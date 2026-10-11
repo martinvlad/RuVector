@@ -22,7 +22,7 @@ Built by [Reuven Cohen (rUv)](https://ruv.io/) as part of the [ruvnet open sourc
 <!-- ecosystem-cta:start -->
 ### Explore the wider ecosystem
 
-[![RuVector: Explore beyond vector memory. Explore Cognitum One.](assets/ruvector/ecosystem-cta.svg)](https://cognitum.one/)
+[![RuVector: explore Cognitum One. Conceptual project-to-destination animation.](assets/ruvector/ecosystem-cta.svg)](https://cognitum.one/)
 
 Building with vector memory? Explore the wider ecosystem.
 

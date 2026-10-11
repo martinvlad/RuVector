@@ -1,6 +1,6 @@
 # ADR-354: Weekly Cloud Run npm improvement loop
 
-- Status: Proposed; observer implementation under validation, adaptive promotion not activated
+- Status: Proposed architecture; observer deployed and verified, adaptive promotion not activated
 - Date: 2026-10-11
 - Updated: 2026-10-11
 - Related: ADR-353; existing research-gate and Ruflo ADR-322A promotion boundary
@@ -63,3 +63,7 @@ Demonstrate one real Cloud Run execution, persisted complete report, Scheduler t
 - [Schedule Cloud Run jobs](https://docs.cloud.google.com/run/docs/execute/jobs-on-schedule)
 - [Cloud Run job secrets](https://docs.cloud.google.com/run/docs/configuring/jobs/secrets)
 - [npm immutable versions](https://docs.npmjs.com/cli/v10/commands/npm-publish/)
+
+## Deployment evidence — 2026-10-11
+
+Two Cloud Run executions succeeded with 398/398 packages; the second read the prior baseline and stored JSON, Markdown, the interactive map and improvement queue. Scheduler is enabled, next run October 12 at 09:00 Toronto time. See [deployment receipt](../ecosystem/deployment.json). The optimizer and publisher remain disabled in the observer.

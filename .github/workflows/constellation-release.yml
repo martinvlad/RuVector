@@ -102,3 +102,9 @@ jobs:
           execFileSync('npm', ['publish', join(CANDIDATE_DIR, seal.filename), '--ignore-scripts', '--access', 'public', '--provenance', '--registry', 'https://registry.npmjs.org'], { stdio: 'inherit' });
           NODE
           node npm/packages/constellation/scripts/verify-publication.mjs "$CANDIDATE_DIR"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: constellation-publication-${{ github.sha }}
+          path: ${{ runner.temp }}/constellation-candidate/publication-receipt.json
+          if-no-files-found: error
+          retention-days: 90

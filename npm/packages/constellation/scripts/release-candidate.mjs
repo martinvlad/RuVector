@@ -54,7 +54,7 @@ try {
   const help = run(process.execPath, [join(installed, 'src/cli.mjs'), '--help'], consumer);
   if (!help.trim()) throw new Error('Packed CLI produced empty help');
   run(process.execPath, ['--input-type=module', '-e', "const m=await import('@ruvector/constellation'); if(typeof m.discoverPackages!=='function') throw Error('Missing public API')"], consumer);
-  for (const path of ['LICENSE', 'skills/ruvector-constellation/SKILL.md']) {
+  for (const path of ['LICENSE', 'plugin.json', 'skills/ruvector-constellation/SKILL.md']) {
     await access(join(installed, path));
     if (!(await readFile(join(installed, path), 'utf8')).trim()) throw new Error(`Empty packed ${path}`);
   }

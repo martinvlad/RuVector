@@ -1,6 +1,7 @@
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile, mkdtemp, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
 import { resolve, join } from 'node:path';
 
 const directory = resolve(process.argv[2] || 'release-candidate');
@@ -39,5 +40,15 @@ if (process.argv.includes('--local-only')) {
     if (attempt < 5) await new Promise(resolve => setTimeout(resolve, 5000));
   }
   if (!verified) throw new Error('Published version unavailable after bounded retries');
+  const consumer = await mkdtemp(join(tmpdir(), 'constellation-public-consumer-'));
+  const cleanEnv = {...process.env, NPM_CONFIG_USERCONFIG: '/dev/null'};
+  for (const key of ['NPM_TOKEN','NODE_AUTH_TOKEN','GH_TOKEN','GITHUB_TOKEN']) delete cleanEnv[key];
+  try {
+    await writeFile(join(consumer,'package.json'), JSON.stringify({private:true,type:'module'}));
+    execFileSync('npm',['install','--ignore-scripts','--workspaces=false','--no-audit','--no-fund',`${seal.name}@${seal.version}`],{cwd:consumer,env:cleanEnv,stdio:'pipe'});
+    execFileSync(process.execPath,['node_modules/@ruvector/constellation/src/cli.mjs','--help'],{cwd:consumer,env:cleanEnv,stdio:'pipe'});
+    execFileSync(process.execPath,['--input-type=module','-e',"const m=await import('@ruvector/constellation');if(typeof m.sweep!=='function')throw Error('Missing sweep')"],{cwd:consumer,env:cleanEnv,stdio:'pipe'});
+    await writeFile(join(directory,'publication-receipt.json'),JSON.stringify({name:seal.name,version:seal.version,sourceSha:seal.sourceSha,sha256:seal.sha256,integrity:seal.integrity,publicBytesMatch:true,publicConsumer:'passed',verifiedAt:new Date().toISOString()},null,2)+'\n',{flag:'wx'});
+  } finally { await rm(consumer,{recursive:true,force:true}); }
   console.log(`Verified published bytes ${seal.name}@${seal.version} SHA256 ${seal.sha256}`);
 }

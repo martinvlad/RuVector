@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { sweep, reportMarkdown } from './index.mjs';
+import { reportHtml } from './visualize.mjs';
 const bucket = process.env.REPORT_BUCKET;
 if (!bucket || !/^[a-z0-9][a-z0-9._-]+$/.test(bucket)) throw new Error('REPORT_BUCKET is required');
 const id = process.env.CLOUD_RUN_EXECUTION ?? randomUUID();
@@ -40,6 +41,7 @@ try {
   await writeObject(`${prefix}/inventory.json`,report,'application/json',0);
   await writeObject(`${prefix}/inventory.md`,reportMarkdown(report),'text/markdown',0);
   await writeObject(`${prefix}/improvement-plan.json`,report.plan,'application/json',0);
+  await writeObject(`${prefix}/inventory.html`,reportHtml(report),'text/html',0);
   if(!report.complete) throw new Error(`Incomplete sweep; preserved at gs://${bucket}/${prefix}`);
   await writeObject('latest.json',report);
   console.log(JSON.stringify({event:'constellation-sweep-complete',packages:report.packages.length,cycles:report.graph.runtimeCycles.length,report:`gs://${bucket}/${prefix}`,sourceSha:report.runner.sourceSha,publishEnabled:false}));

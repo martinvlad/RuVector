@@ -2,6 +2,7 @@
 import { readFile, writeFile, mkdir, stat } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { sweep, reportMarkdown } from './index.mjs';
+import { reportHtml } from './visualize.mjs';
 const [command, ...args] = process.argv.slice(2);
 if (command === 'mcp') {
   if (args.length !== 1) throw new Error('Usage: ruvector-constellation mcp <report.json>');
@@ -20,6 +21,7 @@ if (command === 'mcp') {
   await mkdir(output,{recursive:true});
   await writeFile(`${output}/inventory.json`, JSON.stringify(report,null,2)+'\n');
   await writeFile(`${output}/inventory.md`,reportMarkdown(report));
+  await writeFile(`${output}/inventory.html`,reportHtml(report));
   console.log(JSON.stringify({output,packages:report.packages.length,complete:report.complete,cycles:report.graph.runtimeCycles.length}));
   if (!report.complete) process.exitCode=2;
 } else if (command === '--help' || command === 'help' || !command) {

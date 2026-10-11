@@ -26,12 +26,16 @@ python -m pytest python/portfolio/tests -q
 
 ## Automatic publishing
 
-The `python-portfolio-v0.1.0` tag builds and tests all packages, audits dependencies and publishes the exact tested artifacts with PyPI OIDC attestations. No recurring task is required. PRs build and test but cannot publish. The release tag must point to a commit on main. Configure the `pypi` GitHub environment to accept only protected release tags.
+Merging a new portfolio version into `main` automatically builds, tests, audits and publishes the exact tested artifacts. The first addition of `manifest.json` counts as a new version. Documentation edits without a version change do not publish. An explicit matching `python-portfolio-v0.1.0` tag is also supported. No recurring task is required. PRs build and test but cannot publish. The release tag must point to a commit on main. Configure the `pypi` GitHub environment to accept protected main and release tags. For unattended releases, configure the environment without a manual reviewer, retaining branch protections and CI gates.
 
-Before the first release, register each package's PyPI Trusted Publisher with owner `ruvnet`, repository `RuVector`, workflow `python-portfolio.yml`, environment `pypi`. Confirm name ownership or availability on PyPI; a missing public project is not proof that its name is allocatable. Publish the required runtime version first. The release gate also tests against the published runtime wheel, avoiding accidental dependence on unreleased native APIs.
+Authentication supports an environment secret named `PYPI_API_TOKEN`. When present, only the isolated publish step receives it; otherwise OIDC Trusted Publishing is used. Token publishing does not generate OIDC attestations. Configure the token directly from its protected ruOS binding into the GitHub environment using authenticated GitHub tooling; never print it or put it in command arguments. This credential configuration has not yet been completed.
+
+For OIDC, register each package's PyPI Trusted Publisher with owner `ruvnet`, repository `RuVector`, workflow `python-portfolio.yml`, environment `pypi`. Confirm name ownership or availability on PyPI; a missing public project is not proof that its name is allocatable. Publish the required runtime version first. The release gate also tests against the published runtime wheel, avoiding accidental dependence on unreleased native APIs.
 
 The native runtime keeps its existing `python-v*` wheel workflow. Portfolio packages share a version and release tag, but PyPI publication is not transactional: a partial upload requires checking receipts and publishing only the missing artifacts. Never overwrite releases or silently skip conflicting files.
 
 ## Search discovery
 
 Each package includes a descriptive title, PyPI summary, keywords, repository/documentation links, explicit problem statement, installation command, executable example and limitations. Animated SVGs include accessible titles, descriptions and reduced motion support; static fallback content remains readable. Search rankings are not guaranteed. Prefer measured user adoption and successful installs over package count.
+
+After publishing, Linux, macOS and Windows jobs install the exact versions directly from PyPI in fresh virtual environments and execute portfolio tests and examples. A verification failure is reported as a failed release workflow; uploaded versions are immutable and require a corrective release, not an overwrite.

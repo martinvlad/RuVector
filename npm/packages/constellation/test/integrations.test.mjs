@@ -57,3 +57,10 @@ test('creates inert config from installed executables and preserves unrelated co
     assert.throws(() => createMcpConfiguration({ executables: { constellation: executable }, reportPath: 'relative.json' }), /absolute/);
   } finally { rmSync(directory, { recursive: true, force: true }); }
 });
+
+test('rejects sparse query and training vectors', async () => {
+  const sparse = [1, , 2];
+  const valid = { rows: [{ embedding: [1, 0, 2], scores: { good: 0.9 } }], prices: {good: 1}, embedding: [1, 0, 2] };
+  await assert.rejects(routeWithMetaHarness({...valid, embedding: sparse}), /finite vector/);
+  await assert.rejects(routeWithMetaHarness({...valid, rows: [{embedding:sparse, scores:{good:0.9}}]}), /finite dimensions/);
+});

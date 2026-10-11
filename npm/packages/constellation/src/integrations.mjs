@@ -13,11 +13,11 @@ export async function routeWithMetaHarness(
 ) {
   if (!finite(qualityBar) || qualityBar < 0 || qualityBar > 1) throw new TypeError('qualityBar must be in [0, 1]');
   if (!Number.isSafeInteger(k) || k < 1) throw new TypeError('k must be a positive safe integer');
-  if (!Array.isArray(embedding) || embedding.length === 0 || !embedding.every(finite)) throw new TypeError('embedding must be a nonempty finite vector');
+  if (!Array.isArray(embedding) || embedding.length === 0 || !Array.from(embedding).every(finite)) throw new TypeError('embedding must be a nonempty finite vector');
   if (!Array.isArray(rows) || rows.length === 0 || !record(prices)) throw new TypeError('Measured rows and a price map are required');
   const ids = new Set();
   for (const row of rows) {
-    if (!record(row) || !Array.isArray(row.embedding) || row.embedding.length !== embedding.length || !row.embedding.every(finite)) throw new TypeError('All embeddings must have the same finite dimensions');
+    if (!record(row) || !Array.isArray(row.embedding) || row.embedding.length !== embedding.length || !Array.from(row.embedding).every(finite)) throw new TypeError('All embeddings must have the same finite dimensions');
     if (!record(row.scores) || Object.keys(row.scores).length === 0) throw new TypeError('Each row needs measured quality labels');
     for (const [id, quality] of Object.entries(row.scores)) {
       if (!id.trim() || !finite(quality) || quality < 0 || quality > 1) throw new TypeError('Quality labels must be finite values in [0, 1]');

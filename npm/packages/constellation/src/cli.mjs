@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, stat } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { sweep, reportMarkdown } from './index.mjs';
 const [command, ...args] = process.argv.slice(2);
 if (command === 'mcp') {
   if (args.length !== 1) throw new Error('Usage: ruvector-constellation mcp <report.json>');
+  if ((await stat(resolve(args[0]))).size > 32 * 1024 * 1024) throw new Error('Report exceeds 32 MiB');
   const { serve } = await import('./mcp.mjs');
   await serve(JSON.parse(await readFile(resolve(args[0]), 'utf8')));
 } else if (command === 'sweep') {

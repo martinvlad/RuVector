@@ -16,7 +16,13 @@ test('MCP stdio handshake, tool discovery, query and bounded schema',{timeout:15
     await client.connect(transport);
     const list=await client.listTools();assert.equal(list.tools.length,3);assert(list.tools.every(t=>t.annotations.readOnlyHint));
     const result=await client.callTool({name:'constellation_packages',arguments:{query:'ruvector',limit:1}});
-    assert.equal(JSON.parse(result.content[0].text).packages[0].name,'ruvector');
+    assert.equal(JSON.parse(result.content[0].text).items[0].name,'ruvector');
     const invalid=await client.callTool({name:'constellation_packages',arguments:{limit:10000}});assert.equal(invalid.isError,true);
   } finally {await client.close();await rm(dir,{recursive:true,force:true});}
+});
+
+import {boundedResult, validateReport} from '../src/mcp.mjs';
+test('oversized MCP responses fail explicitly and malformed graphs are rejected',()=>{
+  assert.equal(boundedResult({description:'x'.repeat(128*1024)}).isError,true);
+  assert.throws(()=>validateReport({schemaVersion:1,packages:[],graph:{edges:[{}],runtimeCycles:[]},plan:{queue:[]}}),/Invalid/);
 });

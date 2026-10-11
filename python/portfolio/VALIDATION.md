@@ -10,6 +10,7 @@ Cargo.lock SHA256: 88e1234ffa1178a8e86bc3b819931ef5d1be2a557c887e121b8ff4a62aea9
 * Three Python wheels and three sdists built with hatchling 1.27.0.
 * All six pass twine 7.0.0 strict checks and release artifact validation.
 * 70 tests pass against PyPI ruvector 0.1.2: portfolio contracts plus existing graph, clustering and attention/GNN tests. All three README examples execute during collection.
+* 50 Rust unit tests pass for ruvector-py. The local runtime has a broken libpython symlink; a temporary linker shim to the existing libpython3.12.so.1.0 enabled testing without changing repository code.
 * Source native wheel built with maturin 1.15.0; the same 70 tests pass against it.
 * Clean environment installation from all three sdists: 22 portfolio tests pass, plus the three executable examples.
 * pip-audit 2.10.1: no known vulnerabilities after upgrading build environment pip from 25.0.1 to 26.2.1. Local unpublished distributions cannot be looked up by name in the advisory service; source review covers their added code.

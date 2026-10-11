@@ -80,3 +80,7 @@ Safety constraints: validate all numeric values (comparisons alone do not reject
 ## Recommended weekly acceptance
 
 Collect registry names + versions + ownership, deduplicate authoritative sources; inspect exact tarballs; build typed hard/optional/peer dependency graph; test changed edges and expected missing-optional fallback; run advisories and artifact secret scans; validate `npx skills` discovery in temporary host directories; evaluate candidate changes against frozen installation/compatibility/security anchors; emit source-bound ADR/replay/report. Publish only changed packages in established release trains with immutable source, artifact digest and clean consumer smoke. Measure install success, discovery success, dependent compatibility, vulnerability deltas, latency/size; never use package-count/dependency-count inflation as quality.
+
+## Registry-to-source crosswalk
+
+The [398-package crosswalk](source-crosswalk.json) maps every published name to local manifest candidates: 197 have one candidate, 77 have multiple, and 124 have no matching named manifest in the inspected checkouts. A missing local match can be a generated platform manifest or a repository not checked out; it is not evidence that source does not exist. Repository metadata also includes third-party/co-maintained packages and placeholder URLs, so maintenance membership alone must not choose a release source. Publish access remains unverified per package despite the successful `ruvnet` identity check.

@@ -54,7 +54,6 @@ jobs:
       id-token: write
     env:
       EXPECTED_SHA: ${{ inputs.expected_sha }}
-      CANDIDATE_DIR: ${{ runner.temp }}/constellation-candidate
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -66,10 +65,11 @@ jobs:
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: constellation-sealed-${{ github.sha }}
-          path: ${{ env.CANDIDATE_DIR }}
+          path: ${{ runner.temp }}/constellation-candidate
       - name: Verify approved source, current main, blockers, and sealed bytes
         env:
           GH_TOKEN: ${{ github.token }}
+          CANDIDATE_DIR: ${{ runner.temp }}/constellation-candidate
         run: |
           node --input-type=module <<'NODE'
           import { execFileSync } from 'node:child_process';
@@ -85,6 +85,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ github.token }}
+          CANDIDATE_DIR: ${{ runner.temp }}/constellation-candidate
         run: |
           node --input-type=module <<'NODE'
           import { readFileSync } from 'node:fs';

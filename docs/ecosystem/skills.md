@@ -39,3 +39,7 @@ Use actual MCP `initialize` and `tools/list` responses for capability discovery.
 Validate skill frontmatter and references, then verify local discovery with `npx skills add . --list`. A useful integration check installs into an isolated project, installs the selected runtime, exercises a vector insert/query, and initializes the configured MCP server. Test a missing optional dependency as well as the enabled integration. Do not claim remote availability, runtime compatibility, or marketplace visibility from a local discovery check alone.
 
 Track discovery, installation, runtime smoke results, and MCP tool availability separately in recurring ecosystem reviews. Feed observed failures into narrow skill updates and reproducible regression cases; avoid publishing unsupported feature claims or adding dependencies merely to increase cross-links.
+
+## Portable plugin artifact
+
+The npm package includes a portable Agent Plugins 1.0 `plugin.json` and the same `skills/ruvector-constellation/SKILL.md`. This is a skills-only plugin surface; it does not silently install runtime dependencies or register an MCP process. A local export was built and inspected during validation. Public directory submission and host installation are not implied by npm publication. When creating an export, include only `plugin.json` and `skills/` inside a `ruvector-constellation` directory; exclude node_modules, credentials and unrelated repository files.

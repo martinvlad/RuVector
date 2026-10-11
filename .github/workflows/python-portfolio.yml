@@ -77,8 +77,11 @@ jobs:
       - uses: dtolnay/rust-toolchain@4cda84d5c5c54efe2404f9d843567869ab1699d4
         with:
           toolchain: stable
+      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b
+        with:
+          python-version: '3.12'
       - run: cargo install cargo-audit --version 0.22.2 --locked
-      - run: cargo audit --file Cargo.lock
+      - run: python python/portfolio/audit_native.py /tmp/portfolio-native.lock
   publish:
     needs: [test-build, native-audit]
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/python-portfolio-v')

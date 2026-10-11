@@ -11,7 +11,7 @@ The existing ruvector-py extension already binds graph, attention and clustering
 
 Create ruvector-graph, ruvector-cluster and ruvector-rerank with independent import namespaces, a coordinated 0.1.0 version and an exact dependency on ruvector 0.1.2. Add bounded graph traversal, structured clustering results, and stable attention ranking. Native algorithms stay in the existing PyO3 module. Document that attention ordering is equivalent to dot product, and no trained relevance improvement is implied.
 
-Keep the existing ruvector native wheel pipeline. Add a separate portfolio workflow that tests source-built native bindings and the released runtime, rebuilds sdists, audits Python and Rust dependencies and publishes tested distributions via OIDC. Only tags with matching package versions and main ancestry may publish. Configure publisher identities out of band; never transfer long-lived tokens into chat.
+Keep the existing ruvector native wheel pipeline. Add a separate portfolio workflow that tests source-built native bindings and the released runtime, rebuilds sdists, audits Python and Rust dependencies and publishes tested distributions using a configured PyPI token or OIDC. Version changes merged into main publish automatically after gates pass; ordinary edits without a version change do not publish. Matching release tags with main ancestry are also supported. Published packages are then installed and tested on Linux, macOS and Windows. Token publishing does not produce OIDC attestations. Configure publisher identities out of band; never transfer long-lived tokens into chat.
 
 ## Consequences
 

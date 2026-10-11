@@ -115,6 +115,12 @@ fn int8_embeddings_are_independent_of_batch_composition() {
     let mf = manifest();
     let m = mf.get("bge-small-en-v1.5-int8").unwrap();
     let emb = OrtEmbedder::from_manifest(models_dir(), m).expect("int8 model required");
+    assert_ne!(
+        emb.id(),
+        m.id(),
+        "legacy batched identity must not be reused"
+    );
+    assert_eq!(emb.id(), format!("{}#ort-singleton-v1", m.id()));
     let texts = [
         "I cannot log in",
         "Please urgently refund the duplicate payment on the invoice for our company's annual software subscription.",

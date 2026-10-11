@@ -9,6 +9,9 @@ archive is source code, not a prebuilt runtime or a production-approved model.
 - Saving and reopening an INT8 TypeSafe decision system now keeps its answers
   stable. Previously, processing different groups of examples together changed
   the underlying numbers. Native inference now processes each text independently.
+  Its model identity includes `#ort-singleton-v1` so frozen-head consumers can
+  distinguish the new feature policy from old batched embeddings. Runtime build
+  changes still require separate qualification.
 - The language-model server opens its port before telling clients it is ready.
   A busy port produces a clear failure instead of a misleading success message.
 - Ubuntu CI uses a hash-verified ONNX runtime compatible with that runner.
@@ -33,7 +36,8 @@ module is not built. This is not a full no-skip release qualification. Existing
 workspace peer/platform installation conflicts also remain; `npm ci` across
 all workspaces is not claimed to pass.
 
-RVF/HTTP benchmark receipts are published in the accompanying maintenance gist.
+RVF/HTTP benchmark receipts and runtime comparisons are published at
+https://gist.github.com/ruvnet/eefbcb089426cc4627bf2d4747ae4187.
 This benchmark uses TypeSafe sentence embeddings, not a KGE text-to-graph
 adapter. JEV comparisons replay recorded answers. Fast local loopback timings
 and historical remote timings have different network overhead. An RVF restores

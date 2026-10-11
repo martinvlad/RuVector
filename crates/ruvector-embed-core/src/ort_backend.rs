@@ -81,7 +81,9 @@ impl OrtEmbedder {
         Ok(Self {
             session: Mutex::new(session),
             tokenizer,
-            id: manifest.id(),
+            // Frozen-head consumers must not pair old batched features with
+            // the new per-text inference policy under the same identity.
+            id: format!("{}#ort-singleton-v1", manifest.id()),
             manifest: manifest.clone(),
             input_has_token_type,
             output_name,

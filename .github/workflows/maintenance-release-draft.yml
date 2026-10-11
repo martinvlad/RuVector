@@ -41,13 +41,24 @@ jobs:
           SOURCE_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
-          gh release create maintenance-2026-10-11 \
-            --draft --target "$SOURCE_SHA" \
-            --title 'RuVector maintenance candidate — stable saved decisions and CI repairs' \
-            --notes-file docs/releases/2026-10-11-maintenance.md \
-            "$RUNNER_TEMP/maintenance/ruvector-maintenance-source.tar.gz" \
-            "$RUNNER_TEMP/maintenance/SHA256SUMS" \
-            "$RUNNER_TEMP/maintenance/SOURCE_SHA"
+          if gh release view maintenance-2026-10-11 --json isDraft > "$RUNNER_TEMP/existing-release.json"; then
+            # Never overwrite a published release or silently turn one into a draft.
+            jq --exit-status '.isDraft == true' "$RUNNER_TEMP/existing-release.json"
+            gh release edit maintenance-2026-10-11 --draft \
+              --target "$SOURCE_SHA" --notes-file docs/releases/2026-10-11-maintenance.md
+            gh release upload maintenance-2026-10-11 --clobber \
+              "$RUNNER_TEMP/maintenance/ruvector-maintenance-source.tar.gz" \
+              "$RUNNER_TEMP/maintenance/SHA256SUMS" \
+              "$RUNNER_TEMP/maintenance/SOURCE_SHA"
+          else
+            gh release create maintenance-2026-10-11 \
+              --draft --target "$SOURCE_SHA" \
+              --title 'RuVector maintenance candidate — stable saved decisions and CI repairs' \
+              --notes-file docs/releases/2026-10-11-maintenance.md \
+              "$RUNNER_TEMP/maintenance/ruvector-maintenance-source.tar.gz" \
+              "$RUNNER_TEMP/maintenance/SHA256SUMS" \
+              "$RUNNER_TEMP/maintenance/SOURCE_SHA"
+          fi
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: maintenance-source-${{ github.sha }}

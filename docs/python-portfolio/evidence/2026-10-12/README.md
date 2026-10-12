@@ -70,3 +70,7 @@ ranking and fresh npm window September12 through October11. Filtered retrieval
 is the leading future extension of an existing package; no new library is
 selected while the original release is incomplete. Counts are downloads, not
 unique users, and usefulness/readiness scores are engineering estimates.
+
+Public tested tutorial: https://gist.github.com/ruvnet/2491c7631bf3e186e815196f52fd8954
+
+The posted code was fetched back from GitHub, matched byte for byte and ran successfully. See tutorial-ledger.json for its immutable revision and code digest.

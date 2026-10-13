@@ -533,4 +533,4 @@ No graph arm has run and no transfer or SOTA claim is accepted.
 
 `localization/graph_rerank.py` is a CPU-only experimental benchmark sidecar. It builds typed import, call, and inheritance relations from complete source text and fits one pairwise ridge reranker using development labels. It consumes BM25 and SWERank file ranks over the same candidate universe. It does not call `@ruvector/kge` and is not a production integration.
 
-The protocol has not been scored. The complete pinned code snapshots and dense model artifacts must be restored and hash-verified before running it. The sidecar's focused unit coverage is included in `python3 -m unittest discover -s localization -p 'test_*.py'`; passing those tests does not establish cross-repository transfer.
+The protocol has not been scored. The complete pinned code snapshots and dense model artifacts must be restored and hash-verified before running it. Eleven focused localization tests currently pass with `python3 -m unittest discover -s localization -p 'test_*.py'`, including deterministic leave-one-repository-out L2 selection; passing those tests does not establish cross-repository transfer.

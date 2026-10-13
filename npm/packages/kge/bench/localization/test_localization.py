@@ -9,7 +9,7 @@ import tarfile
 import unittest
 from prepare import chunks,gold_files,snapshot_documents
 from retrieval import bm25,evaluate,file_ranking
-from graph_rerank import FEATURES,build_graph,fit_pairwise,graph_features,score_ranking
+from graph_rerank import FEATURES,build_graph,fit_pairwise,graph_features,score_ranking,select_l2_loro
 
 
 class LocalizationTests(unittest.TestCase):
@@ -137,6 +137,18 @@ class GraphRerankerTests(unittest.TestCase):
     def test_invalid_pair_data_rejected(self):
         with self.assertRaises(ValueError):fit_pairwise([],l2=1.0)
         with self.assertRaises(ValueError):fit_pairwise([dict(features={"x":(1.,)},gold=["missing"])])
+
+    def test_loro_selects_deterministically_and_retrains_on_other_repos(self):
+        examples=[]
+        for i in range(3):
+            good,bad=f"repo{i}/good.py",f"repo{i}/bad.py"
+            features={good:(1.,1.,1.,0.,0.,0.,0.,0.),bad:(0.,0.,0.,0.,0.,0.,0.,0.)}
+            ranking=[dict(path=bad,score=1.),dict(path=good,score=0.)]
+            examples.append(dict(repo=f"org/repo{i}",features=features,ranking=ranking,gold=[good]))
+        selected=select_l2_loro(examples)
+        self.assertEqual(selected["l2"],0.01)
+        self.assertEqual(len(selected["results"]),4)
+        self.assertEqual(len(selected["results"][0]["repositoryMrr"]),3)
 
 
 if __name__=="__main__":unittest.main()

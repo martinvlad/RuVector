@@ -191,3 +191,31 @@ def score_ranking(ranking, features, weights):
             raise ValueError("nonfinite graph score")
         scored.append({"path": row["path"], "score": score})
     return sorted(scored, key=lambda row: (-row["score"], row["path"]))
+
+
+def select_l2_loro(examples, l2_values=(0.01, 0.1, 1.0, 10.0)):
+    """Select L2 by leave-one-repository-out macro MRR; ties favor smaller L2."""
+    repos = sorted({example["repo"] for example in examples})
+    values = sorted(set(float(value) for value in l2_values))
+    if len(repos) < 2 or not values or any(value <= 0 or not math.isfinite(value) for value in values):
+        raise ValueError("need multiple repositories and positive finite L2 values")
+    results = []
+    for l2 in values:
+        fold_scores = []
+        for heldout in repos:
+            train = [example for example in examples if example["repo"] != heldout]
+            test = [example for example in examples if example["repo"] == heldout]
+            weights = fit_pairwise(train, l2=l2)
+            reciprocal_ranks = []
+            for example in test:
+                ranking = score_ranking(example["ranking"], example["features"], weights)
+                paths = [row["path"] for row in ranking]
+                gold = set(example["gold"])
+                if not gold or not gold <= set(paths):
+                    raise ValueError("validation gold missing from candidate ranking")
+                reciprocal_ranks.append(1.0 / min(paths.index(path) + 1 for path in gold))
+            fold_scores.append(sum(reciprocal_ranks) / len(reciprocal_ranks))
+        results.append({"l2": l2, "macroMrr": sum(fold_scores) / len(fold_scores),
+                        "repositoryMrr": fold_scores})
+    winner = min(results, key=lambda row: (-row["macroMrr"], row["l2"]))
+    return {"l2": winner["l2"], "macroMrr": winner["macroMrr"], "results": results}

@@ -123,7 +123,8 @@ function runAdversarial(model, allTriples, testTriples, entities, args, config) 
   const decoys = generateSymmetryDecoys(targets, entities, allTriples, { perTarget: 3 });
   const add = addTriples(model, decoys.map((d) => ({ ...d, split: 'train' })));
   if (!add.available) return { skipped: `addTriples(decoys) unavailable: ${add.error}` };
-  train(model, config); // incremental retrain (no-op for stubs)
+  const retrain = train(model, config);
+  if (!retrain.available) return { skipped: `incremental retraining unavailable: ${retrain.error}` };
   const after = targets.map((t) => scoreTriple(model, t).score);
   // keep only targets scored on BOTH sides of the attack (a fact ranked beyond
   // the k cap returns null and cannot be compared)

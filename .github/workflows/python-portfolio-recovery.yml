@@ -30,7 +30,7 @@ jobs:
       - run: python -m pip install pytest==9.1.1
       - run: python -m pytest python/portfolio/tests/test_resume_release.py -q
   prepare:
-    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')
     needs: contract
     runs-on: ${{ matrix.os }}
     permissions:
@@ -108,7 +108,7 @@ jobs:
           path: preflight.json
           if-no-files-found: ignore
   frozen-native-audit:
-    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')
     needs: contract
     runs-on: ubuntu-latest
     steps:

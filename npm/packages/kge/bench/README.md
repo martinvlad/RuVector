@@ -464,3 +464,27 @@ independently established. These six development cases cannot support a
 production promotion or SOTA claim. A later RuVector graph comparison must use
 separate development and confirmation repositories, identical candidates,
 measured serving cost and a frozen acceptance threshold.
+
+The lexical control sums a set of query tokens. Across Python hash seeds,
+roundoff can change raw BM25 scores at floating point precision. Independent
+recomputation of the first case preserved every file rank (maximum score
+difference 7.11e-15); bitwise score reproducibility is not claimed.
+
+Verify a completed run without encoding again. Preserve the Hugging Face CLI
+`.cache/huggingface/download` metadata in each artifact directory:
+
+```bash
+python npm/packages/kge/bench/localization/verify.py \
+  --run /tmp/localization-run --data /tmp/localization-data \
+  --manifest /tmp/localization-manifest.json --model /tmp/swerank-model \
+  --code /tmp/swerank-code --dataset /tmp/swe-lite \
+  --source-commit 5957f51018cbb5d58e5f0af527e4b52342814860 \
+  --output /tmp/localization-verified.json
+```
+
+The verifier checks complete predictions, rank arithmetic, all aggregate
+metrics, source and input hashes, and download metadata checksums against
+local artifact bytes. It embeds file rankings and gold paths for further
+independent inspection. Metadata checks confirm local consistency; they do
+not authenticate origin. The supplied source commit is declared provenance,
+not remotely verified by this command. Run with Python assertions enabled.

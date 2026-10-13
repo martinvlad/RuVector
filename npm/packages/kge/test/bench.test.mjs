@@ -364,6 +364,31 @@ test('--strict-evidence rejects an incompatible baseline receipt', async () => {
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
+test('--strict-evidence rejects scorer and config mismatch with identical data identity', async () => {
+  const dir = mkdtempSync(join(tmpdir(), 'kge-strict-'));
+  try {
+    const { receipt: candidate } = await main(
+      ['--suite', 'synthetic', '--epochs', '1', '--gate', '--strict-evidence',
+        '--out', join(dir, 'candidate.json')],
+      { binding: FAKE });
+    const baseline = join(dir, 'baseline.json');
+    writeFileSync(baseline, JSON.stringify({
+      ...candidate,
+      scorer: 'rotate',
+      config: { ...candidate.config, scorer: 'rotate', dims: 128, seed: 999, epochs: 9 },
+    }));
+    const { code, receipt } = await main(
+      ['--suite', 'synthetic', '--epochs', '1', '--gate', '--strict-evidence',
+        '--baseline-receipt', baseline, '--out', join(dir, 'receipt.json')],
+      { binding: FAKE });
+    assert.equal(code, 1);
+    const row = receipt.gates.rows.find(r => r.name === 'strict_baseline_identity');
+    assert.equal(row.status, 'FAIL');
+    assert.match(row.detail, /scorer/);
+    assert.match(row.detail, /config/);
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
 test('--strict-evidence passes a complete finite run and remains report-only compatible', async () => {
   for (const reportOnly of [false, true]) {
     const dir = mkdtempSync(join(tmpdir(), 'kge-strict-'));

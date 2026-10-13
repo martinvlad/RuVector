@@ -123,8 +123,7 @@ ULTRA_CHECKOUT=/tmp/ultra python -m unittest discover \
 
 Activate the environment so `ninja` is on PATH. The upstream CPU rspmm kernel
 compiles on first inference. Setup/compilation time is excluded from recorded
-evaluation time. Test without `ULTRA_CHECKOUT` runs seven standard-library
-contracts and explicitly skips the three optional integration tests.
+evaluation time. Without `ULTRA_CHECKOUT`, the optional integration tests are explicitly skipped.
 
 Pass `--query '{"s":"entity","r":"relation","k":5}'` to produce a ranked
 prediction instead of a benchmark. Relation names must occur in target support;
@@ -155,3 +154,111 @@ adapter as an experimental cold-start option. ULTRA evaluated 128 rankings per
 graph in 1.92–2.28 seconds on this CPU environment, excluding initialization and
 kernel compilation. KGE's 50 target epochs took 0.21–2.44 seconds per seed.
 These are descriptive run timings, not a controlled latency benchmark.
+
+
+## Frozen sparse target adaptation experiment
+
+`transfer/sparse_transfer.py` compares frozen pretrained ULTRA, adapted
+pretrained ULTRA, scratch ULTRA, native HolE with 50 epochs, and native HolE
+with training duration calibrated on a discarded model. The protocol and
+runner hashes were committed before execution in
+`b1b445e3b4f95cfc93253f93c4181cb688da5aa4`. The original manifest is retained in
+`transfer/sparse-manifest.json`.
+
+Nested target support fractions are 1%, 5%, 10% and 25%, with a minimum of one
+fact per relation. Nations' nominal 1% therefore uses 3.45%; all actual counts
+and fractions are reported. Seeds are 101, 202 and 303. ULTRA uses AdamW,
+learning rate 0.0005, batch size 8, 16 negatives and one training thread.
+Training stops after crossing two seconds, checked between updates, or 1000
+updates. The native timed arm estimates its epoch count from support-only
+calibration. Actual durations determine whether the comparison meets the
+10% timing tolerance. Fixed 50 epoch KGE is an operational reference and is
+excluded from that timing gate. Setup and calibration are reported separately;
+this is not equal FLOPs, equal examples, or equal total compute.
+
+Only retained support facts enter training or message passing. Withheld
+training facts become filter-only truths. Each ULTRA batch removes its
+positive edges and their inverses before rebuilding the relation graph.
+Negative sampling uses support only. All arms share the full candidate
+vocabulary, including nodes with no retained support. Evaluation uses both
+head and tail queries with exhaustive filtered pessimistic ranks.
+
+Nations, Kinships and UMLS reuse the diagnostic pilot's 64 queries per graph.
+Countries S1 adds an untouched whole-graph check using all 24 official test
+facts. Countries source files are pinned by commit and hash; preparation
+removes one exact within-training duplicate and rejects cross-split overlap.
+The confirmation set is too small to establish broad transfer superiority.
+
+Acceptance requires at least 10% relative aggregate MRR improvement over
+scratch ULTRA and each KGE control, positive improvement over scratch at all
+four support fractions, and every timed arm within 10% of two seconds.
+Aggregate MRR weights seeds and fractions equally. No production promotion is
+performed, regardless of this exploratory gate.
+
+To reproduce, prepare the three PyKEEN datasets as above, and download
+`train.txt`, `valid.txt` and `test.txt` from the pinned `BASE_URL` in
+`transfer/prepare_countries.py`. Then:
+
+```bash
+python npm/packages/kge/bench/transfer/prepare_countries.py \
+  --directory /tmp/countries-raw --output /tmp/countries_s1.json
+python npm/packages/kge/bench/transfer/sparse_transfer.py --freeze \
+  --inputs /tmp/nations.json /tmp/kinships.json /tmp/umls.json /tmp/countries_s1.json \
+  --binding /absolute/path/to/installed/@ruvector/kge/index.js \
+  --native /absolute/path/to/installed/@ruvector/kge/native/kge.linux-x64-gnu.node \
+  --manifest /tmp/sparse-manifest.json
+python npm/packages/kge/bench/transfer/sparse_transfer.py --run \
+  --inputs /tmp/nations.json /tmp/kinships.json /tmp/umls.json /tmp/countries_s1.json \
+  --binding /absolute/path/to/installed/@ruvector/kge/index.js \
+  --native /absolute/path/to/installed/@ruvector/kge/native/kge.linux-x64-gnu.node \
+  --manifest /tmp/sparse-manifest.json --upstream /tmp/ultra --output /tmp/sparse-run
+python npm/packages/kge/bench/transfer/summarize_sparse.py \
+  --receipt /tmp/sparse-run/receipt.json --output /tmp/sparse-summary.json
+```
+
+Use a new manifest when local absolute paths differ. Compare all input,
+source and native binary hashes against the committed manifest before claiming
+a reproduction. Wall-clock stopping can produce different update counts on
+another run. The saved summary includes support coverage, timing mismatches,
+per-fraction metrics and acceptance decisions. The compressed full receipt
+preserves all 208 arm records and ULTRA paired ranks; checkpoint hashes are
+recorded, while generated model weights are not committed.
+
+Measured sparse pilot (2026-10-13), MRR averaged equally across four support
+fractions and three training seeds. Frozen ULTRA has one result per fraction.
+
+| Graph | Frozen ULTRA | Adapted ULTRA | Scratch ULTRA | KGE 50 epochs | KGE calibrated time |
+|---|---:|---:|---:|---:|---:|
+| nations | 0.4968 | 0.5223 | 0.5190 | 0.4087 | 0.4099 |
+| kinships | 0.0638 | 0.0664 | 0.0538 | 0.1394 | 0.1419 |
+| umls | 0.2921 | 0.3013 | 0.1760 | 0.1539 | 0.1547 |
+| countries_s1 | 0.2677 | 0.2582 | 0.1677 | 0.0245 | 0.0300 |
+
+No graph passes the frozen acceptance gate. Adapted ULTRA improves aggregate
+MRR over scratch by 0.6% on Nations, 23.5% on Kinships, 71.2% on UMLS and 54.0%
+on Countries, but every graph contains at least one support fraction where
+scratch wins. KGE also remains stronger on Kinships. These aggregate gains do
+not imply a uniform benefit from pretraining.
+
+On the untouched Countries check, adapted ULTRA loses to scratch at 5%
+support (0.1892 versus 0.2010). At 25%, adaptation improves over scratch
+(0.5985 versus 0.2332), but frozen ULTRA is stronger still (0.6641).
+Across all four fractions, frozen ULTRA averages 0.2677 versus adapted 0.2582.
+The current adaptation recipe therefore does not demonstrate a benefit over
+simply retaining the pretrained model on this holdout.
+
+Timing also fails: 59 of 144 timed records fall outside 1.8 to 2.2 seconds.
+ULTRA update granularity causes overruns, while native calibration sometimes
+underuses the budget. This run cannot support an equal target time claim.
+At the smallest Countries support level, none of the 24 test facts has both
+endpoints observed in support; low coverage is part of this experiment, not
+proof that every cold-start setting is handled.
+
+`transfer/sparse-results.json` contains compact results and provenance;
+`transfer/sparse-receipt.json.gz` contains the complete receipt. All 96 saved
+ULTRA checkpoint hashes and recorded ULTRA MRR values were independently
+recomputed from local checkpoint bytes and paired ranks. Countries preparation
+was reproduced byte for byte. The next experiment should first validate a
+longer timing budget on development graphs and compare frozen versus adapted
+ULTRA explicitly. Any new transfer confirmation requires a fresh held-out
+graph, since Countries has now been inspected. KGE remains the incumbent.

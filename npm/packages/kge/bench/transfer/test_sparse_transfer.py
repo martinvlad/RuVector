@@ -3,6 +3,7 @@ import os
 import unittest
 from sparse_transfer import sparse_payload, state_hash, train
 from ultra_adapter import UltraAdapter
+from summarize_sparse import summarize
 
 
 def fixture():
@@ -30,6 +31,44 @@ class SparseContractTests(unittest.TestCase):
         a=fixture(); b=copy.deepcopy(a)
         b["triples"][-2]["o"]="n18"
         self.assertEqual(sparse_payload(a,.25)["support"],sparse_payload(b,.25)["support"])
+
+
+class ReceiptGateTests(unittest.TestCase):
+    def fixture(self):
+        records=[]
+        for fraction in [.01,.05,.1,.25]:
+            for arm in ["frozen","adapted","scratch","kge50","kgeTimed"]:
+                for seed in ([None] if arm=="frozen" else [101,202,303]):
+                    records.append(dict(graph="countries_s1",fraction=fraction,arm=arm,seed=seed,
+                                        support={"sha256":"same"},inputHash="same",
+                                        training={"seconds":.01 if arm=="kge50" else 2},
+                                        evaluation={"queryHashes":["query"],"metrics":{"count":2,
+                                            "mrr":.5 if arm=="adapted" else .4}}))
+        return dict(complete=True,promotion=False,records=records,
+                    manifest={"inputHashes":{"/data/countries_s1.json":"hash"}})
+
+    def test_fixed_epoch_control_excluded_from_time_gate(self):
+        self.assertTrue(summarize(self.fixture())["confirmationPassed"])
+
+    def test_timing_mismatch_blocks_acceptance(self):
+        data=self.fixture()
+        next(r for r in data["records"] if r["arm"]=="kgeTimed")["training"]["seconds"]=3
+        result=summarize(data)["graphs"]["countries_s1"]
+        self.assertTrue(result["qualityGate"])
+        self.assertFalse(result["acceptancePassed"])
+
+    def test_missing_and_nonfinite_evidence_rejected(self):
+        data=self.fixture(); data["records"].pop()
+        with self.assertRaises(ValueError): summarize(data)
+        data=self.fixture(); data["records"][0]["evaluation"]["metrics"]["mrr"]=float("nan")
+        with self.assertRaises(ValueError): summarize(data)
+
+    def test_one_bad_fraction_blocks_acceptance(self):
+        data=self.fixture()
+        for r in data["records"]:
+            if r["arm"]=="adapted" and r["fraction"]==.01:
+                r["evaluation"]["metrics"]["mrr"]=.3
+        self.assertFalse(summarize(data)["confirmationPassed"])
 
 
 @unittest.skipUnless(os.environ.get("ULTRA_CHECKOUT"),"optional training integration")

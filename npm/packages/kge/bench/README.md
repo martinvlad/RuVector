@@ -488,3 +488,40 @@ local artifact bytes. It embeds file rankings and gold paths for further
 independent inspection. Metadata checks confirm local consistency; they do
 not authenticate origin. The supplied source commit is declared provenance,
 not remotely verified by this command. Run with Python assertions enabled.
+
+Measured development results (2026-10-13), all six preselected cases:
+
+| Method | MRR | Hit@1 | Recall@5 | Recall@10 |
+| --- | ---: | ---: | ---: | ---: |
+| BM25 | 0.8056 | 4/6 | 6/6 | 6/6 |
+| SWERank CPU variant | 0.5988 | 3/6 | 5/6 | 6/6 |
+
+Gold file ranks in selection order were BM25 `[1,1,2,1,1,3]` and SWERank
+`[7,1,4,5,1,1]`. SWERank won one case, tied two and lost three. All six cases
+have one gold production file. Macro Recall@10 has no remaining headroom in
+this pilot. These small public development results favor keeping BM25 as the
+baseline; they do not establish a general model ranking.
+
+Dense indexing took 2265.65 seconds total (37.8 minutes) on two Torch CPU
+threads, plus 4.50 seconds initialization. Mean warm dense query encoding and
+ranking was 0.436 seconds (range 0.155 to 0.861). BM25 corpus scoring and ranking,
+including lexical preparation on each query, averaged 0.0377 seconds. These
+are single-query observations on a shared host, with light verification tasks
+running alongside some indexing; they are not controlled serving percentiles.
+No paid GPU job or fine tuning was used. Download/preparation time is excluded.
+
+SWERank truncated 429 of 3013 chunks (14.2%) and one of six queries. Historical
+syntax fallback preserved 37 chunks. There were 332 file candidates summed
+across snapshots. `localization/pilot-results.json` includes the complete
+receipt, predictions, gold paths and 17 download metadata checks. Seven focused
+localization tests and 29 existing transfer tests pass. Python compilation and
+independent metric verification pass. The pinned Ruflo 3.25.6 static scan
+reported zero findings; Python and dependency advisory coverage is not
+established. Its unrelated helper-file refresh was reverted.
+
+Decision: retain the lexical baseline and keep the SWERank variant experimental.
+The next comparison needs harder, separately held out repositories and a frozen
+protocol for hybrid retrieval and RuVector graph scoring, with identical
+candidates and measured latency. Unknown training overlap, partial chunk
+coverage, truncation and the noncommercial model license remain material limits.
+No graph arm has run and no transfer or SOTA claim is accepted.

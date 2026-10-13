@@ -399,3 +399,68 @@ test inspection, so all findings remain development evidence. No fresh
 confirmation graph was accessed, no candidate was promoted and no KGE
 superiority is claimed. Production use still requires an application graph,
 separate validation and confirmation data, and measured serving cost.
+
+### CPU software localization development pilot
+
+`localization/` compares BM25 with frozen Salesforce/SweRankEmbed-Small on
+six deterministic SWE-bench Lite cases: three each from Requests and Flask,
+selected by the SHA256 of instance ID before retrieval. This is an issue to
+file retrieval smoke experiment. It adds no reranker, graph scorer or training.
+It does not establish unseen repository transfer or reproduce paper results.
+
+The candidate corpus includes every production Python file under `requests/`
+or `src/flask/` in each issue's base commit. Repository archives are read as
+text, never extracted or executed. Chunks contain the first 80 module lines
+and AST functions. Historical Python 2 syntax uses 80 line windows instead.
+File coverage is complete for these cases, but nonfunction content beyond
+line 80 can be absent from AST chunks. Gold production files come from the
+benchmark patch and remain separate from encoder inputs. Predictions are
+saved before scoring. Tests and patch text are not retrieval inputs.
+
+SWERank uses the documented query prefix, normalized CLS embeddings and
+maximum chunk score per file. The CPU variant uses float32, two Torch threads,
+batch size eight and 512 tokens. BM25 uses the same chunks with k1=1.5 and
+b=0.75, without token truncation. This difference in effective input is a
+limitation. Record indexing cost separately from warm query encoding and
+ranking. File ranking uses exact dot products in this small baseline.
+
+Pinned sources:
+
+* Model: `Salesforce/SweRankEmbed-Small`, revision
+  `745d2a06103a66d3cfa600aa52fc0d3523010daa`.
+* Model implementation: `Snowflake/snowflake-arctic-embed-m-long`, revision
+  `92d97331f1f4b6a366c1f161354b9f3390cc219f`.
+* Dataset: `princeton-nlp/SWE-bench_Lite`, revision
+  `6ec7bb89b9342f664a54a6e0a6ea6501d3437cc2`, test parquet.
+
+Artifacts were downloaded using Hugging Face CLI with explicit revisions.
+`pilot-manifest.json` records artifact, source, archive and input hashes and
+was frozen before scoring. A hash checks integrity, not download origin.
+The pinned local implementation is imported only after hash verification;
+weights use safetensors. The model card declares CC BY NC 4.0. This is a
+research comparator, not a commercial deployment authorization. Model weights
+and target repository code are not vendored in this branch.
+
+Reproduction requires Python with the six dependency versions in the manifest,
+plus NumPy 1.26.4. Download the pinned model snapshot, the pinned implementation's
+`configuration_hf_nomic_bert.py` and `modeling_hf_nomic_bert.py`, and the dataset
+parquet. Generate a new manifest for local paths, then compare its content
+hashes and pinned versions with the published manifest before running:
+
+```bash
+python npm/packages/kge/bench/localization/prepare.py \
+  --parquet /tmp/swe-lite/data/test-00000-of-00001.parquet --output /tmp/localization-data
+python npm/packages/kge/bench/localization/run.py --freeze \
+  --data /tmp/localization-data --model /tmp/swerank-model --code /tmp/swerank-code \
+  --manifest /tmp/localization-manifest.json
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python npm/packages/kge/bench/localization/run.py \
+  --data /tmp/localization-data --model /tmp/swerank-model --code /tmp/swerank-code \
+  --manifest /tmp/localization-manifest.json --output /tmp/localization-run
+python -m unittest discover -s npm/packages/kge/bench/localization -p 'test_*.py'
+```
+
+Public benchmark pretraining overlap and issue edit chronology have not been
+independently established. These six development cases cannot support a
+production promotion or SOTA claim. A later RuVector graph comparison must use
+separate development and confirmation repositories, identical candidates,
+measured serving cost and a frozen acceptance threshold.

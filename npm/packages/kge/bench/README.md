@@ -325,3 +325,77 @@ training helps adaptation on these development graphs. It does not establish
 uniform gains, performance on a new graph, or superiority to native KGE.
 Retain frozen ULTRA as the experimental baseline and leave adaptation opt-in
 pending validation on the intended application graph. KGE remains incumbent.
+
+
+## Validation-only adaptation selection
+
+`validation_gate.py` and `guarded_adaptation.py` make adaptation conditional
+on explicit validation evidence. The incumbent stays frozen unless candidate
+MRR is at least 10% higher and the paired bootstrap lower 2.5 percentile of
+MRR difference is positive. Resampling keeps head/tail ranks together per
+fact, uses 2,000 replicates and a fixed seed. At least 32 facts are required;
+the pilot selects 64 by query hash. This is a descriptive stability check,
+not proof of independent graph generalization or a multiple-comparison correction.
+
+The pilot reads pinned official PyKEEN `valid.txt` files. The earlier export's
+`valid` tag also contains unused test facts, so it must not be treated as a
+selection split. Selection filters contain retained support and official
+validation truths only. Test facts, including unused test facts, never enter
+these filters. The full candidate vocabulary remains fixed across arms.
+Diagnostic test MRR retains the earlier full filtering policy, so validation
+and diagnostic test MRR values should not be compared as if their filters
+were identical.
+
+The local checkpoint loader limits input to 64 MiB, checks the expected
+SHA256 before restricted `weights_only=True` deserialization, requires finite
+tensors, and validates keys, shapes and dtypes before changing weights.
+The hash is an integrity check, not authentication. Use trusted local receipts
+and weights only. This does not create an upload endpoint or inference service.
+The sequential `apply_candidate` helper restores incumbent weights on any
+rejection or exception and leaves accepted weights ready for `predict`.
+
+```python
+from guarded_adaptation import apply_candidate
+from validation_gate import official_validation
+
+support = [r for r in payload["triples"] if r["split"] == "train"]
+queries, truths = official_validation(valid_bytes, expected_valid_sha256, support)
+report = apply_candidate(adapter, candidate_path, expected_checkpoint_sha256,
+                         queries, truths)
+result = adapter.predict({"s": known_entity, "r": known_relation, "k": 5})
+```
+
+Here `adapter` starts with frozen pretrained weights. The validation file and
+checkpoint hashes must come from trusted provenance. Do not supply test rows
+to this API. The helper uses the existing model and adds no training run.
+
+Reproduce the bounded development selector using saved checkpoints from the
+longer adaptation run:
+
+```bash
+python npm/packages/kge/bench/transfer/evaluate_validation_gate.py --freeze \
+  --run /tmp/adaptation-run --pykeen /tmp/pykeen --manifest /tmp/validation-manifest.json
+python npm/packages/kge/bench/transfer/evaluate_validation_gate.py \
+  --run /tmp/adaptation-run --pykeen /tmp/pykeen --manifest /tmp/validation-manifest.json \
+  --upstream /tmp/ultra --output /tmp/validation-results.json
+```
+
+Measured selection (2026-10-13): one of nine adapted candidates was accepted,
+Nations seed 202, with 13.26% validation MRR gain and a narrow bootstrap lower
+bound of 0.000770. The other eight candidates retained frozen weights.
+Selected diagnostic MRR averaged over seeds is 0.6061 for Nations versus
+0.5803 frozen, 0.0940 for Kinships versus 0.0940 frozen, and 0.5067 for UMLS
+versus 0.5067 frozen. Always adapting scored higher on these already inspected
+test subsets, so this result does not establish selector superiority. It
+shows that the earlier test gains are not consistently supported by this
+separate validation check.
+
+`transfer/validation-manifest.json` preserves the policy and source/input
+hashes; `transfer/validation-results.json` contains all nine decisions,
+validation ranks and diagnostic summaries. The manifest was written before
+selection evaluation; implementation commit is
+`71a7525be0edbc54d6b220baa526f8668b1358e9`. The policy was designed after earlier
+test inspection, so all findings remain development evidence. No fresh
+confirmation graph was accessed, no candidate was promoted and no KGE
+superiority is claimed. Production use still requires an application graph,
+separate validation and confirmation data, and measured serving cost.

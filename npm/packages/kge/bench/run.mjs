@@ -277,10 +277,11 @@ const sortedEntries = (x) => JSON.stringify(Object.entries(x ?? {}).sort(([a], [
 function strictBaselineStatus(run, args, baseline) {
   if (!baseline) return { ok: true, detail: 'no baseline comparison requested' };
   const mismatches = [];
+  const candidateConfig = { scorer: args.scorer, dims: args.dims, seed: args.seed, epochs: args.epochs };
   if (baseline.schema !== 'ruvector-kge-bench/receipt@1') mismatches.push('schema');
   if (baseline.suite !== run.suite) mismatches.push('suite');
-  if (baseline.scorer !== run.scorer) mismatches.push('scorer');
-  if (sortedEntries(baseline.config) !== sortedEntries(run.config)) mismatches.push('config');
+  if (baseline.scorer !== args.scorer) mismatches.push('scorer');
+  if (sortedEntries(baseline.config) !== sortedEntries(candidateConfig)) mismatches.push('config');
   if (baseline.tie_break !== 'random') mismatches.push('tie_break');
   if (baseline.dataset?.splits_hash !== run.splitsHash) mismatches.push('splits_hash');
   if (sortedEntries(baseline.dataset?.hashes) !== sortedEntries(run.datasetHashes)) mismatches.push('dataset_hashes');

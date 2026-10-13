@@ -340,6 +340,34 @@ test('--strict-evidence fails missing metrics and unavailable requested arms', a
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
+test('--strict-evidence fails an unavailable requested adversarial retrain', async () => {
+  let trainCalls = 0;
+  class Model extends FAKE.Model {
+    trainJson(json) {
+      trainCalls++;
+      if (trainCalls === 2) {
+        return JSON.stringify({ error: { kind: 'forced', message: 'incremental retraining failed' } });
+      }
+      return super.trainJson(json);
+    }
+  }
+
+  const out = join(mkdtempSync(join(tmpdir(), 'kge-strict-adversarial-')), 'receipt.json');
+  const { code, receipt } = await main(
+    ['--suite', 'synthetic', '--epochs', '1', '--adversarial', '--gate', '--strict-evidence', '--out', out],
+    { binding: { ...FAKE, Model } },
+  );
+
+  assert.equal(trainCalls, 2);
+  assert.equal(code, 1, 'a failed requested adversarial retrain must fail strict evidence');
+  assert.equal(receipt.gates.rows.find((r) => r.name === 'strict_training').status, 'PASS');
+  const requested = receipt.gates.rows.find((r) => r.name === 'strict_requested_arms');
+  assert.equal(requested.status, 'FAIL');
+  assert.match(requested.detail, /adversarial/);
+  assert.match(receipt.adversarial.skipped, /incremental retraining unavailable: incremental retraining failed/);
+  assert.equal(receipt.gates.pass, false);
+});
+
 test('--strict-evidence fails a requested tie-check that cannot be evaluated', async () => {
   class Model extends FAKE.Model {
     constructor(configJson) {

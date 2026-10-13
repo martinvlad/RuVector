@@ -279,13 +279,15 @@ function strictBaselineStatus(run, args, baseline) {
   const mismatches = [];
   if (baseline.schema !== 'ruvector-kge-bench/receipt@1') mismatches.push('schema');
   if (baseline.suite !== run.suite) mismatches.push('suite');
+  if (baseline.scorer !== run.scorer) mismatches.push('scorer');
+  if (sortedEntries(baseline.config) !== sortedEntries(run.config)) mismatches.push('config');
   if (baseline.tie_break !== 'random') mismatches.push('tie_break');
   if (baseline.dataset?.splits_hash !== run.splitsHash) mismatches.push('splits_hash');
   if (sortedEntries(baseline.dataset?.hashes) !== sortedEntries(run.datasetHashes)) mismatches.push('dataset_hashes');
   if (run.splits?.transfer?.length && !Number.isFinite(baseline.metrics?.transfer?.mrr)) mismatches.push('transfer_mrr');
   return {
     ok: mismatches.length === 0,
-    detail: mismatches.length ? `incompatible baseline identity: ${mismatches.join(',')}` : 'baseline identity matches candidate dataset and model shape',
+    detail: mismatches.length ? `incompatible baseline identity: ${mismatches.join(',')}` : 'baseline identity matches candidate dataset and model config',
   };
 }
 

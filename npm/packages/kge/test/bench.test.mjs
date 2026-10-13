@@ -372,6 +372,16 @@ test('--strict-evidence rejects scorer and config mismatch with identical data i
         '--out', join(dir, 'candidate.json')],
       { binding: FAKE });
     const baseline = join(dir, 'baseline.json');
+    writeFileSync(baseline, JSON.stringify(candidate));
+    const exact = await main(
+      ['--suite', 'synthetic', '--epochs', '1', '--gate', '--strict-evidence',
+        '--baseline-receipt', baseline, '--out', join(dir, 'exact.json')],
+      { binding: FAKE });
+    assert.equal(exact.code, 0);
+    assert.equal(
+      exact.receipt.gates.rows.find(r => r.name === 'strict_baseline_identity').status,
+      'PASS');
+
     writeFileSync(baseline, JSON.stringify({
       ...candidate,
       scorer: 'rotate',

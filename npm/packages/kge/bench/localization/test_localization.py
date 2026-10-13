@@ -9,6 +9,7 @@ import tarfile
 import unittest
 from prepare import chunks,gold_files,snapshot_documents
 from retrieval import bm25,evaluate,file_ranking
+from graph_rerank import FEATURES,build_graph,fit_pairwise,graph_features,score_ranking
 
 
 class LocalizationTests(unittest.TestCase):
@@ -97,6 +98,45 @@ class ReceiptTests(unittest.TestCase):
             with self.subTest(corruption=corruption):
                 code,written,_=self.run_fixture(corruption)
                 self.assertNotEqual(code,0);self.assertFalse(written)
+
+
+class GraphRerankerTests(unittest.TestCase):
+    def fixture(self):
+        sources={
+            "pkg/a.py":"from pkg import b\ndef entry():\n    return helper()\n",
+            "pkg/b.py":"class Base:\n    pass\ndef helper():\n    return 1\n",
+            "pkg/c.py":"from pkg.b import Base\nclass Child(Base):\n    pass\n",
+        }
+        return sources
+
+    def test_graph_is_typed_and_inductive(self):
+        graph=build_graph(self.fixture())
+        self.assertIn("pkg/b.py",graph["import"]["pkg/a.py"])
+        self.assertIn("pkg/b.py",graph["call"]["pkg/a.py"])
+        self.assertIn("pkg/b.py",graph["inherit"]["pkg/c.py"])
+        self.assertNotIn("pkg/a.py",graph["import"].get("pkg/c.py",()))
+
+    def test_features_train_and_apply_with_unseen_paths(self):
+        sources=self.fixture();graph=build_graph(sources)
+        docs=[dict(path=path,text=source) for path,source in sources.items()]
+        train_ranking=file_ranking(docs,[3.,2.,1.])
+        rankings={"bm25":train_ranking,"swerank":train_ranking[::-1]}
+        features=graph_features(graph,rankings,[d["path"] for d in docs])
+        weights=fit_pairwise([dict(features=features,gold=["pkg/b.py"])],l2=0.1)
+        self.assertEqual(len(weights),len(FEATURES))
+        test_sources={"new/a.py":"from new import b\ndef entry(): return helper()",
+                      "new/b.py":"def helper(): return 1"}
+        test_graph=build_graph(test_sources)
+        test_docs=[dict(path=path,text=source) for path,source in test_sources.items()]
+        ranking=file_ranking(test_docs,[1.,0.])
+        test_rankings={"bm25":ranking,"swerank":ranking[::-1]}
+        test_features=graph_features(test_graph,test_rankings,[d["path"] for d in test_docs])
+        result=score_ranking(ranking,test_features,weights)
+        self.assertEqual({r["path"] for r in result},{"new/a.py","new/b.py"})
+
+    def test_invalid_pair_data_rejected(self):
+        with self.assertRaises(ValueError):fit_pairwise([],l2=1.0)
+        with self.assertRaises(ValueError):fit_pairwise([dict(features={"x":(1.,)},gold=["missing"])])
 
 
 if __name__=="__main__":unittest.main()

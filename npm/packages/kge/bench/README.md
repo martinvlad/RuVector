@@ -525,3 +525,12 @@ protocol for hybrid retrieval and RuVector graph scoring, with identical
 candidates and measured latency. Unknown training overlap, partial chunk
 coverage, truncation and the noncommercial model license remain material limits.
 No graph arm has run and no transfer or SOTA claim is accepted.
+
+
+## Frozen inductive code-graph follow-up
+
+`localization/transfer-protocol.json` locks the pinned dataset revision and hash, repository/issue selection rules, resource caps, training split, and acceptance gate before confirmation scoring. It uses all 23 official development cases and selects one task from each of three confirmation repositories that are disjoint from development and the earlier Flask/Requests pilot.
+
+`localization/graph_rerank.py` is a CPU-only experimental benchmark sidecar. It builds typed import, call, and inheritance relations from complete source text and fits one pairwise ridge reranker using development labels. It consumes BM25 and SWERank file ranks over the same candidate universe. It does not call `@ruvector/kge` and is not a production integration.
+
+The protocol has not been scored. The complete pinned code snapshots and dense model artifacts must be restored and hash-verified before running it. The sidecar's focused unit coverage is included in `python3 -m unittest discover -s localization -p 'test_*.py'`; passing those tests does not establish cross-repository transfer.

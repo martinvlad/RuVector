@@ -340,6 +340,37 @@ test('--strict-evidence fails missing metrics and unavailable requested arms', a
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
+test('--strict-evidence fails a requested tie-check that cannot be evaluated', async () => {
+  class Model extends FAKE.Model {
+    constructor(configJson) {
+      super(configJson);
+      this.tieProbe = JSON.parse(configJson || '{}').epochs === 0;
+    }
+
+    evalJson(json) {
+      const raw = super.evalJson(json);
+      if (!this.tieProbe) return raw;
+      const result = JSON.parse(raw);
+      for (const side of ['combined', 'head', 'tail']) {
+        Object.assign(result.report[side], { mr: 2, mrr: 0.5, hits1: 0, hits3: 1, hits10: 1 });
+      }
+      return JSON.stringify(result);
+    }
+  }
+
+  const out = join(mkdtempSync(join(tmpdir(), 'kge-strict-tie-')), 'receipt.json');
+  const { code, receipt } = await main(
+    ['--suite', 'synthetic', '--epochs', '1', '--tie-check', '--gate', '--strict-evidence', '--out', out],
+    { binding: { ...FAKE, Model } },
+  );
+
+  assert.equal(code, 1, 'a requested but unevaluable tie-check must fail strict evidence');
+  const requested = receipt.gates.rows.find((r) => r.name === 'strict_requested_arms');
+  assert.equal(requested.status, 'FAIL');
+  assert.match(requested.detail, /tie-check/);
+  assert.equal(receipt.gates.rows.find((r) => r.name === 'tie_break_random').status, 'SKIP');
+});
+
 test('--strict-evidence rejects an incompatible baseline receipt', async () => {
   const dir = mkdtempSync(join(tmpdir(), 'kge-strict-'));
   try {

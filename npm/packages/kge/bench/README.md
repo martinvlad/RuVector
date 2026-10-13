@@ -262,3 +262,66 @@ was reproduced byte for byte. The next experiment should first validate a
 longer timing budget on development graphs and compare frozen versus adapted
 ULTRA explicitly. Any new transfer confirmation requires a fresh held-out
 graph, since Countries has now been inspected. KGE remains the incumbent.
+
+
+## Longer adaptation development gate
+
+`transfer/adaptation_budget.py` tests whether increasing the target training
+budget from two to twenty seconds is worth a new confirmation experiment.
+This is development evidence only: Nations, Kinships and UMLS, 25% support,
+64 previously inspected test facts per graph and seeds 101/202/303. The
+selected support fraction must not be interpreted as representative of all
+support levels. No new graph is loaded by this runner.
+
+Frozen pretrained ULTRA is now an explicit comparator alongside scratch
+ULTRA. The gate requires at least 10% relative mean MRR improvement over both
+comparators on every development graph and every trained arm to finish in
+18 to 22 seconds. All other training settings and the support sampler reuse
+the earlier hash-pinned implementation. The output is 21 records, with MRR
+recomputed from 128 head/tail ranks per record. A passing development gate
+would justify freezing a separate protocol for an untouched confirmation
+graph; it never promotes a model or establishes superiority over native KGE.
+
+The manifest was written before execution. Its source and input hashes are
+committed in `transfer/adaptation-manifest.json`; the development protocol
+commit is `74ca7db0b614f5971b1133670ded26b5e54de641`.
+
+```bash
+python npm/packages/kge/bench/transfer/adaptation_budget.py --freeze \
+  --inputs /tmp/nations.json /tmp/kinships.json /tmp/umls.json \
+  --manifest /tmp/adaptation-manifest.json
+python npm/packages/kge/bench/transfer/adaptation_budget.py --run \
+  --inputs /tmp/nations.json /tmp/kinships.json /tmp/umls.json \
+  --manifest /tmp/adaptation-manifest.json --upstream /tmp/ultra \
+  --output /tmp/adaptation-run
+```
+
+Use the isolated environment described above with `ninja` on PATH. The
+training ceiling is checked between updates, so actual duration and completed
+update counts must accompany every result. Fresh output directories prevent
+accidental overwrites. A failed development gate preserves the fresh holdout
+and records the failure rather than trying new settings against that holdout.
+
+Measured longer-budget development results (2026-10-13), MRR at 25% support:
+
+| Graph | Frozen ULTRA | Adapted ULTRA | Scratch ULTRA | Adapted gain over frozen |
+|---|---:|---:|---:|---:|
+| nations | 0.5803 | 0.6293 | 0.5295 | 8.4% |
+| kinships | 0.0940 | 0.1310 | 0.0746 | 39.4% |
+| umls | 0.5067 | 0.6577 | 0.3764 | 29.8% |
+
+All 18 training durations meet the frozen tolerance, ranging from
+20.05 to 21.45 seconds, with 369.4 total training seconds.
+The larger budget resolves the timing problem for these ULTRA arms; it says
+nothing about native KGE calibration. There are 14 to 35 completed updates per arm.
+Kinships and UMLS pass their development quality gates. Nations improves
+8.4% over frozen, below the required 10%, so the overall gate fails.
+No fresh confirmation graph was accessed and promotion remains false.
+
+`transfer/adaptation-results.json` retains all 21 records, paired ranks,
+source/input/checkpoint hashes and the gate decision. All 18 checkpoint hashes
+were verified against saved weights. The useful finding is that more target
+training helps adaptation on these development graphs. It does not establish
+uniform gains, performance on a new graph, or superiority to native KGE.
+Retain frozen ULTRA as the experimental baseline and leave adaptation opt-in
+pending validation on the intended application graph. KGE remains incumbent.

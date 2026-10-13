@@ -265,7 +265,7 @@ function strictRequestedArmsStatus(run, args) {
     || !Number.isFinite(run.ann.latency_ms?.p95))) failed.push('ann');
   if (args.adversarial && (!run.adversarial || run.adversarial.skipped
     || !Number.isFinite(run.adversarial.drop))) failed.push('adversarial');
-  if (args.tieCheck && !run.tieCheck?.available) failed.push('tie-check');
+  if (args.tieCheck && (!run.tieCheck?.available\n    || !Number.isFinite(run.tieCheck.topMr)\n    || Math.abs(run.tieCheck.topMr - 1) > 0.5\n    || !Number.isFinite(run.tieCheck.randomMr)\n    || !Number.isFinite(run.tieCheck.nEntities))) failed.push('tie-check');
   return {
     ok: failed.length === 0,
     detail: failed.length ? `requested arms unavailable: ${failed.join(',')}` : 'all requested optional arms completed',

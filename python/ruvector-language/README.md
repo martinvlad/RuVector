@@ -1,5 +1,9 @@
 # RuGraph Python SDK
 
+**Connect knowledge. Reason with evidence. Trace every decision.**
+
+[RuGraph language guide](https://github.com/ruvnet/RuVector/blob/feat/graph-language-v1/crates/ruvector-language/README.md)
+
 Python process bindings for RuGraph programs, evidence decisions, prediction artifacts, and replay receipts. Python 3.10 or newer is required. The package has no runtime dependencies and does not install a runtime binary or model automatically.
 
 From the repository root:

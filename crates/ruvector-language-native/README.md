@@ -1,4 +1,8 @@
-# RuGraph native execution
+# RuGraph Runtime
+
+**Native graph and model execution for the RuGraph programming language.**
+
+[Language guide](../ruvector-language/README.md) · [Specification](../../docs/research/graph-language/SPEC.md)
 
 This standalone crate connects the RuGraph language to the real `ruvector-graph`
 and `ruvector-kge` crates through path dependencies. It provides `rvg`, the native

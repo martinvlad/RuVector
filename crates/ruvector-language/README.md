@@ -1,9 +1,20 @@
+![RuGraph: the graph programming language for AI. Connect knowledge, reason with evidence, trace every decision.](assets/rugraph-hero.svg)
+
 # RuGraph
 
-RuGraph is a bounded graph and evidence programming language for RuVector. Text
-programs and strict JSON compile to the same typed representation. Programs
-select nodes, traverse relations, rank vectors, read observations, derive facts
-with signed Horn rules, and emit decisions or model predictions.
+**The graph programming language for AI. Built on RuVector.**
+
+Connect knowledge. Reason with evidence. Trace every decision.
+
+RuGraph combines graph traversal, vector search, learned predictions, and explicit
+evidence in bounded programs you can inspect and replay. Use it to diagnose
+service dependencies, reconcile agent memory, or assess claims whose evidence
+can conflict or expire. These are application patterns, not accuracy guarantees.
+
+[Run an example](#run-the-example) · [Eight operations](#operations) · [Replay](#cli-and-replay) · [Native runtime](../ruvector-language-native/README.md) · [Specification](../../docs/research/graph-language/SPEC.md)
+
+Text programs and strict JSON compile to the same typed representation. Rust,
+JavaScript, TypeScript, and Python callers share the same execution semantics.
 
 This is version 0.1.0 with wire schema version 1. It is an executable first
 release, not a general purpose language or a Cypher/GQL implementation.
@@ -44,6 +55,8 @@ limit. A program can request a capability but cannot grant it to itself. At
 `now = 1100`, this fixture's observations expire and its decisions become
 `unknown` on the next execution.
 
+![Four evidence states: supported, refuted, conflicting, and unknown.](assets/rugraph-evidence.svg)
+
 ## Operations
 
 | Text form | Input | Output |
@@ -61,6 +74,8 @@ Predictions cannot flow into `infer` or `assess`. A score is not an observation.
 Both positive and negative support yields `conflicting`; neither yields
 `unknown`. Rules require explicit signed premises and do not infer falsity from
 absence. Rules operate on the same subject and can chain to a fixed point.
+
+![Explicit program, snapshot, context, and model inputs produce a receipt that can be recomputed and compared.](assets/rugraph-replay.svg)
 
 ## CLI and replay
 
@@ -145,3 +160,17 @@ same subject rules. It does not include graph mutation, arbitrary tools, LLM
 calls, distributed execution, incremental truth maintenance, learned query
 planning or calibrated uncertainty. Exact ranking describes evaluation of the
 chosen scorer, not predictive accuracy. No research novelty claim is made.
+
+## Project identity and compatibility
+
+RuGraph is the language; RuVector supplies graph and model infrastructure. The
+native command is `rvg`, the core command is `rvg-core`, and source files use
+`.rvg`. Existing crate names, SDK package names, imports, and
+`RUVECTOR_LANGUAGE_BIN` remain stable in this branding update. Install from the
+repository using the commands above; this README does not announce a registry
+release or a separate repository.
+
+The SVG illustrations animate without scripts or external resources. They retain
+all labels as static images and disable motion when reduced motion is requested.
+
+Licensed under [MIT](../../LICENSE).

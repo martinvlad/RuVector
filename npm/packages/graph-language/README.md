@@ -1,6 +1,10 @@
 # RuGraph JavaScript and TypeScript SDK
 
-Local process bindings for the RuVector graph language. This package does not download, install, or execute a model automatically. Install a trusted `rvg` native binary for KGE predictions, or use `rvg-core` for graph and evidence programs.
+**Connect knowledge. Reason with evidence. Trace every decision.**
+
+[RuGraph language guide](https://github.com/ruvnet/RuVector/blob/feat/graph-language-v1/crates/ruvector-language/README.md)
+
+JavaScript and TypeScript process bindings for the RuGraph programming language, built on RuVector. This package does not download, install, or execute a model automatically. Install a trusted `rvg` native binary for KGE predictions, or use `rvg-core` for graph and evidence programs.
 
 From the repository root:
 

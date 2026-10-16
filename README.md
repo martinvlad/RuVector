@@ -19,7 +19,9 @@ Built by [Reuven Cohen (rUv)](https://ruv.io/) as part of the [ruvnet open sourc
 
 **Explore:** [Quick starts](#quick-start-choose-your-track) · [Build recipes](#build-by-example) · [Tutorials](./examples/README.md) · [Library catalog](#library-and-capability-map) · [Contrastive AI](#where-does-contrastive-ai-fit) · [Deployment](#deployment-surfaces) · [Benchmarks](#reproduce-the-evidence)
 
-**RuGraph language preview:** [Write bounded graph and evidence programs](./crates/ruvector-language/README.md) with typed observations, rule derivation, native KGE prediction, replay receipts, and JavaScript/TypeScript/Python clients. [Native model lifecycle](./crates/ruvector-language-native/README.md) · [Specification and acceptance evidence](./docs/research/graph-language/SPEC.md).
+<a href="./crates/ruvector-language/README.md"><img src="crates/ruvector-language/assets/rugraph-hero.svg" alt="RuGraph: the graph programming language for AI. Connect knowledge, reason with evidence, trace every decision." width="100%"></a>
+
+**RuGraph language preview:** [Start programming with RuGraph](./crates/ruvector-language/README.md). Combine graph traversal, vector search, explicit evidence, and native KGE predictions with bounded execution and replay receipts. [Native runtime](./crates/ruvector-language-native/README.md) · [Specification](./docs/research/graph-language/SPEC.md) · [Acceptance evidence](./docs/research/graph-language/ACCEPTANCE.md).
 
 ## System 0, System 1, and System 2
 

@@ -104,3 +104,13 @@ and receipt accounting. Tests cover malformed snapshots, capability revocation,
 invalid context, exhausted budgets and repeated provider invocation. No unsafe
 code or new I/O boundary is introduced. Index memory is retained until the host
 drops preparation; avoid retaining unbounded numbers of prepared snapshots.
+
+## Exact selection and borrowed IDs
+
+The optimizer changes only internal node ownership and physical sorting. It
+introduces no unsafe code, dependency or external boundary. Every vector is still
+validated before selection; malformed tail candidates cannot escape checks. Public
+evidence, receipts and predictor requests remain owned. Borrowed IDs refer to the
+immutable snapshot, not transient program strings. Historical logical work and
+byte accounting are preserved. Full-sort oracle tests cover ties and extreme
+finite values; real native and SDK boundaries remain in the acceptance gate.

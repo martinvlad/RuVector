@@ -60,13 +60,13 @@ fn invalid(message: impl Into<String>) -> Error {
     Error::new("INVALID_INPUT", message)
 }
 
-enum Value {
-    Nodes(Vec<String>),
+enum Value<'a> {
+    Nodes(Vec<&'a str>),
     Evidence(EvidenceSet),
     Decisions(Vec<Decision>),
     Predictions(PredictionBatch),
 }
-impl Value {
+impl Value<'_> {
     fn retained_bytes(&self) -> Result<usize> {
         match self {
             Self::Nodes(nodes) => Ok(nodes.iter().map(|id| id.len() + 32).sum()),
@@ -76,7 +76,7 @@ impl Value {
         }
     }
 }
-fn nodes<'a>(values: &'a BTreeMap<String, Value>, key: &str) -> Result<&'a [String]> {
+fn nodes<'v, 's>(values: &'v BTreeMap<String, Value<'s>>, key: &str) -> Result<&'v [&'s str]> {
     match values.get(key) {
         Some(Value::Nodes(value)) => Ok(value),
         _ => Err(Error::new(
@@ -85,7 +85,7 @@ fn nodes<'a>(values: &'a BTreeMap<String, Value>, key: &str) -> Result<&'a [Stri
         )),
     }
 }
-fn evidence<'a>(values: &'a BTreeMap<String, Value>, key: &str) -> Result<&'a EvidenceSet> {
+fn evidence<'a>(values: &'a BTreeMap<String, Value<'_>>, key: &str) -> Result<&'a EvidenceSet> {
     match values.get(key) {
         Some(Value::Evidence(value)) => Ok(value),
         _ => Err(Error::new("TYPE_ERROR", format!("{key} is not evidence"))),
@@ -236,7 +236,7 @@ fn execute_internal<const PREPARED: bool>(
                 let request = PredictionRequest {
                     model: model.clone(),
                     relation: relation.clone(),
-                    subjects: subjects.to_vec(),
+                    subjects: subjects.iter().map(|id| (*id).to_string()).collect(),
                     k: *k,
                     max_work: meter.remaining(),
                 };

@@ -105,3 +105,13 @@ the final results to make selection visible. Warm improvements do not establish
 cold-path improvements, production service latency or superiority over other
 languages. A dedicated-host performance run and real dataset remain the next
 external validation gates.
+
+## Exact selection and allocation reduction
+
+Exact cosine ranking now partitions candidates and sorts only the top K. Runtime
+node sets borrow immutable node IDs; owned data remains at public output/provider
+boundaries. The logical work and retained-byte charges remain unchanged to preserve
+receipts and limits. The paired two-dimensional fixture measured an additional
+10.73% to 42.57% reduction in prepared latency. This does not predict performance
+for high-dimensional embeddings or large K. See [raw paired evidence](selection-borrowing-benchmark.json)
+and [ADR-GL-008](../../adr/ADR-GL-008-exact-selection-and-borrowed-node-sets.md).

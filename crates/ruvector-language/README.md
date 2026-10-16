@@ -160,6 +160,12 @@ updates. Models are invoked anew on every query. Preparation is currently a Rust
 host API; CLI/SDK subprocesses and counterfactual trials retain full execution.
 [Design and bounds](../../docs/adr/ADR-GL-007-immutable-prepared-snapshots.md).
 
+Exact cosine ranking selects the top K before sorting the winners, and
+intermediate node sets borrow snapshot IDs. Every candidate is still validated
+and scored. Deterministic work and byte limits retain their prior conservative
+charges, so existing receipts remain compatible. See the
+[paired performance evidence](../../docs/research/graph-language/ACCEPTANCE.md).
+
 ## Native graph and model support
 
 [The native crate](../ruvector-language-native/README.md) provides `rvg`, which

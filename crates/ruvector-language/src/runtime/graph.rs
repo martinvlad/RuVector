@@ -55,41 +55,42 @@ impl<'a> Graph<'a> {
         }
         Ok(graph)
     }
-    pub fn nodes(&self, label: &str, limit: usize, meter: &mut Meter) -> Result<Vec<String>> {
+    pub fn nodes(&self, label: &str, limit: usize, meter: &mut Meter) -> Result<Vec<&'a str>> {
         let mut result = Vec::new();
         for node in self.nodes.values() {
             meter.charge(1)?;
             if node.label == label {
                 bounded(result.len() + 1, limit)?;
-                result.push(node.id.clone());
+                result.push(node.id.as_str());
             }
         }
         Ok(result)
     }
-    pub fn select(&self, ids: &[String], limit: usize, meter: &mut Meter) -> Result<Vec<String>> {
+    pub fn select(&self, ids: &[String], limit: usize, meter: &mut Meter) -> Result<Vec<&'a str>> {
         bounded(ids.len(), limit)?;
         let mut result = BTreeSet::new();
         for id in ids {
             meter.charge(1)?;
-            if !self.nodes.contains_key(id.as_str()) {
-                return Err(invalid(format!("unknown node {id}")));
-            }
-            result.insert(id.clone());
+            let node = self
+                .nodes
+                .get(id.as_str())
+                .ok_or_else(|| invalid(format!("unknown node {id}")))?;
+            result.insert(node.id.as_str());
         }
         Ok(result.into_iter().collect())
     }
     /// Outgoing transitive neighborhood, including seed nodes (distance zero).
     pub fn traverse(
         &self,
-        seeds: &[String],
+        seeds: &[&'a str],
         relation: &str,
         depth: usize,
         limit: usize,
         meter: &mut Meter,
-    ) -> Result<Vec<String>> {
+    ) -> Result<Vec<&'a str>> {
         bounded(seeds.len(), limit)?;
         meter.charge(seeds.len())?;
-        let mut seen: BTreeSet<String> = seeds.iter().cloned().collect();
+        let mut seen: BTreeSet<&str> = seeds.iter().copied().collect();
         let mut frontier = seen.clone();
         for _ in 0..depth {
             if frontier.is_empty() {
@@ -98,13 +99,13 @@ impl<'a> Graph<'a> {
             let mut next = BTreeSet::new();
             for source in frontier {
                 meter.charge(1)?;
-                if let Some(targets) = self.edges.get(&(source.as_str(), relation)) {
+                if let Some(targets) = self.edges.get(&(source, relation)) {
                     for target in targets {
                         meter.charge(1)?;
                         if !seen.contains(*target) {
                             bounded(seen.len() + 1, limit)?;
-                            seen.insert((*target).into());
-                            next.insert((*target).into());
+                            seen.insert(*target);
+                            next.insert(*target);
                         }
                     }
                 }
@@ -116,12 +117,12 @@ impl<'a> Graph<'a> {
     /// Exact cosine ranking; absent or zero norm vectors are not candidates.
     pub fn similar(
         &self,
-        input: &[String],
+        input: &[&'a str],
         vector: &[f32],
         k: usize,
         limit: usize,
         meter: &mut Meter,
-    ) -> Result<Vec<String>> {
+    ) -> Result<Vec<&'a str>> {
         bounded(input.len(), limit)?;
         bounded(k, limit)?;
         meter.charge(vector.len())?;
@@ -136,10 +137,7 @@ impl<'a> Graph<'a> {
         let mut scored = Vec::new();
         for id in input {
             meter.charge(1)?;
-            let node = self
-                .nodes
-                .get(id.as_str())
-                .ok_or_else(|| invalid("unknown node"))?;
+            let node = self.nodes.get(*id).ok_or_else(|| invalid("unknown node"))?;
             if let Some(candidate) = &node.vector {
                 if candidate.len() != vector.len() {
                     return Err(invalid("vector dimension mismatch"));
@@ -152,21 +150,24 @@ impl<'a> Graph<'a> {
                     length += f64::from(*left).powi(2);
                 }
                 if length > 0.0 {
-                    scored.push((dot / (length.sqrt() * norm), id));
+                    scored.push((dot / (length.sqrt() * norm), *id));
                 }
             }
         }
         meter.charge(scored.len().saturating_mul(log_work(scored.len())))?;
-        scored.sort_by(|a, b| b.0.total_cmp(&a.0).then(a.1.cmp(b.1)));
-        Ok(scored
-            .into_iter()
-            .take(k)
-            .map(|(_, id)| id.clone())
-            .collect())
+        // Keep the historical logical sort charge so receipt hashes and budget
+        // failures do not depend on this physical selection optimization.
+        let compare = |a: &(f64, &str), b: &(f64, &str)| b.0.total_cmp(&a.0).then(a.1.cmp(b.1));
+        if k < scored.len() {
+            scored.select_nth_unstable_by(k, compare);
+            scored.truncate(k);
+        }
+        scored.sort_unstable_by(compare);
+        Ok(scored.into_iter().take(k).map(|(_, id)| id).collect())
     }
     pub fn observe(
         &self,
-        input: &[String],
+        input: &[&'a str],
         predicate: &str,
         within: u64,
         context: &Context,
@@ -176,7 +177,7 @@ impl<'a> Graph<'a> {
         for subject in input {
             meter.charge(1)?;
             result.add_domain(subject, predicate, context.max_results, meter)?;
-            if let Some(observations) = self.observations.get(&(subject.as_str(), predicate)) {
+            if let Some(observations) = self.observations.get(&(*subject, predicate)) {
                 for observation in observations {
                     meter.charge(1)?;
                     if observation.observed_at <= context.now
@@ -184,7 +185,7 @@ impl<'a> Graph<'a> {
                         && context.now - observation.observed_at <= within
                     {
                         let witness = Evidence {
-                            subject: subject.clone(),
+                            subject: (*subject).to_string(),
                             predicate: predicate.into(),
                             value: observation.value,
                             kind: EvidenceKind::Observed,

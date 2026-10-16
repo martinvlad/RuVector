@@ -42,7 +42,10 @@ for index, size in enumerate([128, 1024, 4096]):
                 invariant = actual
             assert actual == invariant, f'Behavior or deterministic work changed at size {size}'
     metrics = {}
-    for metric in ['direct_status_only', 'full_runtime', 'audit_four_executions']:
+    paths_to_compare = ['direct_status_only', 'full_runtime', 'audit_four_executions']
+    if all('prepared_runtime' in b['runs']['before']['results'][index] for b in blocks):
+        paths_to_compare += ['prepared_runtime', 'preparation']
+    for metric in paths_to_compare:
         old = statistics.median(b['runs']['before']['results'][index][metric]['median_ns'] for b in blocks)
         new = statistics.median(b['runs']['after']['results'][index][metric]['median_ns'] for b in blocks)
         metrics[metric] = {'before_median_ns': old, 'after_median_ns': new, 'reduction_percent': 100 * (old - new) / old}

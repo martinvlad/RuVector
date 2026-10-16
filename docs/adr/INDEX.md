@@ -387,6 +387,7 @@
 | ADR-GL-005 | ADR-GL-005: Replay receipts and reproducible delivery gates | [`ADR-GL-005-replay-validation-and-delivery.md`](./ADR-GL-005-replay-validation-and-delivery.md) |  | Implemented, validation recorded in the acceptance report |  |
 | ADR-GL-006 | ADR-GL-006: Bounded counterfactual evidence audits | [`ADR-GL-006-bounded-counterfactual-audits.md`](./ADR-GL-006-bounded-counterfactual-audits.md) | 2026-10-16 | Accepted |  |
 | ADR-GL-007 | ADR-GL-007: Immutable prepared snapshots for repeated host queries | [`ADR-GL-007-immutable-prepared-snapshots.md`](./ADR-GL-007-immutable-prepared-snapshots.md) | 2026-10-16 | Accepted |  |
+| ADR-GL-008 | ADR-GL-008: Exact top K selection and borrowed node sets | [`ADR-GL-008-exact-selection-and-borrowed-node-sets.md`](./ADR-GL-008-exact-selection-and-borrowed-node-sets.md) | 2026-10-16 | Accepted |  |
 | ADR-QE-001 | ADR-QE-001: Quantum Engine Core Architecture | [`quantum-engine/ADR-QE-001-quantum-engine-core-architecture.md`](./quantum-engine/ADR-QE-001-quantum-engine-core-architecture.md) | 2026-08-20 | Proposed |  |
 | ADR-QE-002 | ADR-QE-002: Crate Structure & ruVector Integration | [`quantum-engine/ADR-QE-002-crate-structure-integration.md`](./quantum-engine/ADR-QE-002-crate-structure-integration.md) | 2026-08-20 | Proposed |  |
 | ADR-QE-003 | ADR-QE-003: WebAssembly Compilation Strategy | [`quantum-engine/ADR-QE-003-wasm-compilation-strategy.md`](./quantum-engine/ADR-QE-003-wasm-compilation-strategy.md) | 2026-08-20 | Proposed |  |

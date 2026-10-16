@@ -6,14 +6,14 @@ This report covers the version 1 bounded language in [SPEC.md](SPEC.md).
 
 ## Result
 
-Local acceptance passed: **88 tests**, formatting, strict targeted Clippy, ADR
+Local acceptance passed: **90 tests**, formatting, strict targeted Clippy, ADR
 number validation, packed npm client execution with TypeScript declarations,
 and installed Python wheel execution and replay. No tests were skipped.
 
 The implementation includes the text and JSON frontends, type/effect checks,
 deterministic runtime, evidence and rule semantics, replay receipts, real
 RuVector graph/KGE adapters, offline model lifecycle, CLI, process SDKs,
-examples, seven ADRs and a scoped CI workflow. Package publication and default
+examples, eight ADRs and a scoped CI workflow. Package publication and default
 branch merge are separate release actions.
 
 ## Reproduction
@@ -223,3 +223,43 @@ deltas across every block. It intentionally sets no noisy CI timing threshold.
 
 Final local gate: 88 tests passed (52 core, 10 native, 13 JavaScript, 13 Python),
 with formatting and strict all-target Clippy passing in both workspaces.
+
+## Exact selection and borrowed node sets
+
+Followup baseline: `1c1f90115f76c01779bab595e406a10a2e5c3fd2`. Candidate partitions
+exact cosine scores and sorts only the winning K, while intermediate node IDs
+borrow from the immutable snapshot. It preserves historical work/byte charges,
+all vector validation, tie ordering, owned public outputs and complete receipts.
+
+Three alternating old/new binary pairs, 5 warmups and 30 samples per path per
+pair; medians of block medians, in microseconds:
+
+| Nodes | Previous prepared | New prepared | Reduction | New cold | Preparation |
+|---|---:|---:|---:|---:|---:|
+| 128 | 124.38 | 111.03 | 10.73% | 446.59 | 308.59 |
+| 1024 | 285.19 | 173.60 | 39.13% | 3250.58 | 3063.81 |
+| 4096 | 863.75 | 496.03 | 42.57% | 13474.92 | 12874.55 |
+
+This is an additional reduction relative to the previous prepared API, not a
+comparison against its old cold path. The new warm/cold difference at 4096 nodes
+is 96.32%, excluding preparation. The unchanged status-only control moved less
+than 1% at all sizes. Cold execution ranged from 4.68% faster to 0.06% slower;
+audit timings ranged from 3.47% faster to 2.38% slower. No universal no-regression
+or cold-speedup claim is made.
+
+All old/new receipt hashes, runtime work, audit work and intervention deltas match.
+Raw samples and binary hashes: [selection-borrowing-benchmark.json](selection-borrowing-benchmark.json).
+Reproduce with the paired runner and release `agent_memory_bench` binaries.
+The source fixture uses TWO dimensional vectors and top K=4. This measures node
+allocation/ranking overhead, not production embedding throughput. Higher dimensions,
+larger K, changed snapshots and model inference need separate measurements. Scoring
+still examines every vector and retains O(N) scratch space. No RSS figure is claimed.
+
+Two new tests compare exact selection against a separate full sort over 64 cases
+(16 generated datasets times four K values), including ties, zero/missing/negative
+and extreme finite vectors. A malformed candidate outside top K still fails.
+Cold and prepared receipts agree in every case. See ADR-GL-008.
+
+Final optimization gate: **90 tests passed** (54 core, 10 native, 13 JavaScript,
+13 Python), both Rust workspaces passed fmt and strict Clippy, and packed npm
+TypeScript plus installed Python wheel checks passed. No tests skipped.

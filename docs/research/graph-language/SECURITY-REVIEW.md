@@ -56,10 +56,16 @@ evidence, not a proof of safety.
 
 Scan date and npm advisory retrieval date: 2026-10-16. The service did not expose
 an advisory database snapshot timestamp, so an exact feed revision is unknown.
-Cargo transitive advisory auditing was not performed; no Rust dependency
-cleanliness claim is made. Python build tools and the host runtime are outside
-the zero runtime dependency claim. Root repository vulnerabilities were not
-assessed or remediated by this feature review.
+The initial feature review did not include Cargo transitive advisory auditing.
+A subsequent CI review identified an existing root dependency advisory gate
+failure. The root rustls lock entry is updated to the patched 0.23.46 release,
+with unchanged registry dependency requirements, features and minimum Rust
+version. The downloaded archive checksum and compilation were verified.
+The Graph language workflow now audits both standalone lockfiles with
+`cargo-audit` 0.22.2; existing root jobs audit the root lockfile. Passing the
+functional acceptance suite alone does not establish advisory clearance.
+Python build tools and the host runtime are outside the zero runtime dependency
+claim. Other root repository vulnerabilities are outside this feature review.
 
 Rust lockfile hashes, compiler versions, full acceptance commands and results
 are recorded in [ACCEPTANCE.md](ACCEPTANCE.md). No secret values are included in

@@ -33,7 +33,10 @@ The two acceptance scripts completed with exit code 0. Exact local versions:
 rustc 1.90.0 (`1159e78c4`, 2025-09-14), Node.js 24.19.0, Python 3.12.14,
 setuptools 84.0.0, wheel 0.48.0. Target: Linux x86_64, glibc 2.39.
 The checked in workflow uses the same Rust, Python and Node major versions.
-This report records local execution, not a claim that remote CI has finished.
+The dedicated remote acceptance workflow also passed at commit
+`01d961f2d48528b3cf320d335adefa0f1245dc79`:
+[Graph language run 38899871818](https://github.com/ruvnet/RuVector/actions/runs/38899871818).
+Broader repository checks are separate from that successful feature gate.
 
 ## Requirement trace
 
@@ -118,7 +121,14 @@ establish useful real world prediction accuracy or transfer to unseen graphs.
 | Core `Cargo.lock` | `2381cce2e1ec9e372714914533e335bb6ec6866a96e17c2a2ad85e51e7f8dbe0` |
 | Native `Cargo.lock` | `3beba443fc7ade7b251411c4e471f5728eb270b0cf7bfb578751de36d227fe5c` |
 
-Both lockfiles are committed. Root workspace resolution is unchanged. The
+Both lockfiles are committed. A followup CI repair changes only the root
+`rustls` lock entry from 0.23.45 to 0.23.46 and its registry checksum. Cargo
+downloaded and verified the patched archive; dependency requirements, features
+and minimum Rust version are identical in the registry records. The patched
+library compiled with the root ring/std/tls12/logging feature profile in an
+isolated Cargo check. Dedicated advisory checks now cover both standalone
+language lockfiles; root advisory and lockfile integrity jobs validate the root
+repair in CI. This does not suppress advisory findings. The
 existing graph crate receives two additive borrowed visitor methods; existing
 APIs keep their behavior. [SECURITY-REVIEW.md](SECURITY-REVIEW.md) records the
 threat boundary, scanner scope, fixed findings and advisory coverage limits.

@@ -70,3 +70,25 @@ claim. Other root repository vulnerabilities are outside this feature review.
 Rust lockfile hashes, compiler versions, full acceptance commands and results
 are recorded in [ACCEPTANCE.md](ACCEPTANCE.md). No secret values are included in
 this report or the committed fixtures.
+
+## Counterfactual audit extension, 2026-10-16
+
+Threat: a caller requests repeated evaluations or oversized reports, disguises
+missing targets as robustness, supplies ambiguous JSON, or triggers model/provider
+effects during an audit. Mitigations: 64 trial cap, aggregate worst-case execution
+reservation capped at one billion, validated snapshots before copying, incremental
+16 MiB report accounting, missing/duplicate target rejection, strict CLI JSON,
+normal capability checks, and rejection of every prediction step. Audit overhead
+outside the runtime meter is bounded structurally, not billed as runtime work.
+
+SDK options are written into private temporary files and deleted on both success
+and error. Tests check file permissions and cleanup, real process execution and
+aggregate budget errors. Audit reports contain caller-supplied evidence identities
+and must be handled with the same access policy as ordinary receipts.
+
+Read-only Ruflo scan command: `npx -y @claude-flow/cli@3.25.6 security scan --target
+crates/ruvector-language --depth deep --type all`. Completed with zero findings.
+Manual boundary review and regression tests supplement scanner coverage. No new
+dependencies or lockfile changes; this scan is not a refreshed advisory-feed audit
+and does not prove absence of vulnerabilities. Source identity authenticity,
+source independence and real-world causal interpretation remain outside scope.

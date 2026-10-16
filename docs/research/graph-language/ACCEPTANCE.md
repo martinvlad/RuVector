@@ -6,14 +6,14 @@ This report covers the version 1 bounded language in [SPEC.md](SPEC.md).
 
 ## Result
 
-Local acceptance passed: **70 tests**, formatting, strict targeted Clippy, ADR
+Local acceptance passed: **84 tests**, formatting, strict targeted Clippy, ADR
 number validation, packed npm client execution with TypeScript declarations,
 and installed Python wheel execution and replay. No tests were skipped.
 
 The implementation includes the text and JSON frontends, type/effect checks,
 deterministic runtime, evidence and rule semantics, replay receipts, real
 RuVector graph/KGE adapters, offline model lifecycle, CLI, process SDKs,
-examples, five ADRs and a scoped CI workflow. Package publication and default
+examples, six ADRs and a scoped CI workflow. Package publication and default
 branch merge are separate release actions.
 
 ## Reproduction
@@ -146,3 +146,33 @@ No claim is made that all unrelated RuVector crates pass, that every transitive
 dependency is vulnerability free, or that performance and accuracy targets have
 been met outside the measured workload. This release implements the specified
 bounded language; broader research extensions remain separate work.
+
+## Counterfactual audit advancement
+
+2026-10-16 followup: 84 tests passed (48 core, 10 native, 13 JavaScript,
+13 Python), including 10 new audit/oracle tests and four SDK tests. No skipped
+tests. Both standalone workspaces passed formatting and strict all-target Clippy.
+Packed npm TypeScript 5.9.3 and installed Python wheel checks now also execute
+audits. The acceptance and packaging scripts both exited 0.
+
+The generated tests compare 128 seeds at two clocks (256 cases) against an
+independent status evaluator and reverse input order to require identical
+receipts. Another 32 seeds compare two interventions each (64 ablations).
+The reference application executed and emitted a receipt plus audit report.
+No external predictive accuracy benchmark was run.
+
+Synthetic agent memory medians, microseconds, Linux x86_64, Rust 1.90 release:
+
+| Nodes | Status-only direct evaluator | Full runtime | Baseline plus 3 audit trials |
+|---|---:|---:|---:|
+| 128 | 19.74 | 440.66 | 1961.89 |
+| 1024 | 163.46 | 3121.65 | 12640.27 |
+| 4096 | 640.51 | 12467.28 | 49978.01 |
+
+The direct evaluator omits validation, capabilities, resource accounting,
+provenance and receipt hashing. This is a feature-cost comparison, not an
+identical-feature speedup claim. All three sizes matched statuses and replayed
+exactly. Five warmups and 30 measured samples per path; raw timing samples are in
+[agent-memory-benchmark.json](agent-memory-benchmark.json). Timings exclude parsing,
+process startup and graph capture. Shared-host variance limits generalization.
+See [FRONTIER.md](FRONTIER.md) and ADR-GL-006 for sources, bounds and next gates.

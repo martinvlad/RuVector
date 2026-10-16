@@ -211,3 +211,11 @@ orchestration, probabilistic inference, automatic confidence calibration,
 cross subject rule variables, incremental truth maintenance, distributed
 execution, ANN planning, general purpose loops or a native code compiler.
 It is a complete implementation of the bounded language specified here.
+
+## Host counterfactual audit extension
+
+The additive audit API does not add a language operation or change receipt wire
+version 1. See [ADR-GL-006](../../adr/ADR-GL-006-bounded-counterfactual-audits.md)
+for its separate version 1 report contract and [FRONTIER.md](FRONTIER.md) for CLI
+and SDK examples. Audit is restricted to decision programs without prediction
+steps. Each intervention is independent of the others.

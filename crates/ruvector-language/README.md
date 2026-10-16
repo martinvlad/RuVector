@@ -104,6 +104,26 @@ and compatible floating point behavior. Pin the toolchain and target when
 archiving receipts. A new snapshot is recomputed from scratch, which retracts
 conclusions when observations are deleted or expire.
 
+## Counterfactual evidence audits
+
+Ask what changes if a source disappears or a graph edge is removed. RuGraph
+recomputes each intervention independently and reports changed decisions, witness
+changes, and receipt hashes. Redundant evidence can preserve a conclusion even
+when the selected witness is removed. Missing retrieval results are distinct
+from an `unknown` assessment.
+
+```text
+rvg-core audit --request request.json --audit-options options.json
+```
+
+The same operation is available as `client.audit(request, options)` in both SDKs.
+Audits accept 1 to 64 explicit observation, source or edge interventions, reserve
+an aggregate execution budget, and exclude model predictions. They measure
+sensitivity to supplied inputs, not real world causality or source authenticity.
+
+[Run the agent memory application and benchmark](../../docs/research/graph-language/FRONTIER.md)
+· [Audit architecture](../../docs/adr/ADR-GL-006-bounded-counterfactual-audits.md)
+
 ## Use from Rust
 
 ```rust,ignore

@@ -17,6 +17,38 @@ class RuGraphE2E(unittest.TestCase):
             "context": json.loads((EXAMPLES / "context.json").read_text()),
         }
 
+    def test_counterfactual_audit_and_aggregate_limit(self):
+        options = {"interventions": [{"kind": "source", "id": "telemetry-a"}, {"kind": "edge", "id": "api-db"}], "max_execution_work": 300000}
+        report = self.client.audit(self.request, options)
+        self.assertEqual(report, self.client.audit(self.request, options))
+        self.assertTrue(all(c["after"] == "unknown" for c in report["trials"][0]["changes"]))
+        self.assertTrue(all(c["after"] is None for c in report["trials"][1]["changes"]))
+        options["max_execution_work"] = 1
+        with self.assertRaises(RuGraphError) as error:
+            self.client.audit(self.request, options)
+        self.assertEqual(error.exception.code, "AUDIT_BUDGET")
+
+    def test_audit_private_file_cleanup_on_success_and_failure(self):
+        import os
+        for fail in (False, True):
+            paths = []
+            def invoke(args, payload):
+                path = Path(args[-1])
+                paths.append(path)
+                if os.name == "posix":
+                    self.assertEqual(path.stat().st_mode & 0o777, 0o600)
+                if fail:
+                    raise RuGraphError("TEST", "expected")
+                return {}
+            client = RuGraph()
+            client._invoke = invoke
+            if fail:
+                with self.assertRaises(RuGraphError):
+                    client.audit({}, {})
+            else:
+                client.audit({}, {})
+            self.assertFalse(paths[0].exists())
+
     def test_native_process_execute_replay(self):
         receipt = self.client.run(self.request)
         self.assertEqual(self.client.replay(self.request, receipt), receipt)

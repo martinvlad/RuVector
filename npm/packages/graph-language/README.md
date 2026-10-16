@@ -64,3 +64,18 @@ RUVECTOR_LANGUAGE_BIN="$PWD/crates/ruvector-language/target/release/rvg-core" \
 ```
 
 The tests execute the real binary and separately exercise oversized output, process timeouts, malformed responses, and unsafe integer handling.
+
+## Counterfactual audit
+
+`audit(request, options)` recomputes a decision program after each independent
+observation, source, or edge removal. Options contain `interventions` (1 to 64
+objects with `kind` and `id`) and `max_execution_work` (at most one billion).
+The reserved total is the per-run budget times the number of trials plus baseline.
+It rejects prediction steps, missing targets and duplicate interventions. Status
+changes are in `trials[].changes`; null means a missing decision domain entry,
+not `unknown`. `changed_decisions` also counts witness changes. Repeat the audit
+and compare the complete report for reproducibility. Options use a private
+file that is removed on success or failure. Existing process bounds apply.
+
+This method requires the runtime built from the same revision as this SDK.
+Audit sensitivity does not authenticate sources or establish real world causality.

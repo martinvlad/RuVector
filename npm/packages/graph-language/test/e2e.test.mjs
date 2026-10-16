@@ -41,3 +41,29 @@ test('binding rejects nonfinite request numbers before invoking runtime', async 
   const request = await fixture(); request.context.now = NaN;
   assert.throws(() => client.run(request), error => error.code === 'INVALID_INPUT');
 });
+test('counterfactual audit runs and replays through the native SDK boundary', async () => {
+  const request = await fixture();
+  const options = { interventions: [{ kind: 'source', id: 'telemetry-a' }, {kind:'edge',id:'api-db'}], max_execution_work: 300000 };
+  const report = await client.audit(request, options);
+  assert.equal(report.trials.length, 2);
+  assert.ok(report.trials[0].changes.every(x => x.after === 'unknown'));
+  assert.ok(report.trials[1].changes.every(x => x.after === null));
+  assert.deepEqual(report, await client.audit(request, options));
+  await assert.rejects(client.audit(request, {...options, max_execution_work:1}), error => error.code === 'AUDIT_BUDGET');
+});
+test('audit removes private temporary options on success and failure', async () => {
+  const { stat, access } = await import('node:fs/promises');
+  for (const fail of [false,true]) {
+    let path;
+    const fake = new RuGraph();
+    fake.invoke = async args => {
+      path = args.at(-1);
+      assert.equal((await stat(path)).mode & 0o777, 0o600);
+      if (fail) throw new RuGraphError('TEST','expected');
+      return {};
+    };
+    if (fail) await assert.rejects(fake.audit({}, {}), error => error.code === 'TEST');
+    else await fake.audit({}, {});
+    await assert.rejects(access(path));
+  }
+});

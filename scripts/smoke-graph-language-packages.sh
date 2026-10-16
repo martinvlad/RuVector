@@ -24,6 +24,9 @@ const receipt: Receipt = await client.run(request);
 if (receipt.output.kind !== 'decisions' || receipt.output.items[0]?.status !== 'unknown') throw new Error('Incorrect packaged SDK output');
 const replay = await client.replay(request, receipt);
 if (replay.receipt_hash !== receipt.receipt_hash) throw new Error('Packaged SDK replay mismatch');
+request.snapshot.observations = [{id:'test',subject:'api',predicate:'Failing',value:true,source:'probe',observed_at:999,expires_at:1100}];
+const audit = await client.audit(request, {interventions:[{kind:'source',id:'probe'}],max_execution_work:200000});
+if (audit.trials[0]?.changes[0]?.after !== 'unknown') throw new Error('Packaged audit mismatch');
 console.log('Packed npm client and TypeScript declarations: PASS');
 TYPESCRIPT
 npm exec --yes --package typescript@5.9.3 -- tsc \
@@ -50,5 +53,7 @@ request = {
 receipt = client.run(request)
 assert any(item["status"] == "supported" for item in receipt["output"]["items"])
 assert client.replay(request, receipt) == receipt
+report = client.audit(request, {"interventions": [{"kind": "source", "id": "telemetry-a"}], "max_execution_work": 200000})
+assert len(report["trials"][0]["changes"]) == 2
 print("Installed Python wheel execution and replay: PASS")
 PYTHON

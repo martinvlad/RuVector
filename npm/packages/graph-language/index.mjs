@@ -67,6 +67,23 @@ export class RuGraph {
   run(request, { modelsPath } = {}) {
     return this.invoke(['run', '--request', '-', ...modelArgs(modelsPath)], encode(request));
   }
+  async audit(request, options) {
+    const encodedRequest = encode(request); const encodedOptions = encode(options);
+    let directory;
+    try {
+      directory = await mkdtemp(join(tmpdir(), 'rugraph-audit-'));
+      const path = join(directory, 'options.json');
+      await writeFile(path, encodedOptions, { mode: 0o600 });
+      return await this.invoke(['audit', '--request', '-', '--audit-options', path], encodedRequest);
+    } catch (error) {
+      throw error instanceof RuGraphError ? error : new RuGraphError('IO_ERROR', error.message);
+    } finally {
+      if (directory) {
+        try { await rm(directory, { recursive: true, force: true }); }
+        catch (error) { throw new RuGraphError('IO_ERROR', error.message); }
+      }
+    }
+  }
   async replay(request, receipt, { modelsPath } = {}) {
     const encodedRequest = encode(request); const encodedReceipt = encode(receipt);
     const models = modelArgs(modelsPath);

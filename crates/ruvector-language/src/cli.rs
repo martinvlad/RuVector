@@ -13,6 +13,7 @@ Usage:\n\
   rvg run PROGRAM --snapshot SNAPSHOT --context CONTEXT [--models MODELS]\n\
   rvg run --request REQUEST [--models MODELS]\n\
   rvg replay --request REQUEST --receipt RECEIPT [--models MODELS]\n\
+  rvg audit --request REQUEST --audit-options OPTIONS\n\
   rvg verify RECEIPT\n\
 PROGRAM accepts .rvg text or strict program JSON. REQUEST is RunRequest JSON.\n\
 Use - for stdin in one input position. Results are JSON on stdout; errors are\n\
@@ -75,6 +76,7 @@ pub fn run_cli(args: &[String], loader: ModelLoader) -> Result<String> {
         let arg = &args[index];
         if arg.starts_with("--") {
             if ![
+                "--audit-options",
                 "--snapshot",
                 "--context",
                 "--request",
@@ -106,7 +108,26 @@ pub fn run_cli(args: &[String], loader: ModelLoader) -> Result<String> {
     if stdin_count > 1 {
         return Err(Error::new("USAGE", "Only one input may use stdin"));
     }
+    if command != "audit" && options.contains_key("--audit-options") {
+        return Err(Error::new(
+            "USAGE",
+            "--audit-options is only valid for audit",
+        ));
+    }
     match command.as_str() {
+        "audit" => {
+            if !positional.is_empty() || options.len() != 2 {
+                return Err(Error::new(
+                    "USAGE",
+                    "audit requires only --request and --audit-options",
+                ));
+            }
+            let request_path = required(&options, "--request")?;
+            let options_path = required(&options, "--audit-options")?;
+            let settings: crate::audit::AuditOptions = decode(&read(options_path)?)?;
+            let request = parser::parse_request_json(&read(request_path)?)?;
+            json(&crate::audit::run(&request, &settings)?)
+        }
         "check" | "compile" | "verify" => {
             if positional.len() != 1 || !options.is_empty() {
                 return Err(Error::new("USAGE", "Expected exactly one input path"));

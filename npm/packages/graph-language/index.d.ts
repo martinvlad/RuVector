@@ -33,5 +33,12 @@ export class RuGraph {
   check(source:string):Promise<{valid:true;name:string;version:1}>;
   compile(source:string):Promise<Program>;
   run(request:RunRequest,options?:{modelsPath?:string}):Promise<Receipt>;
+  audit(request:RunRequest,options:AuditOptions):Promise<AuditReport>;
   replay(request:RunRequest,receipt:Receipt,options?:{modelsPath?:string}):Promise<Receipt>;
 }
+
+export type Intervention = {kind:'observation'|'source'|'edge';id:string};
+export interface AuditOptions {interventions:Intervention[];max_execution_work:number}
+export interface AuditChange {subject:string;predicate:string;before:Decision['status']|null;after:Decision['status']|null}
+export interface AuditTrial {intervention:Intervention;removed_records:number;receipt_hash:string;snapshot_hash:string;work:number;changes:AuditChange[];changed_decisions:number}
+export interface AuditReport {version:1;baseline_receipt_hash:string;program_hash:string;snapshot_hash:string;context_hash:string;reserved_execution_work:number;execution_work:number;baseline_decisions:number;trials:AuditTrial[]}

@@ -1,5 +1,6 @@
 //! RuGraph is a bounded graph programming language with explicit evidence,
 //! deterministic replay and host-owned capability grants.
+pub mod audit;
 pub mod cli;
 pub mod compiler;
 pub mod error;

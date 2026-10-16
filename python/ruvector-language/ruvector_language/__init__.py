@@ -88,6 +88,18 @@ class RuGraph:
     def run(self, request: Mapping[str, Any], *, models_path: str | None = None) -> dict[str, Any]:
         return self._invoke(["run", "--request", "-", *_models(models_path)], _encode(request))
 
+    def audit(self, request: Mapping[str, Any], options: Mapping[str, Any]) -> dict[str, Any]:
+        encoded_request, encoded_options = _encode(request), _encode(options)
+        try:
+            with tempfile.TemporaryDirectory(prefix="rugraph-audit-") as directory:
+                path = Path(directory) / "options.json"
+                fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
+                with os.fdopen(fd, "w", encoding="utf-8") as output:
+                    output.write(encoded_options)
+                return self._invoke(["audit", "--request", "-", "--audit-options", str(path)], encoded_request)
+        except OSError as error:
+            raise RuGraphError("IO_ERROR", str(error)) from error
+
     def replay(self, request: Mapping[str, Any], receipt: Mapping[str, Any], *, models_path: str | None = None) -> dict[str, Any]:
         encoded_request, encoded_receipt = _encode(request), _encode(receipt)
         models = _models(models_path)

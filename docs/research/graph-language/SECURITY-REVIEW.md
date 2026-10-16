@@ -92,3 +92,15 @@ Manual boundary review and regression tests supplement scanner coverage. No new
 dependencies or lockfile changes; this scan is not a refreshed advisory-feed audit
 and does not prove absence of vulnerabilities. Source identity authenticity,
 source independence and real-world causal interpretation remain outside scope.
+
+## Prepared snapshots
+
+The additive Rust API borrows an immutable snapshot; private cached fields cannot
+be constructed or replaced by the caller. Safe Rust prevents mutation and use
+after free while it exists. It retains no caller capabilities, clock, decisions
+or model responses. Every execution rechecks program/context and provider calls.
+Cached validation/index work is charged again, preserving low-budget rejection
+and receipt accounting. Tests cover malformed snapshots, capability revocation,
+invalid context, exhausted budgets and repeated provider invocation. No unsafe
+code or new I/O boundary is introduced. Index memory is retained until the host
+drops preparation; avoid retaining unbounded numbers of prepared snapshots.

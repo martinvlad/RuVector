@@ -219,3 +219,12 @@ version 1. See [ADR-GL-006](../../adr/ADR-GL-006-bounded-counterfactual-audits.m
 for its separate version 1 report contract and [FRONTIER.md](FRONTIER.md) for CLI
 and SDK examples. Audit is restricted to decision programs without prediction
 steps. Each intervention is independent of the others.
+
+## Prepared Rust host execution
+
+`runtime::PreparedSnapshot` borrows a validated immutable snapshot and reuses its
+indexes and canonical hash across queries. It changes actual preparation cost,
+not language semantics or deterministic work. Every query uses fresh program,
+context and optional provider calls. Complete receipts match ordinary execution.
+This is not a process SDK cache or incremental graph update facility. See
+[ADR-GL-007](../../adr/ADR-GL-007-immutable-prepared-snapshots.md).

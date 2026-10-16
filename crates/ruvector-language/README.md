@@ -142,6 +142,24 @@ filesystem, shell, model download or external provider operations. The CLI owns
 file access. A host can supply a trusted `Predictor`; the native adapter uses
 RuVector's real KGE implementation.
 
+## Repeated Rust host queries
+
+Prepare an immutable snapshot once to reuse validated indexes and its canonical
+hash. Each query still checks its program, clock, capabilities and limits.
+
+```rust,ignore
+use ruvector_language::runtime::PreparedSnapshot;
+let prepared = PreparedSnapshot::new(&snapshot)?;
+let receipt = prepared.execute(&program, &context, None)?;
+```
+
+Prepared and ordinary execution produce identical receipts and logical work
+charges. This optimizes actual repeated-query cost without changing budget
+semantics. The snapshot remains immutably borrowed; rebuild preparation after
+updates. Models are invoked anew on every query. Preparation is currently a Rust
+host API; CLI/SDK subprocesses and counterfactual trials retain full execution.
+[Design and bounds](../../docs/adr/ADR-GL-007-immutable-prepared-snapshots.md).
+
 ## Native graph and model support
 
 [The native crate](../ruvector-language-native/README.md) provides `rvg`, which

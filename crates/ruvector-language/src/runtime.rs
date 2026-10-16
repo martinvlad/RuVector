@@ -97,6 +97,43 @@ pub fn validate_snapshot(snapshot: &Snapshot) -> Result<()> {
     validation::snapshot(snapshot, &mut Meter::new(MAX_BUDGET))
 }
 
+/// Immutable, borrowed snapshot preparation for repeated Rust host queries.
+/// The borrow prevents mutation while indexes and canonical hash are retained.
+/// Warm executions charge the same logical work as ordinary executions.
+pub struct PreparedSnapshot<'a> {
+    snapshot: &'a Snapshot,
+    graph: Graph<'a>,
+    index_work: u64,
+    serialized_bytes: usize,
+    snapshot_hash: String,
+}
+impl<'a> PreparedSnapshot<'a> {
+    pub fn new(snapshot: &'a Snapshot) -> Result<Self> {
+        let mut meter = Meter::new(MAX_BUDGET);
+        validation::snapshot(snapshot, &mut meter)?;
+        let graph = Graph::new(snapshot, &mut meter)?;
+        let serialized_bytes = validation::serialized_size(snapshot)?;
+        let snapshot_hash = receipt::snapshot_hash(snapshot)?;
+        Ok(Self {
+            snapshot,
+            graph,
+            index_work: meter.used,
+            serialized_bytes,
+            snapshot_hash,
+        })
+    }
+    /// Context, program, provider and capabilities are checked on EVERY query.
+    /// This is index/hash reuse, never cached decisions or cached authority.
+    pub fn execute(
+        &self,
+        program: &Program,
+        context: &Context,
+        predictor: Option<&dyn Predictor>,
+    ) -> Result<Receipt> {
+        execute_internal::<true>(program, self.snapshot, context, predictor, Some(self))
+    }
+}
+
 /// Execute without I/O, mutation, ambient time, or implicit model promotion.
 /// All errors discard intermediate results; budget exhaustion never returns a partial receipt.
 pub fn execute(
@@ -104,6 +141,16 @@ pub fn execute(
     snapshot: &Snapshot,
     context: &Context,
     predictor: Option<&dyn Predictor>,
+) -> Result<Receipt> {
+    execute_internal::<false>(program, snapshot, context, predictor, None)
+}
+
+fn execute_internal<const PREPARED: bool>(
+    program: &Program,
+    snapshot: &Snapshot,
+    context: &Context,
+    predictor: Option<&dyn Predictor>,
+    prepared: Option<&PreparedSnapshot<'_>>,
 ) -> Result<Receipt> {
     compiler::check(program)?;
     validation::context(context)?;
@@ -116,8 +163,16 @@ pub fn execute(
     let mut meter = Meter::new(program.budget.min(context.max_steps));
     let program_bytes = validation::serialized_size(program)?;
     meter.charge(program_bytes / 64 + 1)?;
-    validation::snapshot(snapshot, &mut meter)?;
-    let graph = Graph::new(snapshot, &mut meter)?;
+    let owned_graph;
+    let graph = if PREPARED {
+        let prepared = prepared.expect("prepared execution requires preparation");
+        meter.charge(prepared.index_work as usize)?;
+        &prepared.graph
+    } else {
+        validation::snapshot(snapshot, &mut meter)?;
+        owned_graph = Graph::new(snapshot, &mut meter)?;
+        &owned_graph
+    };
     let mut values = BTreeMap::new();
     let mut retained_bytes = 0_usize;
     for step in &program.steps {
@@ -163,9 +218,7 @@ pub fn execute(
                     .iter()
                     .map(|key| evidence(&values, key))
                     .collect::<Result<Vec<_>>>()?;
-                Value::Evidence(evidence::infer(
-                    &inputs, rules, &graph, context, &mut meter,
-                )?)
+                Value::Evidence(evidence::infer(&inputs, rules, graph, context, &mut meter)?)
             }
             Op::Predict {
                 input,
@@ -227,7 +280,14 @@ pub fn execute(
     };
     // Serialization size is bounded before hashing and the input hash cost is metered.
     meter.charge(program_bytes / 64 + 1)?;
-    meter.charge(validation::serialized_size(snapshot)? / 64 + 1)?;
+    let snapshot_bytes = if PREPARED {
+        prepared
+            .expect("prepared execution requires preparation")
+            .serialized_bytes
+    } else {
+        validation::serialized_size(snapshot)?
+    };
+    meter.charge(snapshot_bytes / 64 + 1)?;
     meter.charge(validation::serialized_size(&output)? / 64 + 1)?;
     meter.charge(validation::serialized_size(context)? / 64 + 1)?;
     let records = snapshot.nodes.len()
@@ -236,7 +296,14 @@ pub fn execute(
         + snapshot.rules.len();
     meter.charge(records.saturating_mul(graph::log_work(records)))?;
     let program_hash = receipt::hash(program)?;
-    let snapshot_hash = receipt::snapshot_hash(snapshot)?;
+    let snapshot_hash = if PREPARED {
+        prepared
+            .expect("prepared execution requires preparation")
+            .snapshot_hash
+            .clone()
+    } else {
+        receipt::snapshot_hash(snapshot)?
+    };
     let context_hash = receipt::hash(context)?;
     let mut receipt = Receipt {
         version: 1,

@@ -26,6 +26,9 @@ fn main() {
         let r = memory::request(size, 42);
         let execute = || runtime::execute(&r.program, &r.snapshot, &r.context, None).unwrap();
         let receipt = execute();
+        let prepared = runtime::PreparedSnapshot::new(&r.snapshot).unwrap();
+        let warm = || prepared.execute(&r.program, &r.context, None).unwrap();
+        assert_eq!(receipt, warm());
         assert_eq!(memory::reference(&r), memory::actual(&receipt));
         assert_eq!(receipt, execute());
         let options = AuditOptions {
@@ -44,6 +47,8 @@ fn main() {
         assert_eq!(report, audit::run(&r, &options).unwrap());
         results.push(json!({"nodes":size,"edges":size,"observations":r.snapshot.observations.len(),"seed":42,"equal_statuses":true,"exact_replay":true,
           "direct_status_only":measure(||memory::reference(&r)),"full_runtime":measure(execute),
+          "preparation":measure(||runtime::PreparedSnapshot::new(&r.snapshot).unwrap()),
+          "prepared_runtime":measure(warm),
           "audit_four_executions":measure(||audit::run(&r,&options).unwrap()),
           "receipt_hash":receipt.receipt_hash,"runtime_work":receipt.work,"audit_execution_work":report.execution_work,
           "audit_status_changes":report.trials.iter().map(|t| t.changes.len()).collect::<Vec<_>>() }));

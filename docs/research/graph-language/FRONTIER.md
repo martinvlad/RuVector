@@ -89,3 +89,19 @@ Next research gate: evaluate a real application dataset and compare an equivalen
 handwritten implementation with the same governance features. Until then, retain
 preview positioning. External benchmark leadership and research novelty remain
 unestablished.
+
+## Reuse without stale decisions
+
+The new Rust `PreparedSnapshot` API reuses validation, indexes and the canonical
+snapshot hash under an immutable borrow. It recomputes decisions with a fresh
+context and preserves complete receipts and logical budgets. See
+[ADR-GL-007](../../adr/ADR-GL-007-immutable-prepared-snapshots.md) and the
+[paired measurements](prepared-specialized-benchmark.json). This addresses repeated
+host-query cost; it is not an incremental engine or a cache of authority/model
+outputs. The cold path and process SDK behavior remain semantically unchanged.
+
+A rejected hash buffer experiment and first prepared candidate are retained with
+the final results to make selection visible. Warm improvements do not establish
+cold-path improvements, production service latency or superiority over other
+languages. A dedicated-host performance run and real dataset remain the next
+external validation gates.

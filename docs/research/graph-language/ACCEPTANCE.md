@@ -6,14 +6,14 @@ This report covers the version 1 bounded language in [SPEC.md](SPEC.md).
 
 ## Result
 
-Local acceptance passed: **84 tests**, formatting, strict targeted Clippy, ADR
+Local acceptance passed: **88 tests**, formatting, strict targeted Clippy, ADR
 number validation, packed npm client execution with TypeScript declarations,
 and installed Python wheel execution and replay. No tests were skipped.
 
 The implementation includes the text and JSON frontends, type/effect checks,
 deterministic runtime, evidence and rule semantics, replay receipts, real
 RuVector graph/KGE adapters, offline model lifecycle, CLI, process SDKs,
-examples, six ADRs and a scoped CI workflow. Package publication and default
+examples, seven ADRs and a scoped CI workflow. Package publication and default
 branch merge are separate release actions.
 
 ## Reproduction
@@ -176,3 +176,50 @@ exactly. Five warmups and 30 measured samples per path; raw timing samples are i
 [agent-memory-benchmark.json](agent-memory-benchmark.json). Timings exclude parsing,
 process startup and graph capture. Shared-host variance limits generalization.
 See [FRONTIER.md](FRONTIER.md) and ADR-GL-006 for sources, bounds and next gates.
+
+## Immutable preparation followup
+
+PreparedSnapshot is an additive Rust host API for repeated queries over a borrowed
+immutable snapshot. Four new tests add 96 cold/warm query and clock comparisons,
+invalid snapshot checks, capability revocation, budget equivalence and fresh
+provider invocation. Complete receipts are equal, not only decision statuses.
+
+Measured medians in microseconds, three alternating binary pairs, 30 samples per
+path per pair, five warmups. The cold and prepared columns use the new binary;
+preparation is measured independently:
+
+| Nodes | Cold execution | Prepared execution | Preparation cost | Warm reduction |
+|---|---:|---:|---:|---:|
+| 128 | 454.22 | 124.30 | 303.85 | 72.64% |
+| 1024 | 3226.86 | 272.81 | 2840.60 | 91.55% |
+| 4096 | 13078.38 | 930.38 | 12181.73 | 92.89% |
+
+These are warm query reductions on synthetic fixtures, excluding initial
+preparation. Median estimates suggest amortization within two queries; do not
+interpret that estimate as a guarantee. The retained indexes consume memory until
+dropped; resident memory was not measured. No changes to process SDK caching or
+audit intervention execution are included.
+
+Cold old/new differences range from a 2.59% reduction to a 3.52% increase; audit
+differences range from a 2.60% reduction to an 8.14% increase. The unchanged direct
+control slowed 3.26% to 6.01%. This host does not establish zero regression or a
+cold-path improvement. The API is opt-in; profile cold workloads on a dedicated
+host before making a performance release claim.
+
+Raw final results: [prepared-specialized-benchmark.json](prepared-specialized-benchmark.json).
+The first prepared candidate with runtime path selection is retained in
+[prepared-snapshot-benchmark.json](prepared-snapshot-benchmark.json); the shipped
+implementation specializes the two paths at compile time. The rejected 8 KiB
+hash buffer results are retained in [hash-buffer-benchmark.json](hash-buffer-benchmark.json).
+That experiment overlapped other local checks and supports no performance claim.
+
+Reproduce with `scripts/benchmark-rugraph-paired.py --before OLD_BINARY --after
+NEW_BINARY --output NEW_REPORT.json`. Both binaries are the release
+`agent_memory_bench` example. Baseline source is commit
+`6834ddc78bf51a1a2b6332409d194a7a8b77ec0d`; the candidate is this change, Rust
+1.90.0, Linux x86_64. Reports retain binary SHA256 and raw samples. The runner
+requires identical receipt hashes, runtime work, audit work and intervention
+deltas across every block. It intentionally sets no noisy CI timing threshold.
+
+Final local gate: 88 tests passed (52 core, 10 native, 13 JavaScript, 13 Python),
+with formatting and strict all-target Clippy passing in both workspaces.

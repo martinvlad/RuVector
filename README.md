@@ -19,6 +19,8 @@ Built by [Reuven Cohen (rUv)](https://ruv.io/) as part of the [ruvnet open sourc
 
 **Explore:** [Quick starts](#quick-start-choose-your-track) · [Build recipes](#build-by-example) · [Tutorials](./examples/README.md) · [Library catalog](#library-and-capability-map) · [Contrastive AI](#where-does-contrastive-ai-fit) · [Deployment](#deployment-surfaces) · [Benchmarks](#reproduce-the-evidence)
 
+**RuGraph language preview:** [Write bounded graph and evidence programs](./crates/ruvector-language/README.md) with typed observations, rule derivation, native KGE prediction, replay receipts, and JavaScript/TypeScript/Python clients. [Native model lifecycle](./crates/ruvector-language-native/README.md) · [Specification and acceptance evidence](./docs/research/graph-language/SPEC.md).
+
 ## System 0, System 1, and System 2
 
 RuVector supports three complementary roles in the wider ruvnet stack. These are architecture groups, not automatic execution tiers or a claim that every component is installed together.

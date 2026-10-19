@@ -198,7 +198,7 @@ mod tests {
     #[test]
     fn non_64_aligned_dim_masks_padding() {
         // dim=40 -> 1 word, 24 padding bits that must not count as agreement.
-        let a = BinaryCode::encode(&vec![1.0f32; 40], 1.0);
+        let a = BinaryCode::encode(&[1.0f32; 40], 1.0);
         let neg: Vec<f32> = vec![-1.0f32; 40];
         let b = BinaryCode::encode(&neg, 1.0);
         assert_eq!(

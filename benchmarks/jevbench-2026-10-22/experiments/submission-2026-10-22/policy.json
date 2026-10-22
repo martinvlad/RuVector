@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-22T13:55:24.573753+00:00",
+  "objective": "Improve from exact100/183 public JevBench pipeline and prepare/submit the strongest eligible author engine using verified routes.",
+  "prior_evidence_zip": {
+    "path": "/workspace/ruvector-benchmark-iteration-2026-10-21.zip",
+    "sha256": "da4f67550c39c0f668625e4f2cf484ce9badf2510d9100fc4a9f2984e40b5486"
+  },
+  "confirmed_champion": {
+    "id": "api8b_native64_plus_api8b_MiniLM_FP32_reranked64_equalRRF10",
+    "development": {
+      "n": 776,
+      "recall_at8": 0.3636359802482539,
+      "precision_at8": 0.057314705067230735,
+      "failures": 0
+    },
+    "proof": {
+      "path": "experiments/swarm/api8b-fp32-rank-fusion-audit/independent-verification.json",
+      "sha256": "e02d30a37e20ea175e137605a7498ef873e4adb63a830cdb758b69142ed0f5a5"
+    },
+    "fresh_proof": {
+      "path": "experiments/swarm/api8b-fp32-rank-fusion-fresh-audit/independent-verification-v3.json",
+      "sha256": "bf1e0305e659376cf1327ab8f3235e211d9530f73216b856f62be685ea76a8af"
+    },
+    "root_review": {
+      "path": "experiments/swarm/api8b-fp32-fusion-control/root-transfer-review.json",
+      "sha256": "65fb597efafd81b1595b3e8c8025d7b5343f74d22ebc33e71ea9c5ab09a566c7"
+    },
+    "fresh_scope": "64 loop-unused MAUD queries / 8 new document groups, matched BGE-small comparison; not a comparison against a later contender."
+  },
+  "jevbench_reference": {
+    "id": "ruvector-native-cycle3-round2",
+    "n": 183,
+    "correct": 100,
+    "accuracy": 0.546448087431694,
+    "errors": 0,
+    "original_correct": 56,
+    "hard_correct": 44,
+    "strict_valid": 183,
+    "proof": {
+      "path": "experiments/compounding/audit/jevbench-cycle3-round2-independent-verification.json",
+      "sha256": "d274fb45f268146615468f23c3e55d7d429b63e5a0653b7e805a71d8a5ea472c"
+    },
+    "source_selection": {
+      "path": "experiments/compounding/jevbench/cycle3/round2/integration-result.json",
+      "sha256": "846410b38a5091fd1f57edf68a3a916cee58481f6783a0134d03690865c405b2"
+    }
+  },
+  "acceptance_contract": {
+    "path": "experiments/submission-2026-10-22/audit/acceptance-contract-v1.json",
+    "sha256": "0409425579256d790fd1389e1a038b17e73cc839b22cb1f2822453fcda6e81fd"
+  },
+  "limits": {
+    "jevbench_rounds": 2,
+    "cpu_threads_per_worker": 2,
+    "seconds_per_round": 600,
+    "new_paid_API_or_GPU_calls_current_batch": 0,
+    "external_network_calls": 0,
+    "evidence_free_retries_per_branch": 2
+  },
+  "promotion": {
+    "development": "Independent source/rank/metric proof; strict recall gain and precision nondecrease, zero errors, fixed document-fold stability diagnostics. Development selection remains adaptive.",
+    "confirmed": "A recipe frozen before a NEW unused draw, independently verified head-to-head gain over the confirmed champion and unchanged precision/error gate. Never reuse earlier confirmation outcomes as fresh.",
+    "official": "Matching full release, exact candidate identity and publisher sealed evaluation/rank evidence."
+  },
+  "artifact_isolation": "All historical swarm/compounding files and archives remain read-only. This cycle writes only experiments/submission-2026-10-22.",
+  "memory": "Project-scoped distilled findings linked to accepted evidence, including failed hypotheses; no credentials or evaluation answer text.",
+  "metaharness": "Use existing @metaharness/flywheel@0.1.12 for receipt/replay checks only when score evidence is complete; static scorecards are not benchmark measurements.",
+  "official_rank": null,
+  "goal_met": false,
+  "cycle": 4,
+  "parent_snapshot": {
+    "path": "experiments/compounding/cycle3-summary.json",
+    "sha256": "acbcae1e00e6b66ca57ca54584e385ee8e4a984f76012aefc17d1fd3655224a4"
+  },
+  "inherited_knowledge": [
+    {
+      "track": "retrieval",
+      "round": 2,
+      "lesson": {
+        "claim": "Allattempts and fold stability recorded; developmentonly",
+        "evidence_paths": [
+          "experiments/compounding/retrieval/v2/learner-journal.json"
+        ]
+      },
+      "independent_review": {
+        "path": "experiments/compounding/audit/retrieval-integration-verification.json",
+        "sha256": "39124e8968c1bfa0ae6f8cf891dc867a5e1475dc8edab940aff7334dbb6e8c8d"
+      }
+    },
+    {
+      "track": "jevbench",
+      "round": 1,
+      "lesson": {
+        "at": "2026-10-22T02:07:06.970768+00:00",
+        "evidence": [
+          {
+            "path": "experiments/compounding/jevbench/round1/paired.json",
+            "sha256": "8b3b1db1296dbe52025ad9478c8e28d5095b1e682ae0a7144f05202d3f17d05e"
+          },
+          {
+            "path": "experiments/compounding/jevbench/round1/verification.json",
+            "sha256": "42b968b1a42f92e409fb25bce8df6bf64c9d231d8fa3b1995f9a726a9afd4565"
+          }
+        ],
+        "lesson": "Similarity fallback alone fails explicit word counts, required reference completeness and JSON type constraints. Generic exact validators improved five original items with no regression in round1.",
+        "scope": "observed_development",
+        "track": "jevbench"
+      },
+      "independent_review": {
+        "path": "experiments/compounding/audit/jevbench-round1-integration-verification.json",
+        "sha256": "737dd9d89d2881495757db98fa0b5e59aaec3761e16acd90be6b8bc8d6b3f864"
+      }
+    },
+    {
+      "track": "jevbench",
+      "round": 2,
+      "lesson": {
+        "at": "2026-10-22T02:07:06.970768+00:00",
+        "evidence": [
+          {
+            "path": "experiments/compounding/jevbench/round1/paired.json",
+            "sha256": "8b3b1db1296dbe52025ad9478c8e28d5095b1e682ae0a7144f05202d3f17d05e"
+          },
+          {
+            "path": "experiments/compounding/jevbench/round1/verification.json",
+            "sha256": "42b968b1a42f92e409fb25bce8df6bf64c9d231d8fa3b1995f9a726a9afd4565"
+          }
+        ],
+        "lesson": "Similarity fallback alone fails explicit word counts, required reference completeness and JSON type constraints. Generic exact validators improved five original items with no regression in round1.",
+        "scope": "observed_development",
+        "track": "jevbench"
+      },
+      "independent_review": {
+        "path": "experiments/compounding/audit/jevbench-integration-verification.json",
+        "sha256": "1f29eeb6d55a303d7b71c44493479fcdf0eb19dbe7a14fb2aa3769e3642a4474"
+      }
+    },
+    {
+      "track": "jevbench",
+      "round": 2,
+      "lesson": {
+        "at": "2026-10-22T02:07:06.970786+00:00",
+        "evidence": [
+          {
+            "path": "experiments/compounding/jevbench/round2/verification.json",
+            "sha256": "e3a3c139d08264e73bfb4e47b7d0375775425ae8179eb6650301e32751325f14"
+          },
+          {
+            "path": "experiments/compounding/jevbench/round2-vs-round1.json",
+            "sha256": "3dc46008b21c1ae92c8e11dce5bbe2b807078ecbf27947d230741a3a17197463"
+          }
+        ],
+        "lesson": "Request polarity and supplied-rubric impact checks improved eleven additional original cases. All31 deterministic overrides in round2 were correct on these exposed DEV cases; generalization remains unmeasured.",
+        "scope": "observed_development",
+        "track": "jevbench"
+      },
+      "independent_review": {
+        "path": "experiments/compounding/audit/jevbench-integration-verification.json",
+        "sha256": "1f29eeb6d55a303d7b71c44493479fcdf0eb19dbe7a14fb2aa3769e3642a4474"
+      }
+    },
+    {
+      "track": "jevbench",
+      "round": 2,
+      "lesson": {
+        "at": "2026-10-22T02:07:06.970788+00:00",
+        "evidence": [
+          {
+            "path": "experiments/compounding/jevbench/round2/paired.json",
+            "sha256": "03eff96bdabc41c5d4d39c22057370973a6776940787ea3cf2f46e3a3a02b2be"
+          },
+          {
+            "path": "experiments/compounding/jevbench/round2/results.json",
+            "sha256": "d99824c3907dd6a525f4abb395533fe5c37fa23530f4d7174495ce29bf515186"
+          }
+        ],
+        "lesson": "Hard111 remains37correct in both rounds. Generic short-form validators did not solve long policy, provenance, temporal or multi-hop reasoning.",
+        "scope": "observed_development",
+        "track": "jevbench"
+      },
+      "independent_review": {
+        "path": "experiments/compounding/audit/jevbench-integration-verification.json",
+        "sha256": "1f29eeb6d55a303d7b71c44493479fcdf0eb19dbe7a14fb2aa3769e3642a4474"
+      }
+    },
+    {
+      "track": "jevbench",
+      "round": 2,
+      "lesson": {
+        "at": "2026-10-22T02:07:06.970789+00:00",
+        "evidence": [
+          {
+            "path": "experiments/compounding/jevbench/round1/verification.json",
+            "sha256": "42b968b1a42f92e409fb25bce8df6bf64c9d231d8fa3b1995f9a726a9afd4565"
+          },
+          {
+            "path": "experiments/compounding/jevbench/round2/verification.json",
+            "sha256": "e3a3c139d08264e73bfb4e47b7d0375775425ae8179eb6650301e32751325f14"
+          }
+        ],
+        "lesson": "The native original answers exactly match all183 prior reference scores in each round, attributing these gains to symbolic validators in the integrated pipeline rather than a changed vector index.",
+        "scope": "observed_development",
+        "track": "jevbench"
+      },
+      "independent_review": {
+        "path": "experiments/compounding/audit/jevbench-integration-verification.json",
+        "sha256": "1f29eeb6d55a303d7b71c44493479fcdf0eb19dbe7a14fb2aa3769e3642a4474"
+      }
+    },
+    {
+      "track": "jevbench",
+      "round": 1,
+      "lesson": {
+        "claim": "Supported exact cohort/date/week frequency and Decimal unit/rounding proofs corrected three hard cases without changing the56/72 original score. Native77 and frozen93 score streams replay exactly; unsupported cases retain the93 pipeline.",
+        "evidence_paths": [
+          "experiments/compounding/jevbench/cycle2/round1/verification.json",
+          "experiments/compounding/jevbench/cycle2/round1/paired.json",
+          "experiments/compounding/jevbench/cycle2/round1/execution-preservation.json"
+        ],
+        "scope": "observed_development"
+      },
+      "independent_review": {
+        "path": "experiments/compounding/audit/jevbench-cycle2-round1-integration-verification.json",
+        "sha256": "27ffad46d16587d1f63e9f1d4d65e91e9a349b592be1d8751ed46abcc6c5e64a"
+      }
+    },
+    {
+      "track": "jevbench",
+      "round": 2,
+      "lesson": {
+        "claim": "Explicit time-snapshot event chronology selected the supported Markdown outcome row and corrected one additional hard case. New unseen-header/row/time/label/count/population tests passed before calls; all prior H1 and frozen93 behavior remained intact. The complete cycle measured93\u219296\u219297, original56 unchanged and hard37\u219240\u219241.",
+        "evidence_paths": [
+          "experiments/compounding/jevbench/cycle2/round2/proposal.json",
+          "experiments/compounding/jevbench/cycle2/round2/tests.json",
+          "experiments/compounding/jevbench/cycle2/round2/verification.json",
+          "experiments/compounding/jevbench/cycle2/round2-vs-round1.json"
+        ],
+        "scope": "observed_development"
+      },
+      "independent_review": {
+        "path": "experiments/compounding/audit/jevbench-cycle2-round2-integration-verification.json",
+        "sha256": "b4e8290de7dd3c219acd23c27f1b9f3238487784f3eeb87bb9e9fd24beb5670e"
+      }
+    },
+    {
+      "claim": "GPU launch requires complete payload and actual preflight before the finite deadline; preserve an unexecuted study without a quality claim.",
+      "proof": {
+        "path": "experiments/compounding/confirmation-gpu/NOT_EXECUTED_WINDOW_EXPIRED.json",
+        "sha256": "916d544e386171fb5c17ba3b0283f916da578a67b0d25d12743b36f376b3c783"
+      }
+    },
+    {
+      "track": "jevbench",
+      "round": 1,
+      "lesson": {
+        "claim": "Supplied scoped priors, failure likelihoods and observed-mode likelihoods support exact posterior normalization; explicit independent exhaustive branches support a weighted conditional mixture and complement. Unsupported inputs retain immutable97.",
+        "evidence_paths": [
+          "experiments/compounding/jevbench/cycle3/round1/tests.json",
+          "experiments/compounding/jevbench/cycle3/round1/verification.json",
+          "experiments/compounding/jevbench/cycle3/round1/quality-gate.json",
+          "experiments/compounding/jevbench/cycle3/round1/paired.json",
+          "experiments/compounding/jevbench/cycle3/round1/execution-preservation.json"
+        ],
+        "scope": "observed_development"
+      },
+      "independent_review": {
+        "path": "experiments/compounding/audit/jevbench-cycle3-round1-integration-verification.json",
+        "sha256": "d9eb8701b19c84be8f757e17511383baff4f69ebab935595198819d0abd16ce7"
+      }
+    },
+    {
+      "track": "jevbench",
+      "round": 2,
+      "lesson": {
+        "claim": "A separately frozen exact arithmetic correction was measured after preserving round1; all attempted settings and paired changes are retained.",
+        "evidence_paths": [
+          "experiments/compounding/jevbench/cycle3/round2/tests.json",
+          "experiments/compounding/jevbench/cycle3/round2/verification.json",
+          "experiments/compounding/jevbench/cycle3/round2/quality-gate.json",
+          "experiments/compounding/jevbench/cycle3/round2/paired.json",
+          "experiments/compounding/jevbench/cycle3/round2/execution-preservation.json"
+        ],
+        "scope": "observed_development"
+      },
+      "independent_review": {
+        "path": "experiments/compounding/audit/jevbench-cycle3-round2-integration-verification.json",
+        "sha256": "bb4684a1d9e505981701cd53eb771fc36e991ccad8e67c2c2759bc173d460137"
+      }
+    }
+  ],
+  "planned_worker_directory": "experiments/submission-2026-10-22/jevbench",
+  "sibling_confirmation": "Prior96-query CUDA preparation remains unscored; no new provider activation in this CPU development phase.",
+  "cycle4_gate": {
+    "total_correct_strictly_above": 100,
+    "hard_correct_strictly_above": 44,
+    "original_correct_at_least": 56,
+    "n": 183,
+    "strict_valid": 183,
+    "errors": 0,
+    "no_lost_correct_cases": true
+  },
+  "submission_authorized": true,
+  "submission_scope": "Publish reviewed reproducible author-engine code and honest measured results, submit to verified official benchmark routes. Development scores do not establish rank."
+}

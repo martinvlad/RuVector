@@ -1,0 +1,9 @@
+POST /v1/systemone HTTP/1.1
+Accept-Encoding: identity
+Content-Length: 1424
+Host: 127.0.0.1:43809
+Content-Type: application/json
+User-Agent: JevBench/1.2 (+https://github.com/fstandhartinger/jevbench)
+Connection: close
+
+{"state": {"handlers": {"ci_infrastructure": "Handles general runner availability and build queue failures.", "code_signing": "Handles signing identities, entitlements, signature validity, and certificate chains.", "endpoint_security": "Configures corporate device allowlists and malware controls.", "macos_runtime": "Handles crashes and behavioral defects after launch.", "release_notarization": "Handles notarization submission, status, stapling, and Gatekeeper distribution acceptance."}, "request": "A signed macOS installer launches and verifies successfully, but Gatekeeper labels it as from an unidentified developer on clean machines. The Developer ID certificate is valid; the release pipeline skipped submission to Apple's notary service and ticket stapling."}, "model": "ruvector-native-submission-round2-v2", "questions": {"decision": {"type": "choice", "instructions": "Select the single best primary handler for this request.", "criteria": {"ci_infrastructure": "Handles general runner availability and build queue failures.", "code_signing": "Handles signing identities, entitlements, signature validity, and certificate chains.", "endpoint_security": "Configures corporate device allowlists and malware controls.", "macos_runtime": "Handles crashes and behavioral defects after launch.", "release_notarization": "Handles notarization submission, status, stapling, and Gatekeeper distribution acceptance."}}}}

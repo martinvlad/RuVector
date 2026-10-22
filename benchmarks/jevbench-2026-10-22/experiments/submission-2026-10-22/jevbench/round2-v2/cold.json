@@ -1,0 +1,97 @@
+{
+  "native_initialization_ms": 395.8509760000197,
+  "first_http_request": {
+    "id": "original-policy-01-0",
+    "cohort": "original",
+    "warmup": true,
+    "question_type": "noul",
+    "family": "policy",
+    "group": "original-policy-01",
+    "labels": [
+      "no",
+      "yes"
+    ],
+    "expected": "no",
+    "ok": true,
+    "http_status": 200,
+    "runner_wall_ms": 45.77693300007013,
+    "adapter_internal_ms": 45.55068299987397,
+    "probs_source": "native",
+    "model": "ruvector-native-submission-round2-v2",
+    "usage": {
+      "embed_calls": 1,
+      "texts_embedded": 2,
+      "state_bytes": 128,
+      "token_count_basis": "native package does not report tokenizer input/output counts; unknown, not zero",
+      "generic_solver_decisions": 0,
+      "native_requests": 1
+    },
+    "official_score": {
+      "valid": true,
+      "strict_valid": true,
+      "renormalized": false,
+      "probs": {
+        "yes": 0.7898946,
+        "no": 0.2101054
+      },
+      "predicted": "yes",
+      "correct": false
+    },
+    "request_file": "wire/warmup.request.http",
+    "response_file": "wire/warmup.response.http",
+    "request_sha256": "b4a5569a6efbb509e194458801d8e915a0b6beed0dc5a8e84062b52842f6641a",
+    "response_sha256": "d836210ac3d54756cd96793ea3f8ad8786ce1389b78c201ca921e4ce33d2b28a",
+    "request_body_sha256": "9c74f2650fe00502a525d00c9bf2ccaf8a594c69e85ed624b3409365205a093a",
+    "raw_response": {
+      "model": "ruvector-native-submission-round2-v2",
+      "answers": {
+        "decision": {
+          "noul": 0.7898946,
+          "confidence": 0.7898946,
+          "abstain": 0,
+          "calibrated": false,
+          "head": "similarity-uncalibrated",
+          "model": "bge-small-en-v1.5@828e1496d7fa",
+          "temperature": 1,
+          "type": "noul",
+          "native_original_answer": {
+            "noul": 0.7898946,
+            "confidence": 0.7898946,
+            "abstain": 0,
+            "calibrated": false,
+            "head": "similarity-uncalibrated",
+            "model": "bge-small-en-v1.5@828e1496d7fa",
+            "temperature": 1,
+            "type": "noul"
+          },
+          "baseline100_answer": {
+            "noul": 0.7898946,
+            "confidence": 0.7898946,
+            "abstain": 0,
+            "calibrated": false,
+            "head": "similarity-uncalibrated",
+            "model": "bge-small-en-v1.5@828e1496d7fa",
+            "temperature": 1,
+            "type": "noul"
+          },
+          "native_fallback_used": true
+        }
+      },
+      "usage": {
+        "embed_calls": 1,
+        "texts_embedded": 2,
+        "state_bytes": 128,
+        "token_count_basis": "native package does not report tokenizer input/output counts; unknown, not zero",
+        "generic_solver_decisions": 0,
+        "native_requests": 1
+      },
+      "attribution": "Actual native RuVector BGE-small fallback, immutable100 validators and source-linked exact typed joins. Whole-pipeline observed development, not index-only reasoning.",
+      "timing": {
+        "server_request_ms": 37.47931299994889,
+        "boundary": "read body, parse, validate, all decision calls, response construction before JSON serialization; caller HTTP wall time is authoritative"
+      }
+    },
+    "error": null
+  },
+  "scored_in_denominator": false
+}

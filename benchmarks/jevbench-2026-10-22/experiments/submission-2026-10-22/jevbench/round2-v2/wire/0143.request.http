@@ -1,0 +1,9 @@
+POST /v1/systemone HTTP/1.1
+Accept-Encoding: identity
+Content-Length: 1645
+Host: 127.0.0.1:43809
+Content-Type: application/json
+User-Agent: JevBench/1.2 (+https://github.com/fstandhartinger/jevbench)
+Connection: close
+
+{"state": "Bright Orchard support handbook, sections 5\u20138. A ticket may close when the customer reports the affected function working after remediation. An advance statement such as \u201cif X fixes it, close\u201d records conditional consent, not a report that X worked. Agent telemetry can corroborate a customer report but cannot replace one for an interface-visible defect. If reports conflict, evidence about the customer's affected interface outranks backend health; automated summaries never establish customer confirmation.\n\nTicket BO-771 concerns a dashboard that renders blank for the customer. At 10:02 the customer wrote, \u201cIf resetting the gateway fixes it, you can close this.\u201d The agent reset it at 10:14. Gateway telemetry was normal from 10:16 through 11:16, and an automated card displayed RESOLUTION LIKELY. At 11:18 the agent wrote \u201cReset worked, closing as authorized.\u201d At 11:23 the customer replied from the affected account, \u201cThe dashboard is still blank for me. Please do not close.\u201d A synthetic test at 11:25 loaded the dashboard, but no later customer report exists.", "model": "ruvector-native-submission-round2-v2", "questions": {"decision": {"type": "choice", "instructions": "Choose the correct ticket disposition.", "criteria": {"await_internal_metrics": "Neither close nor keep open until another telemetry window.", "close_agent_verified": "Close because agent-side telemetry alone meets the stated closure rule.", "close_confirmed": "Close because the customer confirmed actual resolution.", "keep_open_unresolved": "Keep open because customer reports the issue persists."}}}}

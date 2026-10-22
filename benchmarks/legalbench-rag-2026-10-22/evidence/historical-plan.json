@@ -1,0 +1,38 @@
+{
+  "frozen_at": "2026-10-22T02:07:13.138991+00:00",
+  "status": "frozen_before_first_access_to_historical_quality_outputs_by_this_track",
+  "scope": "ONE exploratory historical/observed64query MAUD replay; NOTunusedconfirmation or promotion",
+  "inputs": {
+    "experiments/compounding/retrieval/v2/selected-recipe.json": "8f3c0a5f1ebc92c368e32f7f12fbb71eaaf4abb7a2128ae1ba6c9dbc25891458",
+    "experiments/compounding/audit/retrieval-independent-verification.json": "47944bcf76c89bcc52126d23bb1f49735adee203cca5d4e3c348356a1deac690",
+    "experiments/swarm/api8b-fp32-rank-fusion-fresh/plan.json": "7e7d5222858b6342d9f2df29d3417be039bffa1088395304120fc2f601838a99",
+    "experiments/swarm/api8b-fp32-rank-fusion-fresh/chunks.json": "16cb4ab5f53cedf8778be62c09d5e814879b284eed359be4a6a838ada5a1fa54",
+    "experiments/swarm/api8b-fp32-rank-fusion-fresh/queries.json": "3e995e4d2ef971b0d197ba79a3d643d6748f0853721bb925e3ff6adcc6edc50c",
+    "experiments/swarm/api8b-fp32-rank-fusion-fresh-audit/independent-verification-v3.json": "bf1e0305e659376cf1327ab8f3235e211d9530f73216b856f62be685ea76a8af",
+    "experiments/swarm/api8b-fp32-rank-fusion-fresh-audit/incoming-v3/extracted/decisions.json": "b99a92bd887c27ffc3830fefb08f06b9d6c3d87d77111d888a13457839c7a28a",
+    "experiments/swarm/api8b-fp32-rank-fusion-fresh-audit/incoming-v3/extracted/native/response.json": "dc482e7a5231a496de7e986e4b669f5d73c86497078c283da4611deb5be7b220",
+    "experiments/swarm/api8b-fp32-rank-fusion-fresh-audit/incoming-v3/extracted/scores.npz": "67771652f618a1cf71b58ca37d64b3d97929391515fde9f88ce96ed004cd320e"
+  },
+  "candidate": "Exact selected global equalRRF20 using actualnative128FIRST64 and actualreranked64, numericIDties",
+  "comparator": "Same lists/global equalRRF10 exact confirmedpipeline",
+  "new_policy_search": false,
+  "top_k": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "metric": "Unchanged pinnedauthorQAResult/file-awarepairwise spans",
+  "primary_k": 8,
+  "rejection_guard": "Reject contender if recall does not strictly increase or precision regresses on this historicalset; this guard is exploratory not independent confirmation",
+  "document_diagnostics": "8firstgoldfilegroups paired mean deltas/allgroup means and seeded2000clusterbootstrap descriptiveCI",
+  "budget": {
+    "CPU_threads": 2,
+    "seconds": 120,
+    "new_paid_API_model_native_download_calls": 0
+  },
+  "previous_historical_outcomes_used_to_select_RRF20": false
+}

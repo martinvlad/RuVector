@@ -1,0 +1,9 @@
+POST /v1/systemone HTTP/1.1
+Accept-Encoding: identity
+Content-Length: 885
+Host: 127.0.0.1:43809
+Content-Type: application/json
+User-Agent: JevBench/1.2 (+https://github.com/fstandhartinger/jevbench)
+Connection: close
+
+{"state": {"request": "A bakery makes 3 batches of 24 rolls. Twelve rolls are reserved for an order. The rest are packed equally into 5 display baskets, with any leftovers kept in the kitchen. State rolls per basket and leftovers, showing integer division.", "response": "There are 3 \u00d7 24 = 72 rolls total. After reserving 12, 60 remain. Integer division gives 60 \u00f7 5 = 12 remainder 0, so each basket receives 12 rolls and none are left in the kitchen."}, "model": "ruvector-native-submission-round2-v2", "questions": {"decision": {"type": "noul", "instructions": "Does the response fully and correctly satisfy the request?", "criteria": {"false": "The response has any substantive error or misses any explicit requirement.", "true": "The response fully and correctly satisfies every explicit request, including method, edge cases, units, formatting, and retained facts."}}}}

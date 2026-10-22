@@ -1,0 +1,9 @@
+POST /v1/systemone HTTP/1.1
+Accept-Encoding: identity
+Content-Length: 1084
+Host: 127.0.0.1:43809
+Content-Type: application/json
+User-Agent: JevBench/1.2 (+https://github.com/fstandhartinger/jevbench)
+Connection: close
+
+{"state": "Lumen Press asks whether an author requested deletion of chapter 6. The author's message says, \u201cMy editor asked, \u2018Should we delete chapter 6?\u2019 Please do not take that quoted question as my instruction. I want chapter 6 retained, but delete the duplicate appendix.\u201d An extraction system lists \u201cdelete chapter 6\u201d as a detected imperative after dropping punctuation and attribution. The decision must follow the author's communicative intent in context.\n\nPolicy excerpt: Editorial deletion requires an affirmative instruction identifying the material to remove. Discussion of a possible cut, quoted advice, and an instruction to retain the chapter are interpreted by the latest direct author instruction.", "model": "ruvector-native-submission-round2-v2", "questions": {"decision": {"type": "noul", "instructions": "Did the author request deletion of chapter 6?", "criteria": {"false": "The condition in the question is not established by the operative facts.", "true": "The condition in the question is established by the operative facts."}}}}

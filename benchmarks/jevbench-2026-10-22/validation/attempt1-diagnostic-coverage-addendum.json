@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "scope": "Clarifies the preserved initial delivery diagnostic failure without changing it",
+  "initial_receipt": "isolated-native-smoke-attempt1.json",
+  "initial_failure": "Executor omits /proc/PID/task/PID/children; failed before HTTP",
+  "initial_process_absence_flag_coverage": "Observed server PID only; child discovery did not complete. Server exited0 through its measured close handler, but the first receipt does not independently attest a discovered native PID.",
+  "replacement": "Final successful isolated-native-smoke.json uses PPid status discovery and independently records both server/native PID absence; clean npm installation repeated with fresh cache.",
+  "scientific_candidate_changed": false,
+  "benchmark_quality_measurements": 0
+}

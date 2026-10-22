@@ -1,0 +1,9 @@
+POST /v1/systemone HTTP/1.1
+Accept-Encoding: identity
+Content-Length: 1032
+Host: 127.0.0.1:43809
+Content-Type: application/json
+User-Agent: JevBench/1.2 (+https://github.com/fstandhartinger/jevbench)
+Connection: close
+
+{"state": "QuillWorks evaluates whether a reviewer endorsed a proposal. In the meeting transcript, reviewer Jo says: \u201cSam wrote in the draft chat, \u2018This plan is flawless; ship it now.\u2019 I am quoting that because it captures exactly the overconfidence we must avoid. My own recommendation is not to ship until the load test passes.\u201d Later Jo answers \u201ccorrect\u201d when asked whether Sam had favored immediate shipment. The minutes bot extracts the sentence \u201cThis plan is flawless; ship it now\u201d and attributes it to Jo because Jo spoke the words aloud. The rubric asks about Jo\u2019s own recommendation, not whether Jo accurately reported another person\u2019s position.", "model": "ruvector-native-submission-round2-v2", "questions": {"decision": {"type": "noul", "instructions": "Did Jo endorse shipping the proposal immediately?", "criteria": {"false": "The stated condition is not satisfied under the operative facts.", "true": "The stated condition is satisfied under the operative facts."}}}}

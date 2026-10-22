@@ -1,0 +1,9 @@
+POST /v1/systemone HTTP/1.1
+Accept-Encoding: identity
+Content-Length: 1197
+Host: 127.0.0.1:43809
+Content-Type: application/json
+User-Agent: JevBench/1.2 (+https://github.com/fstandhartinger/jevbench)
+Connection: close
+
+{"state": "Vela Transit awards the \u201con-time\u201d status when arrival is no later than 18:00 at the destination clock. Dispatch predicted 17:52. A monitoring banner at 17:55 read \u201cON TIME,\u201d but banners are forecasts and freeze once a trip enters the tunnel. The actual gate scan, which is the authoritative arrival record, occurred at 18:04. A passenger message says the bus reached the station \u201caround six,\u201d and the driver\u2019s handwritten log says 17:59; policy resolves discrepancies in favor of the gate scan unless it is flagged faulty. No fault flag exists.\n\nPolicy excerpt: Timing standard T4 uses the first unflagged physical gate scan. Manual estimates, scans marked TEST, and dispatch-board projections do not substitute; equality with the deadline is on time.", "model": "ruvector-native-submission-round2-v2", "questions": {"decision": {"type": "choice", "instructions": "What final punctuality status applies?", "criteria": {"canceled": "The trip did not arrive.", "indeterminate": "No authoritative actual time can be selected.", "late": "Authoritative actual arrival is after 18:00.", "on_time": "Authoritative actual arrival is at or before 18:00."}}}}

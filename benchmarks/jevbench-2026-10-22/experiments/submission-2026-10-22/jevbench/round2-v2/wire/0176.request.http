@@ -1,0 +1,9 @@
+POST /v1/systemone HTTP/1.1
+Accept-Encoding: identity
+Content-Length: 1501
+Host: 127.0.0.1:43809
+Content-Type: application/json
+User-Agent: JevBench/1.2 (+https://github.com/fstandhartinger/jevbench)
+Connection: close
+
+{"state": {"request": "An invoice subtotal is $19.95. Apply a 15% discount, then 8.25% tax to the discounted amount. Do not round the intermediate discounted amount. Round the final charge to cents using half-up, and show the derivation.\n\nAdditional evaluation context: The accounting policy treats discount as reducing the taxable base. Both percentages are exact decimal rates for this exercise. Show enough digits in the intermediate discounted base and taxed product to demonstrate that cents were not rounded early; the final currency result alone should use the requested tie convention. The answer will be reviewed as a complete handoff, so correctness of intermediate reasoning, units, boundary conventions, and every stated presentation constraint matters independently of whether the concluding value appears plausible.", "response": "Discounted amount = 19.95 \u00d7 0.85 = 16.9575. Taxed charge = 16.9575 \u00d7 1.0825 = 18.35649375. Rounded half-up to cents, the final charge is **$18.35**."}, "model": "ruvector-native-submission-round2-v2", "questions": {"decision": {"type": "noul", "instructions": "Does the response fully and correctly satisfy every explicit requirement in the request? Judge the derivation, code, result, and formatting, not merely whether the final number looks plausible.", "criteria": {"false": "The response contains any substantive error or misses an explicit constraint.", "true": "The response is fully correct and satisfies every explicit constraint."}}}}

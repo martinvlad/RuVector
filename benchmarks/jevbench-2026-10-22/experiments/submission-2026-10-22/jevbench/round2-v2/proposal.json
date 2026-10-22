@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T14:10:24.308402+00:00",
+  "status": "prepared_before_final_measurement",
+  "cycle": 4,
+  "round": 2,
+  "round1_integration": {
+    "path": "experiments/submission-2026-10-22/jevbench/round1/integration-result.json",
+    "sha256": "8fcb15c15242959d22b5a1f1a08bc97baadf7f4d21d5ff8c7f236aed09c13bd3"
+  },
+  "round1_independent_proof": {
+    "path": "experiments/submission-2026-10-22/audit/round1-independent-verification.json",
+    "sha256": "a5e224fa7d148690aa97fbbf66c082340eae4a10f18977a108f900f573a32970"
+  },
+  "supported_followup": "One current data-access relation path joins dataset/tier, requester/class, purpose code, signed current non-granular reclassification, allowed fields and conditional retention maximum. Missing or conflicting scope abstains.",
+  "independently_observed_boundary_fix": {
+    "path": "experiments/submission-2026-10-22/audit/synthetic-float-boundary-counterexample-v1.json",
+    "sha256": "85909fd10973343daef1cf2db7c8890a33f950b8bfc0963475294b0b45daca96"
+  },
+  "arithmetic_correction": "Fraction(str(normalized supplied numeric value)) performs exact rational subtraction and compares before converting. Proof trace exact quantities use Fraction decimal/rational strings. This avoids both binary-float boundary error and finite Decimal-context cancellation.",
+  "additional_conservatism": "Reject unknown nested operative request fields; preserve all original Round1 source and outcomes.",
+  "counterfactual_tests": [
+    "2.3-0.3 exactly2 is not under2",
+    "2.29-0.3 under2",
+    "2-1e-100 under2 without precision cancellation",
+    "Unseen entities/labels and retention thresholds",
+    "Missing classification or alias edge abstains",
+    "Conflicting current reclassification/revision abstains",
+    "Reordered JSON and historical distractors preserve actual current path"
+  ],
+  "new_quality_calls_before_freeze": 0,
+  "new_paid_calls": 0,
+  "source_revision": 2,
+  "prelaunch_revision1": {
+    "path": "experiments/submission-2026-10-22/jevbench/round2/plan.json",
+    "sha256": "67f55d72528bb1e258be3abf41915caf3473abbc087b38de16e5d3e5e8dc4224"
+  },
+  "prelaunch_revision1_closure": {
+    "path": "experiments/submission-2026-10-22/jevbench/round2/CANCELLED_BEFORE_MEASUREMENT.json",
+    "sha256": "f78111b0be46f0dbacab4dc78b738ed2e88a3c008aeedbf3887cb35c765ffac9"
+  },
+  "memo_guard": "An optional memo is ignored only when its entire text explicitly states the supported draft summary is nonbinding; binding or ambiguous memos abstain."
+}

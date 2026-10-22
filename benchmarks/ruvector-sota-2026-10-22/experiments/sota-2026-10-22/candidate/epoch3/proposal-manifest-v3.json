@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "epoch": 3,
+  "frozen_at": "2026-10-22T16:19:37.168231+00:00",
+  "hypothesis": "Actual nativeRuVector evidence selection plus pretrainedNLI versus SAME-NLI positional/lexical matchedcontrols on DEV24; native104reads exactlythe selectedRuVector evidence as additional learned-readercontrol. No fresh96evaluationthisepoch.",
+  "candidate_id": "ruvector-bge-native-top2-nli-v3",
+  "config_count": 1,
+  "runtime_api": {
+    "interpreter": "retrieval/.venv/bin/python",
+    "module": "candidate.epoch3.runtime",
+    "class": "CandidateEngine",
+    "constructor": "CandidateEngine(artifact_path=None); optional artifact must exactly equal config.json",
+    "methods": [
+      "predict(state,questions)",
+      "close()"
+    ],
+    "attributes": [
+      "name",
+      "attribution",
+      "receipt",
+      "last_usage",
+      "native_pid",
+      "native_process"
+    ],
+    "root_resolution": "Canonical project/experiments/sota-2026-10-22/candidate/epoch3; ROOT=HERE.parents[3]",
+    "paired_native104_control": "baseline104_response, model=native104_on_ruvector_evidence (not originalfull-input104)",
+    "same_decoder_controls": "ablation_responses.same_nli_lexical_top2 and .same_nli_positional_first2",
+    "required_environment_variable": "RUVECTOR_SOTA_BUNDLE_DIR (per-phase nativebundle directory, set before engineinit)"
+  },
+  "inputs": "Only normalized supplied state/questions; binary choice labels exactly Yes/No. Positive hypothesis from exact supplied criteria.Yes. No task IDs, labels, saved outcomes, retrieval gold or source group lookup.",
+  "architecture": {
+    "encoder": "Existing pretrained BGE-small float32 ONNX CLS normalized384D, CPU2",
+    "retrieval": "Actual @ruvector/core0.1.33 Cosine VectorDb insert+search every question, observed binary hash required",
+    "decoder": "Cached supervised DeBERTa-v3-xsmall NLI quantized ONNX; learned cross-encoder, CPU2, exact2a4f614a...revision",
+    "mapping": "Read actual config.id2label. Yes=P(entailment),No=P(contradiction)+P(neutral). Maxentailment pool across2selectedchunks.",
+    "matched_decoder": "Identical weights/tokenizer/predicate/K2/pooling/T1 and512token guard in all3arms",
+    "state_context": "All state tokenized into192BGEtokenwindows/overlap32. At most64completechunks; longer state fails explicitly, never silently clipped.",
+    "hypothesis_evidence_context": "BGE256/NLI512 raw-token guards reject before ONNX inference; every raw/used token count and chunk span reported.",
+    "evidence_cache": "At most64 source-only chunkbanks, keys SHA256 over exact chunktext and runtime-pinned encoder/config; no labels. Cachehits and actualembeddings counted."
+  },
+  "attribution": "SAME-NLIcontrols isolateRuVector evidence selection. NLIvsnative104_on_ruvector_evidence comparesdecisioncomponentsonsameevidence. Original104submittedcandidateunchanged; no newbenchmarkrankortrainingclaim.",
+  "model_history": "Same cached NLI weights were used in older experiments/optimization/decision_loop.py. Old public outcomes are not new gains. No model training, model downloads, dependency installs or paid calls in worker.",
+  "label_access": {
+    "new_ContractNLI_DEV_labels_read": false,
+    "new_ContractNLI_confirmation_data_or_labels_read": false,
+    "only_predicate_metadata_read": "legal-transfer/epoch3/predicates.json; final original-archive predicate strings supplied in worker messages",
+    "actual_model_or_native_calls": 0
+  },
+  "provenance": {
+    "onnx_quantized_weight_exact_HF_LFS_verified": true,
+    "tokenizer_config_exact_HF_git_blob_verified": true,
+    "conversion_revision": "2a4f614a701367a02d51389039afc998faeda637",
+    "base_license": "Apache-2.0 declared at pinned base-model card; conversion repo has no explicit license declaration",
+    "native_core_license": "MIT"
+  },
+  "timing_scope": "Reports BGE chunks/query and native process/search timing and each actual NLI-arm inference timing. Total request includes native104 + all3decoder arms, not deployment latency of primary alone.",
+  "tests": {
+    "success": true,
+    "tests_run": 14,
+    "failures": 0,
+    "errors": 0,
+    "actual_onnx_calls_by_worker": 0,
+    "actual_native_typesafe_calls_by_worker": 0,
+    "actual_native_core_calls_by_worker": 0,
+    "new_corpus_labels_read_by_worker": false,
+    "new_tests": [
+      "nativecontrol receivesexactselectedRuVectorchunktextandoriginalquestion",
+      "nativecontrolinputliteralhashandchunkidsreconstructible",
+      "long>16KiBsource neverpassesfullstate to nativecontrol"
+    ]
+  },
+  "sources": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/runtime.py",
+      "bytes": 14155,
+      "sha256": "fdca85cf34c5fb50c1fa622192ad36c1d322fd7fee909c80e9e0d0f95154e649"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/models.py",
+      "bytes": 4708,
+      "sha256": "c5cf3500a89837e71adc754f0dc96d090e172068031545fc55ee349e80210716"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/test_runtime.py",
+      "bytes": 10119,
+      "sha256": "a1a25226b3d1f2e6aea165b26ad26cf3589566cb7e080fd1976ab1f1ff1beaa9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/config.json",
+      "bytes": 592,
+      "sha256": "73dbc1483b307de55de9752e9bd54114cb7ebeabd32dd138eaedfb2b1e45011e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/assets.lock.json",
+      "bytes": 3977,
+      "sha256": "32e7aefe6bb5db0e1261ef06c638870c845dcfcc3a8989ec9a0d117ae733adbc"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/source-receipts.json",
+      "bytes": 656,
+      "sha256": "9d8c41c7514baf5d7e27c64a943fef1ef73f821b0a32ed33967852998b9978c8"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/model-api.json",
+      "bytes": 3910,
+      "sha256": "029531026ea66279e7245ef5e8641a631a4a5b629a7505999c17d7930478e851"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/model-api-blobs.json",
+      "bytes": 6103,
+      "sha256": "eddd05be9823e71ab80bfc1f295a515a76c77652668dea475252f9b942343c0c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/model-card.md",
+      "bytes": 1170,
+      "sha256": "1112e16f917777ce720f99ac42ba97f45d4e1bbbfa0dc1ed62313c33e9e0170b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/base-model-api.json",
+      "bytes": 4394,
+      "sha256": "4cf995bcdce45aff26f89f0bc68033be7032c1e2764906f975167268cb751991"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/base-model-card.md",
+      "bytes": 2871,
+      "sha256": "4aeb5585a9eeb71b2d572249f9faa22ef3378c6abee3eeaffaae8c961068a2c6"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/tests-result-v3.json",
+      "bytes": 469,
+      "sha256": "2cb02f03960cac706d2af1155f28341eec74c0bb91f56e22138baf2fe7df5f39"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/tests-result-v3.txt",
+      "bytes": 1889,
+      "sha256": "5e7cb9b97affa64aabe9307a6724053043a8cfb1b5c33420cbff2efcbdf2e09a"
+    }
+  ],
+  "read_only_dependencies": [
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/engine.py",
+      "sha256": "a833b1772be7bf18f48a2be58b6dd315428e9efa920c5ff5f7867fc22e14e8e9"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round2-v2/plan.json",
+      "sha256": "782db4034b2eb51ad9520a632ee94f7bdbb5bf0e8826ca44a91a055c15971f17"
+    },
+    {
+      "path": "retrieval/native-candidates.cjs",
+      "sha256": "45efc7fecd2d249aea7bd1f5e7d36bf26cfe57cd6f91de51ffd15adc039ec4a3"
+    }
+  ],
+  "official_score": null,
+  "official_rank": null,
+  "goal_met": false,
+  "source_revision": 3,
+  "replaces_unexecuted_source_freeze": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch3/proposal-manifest.json",
+    "sha256": "b1a45dedf91619629fa114f3a931737e92602a8cdd6b935b42374717c55bcede",
+    "reason": "Independent pre-native audit required literal native embeddingbundle retention for cosine/rank replay. Prior source and tests preserved before fix; zero modelcalls under old freeze.",
+    "preserved_sources": [
+      {
+        "path": "experiments/sota-2026-10-22/candidate/epoch3/runtime.pre-bundle-evidence-v1.py",
+        "sha256": "5312cb566e2c3362e6a8b606e64be5c35ce8684a50da3544ecdcd07e1c3f5804"
+      },
+      {
+        "path": "experiments/sota-2026-10-22/candidate/epoch3/test_runtime.pre-bundle-evidence-v1.py",
+        "sha256": "c1e6eca11b1a88262858d269f53bf2ece3ab9779e29192b52c155c897e924b2a"
+      }
+    ]
+  },
+  "bundle_evidence": {
+    "required_environment_variable": "RUVECTOR_SOTA_BUNDLE_DIR",
+    "storage": "Caller-selected per-phase evidence directory; contentaddressed SHA256hex.json filenames",
+    "literal_bytes": "Exact UTF8JSONbytes written to tempbundle for native worker are fsynced tosidecar before nativeprocess and beforetempcleanup",
+    "wire_diagnostic": "diagnostics[question].retrieval.bundle_evidence:{sha256,bytes,relativefilename,encoding}",
+    "identity_checks": "SavedsidecarSHA equalsobservednativebundleSHA; reuseonlyidenticalbytes; conflictingexistingbytes orsymlink fails withoutoverwrite",
+    "native_rank_observation": "NativeallretrievedIDs preserved unchanged; sidecars permit independent Float32 cosine/retrieval replay without ONNX rerun"
+  },
+  "replaces_failed_native104_full_context_control": {
+    "previous_manifest": "experiments/sota-2026-10-22/candidate/epoch3/proposal-manifest-v2.json",
+    "previous_manifest_sha256": "e599c480a46e873aebf647b130d5e5e07370735ed954564d3dab953a8ee3a1c0",
+    "parent_reported_observation": "FirstactualHTTPDEVattempt returned500 native104 state exceeds16KiB before any NLI/BGEselectionforward;1attemptednativeTypeSafe request,0completedcorpusitems.",
+    "reason_for_fix": "Use identicalretrievedsource evidence for native104readercontrol ratherthan unsupportedfull-inputbaseline. MatchedsameNLIarms/model/hypothesis remain unchanged.",
+    "preserved_sources": [
+      {
+        "path": "experiments/sota-2026-10-22/candidate/epoch3/runtime.pre-context-control-v2.py",
+        "sha256": "1dd4973f91216e0f8a194d83eca9b3c8872beaec51d48ac3639285c1faa57510"
+      },
+      {
+        "path": "experiments/sota-2026-10-22/candidate/epoch3/test_runtime.pre-context-control-v2.py",
+        "sha256": "71f8d70cee4239e9720bbdd23933939e46674bc8b44092a9f04d60a9493e97ac"
+      }
+    ]
+  },
+  "native_control": {
+    "label": "native104_on_ruvector_evidence",
+    "response_field": "baseline104_response",
+    "input": "Exact nativeRuVectortop2 sourcechunks concatenated inreturnedrankorder withtwo newlinecharacters; exactoriginalquestionmaponequestion; no additionalinput ororacle",
+    "runtime_order": "RuVector BGEencodeandnativecoreselection, thenone actualnative104predictperquestion, thenunchangedthreeNLIarms",
+    "context_guard": "Rejectselectedevidenceover16KiB; no hiddenclipping",
+    "reconstructible_diagnostics": [
+      "baseline_control_input",
+      "baseline_control_input_sha256",
+      "baseline_control_source_chunk_ids",
+      "baseline_control_state_bytes",
+      "baseline_control_wall_ms"
+    ],
+    "not_comparable_as": "Originalfull-input104benchmarkconfiguration; this isevidence-conditionedreader control",
+    "usage": "Originalperquestionobservationsretained; sumonlynumericfieldspresentineveryresponse; unknown tokens/cost remainunknown"
+  },
+  "execution_budget_note": "CoordinatorauthorizedONLYDEV24 assecondandLASTnativebatchattemptthisepoch. Firstfailedattemptcountsagainst2attemptcap; confirmation96mustremainunconsumedregardlessDEVoutcome."
+}

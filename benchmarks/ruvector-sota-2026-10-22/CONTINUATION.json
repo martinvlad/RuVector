@@ -3,15 +3,20 @@
   "objective": "Reach independently verified SOTA using actual RuVector; initial target JevBench open-weights Capability under official caps.",
   "goal_met": false,
   "official_rank": null,
-  "champion": "Native104 submitted as7FEA2738; unchanged after two failed transfer experiments",
+  "champion": "Native104 submitted as7FEA2738; unchanged after three rejected research epochs",
   "prior_published_base_commit": "11983d212b951305bcab06ad868bca5a12ea2954",
-  "checkpoint_manifest_sha256": "07dee7c9bcb363ce85c3fa9b61837db5c5dc57677dda39b106f2024aa6e2c1e5",
+  "checkpoint_manifest_sha256": "2535f0a08edb1a154063aae2ba1675922625cc870f96dcd4fa3b1c35db4ff42f",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
-    "native_corpus_batches": 3,
-    "actual_HTTP_decisions": 327,
+    "native_corpus_batches": 4,
+    "actual_HTTP_decisions": 351,
     "paid_inference_calls": 0,
-    "new_GPU_rentals": 0
+    "new_GPU_rentals": 0,
+    "native_corpus_batches_completed": 4,
+    "native_corpus_attempts_including_failed_request": 5,
+    "actual_HTTP_successful_decisions": 351,
+    "actual_HTTP_failed_requests": 1,
+    "counting_note": "Successful corpus batches4 plus1 failed native corpus attempt; total5 attempted, within newepoch2 attempts."
   },
   "epochs": [
     {
@@ -30,6 +35,18 @@
       "confirmation_control": 57,
       "confirmation_n": 96,
       "proper_scores": "BothBrierandNLLslightlyworse"
+    },
+    {
+      "epoch": 3,
+      "status": "REJECTED_DEV_GATE",
+      "candidate_correct": 16,
+      "same_NLI_lexical_correct": 13,
+      "same_NLI_positional_correct": 15,
+      "native104_on_ruvector_evidence_correct": 11,
+      "DEV_n": 24,
+      "gate_failure": "Proper scores worse vs evidence-conditioned native104 diagnostic; not a full submitted Native104 comparison",
+      "confirmation_consumed": false,
+      "manifest": "experiments/sota-2026-10-22/epoch3/EPOCH_MANIFEST.json"
     }
   ],
   "used_confirmation_sets": [
@@ -42,7 +59,7 @@
     "Legal96zero-shotfourtaskadaptation,notfull162taskofficialLegalBench",
     "NoClaimBenchRuVectorscore; fullquestions/scorer/license/submissionnotverified"
   ],
-  "next_research_priority": "Stronger pretrainedtypeddecision/NLI model with actualRuVectorevidence-selectionablation; stop repeating failed shallowheadorcalibrationgrids.",
+  "next_research_priority": "Do not tune ANN: top2 exact agreement24/24. Improve contextual evidence aggregation/coverage and pretrained typed reader; freeze quantized batch policy and separate new train/calibration identities before unused confirmation. Current small DEV gain uncertain and proper gate failed.",
   "benchmark_targets": {
     "JevBench": {
       "leader_observed": "Chon-1.0-12B",
@@ -74,7 +91,38 @@
   "active_run": {
     "path": "ACTIVE_RUN.json",
     "run_id": "7370d416-ce68-417d-9fd9-4511e2ff3d34",
-    "state": "PUBLICATION_ONLY",
-    "expires_at": "2026-10-22T16:40:05.018548+00:00"
+    "state": "COMPLETE_REJECTED",
+    "experiments_active": false,
+    "publication_complete_in_this_commit": true
+  },
+  "exposed_development_sets": [
+    "old public183",
+    "easy48",
+    "four-task Legal96",
+    "epoch3 Original ContractNLI train8documents24queries"
+  ],
+  "unused_confirmation_sets": [
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch3/confirmation96.jsonl",
+      "sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+      "queries": 96,
+      "document_groups": 32,
+      "status": "Public source labels archived, project-model-unconsumed; never tune/select on these labels; upstream training overlap unknown"
+    }
+  ],
+  "rejection_ledger": "experiments/sota-2026-10-22/REJECTION_LEDGER.json",
+  "benchmark_refresh": "experiments/sota-2026-10-22/epoch3/benchmark-refresh.json",
+  "restore_epoch3": "First restore_checkpoint.py; optional restore_epoch3_data.py materializes exact pinned original CC-BY data archive/train/dev/license. Existing bootstrap model flags do not acquire new NLI assets; obtain only official revisions in assets.lock.json/model-api, verify SHA. No inference during restore.",
+  "restoration_boundary": "Exact archived inputs/executed source/results restore. Standalone historical redraw differs because full historical exclusion-scan corpora are omitted. Eleven declared model/native dependency assets remain to acquire and verify before runtime; no claim of dependency-complete cold inference.",
+  "publication_review": "experiments/sota-2026-10-22/audit/epoch3/final-publication-review-v1.json",
+  "cumulative_budget_ledger": {
+    "original_study_native_attempt_cap": 6,
+    "prior_epochs_attempts": 3,
+    "epoch3_native_attempts_including_failed_request": 2,
+    "cumulative_native_attempts": 5,
+    "remaining_in_original_study": 1,
+    "current_epoch_closed": true,
+    "publication_period_native_calls_allowed": 0,
+    "next_epoch_rule": "Carry this ledger forward. Within original frozen6-cap at most1attempt remains; do not silently reset it. Any separately authorized future bounded study must explicitly freeze a new contract/budget before native measurements; user recurring authorization still caps each epoch at2attempts, CPU2,600s/batch,paid0."
   }
 }

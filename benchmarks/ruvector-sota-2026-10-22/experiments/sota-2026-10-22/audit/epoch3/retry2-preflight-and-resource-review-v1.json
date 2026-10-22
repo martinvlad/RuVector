@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T16:25:36.786770+00:00",
+  "checks_passed": true,
+  "preflight_attempt": {
+    "parent_pid": 5292,
+    "status": "STOPPED_WITH_PRESERVED_EVIDENCE",
+    "native_batches_started": 0,
+    "error": "FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch3/project/experiments/sota-2026-10-22/epoch3/retry2/runs/development'",
+    "native_worker_spawned": false,
+    "wire_requests": 0,
+    "preserved_plan_sha256": "d3e8e2ebc09ecb33e0e1f8649935023941258d3f7624a3c242b28df6e88f307f",
+    "status_sha256": "e8d3cba8ee775796c50836612430fc560ae31579fc526c5364456be681d45bdf",
+    "preservation": "retry2-preflight, unchanged source and d3e plan; missing output parent directory created before relaunch"
+  },
+  "actual_retry_observation": {
+    "worker_pid": 5309,
+    "affinity_observed_while_running": [
+      0,
+      1
+    ],
+    "affinity_source": "Independent os.sched_getaffinity(5309) read in preceding live tool call; worker subsequently terminated, no live environment observation was retained.",
+    "thread_bound_evidence": "Pinned controller sets thread-env knobs2; pinned ORT SessionOptions intra2/inter1; actual runtime receipts CPUExecutionProvider threads2. Actual affinity separately observed.",
+    "runtime_receipt_sha256": "7f9d6adf68f814373e9dae69ab209702462733ac2239dd4f31e6444c369fa521"
+  },
+  "process_states_after_terminal": {
+    "5025": {
+      "Name": "python",
+      "State": "Z (zombie)",
+      "PPid": "1"
+    },
+    "5292": {
+      "Name": "python",
+      "State": "Z (zombie)",
+      "PPid": "1"
+    },
+    "5308": {
+      "Name": "python",
+      "State": "Z (zombie)",
+      "PPid": "1"
+    },
+    "5309": {
+      "State": "absent"
+    },
+    "5313": {
+      "State": "absent"
+    }
+  },
+  "zombie_scope": "Controller parents reparented toPID1 remain zombies, consume no inference/CPU and cannot be reaped by this auditor; native+collector workers absent.",
+  "epoch3_native_batches_started": 2,
+  "successful_native_HTTP_responses": 24,
+  "failed_native_HTTP_responses": 1,
+  "preflight_model_or_HTTP_requests": 0,
+  "prior_successful_native_HTTP_responses": 327,
+  "cumulative_successful_native_HTTP_responses": 351,
+  "cumulative_native_attempts_including_failed_batch": 5,
+  "global_study_native_batch_cap": 6,
+  "new_paid_calls": 0,
+  "new_gpu_calls": 0,
+  "auditor_native_calls": 0,
+  "auditor_onnx_calls": 0
+}

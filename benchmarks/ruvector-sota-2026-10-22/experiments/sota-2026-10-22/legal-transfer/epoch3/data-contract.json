@@ -1,0 +1,102 @@
+{
+  "schema_version": 3,
+  "frozen_at": "2026-10-22T16:01:01.203668+00:00",
+  "frozen": true,
+  "benchmark": "Original ContractNLI binary document-level entailment diagnostic",
+  "source_commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+  "archive": {
+    "source_commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "source_url": "https://raw.githubusercontent.com/stanfordnlp/contract-nli/eced6528dd3c1d14d73f9a87df8f7bdbc03126f9/resources/contract-nli.zip",
+    "path": "sources/original-contractnli.zip",
+    "bytes": 65362913,
+    "git_blob_sha1": "757fd1dafd29a997fba00c60c6d40b2930a36159",
+    "sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+    "extracted": [
+      {
+        "path": "sources/original-train.json",
+        "member": "contract-nli/train.json",
+        "sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5"
+      },
+      {
+        "path": "sources/original-dev.json",
+        "member": "contract-nli/dev.json",
+        "sha256": "310af7d661d2ab50ee3700169cef524c75f39fb296bbf5a515c229eb0f42e68e"
+      },
+      {
+        "path": "sources/original-LICENSE",
+        "member": "contract-nli/LICENSE",
+        "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+      }
+    ]
+  },
+  "license": "CC-BY-4.0 per original index.md and archiveLICENSE",
+  "data_files": {
+    "development24.jsonl": {
+      "sha256": "ab82c89361316658dd630947025c167e9970d579949d76dc3c9fd66dd3187096",
+      "queries": 24,
+      "document_groups": 8,
+      "source_split": "train",
+      "role": "dev"
+    },
+    "confirmation96.jsonl": {
+      "sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+      "queries": 96,
+      "document_groups": 32,
+      "source_split": "dev",
+      "role": "confirmation"
+    }
+  },
+  "hypotheses": {
+    "nda-17": {
+      "short_description": "Permissible copy",
+      "hypothesis": "Receiving Party may create a copy of some Confidential Information in some circumstances."
+    },
+    "nda-7": {
+      "short_description": "Sharing with third-parties",
+      "hypothesis": "Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors)."
+    },
+    "nda-3": {
+      "short_description": "Inclusion of verbally conveyed information",
+      "hypothesis": "Confidential Information may include verbally conveyed information."
+    }
+  },
+  "label_mapping": {
+    "Entailment": "Yes",
+    "Contradiction": "No",
+    "NotMentioned": "No"
+  },
+  "inference_schema": "Same state/questions boundary and evaluation metadata shape as prior benchmark JSONL. Raw full agreement text only in state; no evidence spans or annotation labels in requests. choiceYes/No criteria exact positive hypothesis and fixed not-established negation.",
+  "fitting": {
+    "supervised_training": false,
+    "calibration_fitting": false,
+    "temperature": 1.0
+  },
+  "sampling": "Frozen source-availability-only adaptation from impossible same-testpool96distinctdocs to originaltrain/dev40unuseddocumentgroups; deterministic text/documenthash, no labelbalance or outcomes.",
+  "source_availability": {
+    "dev": {
+      "source_split": "train",
+      "source_documents": 423,
+      "eligible_documents": 346,
+      "selected_documents": 8,
+      "queries": 24
+    },
+    "confirmation": {
+      "source_split": "dev",
+      "source_documents": 61,
+      "eligible_documents": 61,
+      "selected_documents": 32,
+      "queries": 96
+    }
+  },
+  "history_checks": "ExcludesoldLegal96documentnames+clauses,18earlieroverlapdocs,94historicalContractNLIcorpusfulltexts/names and priorclassificationTSVquerytexts. SourcegroupdisjointtrainDEVvsdevconfirmation;32confirmationgroups\u00d73queries requireDOCUMENT-GROUPbootstrap.",
+  "novelty_limits": "Exact document names, normalized fulltext, and verbatim casefold/whitespace prior query substrings checked; unknown/fuzzy provenance overlap and model pretraining contamination not ruled out.",
+  "statistical_unit": "Source document group; bootstrap32groups retaining3hypotheses together",
+  "plan_sha256": "1d4aa230b33a0c7033404c035227d7565a5edfa372023a169f3b171ae4f1f3cb",
+  "source_manifest_sha256": "ebc5aa587a8dfa4827b33b242256a900710fd956273e9410e231de3fe61fbfbd",
+  "source_predicate_metadata_sha256": "28f9410725bc94ce5d98e0b9ae662948b13e8f3e90db1f7da4af5947a580153f",
+  "old_failed_scope_preserved": "draw-plan.json andLegalBenchtaskhypothesesv1retainedunexecuted; no newLegalBenchtest96created.",
+  "new_native_or_paid_calls": 0,
+  "official_LegalBench162_score": null,
+  "official_JevBench_Capability": null,
+  "official_rank": null
+}

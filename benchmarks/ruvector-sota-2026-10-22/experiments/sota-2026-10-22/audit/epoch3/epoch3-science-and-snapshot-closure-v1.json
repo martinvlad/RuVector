@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T16:27:30.954124+00:00",
+  "checks_passed": true,
+  "actual_snapshot_files_verified_byte_identical": 47,
+  "snapshot_manifest_sha256": "a188a90312ebde5d1fe7d9bd7045ae1c78d4fc6797643c3ff7b763942452a628",
+  "epoch_manifest_sha256": "dd3b5996e82fac8d19978e3848edc2de32c748cc7d899b8a192f8d465ba4657d",
+  "rejection_ledger_sha256": "2421301ccba8540a40ba009496c8d7b786432952cf9c1836d944217a263e8a77",
+  "scorer_freeze": {
+    "actual_isolated_evaluator_sha256": "7c66c315928628279ed7e964f9651bad94443dc0daba12ed203f5397067164f8",
+    "direct_epoch3_plan_pin": false,
+    "freeze_type": "Transitive initial immutable published KIT_MANIFEST pin, not included in new116pins",
+    "KIT_MANIFEST_sha256": "b5dc6bab62ea0c93e02dedc6ac688ac12fdf3b8f0bc73e0ac705c7486e9ecdd4",
+    "initial_public_commit": "e6de3031b552b7b68ec8e8a97f6627899ace98a9",
+    "initial_public_receipt_independent_review": "audit/published-schedule-independent-review-v1.json",
+    "actual_metrics_reproduced_independently_from_raw_probabilities_and_direct_pinned_upstream_scorer": true
+  },
+  "scientific_conclusion": {
+    "native_RuVector_DEV_accuracy": "16/24 vs13/24same-NLI lexical and15/24same-NLI positional",
+    "accuracy_gain_95percent_group_bootstrap_vs_lexical": [
+      -0.041666666666666664,
+      0.29166666666666663
+    ],
+    "accuracy_gain_95percent_group_bootstrap_vs_positional": [
+      -0.08333333333333333,
+      0.16666666666666666
+    ],
+    "groups": 8,
+    "gate": "FAIL proper Brier/NLL vs evidence-conditioned native104 despite higher accuracy",
+    "promotion": false,
+    "generalization_established": false,
+    "confirmation96_scored": false,
+    "submitted_Jev104_champion_unchanged": true,
+    "RRF10_unchanged": true,
+    "official_rank": null,
+    "sota_established": false
+  },
+  "important_limits": [
+    "Original public ContractNLI train8doc DEV only; not canonical full LegalBench or JevBench",
+    "Native104 diagnostic now receives primary selected excerpts and differs from original full-input submitted104",
+    "Only6of13 annotated-evidence queries retrieved any gold-span overlap",
+    "Same-pair quantized-batch logits drift up to0.522; future protocol should control batch context before claiming decoder stability",
+    "PeakRSS/CPU-seconds unknown; no new GPU/paidcalls"
+  ],
+  "auditor_native_calls": 0,
+  "auditor_onnx_calls": 0
+}

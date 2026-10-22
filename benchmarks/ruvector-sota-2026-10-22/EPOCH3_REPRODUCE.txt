@@ -1,0 +1,16 @@
+Epoch3 source and public data extension
+
+First use the reviewed root bootstrap/restore_checkpoint.py after the coordinator merges EPOCH3_CHECKPOINT_EXTENSION.json and dynamic evidence into CHECKPOINT_MANIFEST.json and binds that exact manifest in CONTINUATION.json. This static stage does not edit either root control file.
+
+Restore omitted public source archive and train/dev JSON into the reconstructed project:
+  python3 restore_epoch3_data.py --dest /path/to/project
+Optional offline source:
+  python3 restore_epoch3_data.py --dest /path/to/project --archive-local /path/to/original-contractnli.zip
+Verify without network:
+  python3 restore_epoch3_data.py --dest /path/to/project --verify-only
+
+The helper downloads only the fixed official archive URL at the pinned commit, verifies exact SHA256 and size, and extracts only three exact pinned members. Existing differing files are never overwritten. No model calls, dependency installation or benchmark execution occur.
+
+Models and dependencies are omitted. candidate/epoch3/assets.lock.json pins exact model, tokenizer, native package/binary and Python versions; cached assets or a separate reviewed setup are required for inference. No claim of a dependency-complete fresh runtime is made by this data restorer.
+
+This epoch consumed24 DEV items. The public96 rows remain model-unconsumed and were not used for tuning/selection; publication preserves their public provenance and does not establish sealed evaluation or unknown model-training contamination. No official score, rank or SOTA is established.

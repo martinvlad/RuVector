@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "epoch": 3,
+  "frozen_hypothesis": "Native RuVector BGE top2 evidence with pinned pretrained DeBERTa NLI vs same-model lexical/positional retrieval",
+  "status": "REJECTED_DEV_GATE",
+  "run_id": "7370d416-ce68-417d-9fd9-4511e2ff3d34",
+  "scope": "Original ContractNLI public24 queries/8 train documents diagnostic; not official JevBench/fullLegalBench/ClaimBench",
+  "execution": {
+    "actual_project": "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch3/project",
+    "actual_native_corpus_attempts": 2,
+    "first_attempt_http500": 1,
+    "first_attempt_scored": 0,
+    "successful_dev_http_decisions": 24,
+    "preflight_launch_failed_before_native_spawn": 1,
+    "confirmation_decisions": 0,
+    "paid_calls": 0,
+    "new_GPU_calls": 0,
+    "CPU_threads": 2,
+    "batch_time_cap_seconds": 600,
+    "actual_complete_batch_wall_seconds": 33.497490196999934
+  },
+  "preregistration": {
+    "research_plan_sha256": "71ced08f8b92c2a83cfb02b76556be571e6b880c2412b64466d3fdb86c905245",
+    "retry2_amendment_sha256": "82c9f49c67b93865ab8fe1bb7879920f59f88b6fcb7be603626a10b592ed3706",
+    "first_failed_plan_sha256": "c10bf8827aab6f58968daedec8dd527fd25e8a0c8b7d4f3ad2b757ba83111a51",
+    "retry2_plan_sha256": "d3e8e2ebc09ecb33e0e1f8649935023941258d3f7624a3c242b28df6e88f307f",
+    "candidate_manifest_sha256": "34acf9d9ca05416fc4f40ce351f1dab239516c20bfbe519341e9c61bbe65cbc3",
+    "scorer_path": "experiments/sota-2026-10-22/benchmark/evaluate.py",
+    "scorer_sha256": "7c66c315928628279ed7e964f9651bad94443dc0daba12ed203f5397067164f8"
+  },
+  "data": {
+    "train": "no supervised fit",
+    "calibration": "none, T1",
+    "development_sha256": "ab82c89361316658dd630947025c167e9970d579949d76dc3c9fd66dd3187096",
+    "development_ids_now_exposed_DEV_forever": [
+      "original-contractnli:train:305:nda-17",
+      "original-contractnli:train:305:nda-7",
+      "original-contractnli:train:305:nda-3",
+      "original-contractnli:train:430:nda-17",
+      "original-contractnli:train:430:nda-7",
+      "original-contractnli:train:430:nda-3",
+      "original-contractnli:train:561:nda-17",
+      "original-contractnli:train:561:nda-7",
+      "original-contractnli:train:561:nda-3",
+      "original-contractnli:train:587:nda-17",
+      "original-contractnli:train:587:nda-7",
+      "original-contractnli:train:587:nda-3",
+      "original-contractnli:train:275:nda-17",
+      "original-contractnli:train:275:nda-7",
+      "original-contractnli:train:275:nda-3",
+      "original-contractnli:train:189:nda-17",
+      "original-contractnli:train:189:nda-7",
+      "original-contractnli:train:189:nda-3",
+      "original-contractnli:train:519:nda-17",
+      "original-contractnli:train:519:nda-7",
+      "original-contractnli:train:519:nda-3",
+      "original-contractnli:train:333:nda-17",
+      "original-contractnli:train:333:nda-7",
+      "original-contractnli:train:333:nda-3"
+    ],
+    "confirmation_sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+    "confirmation_status": "Frozen public96queries32documents; zero model predictions or selection on its labels; project-unused, unknown upstream model training overlap",
+    "used_confirmation_sets_this_epoch": [],
+    "old_easy48_and_Legal96": "Already exposedDEV, not fresh confirmation"
+  },
+  "model_and_dependency_assets": {
+    "schema_version": 1,
+    "frozen_at": "2026-10-22T15:59:37.045583+00:00",
+    "assets": [
+      {
+        "path": "models/nli/onnx/model_quantized.onnx",
+        "bytes": 87246587,
+        "sha256": "3fac2500c45c75af42c7711de0d1b93d59577456100208be0dc1f9e8811946b6"
+      },
+      {
+        "path": "models/nli/tokenizer.json",
+        "bytes": 8656551,
+        "sha256": "a86f883318afa11c8c10466f1bf4efaeb6ded28a52cbe57217a8fa0d0a2a87df"
+      },
+      {
+        "path": "models/nli/config.json",
+        "bytes": 1038,
+        "sha256": "ec0bd14cc28640326474399cd61d38ccd52b64900228799d0f81debda8c4bc53"
+      },
+      {
+        "path": "models/nli/tokenizer_config.json",
+        "bytes": 384,
+        "sha256": "d8d3bb123b99317634d5ee3d1d2d8b2ddb01510a0654687fc2639a5347a7291f"
+      },
+      {
+        "path": "models/nli/special_tokens_map.json",
+        "bytes": 173,
+        "sha256": "311de3f4eed9d76a43bf0d71f10e62e086ca65ccce9f15d5da0d2098bf519ecc"
+      },
+      {
+        "path": "models/bge-small-en-v1.5/model.onnx",
+        "bytes": 133093490,
+        "sha256": "828e1496d7fabb79cfa4dcd84fa38625c0d3d21da474a00f08db0f559940cf35"
+      },
+      {
+        "path": "models/bge-small-en-v1.5/tokenizer.json",
+        "bytes": 711396,
+        "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+      },
+      {
+        "path": "models/manifest.json",
+        "bytes": 577,
+        "sha256": "fdca50d372d5993f347db244678f77c0c8fef5698d5fd479ddf1a060f77838a5"
+      },
+      {
+        "path": "retrieval/native-candidates.cjs",
+        "bytes": 1580,
+        "sha256": "45efc7fecd2d249aea7bd1f5e7d36bf26cfe57cd6f91de51ffd15adc039ec4a3"
+      },
+      {
+        "path": "retrieval/package.json",
+        "bytes": 59,
+        "sha256": "2f0d4cce44f1adb92bd6ae5dc06ad9b2a6c80545c513850363c26f6070f0adfa"
+      },
+      {
+        "path": "retrieval/package-lock.json",
+        "bytes": 3284,
+        "sha256": "3a6ecb71b44b6cb593d8ae46709788af2aeacec9509ff7b0e33c34f66dfc940a"
+      },
+      {
+        "path": "retrieval/node_modules/ruvector-core-linux-x64-gnu/ruvector.node",
+        "bytes": 5403040,
+        "sha256": "ff559e9fac2e3d29a8b32e890fdb047bcd4bd28f389b4731ad72148b221d5a2e"
+      },
+      {
+        "path": "retrieval/node_modules/@ruvector/core/index.js",
+        "bytes": 1357,
+        "sha256": "eeba197be4085adb3492b8bc53cd61870f57d6bc18a9a5f1cd2ebec4b1908bee"
+      },
+      {
+        "path": "retrieval/node_modules/@ruvector/core/package.json",
+        "bytes": 1669,
+        "sha256": "729e07f6c040bd47ba687cde8ad5681088187e53812e89d77d646ff48088a5e4"
+      },
+      {
+        "path": "retrieval/node_modules/ruvector-core-linux-x64-gnu/package.json",
+        "bytes": 1130,
+        "sha256": "afca994434efaadf637eb7d28bfd48da9dda69f24513bfb498c4ab9459d2fdf4"
+      }
+    ],
+    "python_versions": {
+      "numpy": "2.2.6",
+      "onnxruntime": "1.22.1",
+      "tokenizers": "0.21.4"
+    },
+    "python_runtime": "retrieval/.venv/bin/python",
+    "native_core_version": "0.1.33",
+    "native_core_binary_sha256": "ff559e9fac2e3d29a8b32e890fdb047bcd4bd28f389b4731ad72148b221d5a2e",
+    "nli_revision": "2a4f614a701367a02d51389039afc998faeda637",
+    "nli_repo": "Xenova/nli-deberta-v3-xsmall",
+    "onnx_lfs_identity_verified_at_exact_revision": true,
+    "tokenizer_and_config_git_blob_ids_verified_at_exact_revision": true,
+    "nli_license": {
+      "base_repo": "cross-encoder/nli-deberta-v3-xsmall",
+      "inspected_base_revision": "a150876415327c80daeff35ca6f68f5ed8cf5c24",
+      "declared_license": "apache-2.0",
+      "conversion_repo_license_not_explicitly_declared": true,
+      "evidence": "base-model-api.json, base-model-card.md, model-card.md"
+    },
+    "native_core_license": "MIT",
+    "weights_already_cached": true,
+    "model_downloads": 0,
+    "installations": 0,
+    "existing_model_history": "Same NLI was measured on older public studies in experiments/optimization/decision_loop.py; no pretrained-model novelty claim.",
+    "permitted_asset_storage": "Existing reviewed model/dependency caches may be linked into isolated project; resolved bytes must match all exact sizes and SHA256 identities."
+  },
+  "metrics": {
+    "ruvector_top2": {
+      "n": 24,
+      "correct": 16,
+      "strict_valid": 24,
+      "errors": 0,
+      "brier": 0.5435533614049913,
+      "nll": 1.0073352020452995
+    },
+    "same_nli_lexical_top2": {
+      "n": 24,
+      "correct": 13,
+      "strict_valid": 24,
+      "errors": 0,
+      "brier": 0.767831688488455,
+      "nll": 1.5631617522844965
+    },
+    "same_nli_positional_first2": {
+      "n": 24,
+      "correct": 15,
+      "strict_valid": 24,
+      "errors": 0,
+      "brier": 0.6997558179813614,
+      "nll": 1.4963217782644933
+    },
+    "native104_on_ruvector_evidence": {
+      "n": 24,
+      "correct": 11,
+      "strict_valid": 24,
+      "errors": 0,
+      "brier": 0.5011988951048693,
+      "nll": 0.6943461242398817
+    }
+  },
+  "independent_actual_review": {
+    "path": "experiments/sota-2026-10-22/audit/epoch3/retry2-actual-independent-v1.json",
+    "sha256": "e6682faa7dc6f6d98d67cfbb76079416d5f7fed9c7fd1ebdde8dbe22b23b0c37"
+  },
+  "latency": {
+    "p50": 0.7899847064991263,
+    "max": 3.1072833930011257,
+    "scope": "Actual loopback HTTP including all3NLI arms+evidence-conditioned104+retrieval; not primary-only deployment latency",
+    "p95": 3.066818687950581
+  },
+  "resource_counts": {
+    "actual_request_count": 24,
+    "actual_native_core_searches": 24,
+    "actual_evidence_conditioned_native104_calls": 24,
+    "actual_NLI_pairs_all_arms": 144,
+    "actual_BGE_text_embeddings": 170,
+    "cached_chunk_vectors_reused": 292
+  },
+  "resource_measurement_limits": {
+    "peak_RSS_bytes": null,
+    "CPU_seconds": null,
+    "reason": "Not instrumented in this epoch; do not infer from wall time or post-exit process absence"
+  },
+  "decision": "Reject promotion: same-model retrieval accuracy/proper scores improved on DEV, but frozen proper-score gate fails versus evidence-conditioned native104; small8doc DEV pilot cannot establish generalization",
+  "champions_preserved": [
+    "submitted native104",
+    "RRF10"
+  ],
+  "official_score": null,
+  "official_rank": null,
+  "goal_met": false,
+  "next_direction": "Context-aware entailment aggregation and a stronger licensed CPU-feasible decoder with exact revisions and matched retrieval controls; separate train/calibration from these24DEV and unconsumed96; no more grid on old exposed sets",
+  "known_uncertainty": [
+    "Quantized NLI batch companion/padding changes logits; independent replay measured up to0.522 variation on same pairs",
+    "Model training overlap with public ContractNLI cannot be excluded",
+    "No numeric questions in this NDA pilot; numerical-check generalization remains unmeasured"
+  ]
+}

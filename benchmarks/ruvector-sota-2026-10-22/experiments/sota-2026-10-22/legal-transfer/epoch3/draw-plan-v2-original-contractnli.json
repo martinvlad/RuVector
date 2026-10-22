@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "frozen_at": "2026-10-22T15:56:48.426468+00:00",
+  "reason_for_scope_change": "PriorLegal96consumed96distincttestdocumentgroups. UseofficialoriginalContractNLItrain/devsplitsfornewdocumentgroups; sourceavailabilityonly, no modeloutcomes.",
+  "source_repository": "stanfordnlp/contract-nli",
+  "source_commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+  "archive_path": "resources/contract-nli.zip",
+  "tasks": [
+    "contract_nli_permissible_copy",
+    "contract_nli_sharing_with_third-parties",
+    "contract_nli_inclusion_of_verbally_conveyed_information"
+  ],
+  "predicates_metadata_sha256": "a30e4ca197cbeee62af6ac3842892018404bd18a0f70943cff94fdab99b581dd",
+  "dev": {
+    "source_split": "train",
+    "documents": 8,
+    "hypotheses_per_document": 3,
+    "queries": 24,
+    "selection": "Text/documentonlySHA256fixedsaltorderingafterhistoryquery/documentexclusion"
+  },
+  "confirmation": {
+    "source_split": "dev",
+    "documents": 32,
+    "hypotheses_per_document": 3,
+    "queries": 96,
+    "selection": "Text/documentonlySHA256fixedsaltorderingafterhistoryquery/documentexclusion"
+  },
+  "exclusions": "OldLegal96documentIDsandexact/normalizedclausetexts, historicalretrievalcorpuswhole-docnames/text fingerprints and matchingclauses, historicalclassificationTSVtext; DEV/confirmationdocumentsdisjoint.",
+  "label_mapping": {
+    "Entailment": "Yes",
+    "Contradiction": "No",
+    "NotMentioned": "No"
+  },
+  "learning": {
+    "train": false,
+    "calibration": false,
+    "temperature": 1.0
+  },
+  "model_calls": 0,
+  "scope": "Newwithin-documentoriginalContractNLIbinaryentailmentdiagnostic; notofficialLegalBench162orJevBenchCapability."
+}

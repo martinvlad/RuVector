@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "hypothesis": "A pretrainedNLIdecisionmodel with nativeRuVectorevidence selection can improve whole-pipeline decisions; causalretrievalclaimrequiresmatchedsameNLI comparisons.",
+  "primary": "nativeRuVector-top2 BGEchunks +sameNLI",
+  "controls": [
+    "sameNLIpositionalfirst2",
+    "sameNLIlexicaltop2",
+    "native104wholepipeline"
+  ],
+  "fixed_protocol": {
+    "K": 2,
+    "BGE_chunk_tokens_max": 192,
+    "BGE_chunk_overlap": 32,
+    "NLI_pair_tokens_max": 512,
+    "temperature": 1,
+    "mapping": "Yes=entailment,No=contradiction+neutral",
+    "pooling": "maxentailmentoverselectedchunks",
+    "training": "none,pretrainedfrozen",
+    "calibration": "none,uncalibrated"
+  },
+  "development_gate": "Allstrictvalid,error0, native104accuracynondecrease+bothBrier/NLLnonincrease; primaryaccuracyandbothpropermetricsnonworseagainstbothmatchedNLIcontrols, withatleastone strictproper-scoreimprovement required beforefreshconfirmation.",
+  "confirmation_gate": "Allstrictvalid,error0; primaryaccuracyandpropermetricsnonworseagainsteachmatchedcontrolandnative104. Forconfirmedretrievalgain require32-documentpairedbootstrap95%lowerboundofaccuracygain>0againsteachmatchedcontrol, andnonnegativeproper-scoregainlowerbounds. Otherwise retainonlyobserveddiagnostic;nochampionpromotion.",
+  "champion_scope": "No replacementofsubmittedJev104orRRF10 basedonContractNLIpilot alone. Noofficialscore/rank/SOTAclaim.",
+  "limits": {
+    "native_batches": 2,
+    "threads": 2,
+    "seconds_per_batch": 600,
+    "paid_calls": 0,
+    "GPUrentals": 0
+  },
+  "data": "originalContractNLItrain8docgroups\u00d73predicatesDEV24; originaldev32newdocgroups\u00d73predicatesconfirmation96; documentbootstrap, not independent-querybootstrap",
+  "run_id": "7370d416-ce68-417d-9fd9-4511e2ff3d34",
+  "GitHub_start": "ad9465607e57a1395e63974be46f4e0437d059da"
+}

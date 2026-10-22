@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "epoch": 3,
+  "revision": "retry2-dev-only-context-control",
+  "frozen_before_nli_predictions": true,
+  "previous_failed_plan_sha256": "c10bf8827aab6f58968daedec8dd527fd25e8a0c8b7d4f3ad2b757ba83111a51",
+  "previous_attempt": "one HTTP500 state exceeds16KiB, completed0, no NLI predictions",
+  "hypothesis_unchanged": "Actual native RuVector top2 versus matched same-NLI lexical/positional evidence selection",
+  "control_amendment": "native104_on_ruvector_evidence receives identical native selected chunks and original question; not submitted full-input Native104",
+  "model_source_manifest_sha256": "34acf9d9ca05416fc4f40ce351f1dab239516c20bfbe519341e9c61bbe65cbc3",
+  "train": "no supervised fitting",
+  "development": "Original ContractNLI train8documents24queries, source licensed CC-BY4.0",
+  "calibration": "none; temperature1 uncalibrated",
+  "confirmation": "Original ContractNLI dev32documents96queries remains model-unused, excluded from executable datasets and phase choices",
+  "attempt_budget": {
+    "previous_failed_attempts": 1,
+    "remaining_native_batches": 1,
+    "total_max": 2,
+    "cpu_threads": 2,
+    "batch_seconds_max": 600,
+    "paid_calls": 0
+  },
+  "gate": "unchanged accuracy/proper score dominance over both same-NLI controls and explicitly amended native evidence reader; DEV-only, never promotion",
+  "source_driver_sha256": "1aeb07a2f832fb1ad0f444b8128db3e59a5bd5b90fd9455d0904e83b7f9f917e"
+}

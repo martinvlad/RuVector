@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "champion": "native104 unchanged",
+  "official_sota_established": false,
+  "rejections": [
+    {
+      "epoch": 1,
+      "candidate": "learned residual head",
+      "DEV_correct": 106,
+      "DEV_n": 183,
+      "confirmation_candidate": 39,
+      "confirmation_control": 41,
+      "n": 48,
+      "status": "REJECTED",
+      "source_report": "audit/epoch1-promotion-decision-v1.json"
+    },
+    {
+      "epoch": 2,
+      "candidate": "decision-preserving calibration",
+      "candidate_correct": 57,
+      "control_correct": 57,
+      "n": 96,
+      "brier_candidate": 0.4999147275769355,
+      "brier_control": 0.4995167302004609,
+      "nll_candidate": 0.6930619081225885,
+      "nll_control": 0.6926639080519976,
+      "status": "REJECTED",
+      "source_report": "audit/epoch2-actual-independent-v1.json"
+    },
+    {
+      "epoch": 3,
+      "candidate": "native RuVector evidence + DeBERTa NLI",
+      "DEV_correct": 16,
+      "DEV_n": 24,
+      "same_NLI_lexical_correct": 13,
+      "same_NLI_positional_correct": 15,
+      "native104_on_ruvector_evidence_correct": 11,
+      "reason": "Frozen Brier and NLL gate failed vs excerpt-conditioned native104; no confirmation allowed after two-attempt budget",
+      "confirmation_consumed": false,
+      "status": "REJECTED_DEV_GATE",
+      "source_report": "audit/epoch3/retry2-actual-independent-v1.json"
+    }
+  ]
+}

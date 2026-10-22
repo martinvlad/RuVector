@@ -1,0 +1,1696 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T16:24:33.356042+00:00",
+  "checks_passed": true,
+  "scope": "Original ContractNLI public train24/8doc DEV only, availability-amended native104 excerpt control, no fresh confirmation and no generalization/official-score claim.",
+  "plan_sha256": "d3e8e2ebc09ecb33e0e1f8649935023941258d3f7624a3c242b28df6e88f307f",
+  "pins_verified": 116,
+  "metrics": {
+    "ruvector_top2": {
+      "n": 24,
+      "correct": 16,
+      "strict_valid": 24,
+      "errors": 0,
+      "brier": 0.5435533614049913,
+      "nll": 1.0073352020452995
+    },
+    "same_nli_lexical_top2": {
+      "n": 24,
+      "correct": 13,
+      "strict_valid": 24,
+      "errors": 0,
+      "brier": 0.767831688488455,
+      "nll": 1.5631617522844965
+    },
+    "same_nli_positional_first2": {
+      "n": 24,
+      "correct": 15,
+      "strict_valid": 24,
+      "errors": 0,
+      "brier": 0.6997558179813614,
+      "nll": 1.4963217782644933
+    },
+    "native104_on_ruvector_evidence": {
+      "n": 24,
+      "correct": 11,
+      "strict_valid": 24,
+      "errors": 0,
+      "brier": 0.5011988951048693,
+      "nll": 0.6943461242398817
+    }
+  },
+  "gate_passed": false,
+  "doc_group_DEV_bootstrap_diagnostic": {
+    "same_nli_lexical_top2": {
+      "accuracy": {
+        "mean_improvement": 0.125,
+        "ci95": [
+          -0.041666666666666664,
+          0.29166666666666663
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "brier": {
+        "mean_improvement": 0.2242783270834635,
+        "ci95": [
+          0.08200037811338626,
+          0.386187656613744
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "nll": {
+        "mean_improvement": 0.5558265502391971,
+        "ci95": [
+          0.23749457395483464,
+          0.9166561971820739
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      }
+    },
+    "same_nli_positional_first2": {
+      "accuracy": {
+        "mean_improvement": 0.041666666666666664,
+        "ci95": [
+          -0.08333333333333333,
+          0.16666666666666666
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "brier": {
+        "mean_improvement": 0.15620245657637005,
+        "ci95": [
+          -0.1008662208785815,
+          0.4027639489561713
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "nll": {
+        "mean_improvement": 0.48898657621919384,
+        "ci95": [
+          -0.05883398886531097,
+          1.1128708398530667
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      }
+    },
+    "native104_on_ruvector_evidence": {
+      "accuracy": {
+        "mean_improvement": 0.20833333333333331,
+        "ci95": [
+          -0.2916666666666667,
+          0.6666666666666666
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "brier": {
+        "mean_improvement": -0.0423544663001221,
+        "ci95": [
+          -0.49734314074206887,
+          0.34164959989622745
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "nll": {
+        "mean_improvement": -0.3129890778054176,
+        "ci95": [
+          -1.182239693727609,
+          0.4420846757503428
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      }
+    }
+  },
+  "actual_request_count": 24,
+  "actual_native_core_searches": 24,
+  "actual_evidence_conditioned_native104_calls": 24,
+  "actual_NLI_pairs_all_arms": 144,
+  "actual_BGE_text_embeddings": 170,
+  "cached_chunk_vectors_reused": 292,
+  "max_repeated_pair_logit_difference": 0.5216557383537292,
+  "same_pair_logit_drift_scope": "Quantized batching/companion padding may alter logits; actual outputs retained and decoded independently, no cross-arm logit cache.",
+  "ANN_exact_top2_set_agreement_count": 24,
+  "ANN_mean_exact_recall_at2": 1.0,
+  "rows": [
+    {
+      "id": "original-contractnli:train:305:nda-17",
+      "group": "original-contractnli:305",
+      "gold": "No",
+      "source_threeway": "NotMentioned",
+      "native_top2": [
+        13,
+        2
+      ],
+      "exact_cosine_top2": [
+        13,
+        2
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            13,
+            2
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 141.08381700134487,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            1,
+            9
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 147.21222200023476,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 126.38762099959422,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:305:nda-7",
+      "group": "original-contractnli:305",
+      "gold": "Yes",
+      "source_threeway": "Entailment",
+      "native_top2": [
+        2,
+        13
+      ],
+      "exact_cosine_top2": [
+        2,
+        13
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            13
+          ],
+          "gold_span_count": 6,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 147.43454099880182,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            1,
+            6
+          ],
+          "gold_span_count": 6,
+          "gold_spans_with_any_overlap": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 143.46385399949213,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 6,
+          "gold_spans_with_any_overlap": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 134.0367270004208,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:305:nda-3",
+      "group": "original-contractnli:305",
+      "gold": "Yes",
+      "source_threeway": "Entailment",
+      "native_top2": [
+        2,
+        13
+      ],
+      "exact_cosine_top2": [
+        2,
+        13
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            13
+          ],
+          "gold_span_count": 4,
+          "gold_spans_with_any_overlap": 4,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decoding_ms": 139.92327300002216,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            9,
+            4
+          ],
+          "gold_span_count": 4,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 130.26552499832178,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 4,
+          "gold_spans_with_any_overlap": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 136.620691000644,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:430:nda-17",
+      "group": "original-contractnli:430",
+      "gold": "No",
+      "source_threeway": "Contradiction",
+      "native_top2": [
+        25,
+        12
+      ],
+      "exact_cosine_top2": [
+        25,
+        12
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            25,
+            12
+          ],
+          "gold_span_count": 1,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 142.55301199955284,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            10
+          ],
+          "gold_span_count": 1,
+          "gold_spans_with_any_overlap": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decoding_ms": 130.9217420002824,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 1,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 152.410515000156,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:430:nda-7",
+      "group": "original-contractnli:430",
+      "gold": "No",
+      "source_threeway": "Contradiction",
+      "native_top2": [
+        12,
+        11
+      ],
+      "exact_cosine_top2": [
+        12,
+        11
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            12,
+            11
+          ],
+          "gold_span_count": 1,
+          "gold_spans_with_any_overlap": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decoding_ms": 152.66434300065157,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            10
+          ],
+          "gold_span_count": 1,
+          "gold_spans_with_any_overlap": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decoding_ms": 153.45939500002714,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 1,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 135.85545800015097,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:430:nda-3",
+      "group": "original-contractnli:430",
+      "gold": "No",
+      "source_threeway": "NotMentioned",
+      "native_top2": [
+        11,
+        12
+      ],
+      "exact_cosine_top2": [
+        11,
+        12
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            11,
+            12
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 118.74782300037623,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            10
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 114.90803999913624,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 134.14054900022165,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:561:nda-17",
+      "group": "original-contractnli:561",
+      "gold": "No",
+      "source_threeway": "NotMentioned",
+      "native_top2": [
+        1,
+        2
+      ],
+      "exact_cosine_top2": [
+        1,
+        2
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            2
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 151.3886590000766,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            5,
+            1
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 131.2782730001345,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 151.4808770007221,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:561:nda-7",
+      "group": "original-contractnli:561",
+      "gold": "No",
+      "source_threeway": "Contradiction",
+      "native_top2": [
+        1,
+        2
+      ],
+      "exact_cosine_top2": [
+        1,
+        2
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            2
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 154.87465200021688,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            3,
+            2
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 157.3975729988888,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 157.3714240003028,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:561:nda-3",
+      "group": "original-contractnli:561",
+      "gold": "No",
+      "source_threeway": "NotMentioned",
+      "native_top2": [
+        1,
+        2
+      ],
+      "exact_cosine_top2": [
+        1,
+        2
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            2
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 144.09446399986336,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            0,
+            5
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 143.19185899876175,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 149.68597000006412,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:587:nda-17",
+      "group": "original-contractnli:587",
+      "gold": "No",
+      "source_threeway": "NotMentioned",
+      "native_top2": [
+        10,
+        17
+      ],
+      "exact_cosine_top2": [
+        10,
+        17
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            10,
+            17
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 156.30277899981593,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            10,
+            11
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 149.1838710007869,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 208.04394200058596,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:587:nda-7",
+      "group": "original-contractnli:587",
+      "gold": "No",
+      "source_threeway": "Contradiction",
+      "native_top2": [
+        10,
+        11
+      ],
+      "exact_cosine_top2": [
+        10,
+        11
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            10,
+            11
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 133.3166069998697,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            10,
+            11
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 103.30616000101145,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 130.11219799955143,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:587:nda-3",
+      "group": "original-contractnli:587",
+      "gold": "No",
+      "source_threeway": "NotMentioned",
+      "native_top2": [
+        10,
+        17
+      ],
+      "exact_cosine_top2": [
+        10,
+        17
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            10,
+            17
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 121.78271100128768,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            10,
+            8
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 135.14293799926236,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 130.96544400104904,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:275:nda-17",
+      "group": "original-contractnli:275",
+      "gold": "No",
+      "source_threeway": "NotMentioned",
+      "native_top2": [
+        1,
+        3
+      ],
+      "exact_cosine_top2": [
+        1,
+        3
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            3
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 143.93109099910362,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            3,
+            7
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 151.09379600107786,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 154.54175399827363,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:275:nda-7",
+      "group": "original-contractnli:275",
+      "gold": "No",
+      "source_threeway": "NotMentioned",
+      "native_top2": [
+        1,
+        3
+      ],
+      "exact_cosine_top2": [
+        1,
+        3
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            3
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 158.0748569995194,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            0,
+            3
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 161.49116300039168,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 158.94164200108207,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:275:nda-3",
+      "group": "original-contractnli:275",
+      "gold": "No",
+      "source_threeway": "NotMentioned",
+      "native_top2": [
+        1,
+        3
+      ],
+      "exact_cosine_top2": [
+        1,
+        3
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            3
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 209.11882700056594,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            5,
+            3
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 165.8851020001748,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 145.7771719997254,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:189:nda-17",
+      "group": "original-contractnli:189",
+      "gold": "Yes",
+      "source_threeway": "Entailment",
+      "native_top2": [
+        3,
+        10
+      ],
+      "exact_cosine_top2": [
+        3,
+        10
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            3,
+            10
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 155.11755700026697,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            13,
+            6
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 217.44301600119798,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 136.85459199950856,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:189:nda-7",
+      "group": "original-contractnli:189",
+      "gold": "Yes",
+      "source_threeway": "Entailment",
+      "native_top2": [
+        3,
+        10
+      ],
+      "exact_cosine_top2": [
+        3,
+        10
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            3,
+            10
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 162.54589200070768,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            7,
+            1
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 157.3259489996417,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 157.4887030001264,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:189:nda-3",
+      "group": "original-contractnli:189",
+      "gold": "Yes",
+      "source_threeway": "Entailment",
+      "native_top2": [
+        2,
+        5
+      ],
+      "exact_cosine_top2": [
+        2,
+        5
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            5
+          ],
+          "gold_span_count": 1,
+          "gold_spans_with_any_overlap": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decoding_ms": 122.75513900021906,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            6,
+            1
+          ],
+          "gold_span_count": 1,
+          "gold_spans_with_any_overlap": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decoding_ms": 127.6127399996767,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 1,
+          "gold_spans_with_any_overlap": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decoding_ms": 137.9307469997002,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:519:nda-17",
+      "group": "original-contractnli:519",
+      "gold": "No",
+      "source_threeway": "NotMentioned",
+      "native_top2": [
+        22,
+        4
+      ],
+      "exact_cosine_top2": [
+        22,
+        4
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            22,
+            4
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 151.2485760013078,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            5,
+            6
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 145.17269099997065,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 135.37490400085517,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:519:nda-7",
+      "group": "original-contractnli:519",
+      "gold": "Yes",
+      "source_threeway": "Entailment",
+      "native_top2": [
+        1,
+        22
+      ],
+      "exact_cosine_top2": [
+        1,
+        22
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            22
+          ],
+          "gold_span_count": 6,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 163.68694700031483,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            6,
+            22
+          ],
+          "gold_span_count": 6,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 158.17075499944622,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 6,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 173.96922899933998,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:519:nda-3",
+      "group": "original-contractnli:519",
+      "gold": "Yes",
+      "source_threeway": "Entailment",
+      "native_top2": [
+        22,
+        4
+      ],
+      "exact_cosine_top2": [
+        22,
+        4
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            22,
+            4
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 149.59634600018035,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            22,
+            5
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 152.64376699997229,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 157.92487500038987,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:333:nda-17",
+      "group": "original-contractnli:333",
+      "gold": "No",
+      "source_threeway": "Contradiction",
+      "native_top2": [
+        2,
+        1
+      ],
+      "exact_cosine_top2": [
+        2,
+        1
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            1
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decoding_ms": 173.3333259999199,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            0,
+            2
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 126.20073100151785,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 2,
+          "gold_spans_with_any_overlap": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decoding_ms": 145.35144100045727,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:333:nda-7",
+      "group": "original-contractnli:333",
+      "gold": "Yes",
+      "source_threeway": "Entailment",
+      "native_top2": [
+        2,
+        0
+      ],
+      "exact_cosine_top2": [
+        2,
+        0
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            0
+          ],
+          "gold_span_count": 1,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 151.39233700028853,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            5
+          ],
+          "gold_span_count": 1,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 144.78228299958573,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 1,
+          "gold_spans_with_any_overlap": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decoding_ms": 114.05797099905612,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:333:nda-3",
+      "group": "original-contractnli:333",
+      "gold": "No",
+      "source_threeway": "NotMentioned",
+      "native_top2": [
+        2,
+        5
+      ],
+      "exact_cosine_top2": [
+        2,
+        5
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_recall_at2": 1.0,
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            5
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 119.16006899991771,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            5
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 110.92278700016323,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "gold_spans_with_any_overlap": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decoding_ms": 129.27301500167232,
+          "correct": true
+        }
+      }
+    }
+  ],
+  "whole_pipeline_latency_seconds": {
+    "p50": 0.7899847064991263,
+    "max": 3.1072833930011257,
+    "scope": "Actual loopback HTTP including all3NLI arms+evidence-conditioned104+retrieval; not primary-only deployment latency",
+    "p95": 3.066818687950581
+  },
+  "closed_worker_native_pids": [
+    5309,
+    5313
+  ],
+  "confirmation96_consumed": false,
+  "promotion_permitted": false,
+  "champion_unchanged": true,
+  "official_rank": null,
+  "official_score": null,
+  "sota_established": false,
+  "auditor_native_calls": 0,
+  "auditor_onnx_calls": 0,
+  "artifact_pins": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/controller/launch.json",
+      "sha256": "b3bbafdce8889c631d48ca83448e237cb519f6289350bbae28f528b27c89f72a",
+      "bytes": 147
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/plan.json",
+      "sha256": "d3e8e2ebc09ecb33e0e1f8649935023941258d3f7624a3c242b28df6e88f307f",
+      "bytes": 23278
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/attempt.json",
+      "sha256": "16b700180a87cd1583e1a4e6e73e0629ac8d70e187b1c779315e6c99957934f8",
+      "bytes": 309
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/034c13fcaf059ea32a83b6d15839fd08d938960f9fe498674d9953d5af325c7a.json",
+      "sha256": "034c13fcaf059ea32a83b6d15839fd08d938960f9fe498674d9953d5af325c7a",
+      "bytes": 113114
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/0c3965173d8ad5d2606534e0aead8035befacb8961f5a0a25f81fa5eec453172.json",
+      "sha256": "0c3965173d8ad5d2606534e0aead8035befacb8961f5a0a25f81fa5eec453172",
+      "bytes": 242362
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/0ebaa964a6c076fe3a1c17048af6e34759736836b117598cbbd72d20ad8188e8.json",
+      "sha256": "0ebaa964a6c076fe3a1c17048af6e34759736836b117598cbbd72d20ad8188e8",
+      "bytes": 177813
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/112cfabde8a3c2dee2bc23005c7bbd1b74d853c0e7b98fefa2ca2d59745964ed.json",
+      "sha256": "112cfabde8a3c2dee2bc23005c7bbd1b74d853c0e7b98fefa2ca2d59745964ed",
+      "bytes": 177812
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/4eeeb143112a2e45b2fbfd489973091d3cd315559fd8cb5d91c6907968094347.json",
+      "sha256": "4eeeb143112a2e45b2fbfd489973091d3cd315559fd8cb5d91c6907968094347",
+      "bytes": 64662
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/5c91d7a01eb9e60e9000a65daf9be62b2495802f6daf51626c5edb68cd161895.json",
+      "sha256": "5c91d7a01eb9e60e9000a65daf9be62b2495802f6daf51626c5edb68cd161895",
+      "bytes": 96923
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/6588bf65e3962a93b9ace52cdbcc15773de00fce108d165758dd4e48c6fd46a9.json",
+      "sha256": "6588bf65e3962a93b9ace52cdbcc15773de00fce108d165758dd4e48c6fd46a9",
+      "bytes": 96942
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/68793648e0cf68f891b56a0b2c1f2a32a5eb6ec4d8f663817e83ebc85d4f3550.json",
+      "sha256": "68793648e0cf68f891b56a0b2c1f2a32a5eb6ec4d8f663817e83ebc85d4f3550",
+      "bytes": 64681
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/7c4e3c2cbeb40eb43e702162d750c81bd22e9c9b3423262d55a441e4bc72c206.json",
+      "sha256": "7c4e3c2cbeb40eb43e702162d750c81bd22e9c9b3423262d55a441e4bc72c206",
+      "bytes": 242340
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/7f6392a3f8d95b61690982c351881e715679eb3ac85e7d356a688d8162001899.json",
+      "sha256": "7f6392a3f8d95b61690982c351881e715679eb3ac85e7d356a688d8162001899",
+      "bytes": 250468
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/8e90c7b6ff101f9b5bcb9af6b0a4fe13f64895d8a824a03c4276618dea70ace1.json",
+      "sha256": "8e90c7b6ff101f9b5bcb9af6b0a4fe13f64895d8a824a03c4276618dea70ace1",
+      "bytes": 250487
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/95bf85e960d8655d7df4838a04db9774258097f074d36389e465e6800fe02487.json",
+      "sha256": "95bf85e960d8655d7df4838a04db9774258097f074d36389e465e6800fe02487",
+      "bytes": 121138
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/9b1017f5c1926acc25e4072757cac4b3b4908844048e1b0a1703acd10f96a23f.json",
+      "sha256": "9b1017f5c1926acc25e4072757cac4b3b4908844048e1b0a1703acd10f96a23f",
+      "bytes": 121160
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/a3bc06cfb91543ac85fe2e89e44809f77bb0f8db91124b9163d18d1cb1eaa548.json",
+      "sha256": "a3bc06cfb91543ac85fe2e89e44809f77bb0f8db91124b9163d18d1cb1eaa548",
+      "bytes": 250490
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/a4395debfbd3b745deeaab9a8f23172f9551cf21f3124fe2b34fca61a4aad61a.json",
+      "sha256": "a4395debfbd3b745deeaab9a8f23172f9551cf21f3124fe2b34fca61a4aad61a",
+      "bytes": 121157
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/a6c9e529f06410f03137ee1aef86f59a16b9f14180d6e651cac7474098979061.json",
+      "sha256": "a6c9e529f06410f03137ee1aef86f59a16b9f14180d6e651cac7474098979061",
+      "bytes": 177791
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/ad6c341d8584f65861cbb62f48a7030bfb4c69e964f07e8af80e34cd9e5f94e3.json",
+      "sha256": "ad6c341d8584f65861cbb62f48a7030bfb4c69e964f07e8af80e34cd9e5f94e3",
+      "bytes": 177831
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/ad6e29920941dbe1b8f96b6163f597c24e9d302ad995bab3f15def8b2014eadf.json",
+      "sha256": "ad6e29920941dbe1b8f96b6163f597c24e9d302ad995bab3f15def8b2014eadf",
+      "bytes": 96945
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/b5f0b2672b1ada9b8179edd310ade81e78e0538a302f17b7d00d3d169411cc40.json",
+      "sha256": "b5f0b2672b1ada9b8179edd310ade81e78e0538a302f17b7d00d3d169411cc40",
+      "bytes": 113111
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/b722021680e4a4dedfb0ade13fca91bf866078bea49805c6db9a168af2894e0e.json",
+      "sha256": "b722021680e4a4dedfb0ade13fca91bf866078bea49805c6db9a168af2894e0e",
+      "bytes": 64684
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/c880353e9d6b48239d725216b321b2ee0ddf758c81c9b4befcd0fcf6e6f49a28.json",
+      "sha256": "c880353e9d6b48239d725216b321b2ee0ddf758c81c9b4befcd0fcf6e6f49a28",
+      "bytes": 177834
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/d03a93ae76e2ee14417aca874c33fa9bb9aa81ad7f9955b89ec269466e917fcf.json",
+      "sha256": "d03a93ae76e2ee14417aca874c33fa9bb9aa81ad7f9955b89ec269466e917fcf",
+      "bytes": 242359
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/e8adf2bc38ba3a5c520e5e70ee61896e555f45840f56eb35aa1cbc5719f70d26.json",
+      "sha256": "e8adf2bc38ba3a5c520e5e70ee61896e555f45840f56eb35aa1cbc5719f70d26",
+      "bytes": 113092
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/bundles/eaa57da1fb3c9e6081dcfd3f9e381f14c72931f8ad2d84d9d99745b5aff07640.json",
+      "sha256": "eaa57da1fb3c9e6081dcfd3f9e381f14c72931f8ad2d84d9d99745b5aff07640",
+      "bytes": 177810
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/cleanup.json",
+      "sha256": "fe264ecdd587c6c4214724babf7c0a9d1cc8d406450d0c49cdff0011f751f9a2",
+      "bytes": 172
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/collection.json",
+      "sha256": "9a0c3a6fd71065b3e64ed47b3fa033065ac77bada10516111a3ea19c49358046",
+      "bytes": 373
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/process.json",
+      "sha256": "a9a5319727ddc4049c5a6c0881056904a6169b65ff57682ebfe7fddbe3090d41",
+      "bytes": 86
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/progress.json",
+      "sha256": "3dab7c9bd3d6aa040061d025b12818f03312f5ba87d846329c7243053c5277c8",
+      "bytes": 104
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/records.jsonl",
+      "sha256": "ed837d49d6416c7296c17abc94ca0450c1015a624ed314354b9539490f12a267",
+      "bytes": 714574
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/runtime.json",
+      "sha256": "7f9d6adf68f814373e9dae69ab209702462733ac2239dd4f31e6444c369fa521",
+      "bytes": 3480
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/server-audit.jsonl",
+      "sha256": "fe1da2d95df078a9d3d7b7c89d6e98c883b8d3ac15ed78f8929a545698696262",
+      "bytes": 28924
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/wire.jsonl",
+      "sha256": "74d304794795c184e84a5f95c59438f50fc9f467fc06cff8cb3927d4dce6d793",
+      "bytes": 715251
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development/worker.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/runs/development-comparison.json",
+      "sha256": "c0ba187eb029bec95033cf1b9c27327328f48a45af939e645848c71f5e4f9dd7",
+      "bytes": 3618
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch3/retry2/status.json",
+      "sha256": "955b1e92e71a491d663c919f4c6e61ef449f2dde5092dc4cf91ec0592e9aea64",
+      "bytes": 7519
+    }
+  ],
+  "per_arm_NLI_decode_ms": {
+    "ruvector_top2": {
+      "p50": 150.42246100074408,
+      "p95": 171.88636914997912,
+      "scope": "NLI decode only; each arm executes both pairs independently"
+    },
+    "same_nli_lexical_top2": {
+      "p50": 144.9774869997782,
+      "p95": 165.22601115020734,
+      "scope": "NLI decode only; each arm executes both pairs independently"
+    },
+    "same_nli_positional_first2": {
+      "p50": 141.64109400007874,
+      "p95": 171.71509094960126,
+      "scope": "NLI decode only; each arm executes both pairs independently"
+    }
+  },
+  "evidence_conditioned_native104_ms": {
+    "p50": 164.7060959994633,
+    "p95": 482.2201089010377
+  },
+  "native_retrieval_process_ms": {
+    "p50": 59.2139069995028,
+    "p95": 73.5816302002604,
+    "scope": "Native node process+index creation+insert+search, excludes BGE embedding"
+  },
+  "annotation_coverage_diagnostic": {
+    "ruvector_top2": {
+      "queries_with_gold_spans": 13,
+      "queries_any_gold_span_overlap": 6,
+      "queries_all_gold_spans_overlap": 4,
+      "scope": "Posthoc original gold-evidence offset overlap only; no spans provided to inference and overlap alone does not prove sufficient evidence"
+    },
+    "same_nli_lexical_top2": {
+      "queries_with_gold_spans": 13,
+      "queries_any_gold_span_overlap": 5,
+      "queries_all_gold_spans_overlap": 3,
+      "scope": "Posthoc original gold-evidence offset overlap only; no spans provided to inference and overlap alone does not prove sufficient evidence"
+    },
+    "same_nli_positional_first2": {
+      "queries_with_gold_spans": 13,
+      "queries_any_gold_span_overlap": 5,
+      "queries_all_gold_spans_overlap": 3,
+      "scope": "Posthoc original gold-evidence offset overlap only; no spans provided to inference and overlap alone does not prove sufficient evidence"
+    }
+  }
+}

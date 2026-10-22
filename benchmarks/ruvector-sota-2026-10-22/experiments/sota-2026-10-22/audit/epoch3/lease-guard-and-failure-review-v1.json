@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T16:18:29.208306+00:00",
+  "checks_passed": true,
+  "scope": "Append-only independent guard-diff and first failed-attempt audit; resource-only change checked after root launch, before any successful epoch3 outcome exists.",
+  "previous_acceptance_sha256": "27ba6145ecd14202761aeadcb956f9783c392b133506f9dc89d9e4e3fc79e339",
+  "plan_sha256": "c10bf8827aab6f58968daedec8dd527fd25e8a0c8b7d4f3ad2b757ba83111a51",
+  "plan_pins_verified_against_preserved_sources_or_unchanged_data_assets": 110,
+  "only_changed_pin": "experiments/sota-2026-10-22/controller/epoch3_loop.py",
+  "old_controller_sha256": "158f2b4dbf43f7b76180595f13b45d54ba3a20eeae697d6a6dae32de10c8d685",
+  "controller_sha256": "0b4ac6af58b4f421681d5b62d3243d17cc8c8426c47ee738a36eaae195d388d1",
+  "changes": "Only process.wait timeout replaced by min(batch600, max(1, lease_expires-time.time()-30)); explicit lease expiry/policy added. All data/candidate/model/hypothesis bytes unchanged.",
+  "lease_expires_unix": 1792686605.0185483,
+  "failed_attempt": {
+    "http_status": 500,
+    "error": "RuntimeError: state exceeds 16 KiB",
+    "records_completed": 0,
+    "wire_records": 1,
+    "server_audit_records": 1,
+    "elapsed_http_s": 0.003980251000029966,
+    "failure_source_order": "Frozen runtime calls native104.predict(fullstate,questions) before retrieval or NLI predict; state-limit error therefore precedes all evidence model forward calls. Model sessions and native104 child had initialized.",
+    "model_forward_count_evidence": "Source-order inference, not instrumented ORT call counter.",
+    "worker_and_native_pids_absent": [
+      5026,
+      5030
+    ],
+    "preserved_files": {
+      "cleanup.json": "bbf0850f2ac73f49ab3c1e2e505b75c6924a61e2a04355b7bcc9f3be8b83429e",
+      "server-audit.jsonl": "9da6e33429a9dc3e5b8265c08522fef3b4cfced4a2084537e90b034be30cc90c",
+      "records.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "wire.jsonl": "40a53a9d5ce9806d6d1dd2eb45f1e1c36a56bb1efd2f21b98d0120337765e5e2",
+      "process.json": "e63e58aea0eb6625b547ccde6c8df3c7bde5160e6c74a36df6368906e64db8cf",
+      "worker.log": "0f2b249b372f11bf23e5c86af661707232b47934a784c8f2e80a5874f1c46b3c",
+      "attempt.json": "c408c60356eb971abc4fbb19b515c88739717e93f323030064b7a13e10156b34",
+      "runtime.json": "9f2500ed63644aa26c9f4a31d0e8a61e2aa6fa80d6180f5f3194ea071a5b5f35"
+    }
+  },
+  "confirmation96_consumed": false,
+  "new_native_batches_started_in_epoch": 1,
+  "prior_study_batches": 3,
+  "new_paid_calls": 0,
+  "promotion_permitted": false,
+  "official_rank": null,
+  "sota_goal_met": false,
+  "auditor_model_calls": 0,
+  "auditor_native_calls": 0
+}

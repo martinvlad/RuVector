@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-22T15:54:35.863832+00:00",
+  "tasks": {
+    "contract_nli_permissible_copy": {
+      "official_instruction": "Identify if the clause provides that the Receiving Party may create a copy of some Confidential Information in some circumstances.",
+      "positive_hypothesis": "The Receiving Party may create a copy of some Confidential Information in some circumstances.",
+      "negative_hypothesis": "The clause does not establish that the Receiving Party may create a copy of some Confidential Information in some circumstances.",
+      "criteria": {
+        "Yes": "The Receiving Party may create a copy of some Confidential Information in some circumstances.",
+        "No": "The clause does not establish that the Receiving Party may create a copy of some Confidential Information in some circumstances."
+      },
+      "source_sha256": "9e21b153d63d62d119c811c1b433e8113492913808d41e52129b507ff632cb1e",
+      "binary_label_semantics": "Yes=entailed; No=contradiction OR not mentioned, per officialtask README."
+    },
+    "contract_nli_sharing_with_third-parties": {
+      "official_instruction": "Identify if the clause provides that the Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+      "positive_hypothesis": "The Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+      "negative_hypothesis": "The clause does not establish that the Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+      "criteria": {
+        "Yes": "The Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+        "No": "The clause does not establish that the Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors)."
+      },
+      "source_sha256": "d0966198484054601db80993f06f0c747a82a47309b9bd0939e197d529542d36",
+      "binary_label_semantics": "Yes=entailed; No=contradiction OR not mentioned, per officialtask README."
+    },
+    "contract_nli_survival_of_obligations": {
+      "official_instruction": "Identify if the clause provides that ome obligations of Agreement may survive termination of Agreement.",
+      "positive_hypothesis": "Ome obligations of Agreement may survive termination of Agreement.",
+      "negative_hypothesis": "The clause does not establish that ome obligations of Agreement may survive termination of Agreement.",
+      "criteria": {
+        "Yes": "Ome obligations of Agreement may survive termination of Agreement.",
+        "No": "The clause does not establish that ome obligations of Agreement may survive termination of Agreement."
+      },
+      "source_sha256": "7e3a10417386c3f1a4c0cf9b6138f46798de5bbcf565915838822a47935e8340",
+      "binary_label_semantics": "Yes=entailed; No=contradiction OR not mentioned, per officialtask README."
+    },
+    "contract_nli_inclusion_of_verbally_conveyed_information": {
+      "official_instruction": "Identify if the clause provides that Confidential Information may include verbally conveyed information.",
+      "positive_hypothesis": "Confidential Information may include verbally conveyed information.",
+      "negative_hypothesis": "The clause does not establish that confidential Information may include verbally conveyed information.",
+      "criteria": {
+        "Yes": "Confidential Information may include verbally conveyed information.",
+        "No": "The clause does not establish that confidential Information may include verbally conveyed information."
+      },
+      "source_sha256": "f30e6e9d718695a824b2e431c03c5803909dd2a85670ec6946942a789f116c40",
+      "binary_label_semantics": "Yes=entailed; No=contradiction OR not mentioned, per officialtask README."
+    }
+  },
+  "label_access": "No epoch3 test TSV fetched before this metadata freeze; official8exampletrain rows are source DEV only.",
+  "github_commit": "b46bf4ffae90524b2b72aaa30e7745fe9db64481",
+  "huggingface_revision": "daec8237410aa23e3faf4bc41ad8b3a7e1696826",
+  "target": "24 unused test documents/task,96distinctoverall; gate may be infeasible afterprior96used."
+}

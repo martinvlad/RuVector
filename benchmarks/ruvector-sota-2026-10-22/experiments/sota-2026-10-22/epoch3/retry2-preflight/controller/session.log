@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch3/project/experiments/sota-2026-10-22/controller/epoch3_retry2.py", line 372, in <module>
+    main()
+  File "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch3/project/experiments/sota-2026-10-22/controller/epoch3_retry2.py", line 368, in main
+    Controller(args.plan).run()
+  File "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch3/project/experiments/sota-2026-10-22/controller/epoch3_retry2.py", line 334, in run
+    development=self.native_batch("development")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch3/project/experiments/sota-2026-10-22/controller/epoch3_retry2.py", line 277, in native_batch
+    directory.mkdir(exist_ok=False)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch3/project/experiments/sota-2026-10-22/epoch3/retry2/runs/development'

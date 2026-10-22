@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "epoch": 4,
+  "status": "BLOCKED_RUNTIME_CLOSURE",
+  "run_id": "0bddc698-63bf-4067-886c-64436d5eb0f3",
+  "objective": "Stronger pretrained typed NLI with actual native RuVector evidence selection and matched same-model retrieval controls",
+  "scope": "Frozen originalContractNLI freshDEV24 and conditionally-gated96 diagnostic; no officialscore",
+  "source_freeze": {
+    "plan_sha256": "67c8f1b93e0d3bdd5b888011b451a81f9b1fb5f1e3ea98c98ec04b0ce24f0852",
+    "research_plan_sha256": "76f40adf85cfb20ac554fa89d163c8b37d1334df9143d8b89f83c3fd9660e943",
+    "candidate_manifest_sha256": "86a0f900c2dc1a8ae46c49a5c50af4da8ef98a2e7a0c3726b155ab96fa3530c1",
+    "DEV_data_sha256": "7663fe3a1a4af1a5716671eb1198c89726d88cf02c81209e34afeeaf153942c8",
+    "unused_confirmation96_sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+    "independent_premeasurement_sha256": "9d9455da1789fb510c69e8ef167ccc43ab826a80a1a25b37a1b864cd4d0c108d"
+  },
+  "model": {
+    "repo": "Xenova/nli-deberta-v3-base",
+    "revision": "80a99030ce45a69a39ea2a6f50756d03859ff521",
+    "weights_sha256": "9d83d9d0ba179cab8b78b942dcc42756da7712b2bbe101a2a4c25fdfa7968e2f",
+    "weights_bytes": 244291931,
+    "hidden_size": 768,
+    "temperature": 1,
+    "batchsize": 1,
+    "no_padding_or_truncation": true,
+    "forward_attempts": 0,
+    "performance_measured": false,
+    "initialization_completed": true
+  },
+  "execution": {
+    "native_corpus_attempts": 1,
+    "original_study_attempts_used": 6,
+    "original_study_attempts_remaining": 0,
+    "process_wall_seconds": 7.253493329999401,
+    "first_request_ID": "original-contractnli:train:epoch4:621:nda-17",
+    "HTTP_failed_requests": 1,
+    "HTTP_successful_predictions": 0,
+    "DEV_scored": 0,
+    "confirmation_model_consumed": 0,
+    "counters": {
+      "requests_attempted": 1,
+      "requests_completed": 0,
+      "native104_requests_attempted": 0,
+      "native104_requests_completed": 0,
+      "native_core_searches_attempted": 1,
+      "native_core_searches_completed": 0,
+      "bge_forward_batches_attempted": 4,
+      "bge_forward_batches_completed": 4,
+      "bge_texts_attempted": 25,
+      "bge_texts_completed": 25,
+      "nli_forward_pairs_attempted": 0,
+      "nli_forward_pairs_completed": 0,
+      "nli_input_tokens_attempted": 0,
+      "nli_input_tokens_completed": 0,
+      "bge_forward_wall_seconds": 2.2817080580007314,
+      "nli_forward_wall_seconds": 0.0
+    },
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "retries": 0
+  },
+  "real_resource_measurements": {
+    "at": "2026-10-22T17:50:35.942040+00:00",
+    "worker_cpu_user_seconds": 7.28134,
+    "worker_cpu_system_seconds": 1.162833,
+    "worker_peak_RSS_bytes": 1192792064,
+    "terminated_children_cpu_user_seconds": 0.355523,
+    "terminated_children_cpu_system_seconds": 0.234895,
+    "largest_terminated_child_peak_RSS_bytes": 1192792064,
+    "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+    "allowed_CPU_ids": [
+      0,
+      1
+    ],
+    "configured_ORT_threads": 2,
+    "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+  },
+  "real_failed_HTTP_latency_seconds": {
+    "n": 1,
+    "p50": 2.3856351890008227,
+    "p95": 2.3856351890008227,
+    "scope": "Single failed loading request only; not successful model/benchmark serving latency"
+  },
+  "accuracy": null,
+  "Brier": null,
+  "NLL": null,
+  "errors": {
+    "HTTP500": 1
+  },
+  "data_exposure": {
+    "declared_DEV24_remain_DEV_forever": true,
+    "measured_source_input_attempted": [
+      "original-contractnli:train:epoch4:621:nda-17"
+    ],
+    "used_confirmation_sets_this_epoch": [],
+    "confirmation96": "Still project-model-unused; do not tune/select on these archived public labels; upstream training overlap unknown"
+  },
+  "failure": {
+    "schema_version": 1,
+    "status": "BLOCKED_INCOMPLETE_RESTORATION",
+    "root_cause": "The actual isolated platformpackage package.json main points to index.js, but that required file was omitted from asset-list-only binding. Native-candidates.cjs could not load @ruvector/core; no successful native-core search or NLI decision occurred.",
+    "package": "ruvector-core-linux-x64-gnu@0.1.31",
+    "package_json_sha256": "afca994434efaadf637eb7d28bfd48da9dda69f24513bfb498c4ab9459d2fdf4",
+    "required_entry": "retrieval/node_modules/ruvector-core-linux-x64-gnu/index.js",
+    "entry_present_in_failed_project": false,
+    "existing_expected_entry_sha256": "f392127e6cd14141107fa432a43bbccc2fa1d574630a6fe2611688c66a48a7e9",
+    "first_request_id": "original-contractnli:train:epoch4:621:nda-17",
+    "HTTP_status": 500,
+    "response_sha256": "c42e167fa1cc74bf395cc8d245990c39f623dfb21448a784b29d73ac8e240a72",
+    "native_decisions_completed": 0,
+    "NLI_forwards_completed": 0,
+    "BGE_forwards_completed": 4,
+    "BGE_texts_completed": 25,
+    "original_attempt_budget": {
+      "cap": 6,
+      "spent": 6,
+      "remaining": 0,
+      "retry_this_epoch": false
+    },
+    "independent_next_step": "Source-only complete officialnpm tarball closure binder and require.resolve-only checks, without importing package or native/model reruns. Failed isolated project preserved unchanged.",
+    "unchanged_blocker_retests": 0,
+    "model_accuracy": null,
+    "official_score": null,
+    "official_rank": null
+  },
+  "acceptance": "No measured decision results, no promotion, no source alternatives selected from gold outcomes",
+  "champion_native104": "preserved",
+  "RRF10": "preserved",
+  "official_score": null,
+  "official_rank": null,
+  "goal_met": false,
+  "next_direction": "After originalstudyclosure, explicitly freeze a new boundedstudy contract under existing recurring authorization, carry forward six-attemptledger, run complete dependency-resolution preflight before any new native/modelforward. Stronger NLI remains unmeasured; no need to change frozenweights or tune on96."
+}

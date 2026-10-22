@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T17:44:02.793708+00:00",
+  "checks_passed": true,
+  "scope": "Independent raw-tokenizer-only preflight of every possible unordered native top2 chunk combination, source-order overlap merge and complete pair. No model or native forwards.",
+  "chunk_policy": "NLI192token windows/32overlap/max64; allcomplete selected spans mergedsourceorder then newlinejoin; exactquestionYescriterion.",
+  "phases": {
+    "dev": {
+      "requests": 24,
+      "all_possible_top2_contexts": 2295,
+      "max_joint_NLI_tokens": 409
+    },
+    "confirmation": {
+      "requests": 96,
+      "all_possible_top2_contexts": 12726,
+      "max_joint_NLI_tokens": 412
+    }
+  },
+  "all_possible_joint_contexts": 15021,
+  "max_NLI_pair_tokens": 412,
+  "max_BGE_sequence_tokens": 222,
+  "max_native104_context_bytes": 2436,
+  "max_source_chunks": 28,
+  "NLI_cap": 512,
+  "BGE_cap": 256,
+  "native104_state_cap_bytes": 16384,
+  "violations": [],
+  "NLI_tokenizer_sha256": "a86f883318afa11c8c10466f1bf4efaeb6ded28a52cbe57217a8fa0d0a2a87df",
+  "BGE_tokenizer_sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+  "DEV_sha256": "7663fe3a1a4af1a5716671eb1198c89726d88cf02c81209e34afeeaf153942c8",
+  "confirmation_sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+  "native_calls": 0,
+  "ONNX_calls": 0,
+  "CPU_affinity": [
+    0,
+    1
+  ]
+}

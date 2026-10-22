@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T17:39:10.689414+00:00",
+  "public_official_site_readable": true,
+  "ClaimBench_page_http_status": 200,
+  "published_updated_date": "2026-10-20",
+  "published_claim_count": 1960,
+  "published_label_counts": {
+    "supported": 392,
+    "contradicted": 785,
+    "insufficient_evidence": 783
+  },
+  "published_decision_model_leader": {
+    "name": "Decider V1.2",
+    "accuracy_percent": 99.694,
+    "cost_per_claim_usd": 0.000104,
+    "latency_seconds": 1.229
+  },
+  "published_language_model_top": {
+    "accuracy_percent": 100,
+    "number_of_models": 4
+  },
+  "public_examples_described": 10,
+  "examples_rendered_in_methodology": 3,
+  "full_official_questions_located": false,
+  "full_pinned_official_scorer_located": false,
+  "official_submission_registration_route_located": false,
+  "dataset_license_verified": false,
+  "general_site_policy_excerpt": "bases? Long-Horizon Tasks : Can models autonomously work on tasks that take minutes, hours, or longer? Agentic Work : Can models drive a coding agent, a terminal, or a browser end-to-end in a real environment, from software engineering and code migration to computer-use tasks? Public and Private Sets A major problem with evaluations of AI models is test-set leakage 1 . Benchmark data can contaminate training sets either directly or through synthetic data 2 , undermining the validity of reported results.\nThus, our proprietary benchmarks are evaluated on private data. For transparency and fairness, most of them come with: Public Validation Set : A completely open dataset, to provide transparency in the types of samples we use for evaluation. Private Validation Set : A larger, privately held dataset, which we license to companies for their own internal validation. We provide statistical evidence that it is correlated with our test set. Test Set : This dataset remains private at all times, and is the only dataset used for the proprietary benchmark results we publish. It is private to prevent leakage into the training data of foundation models. We also run selected public benchmarks (for example, Terminal-Bench, SWE-bench, and IOI). For these, we run every model ourselves under the same harness and settings, so results are comparable across models even though the tasks are open. Metrics and Evaluation Benchmarks often report only accuracy numbers; however, it is important to consider factors such as efficiency, cost, time taken per test, failure modes, and more.\nOur evaluation f",
+  "policy_limit": "General proprietary benchmark methodology is not proof that every ClaimBench item is private; exact ClaimBench release/access terms remain unverified. No policy bypass or account/login attempted.",
+  "public_methodology_observations": [
+    "All systems must use supplied excerpt only; supported/contradicted/insufficient_evidence are distinct labels.",
+    "Five construction categories ~392 each, paragraphs and2k-4k/8k-16k token excerpts; selected-evidence miss cannot imply whole-excerpt insufficiency.",
+    "Decision threshold is fitted on fixed30percent subset at<=1percent accepted-answer errors and evaluated on heldout70percent; exact split IDs/harness not published in examined surface.",
+    "Language-model baseline uses2calls(label+probabilities), measured gateway latency excludes sandbox-to-gateway hop; cannot compare local pipeline timing as official without matching harness."
+  ],
+  "conclusion": "Official measurement/submission remains unavailable from the reviewed public surface. No RuVector ClaimBench score or rank; do not treat3examples or a reconstruction as canonical.",
+  "read_source_hashes": {
+    "claimbench-page.source": "a341ab218b719f87bd8bed86a484e7e3649bbe91be15a56c7e66babbfd8f21d9",
+    "claimbench-methodology.source": "de912f5ca7126d3b785b30330187805ccf595d4a24c0ebd195fd9970866d5338",
+    "claimbench-decider.source": "a836db909d725ca4302ec419a715716e5698f7c912589dfafb20c4c15bdc3609"
+  },
+  "external_mutations": 0,
+  "model_calls": 0
+}

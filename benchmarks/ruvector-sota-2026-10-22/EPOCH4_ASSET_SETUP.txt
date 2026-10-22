@@ -1,0 +1,22 @@
+Epoch4: exact public model asset acquisition
+
+This helper only verifies or restores the six pinned DeBERTa-base files. It does not run inference, install dependencies, access provider credentials, fit models, execute benchmarks, or grant a new execution budget. Epoch4 did not measure NLI performance: its sole corpus attempt failed before any NLI forward, successful native-core search, or Native104 prediction; initialization and BGE forwards did run (four BGE forwards on 25 texts; the Native104 process initialized).
+
+1. Restore the existing reviewed public checkpoint with bootstrap.py and restore_checkpoint.py. Use restore_epoch3_data.py for the omitted exact original ContractNLI archive/train/dev source. This preserves archived source rows; historical sampling is not claimed independently reproducible without the earlier historical corpus.
+
+2. Verify already available epoch4 assets, without network:
+   python3 acquire_epoch4_assets.py --dest /path/to/project --verify-only
+
+3. Or copy from a verified offline regular-file model directory containing config.json and onnx/model_quantized.onnx:
+   python3 acquire_epoch4_assets.py --dest /path/to/project --cache-dir /path/to/nli-base
+
+4. Or explicitly opt into free public model downloads:
+   python3 acquire_epoch4_assets.py --dest /path/to/project --download
+
+The helper pins the complete six-file manifest by SHA256, exact immutable HuggingFace revision80a99030ce45a69a39ea2a6f50756d03859ff521 and fixed public URLs. Existing differing files, unsafe paths and symlink traversal are rejected without overwriting evidence. Cache inputs must be regular files.
+
+Weights and large tokenizer JSON are omitted from the public checkpoint. The separate base-model card declares Apache-2.0; the conversion card references that base but does not declare a separate license. See EPOCH4_MODEL_ASSETS.json and model provenance.
+
+Cold inference also requires separately reviewed BGE/native dependency assets and their complete package closure, plus Node and a scoped Python environment. Runtime interpreter is retrieval/.venv/bin/python with numpy2.2.6, onnxruntime1.22.1 and tokenizers0.21.4, CPU2. The previously frozen asset list missed a required native platform index.js; this acquisition helper does not repair that dependency closure or claim a complete runtime. Use the coordinator-reviewed runtime-repair materials before any separately authorized execution.
+
+The frozen inference policy is unpadded singleton joint-context NLI, T1, no training/calibration fit, complete selected source-ordered evidence plus full claim within512 tokens, and matched lexical/positional controls. No benchmark score, rank, promotion or SOTA follows from asset restoration.

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-22T17:47:56.463856+00:00",
+  "epoch": 4,
+  "parent_checkpoint": "b1631d34a98df9866f6394ecd07e2bb505a16917",
+  "hypothesis": "Materially stronger pretrained DeBERTa-base plus joint source-ordered complete RuVector evidence and singleton decoder batching will improve typed binary decisions over matched same-model lexical/positional evidence and explicit excerpt-native104",
+  "train": "none",
+  "calibration": "none",
+  "temperature": 1,
+  "DEV": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch4/development24.jsonl",
+    "sha256": "7663fe3a1a4af1a5716671eb1198c89726d88cf02c81209e34afeeaf153942c8",
+    "groups": 8,
+    "n": 24,
+    "status": "Project-model-unused before this epoch"
+  },
+  "confirmation": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch3/confirmation96.jsonl",
+    "sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+    "groups": 32,
+    "n": 96,
+    "status": "Previously frozen public originalContractNLIdev; project-model-unused, upstream pretraining contamination unknown"
+  },
+  "candidate_manifest_sha256": "86a0f900c2dc1a8ae46c49a5c50af4da8ef98a2e7a0c3726b155ab96fa3530c1",
+  "independent_acceptance_sha256": "01cfdb5b0a04533ef7d8a622bcdc48f3def7ebc84a3d3e13809fc296adbf5000",
+  "DEV_gate": "All4arms errors0/strict24; primaryaccuracy>=all3controls, both Brier/NLL<=all3controls+1e-12, and at least1strictpropergain versus EACH matched same-NLI control. No source/config changes after outcomes. Failed gate means no confirmation inputs enter model.",
+  "confirmation_gate": {
+    "point_metrics": "All4arms errors0/strict96; accuracy>=all3controls; Brier/NLL nonworse than all3controls",
+    "bootstrap": "Paired document groups32 with3querieseach;2000resamples;seed20261022;2.5/97.5percentile intervals; all comparisons disclosed",
+    "uncertainty_gate": "Accuracy-gain95percent lowerCI>0 versus BOTH matched same-NLI controls; Brier/NLL loss-difference95percent upperCI<=0 versus ALL3controls. Nominal intervals, no familywise coverage claim.",
+    "research_promotion_scope": "At most internal binaryContractNLI pipeline advancement; submitted genericnative104/RRF10 preserved until applicable broader typed gates, publisherprotocol/eligibility independently accepted. No official submission/rank from this diagnostic."
+  },
+  "budget": {
+    "original_cap": 6,
+    "attempts_before": 5,
+    "this_epoch_native_batches": 1,
+    "shared_DEV_and_confirmation_seconds_max": 600,
+    "CPU_cores": 2,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "retries": 0
+  },
+  "context": "NLI-tokenizer192rawtoken windows/32overlap, native/lexical/positional top2; merge overlapping source spans in sourceorder; full premise+exact suppliedhypothesis; singleton unpadded max512, BGEmax256 preflight guarded. No silent clipping.",
+  "numeric_scope": "Mechanical omitted/retained numeric-literal coverage audit only; no numeric benchmark validation or ClaimBench entailment/insufficiency from retrieval misses.",
+  "prior_exposures": "Old183/easy48/Legal96/epoch3DEV24 remain exposedDEV forever; none are freshconfirmation.",
+  "official_score": null,
+  "official_rank": null
+}

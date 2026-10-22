@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "epoch": 4,
+  "frozen_at": "2026-10-22T17:44:22.069128+00:00",
+  "hypothesis": "A materially larger pretrained DeBERTa-base learned NLI model with singleton joint complete evidence can improve decisions; native RuVector evidence selection must separately beat SAME-model lexical-top2/positional-first2 controls.",
+  "candidate_id": "ruvector-deberta-base-joint-singleton-v4",
+  "config_count": 1,
+  "runtime_api": {
+    "interpreter": "retrieval/.venv/bin/python",
+    "module": "candidate.epoch4.runtime",
+    "class": "CandidateEngine",
+    "constructor": "CandidateEngine(artifact_path=None), optionalartifact must equalconfig.json",
+    "methods": [
+      "predict(state,questions)",
+      "close()",
+      "execution_snapshot()"
+    ],
+    "attributes": [
+      "name",
+      "attribution",
+      "receipt",
+      "last_usage",
+      "native_pid",
+      "native_process"
+    ],
+    "required_environment": "RUVECTOR_SOTA_BUNDLE_DIR",
+    "root_resolution": "HERE.parents[3] from canonical project/experiments/sota-2026-10-22/candidate/epoch4",
+    "primary_response": "answers",
+    "paired_native_reference": "baseline104_response with model native104_on_ruvector_evidence",
+    "same_model_controls": [
+      "ablation_responses.same_nli_lexical_top2",
+      "ablation_responses.same_nli_positional_first2"
+    ]
+  },
+  "model_upgrade": {
+    "repo": "Xenova/nli-deberta-v3-base",
+    "revision": "80a99030ce45a69a39ea2a6f50756d03859ff521",
+    "quantized_onnx_bytes": 244291931,
+    "quantized_onnx_sha256": "9d83d9d0ba179cab8b78b942dcc42756da7712b2bbe101a2a4c25fdfa7968e2f",
+    "prior_xsmall_quantized_bytes": 87246587,
+    "hidden_size": 768,
+    "prior_hidden_size": 384,
+    "layers": 12,
+    "training_corpus_declared": "MNLI+SNLI per upstream modelcard",
+    "upstream_reported_SNLI_test_accuracy": 92.38,
+    "upstream_reported_MNLI_mismatched_accuracy": 90.04,
+    "upstream_metrics_scope": "Author modelcard figures, not RuVector benchmark measurements or verified current-task gains",
+    "license": "Upstream declares Apache-2.0 at cross-encoder/nli-deberta-v3-base@6c749ce3425cd33b46d187e45b92bbf96ee12ec7; conversion card references base but has no separate license field; exact metadata/sourcecard preserved."
+  },
+  "fixed_decode": {
+    "training": "none",
+    "calibration": "none",
+    "temperature": 1,
+    "batch_size": 1,
+    "padding": false,
+    "truncation": false,
+    "joint_premise": "Complete selected native/lexical/positional top2 source windows sorted by source offset and overlap-merged; exact supplied positive hypothesis remains whole",
+    "source_windows": "Pinned NLI tokenizer192tokens overlap32, at most64 complete windows",
+    "NLI_pair_cap": 512,
+    "BGE_chunk_query_cap": 256,
+    "over_cap_policy": "Explicit rejection before forward; no clipping, abbreviation, hidden taildrop or claim truncation",
+    "labels": "Actual model config.id2label; Yes=entailment,No=contradiction+neutral",
+    "pooling": "Single joint evidence pair per arm; no max-entailment perchunk",
+    "matched_arms": "All use identical complete-context construction, model/tokenizer/512cap/T1/singleton policy. Actual token counts and context coverage reported."
+  },
+  "ruvector_evidence": {
+    "encoder": "Pinned native-use BGE-small CLS384D normalized ONNX,CPU2",
+    "retrieval": "Actual @ruvector/core0.1.33 cosine insert/search; binary/JS/source/lock pins verified; literal vector bundle retained by hash",
+    "causal_attribution": "Primary versus SAME-NLI lexical/positional controls isolates evidence selection; NLI vs native104 on same excerpt compares learned decision components. No index-only reasoning or RuVector-trained NLI weights claim."
+  },
+  "audits": {
+    "coverage": "Exact source spans, all selected text/claim, raw token IDs/logits, retained/omitted source chunks, position-specific numeric mentions, input/context hashes",
+    "coverage_limits": "Omitted chunks/numbers are mechanical coverage observations and do not establish insufficient evidence or correctness; no ClaimBench scorer/target-label claim",
+    "quantization_drift_fix": "Each actual NLI forward receives exactly one pair without any companion batch padding; repeated identical pair input IDs are comparable irrespective of other arm lengths",
+    "native_reference": "One actual native104 predict per question on exact same complete primary selected excerpt and original question; explicit label and reconstructible input/hash/span IDs, not submitted full-input104."
+  },
+  "resource_accounting": {
+    "exact_counters": [
+      "allrequests attempted/completed",
+      "native104requests attempted/completed",
+      "nativecore searches attempted/completed",
+      "BGEforward batches andtexts attempted/completed",
+      "NLI singleton pairs andtokens attempted/completed",
+      "BGE/NLI forward wallseconds"
+    ],
+    "CPU_RSS": "getrusage selfCPU/peakRSS, current/proc RSS, terminated-childCPU and live native104/proc CPU+RSS separately; observed CPU affinity; initialization and each request snapshots. Avoid doublecounted sum.",
+    "error_path": "finally updates last_usage execution_terminal counters/resources for failed requests."
+  },
+  "execution_limits": {
+    "CPU_threads": 2,
+    "allowed_new_native_corpus_batches": 1,
+    "total_shared_batch_seconds": 600,
+    "batch_contents": "FreshDEV24 then ONLYconditionally96 under a single parentcomposite process/deadline; no retries or extra model test corpora",
+    "new_paid_API_or_GPU_calls": 0,
+    "model_downloads": "Public pinned assets only,252951240bytes,0modelcalls",
+    "dependency_installations": 0
+  },
+  "source_access": {
+    "new_epoch4_dataset_or_labels_inspected": false,
+    "new_epoch4_model_native_forwards": 0,
+    "only_prior_exposed_evidence": "epoch3 EPOCH_MANIFEST/rejection context and exact model sourcecards used for source-reasoned policy"
+  },
+  "tests": {
+    "success": true,
+    "tests_run": 10,
+    "failures": 0,
+    "errors": 0,
+    "actual_model_forwards": 0,
+    "actual_native_typesafe_requests": 0,
+    "actual_native_core_requests": 0,
+    "uses_generated_inputs_and_doubles_only": true
+  },
+  "sources": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/runtime.py",
+      "bytes": 13126,
+      "sha256": "e93acc48ca3b8aade10179417e4c7090d1ec01ec31b1a6d4e3b04f8931ee91ae"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/models.py",
+      "bytes": 4504,
+      "sha256": "b6e7e3e6e8fe13b60e0efca2378f187d0d949467f611f1763cb8f0799a79aaab"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/context.py",
+      "bytes": 2758,
+      "sha256": "ec7c77968c1b189a0b5f68e82a23b0967f0c4179fd35ecf3bfab757d3572fdbc"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/test_runtime.py",
+      "bytes": 8060,
+      "sha256": "10e6fa1516e241cf4d7a564a03f0cc5db82dd7964b3de9b8166682003b10c18d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/config.json",
+      "bytes": 1025,
+      "sha256": "54620f15c84d562e1a2ab361acbe0431ffe9ba8278e1d1ca06a1cf685ba02f11"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/assets.lock.json",
+      "bytes": 3975,
+      "sha256": "91f035c3bd5e24d6094a4656b2c2c35257bd0346eb7d278e5a8faf1ce817cfbd"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/model-assets.lock.json",
+      "bytes": 4205,
+      "sha256": "0cf71f7476774716fbaf2c8c3002ac41dc7e61be14c7a0f2a97ef178ec4f9dff"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/availability.json",
+      "bytes": 3659,
+      "sha256": "01edf3abc3897eb4a401a9dfecc8010b11a7bb7c8c6d5bb6ccdad346315015be"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/model-api-pinned.json",
+      "bytes": 5764,
+      "sha256": "e3733d973d837f4feac86f5df37e007c5429c1a3d57ef290ef1b1b33957f08b4"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/Xenova--nli-deberta-v3-base-api.json",
+      "bytes": 5764,
+      "sha256": "e3733d973d837f4feac86f5df37e007c5429c1a3d57ef290ef1b1b33957f08b4"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/Xenova--nli-deberta-v3-small-api.json",
+      "bytes": 5769,
+      "sha256": "da21d61e1e7cbc8ba5303f01cb22cb472004436ad529255a6f3a5ed23d479afa"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/cross-encoder--nli-deberta-v3-base-api.json",
+      "bytes": 8955,
+      "sha256": "02e4a5a93dab326e90494f30ecc20800c46afcc99e58377c8361919236416877"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/base-model-card.md",
+      "bytes": 2856,
+      "sha256": "b6a6dd82d5fee7036e3b815ce1d28458df294d8525fc234fb7e7277b6b79d878"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/tests-result.json",
+      "bytes": 229,
+      "sha256": "e41dbdeb66f6a21aab310b63ed31b2ef8dfd6d58fafae0e22aab6d88e76e3361"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/tests-result.txt",
+      "bytes": 1413,
+      "sha256": "58b8d2d018d4f8363b47e467fcd8e523779cc752a2aaffac62af4685a63e583f"
+    }
+  ],
+  "read_only_code_dependencies": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/runtime.py",
+      "sha256": "fdca85cf34c5fb50c1fa622192ad36c1d322fd7fee909c80e9e0d0f95154e649"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/models.py",
+      "sha256": "c5cf3500a89837e71adc754f0dc96d090e172068031545fc55ee349e80210716"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/engine.py",
+      "sha256": "a833b1772be7bf18f48a2be58b6dd315428e9efa920c5ff5f7867fc22e14e8e9"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round2-v2/plan.json",
+      "sha256": "782db4034b2eb51ad9520a632ee94f7bdbb5bf0e8826ca44a91a055c15971f17"
+    },
+    {
+      "path": "retrieval/native-candidates.cjs",
+      "sha256": "45efc7fecd2d249aea7bd1f5e7d36bf26cfe57cd6f91de51ffd15adc039ec4a3"
+    }
+  ],
+  "publication_exclusions": [
+    "assets/nli-base/onnx/model_quantized.onnx",
+    "assets/nli-base/tokenizer.json",
+    "all runtime model/native dependency binary caches"
+  ],
+  "official_score": null,
+  "official_rank": null,
+  "goal_met": false
+}

@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T17:56:31.887468+00:00",
+  "checks_passed": true,
+  "measurement_outcome": "FAILED_SOFTWARE_DEPENDENCY_BEFORE_ANY_NLI_OR_NATIVE104_DECISION",
+  "scientific_candidate_result": "UNMEASURED; no accuracy/proper-score result exists for this epoch, not0/24 or a model-quality rejection.",
+  "plan_sha256": "67c8f1b93e0d3bdd5b888011b451a81f9b1fb5f1e3ea98c98ec04b0ce24f0852",
+  "pins_verified_after_failure": 181,
+  "frozen_candidate_source_unchanged": true,
+  "first_attempted_id": "original-contractnli:train:epoch4:621:nda-17",
+  "first_phase": "development",
+  "completed_scored_records": 0,
+  "failed_HTTP_requests": 1,
+  "wire_request_and_response_SHA_verified": true,
+  "server_response_hash_limit": "Error audit intentionally has response_sha256 null; literal wire error bytes independently hashed.",
+  "failure_cause": {
+    "platform_package_version": "0.1.31",
+    "platform_package_main": "index.js",
+    "missing_main_file": "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch4/project/retrieval/node_modules/ruvector-core-linux-x64-gnu/index.js",
+    "pinned_binary_present": true,
+    "binary_identity_only_not_executable_dependency_closure": true,
+    "static_resolve_only_check": {
+      "status": "MISSING_ENTRYPOINT",
+      "code": "MODULE_NOT_FOUND",
+      "path": "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch4/project/retrieval/node_modules/ruvector-core-linux-x64-gnu/package.json",
+      "requestPath": "ruvector-core-linux-x64-gnu",
+      "core_entry": "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch4/project/retrieval/node_modules/@ruvector/core/index.js",
+      "loaded_native_addons": []
+    },
+    "nativecore_loaded_or_search_completed": false,
+    "native104_process_initialized_but_predict_count": 0
+  },
+  "actual_forward_counters": {
+    "requests_attempted": 1,
+    "requests_completed": 0,
+    "native104_requests_attempted": 0,
+    "native104_requests_completed": 0,
+    "native_core_searches_attempted": 1,
+    "native_core_searches_completed": 0,
+    "bge_forward_batches_attempted": 4,
+    "bge_forward_batches_completed": 4,
+    "bge_texts_attempted": 25,
+    "bge_texts_completed": 25,
+    "nli_forward_pairs_attempted": 0,
+    "nli_forward_pairs_completed": 0,
+    "nli_input_tokens_attempted": 0,
+    "nli_input_tokens_completed": 0,
+    "bge_forward_wall_seconds": 2.2817080580007314,
+    "nli_forward_wall_seconds": 0.0
+  },
+  "actual_BGE_bundle": {
+    "path": "experiments/sota-2026-10-22/epoch4/runs/composite/bundles/42ebe211b3374a9ee2e511fa65d5bf6f97810dd550c1a9efab39331d1c56f44b.json",
+    "bytes": 201974,
+    "sha256": "42ebe211b3374a9ee2e511fa65d5bf6f97810dd550c1a9efab39331d1c56f44b",
+    "vectors": 24,
+    "query_vectors": 1,
+    "dimension": 384,
+    "finite_unit_vectors": true,
+    "scope": "ActualBGE4forwards25texts completed before failed native-core module resolution; no native ranking orNLI logits exist."
+  },
+  "resources": {
+    "at": "2026-10-22T17:50:35.942040+00:00",
+    "worker_cpu_user_seconds": 7.28134,
+    "worker_cpu_system_seconds": 1.162833,
+    "worker_peak_RSS_bytes": 1192792064,
+    "terminated_children_cpu_user_seconds": 0.355523,
+    "terminated_children_cpu_system_seconds": 0.234895,
+    "largest_terminated_child_peak_RSS_bytes": 1192792064,
+    "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+    "allowed_CPU_ids": [
+      0,
+      1
+    ],
+    "configured_ORT_threads": 2,
+    "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+  },
+  "wall_seconds_including_model_load": 7.253493329999401,
+  "failed_HTTP_seconds": 2.3856351890008227,
+  "resource_scope": "Worker and terminatedchild CPU/high-water RSS measured separately; no simultaneous total-memory or primarydeploymentlatency estimate. ChildRSS may include fork inheritance, never add highwatermarks.",
+  "closed_worker_native_pids": [
+    6927,
+    6931
+  ],
+  "group_cleanup": {
+    "pgid": 6927,
+    "live_members_before": [],
+    "signals": [],
+    "live_members_after": []
+  },
+  "confirmation96_consumed": false,
+  "confirmation96_SHA256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+  "DEV_exposure": "Firstdoc621 supplied toBGE onnda17; preserve all24planned rows as DEV and never advertise this attempt as an unused successful holdout. NoNLIanswers or label-driven selection occurred.",
+  "budget": {
+    "original_cap": 6,
+    "used": 6,
+    "remaining": 0,
+    "retry_allowed": false,
+    "new_paid_calls": 0,
+    "new_GPU_calls": 0
+  },
+  "acceptance_correction": "Earlier premeasurement acceptance validated all16asset identities but missed that platformpackage mainindex.js was absent. That acceptance is superseded as executable-readiness evidence by this actual failure; byteidentity never proved full runtime dependency closure. Auditor should have required resolve-only dependency closure preflight.",
+  "required_next_work": "Only source-only npm-integrity-bound complete dependency closure/binder and resolution checks under current exhausted contract; no native/model rerun.",
+  "original_champions_unchanged": true,
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "auditor_native_calls": 0,
+  "auditor_ONNX_calls": 0,
+  "auditor_static_Node_resolver_processes": 1,
+  "artifact_pins": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runs/composite/attempt.json",
+      "bytes": 368,
+      "sha256": "ec490404097aa624c84b2915ded976d4195669dc0cd1a7971e5fcb534ddd5be3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runs/composite/bundles/42ebe211b3374a9ee2e511fa65d5bf6f97810dd550c1a9efab39331d1c56f44b.json",
+      "bytes": 201974,
+      "sha256": "42ebe211b3374a9ee2e511fa65d5bf6f97810dd550c1a9efab39331d1c56f44b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runs/composite/cleanup.json",
+      "bytes": 177,
+      "sha256": "fa676a5cf1d63c1870b63cc4f58f13ed7afc912a8da4af65017a59951b10980b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runs/composite/completion.json",
+      "bytes": 508,
+      "sha256": "2ecc81d298a25a1a67ae391f4fda39716cd7e4e88eb2c0d226cff30051500ce5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runs/composite/final-engine.json",
+      "bytes": 10133,
+      "sha256": "918360b03973dd44beac8839e154910eecc853461fdf42d3f91df07aa207a740"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runs/composite/records.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runs/composite/report.json",
+      "bytes": 377,
+      "sha256": "0f088dc51d6bbb96297368f4ae6087206891d5a237f75a7c96601d4f336fd39c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runs/composite/resources.json",
+      "bytes": 664,
+      "sha256": "a70b1d248dd362ad947d5e1c5d4ae2ecaee8322bae58fd8e80aa53c2d6542d0a"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runs/composite/runtime.json",
+      "bytes": 6631,
+      "sha256": "a61a03c398625d034d61af11ffecda6d6c84840d598c6ad570775f89db6580fa"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runs/composite/server-audit.jsonl",
+      "bytes": 3231,
+      "sha256": "a98d113c9741394c74cd63ba41ca2cda9490707ceedf11b803fd56c7dbb3ad27"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runs/composite/started-requests.jsonl",
+      "bytes": 21636,
+      "sha256": "f1d54ac42fba079da6df38517f45cad9da2515d99e819592c2b1ee166a28e05e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runs/composite/wire.jsonl",
+      "bytes": 22319,
+      "sha256": "d2f192bd92f2b8152d739ba22f2a417728e099e8e7fe91684c6443f47b3e9daf"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runs/composite/worker.log",
+      "bytes": 676,
+      "sha256": "b889a16090d6a2e08e5dea70bda4fb4f292e90edb3605d84991f132c563fe41c"
+    }
+  ]
+}

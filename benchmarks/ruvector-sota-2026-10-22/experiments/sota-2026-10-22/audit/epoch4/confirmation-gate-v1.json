@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-22T17:47:36.601636+00:00",
+  "parent_acceptance_contract_sha256": "01cfdb5b0a04533ef7d8a622bcdc48f3def7ebc84a3d3e13809fc296adbf5000",
+  "scope": "Precise pre-outcome conditional confirmation gate for internal original-ContractNLI diagnostic advancement only; publisher rank/SOTA remain unavailable.",
+  "confirmation_sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+  "selection": "Exactly one frozen config, no supervised fit/calibration/grid; DEV failure must not open confirmation.",
+  "required": {
+    "complete_queries": 96,
+    "groups": 32,
+    "queries_per_group": 3,
+    "strict_valid_each_arm": 96,
+    "errors_each_arm": 0,
+    "accuracy_point_nondecrease": "primary vs each of all3controls",
+    "proper_loss_point_nonincrease": "primary Brier and NLL vs each of all3controls, tolerance1e-12",
+    "accuracy_supported_gain": "Paired document-cluster percentile bootstrap95 lowerbound>0 versus EACH same-NLI lexical and positional control",
+    "proper_noninferiority_supported": "Paired document-cluster bootstrap95 lowerbound>=-1e-12 for control-minus-primary Brier and NLL versus EACH all3controls",
+    "strict_proper_gain_matched": "At least one point proper-loss strict gain>1e-12 versus EACH same-NLI control; disclose allcomparisons regardless.",
+    "runtime": "Actual frozen nativecore+allmatchedmodels executed, literal contexts/bundles/logits/tokens and counters replay, source/data pins unchanged, onebudgeted composite process/deadline, no unresolved cleanup/errors."
+  },
+  "bootstrap": {
+    "unit": "32document groups, aggregate3query gains per doc, resample32groups with replacement, paired samegroups across metrics/arms",
+    "draws": 2000,
+    "seed": 20261022,
+    "interval": "two-sided percentile2.5%,97.5%",
+    "gain_sign": "accuracy=primary_correct-control_correct; Brier/NLL=control_loss-primary_loss; positive favorsprimary",
+    "multiplicity": "Unadjusted exploratory pairwise intervals, no familywise or universal task claim; uncertainty persists from small32publicdocuments and possiblepretraining exposure."
+  },
+  "failure": "Any required gate failure rejects diagnostic advancement; all96 once accessed become permanently exposedDEV. Preserve negative/partial results, no threshold/policy edits or re-evaluation on the same96.",
+  "always_forbidden_claims": [
+    "OfficialJevBenchCapability/Calibration or rank from these local lossmetrics",
+    "Canonical fullLegalBench162/LegalBench-RAG score from this adaptation",
+    "ClaimBenchscore/rank from NDAdata",
+    "Generic submittedJev104/RRF10 replacement from binary-only NLI study",
+    "OfficialSOTA withoutpublishermatched score+eligibility receipt"
+  ],
+  "auditor_model_calls": 0,
+  "auditor_native_calls": 0
+}

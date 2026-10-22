@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T21:50:08.017278+00:00",
+  "checks_passed": true,
+  "head_sha256": "3f81b5b4587441d0b3f1977ecd3a0ba63c28c60d5ef2c6d50389d4226f71166c",
+  "feature_sha256": "ac91ca3822c5d26305097198b616d7c1a1fa51fc2594799e54c9829738e97ee8",
+  "synthetic_gradient_coordinates_checked": 87,
+  "max_central_finite_difference_error": 3.7669356522940234e-10,
+  "synthetic_objective_logitshift_invariant": true,
+  "three_generic_legal_feature_examples_logitshift_invariant": true,
+  "canonical_target_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "fixed_algorithm": {
+    "optimizer": "full_batch_Adam_float64",
+    "steps": 400,
+    "learning_rate": 0.03,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "epsilon": 1e-08,
+    "residual_l2": 0.1,
+    "scale_floor": 0.1,
+    "final_gradient_norm_max": 0.001,
+    "final_vs_initial_objective_tolerance": 1e-08,
+    "objective": "weighted_mean_threeway_cross_entropy+0.5*L2*sum(residual_weights**2)",
+    "sample_weight": "Each question has totalweight1; each of its3 arms hasweight1/3",
+    "calibration": false,
+    "threshold_fit": false,
+    "early_stop": false
+  },
+  "observations": [
+    "WeightedCEgradient matchesindependentfinite differences includingfullW L2penalty; no omittedbiaspenalty.",
+    "Rawlogitfeaturescentered; residualsoftmax invariant tocommonlogitshift.",
+    "Train-onlyweightednormalization mean/variance floor.1, biasraw1leftmean0scale1; sameartifactallarms.",
+    "400fixedAdam steps pluspredeclared finalobjective<=initial+1e-8/gradientnorm<=1e-3; iffailurestop,no extraiterations/retry.",
+    "Featureextractor genericinference-text29features, no role/IDs/labels/annotations/selectoridentity orstoredanswers."
+  ],
+  "scope": "Pure software/mathchecks only; no actualcorpus inputs/labels fitted, no model/session/native execution or performanceclaim.",
+  "new_model_native_calls": 0
+}

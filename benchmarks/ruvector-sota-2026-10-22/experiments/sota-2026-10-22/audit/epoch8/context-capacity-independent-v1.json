@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T21:47:33.920048+00:00",
+  "checks_passed": true,
+  "context_source_sha256": "28bceb95282ec3e3e938f3211ccad04d2369fa29e1f191f187566339ae3b44d2",
+  "config_sha256": "27f1f8064516b73ba32515adec20d4bb53ce355b46944cd33ba8a7191fc412a1",
+  "TRAIN_sha256": "d98f05b49ebad6a9cac447238b32aa3f8ccefa1253bdd2d52465bd111403c644",
+  "DEV_sha256": "89ceb7f6f8e72a7ad0e1247115a2b1991ccfe81563c2cf0ee362225c089601b9",
+  "confirmation_sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+  "phases": {
+    "train": {
+      "requests": 72,
+      "max_units": 38,
+      "source_document_groups": 24,
+      "all_possible_single_anchors_plus_neighbors_tested": 1161,
+      "full_ranking_paths_tested": 360,
+      "fallback_units_across_queries": 195
+    },
+    "development": {
+      "requests": 24,
+      "max_units": 40,
+      "source_document_groups": 8,
+      "all_possible_single_anchors_plus_neighbors_tested": 516,
+      "full_ranking_paths_tested": 120,
+      "fallback_units_across_queries": 75
+    },
+    "confirmation": {
+      "requests": 96,
+      "max_units": 39,
+      "source_document_groups": 32,
+      "all_possible_single_anchors_plus_neighbors_tested": 1950,
+      "full_ranking_paths_tested": 480,
+      "fallback_units_across_queries": 288
+    }
+  },
+  "possible_anchors_tested": 3627,
+  "bounded_full_ranking_paths_tested": 960,
+  "admission_trace_attempts_retokenized": 30244,
+  "oversize_admissions_rejected": 15545,
+  "max_observed_complete_NLI_pair_tokens": 512,
+  "max_all192_BGE_sequence_tokens": 182,
+  "max_observed_native104_context_bytes": 2940,
+  "max_source_units": 40,
+  "budget_proof": "Sourcechecks before EVERY admission and final rendering imply allrankingpath contexts <=512; everyfrozenunit/query measured rawBGE<=256. Enumeratedall192singleanchors+neighbors plusfivefullorders/input; no exhaustive40!ranking claim. Runtime additionally requires16KiB nativeguard.",
+  "source_coverage": "Fullsourceexactcontiguouspartition includingwhitespace, nooffsetdrop/overlap. Oversizedatoms explicitlytokenfallback; allselectedstrings/hash/wholehypothesis/readmissioncounts replayed.",
+  "NLI_tokenizer_sha256": "a86f883318afa11c8c10466f1bf4efaeb6ded28a52cbe57217a8fa0d0a2a87df",
+  "BGE_tokenizer_sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+  "model_initializations_or_forwards_native_calls": 0,
+  "scope": "Tokenizers/sourcepolicy only; no predictions or qualityclaim."
+}

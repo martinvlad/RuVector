@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-22T21:43:53.037016+00:00",
+  "scope": "Epoch8 ONE train-only fitted3waylegal head on pinned pretrained baseNLI, exact coherentcontext6oldpolicy, train72+DEV24 phase then conditional32docconfirmation in separatelybudgeted nonretryableprocess.",
+  "confirmation_sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+  "selection": "Exactly one source-frozen feature/optimizer/L2 recipe; fit original3waylabels ONLY TRAIN72 with eachquerytotalweight1 across3views. Shared fittedartifact lockedbeforeDEV, no DEV/CONF fitting/calibration/grid/selection.",
+  "required": {
+    "complete_queries": 96,
+    "groups": 32,
+    "queries_per_group": 3,
+    "strict_valid_each_arm": 96,
+    "errors_each_arm": 0,
+    "accuracy_point_nondecrease": "primary vs each of all3controls",
+    "proper_loss_point_nonincrease": "primary Brier and NLL vs each of all3controls, tolerance1e-12",
+    "accuracy_supported_gain": "Paired document-cluster percentile bootstrap95 lowerbound>0 versus EACH same-NLI lexical and positional control",
+    "proper_noninferiority_supported": "Paired document-cluster bootstrap95 lowerbound>=-1e-12 for control-minus-primary Brier and NLL versus EACH all3controls",
+    "strict_proper_gain_matched": "At least one point proper-loss strict gain>1e-12 versus EACH same-NLI control; disclose allcomparisons regardless.",
+    "runtime": "Actual frozen nativecore/BGE/pretrained3wayNLI plus ONE shared train-only head executed identically acrossmatchedarms; immutable train/view/logits/fitobjective/artifact/context/receipts/counters replay. Eachphase<=600s inclmodelinit, allfit/collect andcleanup,CPU2,paid0,GPU0,noretry."
+  },
+  "bootstrap": {
+    "unit": "32document groups, aggregate3query gains per doc, resample32groups with replacement, paired samegroups across metrics/arms",
+    "draws": 2000,
+    "seed": 20261022,
+    "interval": "two-sided percentile2.5%,97.5%",
+    "gain_sign": "accuracy=primary_correct-control_correct; Brier/NLL=control_loss-primary_loss; positive favorsprimary",
+    "multiplicity": "Nominal unadjusted exploratory intervals across paired comparisons; iterative adaptive DEV experiments do not establish familywise or universal task claims. Confirmation never reused after any model exposure."
+  },
+  "failure": "Any required gate failure rejects diagnostic advancement; all96 once accessed become permanently exposedDEV. Preserve negative/partial results, no threshold/policy edits or re-evaluation on the same96.",
+  "always_forbidden_claims": [
+    "OfficialJevBenchCapability/Calibration or rank from these local lossmetrics",
+    "Canonical fullLegalBench162/LegalBench-RAG score from this adaptation",
+    "ClaimBenchscore/rank from NDAdata",
+    "Generic submittedJev104/RRF10 replacement from binary-only NLI study",
+    "OfficialSOTA withoutpublishermatched score+eligibility receipt"
+  ],
+  "auditor_model_calls": 0,
+  "auditor_native_calls": 0,
+  "previous_epoch7_gate_sha256": "2444605411a026e43a24638942082a0ec1b86b5767a1453d3c2bc7005f6b0a46"
+}

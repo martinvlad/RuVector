@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "source_commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+  "source_train_json_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+  "official_archive_sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+  "license": "CC-BY-4.0",
+  "tool_revisions": {
+    "python": "3.12.14",
+    "implementation": "CPython",
+    "builder_sha256": "f236ce7c481727c1b6b0cf28dca99f3314d0b5d1e21e3e5880baffe71147c16f",
+    "validator_sha256": "f58bf593c57f56bcd33c5131fbec51c4e1fc7c29e6aa613e81232e1bd05d10ea",
+    "dependency_requirement": "Pythonstandardlibraryonly; no model/runtimeinstallationorinferencebydataworker"
+  },
+  "diagnostic_scoring_sources": [
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/evaluate.py",
+      "sha256": "7c66c315928628279ed7e964f9651bad94443dc0daba12ed203f5397067164f8",
+      "scope": "Legacytypedaccuracyandproper-scoredisgnostics, notcurrentofficialCapability"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/sources/jevbench_scoring.py",
+      "sha256": "6aa17d212ea20a3eeb6876149367842e8462c11dcb54d73df062fb406368331e",
+      "scope": "Pinnedlegacyper-itemstrictparser/scorer"
+    }
+  ],
+  "target_mapping": {
+    "threeway_field": "evaluation.original_threeway_label",
+    "source_classes": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "binary_Yes": "Entailmentonly",
+    "binary_No": "ContradictionORNotMentioned"
+  },
+  "gate_and_candidate_runtime_source_identity": "Rootcontroller/auditorbindseparately; thisfiledoesnotpretenddatapreparationexecutedscoringormodels.",
+  "current_official_JevBench_Capability_computed": false,
+  "native_model_paid_calls": 0
+}

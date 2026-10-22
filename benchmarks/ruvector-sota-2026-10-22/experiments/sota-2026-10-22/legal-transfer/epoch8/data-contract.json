@@ -1,0 +1,109 @@
+{
+  "schema_version": 2,
+  "frozen_at": "2026-10-22T21:45:07.723535+00:00",
+  "frozen": true,
+  "benchmark": "OriginalContractNLIbinary+threewaytypedheadTRAIN/DEV epoch8diagnostic",
+  "data_files": {
+    "train72.jsonl": {
+      "sha256": "d98f05b49ebad6a9cac447238b32aa3f8ccefa1253bdd2d52465bd111403c644",
+      "queries": 72,
+      "source_document_groups": 24,
+      "source_split": "officialoriginaltrain",
+      "role": "train"
+    },
+    "development24.jsonl": {
+      "sha256": "89ceb7f6f8e72a7ad0e1247115a2b1991ccfe81563c2cf0ee362225c089601b9",
+      "queries": 24,
+      "source_document_groups": 8,
+      "source_split": "officialoriginaltrain",
+      "role": "dev"
+    }
+  },
+  "source": {
+    "path": "../epoch3/sources/original-train.json",
+    "sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+    "documents": 423
+  },
+  "source_commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+  "source_license": "CC-BY-4.0",
+  "source_materialization": {
+    "archive_url": "https://raw.githubusercontent.com/stanfordnlp/contract-nli/eced6528dd3c1d14d73f9a87df8f7bdbc03126f9/resources/contract-nli.zip",
+    "archive_sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+    "member": "contract-nli/train.json",
+    "extracted_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5"
+  },
+  "source_manifest_sha256": "57e0e10b07fa81505cfe729b1a65462ed8bbaf5cd203b8ff0c0c70273ddcc835",
+  "eligibility_manifest_sha256": "bfa8c9784675b322676b44f8de1c536d23cf87d4a7f796ca744f3273de641f6b",
+  "draw_plan_sha256": "a9599d9c65d68b66806c86f6d1ec8db5c32c154ca958f1157cdabae99a57b8e9",
+  "fitting_allowlist": {
+    "path": "train-allowlist.json",
+    "sha256": "d58d8860bf2233cb3dfb7252d235cd3d6c4737af01012d577256aac7cd7caaf6",
+    "contains_labels_or_inputtext": false,
+    "fit_label_field": "evaluation.original_threeway_label",
+    "classes": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ]
+  },
+  "gating_allowlist": {
+    "path": "dev-allowlist.json",
+    "sha256": "58833868e74c204bdbde1a40f02e968aa8b6c4946946d5d8ad77ff6995413976",
+    "contains_labels_or_inputtext": false,
+    "DEVlabels_for_fit": false
+  },
+  "historical_exclusions": {
+    "source": 423,
+    "historical_excluded": 77,
+    "epoch3_dev": 8,
+    "epoch4_dev": 8,
+    "epoch5_dev": 8,
+    "epoch6_dev": 8,
+    "epoch7_dev": 8,
+    "all_prior_excluded": 117,
+    "eligible": 306
+  },
+  "novelty": "117priortraining-sourcegroups excluded; ONE306doclabel-independentranking\u219224newTRAINdocuments then8differentnewDEVdocuments. Group/ID/inputdisjoint; historicalsemanticprovenanceinherited,frozenregistryneedsnorawoldcorpus. Publicsource,notpretrainingcontaminationproof.",
+  "hypotheses": [
+    "nda-17",
+    "nda-7",
+    "nda-3"
+  ],
+  "original_threeway_gold": "evaluation.original_threeway_label preservedverbatim; trainonlyfitpermitted",
+  "binary_mapping": {
+    "Entailment": "Yes",
+    "Contradiction": "No",
+    "NotMentioned": "No"
+  },
+  "inference_boundary": [
+    "state",
+    "questions"
+  ],
+  "forbidden_inference_fields": [
+    "evaluation",
+    "gold",
+    "original_threeway_label",
+    "source_group",
+    "id",
+    "split"
+  ],
+  "learning": {
+    "train72_labels_allowed_for_frozen_head_fit": true,
+    "DEV24_labels_for_fit": false,
+    "calibration_set": null,
+    "officialdev_or_test_for_fit": false
+  },
+  "unused_confirmation_reference": {
+    "path": "../epoch3/confirmation96.jsonl",
+    "sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+    "role": "confirmation; model-unused per parent current checkpoint; labels not loaded for epoch4draw",
+    "source_split": "original-dev",
+    "documents": 32,
+    "queries": 96
+  },
+  "confirmation_labels_used_for_draw_or_fitting": false,
+  "native_model_paid_calls": 0,
+  "official_JevBench_Capability": null,
+  "official_LegalBench162_score": null,
+  "official_rank": null
+}

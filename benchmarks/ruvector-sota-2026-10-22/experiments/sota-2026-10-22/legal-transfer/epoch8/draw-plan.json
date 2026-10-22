@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-22T21:43:10.229327+00:00",
+  "scope": "ONElabel-independentjointdocumentdraw: train72from24newdocuments,DEV24from8differentnewdocuments; originaldev/testexcludedfromfit.",
+  "source_repository": "stanfordnlp/contract-nli",
+  "source_commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+  "source_split": "train",
+  "source_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+  "eligibility_manifest_sha256": "bfa8c9784675b322676b44f8de1c536d23cf87d4a7f796ca744f3273de641f6b",
+  "documents": 32,
+  "role_documents": {
+    "train": 24,
+    "dev": 8
+  },
+  "hypotheses": [
+    "nda-17",
+    "nda-7",
+    "nda-3"
+  ],
+  "queries": 96,
+  "role_queries": {
+    "train": 72,
+    "dev": 24
+  },
+  "selection": "ONErankingof306eligibleofficialTRAINdocumentsbySHA256(ruvector-original-contractnli-epoch8-joint-v1|document_id|casefold-whitespace-normalizedfulltextSHA256). Selectfirst32: first24TRAIN,next8DEV. Roleassignment,predicatesandcountsfixedbeforeanylabelprojection. No labelstratification, predictions, lengthstrataoroutcomes influence selection.",
+  "fit": {
+    "supervised_training": "Onlytrain72labelspermittedaftercandidatefreeze",
+    "calibration": false,
+    "DEV_for_fit": false,
+    "officialdev_or_test_for_fit": false
+  },
+  "freshness": "117priortraining-sourcegroups excluded;32newgroups,24fit+8DEVgroupdisjoint; publicsource notunseen-pretrainingproof.",
+  "confirmation": "UnchangedoriginalofficialdevCONF96SHAf01894... referenceonly; neverlabelsforselection."
+}

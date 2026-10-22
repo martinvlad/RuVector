@@ -1,0 +1,46 @@
+Epoch8 source and fitted-head reconstruction
+
+Use the existing reviewed bootstrap.py/restore_checkpoint.py to restore the
+canonical source hierarchy. Restore the pinned BGE/base3way model assets using
+the existing BGE helper and candidate/epoch4/publication/acquire_assets.py.
+No epoch7 large-binary model assets are needed by epoch8.
+
+Materialize the full core8 and TypeSafe14 runtime closure using the reviewed
+offline helper; source caches must contain the exact regular-file bytes:
+
+  python3 experiments/sota-2026-10-22/candidate/epoch5/reconstruction/restore_runtime.py \
+    --project-root /absolute/project \
+    --core-cache-root /absolute/verified-core-cache-tree \
+    --typesafe-cache-root /absolute/verified-typesafe-cache-tree \
+    --receipt /absolute/new-native-closure.json
+
+The runtime expects the pinned Python3.12 environment, numpy2.2.6,
+onnxruntime1.22.1 and tokenizers0.21.4, Linux x86_64 glibc and Node. Model and
+dependency identity checks execute no prediction themselves. Restoring source
+does not run a benchmark.
+
+The fixed role metadata is legal-transfer/epoch8/data-contract.json, SHA256
+edf7b427c0fef852464d2ead0faeb75916d0e68437e884ee7fae2237f2302b9f.
+Input-only train-allowlist.json SHA256 is
+d58d8860bf2233cb3dfb7252d235cd3d6c4737af01012d577256aac7cd7caaf6.
+The TRAIN-only train72.jsonl projection SHA256 is
+d98f05b49ebad6a9cac447238b32aa3f8ccefa1253bdd2d52465bd111403c644;
+it is opened only during actual fit, never during source preparation/inference.
+No full original annotation corpus or confirmation labels are fit inputs.
+
+After a measured run, restore its exact published frozen readout artifact and
+verify the SHA recorded in the parent fit/selection locks. Initialize:
+
+  engine = candidate.epoch8.runtime.CandidateEngine(
+      fitted_head_path='/absolute/locked-fitted-head.json',
+      training_contract_path='/absolute/project/experiments/sota-2026-10-22/legal-transfer/epoch8/data-contract.json')
+
+This fitted process performs inference only; it cannot refit. Source-only
+reconstruction with no fitted artifact is TRAIN_COLLECTION, not a trained result.
+Fitting/DEV/confirmation execution remains governed by the parent frozen plan,
+role boundaries and resource gates. Existing measured studies stay closed.
+
+Public source includes all candidate8 code/config/tests/provenance/locks and,
+after measurement, the reviewed fitted numeric readout and its identity receipts.
+Exclude cached model weights/tokenizer JSON, dependencies, nested projects,
+private material and temporary artifacts. Preserve all prior checkpoint files.

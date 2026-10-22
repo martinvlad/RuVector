@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-22T21:48:01.371024+00:00",
+  "status": "PREDECLARED_OFFLINE_DIAGNOSTICS_ONLY_BEFORE_ANY_MEASUREMENT",
+  "candidate": "ONEfrozen train-only3waylegalhead isONLY gatedcandidate. No rawreferencecandidate/configselection or promotion/submission.",
+  "source": "Retainedactualraw pretrained3way E/C/N logits from SAME acceptedruntime, exactsaved evidence/context/query foreachnative/lexical/positional reader arm onDEV andconditionalCONF. No extraforwards, alternateinputs or model/sizes/configurations.",
+  "untrained_threeway_reference": {
+    "temperature": 1,
+    "formula": "Stable float64softmax(rawcanonicalE/C/N);Yes=P(E),No=P(C)+P(N).",
+    "meaning": "No supervisedhead; retainsNotMentioned mass."
+  },
+  "discard_neutral_reference": {
+    "temperature": 1,
+    "formula": "Stable float64softmax(rawcanonicalE/C only);Yes=exp(E)/(exp(E)+exp(C)),No=exp(C)/(exp(E)+exp(C)). AlgebraicallyE/(E+C) conditionalonnotNeutral; use2logitstableform toavoidunderflow.",
+    "meaning": "Historical discarded-neutral readout formula asfixed mathematicalreference, not a rerun orclaimmatchingallhistoricalpipelines."
+  },
+  "scoring": "Same strictbinaryargmax lexicographicallysmallest tie(No), properBriersumonehotdiff\u00b2 andNLL\u2212log(max(pgold,1e-15)), finitevalid normalizedprobs.",
+  "comparisons": "Disclose all3trainedhead arms and2rawreference readouts onexactSAMEactualDEV/conditionalCONFinputs; paired groupuncertainty ifreported uses8DEV/32CONF groups,2000seed20261022 andnominalunadjusted intervals. No posthoc thresholds/temperatures or selectingbestreference.",
+  "allowed_interpretation": "Descriptivecontrolledreadout transformation differences onidenticalsavedlogits/evidence canseparate learnedhead from neutraldiscard. Do notinfercross-epoch model/context performance, fullbenchmarkSOTA or unseenpretrainingproof.",
+  "gate_unchanged": "StrictfrozenactualheadonlyDEV/CONFaccuracy/proper/statistical/runtimegates remain unchanged. Referenceimprovement cannot rescuefailedcandidate orconsume96.",
+  "train_labels": "Only frozenTRAIN72fit; no DEV/CONFlabels influence featurefunc,head,normalization,temperature,diagnosticformulas or data selection.",
+  "confirmation_protection": "If actualcandidateDEVgate orruntimeforecastfails, no96modeluse; diagnosticcannotaccessmissingCONFoutputs or causeextraPopen.",
+  "new_auditor_or_worker_model_native_or_paid_calls": 0,
+  "official_score": null,
+  "official_rank": null
+}

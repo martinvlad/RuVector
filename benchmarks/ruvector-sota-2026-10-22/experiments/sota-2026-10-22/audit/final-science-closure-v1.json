@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T15:44:34.093119+00:00",
+  "checks_passed": true,
+  "scope": "Independent final science and source-only continuation-kit audit for completed first two CPU epochs. Publication and recurring-schedule receipts require separate root verification.",
+  "proofs": [
+    {
+      "path": "acceptance-contract-v1.json",
+      "sha256": "04b1f32afc607b1e22955067729053cc82b0f4a9c7a7e05fb47bfeac79b508ed"
+    },
+    {
+      "path": "benchmark-data-independent-v1.json",
+      "sha256": "631a970f2bd0a8a8ea52e578aba535fb8476e80ce992748636c1103f9474f286"
+    },
+    {
+      "path": "premeasurement-acceptance-v2.json",
+      "sha256": "c8a344df007699d62ad3687c531bb6f727a224697bbe4289144ea856db9efcf9"
+    },
+    {
+      "path": "actual-epoch-independent-v1.json",
+      "sha256": "ee1b55ad2b2033d27447f6cef33b7b4035208fe1d4f401300f77f3c2d257ac8d"
+    },
+    {
+      "path": "epoch1-promotion-decision-v1.json",
+      "sha256": "36d7010fb12c63f4084a490fb01a607f8d860cae26dc2724f845ba6f9597f6d5"
+    },
+    {
+      "path": "epoch2-premeasurement-acceptance-v1.json",
+      "sha256": "19975207e0848c39cd31a76a9c5bb2663456431732689f4f07a262d0888e5aa1"
+    },
+    {
+      "path": "epoch2-semantic-probes-v1.json",
+      "sha256": "82558f911332eaa96c813c300924f8c3533dc0edf31e93cfdc824631f848e8b9"
+    },
+    {
+      "path": "epoch2-actual-independent-v1.json",
+      "sha256": "41c794e6df004fd1070aa5d1b45713cb7458814d50c121915372746348ea78e6"
+    },
+    {
+      "path": "continuation-source-kit-review-v1.json",
+      "sha256": "b3878db1ccb57126d1f979b398f7aff47d61dc7c22776c1c55f8c4be82efcb5a"
+    },
+    {
+      "path": "actual-review-design-timing-clarification-v1.json",
+      "sha256": "994e3e6e02789f743b70d6f1ea22ab203c015083a50a17a7df7afcfd1ac9000f"
+    }
+  ],
+  "native_measurement_batches": [
+    {
+      "path": "experiments/sota-2026-10-22/runs/development",
+      "n": 183,
+      "elapsed_s": 66.50072300899956
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/confirmation",
+      "n": 48,
+      "elapsed_s": 1.8474341119999735
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/confirmation",
+      "n": 96,
+      "elapsed_s": 6.564897401999588
+    }
+  ],
+  "actual_native_requests": 327,
+  "completed_native_batches": 3,
+  "contract_global_batch_cap": 6,
+  "all_measured_worker_and_native_pids_absent": [
+    3260,
+    3263,
+    3300,
+    3303,
+    4030,
+    4033
+  ],
+  "new_paid_calls": 0,
+  "new_gpu_rentals": 0,
+  "source_training_and_eval_failures_preserved": true,
+  "epoch1": {
+    "selected_candidate": "residual-l2-1-temperature",
+    "public_development_correct": 106,
+    "public_development_n": 183,
+    "public_baseline_correct": 104,
+    "confirmation_n": 48,
+    "confirmation_correct": 39,
+    "confirmation_control_correct": 41,
+    "promotion": "REJECTED_ACCURACY_REGRESSION",
+    "scope": "Old183 repeatedly exposed; easy48 first known project use, now consumed."
+  },
+  "epoch2": {
+    "selected_candidate": "decision-preserving-temperature-global",
+    "public_development_correct": 104,
+    "public_development_n": 183,
+    "confirmation_n": 96,
+    "confirmation_correct": 57,
+    "confirmation_control_correct": 57,
+    "proper_score_improvement": false,
+    "brier_improvement_ci95": [
+      -0.0007400053769178889,
+      -3.209142426160936e-05
+    ],
+    "nll_improvement_ci95": [
+      -0.0007400134090472013,
+      -3.208655328087659e-05
+    ],
+    "promotion": "REJECTED_PROPER_SCORE_REGRESSION",
+    "scope": "Four LegalBench tasks,24querieseach,zero-shot adaptation,96distinctsource docs; not full162 official protocol."
+  },
+  "accepted_champion_unchanged": "ruvector-native-submission-round2-v2",
+  "accepted_public_development_score": {
+    "correct": 104,
+    "n": 183
+  },
+  "LegalBench_RAG_confirmed_policy_unchanged": "RRF10",
+  "previous_JevBench_submission_reference": "7FEA2738",
+  "new_benchmark_submission_by_auditor": false,
+  "official_score": null,
+  "official_rank": null,
+  "official_sota_established": false,
+  "freshness_state": {
+    "old183": "exposed adaptive development",
+    "easy48": "consumed; never fresh confirmation again",
+    "Legal96": "consumed; never fresh confirmation again"
+  },
+  "source_continuation_kit": {
+    "reviewed_files": 71,
+    "reviewed_bytes": 4574331,
+    "reconstruction": "Cold source-only bootstrap and82nonmodelpins verified; native model weights deferred explicitly",
+    "root_must_add_actual_results_and_final_reviews": true
+  },
+  "old_archives": [
+    {
+      "path": "/workspace/ruvector-benchmark-pilot.zip",
+      "sha256": "0ff4ffcf156deaf612bce0d5f9b66800e1595a94c0e5ad15e39c9d3e6f1dc363",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/ruvector-benchmark-iteration-2026-10-21.zip",
+      "sha256": "da4f67550c39c0f668625e4f2cf484ce9badf2510d9100fc4a9f2984e40b5486",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/ruvector-compounding-2026-10-22.zip",
+      "sha256": "9b29bec10491594c6c2ee8cbaceecf07b47cf97f13f6dd24bfe37b6252c2c45e",
+      "unchanged": true
+    }
+  ],
+  "minor_disclosures": [
+    "Initial auditor sumtol1e-9 false-negative fixed in preservedv2 matching officialstrict1e-3; no model/data change.",
+    "Ordering source hardening was pre-run robustness; original183state and criteria renderedorder differences werezero.",
+    "Initialaudit-script design was before auditoroutcomeinspection, afternativeoutcome generation; wordingclarificationpreserved.",
+    "Legal96contractprose2014priorclassificationtexts differsfrom pinned actual2013; independentdraw/exclusions verified2013 unchanged.",
+    "First closure emission attempted relative_to using a relative batchpath and absolute projectpath; corrected reporting path only, no metric/data/model changes."
+  ],
+  "next_research_requirement": "A new evidence-bearing hypothesis and new unused confirmation identities. Stronger native-compatible decision model and matched retrieval ablation are research priorities; repeating failed residual calibration is not new evidence.",
+  "auditor_external_mutations": 0,
+  "auditor_native_calls": 0,
+  "auditor_paid_calls": 0
+}

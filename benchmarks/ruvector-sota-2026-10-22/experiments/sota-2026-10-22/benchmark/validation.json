@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T15:18:28.662341+00:00",
+  "checks_passed": true,
+  "source_manifest_sha256": "e270fa941f07b27ed75818cab43f48d5800598444d95d3a25b4db1710a33f64d",
+  "data_contract_sha256": "09d3791981ed894e28bb9dd9847003118a7f3defcc9a0fd757a8e3db78440d7e",
+  "validation_source_sha256": "bf70a33dd1aaae3f9d40c6d8bd30b86a13bfbb67f7e79fde56ef646a4bac5248",
+  "frozen_source_checks": 22,
+  "split_counts": {
+    "train": 106,
+    "dev": 43,
+    "calibration": 34,
+    "confirmation": 48
+  },
+  "cross_split_id_group_request_duplicate_collisions": 0,
+  "legacy104_saved_response_replay": {
+    "n": 183,
+    "correct": 104,
+    "accuracy": 0.5683060109289617,
+    "brier": 0.5739495692089873,
+    "nll": 0.9978038016019558,
+    "strict_valid": 183,
+    "errors": 0,
+    "ece10": 0.16584056323445223,
+    "by_type": {
+      "choice": {
+        "n": 103,
+        "correct": 55,
+        "accuracy": 0.5339805825242718,
+        "brier": 0.6201796022926653,
+        "nll": 1.1918788029882632,
+        "strict_valid": 103,
+        "errors": 0,
+        "ece10": 0.1577829487563569
+      },
+      "noul": {
+        "n": 62,
+        "correct": 37,
+        "accuracy": 0.5967741935483871,
+        "brier": 0.5902677957022334,
+        "nll": 0.8270736416304035,
+        "strict_valid": 62,
+        "errors": 0,
+        "ece10": 0.2575464587096774
+      },
+      "score": {
+        "n": 18,
+        "correct": 12,
+        "accuracy": 0.6666666666666666,
+        "brier": 0.25320382197564895,
+        "nll": 0.4753340669045429,
+        "strict_valid": 18,
+        "errors": 0,
+        "ece10": 0.0817056161111111
+      }
+    },
+    "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+    "official_score": null,
+    "official_rank": null
+  },
+  "native_inference_calls": 0,
+  "network_calls": 0,
+  "diagnostic_contract_tests": [
+    "proper scores prefer correct uncertainty to confident error",
+    "unnormalized probabilities fail closed",
+    "missing output fails closed",
+    "bool noul fails closed"
+  ],
+  "official_score": null,
+  "official_rank": null
+}

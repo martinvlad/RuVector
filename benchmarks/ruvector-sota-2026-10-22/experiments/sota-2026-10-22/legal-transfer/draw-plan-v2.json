@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-22T15:37:38.093173+00:00",
+  "tasks": [
+    "contract_nli_explicit_identification",
+    "contract_nli_limited_use",
+    "contract_nli_return_of_confidential_information",
+    "contract_nli_sharing_with_employees"
+  ],
+  "rows_per_task": 24,
+  "draw_rule": "Exclude entire upstream source document if any clause exactly matches historical classification text or is a casefold/whitespace-normalized substring of prior ContractNLI retrieval corpus. Deterministic augmenting-path matching allocates24 unique documents per task (96 distinct total), task order by eligible-document count then name; document adjacency sorted by first text-only SHA256 draw key; choose first row per assigned document without cross-document query-text duplication. No label stratification, prediction or model outcome used.",
+  "github_commit": "b46bf4ffae90524b2b72aaa30e7745fe9db64481",
+  "huggingface_revision": "daec8237410aa23e3faf4bc41ad8b3a7e1696826",
+  "prompt_mode": "Official task base_prompt template, zero-shot typed two-choice adaptation; no examples or label-dependent prompt edits.",
+  "old183_and_easy48_are_not_confirmation": true,
+  "model_calls": 0,
+  "version": 2,
+  "amends": {
+    "path": "draw-plan.json",
+    "sha256": "f89509f95330b40dcf805437a6f801f2c07eee75436d1f3aab49fa0b0f0ca8b1"
+  },
+  "why_amended": "After source inspection, strengthen global document disjointness beyond initial text uniqueness. Both protocol versions precede all model inference; no benchmark outcomes exist for this set.",
+  "zero_shot_adaptation": "Official base_prompt first paragraph only + Answer Yes or No; state is verbatim test clause; choice criteria exact Yes/No. The upstream8 in-context demonstrations are omitted, explicitly not the official few-shot protocol."
+}

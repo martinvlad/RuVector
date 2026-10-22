@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-22T15:35:32.997946+00:00",
+  "epoch": 2,
+  "hypothesis": "Temperature fitting improves classification proper-score diagnostics while preserving every exact legacy decision; entire ordinal answer is unchanged.",
+  "source_of_clarifications": "Parent clarified noul numeric probability may change monotonically; only binary decision is invariant. Legacy scorer uses argmax even for ordinal, so epoch2 leaves ordinal fully identity.",
+  "config_count": 2,
+  "runtime_api": {
+    "module": "candidate.epoch2.runtime",
+    "class": "CandidateEngine",
+    "constructor": "CandidateEngine(artifact_path=None)",
+    "methods": [
+      "predict(state,questions)",
+      "close()"
+    ],
+    "paired_control_field": "baseline104_response"
+  },
+  "pure_api": {
+    "module": "candidate.epoch2.head",
+    "functions": [
+      "fit(records,config)",
+      "transform(response,state,questions,artifact)",
+      "candidate_configs()"
+    ]
+  },
+  "fitting_scope": {
+    "head_training": "none",
+    "calibration": "old public183 calibration34 only; classification subset",
+    "dev_labels_read_by_worker": false,
+    "easy48_inspected": false,
+    "new_legal_transfer_labels_inspected": false,
+    "native_calls_by_worker": 0
+  },
+  "proofs": {
+    "all_typed_argmax": "Monotonic positive temperature with explicit legacy lexicographic argmax check and identity fallback for floating-point tie change",
+    "choice_field": "exact original field retained",
+    "noul": "scalar and redundant probability map are consistent; exact binary decision retained",
+    "score": "entire answer identity, including argmax, exact score field, probabilities and moment"
+  },
+  "calibration_claim": "Temperature fitted only; calibrated remains false until independent evidence warrants a claim.",
+  "pre_freeze_audit_fix": "Auditor identified redundant noul map NaN/type validation and Boolean temperature validation. Fixed before any runtime/batch; earlier source preserved in head.pre-audit-finite.py.",
+  "tests": {
+    "passed": true,
+    "run": 16,
+    "failures": 0,
+    "errors": 0,
+    "uses_only_generated_diagnostics": true
+  },
+  "sources": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/head.py",
+      "bytes": 8208,
+      "sha256": "907f1a2827d5cca5d3ca33c91a8bd841b12e0b36df4f7944aed6be6152929db9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/runtime.py",
+      "bytes": 1510,
+      "sha256": "961f7d130839ca8facbe28e702f07646c7c3190f65a37e9dd612b24e4f7338c5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/train.py",
+      "bytes": 1097,
+      "sha256": "aca95964316ec89343a5878aae070aad3abf28f19b1faceab118d8fe49abaacf"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/test_head.py",
+      "bytes": 7361,
+      "sha256": "d140b1423b25df7ca69505f18cd78fe7b3f4e7df53c896d7fd7e1cd691923af4"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/configs.json",
+      "bytes": 223,
+      "sha256": "411f35cc976de4f7929cbcb6ca82824d0dbffaa6ba5f651a34c5a0a8d67d2012"
+    }
+  ],
+  "immutable_base_runtime": {
+    "path": "experiments/sota-2026-10-22/candidate/runtime.py",
+    "sha256": "9740b72865d882870423e55ce74f8791863ddef2c980da5354457c109bccdd5e"
+  },
+  "fit_preflight": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch2/fit-preflight.json",
+    "sha256": "4df12c69302a601412480e0ddcda50518842d10c78940cbc43531f810a862837"
+  },
+  "official_score": null,
+  "official_rank": null,
+  "goal_met": false
+}

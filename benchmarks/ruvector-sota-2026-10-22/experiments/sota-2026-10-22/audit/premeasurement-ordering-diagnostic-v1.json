@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-22T15:24:48.450597+00:00",
+  "status": "PRE_RUN_REVIEW_V1_SUPERSEDED_BEFORE_ANY_NATIVE_MEASUREMENT",
+  "finding_origin": "Root coordinator inspected normalized-state ordering after initial auditor source approval",
+  "prior_plan_sha256": "96b377f22c8adb94a3c386f8a1d26e40d1e64e4ac7bd473388632119b4edf3c7",
+  "prior_premeasurement_review_sha256": "f367b2b35dd6c0108e6aaf9e520ee705eb79511cc58225192e13c59bd81c03aa",
+  "independent_ordering_check": {
+    "dict_states": 35,
+    "dict_state_key_order_different": 0
+  },
+  "old_request_top_key_sets": [
+    [
+      "state",
+      "model",
+      "questions"
+    ]
+  ],
+  "reason": "Canonical JSONL semantic identity drops insertion order; native adapter renders dict state text in request insertion order, and candidate lexical trigrams likewise use rendered state. Source and dataset byte checks alone did not establish identical runtime text.",
+  "required_fix": "Use preserved old state/question ordering for development requests and retain decoded actual request order in collected inference inputs; preserve previous source/plan as unlaunched revisions.",
+  "no_model_or_benchmark_calls_used_in_diagnosis": true
+}

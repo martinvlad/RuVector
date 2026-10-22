@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T15:17:08.153775+00:00",
+  "frozen": true,
+  "normalization": "Unmodified upstream build_question: type, instructions, criteria when non-null. input is only state/questions; model field omitted and no metadata passed.",
+  "input_hash": "SHA256(json.dumps(input,ensure_ascii=False,sort_keys=True,separators=(',',':'),allow_nan=False).encode('utf-8'))",
+  "normalized_input_hash": "Casefold and collapse all whitespace in canonical serialized input, then SHA256",
+  "record_schema": {
+    "id": "evaluation-only id",
+    "split": "train|dev|calibration|confirmation",
+    "source": "provenance only",
+    "source_group": "paraphrase group or exact id",
+    "input": {
+      "state": "upstream state",
+      "questions": {
+        "decision": "upstream typed question"
+      }
+    },
+    "evaluation": {
+      "type": "noul|choice|score",
+      "gold": "exact STRING label, including ordinal index",
+      "labels": "exact upstream labels in order",
+      "source_family": "upstream family",
+      "group": "upstream group or null",
+      "gold_distribution": null
+    },
+    "input_sha256": "canonical hash",
+    "normalized_input_sha256": "duplicate-control hash",
+    "response": "only in cached/measured records"
+  },
+  "split_summary": {
+    "train": {
+      "n": 106,
+      "question_types": {
+        "noul": 40,
+        "choice": 55,
+        "score": 11
+      },
+      "source_groups": 85
+    },
+    "dev": {
+      "n": 43,
+      "question_types": {
+        "choice": 26,
+        "score": 3,
+        "noul": 14
+      },
+      "source_groups": 34
+    },
+    "calibration": {
+      "n": 34,
+      "question_types": {
+        "noul": 8,
+        "choice": 22,
+        "score": 4
+      },
+      "source_groups": 28
+    },
+    "confirmation": {
+      "n": 48,
+      "question_types": {
+        "choice": 36,
+        "noul": 12
+      },
+      "source_groups": 48
+    }
+  },
+  "files": {
+    "exposed183.jsonl": {
+      "path": "exposed183.jsonl",
+      "sha256": "cf0d9f2f00dbe079171d27fae02613924e6b8c091a4d173061cfeea30ee3b2f8"
+    },
+    "exposed183-with-responses.jsonl": {
+      "path": "exposed183-with-responses.jsonl",
+      "sha256": "5068edb2fa7e493497f4f325d84e04f03d77953fbbe63c32cc599eb1b2542207"
+    },
+    "train.jsonl": {
+      "path": "train.jsonl",
+      "sha256": "16674d5b182f72df08c3feea04b37d683cb31d97c0d5f30bc201409caab216ff"
+    },
+    "dev.jsonl": {
+      "path": "dev.jsonl",
+      "sha256": "bce96c556434fdbaab618f1ac9afb129d134acead1e32fbe08d0b0c12506ca28"
+    },
+    "calibration.jsonl": {
+      "path": "calibration.jsonl",
+      "sha256": "1dbdf59cdc83f12296541a7682561618cbf88a95b8154da252e1d8f709ef9823"
+    },
+    "confirmation48.jsonl": {
+      "path": "confirmation48.jsonl",
+      "sha256": "5bf8b5470aab851d98a207a91053e32e861b93d7459a4a864961a30de4338ef5"
+    }
+  },
+  "split_rule": "SHA256('sota-2026-10-22:group-split:v1:' + source_group) mod10: <6 train, <8 dev, else calibration. easy48 held out separately.",
+  "cross_split_id_group_canonical_and_normalized_input_collisions": [],
+  "scoring_api": "benchmark.evaluate.score_records(records) -> n,correct,accuracy,brier,nll,strict_valid,errors,ece10,by_type; benchmark.evaluate.score_record(record) -> per-item diagnostics",
+  "brier_definition": "Sum over exact labels of (p - one_hot_gold)^2, averaged over items. Invalid item penalty2; no fabricated probabilities.",
+  "nll_definition": "-log(max(1e-15,p_gold)); invalid item penalty -log(1e-15).",
+  "strict_and_label_accuracy": "Pinned unchanged legacy official scoring.py, same adapter noul/choice/score parsing semantics; not the current full-release Capability score.",
+  "current_release300": {
+    "status": "NOT_PUBLICLY_LOCATED",
+    "evidence": [
+      "current-repo-public-tree.json",
+      "publisher-data-page.txt"
+    ],
+    "meaning": "Untruncated official public repo exposes original72/hard111/easy48; publisher data page offers aggregate system results only. Current draw300 cannot be reconstructed from these sources."
+  },
+  "current_official_scorer": {
+    "status": "CURRENT_V16_SOURCE_NOT_LOCATED_IN_OFFICIAL_JEVBENCH_TREE",
+    "fallback": "Legacy pinned unchanged per-item scorer plus explicitly local proper-score diagnostics only"
+  },
+  "official_capability": null,
+  "official_rank": null,
+  "native_inference_calls_by_data_preparation": 0,
+  "limits": [
+    "All exposed183 labels already used adaptively before this resplit",
+    "easy48 is public historical data, not current300 or publisher sealed test",
+    "No gold probability distributions are available for official fidelity calibration",
+    "No claim that unseen project IDs imply unseen model training data"
+  ]
+}

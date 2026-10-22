@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T15:31:13.751476+00:00",
+  "decision": "REJECTED_FOR_PROMOTION",
+  "candidate": "residual-l2-1-temperature",
+  "artifact_file_sha256": "1214fe84986db37c9cdb3ef367248cc325c6a30c00b6e55d0fe7dd33fbf8293f",
+  "reason": "Predeclared accuracy-nondecrease constraint failed on one first-use internal confirmation pass:39/48 versus41/48. Improved empirical Brier/NLL do not override the accuracy constraint.",
+  "current_accepted_JevBench_candidate": "ruvector-native-submission-round2-v2",
+  "accepted_old_public_score": {
+    "n": 183,
+    "correct": 104
+  },
+  "native_baseline": {
+    "n": 183,
+    "correct": 77,
+    "brier": 0.7621985607763119,
+    "nll": 1.3163746889998424,
+    "strict_valid": 183,
+    "errors": 0
+  },
+  "native104_baseline": {
+    "n": 183,
+    "correct": 104,
+    "brier": 0.5739495692089873,
+    "nll": 0.9978038016019558,
+    "strict_valid": 183,
+    "errors": 0
+  },
+  "selected_old_public_metrics": {
+    "n": 183,
+    "correct": 106,
+    "brier": 0.4962734788395741,
+    "nll": 0.8701483728242644,
+    "strict_valid": 183,
+    "errors": 0
+  },
+  "confirmation": {
+    "n": 48,
+    "selected": {
+      "id": "residual-l2-1-temperature",
+      "head": true,
+      "temperature": true,
+      "uniform_mix": 0.0,
+      "l2": 1.0
+    },
+    "candidate": {
+      "n": 48,
+      "correct": 39,
+      "brier": 0.2826886261082561,
+      "nll": 0.5313359138465117,
+      "strict_valid": 48,
+      "errors": 0
+    },
+    "same_native_call_baseline104": {
+      "n": 48,
+      "correct": 41,
+      "brier": 0.7487328302183932,
+      "nll": 1.3576147761812631,
+      "strict_valid": 48,
+      "errors": 0
+    },
+    "native_only": {
+      "n": 48,
+      "correct": 41,
+      "brier": 0.7487328302183932,
+      "nll": 1.3576147761812631,
+      "strict_valid": 48,
+      "errors": 0
+    },
+    "paired_uncertainty": {
+      "brier": {
+        "mean_improvement": 0.4660442041101371,
+        "ci95": [
+          0.35427215895886593,
+          0.5662361718348911
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "nll": {
+        "mean_improvement": 0.8262788623347516,
+        "ci95": [
+          0.642910661020589,
+          0.9851894902988281
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "accuracy": {
+        "mean_improvement": -0.041666666666666664,
+        "ci95": [
+          -0.125,
+          0.041666666666666664
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      }
+    },
+    "freshness_scope": "First known project use of small public easy48; not current canonical draw or publisher sealed set",
+    "generalization_established": false
+  },
+  "future_easy48_role": "Previously observed development only; may never be counted fresh confirmation in later cycles.",
+  "paired_proper_score_intervals_do_not_establish_accuracy_generalization": true,
+  "official_score": null,
+  "official_rank": null,
+  "official_sota_established": false,
+  "bound_actual_audit_sha256": "ee1b55ad2b2033d27447f6cef33b7b4035208fe1d4f401300f77f3c2d257ac8d"
+}

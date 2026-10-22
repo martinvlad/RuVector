@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T15:37:09.779164+00:00",
+  "status": "PRIMARY_SOURCES_VERIFIED_NO_RUVECTOR_RUN",
+  "benchmark": {
+    "name": "ClaimBench",
+    "publisher": "Vals AI",
+    "version": "1",
+    "published_updated": "2026-10-20",
+    "source_url": "https://www.vals.ai/benchmarks/claimbench",
+    "aggregate_url": "https://www.vals.ai/_astro/benchmark_view_claimbench.cK2bPt2E.json",
+    "n": 1960,
+    "labels": [
+      "supported",
+      "contradicted",
+      "insufficient_evidence"
+    ],
+    "instruction": "Judge only from the supplied 10-K excerpt, not external company knowledge.",
+    "excerpt_lengths": "Short paragraph; medium about2k\u20134k tokens; long about8k\u201316k tokens.",
+    "categories": [
+      "direct_support",
+      "subtle_contradiction",
+      "numeric_discrepancy",
+      "missing_evidence",
+      "non_supporting_citation"
+    ],
+    "label_counts": {
+      "supported": 392,
+      "contradicted": 785,
+      "insufficient_evidence": 783
+    }
+  },
+  "targets": {
+    "decision_model_leader": "Decider V1.2",
+    "decision_model_leader_exact": {
+      "accuracy": 99.694,
+      "latency": 1.229,
+      "stderr": 0.125,
+      "cost_per_test": 0.000104,
+      "token_totals": {
+        "input_tokens": 10184896,
+        "output_tokens": 1960,
+        "reasoning_tokens": null,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": null
+      },
+      "temperature": null,
+      "top_p": null,
+      "max_output_tokens": 0,
+      "reasoning": null,
+      "reasoning_effort": null,
+      "verbosity": null,
+      "compute_effort": null,
+      "provider": "Perplexity via OpenRouter",
+      "harness": null
+    },
+    "leader_correct_derived": 1954,
+    "strictly_higher_point_accuracy_on_same1960_requires_correct": 1955,
+    "max_errors_for_strict_decision_lead": 5,
+    "overall_100_percent_models": [
+      "anthropic/claude-sonnet-5-5",
+      "anthropic/claude-haiku-5-5",
+      "anthropic/claude-opus-5-5",
+      "openai/gpt-6.1-sol"
+    ],
+    "interpretation": "Overall100% is already tied by four frontier language models. A new100% row ties their accuracy; decision-model track and cost/latency tradeoffs must be stated separately. One fewer error is only0.051percentagepoints; statistical superiority is not established by a one-item point advantage."
+  },
+  "calibration_and_cost": {
+    "threshold_rule": "Lowest top-probability threshold with at most1% errors on fixed30% tuning claims; frozen evaluation on other70%.",
+    "page_reported_heldout_n": 1376,
+    "language_model_cost_latency_basis": "Two calls per claim, label then probability; both included.",
+    "decision_model_cost_latency_basis": "One typed-decision call.",
+    "latency_boundary": "Gateway measured model latency, excluding sandbox-to-gateway hop.",
+    "ruvector_full_pipeline_including_index_build_cost_must_be_measured": true
+  },
+  "ruvector_fit": {
+    "good_roles": [
+      "Chunk and rank evidence ONLY inside the provided excerpt.",
+      "Hybrid lexical/dense retrieval with explicit entity/date/unit/value relations.",
+      "Native RuVector execution and retained provenance for every claim.",
+      "Calibrated tri-label decision layer and uncertainty routing."
+    ],
+    "missing_capabilities_in_current_bge_small_baseline": [
+      "Reliable semantic entailment and subtle contradiction detection.",
+      "Exact numerical/year/entity comparison.",
+      "Complete8k\u201316k-token evidence coverage beyond current256token embedding context."
+    ],
+    "critical_guard": "A top-k evidence miss is not proof of insufficient_evidence. Scan or cover the entire supplied excerpt and distinguish irrelevant/different-company evidence from contradiction."
+  },
+  "access": {
+    "official_page_mentions_public_examples": 10,
+    "rendered_examples_inspected": 3,
+    "published_aggregate_rows": 19,
+    "full1960_item_download_verified": false,
+    "official_scorer_download_verified": false,
+    "submission_endpoint_verified": false,
+    "dataset_license_verified": false,
+    "meaning": "No raw dataset, scorer, license or direct submission link appeared in the inspected official page/aggregate. Metadata labels dataset_type public; this does not establish an accessible licensed download."
+  },
+  "pilot_plan": {
+    "status": "PREPARED_NONEXECUTED",
+    "prerequisites": [
+      "Obtain verified official item set and evaluation/submission protocol.",
+      "Pin dataset revision, license, item identities, exact prompt/options, split and scorer before native calls."
+    ],
+    "arms": [
+      "Current native RuVector typed-similarity baseline",
+      "Same decision/NLI model with full supplied excerpt and no RuVector selection",
+      "Same decision model with native RuVector within-excerpt retrieval plus lexical/numeric checks"
+    ],
+    "internal_development": "Freeze a separate filing-disjoint development/calibration/confirmation split for own claims; preserve publisher fixedsplit for official report. Do not tune on ten public examples or target errors.",
+    "metrics": [
+      "Overall and per-category accuracy",
+      "Accuracy by excerpt length and gold label",
+      "Wrong-support vs wrong-contradiction confusion",
+      "Coverage at publisher1%error budget on untouched split",
+      "Probability calibration proper scores",
+      "End-to-end p50/p95 and actual cost/claim including native embedding/retrieval"
+    ],
+    "promotion": "No accuracy regression on untouched claims; demonstrate retrieval contribution in matched model/data/budget ablation. Full official score and placement only after publisher evaluation.",
+    "new_inference_calls": 0,
+    "new_paid_calls": 0,
+    "new_gpu_rentals": 0
+  },
+  "official_ruvector_score": null,
+  "official_ruvector_rank": null,
+  "sources": [
+    {
+      "path": "vals-official.html",
+      "sha256": "a341ab218b719f87bd8bed86a484e7e3649bbe91be15a56c7e66babbfd8f21d9"
+    },
+    {
+      "path": "benchmark-view-official.json",
+      "sha256": "c0b96e43a97ed7a9dbb35a06b2ff59446cf8fd70f6d50005b8c58aa860f229d8"
+    },
+    {
+      "path": "official-source-receipts.json",
+      "sha256": "a7e1f4ff10a1b7cd9a07acd33be94a82f634478ab0ae76082075d3ab20445d1a"
+    },
+    {
+      "path": "benchmark-view-receipt.json",
+      "sha256": "f6aac010949385cef95035537461b0956598e3fea1da08225a619276f6f5054b"
+    }
+  ]
+}

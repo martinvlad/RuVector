@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-22T15:11:40.959891+00:00",
+  "objective": "Use real RuVector in a repeatable improvement loop toward independently verified JevBench and LegalBench-RAG SOTA; never equate synthetic/public-development gains with official rank.",
+  "write_root": "/workspace/ruvector-eval/experiments/sota-2026-10-22",
+  "baseline": {
+    "candidate": "ruvector-native-submission-round2-v2",
+    "source_directory": "experiments/submission-2026-10-22/jevbench",
+    "development_correct": 104,
+    "development_n": 183,
+    "public_development_only": true,
+    "submitted_reference": "7FEA2738"
+  },
+  "official_target": {
+    "track": "JevBench open-weights Capability under official caps",
+    "observed_leader": "Chon-1.0-12B",
+    "observed_score": 85.3,
+    "proof": "experiments/top-rank-2026-10-22/gap-analysis.json",
+    "goal_met": false,
+    "rank": null
+  },
+  "science": {
+    "native_ruvector_execution_required": true,
+    "no_benchmark_id_or_answer_lookup": true,
+    "train_dev_calibration_confirmation_separated": true,
+    "synthetic_results_are_diagnostics_only": true,
+    "confirmation_labels_not_for_selection": true,
+    "source_and_data_freeze_before_measured_runs": true,
+    "preserve_failed_attempts": true,
+    "whole_pipeline_and_native_ablation_required": true
+  },
+  "resources": {
+    "new_paid_inference_calls": 0,
+    "new_gpu_rentals": 0,
+    "max_native_measurement_batches_initial_epoch": 6,
+    "max_threads_per_worker": 2,
+    "max_seconds_per_batch": 600,
+    "max_evidence_free_retries": 2,
+    "max_artifact_bytes": 2000000000
+  },
+  "loop": {
+    "authorized": true,
+    "next_epoch_requires_new_frozen_hypothesis_or_new_unused_confirmation_data": true,
+    "checkpoints_required": true,
+    "official_sota_requires_publisher_score_and_eligibility": true,
+    "stop_on_resource_exhaustion_or_unavailable_next_evidence": true
+  },
+  "ownership": {
+    "root": "contract.json, plan.json, controller/, runs/, status.json, memory/",
+    "benchmark_worker": "benchmark/",
+    "candidate_worker": "candidate/",
+    "independent_auditor": "audit/"
+  },
+  "immutable_inputs": [
+    "experiments/submission-2026-10-22",
+    "experiments/compounding",
+    "experiments/swarm",
+    "/workspace/ruvector-benchmark-pilot.zip",
+    "/workspace/ruvector-benchmark-iteration-2026-10-21.zip",
+    "/workspace/ruvector-compounding-2026-10-22.zip"
+  ],
+  "external_mutations": "No duplicate benchmark submissions or author emails. Only submit a new independently accepted candidate if this phase actually improves the relevant evidence."
+}

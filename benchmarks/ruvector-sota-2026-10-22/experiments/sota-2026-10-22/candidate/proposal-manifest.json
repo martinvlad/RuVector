@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-22T15:20:23.964709+00:00",
+  "architecture": "Actual native RuVector BGE-small + frozen104 supplied-input validators + optional conditional-softmax residual option head and disjoint public-DEV temperature fitting",
+  "runtime_api": {
+    "module": "candidate.runtime",
+    "class": "CandidateEngine",
+    "constructor": "CandidateEngine(artifact_path=None)",
+    "predict": "predict(state,questions)",
+    "close": "close()",
+    "attributes": [
+      "name",
+      "attribution",
+      "receipt",
+      "last_usage",
+      "native_pid",
+      "native_process"
+    ]
+  },
+  "pure_api": {
+    "module": "candidate.head",
+    "fit": "fit(records, config) -> JSON artifact",
+    "transform": "transform(response,state,questions,artifact) -> response",
+    "configs": "candidate_configs() -> six frozen config dicts"
+  },
+  "input_boundary": "Inference takes only supplied state/questions and native104 response, never benchmark ids, labels, split, source group or evaluation metadata.",
+  "feature_names": [
+    "log_native_probability",
+    "native_probability",
+    "option_token_coverage",
+    "option_state_jaccard",
+    "option_state_cosine",
+    "option_instruction_coverage",
+    "option_character_trigram_cosine",
+    "state_option_number_overlap",
+    "option_length_log",
+    "score_bucket_position",
+    "score_bucket_center_distance"
+  ],
+  "training_scope": {
+    "permitted_roles": [
+      "train",
+      "calibration"
+    ],
+    "dev_labels_read": false,
+    "confirmation_records_rejected": true,
+    "old_exposed183_used_for_compatibility": true,
+    "easy48_inspected": false,
+    "official_sealed_access": false
+  },
+  "config_count": 6,
+  "native_budget_used_by_worker": 0,
+  "pairing": "Artifact runtime retains baseline104_response from same actual native request; no extra control inference.",
+  "runtime_validation": "Verifies frozen37 baseline sources, selected plan, all3 model assets and actual native binary hash before serving; artifact integrity checked.",
+  "calibration_claim": "Fitted temperature, not independently validated calibration; output calibrated remains false until a separately evidenced claim is warranted.",
+  "models_trained": "Generic linear conditional-softmax residual head over native/logical probabilities and label-invariant lexical features; native ONNX weights unchanged.",
+  "failure_history": [
+    {
+      "path": "head.preschema-v1.py",
+      "reason": "First cached train/calib preflight expected redundant probabilities map absent from actual native noul scalar wire; zero native calls and zero DEV or confirmation evaluations. Fixed generic Bernoulli reconstruction; preserved failed preflight."
+    }
+  ],
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "ruvector_typesafe": "0.2.0"
+  },
+  "validation": {
+    "at": "2026-10-22T15:20:23.964101+00:00",
+    "success": true,
+    "tests_run": 13,
+    "failures": 0,
+    "errors": 0,
+    "actual_native_calls": 0,
+    "benchmark_or_confirmation_gold_in_tests": false
+  },
+  "sources": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/head.py",
+      "bytes": 13277,
+      "sha256": "c0179108191c8f5d2c3d15067d6b3a390a4b065d4d7744922719e64f0b7721dd"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/runtime.py",
+      "bytes": 3236,
+      "sha256": "9740b72865d882870423e55ce74f8791863ddef2c980da5354457c109bccdd5e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/train.py",
+      "bytes": 967,
+      "sha256": "214d5ba9f89f5f6959c4a5a7da9b0c00aa7eee36dcebd84d93586971a840f9b0"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/test_head.py",
+      "bytes": 6639,
+      "sha256": "ff8a89a19923152f6bb2d686c5ebae383ebf000a0f323a6edcb9f2b15a466727"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/configs.json",
+      "bytes": 752,
+      "sha256": "b1510da9c8813941c94b6b8923dc256e8fe6d7d8933535d9757388c75950a77b"
+    }
+  ],
+  "training_compatibility": {
+    "path": "experiments/sota-2026-10-22/candidate/training-compatibility.json",
+    "sha256": "e937ab9108879d74f095bc6654cb94583cafd58cf37a06191d09eea1ea50925c"
+  },
+  "official_score": null,
+  "official_rank": null,
+  "goal_met": false
+}

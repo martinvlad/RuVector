@@ -1,0 +1,68 @@
+JevBench dataset card & decision model results | Benchmark Heaven
+Skip to main contentBenchmark HeavenBETA — Work in progressOverviewBenchmaxxingBenchmarksCompareChartsMore ▾Cost vs CapabilityProviders per ModelProvider explorerGatewaysEU & SovereignJev-class modelsImage JevBenchAudioJevBenchSubmit a modelAbout
+OptionsBenchmaxxingBenchmarksMoreOverviewBenchmaxxingCompareChartsCost vs CapabilityProviders per ModelProvider explorerGatewaysEU & SovereignJev-class modelsImage JevBenchAudioJevBenchSubmit a modelAbout
+
+
+
+
+Ranking
+ScoreCompositeAA Coding Agent v1.4DesignArena Full-Stack EloDesignArena Web Apps (agentic) EloAA CodingAA IntelligenceEpoch Software ECIEpoch ECIMin score✓ Featuredi✓ Include Benchmaxxing signal in the scorei
+
+Price basis
+✓ Adjusted costsFixed I/O blendOutput only (0:1)1:1 input/output3:1 input/output10:1 input/output20:1 input/output30:1 input/output100:1 input/outputInput only (1:0)Task workloadSame for every modelAs used on OpenRouteriI'm buying for a companyi
+
+Models, providers and labs
+Models: All▾Providers: All▾Labs: All▾
+
+
+Regional
+Hosted in✓ China✓ EU✓ US✓ Other
+
+Provider company based in✓ China✓ EU✓ US✓ Other
+
+Model lab based in✓ China✓ EU✓ US✓ Other
+
+Hosting = where inference runs; company = where the provider or lab is registered.
+EU hosting means the route's inference runs inside the EU: an EU region, AWS Bedrock's EU cross-region (geo) profiles, Azure's Europe Data Zone, or a provider whose entire public fleet is documented as EU-hosted, each checked per model against the provider's documentation. Global deployments do not count, and neither does an EU billing region, an EU company or an EU control plane on its own. One disclosed company-policy exception stays in, marked “EU equivalent”.
+
+
+Data confidentialitywhat the provider may do with your prompts
+Trains or keeps your datai
+
+More settings✓ One variant for Reasoning models✓ Hide deprecatedOpen-weights only
+Evidence requirements (benchmark evidence, priced provider, measured task tokens) sit above the table they apply to.
+
+“Hide deprecated” removes retired models (every Artificial Analysis configuration retired, on no current DesignArena board) and older retired configurations of current models. Applies to model tables, charts, price views & model offers; benchmark evidence stays unfiltered.
+
+Show resultsPresets: None
+
+
+
+
+JevBench by Benchmark Heaven · Decision model evaluation
+JevBench data card & downloadable results
+Download only Benchmark Heaven’s own published JevBench and ImageJevBench system-level measurements. JevBench JSON and CSV identify the named release, and JSON includes the exact source hash; they contain no Artificial Analysis numbers, sealed questions or per-item predictions.
+Reviewed 2026-10-09 · Maintained by Benchmark Heaven, independently of TypeSafe AI.
+Versioned downloads
+JevBench v1.6.1
+Initially published 2026-10-06 · JSON · CSV
+Source SHA-256: 5cd8c1332226ea9c179883d2285c0d8b8cc593ae38f2645197364a7ddd9c83c1
+
+ImageJevBench v0.3.0
+Artifact built 2026-10-22 · JSON · CSV
+Source SHA-256: b7e1ba2ee58baba1f442924db9d4760934425e2061fdee88dc94e45d78150bb5
+
+The live board may also include later dated API reruns and presentation revisions. Image exports contain the core track, with unrankable measurements labeled. Dated carries and computer-use measurements are separate and never silently blended.
+Schema, missing values and units
+One row per measured system. JSON also contains schema_version, version, source_sha256 and method definitions; JevBench includes published_at and ImageJevBench includes built_at. CSV uses the same row values, repeats the release version, quotes text fields and leaves missing values blank.
+FieldsMeaningkey, name, source_urlStable system key, published name and model/source URL.model_pin, last_measured_onPublished model pin (commit) or the API model identifier we requested, the provider reported or the author declared, and the measurement date where available; API identifiers may change. Missing values are null. ImageJevBench exports have no model_pin field.capability, composite, intelligence, calibration, speed, cost_axisNormalized 0–100 scores. The method explains the distinction between Capability and Composite.ranked, capability_eligible, open_capability_rankAdmission, cap eligibility and scoped open-board rank; raw Capability alone is not a rank. Image admission uses ranked and not_ranked_because.usd_per_1000_decisions, price_kind, price_basisJevBench modeled USD per 1,000 complete decisions and its evidence basis; not an invoice.p50_raw_s, p50_adjusted_s, latency_adjustmentJevBench median latency in seconds and the published adjustment. Image exports retain normalized axes, not invented raw seconds or USD.p50_s_measured, latency_basis, p50_s_measured_condition, latency_noteThe p50 we measured in seconds, and how it was measured: measured-loopback (self-hosted model on our GPU, no network), api-end-to-end (network included) or demo-endpoint-x2 (free demo endpoint, ranked at 2 × measured as before). For measured-loopback rows, p50_adjusted_s is the estimate the ranking and the latency cap use (2 × measured + 150 ms) p50_s_measured_condition tags the measured value (on-GPU, no network / on-CPU, no network; not directly comparable with API latency) and latency_note says so. Null where no p50 was recorded.
+Null means unavailable, never zero. Reuse of these aggregate exports is under CC BY 4.0; cite Benchmark Heaven, the exact release, access date and source hash. Original model weights, task sources and third-party data keep their own licenses.
+Scope and limitations
+JevBench evaluates typed text decisions on public and sealed splits. ImageJevBench uses an independent image pool. These samples do not guarantee coverage of your domain; low-count slices, runtime differences, dated carries and admission holds must be read with the result. Full sealed reruns cannot be independently reconstructed from public aggregates.
+Hugging Face results dataset · Static Hugging Face leaderboard · Release manifest.
+Open-weights leaderboardAPI leaderboardImageJevBenchMethodologyData card & downloadsCompare benchmarksCalibration & reliabilityJev alternativesBenchmark HeavenSources & methodologyDecision model benchmarksJevBench methodologyNeed custom eval on your data?Public APIGitHubMIT licencePrivacyTermsImpressum
+
+Benchmark results with their source and date, and a modeled cost per task that accounts for provider prices, caching and token efficiency. Data from OpenRouter, Artificial Analysis, Epoch AI, DesignArena, benchmark maintainers and provider catalogs. Data: Artificial Analysis · Data: Epoch AI (CC BY)
+Open source (MIT) and a hobby project — the code is on GitHub, built to give the world better tools to decide which LLM to choose for the job. The licence covers the code, not the third-party data (its own terms apply).
+Benchmark publishers can ask for their numbers to be removed or shown differently — data sources & removal on request.
+Support Benchmark Heaven · Payments go to productivity-boost.com Betriebs UG (haftungsbeschränkt) & Co. KG, the one-person company behind this project.

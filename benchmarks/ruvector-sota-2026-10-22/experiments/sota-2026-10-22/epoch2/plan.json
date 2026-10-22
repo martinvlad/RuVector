@@ -1,0 +1,566 @@
+{
+  "schema_version": 1,
+  "objective": "Epoch2: decision-preserving temperature calibration, train/calibration on prior183, new96 question cross-benchmark LegalBench diagnostic.",
+  "contract_sha256": "09506c24e998bb1a27427ee4cc11bd2ff7e2da3f80ca629407603d51dfc16a7b",
+  "pins": [
+    {
+      "path": "data/jevbench/hard.jsonl",
+      "sha256": "89e9e6becb33ed88c1de7d42dcc87531b2fb64cfaef4e1986faf7c37b3f80ebb"
+    },
+    {
+      "path": "data/jevbench/original.jsonl",
+      "sha256": "5c2414edb3006b8bfcb70fda433f0f9ca015759433849f8d3104328a1f7c4180"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle2/frozen-baseline/rules.py",
+      "sha256": "855b6b7a1a6d690ccee8d3bd8a4ff6268bb054e3209ff42ffc9291b42671cf98"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle2/round2/rules.py",
+      "sha256": "691ef367b7a00f1a7d5e3deb6f327fcab8cd5f74061f139e5e9b30ad575ff3ad"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle2/round2/typed_numeric.py",
+      "sha256": "ca68e620eb0871e16d98f7242f3a874d72ae57569a6a201a6f6d57aa3c8af6b8"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/engine.py",
+      "sha256": "2263ca3740c43eb1a00816a0c625d70caad0eac67e9c42157056883b8c23e71c"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/freeze_round.py",
+      "sha256": "5725003743531e8e5dc72494c4d817701ec5715bdd6b1c72a44af0178db1c6cb"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/round1/probability.py",
+      "sha256": "31fb589b417f6590ea4bf13319ded417eae2e148b358f6be14ff1c8f39039abd"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/round1/rules.py",
+      "sha256": "38227ac21558f6a1b435bda9963e4c22bb83c495a97855b71c1b608f890e35a0"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/round1/test_probability.py",
+      "sha256": "2c7e22bd7b0bade7867089b72ebf2264ef9092463bbded09c0521f3d2f89498d"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/round2/probability.py",
+      "sha256": "422651293ad4988b5f0f859479941914046493b5fdcaa9399a5aa0d58ad512c3"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/round2/rules.py",
+      "sha256": "38227ac21558f6a1b435bda9963e4c22bb83c495a97855b71c1b608f890e35a0"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/round2/test_probability.py",
+      "sha256": "4674968e60a5ba67352d1526b9d589c8e92d124632fb750987155ec5436513bb"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/run.py",
+      "sha256": "414cb0e21f2210bce1bdc4c3b6565c2fdcebd3b0087c781fc6008a031cf2e7c6"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/save_attempt.py",
+      "sha256": "1e8aee550a93afedf665ccb8633a2547768191d6fde731349b0b21cf3db81c73"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/supervise.py",
+      "sha256": "f71737ef747fc1a94a82006b2b728ba3d6f95217d9c1d4e2f3633135df6d1ad3"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/test_engine.py",
+      "sha256": "5231d0c0c06c3019e60e7e642060ec95d18545d29d83517a85bcdd93a52e32df"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/verify.py",
+      "sha256": "321e996280555e600623e295928385d5725be94b1b4e7e3e5e8cf7b2d70efe8b"
+    },
+    {
+      "path": "experiments/optimization/baseline-server.cjs",
+      "sha256": "acce673e82f571e939836142ebde5f4a4aadfd0d595d022cbcb49ae92fe84703"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/acceptance-contract-v1.json",
+      "sha256": "04b1f32afc607b1e22955067729053cc82b0f4a9c7a7e05fb47bfeac79b508ed"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch1-promotion-decision-v1.json",
+      "sha256": "36d7010fb12c63f4084a490fb01a607f8d860cae26dc2724f845ba6f9597f6d5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch2-semantic-probes-v1.json",
+      "sha256": "82558f911332eaa96c813c300924f8c3533dc0edf31e93cfdc824631f848e8b9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/build_data.py",
+      "sha256": "e492d9711e914e36eb2f35478b9d120de0041f107d8e993f10ed3b9c6f3338fa"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/calibration.jsonl",
+      "sha256": "1dbdf59cdc83f12296541a7682561618cbf88a95b8154da252e1d8f709ef9823"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/confirmation48.jsonl",
+      "sha256": "5bf8b5470aab851d98a207a91053e32e861b93d7459a4a864961a30de4338ef5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/current-repo-public-tree.json",
+      "sha256": "b1b26473fe0ee89131d15e712d8db7677a59c937c1626cb94857ebe7d96946ea"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/data-contract.json",
+      "sha256": "09d3791981ed894e28bb9dd9847003118a7f3defcc9a0fd757a8e3db78440d7e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/dev.jsonl",
+      "sha256": "bce96c556434fdbaab618f1ac9afb129d134acead1e32fbe08d0b0c12506ca28"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/easy-exposure-search.json",
+      "sha256": "30e9e59e2276d771519e3e9f6eef43198b85f4e6e747d385f4309c089e44f75e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/easy-source-response.json",
+      "sha256": "7f9585a571f11f3502ca312c4c503d24ec125a1e11956cb99c6ed023fbce2b45"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/easy.jsonl",
+      "sha256": "231df3c2c8e88a1a8c137ebe85de96ba70fabd330849098ac7b3c52c70b7172b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/evaluate.py",
+      "sha256": "7c66c315928628279ed7e964f9651bad94443dc0daba12ed203f5397067164f8"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/exposed183-with-responses.jsonl",
+      "sha256": "5068edb2fa7e493497f4f325d84e04f03d77953fbbe63c32cc599eb1b2542207"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/exposed183.jsonl",
+      "sha256": "cf0d9f2f00dbe079171d27fae02613924e6b8c091a4d173061cfeea30ee3b2f8"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/publisher-data-page.html",
+      "sha256": "ea3ac67da58f0f2c332dd754bb318e55c3adc025a3701e5543f8746a8bb53a43"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/publisher-data-page.txt",
+      "sha256": "95f035c628a4083c11445296820a1179291054f017be2f4bd35101ba86863a28"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/publisher-data-receipt.json",
+      "sha256": "63239fc84079b5762ae05c32ea4d8b7bf899b51aede8a3af9c1100db3573105b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/request-order-review.json",
+      "sha256": "a35c578ce7517b3ff4efdf95c2fd6ab45778a50641585c23daa0d2904e89c536"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/requests183.jsonl",
+      "sha256": "6eabdfc37d42034fe8d58183db73ea95e8f90d14cc363919cbe5e680d78faa48"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/source-manifest.json",
+      "sha256": "e270fa941f07b27ed75818cab43f48d5800598444d95d3a25b4db1710a33f64d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/sources/jevbench_adapters_base.py",
+      "sha256": "fdddc42e4f71d774096f806c4ee844cc4c4b428385f01a017cb64153d7c089f4"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/sources/jevbench_adapters_typesafe.py",
+      "sha256": "780f879416479b645ee519bb85d0cce722d0df7aa2b41a029de92b76f2593e51"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/sources/jevbench_scoring.py",
+      "sha256": "6aa17d212ea20a3eeb6876149367842e8462c11dcb54d73df062fb406368331e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/sources/jevbench_tasks.py",
+      "sha256": "b9c2f8ba9a7301519656d79d47c31b8ab0542a5545498ce3b339d5e93b976812"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/train.jsonl",
+      "sha256": "16674d5b182f72df08c3feea04b37d683cb31d97c0d5f30bc201409caab216ff"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/validate.py",
+      "sha256": "bf70a33dd1aaae3f9d40c6d8bd30b86a13bfbb67f7e79fde56ef646a4bac5248"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/benchmark/validation.json",
+      "sha256": "dd72dbd2d580903b2eaa549ffe15968b791365327a2ee56bf47b3d553575a075"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/configs.json",
+      "sha256": "b1510da9c8813941c94b6b8923dc256e8fe6d7d8933535d9757388c75950a77b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/configs.json",
+      "sha256": "411f35cc976de4f7929cbcb6ca82824d0dbffaa6ba5f651a34c5a0a8d67d2012"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/fit-preflight.json",
+      "sha256": "4df12c69302a601412480e0ddcda50518842d10c78940cbc43531f810a862837"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/head.pre-audit-finite.py",
+      "sha256": "5f4c86d746d019815a5c104742eb85ded21bb73ec64fb896afb79a13737cc280"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/head.py",
+      "sha256": "907f1a2827d5cca5d3ca33c91a8bd841b12e0b36df4f7944aed6be6152929db9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/proposal-manifest.json",
+      "sha256": "dac7907216d4b66abb1c9c756ec6e82283f4b93929527f74119f4fc7a731cabe"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/runtime.py",
+      "sha256": "961f7d130839ca8facbe28e702f07646c7c3190f65a37e9dd612b24e4f7338c5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/test_head.py",
+      "sha256": "d140b1423b25df7ca69505f18cd78fe7b3f4e7df53c896d7fd7e1cd691923af4"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/tests-result.txt",
+      "sha256": "5226100e79af0113b6447ef1c035b2c4ca6b484833c5b9c86a04ca57378d55b3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch2/train.py",
+      "sha256": "aca95964316ec89343a5878aae070aad3abf28f19b1faceab118d8fe49abaacf"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/head.py",
+      "sha256": "c0179108191c8f5d2c3d15067d6b3a390a4b065d4d7744922719e64f0b7721dd"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/proposal-manifest.json",
+      "sha256": "08211c8064c33ab3c6607bd2d11b7d6db7a92ae89fa07f4a0488486eefc3b305"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/runtime.py",
+      "sha256": "9740b72865d882870423e55ce74f8791863ddef2c980da5354457c109bccdd5e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/test_head.py",
+      "sha256": "ff8a89a19923152f6bb2d686c5ebae383ebf000a0f323a6edcb9f2b15a466727"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/tests-result.json",
+      "sha256": "990a1b4b725d5ac0e43517c8f781098624a185a43fed9fc4abc887e8f3600fb9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/train.py",
+      "sha256": "214d5ba9f89f5f6959c4a5a7da9b0c00aa7eee36dcebd84d93586971a840f9b0"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/training-compatibility-preschema-v1.json",
+      "sha256": "71d719cd95f298090c1e5c6f56873a9e11b05aa8cddb2bf28e162566337870dd"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/training-compatibility.json",
+      "sha256": "e937ab9108879d74f095bc6654cb94583cafd58cf37a06191d09eea1ea50925c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/contract.json",
+      "sha256": "09506c24e998bb1a27427ee4cc11bd2ff7e2da3f80ca629407603d51dfc16a7b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/controller/epoch2_loop.py",
+      "sha256": "ec92cad8479c15cd092fdafcfcab0274e00974705912e4f5cda3a5e5bff06618"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/controller/loop.py",
+      "sha256": "6c6e0bf0befabdc3d165347ee1f4084d233a3040ce2a7ee7b89f9761c4abf3a3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/controller/test_loop.py",
+      "sha256": "deeaffff17fb69abc05906c154e6060d784cc1a193766a855fd536864d6d8824"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/build_data.py",
+      "sha256": "0a1b7340ceaad36c2ce9df6b72d2818430c656e6cbeaa2054ab1b16e28e4ac26"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/confirmation96.jsonl",
+      "sha256": "80324c3c68cd2d178d9418c3736323ded2eee23f7c45585e5eb04a9aa0a05f53"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/data-contract.json",
+      "sha256": "89e34748bd43855f4c201f1914554f1b555379962943f7060cfea2fe7d7a33da"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/draw-plan-v2.json",
+      "sha256": "87ae3e1a16271a1d43ad296445c5c65c9d4e94794c4d50c6735924c3b24ab21e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/draw-plan.json",
+      "sha256": "f89509f95330b40dcf805437a6f801f2c07eee75436d1f3aab49fa0b0f0ca8b1"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/historical-overlap-initial.json",
+      "sha256": "c3afb74a76ab20c152556989cdcd967eec8059865b07baf4248106f1134be179"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/historical-overlap.json",
+      "sha256": "1086a95a8dcacbc469004634cc875747f79e131522f0cd55d1df3dda9a74e641"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/source-manifest.json",
+      "sha256": "3d1948819af0ef0694cbbaab3ebbdc137d5e86502eb18318d5400270c669ddd1"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/source-receipts.json",
+      "sha256": "139eafdeb5a31cb0a4f2d771bb2502978a4e4dde7d405ac9ef1f347db1de31be"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/contract_nli_explicit_identification/README.md",
+      "sha256": "f24987b603ea9f3dc6a2675f27fde20f183da43e8b6fe74ee8ec9e18854ec239"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/contract_nli_explicit_identification/base_prompt.txt",
+      "sha256": "80327ee8e1a458e8accece4d41aadddb0dd78e8ebbc7732b31b6991b4954c27c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/contract_nli_explicit_identification/test.tsv",
+      "sha256": "b287cdc431f818778203752a6d4133f6181d8012ee8aec453a1cfd7577fedcb3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/contract_nli_limited_use/README.md",
+      "sha256": "ac565034f1cc47b4d18f9236cd409c6ffdc7682f887a973208b6bbf4712e65e8"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/contract_nli_limited_use/base_prompt.txt",
+      "sha256": "634217daef1c2831b23822ec955c5f9fc3eb64561e08b206850bb660e67432c9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/contract_nli_limited_use/test.tsv",
+      "sha256": "0a8df2f4cd9978e29ecabf63e7fdf6b8d243964d67d0900631a05935d7edeea8"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/contract_nli_return_of_confidential_information/README.md",
+      "sha256": "decd9c1648c59c9fc2c6a4fdc0b19466af5c58e2fe855d6ce7c9d3353bcb8541"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/contract_nli_return_of_confidential_information/base_prompt.txt",
+      "sha256": "5e30a0c17b42ce7e66bb9388a1667e08a244ffa7e7a9313e0fefc90f4c04865b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/contract_nli_return_of_confidential_information/test.tsv",
+      "sha256": "787ce6da0565a8d5493e1d6d786fc4119ea11989a88933e460b281804b44dfdf"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/contract_nli_sharing_with_employees/README.md",
+      "sha256": "b55e992714691b35bd8b36d867a08e6eee36ee1f0d8f55175db1336d291fa6a4"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/contract_nli_sharing_with_employees/base_prompt.txt",
+      "sha256": "6dc058a651b41a0d8e0cc87b67d6fff25b983ceb1d187995483c59b8957da910"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/contract_nli_sharing_with_employees/test.tsv",
+      "sha256": "72a420ec98da46f79240cc4089b106c1405df8c59901f00dbd42c9948c5dac0f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/github-commit.json",
+      "sha256": "297b77742ed877d3bd4299ebdfa70f49d479652d5a5d780daf67ba7dc1340b48"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/github-tree.json",
+      "sha256": "113303e66ba71f4ffcab2a5f957db807bcbaf081634d81309ea33b88d95d3914"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/huggingface-README.md",
+      "sha256": "b5ef37b47d836f746b3bbb082a6eab2d97342e1363a5816b19092b7b2ba6822d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/sources/huggingface-metadata.json",
+      "sha256": "5af56496f42b32258ac81d0a5ee5a10d3035a30ed0e493a249d49c15c72f2c05"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/validate.py",
+      "sha256": "755b5455b446d858008e9481d3bd022eea62bf6f8636967547eb12071e8af8ef"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/validation.json",
+      "sha256": "e5f8de9c9f1552a97cd27b1703f45d1d6f1c6d7e458aa761fc5254b252eca22d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/cleanup.json",
+      "sha256": "c7fec11692bddcd674891dd331a26a36e52e4ce2ebdf1847ae9e1951d969f84e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/collection.json",
+      "sha256": "0922a67227206f96e42090f4172d3f1522719c84bd8581d0f8fbe51849a90f9c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/records.jsonl",
+      "sha256": "63d286c650a69a89970b026260f9339b7709c277d8a31b61788818972397f548"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/runtime.json",
+      "sha256": "49646cd364706a4b6671df46fb1132d51c26f3957712d865268b2a150b306756"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/server-audit.jsonl",
+      "sha256": "1695108b181c8d9d6830d0274f65609222c10ee9465bd00c0af1f7287049ebe6"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/wire.jsonl",
+      "sha256": "1c8507703eab0444216c953099a1da2b55ade419f9b86b1f8da032efe393896a"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/emit_round2_v2.py",
+      "sha256": "10f5f6d3fbc638a6b044fed34ae7ce0ca10eb23dc089731c1e09af7a4d47ac3c"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/engine.py",
+      "sha256": "a833b1772be7bf18f48a2be58b6dd315428e9efa920c5ff5f7867fc22e14e8e9"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/freeze_round2_v2.py",
+      "sha256": "ada2bbb5a60f5c74c489e1169fcd194696fb7c5b2f80f026aa550211aa19b35c"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round1/rules.py",
+      "sha256": "fee7c41fccf65cd06ba39fbf23edf3540ec76ee8e3659aa82276dff6739fe057"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round1/test_relations.py",
+      "sha256": "028562825b2650086f0638212ecece76d0fc44f18bef0c1e0196513f4a4e08f4"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round1/typed_relations.py",
+      "sha256": "08b116e77d77df764dde3df0ca6170af099fa38c28b7fd640126f49f6851d6cc"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round2-v2/decisions.jsonl",
+      "sha256": "55de94a9e4c464c4b6201f566500ad77ed30bc445352b527909f1a7d8a659ec5"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round2-v2/rules.py",
+      "sha256": "fee7c41fccf65cd06ba39fbf23edf3540ec76ee8e3659aa82276dff6739fe057"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round2-v2/test_relations.py",
+      "sha256": "154f805e45192e23ca32a34485d52f4f01f4f3d0b346370a077b5f0c7f80a6a2"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round2-v2/typed_relations.py",
+      "sha256": "2a46e6de5782fcd917697b616cd2ae60591255c50b0cc1c084ab8ded3acbb145"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/run_round2_v2.py",
+      "sha256": "d4e47c80ee2d975eb87f27b7284b477eebca15102e43d2129dae43075c00ff0d"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/runtime-manifest.json",
+      "sha256": "fc507f1f04a067112415d548f32aac5c24ee02c7d81ae79768ffaea1ccd3fbb7"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/save_attempt.py",
+      "sha256": "1b29f6980d0882bec51ba15bf14573f8ab52fa4a9dbe49410cfacd3050378cdd"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/supervise_round2_v2.py",
+      "sha256": "496770cf2265b14eee1a92adfca0a92f35a0e3bfd4aa09f5905e9b1d0dfd2cac"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/test_engine.py",
+      "sha256": "25d7ba31422297b82ec177560c8d9267b30ee8c5948a7f012e01dccf92bd6383"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/verify_round2_v2.py",
+      "sha256": "39174381fbb1946c1d76616e5b98da4a6c96b670a4c45f2a7ddfec0043f57ef6"
+    },
+    {
+      "path": "experiments/swarm/jevbench-adapter/native-worker.cjs",
+      "sha256": "333e04b62bb13dfa578a26f86d6d69809485e4278dfca46fbae72aae41fd2d29"
+    },
+    {
+      "path": "experiments/swarm/jevbench-adapter/server.py",
+      "sha256": "aadde0913ee2276bcf188b1b49a2b6239004fa9f45ac9f90909b74e2de33b1ba"
+    },
+    {
+      "path": "experiments/swarm/jevbench-adapter/sources/jevbench_adapters_base.py",
+      "sha256": "fdddc42e4f71d774096f806c4ee844cc4c4b428385f01a017cb64153d7c089f4"
+    },
+    {
+      "path": "experiments/swarm/jevbench-adapter/sources/jevbench_adapters_typesafe.py",
+      "sha256": "780f879416479b645ee519bb85d0cce722d0df7aa2b41a029de92b76f2593e51"
+    },
+    {
+      "path": "experiments/swarm/jevbench-adapter/sources/jevbench_scoring.py",
+      "sha256": "6aa17d212ea20a3eeb6876149367842e8462c11dcb54d73df062fb406368331e"
+    },
+    {
+      "path": "experiments/swarm/jevbench-adapter/sources/jevbench_tasks.py",
+      "sha256": "b9c2f8ba9a7301519656d79d47c31b8ab0542a5545498ce3b339d5e93b976812"
+    },
+    {
+      "path": "models/bge-small-en-v1.5/model.onnx",
+      "sha256": "828e1496d7fabb79cfa4dcd84fa38625c0d3d21da474a00f08db0f559940cf35"
+    },
+    {
+      "path": "models/bge-small-en-v1.5/tokenizer.json",
+      "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+    },
+    {
+      "path": "models/manifest.json",
+      "sha256": "fdca50d372d5993f347db244678f77c0c8fef5698d5fd479ddf1a060f77838a5"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "a14afdc5dfc5c95acc87841821374479b39aa63b6434741f1d0cbcf127b74182"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1abaf4e58fee7b6d791e97a2f9e76c797552df3c45151b2acf93e66afa60ad65"
+    }
+  ],
+  "datasets": {
+    "confirmation": "experiments/sota-2026-10-22/legal-transfer/confirmation96.jsonl"
+  },
+  "baseline_expectation": {
+    "n": 183,
+    "correct": 104,
+    "strict_valid": 183,
+    "errors": 0
+  },
+  "expected_native_receipt": {
+    "backend": "native",
+    "package_version": "0.2.0",
+    "binary_sha256": "e4db4b945a91b5cb8937765236e180763e8a3f4866b791e0f71a98d0018c289d",
+    "model_manifest_sha256": "fdca50d372d5993f347db244678f77c0c8fef5698d5fd479ddf1a060f77838a5"
+  },
+  "limits": {
+    "paid_calls": 0,
+    "native_batches": 1,
+    "threads": 2,
+    "seconds_per_batch": 600,
+    "seconds_per_decision": 10,
+    "candidate_configs": 2
+  },
+  "selection": {
+    "primary": "DEV43 Brier with no typed accuracy or NLL regression",
+    "full183_accuracy_must_equal_baseline": true,
+    "confirmation_not_for_selection": true
+  },
+  "confirmation": "96 new project-unseen LegalBench clauses, four tasks24each, pinned official instruction zero-shot adaptation. Same-call baseline. No officialall162 or trainingcontaminationclaim.",
+  "official_score": null,
+  "official_rank": null,
+  "goal_met": false,
+  "revision": "epoch2-v1",
+  "superseded_unexecuted_plan": {
+    "path": "experiments/sota-2026-10-22/controller/plan.preserialization-v1.json",
+    "sha256": "96b377f22c8adb94a3c386f8a1d26e40d1e64e4ac7bd473388632119b4edf3c7",
+    "native_calls": 0
+  },
+  "request_order_note": "Restore nested state/question/criteria order from actual original wire; omit legacy unused model field. Benchmark review found zero actual state or label-order differences, but preserve stronger source-order parity. Measured records store actual ordered inference input.",
+  "cached_development_directory": "experiments/sota-2026-10-22/runs/development",
+  "study_total_actual_native_batches_before_epoch2": 2,
+  "study_total_native_batch_limit": 6,
+  "prior_epoch_result": "REJECTED: selectedhead106developmentbut39vs41onfirsteasy48; all48nowexposed."
+}

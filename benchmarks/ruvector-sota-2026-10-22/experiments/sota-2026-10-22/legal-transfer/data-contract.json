@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-22T15:37:38.096252+00:00",
+  "frozen": true,
+  "data_file": "confirmation96.jsonl",
+  "data_sha256": "80324c3c68cd2d178d9418c3736323ded2eee23f7c45585e5eb04a9aa0a05f53",
+  "data_n": 96,
+  "tasks": [
+    "contract_nli_explicit_identification",
+    "contract_nli_limited_use",
+    "contract_nli_return_of_confidential_information",
+    "contract_nli_sharing_with_employees"
+  ],
+  "rows_per_task": 24,
+  "source_dataset": "nguha/legalbench",
+  "huggingface_revision": "daec8237410aa23e3faf4bc41ad8b3a7e1696826",
+  "official_task_repository": "HazyResearch/legalbench",
+  "github_commit": "b46bf4ffae90524b2b72aaa30e7745fe9db64481",
+  "license": "CC-BY-4.0; each task README links ContractNLI origin and license",
+  "citation": "Koreeda and Manning (2021), ContractNLI; Guha et al. (2023), LegalBench",
+  "record_schema": "Same input/evaluation split as benchmark/exposed183.jsonl; all records role=confirmation; gold exact STRING Yes/No; type=choice",
+  "prompt_protocol": "Official base_prompt first paragraph only + Answer Yes or No; state is verbatim test clause; choice criteria exact Yes/No. The upstream8 in-context demonstrations are omitted, explicitly not the official few-shot protocol.",
+  "source_manifest_sha256": "3d1948819af0ef0694cbbaab3ebbdc137d5e86502eb18318d5400270c669ddd1",
+  "draw_plan_sha256": "87ae3e1a16271a1d43ad296445c5c65c9d4e94794c4d50c6735924c3b24ab21e",
+  "source_groups": "96 distinct upstream ContractNLI document_name IDs",
+  "historical_overlap": "18 source documents excluded if any clause overlaps94 unique prior corpus docs or2014 prior classification text fields; selected96 queries/documents disjoint under recorded exact/normalized checks.",
+  "freshness_scope": "First known project evaluation of these task/query records; public historical data, not publisher sealed data or model-training contamination proof. Source document name differences/fuzzy overlaps cannot be ruled out fully.",
+  "experiment": "Frozen candidate2, already fit only old exposed Jev train/calibration, versus baseline104 on same actual native call. Source/evaluation metadata never passed to inference.",
+  "inference_inputs": [
+    "state",
+    "questions"
+  ],
+  "forbidden_uses": [
+    "No selection or calibration fitting from these labels",
+    "No repeated confirmation after outcomes",
+    "No official all162 LegalBench or JevBench Capability claim"
+  ],
+  "actual_native_calls": 0,
+  "official_score": null,
+  "official_rank": null
+}

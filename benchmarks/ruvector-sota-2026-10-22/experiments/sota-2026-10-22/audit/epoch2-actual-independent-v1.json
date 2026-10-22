@@ -1,0 +1,343 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T15:43:08.522016+00:00",
+  "checks_passed": true,
+  "plan_sha256": "d6dcb07ffa077f0097703e23e52a21721f685cfb15c44a5cecbeb57893ac3ab5",
+  "source_pins_verified": 129,
+  "trials": [
+    {
+      "config": {
+        "id": "decision-preserving-temperature-global",
+        "per_type": false,
+        "ordinal": "identity"
+      },
+      "artifact_sha256": "6590702937ea26708168e86764f3f9e7e79288728d92c8c4cb5ec72745ce0f43",
+      "full_exposed": {
+        "n": 183,
+        "correct": 104,
+        "brier": 0.5316062923313616,
+        "nll": 0.9487583726648045,
+        "strict_valid": 183,
+        "errors": 0
+      },
+      "paired_DEV": {
+        "n": 43,
+        "scope": "empirical label-only paired diagnostic",
+        "baseline": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.5298364055835603,
+          "nll": 0.9177941360855397
+        },
+        "candidate": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.4762478980742724,
+          "nll": 0.8718019271851524
+        },
+        "gains": [],
+        "losses": [],
+        "development_gate_passed": true,
+        "official_Calibration": null,
+        "official_rank": null
+      }
+    },
+    {
+      "config": {
+        "id": "decision-preserving-temperature-by-type",
+        "per_type": true,
+        "ordinal": "identity"
+      },
+      "artifact_sha256": "27654bc81e46903096da665eedfaff2a6e0dffe0f3d5f13c8c404afd07cd4920",
+      "full_exposed": {
+        "n": 183,
+        "correct": 104,
+        "brier": 0.5247318276831318,
+        "nll": 0.9158299370985277,
+        "strict_valid": 183,
+        "errors": 0
+      },
+      "paired_DEV": {
+        "n": 43,
+        "scope": "empirical label-only paired diagnostic",
+        "baseline": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.5298364055835603,
+          "nll": 0.9177941360855397
+        },
+        "candidate": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.4825479123168068,
+          "nll": 0.8486943496152383
+        },
+        "gains": [],
+        "losses": [],
+        "development_gate_passed": true,
+        "official_Calibration": null,
+        "official_rank": null
+      }
+    }
+  ],
+  "baseline104_public183": {
+    "n": 183,
+    "correct": 104,
+    "brier": 0.5739495692089873,
+    "nll": 0.9978038016019558,
+    "strict_valid": 183,
+    "errors": 0
+  },
+  "all_public183_decisions_preserved_for_both_configs": true,
+  "official_score": null,
+  "official_rank": null,
+  "official_sota_established": false,
+  "native_calls_by_auditor": 0,
+  "paid_calls_by_auditor": 0,
+  "transfer96": {
+    "selected": {
+      "id": "decision-preserving-temperature-global",
+      "per_type": false,
+      "ordinal": "identity"
+    },
+    "candidate": {
+      "n": 96,
+      "correct": 57,
+      "brier": 0.4999147275769355,
+      "nll": 0.6930619081225886,
+      "strict_valid": 96,
+      "errors": 0
+    },
+    "same_native_call_baseline104": {
+      "n": 96,
+      "correct": 57,
+      "brier": 0.4995167302004609,
+      "nll": 0.6926639080519976,
+      "strict_valid": 96,
+      "errors": 0
+    },
+    "native_only": {
+      "n": 96,
+      "correct": 57,
+      "brier": 0.4995167302004609,
+      "nll": 0.6926639080519976,
+      "strict_valid": 96,
+      "errors": 0
+    },
+    "decisions_preserved_all96": true,
+    "paired": {
+      "n": 96,
+      "scope": "empirical label-only paired diagnostic",
+      "baseline": {
+        "correct": 57,
+        "accuracy": 0.59375,
+        "brier": 0.4995167302004609,
+        "nll": 0.6926639080519976
+      },
+      "candidate": {
+        "correct": 57,
+        "accuracy": 0.59375,
+        "brier": 0.4999147275769355,
+        "nll": 0.6930619081225886
+      },
+      "gains": [],
+      "losses": [],
+      "development_gate_passed": false,
+      "official_Calibration": null,
+      "official_rank": null
+    },
+    "paired_uncertainty": {
+      "accuracy": {
+        "mean_improvement": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "brier": {
+        "mean_improvement": -0.0003979973764746027,
+        "ci95": [
+          -0.0007400053769178889,
+          -3.209142426160936e-05
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "nll": {
+        "mean_improvement": -0.00039800007059102166,
+        "ci95": [
+          -0.0007400134090472013,
+          -3.208655328087659e-05
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      }
+    },
+    "per_task": {
+      "contract_nli_explicit_identification": {
+        "candidate": {
+          "n": 24,
+          "correct": 20,
+          "brier": 0.49972956831125903,
+          "nll": 0.6928767488264285,
+          "strict_valid": 24,
+          "errors": 0
+        },
+        "baseline": {
+          "n": 24,
+          "correct": 20,
+          "brier": 0.4984641946020058,
+          "nll": 0.691611366534283,
+          "strict_valid": 24,
+          "errors": 0
+        }
+      },
+      "contract_nli_limited_use": {
+        "candidate": {
+          "n": 24,
+          "correct": 15,
+          "brier": 0.49990491478206217,
+          "nll": 0.6930520953381901,
+          "strict_valid": 24,
+          "errors": 0
+        },
+        "baseline": {
+          "n": 24,
+          "correct": 15,
+          "brier": 0.49945983148139267,
+          "nll": 0.6926070080026426,
+          "strict_valid": 24,
+          "errors": 0
+        }
+      },
+      "contract_nli_return_of_confidential_information": {
+        "candidate": {
+          "n": 24,
+          "correct": 13,
+          "brier": 0.49986042194594094,
+          "nll": 0.69300760247541,
+          "strict_valid": 24,
+          "errors": 0
+        },
+        "baseline": {
+          "n": 24,
+          "correct": 13,
+          "brier": 0.49920801473070325,
+          "nll": 0.6923551909806951,
+          "strict_valid": 24,
+          "errors": 0
+        }
+      },
+      "contract_nli_sharing_with_employees": {
+        "candidate": {
+          "n": 24,
+          "correct": 9,
+          "brier": 0.5001640052684798,
+          "nll": 0.6933111858503258,
+          "strict_valid": 24,
+          "errors": 0
+        },
+        "baseline": {
+          "n": 24,
+          "correct": 9,
+          "brier": 0.5009348799877418,
+          "nll": 0.6940820666903695,
+          "strict_valid": 24,
+          "errors": 0
+        }
+      }
+    },
+    "empirical_transfer_promotion_gate_passed": false,
+    "both_proper_score_ci_lower_bounds_positive": false,
+    "scope": "96-question four-task zero-shot adaptation; public heldout project transfer diagnostic, not official full LegalBench/JevBench score"
+  },
+  "actual_artifact_pins": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/baseline-metrics.json",
+      "bytes": 1111,
+      "sha256": "dcb2f2cb763b429f45ef141bf3dd52a5f061d27c22d6605d2e9df8db13dabd65"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/candidate-00.json",
+      "bytes": 11332,
+      "sha256": "6590702937ea26708168e86764f3f9e7e79288728d92c8c4cb5ec72745ce0f43"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/candidate-01.json",
+      "bytes": 11575,
+      "sha256": "27654bc81e46903096da665eedfaff2a6e0dffe0f3d5f13c8c404afd07cd4920"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/confirmation/attempt.json",
+      "bytes": 372,
+      "sha256": "596f61281e5641856b0340d9618ee8e19bed94b000587a331a7f7452aa34def1"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/confirmation/cleanup.json",
+      "bytes": 172,
+      "sha256": "5cc4d8894ff9b2d9a592782fb9c48932ba0a08aac9f7f1f9077df9ad18ae794f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/confirmation/collection.json",
+      "bytes": 372,
+      "sha256": "bafb63c1299b741853b05f5fe5c500ee2d7190efaaf7a6e5ac15d50ffaf8688a"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/confirmation/process.json",
+      "bytes": 86,
+      "sha256": "2ca4830d6172dc552841d56c60f9ce334241e88cdca0366292016f3d919080d7"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/confirmation/progress.json",
+      "bytes": 104,
+      "sha256": "7641c0ed67e72bec84703f56228c98e18eddd6f2462761d9474aeb2318ad4daa"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/confirmation/records.jsonl",
+      "bytes": 582697,
+      "sha256": "34e1a15e8434ca190f86ed5c9471cf73fa3316ef8a7c940252b4956c3bb41046"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/confirmation/runtime.json",
+      "bytes": 1745,
+      "sha256": "6ec46fd762ad559f60fded9a1ad5979d95632a8da8a818b71ab8f6057d752d9c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/confirmation/server-audit.jsonl",
+      "bytes": 59651,
+      "sha256": "e3396e1f187fa2ad87bb477b1fca56297d7e11b9963644dcd5fca943dd83a82e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/confirmation/wire.jsonl",
+      "bytes": 536574,
+      "sha256": "bcb032808ea3fed7b92ec9436ced177ab17c22922f569421ec8d2f8af7382e9f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/confirmation/worker.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/confirmation-comparison.json",
+      "bytes": 1750,
+      "sha256": "c6890fc120fd0708658b767308802749c3511a83b46887a6ec1c39e16d9668a3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/confirmation-lock.json",
+      "bytes": 318,
+      "sha256": "2aa57b679c388364fa5de4a995129485b07ed662537e32fd5afd2ac6f86cb2a5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/selection.json",
+      "bytes": 4481,
+      "sha256": "6ddc4096c39844daee95dd324a23074d58ec3fb83cd6e7f7bba4a1565b3961c7"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch2/runs/trials.json",
+      "bytes": 8632,
+      "sha256": "ad8bcb69cc68b5441d8ab4977d4f9753d5c06afb54ca8641b6c4e28d4520377a"
+    }
+  ]
+}

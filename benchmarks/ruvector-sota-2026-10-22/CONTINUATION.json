@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "objective": "Reach independently verified SOTA using actual RuVector; initial target JevBench open-weights Capability under official caps.",
+  "goal_met": false,
+  "official_rank": null,
+  "champion": "Native104 submitted as7FEA2738; unchanged after two failed transfer experiments",
+  "prior_published_base_commit": "11983d212b951305bcab06ad868bca5a12ea2954",
+  "checkpoint_manifest_sha256": "07dee7c9bcb363ce85c3fa9b61837db5c5dc57677dda39b106f2024aa6e2c1e5",
+  "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
+  "execution_observed": {
+    "native_corpus_batches": 3,
+    "actual_HTTP_decisions": 327,
+    "paid_inference_calls": 0,
+    "new_GPU_rentals": 0
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "status": "REJECTED",
+      "dev_correct": 106,
+      "dev_n": 183,
+      "confirmation_candidate": 39,
+      "confirmation_control": 41,
+      "confirmation_n": 48
+    },
+    {
+      "epoch": 2,
+      "status": "REJECTED",
+      "confirmation_candidate": 57,
+      "confirmation_control": 57,
+      "confirmation_n": 96,
+      "proper_scores": "BothBrierandNLLslightlyworse"
+    }
+  ],
+  "used_confirmation_sets": [
+    "All48easy tasks nowexposedDEV; nofuturefreshconfirmationclaim",
+    "All96four-taskLegalBench clauses nowexposedDEV; nofuturefreshconfirmationclaim"
+  ],
+  "public_data_limits": [
+    "OlderJev231publictasksonly; current300notlocated",
+    "Allold183usedadaptivelybeforethisphase",
+    "Legal96zero-shotfourtaskadaptation,notfull162taskofficialLegalBench",
+    "NoClaimBenchRuVectorscore; fullquestions/scorer/license/submissionnotverified"
+  ],
+  "next_research_priority": "Stronger pretrainedtypeddecision/NLI model with actualRuVectorevidence-selectionablation; stop repeating failed shallowheadorcalibrationgrids.",
+  "benchmark_targets": {
+    "JevBench": {
+      "leader_observed": "Chon-1.0-12B",
+      "capability_observed": 85.3,
+      "refresh_required": true
+    },
+    "ClaimBench": {
+      "source": "https://www.vals.ai/benchmarks/claimbench",
+      "decision_leader_observed": "DeciderV1.2",
+      "accuracy_percent_observed": 99.694,
+      "overall_language_models_at100": 4,
+      "RuVector_measured": false
+    }
+  },
+  "future_epoch_limits": {
+    "cpu_threads": 2,
+    "native_corpus_batches": 2,
+    "seconds_per_batch": 600,
+    "new_paid_calls": 0,
+    "GPU_rentals": 0,
+    "new_frozen_hypothesis_and_unused_confirmation_required": true
+  },
+  "preservation": "No defaultbranchwrites,merges,releases,duplicatesubmissions,authorremails,secretcopyingorbenchmarkanswerlookups. Actualrecurringschedulingreceiptisrecordedseparatelyfromtheseimmutableexperimentartifacts.",
+  "data_licenses": {
+    "new_LegalBench_ContractNLI_sources": "CC-BY-4.0, attribution and pinned source card under legal-transfer/sources",
+    "source_code": "MIT with original upstream notices preserved",
+    "JevBench_public_tasks": "Original upstream license preserved in the pinned base kit"
+  }
+}

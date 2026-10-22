@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "PREFLIGHT_INSTRUMENTATION_ORDER_DIAGNOSTIC",
+  "bootstrap_reconstruction_succeeded": true,
+  "offline_benchmark_candidate_controller_tests_passed": true,
+  "failure_stage": "Original plan pin comparison performed after benchmark/validate.py overwrote its validation.json timestamp in disposable temp",
+  "failed_pin": "experiments/sota-2026-10-22/benchmark/validation.json",
+  "root_cause": "Receipt-generating validator changes its own archived receipt; original source pin check must precede disposable verification",
+  "preserved_original_sources_unchanged": true,
+  "native_calls": 0,
+  "network_calls": 0,
+  "confirmation_remeasured": false,
+  "resolution": "Verify original pins immediately after materialization, then run source checks in disposable temp and record emitted receipt separately"
+}

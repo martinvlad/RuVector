@@ -1,0 +1,514 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T15:30:19.294457+00:00",
+  "checks_passed": true,
+  "plan_sha256": "3e2c36366972d22568f41a341346c089798a454c94948883f95d7d6508a91e2f",
+  "pins_verified": 84,
+  "native_baseline": {
+    "n": 183,
+    "correct": 77,
+    "brier": 0.7621985607763119,
+    "nll": 1.3163746889998424,
+    "strict_valid": 183,
+    "errors": 0
+  },
+  "frozen104_baseline": {
+    "n": 183,
+    "correct": 104,
+    "brier": 0.5739495692089873,
+    "nll": 0.9978038016019558,
+    "strict_valid": 183,
+    "errors": 0
+  },
+  "trials": [
+    {
+      "index": 0,
+      "config": {
+        "id": "identity104",
+        "head": false,
+        "temperature": false,
+        "uniform_mix": 0.0,
+        "l2": 0.0
+      },
+      "artifact_sha256": "132824a9dcada002d70fc61708da491c111ae23ed00249db528750e9c5f5eae6",
+      "full_exposed_metrics": {
+        "n": 183,
+        "correct": 104,
+        "brier": 0.5739495692089873,
+        "nll": 0.9978038016019558,
+        "strict_valid": 183,
+        "errors": 0
+      },
+      "paired_DEV": {
+        "n": 43,
+        "scope": "empirical label-only paired diagnostic",
+        "baseline": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.5298364055835603,
+          "nll": 0.9177941360855397
+        },
+        "candidate": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.5298364055835603,
+          "nll": 0.9177941360855397
+        },
+        "gains": [],
+        "losses": [],
+        "development_gate_passed": false,
+        "official_Calibration": null,
+        "official_rank": null
+      }
+    },
+    {
+      "index": 1,
+      "config": {
+        "id": "temperature",
+        "head": false,
+        "temperature": true,
+        "uniform_mix": 0.0,
+        "l2": 0.0
+      },
+      "artifact_sha256": "63b9b6f817af987447b7ab29b615bab51f13de810fd9c0499fa255e079f5aa7a",
+      "full_exposed_metrics": {
+        "n": 183,
+        "correct": 104,
+        "brier": 0.5192573711652544,
+        "nll": 0.9168831688705961,
+        "strict_valid": 183,
+        "errors": 0
+      },
+      "paired_DEV": {
+        "n": 43,
+        "scope": "empirical label-only paired diagnostic",
+        "baseline": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.5298364055835603,
+          "nll": 0.9177941360855397
+        },
+        "candidate": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.46003830529970086,
+          "nll": 0.825897786277391
+        },
+        "gains": [],
+        "losses": [],
+        "development_gate_passed": true,
+        "official_Calibration": null,
+        "official_rank": null
+      }
+    },
+    {
+      "index": 2,
+      "config": {
+        "id": "mix02-temperature",
+        "head": false,
+        "temperature": true,
+        "uniform_mix": 0.02,
+        "l2": 0.0
+      },
+      "artifact_sha256": "5fc14e4cf0038900addfc5d66c331e70e5fc32ab9833053ebf5ff6f8db70d370",
+      "full_exposed_metrics": {
+        "n": 183,
+        "correct": 104,
+        "brier": 0.5370531371330283,
+        "nll": 0.9578863395788044,
+        "strict_valid": 183,
+        "errors": 0
+      },
+      "paired_DEV": {
+        "n": 43,
+        "scope": "empirical label-only paired diagnostic",
+        "baseline": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.5298364055835603,
+          "nll": 0.9177941360855397
+        },
+        "candidate": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.48822701230533305,
+          "nll": 0.8905959525251917
+        },
+        "gains": [],
+        "losses": [],
+        "development_gate_passed": true,
+        "official_Calibration": null,
+        "official_rank": null
+      }
+    },
+    {
+      "index": 3,
+      "config": {
+        "id": "residual-l2-1-temperature",
+        "head": true,
+        "temperature": true,
+        "uniform_mix": 0.0,
+        "l2": 1.0
+      },
+      "artifact_sha256": "1214fe84986db37c9cdb3ef367248cc325c6a30c00b6e55d0fe7dd33fbf8293f",
+      "full_exposed_metrics": {
+        "n": 183,
+        "correct": 106,
+        "brier": 0.4962734788395741,
+        "nll": 0.8701483728242644,
+        "strict_valid": 183,
+        "errors": 0
+      },
+      "paired_DEV": {
+        "n": 43,
+        "scope": "empirical label-only paired diagnostic",
+        "baseline": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.5298364055835603,
+          "nll": 0.9177941360855397
+        },
+        "candidate": {
+          "correct": 26,
+          "accuracy": 0.6046511627906976,
+          "brier": 0.4523804443652693,
+          "nll": 0.8228751369633165
+        },
+        "gains": [
+          "original-extraction-02-0",
+          "hard-opus-c-long_policy-05",
+          "hard-opus-c-temporal_numeric-06",
+          "hard-sol-a-adversarial-11",
+          "hard-sol-b-long_policy-05"
+        ],
+        "losses": [
+          "original-routing-06-0",
+          "original-routing-06-1",
+          "hard-opus-b-probability-06",
+          "hard-sol-c-multi_hop-12"
+        ],
+        "development_gate_passed": true,
+        "official_Calibration": null,
+        "official_rank": null
+      }
+    },
+    {
+      "index": 4,
+      "config": {
+        "id": "residual-l2-10-temperature",
+        "head": true,
+        "temperature": true,
+        "uniform_mix": 0.0,
+        "l2": 10.0
+      },
+      "artifact_sha256": "14211e2160d96867c225f1a6e19423246e9552cb679009ffac59002f7d76a277",
+      "full_exposed_metrics": {
+        "n": 183,
+        "correct": 108,
+        "brier": 0.5028709923255075,
+        "nll": 0.8833463529561347,
+        "strict_valid": 183,
+        "errors": 0
+      },
+      "paired_DEV": {
+        "n": 43,
+        "scope": "empirical label-only paired diagnostic",
+        "baseline": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.5298364055835603,
+          "nll": 0.9177941360855397
+        },
+        "candidate": {
+          "correct": 24,
+          "accuracy": 0.5581395348837209,
+          "brier": 0.4501065827768076,
+          "nll": 0.8087861977678952
+        },
+        "gains": [
+          "original-extraction-02-0",
+          "hard-sol-a-adversarial-11"
+        ],
+        "losses": [
+          "original-routing-06-0",
+          "original-routing-06-1",
+          "hard-opus-b-probability-06"
+        ],
+        "development_gate_passed": false,
+        "official_Calibration": null,
+        "official_rank": null
+      }
+    },
+    {
+      "index": 5,
+      "config": {
+        "id": "residual-l2-100-temperature",
+        "head": true,
+        "temperature": true,
+        "uniform_mix": 0.0,
+        "l2": 100.0
+      },
+      "artifact_sha256": "43923458a6d28273fd699a2d9d6ddf2fdfede279ab35753fa154bcd7fef7f1bb",
+      "full_exposed_metrics": {
+        "n": 183,
+        "correct": 105,
+        "brier": 0.5166731825866714,
+        "nll": 0.9114473689425403,
+        "strict_valid": 183,
+        "errors": 0
+      },
+      "paired_DEV": {
+        "n": 43,
+        "scope": "empirical label-only paired diagnostic",
+        "baseline": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.5298364055835603,
+          "nll": 0.9177941360855397
+        },
+        "candidate": {
+          "correct": 25,
+          "accuracy": 0.5813953488372093,
+          "brier": 0.4581116250337641,
+          "nll": 0.821940711987596
+        },
+        "gains": [
+          "original-extraction-02-0"
+        ],
+        "losses": [
+          "original-routing-06-0"
+        ],
+        "development_gate_passed": true,
+        "official_Calibration": null,
+        "official_rank": null
+      }
+    }
+  ],
+  "official_score": null,
+  "official_rank": null,
+  "official_sota_established": false,
+  "new_native_calls_by_auditor": 0,
+  "new_paid_calls_by_auditor": 0,
+  "confirmation": {
+    "n": 48,
+    "selected": {
+      "id": "residual-l2-1-temperature",
+      "head": true,
+      "temperature": true,
+      "uniform_mix": 0.0,
+      "l2": 1.0
+    },
+    "candidate": {
+      "n": 48,
+      "correct": 39,
+      "brier": 0.2826886261082561,
+      "nll": 0.5313359138465117,
+      "strict_valid": 48,
+      "errors": 0
+    },
+    "same_native_call_baseline104": {
+      "n": 48,
+      "correct": 41,
+      "brier": 0.7487328302183932,
+      "nll": 1.3576147761812631,
+      "strict_valid": 48,
+      "errors": 0
+    },
+    "native_only": {
+      "n": 48,
+      "correct": 41,
+      "brier": 0.7487328302183932,
+      "nll": 1.3576147761812631,
+      "strict_valid": 48,
+      "errors": 0
+    },
+    "paired_uncertainty": {
+      "brier": {
+        "mean_improvement": 0.4660442041101371,
+        "ci95": [
+          0.35427215895886593,
+          0.5662361718348911
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "nll": {
+        "mean_improvement": 0.8262788623347516,
+        "ci95": [
+          0.642910661020589,
+          0.9851894902988281
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "accuracy": {
+        "mean_improvement": -0.041666666666666664,
+        "ci95": [
+          -0.125,
+          0.041666666666666664
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      }
+    },
+    "freshness_scope": "First known project use of small public easy48; not current canonical draw or publisher sealed set",
+    "generalization_established": false
+  },
+  "actual_artifact_pins": [
+    {
+      "path": "experiments/sota-2026-10-22/runs/baseline-metrics.json",
+      "bytes": 1111,
+      "sha256": "dcb2f2cb763b429f45ef141bf3dd52a5f061d27c22d6605d2e9df8db13dabd65"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/candidate-00.json",
+      "bytes": 12026,
+      "sha256": "132824a9dcada002d70fc61708da491c111ae23ed00249db528750e9c5f5eae6"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/candidate-01.json",
+      "bytes": 12280,
+      "sha256": "63b9b6f817af987447b7ab29b615bab51f13de810fd9c0499fa255e079f5aa7a"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/candidate-02.json",
+      "bytes": 12288,
+      "sha256": "5fc14e4cf0038900addfc5d66c331e70e5fc32ab9833053ebf5ff6f8db70d370"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/candidate-03.json",
+      "bytes": 12575,
+      "sha256": "1214fe84986db37c9cdb3ef367248cc325c6a30c00b6e55d0fe7dd33fbf8293f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/candidate-04.json",
+      "bytes": 12582,
+      "sha256": "14211e2160d96867c225f1a6e19423246e9552cb679009ffac59002f7d76a277"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/candidate-05.json",
+      "bytes": 12596,
+      "sha256": "43923458a6d28273fd699a2d9d6ddf2fdfede279ab35753fa154bcd7fef7f1bb"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/confirmation/attempt.json",
+      "bytes": 372,
+      "sha256": "2db61c58aef8606d23a6edb411692bd327f12f8ec572c1d7991030966b8cb0b1"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/confirmation/cleanup.json",
+      "bytes": 172,
+      "sha256": "d1a80c77f47af55f6b98b352d705977b487537461f91dd7a45691a43c094ce7f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/confirmation/collection.json",
+      "bytes": 373,
+      "sha256": "c0730119712d6931aa514e279794fba6523cab8067f4d90a8e13aa6311e19f74"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/confirmation/process.json",
+      "bytes": 86,
+      "sha256": "fb2809dab0afc05d8f4fd16cab203c44923d1247ad2edf15f2f8d448aa321a41"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/confirmation/progress.json",
+      "bytes": 104,
+      "sha256": "4915a8c1c57be3dffbd96ecd1df25b4838e3b16b06a6d6fbadeaccc95127a2c9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/confirmation/records.jsonl",
+      "bytes": 281119,
+      "sha256": "04dfdd64770a9edd09c9dd430754d6c98ff075c8e7a52672a40e43c0b5e4efcb"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/confirmation/runtime.json",
+      "bytes": 1696,
+      "sha256": "5a722cfe38390ddc1f37a15efd81bd1b4136a36a12a6336e9b47db2936e98b79"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/confirmation/server-audit.jsonl",
+      "bytes": 29166,
+      "sha256": "efe9a081a27ca80e4042c2954c1b441483d5aa125dd18bcd659f3887b786cc32"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/confirmation/wire.jsonl",
+      "bytes": 277747,
+      "sha256": "30d73c89d59beb0b4a60f44f238621faeb42f3cb086ea8c36edb88190c483927"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/confirmation/worker.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/confirmation-comparison.json",
+      "bytes": 2213,
+      "sha256": "56b5241f9305364be4088f14b95ca7c3e938193c10c00e24f8d06cdd4553ab13"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/confirmation-lock.json",
+      "bytes": 318,
+      "sha256": "c58cb51867bbf00d4cc75f887e641355304aa535396122adfad86a4aed77918d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/attempt.json",
+      "bytes": 309,
+      "sha256": "9daaa213b2eb08eb50a31bdf561169a237701f77d0ebf00dbe0a6cb7ef59eb0e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/cleanup.json",
+      "bytes": 173,
+      "sha256": "c7fec11692bddcd674891dd331a26a36e52e4ce2ebdf1847ae9e1951d969f84e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/collection.json",
+      "bytes": 374,
+      "sha256": "0922a67227206f96e42090f4172d3f1522719c84bd8581d0f8fbe51849a90f9c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/process.json",
+      "bytes": 86,
+      "sha256": "913c47ae593103924d0021b3a320d6e0776ceb931180368d71fb008cc87520d2"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/progress.json",
+      "bytes": 106,
+      "sha256": "8552ae427961dc78402699aac925f541973f63d73781b8c33df5b23ec5c548f3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/records.jsonl",
+      "bytes": 1069314,
+      "sha256": "63d286c650a69a89970b026260f9339b7709c277d8a31b61788818972397f548"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/runtime.json",
+      "bytes": 1495,
+      "sha256": "49646cd364706a4b6671df46fb1132d51c26f3957712d865268b2a150b306756"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/server-audit.jsonl",
+      "bytes": 108810,
+      "sha256": "1695108b181c8d9d6830d0274f65609222c10ee9465bd00c0af1f7287049ebe6"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/wire.jsonl",
+      "bytes": 1037414,
+      "sha256": "1c8507703eab0444216c953099a1da2b55ade419f9b86b1f8da032efe393896a"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/development/worker.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/selection.json",
+      "bytes": 4477,
+      "sha256": "33f03d74753d34775dbbdcf616ec9eaace5025d7092c74b11920e110e7628761"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/runs/trials.json",
+      "bytes": 25918,
+      "sha256": "73fa6cab34dc6714bac2985a17661f3ee627d30751a50816d79ddc2b78a8e030"
+    }
+  ]
+}

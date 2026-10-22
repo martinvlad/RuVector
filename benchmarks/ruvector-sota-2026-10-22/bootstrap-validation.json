@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "checks_passed": true,
+  "mode": "clean temp source reconstruction from readonly locally verified immutable old public kit; no model download/install/inference",
+  "kit_manifest_sha256": "b5dc6bab62ea0c93e02dedc6ac688ac12fdf3b8f0bc73e0ac705c7486e9ecdd4",
+  "bootstrap_sha256": "eceb2ca259feaf642bc81172aca57a2a209cc34cd17f9b281861c51f21b95806",
+  "project_files": 61,
+  "base_files": 48,
+  "old_plan_nonmodel_pins_verified_before_receipt_emission": 82,
+  "deferred_explicit_model_assets": [
+    "models/bge-small-en-v1.5/model.onnx",
+    "models/bge-small-en-v1.5/tokenizer.json"
+  ],
+  "network_calls": 0,
+  "paid_calls": 0,
+  "native_calls": 0,
+  "confirmation_remeasured": false,
+  "commands": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "experiments/sota-2026-10-22/benchmark/validate.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"checks_passed\": true, \"frozen_source_checks\": 22, \"split_counts\": {\"train\": 106, \"dev\": 43, \"calibration\": 34, \"confirmation\": 48}, \"legacy_correct\": 104, \"native_inference_calls\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments/sota-2026-10-22/candidate",
+        "-p",
+        "test_head.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.276s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments/sota-2026-10-22/controller",
+        "-p",
+        "test_loop.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nOK\n"
+    }
+  ],
+  "idempotent_verify_only_passed": true,
+  "preserved_preflight_diagnostic": "bootstrap-validation-attempt1.json",
+  "validator_receipt_emitted_only_in_disposable_temp": true
+}

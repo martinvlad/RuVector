@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T15:23:41.345281+00:00",
+  "checks_passed": true,
+  "scope": "Pre-measurement source, data, split, trainer, runtime, controller and acceptance review; not a measured performance result",
+  "plan_sha256": "96b377f22c8adb94a3c386f8a1d26e40d1e64e4ac7bd473388632119b4edf3c7",
+  "pins_verified": 82,
+  "candidate_proposal_manifest_sha256": "08211c8064c33ab3c6607bd2d11b7d6db7a92ae89fa07f4a0488486eefc3b305",
+  "controller_source_sha256": "1cbea835bbbf69b4f85ee9a94b3b922b0af34f30e7c9f4fba33a710b82d0e121",
+  "candidate_head_sha256": "c0179108191c8f5d2c3d15067d6b3a390a4b065d4d7744922719e64f0b7721dd",
+  "candidate_runtime_sha256": "9740b72865d882870423e55ce74f8791863ddef2c980da5354457c109bccdd5e",
+  "source_boundaries_reviewed": {
+    "training_only_train_labels": true,
+    "temperature_only_calibration_labels": true,
+    "dev_only_selection_and_full183_regression_gate": true,
+    "no_confirmation_in_fit": true,
+    "confirmation_artifact_lock_before_native_pass": true,
+    "runtime_only_state_questions_and_native_response": true,
+    "same_native_call_baseline_pair": true,
+    "real_binary_model_source_validation": true,
+    "budget_and_deadline_before_execution": true,
+    "exact_plan_sha_bound_in_parent_and_worker": true,
+    "exclusive_launch_attempt_and_confirmation_lock": true,
+    "actual_wire_and_server_hash_native_count_verification": true,
+    "owned_process_group_cleanup": true
+  },
+  "development_gate": "DEV accuracy nondecrease, Brier/NLL both nonincrease and one strict improvement; full exposed183 correct>=104, errors0. Selection remains adaptive-public.",
+  "tests": {
+    "controller": 11,
+    "candidate": 13,
+    "independent_gate_v2": 11,
+    "auditor_post_freeze_synthetic_probes": 30
+  },
+  "proofs": [
+    {
+      "path": "acceptance-contract-v1.json",
+      "sha256": "04b1f32afc607b1e22955067729053cc82b0f4a9c7a7e05fb47bfeac79b508ed"
+    },
+    {
+      "path": "benchmark-data-independent-v1.json",
+      "sha256": "631a970f2bd0a8a8ea52e578aba535fb8476e80ce992748636c1103f9474f286"
+    },
+    {
+      "path": "fresh-semantic-probes-v1.json",
+      "sha256": "83af1a4465f23f5b31434359f89b72f5ae9bb6a5c56cf51fb7da1bb6a154b610"
+    },
+    {
+      "path": "verify_epoch_v2.py",
+      "sha256": "1787f3ec2ca5e0e92be1a6735213b15c6f3e2b452c4c93ba0a112671c42d839a"
+    },
+    {
+      "path": "auditor-tolerance-diagnostic-v1.json",
+      "sha256": "0cc1babffdf71123c461eacf7b419218d3ab74204e00e162168e5a9c88adff1e"
+    }
+  ],
+  "calibration_limitation": "Empirical one-hot target Brier/NLL; no official probability-fidelity gold distributions. Fitted public temperatures remain explicitly calibrated=false.",
+  "confirmation_scope": "48 public easy tasks, first known project use only; small shifted historical sample, not sealed and no automatic generalization claim.",
+  "official_sota_goal_met": false,
+  "official_rank": null,
+  "new_native_calls_by_auditor": 0,
+  "new_paid_calls_by_auditor": 0
+}

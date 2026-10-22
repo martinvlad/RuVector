@@ -1,0 +1,94 @@
+{
+  "inputs": [
+    {
+      "name": "input_ids",
+      "tensor_element_type": 7,
+      "dimensions": [
+        {
+          "parameter": "batch_size"
+        },
+        {
+          "parameter": "sequence_length"
+        }
+      ]
+    },
+    {
+      "name": "attention_mask",
+      "tensor_element_type": 7,
+      "dimensions": [
+        {
+          "parameter": "batch_size"
+        },
+        {
+          "parameter": "sequence_length"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "logits",
+      "tensor_element_type": 1,
+      "dimensions": [
+        {
+          "parameter": "batch_size"
+        },
+        {
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "opsets": [
+    {
+      "domain": "",
+      "version": 12
+    }
+  ],
+  "operators": {
+    "::Gather": 314,
+    "::Unsqueeze": 488,
+    "::DequantizeLinear": 1,
+    "::ReduceMean": 98,
+    "::Cast": 152,
+    "::Squeeze": 196,
+    "::Sub": 50,
+    "::Pow": 49,
+    "::Mul": 395,
+    "::Add": 391,
+    "::Not": 25,
+    "::Sqrt": 49,
+    "::Div": 172,
+    "::Shape": 290,
+    "::DynamicQuantizeLinear": 98,
+    "::MatMulInteger": 146,
+    "::Slice": 171,
+    "::Range": 1,
+    "::Concat": 312,
+    "::Reshape": 240,
+    "::Sign": 1,
+    "::Less": 1,
+    "::Greater": 1,
+    "::Abs": 1,
+    "::Transpose": 192,
+    "::And": 1,
+    "::Where": 74,
+    "::LessOrEqual": 1,
+    "::Log": 1,
+    "::MatMul": 96,
+    "::Ceil": 1,
+    "::Equal": 72,
+    "::Tile": 48,
+    "::If": 24,
+    "::Clip": 25,
+    "::Neg": 24,
+    "::Expand": 48,
+    "::GatherElements": 48,
+    "::Softmax": 24,
+    "::Erf": 25
+  },
+  "external_initializers": [],
+  "session_initialized": false,
+  "forwards": 0,
+  "ir_version": 7
+}

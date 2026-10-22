@@ -1,0 +1,522 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T20:48:28.278548+00:00",
+  "status": "REJECTED_DEV_GATE",
+  "actual_replay_sha256": "b69a71f774baad448dfeaf29aaeb2b2846760182778ad65cec9f91c864eb05a2",
+  "metrics": {
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 6,
+        "brier": 0.8617902374987969,
+        "nll": 1.1172158909401906,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 6,
+        "brier": 0.9303565907166804,
+        "nll": 1.2121663765730837,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 8,
+        "brier": 0.8264549818468845,
+        "nll": 1.0845726197451544,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 11,
+        "brier": 0.5007358305172002,
+        "nll": 0.6938830263365927,
+        "errors": 0,
+        "strict_valid": 24
+      }
+    }
+  },
+  "gold_binary_counts": {
+    "No": 17,
+    "Yes": 7
+  },
+  "evidence_coverage": {
+    "development": {
+      "ruvector_top2": {
+        "queries_with_annotations": 13,
+        "any_gold_span_overlap": 10,
+        "all_gold_spans_overlap": 8,
+        "all_gold_spans_fully_contained": 8,
+        "correct_among_any_overlap": 4,
+        "correct_among_fully_contained": 2,
+        "queries_selecting_fallback_units": 11,
+        "queries_inspecting_neighbor_outside_anchor_ranking": 0
+      },
+      "same_nli_lexical_top2": {
+        "queries_with_annotations": 13,
+        "any_gold_span_overlap": 11,
+        "all_gold_spans_overlap": 8,
+        "all_gold_spans_fully_contained": 7,
+        "correct_among_any_overlap": 4,
+        "correct_among_fully_contained": 1,
+        "queries_selecting_fallback_units": 11,
+        "queries_inspecting_neighbor_outside_anchor_ranking": 0
+      },
+      "same_nli_positional_first2": {
+        "queries_with_annotations": 13,
+        "any_gold_span_overlap": 8,
+        "all_gold_spans_overlap": 5,
+        "all_gold_spans_fully_contained": 5,
+        "correct_among_any_overlap": 4,
+        "correct_among_fully_contained": 2,
+        "queries_selecting_fallback_units": 12,
+        "queries_inspecting_neighbor_outside_anchor_ranking": 0
+      }
+    }
+  },
+  "readout_errors": {
+    "development": {
+      "ruvector_top2": {
+        "wrong": 18,
+        "wrong_confidence_ge_0_9": 0,
+        "wrong_confidence_ge_0_99": 0,
+        "false_Yes": 17,
+        "false_No": 1
+      },
+      "same_nli_lexical_top2": {
+        "wrong": 18,
+        "wrong_confidence_ge_0_9": 0,
+        "wrong_confidence_ge_0_99": 0,
+        "false_Yes": 16,
+        "false_No": 2
+      },
+      "same_nli_positional_first2": {
+        "wrong": 16,
+        "wrong_confidence_ge_0_9": 0,
+        "wrong_confidence_ge_0_99": 0,
+        "false_Yes": 14,
+        "false_No": 2
+      },
+      "native104_on_ruvector_evidence": {
+        "wrong": 13,
+        "wrong_confidence_ge_0_9": 0,
+        "wrong_confidence_ge_0_99": 0,
+        "false_Yes": 11,
+        "false_No": 2
+      }
+    }
+  },
+  "context_summary": {
+    "development": {
+      "ruvector_top2": {
+        "selected_units": {
+          "min": 3,
+          "p50": 4.0,
+          "max": 5,
+          "mean": 4.166666666666667
+        },
+        "joint_pair_tokens": {
+          "min": 413,
+          "p50": 486.0,
+          "max": 510,
+          "mean": 478.1666666666667
+        },
+        "UTF8_premise_bytes": {
+          "min": 2099,
+          "p50": 2589.5,
+          "max": 2939,
+          "mean": 2502.125
+        },
+        "source_character_coverage": {
+          "min": 0.1002646861296567,
+          "p50": 0.26355710421077394,
+          "max": 0.5823102678571429,
+          "mean": 0.28317380842544376
+        },
+        "admissions_attempted": 501,
+        "oversize_admissions_rejected": 401
+      },
+      "same_nli_lexical_top2": {
+        "selected_units": {
+          "min": 3,
+          "p50": 4.0,
+          "max": 6,
+          "mean": 4.25
+        },
+        "joint_pair_tokens": {
+          "min": 427,
+          "p50": 493.5,
+          "max": 512,
+          "mean": 483.375
+        },
+        "UTF8_premise_bytes": {
+          "min": 2099,
+          "p50": 2584.5,
+          "max": 2867,
+          "mean": 2530.25
+        },
+        "source_character_coverage": {
+          "min": 0.1002646861296567,
+          "p50": 0.2760460479887086,
+          "max": 0.6383928571428571,
+          "mean": 0.2918161050524966
+        },
+        "admissions_attempted": 504,
+        "oversize_admissions_rejected": 402
+      },
+      "same_nli_positional_first2": {
+        "selected_units": {
+          "min": 3,
+          "p50": 4.0,
+          "max": 5,
+          "mean": 4.291666666666667
+        },
+        "joint_pair_tokens": {
+          "min": 413,
+          "p50": 493.0,
+          "max": 512,
+          "mean": 481.75
+        },
+        "UTF8_premise_bytes": {
+          "min": 2099,
+          "p50": 2439.0,
+          "max": 2748,
+          "mean": 2367.875
+        },
+        "source_character_coverage": {
+          "min": 0.09651167384347964,
+          "p50": 0.2372238002822865,
+          "max": 0.5823102678571429,
+          "mean": 0.27404798480222
+        },
+        "admissions_attempted": 496,
+        "oversize_admissions_rejected": 393
+      }
+    }
+  },
+  "ANN_diagnostics": {
+    "exact_top2_sets": 24,
+    "exact_ranked_candidate_sets": 24,
+    "exact_full_candidate_order": 24,
+    "requests": 24,
+    "scope": "Replay exact cosine using saved BGEvectors only, never replace actualANN ranking. Candidate sets trivial if bank<=40; top2/order separately reported."
+  },
+  "singleton_identical_context_logit_drift": 0.0,
+  "execution": {
+    "actual_requests": 24,
+    "actual_NLI_singleton_pairs": 72,
+    "actual_NLI_input_tokens": 34639,
+    "actual_BGE_texts": 178,
+    "actual_BGE_batches": 47,
+    "phase_counts": {
+      "development": {
+        "BGE_texts": 178,
+        "BGE_batches": 47,
+        "NLI_tokens": 34639
+      }
+    }
+  },
+  "phase_completion": {
+    "development": {
+      "at": "2026-10-22T20:47:28.632496+00:00",
+      "phase": "development",
+      "exit_code": 0,
+      "error": null,
+      "wall_seconds_including_model_load": 138.24773560900212,
+      "source_plan_unchanged": true,
+      "native_attempts": 1,
+      "prior_closed_attempts": 8,
+      "lifetime_native_attempt": 9,
+      "owned_group_cleanup": {
+        "pgid": 11074,
+        "live_members_before": [],
+        "signals": [],
+        "hard_cleanup_deadline_unix": 1792702510.384688,
+        "live_members_after": [],
+        "finished_unix": 1792702048.632479,
+        "finished_within_deadline": true
+      },
+      "new_paid_calls": 0,
+      "new_GPU_calls": 0,
+      "official_score": null,
+      "official_rank": null
+    }
+  },
+  "allarm_latency_seconds": {
+    "development": {
+      "p50": 5.2740708550009,
+      "p95": 7.2259279956509985,
+      "max": 8.686235853001563,
+      "scope": "Whole HTTP request includesall3NLIcontrols+native104excerpt+evidenceencoding/index; not primary-only deployment"
+    }
+  },
+  "resources": {
+    "development": {
+      "at": "2026-10-22T20:47:28.224471+00:00",
+      "worker_cpu_user_seconds": 253.640527,
+      "worker_cpu_system_seconds": 1.098363,
+      "worker_peak_RSS_bytes": 1814745088,
+      "terminated_children_cpu_user_seconds": 5.969806,
+      "terminated_children_cpu_system_seconds": 0.647577,
+      "largest_terminated_child_peak_RSS_bytes": 1814220800,
+      "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+      "allowed_CPU_ids": [
+        0,
+        1
+      ],
+      "configured_ORT_threads": 2,
+      "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+    }
+  },
+  "paired_doc_bootstrap": {
+    "development": {
+      "same_nli_lexical_top2": {
+        "accuracy": {
+          "mean_improvement": 0.0,
+          "ci95": [
+            -0.20833333333333331,
+            0.16666666666666666
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.06856635321788353,
+          "ci95": [
+            -0.08072332663048874,
+            0.2041383372371102
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.09495048563289295,
+          "ci95": [
+            -0.06554608379880911,
+            0.25289270506868905
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "same_nli_positional_first2": {
+        "accuracy": {
+          "mean_improvement": -0.08333333333333333,
+          "ci95": [
+            -0.25,
+            0.08333333333333333
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.03533525565191252,
+          "ci95": [
+            -0.13175567954510023,
+            0.05707030131847733
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.03264327119503626,
+          "ci95": [
+            -0.14815214033649793,
+            0.07467830829160232
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "native104_on_ruvector_evidence": {
+        "accuracy": {
+          "mean_improvement": -0.20833333333333331,
+          "ci95": [
+            -0.41666666666666663,
+            0.0
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.36105440698159685,
+          "ci95": [
+            -0.43223228145915044,
+            -0.278981261004552
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.4233328646035979,
+          "ci95": [
+            -0.5043558454250904,
+            -0.3218001368014983
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      }
+    }
+  },
+  "runtime_admission": {
+    "at": "2026-10-22T20:47:28.664530+00:00",
+    "formula_id": "96xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "max_DEV_HTTP_seconds": 8.686235853001563,
+    "max_DEV_units": 41,
+    "max_confirmation_units": 39,
+    "source_unit_ratio": 1.0,
+    "DEV_initialization_seconds": 3.562342367000383,
+    "projected_confirmation_seconds": 901.0033266221508,
+    "allowed": false,
+    "forecast_limit_seconds": 600,
+    "actual_confirmation_watchdog_seconds": 600,
+    "scope": "Conservative admission forecast, not a performance guarantee. No confirmation labels/model outputs used."
+  },
+  "confirmation96_model_consumed": false,
+  "internal_confirmation_gate_passed": false,
+  "DEV24_retired_forever": true,
+  "budget": {
+    "started_at": "2026-10-22T20:45:10.382865+00:00",
+    "status": "REJECTED_DEV_GATE",
+    "confirmation_status": "NOT_MODEL_CONSUMED",
+    "official_score": null,
+    "official_rank": null,
+    "champion_promoted": false,
+    "development_completed": 24,
+    "development_gate_passed": false,
+    "development_metrics": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 6,
+        "accuracy": 0.25,
+        "brier": 0.861790237498797,
+        "nll": 1.1172158909401906,
+        "strict_valid": 24,
+        "errors": 0,
+        "ece10": 0.53113804867293,
+        "by_type": {
+          "choice": {
+            "n": 24,
+            "correct": 6,
+            "accuracy": 0.25,
+            "brier": 0.861790237498797,
+            "nll": 1.1172158909401906,
+            "strict_valid": 24,
+            "errors": 0,
+            "ece10": 0.53113804867293
+          }
+        },
+        "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+        "official_score": null,
+        "official_rank": null
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 11,
+        "accuracy": 0.4583333333333333,
+        "brier": 0.5007358305172002,
+        "nll": 0.6938830263365928,
+        "strict_valid": 24,
+        "errors": 0,
+        "ece10": 0.04366750041666673,
+        "by_type": {
+          "choice": {
+            "n": 24,
+            "correct": 11,
+            "accuracy": 0.4583333333333333,
+            "brier": 0.5007358305172002,
+            "nll": 0.6938830263365928,
+            "strict_valid": 24,
+            "errors": 0,
+            "ece10": 0.04366750041666673
+          }
+        },
+        "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+        "official_score": null,
+        "official_rank": null
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 6,
+        "accuracy": 0.25,
+        "brier": 0.9303565907166805,
+        "nll": 1.2121663765730837,
+        "strict_valid": 24,
+        "errors": 0,
+        "ece10": 0.523665273803,
+        "by_type": {
+          "choice": {
+            "n": 24,
+            "correct": 6,
+            "accuracy": 0.25,
+            "brier": 0.9303565907166805,
+            "nll": 1.2121663765730837,
+            "strict_valid": 24,
+            "errors": 0,
+            "ece10": 0.523665273803
+          }
+        },
+        "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+        "official_score": null,
+        "official_rank": null
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 8,
+        "accuracy": 0.3333333333333333,
+        "brier": 0.8264549818468844,
+        "nll": 1.0845726197451544,
+        "strict_valid": 24,
+        "errors": 0,
+        "ece10": 0.41209039106523404,
+        "by_type": {
+          "choice": {
+            "n": 24,
+            "correct": 8,
+            "accuracy": 0.3333333333333333,
+            "brier": 0.8264549818468844,
+            "nll": 1.0845726197451544,
+            "strict_valid": 24,
+            "errors": 0,
+            "ece10": 0.41209039106523404
+          }
+        },
+        "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+        "official_score": null,
+        "official_rank": null
+      }
+    },
+    "finished_at": "2026-10-22T20:47:28.666023+00:00",
+    "actual_native_attempts": 1,
+    "started_phases": [
+      "development"
+    ],
+    "prior_closed_attempts": 8,
+    "lifetime_native_attempts": 9,
+    "new_study_cap": 2,
+    "unspent_phase_slots": 1,
+    "allowed_further_attempts_in_closed_study": 0,
+    "new_paid_calls": 0,
+    "new_GPU_calls": 0,
+    "confirmation_consumed_or_attempted": false
+  },
+  "scope_limits": [
+    "Public binary3hypothesis NDA pilot, not full LegalBench/LegalBenchRAG/JevBench/ClaimBench; no official placement/SOTA.",
+    "All3matchedNLIarms share exact frozen6 old-policy tokenizer/context algorithm, actual newdecoder512 guard and same binary model/T1. Legacytop2names are variable-unit aliases.",
+    "Different DEV cohorts and absent same-input oldmodel arm forbid causal cross-epoch larger-model or packing improvement.",
+    "Partial or even full annotation-span containment does not prove semantic evidence sufficiency. Numeric coverage is mechanical, not numeric reasoning certification.",
+    "Declared upstreamMIT with mixed/noncommercial/unknown training licenses and converter no ownlicense; underlying/pretraining overlap unknown. No proof sealed/unseen.",
+    "Whole HTTP timings includeallarms/native excerpt/embedding/index; not primary-only serving cost. Linux self/terminatedchildren highwaters cannot be summed as simultaneous memory.",
+    "DEV8/CONF32 doc bootstrap intervals are nominal unadjusted; no familywise/generalization claim.",
+    "Timing projection is admission heuristic, not600s guarantee; unconsumed96 remains untouched for model use if gate/admission fails."
+  ],
+  "submitted_champions_unchanged": true,
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "auditor_model_native_or_paid_calls": 0
+}

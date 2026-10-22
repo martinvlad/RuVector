@@ -1,0 +1,77 @@
+Epoch7 public model asset restoration (separate postfreeze provenance helper)
+
+Script: candidate/epoch7/publication/acquire_assets_v1.py
+Its EPOCH7_MODEL_ASSETS_v1.json is pinned by SHA256:
+  156d721078f1825ed724e7de74f08385d654bc0ce26b3861ada447d8bbc9ea93
+
+The six exact files total 547,486,538 bytes. The quantized ONNX is 538,833,918
+bytes, SHA256 9710e442e94518da4175374e71459be69ca565f7a31369fa10f3a117e1c6d692.
+Every official URL is fixed to this repository and immutable revision:
+  onnx-community/deberta-v3-large-zeroshot-v2.0-ONNX
+  81795c444c24c634d3d5a6142988837b40313b3b
+
+After the existing reviewed bootstrap/checkpoint helpers restore text sources,
+create/use a regular fresh project directory and choose one explicit mode:
+
+Verify files already placed at the canonical project paths:
+
+  PYTHONDONTWRITEBYTECODE=1 python3 \
+    experiments/sota-2026-10-22/candidate/epoch7/publication/acquire_assets_v1.py \
+    --dest /absolute/fresh-project --verify-only \
+    --receipt /absolute/new-asset-verification.json
+
+Restore from a local regular-file model directory containing config.json,
+tokenizer.json and onnx/model_quantized.onnx (no symlink caches):
+
+  PYTHONDONTWRITEBYTECODE=1 python3 \
+    experiments/sota-2026-10-22/candidate/epoch7/publication/acquire_assets_v1.py \
+    --dest /absolute/fresh-project --cache-dir /absolute/large-model-directory \
+    --receipt /absolute/new-asset-restoration.json
+
+Opt in to the six fixed public HTTPS downloads when no verified cache exists:
+
+  PYTHONDONTWRITEBYTECODE=1 python3 \
+    experiments/sota-2026-10-22/candidate/epoch7/publication/acquire_assets_v1.py \
+    --dest /absolute/fresh-project --download \
+    --receipt /absolute/new-asset-acquisition.json
+
+The helper uses only Python's standard library. It verifies exact sizes/SHA256,
+rejects path/symlink/hash mismatches, creates only verified regular files and
+reuses exact existing assets. Existing mismatches are never overwritten. All
+local cache files and existing targets are checked before any write/network.
+Downloads stream to temporary files and are admitted only after exact identity
+verification. A failed later download may leave earlier complete verified files;
+retrying reuses them. Receipt paths must be new. No inference or addon executes.
+
+Other required reconstruction closures remain the reviewed existing helpers:
+
+  * bootstrap.py and restore_checkpoint.py: pinned source hierarchy and BGE
+    model/dependency setup; default source restoration performs no inference.
+  * candidate/epoch3/publication/restore_original_data.py: pinned original data
+    archive/train/dev restoration, when those source-data files are needed.
+  * candidate/epoch4/publication/acquire_assets.py: six historical base-model
+    assets. Epoch7 validates that old asset lock and uses the old tokenizer to
+    preserve exact contexts; it never initializes the old base NLI session.
+  * candidate/epoch5/reconstruction/restore_runtime.py: materialize core8 and
+    TypeSafe14 as 22 exact native runtime files at canonical project paths:
+
+      python3 experiments/sota-2026-10-22/candidate/epoch5/reconstruction/restore_runtime.py \
+        --project-root /absolute/fresh-project \
+        --core-cache-root /absolute/verified-core-cache-tree \
+        --typesafe-cache-root /absolute/verified-typesafe-cache-tree \
+        --receipt /absolute/new-native-closure.json
+
+Those older helpers retain their own exact pins and acquisition options. The
+new asset helper installs no dependencies, reads no provider credentials and
+starts no subprocess, model session, forward or benchmark. The inference runtime
+expects the pinned Python 3.12 environment with numpy 2.2.6, onnxruntime 1.22.1 and
+tokenizers 0.21.4, plus Linux x86_64 glibc/Node native closure. File identity alone
+does not establish execution compatibility or a score. Actual experiments remain
+governed by their separately frozen plan and resource/data gates.
+
+Public allowlist: all 21 frozen candidate source/provenance files named by the
+proposal plus the proposal itself and these versioned publication helper files.
+Exclude the entire candidate/epoch7/assets/ tree: no weights/tokenizer JSON or
+temporary downloads belong in the public source stage. Public research cards,
+API metadata, small config copies, license/training CSV, hashes and tests remain
+included. Preserve every earlier checkpoint file and its identity.

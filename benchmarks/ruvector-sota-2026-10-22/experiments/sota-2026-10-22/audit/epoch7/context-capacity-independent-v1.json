@@ -1,0 +1,767 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T20:41:13.807848+00:00",
+  "checks_passed": true,
+  "context_source_sha256": "28bceb95282ec3e3e938f3211ccad04d2369fa29e1f191f187566339ae3b44d2",
+  "config_sha256": "27f1f8064516b73ba32515adec20d4bb53ce355b46944cd33ba8a7191fc412a1",
+  "DEV_sha256": "cb64cdba88d2f5a00c0b1c9bad2a299ca659af1edac039b8cf8e8e8d3fb8f2af",
+  "confirmation_sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+  "phases": {
+    "development": {
+      "requests": 24,
+      "max_units": 41,
+      "source_document_groups": 8,
+      "all_possible_single_anchors_plus_neighbors_tested": 462,
+      "full_ranking_paths_tested": 120,
+      "fallback_units_across_queries": 66
+    },
+    "confirmation": {
+      "requests": 96,
+      "max_units": 39,
+      "source_document_groups": 32,
+      "all_possible_single_anchors_plus_neighbors_tested": 1950,
+      "full_ranking_paths_tested": 480,
+      "fallback_units_across_queries": 288
+    }
+  },
+  "possible_anchors_tested": 2412,
+  "bounded_full_ranking_paths_tested": 600,
+  "admission_trace_attempts_retokenized": 20105,
+  "oversize_admissions_rejected": 10412,
+  "max_observed_complete_NLI_pair_tokens": 512,
+  "max_all120_BGE_sequence_tokens": 179,
+  "max_observed_native104_context_bytes": 2940,
+  "max_source_units": 41,
+  "budget_proof": "Sourcechecks before EVERY admission and final rendering imply allrankingpath contexts <=512; everyfrozenunit/query measured rawBGE<=256. Enumeratedall120singleanchors+neighbors plusfivefullorders/input; no exhaustive40!ranking claim. Runtime additionally requires16KiB nativeguard.",
+  "source_coverage": "Fullsourceexactcontiguouspartition includingwhitespace, nooffsetdrop/overlap. Oversizedatoms explicitlytokenfallback; allselectedstrings/hash/wholehypothesis/readmissioncounts replayed.",
+  "NLI_tokenizer_sha256": "a86f883318afa11c8c10466f1bf4efaeb6ded28a52cbe57217a8fa0d0a2a87df",
+  "BGE_tokenizer_sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+  "actual_model_tokenizer_sha256": "4b4f60231058db4b5794e7b124bb7945bc8ade6719282de4d2e0372ee527b929",
+  "actual_model_max_pair_tokens": 512,
+  "policy_model_encoding_pairs_checked": 5544,
+  "policy_model_ids_masks_types_equal_on_tested_domain": true,
+  "source_unit_counts_for_runtime_admission": [
+    {
+      "id": "original-contractnli:train:epoch7:469:nda-17",
+      "phase": "development",
+      "input_sha256": "c348677df84184aeb610f204229cb0ad37f5af2be2d0d3ab9c2ac748c5daf90f",
+      "units": 15
+    },
+    {
+      "id": "original-contractnli:train:epoch7:469:nda-7",
+      "phase": "development",
+      "input_sha256": "78e824809b8d0319e922314d9031bac6c6a19f640799e6e7c2d0acdf29cb463c",
+      "units": 15
+    },
+    {
+      "id": "original-contractnli:train:epoch7:469:nda-3",
+      "phase": "development",
+      "input_sha256": "c4e7e933a1e28f450cc20d3fdfedc14080c7b37508d66b9f89dafd290329ec37",
+      "units": 15
+    },
+    {
+      "id": "original-contractnli:train:epoch7:618:nda-17",
+      "phase": "development",
+      "input_sha256": "0116e21501178c549259c50ef7baf7cbf5e633db7a5d2d5a6da88023e0d7f3a5",
+      "units": 41
+    },
+    {
+      "id": "original-contractnli:train:epoch7:618:nda-7",
+      "phase": "development",
+      "input_sha256": "bc7b1db5e2f9a3adcf3d16ca3db87819533380c01686ba7b8addf4a523c5709f",
+      "units": 41
+    },
+    {
+      "id": "original-contractnli:train:epoch7:618:nda-3",
+      "phase": "development",
+      "input_sha256": "504a56821afb6e8d5fc82dd803b39746362e97224ce34ac1ab27c74c313d0303",
+      "units": 41
+    },
+    {
+      "id": "original-contractnli:train:epoch7:143:nda-17",
+      "phase": "development",
+      "input_sha256": "832e43d8706ff8a892983868523c82c536561e3df7ee8c1c71fbb35c4c831839",
+      "units": 14
+    },
+    {
+      "id": "original-contractnli:train:epoch7:143:nda-7",
+      "phase": "development",
+      "input_sha256": "7b2f29c988cc69996130b3ddf3766b499293ee8513563b7623f8a124b8bb155e",
+      "units": 14
+    },
+    {
+      "id": "original-contractnli:train:epoch7:143:nda-3",
+      "phase": "development",
+      "input_sha256": "5af1f9f6debf28cd7b26698803d31eab4b96b8eed1a5672263759082a47a4ce0",
+      "units": 14
+    },
+    {
+      "id": "original-contractnli:train:epoch7:602:nda-17",
+      "phase": "development",
+      "input_sha256": "b955647a8c40f99eed962232087f545a737dd79e6fcc2ca40913c001f95a5923",
+      "units": 30
+    },
+    {
+      "id": "original-contractnli:train:epoch7:602:nda-7",
+      "phase": "development",
+      "input_sha256": "d5bb708e979efd6e0fede7a3c770c8a8d78b1289235e007330b3eaccfce36cec",
+      "units": 30
+    },
+    {
+      "id": "original-contractnli:train:epoch7:602:nda-3",
+      "phase": "development",
+      "input_sha256": "fc60febebd91373ffa7f0096f422716b6f491a9743208307aef36034e319fb66",
+      "units": 30
+    },
+    {
+      "id": "original-contractnli:train:epoch7:527:nda-17",
+      "phase": "development",
+      "input_sha256": "ddcba49cda98320b6a34fc161bb594f8d821c20720415c74a9dbe8a49101c46b",
+      "units": 19
+    },
+    {
+      "id": "original-contractnli:train:epoch7:527:nda-7",
+      "phase": "development",
+      "input_sha256": "51088020add307ce8a311d9e83a698c82d0ba402c04442993ddf10407c21346f",
+      "units": 19
+    },
+    {
+      "id": "original-contractnli:train:epoch7:527:nda-3",
+      "phase": "development",
+      "input_sha256": "d597538c5d47f0990629d2f2eebfe52f3e646903835a0fc0a9fc39f284262cbc",
+      "units": 19
+    },
+    {
+      "id": "original-contractnli:train:epoch7:122:nda-17",
+      "phase": "development",
+      "input_sha256": "9e1483400876736bc67ff61354761542efed2cfd7b450a828e791da14636dfef",
+      "units": 6
+    },
+    {
+      "id": "original-contractnli:train:epoch7:122:nda-7",
+      "phase": "development",
+      "input_sha256": "83deea157cb2e94ea54cee30cff03dac7fd746854342aa973c85950cb9d37ebc",
+      "units": 6
+    },
+    {
+      "id": "original-contractnli:train:epoch7:122:nda-3",
+      "phase": "development",
+      "input_sha256": "a67c1fb67b4a1485b3d9da8c1b3b095d7124184d816ee297e834e6e985929d13",
+      "units": 6
+    },
+    {
+      "id": "original-contractnli:train:epoch7:182:nda-17",
+      "phase": "development",
+      "input_sha256": "a7e1875b221945649aa468f38509284bd47764d64c542eb996a184397087fb59",
+      "units": 19
+    },
+    {
+      "id": "original-contractnli:train:epoch7:182:nda-7",
+      "phase": "development",
+      "input_sha256": "ee4813ebab69b097f930a65f0280ea14ad97028c46b1a56bb0ba428763d1d6af",
+      "units": 19
+    },
+    {
+      "id": "original-contractnli:train:epoch7:182:nda-3",
+      "phase": "development",
+      "input_sha256": "e637d7a5f0333590c05f29539dc6968dbc59ff1f8619d5b25d85430319aea3c0",
+      "units": 19
+    },
+    {
+      "id": "original-contractnli:train:epoch7:253:nda-17",
+      "phase": "development",
+      "input_sha256": "734d74b24778ea6260154dbc25532a612c7beab386f763d2adbf9987c3c29c4c",
+      "units": 10
+    },
+    {
+      "id": "original-contractnli:train:epoch7:253:nda-7",
+      "phase": "development",
+      "input_sha256": "bee9670e71aa49fd0c95508b6373a1a4a186a4564912df7d34c6c8939ca131f5",
+      "units": 10
+    },
+    {
+      "id": "original-contractnli:train:epoch7:253:nda-3",
+      "phase": "development",
+      "input_sha256": "1b2786ee4e93c94997fdc265f29ae221b05f04a018393a481214d8dd04562dd8",
+      "units": 10
+    },
+    {
+      "id": "original-contractnli:dev:610:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "8b854e4b459b1e67045d40327277111ca1bbb2ee88d70a33db04b9e785cc1b31",
+      "units": 27
+    },
+    {
+      "id": "original-contractnli:dev:610:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "d4522c08c99179f48e4af91a0bb6624b69c5805d2fab1a46501ae5a5757160f1",
+      "units": 27
+    },
+    {
+      "id": "original-contractnli:dev:610:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "d39bb3ae4f5539d9be9a98e822102dd7177328414bc20eb937883ce3473a4eff",
+      "units": 27
+    },
+    {
+      "id": "original-contractnli:dev:54:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "04c66a35b1ffe48c993eab914b48646db911588014b8949c1641e3ca9a7cf9c2",
+      "units": 17
+    },
+    {
+      "id": "original-contractnli:dev:54:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "a8fbd303ea137467e157f36d3a161e0ef88bab6cbc7abec8a805c43ab5160ba4",
+      "units": 17
+    },
+    {
+      "id": "original-contractnli:dev:54:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "e28a2d582b257ce7fe08d7f6088f266ec25b1fdf0a5bdd42d85d49fc3e7f2e01",
+      "units": 17
+    },
+    {
+      "id": "original-contractnli:dev:435:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "40be164ed8148523cb37ad09cbc0269fe0c22eb4672ceca55c7228831482bfec",
+      "units": 13
+    },
+    {
+      "id": "original-contractnli:dev:435:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "61d4267d65182481adef3a90189dc5d3b53b32e131181ffdbf6a76737bd7de5c",
+      "units": 13
+    },
+    {
+      "id": "original-contractnli:dev:435:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "23aece40ab70b5d076ebe0cd358878ee74fee5c90c73fd95847e3068a901af31",
+      "units": 13
+    },
+    {
+      "id": "original-contractnli:dev:488:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "dddab0badcdae93bb5e10e2b55deff908562367587681400cefa01256a2edf88",
+      "units": 8
+    },
+    {
+      "id": "original-contractnli:dev:488:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "716d05baa0cf815a55b31eb8d926dc31a83c5f329c5649fe60229ff5a9c59823",
+      "units": 8
+    },
+    {
+      "id": "original-contractnli:dev:488:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "08a43ef4de07bbdcba3a1463d18bb92b64d65e1cc5c5cd1b03cab374dfc7e34d",
+      "units": 8
+    },
+    {
+      "id": "original-contractnli:dev:32:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "30e1eef3cc19ecb55e7d4db504922fc90eebf3350407caf2f9c6861e9e25559d",
+      "units": 26
+    },
+    {
+      "id": "original-contractnli:dev:32:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "df77492a9feb064e35b7f9968be2ea03b73e858bfcbdf2d9c50fff104b4d58f0",
+      "units": 26
+    },
+    {
+      "id": "original-contractnli:dev:32:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "094e0e664c6e817d85191304e1762407789979f8f42729607d77046e6bde76c8",
+      "units": 26
+    },
+    {
+      "id": "original-contractnli:dev:507:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "1683e77f70836cb2a09830bca89cb38d63d382fb223669b13e67ce852fa20f4d",
+      "units": 12
+    },
+    {
+      "id": "original-contractnli:dev:507:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "ef8338b96351effa233d2804a376424241a9cbba00af4d37953eb0b8459b3089",
+      "units": 12
+    },
+    {
+      "id": "original-contractnli:dev:507:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "340e38df388d38b1b0b9075319166d59faf66872c969f759a9dc7f8caa9f099c",
+      "units": 12
+    },
+    {
+      "id": "original-contractnli:dev:71:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "19f4e7175fef9b4fd39caf27bfea9bbb25a5534508c775da58728c3131a4e855",
+      "units": 10
+    },
+    {
+      "id": "original-contractnli:dev:71:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "0faa5442604390ca2e0001dd00e6204fa2f2c751f247fc1e0c99168a0df324f9",
+      "units": 10
+    },
+    {
+      "id": "original-contractnli:dev:71:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "8a175b0bbf217720bd65ab32d7ec7f2dcae78375f2bb409fcf5a2f556762b3db",
+      "units": 10
+    },
+    {
+      "id": "original-contractnli:dev:15:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "ea60f277868b3a12a1a97e6d92b9b5d32f53b659117d5a12a39a63f733628bde",
+      "units": 9
+    },
+    {
+      "id": "original-contractnli:dev:15:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "8915d88a675bcf81c952bee8851a255039f34fed7bdcebb311cb88a12ca646bc",
+      "units": 9
+    },
+    {
+      "id": "original-contractnli:dev:15:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "d930c2f5cdc7945aa3b2d421c4a445ab480f2cc3b59bf1a307d63565f252ec02",
+      "units": 9
+    },
+    {
+      "id": "original-contractnli:dev:586:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "234e93b1a1425b335e9c9205562f4c0d088ff4d3a8565ca89ee3724807f25e77",
+      "units": 33
+    },
+    {
+      "id": "original-contractnli:dev:586:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "640a236f2d1b4a585578f807735f46d20a0b6d1542d63df4ce19ff475ad5a004",
+      "units": 33
+    },
+    {
+      "id": "original-contractnli:dev:586:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "04565f01b50a61c670b57a67912e63cdbec47e3f1e25929657e952af4adbf44f",
+      "units": 33
+    },
+    {
+      "id": "original-contractnli:dev:79:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "89632bbbac715fa34a08ec9c20f5492382b2c3cae3f8e8eef15e5d2e0df30cbe",
+      "units": 11
+    },
+    {
+      "id": "original-contractnli:dev:79:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "ea2560e7e3f19c4fd64e08266a2c5ddcdc0181851d355d8be5d5258484251469",
+      "units": 11
+    },
+    {
+      "id": "original-contractnli:dev:79:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "abc6f14f0cda3e121642cdf22c2a2869b0b9f7cd552034c17f0ff8ccbca94056",
+      "units": 11
+    },
+    {
+      "id": "original-contractnli:dev:478:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "d50350ddecfd951a2ee0e516baa04630d6f0ab394efc156c9198daa024a5d900",
+      "units": 18
+    },
+    {
+      "id": "original-contractnli:dev:478:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "4915d530be7575ef4f73ee1a25aec9df59f4e6b26004008766f556da8b703989",
+      "units": 18
+    },
+    {
+      "id": "original-contractnli:dev:478:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "7590ec8e9decf615741744e7b48e2ddd2e9e2f266095f1ca41e7d275066be26c",
+      "units": 18
+    },
+    {
+      "id": "original-contractnli:dev:405:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "92bb6688b921c9f143b218914bcfd81c2991fc08023d7265e44354a562c66259",
+      "units": 25
+    },
+    {
+      "id": "original-contractnli:dev:405:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "8e1a524046badd8dd5e8628b8d396a0fb671c14eb79e1e05f80c523efacae225",
+      "units": 25
+    },
+    {
+      "id": "original-contractnli:dev:405:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "f7611bb0cbddeba182a8023b7f5f28d2fbf2fb8ee15f66eeee076022389b69ac",
+      "units": 25
+    },
+    {
+      "id": "original-contractnli:dev:35:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "fabb62d16c44bffb83f823ebd32411e47eaf65137e1d2f0e8d45e2f7713921fc",
+      "units": 36
+    },
+    {
+      "id": "original-contractnli:dev:35:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "e10c9b832d6b6fdd11d5887636eacdc3d5f704c205aeffc83ae61de7f169735b",
+      "units": 36
+    },
+    {
+      "id": "original-contractnli:dev:35:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "350eb799c91d4b44d48a39de01ae1e80a7242f1e20970df47ed44b12298360ad",
+      "units": 36
+    },
+    {
+      "id": "original-contractnli:dev:27:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "ff94139676ee8ef024059790c2d19e3a3e1b313ab5da6d5a1a8a077244fd14b4",
+      "units": 27
+    },
+    {
+      "id": "original-contractnli:dev:27:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "63ad54c4f8b3a92350370a742110d82e1e53efc60f80e2ea2fbc16c8800cf49e",
+      "units": 27
+    },
+    {
+      "id": "original-contractnli:dev:27:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "7f7520ab7d31d78262f18108db0492991859cfa6b1b893deeb13449b7ab10680",
+      "units": 27
+    },
+    {
+      "id": "original-contractnli:dev:82:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "3a2daeda361bd9a1bd731af799b3e372430dbf414fdb8e67ab5dc73f8a648368",
+      "units": 10
+    },
+    {
+      "id": "original-contractnli:dev:82:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "be5449216b0add78770c4645dc65326451b7e985a196c1f7a4e60c59d757583f",
+      "units": 10
+    },
+    {
+      "id": "original-contractnli:dev:82:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "2c8754b9a75f13a010870adc56c767d8c3b8f78ad4a1e433d6e964809f361578",
+      "units": 10
+    },
+    {
+      "id": "original-contractnli:dev:590:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "6ea34e9d9f7afb054905b2ebe56df8295e8f29d38910d5414102eaa92b34694d",
+      "units": 37
+    },
+    {
+      "id": "original-contractnli:dev:590:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "74e5ed3e6a41e4b4cfef2754003956999e0c458c5e1db9dabec307c40d34bc58",
+      "units": 37
+    },
+    {
+      "id": "original-contractnli:dev:590:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "a47a1c5673125a5aa2e990e47b1a62f4004ed1124b675d3905d685b0e1ffe3cf",
+      "units": 37
+    },
+    {
+      "id": "original-contractnli:dev:20:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "16e7acd3815d3bc5b02d62b96b1c78313aad9c026adb30b9529fda1c0f40aa9f",
+      "units": 11
+    },
+    {
+      "id": "original-contractnli:dev:20:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "8af3bc0e24220cf926c93e7174fcd37fef355eaa087de81934b388291154e671",
+      "units": 11
+    },
+    {
+      "id": "original-contractnli:dev:20:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "6e11e742f799fe91a9c5291e097fe50ba06b3cd99049c55b36242472ce8307e7",
+      "units": 11
+    },
+    {
+      "id": "original-contractnli:dev:10:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "eeaa2c6fb6a2dfbf0c321a9b38b8d1f9ef43ebe88f5dcc061aa64dffbdd7918a",
+      "units": 24
+    },
+    {
+      "id": "original-contractnli:dev:10:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "c331b7c290b823122aa411df43e9cf00ed679cae1afbb433b0d5b09904a9bb39",
+      "units": 24
+    },
+    {
+      "id": "original-contractnli:dev:10:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "44e3843097405593450619b01fe323f4453263b96a7bebe911bac8315fd3f09e",
+      "units": 24
+    },
+    {
+      "id": "original-contractnli:dev:152:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "c1cc404ac61c687b47cba5b98d72f005c2477ac08ed6c242471a818ea467fcc4",
+      "units": 12
+    },
+    {
+      "id": "original-contractnli:dev:152:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "fdb2ae277710f7b3100ffe336caaaa7ccff63ae99f436e356ee26ce8520561eb",
+      "units": 12
+    },
+    {
+      "id": "original-contractnli:dev:152:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "3ede0a91af64bfadc05978b4fca04f364309afb95bbefefff4122a975c30d6e0",
+      "units": 12
+    },
+    {
+      "id": "original-contractnli:dev:37:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "6956516da8e2a3d3b2762c3431b61776d557554c875a2d937730e600c6341d96",
+      "units": 25
+    },
+    {
+      "id": "original-contractnli:dev:37:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "003495997c145ad971ba24db916d5ae1a064850d1fbb07b9604e6c8883a8d14a",
+      "units": 25
+    },
+    {
+      "id": "original-contractnli:dev:37:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "ea31437386af1d0fd8c9005a4e0b8d96cecfeb8c169a008f28baca833f507cdb",
+      "units": 25
+    },
+    {
+      "id": "original-contractnli:dev:16:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "40920af6bbfc48bd16a17adfa10b274ef39591162179a3ab926c98c1b1ecc361",
+      "units": 15
+    },
+    {
+      "id": "original-contractnli:dev:16:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "d74ee73337b66f3840ae540f5dbe0511750c091dd27fb647f3895d0ffe20f59c",
+      "units": 15
+    },
+    {
+      "id": "original-contractnli:dev:16:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "dc63fc3bfd9f5eb2fdc889a3db499703006d54f8e2f7f19682057bb2abee137f",
+      "units": 15
+    },
+    {
+      "id": "original-contractnli:dev:33:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "a36e2a2f003eea6883424c46c44c963b4fc94109eced36e31ac4551ddf325771",
+      "units": 20
+    },
+    {
+      "id": "original-contractnli:dev:33:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "6b8c757f02a9755288135f845a25ea9df3513359d4057c5241b85dea6752ee44",
+      "units": 20
+    },
+    {
+      "id": "original-contractnli:dev:33:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "6cb431f3fc027fef58b3db0911417890965c94ae1cc8181017e212568c3d3f60",
+      "units": 20
+    },
+    {
+      "id": "original-contractnli:dev:605:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "ca74ebc2c1b06968b76781e94983c0950764fddd6848f442a1f4a29dde3f7679",
+      "units": 20
+    },
+    {
+      "id": "original-contractnli:dev:605:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "5a55a9372599ee639f80253cd711ca713df97b3e2dbaf8b56da4aa63dc1260f0",
+      "units": 20
+    },
+    {
+      "id": "original-contractnli:dev:605:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "ccd4b494c37c4231921d20f65e3898c0216cc9198164fbce6281a06c122d5992",
+      "units": 20
+    },
+    {
+      "id": "original-contractnli:dev:411:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "8077dafea048815801ff54352471520dfd15588fe562f44aae47f615fda81186",
+      "units": 18
+    },
+    {
+      "id": "original-contractnli:dev:411:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "2e97ba6efe87dce2fa1b690cad158a6bf14769eefdc5b4f15eaca2590eb839ac",
+      "units": 18
+    },
+    {
+      "id": "original-contractnli:dev:411:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "8fd981f24a547b46fa4c8ee388dd2da9495f0d8507bd05f56f412454c91b71e2",
+      "units": 18
+    },
+    {
+      "id": "original-contractnli:dev:547:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "a0a4515c837152c252c88f0c4fd33c0ad75d568580e45e069322121d26f43cd6",
+      "units": 11
+    },
+    {
+      "id": "original-contractnli:dev:547:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "ff6d50b746a14d779a08ca2e329145870bf953b203a0dccbca13c2ca85f8c00b",
+      "units": 11
+    },
+    {
+      "id": "original-contractnli:dev:547:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "90702a47ebf2467a1c86215ef6e8c8909ce56187274344d46cd150a7a66a2d97",
+      "units": 11
+    },
+    {
+      "id": "original-contractnli:dev:440:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "394d6b1c8c020caefbb8e723a24f0dc858602c3b416da32a92b4f37d496b93ec",
+      "units": 17
+    },
+    {
+      "id": "original-contractnli:dev:440:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "9bb137aa27d12ad492e920b9163278c5fd7c88b86bf199a0af144cde6b6e20b7",
+      "units": 17
+    },
+    {
+      "id": "original-contractnli:dev:440:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "e65a39e3cfb85ad7cafe21c35f3a6441dc46bbe2097b2627c77a8fda031fc5cb",
+      "units": 17
+    },
+    {
+      "id": "original-contractnli:dev:69:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "0e549d3b914219180a4d0042cfb940daf2ae5833a2085bda856ea06248918cb2",
+      "units": 32
+    },
+    {
+      "id": "original-contractnli:dev:69:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "38706463644692ebd3b8ddda4840f33083c43db69e498db446fcd47281401c7c",
+      "units": 32
+    },
+    {
+      "id": "original-contractnli:dev:69:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "d7c89f427e538f2199e99826d466e1b63bae52c791c67a5d4767557404a231c4",
+      "units": 32
+    },
+    {
+      "id": "original-contractnli:dev:13:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "b29182a2c652bdc496b7dba5939339cf69b86b2ad2a93230f441a0f3822f4b6d",
+      "units": 34
+    },
+    {
+      "id": "original-contractnli:dev:13:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "3273cd4aff77a51d945b0d3965cd248f8e0f62843ab7600bdbfcc4fcb9de4cc2",
+      "units": 34
+    },
+    {
+      "id": "original-contractnli:dev:13:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "fd0a97ebce351ecbed8eeff5c0e2be57dd3950156d1f5046697937767462d306",
+      "units": 34
+    },
+    {
+      "id": "original-contractnli:dev:61:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "bed30ec6479cf48837f93d249a5b84c23d6cc6596bd9cdd175539ef374d8dac9",
+      "units": 19
+    },
+    {
+      "id": "original-contractnli:dev:61:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "de8438de51b779d84132eadd60761c03ef486233ad5188f5702e1265250ecb16",
+      "units": 19
+    },
+    {
+      "id": "original-contractnli:dev:61:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "275667e7871f93fa2f80d5f0e3e3a81bd9d3e1e995551b643f723679ae71174e",
+      "units": 19
+    },
+    {
+      "id": "original-contractnli:dev:595:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "6fee1b66b23203051487d4676518d0869c4e12004cf53d0ccf6d381bd640df7a",
+      "units": 39
+    },
+    {
+      "id": "original-contractnli:dev:595:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "7aa5d601ffc79b24167dfae4a5836e0b60a99a61b557ffc61d70637db9415761",
+      "units": 39
+    },
+    {
+      "id": "original-contractnli:dev:595:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "cff6754eac4ab03012459838d4fe72b00df97f0cd44d9367336b834aa9cee312",
+      "units": 39
+    },
+    {
+      "id": "original-contractnli:dev:398:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "49c4c22a481e078e04bedf9ae992e1c1ba7121732351a6cc9e53eb32735419c4",
+      "units": 24
+    },
+    {
+      "id": "original-contractnli:dev:398:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "0e56c70c51dea94f626fabfc8c04b221c310b161ba25b2ac313904a981c34152",
+      "units": 24
+    },
+    {
+      "id": "original-contractnli:dev:398:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "e7e0ca5f9823310446665341bd243baf0699116376d38cd3cf73945396a87c72",
+      "units": 24
+    },
+    {
+      "id": "original-contractnli:dev:14:nda-17",
+      "phase": "confirmation",
+      "input_sha256": "94faa190921564257b272b3ebcc4794b6eafdc246892fbb28cac6b995da7e227",
+      "units": 10
+    },
+    {
+      "id": "original-contractnli:dev:14:nda-7",
+      "phase": "confirmation",
+      "input_sha256": "105e888299464a003414ca6e46393a76aa6ec1ecfec35545110defbf9727c731",
+      "units": 10
+    },
+    {
+      "id": "original-contractnli:dev:14:nda-3",
+      "phase": "confirmation",
+      "input_sha256": "da0d964399674ee125954ffe5c404d68b8d6c4373cd9e553bccff655216e74d4",
+      "units": 10
+    }
+  ],
+  "model_initializations_or_forwards_native_calls": 0,
+  "scope": "Tokenizers/sourcepolicy only; no predictions or qualityclaim."
+}

@@ -3,20 +3,20 @@
   "objective": "Reach independently verified SOTA using actual RuVector; initial target JevBench open-weights Capability under official caps.",
   "goal_met": false,
   "official_rank": null,
-  "champion": "Submitted Native104 and RRF10 unchanged; epoch6 REJECTED_DEV_GATE",
+  "champion": "Submitted Native104 and RRF10 unchanged; epoch7 REJECTED_DEV_GATE",
   "prior_published_base_commit": "11983d212b951305bcab06ad868bca5a12ea2954",
-  "checkpoint_manifest_sha256": "e164a6d1e50cea79e6a6b9f81e85fb85aa3c3142cef0e05a400105b72ff17048",
+  "checkpoint_manifest_sha256": "7395acbb26dc75bbdb5dc8af29728cdcc64a0e63d75379f83e2111660de2a091",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
-    "native_corpus_batches": 6,
-    "actual_HTTP_decisions": 399,
+    "native_corpus_batches": 7,
+    "actual_HTTP_decisions": 423,
     "paid_inference_calls": 0,
     "new_GPU_rentals": 0,
-    "native_corpus_batches_completed": 6,
-    "native_corpus_attempts_including_failed_request": 8,
-    "actual_HTTP_successful_decisions": 399,
+    "native_corpus_batches_completed": 7,
+    "native_corpus_attempts_including_failed_request": 9,
+    "actual_HTTP_successful_decisions": 423,
     "actual_HTTP_failed_requests": 2,
-    "counting_note": "Original6andepoch5oneattemptclosed+epoch6separatestudy1attempt; successful/failedHTTP counted from actual wire, no scheduledwork represented as executed."
+    "counting_note": "Original6+epoch5one+epoch6one allclosed; epoch7separatenonretryable phase study. Actual Popen/wire counts only; no scheduled/conditional work represented as executed."
   },
   "epochs": [
     {
@@ -80,6 +80,15 @@
       "confirmation_consumed": false,
       "scored_decisions": 24,
       "candidate_correct": 12
+    },
+    {
+      "epoch": 7,
+      "status": "REJECTED_DEV_GATE",
+      "manifest": "experiments/sota-2026-10-22/epoch7/EPOCH_MANIFEST.json",
+      "DEV_n": 24,
+      "confirmation_consumed": false,
+      "scored_decisions": 24,
+      "candidate_correct": 6
     }
   ],
   "used_confirmation_sets": [
@@ -92,7 +101,7 @@
     "Legal96zero-shotfourtaskadaptation,notfull162taskofficialLegalBench",
     "NoClaimBenchRuVectorscore; fullquestions/scorer/license/submissionnotverified"
   ],
-  "next_research_priority": "Close/reject this coherent-context recipe with generic MNLI/SNLI DeBERTa-base: native-selected evidence12/24 trails matched lexical15/24 and loses proper scores against lexical and excerpt104. Do not run more packing/ANN grids on exposedquestions or treat12vs10 across differentDEVsets as contextcausality. Nativecandidate40set and top2 exactlymatchcosine24/24; unsupported to tuneANN approximation. Before a distinct future CPUboundedstudy, prioritize a source-licensed materially different legal/typeddecision/NLI model with verified training-data/confirmation separation, or independent DEV-only reader/evidence diagnostics that can justify a frozen decision-policy change. Keep all8historicalattemptsclosed, champion unchanged, and unusedconfirmation96 reserved. ClaimBench exact data/scorer/license/submission access and officialcurrentJev300 publisher result remain unverified; no repeatedunchangedblocker retests.",
+  "next_research_priority": "Close this single larger binaryNLI study; preserve submittedNative104/RRF10. Do not repeat model/packing grids on exposedDEV. Use saved wrong/right matched-selector traces to separate evidence omission from reader misdecision and confidence errors before freezing a genuinely different typeddecision/legal pretrained policy. Any future learned policy must use source-licensed train/calibration separation and remaining unusedconfirmation; exact model/training overlap must be checked. Original8andcurrentstudy allclosed, no retry; atmost2nativebatches/CPU2/600s/paid0/GPU0 in a separately authorized futureepoch. No officialcurrentJev300/ClaimBench score orrank can be inferred. ClaimBench full data/scorer/license/submission access remains unverified; no repeat unchangedblocker search.",
   "benchmark_targets": {
     "JevBench": {
       "leader_observed": "Chon-1.0-12B",
@@ -124,9 +133,9 @@
   "active_run": {
     "path": "ACTIVE_RUN.json",
     "run_id": "1e487a1d-c1ef-4b83-99a4-d8d9ea10044f",
-    "state": "RUNNING_SOURCE_PREPARATION",
-    "experiments_active": true,
-    "publication_complete_in_this_commit": false
+    "state": "COMPLETE_REJECTED_DEV_GATE",
+    "experiments_active": false,
+    "publication_complete_in_this_commit": true
   },
   "exposed_development_sets": [
     "old public183",
@@ -135,7 +144,8 @@
     "epoch3 Original ContractNLI train8documents24queries",
     "epoch4 OriginalContractNLI train8newdocuments24queries declaredDEV; firstrequestonlyBGEprocessed,0decisionpredictions",
     "epoch5 OriginalContractNLI train8newdocuments24queries declaredDEV, exact identity ac18b9b5e382a1e5ce56adfd2b7e6a5fcedc403ffeea9a52e2dbcf30e94a9795",
-    "epoch6 OriginalContractNLI train8newdocuments24queries declaredDEV, exact identity70fdaf9b5cd591b76d2de7a96629b34ec5d16fea5c1d1c10b19bb8413d5cb8db"
+    "epoch6 OriginalContractNLI train8newdocuments24queries declaredDEV, exact identity70fdaf9b5cd591b76d2de7a96629b34ec5d16fea5c1d1c10b19bb8413d5cb8db",
+    "epoch7 OriginalContractNLI train8newdocuments24queries declaredDEV cb64cdba88d2f5a00c0b1c9bad2a299ca659af1edac039b8cf8e8e8d3fb8f2af"
   ],
   "unused_confirmation_sets": [
     {
@@ -146,37 +156,44 @@
       "status": "Public source labels archived, project-model-unconsumed; never tune/select on these labels; upstream training overlap unknown"
     }
   ],
-  "rejection_ledger": "experiments/sota-2026-10-22/epoch6/REJECTION_LEDGER.json",
-  "benchmark_refresh": "experiments/sota-2026-10-22/legal-transfer/epoch6/benchmark-refresh.json",
+  "rejection_ledger": "experiments/sota-2026-10-22/epoch7/REJECTION_LEDGER.json",
+  "benchmark_refresh": "experiments/sota-2026-10-22/legal-transfer/epoch7/benchmark-refresh.json",
   "restore_epoch3": "First restore_checkpoint.py; optional restore_epoch3_data.py materializes exact pinned original CC-BY data archive/train/dev/license. Existing bootstrap model flags do not acquire new NLI assets; obtain only official revisions in assets.lock.json/model-api, verify SHA. No inference during restore.",
-  "restoration_boundary": "All prior and new publicsource/data/results restored by pinned bootstrap/restore. Actual epoch5 executor ran native RuVector with full package closure; dependencies/models/nativebinary require explicit cache acquisition+full closure binding and exacthashes. Never rerun archived measured controllers.",
-  "publication_review": "experiments/sota-2026-10-22/audit/epoch6/final-publication-review-v1.json",
+  "restoration_boundary": "Hashverified public source/data/results plus reviewed native22file restore. New largeNLI6assets547486538bytes require explicit exacthash cache/acquisition helper; old8modelassets also deferred in cold source-only restore. No model/native forward during restoration.",
+  "publication_review": "experiments/sota-2026-10-22/audit/epoch7/final-publication-review-v1.json",
   "cumulative_budget_ledger": {
     "original_study_native_attempt_cap": 6,
     "prior_epochs_attempts": 3,
     "epoch3_native_attempts_including_failed_request": 2,
-    "cumulative_native_attempts": 8,
+    "cumulative_native_attempts": 9,
     "remaining_in_original_study": 0,
     "current_epoch_closed": true,
     "publication_period_native_calls_allowed": 0,
-    "next_epoch_rule": "Original6/6,epoch5one/one,andepoch6one/oneallclosed; no retry. Future explicit recurringrequest may authorize a newly frozen bounded distinct hypothesis, atmost2batches/CPU2/600s/paid0/GPU0, with unusedconfirmation and completeclosure. No automatic repeated unchangedblockedrun.",
+    "next_epoch_rule": "All historicalstudies closed, including epoch7 unusedconditional slot if any. No retry. Future explicit recurringrequest may authorize a distinct bounded hypothesis,atmost2batches/CPU2/600s/paid0/GPU0; preserveunusedconfirmation and freeze fullsource/data/runtime. No repeated unchangedblocker checks.",
     "original_study_status": "CLOSED_BUDGET_EXHAUSTED",
     "epoch4_native_attempts_including_failed_restoration": 1,
-    "new_study_id": "native-coherent-context-deberta-base-e6",
-    "new_study_attempt_cap": 1,
+    "new_study_id": "native-large-binary-nli-e7",
+    "new_study_attempt_cap": 2,
     "new_study_attempts_used": 1,
     "new_study_attempts_remaining": 0,
-    "total_historical_attempts": 8,
+    "total_historical_attempts": 9,
     "closed_epoch5_study": {
       "id": "native-deberta-base-resolved-2026-10-22-e5",
       "used": 1,
       "cap": 1,
       "remaining": 0
-    }
+    },
+    "closed_epoch6_study": {
+      "id": "native-coherent-context-deberta-base-e6",
+      "used": 1,
+      "cap": 1,
+      "remaining": 0
+    },
+    "new_study_unspent_phase_slots": 1,
+    "allowed_further_attempts_in_closed_study": 0
   },
-  "publisher_status": "experiments/sota-2026-10-22/epoch6/publisher-status.json",
+  "publisher_status": "experiments/sota-2026-10-22/epoch7/publisher-status.json",
   "restore_epoch4": "See EPOCH4_RUNTIME_SETUP.txt and EPOCH4_ASSET_SETUP.txt; seven native package source files now included, .node/modelweights remain omitted with exact helpers/hashes. No repaired-runtime benchmark was run.",
   "epoch4_restoration_limits": "experiments/sota-2026-10-22/epoch4/RESTORATION_LIMITS.json",
-  "restore_epoch5": "See experiments/sota-2026-10-22/candidate/epoch5/RESTORE.txt and reconstruction/restore_runtime.py after existing official dependency/model setup. Full8corefiles+14TypeSafe files pinned; isolated actual path resolution and outcome evidence saved.",
-  "pending_study_contract": "experiments/sota-2026-10-22/epoch7/STUDY_CONTRACT.json"
+  "restore_epoch5": "See experiments/sota-2026-10-22/candidate/epoch5/RESTORE.txt and reconstruction/restore_runtime.py after existing official dependency/model setup. Full8corefiles+14TypeSafe files pinned; isolated actual path resolution and outcome evidence saved."
 }

@@ -1,0 +1,24 @@
+Epoch7 changes one reader model while preserving the exact frozen epoch6 source partition, policy tokenizer, native RuVector ranking and coherent context packer. All three retrieval arms share the new singleton reader, whole-hypothesis512-token guard, temperature1 and direct binary mapping. No training, calibration fit, model grid or inference probe was run during implementation.
+
+The selected model is `onnx-community/deberta-v3-large-zeroshot-v2.0-ONNX` at immutable revision `81795c444c24c634d3d5a6142988837b40313b3b`. Its quantized ONNX has 538,833,918 bytes and SHA256 `9710e442e94518da4175374e71459be69ca565f7a31369fa10f3a117e1c6d692`. The actual config declares 24 layers, 1024 hidden units and two labels: entailment and not_entailment. The new reader uses `Yes=P(entailment)` and `No=P(not_entailment)`, with no three-class renormalization. Architectural size and broader training motivate the hypothesis; improved benchmark performance is unmeasured.
+
+The upstream model card, pinned at `MoritzLaurer/deberta-v3-large-zeroshot-v2.0@cf44676c28ba7312e5c5f8f8d2c22b3e0c9cdae2`, declares MIT. It documents Mixtral synthetic classification tasks, MNLI/FEVER-NLI, broader ANLI/WANLI/LingNLI and a pinned list of other datasets. The non-c release also includes limited training examples from 28 classification tasks. Training-data licenses are mixed, including noncommercial and unknown terms. The conversion card attributes the upstream model but declares no separate license and identifies no exact upstream weight commit. The reviewed upstream revision pins card/config provenance, not a proved conversion-to-upstream weight match. These limits remain explicit in the runtime receipt and provenance file.
+
+No ContractNLI entry appears in the declared fine-tuning list. This does not prove absence from foundation pretraining or synthetic data. Exact record-level contamination is unknown. Original ContractNLIdev96 f018 is excluded from training, calibration, source development and model selection here; only the parent-controlled gated confirmation may consume it.
+
+`model-choice.json` was written before weight acquisition. Six assets were then acquired only from the chosen immutable official revision and checked against exact lengths plus LFS SHA256 or Git blob identities. `model-assets.lock.json` records the official URLs and actual SHA256 values. Model weights and tokenizer JSON belong in local asset storage, not a public source stage. `static_model.py` inspected the ONNX protobuf without importing ONNX Runtime: int64 input_ids/attention_mask, one float32 binary logits output, opset12, and no external weights.
+
+`CandidateEngine` initializes the frozen BGE session, the new large binary NLI session and native104. It never initializes the unused old base NLI session. The old policy tokenizer alone fixes epoch6 contexts; the new model's own tokenizer supplies decoder input IDs. Both pair lengths are checked independently and recorded. Exact source strings/spans, selected/omitted units and numbers, native input vector bundles, observed native ranking, all arm contexts/logits, native104 exact excerpt/input hash, counters, CPU/RSS and cleanup remain inherited from the frozen policy.
+
+The interface remains `CandidateEngine(artifact_path=None).predict(state, questions)` with `.name`, `.attribution`, `.receipt`, `.last_usage`, `.native_process`, `.native_pid` and `.close()`. Four response names remain compatible, including legacy top2 aliases for variable-unit packing. Postprocessing corrects only the historical reader model label; probabilities, contexts, logits and the native104 reference are unchanged.
+
+CPU2 feasibility is an estimate, not a measured forward: the prior base decoder took 40.78 seconds for 72 pairs. A theoretical 3–4× larger compute cost puts DEV24 within 600 seconds, while confirmation96 could approach or exceed 600 seconds with retrieval and native104 overhead. The parent must require both the frozen statistical gate and a conservative observed DEV timing gate before confirmation. No extra timing probe is authorized by this source package.
+
+Eight source-only tests use synthetic tokenizers and an injected fake session/readers; four further synthetic cases load tokenizers only. They check actual config semantics, class-index permutation, singleton int64 feeds, actual-model versus policy token guards, no padding, invalid logits, identical old/new context/control behavior and corrected model provenance:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 retrieval/.venv/bin/python -m unittest discover \
+  -s experiments/sota-2026-10-22/candidate/epoch7 -p 'test_*.py' -v
+```
+
+No candidate source test or static check starts a benchmark, initializes a real model session, loads an addon or performs a model/native forward. A separately frozen and independently accepted parent plan controls actual execution.

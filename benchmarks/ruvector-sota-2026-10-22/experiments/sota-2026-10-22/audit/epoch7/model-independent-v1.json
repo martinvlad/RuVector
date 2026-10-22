@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T20:41:19.424559+00:00",
+  "checks_passed": true,
+  "model_choice_sha256": "1f01bda5fdf32e6950e1d92735daf9e4c890def5c51e117d5e7991fd668428a9",
+  "assets_lock_sha256": "6ef6c25819893beea9734d8ca69a5b20c66257fb82e026841c5ad46d9bf160c0",
+  "assets": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch7/assets/nli-large/config.json",
+      "remote_path": "config.json",
+      "url": "https://huggingface.co/onnx-community/deberta-v3-large-zeroshot-v2.0-ONNX/resolve/81795c444c24c634d3d5a6142988837b40313b3b/config.json",
+      "bytes": 1094,
+      "sha256": "8f715e1ccbf933f4f4bac94efd3096f82b9709df652c46dfb52ce7f7169fcafe",
+      "git_blob_id": "881843df9ed9e092a4f47cafc35275833c16ef6e",
+      "lfs_sha256": null,
+      "verified": true
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch7/assets/nli-large/tokenizer.json",
+      "remote_path": "tokenizer.json",
+      "url": "https://huggingface.co/onnx-community/deberta-v3-large-zeroshot-v2.0-ONNX/resolve/81795c444c24c634d3d5a6142988837b40313b3b/tokenizer.json",
+      "bytes": 8648864,
+      "sha256": "4b4f60231058db4b5794e7b124bb7945bc8ade6719282de4d2e0372ee527b929",
+      "git_blob_id": "91cf6343ed019104bdb2f55473543ee1ce7e79ed",
+      "lfs_sha256": null,
+      "verified": true
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch7/assets/nli-large/tokenizer_config.json",
+      "remote_path": "tokenizer_config.json",
+      "url": "https://huggingface.co/onnx-community/deberta-v3-large-zeroshot-v2.0-ONNX/resolve/81795c444c24c634d3d5a6142988837b40313b3b/tokenizer_config.json",
+      "bytes": 1286,
+      "sha256": "2a67c42a2f1e33353ad74952d924b7adbbfc1b86375ed690d49413c683648b67",
+      "git_blob_id": "186293510d53a0ebf42778b96e5d230ef95ba59d",
+      "lfs_sha256": null,
+      "verified": true
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch7/assets/nli-large/special_tokens_map.json",
+      "remote_path": "special_tokens_map.json",
+      "url": "https://huggingface.co/onnx-community/deberta-v3-large-zeroshot-v2.0-ONNX/resolve/81795c444c24c634d3d5a6142988837b40313b3b/special_tokens_map.json",
+      "bytes": 970,
+      "sha256": "b2f1b2f15f29a6b6d9d6ea4eca1675d2c231a71477f151d48f79cc83a625ba21",
+      "git_blob_id": "83fb22de184abab1b193b1f6001e3015e865e50b",
+      "lfs_sha256": null,
+      "verified": true
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch7/assets/nli-large/README.md",
+      "remote_path": "README.md",
+      "url": "https://huggingface.co/onnx-community/deberta-v3-large-zeroshot-v2.0-ONNX/resolve/81795c444c24c634d3d5a6142988837b40313b3b/README.md",
+      "bytes": 406,
+      "sha256": "04a168496834c6331d2214b82e41927cc19d630bec5758987c1ce3c02aeaab9f",
+      "git_blob_id": "bee807c825cafc569423b71186172fcb52204ddb",
+      "lfs_sha256": null,
+      "verified": true
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch7/assets/nli-large/onnx/model_quantized.onnx",
+      "remote_path": "onnx/model_quantized.onnx",
+      "url": "https://huggingface.co/onnx-community/deberta-v3-large-zeroshot-v2.0-ONNX/resolve/81795c444c24c634d3d5a6142988837b40313b3b/onnx/model_quantized.onnx",
+      "bytes": 538833918,
+      "sha256": "9710e442e94518da4175374e71459be69ca565f7a31369fa10f3a117e1c6d692",
+      "git_blob_id": "1196782661e85b349c9415d9b8109c0612339cc0",
+      "lfs_sha256": "9710e442e94518da4175374e71459be69ca565f7a31369fa10f3a117e1c6d692",
+      "verified": true
+    }
+  ],
+  "static_ONNX": {
+    "inputs": [
+      {
+        "name": "input_ids",
+        "tensor_element_type": 7,
+        "dimensions": [
+          {
+            "parameter": "batch_size"
+          },
+          {
+            "parameter": "sequence_length"
+          }
+        ]
+      },
+      {
+        "name": "attention_mask",
+        "tensor_element_type": 7,
+        "dimensions": [
+          {
+            "parameter": "batch_size"
+          },
+          {
+            "parameter": "sequence_length"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "logits",
+        "tensor_element_type": 1,
+        "dimensions": [
+          {
+            "parameter": "batch_size"
+          },
+          {
+            "value": 2
+          }
+        ]
+      }
+    ],
+    "opsets": [
+      {
+        "domain": "",
+        "version": 12
+      }
+    ],
+    "operators": {
+      "::Gather": 314,
+      "::Unsqueeze": 488,
+      "::DequantizeLinear": 1,
+      "::ReduceMean": 98,
+      "::Cast": 152,
+      "::Squeeze": 196,
+      "::Sub": 50,
+      "::Pow": 49,
+      "::Mul": 395,
+      "::Add": 391,
+      "::Not": 25,
+      "::Sqrt": 49,
+      "::Div": 172,
+      "::Shape": 290,
+      "::DynamicQuantizeLinear": 98,
+      "::MatMulInteger": 146,
+      "::Slice": 171,
+      "::Range": 1,
+      "::Concat": 312,
+      "::Reshape": 240,
+      "::Sign": 1,
+      "::Less": 1,
+      "::Greater": 1,
+      "::Abs": 1,
+      "::Transpose": 192,
+      "::And": 1,
+      "::Where": 74,
+      "::LessOrEqual": 1,
+      "::Log": 1,
+      "::MatMul": 96,
+      "::Ceil": 1,
+      "::Equal": 72,
+      "::Tile": 48,
+      "::If": 24,
+      "::Clip": 25,
+      "::Neg": 24,
+      "::Expand": 48,
+      "::GatherElements": 48,
+      "::Softmax": 24,
+      "::Erf": 25
+    },
+    "external_initializers": [],
+    "session_initialized": false,
+    "forwards": 0,
+    "ir_version": 7
+  },
+  "recursive_graph_tensor_inspection": {
+    "graphs": 49,
+    "tensors": 1026,
+    "nodes": 5066
+  },
+  "external_tensors_any_nested_graph": [],
+  "label_mapping": "Yes=softmax(logits)[0] entailment;No=[1] not_entailment;T1",
+  "declared_model_license": "MIT upstream; conversion card has no own license declaration",
+  "training_source_rows_used_in_v1_1": [
+    {
+      "dataset_name": "google_well_formed_query",
+      "license": "cc-by-sa-4.0",
+      "dataset_link": "https://huggingface.co/datasets/google_wellformed_query"
+    },
+    {
+      "dataset_name": "social_bias_frames",
+      "license": "cc-by-4.0",
+      "dataset_link": "https://huggingface.co/datasets/social_bias_frames"
+    },
+    {
+      "dataset_name": "financial_phrasebank",
+      "license": "cc-by-nc-sa-3.0",
+      "dataset_link": "https://huggingface.co/datasets/financial_phrasebank"
+    },
+    {
+      "dataset_name": "rotten_tomatoes",
+      "license": "CC0",
+      "dataset_link": "https://huggingface.co/datasets/rotten_tomatoes"
+    },
+    {
+      "dataset_name": "amazon_polarity",
+      "license": "appache-2.0",
+      "dataset_link": "https://huggingface.co/datasets/amazon_polarity"
+    },
+    {
+      "dataset_name": "IMDB",
+      "license": "custom, non-commercial",
+      "dataset_link": "https://huggingface.co/datasets/imdb"
+    },
+    {
+      "dataset_name": "app_reviews",
+      "license": "unknown",
+      "dataset_link": "https://huggingface.co/datasets/app_reviews"
+    },
+    {
+      "dataset_name": "yelp_reviews",
+      "license": "non-commercial",
+      "dataset_link": "https://huggingface.co/datasets/yelp_review_full"
+    },
+    {
+      "dataset_name": "wiki_toxic",
+      "license": "CC0",
+      "dataset_link": "https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/overview; processed: https://huggingface.co/datasets/OxAISH-AL-LLM/wiki_toxic"
+    },
+    {
+      "dataset_name": "hate_speech_offensive",
+      "license": "MIT",
+      "dataset_link": "https://huggingface.co/datasets/hate_speech_offensive"
+    },
+    {
+      "dataset_name": "hatexplain",
+      "license": "cc-by-4.0",
+      "dataset_link": "https://huggingface.co/datasets/hatexplain"
+    },
+    {
+      "dataset_name": "trueteacher",
+      "license": "cc-by-nc-4.0",
+      "dataset_link": "https://github.com/google-research/google-research/tree/master/true_teacher"
+    },
+    {
+      "dataset_name": "sms_spam",
+      "license": "CC BY 4.0",
+      "dataset_link": "https://huggingface.co/datasets/sms_spam"
+    },
+    {
+      "dataset_name": "massive",
+      "license": "cc-by-4.0",
+      "dataset_link": "https://huggingface.co/datasets/AmazonScience/massive"
+    },
+    {
+      "dataset_name": "banking77",
+      "license": "cc-by-4.0",
+      "dataset_link": "https://huggingface.co/datasets/PolyAI/banking77"
+    },
+    {
+      "dataset_name": "emotion6_twitter",
+      "license": "custom, non-commercial",
+      "dataset_link": "https://huggingface.co/datasets/dair-ai/emotion"
+    },
+    {
+      "dataset_name": "emocontext",
+      "license": "unknown",
+      "dataset_link": "https://huggingface.co/datasets/emo"
+    },
+    {
+      "dataset_name": "empathetic_dialogues",
+      "license": "cc-by-nc-4.0",
+      "dataset_link": "https://huggingface.co/datasets/empathetic_dialogues"
+    },
+    {
+      "dataset_name": "ag_news",
+      "license": "custom, non-commercial",
+      "dataset_link": "https://huggingface.co/datasets/ag_news"
+    },
+    {
+      "dataset_name": "yahoo_answers",
+      "license": "unknown",
+      "dataset_link": "https://huggingface.co/datasets/yahoo_answers_topics"
+    },
+    {
+      "dataset_name": "manifesto",
+      "license": "custom, commercial use not prohibited",
+      "dataset_link": "https://manifesto-project.wzb.eu/datasets"
+    },
+    {
+      "dataset_name": "cap_sotu",
+      "license": "custom, commercial use not explicitly prohibited",
+      "dataset_link": "https://www.comparativeagendas.net/datasets_codebooks"
+    },
+    {
+      "dataset_name": "mnli",
+      "license": "Different permissive licenses",
+      "dataset_link": "https://huggingface.co/datasets/multi_nli"
+    },
+    {
+      "dataset_name": "anli",
+      "license": "cc-by-nc-4.0",
+      "dataset_link": "https://huggingface.co/datasets/anli"
+    },
+    {
+      "dataset_name": "wanli",
+      "license": "cc-by-4.0",
+      "dataset_link": "https://huggingface.co/datasets/alisawuffles/WANLI"
+    },
+    {
+      "dataset_name": "lingnli",
+      "license": "unknown",
+      "dataset_link": "https://github.com/Alicia-Parrish/ling_in_loop"
+    },
+    {
+      "dataset_name": "fevernli",
+      "license": "cc-by-sa-3.0",
+      "dataset_link": "https://github.com/easonnie/combine-FEVER-NSMN/blob/master/other_resources/nli_fever.md"
+    }
+  ],
+  "provenance_limits": "Declared card/CSV contain no ContractNLI entry; cannot prove no record-level or pretraining overlap. Source has mixed training licenses including noncommercial/unknown; not a wholly permissive training claim. Converter does not identify exact upstream weight commit; upstream immutable revision pins reviewed card/config only.",
+  "source_pins": [
+    {
+      "path": "candidate/epoch7/research/conversion-README.md",
+      "sha256": "04a168496834c6331d2214b82e41927cc19d630bec5758987c1ce3c02aeaab9f",
+      "bytes": 406
+    },
+    {
+      "path": "candidate/epoch7/research/conversion-api.json",
+      "sha256": "87c5f39eb177d1c8752ce58b116bd9c087131e54ee08aa93a44752f1ba6ffbae",
+      "bytes": 3777
+    },
+    {
+      "path": "candidate/epoch7/research/conversion-config.json",
+      "sha256": "8f715e1ccbf933f4f4bac94efd3096f82b9709df652c46dfb52ce7f7169fcafe",
+      "bytes": 1094
+    },
+    {
+      "path": "candidate/epoch7/research/training-datasets-overview.csv",
+      "sha256": "c670fdb0ef579df4e449f78429dbc7f47a646f2dbc33459f588ea8530e2105b5",
+      "bytes": 14572
+    },
+    {
+      "path": "candidate/epoch7/research/upstream-README.md",
+      "sha256": "424801aa7cc4e93e6639a504e47867d4ec537c94e2437b9fddb3b6bf80c26628",
+      "bytes": 21118
+    },
+    {
+      "path": "candidate/epoch7/research/upstream-api.json",
+      "sha256": "1e3c15795ae0a4fb67dc0ce351528d3f503a721c6878ffcdc1958937cfa303ba",
+      "bytes": 6014
+    },
+    {
+      "path": "candidate/epoch7/research/upstream-config.json",
+      "sha256": "3b0a2a3fb311037ba72670d87cbd16f920581985178547a76936dfdb292e5271",
+      "bytes": 1019
+    }
+  ],
+  "actual_model_or_native_calls": 0,
+  "scope": "Static identity/schema/provenance only, no ABI/ORT/session/performance claim."
+}

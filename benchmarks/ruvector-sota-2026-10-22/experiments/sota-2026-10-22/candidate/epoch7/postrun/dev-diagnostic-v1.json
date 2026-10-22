@@ -1,0 +1,2642 @@
+{
+  "schema_version": 1,
+  "scope": "One posthoc saved-DEV-only descriptive diagnostic; no reruns, tuning, candidate selection or causal cross-epoch model comparison",
+  "status": "REJECTED_DEV_GATE",
+  "confirmation_status": "NOT_MODEL_CONSUMED",
+  "n": 24,
+  "independent_source_groups": 8,
+  "queries_per_group": 3,
+  "numeric_retention_scope": "Mentions counted per query; the same source document appears in3 queries. Totals are descriptive exposure counts, not independent numeric facts or evidence of sufficiency.",
+  "group_dependence": "24 correlated queries from8 document groups; no24-independent-observation significance claim",
+  "gold": {
+    "No": 17,
+    "Yes": 7
+  },
+  "original_threeway_labels": {
+    "Contradiction": 6,
+    "Entailment": 7,
+    "NotMentioned": 11
+  },
+  "same_new_model_arm_summary": {
+    "ruvector_top2": {
+      "n": 24,
+      "correct": 6,
+      "predicted": {
+        "Yes": 23,
+        "No": 1
+      },
+      "false_yes": 17,
+      "false_no": 1,
+      "mean_confidence_correct": 0.8572013670625641,
+      "mean_confidence_wrong": 0.7480444425875514,
+      "wrong_confidence_at_least_0_8": 7,
+      "mean_nll": 1.1172158909401906,
+      "mean_brier": 0.8617902374987969,
+      "annotation_cases": 13,
+      "any_annotation_overlap": 10,
+      "all_annotations_overlap": 8,
+      "all_annotation_characters_retained": 8,
+      "mean_annotation_character_fraction": 0.6724573100402285,
+      "mean_source_character_coverage": 0.28317380842544376,
+      "numeric_mentions_retained": 167,
+      "numeric_mentions_total": 756,
+      "mean_numeric_retention_correct": 0.3032051645120334,
+      "mean_numeric_retention_wrong": 0.2898161521191554
+    },
+    "same_nli_lexical_top2": {
+      "n": 24,
+      "correct": 6,
+      "predicted": {
+        "Yes": 21,
+        "No": 3
+      },
+      "false_yes": 16,
+      "false_no": 2,
+      "mean_confidence_correct": 0.7826592222264401,
+      "mean_confidence_wrong": 0.7706672909951867,
+      "wrong_confidence_at_least_0_8": 7,
+      "mean_nll": 1.2121663765730837,
+      "mean_brier": 0.9303565907166804,
+      "annotation_cases": 13,
+      "any_annotation_overlap": 11,
+      "all_annotations_overlap": 8,
+      "all_annotation_characters_retained": 7,
+      "mean_annotation_character_fraction": 0.7089230182450671,
+      "mean_source_character_coverage": 0.2918161050524966,
+      "numeric_mentions_retained": 159,
+      "numeric_mentions_total": 756,
+      "mean_numeric_retention_correct": 0.19184968069892244,
+      "mean_numeric_retention_wrong": 0.28149759206553737
+    },
+    "same_nli_positional_first2": {
+      "n": 24,
+      "correct": 8,
+      "predicted": {
+        "Yes": 19,
+        "No": 5
+      },
+      "false_yes": 14,
+      "false_no": 2,
+      "mean_confidence_correct": 0.7147964934319277,
+      "mean_confidence_wrong": 0.7491527776341083,
+      "wrong_confidence_at_least_0_8": 7,
+      "mean_nll": 1.0845726197451544,
+      "mean_brier": 0.8264549818468845,
+      "annotation_cases": 13,
+      "any_annotation_overlap": 8,
+      "all_annotations_overlap": 5,
+      "all_annotation_characters_retained": 5,
+      "mean_annotation_character_fraction": 0.49935673087390164,
+      "mean_source_character_coverage": 0.27404798480222,
+      "numeric_mentions_retained": 198,
+      "numeric_mentions_total": 756,
+      "mean_numeric_retention_correct": 0.2685506138226923,
+      "mean_numeric_retention_wrong": 0.33799505826713677
+    }
+  },
+  "paired_same_model_case_partitions": {
+    "same_nli_lexical_top2": {
+      "both_correct": [
+        "original-contractnli:train:epoch7:618:nda-7",
+        "original-contractnli:train:epoch7:602:nda-7",
+        "original-contractnli:train:epoch7:527:nda-7",
+        "original-contractnli:train:epoch7:253:nda-3"
+      ],
+      "primary_only_correct": [
+        "original-contractnli:train:epoch7:469:nda-3",
+        "original-contractnli:train:epoch7:143:nda-3"
+      ],
+      "other_only_correct": [
+        "original-contractnli:train:epoch7:182:nda-17",
+        "original-contractnli:train:epoch7:182:nda-3"
+      ],
+      "both_wrong": [
+        "original-contractnli:train:epoch7:469:nda-17",
+        "original-contractnli:train:epoch7:469:nda-7",
+        "original-contractnli:train:epoch7:618:nda-17",
+        "original-contractnli:train:epoch7:618:nda-3",
+        "original-contractnli:train:epoch7:143:nda-17",
+        "original-contractnli:train:epoch7:143:nda-7",
+        "original-contractnli:train:epoch7:602:nda-17",
+        "original-contractnli:train:epoch7:602:nda-3",
+        "original-contractnli:train:epoch7:527:nda-17",
+        "original-contractnli:train:epoch7:527:nda-3",
+        "original-contractnli:train:epoch7:122:nda-17",
+        "original-contractnli:train:epoch7:122:nda-7",
+        "original-contractnli:train:epoch7:122:nda-3",
+        "original-contractnli:train:epoch7:182:nda-7",
+        "original-contractnli:train:epoch7:253:nda-17",
+        "original-contractnli:train:epoch7:253:nda-7"
+      ],
+      "different_decisions": [
+        "original-contractnli:train:epoch7:469:nda-3",
+        "original-contractnli:train:epoch7:143:nda-3",
+        "original-contractnli:train:epoch7:182:nda-17",
+        "original-contractnli:train:epoch7:182:nda-3"
+      ]
+    },
+    "same_nli_positional_first2": {
+      "both_correct": [
+        "original-contractnli:train:epoch7:618:nda-7",
+        "original-contractnli:train:epoch7:143:nda-3",
+        "original-contractnli:train:epoch7:602:nda-7",
+        "original-contractnli:train:epoch7:527:nda-7"
+      ],
+      "primary_only_correct": [
+        "original-contractnli:train:epoch7:469:nda-3",
+        "original-contractnli:train:epoch7:253:nda-3"
+      ],
+      "other_only_correct": [
+        "original-contractnli:train:epoch7:602:nda-17",
+        "original-contractnli:train:epoch7:182:nda-3",
+        "original-contractnli:train:epoch7:253:nda-17",
+        "original-contractnli:train:epoch7:253:nda-7"
+      ],
+      "both_wrong": [
+        "original-contractnli:train:epoch7:469:nda-17",
+        "original-contractnli:train:epoch7:469:nda-7",
+        "original-contractnli:train:epoch7:618:nda-17",
+        "original-contractnli:train:epoch7:618:nda-3",
+        "original-contractnli:train:epoch7:143:nda-17",
+        "original-contractnli:train:epoch7:143:nda-7",
+        "original-contractnli:train:epoch7:602:nda-3",
+        "original-contractnli:train:epoch7:527:nda-17",
+        "original-contractnli:train:epoch7:527:nda-3",
+        "original-contractnli:train:epoch7:122:nda-17",
+        "original-contractnli:train:epoch7:122:nda-7",
+        "original-contractnli:train:epoch7:122:nda-3",
+        "original-contractnli:train:epoch7:182:nda-17",
+        "original-contractnli:train:epoch7:182:nda-7"
+      ],
+      "different_decisions": [
+        "original-contractnli:train:epoch7:469:nda-3",
+        "original-contractnli:train:epoch7:602:nda-17",
+        "original-contractnli:train:epoch7:182:nda-3",
+        "original-contractnli:train:epoch7:253:nda-17",
+        "original-contractnli:train:epoch7:253:nda-7",
+        "original-contractnli:train:epoch7:253:nda-3"
+      ]
+    }
+  },
+  "group_metrics": [
+    {
+      "group": "original-contractnli:122",
+      "n": 3,
+      "correct": {
+        "ruvector_top2": 0,
+        "same_nli_lexical_top2": 0,
+        "same_nli_positional_first2": 0
+      }
+    },
+    {
+      "group": "original-contractnli:143",
+      "n": 3,
+      "correct": {
+        "ruvector_top2": 1,
+        "same_nli_lexical_top2": 0,
+        "same_nli_positional_first2": 1
+      }
+    },
+    {
+      "group": "original-contractnli:182",
+      "n": 3,
+      "correct": {
+        "ruvector_top2": 0,
+        "same_nli_lexical_top2": 2,
+        "same_nli_positional_first2": 1
+      }
+    },
+    {
+      "group": "original-contractnli:253",
+      "n": 3,
+      "correct": {
+        "ruvector_top2": 1,
+        "same_nli_lexical_top2": 1,
+        "same_nli_positional_first2": 2
+      }
+    },
+    {
+      "group": "original-contractnli:469",
+      "n": 3,
+      "correct": {
+        "ruvector_top2": 1,
+        "same_nli_lexical_top2": 0,
+        "same_nli_positional_first2": 0
+      }
+    },
+    {
+      "group": "original-contractnli:527",
+      "n": 3,
+      "correct": {
+        "ruvector_top2": 1,
+        "same_nli_lexical_top2": 1,
+        "same_nli_positional_first2": 1
+      }
+    },
+    {
+      "group": "original-contractnli:602",
+      "n": 3,
+      "correct": {
+        "ruvector_top2": 1,
+        "same_nli_lexical_top2": 1,
+        "same_nli_positional_first2": 2
+      }
+    },
+    {
+      "group": "original-contractnli:618",
+      "n": 3,
+      "correct": {
+        "ruvector_top2": 1,
+        "same_nli_lexical_top2": 1,
+        "same_nli_positional_first2": 1
+      }
+    }
+  ],
+  "cases": [
+    {
+      "id": "original-contractnli:train:epoch7:469:nda-17",
+      "group": "original-contractnli:469",
+      "hypothesis_id": "nda-17",
+      "gold": "No",
+      "original_threeway_label": "Contradiction",
+      "source_state_sha256": "820737dab92f84ec699204b1a85b5f00b2f0800c069aea7221d020989edb3ca3",
+      "annotated_spans": [
+        [
+          4296,
+          4432
+        ]
+      ],
+      "annotated_characters": 136,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8544550372624427,
+          "confidence": 0.8544550372624427,
+          "correct": false,
+          "nll": 1.9272702178568786,
+          "brier": 1.4601868214063245,
+          "selected_source_spans": [
+            [
+              3131,
+              5585
+            ],
+            [
+              7601,
+              7847
+            ],
+            [
+              9588,
+              9750
+            ]
+          ],
+          "source_character_coverage": 0.2935384615384615,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 136,
+            "total_characters": 136,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 36,
+          "numeric_mentions_retained": 5,
+          "numeric_retention_fraction": 0.1388888888888889
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8544550372624427,
+          "confidence": 0.8544550372624427,
+          "correct": false,
+          "nll": 1.9272702178568786,
+          "brier": 1.4601868214063245,
+          "selected_source_spans": [
+            [
+              3131,
+              5585
+            ],
+            [
+              7601,
+              7847
+            ],
+            [
+              9588,
+              9750
+            ]
+          ],
+          "source_character_coverage": 0.2935384615384615,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 136,
+            "total_characters": 136,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 36,
+          "numeric_mentions_retained": 5,
+          "numeric_retention_fraction": 0.1388888888888889
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.8202297735414356,
+          "confidence": 0.8202297735414356,
+          "correct": false,
+          "nll": 1.7160757632118375,
+          "brier": 1.3455537628076695,
+          "selected_source_spans": [
+            [
+              0,
+              2195
+            ],
+            [
+              7601,
+              7847
+            ],
+            [
+              9588,
+              9750
+            ]
+          ],
+          "source_character_coverage": 0.26697435897435895,
+          "annotation_coverage": {
+            "any_character_overlap": false,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 0,
+            "total_characters": 136,
+            "retained_fraction": 0.0
+          },
+          "numeric_mentions": 36,
+          "numeric_mentions_retained": 13,
+          "numeric_retention_fraction": 0.3611111111111111
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:469:nda-7",
+      "group": "original-contractnli:469",
+      "hypothesis_id": "nda-7",
+      "gold": "No",
+      "original_threeway_label": "Contradiction",
+      "source_state_sha256": "820737dab92f84ec699204b1a85b5f00b2f0800c069aea7221d020989edb3ca3",
+      "annotated_spans": [
+        [
+          3131,
+          3426
+        ],
+        [
+          3427,
+          3591
+        ]
+      ],
+      "annotated_characters": 459,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.6689983081124146,
+          "confidence": 0.6689983081124146,
+          "correct": false,
+          "nll": 1.1056317921752812,
+          "brier": 0.8951174725145463,
+          "selected_source_spans": [
+            [
+              3131,
+              5585
+            ],
+            [
+              7601,
+              7847
+            ]
+          ],
+          "source_character_coverage": 0.27692307692307694,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 459,
+            "total_characters": 459,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 36,
+          "numeric_mentions_retained": 5,
+          "numeric_retention_fraction": 0.1388888888888889
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8129379009406305,
+          "confidence": 0.8129379009406305,
+          "correct": false,
+          "nll": 1.6763146367226982,
+          "brier": 1.3217360615715166,
+          "selected_source_spans": [
+            [
+              2195,
+              4814
+            ],
+            [
+              7601,
+              7847
+            ]
+          ],
+          "source_character_coverage": 0.29384615384615387,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 459,
+            "total_characters": 459,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 36,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.16666666666666666
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.6783079436557048,
+          "confidence": 0.6783079436557048,
+          "correct": false,
+          "nll": 1.1341605377859028,
+          "brier": 0.9202033328528616,
+          "selected_source_spans": [
+            [
+              0,
+              2195
+            ],
+            [
+              7601,
+              7847
+            ],
+            [
+              9588,
+              9750
+            ]
+          ],
+          "source_character_coverage": 0.26697435897435895,
+          "annotation_coverage": {
+            "any_character_overlap": false,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 0,
+            "total_characters": 459,
+            "retained_fraction": 0.0
+          },
+          "numeric_mentions": 36,
+          "numeric_mentions_retained": 13,
+          "numeric_retention_fraction": 0.3611111111111111
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:469:nda-3",
+      "group": "original-contractnli:469",
+      "hypothesis_id": "nda-3",
+      "gold": "Yes",
+      "original_threeway_label": "Entailment",
+      "source_state_sha256": "820737dab92f84ec699204b1a85b5f00b2f0800c069aea7221d020989edb3ca3",
+      "annotated_spans": [
+        [
+          1930,
+          2191
+        ],
+        [
+          2321,
+          2405
+        ]
+      ],
+      "annotated_characters": 345,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8599319763455332,
+          "confidence": 0.8599319763455332,
+          "correct": true,
+          "nll": 0.15090199013557368,
+          "brier": 0.03923810250093653,
+          "selected_source_spans": [
+            [
+              755,
+              3131
+            ],
+            [
+              7601,
+              7847
+            ],
+            [
+              9588,
+              9750
+            ]
+          ],
+          "source_character_coverage": 0.2855384615384615,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 345,
+            "total_characters": 345,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 36,
+          "numeric_mentions_retained": 7,
+          "numeric_retention_fraction": 0.19444444444444445
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "No",
+          "p_yes": 0.4515367596218041,
+          "confidence": 0.5484632403781959,
+          "correct": false,
+          "nll": 0.7950984927796649,
+          "brier": 0.6016238520923015,
+          "selected_source_spans": [
+            [
+              0,
+              2195
+            ],
+            [
+              5585,
+              6136
+            ]
+          ],
+          "source_character_coverage": 0.28164102564102567,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 261,
+            "total_characters": 345,
+            "retained_fraction": 0.7565217391304347
+          },
+          "numeric_mentions": 36,
+          "numeric_mentions_retained": 14,
+          "numeric_retention_fraction": 0.3888888888888889
+        },
+        "same_nli_positional_first2": {
+          "predicted": "No",
+          "p_yes": 0.4515367596218041,
+          "confidence": 0.5484632403781959,
+          "correct": false,
+          "nll": 0.7950984927796649,
+          "brier": 0.6016238520923015,
+          "selected_source_spans": [
+            [
+              0,
+              2195
+            ],
+            [
+              5585,
+              6136
+            ]
+          ],
+          "source_character_coverage": 0.28164102564102567,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 261,
+            "total_characters": 345,
+            "retained_fraction": 0.7565217391304347
+          },
+          "numeric_mentions": 36,
+          "numeric_mentions_retained": 14,
+          "numeric_retention_fraction": 0.3888888888888889
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:618:nda-17",
+      "group": "original-contractnli:618",
+      "hypothesis_id": "nda-17",
+      "gold": "No",
+      "original_threeway_label": "NotMentioned",
+      "source_state_sha256": "4b060fc79362a28526bc08ad44b1531a36d22517573dd9b23cb5aa9137e0c908",
+      "annotated_spans": [],
+      "annotated_characters": 0,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7113472242941646,
+          "confidence": 0.7113472242941646,
+          "correct": false,
+          "nll": 1.242530781357094,
+          "brier": 1.012029747022025,
+          "selected_source_spans": [
+            [
+              2380,
+              2866
+            ],
+            [
+              7501,
+              9763
+            ],
+            [
+              11384,
+              11559
+            ]
+          ],
+          "source_character_coverage": 0.11547426223679533,
+          "annotation_coverage": null,
+          "numeric_mentions": 59,
+          "numeric_mentions_retained": 3,
+          "numeric_retention_fraction": 0.05084745762711865
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7383921762707232,
+          "confidence": 0.7383921762707232,
+          "correct": false,
+          "nll": 1.340908752624299,
+          "brier": 1.0904460119556294,
+          "selected_source_spans": [
+            [
+              8066,
+              10366
+            ],
+            [
+              11384,
+              11559
+            ],
+            [
+              15280,
+              15343
+            ]
+          ],
+          "source_character_coverage": 0.1002646861296567,
+          "annotation_coverage": null,
+          "numeric_mentions": 59,
+          "numeric_mentions_retained": 11,
+          "numeric_retention_fraction": 0.1864406779661017
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.7940471413112375,
+          "confidence": 0.7940471413112375,
+          "correct": false,
+          "nll": 1.5801079776974127,
+          "brier": 1.261021725249097,
+          "selected_source_spans": [
+            [
+              0,
+              2380
+            ],
+            [
+              15280,
+              15343
+            ]
+          ],
+          "source_character_coverage": 0.09651167384347964,
+          "annotation_coverage": null,
+          "numeric_mentions": 59,
+          "numeric_mentions_retained": 5,
+          "numeric_retention_fraction": 0.0847457627118644
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:618:nda-7",
+      "group": "original-contractnli:618",
+      "hypothesis_id": "nda-7",
+      "gold": "Yes",
+      "original_threeway_label": "Entailment",
+      "source_state_sha256": "4b060fc79362a28526bc08ad44b1531a36d22517573dd9b23cb5aa9137e0c908",
+      "annotated_spans": [
+        [
+          2866,
+          3075
+        ],
+        [
+          3926,
+          4333
+        ]
+      ],
+      "annotated_characters": 616,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7982948869849321,
+          "confidence": 0.7982948869849321,
+          "correct": true,
+          "nll": 0.22527721723009836,
+          "brier": 0.08136990523284261,
+          "selected_source_spans": [
+            [
+              8066,
+              10366
+            ],
+            [
+              11384,
+              11559
+            ],
+            [
+              15280,
+              15343
+            ]
+          ],
+          "source_character_coverage": 0.1002646861296567,
+          "annotation_coverage": {
+            "any_character_overlap": false,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 0,
+            "total_characters": 616,
+            "retained_fraction": 0.0
+          },
+          "numeric_mentions": 59,
+          "numeric_mentions_retained": 11,
+          "numeric_retention_fraction": 0.1864406779661017
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8257982222201877,
+          "confidence": 0.8257982222201877,
+          "correct": true,
+          "nll": 0.1914048183295246,
+          "brier": 0.060692518763294206,
+          "selected_source_spans": [
+            [
+              2380,
+              4159
+            ],
+            [
+              9066,
+              9763
+            ],
+            [
+              15280,
+              15343
+            ]
+          ],
+          "source_character_coverage": 0.10030419152214277,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": false,
+            "retained_characters": 442,
+            "total_characters": 616,
+            "retained_fraction": 0.7175324675324676
+          },
+          "numeric_mentions": 59,
+          "numeric_mentions_retained": 3,
+          "numeric_retention_fraction": 0.05084745762711865
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.7565143521881659,
+          "confidence": 0.7565143521881659,
+          "correct": true,
+          "nll": 0.27903377410531405,
+          "brier": 0.1185705213806971,
+          "selected_source_spans": [
+            [
+              0,
+              2380
+            ],
+            [
+              15280,
+              15343
+            ]
+          ],
+          "source_character_coverage": 0.09651167384347964,
+          "annotation_coverage": {
+            "any_character_overlap": false,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 0,
+            "total_characters": 616,
+            "retained_fraction": 0.0
+          },
+          "numeric_mentions": 59,
+          "numeric_mentions_retained": 5,
+          "numeric_retention_fraction": 0.0847457627118644
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:618:nda-3",
+      "group": "original-contractnli:618",
+      "hypothesis_id": "nda-3",
+      "gold": "No",
+      "original_threeway_label": "NotMentioned",
+      "source_state_sha256": "4b060fc79362a28526bc08ad44b1531a36d22517573dd9b23cb5aa9137e0c908",
+      "annotated_spans": [],
+      "annotated_characters": 0,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8420569985643033,
+          "confidence": 0.8420569985643033,
+          "correct": false,
+          "nll": 1.8455210614482347,
+          "brier": 1.4181199776622462,
+          "selected_source_spans": [
+            [
+              6194,
+              9066
+            ],
+            [
+              15280,
+              15343
+            ]
+          ],
+          "source_character_coverage": 0.11594832694662821,
+          "annotation_coverage": null,
+          "numeric_mentions": 59,
+          "numeric_mentions_retained": 3,
+          "numeric_retention_fraction": 0.05084745762711865
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8517513823899987,
+          "confidence": 0.8517513823899987,
+          "correct": false,
+          "nll": 1.9088645658695227,
+          "brier": 1.4509608348065475,
+          "selected_source_spans": [
+            [
+              8066,
+              10366
+            ],
+            [
+              16516,
+              16854
+            ]
+          ],
+          "source_character_coverage": 0.10421522537826414,
+          "annotation_coverage": null,
+          "numeric_mentions": 59,
+          "numeric_mentions_retained": 12,
+          "numeric_retention_fraction": 0.2033898305084746
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.7713541519277732,
+          "confidence": 0.7713541519277732,
+          "correct": false,
+          "nll": 1.475580987484983,
+          "brier": 1.1899744553924287,
+          "selected_source_spans": [
+            [
+              0,
+              2380
+            ],
+            [
+              15280,
+              15343
+            ]
+          ],
+          "source_character_coverage": 0.09651167384347964,
+          "annotation_coverage": null,
+          "numeric_mentions": 59,
+          "numeric_mentions_retained": 5,
+          "numeric_retention_fraction": 0.0847457627118644
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:143:nda-17",
+      "group": "original-contractnli:143",
+      "hypothesis_id": "nda-17",
+      "gold": "No",
+      "original_threeway_label": "Contradiction",
+      "source_state_sha256": "171f8557c40a74b1a032acf56ee266b6e78d280c08df0d12449db76d7469c97b",
+      "annotated_spans": [
+        [
+          2757,
+          2930
+        ]
+      ],
+      "annotated_characters": 173,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8183270878639325,
+          "confidence": 0.8183270878639325,
+          "correct": false,
+          "nll": 1.7055473948472912,
+          "brier": 1.3393184454637288,
+          "selected_source_spans": [
+            [
+              0,
+              2171
+            ],
+            [
+              6117,
+              6122
+            ]
+          ],
+          "source_character_coverage": 0.35543939888925186,
+          "annotation_coverage": {
+            "any_character_overlap": false,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 0,
+            "total_characters": 173,
+            "retained_fraction": 0.0
+          },
+          "numeric_mentions": 25,
+          "numeric_mentions_retained": 15,
+          "numeric_retention_fraction": 0.6
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7846392959597452,
+          "confidence": 0.7846392959597452,
+          "correct": false,
+          "nll": 1.5354409633991766,
+          "brier": 1.2313176495284093,
+          "selected_source_spans": [
+            [
+              2171,
+              4353
+            ],
+            [
+              6117,
+              6122
+            ]
+          ],
+          "source_character_coverage": 0.3572361973211369,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 173,
+            "total_characters": 173,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 25,
+          "numeric_mentions_retained": 7,
+          "numeric_retention_fraction": 0.28
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.8183270878639325,
+          "confidence": 0.8183270878639325,
+          "correct": false,
+          "nll": 1.7055473948472912,
+          "brier": 1.3393184454637288,
+          "selected_source_spans": [
+            [
+              0,
+              2171
+            ],
+            [
+              6117,
+              6122
+            ]
+          ],
+          "source_character_coverage": 0.35543939888925186,
+          "annotation_coverage": {
+            "any_character_overlap": false,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 0,
+            "total_characters": 173,
+            "retained_fraction": 0.0
+          },
+          "numeric_mentions": 25,
+          "numeric_mentions_retained": 15,
+          "numeric_retention_fraction": 0.6
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:143:nda-7",
+      "group": "original-contractnli:143",
+      "hypothesis_id": "nda-7",
+      "gold": "No",
+      "original_threeway_label": "Contradiction",
+      "source_state_sha256": "171f8557c40a74b1a032acf56ee266b6e78d280c08df0d12449db76d7469c97b",
+      "annotated_spans": [
+        [
+          1681,
+          1822
+        ]
+      ],
+      "annotated_characters": 141,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8343439890299291,
+          "confidence": 0.8343439890299291,
+          "correct": false,
+          "nll": 1.79784186372242,
+          "brier": 1.392259784060749,
+          "selected_source_spans": [
+            [
+              0,
+              2171
+            ],
+            [
+              6117,
+              6122
+            ]
+          ],
+          "source_character_coverage": 0.35543939888925186,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 141,
+            "total_characters": 141,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 25,
+          "numeric_mentions_retained": 15,
+          "numeric_retention_fraction": 0.6
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8343439890299291,
+          "confidence": 0.8343439890299291,
+          "correct": false,
+          "nll": 1.79784186372242,
+          "brier": 1.392259784060749,
+          "selected_source_spans": [
+            [
+              0,
+              2171
+            ],
+            [
+              6117,
+              6122
+            ]
+          ],
+          "source_character_coverage": 0.35543939888925186,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 141,
+            "total_characters": 141,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 25,
+          "numeric_mentions_retained": 15,
+          "numeric_retention_fraction": 0.6
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.8343439890299291,
+          "confidence": 0.8343439890299291,
+          "correct": false,
+          "nll": 1.79784186372242,
+          "brier": 1.392259784060749,
+          "selected_source_spans": [
+            [
+              0,
+              2171
+            ],
+            [
+              6117,
+              6122
+            ]
+          ],
+          "source_character_coverage": 0.35543939888925186,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 141,
+            "total_characters": 141,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 25,
+          "numeric_mentions_retained": 15,
+          "numeric_retention_fraction": 0.6
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:143:nda-3",
+      "group": "original-contractnli:143",
+      "hypothesis_id": "nda-3",
+      "gold": "Yes",
+      "original_threeway_label": "Entailment",
+      "source_state_sha256": "171f8557c40a74b1a032acf56ee266b6e78d280c08df0d12449db76d7469c97b",
+      "annotated_spans": [
+        [
+          623,
+          1014
+        ]
+      ],
+      "annotated_characters": 391,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.9303475004004941,
+          "confidence": 0.9303475004004941,
+          "correct": true,
+          "nll": 0.0721971062823651,
+          "brier": 0.009702941400918333,
+          "selected_source_spans": [
+            [
+              0,
+              2171
+            ],
+            [
+              6117,
+              6122
+            ]
+          ],
+          "source_character_coverage": 0.35543939888925186,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 391,
+            "total_characters": 391,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 25,
+          "numeric_mentions_retained": 15,
+          "numeric_retention_fraction": 0.6
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "No",
+          "p_yes": 0.31765020389490545,
+          "confidence": 0.6823497961050946,
+          "correct": false,
+          "nll": 1.1468044893843752,
+          "brier": 0.9312024884893284,
+          "selected_source_spans": [
+            [
+              3530,
+              5834
+            ],
+            [
+              6117,
+              6122
+            ]
+          ],
+          "source_character_coverage": 0.37716432538386147,
+          "annotation_coverage": {
+            "any_character_overlap": false,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 0,
+            "total_characters": 391,
+            "retained_fraction": 0.0
+          },
+          "numeric_mentions": 25,
+          "numeric_mentions_retained": 7,
+          "numeric_retention_fraction": 0.28
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.9303475004004941,
+          "confidence": 0.9303475004004941,
+          "correct": true,
+          "nll": 0.0721971062823651,
+          "brier": 0.009702941400918333,
+          "selected_source_spans": [
+            [
+              0,
+              2171
+            ],
+            [
+              6117,
+              6122
+            ]
+          ],
+          "source_character_coverage": 0.35543939888925186,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 391,
+            "total_characters": 391,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 25,
+          "numeric_mentions_retained": 15,
+          "numeric_retention_fraction": 0.6
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:602:nda-17",
+      "group": "original-contractnli:602",
+      "hypothesis_id": "nda-17",
+      "gold": "No",
+      "original_threeway_label": "NotMentioned",
+      "source_state_sha256": "7b67044dc662511beb74bc65931fcd26f0999ec4b2194e77631c7f94713b94d4",
+      "annotated_spans": [],
+      "annotated_characters": 0,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7314021224431193,
+          "confidence": 0.7314021224431193,
+          "correct": false,
+          "nll": 1.3145398967973374,
+          "brier": 1.0698981294285994,
+          "selected_source_spans": [
+            [
+              0,
+              1553
+            ],
+            [
+              3109,
+              3741
+            ]
+          ],
+          "source_character_coverage": 0.11082931777834136,
+          "annotation_coverage": null,
+          "numeric_mentions": 38,
+          "numeric_mentions_retained": 7,
+          "numeric_retention_fraction": 0.18421052631578946
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7530786409928402,
+          "confidence": 0.7530786409928402,
+          "correct": false,
+          "nll": 1.3986853776356905,
+          "brier": 1.1342548790392462,
+          "selected_source_spans": [
+            [
+              584,
+              1553
+            ],
+            [
+              9182,
+              10603
+            ]
+          ],
+          "source_character_coverage": 0.12122749175754502,
+          "annotation_coverage": null,
+          "numeric_mentions": 38,
+          "numeric_mentions_retained": 2,
+          "numeric_retention_fraction": 0.05263157894736842
+        },
+        "same_nli_positional_first2": {
+          "predicted": "No",
+          "p_yes": 0.4363000675265697,
+          "confidence": 0.5636999324734304,
+          "correct": true,
+          "nll": 0.5732332036862942,
+          "brier": 0.38071549784737846,
+          "selected_source_spans": [
+            [
+              0,
+              1553
+            ],
+            [
+              2433,
+              3109
+            ]
+          ],
+          "source_character_coverage": 0.11306112097387776,
+          "annotation_coverage": null,
+          "numeric_mentions": 38,
+          "numeric_mentions_retained": 7,
+          "numeric_retention_fraction": 0.18421052631578946
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:602:nda-7",
+      "group": "original-contractnli:602",
+      "hypothesis_id": "nda-7",
+      "gold": "Yes",
+      "original_threeway_label": "Entailment",
+      "source_state_sha256": "7b67044dc662511beb74bc65931fcd26f0999ec4b2194e77631c7f94713b94d4",
+      "annotated_spans": [
+        [
+          2433,
+          2820
+        ],
+        [
+          3734,
+          4148
+        ],
+        [
+          4329,
+          4553
+        ]
+      ],
+      "annotated_characters": 1025,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8350996118210906,
+          "confidence": 0.8350996118210906,
+          "correct": true,
+          "nll": 0.18020426565231462,
+          "brier": 0.05438427604311004,
+          "selected_source_spans": [
+            [
+              1553,
+              3741
+            ],
+            [
+              9849,
+              9996
+            ]
+          ],
+          "source_character_coverage": 0.11843773776312452,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 394,
+            "total_characters": 1025,
+            "retained_fraction": 0.38439024390243903
+          },
+          "numeric_mentions": 38,
+          "numeric_mentions_retained": 2,
+          "numeric_retention_fraction": 0.05263157894736842
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8350996118210906,
+          "confidence": 0.8350996118210906,
+          "correct": true,
+          "nll": 0.18020426565231462,
+          "brier": 0.05438427604311004,
+          "selected_source_spans": [
+            [
+              1553,
+              3741
+            ],
+            [
+              9849,
+              9996
+            ]
+          ],
+          "source_character_coverage": 0.11843773776312452,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 394,
+            "total_characters": 1025,
+            "retained_fraction": 0.38439024390243903
+          },
+          "numeric_mentions": 38,
+          "numeric_mentions_retained": 2,
+          "numeric_retention_fraction": 0.05263157894736842
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.619207652626939,
+          "confidence": 0.619207652626939,
+          "correct": true,
+          "nll": 0.4793145978893549,
+          "brier": 0.290005623635772,
+          "selected_source_spans": [
+            [
+              0,
+              1553
+            ],
+            [
+              2433,
+              3109
+            ]
+          ],
+          "source_character_coverage": 0.11306112097387776,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 387,
+            "total_characters": 1025,
+            "retained_fraction": 0.3775609756097561
+          },
+          "numeric_mentions": 38,
+          "numeric_mentions_retained": 7,
+          "numeric_retention_fraction": 0.18421052631578946
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:602:nda-3",
+      "group": "original-contractnli:602",
+      "hypothesis_id": "nda-3",
+      "gold": "No",
+      "original_threeway_label": "NotMentioned",
+      "source_state_sha256": "7b67044dc662511beb74bc65931fcd26f0999ec4b2194e77631c7f94713b94d4",
+      "annotated_spans": [],
+      "annotated_characters": 0,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.5886100977438029,
+          "confidence": 0.5886100977438029,
+          "correct": false,
+          "nll": 0.8882138468963106,
+          "brier": 0.6929236943319385,
+          "selected_source_spans": [
+            [
+              584,
+              3109
+            ],
+            [
+              9849,
+              9996
+            ]
+          ],
+          "source_character_coverage": 0.13553132132893736,
+          "annotation_coverage": null,
+          "numeric_mentions": 38,
+          "numeric_mentions_retained": 2,
+          "numeric_retention_fraction": 0.05263157894736842
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8432417815108374,
+          "confidence": 0.8432417815108374,
+          "correct": false,
+          "nll": 1.8530506702906686,
+          "brier": 1.4221134041711416,
+          "selected_source_spans": [
+            [
+              3741,
+              4553
+            ],
+            [
+              9182,
+              10603
+            ],
+            [
+              11708,
+              12080
+            ]
+          ],
+          "source_character_coverage": 0.13213289373573422,
+          "annotation_coverage": null,
+          "numeric_mentions": 38,
+          "numeric_mentions_retained": 1,
+          "numeric_retention_fraction": 0.02631578947368421
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.5888054708698542,
+          "confidence": 0.5888054708698542,
+          "correct": false,
+          "nll": 0.8886888695742766,
+          "brier": 0.6933837650525415,
+          "selected_source_spans": [
+            [
+              0,
+              2433
+            ]
+          ],
+          "source_character_coverage": 0.12340857215318285,
+          "annotation_coverage": null,
+          "numeric_mentions": 38,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.15789473684210525
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:527:nda-17",
+      "group": "original-contractnli:527",
+      "hypothesis_id": "nda-17",
+      "gold": "No",
+      "original_threeway_label": "NotMentioned",
+      "source_state_sha256": "433c7fb2eefa5629b78abc210b100c65f259d5e29eb76fd380207cb50a12e00a",
+      "annotated_spans": [],
+      "annotated_characters": 0,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7475098565692692,
+          "confidence": 0.7475098565692692,
+          "correct": false,
+          "nll": 1.3763830669465418,
+          "brier": 1.117541971336419,
+          "selected_source_spans": [
+            [
+              2318,
+              5152
+            ]
+          ],
+          "source_character_coverage": 0.21912935900409805,
+          "annotation_coverage": null,
+          "numeric_mentions": 21,
+          "numeric_mentions_retained": 2,
+          "numeric_retention_fraction": 0.09523809523809523
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7824206206006945,
+          "confidence": 0.7824206206006945,
+          "correct": false,
+          "nll": 1.5251915322806777,
+          "brier": 1.2243640550823518,
+          "selected_source_spans": [
+            [
+              1364,
+              3523
+            ],
+            [
+              5613,
+              6187
+            ],
+            [
+              12858,
+              12933
+            ]
+          ],
+          "source_character_coverage": 0.21711899791231734,
+          "annotation_coverage": null,
+          "numeric_mentions": 21,
+          "numeric_mentions_retained": 2,
+          "numeric_retention_fraction": 0.09523809523809523
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.8288295483561726,
+          "confidence": 0.8288295483561726,
+          "correct": false,
+          "nll": 1.7650954257092113,
+          "brier": 1.3739168404565945,
+          "selected_source_spans": [
+            [
+              0,
+              2318
+            ],
+            [
+              12858,
+              12933
+            ]
+          ],
+          "source_character_coverage": 0.185030542024279,
+          "annotation_coverage": null,
+          "numeric_mentions": 21,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.2857142857142857
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:527:nda-7",
+      "group": "original-contractnli:527",
+      "hypothesis_id": "nda-7",
+      "gold": "Yes",
+      "original_threeway_label": "Entailment",
+      "source_state_sha256": "433c7fb2eefa5629b78abc210b100c65f259d5e29eb76fd380207cb50a12e00a",
+      "annotated_spans": [
+        [
+          1053,
+          1363
+        ],
+        [
+          2836,
+          3060
+        ],
+        [
+          3190,
+          3523
+        ]
+      ],
+      "annotated_characters": 867,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8957740253292946,
+          "confidence": 0.8957740253292946,
+          "correct": true,
+          "nll": 0.11006710168950691,
+          "brier": 0.021726107592117037,
+          "selected_source_spans": [
+            [
+              0,
+              1640
+            ],
+            [
+              3523,
+              4420
+            ],
+            [
+              12858,
+              12933
+            ]
+          ],
+          "source_character_coverage": 0.20196396814350887,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 310,
+            "total_characters": 867,
+            "retained_fraction": 0.3575547866205306
+          },
+          "numeric_mentions": 21,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.2857142857142857
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8957740253292946,
+          "confidence": 0.8957740253292946,
+          "correct": true,
+          "nll": 0.11006710168950691,
+          "brier": 0.021726107592117037,
+          "selected_source_spans": [
+            [
+              0,
+              1640
+            ],
+            [
+              3523,
+              4420
+            ],
+            [
+              12858,
+              12933
+            ]
+          ],
+          "source_character_coverage": 0.20196396814350887,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 310,
+            "total_characters": 867,
+            "retained_fraction": 0.3575547866205306
+          },
+          "numeric_mentions": 21,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.2857142857142857
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.8658031108471365,
+          "confidence": 0.8658031108471365,
+          "correct": true,
+          "nll": 0.14409775094867613,
+          "brier": 0.03601761011661189,
+          "selected_source_spans": [
+            [
+              0,
+              2318
+            ],
+            [
+              12858,
+              12933
+            ]
+          ],
+          "source_character_coverage": 0.185030542024279,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 310,
+            "total_characters": 867,
+            "retained_fraction": 0.3575547866205306
+          },
+          "numeric_mentions": 21,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.2857142857142857
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:527:nda-3",
+      "group": "original-contractnli:527",
+      "hypothesis_id": "nda-3",
+      "gold": "No",
+      "original_threeway_label": "NotMentioned",
+      "source_state_sha256": "433c7fb2eefa5629b78abc210b100c65f259d5e29eb76fd380207cb50a12e00a",
+      "annotated_spans": [],
+      "annotated_characters": 0,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8488263534932868,
+          "confidence": 0.8488263534932868,
+          "correct": false,
+          "nll": 1.8893261260184675,
+          "brier": 1.4410123567694206,
+          "selected_source_spans": [
+            [
+              635,
+              2318
+            ],
+            [
+              2640,
+              3523
+            ],
+            [
+              12858,
+              12933
+            ]
+          ],
+          "source_character_coverage": 0.20420629397664888,
+          "annotation_coverage": null,
+          "numeric_mentions": 21,
+          "numeric_mentions_retained": 2,
+          "numeric_retention_fraction": 0.09523809523809523
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8655186192834652,
+          "confidence": 0.8655186192834652,
+          "correct": false,
+          "nll": 2.006329522857335,
+          "brier": 1.498244960652712,
+          "selected_source_spans": [
+            [
+              635,
+              2640
+            ],
+            [
+              5613,
+              6187
+            ],
+            [
+              12858,
+              12933
+            ]
+          ],
+          "source_character_coverage": 0.20521147452253924,
+          "annotation_coverage": null,
+          "numeric_mentions": 21,
+          "numeric_mentions_retained": 1,
+          "numeric_retention_fraction": 0.047619047619047616
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.8680171517443086,
+          "confidence": 0.8680171517443086,
+          "correct": false,
+          "nll": 2.025083302295252,
+          "brier": 1.506907551444604,
+          "selected_source_spans": [
+            [
+              0,
+              2318
+            ],
+            [
+              12858,
+              12933
+            ]
+          ],
+          "source_character_coverage": 0.185030542024279,
+          "annotation_coverage": null,
+          "numeric_mentions": 21,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.2857142857142857
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:122:nda-17",
+      "group": "original-contractnli:122",
+      "hypothesis_id": "nda-17",
+      "gold": "No",
+      "original_threeway_label": "NotMentioned",
+      "source_state_sha256": "f4ec0b08cfc6b10a8a99462911341fef7f8ba0c9c8956795d5093072766b3b85",
+      "annotated_spans": [],
+      "annotated_characters": 0,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7434068522282573,
+          "confidence": 0.7434068522282573,
+          "correct": false,
+          "nll": 1.3602635310864528,
+          "brier": 1.1053074958798519,
+          "selected_source_spans": [
+            [
+              0,
+              2087
+            ]
+          ],
+          "source_character_coverage": 0.5823102678571429,
+          "annotation_coverage": null,
+          "numeric_mentions": 19,
+          "numeric_mentions_retained": 10,
+          "numeric_retention_fraction": 0.5263157894736842
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.661971479218869,
+          "confidence": 0.661971479218869,
+          "correct": false,
+          "nll": 1.084625006049732,
+          "brier": 0.8764124785984349,
+          "selected_source_spans": [
+            [
+              464,
+              2752
+            ]
+          ],
+          "source_character_coverage": 0.6383928571428571,
+          "annotation_coverage": null,
+          "numeric_mentions": 19,
+          "numeric_mentions_retained": 11,
+          "numeric_retention_fraction": 0.5789473684210527
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.7434068522282573,
+          "confidence": 0.7434068522282573,
+          "correct": false,
+          "nll": 1.3602635310864528,
+          "brier": 1.1053074958798519,
+          "selected_source_spans": [
+            [
+              0,
+              2087
+            ]
+          ],
+          "source_character_coverage": 0.5823102678571429,
+          "annotation_coverage": null,
+          "numeric_mentions": 19,
+          "numeric_mentions_retained": 10,
+          "numeric_retention_fraction": 0.5263157894736842
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:122:nda-7",
+      "group": "original-contractnli:122",
+      "hypothesis_id": "nda-7",
+      "gold": "No",
+      "original_threeway_label": "Contradiction",
+      "source_state_sha256": "f4ec0b08cfc6b10a8a99462911341fef7f8ba0c9c8956795d5093072766b3b85",
+      "annotated_spans": [
+        [
+          937,
+          1252
+        ]
+      ],
+      "annotated_characters": 315,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7336970529138526,
+          "confidence": 0.7336970529138526,
+          "correct": false,
+          "nll": 1.3231207194335977,
+          "brier": 1.076622730908945,
+          "selected_source_spans": [
+            [
+              0,
+              2087
+            ]
+          ],
+          "source_character_coverage": 0.5823102678571429,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 315,
+            "total_characters": 315,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 19,
+          "numeric_mentions_retained": 10,
+          "numeric_retention_fraction": 0.5263157894736842
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7336970529138526,
+          "confidence": 0.7336970529138526,
+          "correct": false,
+          "nll": 1.3231207194335977,
+          "brier": 1.076622730908945,
+          "selected_source_spans": [
+            [
+              0,
+              2087
+            ]
+          ],
+          "source_character_coverage": 0.5823102678571429,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 315,
+            "total_characters": 315,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 19,
+          "numeric_mentions_retained": 10,
+          "numeric_retention_fraction": 0.5263157894736842
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.7336970529138526,
+          "confidence": 0.7336970529138526,
+          "correct": false,
+          "nll": 1.3231207194335977,
+          "brier": 1.076622730908945,
+          "selected_source_spans": [
+            [
+              0,
+              2087
+            ]
+          ],
+          "source_character_coverage": 0.5823102678571429,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 315,
+            "total_characters": 315,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 19,
+          "numeric_mentions_retained": 10,
+          "numeric_retention_fraction": 0.5263157894736842
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:122:nda-3",
+      "group": "original-contractnli:122",
+      "hypothesis_id": "nda-3",
+      "gold": "No",
+      "original_threeway_label": "NotMentioned",
+      "source_state_sha256": "f4ec0b08cfc6b10a8a99462911341fef7f8ba0c9c8956795d5093072766b3b85",
+      "annotated_spans": [],
+      "annotated_characters": 0,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.5674374239260176,
+          "confidence": 0.5674374239260176,
+          "correct": false,
+          "nll": 0.8380282785118839,
+          "brier": 0.64397046014359,
+          "selected_source_spans": [
+            [
+              0,
+              2087
+            ]
+          ],
+          "source_character_coverage": 0.5823102678571429,
+          "annotation_coverage": null,
+          "numeric_mentions": 19,
+          "numeric_mentions_retained": 10,
+          "numeric_retention_fraction": 0.5263157894736842
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7440148216174367,
+          "confidence": 0.7440148216174367,
+          "correct": false,
+          "nll": 1.3626357331217793,
+          "brier": 1.1071161095728523,
+          "selected_source_spans": [
+            [
+              464,
+              2752
+            ]
+          ],
+          "source_character_coverage": 0.6383928571428571,
+          "annotation_coverage": null,
+          "numeric_mentions": 19,
+          "numeric_mentions_retained": 11,
+          "numeric_retention_fraction": 0.5789473684210527
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.5674374239260176,
+          "confidence": 0.5674374239260176,
+          "correct": false,
+          "nll": 0.8380282785118839,
+          "brier": 0.64397046014359,
+          "selected_source_spans": [
+            [
+              0,
+              2087
+            ]
+          ],
+          "source_character_coverage": 0.5823102678571429,
+          "annotation_coverage": null,
+          "numeric_mentions": 19,
+          "numeric_mentions_retained": 10,
+          "numeric_retention_fraction": 0.5263157894736842
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:182:nda-17",
+      "group": "original-contractnli:182",
+      "hypothesis_id": "nda-17",
+      "gold": "No",
+      "original_threeway_label": "NotMentioned",
+      "source_state_sha256": "38c40cf01e80b0ae77022b3f2553fd38921bb618997acc3931c0ab8d1153b057",
+      "annotated_spans": [],
+      "annotated_characters": 0,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7086970478236632,
+          "confidence": 0.7086970478236632,
+          "correct": false,
+          "nll": 1.2333914805801625,
+          "brier": 1.0045030111879512,
+          "selected_source_spans": [
+            [
+              373,
+              2120
+            ],
+            [
+              2991,
+              3719
+            ]
+          ],
+          "source_character_coverage": 0.23652522935779816,
+          "annotation_coverage": null,
+          "numeric_mentions": 42,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.14285714285714285
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "No",
+          "p_yes": 0.24093724307319017,
+          "confidence": 0.7590627569268097,
+          "correct": true,
+          "nll": 0.2756708213065792,
+          "brier": 0.11610151019941911,
+          "selected_source_spans": [
+            [
+              373,
+              2991
+            ]
+          ],
+          "source_character_coverage": 0.25019113149847094,
+          "annotation_coverage": null,
+          "numeric_mentions": 42,
+          "numeric_mentions_retained": 5,
+          "numeric_retention_fraction": 0.11904761904761904
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.7619387024328426,
+          "confidence": 0.7619387024328426,
+          "correct": false,
+          "nll": 1.4352270856685094,
+          "brier": 1.1611011725300877,
+          "selected_source_spans": [
+            [
+              0,
+              2120
+            ],
+            [
+              10413,
+              10464
+            ]
+          ],
+          "source_character_coverage": 0.20747324159021407,
+          "annotation_coverage": null,
+          "numeric_mentions": 42,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.14285714285714285
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:182:nda-7",
+      "group": "original-contractnli:182",
+      "hypothesis_id": "nda-7",
+      "gold": "No",
+      "original_threeway_label": "Contradiction",
+      "source_state_sha256": "38c40cf01e80b0ae77022b3f2553fd38921bb618997acc3931c0ab8d1153b057",
+      "annotated_spans": [
+        [
+          2124,
+          2550
+        ]
+      ],
+      "annotated_characters": 426,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.6555042872229025,
+          "confidence": 0.6555042872229025,
+          "correct": false,
+          "nll": 1.0656736333748082,
+          "brier": 0.8593717411352109,
+          "selected_source_spans": [
+            [
+              373,
+              2991
+            ]
+          ],
+          "source_character_coverage": 0.25019113149847094,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 426,
+            "total_characters": 426,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 42,
+          "numeric_mentions_retained": 5,
+          "numeric_retention_fraction": 0.11904761904761904
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8663327278970591,
+          "confidence": 0.8663327278970591,
+          "correct": false,
+          "nll": 2.012401610905499,
+          "brier": 1.5010647908511194,
+          "selected_source_spans": [
+            [
+              373,
+              511
+            ],
+            [
+              1412,
+              3719
+            ]
+          ],
+          "source_character_coverage": 0.23365825688073394,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 426,
+            "total_characters": 426,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 42,
+          "numeric_mentions_retained": 7,
+          "numeric_retention_fraction": 0.16666666666666666
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.8050892585272982,
+          "confidence": 0.8050892585272982,
+          "correct": false,
+          "nll": 1.6352135612489365,
+          "brier": 1.2963374283920694,
+          "selected_source_spans": [
+            [
+              0,
+              2120
+            ]
+          ],
+          "source_character_coverage": 0.20259938837920488,
+          "annotation_coverage": {
+            "any_character_overlap": false,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 0,
+            "total_characters": 426,
+            "retained_fraction": 0.0
+          },
+          "numeric_mentions": 42,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.14285714285714285
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:182:nda-3",
+      "group": "original-contractnli:182",
+      "hypothesis_id": "nda-3",
+      "gold": "Yes",
+      "original_threeway_label": "Entailment",
+      "source_state_sha256": "38c40cf01e80b0ae77022b3f2553fd38921bb618997acc3931c0ab8d1153b057",
+      "annotated_spans": [
+        [
+          1412,
+          1943
+        ]
+      ],
+      "annotated_characters": 531,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "No",
+          "p_yes": 0.2588844533557234,
+          "confidence": 0.7411155466442766,
+          "correct": false,
+          "nll": 1.3513734428661062,
+          "brier": 1.0985045069556898,
+          "selected_source_spans": [
+            [
+              373,
+              2991
+            ]
+          ],
+          "source_character_coverage": 0.25019113149847094,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 531,
+            "total_characters": 531,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 42,
+          "numeric_mentions_retained": 5,
+          "numeric_retention_fraction": 0.11904761904761904
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.5564605155672181,
+          "confidence": 0.5564605155672181,
+          "correct": true,
+          "nll": 0.586159062145397,
+          "brier": 0.39345454850179606,
+          "selected_source_spans": [
+            [
+              511,
+              2991
+            ],
+            [
+              9747,
+              10097
+            ]
+          ],
+          "source_character_coverage": 0.27045107033639143,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 531,
+            "total_characters": 531,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 42,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.14285714285714285
+        },
+        "same_nli_positional_first2": {
+          "predicted": "Yes",
+          "p_yes": 0.7555100516511762,
+          "confidence": 0.7555100516511762,
+          "correct": true,
+          "nll": 0.2803621927235982,
+          "brier": 0.11955066968722099,
+          "selected_source_spans": [
+            [
+              0,
+              2120
+            ],
+            [
+              10413,
+              10464
+            ]
+          ],
+          "source_character_coverage": 0.20747324159021407,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 531,
+            "total_characters": 531,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 42,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.14285714285714285
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:253:nda-17",
+      "group": "original-contractnli:253",
+      "hypothesis_id": "nda-17",
+      "gold": "No",
+      "original_threeway_label": "NotMentioned",
+      "source_state_sha256": "b69558b2ffbc3ea43f4603b5c8b8ededda942777dad59998522f4f1224981e50",
+      "annotated_spans": [],
+      "annotated_characters": 0,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8566580060060369,
+          "confidence": 0.8566580060060369,
+          "correct": false,
+          "nll": 1.9425219375743514,
+          "brier": 1.4677258785084784,
+          "selected_source_spans": [
+            [
+              1889,
+              3826
+            ],
+            [
+              6210,
+              6654
+            ]
+          ],
+          "source_character_coverage": 0.35782987676585515,
+          "annotation_coverage": null,
+          "numeric_mentions": 12,
+          "numeric_mentions_retained": 9,
+          "numeric_retention_fraction": 0.75
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7982376219311075,
+          "confidence": 0.7982376219311075,
+          "correct": false,
+          "nll": 1.600664620212802,
+          "brier": 1.2743666021324593,
+          "selected_source_spans": [
+            [
+              2521,
+              4655
+            ],
+            [
+              6210,
+              6654
+            ]
+          ],
+          "source_character_coverage": 0.3874361286444244,
+          "annotation_coverage": null,
+          "numeric_mentions": 12,
+          "numeric_mentions_retained": 8,
+          "numeric_retention_fraction": 0.6666666666666666
+        },
+        "same_nli_positional_first2": {
+          "predicted": "No",
+          "p_yes": 0.32053959466536974,
+          "confidence": 0.6794604053346303,
+          "correct": true,
+          "nll": 0.3864563173835964,
+          "brier": 0.20549126349647906,
+          "selected_source_spans": [
+            [
+              0,
+              2521
+            ]
+          ],
+          "source_character_coverage": 0.3788698527201683,
+          "annotation_coverage": null,
+          "numeric_mentions": 12,
+          "numeric_mentions_retained": 4,
+          "numeric_retention_fraction": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:253:nda-7",
+      "group": "original-contractnli:253",
+      "hypothesis_id": "nda-7",
+      "gold": "No",
+      "original_threeway_label": "NotMentioned",
+      "source_state_sha256": "b69558b2ffbc3ea43f4603b5c8b8ededda942777dad59998522f4f1224981e50",
+      "annotated_spans": [],
+      "annotated_characters": 0,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8124066744342533,
+          "confidence": 0.8124066744342533,
+          "correct": false,
+          "nll": 1.673478821050672,
+          "brier": 1.3200092093306457,
+          "selected_source_spans": [
+            [
+              2521,
+              4655
+            ]
+          ],
+          "source_character_coverage": 0.3207093477607454,
+          "annotation_coverage": null,
+          "numeric_mentions": 12,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.5
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.7161650536104383,
+          "confidence": 0.7161650536104383,
+          "correct": false,
+          "nll": 1.2593623844530417,
+          "brier": 1.0257847680256837,
+          "selected_source_spans": [
+            [
+              3113,
+              5464
+            ]
+          ],
+          "source_character_coverage": 0.3533213104899309,
+          "annotation_coverage": null,
+          "numeric_mentions": 12,
+          "numeric_mentions_retained": 1,
+          "numeric_retention_fraction": 0.08333333333333333
+        },
+        "same_nli_positional_first2": {
+          "predicted": "No",
+          "p_yes": 0.45217105806655056,
+          "confidence": 0.5478289419334494,
+          "correct": true,
+          "nll": 0.6017921905194766,
+          "brier": 0.4089173315060477,
+          "selected_source_spans": [
+            [
+              0,
+              2521
+            ]
+          ],
+          "source_character_coverage": 0.3788698527201683,
+          "annotation_coverage": null,
+          "numeric_mentions": 12,
+          "numeric_mentions_retained": 4,
+          "numeric_retention_fraction": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch7:253:nda-3",
+      "group": "original-contractnli:253",
+      "hypothesis_id": "nda-3",
+      "gold": "Yes",
+      "original_threeway_label": "Entailment",
+      "source_state_sha256": "b69558b2ffbc3ea43f4603b5c8b8ededda942777dad59998522f4f1224981e50",
+      "annotated_spans": [
+        [
+          925,
+          1138
+        ]
+      ],
+      "annotated_characters": 213,
+      "arms": {
+        "ruvector_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8237602014940403,
+          "confidence": 0.8237602014940403,
+          "correct": true,
+          "nll": 0.19387580903082577,
+          "brier": 0.06212093315484253,
+          "selected_source_spans": [
+            [
+              0,
+              459
+            ],
+            [
+              2521,
+              4655
+            ]
+          ],
+          "source_character_coverage": 0.38969041178238656,
+          "annotation_coverage": {
+            "any_character_overlap": false,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 0,
+            "total_characters": 213,
+            "retained_fraction": 0.0
+          },
+          "numeric_mentions": 12,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.5
+        },
+        "same_nli_lexical_top2": {
+          "predicted": "Yes",
+          "p_yes": 0.8237602014940403,
+          "confidence": 0.8237602014940403,
+          "correct": true,
+          "nll": 0.19387580903082577,
+          "brier": 0.06212093315484253,
+          "selected_source_spans": [
+            [
+              0,
+              459
+            ],
+            [
+              2521,
+              4655
+            ]
+          ],
+          "source_character_coverage": 0.38969041178238656,
+          "annotation_coverage": {
+            "any_character_overlap": false,
+            "all_annotated_spans_have_overlap": false,
+            "every_annotated_character_retained": false,
+            "retained_characters": 0,
+            "total_characters": 213,
+            "retained_fraction": 0.0
+          },
+          "numeric_mentions": 12,
+          "numeric_mentions_retained": 6,
+          "numeric_retention_fraction": 0.5
+        },
+        "same_nli_positional_first2": {
+          "predicted": "No",
+          "p_yes": 0.17585034656108087,
+          "confidence": 0.8241496534389191,
+          "correct": false,
+          "nll": 1.738121949287398,
+          "brier": 1.358445302526981,
+          "selected_source_spans": [
+            [
+              0,
+              2521
+            ]
+          ],
+          "source_character_coverage": 0.3788698527201683,
+          "annotation_coverage": {
+            "any_character_overlap": true,
+            "all_annotated_spans_have_overlap": true,
+            "every_annotated_character_retained": true,
+            "retained_characters": 213,
+            "total_characters": 213,
+            "retained_fraction": 1.0
+          },
+          "numeric_mentions": 12,
+          "numeric_mentions_retained": 4,
+          "numeric_retention_fraction": 0.3333333333333333
+        }
+      }
+    }
+  ],
+  "source_and_result_pins": [
+    {
+      "role": "terminal status and saved aggregate results",
+      "path": "experiments/sota-2026-10-22/epoch7/study-completion.json",
+      "bytes": 3611,
+      "sha256": "9d882a57c3c577c81a28f9c986f8d561348421608eee081194ae547f03d27f7d"
+    },
+    {
+      "role": "all saved DEV responses and24 labels",
+      "path": "experiments/sota-2026-10-22/epoch7/runs/development/records.jsonl",
+      "bytes": 2222235,
+      "sha256": "e5088433ba8cdcea25fda4e3dd7101f9f83ba6938a25cbc8caaa8e5297354db6"
+    },
+    {
+      "role": "frozen DEV comparison",
+      "path": "experiments/sota-2026-10-22/epoch7/runs/development/development-comparison.json",
+      "bytes": 3598,
+      "sha256": "86b1a111276560b7922825223b71789f3dbb9c2023d8128399b60491ee66bd41"
+    },
+    {
+      "role": "accepted plan",
+      "path": "experiments/sota-2026-10-22/epoch7/plan.json",
+      "bytes": 32517,
+      "sha256": "ab0d3fadf4bc23c3d58b36c157ebb665127d2a50487ea56c79d830a8054c0aee"
+    },
+    {
+      "role": "original source annotations; filtered to8DEV groups/3hypotheses",
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch3/sources/original-train.json",
+      "bytes": 7608211,
+      "sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5"
+    },
+    {
+      "role": "frozen candidate source identity",
+      "path": "experiments/sota-2026-10-22/candidate/epoch7/proposal-manifest.json",
+      "bytes": 18804,
+      "sha256": "21c71d91aec3b403dad1ead613c8a3e1d9bebc991efbf60d28a33bfe6a218ac8"
+    },
+    {
+      "role": "reader runtime",
+      "path": "experiments/sota-2026-10-22/candidate/epoch7/runtime.py",
+      "bytes": 9904,
+      "sha256": "f28f37f5abfb262bbbb00c4544453b7f4def36f96902c2ecaea85c0702142bbf"
+    },
+    {
+      "role": "binary decoder",
+      "path": "experiments/sota-2026-10-22/candidate/epoch7/models.py",
+      "bytes": 6480,
+      "sha256": "f54012202a39182300f849962008f03c152b128d14f0a15033e7b1e17970b505"
+    },
+    {
+      "role": "fixed config",
+      "path": "experiments/sota-2026-10-22/candidate/epoch7/config.json",
+      "bytes": 2573,
+      "sha256": "2a79cb75d55a0d305c7b45396c03e8442c22e247f0fe06eefbe8f85d701ef579"
+    },
+    {
+      "role": "immutable selected model hashes",
+      "path": "experiments/sota-2026-10-22/candidate/epoch7/model-assets.lock.json",
+      "bytes": 3622,
+      "sha256": "6ef6c25819893beea9734d8ca69a5b20c66257fb82e026841c5ad46d9bf160c0"
+    },
+    {
+      "role": "unchanged source partition/packer",
+      "path": "experiments/sota-2026-10-22/candidate/epoch6/context.py",
+      "bytes": 9205,
+      "sha256": "28bceb95282ec3e3e938f3211ccad04d2369fa29e1f191f187566339ae3b44d2"
+    }
+  ],
+  "findings": [
+    "Native-selected reader predictsYes23/24 against goldYes7/24; all17 gold-No cases are false positives. Lexical and positional controls share a strong positive bias.",
+    "Matched same-new-model retrieval-arm disagreements are listed by saved case ID; they do not identify a causal model gain across epochs.",
+    "Annotation overlap and numeric retention are mechanical exposure measurements. Coverage is not sufficiency; NotMentioned cases have no annotated support and are excluded from annotation-coverage denominators.",
+    "Confidence errors and proper scores are descriptive DEV diagnostics, not official Capability, calibration against a gold distribution or proof of rank."
+  ],
+  "posthoc_majority_reference": {
+    "scope": "Posthoc DEV-only reference computed after observing gold; not a candidate, tuned threshold, selection rule or confirmation gate",
+    "constant_label": "No",
+    "correct": 17,
+    "n": 24
+  },
+  "one_next_hypothesis": {
+    "status": "Unimplemented and unmeasured; no automatic execution or generic model grid",
+    "hypothesis": "A domain-specific three-way legal decision head that explicitly distinguishes entailment, contradiction and not-mentioned, with permission/prohibition/exception scope, will reduce broad positive bias under the same frozen RuVector context policy.",
+    "training_separation": "If later authorized, use only original official training documents after excluding all8 exposed DEV groups; exclude all official dev/test documents and original-dev confirmation96 f018 from fitting, calibration and selection.",
+    "typed_readout": "Yes=P(entailment);No=P(contradiction)+P(not-mentioned); no posthoc threshold fitted to these24 outcomes",
+    "test_design": "Freeze one legal/deontic hypothesis and unchanged matched retrieval arms before any future unused confirmation, with document-group uncertainty."
+  },
+  "exposure_note": "A preliminary schema probe displayed sibling annotation labels for one already-consumed DEV training document. These siblings were excluded from every metric/hypothesis; all8groups remain permanent DEV. No unused confirmation source/labels were opened.",
+  "new_model_calls": 0,
+  "new_native_calls": 0,
+  "new_paid_calls": 0,
+  "frozen_candidate_modified": false,
+  "unused_confirmation_labels_inspected": false,
+  "official_score": null,
+  "official_rank": null
+}

@@ -1,25 +1,21 @@
 {
   "schema_version": 1,
-  "run_id": "98db2f6c-0242-441b-b38a-10d42a35f923",
-  "state": "COMPLETE_REJECTED_DEV_GATE",
-  "started_at": "2026-10-22 19:50:08 UTC",
-  "expires_at": "2026-10-22T20:34:30.904Z",
-  "owner_scope": "RuVectorSOTAepoch6-context",
-  "checkpoint_parent": "3ae70593f2247ccac786969b74fbc445fc445bec",
-  "study_id": "native-coherent-context-deberta-base-e6",
+  "run_id": "1e487a1d-c1ef-4b83-99a4-d8d9ea10044f",
+  "state": "RUNNING_SOURCE_PREPARATION",
+  "started_at": "2026-10-22 20:34:25 UTC",
+  "expires_at": "2026-10-22T21:20:24.364Z",
+  "owner_scope": "RuVectorSOTAepoch7-newNLI",
+  "checkpoint_parent": "3bc26d5512056a61b992afc70290ff03b8310c2d",
+  "study_id": "native-large-binary-nli-e7",
   "limits": {
-    "native_batches": 1,
+    "native_batches": 2,
     "threads": 2,
     "seconds_per_batch": 600,
     "paid_calls": 0,
     "GPU_calls": 0
   },
-  "prior_closed_lifetime_attempts": 7,
+  "prior_closed_lifetime_attempts": 8,
   "new_study_attempts_started": 0,
-  "experiments_active": false,
-  "instruction": "Exclusive scoped owner; stop on concurrent active run/CAS mismatch. One separately frozen context hypothesis and no automatic native retry, no original-study budget reset.",
-  "publication_complete_in_this_commit": true,
-  "finished_at": "2026-10-22T20:08:38.715024+00:00",
-  "new_study_native_attempts_used": 1,
-  "new_study_native_attempts_remaining": 0
+  "experiments_active": true,
+  "instruction": "Exclusive owner; stop on active otherowner/CAS mismatch or uncertain mutation. Separatefrozen DEVthenconditionallyconfirmation phases only, no native retry."
 }

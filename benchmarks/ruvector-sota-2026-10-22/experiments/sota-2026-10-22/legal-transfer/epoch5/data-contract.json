@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-22T18:38:19.933450+00:00",
+  "frozen": true,
+  "benchmark": "OriginalContractNLIbinaryentailmentDEVdiagnosticepoch5",
+  "development": {
+    "path": "development24.jsonl",
+    "sha256": "ac18b9b5e382a1e5ce56adfd2b7e6a5fcedc403ffeea9a52e2dbcf30e94a9795",
+    "queries": 24,
+    "source_document_groups": 8,
+    "source_split": "officialoriginaltrain",
+    "role": "dev"
+  },
+  "source": {
+    "path": "../epoch3/sources/original-train.json",
+    "sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+    "documents": 423
+  },
+  "source_commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+  "source_license": "CC-BY-4.0",
+  "source_materialization": {
+    "archive_url": "https://raw.githubusercontent.com/stanfordnlp/contract-nli/eced6528dd3c1d14d73f9a87df8f7bdbc03126f9/resources/contract-nli.zip",
+    "archive_sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+    "member": "contract-nli/train.json",
+    "extracted_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5"
+  },
+  "eligibility_manifest_sha256": "0c39d096f7986aae304a186e6968a60238be7970ee8aaf813870a607e8025907",
+  "draw_plan_sha256": "ce0dab5f7b932e02d2329fda41ab3bad825a8a9483e0620e98e32ae70157891c",
+  "source_manifest_sha256": "e7b5e78e46b9fc9ae57b7e9b50ee69734dd56856bf5ec18c1e753c322e4e7ab0",
+  "historical_exclusions": {
+    "source": 423,
+    "historical_excluded": 77,
+    "epoch3_dev": 8,
+    "epoch4_dev": 8,
+    "eligible": 330
+  },
+  "novelty": "Excludes77historicaltrain-documents+8epoch3DEV+all8epoch4DEVgroups,330eligibleIDs. Priorhistoricalsemanticnoveltyinheritedviahashboundregistry;standalonebuilderneedsnohistoriccorpora.",
+  "hypotheses": [
+    "nda-17",
+    "nda-7",
+    "nda-3"
+  ],
+  "labels": {
+    "Entailment": "Yes",
+    "Contradiction": "No",
+    "NotMentioned": "No"
+  },
+  "fit": {
+    "supervised_training": false,
+    "calibration": false,
+    "temperature": 1.0
+  },
+  "inference_boundary": [
+    "state",
+    "questions"
+  ],
+  "unused_confirmation_reference": {
+    "path": "../epoch3/confirmation96.jsonl",
+    "sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+    "role": "confirmation; model-unused per parent current checkpoint; labels not loaded for epoch4draw",
+    "source_split": "original-dev",
+    "documents": 32,
+    "queries": 96
+  },
+  "confirmation_labels_used_for_draw": false,
+  "native_calls": 0,
+  "official_JevBench_Capability": null,
+  "official_LegalBench162_score": null,
+  "official_rank": null
+}

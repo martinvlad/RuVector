@@ -1,0 +1,26 @@
+Epoch5 native runtime restoration
+
+After the reviewed bootstrap/checkpoint restoration and model asset helpers,
+use the offline-only helper below. CORE_CACHE must contain the exact canonical
+retrieval/node_modules core paths; TYPESAFE_CACHE must contain the exact
+node_modules/@ruvector/typesafe paths. Both may be one verified local cache tree.
+
+  PYTHONDONTWRITEBYTECODE=1 python3 \
+    experiments/sota-2026-10-22/candidate/epoch5/reconstruction/restore_runtime.py \
+    --project-root /absolute/fresh-project \
+    --core-cache-root /absolute/CORE_CACHE \
+    --typesafe-cache-root /absolute/TYPESAFE_CACHE \
+    --receipt /absolute/new-runtime-restoration.json
+
+Verify again without cache access:
+
+  PYTHONDONTWRITEBYTECODE=1 python3 \
+    experiments/sota-2026-10-22/candidate/epoch5/reconstruction/restore_runtime.py \
+    --project-root /absolute/fresh-project --verify-only \
+    --receipt /absolute/new-runtime-verification.json
+
+See reconstruction/README.txt for cache sources, exact manifest identities,
+canonical paths, symlink/overwrite rejection and pure tests. This helper performs
+no downloads, installs, package/addon imports, subprocesses, model initialization
+or inference. Restoration does not run or authorize a benchmark. It is postfreeze
+provenance tooling; the original frozen candidate4 and epoch5 plan are unchanged.

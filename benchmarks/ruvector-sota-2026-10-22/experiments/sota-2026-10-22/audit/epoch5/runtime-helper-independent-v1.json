@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-22T18:55:00.804836+00:00",
+  "checks_passed": true,
+  "helper_sha256": "9ff7f7773532da080f88ebfd6b20b9398b62d77e7606036e28d717b82c48128e",
+  "pure_tests_independently_passed": 9,
+  "actual_offline_exact_regular_files_copied": 22,
+  "actual_offline_verify_only_files": 22,
+  "new_owned_destination": "/workspace/ruvector-eval/experiments/sota-2026-10-22/audit/epoch5/runtime-restoration-v1",
+  "source_actual_execution_project_unchanged": true,
+  "receipt_sha256": "47ea21506d127543024ebaac4d6451209282749f25ca55a397e34d79b9537c9f",
+  "verify_receipt_sha256": "2e0341f9ebc69a2b50f9a9a2b1a41a5a607b300582a55540bdeee5c6112452a7",
+  "manual_review": [
+    "Threehardpinned closure/manifests withbinarycrosscheck, exactprefixes/pathdedup.",
+    "PrevalidateALLexistingtargetsandsourcesbeforewrites; nofollowdirFDtraversal/O_NONBLOCKregularread/exclusivecreation/fsync/hashreuse.",
+    "No network, install, subprocess, model/addon import, sourceoverwrite or inference. Writesonlyexplicitnewauditdestination."
+  ],
+  "limitations": [
+    "Exactfile placementonly; helper doesnotrunabi/provider/inference tests.",
+    "Cacheacquisitionseparate andexplicit; absentbytescannotbecreatedfromhashes.",
+    "WholematerializationisnottransactionalrollbackafterunexpectedIOfailure, but existingpathsareneverreplaced; partialnewfilespreservedandverifiedonreuse."
+  ],
+  "auditor_native_or_model_calls": 0
+}

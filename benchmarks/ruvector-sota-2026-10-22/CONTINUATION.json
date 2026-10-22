@@ -3,20 +3,20 @@
   "objective": "Reach independently verified SOTA using actual RuVector; initial target JevBench open-weights Capability under official caps.",
   "goal_met": false,
   "official_rank": null,
-  "champion": "Submitted Native104 and RRF10 unchanged; epochs1-3rejected,epoch4blockedbeforedecisionpredictions",
+  "champion": "Submitted Native104 and RRF10 unchanged; epoch5 REJECTED_DEV_GATE",
   "prior_published_base_commit": "11983d212b951305bcab06ad868bca5a12ea2954",
-  "checkpoint_manifest_sha256": "2f56e4e0a7ad12b89f73307496581bca51ade3180427bb8e92cf4e9602a691d5",
+  "checkpoint_manifest_sha256": "32bf0b0d6714dc4507c78ae604b6ccb4da7b77f1baacbd91db4d0f7cea18a370",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
-    "native_corpus_batches": 4,
-    "actual_HTTP_decisions": 351,
+    "native_corpus_batches": 5,
+    "actual_HTTP_decisions": 375,
     "paid_inference_calls": 0,
     "new_GPU_rentals": 0,
-    "native_corpus_batches_completed": 4,
-    "native_corpus_attempts_including_failed_request": 6,
-    "actual_HTTP_successful_decisions": 351,
+    "native_corpus_batches_completed": 5,
+    "native_corpus_attempts_including_failed_request": 7,
+    "actual_HTTP_successful_decisions": 375,
     "actual_HTTP_failed_requests": 2,
-    "counting_note": "4successfulcorpusbatches,2failednativeattempts;351successfulHTTPdecisions,2HTTP500responses; original6capexhausted."
+    "counting_note": "Original6attemptsclosed+newseparatestudy1attempt; successful/failedHTTP counted from actual wire, no scheduledwork represented as executed."
   },
   "epochs": [
     {
@@ -62,6 +62,15 @@
       "proper_scores": null,
       "confirmation_consumed": false,
       "manifest": "experiments/sota-2026-10-22/epoch4/EPOCH_MANIFEST.json"
+    },
+    {
+      "epoch": 5,
+      "status": "REJECTED_DEV_GATE",
+      "manifest": "experiments/sota-2026-10-22/epoch5/EPOCH_MANIFEST.json",
+      "DEV_n": 24,
+      "confirmation_consumed": false,
+      "scored_decisions": 24,
+      "candidate_correct": 10
     }
   ],
   "used_confirmation_sets": [
@@ -74,7 +83,7 @@
     "Legal96zero-shotfourtaskadaptation,notfull162taskofficialLegalBench",
     "NoClaimBenchRuVectorscore; fullquestions/scorer/license/submissionnotverified"
   ],
-  "next_research_priority": "Use the prepared unmeasured stronger DeBERTa-base singleton joint-evidence pipeline only after complete native package resolution checks under a NEW frozen boundedstudycontract. Missing platform330Bindex.js was a restoration bug; do not repeat it. Preserve Native104, all prior failures and unusedconfirmation96; no grid on oldexposedquestions.",
+  "next_research_priority": "Reject this stronger generic DeBERTa-base/top2 joint-evidence recipe; do not tune on confirmation or rerun exposed DEV as fresh. Before any distinct future native study, investigate source-licensed legal/domain-aligned pretrained NLI or a frozen coverage-aware contextual reader using DEV-only evidence audits, with matched same-model retrieval and genuinely unused confirmation. NativeANN retrieved exact cosine top2 in24/24, so changing ANN search quality alone is unsupported. Keep original6/6 and new1/1 studies closed, submittedNative104/RRF10 preserved. ClaimBench full access/scorer/license and currentJev300 publisher evaluation remain unresolved official access steps.",
   "benchmark_targets": {
     "JevBench": {
       "leader_observed": "Chon-1.0-12B",
@@ -106,16 +115,17 @@
   "active_run": {
     "path": "ACTIVE_RUN.json",
     "run_id": "512ea53a-837b-474b-853b-c48536b77ef2",
-    "state": "ACTIVE",
-    "expires_at": "2026-10-22T19:23:22.360Z",
-    "study_id": "native-deberta-base-resolved-2026-10-22-e5"
+    "state": "COMPLETE_REJECTED_DEV_GATE",
+    "experiments_active": false,
+    "publication_complete_in_this_commit": true
   },
   "exposed_development_sets": [
     "old public183",
     "easy48",
     "four-task Legal96",
     "epoch3 Original ContractNLI train8documents24queries",
-    "epoch4 OriginalContractNLI train8newdocuments24queries declaredDEV; firstrequestonlyBGEprocessed,0decisionpredictions"
+    "epoch4 OriginalContractNLI train8newdocuments24queries declaredDEV; firstrequestonlyBGEprocessed,0decisionpredictions",
+    "epoch5 OriginalContractNLI train8newdocuments24queries declaredDEV, exact identity ac18b9b5e382a1e5ce56adfd2b7e6a5fcedc403ffeea9a52e2dbcf30e94a9795"
   ],
   "unused_confirmation_sets": [
     {
@@ -126,24 +136,30 @@
       "status": "Public source labels archived, project-model-unconsumed; never tune/select on these labels; upstream training overlap unknown"
     }
   ],
-  "rejection_ledger": "experiments/sota-2026-10-22/epoch4/REJECTION_LEDGER.json",
-  "benchmark_refresh": "experiments/sota-2026-10-22/legal-transfer/epoch4/benchmark-refresh.json",
+  "rejection_ledger": "experiments/sota-2026-10-22/epoch5/REJECTION_LEDGER.json",
+  "benchmark_refresh": "experiments/sota-2026-10-22/legal-transfer/epoch5/benchmark-refresh.json",
   "restore_epoch3": "First restore_checkpoint.py; optional restore_epoch3_data.py materializes exact pinned original CC-BY data archive/train/dev/license. Existing bootstrap model flags do not acquire new NLI assets; obtain only official revisions in assets.lock.json/model-api, verify SHA. No inference during restore.",
-  "restoration_boundary": "Exact archivedinputs/executedsource/results restore with hashes. Modelweights/nativebinary and exactPython/Node dependencies require separate verified acquisition. Epoch3historicalredrawnotselfcontained; epoch4drawreproduceswithfrozeneligibilityregistry. Seven nativepackage textfiles added after failure; no runtime/NLIexecution tested after package repair.",
-  "publication_review": "experiments/sota-2026-10-22/audit/epoch4/final-publication-review-v1.json",
+  "restoration_boundary": "All prior and new publicsource/data/results restored by pinned bootstrap/restore. Actual epoch5 executor ran native RuVector with full package closure; dependencies/models/nativebinary require explicit cache acquisition+full closure binding and exacthashes. Never rerun archived measured controllers.",
+  "publication_review": "experiments/sota-2026-10-22/audit/epoch5/final-publication-review-v1.json",
   "cumulative_budget_ledger": {
     "original_study_native_attempt_cap": 6,
     "prior_epochs_attempts": 3,
     "epoch3_native_attempts_including_failed_request": 2,
-    "cumulative_native_attempts": 6,
+    "cumulative_native_attempts": 7,
     "remaining_in_original_study": 0,
     "current_epoch_closed": true,
     "publication_period_native_calls_allowed": 0,
-    "next_epoch_rule": "Do not rerun archived epoch4. Existing recurring user instruction authorizes future bounded epochs, without additional paid spending. Before future native/model measurements freeze a NEW explicit study contract and budget, carry forward this original6/6closedledger, use full8filepackageclosure+source-onlyresolution preflight, exactmodel/scorer/dataidentities and frozenunusedconfirmationgates. Atmost2nativebatches/epoch,CPU2,600s/batch,paid0/GPU0. New study is not started.",
+    "next_epoch_rule": "Bothoriginal6/6andnewstudy1/1closed; no retry. Future explicit recurringrequest may authorize a newly frozen bounded distinct hypothesis, atmost2batches/CPU2/600s/paid0/GPU0, with unusedconfirmation and completeclosure. No automatic repeated unchangedblockedrun.",
     "original_study_status": "CLOSED_BUDGET_EXHAUSTED",
-    "epoch4_native_attempts_including_failed_restoration": 1
+    "epoch4_native_attempts_including_failed_restoration": 1,
+    "new_study_id": "native-deberta-base-resolved-2026-10-22-e5",
+    "new_study_attempt_cap": 1,
+    "new_study_attempts_used": 1,
+    "new_study_attempts_remaining": 0,
+    "total_historical_attempts": 7
   },
-  "publisher_status": "experiments/sota-2026-10-22/epoch4/publisher-status.json",
+  "publisher_status": "experiments/sota-2026-10-22/epoch5/publisher-status.json",
   "restore_epoch4": "See EPOCH4_RUNTIME_SETUP.txt and EPOCH4_ASSET_SETUP.txt; seven native package source files now included, .node/modelweights remain omitted with exact helpers/hashes. No repaired-runtime benchmark was run.",
-  "epoch4_restoration_limits": "experiments/sota-2026-10-22/epoch4/RESTORATION_LIMITS.json"
+  "epoch4_restoration_limits": "experiments/sota-2026-10-22/epoch4/RESTORATION_LIMITS.json",
+  "restore_epoch5": "See experiments/sota-2026-10-22/candidate/epoch5/RESTORE.txt and reconstruction/restore_runtime.py after existing official dependency/model setup. Full8corefiles+14TypeSafe files pinned; isolated actual path resolution and outcome evidence saved."
 }

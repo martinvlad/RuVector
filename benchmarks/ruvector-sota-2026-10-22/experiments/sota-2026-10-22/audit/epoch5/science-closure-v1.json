@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T18:54:10.160657+00:00",
+  "status": "REJECTED_DEV_GATE",
+  "actual_replay_sha256": "170f6973d062fce4facf4479ae73ec640eb1a3f14c630eaacae6e705d4ebfcee",
+  "metrics": {
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 10,
+        "brier": 0.8752615421648509,
+        "nll": 1.4412713203566787,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.6778546569659176,
+        "nll": 1.0203011648070228,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 10,
+        "brier": 1.0107725202954865,
+        "nll": 1.8529921670642089,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.5000374137187634,
+        "nll": 0.6931846009437356,
+        "errors": 0,
+        "strict_valid": 24
+      }
+    }
+  },
+  "source_doc_annotation_coverage": {
+    "ruvector_top2": {
+      "queries_with_annotations": 16,
+      "any_gold_span_overlap": 15,
+      "all_gold_spans_overlap": 10,
+      "all_gold_spans_fully_contained": 6,
+      "correct_among_any_overlap": 7,
+      "correct_among_fully_contained": 3
+    },
+    "same_nli_lexical_top2": {
+      "queries_with_annotations": 16,
+      "any_gold_span_overlap": 12,
+      "all_gold_spans_overlap": 8,
+      "all_gold_spans_fully_contained": 7,
+      "correct_among_any_overlap": 6,
+      "correct_among_fully_contained": 4
+    },
+    "same_nli_positional_first2": {
+      "queries_with_annotations": 16,
+      "any_gold_span_overlap": 9,
+      "all_gold_spans_overlap": 7,
+      "all_gold_spans_fully_contained": 4,
+      "correct_among_any_overlap": 5,
+      "correct_among_fully_contained": 3
+    }
+  },
+  "readout_error_diagnostics": {
+    "ruvector_top2": {
+      "wrong": 14,
+      "wrong_max_confidence_ge_0_9": 8,
+      "wrong_max_confidence_ge_0_99": 0,
+      "correct_Yes": 5,
+      "correct_No": 5,
+      "false_Yes": 7,
+      "false_No": 7
+    },
+    "same_nli_lexical_top2": {
+      "wrong": 12,
+      "wrong_max_confidence_ge_0_9": 3,
+      "wrong_max_confidence_ge_0_99": 0,
+      "correct_Yes": 5,
+      "correct_No": 7,
+      "false_Yes": 5,
+      "false_No": 7
+    },
+    "same_nli_positional_first2": {
+      "wrong": 14,
+      "wrong_max_confidence_ge_0_9": 8,
+      "wrong_max_confidence_ge_0_99": 2,
+      "correct_Yes": 6,
+      "correct_No": 4,
+      "false_Yes": 8,
+      "false_No": 6
+    },
+    "native104_on_ruvector_evidence": {
+      "wrong": 12,
+      "wrong_max_confidence_ge_0_9": 0,
+      "wrong_max_confidence_ge_0_99": 0,
+      "correct_Yes": 12,
+      "correct_No": 0,
+      "false_Yes": 12,
+      "false_No": 0
+    }
+  },
+  "gold_binary_counts": {
+    "Yes": 12,
+    "No": 12
+  },
+  "probability_readout": "Pinned config0contradiction/1entailment/2neutral; logits softmax f64, Yes=entailment,No=contradiction+neutral replayed. No clipping/padding and72singletonpairs. Identicalcontext/hypothesis logit drift0.",
+  "science_takeaways": [
+    "Primary10/24 versuslexical12/24 andexcerptNative10412/24 fails accuracy, Brier andNLL gates; equalpositional10/24 doesnotestablish usefulgain.",
+    "Primaryannotated-span overlap15/16 versuslexical12/16 andposition9/16 is an exploratory coverage observation, not sufficient-evidence correctness. Full containment is reported separately. Retrieval coverage alone didnot yield a better measured decision pipeline.",
+    "Primaryproperlosses exceednear-uniformexcerptreference; focus futureindependentlyfrozen studies on legal-domain decision/readout adequacy, complete-context evidence and calibration on disjointtraining/calibration data. Do not assume anotherlargerencoder automaticallyimprovesresults.",
+    "EightpublicDEVdocuments yieldwide nominal accuracy intervals: do notclaimtheobserveddifference is confirmedgeneralization. Nohead-to-headcomparisonofepoch3vs5datasets establishesmodelregression.",
+    "No confirmation96modeluse, no holdouttuning, no posthoc candidate selection or genericchampionpromotion. Allnew24 becomepermanentlyDEV."
+  ],
+  "resources": {
+    "at": "2026-10-22T18:52:19.649320+00:00",
+    "worker_cpu_user_seconds": 86.453879,
+    "worker_cpu_system_seconds": 0.800824,
+    "worker_peak_RSS_bytes": 1151918080,
+    "terminated_children_cpu_user_seconds": 6.195654,
+    "terminated_children_cpu_system_seconds": 0.647513,
+    "largest_terminated_child_peak_RSS_bytes": 1151918080,
+    "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+    "allowed_CPU_ids": [
+      0,
+      1
+    ],
+    "configured_ORT_threads": 2,
+    "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+  },
+  "whole_batch_seconds": 52.28292881699963,
+  "latency_seconds": {
+    "development": {
+      "p50": 1.630879348000235,
+      "p95": 3.1938180296469,
+      "max": 3.4866216970003734,
+      "scope": "Whole HTTP request includesall3NLIcontrols+native104excerpt+evidenceencoding/index; not primary-only deployment"
+    }
+  },
+  "actual_forward_counts": {
+    "HTTP_completed": 24,
+    "native_core_searches": 24,
+    "Native104_excerpt_predictions": 24,
+    "NLI_singleton_pairs": 72,
+    "NLI_input_tokens": 27512,
+    "BGE_texts": 128,
+    "BGE_batches": 42,
+    "errors": 0
+  },
+  "budget": {
+    "prior_original_closed": {
+      "used": 6,
+      "remaining": 0
+    },
+    "new_study_closed": {
+      "used": 1,
+      "remaining": 0
+    },
+    "lifetime_attempts": 7,
+    "paid": 0,
+    "GPU": 0,
+    "no_retry": true
+  },
+  "confirmation96_model_consumed": false,
+  "generic_champions_changed": false,
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "auditor_model_or_native_calls": 0
+}

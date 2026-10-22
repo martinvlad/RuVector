@@ -1,0 +1,1665 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T18:52:39.551330+00:00",
+  "checks_passed": true,
+  "plan_SHA256": "a71670559208b3b2676734465bdaeb09c8dac4b5df0a69221f41f5b9702d9f55",
+  "source_pins_verified": 122,
+  "metrics": {
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 10,
+        "brier": 0.8752615421648509,
+        "nll": 1.4412713203566787,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.6778546569659176,
+        "nll": 1.0203011648070228,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 10,
+        "brier": 1.0107725202954865,
+        "nll": 1.8529921670642089,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.5000374137187634,
+        "nll": 0.6931846009437356,
+        "errors": 0,
+        "strict_valid": 24
+      }
+    }
+  },
+  "DEV_gate_passed": false,
+  "internal_confirmation_gate_passed": false,
+  "confirmation_consumed": false,
+  "confirmation_now_permanently_exposed_DEV": false,
+  "paired_doc_bootstrap": {
+    "development": {
+      "same_nli_lexical_top2": {
+        "accuracy": {
+          "mean_improvement": -0.08333333333333333,
+          "ci95": [
+            -0.29166666666666663,
+            0.08333333333333333
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.19740688519893332,
+          "ci95": [
+            -0.4846716688583573,
+            0.050365201668379225
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.42097015554965594,
+          "ci95": [
+            -0.9568269698855825,
+            0.05416904322447415
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "same_nli_positional_first2": {
+        "accuracy": {
+          "mean_improvement": 0.0,
+          "ci95": [
+            -0.16666666666666666,
+            0.16666666666666666
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.13551097813063562,
+          "ci95": [
+            -0.22648577766708694,
+            0.4577680863735805
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.41172084670753006,
+          "ci95": [
+            -0.5186751406614589,
+            1.2502192655389557
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "native104_on_ruvector_evidence": {
+        "accuracy": {
+          "mean_improvement": -0.08333333333333333,
+          "ci95": [
+            -0.20833333333333331,
+            0.08333333333333333
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.3752241284460875,
+          "ci95": [
+            -0.6681438578603279,
+            -0.11406960501844506
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.7480867194129432,
+          "ci95": [
+            -1.4124058840103628,
+            -0.20816913056178382
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      }
+    }
+  },
+  "bootstrap_scope": "2000paired doc-group draws seed20261022, nearest empirical 2.5/97.5percentiles inherited frozen verifier; nominal unadjusted intervals.",
+  "max_same_context_singleton_logit_drift": 0.0,
+  "ANN_exact_top2_set_agreement_count": 24,
+  "actual_requests": 24,
+  "actual_NLI_singleton_pairs": 72,
+  "actual_NLI_input_tokens": 27512,
+  "actual_BGE_texts": 128,
+  "actual_BGE_batches": 42,
+  "resources": {
+    "at": "2026-10-22T18:52:19.649320+00:00",
+    "worker_cpu_user_seconds": 86.453879,
+    "worker_cpu_system_seconds": 0.800824,
+    "worker_peak_RSS_bytes": 1151918080,
+    "terminated_children_cpu_user_seconds": 6.195654,
+    "terminated_children_cpu_system_seconds": 0.647513,
+    "largest_terminated_child_peak_RSS_bytes": 1151918080,
+    "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+    "allowed_CPU_ids": [
+      0,
+      1
+    ],
+    "configured_ORT_threads": 2,
+    "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+  },
+  "completion": {
+    "at": "2026-10-22T18:52:19.878965+00:00",
+    "exit_code": 0,
+    "error": null,
+    "wall_seconds_including_model_load": 52.28292881699963,
+    "source_plan_unchanged": true,
+    "native_attempts": 1,
+    "prior_study_native_attempts_used": 6,
+    "prior_study_attempts_remaining": 0,
+    "new_study_native_attempts_used": 1,
+    "new_study_attempts_remaining": 0,
+    "lifetime_native_attempts_used": 7,
+    "owned_group_cleanup": {
+      "pgid": 8091,
+      "live_members_before": [],
+      "signals": [],
+      "live_members_after": []
+    },
+    "new_paid_calls": 0,
+    "new_GPU_calls": 0,
+    "official_score": null,
+    "official_rank": null
+  },
+  "latency_by_phase_seconds": {
+    "development": {
+      "p50": 1.630879348000235,
+      "p95": 3.1938180296469,
+      "max": 3.4866216970003734,
+      "scope": "Whole HTTP request includesall3NLIcontrols+native104excerpt+evidenceencoding/index; not primary-only deployment"
+    }
+  },
+  "rows": [
+    {
+      "id": "original-contractnli:train:epoch5:420:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:420",
+      "native_top2": [
+        2,
+        1
+      ],
+      "exact_cosine_top2": [
+        2,
+        1
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            1
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 419.80310500002815,
+          "joint_tokens": 369,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            1
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 408.5932979978679,
+          "joint_tokens": 369,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 397.63741999922786,
+          "joint_tokens": 369,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:420:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:420",
+      "native_top2": [
+        2,
+        1
+      ],
+      "exact_cosine_top2": [
+        2,
+        1
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            1
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 427.17635100052576,
+          "joint_tokens": 377,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            1
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 419.2284250020748,
+          "joint_tokens": 377,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 416.26523299783,
+          "joint_tokens": 377,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:420:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:420",
+      "native_top2": [
+        1,
+        2
+      ],
+      "exact_cosine_top2": [
+        1,
+        2
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            2
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 397.75296399966464,
+          "joint_tokens": 363,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            1
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 393.08856099887635,
+          "joint_tokens": 363,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 398.98985599938896,
+          "joint_tokens": 363,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:407:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:407",
+      "native_top2": [
+        1,
+        3
+      ],
+      "exact_cosine_top2": [
+        1,
+        3
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            3
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 485.8172070016735,
+          "joint_tokens": 401,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            10
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 468.7832229974447,
+          "joint_tokens": 401,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 395.33002100142767,
+          "joint_tokens": 369,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:407:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:407",
+      "native_top2": [
+        1,
+        2
+      ],
+      "exact_cosine_top2": [
+        1,
+        2
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            2
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 418.9418140013004,
+          "joint_tokens": 377,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            1
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 417.6279359999171,
+          "joint_tokens": 377,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 412.08865699809394,
+          "joint_tokens": 377,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:407:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:407",
+      "native_top2": [
+        1,
+        3
+      ],
+      "exact_cosine_top2": [
+        1,
+        3
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            3
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 453.183016001276,
+          "joint_tokens": 395,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            6,
+            3
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 434.5292369980598,
+          "joint_tokens": 395,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 381.03683599911164,
+          "joint_tokens": 363,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:302:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:302",
+      "native_top2": [
+        1,
+        2
+      ],
+      "exact_cosine_top2": [
+        1,
+        2
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            2
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 401.72558199992636,
+          "joint_tokens": 369,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            3,
+            2
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 419.28492599981837,
+          "joint_tokens": 369,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 405.399031998968,
+          "joint_tokens": 369,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:302:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:302",
+      "native_top2": [
+        1,
+        2
+      ],
+      "exact_cosine_top2": [
+        1,
+        2
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            2
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 422.19825299980585,
+          "joint_tokens": 377,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            3,
+            0
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 470.2711009995255,
+          "joint_tokens": 409,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 411.3967010016495,
+          "joint_tokens": 377,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:302:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:302",
+      "native_top2": [
+        1,
+        3
+      ],
+      "exact_cosine_top2": [
+        1,
+        3
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            3
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 450.19196099747205,
+          "joint_tokens": 395,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            1,
+            3
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 450.7449899974745,
+          "joint_tokens": 395,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 396.4795729989419,
+          "joint_tokens": 363,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:92:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:92",
+      "native_top2": [
+        1,
+        4
+      ],
+      "exact_cosine_top2": [
+        1,
+        4
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            4
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 466.6954479980632,
+          "joint_tokens": 401,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            7
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 470.64761300134705,
+          "joint_tokens": 401,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 427.43602200062014,
+          "joint_tokens": 369,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:92:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:92",
+      "native_top2": [
+        1,
+        2
+      ],
+      "exact_cosine_top2": [
+        1,
+        2
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            2
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 453.620698001032,
+          "joint_tokens": 377,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            1
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 417.00150800170377,
+          "joint_tokens": 377,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 423.8034500012873,
+          "joint_tokens": 377,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:92:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:92",
+      "native_top2": [
+        1,
+        4
+      ],
+      "exact_cosine_top2": [
+        1,
+        4
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            4
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 442.16123200021684,
+          "joint_tokens": 395,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            7,
+            1
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 405.297289002192,
+          "joint_tokens": 395,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 404.07071899971925,
+          "joint_tokens": 363,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:619:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:619",
+      "native_top2": [
+        11,
+        6
+      ],
+      "exact_cosine_top2": [
+        11,
+        6
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            11,
+            6
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 451.1773779995565,
+          "joint_tokens": 401,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            1,
+            10
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 476.6443240005174,
+          "joint_tokens": 401,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 410.28951999760466,
+          "joint_tokens": 369,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:619:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:619",
+      "native_top2": [
+        2,
+        6
+      ],
+      "exact_cosine_top2": [
+        2,
+        6
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            6
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 467.9917680005019,
+          "joint_tokens": 409,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            1,
+            11
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 490.4183209982875,
+          "joint_tokens": 409,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 415.54179299782845,
+          "joint_tokens": 377,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:619:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:619",
+      "native_top2": [
+        2,
+        6
+      ],
+      "exact_cosine_top2": [
+        2,
+        6
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            6
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 449.3105529982131,
+          "joint_tokens": 395,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            0
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 454.62742100062314,
+          "joint_tokens": 395,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 354.49916799916537,
+          "joint_tokens": 363,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:474:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:474",
+      "native_top2": [
+        4,
+        8
+      ],
+      "exact_cosine_top2": [
+        4,
+        8
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            4,
+            8
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 459.97103300032904,
+          "joint_tokens": 401,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            3,
+            4
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 399.77667499988456,
+          "joint_tokens": 369,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 377.69466700046905,
+          "joint_tokens": 369,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:474:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:474",
+      "native_top2": [
+        4,
+        2
+      ],
+      "exact_cosine_top2": [
+        4,
+        2
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            4,
+            2
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 471.3252889996511,
+          "joint_tokens": 409,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            3,
+            4
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 416.7271929982235,
+          "joint_tokens": 377,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 416.6399880014069,
+          "joint_tokens": 377,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:474:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:474",
+      "native_top2": [
+        4,
+        7
+      ],
+      "exact_cosine_top2": [
+        4,
+        7
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            4,
+            7
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 426.18582700015395,
+          "joint_tokens": 395,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            3
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 389.60413099994184,
+          "joint_tokens": 363,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 382.5434780010255,
+          "joint_tokens": 363,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:396:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:396",
+      "native_top2": [
+        4,
+        3
+      ],
+      "exact_cosine_top2": [
+        4,
+        3
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            4,
+            3
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 418.9640380027413,
+          "joint_tokens": 369,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            6,
+            3
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 469.00347900009365,
+          "joint_tokens": 401,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 419.904704001965,
+          "joint_tokens": 369,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:396:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:396",
+      "native_top2": [
+        2,
+        3
+      ],
+      "exact_cosine_top2": [
+        2,
+        3
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            3
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 414.1597999987425,
+          "joint_tokens": 377,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            6,
+            3
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 473.2681790010247,
+          "joint_tokens": 409,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 402.4507909998647,
+          "joint_tokens": 377,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:396:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:396",
+      "native_top2": [
+        3,
+        5
+      ],
+      "exact_cosine_top2": [
+        3,
+        5
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            3,
+            5
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 441.2887539983785,
+          "joint_tokens": 395,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            3,
+            2
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 403.5784870029602,
+          "joint_tokens": 363,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 401.60373999970034,
+          "joint_tokens": 363,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:164:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:164",
+      "native_top2": [
+        10,
+        9
+      ],
+      "exact_cosine_top2": [
+        10,
+        9
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            10,
+            9
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 412.0726849978382,
+          "joint_tokens": 369,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            6,
+            10
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 441.99199700233294,
+          "joint_tokens": 401,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 407.588679001492,
+          "joint_tokens": 369,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:164:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:164",
+      "native_top2": [
+        8,
+        1
+      ],
+      "exact_cosine_top2": [
+        8,
+        1
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            8,
+            1
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 481.04082200006815,
+          "joint_tokens": 409,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            6,
+            10
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 467.99194699997315,
+          "joint_tokens": 409,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 405.1382450015808,
+          "joint_tokens": 377,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch5:164:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:164",
+      "native_top2": [
+        3,
+        7
+      ],
+      "exact_cosine_top2": [
+        3,
+        7
+      ],
+      "exact_top2_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            3,
+            7
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 404.02646100119455,
+          "joint_tokens": 395,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            6,
+            10
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 448.3382559992606,
+          "joint_tokens": 395,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 374.63462199957576,
+          "joint_tokens": 363,
+          "correct": false
+        }
+      }
+    }
+  ],
+  "official_rank": null,
+  "official_score": null,
+  "SOTA_established": false,
+  "generic_submitted_Jev104_RRF10_champions_unchanged": true,
+  "auditor_native_calls": 0,
+  "auditor_ONNX_calls": 0,
+  "artifact_pins": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/attempt.json",
+      "bytes": 463,
+      "sha256": "15bf6c416000e45e7a6edb4911675c14bf0c839b3b53fd7426912f001942399c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/03309383d7a866939020c333df6e2e0ff374ed8daadecbce4d16f53b98914b1c.json",
+      "bytes": 104995,
+      "sha256": "03309383d7a866939020c333df6e2e0ff374ed8daadecbce4d16f53b98914b1c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/1c43d8c0a0d87bfbcf702dd156cb59996f28a939f206c8b9a54efa9bf350ff2e.json",
+      "bytes": 145418,
+      "sha256": "1c43d8c0a0d87bfbcf702dd156cb59996f28a939f206c8b9a54efa9bf350ff2e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/45993ffe15c22b1e9b4c6803d5a9cb516c2444cc4d55736c98e65c37a2a97085.json",
+      "bytes": 161639,
+      "sha256": "45993ffe15c22b1e9b4c6803d5a9cb516c2444cc4d55736c98e65c37a2a97085"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/466d8440f0aa22b0ec68a7c52fd96264748e6cbaef331431847b03fd68f1fb32.json",
+      "bytes": 145413,
+      "sha256": "466d8440f0aa22b0ec68a7c52fd96264748e6cbaef331431847b03fd68f1fb32"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/55d8238c0cf9739fe78157d9c1e3687b26ee5b5cd5b690bb7ce8178dd9c15947.json",
+      "bytes": 56635,
+      "sha256": "55d8238c0cf9739fe78157d9c1e3687b26ee5b5cd5b690bb7ce8178dd9c15947"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/5616f23c792047697bc763de0fb2e6a93fb8870d353dcb7584ef133a810bec7b.json",
+      "bytes": 56616,
+      "sha256": "5616f23c792047697bc763de0fb2e6a93fb8870d353dcb7584ef133a810bec7b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/5e50124ab9984bb00af7da0b3d14ce9d560039b603951ac47d4abe32fb1b6f1d.json",
+      "bytes": 145421,
+      "sha256": "5e50124ab9984bb00af7da0b3d14ce9d560039b603951ac47d4abe32fb1b6f1d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/6438f533ecfd9c6ef6dc8f875387a987aab7cdde80c6c06413097f3e2a87c0f2.json",
+      "bytes": 161642,
+      "sha256": "6438f533ecfd9c6ef6dc8f875387a987aab7cdde80c6c06413097f3e2a87c0f2"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/82820f09fc97926b18fbce6a0fdcef5eac4173b27d80ab977e40c68448b85c51.json",
+      "bytes": 145432,
+      "sha256": "82820f09fc97926b18fbce6a0fdcef5eac4173b27d80ab977e40c68448b85c51"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/83781f85d825d20c9fd6b3563faca508e2f5c08e12ce664bdfb4ecd07c86d798.json",
+      "bytes": 64714,
+      "sha256": "83781f85d825d20c9fd6b3563faca508e2f5c08e12ce664bdfb4ecd07c86d798"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/85c3c3efc2869db79815b5f3dbb641a6523c0d91dbb91df58e81498881f5a02f.json",
+      "bytes": 104998,
+      "sha256": "85c3c3efc2869db79815b5f3dbb641a6523c0d91dbb91df58e81498881f5a02f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/8905cbede2cc57eb44575a16249dbe321ce8a694eb763856546d095a0f8b2891.json",
+      "bytes": 145475,
+      "sha256": "8905cbede2cc57eb44575a16249dbe321ce8a694eb763856546d095a0f8b2891"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/9f5c779a981b093acce7ec38307ab1529e9f9dc7190afe1eb9fa5cb87295b8d9.json",
+      "bytes": 145494,
+      "sha256": "9f5c779a981b093acce7ec38307ab1529e9f9dc7190afe1eb9fa5cb87295b8d9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/a20f8c8f85b40a053cb38e4806e141befd1a253d6e6093af8cc179f1be2fe6a1.json",
+      "bytes": 80823,
+      "sha256": "a20f8c8f85b40a053cb38e4806e141befd1a253d6e6093af8cc179f1be2fe6a1"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/a3af6cef4528ea0d7af86fec2e784c3af39961dfde318753286c3a8274c8af3c.json",
+      "bytes": 64717,
+      "sha256": "a3af6cef4528ea0d7af86fec2e784c3af39961dfde318753286c3a8274c8af3c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/a3bfa1484b4e18220e125dcd15d9237e0ad4513aeb44b77ab8fdc845e8c54d98.json",
+      "bytes": 80820,
+      "sha256": "a3bfa1484b4e18220e125dcd15d9237e0ad4513aeb44b77ab8fdc845e8c54d98"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/aac8949d0c694fac0831f19c80b578f27f61131e429f4933aa053518a66bca85.json",
+      "bytes": 56638,
+      "sha256": "aac8949d0c694fac0831f19c80b578f27f61131e429f4933aa053518a66bca85"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/b6b43b2d3c74d00ec8140948ee2821b5b4fd6c62f07d1a3adad8cc4cb28f7000.json",
+      "bytes": 145497,
+      "sha256": "b6b43b2d3c74d00ec8140948ee2821b5b4fd6c62f07d1a3adad8cc4cb28f7000"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/c9cf52caf2f673f970c1205c215c9ede052b7aaa001c243dcb9146eac5dc006c.json",
+      "bytes": 64695,
+      "sha256": "c9cf52caf2f673f970c1205c215c9ede052b7aaa001c243dcb9146eac5dc006c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/cb39e76983c79b82585c18e813e4767e419b030e18c5ec8a194accdeda141968.json",
+      "bytes": 145435,
+      "sha256": "cb39e76983c79b82585c18e813e4767e419b030e18c5ec8a194accdeda141968"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/cf8d1f55b5071e5896f4e6ef4da3280cd210ea5418ac0c012f277f8e88984d50.json",
+      "bytes": 80801,
+      "sha256": "cf8d1f55b5071e5896f4e6ef4da3280cd210ea5418ac0c012f277f8e88984d50"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/da6fd5f44ed5553cbdb92ae50c39233584ed4f261f7e67cf1070f2de41ea62a7.json",
+      "bytes": 161620,
+      "sha256": "da6fd5f44ed5553cbdb92ae50c39233584ed4f261f7e67cf1070f2de41ea62a7"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/eede689827bc61404fff9bd5f3c5b8a24c4b25ed930997b3b9f821f2e2f01fee.json",
+      "bytes": 145399,
+      "sha256": "eede689827bc61404fff9bd5f3c5b8a24c4b25ed930997b3b9f821f2e2f01fee"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/bundles/fdd30bacd2bd469bdd52db978195baacb93ba5313eb48623fa21e390c834b240.json",
+      "bytes": 104976,
+      "sha256": "fdd30bacd2bd469bdd52db978195baacb93ba5313eb48623fa21e390c834b240"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/cleanup.json",
+      "bytes": 177,
+      "sha256": "54aff9f5da839ac29a62bc814bf8b198fc1556a26708ef27b7021dc465fddeb5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/completion.json",
+      "bytes": 616,
+      "sha256": "e1a7f8b99086720a514926a13d2ec36af84f16730a8ee50fc329e04dd01e6bd4"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/development-comparison.json",
+      "bytes": 3593,
+      "sha256": "814b371f4b94a8da6a073cb8297c535fa486d86078343ecaa4fcbe9b84d31079"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/final-engine.json",
+      "bytes": 10238,
+      "sha256": "d907f611b1443dda9886f5ba6c717598ce9c7f9ac7dd8e30a87ea59365c6056d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/progress.json",
+      "bytes": 657,
+      "sha256": "2f1858d483377f028ba80937da6c32fd75403409391af530ee5c3bd026dca029"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/records.jsonl",
+      "bytes": 1375556,
+      "sha256": "9c50af07963688bfe1955b55d71b62d46f25617a0bb03ca5a2be465025ca10b3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/report.json",
+      "bytes": 570,
+      "sha256": "969dd905cc70732702f17530eeabcbdfed95991f8d3d3b1898d002798724b4d4"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/resources.json",
+      "bytes": 666,
+      "sha256": "89a0d6f3bd6aeb0cc19eb025472f269d70b259bb9ba648516ce98a16847e3690"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/runtime.json",
+      "bytes": 6652,
+      "sha256": "d1006bead98a0e44c17cd5ab2fbad56dac8e41fc357c1c34089b8f04b9099f9a"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/server-audit.jsonl",
+      "bytes": 108506,
+      "sha256": "f6079c63b62113c1c3f58ed697aa326e4070ace67e7ae01b149fa2d6609e6f6e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/started-requests.jsonl",
+      "bytes": 272159,
+      "sha256": "faf6a81b8570caf9eea2e6e7bfe93cef6bd86637b01a4128e71949d465e064de"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/wire.jsonl",
+      "bytes": 1400906,
+      "sha256": "363014dc53beee3491bf7630ff7d82059dea8f2891ad37a42b599d65f9d03217"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/runs/composite/worker.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

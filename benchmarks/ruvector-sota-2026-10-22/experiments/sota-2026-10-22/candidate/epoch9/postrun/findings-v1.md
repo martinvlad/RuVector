@@ -1,0 +1,17 @@
+The frozen epoch9 candidate was rejected on DEV: RuVector 11/24, lexical 7/24, positional 16/24, and Native104 on the same RuVector excerpt 14/24. The saved-output replay reproduces all four accuracy, Brier and NLL results exactly. Native Brier is 0.71757049 and NLL 0.99950503. No new model/native call, optimizer fit, threshold, candidate selection or frozen-source change occurred. Confirmation48 was not run; its text, records and labels were not opened.
+
+The native reader predicts Yes on 21/24 queries against 10 gold Yes labels. It predicts Entailment for all five Contradiction cases. Six binary errors have confidence at least .8. This supports an error diagnosis involving polarity, clause roles and deontic scope on this small sample; it does not establish a general cause or improvement from a different historical model.
+
+Positional selection does not retain more annotated gold evidence. Of 15 queries with annotated evidence, native retains any annotated character on 10 and all characters on 9; positional retains any on 6 and all on 5. Two of the nine fully retained native cases remain binary errors. Coverage is mechanical source exposure, not sufficiency. Nine NotMentioned queries have no positive evidence annotation. Native retains 92/438 numeric occurrences versus positional 134/438; occurrences are counted per query, repeating documents across three hypotheses, and do not measure numerical reasoning.
+
+Matched positional/native disagreements contain six positional-only correct queries and one native-only correct query. Positional has more correct queries in four document groups and ties in four. These 24 queries span only eight document groups with three correlated hypotheses each. No independent-query significance or causal cross-epoch gain is claimed. The better positional accuracy despite lower annotation retention does not justify choosing a new selector after this result.
+
+One unimplemented future direction is TRAIN-only evidence-supervised clause-role, polarity and conditional-scope learning with separate Entailment, Contradiction and NotMentioned targets, shared across matched retrieval controls. Freeze its source rule and objective before a new document-group holdout. No fitting or tuning on this consumed DEV, rescue using another readout, generic model grid or automatic follow-on run is proposed as an accepted candidate.
+
+The adjacent `dev-diagnostic-v1.json` includes compact case decisions, document-group counts, confusions, coverage and cached validation. Its input pins bind only the measured DEV records, terminal metrics, wire file, frozen proposal and the auditor's exact DEV24-only annotation projection. The script imports the Python standard library only. Reproduce with a new output filename:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 experiments/sota-2026-10-22/candidate/epoch9/postrun/dev_diagnostic_v1.py --root /absolute/repository --annotations /absolute/repository/experiments/sota-2026-10-22/audit/epoch9/development-evidence-projection-v1.json --output /tmp/epoch9-dev-diagnostic.json
+```
+
+The replay accepts the pinned legacy scorer's strict probability sum tolerance of .001, leaving Native104 serialization roundoff unchanged. It compares 20 terminal metric cells, 96 binary answers and 72 typed-logit/numeric traces. No raw source texts or token/logit arrays are duplicated into the report. This is an internal public-data pilot, with unknown pretraining contamination, and supplies no official leaderboard score or rank.

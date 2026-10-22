@@ -1,0 +1,557 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T23:11:17.101727+00:00",
+  "status": "REJECTED_DEV_GATE",
+  "actual_replay_sha256": "6227d320f51a9de2fba8794df85b604378d9a4193fe269679b27c3bb7fa9c0e3",
+  "metrics": {
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 11,
+        "brier": 0.7175704900308251,
+        "nll": 0.9995050323783483,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 7,
+        "brier": 0.8287010156921479,
+        "nll": 1.182114948596627,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 16,
+        "brier": 0.5310243475181613,
+        "nll": 0.8375419210956035,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 14,
+        "brier": 0.4995572963163387,
+        "nll": 0.692704480765106,
+        "errors": 0,
+        "strict_valid": 24
+      }
+    }
+  },
+  "gold_binary_counts_by_corpus": {
+    "development": {
+      "No": 14,
+      "Yes": 10
+    },
+    "confirmation": {}
+  },
+  "evidence_coverage": {
+    "development": {
+      "ruvector_top2": {
+        "queries_with_annotations": 15,
+        "any_gold_span_overlap": 10,
+        "all_gold_spans_overlap": 9,
+        "all_gold_spans_fully_contained": 9,
+        "correct_among_any_overlap": 7,
+        "correct_among_fully_contained": 7,
+        "queries_selecting_fallback_units": 8,
+        "queries_inspecting_neighbor_outside_anchor_ranking": 0,
+        "numeric_mentions_per_query_total": 438,
+        "numeric_mentions_retained": 92,
+        "binary_wrong_among_fully_contained": 2
+      },
+      "same_nli_lexical_top2": {
+        "queries_with_annotations": 15,
+        "any_gold_span_overlap": 9,
+        "all_gold_spans_overlap": 9,
+        "all_gold_spans_fully_contained": 9,
+        "correct_among_any_overlap": 5,
+        "correct_among_fully_contained": 5,
+        "queries_selecting_fallback_units": 5,
+        "queries_inspecting_neighbor_outside_anchor_ranking": 0,
+        "numeric_mentions_per_query_total": 438,
+        "numeric_mentions_retained": 103,
+        "binary_wrong_among_fully_contained": 4
+      },
+      "same_nli_positional_first2": {
+        "queries_with_annotations": 15,
+        "any_gold_span_overlap": 6,
+        "all_gold_spans_overlap": 5,
+        "all_gold_spans_fully_contained": 5,
+        "correct_among_any_overlap": 6,
+        "correct_among_fully_contained": 5,
+        "queries_selecting_fallback_units": 9,
+        "queries_inspecting_neighbor_outside_anchor_ranking": 0,
+        "numeric_mentions_per_query_total": 438,
+        "numeric_mentions_retained": 134,
+        "binary_wrong_among_fully_contained": 0
+      }
+    }
+  },
+  "readout_errors": {
+    "development": {
+      "ruvector_top2": {
+        "wrong": 13,
+        "wrong_confidence_ge_0_9": 1,
+        "wrong_confidence_ge_0_99": 0,
+        "false_Yes": 12,
+        "false_No": 1
+      },
+      "same_nli_lexical_top2": {
+        "wrong": 17,
+        "wrong_confidence_ge_0_9": 3,
+        "wrong_confidence_ge_0_99": 0,
+        "false_Yes": 13,
+        "false_No": 4
+      },
+      "same_nli_positional_first2": {
+        "wrong": 8,
+        "wrong_confidence_ge_0_9": 3,
+        "wrong_confidence_ge_0_99": 0,
+        "false_Yes": 7,
+        "false_No": 1
+      },
+      "native104_on_ruvector_evidence": {
+        "wrong": 10,
+        "wrong_confidence_ge_0_9": 0,
+        "wrong_confidence_ge_0_99": 0,
+        "false_Yes": 10,
+        "false_No": 0
+      }
+    }
+  },
+  "context_summary": {
+    "development": {
+      "ruvector_top2": {
+        "selected_units": {
+          "min": 3,
+          "p50": 4.0,
+          "max": 6,
+          "mean": 4.041666666666667
+        },
+        "joint_pair_tokens": {
+          "min": 422,
+          "p50": 494.5,
+          "max": 512,
+          "mean": 479.8333333333333
+        },
+        "UTF8_premise_bytes": {
+          "min": 1853,
+          "p50": 2540.0,
+          "max": 2775,
+          "mean": 2439.3333333333335
+        },
+        "source_character_coverage": {
+          "min": 0.14654070180423356,
+          "p50": 0.2809694576859816,
+          "max": 0.44638949671772427,
+          "mean": 0.281064186936954
+        },
+        "admissions_attempted": 428,
+        "oversize_admissions_rejected": 331
+      },
+      "same_nli_lexical_top2": {
+        "selected_units": {
+          "min": 3,
+          "p50": 4.0,
+          "max": 6,
+          "mean": 4.25
+        },
+        "joint_pair_tokens": {
+          "min": 416,
+          "p50": 479.0,
+          "max": 511,
+          "mean": 477.9166666666667
+        },
+        "UTF8_premise_bytes": {
+          "min": 1717,
+          "p50": 2451.5,
+          "max": 2780,
+          "mean": 2418.9583333333335
+        },
+        "source_character_coverage": {
+          "min": 0.11358147464128428,
+          "p50": 0.28092877059296445,
+          "max": 0.4295573135835718,
+          "mean": 0.2802775751502978
+        },
+        "admissions_attempted": 446,
+        "oversize_admissions_rejected": 344
+      },
+      "same_nli_positional_first2": {
+        "selected_units": {
+          "min": 3,
+          "p50": 4.0,
+          "max": 6,
+          "mean": 4.083333333333333
+        },
+        "joint_pair_tokens": {
+          "min": 420,
+          "p50": 488.5,
+          "max": 510,
+          "mean": 477.25
+        },
+        "UTF8_premise_bytes": {
+          "min": 899,
+          "p50": 2188.5,
+          "max": 2647,
+          "mean": 2100.1666666666665
+        },
+        "source_character_coverage": {
+          "min": 0.04681062650944737,
+          "p50": 0.24984999399976,
+          "max": 0.44083487628345397,
+          "mean": 0.24861012345309944
+        },
+        "admissions_attempted": 447,
+        "oversize_admissions_rejected": 349
+      }
+    }
+  },
+  "ANN_diagnostics": {
+    "exact_top2_sets": 24,
+    "exact_ranked_candidate_sets": 23,
+    "exact_full_candidate_order": 21,
+    "requests": 24,
+    "scope": "Replay exact cosine using saved BGEvectors only, never replace actualANN ranking. Candidate sets trivial if bank<=40; top2/order separately reported."
+  },
+  "singleton_identical_context_logit_drift": 0.0,
+  "execution": {
+    "actual_requests": 24,
+    "actual_NLI_singleton_pairs": 72,
+    "actual_NLI_input_tokens": 34440,
+    "actual_BGE_texts": 160,
+    "actual_BGE_batches": 45,
+    "phase_counts": {
+      "development": {
+        "BGE_texts": 160,
+        "BGE_batches": 45,
+        "NLI_tokens": 34440
+      }
+    }
+  },
+  "phase_completion": {
+    "development": {
+      "at": "2026-10-22T23:08:43.029380+00:00",
+      "phase": "development",
+      "exit_code": 0,
+      "error": null,
+      "wall_seconds_including_model_load": 58.663436160000856,
+      "source_plan_unchanged": true,
+      "native_attempts": 1,
+      "prior_closed_attempts": 11,
+      "lifetime_native_attempt": 12,
+      "owned_group_cleanup": {
+        "pgid": 19475,
+        "live_members_before": [],
+        "signals": [],
+        "hard_cleanup_deadline_unix": 1792711064.3658826,
+        "live_members_after": [],
+        "finished_unix": 1792710523.0293484,
+        "finished_within_deadline": true
+      },
+      "new_paid_calls": 0,
+      "new_GPU_calls": 0,
+      "official_score": null,
+      "official_rank": null
+    }
+  },
+  "allarm_latency_seconds": {
+    "development": {
+      "p50": 2.1406509859989455,
+      "p95": 3.6165940935035894,
+      "max": 4.15014627599885,
+      "scope": "Whole HTTP request includesall3NLIcontrols+native104excerpt+evidenceencoding/index; not primary-only deployment"
+    }
+  },
+  "resources": {
+    "development": {
+      "at": "2026-10-22T23:08:42.759645+00:00",
+      "worker_cpu_user_seconds": 98.893661,
+      "worker_cpu_system_seconds": 0.7323719999999999,
+      "worker_peak_RSS_bytes": 1158332416,
+      "terminated_children_cpu_user_seconds": 5.4530899999999995,
+      "terminated_children_cpu_system_seconds": 0.5443589999999999,
+      "largest_terminated_child_peak_RSS_bytes": 1141293056,
+      "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+      "allowed_CPU_ids": [
+        0,
+        1
+      ],
+      "configured_ORT_threads": 2,
+      "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+    }
+  },
+  "paired_doc_bootstrap": {
+    "development": {
+      "same_nli_lexical_top2": {
+        "accuracy": {
+          "mean_improvement": 0.16666666666666666,
+          "ci95": [
+            0.041666666666666664,
+            0.29166666666666663
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.11113052566132291,
+          "ci95": [
+            -0.0016576308637051937,
+            0.24081462803933504
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.18260991621827868,
+          "ci95": [
+            -0.035137944929593205,
+            0.41492259264962755
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "same_nli_positional_first2": {
+        "accuracy": {
+          "mean_improvement": -0.20833333333333331,
+          "ci95": [
+            -0.375,
+            -0.041666666666666664
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.1865461425126638,
+          "ci95": [
+            -0.3378233475074241,
+            -0.027713327737400067
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.1619631112827447,
+          "ci95": [
+            -0.3853359556684098,
+            0.08637735141585703
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "native104_on_ruvector_evidence": {
+        "accuracy": {
+          "mean_improvement": -0.125,
+          "ci95": [
+            -0.25,
+            -0.041666666666666664
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.21801319371448638,
+          "ci95": [
+            -0.4019345744242664,
+            -0.05806315862242611
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.30680055161324227,
+          "ci95": [
+            -0.5568620854448431,
+            -0.08199357597549442
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      }
+    }
+  },
+  "runtime_admission": {
+    "at": "2026-10-22T23:08:43.049850+00:00",
+    "formula_id": "48xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "max_DEV_HTTP_seconds": 4.15014627599885,
+    "max_DEV_units": 42,
+    "max_confirmation_units": 57,
+    "source_unit_ratio": 1.3571428571428572,
+    "DEV_initialization_seconds": 2.576581162997172,
+    "projected_confirmation_seconds": 335.505548305348,
+    "allowed": true,
+    "forecast_limit_seconds": 600,
+    "actual_confirmation_watchdog_seconds": 600,
+    "scope": "Conservative admission forecast, not a performance guarantee. No confirmation labels/model outputs used."
+  },
+  "confirmation48_model_consumed": false,
+  "internal_confirmation_gate_passed": false,
+  "DEV8groups_retired": true,
+  "newCONF16groups_reserved_model_unused": true,
+  "multiclass_metrics": {
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 11,
+        "brier": 0.7891062441573187,
+        "nll": 1.4264657165636068
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 8,
+        "brier": 0.9163880987276422,
+        "nll": 1.6866548867993516
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 15,
+        "brier": 0.6331468443198179,
+        "nll": 1.3350137915007445
+      }
+    }
+  },
+  "budget": {
+    "started_at": "2026-10-22T23:07:44.364637+00:00",
+    "status": "REJECTED_DEV_GATE",
+    "confirmation_status": "NOT_MODEL_CONSUMED",
+    "official_score": null,
+    "official_rank": null,
+    "champion_promoted": false,
+    "development_completed": 24,
+    "development_gate_passed": false,
+    "development_metrics": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 11,
+        "accuracy": 0.4583333333333333,
+        "brier": 0.7175704900308251,
+        "nll": 0.9995050323783482,
+        "strict_valid": 24,
+        "errors": 0,
+        "ece10": 0.40366998613779714,
+        "by_type": {
+          "choice": {
+            "n": 24,
+            "correct": 11,
+            "accuracy": 0.4583333333333333,
+            "brier": 0.7175704900308251,
+            "nll": 0.9995050323783482,
+            "strict_valid": 24,
+            "errors": 0,
+            "ece10": 0.40366998613779714
+          }
+        },
+        "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+        "official_score": null,
+        "official_rank": null
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 14,
+        "accuracy": 0.5833333333333334,
+        "brier": 0.49955729631633866,
+        "nll": 0.692704480765106,
+        "strict_valid": 24,
+        "errors": 0,
+        "ece10": 0.08031024375000007,
+        "by_type": {
+          "choice": {
+            "n": 24,
+            "correct": 14,
+            "accuracy": 0.5833333333333334,
+            "brier": 0.49955729631633866,
+            "nll": 0.692704480765106,
+            "strict_valid": 24,
+            "errors": 0,
+            "ece10": 0.08031024375000007
+          }
+        },
+        "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+        "official_score": null,
+        "official_rank": null
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 7,
+        "accuracy": 0.2916666666666667,
+        "brier": 0.828701015692148,
+        "nll": 1.182114948596627,
+        "strict_valid": 24,
+        "errors": 0,
+        "ece10": 0.4981688147642667,
+        "by_type": {
+          "choice": {
+            "n": 24,
+            "correct": 7,
+            "accuracy": 0.2916666666666667,
+            "brier": 0.828701015692148,
+            "nll": 1.182114948596627,
+            "strict_valid": 24,
+            "errors": 0,
+            "ece10": 0.4981688147642667
+          }
+        },
+        "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+        "official_score": null,
+        "official_rank": null
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 16,
+        "accuracy": 0.6666666666666666,
+        "brier": 0.5310243475181612,
+        "nll": 0.8375419210956035,
+        "strict_valid": 24,
+        "errors": 0,
+        "ece10": 0.2043752732377766,
+        "by_type": {
+          "choice": {
+            "n": 24,
+            "correct": 16,
+            "accuracy": 0.6666666666666666,
+            "brier": 0.5310243475181612,
+            "nll": 0.8375419210956035,
+            "strict_valid": 24,
+            "errors": 0,
+            "ece10": 0.2043752732377766
+          }
+        },
+        "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+        "official_score": null,
+        "official_rank": null
+      }
+    },
+    "finished_at": "2026-10-22T23:08:43.050912+00:00",
+    "actual_native_attempts": 1,
+    "started_phases": [
+      "development"
+    ],
+    "prior_closed_attempts": 11,
+    "lifetime_native_attempts": 12,
+    "new_study_cap": 2,
+    "unspent_phase_slots": 1,
+    "allowed_further_attempts_in_closed_study": 0,
+    "new_paid_calls": 0,
+    "new_GPU_calls": 0,
+    "confirmation_consumed_or_attempted": false
+  },
+  "scope_limits": [
+    "Public binary3hypothesis NDA pilot, not full LegalBench/LegalBenchRAG/JevBench/ClaimBench; no official placement/SOTA.",
+    "All3matchedNLIarms share exact frozen6 old-policy tokenizer/context algorithm, actual newdecoder512 guard and same broader pretrained three-way backbone/T1. Legacytop2names are variable-unit aliases.",
+    "Different DEV cohorts and absent same-input oldmodel arm forbid causal cross-epoch larger-model or packing improvement.",
+    "Partial or even full annotation-span containment does not prove semantic evidence sufficiency. Numeric coverage is mechanical, not numeric reasoning certification.",
+    "One broader pretrained MNLI/FEVER/ANLI threeway model, no training/calibration. Same12layer768architecture, no cross-epoch causal performance proof. Unknown upstream contamination and mixed source training terms disclosed; public source is not sealed.",
+    "Whole HTTP timings includeallarms/native excerpt/embedding/index; not primary-only serving cost. Linux self/terminatedchildren highwaters cannot be summed as simultaneous memory.",
+    "DEV8/conditionalCONF16 doc bootstrap intervals are nominal unadjusted; no familywise/generalization claim.",
+    "Timing projection was an admission heuristic, not600s guarantee; this new48bank remains model-unused only if actual confirmation was not attempted. Old96f018 is permanently retired."
+  ],
+  "submitted_champions_unchanged": true,
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "auditor_model_native_or_paid_calls": 0
+}

@@ -1,0 +1,11 @@
+Restore the previous reviewed source/data kit and 16 inherited base/BGE assets first, using the root bootstrap/restore_checkpoint and earlier asset helpers. Materialize the complete native core8 and TypeSafe14 package closures with candidate/epoch5/reconstruction/restore_runtime.py. No native/model execution is performed by these reconstruction helpers.
+
+Acquire only the six exact new assets from official immutable Hugging Face URLs:
+
+PYTHONDONTWRITEBYTECODE=1 python3 experiments/sota-2026-10-22/candidate/epoch9/acquire_assets.py --dest /absolute/fresh/project --download --receipt /new/path/assets-receipt.json
+
+For an offline existing regular cache whose root contains config.json, tokenizer.json and onnx/model_quantized.onnx, replace --download with --cache-dir /absolute/cache. To verify already materialized assets without network/writes, use --verify-only. The destination root must already exist. The helper rejects unsafe paths, symlinks, mismatched hashes/lengths or modified pinned specifications; it never overwrites evidence. It never imports a model runtime, initializes sessions, invokes native addons or predicts. The exact specification is model-assets.lock.json, pinned inside acquire_assets.py.
+
+The model revision is 72a1ce83a0144efaf828b3c3844320a61197a53d. Weight file onnx/model_quantized.onnx is 244291931 bytes with SHA256 ab9da76bb06054ea6b921560c1ecf5683a9e4d96f0ea73d78d3b4a8990aea882. All small assets retain exact Git-blob identities plus computed SHA256 values. Only immutable original URLs and file identities are saved, without signed redirect URL query strings, credentials, environment values or authentication headers.
+
+Candidate construction and inference belong only to the separate parent-controlled actual research plan. Restoring this kit does not authorize or launch inference. Set RUVECTOR_SOTA_BUNDLE_DIR through that plan so native vectors are persisted. Source preparation is train/calibration empty and has no DEV/confirmation label access. Publication includes source/metadata/provenance and excludes weights, tokenizer JSON assets, environments/dependencies and nested execution projects.

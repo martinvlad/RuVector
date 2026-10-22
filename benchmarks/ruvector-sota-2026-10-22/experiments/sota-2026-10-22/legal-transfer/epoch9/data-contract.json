@@ -1,0 +1,99 @@
+{
+  "checkpoint_parent": "b5ce57bb1b7260020f0d8a57d4c34eeb2f82cbd1",
+  "data_files": {
+    "confirmation48.jsonl": {
+      "document_groups": 16,
+      "queries": 48,
+      "role": "confirmation",
+      "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+      "source_split": "train"
+    },
+    "development24.jsonl": {
+      "document_groups": 8,
+      "queries": 24,
+      "role": "dev",
+      "sha256": "202a921c62e7b78cf4d5ac53264669d6471fd6cf868102bb04f2b8b9881d6b7f",
+      "source_split": "train"
+    }
+  },
+  "draw": {
+    "confirmation48_rationale": "Fixed before candidate selection for 600s CPU feasibility based on prior large-model runtime, not performance.",
+    "document_roles_frozen_at": "2026-10-22T22:54:39.401136+00:00",
+    "document_selection_sha256": "d5280bf243b6f407f4b6dd4cbc35d833cae7ea377009ac2462abbd939c961516",
+    "draw_plan_sha256": "1647005f1efa8203fee5264c3cc695ca518f0fe708425d0b68e7d3c69cb2a0e7",
+    "eligibility_manifest_sha256": "e22f95096a4a0ed5809ba316856c751a46de679d2b26e7ad81a7a464d3e490b7",
+    "eligible_before_draw": 274,
+    "frozen_before_candidate_selection": true,
+    "joint_new_document_groups": 24,
+    "originaltrain_groups": 423,
+    "prior_exposed_officialtrain_groups": 149,
+    "remaining_after_reserved_draw": 250,
+    "selection": "One fixed text/ID-only SHA256 ranking; first8 DEV,next16 confirmation; no label/outcome/length stratification or redraw."
+  },
+  "fitting": {
+    "calibration_queries": 0,
+    "confirmation_use": "Scorer/auditor only after frozen candidate/source/gate approval; no worker receives labels/text for candidate selection.",
+    "dev_use": "Frozen protocol gate only",
+    "supervised_fit": false,
+    "temperature": 1.0,
+    "train_queries": 0
+  },
+  "frozen": true,
+  "frozen_at": "2026-10-22T22:56:16.509438+00:00",
+  "history": {
+    "all_officialdev_test_ids_and_texts_excluded": true,
+    "basis": "Fresh restored immutable epoch8 registry and USED_IDENTITIES, exact source fulltext hashes and sourcegroup IDs; old raw corpus need not be present for redraw.",
+    "old_confirmation_labels_accessed": false,
+    "retired_originaldev_confirmation96_sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+    "retired_originaldev_confirmation_groups": 32
+  },
+  "hypotheses": {
+    "nda-17": "Receiving Party may create a copy of some Confidential Information in some circumstances.",
+    "nda-3": "Confidential Information may include verbally conveyed information.",
+    "nda-7": "Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors)."
+  },
+  "inference_boundary": {
+    "allowed_record_projection": "input only: state full agreement and questions decision typed positive hypothesis/fixed not-established negation",
+    "forbidden": "gold, source annotation/evidence spans, IDs, provenance, role and selector metadata",
+    "input_sha256": "SHA256 UTF-8 json.dumps(input,ensure_ascii=False,sort_keys=True,separators=(comma,colon),allow_nan=False)"
+  },
+  "label_mapping": {
+    "Contradiction": "No",
+    "Entailment": "Yes",
+    "NotMentioned": "No"
+  },
+  "limitations": "Public-source project novelty only; fuzzy/document-version overlap, unknown historical provenance and model pretraining contamination not ruled out.",
+  "metadata_only_allowlists": {
+    "confirmation": {
+      "path": "confirmation-allowlist.json",
+      "sha256": "65485b57d37a3341031cd4e125539e6c052f34844a60f93be7f1035db68c913e"
+    },
+    "dev": {
+      "path": "dev-allowlist.json",
+      "sha256": "769d298cd79c868198472da02af372637269c18f8783a25cb6b2051df44bd767"
+    }
+  },
+  "native_model_paid_calls": 0,
+  "official_rank": null,
+  "official_score": null,
+  "schema_version": 1,
+  "scope": "Internal project-unused public original ContractNLI NDA pilot; not a sealed test, full LegalBench162 result or official JevBench Capability score.",
+  "scoring": "Binary choice exact Yes iff source Entailment, elseNo; original threeway labels retained separately. No scoring performed by data worker.",
+  "source": {
+    "archive_bytes": 65362913,
+    "archive_git_blob_sha1": "757fd1dafd29a997fba00c60c6d40b2930a36159",
+    "archive_sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+    "archive_url": "https://raw.githubusercontent.com/stanfordnlp/contract-nli/eced6528dd3c1d14d73f9a87df8f7bdbc03126f9/resources/contract-nli.zip",
+    "commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "license": "CC-BY-4.0",
+    "license_sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+    "member": "contract-nli/train.json",
+    "member_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+    "repository": "stanfordnlp/contract-nli",
+    "source_split": "train"
+  },
+  "source_build": "build.py; standalone source+registry+draw+selection only",
+  "source_manifest_sha256": "5d414614b52de6e27dc9a9824667aba3c8fb8a26bf7e9abcf8613cae762c3b06",
+  "statistical_unit": "Source document group; retain all3 predicates together when bootstrapping16 confirmation groups.",
+  "threeway_label_field": "evaluation.original_threeway_label"
+}

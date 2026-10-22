@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "choice_chronology": {
+    "data_frozen_at": "2026-10-22T22:56:16.509438+00:00",
+    "choice_at": "2026-10-22T22:57:07.728085+00:00",
+    "data_freeze_before_choice_before_asset_acquisition": true
+  },
+  "conversion": {
+    "repo": "Xenova/DeBERTa-v3-base-mnli-fever-anli",
+    "revision": "72a1ce83a0144efaf828b3c3844320a61197a53d",
+    "metadata_url": "https://huggingface.co/api/models/Xenova/DeBERTa-v3-base-mnli-fever-anli/revision/72a1ce83a0144efaf828b3c3844320a61197a53d?blobs=true",
+    "card_remote_path": "README.md",
+    "license": "No standalone license declared; card explicitly names upstream. Inherited upstream license is not an independently granted conversion license.",
+    "weight_LFS": {
+      "sha256": "ab9da76bb06054ea6b921560c1ecf5683a9e4d96f0ea73d78d3b4a8990aea882",
+      "size": 244291931,
+      "pointerSize": 134
+    }
+  },
+  "upstream": {
+    "repo": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "revision": "6f5cf0a2b59cabb106aca4c287eed12e357e90eb",
+    "declared_model_license": "MIT",
+    "training_pairs": 763913,
+    "declared_training_datasets": [
+      "MultiNLI",
+      "FEVER-NLI",
+      "ANLI"
+    ],
+    "training_dataset_license_caveats": {
+      "ANLI": [
+        "cc-by-nc-4.0"
+      ],
+      "FEVER": [
+        "cc-by-sa-3.0",
+        "gpl-3.0"
+      ],
+      "MultiNLI": [
+        "cc-by-3.0",
+        "cc-by-sa-3.0",
+        "mit",
+        "other"
+      ]
+    },
+    "conversion_provenance": "Xenova card explicitly identifies upstream; no standalone conversion license or exact upstream weight commit is stated. Reviewed upstream revision pins source card/config only.",
+    "contamination": "No declared ContractNLI training; unknown pretraining overlap, no record-level clean-training guarantee."
+  },
+  "upstream_git_blob_metadata": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "2bf99854609538f90af03c921c41a0cbde670b2f",
+      "size": 1229
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "c9e9b0d4233641b89a5e612e55c59c68b66a0e97",
+      "size": 23571
+    },
+    {
+      "rfilename": "added_tokens.json",
+      "blobId": "8ee2b3623dc526b123cde0aaa401755b82299af2",
+      "size": 23
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "f5ae94167b1efbea3338ba93860abddc9f0de5f3",
+      "size": 1090
+    },
+    {
+      "rfilename": "model.safetensors",
+      "blobId": "02a3fe6048ae7304a9844a346ee4446db9088d12",
+      "size": 368877646,
+      "lfs": {
+        "sha256": "06d6fd89edd4f97816831626daafbdb0b029cf63bae8edc0bccab1d64e2e7707",
+        "size": 368877646,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "pytorch_model.bin",
+      "blobId": "932e2479715cfa03a03e32c08888ff45f6b7e1b2",
+      "size": 368935915,
+      "lfs": {
+        "sha256": "2a2d9e8fc302d1a04f0325c4b0d37aa504f64971667078ad04dfbb7120006d2f",
+        "size": 368935915,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "special_tokens_map.json",
+      "blobId": "2c9cb07c8fdeeb5ac3ceafb170592e990b204dcd",
+      "size": 286
+    },
+    {
+      "rfilename": "spm.model",
+      "blobId": "b1b95e5b0fef33623979511f423eaeee465c46f0",
+      "size": 2464616,
+      "lfs": {
+        "sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+        "size": 2464616,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "tokenizer.json",
+      "blobId": "f9bbf3fa0b51e2c1d9c2bf284e3de29c542720c7",
+      "size": 8656646
+    },
+    {
+      "rfilename": "tokenizer_config.json",
+      "blobId": "13d6406af565bd9e59dd649afd4c2b48bddb6a4c",
+      "size": 1284
+    }
+  ],
+  "training_dataset_metadata": [
+    {
+      "repo": "facebook/anli",
+      "revision": "8e4813d81f46d313dac7892e1c28076917cfcdf9",
+      "metadata_url": "https://huggingface.co/api/datasets/facebook/anli/revision/8e4813d81f46d313dac7892e1c28076917cfcdf9",
+      "metadata_response_sha256": "5b048fcbee29e03ef3741c8fc7f6648281b4f2ff624630d3b0457ef72ffdcc70",
+      "declared_license": [
+        "cc-by-nc-4.0"
+      ],
+      "scope": "Dataset metadata only; no records downloaded or inspected"
+    },
+    {
+      "repo": "fever/fever",
+      "revision": "2a74f2909caf2b8656343aeb8203e50bf84dcb56",
+      "metadata_url": "https://huggingface.co/api/datasets/fever/fever/revision/2a74f2909caf2b8656343aeb8203e50bf84dcb56",
+      "metadata_response_sha256": "005226ed2c8d317b8129d9af04279c7aec54e4b9d0f6b3c3a361a5e072ede47d",
+      "declared_license": [
+        "cc-by-sa-3.0",
+        "gpl-3.0"
+      ],
+      "scope": "Dataset metadata only; no records downloaded or inspected"
+    },
+    {
+      "repo": "nyu-mll/multi_nli",
+      "revision": "da70db2af9d09693783c3320c4249840212ee221",
+      "metadata_url": "https://huggingface.co/api/datasets/nyu-mll/multi_nli/revision/da70db2af9d09693783c3320c4249840212ee221",
+      "metadata_response_sha256": "3bbdf7501b087a6e6deb9bf014944a120b202e5eebee0fe7097e50e9129ed797",
+      "declared_license": [
+        "cc-by-3.0",
+        "cc-by-sa-3.0",
+        "mit",
+        "other"
+      ],
+      "scope": "Dataset metadata only; no records downloaded or inspected"
+    }
+  ],
+  "training_and_calibration": {
+    "training": [],
+    "calibration": [],
+    "fit": false,
+    "threshold_selection": false,
+    "temperature": 1
+  },
+  "new_asset_restore": "acquire_assets.py supports exact offline cache, opt-in official immutable HTTPS download, and verify-only; no runtime import/session/native call",
+  "performance": "Unmeasured before actual controlled corpus. Broader pretraining is materially different; no stronger accuracy claim.",
+  "model_preparation_calls": {
+    "sessions": 0,
+    "forwards": 0,
+    "native": 0
+  },
+  "privacy": "Only immutable original public URLs, file identities and public metadata retained. No signed redirect URLs, headers, credentials or environment values."
+}

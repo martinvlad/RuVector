@@ -1,0 +1,599 @@
+{
+  "schema_version": 1,
+  "scope": "One pure cached terminal DEV24 replay only; no confirmation text/labels/records opened, no model/native calls, fits, selection or frozen source changes",
+  "status": "REJECTED_DEV_GATE",
+  "confirmation_status": "NOT_MODEL_CONSUMED",
+  "statistical_unit": "8 document groups, three correlated hypotheses each; descriptive comparisons, no independent-query inference or causal cross-epoch model claim",
+  "gold_binary_counts": {
+    "No": 14,
+    "Yes": 10
+  },
+  "gold_threeway_counts": {
+    "NotMentioned": 9,
+    "Entailment": 10,
+    "Contradiction": 5
+  },
+  "four_arm_metrics": {
+    "ruvector_top2": {
+      "n": 24,
+      "correct": 11,
+      "accuracy": 0.4583333333333333,
+      "brier": 0.7175704900308251,
+      "nll": 0.9995050323783482,
+      "predicted_counts": {
+        "Yes": 21,
+        "No": 3
+      },
+      "wrong_confidence_at_least_0_8": 6,
+      "mean_confidence_wrong": 0.7894644456904601
+    },
+    "same_nli_lexical_top2": {
+      "n": 24,
+      "correct": 7,
+      "accuracy": 0.2916666666666667,
+      "brier": 0.828701015692148,
+      "nll": 1.182114948596627,
+      "predicted_counts": {
+        "Yes": 19,
+        "No": 5
+      },
+      "wrong_confidence_at_least_0_8": 7,
+      "mean_confidence_wrong": 0.7449494457318048
+    },
+    "same_nli_positional_first2": {
+      "n": 24,
+      "correct": 16,
+      "accuracy": 0.6666666666666666,
+      "brier": 0.5310243475181612,
+      "nll": 0.8375419210956035,
+      "predicted_counts": {
+        "Yes": 16,
+        "No": 8
+      },
+      "wrong_confidence_at_least_0_8": 5,
+      "mean_confidence_wrong": 0.8028636300768395
+    },
+    "native104_on_ruvector_evidence": {
+      "n": 24,
+      "correct": 14,
+      "accuracy": 0.5833333333333334,
+      "brier": 0.49955729631633866,
+      "nll": 0.692704480765106,
+      "predicted_counts": {
+        "Yes": 20,
+        "No": 4
+      },
+      "wrong_confidence_at_least_0_8": 0,
+      "mean_confidence_wrong": 0.503348705
+    }
+  },
+  "threeway_confusions": {
+    "ruvector_top2": [
+      {
+        "gold": "Contradiction",
+        "predicted": "Entailment",
+        "n": 5
+      },
+      {
+        "gold": "Entailment",
+        "predicted": "Entailment",
+        "n": 9
+      },
+      {
+        "gold": "Entailment",
+        "predicted": "NotMentioned",
+        "n": 1
+      },
+      {
+        "gold": "NotMentioned",
+        "predicted": "Entailment",
+        "n": 7
+      },
+      {
+        "gold": "NotMentioned",
+        "predicted": "NotMentioned",
+        "n": 2
+      }
+    ],
+    "same_nli_lexical_top2": [
+      {
+        "gold": "Contradiction",
+        "predicted": "Entailment",
+        "n": 5
+      },
+      {
+        "gold": "Entailment",
+        "predicted": "Entailment",
+        "n": 7
+      },
+      {
+        "gold": "Entailment",
+        "predicted": "NotMentioned",
+        "n": 3
+      },
+      {
+        "gold": "NotMentioned",
+        "predicted": "Entailment",
+        "n": 8
+      },
+      {
+        "gold": "NotMentioned",
+        "predicted": "NotMentioned",
+        "n": 1
+      }
+    ],
+    "same_nli_positional_first2": [
+      {
+        "gold": "Contradiction",
+        "predicted": "Entailment",
+        "n": 4
+      },
+      {
+        "gold": "Contradiction",
+        "predicted": "NotMentioned",
+        "n": 1
+      },
+      {
+        "gold": "Entailment",
+        "predicted": "Entailment",
+        "n": 9
+      },
+      {
+        "gold": "Entailment",
+        "predicted": "NotMentioned",
+        "n": 1
+      },
+      {
+        "gold": "NotMentioned",
+        "predicted": "Entailment",
+        "n": 3
+      },
+      {
+        "gold": "NotMentioned",
+        "predicted": "NotMentioned",
+        "n": 6
+      }
+    ]
+  },
+  "paired_disagreements": {
+    "same_nli_lexical_top2": {
+      "both_wrong": 13,
+      "both_right": 7,
+      "native_only_right": 4
+    },
+    "same_nli_positional_first2": {
+      "both_wrong": 7,
+      "both_right": 10,
+      "other_only_right": 6,
+      "native_only_right": 1
+    },
+    "native104_on_ruvector_evidence": {
+      "both_wrong": 9,
+      "both_right": 10,
+      "other_only_right": 4,
+      "native_only_right": 1
+    }
+  },
+  "per_document_correct": {
+    "original-contractnli:409": {
+      "ruvector_top2": 2,
+      "same_nli_lexical_top2": 2,
+      "same_nli_positional_first2": 2,
+      "native104_on_ruvector_evidence": 2
+    },
+    "original-contractnli:484": {
+      "ruvector_top2": 1,
+      "same_nli_lexical_top2": 0,
+      "same_nli_positional_first2": 3,
+      "native104_on_ruvector_evidence": 2
+    },
+    "original-contractnli:560": {
+      "ruvector_top2": 2,
+      "same_nli_lexical_top2": 2,
+      "same_nli_positional_first2": 2,
+      "native104_on_ruvector_evidence": 3
+    },
+    "original-contractnli:359": {
+      "ruvector_top2": 2,
+      "same_nli_lexical_top2": 1,
+      "same_nli_positional_first2": 2,
+      "native104_on_ruvector_evidence": 2
+    },
+    "original-contractnli:274": {
+      "ruvector_top2": 1,
+      "same_nli_lexical_top2": 0,
+      "same_nli_positional_first2": 2,
+      "native104_on_ruvector_evidence": 1
+    },
+    "original-contractnli:243": {
+      "ruvector_top2": 1,
+      "same_nli_lexical_top2": 1,
+      "same_nli_positional_first2": 2,
+      "native104_on_ruvector_evidence": 2
+    },
+    "original-contractnli:257": {
+      "ruvector_top2": 0,
+      "same_nli_lexical_top2": 0,
+      "same_nli_positional_first2": 1,
+      "native104_on_ruvector_evidence": 0
+    },
+    "original-contractnli:272": {
+      "ruvector_top2": 2,
+      "same_nli_lexical_top2": 1,
+      "same_nli_positional_first2": 2,
+      "native104_on_ruvector_evidence": 2
+    }
+  },
+  "case_decisions_only": [
+    {
+      "id": "original-contractnli:train:epoch9:dev:409:nda-17",
+      "group": "original-contractnli:409",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:409:nda-7",
+      "group": "original-contractnli:409",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:409:nda-3",
+      "group": "original-contractnli:409",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:484:nda-17",
+      "group": "original-contractnli:484",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "No",
+        "native104_on_ruvector_evidence": "No"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:484:nda-7",
+      "group": "original-contractnli:484",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "No",
+        "native104_on_ruvector_evidence": "No"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:484:nda-3",
+      "group": "original-contractnli:484",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "No",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "No",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:560:nda-17",
+      "group": "original-contractnli:560",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "No"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:560:nda-7",
+      "group": "original-contractnli:560",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:560:nda-3",
+      "group": "original-contractnli:560",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "No",
+        "same_nli_lexical_top2": "No",
+        "same_nli_positional_first2": "No",
+        "native104_on_ruvector_evidence": "No"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:359:nda-17",
+      "group": "original-contractnli:359",
+      "gold_binary": "No",
+      "gold_threeway": "Contradiction",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:359:nda-7",
+      "group": "original-contractnli:359",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:359:nda-3",
+      "group": "original-contractnli:359",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "No",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:274:nda-17",
+      "group": "original-contractnli:274",
+      "gold_binary": "No",
+      "gold_threeway": "Contradiction",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:274:nda-7",
+      "group": "original-contractnli:274",
+      "gold_binary": "No",
+      "gold_threeway": "Contradiction",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "No",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:274:nda-3",
+      "group": "original-contractnli:274",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "No",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:243:nda-17",
+      "group": "original-contractnli:243",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "No",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:243:nda-7",
+      "group": "original-contractnli:243",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "No",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:243:nda-3",
+      "group": "original-contractnli:243",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "No",
+        "same_nli_lexical_top2": "No",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:257:nda-17",
+      "group": "original-contractnli:257",
+      "gold_binary": "No",
+      "gold_threeway": "Contradiction",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:257:nda-7",
+      "group": "original-contractnli:257",
+      "gold_binary": "No",
+      "gold_threeway": "Contradiction",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:257:nda-3",
+      "group": "original-contractnli:257",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "No",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:272:nda-17",
+      "group": "original-contractnli:272",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:272:nda-7",
+      "group": "original-contractnli:272",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch9:dev:272:nda-3",
+      "group": "original-contractnli:272",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "No",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      }
+    }
+  ],
+  "coverage": {
+    "ruvector_top2": {
+      "numeric_total": 438,
+      "numeric_retained": 92,
+      "mean_source_character_coverage": 0.281064186936954,
+      "annotated_cases": 15,
+      "any_gold_overlap": 10,
+      "all_gold_characters": 9,
+      "fully_retained_binary_wrong": 2
+    },
+    "same_nli_lexical_top2": {
+      "numeric_total": 438,
+      "numeric_retained": 103,
+      "mean_source_character_coverage": 0.2802775751502978,
+      "annotated_cases": 15,
+      "any_gold_overlap": 9,
+      "all_gold_characters": 9,
+      "fully_retained_binary_wrong": 4
+    },
+    "same_nli_positional_first2": {
+      "numeric_total": 438,
+      "numeric_retained": 134,
+      "mean_source_character_coverage": 0.24861012345309944,
+      "annotated_cases": 15,
+      "any_gold_overlap": 6,
+      "all_gold_characters": 5,
+      "fully_retained_binary_wrong": 0
+    }
+  },
+  "gold_annotation_retention_available": true,
+  "coverage_scope": "Coverage is mechanical source exposure, not sufficiency. NotMentioned has no positive evidence spans. Numeric counts repeat each document across three hypotheses. If no exact DEV-only annotation projection was supplied, no full original source was opened and gold retention is unavailable.",
+  "cached_validation": {
+    "status": "PASS",
+    "checks": {
+      "binary_answers": 96,
+      "typed_logit_and_numeric_replays": 72
+    },
+    "terminal_metric_cells_compared": 20,
+    "source_result_pins": [
+      {
+        "path": "experiments/sota-2026-10-22/epoch9/runs/development/records.jsonl",
+        "bytes": 2043011,
+        "sha256": "81c7930a94dca7a3f01669b998741dc417442f6b3ec4c5895fbcc5f5733a50e0"
+      },
+      {
+        "path": "experiments/sota-2026-10-22/epoch9/study-completion.json",
+        "bytes": 3683,
+        "sha256": "0f2f8bc758ed2708404bcd0bcf1eb2f75e3c9354a9e27d5aff2791464e400606"
+      },
+      {
+        "path": "experiments/sota-2026-10-22/epoch9/runs/development/development-comparison.json",
+        "bytes": 3703,
+        "sha256": "f6d95d732525b709c642442f4c08e0b4872686137e02b264836b85c2baf437ff"
+      },
+      {
+        "path": "experiments/sota-2026-10-22/epoch9/runs/development/wire.jsonl",
+        "bytes": 2093794,
+        "sha256": "a91c7b2a9020b65d857c9a680aab9148fda2563de9e1cfd14bdfd82c78b200ba"
+      },
+      {
+        "path": "experiments/sota-2026-10-22/candidate/epoch9/proposal-manifest.json",
+        "bytes": 20159,
+        "sha256": "e576f4107e16531c0cfbda6f4639f8d8cc541f7b702e61bd7ee3b40ebd7c5b4c"
+      },
+      {
+        "path": "experiments/sota-2026-10-22/audit/epoch9/development-evidence-projection-v1.json",
+        "bytes": 10648,
+        "sha256": "5c0d334eae544d8b2746be04d629a0d354e4a946c548d51e1c7fe5e9f566397c"
+      }
+    ]
+  },
+  "one_future_direction": {
+    "status": "Unimplemented/unmeasured, no new selection, threshold, readout or optimizer",
+    "hypothesis": "Use TRAIN-only evidence-supervised clause-role, polarity and conditional-scope learning with separate Entailment/Contradiction/NotMentioned targets and one shared reader across matched retrieval controls. Freeze source rule and objective before a new document-group holdout.",
+    "separation": "Do not fit or tune on this consumed DEV; unused confirmation remains unused. No generic model grid or automatic execution."
+  },
+  "new_model_calls": 0,
+  "new_native_calls": 0,
+  "new_optimizer_fits": 0,
+  "frozen_candidate_changes": 0,
+  "official_score": null,
+  "official_rank": null
+}

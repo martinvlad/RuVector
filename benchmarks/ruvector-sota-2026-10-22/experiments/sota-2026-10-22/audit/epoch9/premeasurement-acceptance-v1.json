@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T23:07:16.962751+00:00",
+  "checks_passed": true,
+  "decision": "ACCEPTED_FOR_ONE_DEV24_AND_ONLY_CONDITIONALLY_GATED_CONF48_PROCESSES",
+  "plan_sha256": "559fd73ce7d53b498a93a5f93047cdc656f08fe3cb1a9d1957aaee56a56cb58e",
+  "frozen_pins_verified_both_outer_and_actual": 175,
+  "all_actual_pinned_paths_resolve_inside_project": true,
+  "actual_project": "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch9/project",
+  "candidate_manifest_sha256": "e576f4107e16531c0cfbda6f4639f8d8cc541f7b702e61bd7ee3b40ebd7c5b4c",
+  "independent_source_review_sha256": "10b7cf4e2618a402d714d9c6ff312080c8a82dfc6149cc8d53cc255e0188d5c6",
+  "research_plan_sha256": "93956a053dcc321542131ec0709063a8a055f558ae7d033c4a2cb912dc9a9507",
+  "data_scope": "NEW DEV24/8groups and CONF48/16othergroups officialtrain;149oldtrain+allofficialdev/test excluded; not old96f018; TRAIN/calibration empty. Data frozen before modelchoice.",
+  "model_scope": "ONE broader pretrained THREEWAY E0/N1/C2 model, same12x768 architecture; no assumed performance gain. Fullsoftmax T1, YesPE/NoPCPN. Unknown upstream contamination and source/converter-license gaps disclosed.",
+  "context_scope": "Exact unchanged6source/tokenizer/packer, same matched controls and new tokenizer byteidentical;72input source-only preflightmaxpair512/BGE179;maxunitsDEV42/CONF57.",
+  "budget": {
+    "prior_closed": 11,
+    "newcap": 2,
+    "lifetime_ifactualstarts": [
+      12,
+      13
+    ],
+    "CPU2": true,
+    "seconds_per_process_including_init_cleanup": 600,
+    "paid": 0,
+    "GPU": 0,
+    "no_retry_or_unbudgeted_probe": true
+  },
+  "DEV_gate": "Primary correct>=each3control+2; propernonworseall3/strictgainbothmatched; strictvalid24/errors0.",
+  "CONF_gate": "Exact48/16groups; ALL3accuracygain95lower>0/propernoninferiority95lower>=-1e-12,2000paired-docdrawsseed20261022; pointgates andstrictmatchedpropergain; nominalunadjustedonly.",
+  "runtime_admission": "48*DEVmaxHTTP*max(1,57/42)+2*observedDEVinit+60<=600 and lease_remaining>=forecast+30; conditionalphase only, actual600watchdog remains.",
+  "prelaunch_no_run_or_launch_artifact": true,
+  "OS_lock_supervisor": 18884,
+  "OS_lock_actual_exclusive_held": true,
+  "OS_supervisor_state": "S",
+  "connected_GitHub_expected_lease_ref_observed": "89b7733ff5abe7c70007d92db5683eb515e99a59",
+  "preserve_ALL175_pins": "No source/data/model/audit changes to pinned files. Corrections require new preserved versions before measurement, or postrun auditor-only newversion with unchanged gates/evidence.",
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "auditor_model_native_paid_calls": 0
+}

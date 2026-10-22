@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "epoch": 9,
+  "study_id": "native-typed-pretrained-nli-e9",
+  "saved_at": "2026-10-22T23:10:10.841146+00:00",
+  "parent_checkpoint": "b5ce57bb1b7260020f0d8a57d4c34eeb2f82cbd1",
+  "lease_commit": "89b7733ff5abe7c70007d92db5683eb515e99a59",
+  "frozen_plan_sha256": "559fd73ce7d53b498a93a5f93047cdc656f08fe3cb1a9d1957aaee56a56cb58e",
+  "status": "REJECTED_DEV_GATE",
+  "hypothesis": "One broaderpretrained typedthreewayNLI decoder retainingNeutral withnativeRuVector evidence andexactepoch6context. Same decoder/model/contextbudget acrossmatchedretrievalcontrols. No learnedhead/calibration or larger/betterperformanceclaim beforemeasurement.",
+  "scientific_scope": "Internal licensed originalContractNLI3predicate binary+threeway NDApilot. Broaderpretraining, not proven modelstrength or causalcross-epoch gain. No currentJev300/fullLegalBench/ClaimBenchscore/rank.",
+  "source_and_data_frozen_before_measurement": true,
+  "candidate_manifest": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch9/proposal-manifest.json",
+    "sha256": "e576f4107e16531c0cfbda6f4639f8d8cc541f7b702e61bd7ee3b40ebd7c5b4c"
+  },
+  "premeasurement_acceptance": {
+    "path": "experiments/sota-2026-10-22/audit/epoch9/premeasurement-acceptance-v1.json",
+    "sha256": "c4571f95e3bdb6a9506de42abcd8cc96c557cdf2b7e86f0c732a52e7c2a4dd35"
+  },
+  "independent_actual_report": {
+    "path": "experiments/sota-2026-10-22/audit/epoch9/actual-independent-v1.json",
+    "sha256": "6227d320f51a9de2fba8794df85b604378d9a4193fe269679b27c3bb7fa9c0e3"
+  },
+  "actual_results": {
+    "TRAIN_declared": 0,
+    "training_feature_HTTP": 0,
+    "DEV_n": 24,
+    "DEV_declared": 24,
+    "DEV_document_groups": 8,
+    "candidate_correct": 11,
+    "successful_HTTP": 24,
+    "failed_HTTP": 0,
+    "started_without_final_wire_response": 0,
+    "completed_corpora": 1,
+    "metrics": {
+      "development": {
+        "ruvector_top2": {
+          "n": 24,
+          "correct": 11,
+          "brier": 0.7175704900308251,
+          "nll": 0.9995050323783483,
+          "errors": 0,
+          "strict_valid": 24
+        },
+        "same_nli_lexical_top2": {
+          "n": 24,
+          "correct": 7,
+          "brier": 0.8287010156921479,
+          "nll": 1.182114948596627,
+          "errors": 0,
+          "strict_valid": 24
+        },
+        "same_nli_positional_first2": {
+          "n": 24,
+          "correct": 16,
+          "brier": 0.5310243475181613,
+          "nll": 0.8375419210956035,
+          "errors": 0,
+          "strict_valid": 24
+        },
+        "native104_on_ruvector_evidence": {
+          "n": 24,
+          "correct": 14,
+          "brier": 0.4995572963163387,
+          "nll": 0.692704480765106,
+          "errors": 0,
+          "strict_valid": 24
+        }
+      }
+    },
+    "pipeline_latency_seconds": {
+      "development": {
+        "p50": 2.1406509859989455,
+        "p95": 3.6165940935035894,
+        "max": 4.15014627599885,
+        "scope": "Whole HTTP request includesall3NLIcontrols+native104excerpt+evidenceencoding/index; not primary-only deployment"
+      }
+    },
+    "completion": {
+      "development": {
+        "at": "2026-10-22T23:08:43.029380+00:00",
+        "phase": "development",
+        "exit_code": 0,
+        "error": null,
+        "wall_seconds_including_model_load": 58.663436160000856,
+        "source_plan_unchanged": true,
+        "native_attempts": 1,
+        "prior_closed_attempts": 11,
+        "lifetime_native_attempt": 12,
+        "owned_group_cleanup": {
+          "pgid": 19475,
+          "live_members_before": [],
+          "signals": [],
+          "hard_cleanup_deadline_unix": 1792711064.3658826,
+          "live_members_after": [],
+          "finished_unix": 1792710523.0293484,
+          "finished_within_deadline": true
+        },
+        "new_paid_calls": 0,
+        "new_GPU_calls": 0,
+        "official_score": null,
+        "official_rank": null
+      }
+    },
+    "resources": {
+      "development": {
+        "at": "2026-10-22T23:08:42.759645+00:00",
+        "worker_cpu_user_seconds": 98.893661,
+        "worker_cpu_system_seconds": 0.7323719999999999,
+        "worker_peak_RSS_bytes": 1158332416,
+        "terminated_children_cpu_user_seconds": 5.4530899999999995,
+        "terminated_children_cpu_system_seconds": 0.5443589999999999,
+        "largest_terminated_child_peak_RSS_bytes": 1141293056,
+        "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+        "allowed_CPU_ids": [
+          0,
+          1
+        ],
+        "configured_ORT_threads": 2,
+        "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+      }
+    },
+    "actual_execution_counters": {
+      "development": {
+        "requests_attempted": 24,
+        "requests_completed": 24,
+        "native104_requests_attempted": 24,
+        "native104_requests_completed": 24,
+        "native_core_searches_attempted": 24,
+        "native_core_searches_completed": 24,
+        "bge_forward_batches_attempted": 45,
+        "bge_forward_batches_completed": 45,
+        "bge_texts_attempted": 160,
+        "bge_texts_completed": 160,
+        "nli_forward_pairs_attempted": 72,
+        "nli_forward_pairs_completed": 72,
+        "nli_input_tokens_attempted": 34440,
+        "nli_input_tokens_completed": 34440,
+        "context_partitions_attempted": 24,
+        "context_partitions_completed": 24,
+        "context_packs_attempted": 72,
+        "context_packs_completed": 72,
+        "bge_forward_wall_seconds": 6.529921147986897,
+        "nli_forward_wall_seconds": 39.485330846997385
+      }
+    },
+    "ANN_exact_top2_agreement_count": 24,
+    "ANN_exact_candidate_set_agreement_count": 23,
+    "same_context_singleton_logit_drift": 0.0,
+    "paired_document_bootstrap": {
+      "development": {
+        "same_nli_lexical_top2": {
+          "accuracy": {
+            "mean_improvement": 0.16666666666666666,
+            "ci95": [
+              0.041666666666666664,
+              0.29166666666666663
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "brier": {
+            "mean_improvement": 0.11113052566132291,
+            "ci95": [
+              -0.0016576308637051937,
+              0.24081462803933504
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "nll": {
+            "mean_improvement": 0.18260991621827868,
+            "ci95": [
+              -0.035137944929593205,
+              0.41492259264962755
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          }
+        },
+        "same_nli_positional_first2": {
+          "accuracy": {
+            "mean_improvement": -0.20833333333333331,
+            "ci95": [
+              -0.375,
+              -0.041666666666666664
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "brier": {
+            "mean_improvement": -0.1865461425126638,
+            "ci95": [
+              -0.3378233475074241,
+              -0.027713327737400067
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "nll": {
+            "mean_improvement": -0.1619631112827447,
+            "ci95": [
+              -0.3853359556684098,
+              0.08637735141585703
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          }
+        },
+        "native104_on_ruvector_evidence": {
+          "accuracy": {
+            "mean_improvement": -0.125,
+            "ci95": [
+              -0.25,
+              -0.041666666666666664
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "brier": {
+            "mean_improvement": -0.21801319371448638,
+            "ci95": [
+              -0.4019345744242664,
+              -0.05806315862242611
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "nll": {
+            "mean_improvement": -0.30680055161324227,
+            "ci95": [
+              -0.5568620854448431,
+              -0.08199357597549442
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          }
+        }
+      }
+    },
+    "threeway_metrics": {
+      "development": {
+        "ruvector_top2": {
+          "n": 24,
+          "correct": 11,
+          "brier": 0.7891062441573187,
+          "nll": 1.4264657165636068
+        },
+        "same_nli_lexical_top2": {
+          "n": 24,
+          "correct": 8,
+          "brier": 0.9163880987276422,
+          "nll": 1.6866548867993516
+        },
+        "same_nli_positional_first2": {
+          "n": 24,
+          "correct": 15,
+          "brier": 0.6331468443198179,
+          "nll": 1.3350137915007445
+        }
+      }
+    },
+    "uncertainty": "Only8DEV/16CONFdocumentgroups; nominalunadjusted pairedgroupbootstrap, unknownpretrainingoverlap, internalpublicsourcepilot not officialbenchmarkgeneralization."
+  },
+  "DEV_gate_passed": false,
+  "runtime_admission": {
+    "at": "2026-10-22T23:08:43.049850+00:00",
+    "formula_id": "48xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "max_DEV_HTTP_seconds": 4.15014627599885,
+    "max_DEV_units": 42,
+    "max_confirmation_units": 57,
+    "source_unit_ratio": 1.3571428571428572,
+    "DEV_initialization_seconds": 2.576581162997172,
+    "projected_confirmation_seconds": 335.505548305348,
+    "allowed": true,
+    "forecast_limit_seconds": 600,
+    "actual_confirmation_watchdog_seconds": 600,
+    "scope": "Conservative admission forecast, not a performance guarantee. No confirmation labels/model outputs used."
+  },
+  "confirmation_consumed": false,
+  "confirmation_actual_model_consumed_per_independent_report": false,
+  "confirmation_attempted": false,
+  "confirmation_requests_started": 0,
+  "confirmation_requests_completed": 0,
+  "internal_confirmation_gate_passed": false,
+  "used_identities_sha256": "eb0cb1c40349c7e02545bbcf620fff039d182cc3202f817d911a515077bafd10",
+  "rejection_or_acceptance_reason": "Primary11/24; lexical7,positional16,sameexcerpt10414; Brier0.7175704900308251,NLL0.9995050323783483. FrozenmeaningfulDEVgate=False.",
+  "next_research_priority": "Close this single broaderpretrainedthreewayreader study; all11priorattemptsremainclosed, no retry/grid/calibration/rescue on exposedquestions. Preserve submittedNative104/RRF10. A future distincthypothesis may use TRAIN-only evidence-supervised actor/action/modality/condition bindings with3waytargets; freeze source/TRAIN/DEV/calibration/unusedCONF/runtime first, thenactualnative matchedreadercontrols/independentgates. Broaderpretraining alone is not proven legalgeneralization. Alloldf018confirmation96 remainsDEVforever. No currentJev300/fullLegalBench/ClaimBenchscore/rank. Officialsuccessneedsmatchingpublisherresult/rank/eligibility. Epoch9CONF48 remainsproject-model-unused reservedbank850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50; neverclaimitwasexecuted. FuturefreshDEV must exclude8newDEVgroups and preserveCONF16 until frozen gates.",
+  "budget": {
+    "all_prior_closed_attempts": 11,
+    "prior_studies": {
+      "original": 6,
+      "epoch5": 1,
+      "epoch6": 1,
+      "epoch7": 1,
+      "epoch8": 2
+    },
+    "new_study_used": 1,
+    "new_study_cap": 2,
+    "unspent_phase_slots": 1,
+    "allowed_further_attempts_in_closed_study": 0,
+    "new_study_status": "CLOSED_REJECTED_DEV_GATE",
+    "lifetime_native_attempts": 12,
+    "this_epoch_native_attempts": 1,
+    "CPU_threads": 2,
+    "max_seconds_per_phase_including_init_cleanup": 600,
+    "automatic_retries": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "cleanup": {
+    "worker_and_owned_groups_absent": true,
+    "scoped_lock_held_until_compare_and_set_publication": true
+  },
+  "champions_unchanged": [
+    "submittedNative104",
+    "RRF10"
+  ],
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "new_publisher_submissions": 0,
+  "emails_sent": 0,
+  "source_license": "ContractNLI CC-BY4attribution/sourcecommit pinned; modelupstreamMIT declaration/converterinheritedscope, mixedtrainingterms/unknowncontamination/upstreamweightrevision gap disclosed in candidateprovenance. No pretrainedweights published.",
+  "replay_reproduction": {
+    "active_script": {
+      "path": "experiments/sota-2026-10-22/audit/epoch9/replay_actual_v2.py",
+      "sha256": "070152d911524ce2524bba51e94089aa4d4236b3d88df1795b8a0ce90cb50706"
+    },
+    "method_correction": {
+      "path": "experiments/sota-2026-10-22/audit/epoch9/replay-method-correction-v1.json",
+      "sha256": "265aa157ddf7ee46ef606de98112ddbf2782baf4d167ffe6ed0e9daa771a539e"
+    },
+    "scope": "Replayv2changesONLYtwoassetdirectoryliteralsnli-large->nli-broader inarchivedauditorv1; pinnedv1/175scientificpins/scorer/gates/measurements unchanged. Useversionedv2forcached-evidenceanalysis, no model/nativeforwards."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-22T22:55:36.270112+00:00",
+  "scope": "Epoch9 one source-frozen zero-shot three-way pretrained NLI model under unchanged context6, actual RuVector vs matched lexical/positional and same-excerpt Native104. Internal public ContractNLI pilot only.",
+  "data": "Exactly48 previously project-model-unused officialtrain queries in16 new document groups,3 fixed hypotheses each. Exact future bank SHA must be bound before model choice and execution. No reuse of old confirmation96f018.",
+  "required": {
+    "complete_queries": 48,
+    "groups": 16,
+    "queries_per_group": 3,
+    "strict_valid_each_arm": 48,
+    "errors_each_arm": 0,
+    "finite_metrics_all4arms": true,
+    "accuracy_point_nondecrease": "Primary correct>=each of ALL3 controls.",
+    "proper_loss_point_nonincrease": "Primary Brier and NLL<=each of ALL3 controls+1e-12.",
+    "accuracy_supported_gain": "Paired document-cluster percentile bootstrap95 lowerbound>0 versus EACH of ALL3 controls, including same-excerpt Native104.",
+    "proper_noninferiority_supported": "Paired document-cluster bootstrap95 lowerbound>=-1e-12 for control-minus-primary Brier AND NLL versus EACH of ALL3 controls.",
+    "strict_proper_gain_matched": "At least one point proper-loss gain>1e-12 versus EACH same-NLI lexical and positional control.",
+    "native_and_controls": "Actual native ranking, source bank and saved vectors, exact shared model/tokenizer/packing/T1 across matched arms; excerpt104 receives exact primary excerpt+original question. No answer lookup or hidden fallback.",
+    "execution": "Exact plan/model/dependency/data/receipts unchanged, CPU2/GPU0/paid0, at most2 nonretryable process phases each<=600s including initialization and bounded cleanup."
+  },
+  "bootstrap": {
+    "unit": "16 document groups, mean3 correlated query gains per doc; resample16groups with replacement, paired group draws across arms/metrics.",
+    "draws": 2000,
+    "seed": 20261022,
+    "interval": "Two-sided percentile2.5%,97.5%; frozen scorer uses index int(p*(draws-1)).",
+    "gain_sign": "Accuracy=primary_correct-control_correct; proper=control_loss-primary_loss; positive favors primary.",
+    "multiplicity": "Nominal unadjusted exploratory intervals, no familywise/generalization/official SOTA claim. All comparisons disclosed."
+  },
+  "failure": "Any required gate failure rejects internal advancement. After any model attempt retire entire48 as permanently exposed; no posthoc policy/threshold/model choice, rescore-as-new-confirmation or retry.",
+  "official_scope": "No generic submitted Native104/RRF10 replacement or official JevBench/LegalBench/ClaimBench score/rank without publisher-matched score/eligibility receipt.",
+  "auditor_model_native_or_paid_calls": 0
+}

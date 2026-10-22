@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "selected_at": "2026-10-22T22:57:07.728085+00:00",
+  "data_frozen_at": "2026-10-22T22:56:16.509438+00:00",
+  "data_contract_sha256": "a65d687b5bfbd34323bdeda84ba352970d074e60cd66d029a54f8a28160658bc",
+  "choice_before_any_asset_download": true,
+  "metadata_only_research_before_data_freeze": true,
+  "configs_in_grid": 1,
+  "repo": "Xenova/DeBERTa-v3-base-mnli-fever-anli",
+  "revision": "72a1ce83a0144efaf828b3c3844320a61197a53d",
+  "onnx_remote_path": "onnx/model_quantized.onnx",
+  "onnx_bytes": 244291931,
+  "onnx_sha256": "ab9da76bb06054ea6b921560c1ecf5683a9e4d96f0ea73d78d3b4a8990aea882",
+  "raw_id2label": {
+    "0": "entailment",
+    "1": "neutral",
+    "2": "contradiction"
+  },
+  "typed_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "binary_mapping": "Yes=P(Entailment);No=P(Contradiction)+P(NotMentioned);T1;lexical No on exact .5 tie",
+  "training": [],
+  "calibration": [],
+  "upstream": {
+    "repo": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "revision": "6f5cf0a2b59cabb106aca4c287eed12e357e90eb",
+    "declared_model_license": "MIT",
+    "training_pairs": 763913,
+    "declared_training_datasets": [
+      "MultiNLI",
+      "FEVER-NLI",
+      "ANLI"
+    ],
+    "training_dataset_license_caveats": {
+      "ANLI": [
+        "cc-by-nc-4.0"
+      ],
+      "FEVER": [
+        "cc-by-sa-3.0",
+        "gpl-3.0"
+      ],
+      "MultiNLI": [
+        "cc-by-3.0",
+        "cc-by-sa-3.0",
+        "mit",
+        "other"
+      ]
+    },
+    "conversion_provenance": "Xenova card explicitly identifies upstream; no standalone conversion license or exact upstream weight commit is stated. Reviewed upstream revision pins source card/config only.",
+    "contamination": "No declared ContractNLI training; unknown pretraining overlap, no record-level clean-training guarantee."
+  },
+  "rationale": "Materially different broader threeway training than prior SNLI/MNLI base with same architecture/tokenizer, enabling controlled zero-shot typed reader comparison. No performance gain assumed.",
+  "cpu_feasibility": "Same 12-layer/768 structure and quantized byte size as prior base; two CPU threads. Feasibility is source-reasoned, not a new timing/model probe.",
+  "new_model_calls": 0,
+  "new_native_calls": 0,
+  "new_paid_calls": 0
+}

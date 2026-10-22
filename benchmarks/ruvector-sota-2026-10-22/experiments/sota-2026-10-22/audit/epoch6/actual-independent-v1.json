@@ -1,0 +1,5939 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T20:06:26.578395+00:00",
+  "checks_passed": true,
+  "plan_SHA256": "428beafd71468c5551ae244df8dec468e77ffb5f319236605c79cd56316e1d0d",
+  "source_pins_verified": 139,
+  "metrics": {
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.7988140612899279,
+        "nll": 1.2823979554002527,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 15,
+        "brier": 0.595148733749307,
+        "nll": 0.9767133868016766,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 10,
+        "brier": 0.9030246722342019,
+        "nll": 1.485762677561764,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.5003804719746382,
+        "nll": 0.69352768296981,
+        "errors": 0,
+        "strict_valid": 24
+      }
+    }
+  },
+  "DEV_gate_passed": false,
+  "internal_confirmation_gate_passed": false,
+  "confirmation_consumed": false,
+  "confirmation_now_permanently_exposed_DEV": false,
+  "paired_doc_bootstrap": {
+    "development": {
+      "same_nli_lexical_top2": {
+        "accuracy": {
+          "mean_improvement": -0.125,
+          "ci95": [
+            -0.3333333333333333,
+            0
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.20366532754062094,
+          "ci95": [
+            -0.46224954013629715,
+            0.04200207981662947
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.305684568598576,
+          "ci95": [
+            -0.7176580150570436,
+            0.14426501876235487
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "same_nli_positional_first2": {
+        "accuracy": {
+          "mean_improvement": 0.08333333333333333,
+          "ci95": [
+            -0.125,
+            0.3333333333333333
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.10421061094427395,
+          "ci95": [
+            -0.25743154788841976,
+            0.45095065905431286
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.20336472216151133,
+          "ci95": [
+            -0.43162865076496704,
+            0.8061419225549772
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "native104_on_ruvector_evidence": {
+        "accuracy": {
+          "mean_improvement": 0.0,
+          "ci95": [
+            -0.20833333333333331,
+            0.16666666666666666
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.2984335893152897,
+          "ci95": [
+            -0.4854442563733986,
+            -0.09223291138886354
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.5888702724304425,
+          "ci95": [
+            -0.990199116569537,
+            -0.1938435054262796
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      }
+    }
+  },
+  "bootstrap_scope": "2000paired doc-group draws seed20261022, nearest empirical 2.5/97.5percentiles inherited frozen verifier; nominal unadjusted intervals.",
+  "max_same_context_singleton_logit_drift": 0.0,
+  "ANN_exact_top2_set_agreement_count": 24,
+  "ANN_exact_candidate_set_agreement_count": 24,
+  "arm_name_scope": "Legacytop2names are aliases: actual40rankedanchor candidates plusneighbor expansion under shared512budget, variableunitcount. No causalold-vs-newcontextclaim.",
+  "actual_requests": 24,
+  "actual_NLI_singleton_pairs": 72,
+  "actual_NLI_input_tokens": 34993,
+  "actual_BGE_texts": 216,
+  "actual_BGE_batches": 50,
+  "resources": {
+    "at": "2026-10-22T20:05:55.977933+00:00",
+    "worker_cpu_user_seconds": 114.04538,
+    "worker_cpu_system_seconds": 0.800918,
+    "worker_peak_RSS_bytes": 1213554688,
+    "terminated_children_cpu_user_seconds": 5.966858,
+    "terminated_children_cpu_system_seconds": 0.655357,
+    "largest_terminated_child_peak_RSS_bytes": 1213554688,
+    "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+    "allowed_CPU_ids": [
+      0,
+      1
+    ],
+    "configured_ORT_threads": 2,
+    "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+  },
+  "completion": {
+    "at": "2026-10-22T20:05:56.220280+00:00",
+    "exit_code": 0,
+    "error": null,
+    "wall_seconds_including_model_load": 67.73272761400221,
+    "source_plan_unchanged": true,
+    "native_attempts": 1,
+    "prior_study_native_attempts_used": 7,
+    "original_study_native_attempts_used": 6,
+    "epoch5_study_native_attempts_used": 1,
+    "prior_study_attempts_remaining": 0,
+    "new_study_native_attempts_used": 1,
+    "new_study_attempts_remaining": 0,
+    "lifetime_native_attempts_used": 8,
+    "owned_group_cleanup": {
+      "pgid": 9546,
+      "live_members_before": [],
+      "signals": [],
+      "live_members_after": []
+    },
+    "new_paid_calls": 0,
+    "new_GPU_calls": 0,
+    "official_score": null,
+    "official_rank": null
+  },
+  "latency_by_phase_seconds": {
+    "development": {
+      "p50": 2.387746137499562,
+      "p95": 4.378658133300086,
+      "max": 4.626032697000483,
+      "scope": "Whole HTTP request includesall3NLIcontrols+native104excerpt+evidenceencoding/index; not primary-only deployment"
+    }
+  },
+  "rows": [
+    {
+      "id": "original-contractnli:train:epoch6:417:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:417",
+      "native_ranking_ids": [
+        6,
+        5,
+        3,
+        4,
+        2,
+        11,
+        12,
+        13,
+        10,
+        17,
+        16,
+        1,
+        14,
+        7,
+        18,
+        9,
+        15,
+        19,
+        8,
+        20,
+        0
+      ],
+      "primary_selected_unit_ids": [
+        6,
+        5,
+        7,
+        3
+      ],
+      "exact_cosine_ranking_ids": [
+        6,
+        5,
+        3,
+        4,
+        2,
+        11,
+        12,
+        13,
+        10,
+        17,
+        16,
+        1,
+        14,
+        7,
+        18,
+        9,
+        15,
+        19,
+        8,
+        20,
+        0
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            6,
+            5,
+            7,
+            3
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 504.0316189988516,
+          "ranking": [
+            6,
+            5,
+            3,
+            4,
+            2,
+            11,
+            12,
+            13,
+            10,
+            17,
+            16,
+            1,
+            14,
+            7,
+            18,
+            9,
+            15,
+            19,
+            8,
+            20,
+            0
+          ],
+          "selected_spans": [
+            [
+              1867,
+              2334
+            ],
+            [
+              3026,
+              4864
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            6,
+            5,
+            7
+          ],
+          "context_character_coverage": 0.19131806108897742,
+          "joint_tokens": 459,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            16,
+            15,
+            17,
+            2
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 527.3681139988184,
+          "ranking": [
+            16,
+            2,
+            6,
+            5,
+            10,
+            4,
+            13,
+            15,
+            11,
+            18,
+            1,
+            8,
+            17,
+            0,
+            12,
+            7,
+            3,
+            9,
+            14,
+            19,
+            20
+          ],
+          "selected_spans": [
+            [
+              1176,
+              1867
+            ],
+            [
+              9297,
+              11032
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.20136122177954846,
+          "joint_tokens": 500,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 572.2579840003164,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "selected_spans": [
+            [
+              0,
+              2334
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.19372509960159362,
+          "joint_tokens": 497,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:417:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:417",
+      "native_ranking_ids": [
+        6,
+        5,
+        4,
+        2,
+        3,
+        13,
+        7,
+        12,
+        1,
+        9,
+        11,
+        15,
+        14,
+        19,
+        17,
+        18,
+        10,
+        16,
+        0,
+        8,
+        20
+      ],
+      "primary_selected_unit_ids": [
+        6,
+        5,
+        7,
+        4
+      ],
+      "exact_cosine_ranking_ids": [
+        6,
+        5,
+        4,
+        2,
+        3,
+        13,
+        7,
+        12,
+        1,
+        9,
+        11,
+        15,
+        14,
+        19,
+        17,
+        18,
+        10,
+        16,
+        0,
+        8,
+        20
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            6,
+            5,
+            7,
+            4
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 624.565521000477,
+          "ranking": [
+            6,
+            5,
+            4,
+            2,
+            3,
+            13,
+            7,
+            12,
+            1,
+            9,
+            11,
+            15,
+            14,
+            19,
+            17,
+            18,
+            10,
+            16,
+            0,
+            8,
+            20
+          ],
+          "selected_spans": [
+            [
+              2334,
+              4864
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            6,
+            5,
+            7
+          ],
+          "context_character_coverage": 0.2099933598937583,
+          "joint_tokens": 508,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            13,
+            12,
+            14,
+            3
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 656.0190310010512,
+          "ranking": [
+            13,
+            2,
+            4,
+            16,
+            14,
+            15,
+            10,
+            5,
+            3,
+            18,
+            6,
+            11,
+            1,
+            12,
+            9,
+            8,
+            0,
+            17,
+            7,
+            19,
+            20
+          ],
+          "selected_spans": [
+            [
+              1867,
+              2334
+            ],
+            [
+              7251,
+              9297
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.2085823373173971,
+          "joint_tokens": 510,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 536.8167330016149,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "selected_spans": [
+            [
+              0,
+              2334
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.19372509960159362,
+          "joint_tokens": 505,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:417:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:417",
+      "native_ranking_ids": [
+        6,
+        4,
+        2,
+        5,
+        3,
+        12,
+        11,
+        13,
+        9,
+        10,
+        7,
+        14,
+        17,
+        1,
+        16,
+        8,
+        18,
+        15,
+        19,
+        20,
+        0
+      ],
+      "primary_selected_unit_ids": [
+        6,
+        5,
+        7,
+        4
+      ],
+      "exact_cosine_ranking_ids": [
+        6,
+        4,
+        2,
+        5,
+        3,
+        12,
+        11,
+        13,
+        9,
+        10,
+        7,
+        14,
+        17,
+        1,
+        16,
+        8,
+        18,
+        15,
+        19,
+        20,
+        0
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            6,
+            5,
+            7,
+            4
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 617.6270469986775,
+          "ranking": [
+            6,
+            4,
+            2,
+            5,
+            3,
+            12,
+            11,
+            13,
+            9,
+            10,
+            7,
+            14,
+            17,
+            1,
+            16,
+            8,
+            18,
+            15,
+            19,
+            20,
+            0
+          ],
+          "selected_spans": [
+            [
+              2334,
+              4864
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            6,
+            5,
+            7
+          ],
+          "context_character_coverage": 0.2099933598937583,
+          "joint_tokens": 494,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            1,
+            3,
+            6
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 631.7317819994059,
+          "ranking": [
+            2,
+            6,
+            4,
+            5,
+            16,
+            10,
+            13,
+            11,
+            14,
+            15,
+            0,
+            1,
+            3,
+            7,
+            8,
+            9,
+            12,
+            17,
+            18,
+            19,
+            20
+          ],
+          "selected_spans": [
+            [
+              484,
+              2334
+            ],
+            [
+              3692,
+              4214
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            6
+          ],
+          "context_character_coverage": 0.19687915006640105,
+          "joint_tokens": 462,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 619.7839820015361,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "selected_spans": [
+            [
+              0,
+              2334
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.19372509960159362,
+          "joint_tokens": 491,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:415:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:415",
+      "native_ranking_ids": [
+        3,
+        6,
+        12,
+        5,
+        10,
+        4,
+        9,
+        7,
+        8,
+        2,
+        1,
+        0,
+        15,
+        11,
+        13,
+        14
+      ],
+      "primary_selected_unit_ids": [
+        3,
+        2,
+        4,
+        1
+      ],
+      "exact_cosine_ranking_ids": [
+        3,
+        6,
+        12,
+        5,
+        10,
+        4,
+        9,
+        7,
+        8,
+        2,
+        1,
+        0,
+        15,
+        11,
+        13,
+        14
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            3,
+            2,
+            4,
+            1
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 523.8914740002656,
+          "ranking": [
+            3,
+            6,
+            12,
+            5,
+            10,
+            4,
+            9,
+            7,
+            8,
+            2,
+            1,
+            0,
+            15,
+            11,
+            13,
+            14
+          ],
+          "selected_spans": [
+            [
+              565,
+              2977
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.2193126022913257,
+          "joint_tokens": 474,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            4,
+            3,
+            5,
+            1
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 549.9215540003206,
+          "ranking": [
+            4,
+            15,
+            7,
+            12,
+            2,
+            5,
+            10,
+            0,
+            6,
+            9,
+            13,
+            3,
+            11,
+            14,
+            8,
+            1
+          ],
+          "selected_spans": [
+            [
+              565,
+              768
+            ],
+            [
+              1398,
+              3676
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.22558647026732134,
+          "joint_tokens": 484,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 540.6397269980516,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "selected_spans": [
+            [
+              0,
+              2075
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.18867066739407165,
+          "joint_tokens": 447,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:415:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:415",
+      "native_ranking_ids": [
+        3,
+        12,
+        5,
+        10,
+        6,
+        9,
+        4,
+        7,
+        0,
+        2,
+        8,
+        1,
+        15,
+        11,
+        13,
+        14
+      ],
+      "primary_selected_unit_ids": [
+        3,
+        2,
+        4,
+        1
+      ],
+      "exact_cosine_ranking_ids": [
+        3,
+        12,
+        5,
+        10,
+        6,
+        9,
+        4,
+        7,
+        0,
+        2,
+        8,
+        1,
+        15,
+        11,
+        13,
+        14
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            3,
+            2,
+            4,
+            1
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 445.78677200115635,
+          "ranking": [
+            3,
+            12,
+            5,
+            10,
+            6,
+            9,
+            4,
+            7,
+            0,
+            2,
+            8,
+            1,
+            15,
+            11,
+            13,
+            14
+          ],
+          "selected_spans": [
+            [
+              565,
+              2977
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.2193126022913257,
+          "joint_tokens": 482,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            4,
+            3,
+            5,
+            1
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 578.3029429985618,
+          "ranking": [
+            4,
+            0,
+            7,
+            12,
+            5,
+            1,
+            9,
+            13,
+            3,
+            6,
+            11,
+            14,
+            10,
+            15,
+            8,
+            2
+          ],
+          "selected_spans": [
+            [
+              565,
+              768
+            ],
+            [
+              1398,
+              3676
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.22558647026732134,
+          "joint_tokens": 492,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 535.6217340013245,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "selected_spans": [
+            [
+              0,
+              2075
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.18867066739407165,
+          "joint_tokens": 455,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:415:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:415",
+      "native_ranking_ids": [
+        6,
+        2,
+        4,
+        7,
+        3,
+        8,
+        10,
+        12,
+        9,
+        5,
+        0,
+        1,
+        14,
+        15,
+        13,
+        11
+      ],
+      "primary_selected_unit_ids": [
+        6,
+        5,
+        7,
+        8
+      ],
+      "exact_cosine_ranking_ids": [
+        6,
+        2,
+        4,
+        7,
+        3,
+        8,
+        10,
+        12,
+        9,
+        5,
+        0,
+        1,
+        14,
+        15,
+        13,
+        11
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            6,
+            5,
+            7,
+            8
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 556.5990989998681,
+          "ranking": [
+            6,
+            2,
+            4,
+            7,
+            3,
+            8,
+            10,
+            12,
+            9,
+            5,
+            0,
+            1,
+            14,
+            15,
+            13,
+            11
+          ],
+          "selected_spans": [
+            [
+              2977,
+              5685
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.24622658665211858,
+          "joint_tokens": 505,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            4,
+            3,
+            5,
+            1
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 644.4559749979817,
+          "ranking": [
+            4,
+            12,
+            0,
+            2,
+            5,
+            6,
+            7,
+            1,
+            3,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "selected_spans": [
+            [
+              565,
+              768
+            ],
+            [
+              1398,
+              3676
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.22558647026732134,
+          "joint_tokens": 478,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 492.01127999913297,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "selected_spans": [
+            [
+              0,
+              2075
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.18867066739407165,
+          "joint_tokens": 441,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:161:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:161",
+      "native_ranking_ids": [
+        3,
+        8,
+        2,
+        4,
+        14,
+        6,
+        10,
+        9,
+        19,
+        7,
+        5,
+        11,
+        13,
+        15,
+        12,
+        20,
+        0,
+        16,
+        18,
+        1,
+        17
+      ],
+      "primary_selected_unit_ids": [
+        3,
+        2,
+        4,
+        14
+      ],
+      "exact_cosine_ranking_ids": [
+        3,
+        8,
+        2,
+        4,
+        14,
+        6,
+        10,
+        9,
+        19,
+        7,
+        5,
+        11,
+        13,
+        15,
+        12,
+        20,
+        0,
+        16,
+        18,
+        1,
+        17
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            3,
+            2,
+            4,
+            14
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 670.4802310014202,
+          "ranking": [
+            3,
+            8,
+            2,
+            4,
+            14,
+            6,
+            10,
+            9,
+            19,
+            7,
+            5,
+            11,
+            13,
+            15,
+            12,
+            20,
+            0,
+            16,
+            18,
+            1,
+            17
+          ],
+          "selected_spans": [
+            [
+              898,
+              2692
+            ],
+            [
+              9383,
+              10226
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.18726033233915637,
+          "joint_tokens": 509,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            3,
+            2,
+            4,
+            10
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 526.5190089994576,
+          "ranking": [
+            3,
+            4,
+            10,
+            2,
+            9,
+            11,
+            6,
+            7,
+            8,
+            12,
+            19,
+            13,
+            5,
+            14,
+            16,
+            15,
+            17,
+            1,
+            18,
+            20,
+            0
+          ],
+          "selected_spans": [
+            [
+              898,
+              2692
+            ],
+            [
+              6342,
+              7128
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.1832126118449084,
+          "joint_tokens": 502,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 571.3249100008397,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "selected_spans": [
+            [
+              0,
+              2048
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.1454338872319273,
+          "joint_tokens": 451,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:161:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:161",
+      "native_ranking_ids": [
+        3,
+        2,
+        4,
+        6,
+        8,
+        14,
+        9,
+        5,
+        11,
+        7,
+        10,
+        13,
+        19,
+        15,
+        0,
+        12,
+        20,
+        18,
+        1,
+        17,
+        16
+      ],
+      "primary_selected_unit_ids": [
+        3,
+        2,
+        4,
+        6
+      ],
+      "exact_cosine_ranking_ids": [
+        3,
+        2,
+        4,
+        6,
+        8,
+        14,
+        9,
+        5,
+        11,
+        7,
+        10,
+        13,
+        19,
+        15,
+        0,
+        12,
+        20,
+        18,
+        1,
+        17,
+        16
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            3,
+            2,
+            4,
+            6
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 578.1115199970372,
+          "ranking": [
+            3,
+            2,
+            4,
+            6,
+            8,
+            14,
+            9,
+            5,
+            11,
+            7,
+            10,
+            13,
+            19,
+            15,
+            0,
+            12,
+            20,
+            18,
+            1,
+            17,
+            16
+          ],
+          "selected_spans": [
+            [
+              898,
+              2692
+            ],
+            [
+              3512,
+              4265
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.18086919471665958,
+          "joint_tokens": 508,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            2,
+            1,
+            3,
+            9
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 589.1067550001026,
+          "ranking": [
+            2,
+            9,
+            13,
+            3,
+            18,
+            6,
+            17,
+            4,
+            10,
+            5,
+            11,
+            14,
+            8,
+            12,
+            19,
+            7,
+            1,
+            16,
+            15,
+            0,
+            20
+          ],
+          "selected_spans": [
+            [
+              325,
+              2048
+            ],
+            [
+              5899,
+              6342
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.1538133787814231,
+          "joint_tokens": 469,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 520.8186359996034,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "selected_spans": [
+            [
+              0,
+              2048
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.1454338872319273,
+          "joint_tokens": 459,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:161:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:161",
+      "native_ranking_ids": [
+        3,
+        8,
+        9,
+        4,
+        2,
+        6,
+        11,
+        14,
+        13,
+        7,
+        10,
+        5,
+        0,
+        12,
+        19,
+        20,
+        18,
+        15,
+        1,
+        16,
+        17
+      ],
+      "primary_selected_unit_ids": [
+        3,
+        2,
+        4,
+        8
+      ],
+      "exact_cosine_ranking_ids": [
+        3,
+        8,
+        9,
+        4,
+        2,
+        6,
+        11,
+        14,
+        13,
+        7,
+        10,
+        5,
+        0,
+        12,
+        19,
+        20,
+        18,
+        15,
+        1,
+        16,
+        17
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            3,
+            2,
+            4,
+            8
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 616.5701179997995,
+          "ranking": [
+            3,
+            8,
+            9,
+            4,
+            2,
+            6,
+            11,
+            14,
+            13,
+            7,
+            10,
+            5,
+            0,
+            12,
+            19,
+            20,
+            18,
+            15,
+            1,
+            16,
+            17
+          ],
+          "selected_spans": [
+            [
+              898,
+              2692
+            ],
+            [
+              5050,
+              5899
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.18768640818065616,
+          "joint_tokens": 509,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            3,
+            2,
+            4,
+            13
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 472.0362900006876,
+          "ranking": [
+            3,
+            4,
+            13,
+            9,
+            7,
+            10,
+            2,
+            14,
+            11,
+            6,
+            8,
+            12,
+            5,
+            18,
+            19,
+            17,
+            0,
+            1,
+            15,
+            16,
+            20
+          ],
+          "selected_spans": [
+            [
+              898,
+              2692
+            ],
+            [
+              8681,
+              9383
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.17724755006391138,
+          "joint_tokens": 483,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 427.3478270006308,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "selected_spans": [
+            [
+              0,
+              2048
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.1454338872319273,
+          "joint_tokens": 445,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:330:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:330",
+      "native_ranking_ids": [
+        2,
+        3,
+        5,
+        0,
+        4,
+        6,
+        7,
+        1
+      ],
+      "primary_selected_unit_ids": [
+        2,
+        1,
+        3,
+        5
+      ],
+      "exact_cosine_ranking_ids": [
+        2,
+        3,
+        5,
+        0,
+        4,
+        6,
+        7,
+        1
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            1,
+            3,
+            5
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 395.4849049987388,
+          "ranking": [
+            2,
+            3,
+            5,
+            0,
+            4,
+            6,
+            7,
+            1
+          ],
+          "selected_spans": [
+            [
+              204,
+              1983
+            ],
+            [
+              2843,
+              3027
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            1
+          ],
+          "context_character_coverage": 0.5875486381322957,
+          "joint_tokens": 411,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            5,
+            4,
+            6,
+            2
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 409.89647999958834,
+          "ranking": [
+            5,
+            4,
+            2,
+            3,
+            6,
+            0,
+            1,
+            7
+          ],
+          "selected_spans": [
+            [
+              386,
+              1191
+            ],
+            [
+              1983,
+              3206
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            6
+          ],
+          "context_character_coverage": 0.6070038910505836,
+          "joint_tokens": 471,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 664.9384010015638,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "selected_spans": [
+            [
+              0,
+              1983
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            0,
+            1
+          ],
+          "context_character_coverage": 0.5935348697994612,
+          "joint_tokens": 505,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:330:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:330",
+      "native_ranking_ids": [
+        2,
+        3,
+        0,
+        5,
+        7,
+        4,
+        6,
+        1
+      ],
+      "primary_selected_unit_ids": [
+        2,
+        1,
+        3,
+        5
+      ],
+      "exact_cosine_ranking_ids": [
+        2,
+        3,
+        0,
+        5,
+        7,
+        4,
+        6,
+        1
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            1,
+            3,
+            5
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 360.1918640015356,
+          "ranking": [
+            2,
+            3,
+            0,
+            5,
+            7,
+            4,
+            6,
+            1
+          ],
+          "selected_spans": [
+            [
+              204,
+              1983
+            ],
+            [
+              2843,
+              3027
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            1
+          ],
+          "context_character_coverage": 0.5875486381322957,
+          "joint_tokens": 419,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            3,
+            2,
+            4,
+            5
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 532.9438669978117,
+          "ranking": [
+            3,
+            4,
+            5,
+            2,
+            0,
+            1,
+            6,
+            7
+          ],
+          "selected_spans": [
+            [
+              386,
+              3027
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.7904818916492068,
+          "joint_tokens": 479,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            5
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 418.78924000047846,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "selected_spans": [
+            [
+              0,
+              1191
+            ],
+            [
+              2843,
+              3027
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            0,
+            1
+          ],
+          "context_character_coverage": 0.41155342711762943,
+          "joint_tokens": 419,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:330:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:330",
+      "native_ranking_ids": [
+        2,
+        3,
+        5,
+        4,
+        0,
+        7,
+        6,
+        1
+      ],
+      "primary_selected_unit_ids": [
+        2,
+        1,
+        3,
+        5
+      ],
+      "exact_cosine_ranking_ids": [
+        2,
+        3,
+        5,
+        4,
+        0,
+        7,
+        6,
+        1
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            2,
+            1,
+            3,
+            5
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 435.28085900106817,
+          "ranking": [
+            2,
+            3,
+            5,
+            4,
+            0,
+            7,
+            6,
+            1
+          ],
+          "selected_spans": [
+            [
+              204,
+              1983
+            ],
+            [
+              2843,
+              3027
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            1
+          ],
+          "context_character_coverage": 0.5875486381322957,
+          "joint_tokens": 405,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            4,
+            3,
+            5,
+            2
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 521.7913829983445,
+          "ranking": [
+            4,
+            5,
+            3,
+            2,
+            0,
+            1,
+            6,
+            7
+          ],
+          "selected_spans": [
+            [
+              386,
+              3027
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.7904818916492068,
+          "joint_tokens": 465,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 680.450722000387,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "selected_spans": [
+            [
+              0,
+              1983
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            0,
+            1
+          ],
+          "context_character_coverage": 0.5935348697994612,
+          "joint_tokens": 499,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:534:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:534",
+      "native_ranking_ids": [
+        25,
+        29,
+        2,
+        6,
+        8,
+        4,
+        28,
+        7,
+        16,
+        24,
+        5,
+        18,
+        1,
+        3,
+        21,
+        10,
+        19,
+        12,
+        22,
+        11,
+        17,
+        14,
+        23,
+        20,
+        30,
+        9,
+        27,
+        15,
+        31,
+        0,
+        26,
+        13
+      ],
+      "primary_selected_unit_ids": [
+        25,
+        24,
+        26,
+        29,
+        8,
+        3,
+        13
+      ],
+      "exact_cosine_ranking_ids": [
+        25,
+        29,
+        2,
+        6,
+        8,
+        4,
+        28,
+        7,
+        16,
+        24,
+        5,
+        18,
+        1,
+        3,
+        21,
+        10,
+        19,
+        12,
+        22,
+        11,
+        17,
+        14,
+        23,
+        20,
+        30,
+        9,
+        27,
+        15,
+        31,
+        0,
+        26,
+        13
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            25,
+            24,
+            26,
+            29,
+            8,
+            3,
+            13
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 469.2100499996741,
+          "ranking": [
+            25,
+            29,
+            2,
+            6,
+            8,
+            4,
+            28,
+            7,
+            16,
+            24,
+            5,
+            18,
+            1,
+            3,
+            21,
+            10,
+            19,
+            12,
+            22,
+            11,
+            17,
+            14,
+            23,
+            20,
+            30,
+            9,
+            27,
+            15,
+            31,
+            0,
+            26,
+            13
+          ],
+          "selected_spans": [
+            [
+              1851,
+              2013
+            ],
+            [
+              4641,
+              4947
+            ],
+            [
+              7800,
+              7820
+            ],
+            [
+              14652,
+              16564
+            ],
+            [
+              18057,
+              18348
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            29,
+            8
+          ],
+          "context_character_coverage": 0.13956744982106736,
+          "joint_tokens": 497,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            29,
+            28,
+            30,
+            2,
+            3
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 625.0542130001122,
+          "ranking": [
+            29,
+            2,
+            8,
+            16,
+            1,
+            26,
+            20,
+            28,
+            0,
+            7,
+            19,
+            11,
+            30,
+            23,
+            25,
+            6,
+            21,
+            24,
+            4,
+            5,
+            18,
+            9,
+            17,
+            12,
+            10,
+            14,
+            22,
+            3,
+            15,
+            27,
+            13,
+            31
+          ],
+          "selected_spans": [
+            [
+              1078,
+              2013
+            ],
+            [
+              17337,
+              19038
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            29,
+            28
+          ],
+          "context_character_coverage": 0.13671490067942535,
+          "joint_tokens": 512,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            13
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 484.4232050018036,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "selected_spans": [
+            [
+              0,
+              2013
+            ],
+            [
+              2639,
+              3166
+            ],
+            [
+              7800,
+              7820
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            5
+          ],
+          "context_character_coverage": 0.13277319641097454,
+          "joint_tokens": 512,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:534:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:534",
+      "native_ranking_ids": [
+        29,
+        4,
+        6,
+        2,
+        25,
+        3,
+        31,
+        5,
+        1,
+        16,
+        28,
+        8,
+        30,
+        18,
+        10,
+        21,
+        24,
+        9,
+        19,
+        7,
+        14,
+        11,
+        17,
+        15,
+        20,
+        22,
+        27,
+        23,
+        0,
+        26,
+        12,
+        13
+      ],
+      "primary_selected_unit_ids": [
+        29,
+        28,
+        30,
+        4,
+        3,
+        13
+      ],
+      "exact_cosine_ranking_ids": [
+        29,
+        4,
+        6,
+        2,
+        25,
+        3,
+        31,
+        5,
+        1,
+        16,
+        28,
+        8,
+        30,
+        18,
+        10,
+        21,
+        24,
+        9,
+        19,
+        7,
+        14,
+        11,
+        17,
+        15,
+        20,
+        22,
+        27,
+        23,
+        0,
+        26,
+        12,
+        13
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            29,
+            28,
+            30,
+            4,
+            3,
+            13
+          ],
+          "gold_span_count": 4,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 657.7044039986504,
+          "ranking": [
+            29,
+            4,
+            6,
+            2,
+            25,
+            3,
+            31,
+            5,
+            1,
+            16,
+            28,
+            8,
+            30,
+            18,
+            10,
+            21,
+            24,
+            9,
+            19,
+            7,
+            14,
+            11,
+            17,
+            15,
+            20,
+            22,
+            27,
+            23,
+            0,
+            26,
+            12,
+            13
+          ],
+          "selected_spans": [
+            [
+              1851,
+              2639
+            ],
+            [
+              7800,
+              7820
+            ],
+            [
+              17337,
+              19038
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            29,
+            28,
+            4
+          ],
+          "context_character_coverage": 0.13012810538872466,
+          "joint_tokens": 511,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            31,
+            30,
+            8,
+            7,
+            19,
+            3,
+            13
+          ],
+          "gold_span_count": 4,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 671.6473710002901,
+          "ranking": [
+            31,
+            8,
+            16,
+            19,
+            29,
+            2,
+            0,
+            11,
+            25,
+            1,
+            20,
+            24,
+            12,
+            30,
+            23,
+            27,
+            6,
+            10,
+            21,
+            3,
+            5,
+            28,
+            18,
+            9,
+            7,
+            17,
+            22,
+            26,
+            4,
+            14,
+            13,
+            15
+          ],
+          "selected_spans": [
+            [
+              1851,
+              2013
+            ],
+            [
+              3881,
+              4947
+            ],
+            [
+              7800,
+              7820
+            ],
+            [
+              10893,
+              11367
+            ],
+            [
+              18348,
+              19281
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            8,
+            7
+          ],
+          "context_character_coverage": 0.13770032674653804,
+          "joint_tokens": 510,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3,
+            8,
+            13
+          ],
+          "gold_span_count": 4,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 604.7506629984127,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "selected_spans": [
+            [
+              0,
+              2013
+            ],
+            [
+              4641,
+              4947
+            ],
+            [
+              7800,
+              7820
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            8
+          ],
+          "context_character_coverage": 0.12131113531455838,
+          "joint_tokens": 480,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:534:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:534",
+      "native_ranking_ids": [
+        6,
+        2,
+        7,
+        28,
+        4,
+        16,
+        8,
+        1,
+        27,
+        5,
+        24,
+        29,
+        21,
+        18,
+        25,
+        9,
+        22,
+        3,
+        11,
+        19,
+        20,
+        17,
+        14,
+        30,
+        15,
+        10,
+        12,
+        23,
+        0,
+        31,
+        26,
+        13
+      ],
+      "primary_selected_unit_ids": [
+        6,
+        5,
+        7,
+        2,
+        13
+      ],
+      "exact_cosine_ranking_ids": [
+        6,
+        2,
+        7,
+        28,
+        4,
+        16,
+        8,
+        1,
+        27,
+        5,
+        24,
+        29,
+        21,
+        18,
+        25,
+        9,
+        22,
+        3,
+        11,
+        19,
+        20,
+        17,
+        14,
+        30,
+        15,
+        10,
+        12,
+        23,
+        0,
+        31,
+        26,
+        13
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            6,
+            5,
+            7,
+            2,
+            13
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 535.1699329985422,
+          "ranking": [
+            6,
+            2,
+            7,
+            28,
+            4,
+            16,
+            8,
+            1,
+            27,
+            5,
+            24,
+            29,
+            21,
+            18,
+            25,
+            9,
+            22,
+            3,
+            11,
+            19,
+            20,
+            17,
+            14,
+            30,
+            15,
+            10,
+            12,
+            23,
+            0,
+            31,
+            26,
+            13
+          ],
+          "selected_spans": [
+            [
+              1078,
+              1851
+            ],
+            [
+              2639,
+              4641
+            ],
+            [
+              7800,
+              7820
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            5,
+            7
+          ],
+          "context_character_coverage": 0.1449613609252632,
+          "joint_tokens": 499,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            29,
+            28,
+            30,
+            2,
+            3,
+            13
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 678.9858600022853,
+          "ranking": [
+            29,
+            2,
+            1,
+            31,
+            8,
+            20,
+            28,
+            16,
+            0,
+            7,
+            11,
+            30,
+            27,
+            6,
+            21,
+            24,
+            3,
+            4,
+            5,
+            9,
+            10,
+            12,
+            13,
+            14,
+            15,
+            17,
+            18,
+            19,
+            22,
+            23,
+            25,
+            26
+          ],
+          "selected_spans": [
+            [
+              1078,
+              2013
+            ],
+            [
+              7800,
+              7820
+            ],
+            [
+              17337,
+              19038
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            29,
+            28
+          ],
+          "context_character_coverage": 0.13775219127638608,
+          "joint_tokens": 511,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            13
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 624.7595280001406,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "selected_spans": [
+            [
+              0,
+              2013
+            ],
+            [
+              2639,
+              3166
+            ],
+            [
+              7800,
+              7820
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            5
+          ],
+          "context_character_coverage": 0.13277319641097454,
+          "joint_tokens": 506,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:287:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:287",
+      "native_ranking_ids": [
+        9,
+        7,
+        11,
+        10,
+        1,
+        8,
+        4,
+        2,
+        18,
+        5,
+        17,
+        6,
+        13,
+        14,
+        12,
+        3,
+        15,
+        16,
+        0,
+        19
+      ],
+      "primary_selected_unit_ids": [
+        9,
+        8,
+        10,
+        16
+      ],
+      "exact_cosine_ranking_ids": [
+        9,
+        7,
+        11,
+        10,
+        1,
+        8,
+        4,
+        2,
+        18,
+        5,
+        17,
+        6,
+        13,
+        14,
+        12,
+        3,
+        15,
+        16,
+        0,
+        19
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            9,
+            8,
+            10,
+            16
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 534.126300997741,
+          "ranking": [
+            9,
+            7,
+            11,
+            10,
+            1,
+            8,
+            4,
+            2,
+            18,
+            5,
+            17,
+            6,
+            13,
+            14,
+            12,
+            3,
+            15,
+            16,
+            0,
+            19
+          ],
+          "selected_spans": [
+            [
+              5348,
+              7692
+            ],
+            [
+              11374,
+              11791
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.20204903036955726,
+          "joint_tokens": 501,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 537.4567030012258,
+          "ranking": [
+            1,
+            8,
+            18,
+            11,
+            7,
+            9,
+            5,
+            10,
+            3,
+            16,
+            6,
+            2,
+            13,
+            17,
+            4,
+            15,
+            12,
+            14,
+            0,
+            19
+          ],
+          "selected_spans": [
+            [
+              0,
+              2239
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.16384924990852542,
+          "joint_tokens": 492,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 529.2302569978347,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "selected_spans": [
+            [
+              0,
+              2239
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.16384924990852542,
+          "joint_tokens": 492,
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:287:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:287",
+      "native_ranking_ids": [
+        1,
+        8,
+        7,
+        11,
+        9,
+        4,
+        2,
+        5,
+        3,
+        18,
+        10,
+        13,
+        17,
+        6,
+        12,
+        14,
+        15,
+        16,
+        0,
+        19
+      ],
+      "primary_selected_unit_ids": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "exact_cosine_ranking_ids": [
+        1,
+        8,
+        7,
+        11,
+        9,
+        4,
+        2,
+        5,
+        3,
+        18,
+        10,
+        13,
+        17,
+        6,
+        12,
+        14,
+        15,
+        16,
+        0,
+        19
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 544.5811159988807,
+          "ranking": [
+            1,
+            8,
+            7,
+            11,
+            9,
+            4,
+            2,
+            5,
+            3,
+            18,
+            10,
+            13,
+            17,
+            6,
+            12,
+            14,
+            15,
+            16,
+            0,
+            19
+          ],
+          "selected_spans": [
+            [
+              0,
+              2239
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.16384924990852542,
+          "joint_tokens": 500,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            17,
+            16,
+            18,
+            1
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 555.2634769992437,
+          "ranking": [
+            17,
+            1,
+            8,
+            9,
+            18,
+            5,
+            10,
+            12,
+            11,
+            3,
+            6,
+            2,
+            7,
+            13,
+            14,
+            4,
+            15,
+            16,
+            19,
+            0
+          ],
+          "selected_spans": [
+            [
+              352,
+              909
+            ],
+            [
+              11374,
+              13442
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.19209659714599342,
+          "joint_tokens": 507,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 627.5966210014303,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "selected_spans": [
+            [
+              0,
+              2239
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.16384924990852542,
+          "joint_tokens": 500,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:287:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:287",
+      "native_ranking_ids": [
+        1,
+        7,
+        18,
+        11,
+        2,
+        10,
+        5,
+        8,
+        9,
+        17,
+        4,
+        13,
+        6,
+        12,
+        3,
+        15,
+        14,
+        16,
+        0,
+        19
+      ],
+      "primary_selected_unit_ids": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "exact_cosine_ranking_ids": [
+        1,
+        7,
+        18,
+        11,
+        2,
+        10,
+        5,
+        8,
+        9,
+        17,
+        4,
+        13,
+        6,
+        12,
+        3,
+        15,
+        14,
+        16,
+        0,
+        19
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 563.0197869977565,
+          "ranking": [
+            1,
+            7,
+            18,
+            11,
+            2,
+            10,
+            5,
+            8,
+            9,
+            17,
+            4,
+            13,
+            6,
+            12,
+            3,
+            15,
+            14,
+            16,
+            0,
+            19
+          ],
+          "selected_spans": [
+            [
+              0,
+              2239
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.16384924990852542,
+          "joint_tokens": 486,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            11,
+            10,
+            12,
+            19
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 569.6441910004069,
+          "ranking": [
+            11,
+            8,
+            10,
+            1,
+            7,
+            17,
+            18,
+            4,
+            9,
+            5,
+            6,
+            2,
+            13,
+            12,
+            16,
+            0,
+            3,
+            14,
+            15,
+            19
+          ],
+          "selected_spans": [
+            [
+              6943,
+              9231
+            ],
+            [
+              13442,
+              13665
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.18375411635565314,
+          "joint_tokens": 488,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 528.3203719991434,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "selected_spans": [
+            [
+              0,
+              2239
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.16384924990852542,
+          "joint_tokens": 486,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:574:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:574",
+      "native_ranking_ids": [
+        3,
+        4,
+        1,
+        5,
+        25,
+        8,
+        15,
+        10,
+        11,
+        27,
+        2,
+        23,
+        9,
+        22,
+        31,
+        38,
+        32,
+        33,
+        6,
+        30,
+        7,
+        14,
+        13,
+        12,
+        16,
+        24,
+        18,
+        21,
+        37,
+        28,
+        35,
+        29,
+        34,
+        17,
+        36,
+        26,
+        39,
+        0,
+        19,
+        20
+      ],
+      "primary_selected_unit_ids": [
+        3,
+        2,
+        4,
+        28
+      ],
+      "exact_cosine_ranking_ids": [
+        3,
+        4,
+        1,
+        5,
+        25,
+        8,
+        15,
+        10,
+        11,
+        27,
+        2,
+        23,
+        9,
+        22,
+        31,
+        38,
+        32,
+        33,
+        6,
+        30,
+        7,
+        14,
+        13,
+        12,
+        16,
+        24,
+        18,
+        21,
+        37,
+        28,
+        35,
+        29,
+        34,
+        17,
+        36,
+        26,
+        39,
+        0,
+        19,
+        20
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            3,
+            2,
+            4,
+            28
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 606.980950000434,
+          "ranking": [
+            3,
+            4,
+            1,
+            5,
+            25,
+            8,
+            15,
+            10,
+            11,
+            27,
+            2,
+            23,
+            9,
+            22,
+            31,
+            38,
+            32,
+            33,
+            6,
+            30,
+            7,
+            14,
+            13,
+            12,
+            16,
+            24,
+            18,
+            21,
+            37,
+            28,
+            35,
+            29,
+            34,
+            17,
+            36,
+            26,
+            39,
+            0,
+            19,
+            20
+          ],
+          "selected_spans": [
+            [
+              929,
+              3207
+            ],
+            [
+              18104,
+              18348
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            28
+          ],
+          "context_character_coverage": 0.09553754072278203,
+          "joint_tokens": 499,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            1,
+            0,
+            2,
+            7
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 602.600018002704,
+          "ranking": [
+            1,
+            7,
+            4,
+            16,
+            28,
+            9,
+            11,
+            18,
+            6,
+            12,
+            24,
+            21,
+            2,
+            5,
+            8,
+            38,
+            14,
+            31,
+            23,
+            13,
+            3,
+            37,
+            15,
+            33,
+            29,
+            27,
+            10,
+            32,
+            22,
+            26,
+            17,
+            0,
+            25,
+            19,
+            20,
+            35,
+            36,
+            34,
+            30,
+            39
+          ],
+          "selected_spans": [
+            [
+              0,
+              1626
+            ],
+            [
+              4829,
+              5382
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.08254413213122207,
+          "joint_tokens": 480,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            7
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 576.5413059998536,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          "selected_spans": [
+            [
+              0,
+              1626
+            ],
+            [
+              4829,
+              5382
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.08254413213122207,
+          "joint_tokens": 480,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:574:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:574",
+      "native_ranking_ids": [
+        4,
+        1,
+        3,
+        25,
+        5,
+        28,
+        15,
+        27,
+        11,
+        23,
+        8,
+        2,
+        10,
+        9,
+        31,
+        38,
+        12,
+        22,
+        30,
+        21,
+        7,
+        13,
+        16,
+        18,
+        6,
+        24,
+        14,
+        33,
+        32,
+        29,
+        37,
+        35,
+        17,
+        34,
+        0,
+        36,
+        19,
+        39,
+        20,
+        26
+      ],
+      "primary_selected_unit_ids": [
+        4,
+        3,
+        5,
+        28
+      ],
+      "exact_cosine_ranking_ids": [
+        4,
+        1,
+        3,
+        25,
+        5,
+        28,
+        15,
+        27,
+        11,
+        23,
+        8,
+        2,
+        10,
+        9,
+        31,
+        38,
+        12,
+        22,
+        30,
+        21,
+        7,
+        13,
+        16,
+        18,
+        6,
+        24,
+        14,
+        33,
+        32,
+        29,
+        37,
+        35,
+        17,
+        34,
+        0,
+        36,
+        19,
+        39,
+        20,
+        26
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            4,
+            3,
+            5,
+            28
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 653.898135999043,
+          "ranking": [
+            4,
+            1,
+            3,
+            25,
+            5,
+            28,
+            15,
+            27,
+            11,
+            23,
+            8,
+            2,
+            10,
+            9,
+            31,
+            38,
+            12,
+            22,
+            30,
+            21,
+            7,
+            13,
+            16,
+            18,
+            6,
+            24,
+            14,
+            33,
+            32,
+            29,
+            37,
+            35,
+            17,
+            34,
+            0,
+            36,
+            19,
+            39,
+            20,
+            26
+          ],
+          "selected_spans": [
+            [
+              1626,
+              4012
+            ],
+            [
+              18104,
+              18348
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            28
+          ],
+          "context_character_coverage": 0.09962875975452685,
+          "joint_tokens": 512,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            28,
+            27,
+            29,
+            4
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": true,
+          "decode_ms": 607.0109100000991,
+          "ranking": [
+            28,
+            4,
+            23,
+            14,
+            1,
+            9,
+            11,
+            27,
+            24,
+            21,
+            31,
+            16,
+            30,
+            29,
+            7,
+            36,
+            2,
+            8,
+            10,
+            22,
+            13,
+            3,
+            37,
+            25,
+            6,
+            33,
+            5,
+            38,
+            15,
+            12,
+            17,
+            34,
+            18,
+            35,
+            26,
+            32,
+            0,
+            39,
+            19,
+            20
+          ],
+          "selected_spans": [
+            [
+              2434,
+              3207
+            ],
+            [
+              17452,
+              19052
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            28,
+            27
+          ],
+          "context_character_coverage": 0.08989317372528222,
+          "joint_tokens": 478,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            7
+          ],
+          "gold_span_count": 2,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 624.0574000003107,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          "selected_spans": [
+            [
+              0,
+              1626
+            ],
+            [
+              4829,
+              5382
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.08254413213122207,
+          "joint_tokens": 488,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:574:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:574",
+      "native_ranking_ids": [
+        8,
+        10,
+        3,
+        7,
+        4,
+        6,
+        12,
+        5,
+        11,
+        30,
+        1,
+        9,
+        25,
+        29,
+        2,
+        15,
+        31,
+        32,
+        24,
+        27,
+        38,
+        33,
+        23,
+        21,
+        16,
+        34,
+        37,
+        35,
+        22,
+        18,
+        13,
+        28,
+        14,
+        26,
+        17,
+        36,
+        0,
+        39,
+        19,
+        20
+      ],
+      "primary_selected_unit_ids": [
+        8,
+        7,
+        9,
+        12
+      ],
+      "exact_cosine_ranking_ids": [
+        8,
+        10,
+        3,
+        7,
+        4,
+        6,
+        12,
+        5,
+        11,
+        30,
+        1,
+        9,
+        25,
+        29,
+        2,
+        15,
+        31,
+        32,
+        24,
+        27,
+        38,
+        33,
+        23,
+        21,
+        16,
+        34,
+        37,
+        35,
+        22,
+        18,
+        13,
+        28,
+        14,
+        26,
+        17,
+        36,
+        0,
+        39,
+        19,
+        20
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "Yes",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            8,
+            7,
+            9,
+            12
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 653.4638509983779,
+          "ranking": [
+            8,
+            10,
+            3,
+            7,
+            4,
+            6,
+            12,
+            5,
+            11,
+            30,
+            1,
+            9,
+            25,
+            29,
+            2,
+            15,
+            31,
+            32,
+            24,
+            27,
+            38,
+            33,
+            23,
+            21,
+            16,
+            34,
+            37,
+            35,
+            22,
+            18,
+            13,
+            28,
+            14,
+            26,
+            17,
+            36,
+            0,
+            39,
+            19,
+            20
+          ],
+          "selected_spans": [
+            [
+              4829,
+              6823
+            ],
+            [
+              8269,
+              8946
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.10118190772028184,
+          "joint_tokens": 507,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            7,
+            6,
+            8,
+            16
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": true,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 639.0029120011604,
+          "ranking": [
+            7,
+            4,
+            8,
+            10,
+            6,
+            5,
+            1,
+            9,
+            11,
+            29,
+            12,
+            24,
+            23,
+            30,
+            33,
+            21,
+            38,
+            32,
+            16,
+            27,
+            2,
+            14,
+            22,
+            31,
+            13,
+            3,
+            37,
+            25,
+            34,
+            36,
+            0,
+            15,
+            17,
+            18,
+            19,
+            20,
+            26,
+            28,
+            35,
+            39
+          ],
+          "selected_spans": [
+            [
+              4012,
+              6272
+            ],
+            [
+              10837,
+              11267
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.10190165921660732,
+          "joint_tokens": 507,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            7
+          ],
+          "gold_span_count": 3,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 543.8876760017592,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          "selected_spans": [
+            [
+              0,
+              1626
+            ],
+            [
+              4829,
+              5382
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.08254413213122207,
+          "joint_tokens": 474,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:421:nda-17",
+      "phase": "development",
+      "group": "original-contractnli:421",
+      "native_ranking_ids": [
+        15,
+        5,
+        17,
+        6,
+        1,
+        13,
+        16,
+        22,
+        3,
+        2,
+        7,
+        14,
+        21,
+        29,
+        4,
+        33,
+        19,
+        32,
+        20,
+        24,
+        9,
+        27,
+        12,
+        25,
+        23,
+        31,
+        11,
+        10,
+        28,
+        8,
+        26,
+        30,
+        18,
+        0
+      ],
+      "primary_selected_unit_ids": [
+        15,
+        14,
+        16,
+        5,
+        8
+      ],
+      "exact_cosine_ranking_ids": [
+        15,
+        5,
+        17,
+        6,
+        1,
+        13,
+        16,
+        22,
+        3,
+        2,
+        7,
+        14,
+        21,
+        29,
+        4,
+        33,
+        19,
+        32,
+        20,
+        24,
+        9,
+        27,
+        12,
+        25,
+        23,
+        31,
+        11,
+        10,
+        28,
+        8,
+        26,
+        30,
+        18,
+        0
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            15,
+            14,
+            16,
+            5,
+            8
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 623.6222890001955,
+          "ranking": [
+            15,
+            5,
+            17,
+            6,
+            1,
+            13,
+            16,
+            22,
+            3,
+            2,
+            7,
+            14,
+            21,
+            29,
+            4,
+            33,
+            19,
+            32,
+            20,
+            24,
+            9,
+            27,
+            12,
+            25,
+            23,
+            31,
+            11,
+            10,
+            28,
+            8,
+            26,
+            30,
+            18,
+            0
+          ],
+          "selected_spans": [
+            [
+              3527,
+              4236
+            ],
+            [
+              5562,
+              5573
+            ],
+            [
+              8328,
+              10223
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.11968511144674814,
+          "joint_tokens": 501,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            15,
+            14,
+            16,
+            1,
+            10,
+            8
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 640.065247000166,
+          "ranking": [
+            15,
+            1,
+            2,
+            19,
+            32,
+            14,
+            3,
+            10,
+            21,
+            16,
+            25,
+            5,
+            22,
+            27,
+            26,
+            18,
+            29,
+            13,
+            17,
+            24,
+            7,
+            31,
+            33,
+            6,
+            23,
+            12,
+            0,
+            4,
+            28,
+            11,
+            9,
+            20,
+            30,
+            8
+          ],
+          "selected_spans": [
+            [
+              685,
+              1190
+            ],
+            [
+              5562,
+              5573
+            ],
+            [
+              6249,
+              6523
+            ],
+            [
+              8328,
+              10223
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [
+            10
+          ],
+          "context_character_coverage": 0.1228889194013456,
+          "joint_tokens": 509,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            6,
+            8
+          ],
+          "gold_span_count": 1,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 611.6368619987043,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "selected_spans": [
+            [
+              0,
+              1979
+            ],
+            [
+              4236,
+              4789
+            ],
+            [
+              5562,
+              5573
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.11638976612201932,
+          "joint_tokens": 487,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:421:nda-7",
+      "phase": "development",
+      "group": "original-contractnli:421",
+      "native_ranking_ids": [
+        15,
+        5,
+        3,
+        1,
+        17,
+        16,
+        22,
+        21,
+        13,
+        6,
+        2,
+        20,
+        33,
+        4,
+        12,
+        14,
+        19,
+        24,
+        10,
+        23,
+        25,
+        7,
+        29,
+        31,
+        27,
+        28,
+        32,
+        9,
+        11,
+        26,
+        30,
+        18,
+        0,
+        8
+      ],
+      "primary_selected_unit_ids": [
+        15,
+        14,
+        16,
+        5,
+        8
+      ],
+      "exact_cosine_ranking_ids": [
+        15,
+        5,
+        3,
+        1,
+        17,
+        16,
+        22,
+        21,
+        13,
+        6,
+        2,
+        20,
+        33,
+        4,
+        12,
+        14,
+        19,
+        24,
+        10,
+        23,
+        25,
+        7,
+        29,
+        31,
+        27,
+        28,
+        32,
+        9,
+        11,
+        26,
+        30,
+        18,
+        0,
+        8
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            15,
+            14,
+            16,
+            5,
+            8
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 699.560824999935,
+          "ranking": [
+            15,
+            5,
+            3,
+            1,
+            17,
+            16,
+            22,
+            21,
+            13,
+            6,
+            2,
+            20,
+            33,
+            4,
+            12,
+            14,
+            19,
+            24,
+            10,
+            23,
+            25,
+            7,
+            29,
+            31,
+            27,
+            28,
+            32,
+            9,
+            11,
+            26,
+            30,
+            18,
+            0,
+            8
+          ],
+          "selected_spans": [
+            [
+              3527,
+              4236
+            ],
+            [
+              5562,
+              5573
+            ],
+            [
+              8328,
+              10223
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.11968511144674814,
+          "joint_tokens": 509,
+          "correct": false
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            15,
+            14,
+            16,
+            1,
+            12,
+            8
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 621.4840280008502,
+          "ranking": [
+            15,
+            1,
+            17,
+            31,
+            16,
+            12,
+            10,
+            2,
+            5,
+            6,
+            22,
+            23,
+            3,
+            14,
+            26,
+            25,
+            32,
+            7,
+            9,
+            21,
+            19,
+            33,
+            29,
+            13,
+            4,
+            11,
+            24,
+            30,
+            18,
+            27,
+            0,
+            28,
+            20,
+            8
+          ],
+          "selected_spans": [
+            [
+              685,
+              1190
+            ],
+            [
+              5562,
+              5573
+            ],
+            [
+              7302,
+              7485
+            ],
+            [
+              8328,
+              10223
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.11872396906036889,
+          "joint_tokens": 500,
+          "correct": false
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            6,
+            8
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 505.235762000666,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "selected_spans": [
+            [
+              0,
+              1979
+            ],
+            [
+              4236,
+              4789
+            ],
+            [
+              5562,
+              5573
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.11638976612201932,
+          "joint_tokens": 495,
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch6:421:nda-3",
+      "phase": "development",
+      "group": "original-contractnli:421",
+      "native_ranking_ids": [
+        15,
+        5,
+        6,
+        17,
+        16,
+        1,
+        21,
+        13,
+        22,
+        3,
+        2,
+        14,
+        4,
+        12,
+        20,
+        7,
+        19,
+        9,
+        24,
+        31,
+        8,
+        32,
+        10,
+        25,
+        33,
+        29,
+        28,
+        26,
+        23,
+        27,
+        11,
+        30,
+        0,
+        18
+      ],
+      "primary_selected_unit_ids": [
+        15,
+        14,
+        16,
+        5,
+        8
+      ],
+      "exact_cosine_ranking_ids": [
+        15,
+        5,
+        6,
+        17,
+        16,
+        1,
+        21,
+        13,
+        22,
+        3,
+        2,
+        14,
+        4,
+        12,
+        20,
+        7,
+        19,
+        9,
+        24,
+        31,
+        8,
+        32,
+        10,
+        25,
+        33,
+        29,
+        28,
+        26,
+        23,
+        27,
+        11,
+        30,
+        0,
+        18
+      ],
+      "exact_top2_set_agreement": true,
+      "exact_candidate_set_agreement": true,
+      "gold": "No",
+      "arms": {
+        "ruvector_top2": {
+          "selected": [
+            15,
+            14,
+            16,
+            5,
+            8
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 616.5097999983118,
+          "ranking": [
+            15,
+            5,
+            6,
+            17,
+            16,
+            1,
+            21,
+            13,
+            22,
+            3,
+            2,
+            14,
+            4,
+            12,
+            20,
+            7,
+            19,
+            9,
+            24,
+            31,
+            8,
+            32,
+            10,
+            25,
+            33,
+            29,
+            28,
+            26,
+            23,
+            27,
+            11,
+            30,
+            0,
+            18
+          ],
+          "selected_spans": [
+            [
+              3527,
+              4236
+            ],
+            [
+              5562,
+              5573
+            ],
+            [
+              8328,
+              10223
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.11968511144674814,
+          "joint_tokens": 495,
+          "correct": true
+        },
+        "same_nli_lexical_top2": {
+          "selected": [
+            6,
+            5,
+            7,
+            15
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 581.918896001298,
+          "ranking": [
+            6,
+            15,
+            2,
+            12,
+            1,
+            25,
+            17,
+            5,
+            22,
+            3,
+            21,
+            19,
+            10,
+            14,
+            27,
+            11,
+            32,
+            31,
+            16,
+            26,
+            13,
+            0,
+            4,
+            7,
+            8,
+            9,
+            18,
+            20,
+            23,
+            24,
+            28,
+            29,
+            30,
+            33
+          ],
+          "selected_spans": [
+            [
+              3527,
+              5562
+            ],
+            [
+              8778,
+              9565
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.12915922925534348,
+          "joint_tokens": 509,
+          "correct": true
+        },
+        "same_nli_positional_first2": {
+          "selected": [
+            0,
+            1,
+            2,
+            6,
+            8
+          ],
+          "gold_span_count": 0,
+          "any_gold_overlap": false,
+          "all_gold_spans_overlap": false,
+          "decode_ms": 484.5240829999966,
+          "ranking": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "selected_spans": [
+            [
+              0,
+              1979
+            ],
+            [
+              4236,
+              4789
+            ],
+            [
+              5562,
+              5573
+            ]
+          ],
+          "additional_neighbor_units_inspected": [],
+          "fallback_selected_unit_ids": [],
+          "context_character_coverage": 0.11638976612201932,
+          "joint_tokens": 481,
+          "correct": true
+        }
+      }
+    }
+  ],
+  "official_rank": null,
+  "official_score": null,
+  "SOTA_established": false,
+  "generic_submitted_Jev104_RRF10_champions_unchanged": true,
+  "auditor_native_calls": 0,
+  "auditor_ONNX_calls": 0,
+  "artifact_pins": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/attempt.json",
+      "bytes": 460,
+      "sha256": "799194c360723be8603d20b7584e23c40b4c82211be5bdb8967006610a3d3b63"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/0dbad7bf69dfb52c0e69528cba36ccd905d88f67a8f0f0cbc1766b434bfe9daa.json",
+      "bytes": 137401,
+      "sha256": "0dbad7bf69dfb52c0e69528cba36ccd905d88f67a8f0f0cbc1766b434bfe9daa"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/254cdbf86239a28f5dee9b055c2c2989e743f9b99d2c55623336d4c6a7b26de7.json",
+      "bytes": 137404,
+      "sha256": "254cdbf86239a28f5dee9b055c2c2989e743f9b99d2c55623336d4c6a7b26de7"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/27b19735594084f6b9d1f8d7542bc090a80a9398e6364d6e603f555f588d2d38.json",
+      "bytes": 331330,
+      "sha256": "27b19735594084f6b9d1f8d7542bc090a80a9398e6364d6e603f555f588d2d38"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/39de7f86e094251d60b87a84819ed1d84407f76cfb3edeabaf936b7b1c3b9b32.json",
+      "bytes": 331308,
+      "sha256": "39de7f86e094251d60b87a84819ed1d84407f76cfb3edeabaf936b7b1c3b9b32"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/5a328db7763003d66f8a95d6f21430f86ac7a39b62ca8728facb0bc6f32fd192.json",
+      "bytes": 266515,
+      "sha256": "5a328db7763003d66f8a95d6f21430f86ac7a39b62ca8728facb0bc6f32fd192"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/5d17fe6fff6e31b65e5df83f13c77700b3ce33b4d11d06f51b40cc22c86a0101.json",
+      "bytes": 282550,
+      "sha256": "5d17fe6fff6e31b65e5df83f13c77700b3ce33b4d11d06f51b40cc22c86a0101"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/5ea2c85fef0ed962a88d0038a17bd6102e11defa6709c3e5dfd18dde6a749ec8.json",
+      "bytes": 177705,
+      "sha256": "5ea2c85fef0ed962a88d0038a17bd6102e11defa6709c3e5dfd18dde6a749ec8"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/5eec5aebd4ba413fea34f45035bd0ee01d4ec62dea0e7975f2cef37628996e78.json",
+      "bytes": 72745,
+      "sha256": "5eec5aebd4ba413fea34f45035bd0ee01d4ec62dea0e7975f2cef37628996e78"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/690f3f69470659551d338f0f523a755694962d30053e632438c07e1df473a15c.json",
+      "bytes": 282572,
+      "sha256": "690f3f69470659551d338f0f523a755694962d30053e632438c07e1df473a15c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/6dfc342db7f0095a5e91405a0ce23b47272510e7a87986f102a49abbbe72511e.json",
+      "bytes": 177732,
+      "sha256": "6dfc342db7f0095a5e91405a0ce23b47272510e7a87986f102a49abbbe72511e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/75f7fa9d4032f82aa5e2c04fa2e1fa54d0794714951eda784d4ab98e9505f290.json",
+      "bytes": 266493,
+      "sha256": "75f7fa9d4032f82aa5e2c04fa2e1fa54d0794714951eda784d4ab98e9505f290"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/8956bb2aaa567e0c3028dc0287a13a2ac965ffece729d82511e54b7371fd692a.json",
+      "bytes": 169687,
+      "sha256": "8956bb2aaa567e0c3028dc0287a13a2ac965ffece729d82511e54b7371fd692a"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/895d1d057a73c289fd83e905edeb5419c9edda6b1ef8586d28b5253e9709949d.json",
+      "bytes": 177754,
+      "sha256": "895d1d057a73c289fd83e905edeb5419c9edda6b1ef8586d28b5253e9709949d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/981c6c9affa7e063cf6dcfa22cfafdb3512e6a08e6e39b78bdb2178b589fe349.json",
+      "bytes": 177724,
+      "sha256": "981c6c9affa7e063cf6dcfa22cfafdb3512e6a08e6e39b78bdb2178b589fe349"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/a175f66653b31b966de17b5884cf0e8fadbe7bec65cb0447c235c688a1ac1f11.json",
+      "bytes": 72726,
+      "sha256": "a175f66653b31b966de17b5884cf0e8fadbe7bec65cb0447c235c688a1ac1f11"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/a9ef0239ef807270e254215010687e9e15d624947fb093d6f77e916a8938d088.json",
+      "bytes": 177751,
+      "sha256": "a9ef0239ef807270e254215010687e9e15d624947fb093d6f77e916a8938d088"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/b1e904a7f3251ce9a8499f075793bc9551e23e89a98fbce0b23126faf4f7e32c.json",
+      "bytes": 137382,
+      "sha256": "b1e904a7f3251ce9a8499f075793bc9551e23e89a98fbce0b23126faf4f7e32c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/b8360f7ce1c4199c03e4f3177bda854221bbea7ef5161dcf05737eccb8c80332.json",
+      "bytes": 331327,
+      "sha256": "b8360f7ce1c4199c03e4f3177bda854221bbea7ef5161dcf05737eccb8c80332"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/be39fdae17bb29438a62169e130eb234da53a6a0dc08df20e41b3be36b7cb7da.json",
+      "bytes": 177727,
+      "sha256": "be39fdae17bb29438a62169e130eb234da53a6a0dc08df20e41b3be36b7cb7da"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/be4ae47bc18ceca00c578c8a4032fd16a79f2daff8326a9594020cd6541fb1f8.json",
+      "bytes": 266512,
+      "sha256": "be4ae47bc18ceca00c578c8a4032fd16a79f2daff8326a9594020cd6541fb1f8"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/d372365afa7ec5a018546ab39e261467027d9d74eeaf78568d018801d5611c88.json",
+      "bytes": 72748,
+      "sha256": "d372365afa7ec5a018546ab39e261467027d9d74eeaf78568d018801d5611c88"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/dd621287c6a2d05f62beda70ca19915e163e927148da8de2812903f4ec06fb49.json",
+      "bytes": 169665,
+      "sha256": "dd621287c6a2d05f62beda70ca19915e163e927148da8de2812903f4ec06fb49"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/e178b0f8192eb8b56158557fc574d6cfec54d57c98a538353a6ce4860eeaa6e4.json",
+      "bytes": 282569,
+      "sha256": "e178b0f8192eb8b56158557fc574d6cfec54d57c98a538353a6ce4860eeaa6e4"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/bundles/f142ded37ef40f22844a3a833d2e6b135066c289671a7811d5276b0c6d38613d.json",
+      "bytes": 169684,
+      "sha256": "f142ded37ef40f22844a3a833d2e6b135066c289671a7811d5276b0c6d38613d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/cleanup.json",
+      "bytes": 177,
+      "sha256": "cf287a2de2da3627b7810b859d6f76e2ecfaae499dfeef65f222880cced003e1"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/completion.json",
+      "bytes": 702,
+      "sha256": "5160afefcffec047609589caa8f7fcd1a11126a52fd330cc5d3b08153dc35790"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/development-comparison.json",
+      "bytes": 3560,
+      "sha256": "8d8c4a3cdf103e4f7748d49ddb192abd0c6776ca98b42ab6e861e115bc260952"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/final-engine.json",
+      "bytes": 12311,
+      "sha256": "13db4d4498c985839afed37bd8433110094db1c393c9afb2baa4faefb3e03ba5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/progress.json",
+      "bytes": 668,
+      "sha256": "b76e3b2cd323aed34704fc2fc1b9bab2886142470a44ee63809fbe5b6a0feca2"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/records.jsonl",
+      "bytes": 2430078,
+      "sha256": "1db200972ba375c8a7ecfc6420e283129cae482836051ced431cba490ed1f7ee"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/report.json",
+      "bytes": 570,
+      "sha256": "057042bbdf333953e3475f6ae60d9a24f8be2f7e87d34e922a83428113e95b03"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/resources.json",
+      "bytes": 666,
+      "sha256": "b13cd9dfa196edde7f3b8780db5913fe944aec587255a218b5d83521c32e5344"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/runtime.json",
+      "bytes": 8216,
+      "sha256": "5516fa6d78d94da232d4159531bbefd9c7b769c98503a2518dad51aaaaa4ef6b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/server-audit.jsonl",
+      "bytes": 118604,
+      "sha256": "51c6caaef9ecf138a76fe82ba21ac968d41dce709c672f45cdd0135623752725"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/started-requests.jsonl",
+      "bytes": 387209,
+      "sha256": "21c8b384ed60a161651ba8df525660da0fa8af8c5c73b00222cd3076dabe521c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/wire.jsonl",
+      "bytes": 2495580,
+      "sha256": "f1bee59339666b420005c31be96f7e7f2a43711e3ded314f812db504a1ede8e7"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch6/runs/composite/worker.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

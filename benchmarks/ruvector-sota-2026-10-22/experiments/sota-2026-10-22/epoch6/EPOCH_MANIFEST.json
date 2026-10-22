@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "epoch": 6,
+  "study_id": "native-coherent-context-deberta-base-e6",
+  "saved_at": "2026-10-22T20:08:28.942654+00:00",
+  "parent_checkpoint": "78aea9b360f2cf890a94c219a44238dd0f6f1991",
+  "frozen_plan_sha256": "428beafd71468c5551ae244df8dec468e77ffb5f319236605c79cd56316e1d0d",
+  "status": "REJECTED_DEV_GATE",
+  "hypothesis": "Same stronger pretrained DeBERTa-base model with legal paragraph/sentence source partition, ranked anchor plus same-paragraph neighbors packed whole under512tokens, actual nativeRuVector versus matched same-model lexical/positional retrieval.",
+  "scientific_scope": "Selector comparisons under coherentcontext policy on one fresh DEV draw; NOT causal oldvsnew context or modelsizegain, not fullLegalBench/currentJev300/ClaimBench.",
+  "source_and_data_frozen_before_measurement": true,
+  "candidate_manifest": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch6/proposal-manifest.json",
+    "sha256": "337552710c2fdaf360fdc17f084a3f3df17d470322b114283b005c7130032eae"
+  },
+  "premeasurement_acceptance": {
+    "path": "experiments/sota-2026-10-22/audit/epoch6/premeasurement-acceptance-v1.json",
+    "sha256": "e61dfb6ebb8853418b597797133384c0b01313f24a37c77f5be11b8f0cd78380"
+  },
+  "independent_actual_report": {
+    "path": "experiments/sota-2026-10-22/audit/epoch6/actual-independent-v1.json",
+    "sha256": "80b8c10b8e6606a78a0aa9ee3a428def39e38c71ccce98a986d711a6e66d0118"
+  },
+  "arm_name_scope": "Legacytop2names are aliases: actual40rankedanchor candidates plusneighbor expansion under shared512budget, variableunitcount. No causalold-vs-newcontextclaim.",
+  "actual_results": {
+    "DEV_n": 24,
+    "DEV_document_groups": 8,
+    "candidate_correct": 12,
+    "successful_HTTP": 24,
+    "failed_HTTP": 0,
+    "completed_corpus": true,
+    "metrics": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.7988140612899279,
+        "nll": 1.2823979554002527,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 15,
+        "brier": 0.595148733749307,
+        "nll": 0.9767133868016766,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 10,
+        "brier": 0.9030246722342019,
+        "nll": 1.485762677561764,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.5003804719746382,
+        "nll": 0.69352768296981,
+        "errors": 0,
+        "strict_valid": 24
+      }
+    },
+    "pipeline_latency_seconds": {
+      "p50": 2.387746137499562,
+      "p95": 4.378658133300086,
+      "max": 4.626032697000483,
+      "scope": "Whole HTTP request includesall3NLIcontrols+native104excerpt+evidenceencoding/index; not primary-only deployment"
+    },
+    "wall_seconds_including_model_load": 67.73272761400221,
+    "resources": {
+      "at": "2026-10-22T20:05:55.977933+00:00",
+      "worker_cpu_user_seconds": 114.04538,
+      "worker_cpu_system_seconds": 0.800918,
+      "worker_peak_RSS_bytes": 1213554688,
+      "terminated_children_cpu_user_seconds": 5.966858,
+      "terminated_children_cpu_system_seconds": 0.655357,
+      "largest_terminated_child_peak_RSS_bytes": 1213554688,
+      "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+      "allowed_CPU_ids": [
+        0,
+        1
+      ],
+      "configured_ORT_threads": 2,
+      "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+    },
+    "actual_execution_counters": {
+      "requests_attempted": 24,
+      "requests_completed": 24,
+      "native104_requests_attempted": 24,
+      "native104_requests_completed": 24,
+      "native_core_searches_attempted": 24,
+      "native_core_searches_completed": 24,
+      "bge_forward_batches_attempted": 50,
+      "bge_forward_batches_completed": 50,
+      "bge_texts_attempted": 216,
+      "bge_texts_completed": 216,
+      "nli_forward_pairs_attempted": 72,
+      "nli_forward_pairs_completed": 72,
+      "nli_input_tokens_attempted": 34993,
+      "nli_input_tokens_completed": 34993,
+      "bge_forward_wall_seconds": 11.793454538998049,
+      "nli_forward_wall_seconds": 40.7789601189761,
+      "context_partitions_attempted": 24,
+      "context_partitions_completed": 24,
+      "context_packs_attempted": 72,
+      "context_packs_completed": 72
+    },
+    "ANN_exact_top2_agreement": "24/24",
+    "ANN_exact_candidate_set_agreement": "24/24",
+    "same_context_singleton_logit_drift": 0.0,
+    "paired_document_bootstrap": {
+      "development": {
+        "same_nli_lexical_top2": {
+          "accuracy": {
+            "mean_improvement": -0.125,
+            "ci95": [
+              -0.3333333333333333,
+              0
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "brier": {
+            "mean_improvement": -0.20366532754062094,
+            "ci95": [
+              -0.46224954013629715,
+              0.04200207981662947
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "nll": {
+            "mean_improvement": -0.305684568598576,
+            "ci95": [
+              -0.7176580150570436,
+              0.14426501876235487
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          }
+        },
+        "same_nli_positional_first2": {
+          "accuracy": {
+            "mean_improvement": 0.08333333333333333,
+            "ci95": [
+              -0.125,
+              0.3333333333333333
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "brier": {
+            "mean_improvement": 0.10421061094427395,
+            "ci95": [
+              -0.25743154788841976,
+              0.45095065905431286
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "nll": {
+            "mean_improvement": 0.20336472216151133,
+            "ci95": [
+              -0.43162865076496704,
+              0.8061419225549772
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          }
+        },
+        "native104_on_ruvector_evidence": {
+          "accuracy": {
+            "mean_improvement": 0.0,
+            "ci95": [
+              -0.20833333333333331,
+              0.16666666666666666
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "brier": {
+            "mean_improvement": -0.2984335893152897,
+            "ci95": [
+              -0.4854442563733986,
+              -0.09223291138886354
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "nll": {
+            "mean_improvement": -0.5888702724304425,
+            "ci95": [
+              -0.990199116569537,
+              -0.1938435054262796
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          }
+        }
+      }
+    },
+    "uncertainty": "Only eightDEV documentgroups; nominal unadjusted paired2000draw CIs. No established benchmark superiority or generalization."
+  },
+  "confirmation_consumed": false,
+  "confirmation_requests_started": 0,
+  "used_identities_sha256": "ed68adc6303f8d42f4bb9f9adcb8522a0f86c263a15397a1c0523d4c84c0b0fb",
+  "rejection_reason": "Primary12/24 versus lexical15/24, positional10/24, sameexcerpt10412/24. Brier0.7988140612899279 and NLL1.2823979554002527 worse than lexical and excerpt104; frozenDEVgate fails, no confirmation/promotion/submission.",
+  "next_research_priority": "Close/reject this coherent-context recipe with generic MNLI/SNLI DeBERTa-base: native-selected evidence12/24 trails matched lexical15/24 and loses proper scores against lexical and excerpt104. Do not run more packing/ANN grids on exposedquestions or treat12vs10 across differentDEVsets as contextcausality. Nativecandidate40set and top2 exactlymatchcosine24/24; unsupported to tuneANN approximation. Before a distinct future CPUboundedstudy, prioritize a source-licensed materially different legal/typeddecision/NLI model with verified training-data/confirmation separation, or independent DEV-only reader/evidence diagnostics that can justify a frozen decision-policy change. Keep all8historicalattemptsclosed, champion unchanged, and unusedconfirmation96 reserved. ClaimBench exact data/scorer/license/submission access and officialcurrentJev300 publisher result remain unverified; no repeatedunchangedblocker retests.",
+  "budget": {
+    "original_study_used": 6,
+    "original_study_cap": 6,
+    "original_study_remaining": 0,
+    "original_status": "CLOSED_BUDGET_EXHAUSTED",
+    "epoch5_study_used": 1,
+    "epoch5_study_cap": 1,
+    "epoch5_study_remaining": 0,
+    "epoch5_status": "CLOSED_REJECTED",
+    "new_study_used": 1,
+    "new_study_cap": 1,
+    "new_study_remaining": 0,
+    "new_study_status": "CLOSED_REJECTED",
+    "lifetime_native_attempts": 8,
+    "this_epoch_native_attempts": 1,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "max_seconds": 600,
+    "automatic_retries": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "cleanup": {
+    "worker_and_owned_group_absent": true,
+    "native_child_absent": true,
+    "scoped_lock_held_until_compare_and_set_publication": true
+  },
+  "champions_unchanged": [
+    "submitted Native104",
+    "RRF10"
+  ],
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "new_publisher_submissions": 0,
+  "emails_sent": 0,
+  "source_license": "Original ContractNLI CC-BY4.0; MIT source; exact base-model/ONNX conversion provenance/license boundary preserved under candidate4; weights not republished."
+}

@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T20:09:24.496379+00:00",
+  "status": "REJECTED_DEV_GATE",
+  "actual_replay_sha256": "80b8c10b8e6606a78a0aa9ee3a428def39e38c71ccce98a986d711a6e66d0118",
+  "metrics": {
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.7988140612899279,
+        "nll": 1.2823979554002527,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 15,
+        "brier": 0.595148733749307,
+        "nll": 0.9767133868016766,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 10,
+        "brier": 0.9030246722342019,
+        "nll": 1.485762677561764,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.5003804719746382,
+        "nll": 0.69352768296981,
+        "errors": 0,
+        "strict_valid": 24
+      }
+    }
+  },
+  "gold_binary_counts": {
+    "Yes": 12,
+    "No": 12
+  },
+  "evidence_coverage": {
+    "ruvector_top2": {
+      "queries_with_annotations": 14,
+      "any_gold_span_overlap": 7,
+      "all_gold_spans_overlap": 6,
+      "all_gold_spans_fully_contained": 6,
+      "correct_among_any_overlap": 4,
+      "correct_among_fully_contained": 3,
+      "queries_selecting_fallback_units": 11,
+      "queries_inspecting_neighbor_outside_anchor_ranking": 0
+    },
+    "same_nli_lexical_top2": {
+      "queries_with_annotations": 14,
+      "any_gold_span_overlap": 6,
+      "all_gold_spans_overlap": 4,
+      "all_gold_spans_fully_contained": 4,
+      "correct_among_any_overlap": 5,
+      "correct_among_fully_contained": 3,
+      "queries_selecting_fallback_units": 7,
+      "queries_inspecting_neighbor_outside_anchor_ranking": 0
+    },
+    "same_nli_positional_first2": {
+      "queries_with_annotations": 14,
+      "any_gold_span_overlap": 6,
+      "all_gold_spans_overlap": 4,
+      "all_gold_spans_fully_contained": 4,
+      "correct_among_any_overlap": 4,
+      "correct_among_fully_contained": 3,
+      "queries_selecting_fallback_units": 6,
+      "queries_inspecting_neighbor_outside_anchor_ranking": 0
+    }
+  },
+  "readout_errors": {
+    "ruvector_top2": {
+      "wrong": 12,
+      "wrong_confidence_ge_0_9": 5,
+      "wrong_confidence_ge_0_99": 1,
+      "false_Yes": 8,
+      "false_No": 4
+    },
+    "same_nli_lexical_top2": {
+      "wrong": 9,
+      "wrong_confidence_ge_0_9": 5,
+      "wrong_confidence_ge_0_99": 0,
+      "false_Yes": 4,
+      "false_No": 5
+    },
+    "same_nli_positional_first2": {
+      "wrong": 14,
+      "wrong_confidence_ge_0_9": 6,
+      "wrong_confidence_ge_0_99": 1,
+      "false_Yes": 8,
+      "false_No": 6
+    },
+    "native104_on_ruvector_evidence": {
+      "wrong": 12,
+      "wrong_confidence_ge_0_9": 0,
+      "wrong_confidence_ge_0_99": 0,
+      "false_Yes": 8,
+      "false_No": 4
+    }
+  },
+  "context_summary": {
+    "ruvector_top2": {
+      "selected_units": {
+        "min": 4,
+        "p50": 4.0,
+        "max": 7,
+        "mean": 4.375
+      },
+      "joint_pair_tokens": {
+        "min": 405,
+        "p50": 499.5,
+        "max": 512,
+        "mean": 487.5
+      },
+      "UTF8_premise_bytes": {
+        "min": 1973,
+        "p50": 2566.5,
+        "max": 2803,
+        "mean": 2496.2083333333335
+      },
+      "source_character_coverage": {
+        "min": 0.09553754072278203,
+        "p50": 0.18406476352790796,
+        "max": 0.5875486381322957,
+        "mean": 0.21726776710850507
+      },
+      "admissions_attempted": 632,
+      "oversize_admissions_rejected": 527
+    },
+    "same_nli_lexical_top2": {
+      "selected_units": {
+        "min": 4,
+        "p50": 4.0,
+        "max": 7,
+        "mean": 4.416666666666667
+      },
+      "joint_pair_tokens": {
+        "min": 462,
+        "p50": 492.0,
+        "max": 512,
+        "mean": 491.5833333333333
+      },
+      "UTF8_premise_bytes": {
+        "min": 2030,
+        "p50": 2530.5,
+        "max": 2824,
+        "mean": 2514.5416666666665
+      },
+      "source_character_coverage": {
+        "min": 0.08254413213122207,
+        "p50": 0.1802300809544099,
+        "max": 0.7904818916492068,
+        "mean": 0.23261674166280175
+      },
+      "admissions_attempted": 633,
+      "oversize_admissions_rejected": 527
+    },
+    "same_nli_positional_first2": {
+      "selected_units": {
+        "min": 4,
+        "p50": 4.0,
+        "max": 6,
+        "mean": 4.375
+      },
+      "joint_pair_tokens": {
+        "min": 419,
+        "p50": 486.5,
+        "max": 512,
+        "mean": 478.9583333333333
+      },
+      "UTF8_premise_bytes": {
+        "min": 1385,
+        "p50": 2264.0,
+        "max": 2592,
+        "mean": 2235.1666666666665
+      },
+      "source_character_coverage": {
+        "min": 0.08254413213122207,
+        "p50": 0.15464156857022637,
+        "max": 0.5935348697994612,
+        "mean": 0.19405496258421406
+      },
+      "admissions_attempted": 615,
+      "oversize_admissions_rejected": 510
+    }
+  },
+  "ANN_diagnostics": {
+    "exact_top2_sets": 24,
+    "exact_ranked_candidate_sets": 24,
+    "exact_full_candidate_order": 24,
+    "requests": 24,
+    "scope": "Same savedBGEvectors cosine replay; actualnative rankings used, neverreplaced. Setsallunits maybetrivialwhenbank<=40; fullorder/top2reported separately."
+  },
+  "singleton_identical_context_logit_drift": 0.0,
+  "execution": {
+    "successful_HTTP": 24,
+    "errors": 0,
+    "actual_nativecore_searches": 24,
+    "actual_TypeSafe_excerpt_predictions": 24,
+    "actual_NLI_singleton_pairs": 72,
+    "NLI_input_tokens": 34993,
+    "actual_BGE_texts": 216,
+    "actual_BGE_batches": 50
+  },
+  "whole_batch_seconds_including_init": 67.73272761400221,
+  "allarm_latency_seconds": {
+    "development": {
+      "p50": 2.387746137499562,
+      "p95": 4.378658133300086,
+      "max": 4.626032697000483,
+      "scope": "Whole HTTP request includesall3NLIcontrols+native104excerpt+evidenceencoding/index; not primary-only deployment"
+    }
+  },
+  "resources": {
+    "at": "2026-10-22T20:05:55.977933+00:00",
+    "worker_cpu_user_seconds": 114.04538,
+    "worker_cpu_system_seconds": 0.800918,
+    "worker_peak_RSS_bytes": 1213554688,
+    "terminated_children_cpu_user_seconds": 5.966858,
+    "terminated_children_cpu_system_seconds": 0.655357,
+    "largest_terminated_child_peak_RSS_bytes": 1213554688,
+    "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+    "allowed_CPU_ids": [
+      0,
+      1
+    ],
+    "configured_ORT_threads": 2,
+    "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+  },
+  "paired_doc_bootstrap": {
+    "development": {
+      "same_nli_lexical_top2": {
+        "accuracy": {
+          "mean_improvement": -0.125,
+          "ci95": [
+            -0.3333333333333333,
+            0
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.20366532754062094,
+          "ci95": [
+            -0.46224954013629715,
+            0.04200207981662947
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.305684568598576,
+          "ci95": [
+            -0.7176580150570436,
+            0.14426501876235487
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "same_nli_positional_first2": {
+        "accuracy": {
+          "mean_improvement": 0.08333333333333333,
+          "ci95": [
+            -0.125,
+            0.3333333333333333
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.10421061094427395,
+          "ci95": [
+            -0.25743154788841976,
+            0.45095065905431286
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.20336472216151133,
+          "ci95": [
+            -0.43162865076496704,
+            0.8061419225549772
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "native104_on_ruvector_evidence": {
+        "accuracy": {
+          "mean_improvement": 0.0,
+          "ci95": [
+            -0.20833333333333331,
+            0.16666666666666666
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.2984335893152897,
+          "ci95": [
+            -0.4854442563733986,
+            -0.09223291138886354
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.5888702724304425,
+          "ci95": [
+            -0.990199116569537,
+            -0.1938435054262796
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      }
+    }
+  },
+  "takeaways": [
+    "Reject the native dense-selector coherent-context pipeline on frozen gates:12/24 vslexical15/24, properlossesworse thanlexical andsame-excerptnative104. Equalaccuracytoexcerpt104 andgainvsposition10/24 donotmeetgate.",
+    "All3readerarms sharecomplete sourcebank,40rankedANCHORbudget, same expansion and512pairguard; 4\u20137units wereactually selected. Legacytop2labels are compatibilityaliases.",
+    "This tests retrievalselectors undernewpacking. DifferentfreshDEVdatasets and absent sameinputoldpolicyarm mean no causalold-vs-newpacking/modelsize improvementclaim.",
+    "Dense ANN top2/fullcandidateorder agrees exact saved-vectorcosine inthissmallcorpus; changing ANN approximation alone is unsupported as the quality remedy.",
+    "Partial annotated-evidence overlap isnot evidence sufficiency. Fullgoldspancontainment andfallback-unit selectionsreportedseparately; sourceatoms can beexplicitlysplitwhenoversized, no hiddenclipping.",
+    "EightpublicDEVdocgroups yieldnominal unadjusted CIs and unknownpretraining contamination. No officialfullbenchmarkscore, no verifiedrank/SOTA.",
+    "Futureseparatelyfrozen research should prioritize source-licensed domain-aligned decision/readout and appropriatelyfrozen hybrid/lexical+dense retrieval with proper calibration/heldoutgroups, instead of anotherunmatched context/modelsize change. No confirmationtuning."
+  ],
+  "confirmation96_model_consumed": false,
+  "DEV24_retired_forever": true,
+  "budget": {
+    "original_study_closed_used6": true,
+    "epoch5_study_closed_used1": true,
+    "epoch6_study_closed_used1": true,
+    "lifetime_attempts": 8,
+    "remaining_in_each": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "no_retry": true
+  },
+  "submitted_champions_unchanged": true,
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "auditor_model_native_or_paid_calls": 0
+}

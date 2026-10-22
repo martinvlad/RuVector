@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-22T19:57:00.194524+00:00",
+  "checks_passed": true,
+  "context_source_sha256": "7bcd5f7537c24f5168e0402eb7d729ce97846b10eb5237730d586034a51edb34",
+  "config_sha256": "27f1f8064516b73ba32515adec20d4bb53ce355b46944cd33ba8a7191fc412a1",
+  "DEV_sha256": "70fdaf9b5cd591b76d2de7a96629b34ec5d16fea5c1d1c10b19bb8413d5cb8db",
+  "confirmation_sha256": "f01894b231b744c8297344615ce6037524b6eb0794c7548e931839d2936cd79f",
+  "phases": {
+    "development": {
+      "requests": 24,
+      "source_document_groups": 8,
+      "all_possible_single_anchors_plus_neighbors_tested": 576,
+      "full_ranking_paths_tested": 120,
+      "fallback_units_across_queries": 69
+    },
+    "confirmation": {
+      "requests": 96,
+      "source_document_groups": 32,
+      "all_possible_single_anchors_plus_neighbors_tested": 1950,
+      "full_ranking_paths_tested": 480,
+      "fallback_units_across_queries": 288
+    }
+  },
+  "possible_anchors_tested": 2526,
+  "bounded_full_ranking_paths_tested": 600,
+  "admission_trace_attempts_retokenized": 21065,
+  "oversize_admissions_rejected": 11023,
+  "max_observed_complete_NLI_pair_tokens": 512,
+  "max_all120_BGE_sequence_tokens": 184,
+  "max_observed_native104_context_bytes": 2940,
+  "max_source_units": 40,
+  "budget_proof": "Sourcechecks before EVERY admission and final rendering imply allrankingpath contexts <=512; everyfrozenunit/query measured rawBGE<=256. Enumeratedall120singleanchors+neighbors plusfivefullorders/input; no exhaustive40!ranking claim. Runtime additionally requires16KiB nativeguard.",
+  "source_coverage": "Fullsourceexactcontiguouspartition includingwhitespace, nooffsetdrop/overlap. Oversizedatoms explicitlytokenfallback; allselectedstrings/hash/wholehypothesis/readmissioncounts replayed.",
+  "NLI_tokenizer_sha256": "a86f883318afa11c8c10466f1bf4efaeb6ded28a52cbe57217a8fa0d0a2a87df",
+  "BGE_tokenizer_sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+  "model_initializations_or_forwards_native_calls": 0,
+  "scope": "Tokenizers/sourcepolicy only; no predictions or qualityclaim."
+}

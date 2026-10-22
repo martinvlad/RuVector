@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "champion": "native104 unchanged",
+  "official_sota_established": false,
+  "rejections": [
+    {
+      "epoch": 1,
+      "candidate": "learned residual head",
+      "DEV_correct": 106,
+      "DEV_n": 183,
+      "confirmation_candidate": 39,
+      "confirmation_control": 41,
+      "n": 48,
+      "status": "REJECTED",
+      "source_report": "audit/epoch1-promotion-decision-v1.json"
+    },
+    {
+      "epoch": 2,
+      "candidate": "decision-preserving calibration",
+      "candidate_correct": 57,
+      "control_correct": 57,
+      "n": 96,
+      "brier_candidate": 0.4999147275769355,
+      "brier_control": 0.4995167302004609,
+      "nll_candidate": 0.6930619081225885,
+      "nll_control": 0.6926639080519976,
+      "status": "REJECTED",
+      "source_report": "audit/epoch2-actual-independent-v1.json"
+    },
+    {
+      "epoch": 3,
+      "candidate": "native RuVector evidence + DeBERTa NLI",
+      "DEV_correct": 16,
+      "DEV_n": 24,
+      "same_NLI_lexical_correct": 13,
+      "same_NLI_positional_correct": 15,
+      "native104_on_ruvector_evidence_correct": 11,
+      "reason": "Frozen Brier and NLL gate failed vs excerpt-conditioned native104; no confirmation allowed after two-attempt budget",
+      "confirmation_consumed": false,
+      "status": "REJECTED_DEV_GATE",
+      "source_report": "audit/epoch3/retry2-actual-independent-v1.json"
+    },
+    {
+      "epoch": 4,
+      "candidate": "native RuVector evidence + DeBERTa-base singleton joint context",
+      "status": "BLOCKED_RUNTIME_CLOSURE",
+      "reason": "The actual isolated platformpackage package.json main points to index.js, but that required file was omitted from asset-list-only binding. Native-candidates.cjs could not load @ruvector/core; no successful native-core search or NLI decision occurred.",
+      "attempts": 1,
+      "HTTP500": 1,
+      "scored_decisions": 0,
+      "accuracy": null,
+      "confirmation_consumed": false,
+      "source_report": "audit/epoch4/actual-failure-independent-v1.json"
+    },
+    {
+      "epoch": 5,
+      "status": "REJECTED_DEV_GATE",
+      "candidate": "same frozen candidate4 strongerDeBERTabase after complete nativeclosure",
+      "DEV_n": 24,
+      "DEV_candidate": 10,
+      "DEV_same_model_lexical": 12,
+      "DEV_same_model_positional": 10,
+      "DEV_native104_same_excerpt": 12,
+      "reason": "Accuracy10/24 vs12/24 same-modellexical and12/24 excerptnative104; primaryBrier/NLL worse than both. Frozen gate fails; positional comparison alone is insufficient. Do not promote or submit.",
+      "confirmation_consumed": false,
+      "source_report": "audit/epoch5/actual-independent-v1.json"
+    },
+    {
+      "epoch": 6,
+      "status": "REJECTED_DEV_GATE",
+      "candidate": "native coherent legal-source context + same DeBERTa-base",
+      "DEV_n": 24,
+      "DEV_candidate": 12,
+      "DEV_same_model_lexical": 15,
+      "DEV_same_model_positional": 10,
+      "DEV_native104_same_excerpt": 12,
+      "reason": "Primary12/24 versus lexical15/24, positional10/24, sameexcerpt10412/24. Brier0.7988140612899279 and NLL1.2823979554002527 worse than lexical and excerpt104; frozenDEVgate fails, no confirmation/promotion/submission.",
+      "confirmation_consumed": false,
+      "source_report": "audit/epoch6/actual-independent-v1.json",
+      "scope": "Same-modelretrieval withinnewcontextpolicy; no oldvsnew causalclaim"
+    }
+  ],
+  "epoch5_budget": {
+    "original_study_used": 6,
+    "original_study_cap": 6,
+    "original_study_remaining": 0,
+    "original_study_status": "CLOSED_BUDGET_EXHAUSTED",
+    "new_study_used": 1,
+    "new_study_cap": 1,
+    "new_study_remaining": 0,
+    "new_study_status": "CLOSED_REJECTED",
+    "lifetime_native_attempts": 7,
+    "this_epoch_native_attempts": 1,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "max_seconds": 600,
+    "automatic_retries": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "next_research_priority": "Close/reject this coherent-context recipe with generic MNLI/SNLI DeBERTa-base: native-selected evidence12/24 trails matched lexical15/24 and loses proper scores against lexical and excerpt104. Do not run more packing/ANN grids on exposedquestions or treat12vs10 across differentDEVsets as contextcausality. Nativecandidate40set and top2 exactlymatchcosine24/24; unsupported to tuneANN approximation. Before a distinct future CPUboundedstudy, prioritize a source-licensed materially different legal/typeddecision/NLI model with verified training-data/confirmation separation, or independent DEV-only reader/evidence diagnostics that can justify a frozen decision-policy change. Keep all8historicalattemptsclosed, champion unchanged, and unusedconfirmation96 reserved. ClaimBench exact data/scorer/license/submission access and officialcurrentJev300 publisher result remain unverified; no repeatedunchangedblocker retests.",
+  "used_identity_manifest": "experiments/sota-2026-10-22/epoch6/USED_IDENTITIES.json",
+  "epoch6_budget": {
+    "original_study_used": 6,
+    "original_study_cap": 6,
+    "original_study_remaining": 0,
+    "original_status": "CLOSED_BUDGET_EXHAUSTED",
+    "epoch5_study_used": 1,
+    "epoch5_study_cap": 1,
+    "epoch5_study_remaining": 0,
+    "epoch5_status": "CLOSED_REJECTED",
+    "new_study_used": 1,
+    "new_study_cap": 1,
+    "new_study_remaining": 0,
+    "new_study_status": "CLOSED_REJECTED",
+    "lifetime_native_attempts": 8,
+    "this_epoch_native_attempts": 1,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "max_seconds": 600,
+    "automatic_retries": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  }
+}

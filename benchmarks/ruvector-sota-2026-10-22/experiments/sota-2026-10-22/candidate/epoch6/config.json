@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "epoch": 6,
+  "hypothesis": "Complete legal source units plus immediate same-paragraph context improve evidence use compared with arbitrary overlapping fixed-token windows.",
+  "query_prefix": "Represent this sentence for searching relevant passages: ",
+  "source_partition": {
+    "target": 128,
+    "nli_cap": 160,
+    "bge_cap": 256,
+    "max_units": 192,
+    "paragraph_boundary": "blank-line break, including its exact whitespace",
+    "atom_boundary": "sentence or semicolon followed by whitespace",
+    "oversize_policy": "Explicit observed NLI token-offset fallback, complete source retained"
+  },
+  "ranking_depth": 40,
+  "ranking_depth_scope": "min(40, total_units) anchor candidates for native, lexical and positional arms; same-paragraph neighbor expansion may inspect additional units under the same512-token budget",
+  "packing": "Scan ranked anchors; add complete anchor if it fits, then previous and next same-paragraph units if they fit; concatenate merged selected spans in source order",
+  "joint_pair_token_cap": 512,
+  "decoder": "Unchanged pinned candidate4 DeBERTa-base singleton, no padding, no truncation",
+  "temperature": 1.0,
+  "training": "none",
+  "calibration": "none",
+  "paid_calls": 0,
+  "legacy_arm_names": "ruvector_top2/same_nli_lexical_top2/same_nli_positional_first2 are interface aliases; epoch6 ranks up to40 anchor candidates, may inspect same-paragraph neighbors outside that ranking, and packs a variable number identically under512 tokens"
+}

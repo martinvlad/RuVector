@@ -1,20 +1,19 @@
 {
   "schema_version": 1,
-  "run_id": "7370d416-ce68-417d-9fd9-4511e2ff3d34",
-  "state": "COMPLETE_REJECTED",
-  "started_at": "2026-10-22T15:56:30.764764+00:00",
-  "expires_at": "2026-10-22T16:30:05.018548+00:00",
-  "owner_scope": "RuVectorSOTAepoch3",
-  "checkpoint_parent": "e6de3031b552b7b68ec8e8a97f6627899ace98a9",
+  "run_id": "0bddc698-63bf-4067-886c-64436d5eb0f3",
+  "state": "ACTIVE",
+  "started_at": "2026-10-22T17:34:38.286Z",
+  "expires_at": "2026-10-22T18:19:38.246Z",
+  "owner_scope": "RuVectorSOTAepoch4",
+  "checkpoint_parent": "b1631d34a98df9866f6394ecd07e2bb505a16917",
   "limits": {
-    "native_batches": 2,
+    "native_batches": 1,
     "threads": 2,
     "seconds_per_batch": 600,
-    "paid_calls": 0
+    "paid_calls": 0,
+    "GPU_calls": 0
   },
-  "instruction": "While ACTIVE and before expires_at, do not overlap experiments or write this branch from another run. Inspect actual owner state before treating an expired lease as safe.",
-  "experiments_active": false,
-  "epoch_native_attempts": 2,
-  "confirmation_consumed": false,
-  "reason": "Actual DEV gate failed; no promotion or duplicate submission"
+  "original_study_attempts_before": 5,
+  "original_study_attempt_cap": 6,
+  "instruction": "Exclusive scoped run; stop instead of overlapping. One shared native corpus batch/deadline only. Confirmation gated after frozen DEV; zero automatic retries after native process start."
 }

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "at": "2026-10-23T16:42:14.614822+00:00",
+  "review_status": "PREFREEZE_SCORER_GAPS_FOUND_NO_QUALIFICATION_EXECUTED",
+  "reviewer": "Independent platform source_integrity subagent",
+  "source_checkpoint": "6eb624feef9ea93c3b1a8f76c20e8442c6bece50",
+  "reviewed_files": [
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch19/protocol.json",
+      "bytes": 11528,
+      "sha256": "fdb9e1464e41b48fe23b7f7957b145dc0e97a524b5f10b451f5a0c184e44ae6b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch19/scorer.py",
+      "bytes": 27282,
+      "sha256": "40c713c32da29bb1d1b7f664f27397e8968af0f5b19441523bfe33656e01f2bf"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch19/test_scorer.py",
+      "bytes": 14252,
+      "sha256": "6df5a412f10f2af0c45b3ddd37f335f5af857865e3526ac852c35afc2c7f6fd3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/reporting/SEMANTIC_PRECISION_QUALIFICATION_SPEC.json",
+      "bytes": 9201,
+      "sha256": "93564659aa991dc85a6ee129cc5ab2964946f26696b987352006dcde648f74ae"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch19/NATIVE_ENGINEERING_ADDENDUM.json",
+      "bytes": 3549,
+      "sha256": "55102bd484437359c667ef7ae6584a9462ab3a3f4f84af19a28bb3544efc44b6"
+    }
+  ],
+  "method": "Read-only source/math review and stdlib-only modifications of the authored synthetic test_scorer.fixtures() receipts in memory. No benchmark inputs or actual model/native results were read or generated.",
+  "synthetic_baseline": "checks_passed=true, engineering_qualified=true on the deliberately invented pure engineering receipt fixture",
+  "findings": [
+    {
+      "id": "external-cleanup-receipt",
+      "severity": "substantive process gate gap",
+      "demonstration": "Set raw.execution to invented outer fixture receipt, omit separately supplied execution argument. evaluate(plan,raw,None) still returns checks_passed=true and engineering_qualified=true.",
+      "reason": "Worker-supplied raw data can self-certify the separately required outer terminal cleanup/resource evidence.",
+      "requested_fix": "Require an independently supplied execution argument and mandatory CLI --execution; never fall back to raw.execution."
+    },
+    {
+      "id": "full-source-offset-coverage",
+      "severity": "substantive feed gate gap",
+      "demonstration": "Replace all offsets in all six synthetic rows with [0,0], keeping literal source/feed equality and other declared flags. The scorer still qualifies.",
+      "reason": "Bounded and monotonic offsets alone do not prove coverage of the complete direct original premise/hypothesis.",
+      "requested_fix": "Require source-offset coverage of every non-whitespace character in each complete literal source segment, with the special-token offsets still zero. Do not invent fixed token IDs."
+    },
+    {
+      "id": "exposed-native-score-suppression",
+      "severity": "substantive numeric gate gap",
+      "demonstration": "Keep raw_scores_available=false but add scores=[NaN,NaN,NaN] to every actual-looking synthetic query. The scorer still qualifies; score fields are ignored.",
+      "reason": "An availability flag can suppress finite checking of native fields that are already exposed in the raw query receipts.",
+      "requested_fix": "Require a literal boolean matching consistent score-field presence across every query, and validate every exposed score as finite."
+    },
+    {
+      "id": "empty-role-schema",
+      "severity": "schema gate gap",
+      "demonstration": "Delete train, calibration, datasets and confirmation from the synthetic plan. The scorer still qualifies because absent roles are falsy.",
+      "reason": "Missing role declarations are accepted as empty declarations.",
+      "requested_fix": "Require each frozen role field explicitly equal to an empty list."
+    }
+  ],
+  "additional_source_observation": {
+    "id": "outer-receipt-current-run-binding",
+    "status": "SOURCE_OBSERVATION_FOR_PARENT_WORKER_SCHEMA_REVIEW",
+    "observation": "The reviewed scorer validates the outer receipt internally but does not compare an outer plan SHA or worker/helper PIDs with current raw worker provenance. Main binds raw.plan_sha256 only.",
+    "recommendation": "Where worker schema emits actual process IDs, require current plan SHA and worker PID/PGID/helper PID agreement between raw and independent outer receipt, so a stale unrelated cleanup receipt cannot certify a different raw run."
+  },
+  "negative_control": "A synthetic infinite native search latency was correctly rejected as an invalid finite-number receipt.",
+  "no_source_or_test_edits_by_reviewer": true,
+  "actual_qualification_model_forward_calls": 0,
+  "actual_native_calls": 0,
+  "tokenizer_framework_model_or_native_imports": 0,
+  "benchmark_case_or_annotation_reads": 0,
+  "Git_or_external_mutations": 0,
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "next_step": "Parent will preserve reviewed bytes and fix source/test gaps before the new source freeze. This report is append-only; final corrected-source review must use a new artifact."
+}

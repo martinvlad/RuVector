@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "kind": "PREMEASUREMENT_PUBLICATION_METADATA_WRAPPER_PATH_GUARD_CORRECTION",
+  "status": "CORRECTED_APPEND_ONLY_WRAPPER_AWAITING_INDEPENDENT_REVIEW_NOT_EXECUTED",
+  "previous_wrapper": {
+    "path": "experiments/sota-2026-10-22/epoch19/preparation/finalize_source_controls.py",
+    "bytes": 3621,
+    "sha256": "84eeca2c60661aa88b181acb65e1e9d919a1b5542b87cef699d311038f2c1904",
+    "preserved": true,
+    "executed": false
+  },
+  "review_finding": "The original wrapper's lexical output containment check admitted a dot-dot path alias. No actual control build, transformation, publication or inference was executed. The corrected wrapper rejects dot-dot path components before path checks.",
+  "corrected_wrapper": {
+    "path": "experiments/sota-2026-10-22/epoch19/preparation/finalize_source_controls_v2.py",
+    "bytes": 3693,
+    "sha256": "429061194b4455c9824cf5b763b4e6f1b6ec240f60038a14dd354b5826480269"
+  },
+  "scientific_frozen_plan_sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31",
+  "scientific_source_freeze_sha256": "37a8ce4a8660b6453b3a9efb3ad3d0328b5869f61ca49d5523fb6947761eff0e",
+  "scientific_source_plan_roles_scorer_gates_budget_unchanged": true,
+  "source_control_change": "publication0/conditional1 derived from exact frozen worker cap; requires exact independent source readback and fresh live scoped kernel lock; original CHECKPOINT_MANIFEST bytes preserved; final controls remain0.",
+  "actual_qualification_attempts": 0
+}

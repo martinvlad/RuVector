@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "kind": "PREMEASUREMENT_PUBLICATION_METADATA_CLARIFICATION",
+  "status": "CONCRETE_SOURCE_ONLY_WRAPPER_AWAITING_INDEPENDENT_REVIEW_NOT_EXECUTED",
+  "observed_issue": "The frozen control builder writes publication native_allowed0 and also conditional native_allowed_after_exact_remote_readback0 in source mode, while the unchanged frozen plan and instructions permit one future worker after independent source readback and fresh scoped kernel-lock admission. No conflicting derived controls have been published or executed.",
+  "frozen_original": {
+    "path": "experiments/sota-2026-10-22/epoch19/preparation/build_controls.py",
+    "sha256": "108492ae577f65e2fac66c66811f93e9442a4ed052b4cd2f331bf6791e849a04",
+    "preserved_unchanged": true
+  },
+  "append_only_wrapper": {
+    "path": "experiments/sota-2026-10-22/epoch19/preparation/finalize_source_controls.py",
+    "bytes": 3621,
+    "sha256": "84eeca2c60661aa88b181acb65e1e9d919a1b5542b87cef699d311038f2c1904"
+  },
+  "exact_transformation": {
+    "source_publication_native_allowed": 0,
+    "source_conditional_native_allowance_after_exact_matching_independent_remote_readback_and_live_kernel_lock": 1,
+    "allowance_derived_only_from_frozen_plan_worker_attempts": 1,
+    "final_controls_conditional_allowance": 0,
+    "CHECKPOINT_MANIFEST_bytes_unchanged": true,
+    "scientific_source_plan_scorer_roles_gates_and_budget_unchanged": true
+  },
+  "plan_sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31",
+  "source_freeze_sha256": "37a8ce4a8660b6453b3a9efb3ad3d0328b5869f61ca49d5523fb6947761eff0e",
+  "actual_qualification_attempts_at_report": 0,
+  "model_native_Git_calls_by_wrapper": 0,
+  "scope": "Additional reviewed publication source, outside the original scientific source snapshot; it must be included in the immutable premeasurement source publication. It changes no candidate, data role, measurement, statistical gate or execution cap. Final builder remains unchanged and closes all allowances."
+}

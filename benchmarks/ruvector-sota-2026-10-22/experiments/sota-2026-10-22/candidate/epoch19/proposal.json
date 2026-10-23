@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "study_id": "native-semantic-precision-qualification-e19",
+  "source_checkpoint": "6eb624feef9ea93c3b1a8f76c20e8442c6bece50",
+  "purpose": "Engineering-only qualification of the unchanged official 900M source checkpoint and same-model FP32 to dynamic INT8 semantics; never a benchmark score or promotion.",
+  "spec": {
+    "path": "experiments/sota-2026-10-22/epoch18/reporting/SEMANTIC_PRECISION_QUALIFICATION_SPEC.json",
+    "bytes": 9201,
+    "sha256": "93564659aa991dc85a6ee129cc5ab2964946f26696b987352006dcde648f74ae"
+  },
+  "fixtures": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/canaries.json",
+    "bytes": 1921,
+    "sha256": "4bd2e363117600603d6f215813bd77ea0f62acedb8c399700e8ae210161c7820"
+  },
+  "native_addendum": {
+    "path": "experiments/sota-2026-10-22/epoch19/NATIVE_ENGINEERING_ADDENDUM.json",
+    "bytes": 3549,
+    "sha256": "55102bd484437359c667ef7ae6584a9462ab3a3f4f84af19a28bb3544efc44b6"
+  },
+  "audit_protocol": {
+    "path": "experiments/sota-2026-10-22/audit/epoch19/protocol.json",
+    "bytes": 11528,
+    "sha256": "fdb9e1464e41b48fe23b7f7957b145dc0e97a524b5f10b451f5a0c184e44ae6b"
+  },
+  "source_files": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch19/common.py",
+      "bytes": 9953,
+      "sha256": "1e06ae1ebdd47004fa919e5f59af8167b075fccee7036a41e04a4412cf85efe3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch19/worker.py",
+      "bytes": 20592,
+      "sha256": "b36b275cee69a87e4593287531f3a2202e2765e1681b1e564d3ce42f9d85449a"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch19/launch.py",
+      "bytes": 9442,
+      "sha256": "0f6fe25076578317a1f0070f327b51292ffb84b14d5191a694dd3d2ea6ca3c87"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch19/test_engineering.py",
+      "bytes": 7695,
+      "sha256": "9edb045eabfd6f90216d58e5c7da972f3bc951a865c7e9340bf7ede351a1b085"
+    }
+  ],
+  "execution": {
+    "worker_process_cap": 1,
+    "threads": 2,
+    "interop_threads": 1,
+    "total_seconds_including_imports_loading_hashing_native_quantization_cleanup": 600,
+    "observed_seconds_per_forward_max": 30,
+    "FP32_direct_pairs": 3,
+    "INT8_same_object_direct_pairs": 3,
+    "native_invocations": 1,
+    "native_searches": 3,
+    "native_dimensions": 384,
+    "other_model_forwards": 0,
+    "benchmark_corpora": 0,
+    "new_benchmark_inputs_or_labels": 0,
+    "paid_API_GPU_calls": 0,
+    "retry": false
+  },
+  "pair_invariance": "Exactly the three published literal premise/hypothesis pairs, all FP32 first then a single in-place conversion and all INT8. Native selected IDs never alter these pairs. Semantic failure does not shorten the fixed six; runtime failure preserves partial evidence and consumes the slot.",
+  "native_reference": "Explicit deterministic lamp/on/not/box/blue counts plus379zeros; raw native IDs/latency/identity preserved without invented scores, independently replayable cosine and lexical references separate.",
+  "provenance": "Six original assets, eight native closure members,31 exact installed wheel versions; original checkpoint meta dtype/shape inventory, strict original model loading coverage, source-label mapping, actual architecture, canonical pre/post state hashes, original high-level/backend tokenizer feed equality and observed CPU inference contexts.",
+  "admission": "Full unchanged epoch3 verify_plan chain plus strict19 plan/source freeze; exact remote readback and exclusive scoped kernel FLOCK required by both parent launcher and worker before imports.",
+  "results_policy": {
+    "independent_scorer_required": true,
+    "engineering_qualified": null,
+    "accepted": false,
+    "champion_promoted": false,
+    "publisher_submission_allowed": false,
+    "official_score": null,
+    "official_rank": null,
+    "benchmark_generalization_claim": false
+  },
+  "source_ready_only": true,
+  "actual_model_native_execution_by_implementation_agent": 0
+}

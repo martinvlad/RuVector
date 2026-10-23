@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "kind": "INDEPENDENT_ENGINEERING_QUALIFICATION_CONTRACT",
+  "epoch": 19,
+  "source_head": "6eb624feef9ea93c3b1a8f76c20e8442c6bece50",
+  "parent_spec": {
+    "path": "experiments/sota-2026-10-22/epoch18/reporting/SEMANTIC_PRECISION_QUALIFICATION_SPEC.json",
+    "bytes": 9201,
+    "sha256": "93564659aa991dc85a6ee129cc5ab2964946f26696b987352006dcde648f74ae"
+  },
+  "native_addendum": {
+    "path": "experiments/sota-2026-10-22/epoch19/NATIVE_ENGINEERING_ADDENDUM.json",
+    "bytes": 3549,
+    "sha256": "55102bd484437359c667ef7ae6584a9462ab3a3f4f84af19a28bb3544efc44b6"
+  },
+  "fixtures": [
+    {
+      "id": "semantic-e-v1",
+      "premise": "The lamp is on.",
+      "hypothesis": "The lamp is on.",
+      "expected_typed_label": "Entailment",
+      "sha256": "570e78e00f5132b20f1cf9aef87db8b34c5e07a3a23365fbacc7fc759b1a671b"
+    },
+    {
+      "id": "semantic-c-v1",
+      "premise": "The lamp is not on.",
+      "hypothesis": "The lamp is on.",
+      "expected_typed_label": "Contradiction",
+      "sha256": "3a6b7462fe77acfc40fd4eecc7bb1f19160f1976ba1f8be6dcdb3f5d24830d1a"
+    },
+    {
+      "id": "semantic-n-v1",
+      "premise": "The box is blue.",
+      "hypothesis": "The lamp is on.",
+      "expected_typed_label": "NotMentioned",
+      "sha256": "4b9d77bb69e5c3022d157bf1a1fec9d957e24face5126beeaf2ed2eb397cf187"
+    }
+  ],
+  "fixture_license": "CC0-1.0 authored engineering examples; all public and exposed",
+  "typed_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "raw_label_indices": {
+    "contradiction": 0,
+    "neutral": 1,
+    "entailment": 2
+  },
+  "model": {
+    "repo": "microsoft/deberta-v2-xlarge-mnli",
+    "revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+    "license": "MIT declared official card; no legal competence/record-level training lineage established",
+    "assets": [
+      {
+        "remote_path": ".gitattributes",
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/assets/official-deberta-v2-xlarge-mnli/.gitattributes",
+        "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/.gitattributes",
+        "bytes": 690,
+        "sha256": "98cf30ae2568ea1d18641cc0d1d9a2f9041cc43aea81f5d719654abd9e290e0d"
+      },
+      {
+        "remote_path": "README.md",
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/assets/official-deberta-v2-xlarge-mnli/README.md",
+        "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/README.md",
+        "bytes": 3956,
+        "sha256": "e9cab79bfb344526b1955b00bf646d2e6f179a4df616a4c31afd2563a72e8385"
+      },
+      {
+        "remote_path": "config.json",
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/assets/official-deberta-v2-xlarge-mnli/config.json",
+        "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/config.json",
+        "bytes": 952,
+        "sha256": "617f9d0b46fe934497a5aab5b44b1b343a751c0c43fec3e56e26b21e76b77c60"
+      },
+      {
+        "remote_path": "tokenizer_config.json",
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/assets/official-deberta-v2-xlarge-mnli/tokenizer_config.json",
+        "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/tokenizer_config.json",
+        "bytes": 70,
+        "sha256": "0704f75eb3defe60aab06311d14756aa2f48c9aae758c8e5f78aa02dd92cc757"
+      },
+      {
+        "remote_path": "spm.model",
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/assets/official-deberta-v2-xlarge-mnli/spm.model",
+        "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/spm.model",
+        "bytes": 2447305,
+        "sha256": "5598d5e96f339a8d980c15f9afd405a2e5e1be7db41de3ed13b0f03fac1e8c17"
+      },
+      {
+        "remote_path": "pytorch_model.bin",
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/assets/official-deberta-v2-xlarge-mnli/pytorch_model.bin",
+        "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/pytorch_model.bin",
+        "bytes": 1773982007,
+        "sha256": "cc41eeb065c6ab3f7e88f8dab756334abb1f77a1136fec8cf02442143934c253"
+      }
+    ],
+    "architecture": {
+      "layers": 24,
+      "hidden_size": 1536,
+      "attention_heads": 24,
+      "classes": 3,
+      "classifier_weight_shape": [
+        3,
+        1536
+      ],
+      "classifier_bias_shape": [
+        3
+      ]
+    },
+    "versions": {
+      "torch": "2.7.1+cpu",
+      "transformers": "4.52.4",
+      "sentencepiece": "0.2.0",
+      "tokenizers": "0.21.4",
+      "safetensors": "0.5.3",
+      "protobuf": "5.29.5"
+    },
+    "load": "Builtin DebertaV2ForSequenceClassification.from_pretrained(local_files_only=True,trust_remote_code=False,use_safetensors=False,weights_only=True,torch_dtype=torch.float32,output_loading_info=True)",
+    "quantization": "torch.ao.quantization.quantize_dynamic(model,{torch.nn.Linear},dtype=torch.qint8,inplace=True);eval;fbgemm",
+    "raw_checkpoint_storage_dtype_must_be_inspected": true,
+    "same_loaded_model_converted_once_in_place": true,
+    "FP32_parameter_and_floating_buffer_dtype": "torch.float32",
+    "device": "cpu",
+    "temperature": 1.0
+  },
+  "procedure": {
+    "forward_order": [
+      [
+        "FP32",
+        "semantic-e-v1"
+      ],
+      [
+        "FP32",
+        "semantic-c-v1"
+      ],
+      [
+        "FP32",
+        "semantic-n-v1"
+      ],
+      [
+        "INT8",
+        "semantic-e-v1"
+      ],
+      [
+        "INT8",
+        "semantic-c-v1"
+      ],
+      [
+        "INT8",
+        "semantic-n-v1"
+      ]
+    ],
+    "same_literal_original_pair_both_precisions": true,
+    "same_feed_both_precisions": true,
+    "no_truncation_or_padding": true,
+    "pair_format": "[CLS]premise[SEP]hypothesis[SEP]",
+    "feed_dtype": "torch.int64",
+    "batch_size": 1,
+    "pair_token_cap": 512,
+    "semantic_failure_does_not_shorten_six_forwards": true,
+    "runtime_safety_failure_closes_partial_without_retry": true,
+    "no_native_selected_text_enters_NLI": true
+  },
+  "numeric": {
+    "softmax_temperature": 1.0,
+    "raw_logit_softmax_replay_absolute_tolerance": 1e-10,
+    "absolute_probability_mass_tolerance": 1e-06,
+    "maximum_absolute_FP32_INT8_per_class_probability_delta": 0.05,
+    "probability_repair_allowed": false,
+    "typed_tie_policy": "first maximum in canonical Entailment,Contradiction,NotMentioned order",
+    "proper_scores": "Report engineering-only categorical Brier sum over all3 classes and NLL at frozen expected label; no fitting, no task-accuracy claim"
+  },
+  "semantic_gates": {
+    "FP32_correct_required": 3,
+    "INT8_correct_required": 3,
+    "INT8_matches_FP32_required": 3
+  },
+  "native": {
+    "files": [
+      {
+        "path": "retrieval/node_modules/@ruvector/core/index.js",
+        "bytes": 1357,
+        "sha256": "eeba197be4085adb3492b8bc53cd61870f57d6bc18a9a5f1cd2ebec4b1908bee"
+      },
+      {
+        "path": "retrieval/node_modules/@ruvector/core/package.json",
+        "bytes": 1669,
+        "sha256": "729e07f6c040bd47ba687cde8ad5681088187e53812e89d77d646ff48088a5e4"
+      },
+      {
+        "path": "retrieval/node_modules/@ruvector/core/README.md",
+        "bytes": 7890,
+        "sha256": "82b4f4845e0753732a66dc88ddd801502449b60ad1100b273ae34d1035e8b932"
+      },
+      {
+        "path": "retrieval/node_modules/@ruvector/core/index.d.ts",
+        "bytes": 768,
+        "sha256": "36411710e6879c76dca228c4cff97993c4e95cee70388c2f936c79b01536ac54"
+      },
+      {
+        "path": "retrieval/node_modules/ruvector-core-linux-x64-gnu/index.js",
+        "bytes": 330,
+        "sha256": "f392127e6cd14141107fa432a43bbccc2fa1d574630a6fe2611688c66a48a7e9"
+      },
+      {
+        "path": "retrieval/node_modules/ruvector-core-linux-x64-gnu/package.json",
+        "bytes": 1130,
+        "sha256": "afca994434efaadf637eb7d28bfd48da9dda69f24513bfb498c4ab9459d2fdf4"
+      },
+      {
+        "path": "retrieval/node_modules/ruvector-core-linux-x64-gnu/README.md",
+        "bytes": 3727,
+        "sha256": "dd25a68639af6bf44b4e0cd1388eb119047a7bd4f21ef99ece9ded424d3a4a89"
+      },
+      {
+        "path": "retrieval/node_modules/ruvector-core-linux-x64-gnu/ruvector.node",
+        "bytes": 5403040,
+        "sha256": "ff559e9fac2e3d29a8b32e890fdb047bcd4bd28f389b4731ad72148b221d5a2e"
+      }
+    ],
+    "package_version": "0.1.33",
+    "platform_package_version": "0.1.31",
+    "dimensions": 384,
+    "coordinate_tokens": [
+      "lamp",
+      "on",
+      "not",
+      "box",
+      "blue"
+    ],
+    "literal_tokenizer": "lowercase ASCII word matches [a-z]+; count exact coordinate tokens; all remaining379 coordinates zero",
+    "document_order": [
+      "semantic-e-v1",
+      "semantic-c-v1",
+      "semantic-n-v1"
+    ],
+    "query_order": [
+      "semantic-e-v1",
+      "semantic-c-v1",
+      "semantic-n-v1"
+    ],
+    "index_initializations": 1,
+    "searches": 3,
+    "k": 3,
+    "initial_length": 0,
+    "final_length": 3,
+    "full_reference": "Sort all3 document IDs by descending independent cosine similarity using exact literal vectors, tie by declared document order",
+    "raw_scores": "Preserve original native score field if exposed; require finite only. No asserted numeric similarity/distance orientation without source proof.",
+    "lexical_reference": "ASCII word multiset overlap count sum(min(query_count,document_count)); sort descending, tie by document order; metadata only",
+    "scope": "Native engineering integration on deterministic token-count vectors only; no learned embeddings or semantic retrieval efficacy claim"
+  },
+  "limits": {
+    "qualification_worker_attempts": 1,
+    "retry_attempts": 0,
+    "CPU_threads": 2,
+    "torch_interop_threads": 1,
+    "seconds_including_imports_loading_statehash_quantization_forwards_cleanup": 600,
+    "seconds_per_decision": 30,
+    "NLI_forward_pairs_attempted": 6,
+    "NLI_forward_pairs_completed": 6,
+    "original_model_initializations": 1,
+    "dynamic_quantizations": 1,
+    "native_helper_processes": 1,
+    "native_index_initializations": 1,
+    "native_searches": 3,
+    "BGE_forwards": 0,
+    "previous_reader_forwards": 0,
+    "native104_calls": 0,
+    "ORT_sessions": 0,
+    "benchmark_HTTP_requests": 0,
+    "benchmark_native_corpus_batches": 0,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "train_fits": 0,
+    "calibration_fits": 0,
+    "CONF_calls": 0,
+    "new_benchmark_case_labels": 0
+  },
+  "roles": {
+    "TRAIN": [],
+    "DEV": [],
+    "calibration": [],
+    "fresh_confirmation": []
+  },
+  "decision": {
+    "engineering_qualified_requires": "Every frozen semantic, numerical, precision, source, native, process, resource and cleanup gate passes",
+    "invalid_or_partial_receipts": "INCONCLUSIVE_INVALID_OR_INCOMPLETE_EXECUTION; never fabricate zero for missing counters",
+    "valid_gate_failure": "REJECTED_ENGINEERING_QUALIFICATION",
+    "passing_result": "ENGINEERING_QUALIFIED_ONLY",
+    "benchmark_promotion_allowed": false,
+    "submission_allowed": false,
+    "official_score": null,
+    "official_rank": null,
+    "cause_of_epoch18_collapse": "Unproven regardless of these fixture outcomes",
+    "future_action": "Any repair, further forward or benchmark measurement requires a new independently frozen epoch; all unused19 slots close after terminal execution"
+  }
+}

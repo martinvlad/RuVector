@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "frozen_before_execution": true,
+  "kind": "ZERO_PRICE_CPU_ENGINEERING_QUALIFICATION",
+  "authorized_remaining_paid_cap_USD": 0,
+  "new_paid_API_calls": 0,
+  "GPU_rentals": 0,
+  "secret_copying": false,
+  "maximum_qualification_process_attempts": 1,
+  "maximum_cpu_threads": 2,
+  "torch_interop_threads": 1,
+  "seconds_per_process_including_all_imports_model_loading_quantization_hashing_native_work_and_cleanup": 600,
+  "seconds_per_neural_forward": 30,
+  "model_initializations": 1,
+  "quantization_initializations": 1,
+  "attempted_neural_pair_forwards": 6,
+  "actual_native_engineering_index_initializations": 1,
+  "actual_native_engineering_searches": 3,
+  "benchmark_corpora": 0,
+  "training_or_calibration": 0,
+  "benchmark_inputs_labels_confirmation_requests": 0,
+  "retries": 0,
+  "price_plan": {
+    "new_API_GPU_cost_USD": 0,
+    "external_paid_resource_creation_allowed": false
+  },
+  "terminal_policy": "Retain all failures and receipts; close all unused epoch slots after this one terminal process. No benchmark continuation or extra probe within this epoch.",
+  "cleanup_plan": "Outer launcher starts one new process group, applies watchdog/deadline, terminates all owned workers and descendants, records actual exit/resource/cleanup and verifies no live owned process. Keep OS work lock until reviewed checkpoint publication readback; then release and prove lock free.",
+  "future_paid_work": "Requires actually authorized remaining cap plus a newly frozen price/time/cleanup plan; no budget is inferred from historical spend authority."
+}

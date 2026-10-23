@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "at": "2026-10-23T16:50:53.447782+00:00",
+  "checks_passed": true,
+  "status": "INDEPENDENT_PREMEASUREMENT_SOURCE_MODEL_NATIVE_ASSET_ROLE_RESOURCE_AND_LOCK_PASS",
+  "plan_sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31",
+  "source_freeze_sha256": "37a8ce4a8660b6453b3a9efb3ad3d0328b5869f61ca49d5523fb6947761eff0e",
+  "native_execution_admitted": false,
+  "actual_qualification_model_native_calls": 0,
+  "benchmark_or_confirmation_calls": 0,
+  "accepted": false,
+  "source_files_independently_hashed": 2854,
+  "pins_independently_hashed": 2855,
+  "all_frozen_source_and_checker_identities_unchanged": true,
+  "roles": {
+    "TRAIN": [],
+    "DEV": [],
+    "calibration": [],
+    "fresh_confirmation": []
+  },
+  "parent_canary_identities_verified": [
+    "semantic-e-v1",
+    "semantic-c-v1",
+    "semantic-n-v1"
+  ],
+  "explicit_native_delta_reviewed": true,
+  "price_plan": {
+    "new_paid_API_GPU_USD": 0,
+    "remaining_authorized_paid_USD": 0
+  },
+  "limits": {
+    "native_batches": 1,
+    "worker_attempts": 1,
+    "threads": 2,
+    "interop_threads": 1,
+    "seconds_per_batch": 600,
+    "seconds_per_decision": 30,
+    "candidate_configs": 1,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "nli_forwards": 6,
+    "native_invocations": 1,
+    "native_queries": 3,
+    "other_model_forwards": 0,
+    "benchmark_corpora": 0
+  },
+  "actual_full_unmocked_independent_admission": {
+    "command": [
+      "/tmp/ruvector-sota-2026-10-22/epoch19-1a1698f9db5/project/retrieval/.venv/bin/python",
+      "-B",
+      "/tmp/ruvector-sota-2026-10-22/epoch19-1a1698f9db5/project/experiments/sota-2026-10-22/candidate/epoch19/launch.py",
+      "--plan",
+      "/tmp/ruvector-sota-2026-10-22/epoch19-1a1698f9db5/project/experiments/sota-2026-10-22/epoch19/plan.json",
+      "--check-plan",
+      "--verify-assets"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 2.0303416029928485,
+    "receipt": {
+      "status": "FULL_UNMOCKED_SOURCE_PLAN_PASS",
+      "plan_sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31",
+      "pins": 2855,
+      "model_native_calls": 0,
+      "native_execution_admitted": false,
+      "asset_verification": {
+        "model_assets": 6,
+        "native_core_assets": 8,
+        "installed_versions": 31,
+        "model_native_imports": 0
+      }
+    },
+    "stderr": ""
+  },
+  "live_exclusive_work_lock": {
+    "owner_pid": 45689,
+    "owner_start_ticks": 9608413,
+    "path": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
+    "inode": 13626,
+    "device_major_minor": [
+      0,
+      33
+    ],
+    "kernel_FLOCK_line": "10: FLOCK  ADVISORY  WRITE 45689 00:21:13626 0 EOF",
+    "nonblocking_contender_denied": true,
+    "heartbeat_age_seconds": 2.1691458225250244,
+    "lease_expires_unix": 1792783182.2194464
+  },
+  "no_model_native_launch_or_late_admission_markers": true,
+  "qualification_scope": "Engineering-only direct6NLI and deterministic-vector native3search trace; cannot promote or submit",
+  "remaining_required": [
+    "Reviewed connected source publication and independent exact readback",
+    "New late NATIVE_ADMISSION binds this exact plan and fresh scoped kernel FLOCK identity before root one-shot launch"
+  ]
+}

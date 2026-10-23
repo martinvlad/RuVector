@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "kind": "FROZEN_PREMEASUREMENT_ENGINEERING_MANIFEST",
+  "status": "FULL_UNMOCKED_SOURCE_ASSET_ADMISSION_PASSED_REMOTE_SOURCE_ADMISSION_PENDING",
+  "source_checkpoint": "6eb624feef9ea93c3b1a8f76c20e8442c6bece50",
+  "planning_lease_commit": "f55bc2c77247a67ea84d6b2db1cbed192f16b94c",
+  "plan": {
+    "path": "experiments/sota-2026-10-22/epoch19/plan.json",
+    "bytes": 555081,
+    "sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31"
+  },
+  "scientific_source": {
+    "path": "experiments/sota-2026-10-22/epoch19/candidate-source-freeze.json",
+    "bytes": 613656,
+    "sha256": "37a8ce4a8660b6453b3a9efb3ad3d0328b5869f61ca49d5523fb6947761eff0e",
+    "files": 2854,
+    "pins": 2855
+  },
+  "audit_protocol": {
+    "path": "experiments/sota-2026-10-22/audit/epoch19/protocol.json",
+    "bytes": 11528,
+    "sha256": "fdb9e1464e41b48fe23b7f7957b145dc0e97a524b5f10b451f5a0c184e44ae6b"
+  },
+  "roles": {
+    "TRAIN": [],
+    "DEV": [],
+    "calibration": [],
+    "fresh_confirmation": [],
+    "engineering_fixtures": [
+      "semantic-e-v1",
+      "semantic-c-v1",
+      "semantic-n-v1"
+    ]
+  },
+  "model": {
+    "repo": "microsoft/deberta-v2-xlarge-mnli",
+    "revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+    "source_license": "MIT declared original card",
+    "raw_classes": "C0/N1/E2",
+    "precisions": [
+      "Original FP32",
+      "Same loaded model dynamic qint8 Linear fbgemm"
+    ]
+  },
+  "measurement": {
+    "planned_max_worker_attempts": 1,
+    "actual_worker_attempts": 0,
+    "planned_NLI_pair_forwards": 6,
+    "planned_native_engineering_searches": 3,
+    "actual_NLI_forwards": 0,
+    "actual_native_searches": 0,
+    "benchmark_corpora": 0,
+    "new_legal_inputs_labels": 0,
+    "confirmation_queries": 0,
+    "training_calibration": 0,
+    "new_paid_GPU_calls": 0
+  },
+  "scope": "Engineering-only readiness/precision comparison and separate deterministic-vector actual-native integration. Three authored canaries do not establish legal competence, benchmark generalization, semantic retrieval efficacy or official rank.",
+  "champion": "SubmittedNative104/RRF10 unchanged",
+  "candidate_promotion_submission_allowed": false,
+  "official_score": null,
+  "official_rank": null,
+  "unresolved": "All-C epoch18 collapse has no established causal diagnosis. Publisher result/rank partly unverified; ClaimBench full data/scorer/license/submission access unverified.",
+  "next_required": "Independent premeasurement/capsule/privacy review, exact source publication via connected GitHub CAS/readback, fresh scoped kernel lock admission, then one nonretryable CPU2/600-second worker. No measurement has been represented as executed."
+}

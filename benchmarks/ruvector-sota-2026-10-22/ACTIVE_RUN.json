@@ -1,18 +1,21 @@
 {
   "schema_version": 1,
   "run_id": "epoch19-1a1698f9db5",
-  "state": "EPOCH19_SOURCE_QUALIFICATION_LOCKED_NATIVE_NOT_ADMITTED",
-  "experiments_active": false,
+  "state": "EPOCH19_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
+  "experiments_active": true,
   "native_allowed": 0,
-  "checkpoint_parent": "6eb624feef9ea93c3b1a8f76c20e8442c6bece50",
-  "started_at": "2026-10-23T16:20:18.964Z",
-  "expires_at": "2026-10-23T19:20:18.964Z",
+  "native_allowed_after_exact_remote_readback": 1,
+  "checkpoint_parent": "f55bc2c77247a67ea84d6b2db1cbed192f16b94c",
+  "started_at": "2026-10-23T16:19:42.219432+00:00",
+  "expires_at": "2026-10-23T19:19:42.219446+00:00",
   "OS_lock_held": true,
+  "OS_lock_release_pending_final_remote_readback": false,
   "limits": {
-    "native_attempt_cap": 1,
+    "qualification_worker_attempt_cap": 1,
     "CPU_threads": 2,
     "seconds_per_process_including_init_cleanup": 600,
     "paid_GPU_calls": 0
   },
-  "instruction": "Exclusive engineering-only semantic/FP32-int8 qualification. Exactly3 previously frozen CC0 canaries; no new legal inputs/labels/CONF or promotion. Native RuVector engineering trace only if independently frozen. No native/model work before fresh hash restoration, source review/freeze, exact operational admission and connected publication readback. All prior epochs immutable and closed. No uncertain retry, paid work, secrets, main, merge or release."
+  "instruction": "Source-only publication, not native admission. Exact independent remote readback and live exclusive-lock proof must precede one bounded six-forward engineering worker. No legal inputs/labels/CONF/promotion/submission.",
+  "conditional_native_admission_conditions": "Exactly one frozen qualification worker only after matching independent source publication readback, unchanged plan c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31, and fresh live exclusive scoped kernel-lock admission. Publication alone admits zero calls; no automatic retry or benchmark continuation."
 }

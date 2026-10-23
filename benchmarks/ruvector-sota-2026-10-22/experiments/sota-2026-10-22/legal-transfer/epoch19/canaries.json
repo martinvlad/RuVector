@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "kind": "ENGINEERING_CANARIES_NOT_BENCHMARK_DATA",
+  "source_checkpoint": "6eb624feef9ea93c3b1a8f76c20e8442c6bece50",
+  "source_spec": {
+    "path": "experiments/sota-2026-10-22/epoch18/reporting/SEMANTIC_PRECISION_QUALIFICATION_SPEC.json",
+    "bytes": 9201,
+    "sha256": "93564659aa991dc85a6ee129cc5ab2964946f26696b987352006dcde648f74ae"
+  },
+  "license": "CC0-1.0",
+  "fixtures": [
+    {
+      "id": "semantic-e-v1",
+      "premise": "The lamp is on.",
+      "hypothesis": "The lamp is on.",
+      "expected_typed_label": "Entailment",
+      "identity_encoding": "UTF8 JSON sorted keys, ensure_ascii=False, separators comma/colon; identity excludes this hash/encoding metadata",
+      "sha256": "570e78e00f5132b20f1cf9aef87db8b34c5e07a3a23365fbacc7fc759b1a671b"
+    },
+    {
+      "id": "semantic-c-v1",
+      "premise": "The lamp is not on.",
+      "hypothesis": "The lamp is on.",
+      "expected_typed_label": "Contradiction",
+      "identity_encoding": "UTF8 JSON sorted keys, ensure_ascii=False, separators comma/colon; identity excludes this hash/encoding metadata",
+      "sha256": "3a6b7462fe77acfc40fd4eecc7bb1f19160f1976ba1f8be6dcdb3f5d24830d1a"
+    },
+    {
+      "id": "semantic-n-v1",
+      "premise": "The box is blue.",
+      "hypothesis": "The lamp is on.",
+      "expected_typed_label": "NotMentioned",
+      "identity_encoding": "UTF8 JSON sorted keys, ensure_ascii=False, separators comma/colon; identity excludes this hash/encoding metadata",
+      "sha256": "4b9d77bb69e5c3022d157bf1a1fec9d957e24face5126beeaf2ed2eb397cf187"
+    }
+  ],
+  "benchmark_roles": {
+    "train": [],
+    "development": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "new_benchmark_inputs_or_labels": 0,
+  "selection_or_rewording_after_observation_allowed": false,
+  "benchmark_score_or_generalization_claim": false,
+  "model_native_calls_executed_by_data_worker": 0
+}

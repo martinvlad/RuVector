@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "at": "2026-10-23T16:45:38.111869+00:00",
+  "reviewer": "Independent platform source_integrity subagent",
+  "status": "INDEPENDENT_CORRECTED_SCORER_SOURCE_AND_PURE_REPLAY_REVIEW_PASS",
+  "checks_passed": true,
+  "scope": "Corrected stdlib scorer/protocol/tests only, before source freeze and actual qualification. No candidate/runtime/model/native execution acceptance.",
+  "source_checkpoint": "6eb624feef9ea93c3b1a8f76c20e8442c6bece50",
+  "reviewed_files": [
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch19/protocol.json",
+      "bytes": 11528,
+      "sha256": "fdb9e1464e41b48fe23b7f7957b145dc0e97a524b5f10b451f5a0c184e44ae6b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch19/scorer.py",
+      "bytes": 29329,
+      "sha256": "60ce4dc4039c25ef5a26ab6f7ab5d19378a42f45099289d2af04b8d4a64c364d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch19/test_scorer.py",
+      "bytes": 17784,
+      "sha256": "a22eb137e80b5345f5439f7565bef0c1376aaa84c4db75df66b2cdad2c97e0d5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/reporting/SEMANTIC_PRECISION_QUALIFICATION_SPEC.json",
+      "bytes": 9201,
+      "sha256": "93564659aa991dc85a6ee129cc5ab2964946f26696b987352006dcde648f74ae"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch19/NATIVE_ENGINEERING_ADDENDUM.json",
+      "bytes": 3549,
+      "sha256": "55102bd484437359c667ef7ae6584a9462ab3a3f4f84af19a28bb3544efc44b6"
+    }
+  ],
+  "prior_findings": {
+    "path": "experiments/sota-2026-10-22/audit/epoch19/reviews/scorer-prefreeze-findings-v1.json",
+    "bytes": 5164,
+    "sha256": "f83f3fc6eafebf50a275766b93ce3cbef834909f57322849f81b8c5b072dd1ac"
+  },
+  "independent_pure_test_replay": {
+    "command": "python -B -m unittest discover -s experiments/sota-2026-10-22/audit/epoch19 -p test_scorer.py -v",
+    "tests": 48,
+    "failures": 0,
+    "errors": 0,
+    "elapsed_seconds": 0.199,
+    "imports": "stdlib scorer and invented receipt fixtures only"
+  },
+  "independent_adversarial_replay": {
+    "baseline_invented_receipts_pass_engineering_only": true,
+    "original_self_certified_outer_cleanup_exploit_rejected": true,
+    "original_zero_source_offset_exploit_rejected": true,
+    "original_suppressed_nonfinite_native_scores_exploit_rejected": true,
+    "original_missing_plan_role_exploit_rejected": true,
+    "unrelated_outer_worker_PID_rejected": true,
+    "unrelated_outer_worker_PGID_rejected": true,
+    "unrelated_outer_native_helper_PID_rejected": true,
+    "unrelated_outer_plan_SHA_rejected": true,
+    "exposed_finite_native_scores_positive_control_passes": true,
+    "CLI_correct_external_plan_and_raw_bytes_positive_control_passes": true,
+    "CLI_raw_whitespace_byte_change_with_stale_external_hash_rejected": true,
+    "CLI_missing_required_external_receipt_refused": true
+  },
+  "source_and_math_review": {
+    "exact_parent_three_CC0_E_C_N_literal_fixtures_and_identity_hashes_preserved": true,
+    "raw_C0_N1_E2_to_canonical_E_C_N_softmax_T1_stable_replay": true,
+    "mass_tolerance_1e_minus6_and_no_probability_repair": true,
+    "FP32_and_INT8_three_each_same_labels_and_max_per_class_delta_le_0_05": true,
+    "raw_logit_replay_tolerance_1e_minus10_unchanged": true,
+    "proper_scores_are_three_class_Brier_sum_and_NLL_without_fitting": true,
+    "all_original_non_whitespace_source_characters_require_offsets": true,
+    "deterministic_384dim_vectors_and_full_cosine_and_lexical_reference_replay": true,
+    "native_available_score_fields_must_be_consistent_and_finite": true,
+    "one_init_one_quant_six_forwards_three_native_searches_CPU2_interop1_600sec_request30_paid0": true,
+    "independent_external_cleanup_plan_process_identity_deadline_source_status_and_closed_slots_required": true,
+    "actual_raw_byte_identity_binding_enforced_by_required_CLI_receipt_entry_point": true,
+    "missing_invalid_or_incomplete_receipts_inconclusive_and_valid_semantic_fidelity_failure_rejected": true,
+    "no_benchmark_roles_promotion_submission_official_score_or_SOTA_claim": true
+  },
+  "limitations": [
+    "This is a source and synthetic receipt review, not observed model behavior or proof of real process cleanup. Actual execution must use the reviewed CLI with its mandatory separately supplied terminal receipt and byte-identity checks.",
+    "In-memory evaluate() replays supplied dictionaries; exact raw-file byte binding belongs to the reviewed CLI. Do not treat a standalone dictionary replay as a complete execution acceptance report.",
+    "The fixture results cannot establish the cause of epoch18 behavior or legal/benchmark generalization."
+  ],
+  "actual_qualification_model_forward_calls": 0,
+  "actual_native_calls": 0,
+  "model_tokenizer_framework_native_imports": 0,
+  "benchmark_case_or_annotation_reads": 0,
+  "scorer_protocol_tests_or_old_source_edits_by_reviewer": 0,
+  "Git_or_external_mutations": 0,
+  "engineering_model_qualified_by_this_source_review": false,
+  "benchmark_promotion_allowed": false,
+  "submission_allowed": false,
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false
+}

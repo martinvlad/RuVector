@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "at": "2026-10-23T16:47:16.932671+00:00",
+  "status": "PASS",
+  "command": "python -B -m unittest discover -s experiments/sota-2026-10-22/candidate/epoch19 -p 'test_*.py' -v",
+  "tests_run": 10,
+  "failures": 0,
+  "errors": 0,
+  "reported_elapsed_seconds": 0.033,
+  "source_files": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch19/common.py",
+      "bytes": 9953,
+      "sha256": "1e06ae1ebdd47004fa919e5f59af8167b075fccee7036a41e04a4412cf85efe3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch19/worker.py",
+      "bytes": 20592,
+      "sha256": "b36b275cee69a87e4593287531f3a2202e2765e1681b1e564d3ce42f9d85449a"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch19/launch.py",
+      "bytes": 9442,
+      "sha256": "0f6fe25076578317a1f0070f327b51292ffb84b14d5191a694dd3d2ea6ca3c87"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch19/test_engineering.py",
+      "bytes": 7695,
+      "sha256": "9edb045eabfd6f90216d58e5c7da972f3bc951a865c7e9340bf7ede351a1b085"
+    }
+  ],
+  "scope": "Pure source/engineering arithmetic and generic kernel-lock/owned-Python-process fault fixtures only; no neural or native-addon import/execution. Actual parent plan full unmocked preflight remains required. Process-fault isolation mocks admission/plan validation without claiming actual-plan admission.",
+  "actual_model_initializations": 0,
+  "actual_NLI_forwards": 0,
+  "actual_RuVector_addon_imports": 0,
+  "new_benchmark_inputs_or_labels": 0,
+  "paid_API_GPU_calls": 0
+}

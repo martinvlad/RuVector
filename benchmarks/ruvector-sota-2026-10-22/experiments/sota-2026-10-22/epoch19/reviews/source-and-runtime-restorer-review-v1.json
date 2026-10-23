@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "at": "2026-10-23T16:25:26.491532+00:00",
+  "reviewer": "independent-platform-agent-e18_source_review",
+  "status": "FRESH_SOURCE_RECONSTRUCTION_AND_RUNTIME_RESTORER_SOURCE_REVIEW_PASS",
+  "checks_passed": true,
+  "source_commit": "6eb624feef9ea93c3b1a8f76c20e8442c6bece50",
+  "lease_commit": "f55bc2c77247a67ea84d6b2db1cbed192f16b94c",
+  "fresh_source_git_leaves_independently_rehashed": 2795,
+  "fresh_project_CP_files_independently_rehashed": 2718,
+  "source_CP_SHA256": "adc60b85f5b9b11f85ae03e395c20323ab8ec9fba22144e5c8c5bcb3599c4bb7",
+  "new_restorer": {
+    "path": "experiments/sota-2026-10-22/epoch19/preparation/restore_public_runtime_cache_v1.py",
+    "bytes": 10141,
+    "sha256": "2e1fbebca527563aef10bbe52eb0e00665a372e410f9de0b5d2ce2bad01f29c1"
+  },
+  "immutable_reviewed_epoch18_v2_reference": {
+    "path": "experiments/sota-2026-10-22/epoch18/preparation/restore_public_runtime_cache_v2.py",
+    "bytes": 10141,
+    "sha256": "bba272390bc1a856bbe387db34f4262ecf24f1ff62ff2b1a4e8968466fb33654"
+  },
+  "only_change": "Preparation output target epoch18/preparation to epoch19/preparation; exact source otherwise.",
+  "static_checks": [
+    "Fixed immutable17 native22/external20 source manifests form exact public asset inventory; every source/destination is size/SHA256 verified before linking.",
+    "Exactly31 SHA256-pinned official CPU wheels; every regular archive member is verified against its outer official wheel RECORD, nested vendored RECORD files are ordinary hashed members.",
+    "No symlink archive members/ancestors, unsafe paths, conflicting targets, blind venv copy, pip install hooks, console generation, network calls, model imports or warmup.",
+    "Fresh --without-pip venv, only hash-matching cache hardlinks or verified wheel extraction; every destination is rehashed; metadata-only31package inspection and exact manifest receipts.",
+    "No benchmark/source annotation JSON parse, model/native/qualification forward or paid/API/GPU call in restoration."
+  ],
+  "required_followup": "Root may execute exact restorer once with reviewed explicit public cache/wheelcache/receipt paths. Independently rehash restored public assets and canonical wheel-member manifest afterward; this source review does not claim runtime restored or qualify any model.",
+  "runtime_restorer_executions_by_reviewer": 0,
+  "native_model_fit_paid_GPU_calls": 0,
+  "semantic_case_gold_reads": 0,
+  "Git_mutations": 0,
+  "champion_promoted": false,
+  "official_score": null,
+  "official_rank": null
+}

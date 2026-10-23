@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "kind": "EXPLICIT_NATIVE_ENGINEERING_TRACE_ADDENDUM",
+  "parent_spec": {
+    "path": "experiments/sota-2026-10-22/epoch18/reporting/SEMANTIC_PRECISION_QUALIFICATION_SPEC.json",
+    "sha256": "93564659aa991dc85a6ee129cc5ab2964946f26696b987352006dcde648f74ae",
+    "immutable": true
+  },
+  "purpose": "Qualify exact reader precision semantics before consuming another legal development group, while exercising the actual native RuVector backend within the same bounded worker.",
+  "unchanged_parent_procedure": {
+    "literal_canary_pairs": 3,
+    "FP32_forwards": 3,
+    "INT8_forwards": 3,
+    "model_initializations": 1,
+    "dynamic_quantizations": 1,
+    "no_padding_truncation_rewriting": true
+  },
+  "explicit_delta_from_parent": {
+    "native_engineering_index_initializations": 1,
+    "native_engineering_searches": 3,
+    "other_neural_forwards": 0,
+    "benchmark_native_corpus_batches": 0,
+    "why": "The original proposal prohibited other native calls. This new source-frozen addendum permits exactly one deterministic-vector RuVector index and three searches in the same 600-second qualification process. It does not select the six NLI premises."
+  },
+  "native_trace": {
+    "source": "retrieval/native-candidates.cjs",
+    "dimensions": 384,
+    "vector_coordinates_first5": [
+      "lamp",
+      "on",
+      "not",
+      "box",
+      "blue"
+    ],
+    "remaining_coordinates": "379 zeros",
+    "vectors": "Literal lowercase token counts, with tokenizer and exact vectors frozen by worker source before measurement.",
+    "database": "fresh empty native RuVector cosine database; exact pinned package and binary",
+    "input_premises": "Exactly the three frozen engineering canary premises only",
+    "query": "Each unchanged canary hypothesis; three identical hypotheses retained as three explicit searches",
+    "controls": "Independent cosine ordering and lexical ordering recorded as engineering metadata; no model or gold selection.",
+    "direct_NLI_premise_policy": "Always each canary's own unchanged premise; never replace it with a retrieved premise."
+  },
+  "role_limits": {
+    "TRAIN": [],
+    "DEV": [],
+    "calibration": [],
+    "fresh_confirmation": [],
+    "new_benchmark_case_labels": 0,
+    "all_engineering_fixtures_public_and_exposed": true,
+    "canary_semantics": "Explicit engineering canary expected labels only, never benchmark generalization."
+  },
+  "gates": {
+    "parent_semantics_and_fidelity_gates": "Unchanged: FP32 3/3, INT8 3/3, same labels, finite unmodified T1 softmax/mass<=1e-6, max per-class probability drift<=0.05.",
+    "native_trace": "Exact pinned actual native binary and package, exactly3 searches of3 literal premises, full ordering must match independent cosine reference; separate lexical metadata does not define expected semantic labels.",
+    "process": "One original model initialization, one quantization, exactly6 attempted/completed neural pair forwards, no BGE/ORT/previous-reader/native104/API/GPU calls; CPU2/interops1/600s including imports/load/state hashes/quantization/cleanup; no retries.",
+    "failure_policy": "Any frozen gate failure rejects engineering readiness; retain all outcomes and close all unspent epoch slots. No repair or additional forward in this epoch.",
+    "promotion_or_submission_allowed": false
+  },
+  "scope": "Engineering-only. Neither passing canaries nor matching deterministic native rankings demonstrates legal competence, retrieval efficacy, benchmark generalization, official result or SOTA."
+}

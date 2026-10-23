@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "at": "2026-10-23T16:56:08.812337+00:00",
+  "kind": "INDEPENDENT_APPEND_ONLY_SOURCE_PUBLICATION_METADATA_WRAPPER_REVIEW",
+  "checks_passed": true,
+  "status": "APPROVED_EXACT_SOURCE_METADATA_DELTA_ONLY_NO_RUNTIME_ADMISSION",
+  "approved_wrapper": {
+    "path": "experiments/sota-2026-10-22/epoch19/preparation/finalize_source_controls_v2.py",
+    "bytes": 3693,
+    "sha256": "429061194b4455c9824cf5b763b4e6f1b6ec240f60038a14dd354b5826480269"
+  },
+  "unapproved_first_wrapper_retained": {
+    "path": "experiments/sota-2026-10-22/epoch19/preparation/finalize_source_controls.py",
+    "bytes": 3621,
+    "sha256": "84eeca2c60661aa88b181acb65e1e9d919a1b5542b87cef699d311038f2c1904"
+  },
+  "original_v1_parent_component_scope_bypass_reproduced_in_temporary_fixture": true,
+  "first_wrapper_never_applied_to_actual_controls": true,
+  "frozen_original_builder": {
+    "path": "experiments/sota-2026-10-22/epoch19/preparation/build_controls.py",
+    "bytes": 10699,
+    "sha256": "108492ae577f65e2fac66c66811f93e9442a4ed052b4cd2f331bf6791e849a04"
+  },
+  "plan_sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31",
+  "source_freeze_sha256": "37a8ce4a8660b6453b3a9efb3ad3d0328b5869f61ca49d5523fb6947761eff0e",
+  "all_2855_existing_plan_pins_replayed_unchanged": true,
+  "pure_metadata_fixtures_passed": 16,
+  "pure_metadata_fixtures": [
+    {
+      "fixture": "valid_source_exact_delta",
+      "expected": "EXACT_SOURCE_ONLY_DELTA",
+      "observed": "EXACT_SOURCE_ONLY_DELTA",
+      "publication0_conditional1": true,
+      "checkpoint_input_and_plan_bytes_unchanged": true,
+      "final_allowance_changed": false
+    },
+    {
+      "fixture": "final_state_never_reopens",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "publication_allowance_one_rejected",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "already_wrapped_source_rejected",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "changed_plan_bytes_rejected",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "checkpoint_hash_mismatch",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "extra_input_file",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "preexisting_output",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "output_inside_project",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "parent_component_output_bypass_rejected",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "symlink_output_parent",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "symlink_input",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "symlink_project",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "symlink_checkpoint",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "continuation_wrong_run",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    },
+    {
+      "fixture": "continuation_wrong_plan",
+      "expected": "REJECTED_BEFORE_OUTPUT",
+      "observed": "REJECTED_BEFORE_OUTPUT",
+      "exception_type": "AssertionError"
+    }
+  ],
+  "reviewed_actual_transformation": "Only source-stage conditional future allowance0->1 derived from immutable one-worker plan plus explicit unchanged-plan/independent-readback/live-lock conditions; immediate publication native_allowed remains0, checkpoint bytes identical, no scientific source or final-stage allowance changed.",
+  "actual_publication_controls_built_or_transformed_by_this_audit": 0,
+  "actual_model_native_tokenizer_Git_calls": 0,
+  "benchmark_or_confirmation_calls": 0,
+  "execution_admitted": false,
+  "required_next": "Root applies this exact reviewed v2 once to derived source metadata in a new outside-project directory. Independent full source capsule/privacy/remote readback and fresh scoped kernel lock admission still precede actual one-shot execution. Unchanged final builder closes all allowances."
+}

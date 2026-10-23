@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "failures": [
+    {
+      "id": "E15_ACQUIRE_HELPER_IMPORT_PREMEASUREMENT",
+      "scope": "Engineering startup, not native/model benchmark",
+      "source_before_fix_sha256": "234344166cbcd83b886969e2ff8219465e313a94a38f8dc015f5826d05b888ec",
+      "observed_error": "ImportError: cannot import name PurePosevenPath from pathlib",
+      "cause": "Over-broad six-to-seven prose replacement altered PurePosixPath identifier",
+      "fix": "Restore every PurePosixPath identifier; add actual import and selected-asset specification validation engineering tests",
+      "source_after_fix_sha256": "fd3fbbb5d78407854b66440d28628f5277385752a287ab081ecb8682dae51d91",
+      "model_native_fit_paid_GPU_calls": 0,
+      "candidate_already_frozen": false,
+      "at_UTC": "2026-10-23T08:33:35.682940+00:00"
+    },
+    {
+      "id": "E15_INJECTED_RUNTIME_WIRING_MISSING_HASHLIB",
+      "scope": "Injected synthetic engine test; no real NLI/native calls",
+      "source_before_fix_sha256": "80a4eca7e4d35bedbf4c6cb9e3f0e073f015a9d0a3badb426bed994f700c059e",
+      "observed_error": "NameError: hashlib is not defined while building source diagnostics",
+      "cause": "Copied epoch6 predict method uses hashlib; epoch13 outer runtime had delegated predict and lacked import",
+      "fix": "Import hashlib in candidate15 runtime; rerun all integrated pure tests",
+      "source_after_fix_sha256": "bc7c48a02c90a179efbe3e80ee752a2758a27ab95580a4d258bd9112e3929ffa",
+      "candidate_frozen": false,
+      "actual_model_native_fit_paid_GPU_calls": 0,
+      "at_UTC": "2026-10-23T08:38:00.869297+00:00"
+    }
+  ]
+}

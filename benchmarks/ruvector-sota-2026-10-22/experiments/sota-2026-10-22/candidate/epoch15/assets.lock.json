@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "epoch": 15,
+  "scope": "Only required fixed BGE/native source/runtime pins plus one selected official QUINT8AVX2 typed reader; unused historical NLI assets not required or initialized",
+  "python_versions": {
+    "numpy": "2.2.6",
+    "onnxruntime": "1.22.1",
+    "tokenizers": "0.21.4"
+  },
+  "assets": [
+    {
+      "path": "models/bge-small-en-v1.5/model.onnx",
+      "bytes": 133093490,
+      "sha256": "828e1496d7fabb79cfa4dcd84fa38625c0d3d21da474a00f08db0f559940cf35"
+    },
+    {
+      "path": "models/bge-small-en-v1.5/tokenizer.json",
+      "bytes": 711396,
+      "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+    },
+    {
+      "path": "models/manifest.json",
+      "bytes": 577,
+      "sha256": "fdca50d372d5993f347db244678f77c0c8fef5698d5fd479ddf1a060f77838a5"
+    },
+    {
+      "path": "retrieval/native-candidates.cjs",
+      "bytes": 1580,
+      "sha256": "45efc7fecd2d249aea7bd1f5e7d36bf26cfe57cd6f91de51ffd15adc039ec4a3"
+    },
+    {
+      "path": "retrieval/package.json",
+      "bytes": 59,
+      "sha256": "2f0d4cce44f1adb92bd6ae5dc06ad9b2a6c80545c513850363c26f6070f0adfa"
+    },
+    {
+      "path": "retrieval/package-lock.json",
+      "bytes": 3284,
+      "sha256": "3a6ecb71b44b6cb593d8ae46709788af2aeacec9509ff7b0e33c34f66dfc940a"
+    },
+    {
+      "path": "retrieval/node_modules/ruvector-core-linux-x64-gnu/ruvector.node",
+      "bytes": 5403040,
+      "sha256": "ff559e9fac2e3d29a8b32e890fdb047bcd4bd28f389b4731ad72148b221d5a2e"
+    },
+    {
+      "path": "retrieval/node_modules/@ruvector/core/index.js",
+      "bytes": 1357,
+      "sha256": "eeba197be4085adb3492b8bc53cd61870f57d6bc18a9a5f1cd2ebec4b1908bee"
+    },
+    {
+      "path": "retrieval/node_modules/@ruvector/core/package.json",
+      "bytes": 1669,
+      "sha256": "729e07f6c040bd47ba687cde8ad5681088187e53812e89d77d646ff48088a5e4"
+    },
+    {
+      "path": "retrieval/node_modules/ruvector-core-linux-x64-gnu/package.json",
+      "bytes": 1130,
+      "sha256": "afca994434efaadf637eb7d28bfd48da9dda69f24513bfb498c4ab9459d2fdf4"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/assets/official-deberta-v3-large/README.md",
+      "bytes": 2934,
+      "sha256": "2510c58dd047cc8ab0599247e93542b6e04ce4e3a21415c28f1169de38940502"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/assets/official-deberta-v3-large/config.json",
+      "bytes": 1100,
+      "sha256": "30d88fd93586a85330162d169f68161aecc242e1be23dc41db335c069fbbab8f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/assets/official-deberta-v3-large/tokenizer.json",
+      "bytes": 8656624,
+      "sha256": "5124ef2ead1a10a717703bc436de7f353da76d6340e4587719b42b1693707964"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/assets/official-deberta-v3-large/tokenizer_config.json",
+      "bytes": 1346,
+      "sha256": "f3eecd07c370ef0bf7dd3780d3cd68cf9c8b00c267e21a208ddcd8f82bfec1a6"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/assets/official-deberta-v3-large/special_tokens_map.json",
+      "bytes": 301,
+      "sha256": "ed7c099c988dbb414b18a6980d20cb57b91b7cd119f6f6941eb364b0e892e712"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/assets/official-deberta-v3-large/added_tokens.json",
+      "bytes": 26,
+      "sha256": "a4b6bfe668f2b3cf6f0cd535e98a0663d2d0d4a4a15f13075ad3597d33985a23"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/assets/official-deberta-v3-large/onnx/model_quint8_avx2.onnx",
+      "bytes": 642857089,
+      "sha256": "821dc4407d10a9d25c20c57fcb742ddc20c09bc55c8093557091efb825256754"
+    }
+  ],
+  "native_core_binary_sha256": "ff559e9fac2e3d29a8b32e890fdb047bcd4bd28f389b4731ad72148b221d5a2e",
+  "selected_model_assets_lock": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch15/model-assets.lock.json",
+    "sha256": "0771ff15231f8431bc10610571b01a0b718bf19978f0611c06ed932af4ddeec8"
+  },
+  "old_base_NLI_assets_required": false,
+  "old_base_NLI_session_initialized": false,
+  "native_runtime_closures": [
+    "experiments/sota-2026-10-22/epoch4/runtime-repair/official-package-closure.json",
+    "experiments/sota-2026-10-22/epoch5/typesafe-runtime-closure.json"
+  ],
+  "real_model_session_initializations_during_source_work": 0,
+  "new_model_forwards": 0,
+  "new_native_calls": 0
+}

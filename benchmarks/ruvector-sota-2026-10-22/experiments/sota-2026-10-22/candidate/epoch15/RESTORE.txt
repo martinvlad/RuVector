@@ -1,0 +1,5 @@
+After reviewed bootstrap.py and restore_checkpoint.py reconstruct the isolated project, restore the exact required BGE/native closures and pinned Python dependencies.
+Run acquire_assets.py --dest /isolated/project --download only for exact seven official immutable assets, or --cache-dir with a complete regular cache, or --verify-only for an existing complete reconstruction. No inference occurs.
+The default static preflight_model.py exclusively creates onnx-static.json once from the selected exact weight using the reviewed protobuf parser; do not overwrite an existing proof. Existing proof bytes are bound by config/proposal hashes. It creates no runtime session.
+Native benchmark execution is parent-only, after independent final plan acceptance and scoped locks, inside at most2nonretryableCPU2/600s corpus processes including initialization/cleanup. No free-standing session/probe/warmup is authorized.
+Public source allowlist excludes all assets/ files and binaries. Reconstructed model assets are hash checked before use. Historical NLI assets/sessions are not needed by epoch15.

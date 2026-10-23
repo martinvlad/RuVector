@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T08:45:39.016676+00:00",
+  "checks_passed": true,
+  "proposal_SHA256": "d08312546400cbab7e7be0c4b597d699fdadd5898afef7a97187dbb247b748c5",
+  "candidate_source_and_dependency_records_verified": 87,
+  "required_asset_records_verified": 17,
+  "complete_native_regular_file_closure_verified": 22,
+  "selected_repo": "cross-encoder/nli-deberta-v3-large",
+  "selected_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+  "selected_model_SHA256": "821dc4407d10a9d25c20c57fcb742ddc20c09bc55c8093557091efb825256754",
+  "model_tokenizer_SHA256": "5124ef2ead1a10a717703bc436de7f353da76d6340e4587719b42b1693707964",
+  "config_class_mapping": {
+    "contradiction": 0,
+    "entailment": 1,
+    "neutral": 2
+  },
+  "decoder_math_random_logit_checks": 1000,
+  "neutral_preservation": true,
+  "static_graph": {
+    "inputs": [
+      {
+        "name": "input_ids",
+        "tensor_element_type": 7,
+        "dimensions": [
+          {
+            "parameter": "batch_size"
+          },
+          {
+            "parameter": "sequence_length"
+          }
+        ]
+      },
+      {
+        "name": "attention_mask",
+        "tensor_element_type": 7,
+        "dimensions": [
+          {
+            "parameter": "batch_size"
+          },
+          {
+            "parameter": "sequence_length"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "logits",
+        "tensor_element_type": 1,
+        "dimensions": [
+          {
+            "parameter": "batch_size"
+          },
+          {
+            "value": 3
+          }
+        ]
+      }
+    ],
+    "opsets": [
+      {
+        "domain": "",
+        "version": 12
+      }
+    ],
+    "operators": {
+      "::Constant": 2575,
+      "::Unsqueeze": 753,
+      "::ReduceMean": 100,
+      "::Gather": 314,
+      "::Identity": 48,
+      "::Cast": 538,
+      "::Sub": 51,
+      "::DequantizeLinear": 1,
+      "::DynamicQuantizeLinear": 338,
+      "::Squeeze": 364,
+      "::Pow": 50,
+      "::Mul": 804,
+      "::Add": 465,
+      "::Sqrt": 122,
+      "::Not": 25,
+      "::Div": 173,
+      "::Slice": 363,
+      "::MatMulInteger": 290,
+      "::Shape": 746,
+      "::Reshape": 384,
+      "::Range": 1,
+      "::Transpose": 240,
+      "::Sign": 1,
+      "::Less": 1,
+      "::Greater": 1,
+      "::Abs": 1,
+      "::And": 1,
+      "::Concat": 384,
+      "::Where": 74,
+      "::LessOrEqual": 1,
+      "::Log": 1,
+      "::Ceil": 1,
+      "::Equal": 72,
+      "::If": 24,
+      "::Neg": 24,
+      "::ConstantOfShape": 96,
+      "::Clip": 25,
+      "::Expand": 96,
+      "::Tile": 48,
+      "::GatherElements": 48,
+      "::Softmax": 24,
+      "::Erf": 25
+    },
+    "external_initializers": [],
+    "session_initialized": false,
+    "model_forwards": 0,
+    "ir_version": 7
+  },
+  "recursive_tensor_closure": {
+    "counts": {
+      "graphs": 49,
+      "nodes": 11061,
+      "tensor_messages": 3815,
+      "sparse_tensor_messages": 0
+    },
+    "tensor_data_types": {
+      "7": 2708,
+      "1": 813,
+      "2": 294
+    },
+    "external_references": 0,
+    "unsupported_functions_or_training_info": false
+  },
+  "no_documented_ContractNLI_supervision": true,
+  "source_training_and_license_limit": "Official card declaresSNLI+MultiNLI/Apache2, not independently exhaustive run lineage, componentdata rights, unknownpretraining/fuzzyoverlap or proven legal superiority. AuthorfixedQUINT8 conversion fidelity not independently compared tooriginal PyTorch. No weights republished.",
+  "ABI_provider_execution_or_performance_verified": false,
+  "model_native_session_fit_paid_GPU_calls": 0,
+  "candidate_measurement_admission": "Requires root finaldata/sourceplan/sourceclosure and independent fullprelaunch report"
+}

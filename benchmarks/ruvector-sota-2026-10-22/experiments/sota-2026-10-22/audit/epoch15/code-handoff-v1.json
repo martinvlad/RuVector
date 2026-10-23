@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T08:55:39.424188+00:00",
+  "status": "IMMUTABLE_AUDITOR_CODE_HANDOFF_BEFORE_FINAL_PLAN_V2",
+  "owner": "platform-agent e15_audit; audit/epoch15 only",
+  "files": [
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/replay_scores_v1.py",
+      "bytes": 14047,
+      "sha256": "e735ee8ea0e47db99b79cea7b74347800e4181fa81c7dc067941585a96e8a5f9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/replay_scores_v2.py",
+      "bytes": 15919,
+      "sha256": "df6d5a63a3e2baf4f34edf0ffed31d9b9d26b9bc13fe57ab1b96663cf42983e2"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/replay_context_v1.py",
+      "bytes": 9656,
+      "sha256": "c5621c3f37b486ad87f61babfb349724f7a9a92f75f3567cfebdad8642bc09c5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/replay_context_v2.py",
+      "bytes": 10712,
+      "sha256": "a934528a79f78418eab5dd65f43751aa8482e1950e36a04f19de1f1588d1c786"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/source_closure_cli.mjs",
+      "bytes": 4013,
+      "sha256": "e0e317749830a1680efefa8097823163de69551d526a3d09bffc9e2dd21766cb"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/context_math_v1.py",
+      "bytes": 6850,
+      "sha256": "89b50738281350b29208deb9b68bec68e5ad739d20316b94bb6c8e7c8583a506"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/context_preflight_v1.py",
+      "bytes": 6273,
+      "sha256": "37b8dd9f1c407882f0ce08c7b00f046a038a29bd1bf1df9dc71885bb6960d536"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/model_static_v1.py",
+      "bytes": 7503,
+      "sha256": "4bae1359d3553b8644692e02b6a8da1e16c3bfc015ce7c3f6e33f94dcf0d61dc"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/acceptance-contract-v2.json",
+      "bytes": 7360,
+      "sha256": "7b004718dc92bb4a2f7d37d83dbf20ef329c5ec6ab3f9b55316f889a61d5f12e"
+    }
+  ],
+  "superseded_plan_v1": {
+    "path": "experiments/sota-2026-10-22/epoch15/plan.json",
+    "SHA256": "158d3fe7ff23c1e91e2bfa8d87b4882114170d21108e5d170b4d02e36177ea2d",
+    "source_pins": 194,
+    "all_source_pin_hashes_reverified_after_exact_restore": true,
+    "model_native_attempts_executed": 0,
+    "state": "SUPERSEDED_PRELAUNCH_NO_SCIENTIFIC_MEASUREMENT"
+  },
+  "race_and_correction": "Root froze planv1 while auditor was strengthening replay checks. Exactv1 replay source bytes were restored and all194pins reverified. Strengthened versions preserved separately as replay_scores_v2.py/replay_context_v2.py with explicit optional --plan-path. Root will bind finalv2 before any Popen; no candidate/controller/data/policy/gates changed or observed outputs used.",
+  "active_replay_commands": [
+    "OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B experiments/sota-2026-10-22/audit/epoch15/replay_scores_v2.py --project . --plan-path experiments/sota-2026-10-22/epoch15/plan.v2.json --expected-plan-sha ACTUAL_V2_SHA --out UNUSED_SCORES_REPORT",
+    "OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B experiments/sota-2026-10-22/audit/epoch15/replay_context_v2.py --project . --plan-path experiments/sota-2026-10-22/epoch15/plan.v2.json --expected-plan-sha ACTUAL_V2_SHA --out UNUSED_CONTEXT_REPORT"
+  ],
+  "future_mutation_rule": "No further edits to these handed-off code/policy files. New immutable reports may be created. Any discovered replay/source error requires explicit new version and disclosure, never silent correction.",
+  "new_model_native_session_fit_paid_GPU_calls": 0,
+  "candidate_native_admission": "Still requires actualfinalplan/sourceClosure/remotelease and independent prelaunch binding",
+  "private_credentials_raw_mail_published": false
+}

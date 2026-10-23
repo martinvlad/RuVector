@@ -1,0 +1,99 @@
+{
+  "inputs": [
+    {
+      "name": "input_ids",
+      "tensor_element_type": 7,
+      "dimensions": [
+        {
+          "parameter": "batch_size"
+        },
+        {
+          "parameter": "sequence_length"
+        }
+      ]
+    },
+    {
+      "name": "attention_mask",
+      "tensor_element_type": 7,
+      "dimensions": [
+        {
+          "parameter": "batch_size"
+        },
+        {
+          "parameter": "sequence_length"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "logits",
+      "tensor_element_type": 1,
+      "dimensions": [
+        {
+          "parameter": "batch_size"
+        },
+        {
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "opsets": [
+    {
+      "domain": "",
+      "version": 12
+    }
+  ],
+  "operators": {
+    "::Constant": 2575,
+    "::Unsqueeze": 753,
+    "::ReduceMean": 100,
+    "::Gather": 314,
+    "::Identity": 48,
+    "::Cast": 538,
+    "::Sub": 51,
+    "::DequantizeLinear": 1,
+    "::DynamicQuantizeLinear": 338,
+    "::Squeeze": 364,
+    "::Pow": 50,
+    "::Mul": 804,
+    "::Add": 465,
+    "::Sqrt": 122,
+    "::Not": 25,
+    "::Div": 173,
+    "::Slice": 363,
+    "::MatMulInteger": 290,
+    "::Shape": 746,
+    "::Reshape": 384,
+    "::Range": 1,
+    "::Transpose": 240,
+    "::Sign": 1,
+    "::Less": 1,
+    "::Greater": 1,
+    "::Abs": 1,
+    "::And": 1,
+    "::Concat": 384,
+    "::Where": 74,
+    "::LessOrEqual": 1,
+    "::Log": 1,
+    "::Ceil": 1,
+    "::Equal": 72,
+    "::If": 24,
+    "::Neg": 24,
+    "::ConstantOfShape": 96,
+    "::Clip": 25,
+    "::Expand": 96,
+    "::Tile": 48,
+    "::GatherElements": 48,
+    "::Softmax": 24,
+    "::Erf": 25
+  },
+  "external_initializers": [],
+  "session_initialized": false,
+  "model_forwards": 0,
+  "ir_version": 7,
+  "weight_sha256": "821dc4407d10a9d25c20c57fcb742ddc20c09bc55c8093557091efb825256754",
+  "forwards": 0,
+  "scope": "Static protobuf metadata; no ABI/provider/execution or performance claim"
+}

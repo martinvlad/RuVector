@@ -1,21 +1,23 @@
 {
   "schema_version": 1,
   "run_id": "epoch15-f9b6eb28f760446c95952824088e939c",
-  "state": "EPOCH15_PLANNING_RESTORATION",
-  "started_at": "2026-10-23T08:14:58.363347+00:00",
-  "expires_at": "2026-10-23T11:14:58.363Z",
+  "state": "FROZEN_NATIVE_NOT_STARTED",
   "checkpoint_parent": "0a6379a108919c9aa5ab52966ce1a9aacab8a0f4",
+  "started_at": "2026-10-23T08:14:58.363347+00:00",
+  "expires_at": "2026-10-23T11:14:58.363362+00:00",
   "experiments_active": true,
-  "native_allowed": 0,
+  "native_allowed": 2,
   "OS_lock_held": true,
-  "limits": {
-    "max_native_processes": 2,
-    "CPU_threads": 2,
-    "max_seconds_each_including_init_cleanup": 600,
-    "paid_calls": 0,
-    "GPU_calls": 0
-  },
+  "native_attempts_executed": 0,
+  "frozen_plan_SHA256": "82cfe2fd0ab18ad1c7c1f6372df97925061832d6e809701cfcc9a53a37dcfc3f",
+  "frozen_plan_path": "experiments/sota-2026-10-22/epoch15/plan.v2.json",
   "prior_closed_native_attempts": 16,
-  "new_native_attempts": 0,
-  "instruction": "Exclusive epoch15 work lease. Native calls remain forbidden until reviewed hash restoration plus exact candidate/source/licensed train/dev/calibration/eligibleunusedconfirmation and acceptance gates freeze. Stop competinglease or uncertainmutation; no retry. Preserve SubmittedNative104/RRF10, all prior exposures, main/packages/submissions."
+  "limits": {
+    "native_attempt_cap": 2,
+    "CPU_threads": 2,
+    "seconds_per_process_including_init_cleanup": 600,
+    "paid_GPU_calls": 0
+  },
+  "instruction": "Exclusive scoped epoch15 lease. Only this exact frozen candidate/source/data/gates after independent acceptance. Atmost2 nonretryable CPU2/600s processes inclinit/cleanup, DEVthenconditionalunchangedCONF48. No extra probes, paid/GPU0. Othercontinuations STOP whileactive. If currentprocess/reservationstateuncertain, stop; never repeat an uncertain mutation or native batch.",
+  "publication_complete_in_this_commit": false
 }

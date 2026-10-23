@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "epoch": 15,
+  "frozen_at": "2026-10-23T08:27:31.722639+00:00",
+  "frozen_roles_before_gold_projection": true,
+  "source_only_role_freeze": true,
+  "candidate_code_measurement_freeze_by_root_still_required": true,
+  "checkpoint_parent": "0a6379a108919c9aa5ab52966ce1a9aacab8a0f4",
+  "scope": "Internal source-licensed originalContractNLI three-predicate NDA pilot with one fixedpretrained typed3wayreader/context policy. No fullLegalBench/currentJev300/ClaimBench accuracy or officialrank.",
+  "train": [],
+  "calibration": [],
+  "training_questions": 0,
+  "training_feature_questions": 0,
+  "fitting": {
+    "supervised_fit": false,
+    "calibration_fit": false,
+    "model_precision_or_threshold_selection": false,
+    "temperature": 1.0
+  },
+  "development": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch15/development24.jsonl",
+    "file_sha256": "TO_BE_WRITTEN_IN_IMMUTABLE_MATERIALIZATION_RECEIPT_BEFORE_MODEL_CALLS",
+    "queries": 24,
+    "document_groups": 8,
+    "document_ids": [
+      603,
+      238,
+      259,
+      115,
+      155,
+      192,
+      623,
+      270
+    ],
+    "hypotheses": [
+      "nda-17",
+      "nda-7",
+      "nda-3"
+    ],
+    "status": "One source-ID-only fixeddraw from218project-unused eligible originaltrain groups; no source corpus or gold opened during selection. No fitting or redraw; becomes foreverDEV if phaseattempted; filebytes/goldmaterialization require separate explicitrootauthorization."
+  },
+  "confirmation": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+    "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "queries": 48,
+    "document_groups": 16,
+    "status": "Existing epoch9reservedbank unchanged/project-model-unused. No rawCONFJSONLparsedbythisworker. AccessonlyafterfixedDEVgates and runtimebudgetadmission; no labeltraining/selection",
+    "allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch15/confirmation-allowlist.json",
+    "allowlist_sha256": "65485b57d37a3341031cd4e125539e6c052f34844a60f93be7f1035db68c913e"
+  },
+  "source": {
+    "repository": "stanfordnlp/contract-nli",
+    "commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "member": "contract-nli/train.json",
+    "member_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+    "archive_sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+    "license": "CC-BY-4.0",
+    "license_sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+    "attribution": "Koreeda and Manning(2021),ContractNLI:A Dataset for Document-levelNaturalLanguageInference forContracts. OriginalStanfordpublisherlicensepreserved."
+  },
+  "draw": {
+    "builder_sha256": "188162eadec4ad8355127969e4ebf81f6193ccb3caf2c61f26e8ac4b49efac91",
+    "plan_sha256": "08183cb89b8ab084b87cff58ce9438eacea333c20aba0c8481e5243b1df6ece0",
+    "selection_sha256": "28e2937a9e17f7ce3235ee95d80b45aecf2f52bc2cf4217d216984109e2716fb",
+    "eligibility_manifest_sha256": "d64d032f05b00ef0ad410aeb69d1920d7c8398b17c8f5f6f9e3f19e27d6bca0b",
+    "prior_exposed_train_groups": 189,
+    "reserved_confirmation_groups": 16,
+    "eligible_unreserved_before": 218,
+    "fixed_new_DEV_groups": 8,
+    "unreserved_after_if_exposed": 210,
+    "selection_uses_labels_outcomes_text_length": false,
+    "role_identities_unchanged_after_selection": true,
+    "any_collision_aborts_without_redraw": true
+  },
+  "inference_boundary": {
+    "only": [
+      "state",
+      "questions"
+    ],
+    "forbidden": [
+      "gold",
+      "evidenceannotations",
+      "recordIDs as features",
+      "sourcegroups",
+      "roles",
+      "provenance"
+    ],
+    "original_threeway_label_field": "evaluation.original_threeway_label",
+    "binary_mapping": {
+      "Entailment": "Yes",
+      "Contradiction": "No",
+      "NotMentioned": "No"
+    }
+  },
+  "selected_pretrained_model": {
+    "repository": "cross-encoder/nli-deberta-v3-large",
+    "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+    "declared_supervision": "SNLI+MultiNLI; no declaredContractNLI, exactpretraining/equivalentdatasetoverlapunknown",
+    "known_ContractNLI_supervised_models_not_eligible": true,
+    "larger_architecture_not_proven_legal_accuracy_gain": true
+  },
+  "limitations": "Public-source projectnoveltyonly. Unknownpretraining and fuzzyexcerpt overlapremain; exactinput/fulltext/crosssplit checksrunbefore goldprojection. Project Legal96/f018 exposure remainsforeverDEV; trainrolesnotrelabeledfreshDEV. No confirmation used for candidate design.",
+  "new_native_model_fit_paid_GPU_calls": 0,
+  "official_score": null,
+  "official_rank": null
+}

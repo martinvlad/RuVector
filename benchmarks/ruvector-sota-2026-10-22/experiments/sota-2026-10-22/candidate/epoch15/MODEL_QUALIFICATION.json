@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "epoch": 15,
+  "kind": "SOURCE_MODEL_QUALIFICATION_NO_MODEL_NATIVE_CALLS",
+  "qualified_model": {
+    "repository": "cross-encoder/nli-deberta-v3-large",
+    "exact_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+    "architecture": "DebertaV2ForSequenceClassification",
+    "layers": 24,
+    "hidden_size": 1024,
+    "max_positions": 512,
+    "torch_dtype": "float32",
+    "id2label": {
+      "0": "contradiction",
+      "1": "entailment",
+      "2": "neutral"
+    },
+    "declared_training": [
+      "SNLI",
+      "MultiNLI"
+    ],
+    "declared_ContractNLI_supervision": false,
+    "known_originaltrain_CONF_ineligibility_from_supervision": false,
+    "training_scope_caveat": "README declares SNLI+MultiNLI, not proof of exhaustive training/pretraining provenance or no exact/fuzzy document overlap. Current confirmation remains source-public/project-model-unused, never globally guaranteed uncontaminated.",
+    "model_license_declaration": "Apache-2.0",
+    "license_scope": "Model card declaration; component/base/training-data terms not superseded",
+    "official_ONNX_assets": [
+      {
+        "path": "onnx/model.onnx",
+        "bytes": 1742010231,
+        "publisher_sha256": "522031148bd5696cf67ca4a682ee56090cd5219558f29b62b311ea345e9f0fb7",
+        "Git_pointer_blob": "34523ff1cdf0c384ef814e1f876a04fe4f0b75ed",
+        "metadata_revision_bound": true,
+        "asset_downloaded_or_rehashed": false
+      },
+      {
+        "path": "onnx/model_qint8_avx512.onnx",
+        "bytes": 642857090,
+        "publisher_sha256": "9411944eb4cfb593a2fea3b3e51f1c4c6531afaa59ef1b8f2713b6eec427126c",
+        "Git_pointer_blob": "9a29e0abb397a0a26c5ed219c81b0595b98b5498",
+        "metadata_revision_bound": true,
+        "asset_downloaded_or_rehashed": false
+      },
+      {
+        "path": "onnx/model_quint8_avx2.onnx",
+        "bytes": 642857089,
+        "publisher_sha256": "821dc4407d10a9d25c20c57fcb742ddc20c09bc55c8093557091efb825256754",
+        "Git_pointer_blob": "6cf827a61b79f4e7ff6ed476a00448a0422f5fbc",
+        "metadata_revision_bound": true,
+        "asset_downloaded_or_rehashed": false
+      }
+    ],
+    "small_metadata_and_tokenizer_files": [
+      {
+        "path": "official-api.json",
+        "url": "https://huggingface.co/api/models/cross-encoder/nli-deberta-v3-large/revision/bab4bc7178836f731dcfd18c06ca9def0a137712?blobs=true",
+        "bytes": 6425,
+        "sha256": "47196c07643235f54504b67ee19118f02448b9378d871acff835bd0b18d16413"
+      },
+      {
+        "path": "README.md",
+        "url": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/resolve/bab4bc7178836f731dcfd18c06ca9def0a137712/README.md",
+        "bytes": 2934,
+        "sha256": "2510c58dd047cc8ab0599247e93542b6e04ce4e3a21415c28f1169de38940502"
+      },
+      {
+        "path": "config.json",
+        "url": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/resolve/bab4bc7178836f731dcfd18c06ca9def0a137712/config.json",
+        "bytes": 1100,
+        "sha256": "30d88fd93586a85330162d169f68161aecc242e1be23dc41db335c069fbbab8f"
+      },
+      {
+        "path": "tokenizer.json",
+        "url": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/resolve/bab4bc7178836f731dcfd18c06ca9def0a137712/tokenizer.json",
+        "bytes": 8656624,
+        "sha256": "5124ef2ead1a10a717703bc436de7f353da76d6340e4587719b42b1693707964"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "url": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/resolve/bab4bc7178836f731dcfd18c06ca9def0a137712/tokenizer_config.json",
+        "bytes": 1346,
+        "sha256": "f3eecd07c370ef0bf7dd3780d3cd68cf9c8b00c267e21a208ddcd8f82bfec1a6"
+      },
+      {
+        "path": "special_tokens_map.json",
+        "url": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/resolve/bab4bc7178836f731dcfd18c06ca9def0a137712/special_tokens_map.json",
+        "bytes": 301,
+        "sha256": "ed7c099c988dbb414b18a6980d20cb57b91b7cd119f6f6941eb364b0e892e712"
+      },
+      {
+        "path": "added_tokens.json",
+        "url": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/resolve/bab4bc7178836f731dcfd18c06ca9def0a137712/added_tokens.json",
+        "bytes": 26,
+        "sha256": "a4b6bfe668f2b3cf6f0cd535e98a0663d2d0d4a4a15f13075ad3597d33985a23"
+      }
+    ],
+    "tokenizer_type": "Unigram",
+    "tokenizer_post_processor": {
+      "type": "TemplateProcessing",
+      "single": [
+        {
+          "SpecialToken": {
+            "id": "[CLS]",
+            "type_id": 0
+          }
+        },
+        {
+          "Sequence": {
+            "id": "A",
+            "type_id": 0
+          }
+        },
+        {
+          "SpecialToken": {
+            "id": "[SEP]",
+            "type_id": 0
+          }
+        }
+      ],
+      "pair": [
+        {
+          "SpecialToken": {
+            "id": "[CLS]",
+            "type_id": 0
+          }
+        },
+        {
+          "Sequence": {
+            "id": "A",
+            "type_id": 0
+          }
+        },
+        {
+          "SpecialToken": {
+            "id": "[SEP]",
+            "type_id": 0
+          }
+        },
+        {
+          "Sequence": {
+            "id": "B",
+            "type_id": 1
+          }
+        },
+        {
+          "SpecialToken": {
+            "id": "[SEP]",
+            "type_id": 1
+          }
+        }
+      ],
+      "special_tokens": {
+        "[CLS]": {
+          "id": "[CLS]",
+          "ids": [
+            1
+          ],
+          "tokens": [
+            "[CLS]"
+          ]
+        },
+        "[SEP]": {
+          "id": "[SEP]",
+          "ids": [
+            2
+          ],
+          "tokens": [
+            "[SEP]"
+          ]
+        }
+      }
+    },
+    "tokenizer_padding": null,
+    "tokenizer_truncation": null
+  },
+  "prior_models_reviewed": [
+    {
+      "epoch": 7,
+      "repository": "onnx-community/deberta-v3-large-zeroshot-v2.0-ONNX",
+      "revision": "81795c444c24c634d3d5a6142988837b40313b3b",
+      "semantic_head": "binary E/notE;24layers1024"
+    },
+    {
+      "epoch": 9,
+      "repository": "Xenova/DeBERTa-v3-base-mnli-fever-anli",
+      "revision": "72a1ce83a0144efaf828b3c3844320a61197a53d",
+      "semantic_head": "threeway E/N/C;12layers768"
+    },
+    {
+      "epoch": 11,
+      "repository": "Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+      "revision": "a70e12f8244efae07cf6fdfa935df30e3ac4a060",
+      "semantic_head": "threeway E/N/C;24layers1024"
+    },
+    {
+      "epoch": 13,
+      "repository": "cross-encoder/nli-roberta-base",
+      "revision": "1be0567456f0543475805e758725f151f283705a",
+      "semantic_head": "threeway C/E/N;12layers768"
+    }
+  ],
+  "not_a_repeat_of_epoch11": true,
+  "strength_qualification": {
+    "architectural_capacity": "Higher capacity than epoch13 RoBERTa-base:24layers1024 vs12layers768, about3.56x basic encoder block depth*width^2. Distinct fine-tuned task family/label ordering from11.",
+    "publisher_only_NLI_aggregate": {
+      "SNLI_test_percent": 92.2,
+      "MNLI_mismatched_percent": 90.49
+    },
+    "legal_or_RuVector_superiority_verified": false,
+    "not_proven_stronger_than_epoch11": true,
+    "research_warning": "This remains generic NLI; checkpoint prioritizes legal typed-decision competence and context coverage over another generic-reader grid. Do not describe architecture as verified legal semantic strength."
+  },
+  "proposed_one_candidate_only": {
+    "precision_recommendation": "Freeze exactly one official ONNX identity before any model call; FP32 eliminates an additional quantization-fidelity uncertainty if CPU/memory admission is justified. Quantized alternative metadata is recorded for a future choice, not a grid or measured comparison.",
+    "mapping": "ONNX raw C0/E1/N2 logits -> stable softmax T1 -> typed[E,C,N]=[p1,p0,p2]; binaryYes=p1,No=p0+p2;exacthalfNo. Do not swap with epoch11E0/N1/C2.",
+    "inputs": "UNVERIFIED until static graph inspection. Config type_vocab_size0 does not itself prove whether ONNX exposes token_type_ids.",
+    "output": "UNVERIFIED graph identity/shape/name; require raw 3way logits and no hidden activation.",
+    "context": "Use actual fast tokenizer and512paired-token guard. Fixed pair packing must preserve supplied legal text, roles/exceptions, source ranges and matched same-model retrieval ablation. No input truncation/padding unless frozen explicitly.",
+    "runtime": "At most2nonretryableCPU2/600s including init/cleanup; actual throughput unknown, no warmup/probe admitted."
+  },
+  "remaining_prelaunch_gates": [
+    "Root stable scoped lock and complete reviewed bootstrap/restore hash verification",
+    "Exact chosen ONNX asset acquired from immutable revision and rehashed; static graph inputs/types/output/opsets/externaldata inspected without a session",
+    "Pin actual tokenizer/API source and every imported dependency; freeze native RuVector evidence policy and all source hashes",
+    "Freeze licensed unused DEV, empty or explicitTRAIN/calibration and eligible project-model-unusedCONF identities before any model call; known/fuzzy/normalized-document overlap caveats retained",
+    "Independent acceptance review before at most2nativecorpusprocesses; no confirmation after any failedDEV or runtime admission"
+  ],
+  "new_calls": {
+    "model_sessions": 0,
+    "model_forwards": 0,
+    "native": 0,
+    "fits": 0,
+    "paid_API": 0,
+    "GPU": 0,
+    "DEV_or_confirmation_labels_accessed": 0
+  },
+  "model_repositories_examined": 1,
+  "model_repository_cap": 2,
+  "generated_at": "2026-10-23T08:17:04.290232+00:00"
+}

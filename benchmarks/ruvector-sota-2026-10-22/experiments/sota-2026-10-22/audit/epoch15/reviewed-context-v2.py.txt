@@ -1,0 +1,177 @@
+"""Exact-source definition priority under a shared 160-token preselection budget.
+
+Pure tokenization only. Priority units retain global source order in the final
+premise; this is not a guarantee that definitions appear literally first.
+"""
+from __future__ import annotations
+import hashlib
+import importlib.util
+from pathlib import Path
+import re
+
+BASE_PATH = Path(__file__).resolve().parent.parent / 'epoch6/context.py'
+BASE_SHA256 = '28bceb95282ec3e3e938f3211ccad04d2369fa29e1f191f187566339ae3b44d2'
+if hashlib.sha256(BASE_PATH.read_bytes()).hexdigest() != BASE_SHA256:
+    raise ValueError('Reviewed complete-source partition/packing base changed')
+_spec = importlib.util.spec_from_file_location('epoch15_exact_partition_base6', BASE_PATH)
+BASE = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(BASE)
+partition = BASE.partition
+
+DEFINITION = re.compile(r'(?:\bhereinafter\b|\breferred\s+to\s+as\b|\bdefined\s+as\b|["“][^"”\r\n]{1,80}["”]\s*(?:shall\s+)?(?:means?|includes?)\b)', re.IGNORECASE)
+# Exact quoted legal term inside an observed parenthesis. This locates only
+# source text; it does not infer that any company is the named party or rewrite
+# a predicate. Parenthesis contents before/after the quote are explicitly bounded.
+NAMED_PARENTHETICAL = re.compile(
+    r'''\([^()\r\n]{0,96}["“‘']\s*(?:(?:confidential|proprietary|non[\s\-\u2010-\u2015]*public)[\s\-\u2010-\u2015]+information|data[\s\-\u2010-\u2015]+recipient|receiving[\s\-\u2010-\u2015]+party|disclosing[\s\-\u2010-\u2015]+party|vendor|recipient)\s*["”’'][^()\r\n]{0,32}\)''',
+    re.IGNORECASE)
+BETWEEN = re.compile(r'\bbetween\b', re.IGNORECASE)
+PARTY = re.compile(r'\b(?:agreement|parties|party|recipient|disclosing|receiving)\b', re.IGNORECASE)
+PRELUDE_TOKEN_CAP = 160
+INITIAL_PARTY_CHARACTER_CAP = 2048
+
+
+def _premise(state, units, selected):
+    if not selected:
+        return '', []
+    spans = BASE.merge_selected(units, selected)
+    return '\n\n'.join(state[start:end] for start, end in spans), spans
+
+
+def select_prelude(state, units, nli):
+    """Claim-independent priority IDs; whole over-budget units are skipped."""
+    selected, attempts = [], []
+    for index, unit in enumerate(units):
+        if unit['id'] != index or not 0 <= unit['start'] < unit['end'] <= len(state):
+            raise ValueError('Unexpected exact source partition identity')
+        text = state[unit['start']:unit['end']]
+        triggers = []
+        if DEFINITION.search(text):
+            triggers.append('explicit-definition-marker')
+        if NAMED_PARENTHETICAL.search(text):
+            triggers.append('explicit-quoted-named-term-parenthetical')
+        initial_text = state[unit['start']:min(unit['end'], INITIAL_PARTY_CHARACTER_CAP)]
+        if (unit['start'] < INITIAL_PARTY_CHARACTER_CAP and BETWEEN.search(initial_text)
+                and PARTY.search(initial_text)):
+            triggers.append('initial-party-declaration')
+        if not triggers:
+            continue
+        candidate, _ = _premise(state, units, selected + [index])
+        tokens = len(nli.encode(candidate, add_special_tokens=False).ids)
+        # Token-offset fallback fragments are full partition units, but are not
+        # complete original legal atoms. Never treat them as a global definition.
+        accepted = not unit['token_fallback'] and tokens <= PRELUDE_TOKEN_CAP
+        reason = ('admitted-whole-source-unit' if accepted else
+                  'token-fallback-not-whole-original-atom' if unit['token_fallback'] else
+                  'whole-unit-exceeds-remaining160-token-priority-budget')
+        attempts.append({'unit_id': index, 'span': [unit['start'], unit['end']],
+                         'source_sha256': hashlib.sha256(text.encode()).hexdigest(),
+                         'triggers': triggers, 'candidate_priority_tokens': tokens,
+                         'accepted': accepted, 'reason': reason})
+        if accepted:
+            selected.append(index)
+    text, spans = _premise(state, units, selected)
+    tokens = len(nli.encode(text, add_special_tokens=False).ids)
+    if tokens > PRELUDE_TOKEN_CAP:
+        raise ValueError('Shared definition priority exceeds exact160-token cap')
+    return {'policy': 'Claim-independent exact whole-unit preselection; global source order, no aliases, rewrites or semantic inference',
+            'selected_unit_ids': selected, 'selected_source_spans': [list(x) for x in spans],
+            'priority_text_sha256': hashlib.sha256(text.encode()).hexdigest(),
+            'priority_tokens': tokens, 'priority_token_cap': PRELUDE_TOKEN_CAP,
+            'initial_party_character_cap': INITIAL_PARTY_CHARACTER_CAP,
+            'definition_regex': DEFINITION.pattern,
+            'named_parenthetical_regex': NAMED_PARENTHETICAL.pattern, 'party_regex': PARTY.pattern,
+            'between_regex': BETWEEN.pattern, 'candidate_attempts': attempts,
+            'whole_units_only': True, 'token_fallback_admitted': False,
+            'literal_first_text_guaranteed': False, 'claim_dependent': False}
+
+
+def pack(state, units, ranking, hypothesis, nli, *, pair_cap=512, rank_depth=40, prelude=None):
+    if not isinstance(hypothesis, str) or not hypothesis.strip():
+        raise ValueError('Exact complete hypothesis is required')
+    ranking = list(ranking)
+    if not ranking or len(ranking) != len(set(ranking)) or any(type(i) is not int or not 0 <= i < len(units) for i in ranking):
+        raise ValueError('Invalid observed ranking')
+    if len(nli.encode('', hypothesis).ids) > pair_cap:
+        raise ValueError('Whole hypothesis exceeds pair budget; no clipping')
+    expected = select_prelude(state, units, nli)
+    if prelude is not None and prelude != expected:
+        raise ValueError('Provided shared priority prelude differs from claim-independent source rule')
+    prelude = expected
+    selected = list(prelude['selected_unit_ids'])
+    priority_text, _ = _premise(state, units, selected)
+    if len(nli.encode(priority_text, hypothesis).ids) > pair_cap:
+        raise ValueError('Whole shared priority and whole claim cannot jointly fit; no silent priority drop')
+    trace = []
+    ranking = ranking[:rank_depth]
+
+    def attempt(index, role, anchor):
+        if index in selected:
+            return True
+        premise, _ = _premise(state, units, selected + [index])
+        count = len(nli.encode(premise, hypothesis).ids)
+        accepted = count <= pair_cap
+        trace.append({'unit_id': index, 'role': role, 'anchor': anchor,
+                      'candidate_pair_tokens': count, 'accepted': accepted})
+        if accepted:
+            selected.append(index)
+        return accepted
+
+    for anchor in ranking:
+        if anchor in selected:
+            continue
+        if not attempt(anchor, 'ranked-anchor', anchor):
+            continue
+        for neighbor in (anchor - 1, anchor + 1):
+            if 0 <= neighbor < len(units) and units[neighbor]['paragraph_id'] == units[anchor]['paragraph_id']:
+                attempt(neighbor, 'same-paragraph-neighbor', anchor)
+    if not selected:
+        raise ValueError('No complete source unit fits the whole claim; no clipping')
+    premise, spans = _premise(state, units, selected)
+    tokens = len(nli.encode(premise, hypothesis).ids)
+    if tokens > pair_cap:
+        raise ValueError('Packed context exceeds exact joint pair cap')
+    selected_set = set(selected)
+    omitted = [u['id'] for u in units if u['id'] not in selected_set]
+    numbers = [{'span': [m.start(), m.end()], 'text': m.group(),
+                'retained': any(a <= m.start() and m.end() <= b for a, b in spans)}
+               for m in BASE.NUMBER.finditer(state)]
+    covered = sum(b - a for a, b in spans)
+    # Exact unchanged no-priority counterfactual uses tokenization only. It does
+    # not execute an extra reader/retrieval arm and is not an accuracy ablation.
+    try:
+        _, baseline = BASE.pack(state, units, ranking, hypothesis, nli,
+                                pair_cap=pair_cap, rank_depth=rank_depth)
+        no_priority = {k: baseline[k] for k in ('selected_chunk_ids_source_order',
+                         'selected_source_spans', 'joint_pair_tokens',
+                         'retained_source_characters', 'numeric_mentions_retained')}
+        no_priority.update(status='TOKENIZATION_ONLY', model_forwards=0,
+                           displaced_unit_ids=sorted(set(baseline['selected_chunk_ids_source_order']) - selected_set),
+                           introduced_unit_ids=sorted(selected_set - set(baseline['selected_chunk_ids_source_order'])),
+                           source_characters_delta=covered - baseline['retained_source_characters'],
+                           pair_tokens_delta=tokens - baseline['joint_pair_tokens'],
+                           numeric_retained_delta=sum(x['retained'] for x in numbers) - baseline['numeric_mentions_retained'])
+    except ValueError as exc:
+        no_priority = {'status': 'TOKENIZATION_ONLY_BASELINE_CANNOT_PACK', 'error': str(exc),
+                       'model_forwards': 0, 'displaced_unit_ids': None,
+                       'introduced_unit_ids': None, 'source_characters_delta': None,
+                       'pair_tokens_delta': None, 'numeric_retained_delta': None}
+    audit = {'policy': 'Whole-unit shared definition priority, then ranked anchors and same-paragraph neighbors; final global source order',
+             'definition_priority': prelude, 'no_priority_counterfactual': no_priority,
+             'ranking_ids_considered': ranking, 'ranking_depth': len(ranking),
+             'ranked_anchor_candidate_cap': rank_depth, 'joint_pair_token_cap': pair_cap,
+             'additional_neighbor_unit_ids_inspected': sorted({x['unit_id'] for x in trace if x['role'] == 'same-paragraph-neighbor' and x['unit_id'] not in ranking}),
+             'selected_chunk_ids_rank_order': selected, 'selected_chunk_ids_source_order': sorted(selected),
+             'selected_source_spans': [list(x) for x in spans], 'omitted_chunk_ids': omitted,
+             'omitted_source_spans': [[units[i]['start'], units[i]['end']] for i in omitted],
+             'total_document_chunks': len(units), 'retained_source_characters': covered,
+             'document_characters': len(state), 'document_character_coverage': covered / len(state),
+             'joint_pair_tokens': tokens, 'selected_evidence_truncated': False, 'claim_truncated': False,
+             'premise_sha256': hashlib.sha256(premise.encode()).hexdigest(),
+             'hypothesis_sha256': hashlib.sha256(hypothesis.encode()).hexdigest(),
+             'packing_attempts': trace,
+             'selected_token_fallback_unit_ids': [i for i in selected if units[i]['token_fallback']],
+             'numeric_mentions': numbers, 'numeric_mentions_retained': sum(x['retained'] for x in numbers),
+             'numeric_mentions_omitted': sum(not x['retained'] for x in numbers),
+             'scope': 'Mechanical source/definition/number coverage only; retention does not prove sufficiency and omission does not prove absence'}
+    return premise, audit

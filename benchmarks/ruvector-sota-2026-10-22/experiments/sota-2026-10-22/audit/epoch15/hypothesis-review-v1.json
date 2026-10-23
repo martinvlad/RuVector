@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-23T08:25:43.079538+00:00",
+  "source_commit": "0a6379a108919c9aa5ab52966ce1a9aacab8a0f4",
+  "status": "DISTINCT_CONTEXT_HYPOTHESIS_CONDITIONALLY_USEFUL_NOT_PROVEN",
+  "old_source_context_SHA256": "28bceb95282ec3e3e938f3211ccad04d2369fa29e1f191f187566339ae3b44d2",
+  "old_results_SHA256": "a2be66a3ba368790815d1ad8789e779e4bdfe997d93fcb7324a3c823e90f9c2a",
+  "old_findings_SHA256": "8658eca2745bf2a7fdef9756a98e7bd0e198e5d2eee689232a7bc48fd5e86829",
+  "old_reference_character_coverage_SHA256": "e635cb49641f9e163916efcab0e987cf9878003573b8a1c1417e2eb277f9ad0e",
+  "source_review": "Prior epoch6 pack scans ranked40anchors, immediately adjacent same-paragraph neighbors and source-order merged exact text; no mandatory global party/term-definition prelude exists.",
+  "evidence": [
+    {
+      "id": "original-contractnli:train:epoch13:dev:172:nda-3",
+      "scope": "Permanently exposed epoch13 DEV only",
+      "input_SHA256": "7b6db33d934de36126b6f6efbe530d2b4af72ae2967fefc13303e888c081f1e9",
+      "hypothesis": "Confidential Information may include verbally conveyed information.",
+      "native_selected_spans": [
+        [
+          0,
+          2113
+        ]
+      ],
+      "all_annotated_reference_characters_retained": true,
+      "observed_typed_probabilities": {
+        "Entailment": 0.0979195106899108,
+        "Contradiction": 0.10359188315111653,
+        "NotMentioned": 0.7984886061589725
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch13:dev:290:nda-3",
+      "scope": "Permanently exposed epoch13 DEV only",
+      "input_SHA256": "8409c20268fe52d6fa325ed6b565b01b25c04fa793dac65478da4154d2833258",
+      "hypothesis": "Confidential Information may include verbally conveyed information.",
+      "native_selected_spans": [
+        [
+          0,
+          2158
+        ]
+      ],
+      "all_annotated_reference_characters_retained": true,
+      "observed_typed_probabilities": {
+        "Entailment": 0.11007774454529742,
+        "Contradiction": 0.11735082364253263,
+        "NotMentioned": 0.7725714318121699
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch13:dev:385:nda-3",
+      "scope": "Permanently exposed epoch13 DEV only",
+      "input_SHA256": "9a02aecf84d57702104985cd9ac2d1d24ee16b9629ac5d48ad454e236ea73079",
+      "hypothesis": "Confidential Information may include verbally conveyed information.",
+      "native_selected_spans": [
+        [
+          553,
+          2337
+        ],
+        [
+          3517,
+          4186
+        ],
+        [
+          8090,
+          8123
+        ]
+      ],
+      "all_annotated_reference_characters_retained": true,
+      "observed_typed_probabilities": {
+        "Entailment": 0.023346550893566805,
+        "Contradiction": 0.028339810030934078,
+        "NotMentioned": 0.9483136390754991
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch13:dev:324:nda-7",
+      "scope": "Permanently exposed epoch13 DEV only",
+      "input_SHA256": "d71d4fa0e23379dcb878e699e52958ff23dc62f24e96eb3462b67e359f1e2c4d",
+      "hypothesis": "Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+      "native_selected_spans": [
+        [
+          1296,
+          3622
+        ],
+        [
+          8661,
+          8707
+        ]
+      ],
+      "all_annotated_reference_characters_retained": true,
+      "observed_typed_probabilities": {
+        "Entailment": 0.27453881960500975,
+        "Contradiction": 0.10495590907167682,
+        "NotMentioned": 0.6205052713233135
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch13:dev:419:nda-17",
+      "scope": "Permanently exposed epoch13 DEV only",
+      "input_SHA256": "863f8c9ba1633b419df8033f1f94807cc1bf735ee0604d82eadc556b70f1b729",
+      "hypothesis": "Receiving Party may create a copy of some Confidential Information in some circumstances.",
+      "native_selected_spans": [
+        [
+          643,
+          3034
+        ]
+      ],
+      "all_annotated_reference_characters_retained": true,
+      "observed_typed_probabilities": {
+        "Entailment": 0.298635172411944,
+        "Contradiction": 0.10655660346211024,
+        "NotMentioned": 0.5948082241259457
+      }
+    }
+  ],
+  "support": "Document324 native premise starts1296 and omits initial DataRecipient/NonPublicInformation definitions. Document419 native premise starts643, omitting the ProprietaryInformation definition, although it already states Ingram discloses to Vendor. Exact-source definition admission is a distinct possible missing-link mechanism.",
+  "counterevidence": "172/290/385 oral-information cases already retain their explicit ConfidentialInformation definitions and oral clauses;385 also contains both Disclosing/ReceivingParty definitions, and all three selectors still predict Neutral. A prelude is not a sufficient explanation or demonstrated remedy for0/9typed fully-retained failures.",
+  "candidate_hypothesis": "ONE different author-published pretrained three-way reader with fixed QUINT8 graph plus a deterministic<=96token exact-source global definition prelude, shared across native/lexical/positional selectors. This is a frozen test, not demonstrated stronger legal competence.",
+  "requirements": [
+    "Use only supplied source spans; no fabricated party equivalence or hypothesis rewrite",
+    "Fixed pattern/ordering/cap before new labels or outputs; source-order merge, exact offsets and dedup",
+    "Prelude consumes shared actual-tokenizer512pair budget; whole hypothesis and each admitted source unit remain untruncated",
+    "All three retrieval arms use identical prelude/tokenizer/readout/packing; Native104 reads exact primary packed excerpt",
+    "Record prelude admission and displaced source coverage/numeric positions; retention proves neither truth nor sufficiency",
+    "Matched same-model retrieval comparisons identify retrieval differences under the new shared policy; simultaneous model+context changes and new DEV prevent causal attribution to either change alone"
+  ],
+  "new_DEV_or_confirmation_labels_accessed": false,
+  "new_model_native_fit_paid_GPU_calls": 0,
+  "native_candidate_admitted": false
+}

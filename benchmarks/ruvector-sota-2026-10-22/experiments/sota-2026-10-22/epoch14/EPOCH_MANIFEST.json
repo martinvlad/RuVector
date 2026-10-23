@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "epoch": 14,
+  "status": "SOURCE_ONLY_NATIVE_NOT_RUN",
+  "scientific_candidate_status": "NOT_ADMITTED_NO_PERFORMANCE_ACCEPTANCE",
+  "recorded_at": "2026-10-23T07:44:52.826Z",
+  "resolved_parent_commit": "fbf7334bb0502df285c75674b0a14b3b7a6fa1d2",
+  "source_only_lease_commit": "eb06064eab159e2eebdebca3730594b2fe485c9a",
+  "run_id": "source-qualification-14-20261023T0728Z-517bfd4f3a5158",
+  "execution": {
+    "native_corpus_attempts": 0,
+    "native_corpus_completions": 0,
+    "HTTP_decisions": 0,
+    "model_sessions": 0,
+    "model_probes": 0,
+    "training_or_calibration_fits": 0,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "reconstruction_executed": false,
+    "OS_lock_currently_held": false,
+    "alternate_initial_OS_lock_lost": true,
+    "source_only_Git_CAS_lease": true
+  },
+  "measurements": {
+    "accuracy": null,
+    "Brier": null,
+    "NLL": null,
+    "p50_seconds": null,
+    "p95_seconds": null,
+    "model_resource_use": null,
+    "errors": null,
+    "status": "NOT_MEASURED_NO_CORPUS_ADMITTED"
+  },
+  "preserved_cumulative_execution": {
+    "native_corpus_batches": 14,
+    "actual_HTTP_decisions": 813,
+    "paid_inference_calls": 0,
+    "new_GPU_rentals": 0,
+    "native_corpus_batches_completed": 14,
+    "native_corpus_attempts_including_failed_request": 16,
+    "actual_HTTP_successful_decisions": 813,
+    "actual_HTTP_failed_requests": 2,
+    "counting_note": "Cumulative counts include historicaladaptivepublic/evaluationdiagnostics; notallfreshheldout. The144trainingfeature and6epoch12TRAINsanity diagnosticHTTP are preserved separately; epoch13 has no TRAIN/fitting/calibration. DEV/CONF evaluationdiagnostics are not officialbenchmarkgeneralization; scheduledwork notcalledexecuted.",
+    "actual_HTTP_training_feature_requests": 144,
+    "actual_HTTP_evaluation_diagnostic_decisions": 663,
+    "actual_HTTP_training_sanity_diagnostic_requests": 6
+  },
+  "roles": {
+    "train": [],
+    "development": [],
+    "calibration": [],
+    "new_confirmation": [],
+    "new_groups_drawn": 0,
+    "confirmation_consumed": false,
+    "used_manifest": "experiments/sota-2026-10-22/epoch14/USED_IDENTITIES.json",
+    "prior_exposed_originaltrain_groups": 189,
+    "unreserved_originaltrain_groups": 218,
+    "reserved_originaltrain_groups": 16,
+    "current_confirmation_SHA256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "current_confirmation_project_model_unused": true,
+    "current_confirmation_ineligible_for_reviewed_ContractNLI_supervised_models": true
+  },
+  "prelaunch_engineering": {
+    "runtime": "V8 pure functions",
+    "fixtures_passed": 24,
+    "frozen_prior_metadata_pins": 196,
+    "declared_public": 178,
+    "declared_external": 18,
+    "historical_exact_source_omissions_detected": 13,
+    "source_and_native_reconstruction": false,
+    "performance_claim": false,
+    "independent_root_replay": "experiments/sota-2026-10-22/audit/epoch14/root-independent-engineering-replay-v1.json"
+  },
+  "source_manifest": {
+    "path": "experiments/sota-2026-10-22/epoch14/SOURCE_MANIFEST.json",
+    "sha256": "6b2604f22a2b891fc3dde6fe49e6c0813b725ec78a518697ecd0b9a45f34d5bc"
+  },
+  "model_qualification": "experiments/sota-2026-10-22/epoch14/MODEL_QUALIFICATION.json",
+  "data_qualification": "experiments/sota-2026-10-22/epoch14/DATA_QUALIFICATION.json",
+  "blockers": "experiments/sota-2026-10-22/epoch14/BLOCKERS.json",
+  "research_plan": "experiments/sota-2026-10-22/epoch14/RESEARCH_PLAN.json",
+  "rejection_ledger": "experiments/sota-2026-10-22/epoch14/REJECTION_LEDGER.json",
+  "official_benchmark_refresh": "experiments/sota-2026-10-22/epoch14/benchmark-refresh.json",
+  "publisher_status": "experiments/sota-2026-10-22/epoch14/publisher-status.json",
+  "independent_acceptance_report": "experiments/sota-2026-10-22/audit/epoch14/independent-source-publication-review-v1.json",
+  "acceptance": {
+    "DEV": "NOT_RUN",
+    "confirmation": "NOT_RUN",
+    "native_candidate": "NOT_ACCEPTED",
+    "source_publication": "BOUND_TO_REFERENCED_INDEPENDENT_REPORT; NO_NATIVE_PROMOTION",
+    "champion": "SubmittedNative104/RRF10 preserved",
+    "official_SOTA_verified": false,
+    "official_rank": null
+  },
+  "budget": {
+    "all_16_prior_native_attempts_closed": true,
+    "source_scope_native_allowed": 0,
+    "source_scope_paid_GPU_allowed": 0,
+    "future_native_limits": {
+      "max_nonretryable_processes": 2,
+      "CPU_threads": 2,
+      "seconds_per_process_including_init_cleanup": 600,
+      "paid_API_calls": 0,
+      "GPU_calls": 0
+    },
+    "future_gates_not_executed_or_scheduled": true
+  },
+  "next_priority": "Epoch14 was SOURCE_ONLY_QUALIFICATION; native/model/fit calls0, no new data roles or benchmark score, all16 historical native attempts remain closed. Alternate executor lost scoped ownerfiles/PID between commands; do not retry unchanged runtime ownership failure. Before future native work require a confirmed stable executor generation, fresh scoped OSlock, hash-verified reviewed bootstrap/restore, and enforce audit/epoch14/source_closure.mjs against explicit reviewed public/nonbinary source plus model/native restoration registry BEFORE launch. Stronger legal NLI candidates tasksource/deberta-base-long-nli and ModernBERT-base-nli declare ContractNLI supervision; current originaltrainCONF48 is ineligible for those models, not consumed or globally relabeled. Published originaltest aggregates and unknown training/selection lineage mean originaltest is not automatically fresh. Qualify a genuinely unused licensed bank and exact pretrained head/model/tokenizer/runtime/dependencies underCPU2/2nonretryable600s/paid0/GPU0 before any model probe. Tasksource Jev typed decisions are a mixed-license training-source lead, not currentJev300/sealedscorer. Preserve SubmittedNative104/RRF10, easy48/Legal96/f018 foreverDEV; currentCONF48 remains project-model-unused for otherwise eligible source-clean candidates. No officialrank/result or ClaimBenchscore; new submission only after independent DEV+unusedCONF acceptance plus confirmed publisher eligibility.",
+  "private_credentials_or_raw_mail_published": false,
+  "main_merge_release_packages_changed": false
+}

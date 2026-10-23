@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "scope": "Official-source qualification only; no selected or measured candidate",
+  "candidate_selection_frozen": false,
+  "model_repositories_examined": 2,
+  "model_repository_cap": 3,
+  "new_model_native_session_fit_paid_GPU_calls": 0,
+  "candidates": [
+    {
+      "repository": "tasksource/deberta-base-long-nli",
+      "observed_revision": "04dcf11f844b07bc57015169fca2b7d6df8299d5",
+      "license_declaration": "Apache-2.0 model; component training-data terms remain",
+      "architecture": {
+        "class": "DebertaV2ForSequenceClassification",
+        "parameters_approx": 184400000,
+        "layers": 12,
+        "hidden_size": 768,
+        "max_positions": 1280,
+        "dtype": "float32",
+        "id2label": {
+          "0": "entailment",
+          "1": "neutral",
+          "2": "contradiction"
+        }
+      },
+      "declared_training": "Tasksource multitask250ksteps; ContractNLI seg/full explicit in config tasks, alongside long NLI, logic and legal LexGLUE",
+      "publisher_weight_pointer": {
+        "file": "model.safetensors",
+        "bytes": 737722356,
+        "sha256": "71cace06873870322ffa93e4005999961cef6d6b08263b01aad832ded23d94ae",
+        "locally_downloaded_or_rehashed": false,
+        "immutable_revision_binding_verified": false
+      },
+      "official_root_ONNX_found": false,
+      "qualification": "DISQUALIFIED_CURRENT_ORIGINALTRAIN_CONFIRMATION; NOT_RUNTIME_READY",
+      "reasons": [
+        "Declared ContractNLI original-train supervision makes current reserved original-train CONF48 ineligible for this candidate",
+        "No exact training-run dataset revisions or checkpoint selection manifest verified",
+        "No reviewed ONNX/feed closure or CPU2/600s execution established"
+      ],
+      "sources": [
+        "https://huggingface.co/tasksource/deberta-base-long-nli",
+        "https://huggingface.co/tasksource/deberta-base-long-nli/blob/main/config.json",
+        "https://huggingface.co/tasksource/deberta-base-long-nli/tree/main",
+        "https://huggingface.co/tasksource/deberta-base-long-nli/commit/04dcf11f844b07bc57015169fca2b7d6df8299d5"
+      ]
+    },
+    {
+      "repository": "tasksource/ModernBERT-base-nli",
+      "observed_revision": "de4ab7e77845098b7fab7f6ab9d370ddff27b19c",
+      "license_declaration": "Apache-2.0 model; component training-data terms remain",
+      "architecture": {
+        "class": "ModernBertForSequenceClassification",
+        "parameters_approx": 149600000,
+        "layers": 22,
+        "hidden_size": 768,
+        "max_positions": 2048,
+        "dtype": "float32",
+        "id2label": {
+          "0": "entailment",
+          "1": "neutral",
+          "2": "contradiction"
+        }
+      },
+      "declared_training": "Full card says all table tasks trained200ksteps; ContractNLI seg/full appears in card/config although abbreviated metadata lists only GLUE/ANLI",
+      "publisher_weight_pointer": {
+        "file": "model.safetensors",
+        "bytes": 598442860,
+        "sha256": "86c32c52ce38b8f26e028ca959b06daee3a5f3f6947c63258bc8695dde88a465",
+        "locally_downloaded_or_rehashed": false,
+        "immutable_revision_binding_verified": false
+      },
+      "official_root_ONNX_found": false,
+      "qualification": "DISQUALIFIED_CURRENT_ORIGINALTRAIN_CONFIRMATION; NOT_RUNTIME_READY",
+      "published_test_aggregates": {
+        "ContractNLI_seg": 0.87,
+        "ContractNLI_full": 0.79,
+        "scope": "Author-reported separate task heads, not RuVector measurements or verified generic-head accuracy; selection exposure prevents automatically calling original test genuinely unused"
+      },
+      "reasons": [
+        "Known original-train supervision invalidates current CONF48",
+        "Original test not automatically fresh given published aggregates and unknown training/selection lineage",
+        "New architecture/export/dependency/CPU admission unverified"
+      ],
+      "sources": [
+        "https://huggingface.co/tasksource/ModernBERT-base-nli",
+        "https://huggingface.co/tasksource/ModernBERT-base-nli/blob/main/config.json",
+        "https://huggingface.co/tasksource/ModernBERT-base-nli/tree/main",
+        "https://huggingface.co/tasksource/ModernBERT-base-nli/commit/de4ab7e77845098b7fab7f6ab9d370ddff27b19c"
+      ]
+    }
+  ],
+  "historical_recipe_evidence": {
+    "tasknet_commit": "2955f6d711ce4637c689733b1afeb429d8e888a0",
+    "tasknet_file": "src/tasknet/models.py",
+    "tasksource_commit": "3f51c90297f654837d634b7541e35f49856e18f4",
+    "tasksource_files": [
+      "src/tasksource/tasks.py",
+      "src/tasksource/preprocess.py"
+    ],
+    "finding": "Separate training/evaluation dictionaries and default split handling are mechanisms, not exact binding to either published checkpoint's actual run or checkpoint selection"
+  },
+  "new_source_lead": {
+    "repository": "sileod/tasksource",
+    "revision": "df53888a967b9e4d70fba71d1421cba6b72abb92",
+    "metadata_files": [
+      "dataset_cards/tasksource-jev.md",
+      "README.md"
+    ],
+    "dataset": "tasksource/tasksource-jev-typed-decisions",
+    "qualification": "TRAINING_SOURCE_LEAD_ONLY; NOT_CURRENT_JEVBENCH300",
+    "split_risk": "default/full include train/validation/test; filtered-full is a historical TRAIN-only snapshot, later additions absent",
+    "license_scope": "license:other/mixed component rights; source-license filtering best effort; codeBSD3/annotationsCCBY4 declarations do not override component terms",
+    "not_verified": [
+      "Current JevBench300/publisher sealed scorer",
+      "Clean benchmark overlap",
+      "Immutable HF dataset revision",
+      "Eligible unused confirmation"
+    ],
+    "case_rows_or_labels_read": false
+  },
+  "access_limits": [
+    "HF abbreviated metadata omitted important ModernBERT ContractNLI training; full card/config corrected it",
+    "hf_doc_fetch unavailable; API and immutable file paths inaccessible through web tool",
+    "Pointer hashes/repository heads are publisher metadata, not locally verified or fully revision-bound acquired model assets"
+  ],
+  "next_gate": "A stable executor, exact licensed train/development/calibration/eligible fresh confirmation, selected candidate/source/export/tokenizer/raw3way feed/asset hashes and CPU budget must freeze before any model/native call. No paid work or model probe admitted."
+}

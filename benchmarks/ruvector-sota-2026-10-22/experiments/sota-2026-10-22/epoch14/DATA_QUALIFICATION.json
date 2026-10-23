@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "epoch": 14,
+  "status": "SOURCE_QUALIFICATION_ONLY_NO_NEW_BENCHMARK_RUN",
+  "source_repository": "stanfordnlp/contract-nli",
+  "source_revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+  "source_license": "CC-BY-4.0",
+  "license_git_blob": "4ea99c213c5c0c005ae4e80df8e52169d06896ec",
+  "archive": {
+    "path": "resources/contract-nli.zip",
+    "bytes": 65362913,
+    "git_blob": "757fd1dafd29a997fba00c60c6d40b2930a36159",
+    "rehashed_this_epoch": false
+  },
+  "official_split_counts_from_paper": {
+    "train": 423,
+    "development": 61,
+    "test": 123,
+    "total_documents": 607,
+    "fixed_hypotheses": 17
+  },
+  "sources": [
+    "https://github.com/stanfordnlp/contract-nli/tree/eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "https://aclanthology.org/2021.findings-emnlp.164.pdf"
+  ],
+  "fresh_confirmation_qualified": false,
+  "qualification_requirements": [
+    "Verify exact chosen-model supervised dataset/split and transformed LegalBench overlap",
+    "Check all historical Legal96/f018 and document/excerpt/input identities before declaring new dev/test groups unused",
+    "Unknown pretraining overlap remains even after project/source split checks"
+  ],
+  "original_baseline_code": {
+    "repository": "stanfordnlp/contract-nli-bert",
+    "revision": "058c56fd62d56897bb4fcfbf1be71b17aee3a79c",
+    "license": "Apache-2.0 implementation; original data CC-BY-4.0",
+    "recipe": "train.json training/dev.json validation; CUDA configuration",
+    "released_trained_checkpoint_or_ONNX_located": false,
+    "CPU_ready": false
+  },
+  "train": [],
+  "development": [],
+  "calibration": [],
+  "new_confirmation": [],
+  "new_roles_drawn": false,
+  "unseen_DEV_CONF_labels_accessed": false,
+  "retained_confirmation": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+    "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "project_model_unused": true,
+    "globally_retired": false,
+    "ineligible_for_this_reviewed_ContractNLI_supervised_model_family": true
+  },
+  "model_native_fit_paid_GPU_calls": 0
+}

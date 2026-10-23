@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "frozen": true,
+  "frozen_at": "2026-10-23T06:13:53.705427+00:00",
+  "checkpoint_parent": "cd18a712d1adbaba92d7c26080923b437ae36af8",
+  "scope": "Internal source-licensed original ContractNLI three-predicate NDA pilot; one frozen zero-shot pretrained architecture test, no fitting or calibration. Not full LegalBench, current JevBench300 or ClaimBench.",
+  "train": [],
+  "calibration": [],
+  "training_questions": 0,
+  "training_feature_questions": 0,
+  "fitting": {
+    "training_feature_queries": 0,
+    "calibration_queries": 0,
+    "supervised_fit": false,
+    "model_precision_or_threshold_selection": false,
+    "temperature": 1.0
+  },
+  "development": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch13/development24.jsonl",
+    "sha256": "4eb38bf37b98562d12433c0a2791b2122c6f62ebf597eea9c941e72bd566ec1a",
+    "queries": 24,
+    "document_groups": 8,
+    "status": "New project-unused groups for one frozen gate; no fitting or calibration; becomes exposed DEV permanently after attempt"
+  },
+  "confirmation": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+    "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "queries": 48,
+    "document_groups": 16,
+    "status": "Existing epoch9 bank unchanged/project-model-unused; metadata only until frozen development gates pass. No labels for candidate selection or fitting.",
+    "allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch13/confirmation-allowlist.json",
+    "allowlist_sha256": "65485b57d37a3341031cd4e125539e6c052f34844a60f93be7f1035db68c913e"
+  },
+  "roles_frozen_before_new_gold_projection_at": "2026-10-23T06:13:53.632033+00:00",
+  "draw": {
+    "plan_sha256": "1b544eeeebb936614cbaaee58d5dd81dd139d193251a7e05dc98dbcb578de79a",
+    "selection_sha256": "945980dd1f6e300497a01defb25d1589cb02424e346cb0208a07a4a2a99fe149",
+    "eligible_unreserved_before": 226,
+    "new_DEV_groups": 8,
+    "unreserved_remaining_after": 218,
+    "prior_exposed_train_groups": 181,
+    "reserved_confirmation_groups": 16,
+    "new_TRAIN_exposure_groups": 0,
+    "selection_uses_labels_or_outcomes": false
+  },
+  "source": {
+    "repository": "stanfordnlp/contract-nli",
+    "commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "member": "contract-nli/train.json",
+    "member_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+    "archive_sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+    "license": "CC-BY-4.0",
+    "license_sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+  },
+  "inference_boundary": {
+    "only": [
+      "state",
+      "questions"
+    ],
+    "forbidden": [
+      "gold",
+      "evidence annotations",
+      "record IDs as model features",
+      "source groups",
+      "roles",
+      "provenance"
+    ],
+    "original_threeway_label_field": "evaluation.original_threeway_label",
+    "binary_mapping": {
+      "Entailment": "Yes",
+      "Contradiction": "No",
+      "NotMentioned": "No"
+    }
+  },
+  "metadata_only_allowlists": {
+    "dev": {
+      "path": "dev-allowlist.json",
+      "sha256": "16e029d743768d263e81ce0a1004fcfd4892b750dc911b221a9e68f6a3978903"
+    },
+    "confirmation": {
+      "path": "confirmation-allowlist.json",
+      "sha256": "65485b57d37a3341031cd4e125539e6c052f34844a60f93be7f1035db68c913e"
+    }
+  },
+  "data_files": {
+    "development24.jsonl": {
+      "sha256": "4eb38bf37b98562d12433c0a2791b2122c6f62ebf597eea9c941e72bd566ec1a",
+      "queries": 24,
+      "document_groups": 8,
+      "role": "dev"
+    },
+    "confirmation48.jsonl": {
+      "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+      "queries": 48,
+      "document_groups": 16,
+      "role": "confirmation",
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl"
+    }
+  },
+  "limitations": "Public-source project novelty only; upstream pretraining/fuzzy-version overlap unknown. Prior exposed roles remain fixed: previous designated DEV stays DEV and previous TRAIN is not relabeled as fresh DEV. No confirmation labels used to choose candidate.",
+  "native_model_paid_calls": 0,
+  "official_score": null,
+  "official_rank": null
+}

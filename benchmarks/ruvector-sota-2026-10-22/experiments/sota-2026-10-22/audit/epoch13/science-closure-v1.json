@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T06:31:38.420253+00:00",
+  "checks_passed": true,
+  "decision": "REJECTED_DEV_GATE_NO_PROMOTION_OR_SUBMISSION",
+  "plan_sha256": "6aba06f350bb077c604ce2931bf95e302ea91cfac05c9990185d868ec6e82ac3",
+  "independent_actual_report_sha256": "3201200e4646c5e2c37b4542957fcb3e7726971883435606f0eb912676e20c5e",
+  "all196sourcepins_still_exact_outer_actual": true,
+  "all43terminal_snapshotfiles_exact_outer_actual": true,
+  "historical12rejectionprefix_unchanged": true,
+  "new_epoch_root_manifest_sha256": "5cb9b31743674299d3a394c886773c8246acbb9098ad1947285e4ec46f2329b1",
+  "used_identities_sha256": "953eba98d54681800501940da9e4a8380087eac58a5d089937079035d58a464d",
+  "rejection_ledger_sha256": "9c2c421ac8469dd6a3d73b087470903fad58ffa3b964d427a2d0beb670229eb2",
+  "results_sha256": "693b4a03843afb6f7f188e2b097fd66980e5ce653a95b0b1bc5db84d8a160a57",
+  "actual": {
+    "native_processes": 1,
+    "conservative_invocation_reservations": 1,
+    "HTTP200": 24,
+    "failed_HTTP": 0,
+    "TRAIN": 0,
+    "DEV": 24,
+    "CONF": 0,
+    "NLI_singleton_pairs": 72,
+    "NLI_tokens": 35168,
+    "BGE_texts": 170,
+    "BGE_batches": 45,
+    "ANN_full_order_agreements": 24,
+    "same_context_logit_drift": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "metrics": {
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.7496523357472612,
+        "nll": 1.2207606718574753,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 14,
+        "brier": 0.7116087693153391,
+        "nll": 1.2120811717846636,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 14,
+        "brier": 0.6933283124759858,
+        "nll": 1.1343900834132912,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.5013138813361416,
+        "nll": 0.6944611184121025,
+        "errors": 0,
+        "strict_valid": 24
+      }
+    }
+  },
+  "latency": {
+    "development": {
+      "p50": 2.563010759502504,
+      "p95": 3.982491662102256,
+      "max": 5.314623174999724,
+      "scope": "Whole HTTP request includesall3NLIcontrols+native104excerpt+evidenceencoding/index; not primary-only deployment"
+    }
+  },
+  "resources": {
+    "development": {
+      "at": "2026-10-23T06:23:10.651908+00:00",
+      "worker_cpu_user_seconds": 120.69182,
+      "worker_cpu_system_seconds": 0.916998,
+      "worker_peak_RSS_bytes": 1335529472,
+      "terminated_children_cpu_user_seconds": 5.617743,
+      "terminated_children_cpu_system_seconds": 0.688913,
+      "largest_terminated_child_peak_RSS_bytes": 1335529472,
+      "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+      "allowed_CPU_ids": [
+        0,
+        1
+      ],
+      "configured_ORT_threads": 2,
+      "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+    }
+  },
+  "wall_seconds_including_all_init_cleanup": 70.44176406000042,
+  "runtime_admission": {
+    "at": "2026-10-23T06:23:10.802477+00:00",
+    "formula_id": "48xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "max_DEV_HTTP_seconds": 5.314623174999724,
+    "max_DEV_units": 32,
+    "max_confirmation_units": 60,
+    "source_unit_ratio": 1.875,
+    "DEV_initialization_seconds": 2.5548888299963437,
+    "projected_confirmation_seconds": 543.4258634099679,
+    "allowed": true,
+    "forecast_limit_seconds": 600,
+    "actual_confirmation_watchdog_seconds": 600,
+    "scope": "Conservative admission forecast, not a performance guarantee. No confirmation labels/model outputs used."
+  },
+  "runtime_scope": "543.426s forecast passed runtime-alone admission. Failed DEV forbade CONF; forecast is not executed CONF or guaranteed timing. Whole HTTP contains all3NLIarms/native104/embedding/index; no primary-only latency. Worker/child getrusage peakRSS are not additive aggregate memory.",
+  "failure_direction": "Same fixed official RoBERTa reader with native evidence scored12/24 versus lexical14 and positional14; Native104sameexcerpt12. All proper losses worse all3controls, so native evidence selection plus changed reader did not pass. No cross-epoch causalaccuracy/modelsize/quantization comparison; differentDEVdocuments and BPE contexts.",
+  "data_roles": {
+    "TRAIN": [],
+    "calibration": [],
+    "prior_exposed_originaltrain": 181,
+    "new_DEV_groups_retired": 8,
+    "total_exposed_originaltrain": 189,
+    "unreserved_after_draw": 218,
+    "reserved_CONFIRM_groups": 16,
+    "CONF48_model_consumed": false,
+    "unused_confirmation_labels_inspected": false,
+    "old_easy48_Legal96_f018_permanently_DEV": true,
+    "old_TRAIN_roles_preserved": true
+  },
+  "budget": {
+    "prior_closed_attempts": 15,
+    "epoch_attempts_used": 1,
+    "cap": 2,
+    "unspent_slots": 1,
+    "further_allowed": 0,
+    "all16_attempts_now_closed": true,
+    "maxCPU": 2,
+    "seconds_per_phase_including_initcleanup": 600,
+    "automatic_retries": 0,
+    "paid": 0,
+    "GPU": 0
+  },
+  "cleanup": {
+    "observed_worker_nativePIDs": [
+      30356,
+      30360
+    ],
+    "absent_now": true,
+    "saved_owned_group_empty": true,
+    "hard_deadline_met": true,
+    "scoped_worklock_still_required_untilCAS": true
+  },
+  "science_scope": "Internal public CC-BY ContractNLI three-predicate NDA pilot; no currentJev300/fullLegalBench/ClaimBench score/rank or SOTA. Original champion unchanged. Unknown pretraining/fuzzy overlap/source-original export derivation and model dataset terms remain explicit; no weights republished. Numeric retention is exposure, not arithmetic truth/sufficient evidence.",
+  "auditor_actual_model_session_native_fit_paid_or_externalwrite_calls": 0
+}

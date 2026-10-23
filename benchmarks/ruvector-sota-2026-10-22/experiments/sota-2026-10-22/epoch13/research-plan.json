@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "epoch": 13,
+  "frozen_at": "2026-10-23T06:21:07.912088+00:00",
+  "parent_checkpoint": "cd18a712d1adbaba92d7c26080923b437ae36af8",
+  "lease_commit": "3a429c6c40c5b751c0eb1423de29c2495d0b1209",
+  "hypothesis": "One fixed official cross-encoder/nli-roberta-base FP32 three-way SNLI/MultiNLI pretrained reader, testing a distinct semantic/contradiction family at lower static CPU complexity after the rejected larger DeBERTa precision study. Actual native RuVector/BGE evidence selection, same-model lexical/positional controls and Native104 same-excerpt control. Active RoBERTa BPE governs partition and exact epoch6 coherent context packing algorithm; contexts intentionally differ from old SentencePiece policy. No fitting, calibration, precision/model selection or fallback; no assumed legal or general-NLI superiority.",
+  "scientific_scope": "Internal CC-BY original ContractNLI three-predicate NDA pilot, public-source project-unused document groups, unknown pretraining/fuzzy overlap. No current JevBench300, full LegalBench or ClaimBench score/rank.",
+  "train": [],
+  "calibration": [],
+  "fitting": false,
+  "temperature": 1,
+  "development": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch13/development24.jsonl",
+    "sha256": "4eb38bf37b98562d12433c0a2791b2122c6f62ebf597eea9c941e72bd566ec1a",
+    "queries": 24,
+    "document_groups": 8,
+    "status": "New project-unused groups for one frozen gate; no fitting or calibration; becomes exposed DEV permanently after attempt"
+  },
+  "confirmation": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+    "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "queries": 48,
+    "document_groups": 16,
+    "status": "Existing epoch9 bank unchanged/project-model-unused; metadata only until frozen development gates pass. No labels for candidate selection or fitting.",
+    "allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch13/confirmation-allowlist.json",
+    "allowlist_sha256": "65485b57d37a3341031cd4e125539e6c052f34844a60f93be7f1035db68c913e"
+  },
+  "data_ordering": {
+    "contract_frozen_at": "2026-10-23T06:13:53.705427+00:00",
+    "document_role_frozen_at": "2026-10-23T06:13:53.632033+00:00",
+    "candidate_choice_after_data": true
+  },
+  "model_identity": {
+    "repo": "cross-encoder/nli-roberta-base",
+    "revision": "1be0567456f0543475805e758725f151f283705a",
+    "onnx_sha256": "50dbf8939f1fdc45ae31fd6c1e6680489c6560b0f5e37b13da0e7979b8384ad0",
+    "onnx_bytes": 498911192,
+    "precision": "FP32",
+    "labels": {
+      "0": "contradiction",
+      "1": "entailment",
+      "2": "neutral"
+    },
+    "typed_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "mapping": "Yes=P(E);No=P(C)+P(N);T1;exacthalf-tieNo",
+    "layers": 12,
+    "hidden_size": 768
+  },
+  "candidate_manifest_sha256": "bf7426beaa2b0cc746cf38213d9d03216129398fe4d5d538300aa0af35118c76",
+  "independent_acceptance_sha256": "921265d872fce1e12d60f1817bbe297e348b84e61553587c27bd5811c0a40612",
+  "confirmation_gate_sha256": "95af3f6c2521b9ed8a18f50abd8ba7287a757e805746a7f469cbb58f77f3184e",
+  "DEV_gate": "Primary>=each3controls+2correct; Brier/NLL nonworse ALL3, strict proper gain both matched; all24 strictvalid/errors0.",
+  "confirmation_gate": "Nominal2000seed20261022 paired16doc bootstrap accuracy gain lowerCI>0 ALL3; proper improvement lowerCI>=-1e-12 ALL3 and points nonworse. Independent review only.",
+  "budget": {
+    "native_attempt_cap": 2,
+    "attempts_started_before": 0,
+    "automatic_retries": 0,
+    "seconds_per_phase_including_init_cleanup": 600,
+    "CPU_cores": 2,
+    "ORT_intra": 2,
+    "ORT_inter": 1,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "lifetime_attempts_before": 15
+  },
+  "context_policy": "Reviewed epoch6 algorithm40anchors/same-paragraph neighbors/source-order/wholeclaim. NEW active RoBERTa BPE token-budget policy for partition/packing and raw exact joint512 reader; no clipping/padding/truncation; same model/context policy all3 retrieval selectors. Context bytes differ from prior SentencePiece, not a precision-only comparison.",
+  "runtime_admission": {
+    "formula_id": "48xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "max_DEV_units": 32,
+    "max_confirmation_units": 60,
+    "formula": "48*maxDEVHTTPseconds*max(1,maxCONFunits/maxDEVunits)+2*phase1initseconds+60; require<=600 and lease_remaining>=forecast+30",
+    "scope": "Conservative estimate only, no confirmation labels/model outputs; actual phase watchdog600seconds"
+  },
+  "evidence_scope": "Whole-document gold labels; packed context may omit evidence. Retrieval miss cannot prove absence/ClaimBench insufficiency. No ClaimBench pilot before verified data/scorer/license/access.",
+  "numeric_scope": "Source-position numeric retention/omission audit only, not numeric truth or sufficiency certification.",
+  "source_license": "Original ContractNLI CC-BY4 exact source/attribution pinned. Official cross-encoder model Apache-2.0 declaration and SNLI/MultiNLI training declared; underlying corpus terms and unknown pretraining overlap remain. Exact official ONNX/repo revision pinned, exporter/training checkpoints and upstream original-weight fidelity not independently established. No pretrained binaries published.",
+  "study_contract_sha256": "f7b76a29d5f45386f27a99be5549b0782762436448456e904a82f99808e807f1",
+  "prior_exposures": "All oldpublic183/easy48/Legal96/f018CONF96 and181 originaltrain groups remain exposed with original roles; newDEV8 source-only drawn before model choice, preservedCONF16. No oldset relabeling.",
+  "replay_reproduction": {
+    "active_source": {
+      "path": "experiments/sota-2026-10-22/audit/epoch13/replay_actual_v1.py",
+      "sha256": "8f6464f2c27da12c95d1c23dc16b67e967b67f285b3ef3db19770ccf865047e7"
+    },
+    "method": {
+      "path": "experiments/sota-2026-10-22/audit/epoch13/saved-replay-method-v1.json",
+      "sha256": "f141414ca749750c9882fa9d97790a5f17bf12b7a3dcf4b629d6b08557c3d6bd"
+    },
+    "scope": "Pure saved-output replay with Python-float scorer inputs; no model/native/session/fit calls. Prepared before actual.",
+    "prepared_before_measurements": true,
+    "command": "OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B experiments/sota-2026-10-22/audit/epoch13/replay_actual_v1.py --project . --out /tmp/ruvector-epoch13-audit-replay-UNUSED.json --expected-plan-sha PLAN_SHA",
+    "output_rule": "Choose actually unused path; no overwrite."
+  }
+}

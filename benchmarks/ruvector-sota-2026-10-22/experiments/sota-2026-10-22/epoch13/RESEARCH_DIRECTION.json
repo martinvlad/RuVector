@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "epoch": 13,
+  "at": "2026-10-23T06:32:38.101816+00:00",
+  "status": "REJECTED_DEV_GATE_DIRECTION_UPDATED_FROM_REAL_SAVED_OUTPUTS",
+  "epoch_manifest": {
+    "path": "experiments/sota-2026-10-22/epoch13/EPOCH_MANIFEST.json",
+    "sha256": "5cb9b31743674299d3a394c886773c8246acbb9098ad1947285e4ec46f2329b1"
+  },
+  "independent_measurement_report": {
+    "path": "experiments/sota-2026-10-22/audit/epoch13/actual-independent-v1.json",
+    "sha256": "3201200e4646c5e2c37b4542957fcb3e7726971883435606f0eb912676e20c5e"
+  },
+  "independent_postrun_acceptance": {
+    "path": "experiments/sota-2026-10-22/audit/epoch13/postrun-independent-v1.json",
+    "sha256": "72a85e22b88222a80289a36ef0f8c07102fb9a16b010209fe99f23f314d8eeca"
+  },
+  "postrun_findings": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch13/postrun/findings-v2.json",
+    "sha256": "8658eca2745bf2a7fdef9756a98e7bd0e198e5d2eee689232a7bc48fd5e86829"
+  },
+  "exact_reference_character_coverage": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch13/postrun/reference-coverage-v1.json",
+    "sha256": "e635cb49641f9e163916efcab0e987cf9878003573b8a1c1417e2eb277f9ad0e"
+  },
+  "independent_annotation_validation": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch13/postrun/annotation-export-validation-v1.json",
+    "sha256": "87902a6ebfc34c1d5a29f296a7af7b45440ef71cd7b697208fc1538c9193391e"
+  },
+  "actual_observations": {
+    "correct": {
+      "native": 12,
+      "same_model_lexical": 14,
+      "same_model_positional": 14,
+      "same_excerpt104": 12
+    },
+    "DEV_queries": 24,
+    "DEV_groups": 8,
+    "ANN_exact_full_order": 24,
+    "typed_predictions": {
+      "Entailment": 2,
+      "Contradiction": 0,
+      "NotMentioned": 22
+    },
+    "true_Entailment_correct_all3selectors": 0,
+    "true_Entailment_n": 10,
+    "native_full_reference_character_retention_queries": 9,
+    "native_typed_correct_on_full_references": 0,
+    "native_binary_correct_on_full_references": 3,
+    "reference_bearing_queries": 15,
+    "all_reference_character_retention_is_sufficiency_certificate": false,
+    "runtime_seconds_including_init_cleanup": 70.44176406000042,
+    "pipeline_p50_seconds": 2.563010759502504,
+    "pipeline_p95_seconds": 3.982491662102256,
+    "pipeline_latency_scope": "All3readerarms plus native104excerpt and nativeevidence retrieval, not primary-only deployment",
+    "confirmation_runtime_forecast_seconds": 543.4258634099679,
+    "runtime_forecast_is_execution": false
+  },
+  "next_research_priority": "Epoch13 closed/rejected: actualnative12/24 versus matchedlexical14/positional14; exactnativeANN24/24 but typedNeutral22/24 and all10trueEntailments missed acrossall3readerarms. Native retained everyannotatedreferencecharacter for9/15reference-bearingqueries (6E+3C), yettyped0/9; annotations are not sufficiencyproof. Prioritize verified legal typed-decision competence, roles/exceptions/negation and sourcecoverage over another genericNLI/precision/threshold grid. Any next TRAIN/DEV diagnostic/model work must itself be frozen and fit within a new authorized CPU2/atmost2nonretryable600s process budget; no unbudgeted model probes. Only licensed alreadyexposedTRAIN/DEV may support design/fitting; use new source-only DEV groups plus project-unusedCONF for acceptance. Never select/train on confirmation labels. A published model trained on originalContractNLItrain would contaminate the current reserved originaltrainCONF48 and require a different genuinely unused licensed confirmation bank. Preserve SubmittedNative104/RRF10, all16historicalattempts closed, easy48/Legal96/f018 foreverDEV; existingCONF48 untouched. No new submission until independently meaningful DEV+unusedCONF improvement and verified publisher protocol/eligibility; no official SOTA/rank claimed.",
+  "future_work_executed_or_scheduled_by_this_artifact": false,
+  "new_native_model_fit_paid_GPU_calls": 0,
+  "confirmation_consumed": false,
+  "champion_unchanged": true,
+  "official_score": null,
+  "official_rank": null,
+  "goal_met": false,
+  "limitations": [
+    "Only8newpublicsourceDEVgroups, all24nowpermanentlyexposed",
+    "Pretraining/fuzzyoverlap unknown; no causal cross-epocharchitecture or precision improvement claim",
+    "Annotated evidence may be alternative/incomplete; exact retained characters do not prove sufficiency or truth",
+    "No fullLegalBench/currentJev300/ClaimBench result; official result/rank/eligibility required"
+  ]
+}

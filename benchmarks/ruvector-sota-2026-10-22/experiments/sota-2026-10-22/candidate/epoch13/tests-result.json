@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "tests_run": 14,
+  "failures": 0,
+  "errors": 0,
+  "exit_code": 0,
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B -m unittest discover -s experiments/sota-2026-10-22/candidate/epoch13 -p test_*.py -v",
+  "scope": "Engineering only: actual tokenizer, config metadata and injected fake NLI session; Unicode/whitespace/oversize exact source conservation. No ORT sessions, model/native calls or DEV/CONF reads. Three injected-runtime tests additionally verify shared answer tie and unchanged packing algorithm under identical fixture tokenizer, not historical actual context identity.",
+  "prior_environment_attempt": {
+    "python": "defaultpython3.12",
+    "tests_passed": 8,
+    "import_error": "tokenizers not installed in defaultpython; test_context import failed. Corrected by using existing pinned runtime, no install."
+  },
+  "new_model_forwards": 0,
+  "new_native_calls": 0,
+  "new_evaluation_inputs_or_labels_read": 0
+}

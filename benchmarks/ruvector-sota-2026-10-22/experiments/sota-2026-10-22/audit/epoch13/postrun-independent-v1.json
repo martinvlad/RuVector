@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T06:31:11.282332+00:00",
+  "checks_passed": true,
+  "candidate_public_allowlist_sha256": "1acb9ca20069ab24de140dced9e38b0695586ed5e20270c61186715644efc998",
+  "diagnostic_sha256": "ea045765ca608442d4ebd5e7f26ad3822925e28d64bb781a116eab0bd4815ab0",
+  "findings_v1_sha256": "6a3672b8991666f5f418d5ffd7144e9b1d78aac015b3784b5e70a2d2fc449625",
+  "reference_coverage_sha256": "e635cb49641f9e163916efcab0e987cf9878003573b8a1c1417e2eb277f9ad0e",
+  "findings_v2_sha256": "8658eca2745bf2a7fdef9756a98e7bd0e198e5d2eee689232a7bc48fd5e86829",
+  "exact_rebuild_all4_candidate_outputs_byteidentical": true,
+  "independent_source_character_set_oracle_rows": 72,
+  "independent_summary": {
+    "ruvector_top2": {
+      "queries": 24,
+      "reference_bearing": 15,
+      "full_reference_characters": 9,
+      "fully_retained_typed_correct": 0,
+      "fully_retained_binary_correct": 3,
+      "fully_retained_gold_counts": {
+        "Contradiction": 3,
+        "Entailment": 6
+      },
+      "typed_predicted_counts": {
+        "NotMentioned": 22,
+        "Entailment": 2
+      },
+      "gold_counts": {
+        "Contradiction": 5,
+        "Entailment": 10,
+        "NotMentioned": 9
+      },
+      "gold_to_typed_prediction": {
+        "Entailment": {
+          "NotMentioned": 10
+        },
+        "Contradiction": {
+          "NotMentioned": 4,
+          "Entailment": 1
+        },
+        "NotMentioned": {
+          "NotMentioned": 8,
+          "Entailment": 1
+        }
+      },
+      "numeric_positions_per_query": 477,
+      "retained_numeric_positions_per_query": 104
+    },
+    "same_nli_lexical_top2": {
+      "queries": 24,
+      "reference_bearing": 15,
+      "full_reference_characters": 9,
+      "fully_retained_typed_correct": 0,
+      "fully_retained_binary_correct": 4,
+      "fully_retained_gold_counts": {
+        "Contradiction": 4,
+        "Entailment": 5
+      },
+      "typed_predicted_counts": {
+        "NotMentioned": 23,
+        "Contradiction": 1
+      },
+      "gold_counts": {
+        "Contradiction": 5,
+        "Entailment": 10,
+        "NotMentioned": 9
+      },
+      "gold_to_typed_prediction": {
+        "Entailment": {
+          "NotMentioned": 10
+        },
+        "Contradiction": {
+          "NotMentioned": 5
+        },
+        "NotMentioned": {
+          "NotMentioned": 8,
+          "Contradiction": 1
+        }
+      },
+      "numeric_positions_per_query": 477,
+      "retained_numeric_positions_per_query": 94
+    },
+    "same_nli_positional_first2": {
+      "queries": 24,
+      "reference_bearing": 15,
+      "full_reference_characters": 7,
+      "fully_retained_typed_correct": 0,
+      "fully_retained_binary_correct": 2,
+      "fully_retained_gold_counts": {
+        "Entailment": 5,
+        "Contradiction": 2
+      },
+      "typed_predicted_counts": {
+        "NotMentioned": 24
+      },
+      "gold_counts": {
+        "Contradiction": 5,
+        "Entailment": 10,
+        "NotMentioned": 9
+      },
+      "gold_to_typed_prediction": {
+        "Entailment": {
+          "NotMentioned": 10
+        },
+        "Contradiction": {
+          "NotMentioned": 5
+        },
+        "NotMentioned": {
+          "NotMentioned": 9
+        }
+      },
+      "numeric_positions_per_query": 477,
+      "retained_numeric_positions_per_query": 97
+    }
+  },
+  "engineering_tests": {
+    "source_sha256": "71a20e5e828a2da4f40e73f900d3b586b9da7bb0d515dbd094a74f60c7bbe9d0",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n"
+  },
+  "data_independent_report_pins": [],
+  "direction": "Reader/task decision semantics remains a live blocker even on9native/9lexical/7positional queries with every annotated reference character retained: typed0correct. Full references may be alternative or incomplete and do not prove sufficient evidence. Native retrieval improves no exclusive binarycorrect over either matchedselector; exactANN validates implementation, not semantic evidence quality. Future separatelyfrozen/bounded task-specific semantics+evidence study may use exposedTRAIN/DEV only; no reservedCONF design/labels or extra probes.",
+  "proper_scope": "Candidate supplemental Pythonfloat-normalized proper diagnostics may differ by tiny massrounding; frozen canonical actualaudit governs all acceptance/table. No gate/model/data/source changes.",
+  "new_model_native_session_fit_paid_or_externalwrite_calls": 0,
+  "confirmation_labels_or_annotations_accessed": false,
+  "official_rank": null,
+  "SOTA_established": false
+}

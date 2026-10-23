@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T06:19:58.187883+00:00",
+  "checks_passed": true,
+  "tests": [
+    {
+      "source": "candidate/epoch13/test_models.py",
+      "source_sha256": "e6d442fc0e3aad65fae2f76454a03473247bf030888ec73199afb0de47758e72",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "source": "candidate/epoch13/test_context.py",
+      "source_sha256": "83b393c6296330e00e006eaa62b4715ec887a2f92f47960a5c7aedd90427caf7",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.648s\n\nOK\n"
+    },
+    {
+      "source": "controller/epoch13/test_loop.py",
+      "source_sha256": "8e85e7dbebfd5a3dcf8e92b156a244d9da523940e7e3a7cc9ae814e55280a7e6",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_all_controls_required (__main__.GatesAndAttemptBudget.test_all_controls_required) ... ok\ntest_closed_ledgers_and_zero_paid_budget_are_required (__main__.GatesAndAttemptBudget.test_closed_ledgers_and_zero_paid_budget_are_required) ... ok\ntest_confirmation_PID_receipt_failure_cleans_process_and_retires_bank (__main__.GatesAndAttemptBudget.test_confirmation_PID_receipt_failure_cleans_process_and_retires_bank) ... ok\ntest_confirmation_Popen_failure_marker_retires_bank_without_claiming_process (__main__.GatesAndAttemptBudget.test_confirmation_Popen_failure_marker_retires_bank_without_claiming_process) ... ok\ntest_confirmation_process_failure_retires_bank_without_HTTP (__main__.GatesAndAttemptBudget.test_confirmation_process_failure_retires_bank_without_HTTP) ... ok\ntest_dev_failure_never_opens_confirmation_or_retries (__main__.GatesAndAttemptBudget.test_dev_failure_never_opens_confirmation_or_retries) ... ok\ntest_development_Popen_failure_retires_DEV_without_claiming_process (__main__.GatesAndAttemptBudget.test_development_Popen_failure_retires_DEV_without_claiming_process) ... ok\ntest_each_phase_owns_new_process_and_deadline (__main__.GatesAndAttemptBudget.test_each_phase_owns_new_process_and_deadline) ... ok\ntest_empty_dev_cannot_open_confirmation (__main__.GatesAndAttemptBudget.test_empty_dev_cannot_open_confirmation) ... ok\ntest_invalid_control_stops_confirmation (__main__.GatesAndAttemptBudget.test_invalid_control_stops_confirmation) ... ok\ntest_matched_control_tie_is_not_improvement (__main__.GatesAndAttemptBudget.test_matched_control_tie_is_not_improvement) ... ok\ntest_missing_control_and_nonfinite_scores_stop (__main__.GatesAndAttemptBudget.test_missing_control_and_nonfinite_scores_stop) ... ok\ntest_only_admitted_dev_starts_second_distinct_phase (__main__.GatesAndAttemptBudget.test_only_admitted_dev_starts_second_distinct_phase) ... ok\ntest_owned_orphan_group_is_escalated (__main__.GatesAndAttemptBudget.test_owned_orphan_group_is_escalated) ... ok\ntest_passing_dev_slow_model_preserves_confirmation (__main__.GatesAndAttemptBudget.test_passing_dev_slow_model_preserves_confirmation) ... ok\ntest_refuses_unowned_process_group (__main__.GatesAndAttemptBudget.test_refuses_unowned_process_group) ... ok\ntest_runtime_forecast_blocks_slow_or_short_lease (__main__.GatesAndAttemptBudget.test_runtime_forecast_blocks_slow_or_short_lease) ... ok\ntest_single_correct_gain_is_insufficient (__main__.GatesAndAttemptBudget.test_single_correct_gain_is_insufficient) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 0.014s\n\nOK\n"
+    }
+  ],
+  "source_review": "Controller diff against reviewed e11 changes only newsource/prior15ledger plus conservativeDEV retirement; inherited rawsource/scorer/DEV/runtimeadmission/premarkers/deadline/cleanup verified. Candidate tests use __new__ injected fake session and pure probabilities; context tests use actual BPE tokenization only and exact epoch6source.",
+  "coverage": [
+    "C0/E1/N2 config and label permutations",
+    "fullNeutral posterior and exacthalftieNo",
+    "invalid/nonfinite logits",
+    "raw singleton int64/mask/type0 feeds and graphnames",
+    "overflow/padding reject beforeforward",
+    "Unicode/whitespace/oversizefallback fullsource conservation",
+    "wholepair <s>A</s></s>B</s> serialization",
+    "DEVgain/proper/all3controls/errors/missing/nonfinite gates",
+    "prior15closed/CPU2/600paid0GPU0",
+    "DEV/CONF Popen/noPID conservative consumption",
+    "no retry/CONF onDEV/runtimefailure",
+    "separatephaseprocess deadline and ownedcleanup"
+  ],
+  "tests_are_engineering_not_benchmark_scores": true,
+  "model_initializations_real_forwards_native_or_paid_calls": 0
+}

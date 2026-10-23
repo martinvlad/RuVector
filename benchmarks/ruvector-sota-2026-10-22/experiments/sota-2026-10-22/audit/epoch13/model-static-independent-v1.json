@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T06:20:31.381893+00:00",
+  "checks_passed": true,
+  "actual_project": "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch13/project",
+  "model_choice_sha256": "67ddcbc490e1b45d3d769fb6c0c44d56fc3429cbcf889c98c5aa5ebf2ee706d2",
+  "choice_after_frozen_data_verified": true,
+  "new_assets_lock_sha256": "315eff654b771e3a02376a208f9b48d9d8ebdb084ff2a968ff4a9722b4c7df8a",
+  "new6assets_verified_both_outer_actual": [
+    {
+      "remote_path": "config.json",
+      "path": "experiments/sota-2026-10-22/candidate/epoch13/assets/official-roberta-base/config.json",
+      "url": "https://huggingface.co/cross-encoder/nli-roberta-base/resolve/1be0567456f0543475805e758725f151f283705a/config.json",
+      "bytes": 702,
+      "sha256": "20b692ce487e9ae8f5e97d08c795eed4ba6fb6a5f89fd67f64880dbd232d8da4"
+    },
+    {
+      "remote_path": "tokenizer.json",
+      "path": "experiments/sota-2026-10-22/candidate/epoch13/assets/official-roberta-base/tokenizer.json",
+      "url": "https://huggingface.co/cross-encoder/nli-roberta-base/resolve/1be0567456f0543475805e758725f151f283705a/tokenizer.json",
+      "bytes": 3558642,
+      "sha256": "2bb1a22cfbe25b8e5a232b7fc4d7fc5073923b45724a5f813b00811bb6620f66"
+    },
+    {
+      "remote_path": "tokenizer_config.json",
+      "path": "experiments/sota-2026-10-22/candidate/epoch13/assets/official-roberta-base/tokenizer_config.json",
+      "url": "https://huggingface.co/cross-encoder/nli-roberta-base/resolve/1be0567456f0543475805e758725f151f283705a/tokenizer_config.json",
+      "bytes": 1303,
+      "sha256": "87111eee3eed2bc8b8e774bc30d9c23e9eb2e07c031ffb7f3a9248c53b7938dc"
+    },
+    {
+      "remote_path": "special_tokens_map.json",
+      "path": "experiments/sota-2026-10-22/candidate/epoch13/assets/official-roberta-base/special_tokens_map.json",
+      "url": "https://huggingface.co/cross-encoder/nli-roberta-base/resolve/1be0567456f0543475805e758725f151f283705a/special_tokens_map.json",
+      "bytes": 1008,
+      "sha256": "75cbec71553267dadc77a583ef15122c2aa7422eb6635acc72a184a413f17c1c"
+    },
+    {
+      "remote_path": "README.md",
+      "path": "experiments/sota-2026-10-22/candidate/epoch13/assets/official-roberta-base/README.md",
+      "url": "https://huggingface.co/cross-encoder/nli-roberta-base/resolve/1be0567456f0543475805e758725f151f283705a/README.md",
+      "bytes": 2652,
+      "sha256": "2467ea92656cd8dd520f858d32eca51a70ab1fd0d9215b0a640a36d2e041c28d"
+    },
+    {
+      "remote_path": "onnx/model.onnx",
+      "path": "experiments/sota-2026-10-22/candidate/epoch13/assets/official-roberta-base/onnx/model.onnx",
+      "url": "https://huggingface.co/cross-encoder/nli-roberta-base/resolve/1be0567456f0543475805e758725f151f283705a/onnx/model.onnx",
+      "bytes": 498911192,
+      "sha256": "50dbf8939f1fdc45ae31fd6c1e6680489c6560b0f5e37b13da0e7979b8384ad0"
+    }
+  ],
+  "old16assets_verified_actual": true,
+  "new_model_weight_sha256": "50dbf8939f1fdc45ae31fd6c1e6680489c6560b0f5e37b13da0e7979b8384ad0",
+  "config_class_mapping": {
+    "contradiction": 0,
+    "entailment": 1,
+    "neutral": 2
+  },
+  "canonical_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "production_binary": "Yes=P(E),No=P(C)+P(N),full3waysoftmax T1, exact0.5tie No",
+  "pure_random_logit_checks": 1000,
+  "Python_float_scalar_types_verified": true,
+  "neutral_preservation_checked": true,
+  "new_active_BPE_used_consistently_for_partition_packing_decode": true,
+  "unchanged_epoch6_algorithm": true,
+  "unchanged_historical_policy_or_context_strings": false,
+  "architecture": {
+    "layers": 12,
+    "hidden_size": 768,
+    "attention_heads": 12,
+    "max_positions": 514,
+    "max_complete_tokens": 512,
+    "precision": "FP32",
+    "new_quality_or_generalization_claim": false
+  },
+  "context_domain_report_sha256": "e1ae135de19e08280e93701c4eeb92c8a64a227f12370f529028b2e3ec2ea1ed",
+  "onnx_static": {
+    "inputs": [
+      {
+        "name": "input_ids",
+        "tensor_element_type": 7,
+        "dimensions": [
+          {
+            "parameter": "batch_size"
+          },
+          {
+            "parameter": "sequence_length"
+          }
+        ]
+      },
+      {
+        "name": "attention_mask",
+        "tensor_element_type": 7,
+        "dimensions": [
+          {
+            "parameter": "batch_size"
+          },
+          {
+            "parameter": "sequence_length"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "logits",
+        "tensor_element_type": 1,
+        "dimensions": [
+          {
+            "parameter": "batch_size"
+          },
+          {
+            "value": 3
+          }
+        ]
+      }
+    ],
+    "opsets": [
+      {
+        "domain": "",
+        "version": 14
+      }
+    ],
+    "operators": {
+      "::Constant": 425,
+      "::Shape": 114,
+      "::Gather": 104,
+      "::Unsqueeze": 104,
+      "::Slice": 13,
+      "::Concat": 50,
+      "::Reshape": 50,
+      "::ConstantOfShape": 2,
+      "::Mul": 76,
+      "::Equal": 3,
+      "::Where": 3,
+      "::Expand": 2,
+      "::Not": 1,
+      "::Cast": 29,
+      "::CumSum": 1,
+      "::Add": 173,
+      "::ReduceMean": 50,
+      "::Sub": 26,
+      "::Pow": 25,
+      "::Sqrt": 61,
+      "::Div": 49,
+      "::MatMul": 96,
+      "::Transpose": 48,
+      "::Softmax": 12,
+      "::Erf": 12,
+      "::Gemm": 2,
+      "::Tanh": 1
+    },
+    "external_initializers": [],
+    "session_initialized": false,
+    "model_forwards": 0,
+    "ir_version": 7
+  },
+  "recursive_all_tensor_closure": {
+    "counts": {
+      "graphs": 1,
+      "nodes": 1532,
+      "tensor_messages": 628,
+      "sparse_tensor_messages": 0
+    },
+    "tensor_element_type_counts": {
+      "7": 326,
+      "6": 1,
+      "1": 301
+    },
+    "external_tensor_references": 0,
+    "nested_graph_tensor_attributes_checked": true,
+    "training_info_or_functions_present": false
+  },
+  "source_provenance": "Official cross-encoder source/export repo at same exact revision for card/config/tokenizer/FP32. Declared Apache2 model and SNLI/MultiNLI only; no documented ContractNLI supervision. Exact training-run/export derivation, source dataset rights and unknown pretraining/fuzzy overlap not independently proven. No known empirical superiority or causal cross-epoch inference. No weights republished.",
+  "model_initializations_forwards_native_paid_calls": 0,
+  "ABI_and_ORT_provider_execution_tested": false
+}

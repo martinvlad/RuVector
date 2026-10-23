@@ -1,0 +1,84 @@
+{
+  "inputs": [
+    {
+      "name": "input_ids",
+      "tensor_element_type": 7,
+      "dimensions": [
+        {
+          "parameter": "batch_size"
+        },
+        {
+          "parameter": "sequence_length"
+        }
+      ]
+    },
+    {
+      "name": "attention_mask",
+      "tensor_element_type": 7,
+      "dimensions": [
+        {
+          "parameter": "batch_size"
+        },
+        {
+          "parameter": "sequence_length"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "logits",
+      "tensor_element_type": 1,
+      "dimensions": [
+        {
+          "parameter": "batch_size"
+        },
+        {
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "opsets": [
+    {
+      "domain": "",
+      "version": 14
+    }
+  ],
+  "operators": {
+    "::Constant": 425,
+    "::Shape": 114,
+    "::Gather": 104,
+    "::Unsqueeze": 104,
+    "::Slice": 13,
+    "::Concat": 50,
+    "::Reshape": 50,
+    "::ConstantOfShape": 2,
+    "::Mul": 76,
+    "::Equal": 3,
+    "::Where": 3,
+    "::Expand": 2,
+    "::Not": 1,
+    "::Cast": 29,
+    "::CumSum": 1,
+    "::Add": 173,
+    "::ReduceMean": 50,
+    "::Sub": 26,
+    "::Pow": 25,
+    "::Sqrt": 61,
+    "::Div": 49,
+    "::MatMul": 96,
+    "::Transpose": 48,
+    "::Softmax": 12,
+    "::Erf": 12,
+    "::Gemm": 2,
+    "::Tanh": 1
+  },
+  "external_initializers": [],
+  "session_initialized": false,
+  "model_forwards": 0,
+  "ir_version": 7,
+  "weight_sha256": "50dbf8939f1fdc45ae31fd6c1e6680489c6560b0f5e37b13da0e7979b8384ad0",
+  "forwards": 0,
+  "scope": "Static protobuf metadata; no ABI/provider/execution or performance claim"
+}

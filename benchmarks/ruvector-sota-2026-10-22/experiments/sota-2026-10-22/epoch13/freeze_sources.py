@@ -1,0 +1,50 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import json,hashlib,shutil,os
+r=Path('/workspace/ruvector-eval');s=r/'experiments/sota-2026-10-22';e=s/'epoch13';pr=e/'project'
+def read(p):return json.loads(p.read_text())
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def save(p,x):
+ with p.open('x') as f:json.dump(x,f,indent=2);f.write('\n')
+assert not (e/'plan.json').exists(),'Cannot replace frozen plan'
+base=read(e/'durable-kit/experiments/sota-2026-10-22/epoch11/plan.json');cand=read(s/'candidate/epoch13/proposal-manifest.json');data=read(s/'legal-transfer/epoch13/data-contract.json');capacity=read(s/'audit/epoch13/context-capacity-independent-v1.json');owner=read(e/'lock-owner.json');lease=read(e/'lease.json');mi=cand['model_identity']
+assert sha(s/'legal-transfer/epoch13/data-contract.json')=='65a5c4777444b24d59922eac927f63ad6f207fe5bdec4e3b46ea9a890bbc1187'
+assert mi['revision']=='1be0567456f0543475805e758725f151f283705a' and mi['onnx_sha256']=='50dbf8939f1fdc45ae31fd6c1e6680489c6560b0f5e37b13da0e7979b8384ad0'
+assert data['train']==data['calibration']==[]
+assert read(e/'controller-tests.json')['status']=='PASS'
+study='native-official-roberta-threeway-e13';at=datetime.now(timezone.utc).isoformat()
+hypothesis='One fixed official cross-encoder/nli-roberta-base FP32 three-way SNLI/MultiNLI pretrained reader, testing a distinct semantic/contradiction family at lower static CPU complexity after the rejected larger DeBERTa precision study. Actual native RuVector/BGE evidence selection, same-model lexical/positional controls and Native104 same-excerpt control. Active RoBERTa BPE governs partition and exact epoch6 coherent context packing algorithm; contexts intentionally differ from old SentencePiece policy. No fitting, calibration, precision/model selection or fallback; no assumed legal or general-NLI superiority.'
+scope='Internal CC-BY original ContractNLI three-predicate NDA pilot, public-source project-unused document groups, unknown pretraining/fuzzy overlap. No current JevBench300, full LegalBench or ClaimBench score/rank.'
+license_scope='Original ContractNLI CC-BY4 exact source/attribution pinned. Official cross-encoder model Apache-2.0 declaration and SNLI/MultiNLI training declared; underlying corpus terms and unknown pretraining overlap remain. Exact official ONNX/repo revision pinned, exporter/training checkpoints and upstream original-weight fidelity not independently established. No pretrained binaries published.'
+budget={'native_attempt_cap':2,'attempts_started_before':0,'automatic_retries':0,'seconds_per_phase_including_init_cleanup':600,'CPU_cores':2,'ORT_intra':2,'ORT_inter':1,'paid_calls':0,'GPU_calls':0}
+prior={'original':6,'epoch5':1,'epoch6':1,'epoch7':1,'epoch8':2,'epoch9':1,'epoch10':1,'epoch11':1,'epoch12':1,'lifetime_before':15}
+contract={'schema_version':1,'epoch':13,'study_id':study,'frozen_at':at,'authorization':'Current explicit continuation; two nonretryable CPU2 phases maximum,600seconds including initialization/cleanup, paid0/GPU0. All15 historical attempts closed; no native/model probes before freeze.','hypothesis':hypothesis,'prior_closed_studies':prior,'new_study':budget,'candidate_source_manifest_sha256':sha(s/'candidate/epoch13/proposal-manifest.json'),'data_contract_sha256':sha(s/'legal-transfer/epoch13/data-contract.json'),'train':[],'calibration':[],'fitting':False,'development':data['development'],'confirmation':data['confirmation'],'data_frozen_at':data['frozen_at'],'lease_expires_unix':owner['expires_unix'],'champion':'Submitted Native104/RRF10 unchanged pending independent frozen DEV/unusedCONF gates and confirmed publisher protocol/eligibility; no automatic promotion/submission'}
+save(e/'STUDY_CONTRACT.json',contract)
+rt={'formula_id':'48xDEVmaxHTTPxunitratio+2xDEVinit+60-v1','max_DEV_units':capacity['phases']['development']['max_units'],'max_confirmation_units':capacity['phases']['confirmation']['max_units'],'formula':'48*maxDEVHTTPseconds*max(1,maxCONFunits/maxDEVunits)+2*phase1initseconds+60; require<=600 and lease_remaining>=forecast+30','scope':'Conservative estimate only, no confirmation labels/model outputs; actual phase watchdog600seconds'}
+rp={'schema_version':1,'epoch':13,'frozen_at':at,'parent_checkpoint':lease['parent_checkpoint'],'lease_commit':lease['lease_commit'],'hypothesis':hypothesis,'scientific_scope':scope,'train':[],'calibration':[],'fitting':False,'temperature':1,'development':data['development'],'confirmation':data['confirmation'],'data_ordering':{'contract_frozen_at':data['frozen_at'],'document_role_frozen_at':data['roles_frozen_before_new_gold_projection_at'],'candidate_choice_after_data':True},'model_identity':mi,'candidate_manifest_sha256':sha(s/'candidate/epoch13/proposal-manifest.json'),'independent_acceptance_sha256':sha(s/'audit/epoch13/acceptance-contract-v1.json'),'confirmation_gate_sha256':sha(s/'audit/epoch13/confirmation-gate-v1.json'),'DEV_gate':'Primary>=each3controls+2correct; Brier/NLL nonworse ALL3, strict proper gain both matched; all24 strictvalid/errors0.','confirmation_gate':'Nominal2000seed20261022 paired16doc bootstrap accuracy gain lowerCI>0 ALL3; proper improvement lowerCI>=-1e-12 ALL3 and points nonworse. Independent review only.','budget':budget|{'lifetime_attempts_before':15},'context_policy':'Reviewed epoch6 algorithm40anchors/same-paragraph neighbors/source-order/wholeclaim. NEW active RoBERTa BPE token-budget policy for partition/packing and raw exact joint512 reader; no clipping/padding/truncation; same model/context policy all3 retrieval selectors. Context bytes differ from prior SentencePiece, not a precision-only comparison.','runtime_admission':rt,'evidence_scope':'Whole-document gold labels; packed context may omit evidence. Retrieval miss cannot prove absence/ClaimBench insufficiency. No ClaimBench pilot before verified data/scorer/license/access.','numeric_scope':'Source-position numeric retention/omission audit only, not numeric truth or sufficiency certification.','source_license':license_scope,'study_contract_sha256':sha(e/'STUDY_CONTRACT.json'),'prior_exposures':'All oldpublic183/easy48/Legal96/f018CONF96 and181 originaltrain groups remain exposed with original roles; newDEV8 source-only drawn before model choice, preservedCONF16. No oldset relabeling.'}
+replay=s/'audit/epoch13/replay_actual_v1.py';method=s/'audit/epoch13/saved-replay-method-v1.json'
+rp['replay_reproduction']={'active_source':{'path':str(replay.relative_to(r)),'sha256':sha(replay)},'method':{'path':str(method.relative_to(r)),'sha256':sha(method)},'scope':'Pure saved-output replay with Python-float scorer inputs; no model/native/session/fit calls. Prepared before actual.','prepared_before_measurements':True,'command':'OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B experiments/sota-2026-10-22/audit/epoch13/replay_actual_v1.py --project . --out /tmp/ruvector-epoch13-audit-replay-UNUSED.json --expected-plan-sha PLAN_SHA','output_rule':'Choose actually unused path; no overwrite.'}
+save(e/'research-plan.json',rp)
+paths={x['path'] for x in base['pins'] if not any(t in x['path'] for t in ('/audit/epoch11/','/legal-transfer/epoch11/','/candidate/epoch11/','/epoch11/','/controller/epoch11_loop.py','/controller/test_epoch11_loop.py'))}
+for x in cand['sources']+cand['read_only_code_dependencies']:paths.add(x['path'])
+for folder in ('audit/epoch13','legal-transfer/epoch13','controller/epoch13'):
+ for f in (s/folder).rglob('*'):
+  if f.is_file() and f.suffix in ('.py','.json','.jsonl','.md','.txt','.log') and '.private' not in str(f) and '__pycache__' not in str(f):paths.add(str(f.relative_to(r)))
+for q in ('candidate/epoch13/proposal-manifest.json','epoch13/STUDY_CONTRACT.json','epoch13/research-plan.json','epoch13/native-runtime-restoration.json','epoch13/controller-tests.json'):paths.add('experiments/sota-2026-10-22/'+q)
+paths.add(data['confirmation']['path'])
+for a in read(s/'candidate/epoch13/assets.lock.json')['assets']:
+ q=a['path'];src=r/q;dst=pr/q
+ if not src.exists() and dst.exists():src=dst
+ assert src.is_file() and src.stat().st_size==a['bytes'] and sha(src)==a['sha256'],q
+ if not dst.exists():dst.parent.mkdir(parents=True,exist_ok=True);os.link(src,dst)
+ assert sha(dst)==a['sha256'] and dst.resolve().is_relative_to(pr.resolve()),q
+ paths.add(q)
+for q in sorted(paths):
+ src=r/q;dst=pr/q
+ if not dst.exists():dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dst)
+ assert sha(src)==sha(dst),q
+ assert dst.resolve().is_relative_to(pr.resolve()),q
+plan={k:v for k,v in base.items() if k not in ('pins','native_package_closure','typesafe_closure_sha256')}
+plan.update(epoch=13,revision='official-roberta-threeway-active-BPE-v1',study_id=study,train='none',calibration='none',prior_closed_study_native_attempts=15,prior_closed_epoch11_study_attempts=1,prior_closed_epoch12_study_attempts=1,new_study_native_attempt_cap=2,new_study_native_attempts_before=0,lease_expires_unix=owner['expires_unix'],research_plan_sha256=sha(e/'research-plan.json'),actual_project=str(pr),candidate_manifest_sha256=sha(s/'candidate/epoch13/proposal-manifest.json'),expected_nli_revision=mi['revision'],expected_nli_sha256=mi['onnx_sha256'],runtime_admission=rt)
+plan['datasets']={k:data[k]['path'] for k in ('development','confirmation')};plan['pins']=[{'path':q,'sha256':sha(pr/q)} for q in sorted(paths)];plan['limits'].update(GPU_calls=0,native_batches=2,seconds_per_decision=30,candidate_configs=1);plan['source_policy']=rp['context_policy'];plan['public_model_acquisition']={'inference_calls_before_batch':0,'paid_calls':0,**mi}
+save(e/'plan.json',plan);shutil.copy2(e/'plan.json',pr/'experiments/sota-2026-10-22/epoch13/plan.json');save(e/'freeze-receipt.json',{'at':datetime.now(timezone.utc).isoformat(),'plan_sha256':sha(e/'plan.json'),'pins':len(paths),'actual_project':str(pr),'native_model_calls':0,'prior_closed_lifetime_attempts':15,'new_study_started':0});print(json.dumps({'plan_sha256':sha(e/'plan.json'),'pins':len(paths),'source_frozen':True,'forwards':0}))

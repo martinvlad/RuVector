@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T06:19:30.534153+00:00",
+  "checks_passed": true,
+  "context_source_sha256": "28bceb95282ec3e3e938f3211ccad04d2369fa29e1f191f187566339ae3b44d2",
+  "config_sha256": "27f1f8064516b73ba32515adec20d4bb53ce355b46944cd33ba8a7191fc412a1",
+  "DEV_sha256": "4eb38bf37b98562d12433c0a2791b2122c6f62ebf597eea9c941e72bd566ec1a",
+  "confirmation_sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+  "phases": {
+    "development": {
+      "requests": 24,
+      "max_units": 32,
+      "source_document_groups": 8,
+      "all_possible_single_anchors_plus_neighbors_tested": 438,
+      "full_ranking_paths_tested": 120,
+      "fallback_units_across_queries": 75
+    },
+    "confirmation": {
+      "requests": 48,
+      "max_units": 60,
+      "source_document_groups": 16,
+      "all_possible_single_anchors_plus_neighbors_tested": 954,
+      "full_ranking_paths_tested": 240,
+      "fallback_units_across_queries": 123
+    }
+  },
+  "possible_anchors_tested": 1392,
+  "bounded_full_ranking_paths_tested": 360,
+  "admission_trace_attempts_retokenized": 11279,
+  "oversize_admissions_rejected": 5676,
+  "max_observed_complete_NLI_pair_tokens": 512,
+  "max_all72_BGE_sequence_tokens": 256,
+  "max_observed_native104_context_bytes": 2714,
+  "max_source_units": 60,
+  "budget_proof": "Sourcechecks before EVERY admission and final rendering imply allrankingpath contexts <=512; everyfrozenunit/query measured rawBGE<=256. Enumeratedall72singleanchors+neighbors plusfivefullorders/input; no exhaustive40!ranking claim. Runtime additionally requires16KiB nativeguard.",
+  "source_coverage": "Fullsourceexactcontiguouspartition includingwhitespace, nooffsetdrop/overlap. Oversizedatoms explicitlytokenfallback; allselectedstrings/hash/wholehypothesis/readmissioncounts replayed.",
+  "NLI_tokenizer_sha256": "2bb1a22cfbe25b8e5a232b7fc4d7fc5073923b45724a5f813b00811bb6620f66",
+  "BGE_tokenizer_sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+  "active_model_tokenizer_sha256": "2bb1a22cfbe25b8e5a232b7fc4d7fc5073923b45724a5f813b00811bb6620f66",
+  "active_model_max_complete_pair_tokens": 512,
+  "active_model_accepted_context_checks": 7355,
+  "active_policy_token_sequence_differences": 0,
+  "tokenizer_budget_adapter": {
+    "algorithm_unchanged": true,
+    "historical_policy_tokenizer_unchanged": false,
+    "historical_context_strings_identical": false,
+    "new_BPE_governs_partition_packing_decoding": true,
+    "same_active_tokenizer_feed_and_packing": true,
+    "raw_padding_truncation_disabled": true,
+    "pair_format": "<s>premise</s></s>hypothesis</s>",
+    "class_mapping": "C0/E1/N2"
+  },
+  "no_confirmation_labels_accessed_for_checks": true,
+  "unused_confirmation_projection_parsed": false,
+  "confirmation_input_only_reconstruction_allowlist_sha256": "65485b57d37a3341031cd4e125539e6c052f34844a60f93be7f1035db68c913e",
+  "model_initializations_or_forwards_native_calls": 0,
+  "scope": "Tokenizers/sourcepolicy only; no predictions or qualityclaim."
+}

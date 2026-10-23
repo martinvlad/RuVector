@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "model_choice_sha256": "67ddcbc490e1b45d3d769fb6c0c44d56fc3429cbcf889c98c5aa5ebf2ee706d2",
+  "upstream": {
+    "repo": "cross-encoder/nli-roberta-base",
+    "revision": "1be0567456f0543475805e758725f151f283705a",
+    "declared_model_license": "apache-2.0",
+    "declared_training_datasets": [
+      "nyu-mll/multi_nli",
+      "stanfordnlp/snli"
+    ],
+    "language": "en",
+    "architecture": "RobertaForSequenceClassification",
+    "layers": 12,
+    "hidden_size": 768,
+    "attention_heads": 12,
+    "classes": 3,
+    "label_indices": {
+      "contradiction": 0,
+      "entailment": 1,
+      "neutral": 2
+    },
+    "card_sha256": "2467ea92656cd8dd520f858d32eca51a70ab1fd0d9215b0a640a36d2e041c28d",
+    "config_sha256": "20b692ce487e9ae8f5e97d08c795eed4ba6fb6a5f89fd67f64880dbd232d8da4",
+    "API_sha256": "7339ad47c7001e9982569d04c42f5def46188d1cf48ede4330ef62ff18394763",
+    "export_provenance": "Official cross-encoder model repository publishes card/config/tokenizer and ONNX together at this exact revision. No third-party converter is used. Exact training-run lineage and source-original export derivation are not independently proven.",
+    "contamination": "Card declares SNLI and MultiNLI only; no ContractNLI declared. Unknown pretraining overlap and no record-level clean-training guarantee.",
+    "training_terms": "Apache-2.0 model declaration; upstream SNLI/MultiNLI source dataset rights remain. This epoch adds no training and republishes no model weights."
+  },
+  "official_same_revision_source_export": true,
+  "source_data": "Original ContractNLI source projections under CC-BY-4.0; roles frozen independently before model choice. Candidate does not load gold labels.",
+  "context_algorithm": "Exact unedited reviewed epoch6 context.py SHA28bceb95282ec3e3e938f3211ccad04d2369fa29e1f191f187566339ae3b44d2; only active NLI tokenizer adapter differs. Source context strings are not historically identical.",
+  "model_artifacts_republished": false,
+  "scope": "Distinct CPU-feasible semantic family and actual native RuVector evidence pilot, not a source-original derivation proof, model size superiority, full benchmark score or rank."
+}

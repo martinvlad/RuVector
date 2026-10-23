@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T06:21:31.163786+00:00",
+  "checks_passed": true,
+  "accepted_for_one_controlled_study": true,
+  "plan_sha256": "6aba06f350bb077c604ce2931bf95e302ea91cfac05c9990185d868ec6e82ac3",
+  "source_pins_verified_outer_and_actual": 196,
+  "all_actual_pins_materialized_inside_project": true,
+  "candidate_manifest_sha256": "bf7426beaa2b0cc746cf38213d9d03216129398fe4d5d538300aa0af35118c76",
+  "data_contract_sha256": "65a5c4777444b24d59922eac927f63ad6f207fe5bdec4e3b46ea9a890bbc1187",
+  "new_local_controller_verifier_passed": true,
+  "data_roles": {
+    "TRAIN": [],
+    "calibration": [],
+    "DEV": "NEW24/8 source-only draw; prior181exposed/reserved16/officialdevtest excluded; all8 retire afterphase1marker evenpartial/noPID.",
+    "CONF": "Exact unchanged850b48/16 project-model-unused; metadata-only until acceptedDEV/runtime; anyphase2markerretiresall48."
+  },
+  "source_guards": {
+    "one_fixed_official_FP32_after_DATAfreeze": true,
+    "full_threeway_C0_E1_N2_T1": true,
+    "same_reader_BPE_and_contextalgorithm_all3selectors": true,
+    "epoch6_algorithm_unchanged": true,
+    "historical_policy_or_context_strings_unchanged": false,
+    "raw_BPE512_BGE256_native16KiB": true,
+    "no_fit_calibration_probe_retry_fallback": true,
+    "literal_model_inputs_only_state_questions": true,
+    "all15prior_attempts_closed": true,
+    "prePopen_conservative_count_separate_confirmedPID": true
+  },
+  "premeasurement_evidence": {
+    "data-independent-v1.json": "b5b05a393cce7acda645a0e7628993ef3e8e301e2aa3445f156ddafc1def7f22",
+    "runtime-independent-v1.json": "d81bed28aaa5f80f384feee6617239378bf7dff269ddc3fe2890f8ed054ca735",
+    "context-capacity-independent-v1.json": "e1ae135de19e08280e93701c4eeb92c8a64a227f12370f529028b2e3ec2ea1ed",
+    "source-tests-independent-v1.json": "c7c4f48900066af7edd97d079202ac770f29cf6edd17f47c27b6d01b92c5063f",
+    "model-static-independent-v1.json": "3af496bb979cf77e38c3e7c77d05ad0970f97b6a452dc22c85165857c3881d12",
+    "acceptance-contract-v1.json": "921265d872fce1e12d60f1817bbe297e348b84e61553587c27bd5811c0a40612",
+    "confirmation-gate-v1.json": "95af3f6c2521b9ed8a18f50abd8ba7287a757e805746a7f469cbb58f77f3184e",
+    "saved-replay-method-v1.json": "f141414ca749750c9882fa9d97790a5f17bf12b7a3dcf4b629d6b08557c3d6bd"
+  },
+  "active_saved_replay": {
+    "source": "experiments/sota-2026-10-22/audit/epoch13/replay_actual_v1.py",
+    "sha256": "8f6464f2c27da12c95d1c23dc16b67e967b67f285b3ef3db19770ccf865047e7",
+    "prepared_before_actual_measurements": true,
+    "zero_inference_or_fit": true
+  },
+  "budgets": {
+    "native_batches": 2,
+    "threads": 2,
+    "seconds_per_batch": 600,
+    "seconds_per_decision": 30,
+    "candidate_configs": 1,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "runtime_admission": "48*maxDEVHTTP*max(1,maxCONFunits/maxDEVunits)+2*wholephase1init+60<=600 ANDlease>=forecast+30;600hardwatchdogincludesallinitcleanup.",
+  "scope": "Bounded measurement acceptance only. Distinct directly published reader is not proven stronger accuracy or original-upstream export identity. Public-source unknown pretraining overlap. No officialrank/score/SOTA or champion promotion/submission.",
+  "no_run_started_at_verification": true,
+  "model_session_native_fit_paid_calls_by_auditor": 0
+}

@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "epoch": 18,
+  "at": "2026-10-23T15:20:13.074261+00:00",
+  "checks_passed": true,
+  "independent_replays_passed": true,
+  "accepted": false,
+  "status": "INDEPENDENT_REJECTED_DEV_GATE_CONF_UNTOUCHED",
+  "plan_sha256": "f2eb56b436bc499f4a63d724dc6055a5e1e69e82892cb41d1db4e023af49e7eb",
+  "frozen_source_commit": "19106bac59a336accc28e5731744e08be9a825f2",
+  "plan": {
+    "path": "experiments/sota-2026-10-22/epoch18/plan.json",
+    "bytes": 81706,
+    "sha256": "f2eb56b436bc499f4a63d724dc6055a5e1e69e82892cb41d1db4e023af49e7eb"
+  },
+  "DEV_gate_passed": false,
+  "CONF_gate_passed": null,
+  "actual_confirmation_completed": false,
+  "confirmation_consumed": false,
+  "actual_native_process_reservations": 1,
+  "verified_worker_starts": 1,
+  "lifetime_native_attempts": 19,
+  "unused_epoch18_slots_permanently_closed": 1,
+  "allowed_further_epoch18_attempts": 0,
+  "independent_score_report": {
+    "path": "experiments/sota-2026-10-22/audit/epoch18/score-replay-independent-v1.json",
+    "bytes": 211564,
+    "sha256": "62477a976b7dec45248eed97649945a64d071272630020f350754839d04d83f4"
+  },
+  "independent_context_report": {
+    "path": "experiments/sota-2026-10-22/audit/epoch18/context-replay-independent-v1.json",
+    "bytes": 49171,
+    "sha256": "27bf52c4ec330571876905aaef4ec3a7e6fef77e331db12549742e9d4a816268"
+  },
+  "postrun_identity_report": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch18/postrun-identity-retirement-v1.json",
+    "bytes": 31080,
+    "sha256": "d960eb1f36cdc5e7d95f27944e0153be6deb29ea9d6e6e06d987bc11593b2413"
+  },
+  "source_model_scorer_budget_validity": {
+    "all415_plan_pins_unchanged": true,
+    "all88_prelabel_source_members_unchanged": true,
+    "actual_native_backend_and_pinned_binary_verified": true,
+    "exact_selected_and_previous_reader_and_scorer_revisions_verified": true,
+    "raw_logits_to_frozen_class_mapping_softmax_typed_binary_and_wire_replayed": true,
+    "both_actual_tokenizers_and_no_truncation_verified": true,
+    "same_old_reader_actual_primary_premise_verified": true,
+    "literal_binary_SUM_TOL_1e3_no_renormalization_and_raw_typed_1e10": true,
+    "CPU2_batch_under600_paid0_GPU0_cleanup_verified": true,
+    "frozen_gates_unchanged": true
+  },
+  "binary_metrics_DEV24": {
+    "ruvector_top2": {
+      "n": 24,
+      "correct": 11,
+      "brier": 0.6726819317000906,
+      "nll": 0.8918755203076868,
+      "strict_valid": 24,
+      "errors": 0,
+      "accuracy": 0.4583333333333333
+    },
+    "same_nli_lexical_top2": {
+      "n": 24,
+      "correct": 11,
+      "brier": 0.6361286278502775,
+      "nll": 0.845823648932006,
+      "strict_valid": 24,
+      "errors": 0,
+      "accuracy": 0.4583333333333333
+    },
+    "same_nli_positional_first2": {
+      "n": 24,
+      "correct": 11,
+      "brier": 0.6453482927501047,
+      "nll": 0.857358686091372,
+      "strict_valid": 24,
+      "errors": 0,
+      "accuracy": 0.4583333333333333
+    },
+    "native104_on_ruvector_evidence": {
+      "n": 24,
+      "correct": 9,
+      "brier": 0.5008768733138308,
+      "nll": 0.6940240533745953,
+      "strict_valid": 24,
+      "errors": 0,
+      "accuracy": 0.375
+    },
+    "previous_reader_native_same_premise": {
+      "n": 24,
+      "correct": 13,
+      "brier": 0.7318286998173804,
+      "nll": 1.275998785074388,
+      "strict_valid": 24,
+      "errors": 0,
+      "accuracy": 0.5416666666666666
+    }
+  },
+  "typed_metrics_DEV24": {
+    "ruvector_top2": {
+      "n": 24,
+      "correct": 3,
+      "brier": 0.7787040376344816,
+      "nll": 1.2671242448182167,
+      "strict_valid": 24,
+      "errors": 0,
+      "by_class": {
+        "Entailment": {
+          "n": 13,
+          "correct": 0
+        },
+        "Contradiction": {
+          "n": 3,
+          "correct": 3
+        },
+        "NotMentioned": {
+          "n": 8,
+          "correct": 0
+        }
+      },
+      "accuracy": 0.125
+    },
+    "same_nli_lexical_top2": {
+      "n": 24,
+      "correct": 3,
+      "brier": 0.7343279619528993,
+      "nll": 1.1961404336794947,
+      "strict_valid": 24,
+      "errors": 0,
+      "by_class": {
+        "Entailment": {
+          "n": 13,
+          "correct": 0
+        },
+        "Contradiction": {
+          "n": 3,
+          "correct": 3
+        },
+        "NotMentioned": {
+          "n": 8,
+          "correct": 0
+        }
+      },
+      "accuracy": 0.125
+    },
+    "same_nli_positional_first2": {
+      "n": 24,
+      "correct": 3,
+      "brier": 0.7480335115243266,
+      "nll": 1.2220182677209166,
+      "strict_valid": 24,
+      "errors": 0,
+      "by_class": {
+        "Entailment": {
+          "n": 13,
+          "correct": 0
+        },
+        "Contradiction": {
+          "n": 3,
+          "correct": 3
+        },
+        "NotMentioned": {
+          "n": 8,
+          "correct": 0
+        }
+      },
+      "accuracy": 0.125
+    },
+    "previous_reader_native_same_premise": {
+      "n": 24,
+      "correct": 11,
+      "brier": 0.8877204469766907,
+      "nll": 1.9357761257778918,
+      "strict_valid": 24,
+      "errors": 0,
+      "by_class": {
+        "Entailment": {
+          "n": 13,
+          "correct": 4
+        },
+        "Contradiction": {
+          "n": 3,
+          "correct": 0
+        },
+        "NotMentioned": {
+          "n": 8,
+          "correct": 7
+        }
+      },
+      "accuracy": 0.4583333333333333
+    }
+  },
+  "gold_class_counts": {
+    "Entailment": 13,
+    "Contradiction": 3,
+    "NotMentioned": 8
+  },
+  "primary_typed_confusion": {
+    "NotMentioned->Contradiction": 8,
+    "Entailment->Contradiction": 13,
+    "Contradiction->Contradiction": 3
+  },
+  "DEV_gate_checks": {
+    "validity": true,
+    "all_gold_classes_present": true,
+    "primary_contradiction_correct_at_least_one": true,
+    "binary": {
+      "same_nli_lexical_top2": {
+        "accuracy_gain": false,
+        "brier_nonincrease": false,
+        "nll_nonincrease": false,
+        "strict_proper_gain": false
+      },
+      "same_nli_positional_first2": {
+        "accuracy_gain": false,
+        "brier_nonincrease": false,
+        "nll_nonincrease": false,
+        "strict_proper_gain": false
+      },
+      "native104_on_ruvector_evidence": {
+        "accuracy_gain": true,
+        "brier_nonincrease": false,
+        "nll_nonincrease": false
+      },
+      "previous_reader_native_same_premise": {
+        "accuracy_gain": false,
+        "brier_nonincrease": true,
+        "nll_nonincrease": true,
+        "strict_proper_gain": true
+      }
+    },
+    "typed": {
+      "same_nli_lexical_top2": {
+        "accuracy_gain": false,
+        "brier_nonincrease": false,
+        "nll_nonincrease": false,
+        "strict_proper_gain": false
+      },
+      "same_nli_positional_first2": {
+        "accuracy_gain": false,
+        "brier_nonincrease": false,
+        "nll_nonincrease": false,
+        "strict_proper_gain": false
+      },
+      "previous_reader_native_same_premise": {
+        "accuracy_gain": false,
+        "brier_nonincrease": true,
+        "nll_nonincrease": true,
+        "strict_proper_gain": true
+      }
+    }
+  },
+  "observed_class_collapse": {
+    "new_reader_selector_arms": 3,
+    "predicted_Contradiction_per_arm": 24,
+    "predicted_Entailment_per_arm": 0,
+    "predicted_NotMentioned_per_arm": 0,
+    "raw_source_conformant_mapping_verified": true,
+    "cause_established": false
+  },
+  "conclusions": [
+    "This exact900M dynamic-int8 native-evidence pipeline failed the fixed development gate; no champion promotion or submission is justified.",
+    "All three same-new-reader selectors produced the same all-Contradiction decisions. Primary native selection demonstrated no accuracy gain over lexical or positional selection and had worse proper scores than both.",
+    "The actual unchanged previous reader on the exact same primary premise achieved13/24 binary and11/24 typed versus11/24 and3/24 for the new reader; its proper scores were worse than the new primary, so accuracy and proper-score comparisons must remain separate.",
+    "Primary correct Contradiction3/3 and all gold classes present pass the class guard, but zero correct Entailment13 and NotMentioned8 leaves the candidate far below the required every-control accuracy improvement.",
+    "The native104-on-selected-excerpt control9/24 is not the submitted full-input native104 champion score and does not establish a champion improvement.",
+    "Saved raw/logit/probability/token/feed/source/vector/resource consistency checks passed. These checks do not identify why the model pipeline collapsed, prove model semantic label correctness, or establish evidence sufficiency.",
+    "The DEV-only paired8-document bootstrap is exploratory exposed-development evidence; no confirmation inference or full benchmark generalization is claimed."
+  ],
+  "uncertainty": {
+    "CONF_intervals": null,
+    "DEV_paired_bootstrap_draws": 2000,
+    "DEV_groups": 8,
+    "nominal_not_familywise": true,
+    "primary_minus_previous_reader_typed_accuracy_DEV": {
+      "mean_improvement": -0.3333333333333333,
+      "ci95": [
+        -0.6666666666666666,
+        -0.041666666666666664
+      ],
+      "draws": 2000,
+      "seed": 20261022
+    },
+    "causal_quantization_model_tokenizer_architecture_or_domain_shift_diagnosis": "Unproven; no new inference or frozen-pipeline repair was performed."
+  },
+  "actual_execution": {
+    "HTTP_requests": 24,
+    "HTTP_errors": 0,
+    "actual_native_searches": 24,
+    "NLI_forwards": 96,
+    "new_reader_forwards": 72,
+    "previous_reader_forwards": 24,
+    "NLI_input_tokens": 44922,
+    "BGE_texts": 162,
+    "BGE_forward_batches": 45,
+    "maximum_same_input_logit_drift": 0.0,
+    "native_exact_vector_agreement_counts": {
+      "full_order": 24,
+      "candidate_set": 24,
+      "top2_set": 24
+    },
+    "phase_wall_seconds_including_load_cleanup": 300.5808907380124,
+    "whole_phase_initialization_seconds": 43.21498489379883,
+    "whole_all_arm_HTTP_latency_seconds": {
+      "p50": 10.688919296997483,
+      "p95": 11.909634439754882,
+      "max": 11.994171039012144,
+      "scope": "Whole all-arm HTTP; not primary-only deployment"
+    },
+    "worker_resources": {
+      "at": "2026-10-23T15:15:01.523547+00:00",
+      "worker_cpu_user_seconds": 461.914013,
+      "worker_cpu_system_seconds": 56.424171,
+      "worker_peak_RSS_bytes": 7064096768,
+      "terminated_children_cpu_user_seconds": 5.65086,
+      "terminated_children_cpu_system_seconds": 0.5195379999999999,
+      "largest_terminated_child_peak_RSS_bytes": 7064096768,
+      "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+      "allowed_CPU_ids": [
+        0,
+        1
+      ],
+      "configured_ORT_threads": 2,
+      "configured_torch_threads": 2,
+      "configured_torch_interop_threads": 1,
+      "thread_evidence_scope": "Configured limits; observed torch/ORT state retained in engine receipt",
+      "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+    },
+    "outer_waited_resources": {
+      "schema_version": 1,
+      "started_at": "2026-10-23T15:09:59.175846+00:00",
+      "finished_at": "2026-10-23T15:15:02.533867+00:00",
+      "exit_code": 0,
+      "wall_seconds": 303.35804578999523,
+      "allowed_CPU_ids": [
+        0,
+        1
+      ],
+      "children_CPU_user_seconds": 470.340589,
+      "children_CPU_system_seconds": 58.253686,
+      "children_largest_peak_RSS_bytes": 7064096768,
+      "resource_scope": "Linux outer waited child/descendant counters. RSS is largest process high-water mark, not simultaneous aggregate memory. Actual per-phase reservations/watchdogs/cleanup are recorded by the frozen controller.",
+      "unchanged_controller": true,
+      "additional_model_native_calls_from_outer_recorder": 0,
+      "paid_GPU_calls": 0
+    },
+    "runtime_forecast": {
+      "at": "2026-10-23T15:15:02.522155+00:00",
+      "formula_id": "24xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+      "max_DEV_HTTP_seconds": 11.994171039012144,
+      "max_DEV_units": 25,
+      "max_confirmation_units": 20,
+      "source_unit_ratio": 1.0,
+      "DEV_initialization_seconds": 43.21498489379883,
+      "projected_confirmation_seconds": 434.2900747238891,
+      "allowed": true,
+      "forecast_limit_seconds": 600,
+      "actual_confirmation_watchdog_seconds": 600,
+      "scope": "Conservative admission forecast, not a performance guarantee. No confirmation labels/model outputs used."
+    },
+    "quality_failed_despite_runtime_forecast_allowed": true,
+    "owned_worker_and_children_cleanup_verified": true,
+    "new_paid_API_calls": 0,
+    "new_GPU_calls": 0
+  },
+  "identity_retirement": {
+    "DEV_queries_permanently_exposed": 24,
+    "DEV_document_groups_permanently_exposed": 8,
+    "originaltrain_partition": {
+      "exposed": 221,
+      "unreserved": 178,
+      "reserved": 24
+    },
+    "exact_unused16_CONF24_preserved_through17_and18": true,
+    "CONF_annotations_or_model_queries_this_epoch": 0,
+    "old_CONF48_touched": false
+  },
+  "next_priority": "Before another legal benchmark draw, freeze and source-review a generic typed E/C/N semantic readiness and tokenizer/label-provenance protocol, with a matched fixed original-FP32 versus dynamic-int8 diagnostic or a separately justified pretrained model. No such neural probe was executed in epoch18. Future execution needs a new frozen source/identity/scorer/budget plan; keep generic canaries separate from benchmark generalization, do not tune or select on the reserved confirmation labels, and do not reuse epoch18 DEV as fresh confirmation. The observed collapse has no established causal diagnosis.",
+  "future_canary_protocol_executed": false,
+  "new_model_native_calls_by_auditor": 0,
+  "champion_promoted": false,
+  "publisher_submission_allowed": false,
+  "official_score": null,
+  "official_rank": null,
+  "official_sota_goal_met": false,
+  "official_scope": "Licensed ContractNLI NDA development diagnostic only. No Jev300, full LegalBench, ClaimBench, official publisher result or placement is established."
+}

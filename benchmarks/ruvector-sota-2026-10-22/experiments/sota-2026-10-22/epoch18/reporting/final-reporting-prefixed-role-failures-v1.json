@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "status": "ACTUAL_GENERIC_REGRESSIONS_REPRODUCED_BEFORE_ROLE_FIX",
+  "helper": {
+    "path": "engine-reporting/build_final.before-role-state-fix.py",
+    "bytes": 22095,
+    "sha256": "ad05354fc0f863edf7ce371fc657e9c43d58f4af44aa10d3d5a17b054a0954b6"
+  },
+  "test_source": {
+    "path": "source-review-scratch/test_final_reporting_end_to_end.py",
+    "bytes": 7759,
+    "sha256": "7e61b93986ee78c9375392fbc91b44f80369359ff14b424618430896020ab89d"
+  },
+  "command": "python -B source-review-scratch/test_final_reporting_end_to_end.py",
+  "tests": 2,
+  "passed": 0,
+  "failures": 2,
+  "exit_code": 1,
+  "failed_tests": [
+    "test_complete_development_updates_nested_roles_and_keeps_unused_confirmation",
+    "test_consumed_confirmation_updates_nested_annotations_and_retirement"
+  ],
+  "common_actual_assertion": "AssertionError: False is not true at assertion of final used[development][model_attempted]",
+  "scope": "Actual execution of the reporting helper on invented temporary88source/415pin metadata fixtures, never actual epoch inputs/gold/model data. Old eight shallow helper tests passed.",
+  "actual_project_build_or_case_gold_model_calls": 0,
+  "source_changes_after_failure": "Outside reporter only; no immutable study source/plan/gate change."
+}

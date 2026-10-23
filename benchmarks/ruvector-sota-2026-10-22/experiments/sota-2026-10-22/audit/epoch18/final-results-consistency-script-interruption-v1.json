@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T15:32:17.177958+00:00",
+  "status": "DERIVED_METADATA_CHECK_SCRIPT_OVERSTRICT_HISTORY_ASSERTION_INTERRUPTION_RETAINED",
+  "derived_artifacts": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/RESULTS.json",
+      "bytes": 133662,
+      "sha256": "8d12162fc01c2b1651437955d8cb67826505b179bb75beb1a4b841ebcb6d3d3f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/USED_IDENTITIES.json",
+      "bytes": 20354,
+      "sha256": "26b9524bd919e2bdeba2691984b4f42393cdff66f067a90ffa3392e4b88130ec"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/REJECTION_LEDGER.json",
+      "bytes": 27046,
+      "sha256": "0590e10cc6861d6fd359d03d11d1be3a25cd75263890365e50b70438e6f65546"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/EPOCH_MANIFEST.json",
+      "bytes": 22072,
+      "sha256": "73a12a5958ad477d7cf98a44c3dc937bc7f1b937b0014a134fbcb90afbf9a891"
+    }
+  ],
+  "actual_script_error": "AssertionError: preparation_blocks at the historical-field whole-equality check",
+  "finding": "The checker script incorrectly required the entire preparation_blocks list to equal the old ledger. Both historical rows are retained exactly and the reporter correctly appends the actualepoch18 fixture-race/recovery entry. No derived-artifact defect was found.",
+  "previously_completed_checks": "All every-arm metrics/proper/class/confusion, raw saved runtime/process/resource/counter, latency, absent CONF null values, actual counts, role identities/consumption and cumulative baseline-plus-actual values passed before this history assertion.",
+  "continuation": "Continue the same inspection on unchanged four artifact bytes with required append-only historical-prefix semantics, then verify all file-identity references. No artifact, model, frozen scientific checker, gate or source is edited.",
+  "scientific_acceptance_unchanged": false,
+  "model_native_fit_paid_GPU_calls": 0
+}

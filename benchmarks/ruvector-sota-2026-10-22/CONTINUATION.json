@@ -4,21 +4,21 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "7d3812466cc2529f4348987e9d7796fabc307aed",
-  "checkpoint_manifest_sha256": "2613c4b6e0b4bb52ccdfa26bf3648a136cf1bdb24200e631506bf8a1f62908e2",
+  "prior_published_base_commit": "19106bac59a336accc28e5731744e08be9a825f2",
+  "checkpoint_manifest_sha256": "adc60b85f5b9b11f85ae03e395c20323ab8ec9fba22144e5c8c5bcb3599c4bb7",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
-    "native_corpus_batches": 16,
-    "actual_HTTP_decisions": 861,
+    "native_corpus_batches": 17,
+    "actual_HTTP_decisions": 885,
     "paid_inference_calls": 0,
     "new_GPU_rentals": 0,
-    "native_corpus_batches_completed": 16,
-    "native_corpus_attempts_including_failed_request": 18,
-    "actual_HTTP_successful_decisions": 861,
+    "native_corpus_batches_completed": 17,
+    "native_corpus_attempts_including_failed_request": 19,
+    "actual_HTTP_successful_decisions": 885,
     "actual_HTTP_failed_requests": 2,
     "counting_note": "Cumulative counts include historicaladaptivepublic/evaluationdiagnostics; notallfreshheldout. The144trainingfeature and6epoch12TRAINsanity diagnosticHTTP are preserved separately; epoch13 has no TRAIN/fitting/calibration. DEV/CONF evaluationdiagnostics are not officialbenchmarkgeneralization; scheduledwork notcalledexecuted.",
     "actual_HTTP_training_feature_requests": 144,
-    "actual_HTTP_evaluation_diagnostic_decisions": 711,
+    "actual_HTTP_evaluation_diagnostic_decisions": 735,
     "actual_HTTP_training_sanity_diagnostic_requests": 6
   },
   "epochs": [
@@ -200,6 +200,13 @@
       "scored_decisions": 0,
       "metrics": null,
       "confirmation_consumed": false
+    },
+    {
+      "epoch": 18,
+      "status": "INDEPENDENT_REJECTED_DEV_GATE_CONF_UNTOUCHED",
+      "manifest": "experiments/sota-2026-10-22/epoch18/EPOCH_MANIFEST.json",
+      "native_attempts": 1,
+      "confirmation_consumed": false
     }
   ],
   "used_confirmation_sets": [
@@ -213,7 +220,7 @@
     "Legal96zero-shotfourtaskadaptation,notfull162taskofficialLegalBench",
     "NoClaimBenchRuVectorscore; fullquestions/scorer/license/submissionnotverified"
   ],
-  "next_research_priority": "Execute only the exact independently reviewed published18plan after matching remote source/control readback and owned exclusive lock; max2nonretryableCPU2/600s phases,paid0. CONF only frozen DEV+runtime gates.",
+  "next_research_priority": "Before another legal benchmark draw, freeze and source-review a generic typed E/C/N semantic readiness and tokenizer/label-provenance protocol, with a matched fixed original-FP32 versus dynamic-int8 diagnostic or a separately justified pretrained model. No such neural probe was executed in epoch18. Future execution needs a new frozen source/identity/scorer/budget plan; keep generic canaries separate from benchmark generalization, do not tune or select on the reserved confirmation labels, and do not reuse epoch18 DEV as fresh confirmation. The observed collapse has no established causal diagnosis.",
   "benchmark_targets": {
     "JevBench": {
       "leader_observed": "Chon-1.0-12B",
@@ -317,8 +324,8 @@
   "active_run": {
     "path": "ACTIVE_RUN.json",
     "run_id": "epoch18-e229426df6174a65bcdc567ccc372a95",
-    "state": "EPOCH18_FROZEN_REVIEWED_PENDING_DURABLE_READBACK",
-    "experiments_active": true,
+    "state": "EPOCH18_CLOSED",
+    "experiments_active": false,
     "native_allowed": 0
   },
   "exposed_development_sets": [
@@ -354,7 +361,9 @@
       "epoch15_project_model_unused": true,
       "epoch15_annotation_choices_used": 0,
       "epoch16_model_unused": true,
-      "epoch16_annotation_choices_used": 0
+      "epoch16_annotation_choices_used": 0,
+      "epoch18_model_unused": true,
+      "epoch18_annotation_choices_used": 0
     },
     {
       "input_only_allowlist": {
@@ -389,30 +398,32 @@
       "status": "EXACT_LAZY_RECIPE_FROZEN_PROJECT_MODEL_UNUSED_RESERVED",
       "globally_retired": false,
       "epoch16_model_unused": true,
-      "epoch16_annotation_choices_used": 0
+      "epoch16_annotation_choices_used": 0,
+      "epoch18_model_unused": true,
+      "epoch18_annotation_choices_used": 0
     }
   ],
-  "rejection_ledger": "experiments/sota-2026-10-22/epoch17/REJECTION_LEDGER.json",
+  "rejection_ledger": "experiments/sota-2026-10-22/epoch18/REJECTION_LEDGER.json",
   "benchmark_refresh": "experiments/sota-2026-10-22/legal-transfer/epoch18/benchmark-refresh.json",
   "restore_epoch3": "First restore_checkpoint.py; optional restore_epoch3_data.py materializes exact pinned original CC-BY data archive/train/dev/license. Existing bootstrap model flags do not acquire new NLI assets; obtain only official revisions in assets.lock.json/model-api, verify SHA. No inference during restore.",
   "restoration_boundary": "Epoch16 freshly verified2293 Gitblob files and2220projectCP+48base using reviewed bootstrap/restore; exact7officialNLI+BGE2/native22 restored separately. No model/native session occurred before reviewed source freeze/publication; actual oneDEV process is in epoch16_final. Never rerun archived controllers.",
-  "publication_review": "experiments/sota-2026-10-22/audit/epoch18/premeasurement-plan-independent-v1.json",
+  "publication_review": "experiments/sota-2026-10-22/audit/epoch18/acceptance-rejection-independent-v1.json",
   "cumulative_budget_ledger": {
     "original_study_native_attempt_cap": 6,
     "prior_epochs_attempts": 3,
     "epoch3_native_attempts_including_failed_request": 2,
-    "cumulative_native_attempts": 18,
+    "cumulative_native_attempts": 19,
     "remaining_in_original_study": 0,
-    "current_epoch_closed": false,
+    "current_epoch_closed": true,
     "publication_period_native_calls_allowed": 0,
     "next_epoch_rule": "Allhistoricalstudiesclosed, includinganyunspentconditional13slot; no retry. A newexplicitcontinuation permitsdistincthypothesis onlyafterfrozenlicensedTRAIN/DEV/calibration/project-unusedCONF/source/runtime, atmost2nonretryableCPU2/600sphases,paid0/GPU0. Oldf018DEVforever. Preserveepoch9CONF48ifunused; ifretiredneednewverifiedbank. No repeatedunchangedblockerprobes.",
     "original_study_status": "CLOSED_BUDGET_EXHAUSTED",
     "epoch4_native_attempts_including_failed_restoration": 1,
     "new_study_id": "native-microsoft-xlarge-typed-reader-e18",
     "new_study_attempt_cap": 2,
-    "new_study_attempts_used": 0,
+    "new_study_attempts_used": 1,
     "new_study_attempts_remaining": 0,
-    "total_historical_attempts": 18,
+    "total_historical_attempts": 19,
     "closed_epoch5_study": {
       "id": "native-deberta-base-resolved-2026-10-22-e5",
       "used": 1,
@@ -425,7 +436,7 @@
       "cap": 1,
       "remaining": 0
     },
-    "new_study_unspent_phase_slots": 2,
+    "new_study_unspent_phase_slots": 1,
     "allowed_further_attempts_in_closed_study": 0,
     "closed_epoch7_study": {
       "id": "native-large-binary-nli-e7",
@@ -479,7 +490,7 @@
       "new_study_admitted": false,
       "all_16_prior_attempts_closed": true
     },
-    "scope": "EPOCH18_FROZEN_PENDING_READBACK_PRIOR18_NATIVE_ATTEMPTS_CLOSED",
+    "scope": "ALL_EPOCHS_CLOSED_THROUGH18",
     "epoch15_active_study": {
       "study_id": "native-definition-priority-deberta-threeway-e15",
       "plan_path": "experiments/sota-2026-10-22/epoch15/plan.v2.json",
@@ -538,12 +549,18 @@
     "epoch18_active_study": {
       "study_id": "native-microsoft-xlarge-typed-reader-e18",
       "cap": 2,
-      "used": 0,
+      "used": 1,
       "native_allowed": 0,
-      "conditional_native_allowance_after_exact_remote_readback": 2,
+      "conditional_native_allowance_after_exact_remote_readback": 0,
       "CPU_threads": 2,
       "seconds_each_including_all_initialization_cleanup": 600,
-      "paid_GPU_calls": 0
+      "paid_GPU_calls": 0,
+      "status": "CLOSED"
+    },
+    "epoch18_closed_study": {
+      "used": 1,
+      "cap": 2,
+      "remaining": 0
     }
   },
   "publisher_status": "experiments/sota-2026-10-22/legal-transfer/epoch18/publisher-status.json",
@@ -566,11 +583,11 @@
   },
   "latest_learning": {
     "manifest": {
-      "path": "experiments/sota-2026-10-22/epoch17/EPOCH_MANIFEST.json",
-      "bytes": 7406,
-      "sha256": "654e5db211d94c8e7b0ab4b6b9ef5a11413692f97b3bbde234f5babd5761cef8"
+      "path": "experiments/sota-2026-10-22/epoch18/EPOCH_MANIFEST.json",
+      "bytes": 22072,
+      "sha256": "73a12a5958ad477d7cf98a44c3dc937bc7f1b937b0014a134fbcb90afbf9a891"
     },
-    "direction": "Do not rerun/repair frozen17 or use its8projectedDEVdocuments as fresh confirmation. In a separately reviewed append-only epoch, qualify operational/full require_plan against exact intended budget and all inherited validators before any new input/gold projection, then revalidate final data/source closure. Current inherited path caps requests at30seconds; accepting60 requires a separately reviewed prelabel source change, never silent bypass. Keep new900M exact pretrained candidate as unmeasured hypothesis, retain matched old-reader/retrieval controls, both unused confirmation banks and submitted native104. CPU2/max2x600s/paid0 remain."
+    "direction": "Before another legal benchmark draw, freeze and source-review a generic typed E/C/N semantic readiness and tokenizer/label-provenance protocol, with a matched fixed original-FP32 versus dynamic-int8 diagnostic or a separately justified pretrained model. No such neural probe was executed in epoch18. Future execution needs a new frozen source/identity/scorer/budget plan; keep generic canaries separate from benchmark generalization, do not tune or select on the reserved confirmation labels, and do not reuse epoch18 DEV as fresh confirmation. The observed collapse has no established causal diagnosis."
   },
   "source_closure_correction": {
     "path": "experiments/sota-2026-10-22/epoch13/SOURCE_CLOSURE_CORRECTION.v1.json",
@@ -1163,23 +1180,94 @@
     "confirmation_only_if_DEV_and_runtime_gates_pass": true
   },
   "epoch18_data_roles": {
-    "originaltrain_exposed": 221,
+    "exposed": 221,
     "unreserved": 178,
-    "reserved_unused_confirmation": 24,
-    "old48_unused": true,
-    "newCONF24_unused": true
+    "reserved_unused": 24
   },
   "publisher_status_refresh_scope": "Exact first account search0; second account and broader search FORBIDDEN. No claim of result absence; current officialresult/rank UNVERIFIED.",
   "epoch18_publication_reviews": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/reviews/capsule-final-review-v1.json",
+      "bytes": 57281,
+      "sha256": "a29f0ebd90ea0c3f58f8124e1db1fc898254a83ea1eddbd4d30901289ab638e1"
+    },
     {
       "path": "experiments/sota-2026-10-22/epoch18/reviews/capsule-frozen-review-v1.json",
       "bytes": 34361,
       "sha256": "87032eb2c85fb58bb6c1f73e6739c291f9dd43692c88b19f4d021321d901b012"
     },
     {
+      "path": "experiments/sota-2026-10-22/epoch18/reviews/privacy-final-review-v1.json",
+      "bytes": 50441,
+      "sha256": "d12e4e96ec02a8b79e32ce3ab4f4e44aa62e965c80b8ed8a8577e4a16968a05d"
+    },
+    {
       "path": "experiments/sota-2026-10-22/epoch18/reviews/privacy-frozen-review-v1.json",
       "bytes": 31209,
       "sha256": "36c49fa2c5a8b9b2c77485329c700595c09ae86c7ad31d6ff9a7f8443e439100"
     }
-  ]
+  ],
+  "epoch18_final": {
+    "manifest": {
+      "path": "experiments/sota-2026-10-22/epoch18/EPOCH_MANIFEST.json",
+      "bytes": 22072,
+      "sha256": "73a12a5958ad477d7cf98a44c3dc937bc7f1b937b0014a134fbcb90afbf9a891"
+    },
+    "status": "INDEPENDENT_REJECTED_DEV_GATE_CONF_UNTOUCHED",
+    "accepted": false,
+    "all_further_attempts_closed": true,
+    "actual_execution": {
+      "native_process_attempts": 1,
+      "native_processes_started_verified": 1,
+      "native_process_start_uncertainties": 0,
+      "attempt_count_scope": "Conservative pre-Popen durable reservations; reservation alone never proves a model or worker ran",
+      "completed_native_corpora": 1,
+      "successful_HTTP_decisions": 24,
+      "failed_HTTP_requests": 0,
+      "decision_records_saved": 24,
+      "model_initializations": 1,
+      "model_initialization_count_scope": "New primary reader only; complete previous/BGE receipt provenance retained per phase",
+      "quantization_initializations": 1,
+      "training_calibration_fits": 0,
+      "paid_API_calls": 0,
+      "GPU_calls": 0,
+      "unspent_phase_slots_closed": 1,
+      "allowed_further_epoch18_native_attempts": 0,
+      "NLI_forward_pairs_attempted": 96,
+      "NLI_forward_pairs_completed": 96,
+      "BGE_model_forwards": 45,
+      "BGE_texts": 162,
+      "native_core_searches": 24,
+      "native104_predictions": 24,
+      "new_reader_forwards": 72,
+      "previous_reader_forwards": 24
+    },
+    "source_manifest": {
+      "path": "experiments/sota-2026-10-22/epoch18/SOURCE_MANIFEST.json",
+      "bytes": 47513,
+      "sha256": "9af5ec0327577dacf5f662dc2671bce295a3b01100992b840b236446ba8157de"
+    },
+    "results": {
+      "path": "experiments/sota-2026-10-22/epoch18/RESULTS.json",
+      "bytes": 133662,
+      "sha256": "8d12162fc01c2b1651437955d8cb67826505b179bb75beb1a4b841ebcb6d3d3f"
+    },
+    "used_identities": {
+      "path": "experiments/sota-2026-10-22/epoch18/USED_IDENTITIES.json",
+      "bytes": 20354,
+      "sha256": "26b9524bd919e2bdeba2691984b4f42393cdff66f067a90ffa3392e4b88130ec"
+    },
+    "rejection_ledger": {
+      "path": "experiments/sota-2026-10-22/epoch18/REJECTION_LEDGER.json",
+      "bytes": 27046,
+      "sha256": "0590e10cc6861d6fd359d03d11d1be3a25cd75263890365e50b70438e6f65546"
+    },
+    "independent_identity_retirement": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch18/postrun-identity-retirement-v1.json",
+      "bytes": 31080,
+      "sha256": "d960eb1f36cdc5e7d95f27944e0153be6deb29ea9d6e6e06d987bc11593b2413"
+    }
+  },
+  "epoch18_frozen_study_scope": "Historical immutable premeasurement snapshot. Current actual state is epoch18_final; every epoch18 phase slot is permanently closed.",
+  "official_result_status": "UNVERIFIED. Publisher status refresh partially FORBIDDEN; queue115 was never a rank."
 }

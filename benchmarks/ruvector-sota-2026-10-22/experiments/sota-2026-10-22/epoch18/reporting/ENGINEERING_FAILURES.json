@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "failures": [
+    {
+      "stage": "Independent static review before actual report builder invocation",
+      "status": "FINAL_NESTED_ROLE_STATE_STALE_PRE_NATIVE_METADATA",
+      "exact_pre_fix_source": "build_final.before-role-state-fix.py",
+      "exact_pre_fix_sha256": "ad05354fc0f863edf7ce371fc657e9c43d58f4af44aa10d3d5a17b054a0954b6",
+      "finding": "Copying prenative USED then updating only top-level fields retained nested development.model_attempted=False after actual DEV execution; conditional CONF nested states would likewise remain stale. Original8 generic tests passed but lacked this nested-state regression.",
+      "pre_fix_tests_status": "8_PASS_WITH_MISSING_ROLE_STATE_COVERAGE",
+      "actual_project_report_builds_before_discovery": 0,
+      "case_or_label_semantic_reads": 0,
+      "fix_scope": "Outside reporting metadata only; frozen science/plan/gates/checkers untouched",
+      "regression_fixture_status": "ACTUAL_GENERIC_FULL_BUILD_REGRESSIONS_0_OF_2_PASSED_BEFORE_FIX_2_OF_2_AFTER_FIX",
+      "independent_failure_receipt": {
+        "path": "engine-reporting/final-reporting-prefixed-role-failures-v1.json",
+        "sha256": "7e35f8614305dcfd778747ffe79c9a278414afd3a53ea442c312a4321e42e6ea"
+      },
+      "independent_after_fix_full_build_tests": 2,
+      "independent_after_fix_role_state_tests": 3
+    }
+  ]
+}

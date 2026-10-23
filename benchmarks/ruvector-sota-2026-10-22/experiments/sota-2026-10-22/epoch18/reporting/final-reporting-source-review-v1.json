@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T15:25:56.504535+00:00",
+  "reviewer": "independent-platform-agent-e18_source_review",
+  "status": "FINAL_REPORTING_GLUE_AND_FUTURE_SOURCE_SPEC_REVIEW_PASS_ONLY",
+  "checks_passed": true,
+  "helper": {
+    "path": "engine-reporting/build_final.py",
+    "bytes": 23813,
+    "sha256": "8fb688d383ee3ad488bf5fd1d79e0656c104392e986818a43b641b6c7429c90e"
+  },
+  "future_protocol_source": {
+    "path": "engine-reporting/SEMANTIC_PRECISION_QUALIFICATION_SPEC.json",
+    "bytes": 9201,
+    "sha256": "93564659aa991dc85a6ee129cc5ab2964946f26696b987352006dcde648f74ae"
+  },
+  "independent_regression_sources": [
+    {
+      "path": "source-review-scratch/test_final_reporting_end_to_end.py",
+      "bytes": 7759,
+      "sha256": "7e61b93986ee78c9375392fbc91b44f80369359ff14b424618430896020ab89d"
+    },
+    {
+      "path": "source-review-scratch/test_role_reporting_v1.py",
+      "bytes": 2957,
+      "sha256": "e0e790972606b9b41ad1bdaae6645a9eb775c9b9af62e3cec4d7b2fa818d15a4"
+    }
+  ],
+  "engine_unit_test_source": {
+    "path": "engine-reporting/test_build_final.py",
+    "bytes": 4887,
+    "sha256": "1df95f00018c3adc9371cbc33fa6578afe9495fc51be93ed089db09e7cae909a"
+  },
+  "resolved_finding": {
+    "id": "FINAL-ROLE-STATE-01",
+    "finding": "Copying pre-native USED identities without replacing nested role model/annotation state falsely retained development.model_attempted=False after completed DEV and would retain stale CONF annotations.",
+    "pre_fix_source": {
+      "path": "engine-reporting/build_final.before-role-state-fix.py",
+      "bytes": 22095,
+      "sha256": "ad05354fc0f863edf7ce371fc657e9c43d58f4af44aa10d3d5a17b054a0954b6"
+    },
+    "actual_pre_fix_regression_failures": {
+      "path": "source-review-scratch/final-reporting-prefixed-role-failures-v1.json",
+      "bytes": 1285,
+      "sha256": "7e35f8614305dcfd778747ffe79c9a278414afd3a53ea442c312a4321e42e6ea"
+    },
+    "resolution": "Exported final-role derivation overwrites nested current role facts from actual saved activity/HTTP/reservation/worker evidence, preserves historical snapshot by exact reference, retains null for uncertain model use and updates exact confirmation annotation/retirement state."
+  },
+  "executed_generic_tests": [
+    {
+      "command": "python -B -m unittest discover -s engine-reporting -p test_build_final.py -v",
+      "tests": 8,
+      "passed": 8,
+      "exit_code": 0
+    },
+    {
+      "command": "python -B source-review-scratch/test_final_reporting_end_to_end.py",
+      "tests": 2,
+      "passed": 2,
+      "exit_code": 0,
+      "scope": "Complete invented temporary88source/415pin metadata builds for DEV-only and DEV+CONF, exact future output hash/byte references and actual cumulative counts; actual epoch plan SHA is never substituted in a real execution."
+    },
+    {
+      "command": "python -B source-review-scratch/test_role_reporting_v1.py",
+      "tests": 3,
+      "passed": 3,
+      "exit_code": 0,
+      "scope": "Current-vs-historical role state, known no-start, unknown activity, positive actual counters and consumed confirmation."
+    }
+  ],
+  "actual_saved_schema_checks": {
+    "independent_decision": {
+      "path": "project/experiments/sota-2026-10-22/audit/epoch18/acceptance-rejection-independent-v1.json",
+      "bytes": 14081,
+      "sha256": "f48a100b8f42506ee10eb567bea305444a2ccc6e26e76ed141886bb0e02b2757"
+    },
+    "accepted": false,
+    "DEV_gate_passed": false,
+    "CONF_gate_passed": null,
+    "confirmation_consumed": false,
+    "actual_reserved_processes": 1,
+    "verified_worker_starts": 1,
+    "actual_runtime_receipt_new_reader_and_final_execution_counter_keys_match_helper": true,
+    "reviewer_did_not_run_helper_build_on_actual_project": true
+  },
+  "static_reporting_checks": [
+    "Independent checks_passed and exact immutable plan SHA required; acceptance requires all replay/DEV/CONF/actualCONF gates; no automatic champion promotion, submission or official score/rank.",
+    "Exact frozen source/member hashes, actual independent source-readback hash/commit, native admission and actual worker start chronology are checked before aggregation.",
+    "Popen reservations and verified starts are separate; partial/unanswered HTTP is retained, missing inference/initialization counts remain unknown, and successful whole-request p50/p95 have an explicit interpolation/scope.",
+    "Only aggregate comparison/resource/receipt evidence is copied. Wire metadata projects id/status/elapsed only; saved decision and started request files are counted as nonempty lines. No case/gold/answer interpretation or rescoring occurs.",
+    "Historical cumulative18attempt/861HTTP base is frozen and new observed deltas are added once; preserved training144/sanity6 counts remain distinct.",
+    "Final RESULTS/USED/REJECTION byte/hash references are computed before final EPOCH manifest without self-cycles; exclusive output remains outside project for later independent exact review."
+  ],
+  "future_source_spec_checks": {
+    "static_only": true,
+    "three_generic_fixture_identity_hashes_verified": true,
+    "explicit_E_C_N_labels_are_semantically_coherent": true,
+    "fixtures_original_hand_authored_CC0_not_benchmark_content": true,
+    "exact_pretrained_source_asset_revision_and_label_map_declared": true,
+    "one_proposed_future_CPU2_600second_process_six_forwards_paid0_GPU0": true,
+    "current_epoch18_all_slots_closed": true,
+    "new_future_lease_source_freeze_operational_gate_budget_required": true,
+    "no_future_work_claimed_executed_or_scheduled_or_reserved": true,
+    "no_precision_causal_diagnosis_or_legal_benchmark_generalization_claim": true,
+    "no_actual_model_native_or_canary_execution_by_review": true
+  },
+  "remaining_gates": "Root may run exact reporting helper once against actual saved evidence into an exclusive outside directory. Derived actual results, new publication artifacts and exact final capsule/control/transport/privacy require independent review, scoped CAS from actual19106 source commit, and matching remote readback before lock release.",
+  "published130_or_frozen415_source_or_gate_edits_by_reviewer": 0,
+  "actual_project_reporting_builds_by_reviewer": 0,
+  "semantic_case_gold_reads_by_reviewer": 0,
+  "model_native_fit_paid_GPU_calls": 0,
+  "Git_calls_or_mutations_for_this_review": 0,
+  "champion_promoted": false,
+  "official_score": null,
+  "official_rank": null,
+  "native_execution_admitted": false
+}

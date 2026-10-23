@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "candidate": "epoch10",
+  "pretrained_model_identity": {
+    "repo": "Xenova/DeBERTa-v3-base-mnli-fever-anli",
+    "revision": "72a1ce83a0144efaf828b3c3844320a61197a53d",
+    "onnx_sha256": "ab9da76bb06054ea6b921560c1ecf5683a9e4d96f0ea73d78d3b4a8990aea882",
+    "onnx_bytes": 244291931,
+    "labels": {
+      "0": "entailment",
+      "1": "neutral",
+      "2": "contradiction"
+    },
+    "raw_id2label": {
+      "0": "entailment",
+      "1": "neutral",
+      "2": "contradiction"
+    },
+    "typed_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "mapping": "Yes=P(Entailment);No=P(Contradiction)+P(NotMentioned);T1;lexical No on exact .5 tie",
+    "layers": 12,
+    "hidden_size": 768
+  },
+  "unchanged_pretrained_model_provenance": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch9/provenance.json",
+    "bytes": 5869,
+    "sha256": "af6b2dd724b5beb09170242a6a0ae3366d7f8cecfec12ad387f4af8d9eb35b41"
+  },
+  "model_asset_spec": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch9/model-assets.lock.json",
+    "bytes": 3148,
+    "sha256": "1981da8ede672c702eab286758d787e3efe62aad79110bcd3e28b36800c67900"
+  },
+  "restore_helper": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch9/acquire_assets.py",
+    "bytes": 9160,
+    "sha256": "6bda1ae281b8de7eb7707ccabdf598ef4fe1a2f69b2668c19185c5a665b51441"
+  },
+  "native_restore_helper": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch5/reconstruction/restore_runtime.py",
+    "bytes": 9683,
+    "sha256": "9ff7f7773532da080f88ebfd6b20b9398b62d77e7606036e28d717b82c48128e"
+  },
+  "source_data_provenance": "Exact frozen public ContractNLI source/license/scorer references inherited by epoch10 data-contract; TRAIN72 is already exposed, DEV24 newly frozen and CONF48 remains unopened.",
+  "local_training": "Exactly four annotation-overlap logistic auxiliary fits plus one residual threeway head; pretrained backbone unchanged. All fits TRAIN-only inside admitted phase1, not source preparation.",
+  "auxiliary_target": "any positive annotated source-character overlap; no annotation=>0; NOT sufficiency/absence proof",
+  "oof_runtime_shift": "Any positive annotation-character overlap only; emptyannotation=>0 is not absence/sufficiencyproof. Decision fit uses OOF probabilities; inference uses final allTRAINaux, a disclosed shift.",
+  "license_limits": "Epoch9 upstreamMIT model card plus disclosed noncommercial/sharealike training-source and conversion-license caveats retained. No model redistribution or publisher eligibility claimed.",
+  "pretraining_contamination": "Unknown. Document-disjoint local train/dev/confirmation is not evidence of pretraining independence.",
+  "source_preparation": {
+    "real_model_sessions": 0,
+    "model_forwards": 0,
+    "native_calls": 0,
+    "real_data_fits": 0,
+    "real_TRAIN_DEV_CONF_inputs_labels_read": 0,
+    "downloads": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "publication": "Reviewed public source and metadata only; no credentials/private data/weights/tokenizer assets/environments/execution projects"
+}

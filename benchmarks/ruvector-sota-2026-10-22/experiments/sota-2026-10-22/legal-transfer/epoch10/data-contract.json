@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "frozen": true,
+  "frozen_at": "2026-10-23T00:20:40.490321+00:00",
+  "checkpoint_parent": "9f899fc6d9e75f69993dcf80927116584740e7b8",
+  "scope": "Internal source-licensed originalContractNLI3predicate NDApilot. TRAIN reused and already exposed; DEV newly drawn; confirmation48 preserved project-model-unused. No full LegalBench/Jev300/ClaimBench score.",
+  "train_data": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch10/train72.jsonl",
+    "sha256": "d98f05b49ebad6a9cac447238b32aa3f8ccefa1253bdd2d52465bd111403c644",
+    "queries": 72,
+    "document_groups": 24,
+    "status": "Exact reused epoch8 TRAIN bytes, already exposed, not fresh evaluation"
+  },
+  "train_annotations": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch10/train-annotations.json",
+    "sha256": "17e7021fc3cfdd6db66bc0bebc1adff2d671683914c0720fea0a0e1f6a3d2a49",
+    "queries": 72,
+    "role": "TRAIN-only source-gold annotation coverage target; never legal sufficiency/absence evidence"
+  },
+  "train_allowlist": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch10/train-allowlist.json",
+    "sha256": "d8723120248949a840beabd4aba8cabddc15aa8a801765cf2eb0d43bbac589f6"
+  },
+  "development": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch10/development24.jsonl",
+    "sha256": "b33c63e727b2990b2efea24234af5b7b9890e4b0ed2634534d4e1e942ca9a86e",
+    "queries": 24,
+    "document_groups": 8,
+    "status": "New project-unused source groups, no fit/normalization/calibration"
+  },
+  "confirmation": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+    "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "queries": 48,
+    "document_groups": 16,
+    "status": "Existing epoch9 bank unchanged and unconsumed; labels only scorer/auditor after frozen gates; no selection/fit use",
+    "allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch10/confirmation-allowlist.json",
+    "allowlist_sha256": "65485b57d37a3341031cd4e125539e6c052f34844a60f93be7f1035db68c913e"
+  },
+  "calibration": [],
+  "roles_frozen_before_new_gold_projection_at": "2026-10-23T00:20:40.478078+00:00",
+  "draw": {
+    "plan_sha256": "600a0ef08cb200a285bd97889a7f99dab268ee0759d5f7271093f0e63be171de",
+    "selection_sha256": "b7eb59a9c143e3f34a0b776b08ceadeca90bb577bb12bcfeb7d4ef663ecc8cdc",
+    "eligible_unreserved_before": 250,
+    "new_DEV_groups": 8,
+    "unreserved_remaining_after": 242,
+    "prior_exposed_train_groups": 157,
+    "reserved_confirmation_groups": 16,
+    "selection_uses_labels_or_outcomes": false
+  },
+  "source": {
+    "repository": "stanfordnlp/contract-nli",
+    "commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "member": "contract-nli/train.json",
+    "member_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+    "archive_sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+    "license": "CC-BY-4.0",
+    "license_sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+  },
+  "inference_boundary": {
+    "only": [
+      "state",
+      "questions"
+    ],
+    "forbidden": [
+      "gold",
+      "evidence annotations",
+      "record IDs",
+      "source groups",
+      "roles",
+      "provenance"
+    ],
+    "original_threeway_label_field": "evaluation.original_threeway_label",
+    "binary_mapping": {
+      "Entailment": "Yes",
+      "Contradiction": "No",
+      "NotMentioned": "No"
+    }
+  },
+  "native_model_paid_calls": 0,
+  "official_score": null,
+  "official_rank": null
+}

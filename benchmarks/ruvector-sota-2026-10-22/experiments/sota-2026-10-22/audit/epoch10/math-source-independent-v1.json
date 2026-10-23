@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T00:32:45.549386+00:00",
+  "checks_passed": true,
+  "candidate_manifest_sha256": "2d67d11ae1052bb048cbeadde6823b33f8c0df41a9f65b11d669a012191c1e87",
+  "final_sources": {
+    "head.py": "0b7f5575dc275e26d75694bc602774cafa0a4c4db757ebf9fdcfec54c3bf9b51",
+    "models.py": "3dae559f60d873b17945215b8af1ff6bdf0b28e0e77da08efaaee4062b13005f",
+    "runtime.py": "375264eb77f5424d3836287bc1802cc67aa604775931ae2fce4644bf5adc9fbc",
+    "features.py": "b934b1ec05d6a6553ddefc883ea18b34920050848f0cb52f21a1c947c36de3f0",
+    "test_head.py": "a4447ae89083d000e7d1da8e75f899a997dc738e334ac7c78a56562aa25cc9e3"
+  },
+  "config_sha256": "0bc127ff92ffd9a3362517010c86e9d4d5113950d17e31a24af79090a165d9c5",
+  "finite_difference_checks": [
+    {
+      "objective": "CE_L2",
+      "max_gradient_absolute_error": 2.7052695153462203e-10,
+      "finite_difference_epsilon": 1e-06
+    },
+    {
+      "objective": "BCE_L2",
+      "max_gradient_absolute_error": 1.0840905950715296e-10,
+      "finite_difference_epsilon": 1e-06
+    }
+  ],
+  "synthetic_document_crossfit": {
+    "documents": 24,
+    "queries": 72,
+    "correlated_arm_views": 216,
+    "five_fits_steps_each": 400,
+    "fold_only_normalization_verified": true,
+    "heldout_documents_excluded": true,
+    "main_normalization_uses_OOF_probability_only": true,
+    "runtime_uses_allTRAIN_auxiliary_probability": true,
+    "distribution_shift_disclosed": true,
+    "all216_inference_math_replayed": true
+  },
+  "candidate_synthetic_tests_passed": 11,
+  "controller_mock_tests_passed": 18,
+  "source_review": {
+    "TRAIN72_source_and_annotation_only_at_fit": true,
+    "exact_source_label_and_input_guard": true,
+    "raw_training_cache_and_fit_artifact_lock_before_DEV_open": true,
+    "same_frozen_artifact_verified_before_CONFIRM_constructor": true,
+    "no_refit_or_fallback_after_failure": true,
+    "five_optimizer_failure_diagnostics_preserved": true,
+    "weak_overlap_target_is_not_sufficiency_or_absence": true,
+    "same_features_auxiliary_head_and_model_all_three_selectors": true,
+    "source_group_IDs_only_membership_not_inference_features": true,
+    "proper_loss_signs_and_strict_DEV_plus2_all3_controls": true,
+    "CONF_attempt_retirement_before_completed_measurements": true
+  },
+  "limits": "Empirical fixed optimizer criteria, not a convergence proof. Synthetic checks do not predict real fit convergence or benchmark gain. Generic lexical relation features do not establish legal semantics. Upstream conversion training provenance/contamination and mixed dataset-license caveats remain.",
+  "real_corpus_reads_for_this_script": 0,
+  "real_TRAIN_fit_model_init_forward_native_paid_calls": 0
+}

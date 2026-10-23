@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "epoch": 10,
+  "frozen_at": "2026-10-23T00:31:22.312636+00:00",
+  "parent_checkpoint": "9f899fc6d9e75f69993dcf80927116584740e7b8",
+  "lease_commit": "24e671dd2b27f5119f25651056456832e0657745",
+  "hypothesis": "One TRAIN-only clause-role/scope residual3wayhead plus3documentfold crossfitted annotation-overlap auxiliary over fixed pretrained9 broaderNLI logits, actual nativeRuVector evidence, and matchedsamehead/model/context lexical/positional controls. Distinct from generichead8 and zero-shotbroader9, not a pretrainedstrength or officialSOTAclaim.",
+  "scientific_scope": "Internal licensed originalContractNLI3predicate binary+threeway NDApilot,TRAIN-only evidence/role residual learner, matchedsamehead retrievalcontrols. No currentJev300/fullLegalBench/ClaimBenchscore/rank; no inference about officialbenchmarkgeneralization.",
+  "train": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch10/train72.jsonl",
+    "sha256": "d98f05b49ebad6a9cac447238b32aa3f8ccefa1253bdd2d52465bd111403c644",
+    "queries": 72,
+    "document_groups": 24,
+    "status": "Exact reused epoch8 TRAIN bytes, already exposed, not fresh evaluation"
+  },
+  "train_annotations": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch10/train-annotations.json",
+    "sha256": "17e7021fc3cfdd6db66bc0bebc1adff2d671683914c0720fea0a0e1f6a3d2a49",
+    "queries": 72,
+    "role": "TRAIN-only source-gold annotation coverage target; never legal sufficiency/absence evidence"
+  },
+  "train_allowlist": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch10/train-allowlist.json",
+    "sha256": "d8723120248949a840beabd4aba8cabddc15aa8a801765cf2eb0d43bbac589f6"
+  },
+  "development": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch10/development24.jsonl",
+    "sha256": "b33c63e727b2990b2efea24234af5b7b9890e4b0ed2634534d4e1e942ca9a86e",
+    "queries": 24,
+    "document_groups": 8,
+    "status": "New project-unused source groups, no fit/normalization/calibration"
+  },
+  "confirmation": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+    "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "queries": 48,
+    "document_groups": 16,
+    "status": "Existing epoch9 bank unchanged and unconsumed; labels only scorer/auditor after frozen gates; no selection/fit use",
+    "allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch10/confirmation-allowlist.json",
+    "allowlist_sha256": "65485b57d37a3341031cd4e125539e6c052f34844a60f93be7f1035db68c913e"
+  },
+  "calibration": "none",
+  "temperature": 1,
+  "data_ordering": {
+    "contract_frozen_at": "2026-10-23T00:20:40.490321+00:00",
+    "document_role_frozen_at": "2026-10-23T00:20:40.478078+00:00",
+    "before_measurement": true
+  },
+  "model_identity": {
+    "repo": "Xenova/DeBERTa-v3-base-mnli-fever-anli",
+    "revision": "72a1ce83a0144efaf828b3c3844320a61197a53d",
+    "onnx_sha256": "ab9da76bb06054ea6b921560c1ecf5683a9e4d96f0ea73d78d3b4a8990aea882",
+    "onnx_bytes": 244291931,
+    "labels": {
+      "0": "entailment",
+      "1": "neutral",
+      "2": "contradiction"
+    },
+    "raw_id2label": {
+      "0": "entailment",
+      "1": "neutral",
+      "2": "contradiction"
+    },
+    "typed_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "mapping": "Yes=P(Entailment);No=P(Contradiction)+P(NotMentioned);T1;lexical No on exact .5 tie",
+    "layers": 12,
+    "hidden_size": 768
+  },
+  "candidate_manifest_sha256": "2d67d11ae1052bb048cbeadde6823b33f8c0df41a9f65b11d669a012191c1e87",
+  "independent_acceptance_sha256": "493b93ca29c98f73cc4734243a15b46d549d47cd8206fd804e327d87d42c6eab",
+  "confirmation_gate_sha256": "37bdec2eeee219f7e2f2d7d97b67e7c585cda0e287022001611ad685fdfe4ea1",
+  "DEV_gate": "Primary>=eachof3controls+2correct; Brier/NLLnonworseALL3,strictpropergainbothmatched; strictvalid24/errors0all",
+  "confirmation_gate": "Frozen nominal2000seed20261022 paired16docbootstrap primaryaccuracygainCI lower>0ALL3 andproperimprovementCI lower>=-1e-12ALL3; pointnonworse; independentreviewonly",
+  "budget": {
+    "native_attempt_cap": 2,
+    "attempts_started_before": 0,
+    "retries": 0,
+    "seconds_per_phase_including_init_fit_cleanup": 600,
+    "CPU_cores": 2,
+    "ORT_intra": 2,
+    "ORT_inter": 1,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "lifetime_attempts_before": 12
+  },
+  "context_policy": "Exactepoch6source28bceb/tokenizera86f;40rankedanchors+sameparagraphneighbors/singletonraw512/wholeclaim; raw512guard/no clipping/padding/grid; sameall3selectors; native104baseline sees identicalprimarypackedexcerpt.",
+  "runtime_admission": {
+    "formula_id": "48xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "max_DEV_units": 23,
+    "max_confirmation_units": 57,
+    "formula": "48*maxDEVHTTPseconds*max(1,maxCONFunits/maxDEVunits)+2*DEVinitseconds+60; require<=600 andlease_remaining>=forecast+30",
+    "scope": "Conservative admission only; no confirmationlabels/modeloutputs; actual watchdog remains600"
+  },
+  "evidence_scope": "TargetANYpositiveannotatedcharacterintersection, emptyannotation0; weakcoverageproxy, never sufficient-evidence/absence proof. OOF auxiliary probabilities during decisionfit vs finalallTRAIN auxiliary at inference creates disclosed distribution shift. Goldwhole-documentlabels maynotbe supported byretrievedpackedcontext; retrievalmissneverprovesClaimBenchinsufficiency.",
+  "numeric_scope": "Source-position numbers retention/omission and generic numerical features; no numericaltruthcertification/answerlookup.",
+  "source_license": "ContractNLI CC-BY4 attribution and exactsource/model/scorer revisions pinned; reusedpretrained9 upstreamMITdeclaration/converterinheritedscope/mixedtrainingterms/unknowncontamination/exactupstreamweightprovenancegap disclosed. Publicbinaries omitted.",
+  "study_contract_sha256": "0d9dd8674d11195313c169706068e6545de5578708441899beeaa24741d959cc",
+  "prior_exposures": "Allhistoricaleasy48/Legal96/originaldevCONF96f018 plus157originaltrain groups permanentlyDEV. ReusedTRAIN24 arealreadyamong157; newDEV8 becomefutureDEVafteractualphase1, evenfitfailure. PreservedCONF48retiredafterANYphase2attempt."
+}

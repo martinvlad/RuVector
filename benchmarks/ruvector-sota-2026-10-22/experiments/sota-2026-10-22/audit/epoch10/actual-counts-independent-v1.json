@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T00:48:05.148675+00:00",
+  "checks_passed": true,
+  "scope": "Independent saved-output count/resource/identity/metric arithmetic only; no model/native/fitting/confirmation reads",
+  "pins": {
+    "plan_sha256": "eb6f040d544e83632830921281bda98deb740c70a176c54d2b2e5c9d8d86fb84",
+    "main_actual_audit_sha256": "5b518aab671a8f64b847d7fce8db39bc4121ab84dc967dd49f4cd87e3a6ef450",
+    "root_epoch_manifest_sha256": "2e99e7d2a754508ce465b67f30597cfa823d372c117a572eae9f28ef89682c42",
+    "root_RESULTS_sha256": "8f1a02abed679a696f43dda389c22357c2eecf5ea3a7b62873c6dbe5485f3a1f",
+    "records_sha256": "1fed12c54c2b419072e975b1e0cd8ae54e1ce607b0aace7c746d9d3f26f80519",
+    "wire_sha256": "2994a0c01253fee39cf411103a7acab77f9c46b9ab166ed63138194fda9b63cb",
+    "TRAIN_cache_sha256": "8cdbe383ac2f6fa458c8d43704561acd10a64d70bc2b94d1deaab850ba6110be",
+    "fit_lock_sha256": "443d483f33b30dcb2349dd07b01b4ea42356d63969899ec130af42290aa968c6"
+  },
+  "actual_counts": {
+    "native_phase_processes": 1,
+    "TRAIN_feature_HTTP": 72,
+    "DEV_evaluation_HTTP": 24,
+    "confirmation_HTTP": 0,
+    "started_requests": 96,
+    "HTTP200_responses": 96,
+    "recorded_responses": 96,
+    "server_audit_rows": 96,
+    "errors": 0,
+    "started_without_wire": 0,
+    "native_vector_bundles": 96,
+    "all_bundles_exact_hash_size_and_finite_vector_shape_checked": true,
+    "native_searches": 96,
+    "native104_predictions": 96,
+    "NLI_singleton_pairs": 288,
+    "BGE_texts": 610,
+    "BGE_batches": 174,
+    "lifetime_native_attempts": 13
+  },
+  "cumulative_after_epoch10": {
+    "native_attempts": 13,
+    "successful_HTTP": 735,
+    "training_feature_requests": 144,
+    "evaluation_diagnostic_decisions": 591
+  },
+  "metrics_recomputed_from_actual_binary_probabilities": {
+    "ruvector_top2": {
+      "n": 24,
+      "correct": 17,
+      "brier": 0.4066192724272553,
+      "nll": 0.5852220227618309
+    },
+    "same_nli_lexical_top2": {
+      "n": 24,
+      "correct": 14,
+      "brier": 0.45753337884875034,
+      "nll": 0.6459060834755073
+    },
+    "same_nli_positional_first2": {
+      "n": 24,
+      "correct": 17,
+      "brier": 0.38335823946557834,
+      "nll": 0.5631454693301994
+    },
+    "native104_on_ruvector_evidence": {
+      "n": 24,
+      "correct": 17,
+      "brier": 0.4985879821024212,
+      "nll": 0.6917351498574238
+    }
+  },
+  "maximum_probability_sum_roundoff": {
+    "ruvector_top2": 2.220446049250313e-16,
+    "same_nli_lexical_top2": 2.220446049250313e-16,
+    "same_nli_positional_first2": 1.1102230246251565e-16,
+    "native104_on_ruvector_evidence": 7.999999995789153e-08
+  },
+  "frozen_DEV_gate_passed": false,
+  "rejection_reason": "Primary17 ties positional17 and same-excerpt10417, below required+2; positional Brier/NLL also better. Lexical14 does not rescue failed all-control gate.",
+  "latency_recomputed_from_wire_seconds": {
+    "train": {
+      "p50": 2.035062807997747,
+      "p95": 3.5267539488486372,
+      "max": 3.956579644996964
+    },
+    "development": {
+      "p50": 1.9054401799985499,
+      "p95": 3.0073839094999126,
+      "max": 3.5498096570008784
+    }
+  },
+  "resource_arithmetic": {
+    "whole_phase_wall_seconds_including_init_fit_cleanup": 209.73199689399917,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "ORT_threads": 2,
+    "worker_plus_terminated_children_CPU_seconds": 387.27028,
+    "worker_peak_RSS_bytes": 1331503104,
+    "largest_terminated_child_peak_RSS_bytes": 1331109888,
+    "scope": "RSS process high-water marks are not sum or simultaneous total memory; latency includes all controls, not primary-only deployment.",
+    "cleanup_recorded_absent_and_within_deadline": true
+  },
+  "identity_arithmetic": {
+    "prior_exposed_originaltrain_groups": 157,
+    "reused_TRAIN_additional_exposure": 0,
+    "new_consumed_DEV_groups": 8,
+    "exposed_originaltrain_groups": 165,
+    "unreserved_remaining": 242,
+    "confirmation_reserved_groups": 16,
+    "confirmation_queries_project_model_unused": 48,
+    "confirmation_path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+    "confirmation_sha256_metadata_reference": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "confirmation_no_phase_directory_or_selection_lock": true,
+    "fit_lock_before_first_DEV_request": true,
+    "TRAIN_cache_exact_first72_measured_records": true,
+    "TRAIN_DEV_input_hashes_order_ids_exact_frozen_projection": true
+  },
+  "source_verification": {
+    "frozen_pins": 190,
+    "directly_hashed_in_isolated_project_excluding_CONF_dataset": 189,
+    "confirmation_dataset_pin_not_opened": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+      "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50"
+    },
+    "main_independent_report_all190_verified": 190,
+    "note": "Explicit no-CONF-read honored: all189 other pinned files directly verified; unchanged metadata and main source audit supply CONF pin. No confirmation labels or rawfile opened."
+  },
+  "root_manifest_actual_report_schema": "PASS required fields exist and actual96/72/24/0 logs/count/resource/metrics match. No builder rerun.",
+  "root_RESULTS_review": "Count,17/14/17/17,209.731997s,latency/RSS/CPU,CONFunused andchampion unchanged match saved evidence; correctly disclaims official benchmark result.",
+  "official_score": null,
+  "official_rank": null,
+  "champion_promoted": false,
+  "source_data_raw_modified": false,
+  "native_calls_by_this_audit": 0,
+  "model_forwards_by_this_audit": 0,
+  "real_data_fits_by_this_audit": 0,
+  "confirmation_dataset_read": false,
+  "paid_calls": 0
+}

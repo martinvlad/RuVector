@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "data_role_contract": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch10/data-contract.json",
+    "bytes": 3602,
+    "sha256": "c6178d4d2f4144161b0b095b714e64f227fba71cc6e73908ff767dcb96105aec"
+  },
+  "train_input_only_allowlist": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch10/train-allowlist.json",
+    "bytes": 18415,
+    "sha256": "d8723120248949a840beabd4aba8cabddc15aa8a801765cf2eb0d43bbac589f6"
+  },
+  "train_only_label_projection": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch10/train72.jsonl",
+    "bytes": 818178,
+    "sha256": "d98f05b49ebad6a9cac447238b32aa3f8ccefa1253bdd2d52465bd111403c644"
+  },
+  "train_only_annotation_projection": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch10/train-annotations.json",
+    "bytes": 46767,
+    "sha256": "17e7021fc3cfdd6db66bc0bebc1adff2d671683914c0720fea0a0e1f6a3d2a49"
+  },
+  "allowed_training_queries": 72,
+  "allowed_training_document_groups": 24,
+  "threeway_classes": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "labels_or_inputs_inspected_by_source_worker": false,
+  "read_policy": "ExactTRAIN72 labels+annotations opened only once at fit; no DEV/CONF/fullsource label access; all annotation fields excluded from inference"
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T00:30:15.872674+00:00",
+  "status": "PASS_INTERFACE_REVIEW_PENDING_FINAL_PLAN_MATERIALIZATION",
+  "reviewer": "Independent epoch10 DATA worker; supplemental root-controller/data interface review only",
+  "source_identity": {
+    "freeze_script_sha256": "c2cbe6a8200780e2d2fdf7ce8f88f2ed6e8b0770dc8a8d02cbae963306d9c68f",
+    "controller_sha256": "63fa0c079fedcd3262bae7c1270eca6c5fe57e2fed761f80c7d77773a9009cc2",
+    "controller_tests_sha256": "8660641024432d91b9371c6aac801139208f8dcdf17747e4490d40bdfaa551ad",
+    "candidate_manifest_sha256": "2d67d11ae1052bb048cbeadde6823b33f8c0df41a9f65b11d669a012191c1e87",
+    "candidate_config_sha256": "0bc127ff92ffd9a3362517010c86e9d4d5113950d17e31a24af79090a165d9c5",
+    "data_contract_sha256": "c6178d4d2f4144161b0b095b714e64f227fba71cc6e73908ff767dcb96105aec",
+    "data_publication_allowlist_sha256": "16763d1eaa9a38b4396d58a1cea99863df80296a6f69297c66bedb1895f683e3"
+  },
+  "checks": {
+    "exact_train_label_projection_and_annotation_and_allowlist_config_bindings": true,
+    "candidate_source_and_read_only_dependency_manifest_hashes_and_sizes": true,
+    "metadata_only_role_counts": {
+      "train": {
+        "queries": 72,
+        "document_groups": 24
+      },
+      "dev": {
+        "queries": 24,
+        "document_groups": 8
+      },
+      "confirmation": {
+        "queries": 48,
+        "document_groups": 16
+      }
+    },
+    "all_role_ids_and_document_groups_pairwise_disjoint": true,
+    "existing_confirmation_reference_sha256_unchanged": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "calibration_empty": true,
+    "freeze_script_derives_train_dev_conf_paths_from_exact_contract": true,
+    "freeze_script_adds_existing_epoch9_confirmation_as_explicit_pin": true,
+    "freeze_script_materializes_paths_under_isolated_actual_project_and_checks_hashes": true,
+    "freeze_script_does_not_load_full_original_train_or_confirmation_labels": true,
+    "runtime_fit_reads_only_exact_train72_and_annotation_sidecar": true,
+    "controller_request_body_only_state_and_questions": true,
+    "controller_train_cache_head_and_fit_lock_before_DEV_row_parse_or_request": true,
+    "controller_fit_failure_stops_without_DEV_or_confirmation_fallback": true,
+    "controller_confirmation_artifact_and_admission_locks_before_model_constructor": true,
+    "controller_DEV24_and_runtime_gate_before_second_phase": true,
+    "controller_separate_two_nonretryable_CPU2_600s_phase_processes_and_cleanup": true,
+    "controller_conservative_bank_retirement_after_actual_confirmation_start": true,
+    "frozen_data_publication_files_still_match": 24
+  },
+  "mock_only_controller_tests": {
+    "command": "retrieval/.venv/bin/python -B experiments/sota-2026-10-22/controller/test_epoch10_loop.py",
+    "tests": 18,
+    "failures": 0,
+    "errors": 0,
+    "native_calls": 0,
+    "model_initializations_or_forwards": 0,
+    "real_data_fits": 0
+  },
+  "limitations": [
+    "Freeze script was inspected, not executed by this worker. Materialized plan and isolated runtime closure require final independent source/math/plan approval by the assigned auditor.",
+    "This review does not certify model quality or convergence. All inference/fitting/gated confirmation measurements remain future work at this review timestamp.",
+    "Source pinning may read complete DEV/CONF bytes for cryptographic identity; this worker did not parse or select on confirmation labels. Confirmation metadata-only allowlist was used for identity/count/disjointness checks.",
+    "TRAIN is reused exposed data; new DEV is a source-only one-shot draw; unchanged confirmation is project-model-unused public originaltrain, with unknown upstream pretraining overlap."
+  ],
+  "issues": [],
+  "data_files_modified": false,
+  "freeze_script_executed": false,
+  "confirmation_labels_inspected": false,
+  "native_calls": 0,
+  "model_initializations_or_forwards": 0,
+  "real_data_fits": 0,
+  "paid_calls": 0,
+  "official_score": null,
+  "official_rank": null
+}

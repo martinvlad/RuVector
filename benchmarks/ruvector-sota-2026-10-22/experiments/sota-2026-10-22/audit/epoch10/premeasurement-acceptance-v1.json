@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T00:33:38.128862+00:00",
+  "checks_passed": true,
+  "accepted_for_one_controlled_study": true,
+  "plan_sha256": "eb6f040d544e83632830921281bda98deb740c70a176c54d2b2e5c9d8d86fb84",
+  "actual_project": "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch10/project",
+  "identical_outer_actual_plan": true,
+  "all190pins_verified_outer_and_actual": true,
+  "all_actual_pinned_paths_resolve_inside_project": true,
+  "final_candidate_manifest_sha256": "2d67d11ae1052bb048cbeadde6823b33f8c0df41a9f65b11d669a012191c1e87",
+  "final_candidate_sources": {
+    "head.py": "0b7f5575dc275e26d75694bc602774cafa0a4c4db757ebf9fdcfec54c3bf9b51",
+    "models.py": "3dae559f60d873b17945215b8af1ff6bdf0b28e0e77da08efaaee4062b13005f",
+    "runtime.py": "375264eb77f5424d3836287bc1802cc67aa604775931ae2fce4644bf5adc9fbc",
+    "features.py": "b934b1ec05d6a6553ddefc883ea18b34920050848f0cb52f21a1c947c36de3f0",
+    "test_head.py": "a4447ae89083d000e7d1da8e75f899a997dc738e334ac7c78a56562aa25cc9e3"
+  },
+  "data_roles": {
+    "train": "Reused exposed72/24docs + TRAIN-only annotations; only these labels/spans enter5fits",
+    "development": "Fresh24/8groups no fit or normalization",
+    "confirmation": "Preserved48/16groups project-model-unused conditional only, no labels inspected for selection or fitting",
+    "calibration": "none"
+  },
+  "source_guards": {
+    "TRAIN_cache_then5fixedfits_then_artifact_and_fitlock_then_DEV_open": true,
+    "same_head_features_and_auxiliary_all3selectors": true,
+    "confirmation_exact_artifact_before_constructor_no_refit": true,
+    "fit_failure_blocks_DEV_CONF_no_fallback": true,
+    "actualCONF_attempt_retires_bank_even_without_HTTP": true
+  },
+  "premeasurement_evidence": {
+    "acceptance-contract-v1.json": "493b93ca29c98f73cc4734243a15b46d549d47cd8206fd804e327d87d42c6eab",
+    "confirmation-gate-v1.json": "37bdec2eeee219f7e2f2d7d97b67e7c585cda0e287022001611ad685fdfe4ea1",
+    "data-independent-v1.json": "d5c1219c0c2f44e85e9a03639a2c267078fe0d4d56df0afc51a4b52d23f7e887",
+    "runtime-independent-v1.json": "ac5570eade06bf417b6386edcb1aa8a910ca63d8538eadd632e484e841f7019b",
+    "context-capacity-independent-v1.json": "6b806ad69a5a01adb45a9e28e0cadb70ced77ea4426d199a22b73bd5cfa91211",
+    "math-source-independent-v1.json": "5537fff47578ae0b0f33c5b17e3c7454ff6db5833a8a3bd2e7bc0a4bae9f1904",
+    "model-static-independent-v1.json": "b92a38d3cff6ee35978de418a99fc32ada914b20a93cbfa0322a68a04ddb4b26"
+  },
+  "reader9_static_reference_scope": "model-static-independent-v1.json fields final_models/runtime/config/proposal identify historical candidate9 backbone/decoder static reference. They are NOT finalcandidate10 identities. Finalcandidate10 identity is bound separately by this report, math-source report and all190exactpins. Actual model9 assets/tokenizer/ONNX closure are reused unchanged.",
+  "DEV_gate": "At least2correct gain vs EACH3controls, proper nonworseALL3 and strictpropermatched, strict24valid/errors0",
+  "CONF_gate": "Frozen nominal2000seed20261022 16docbootstrap accuracygain CI lower>0ALL3, propergain CI lower>=-1e-12ALL3, pointnonworse",
+  "budgets": {
+    "native_batches": 2,
+    "threads": 2,
+    "seconds_per_batch": 600,
+    "seconds_per_decision": 30,
+    "candidate_configs": 1,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "prior12closed_new_cap2": true,
+  "forecast": "48*maxDEVHTTP*max(1,57/23)+2*phase1wholeinit+60 <=600 AND lease>=forecast+30; hardwatchdog inclfit/init/cleanup remains600 each",
+  "scope": "Acceptance authorizes the bounded measurement, not promotion. Internal3hypothesisNDApilot only; no officialscore/rank/SOTA/generalchampion replacement. Weakannotationcoverage is not sufficiency/absence; fullTRAINaux vsOOFshift disclosed. Empirical400step criteria may fail closed.",
+  "model_initializations_real_forwards_native_realTRAINfits_paid_calls_by_auditor": 0,
+  "no_run_started_at_verification": true
+}

@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "diagnostic_sha256": "3d3d723a40f9cfc85aeee57a86798f20bc1772c5e792d5f8287dcfb79e231cd4",
+  "status": "REJECTED_DEV_GATE",
+  "champion_promoted": false,
+  "submitted_native104_champion_preserved": true,
+  "confirmation48_consumed_or_attempted": false,
+  "official_score": null,
+  "official_rank": null,
+  "matched_saved_input_readouts": {
+    "ruvector_top2": {
+      "raw9_binary_correct": 13,
+      "trained_binary_correct": 17,
+      "raw9_binary_brier": 0.688771066087629,
+      "trained_binary_brier": 0.4066192724272553,
+      "raw9_binary_nll": 1.0439809108655287,
+      "trained_binary_nll": 0.5852220227618309,
+      "raw9_threeway_correct": 13,
+      "trained_threeway_correct": 16,
+      "trained_threeway_confusion": [
+        {
+          "gold": "Contradiction",
+          "predicted": "Contradiction",
+          "n": 1
+        },
+        {
+          "gold": "Contradiction",
+          "predicted": "Entailment",
+          "n": 2
+        },
+        {
+          "gold": "Contradiction",
+          "predicted": "NotMentioned",
+          "n": 2
+        },
+        {
+          "gold": "Entailment",
+          "predicted": "Entailment",
+          "n": 10
+        },
+        {
+          "gold": "Entailment",
+          "predicted": "NotMentioned",
+          "n": 2
+        },
+        {
+          "gold": "NotMentioned",
+          "predicted": "Entailment",
+          "n": 2
+        },
+        {
+          "gold": "NotMentioned",
+          "predicted": "NotMentioned",
+          "n": 5
+        }
+      ]
+    },
+    "lexical_top2": {
+      "raw9_binary_correct": 11,
+      "trained_binary_correct": 14,
+      "raw9_binary_brier": 0.7262104428798772,
+      "trained_binary_brier": 0.45753337884875034,
+      "raw9_binary_nll": 0.9749740468687887,
+      "trained_binary_nll": 0.6459060834755073,
+      "raw9_threeway_correct": 11,
+      "trained_threeway_correct": 12,
+      "trained_threeway_confusion": [
+        {
+          "gold": "Contradiction",
+          "predicted": "Entailment",
+          "n": 2
+        },
+        {
+          "gold": "Contradiction",
+          "predicted": "NotMentioned",
+          "n": 3
+        },
+        {
+          "gold": "Entailment",
+          "predicted": "Entailment",
+          "n": 7
+        },
+        {
+          "gold": "Entailment",
+          "predicted": "NotMentioned",
+          "n": 5
+        },
+        {
+          "gold": "NotMentioned",
+          "predicted": "Entailment",
+          "n": 2
+        },
+        {
+          "gold": "NotMentioned",
+          "predicted": "NotMentioned",
+          "n": 5
+        }
+      ]
+    },
+    "positional_first2": {
+      "raw9_binary_correct": 12,
+      "trained_binary_correct": 17,
+      "raw9_binary_brier": 0.7633206142906072,
+      "trained_binary_brier": 0.38335823946557834,
+      "raw9_binary_nll": 1.0988106300751475,
+      "trained_binary_nll": 0.5631454693301994,
+      "raw9_threeway_correct": 12,
+      "trained_threeway_correct": 14,
+      "trained_threeway_confusion": [
+        {
+          "gold": "Contradiction",
+          "predicted": "Contradiction",
+          "n": 1
+        },
+        {
+          "gold": "Contradiction",
+          "predicted": "Entailment",
+          "n": 2
+        },
+        {
+          "gold": "Contradiction",
+          "predicted": "NotMentioned",
+          "n": 2
+        },
+        {
+          "gold": "Entailment",
+          "predicted": "Entailment",
+          "n": 8
+        },
+        {
+          "gold": "Entailment",
+          "predicted": "NotMentioned",
+          "n": 4
+        },
+        {
+          "gold": "NotMentioned",
+          "predicted": "Entailment",
+          "n": 2
+        },
+        {
+          "gold": "NotMentioned",
+          "predicted": "NotMentioned",
+          "n": 5
+        }
+      ]
+    }
+  },
+  "trained_native_vs_positional": {
+    "correct_difference": 0,
+    "brier_difference": 0.023261032961676975,
+    "nll_difference": 0.022076553431631507,
+    "interpretation": "Native ties positional17/24 and same-excerpt10417/24; positional has better proper scores. Strict development acceptance fails; confirmation remains unused."
+  },
+  "auxiliary_TRAIN_all_views": {
+    "OOF": {
+      "views": 216,
+      "positive_annotation_overlap_targets": 85.0,
+      "mean_probability": 0.43984272013618503,
+      "mean_probability_positive": 0.5874654066979651,
+      "mean_probability_negative": 0.34405700748159496,
+      "auc_pairwise_tie_half": 0.7556353839245622,
+      "brier": 0.20067694250221804,
+      "nll": 0.6067036914709723,
+      "scope": "Annotation-overlap discrimination only; correlated selector/query/document views, not sufficiency or benchmark generalization."
+    },
+    "final_allTRAIN_in_sample": {
+      "views": 216,
+      "positive_annotation_overlap_targets": 85.0,
+      "mean_probability": 0.42821079333873163,
+      "mean_probability_positive": 0.6914540227807833,
+      "mean_probability_negative": 0.25740411774656075,
+      "auc_pairwise_tie_half": 0.9321059721598564,
+      "brier": 0.11099582644091732,
+      "nll": 0.369272430322142,
+      "scope": "Annotation-overlap discrimination only; correlated selector/query/document views, not sufficiency or benchmark generalization."
+    },
+    "final_minus_OOF_mean": -0.011631926797453408,
+    "final_minus_OOF_mean_absolute": 0.11320574510838055,
+    "final_minus_OOF_max_absolute": 0.6974280869658462
+  },
+  "auxiliary_consumed_DEV": {
+    "ruvector_top2": {
+      "views": 24,
+      "positive_annotation_overlap_targets": 12.0,
+      "mean_probability": 0.44849038354367926,
+      "mean_probability_positive": 0.5878304456871841,
+      "mean_probability_negative": 0.3091503214001744,
+      "auc_pairwise_tie_half": 0.7916666666666666,
+      "brier": 0.18993235169124656,
+      "nll": 0.5431693983194792,
+      "scope": "Annotation-overlap discrimination only; correlated selector/query/document views, not sufficiency or benchmark generalization."
+    },
+    "lexical_top2": {
+      "views": 24,
+      "positive_annotation_overlap_targets": 10.0,
+      "mean_probability": 0.3471546740127308,
+      "mean_probability_positive": 0.49240300015565264,
+      "mean_probability_negative": 0.24340586962492955,
+      "auc_pairwise_tie_half": 0.7928571428571428,
+      "brier": 0.18699034897162584,
+      "nll": 0.5392658208755754,
+      "scope": "Annotation-overlap discrimination only; correlated selector/query/document views, not sufficiency or benchmark generalization."
+    },
+    "positional_first2": {
+      "views": 24,
+      "positive_annotation_overlap_targets": 8.0,
+      "mean_probability": 0.3136753382892653,
+      "mean_probability_positive": 0.43985780386755446,
+      "mean_probability_negative": 0.2505841055001207,
+      "auc_pairwise_tie_half": 0.78125,
+      "brier": 0.18073828522200008,
+      "nll": 0.5293541760900984,
+      "scope": "Annotation-overlap discrimination only; correlated selector/query/document views, not sufficiency or benchmark generalization."
+    }
+  },
+  "DEV_annotation_numeric_retention": {
+    "ruvector_top2": {
+      "numeric_total": 420,
+      "numeric_retained": 55,
+      "mean_source_character_coverage": 0.2667594656996024,
+      "positive_annotation_cases": 17,
+      "any_annotation_overlap": 12,
+      "full_annotation_retained": 9,
+      "mean_annotation_character_fraction": 0.607512842070073
+    },
+    "lexical_top2": {
+      "numeric_total": 420,
+      "numeric_retained": 78,
+      "mean_source_character_coverage": 0.25272916953505664,
+      "positive_annotation_cases": 17,
+      "any_annotation_overlap": 10,
+      "full_annotation_retained": 6,
+      "mean_annotation_character_fraction": 0.4111538220292915
+    },
+    "positional_first2": {
+      "numeric_total": 420,
+      "numeric_retained": 95,
+      "mean_source_character_coverage": 0.2527496000923,
+      "positive_annotation_cases": 17,
+      "any_annotation_overlap": 8,
+      "full_annotation_retained": 4,
+      "mean_annotation_character_fraction": 0.3176798259806866
+    }
+  },
+  "DEV_ANN": {
+    "queries": 24,
+    "mean_topk_set_overlap_fraction": 1.0,
+    "queries_with_rank_position_difference": 0,
+    "max_top1_cosine_distance_regret": 0.0,
+    "scope": "Saved vector arithmetic only, no native/model calls. Float64 cosine and ascending index tie rule can differ from native float32/ties. No evidence is reselected or decoder rerun."
+  },
+  "learning": [
+    "The fixed TRAIN-only head reduces raw pretrained positive bias on the same saved DEV inputs across all three selectors; this is descriptive within this split, not an official result or cross-epoch causal gain.",
+    "Native retains more annotated characters than positional but does not beat its binary accuracy/proper scores. Retained annotation does not establish correct actor/scope interpretation or sufficiency.",
+    "The native typed head distinguishes only one of five contradictions as Contradiction; two become Entailment and two NotMentioned. Weak coverage discrimination cannot replace typed decision quality.",
+    "TRAIN OOF and final allTRAIN auxiliary probabilities differ substantially; final TRAIN discrimination is in-sample and cannot establish deployment generalization.",
+    "All24 saved native rankings match offline cosine ordering, so these observations provide no ANN-ranking defect to repair in this epoch."
+  ],
+  "one_next_direction": {
+    "status": "Unimplemented/unmeasured; no further attempt in closed epoch10",
+    "hypothesis": "A single pretrained typed clause decision pipeline with explicit actor/scope contradiction supervision and a deployment-matched evidence-proxy interface, frozen before a genuinely unused document split, may turn better native evidence retention into a measured decision advantage.",
+    "conditions": "Use only permitted training data and exact licensed model/source revisions; preserve E/C/N and matched same-model selectors. Do not fit/select/calibrate on any consumed DEV or unused confirmation. Any paid work requires a new actually authorized remaining cap and frozen price/time/cleanup plan."
+  },
+  "dependence": "DEV24 contains eight documents with three correlated queries each. Auxiliary views also share queries/documents. No independent24-case significance or full-benchmark placement is claimed.",
+  "new_model_calls": 0,
+  "new_native_calls": 0,
+  "new_optimizer_fits": 0,
+  "frozen_candidate_sources_modified": false
+}

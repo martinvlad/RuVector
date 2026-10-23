@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T00:40:07.230250+00:00",
+  "checks_passed": true,
+  "decision": "REJECTED_DEV_GATE_DO_NOT_PROMOTE",
+  "independent_actual_report_sha256": "5b518aab671a8f64b847d7fce8db39bc4121ab84dc967dd49f4cd87e3a6ef450",
+  "metrics": {
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 17,
+        "brier": 0.4066192724272553,
+        "nll": 0.5852220227618309,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 14,
+        "brier": 0.45753337884875034,
+        "nll": 0.6459060834755073,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 17,
+        "brier": 0.38335823946557834,
+        "nll": 0.5631454693301994,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 17,
+        "brier": 0.4985879821024212,
+        "nll": 0.6917351498574238,
+        "errors": 0,
+        "strict_valid": 24
+      }
+    },
+    "confirmation": null
+  },
+  "rejection_reason": "Primary17/24 ties positional17 and same-excerpt10417; frozen meaningfulDEVgate requires+2correct againstEACH3controls. PrimaryBrier.406619/NLL.585222 are worse than positional.383358/.563145. Accuracygain3vslexical14 alone is insufficient.",
+  "confirmation48": "No actualphase2 Popen, noHTTP/modeluse, no selectionlock; byteidentical850b bank reserved and project-model-unused. Sourceinput tokenizer-only capacity check is not model use. Unknown pretraining overlap persists.",
+  "training": "Reused exposedTRAIN72/24documents,216correlatedviews weight1/query. Independent all5fixed400step loss/gradient/Adam/normalization/docfold/OOF replay matches actualartifact; no DEV/CONF fit. Runtime allTRAINaux vsOOFmainfit shift disclosed. No claim of216independent trainingexamples.",
+  "fit_artifact_sha256": "a536a6d6abd8413d3b78f143ba5ae0ba9c9e4b2afd22929fd2f08cc8a92ca1c9",
+  "auxiliary_semantics": "ANY gold TRAINannotationcharacterintersection, emptyannotation0, weakcoverageproxy. Does not prove legal sufficiency, absence, or NotMentioned truth. Generic textual binding features are approximate observations, not verified legal-role semantics.",
+  "native_evidence": {
+    "native_core_searches": 96,
+    "native104_excerpt_predictions": 96,
+    "NLI_singleton_pairs": 288,
+    "BGE_texts": 610,
+    "BGE_batches": 174,
+    "all96literal_bundles_vectors_and_observed_native_ranks_verified": true,
+    "exact_cosine_top2_candidate_sets_full_order_matches": 96,
+    "same_context_pretrained_logit_drift": 0.0,
+    "scope": "Exact cosine diagnostics corroborate actualnativeevidence; never replace native observedranking."
+  },
+  "resources": {
+    "phase_wall_seconds": 209.73199689399917,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "worker_CPU_seconds": 367.15808400000003,
+    "terminated_children_CPU_seconds": 20.112196,
+    "worker_peak_RSS_bytes": 1331503104,
+    "child_largest_peak_RSS_bytes": 1331109888,
+    "scope": "Linuxprocesshighwatermarks are not summed or simultaneous totalRSS. WholeHTTP includesall3readers+excerpt104+embedding/index; not primarydeployment latency."
+  },
+  "latency": {
+    "train": {
+      "p50": 2.035062807997747,
+      "p95": 3.5267539488486372,
+      "max": 3.956579644996964,
+      "scope": "WholeHTTPall3NLIarms+native104excerpt+embedding/index, notprimarydeployment"
+    },
+    "development": {
+      "p50": 1.9054401799985499,
+      "p95": 3.0073839094999126,
+      "max": 3.5498096570008784,
+      "scope": "WholeHTTPall3NLIarms+native104excerpt+embedding/index, notprimarydeployment"
+    }
+  },
+  "uncertainty": {
+    "development": {
+      "same_nli_lexical_top2": {
+        "accuracy": {
+          "mean_improvement": 0.125,
+          "ci95": [
+            -0.041666666666666664,
+            0.25
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.05091410642149499,
+          "ci95": [
+            -0.09416628700706699,
+            0.1738359805694613
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.060684060713676345,
+          "ci95": [
+            -0.105432266766793,
+            0.21025560274056293
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "same_nli_positional_first2": {
+        "accuracy": {
+          "mean_improvement": 0.0,
+          "ci95": [
+            -0.20833333333333331,
+            0.20833333333333331
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.02326103296167701,
+          "ci95": [
+            -0.15969991756148655,
+            0.11824833869059004
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.022076553431631514,
+          "ci95": [
+            -0.16551960455441414,
+            0.12858576772693217
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "native104_on_ruvector_evidence": {
+        "accuracy": {
+          "mean_improvement": 0.0,
+          "ci95": [
+            -0.20833333333333331,
+            0.20833333333333331
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.0919687096751659,
+          "ci95": [
+            -0.01827522050546847,
+            0.2063875572936892
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.10651312709559294,
+          "ci95": [
+            -0.019351583479892364,
+            0.23239718248553415
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      }
+    }
+  },
+  "raw_snapshot_files_both_actual_and_outer_verified": 119,
+  "budget": {
+    "prior12closed": true,
+    "new_attempts": 1,
+    "new_cap": 2,
+    "lifetime_actual_attempts": 13,
+    "unspent_phase_slots": 1,
+    "further_attempts_allowed_in_closed_study": 0,
+    "successful_HTTP_this_epoch": 96,
+    "TRAIN_feature_HTTP": 72,
+    "DEV_evaluation_HTTP": 24,
+    "CONF_HTTP": 0,
+    "lifetime_successful_HTTP": 735,
+    "lifetime_TRAIN_feature_HTTP": 144,
+    "lifetime_evaluation_diagnostic_HTTP": 591,
+    "historic_failed_HTTP": 2,
+    "newerrors": 0,
+    "paid": 0,
+    "GPU": 0
+  },
+  "exposure": {
+    "newDEV8_permanently_retired": true,
+    "originaltrain_exposed_groups_total": 165,
+    "unreserved_groups_after_draw": 242,
+    "reserved_confirmation_groups": 16
+  },
+  "scope_limits": [
+    "Internal3hypothesisoriginalContractNLI NDApilot; not fullLegalBench/Jev300/ClaimBench benchmark result.",
+    "DEVonly8documentgroups; nominalbootstrapgainintervals overlapzero. No freshconfirmation/generalizationclaim.",
+    "No cross-epoch causalhead/model gain fromdifferentDEVdatasets. Saved same-input rawpretrained comparisons are descriptive only and cannot rescue gate.",
+    "Official#1requirespublisher-matchedscore/eligibility/rank; none established here."
+  ],
+  "next_step": "Preserve the negative result and unusedconfirmationbank. Any future hypothesis needs a distinct frozenTRAIN-only mechanism and unusedsourcegroups with same-modelmatchedretrievalcontrols; no posthocfeature/readout/threshold rescue on these consumedquestions.",
+  "champion": "SubmittedNative104/RRF10 unchanged",
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "new_submissions_or_emails": 0,
+  "auditor_model_native_paid_calls": 0
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T00:32:27.738746+00:00",
+  "status": "STATIC_REVIEW_WITH_TWO_METADATA_FIXES_REQUESTED_AND_POSTRUN_SCHEMA_PENDING",
+  "scope": "Independent review of root temporary publication/manifest builder scripts against restored durable checkpoint and frozen epoch10 data; did not execute either builder, inspect confirmation labels, fit or predict",
+  "script_pins": {
+    "stage_e10_sha256": "f88f82dc7cf77c3adaf84a66419c9181718c5b2a1a3715b0724266fc65d432a7",
+    "manifest_e10_sha256": "a3f12ec21c2dd87c7fadff367590cf19cd91a0c1c021ceeab0ee873ba5bfb4c4"
+  },
+  "reference_pins": {
+    "durable_CONTINUATION_sha256": "6bcd71bf08f60f7ab0868c6bce1dd508db91d17ea6c6c5fc24065dfdee2be5c2",
+    "durable_checkpoint_manifest_sha256": "89e4f023dedcd744eb3553387b35e38c49e5c1ae971312b3a994181e2b107750",
+    "epoch9_rejection_ledger_sha256": "0acb62adfc37e16b2ba68faa00cd3cf80ce479bcd39d7e9972e162190ca3b2a3",
+    "epoch10_data_contract_sha256": "c6178d4d2f4144161b0b095b714e64f227fba71cc6e73908ff767dcb96105aec",
+    "benchmark_refresh_sha256": "e9a7a75de386c60e055db2f658d13c46cd02a8e2e452bc7009589eb19500d87e",
+    "publisher_status_sha256": "4eff8cabd7fd03690c4d1ccbfe5c68883e71db856ccac8db1b802615e5700316"
+  },
+  "verified": {
+    "durable_cumulative_fields": {
+      "actual_HTTP_successful_decisions": 639,
+      "actual_HTTP_training_feature_requests": 72,
+      "actual_HTTP_evaluation_diagnostic_decisions": 567,
+      "native_corpus_attempts_including_failed_request": 12
+    },
+    "current_stage_updates_existing_training_feature_requests_key": true,
+    "current_stage_refreshes_benchmark_targets_from_epoch10_source_extract": true,
+    "fresh_ClaimBench_decision_leader": "decision/d1-ultra",
+    "fresh_ClaimBench_decision_accuracy_percent": 100.0,
+    "fresh_ClaimBench_language_models_at100": 4,
+    "fresh_JevBench_leader": "Chon-1.0-12B",
+    "fresh_JevBench_Capability": 85.3,
+    "publisher_result_and_rank_null": true,
+    "publisher115_is_original_queue_position_only": true,
+    "preserved_confirmation_path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+    "preserved_confirmation_sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "prior_native_attempts": 12,
+    "future_lifetime_attempts_formula": "12 + actual separately started phase processes",
+    "exposure_formula": "157 prior exposed +8 iff phase1 attempted +16 iff confirmation retired; TRAIN24 reused adds0",
+    "exposure_after_phase1_only": 165,
+    "exposure_after_both_phases": 181,
+    "unreserved_originaltrain_after_fixed_draw": 242,
+    "reconstruction_counts": {
+      "remote_Git_blobs_verified": 1330,
+      "checkpoint_project_source_files": 1264,
+      "additional_base_files": 48
+    },
+    "historical_ledger": {
+      "prior_rejections": 9,
+      "append_only_load": "manifest script loads epoch9/REJECTION_LEDGER.json, appends epoch10 to rejections/internal_acceptances, preserves historical entries and budget keys"
+    },
+    "actual_result_fields_are_derived_from_saved_logs_not_scheduled_work": true,
+    "native_corpus_completed_phase1_requires_exit0_and96_train_plus_DEV_records": true,
+    "native_corpus_completed_phase2_requires_exit0_and48_confirmation_records": true
+  },
+  "issues_requested_to_root": [
+    {
+      "id": "stale-cumulative-note",
+      "severity": "metadata",
+      "script": "stage_e10.py",
+      "field": "execution_observed.counting_note",
+      "finding": "Current literal says Trainingfeature72 and Epoch9 zero-shot after adding epoch10 TRAIN feature requests. It becomes stale when TRAIN collection completes.",
+      "fix": "Derive note from cumulative actual_HTTP_training_feature_requests and explicitly describe epoch10 TRAIN72 acquisition separately from DEV/CONF decisions."
+    },
+    {
+      "id": "unconditional-exposure-summary",
+      "severity": "metadata_conditional_path",
+      "script": "stage_e10.py",
+      "field": "exposed_development_sets append",
+      "finding": "Summary is appended unconditionally and says reserved16 even if phase2 retired that bank; a zero-phase failure would also be described as8 new exposures. Main manifest USED_IDENTITIES formula already handles these conditions correctly.",
+      "fix": "Condition newDEV exposure on actual phase1 attempt; derive total exposed and reserved bank state from USED_IDENTITIES/result confirmation_consumed. Preserve bank as reserved only when unattempted."
+    }
+  ],
+  "issues_resolved_during_review": [
+    {
+      "id": "training-counter-key",
+      "initial_finding": "Initial stage used nonexistent actual_HTTP_training_feature_decisions, causing KeyError against durable CONTINUATION.",
+      "current_status": "Root corrected to existing actual_HTTP_training_feature_requests in current pinned script."
+    },
+    {
+      "id": "stale-ClaimBench-leader",
+      "initial_finding": "Initial stage inherited DeciderV1.2/99.694 without applying fresh epoch10 official ClaimBench extract.",
+      "current_status": "Root added benchmark_targets update from epoch10 benchmark-refresh; decision/d1-ultra100 and fourLMs100 now propagated."
+    }
+  ],
+  "pending_actual_validation": [
+    "No epoch10 actual-independent-v1.json exists at review time. Confirm exact auditor schema for metrics.development/confirmation, completion, resources, latency_by_phase_seconds, ANN agreement fields, max_same_context_singleton_logit_drift, paired_doc_bootstrap, confirmation_consumed and gate fields before running manifest builder.",
+    "HTTP200 responses and completed parsed records are counted separately. If they differ after a malformed200/partial request, inspect phase-specific wire counts before cumulative evaluation/training split; preserve unknown started-without-wire separately.",
+    "Review final staged outputs and historical ledger prefix after builders run; this source review does not claim publication occurred."
+  ],
+  "owned_data_modified": false,
+  "builders_executed": false,
+  "confirmation_labels_inspected": false,
+  "native_calls": 0,
+  "model_initializations_or_forwards": 0,
+  "real_data_fits": 0,
+  "paid_calls": 0,
+  "official_SOTA_established": false
+}

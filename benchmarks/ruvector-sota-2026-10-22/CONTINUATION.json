@@ -3,22 +3,22 @@
   "objective": "Reach independently verified SOTA using actual RuVector; initial target JevBench open-weights Capability under official caps.",
   "goal_met": false,
   "official_rank": null,
-  "champion": "SubmittedNative104/RRF10unchanged; epoch9 REJECTED_DEV_GATE",
+  "champion": "SubmittedNative104/RRF10unchanged; epoch10 REJECTED_DEV_GATE",
   "prior_published_base_commit": "11983d212b951305bcab06ad868bca5a12ea2954",
-  "checkpoint_manifest_sha256": "89e4f023dedcd744eb3553387b35e38c49e5c1ae971312b3a994181e2b107750",
+  "checkpoint_manifest_sha256": "4d4c22ee6431b73fe28a301d4b1882de221424bcc7c7a7761c1b4deff725f714",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
-    "native_corpus_batches": 10,
-    "actual_HTTP_decisions": 639,
+    "native_corpus_batches": 11,
+    "actual_HTTP_decisions": 735,
     "paid_inference_calls": 0,
     "new_GPU_rentals": 0,
-    "native_corpus_batches_completed": 10,
-    "native_corpus_attempts_including_failed_request": 12,
-    "actual_HTTP_successful_decisions": 639,
+    "native_corpus_batches_completed": 11,
+    "native_corpus_attempts_including_failed_request": 13,
+    "actual_HTTP_successful_decisions": 735,
     "actual_HTTP_failed_requests": 2,
-    "counting_note": "Cumulativeevaluation/non-fitHTTP includeshistoricaladaptivepublic/TRAIN/DEV/confirmation; notallfreshheldout. Trainingfeature72remainsseparate. Epoch9zero-shotactualcountsfromPopen/wire, no scheduledworkcalledexecuted.",
-    "actual_HTTP_training_feature_requests": 72,
-    "actual_HTTP_evaluation_diagnostic_decisions": 567
+    "counting_note": "Cumulative counts include historicaladaptivepublic/evaluationdiagnostics; notallfreshheldout. TrainingfeatureHTTP countedseparately, never benchmarkgeneralization. Epoch10 actual TRAIN/DEV/conditionalCONF fromPopen/wire; scheduledwork notcalledexecuted.",
+    "actual_HTTP_training_feature_requests": 144,
+    "actual_HTTP_evaluation_diagnostic_decisions": 591
   },
   "epochs": [
     {
@@ -112,6 +112,16 @@
       "confirmation_consumed": false,
       "confirmation_requests_completed": 0,
       "scored_decisions": 24
+    },
+    {
+      "epoch": 10,
+      "status": "REJECTED_DEV_GATE",
+      "manifest": "experiments/sota-2026-10-22/epoch10/EPOCH_MANIFEST.json",
+      "DEV_n": 24,
+      "candidate_correct": 17,
+      "confirmation_consumed": false,
+      "confirmation_requests_completed": 0,
+      "scored_decisions": 24
     }
   ],
   "used_confirmation_sets": [
@@ -125,19 +135,21 @@
     "Legal96zero-shotfourtaskadaptation,notfull162taskofficialLegalBench",
     "NoClaimBenchRuVectorscore; fullquestions/scorer/license/submissionnotverified"
   ],
-  "next_research_priority": "Close this single broaderpretrainedthreewayreader study; all11priorattemptsremainclosed, no retry/grid/calibration/rescue on exposedquestions. Preserve submittedNative104/RRF10. A future distincthypothesis may use TRAIN-only evidence-supervised actor/action/modality/condition bindings with3waytargets; freeze source/TRAIN/DEV/calibration/unusedCONF/runtime first, thenactualnative matchedreadercontrols/independentgates. Broaderpretraining alone is not proven legalgeneralization. Alloldf018confirmation96 remainsDEVforever. No currentJev300/fullLegalBench/ClaimBenchscore/rank. Officialsuccessneedsmatchingpublisherresult/rank/eligibility. Epoch9CONF48 remainsproject-model-unused reservedbank850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50; neverclaimitwasexecuted. FuturefreshDEV must exclude8newDEVgroups and preserveCONF16 until frozen gates.",
+  "next_research_priority": "Close this single TRAIN-only crossfitted evidence/clause-role head study; all12historicalattemptsremainclosed. Preserve submittedNative104/RRF10. No optimizer/readout/feature/threshold rescue on these exposed questions. Use saved exact logit/evidence/TRAINfit failure or acceptedfit diagnostics to distinguish weakcoverageproxy, OOF-to-final shift, residualdecision errors and retrieval/context omissions. A future genuinely distinct pretrained typed-decision approach needs frozenlicensed TRAIN/DEV/calibration/unusedCONF/source and bounded CPUforecast first. Unknownpretrainingoverlap persists; no currentJev300/fullLegalBench/ClaimBenchscore/rank. Officialsuccess requires matchingpublisherresult/rank/eligibility. Epoch9CONF48 remainsproject-model-unused reservedbank850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50, never executed thisepoch; newDEV8 permanentlyexposedafterphase1 evenfitfailure.",
   "benchmark_targets": {
     "JevBench": {
       "leader_observed": "Chon-1.0-12B",
       "capability_observed": 85.3,
-      "refresh_required": true
+      "refresh_required": true,
+      "last_observed_at_UTC": "2026-10-23T00:24:23.039732+00:00"
     },
     "ClaimBench": {
       "source": "https://www.vals.ai/benchmarks/claimbench",
-      "decision_leader_observed": "DeciderV1.2",
-      "accuracy_percent_observed": 99.694,
+      "decision_leader_observed": "decision/d1-ultra",
+      "accuracy_percent_observed": 100.0,
       "overall_language_models_at100": 4,
-      "RuVector_measured": false
+      "RuVector_measured": false,
+      "last_observed_at_UTC": "2026-10-23T00:24:23.481833+00:00"
     }
   },
   "future_epoch_limits": {
@@ -157,8 +169,9 @@
   "active_run": {
     "path": "ACTIVE_RUN.json",
     "run_id": "35c0d6af-5d4c-4ad4-8412-13ce361772d3",
-    "state": "SOURCE_DATA_PREPARATION",
-    "experiments_active": true
+    "state": "COMPLETE_REJECTED_DEV_GATE",
+    "experiments_active": false,
+    "publication_complete_in_this_commit": true
   },
   "exposed_development_sets": [
     "old public183",
@@ -170,7 +183,8 @@
     "epoch6 OriginalContractNLI train8newdocuments24queries declaredDEV, exact identity70fdaf9b5cd591b76d2de7a96629b34ec5d16fea5c1d1c10b19bb8413d5cb8db",
     "epoch7 OriginalContractNLI train8newdocuments24queries declaredDEV cb64cdba88d2f5a00c0b1c9bad2a299ca659af1edac039b8cf8e8e8d3fb8f2af",
     "epoch8 TRAIN72/24neworiginaltrain groupsd98f05b49ebad6a9cac447238b32aa3f8ccefa1253bdd2d52465bd111403c644 andDEV24/8othernewgroups89ceb7f6f8e72a7ad0e1247115a2b1991ccfe81563c2cf0ee362225c089601b9 exposed; neverfreshconfirmation. Futurefreshpool274.",
-    "epoch9DEV24/8neworiginaltrain groups SHA202a921c62e7b78cf4d5ac53264669d6471fd6cf868102bb04f2b8b9881d6b7f conservativelyexposedafteractualphaseattempt; neverfreshCONF. Other16groupsreservednewCONF48; unreservedpool250."
+    "epoch9DEV24/8neworiginaltrain groups SHA202a921c62e7b78cf4d5ac53264669d6471fd6cf868102bb04f2b8b9881d6b7f conservativelyexposedafteractualphaseattempt; neverfreshCONF. Other16groupsreservednewCONF48; unreservedpool250.",
+    "epoch10DEV24/8neworiginaltrain groups SHAb33c63e727b2990b2efea24234af5b7b9890e4b0ed2634534d4e1e942ca9a86e permanentlyDEVafterphase1attempt evenfitfailure; reusedTRAIN24adds0newexposures. Totalexposedoriginaltrain=165; unreserved242; confirmation16retired=False"
   ],
   "unused_confirmation_sets": [
     {
@@ -181,27 +195,27 @@
       "status": "PROJECT_MODEL_UNUSED_RESERVED; sourcepublic,unknownpretrainingoverlap; nofit/selection"
     }
   ],
-  "rejection_ledger": "experiments/sota-2026-10-22/epoch9/REJECTION_LEDGER.json",
-  "benchmark_refresh": "experiments/sota-2026-10-22/legal-transfer/epoch9/benchmark-refresh.json",
+  "rejection_ledger": "experiments/sota-2026-10-22/epoch10/REJECTION_LEDGER.json",
+  "benchmark_refresh": "experiments/sota-2026-10-22/legal-transfer/epoch10/benchmark-refresh.json",
   "restore_epoch3": "First restore_checkpoint.py; optional restore_epoch3_data.py materializes exact pinned original CC-BY data archive/train/dev/license. Existing bootstrap model flags do not acquire new NLI assets; obtain only official revisions in assets.lock.json/model-api, verify SHA. No inference during restore.",
   "restoration_boundary": "All public source/data/results hashrestored; native22filehelper verified. Coldproof explicitly lists deferredmodelassetpins(old/new); weights acquiredseparately via reviewedhelpers/exactofficialrevision+hashes. No inference or archivedcontroller rerun duringrestore.",
-  "publication_review": "experiments/sota-2026-10-22/audit/epoch9/final-publication-review-v1.json",
+  "publication_review": "experiments/sota-2026-10-22/audit/epoch10/final-publication-review-v1.json",
   "cumulative_budget_ledger": {
     "original_study_native_attempt_cap": 6,
     "prior_epochs_attempts": 3,
     "epoch3_native_attempts_including_failed_request": 2,
-    "cumulative_native_attempts": 12,
+    "cumulative_native_attempts": 13,
     "remaining_in_original_study": 0,
     "current_epoch_closed": true,
     "publication_period_native_calls_allowed": 0,
-    "next_epoch_rule": "Allhistoricalstudiesclosed, includinganyunspentconditional9slot; no retry. A newexplicitcontinuation permitsdistincthypothesis onlyafterfrozenlicensedTRAIN/DEV/calibration/project-unusedCONF/source/runtime, atmost2nonretryableCPU2/600sphases,paid0/GPU0. Oldf018DEVforever. Preserve9CONF48ifunused; ifretiredneednewverifiedbank. No repeatedunchangedblockerprobes.",
+    "next_epoch_rule": "Allhistoricalstudiesclosed, includinganyunspentconditional10slot; no retry. A newexplicitcontinuation permitsdistincthypothesis onlyafterfrozenlicensedTRAIN/DEV/calibration/project-unusedCONF/source/runtime, atmost2nonretryableCPU2/600sphases,paid0/GPU0. Oldf018DEVforever. Preserveepoch9CONF48ifunused; ifretiredneednewverifiedbank. No repeatedunchangedblockerprobes.",
     "original_study_status": "CLOSED_BUDGET_EXHAUSTED",
     "epoch4_native_attempts_including_failed_restoration": 1,
-    "new_study_id": "native-typed-pretrained-nli-e9",
+    "new_study_id": "native-evidence-role-head-e10",
     "new_study_attempt_cap": 2,
     "new_study_attempts_used": 1,
     "new_study_attempts_remaining": 0,
-    "total_historical_attempts": 12,
+    "total_historical_attempts": 13,
     "closed_epoch5_study": {
       "id": "native-deberta-base-resolved-2026-10-22-e5",
       "used": 1,
@@ -229,21 +243,35 @@
       "cap": 2,
       "unspent_slots": 0,
       "allowed_further": 0
+    },
+    "closed_epoch9_study": {
+      "id": "native-typed-pretrained-nli-e9",
+      "used": 1,
+      "cap": 2,
+      "unspent_slots": 1,
+      "allowed_further": 0
     }
   },
-  "publisher_status": "experiments/sota-2026-10-22/epoch9/publisher-status.json",
+  "publisher_status": "experiments/sota-2026-10-22/epoch10/publisher-status.json",
   "restore_epoch4": "See EPOCH4_RUNTIME_SETUP.txt and EPOCH4_ASSET_SETUP.txt; seven native package source files now included, .node/modelweights remain omitted with exact helpers/hashes. No repaired-runtime benchmark was run.",
   "epoch4_restoration_limits": "experiments/sota-2026-10-22/epoch4/RESTORATION_LIMITS.json",
   "restore_epoch5": "See experiments/sota-2026-10-22/candidate/epoch5/RESTORE.txt and reconstruction/restore_runtime.py after existing official dependency/model setup. Full8corefiles+14TypeSafe files pinned; isolated actual path resolution and outcome evidence saved.",
   "audit_replay_reproduction": {
-    "active_script": {
-      "path": "experiments/sota-2026-10-22/audit/epoch9/replay_actual_v2.py",
-      "sha256": "070152d911524ce2524bba51e94089aa4d4236b3d88df1795b8a0ce90cb50706"
+    "active_source": {
+      "path": "experiments/sota-2026-10-22/audit/epoch10/replay_actual_v2.py",
+      "sha256": "a1be9c8b8dd4cd14725fab87fb5331901ba79152b76acbfe213157c5de2947be"
+    },
+    "fit_source": {
+      "path": "experiments/sota-2026-10-22/audit/epoch10/verify_fit.py",
+      "sha256": "e8f4bb711cbb4c7618d4b84c6a2467f09df2f23fb7fd36811b00b3eda632beba"
     },
     "method_correction": {
-      "path": "experiments/sota-2026-10-22/audit/epoch9/replay-method-correction-v1.json",
-      "sha256": "265aa157ddf7ee46ef606de98112ddbf2782baf4d167ffe6ed0e9daa771a539e"
+      "path": "experiments/sota-2026-10-22/audit/epoch10/replay-method-correction-v2.json",
+      "sha256": "c0a58efc98da20fd4ae2808e64b0c3b579883ebf5e0d80a66bb0c4da85e3d164"
     },
-    "scope": "Replayv2changesONLYtwoassetdirectoryliteralsnli-large->nli-broader inarchivedauditorv1; pinnedv1/175scientificpins/scorer/gates/measurements unchanged. Useversionedv2forcached-evidenceanalysis, no model/nativeforwards."
+    "scope": "Cached rawlogit/evidence/vector/scorer/5fixedfit numerical verification only; no new model/nativecalls or candidate/gate changes; rawE/N/C summation compared1e-10 aftercanonical E/C/N reorder, exactlogitmapping preserved",
+    "command": "OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B experiments/sota-2026-10-22/audit/epoch10/replay_actual_v2.py --project . --out /tmp/ruvector-epoch10-audit-replay-UNUSED.json --expected-plan-sha eb6f040d544e83632830921281bda98deb740c70a176c54d2b2e5c9d8d86fb84",
+    "asset_directory": "experiments/sota-2026-10-22/candidate/epoch9/assets/nli-broader",
+    "output_rule": "Use an actually unused output path; verifier refuses overwrite. Exactfrozenassets/tokenizers/native sourcepins mustfirstbe restored and hashverified, but no sessions/nativeimports/forwards."
   }
 }

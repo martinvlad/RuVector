@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "selected_model_choice_sha256": "6f6309754803ff661258de195f96e5e5eed8eddae4e3b930a5bdaa599e565e66",
+  "FP32_and_INT8_model_metadata": "Exact e11 immutable config, tokenizer, special tokens and card at a70e12f8244efae07cf6fdfa935df30e3ac4a060, full three-way semantics E0/N1/C2. No tokenizer, context or decoder change between precision variants.",
+  "upstream": {
+    "repo": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "declared_model_license": "MIT",
+    "training_pairs": 885242,
+    "declared_training_datasets": [
+      "multi_nli",
+      "facebook/anli",
+      "fever",
+      "lingnli",
+      "alisawuffles/WANLI"
+    ],
+    "source_card_sha256": "216c3ac9ea77beec4e35a347c8b4edc47fbb3465e7c2a00dc923ae7b975cf346",
+    "source_config_sha256": "7f9d420b616691c5b575bab8839719aefbddc656d8e1316519414b097ce43e3d",
+    "source_API_sha256": "d61e448bd58e73b2aadbd812ea1007a18952490cbda806100b55c8ff50e2f232",
+    "conversion_provenance": "Xenova card explicitly links this exact upstream model name. No exact upstream weight commit or separate converter license is stated; source card/config/API revision is pinned, not claimed to identify converted weight provenance.",
+    "training_terms": "Upstreamdeclared MIT model; mixed training dataset terms remain. Prior officialANLI cc-by-nc4/FEVERmixedCCBYSA+GPL/MNLImixed terms apply; this study adds no training, republishes no pretrainedweights and makes no commercialor submissioneligibility guarantee. LingNLI/WANLI trainingrights notindependentlyaudited.",
+    "contamination": "No listed ContractNLI training, but unknown pretrainingoverlap and no record-level clean-training guarantee."
+  },
+  "variant_provenance_limit": "FP32 and INT8 are co-located exports at the same converter repository revision, not verified original-source exports or a bit-exact derivation proof. Difference alone cannot establish quantization causality. Exact upstream weight commit remains unverified. No pretrained weights are published.",
+  "model_artifacts_republished": false,
+  "source_data": "Original ContractNLI source/licensed projections prepared independently under CC-BY-4.0; six TRAIN diagnostics only on already exposed groups; no labels loaded by candidate.",
+  "scope": "Numerical fidelity of two published variants plus a distinct fixed-FP32 native retrieval pilot; not source-original verification or benchmark rank."
+}

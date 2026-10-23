@@ -1,0 +1,509 @@
+{
+  "schema_version": 1,
+  "candidate_id": "ruvector-native-fixed-FP32-large-threeway-variant-fidelity-epoch12",
+  "status": "SOURCE_FROZEN_PENDING_INDEPENDENT_FINAL_PLAN_ACCEPTANCE",
+  "runtime_module": "candidate.epoch12.runtime",
+  "runtime_class": "CandidateEngine",
+  "runtime_API": "CandidateEngine(artifact_path=None, enable_training_sanity=False); predict_train_sanity(state,questions,example_id); finish_training_sanity(); predict(state,questions); close(); execution_snapshot()",
+  "config": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch12/config.json",
+    "bytes": 3708,
+    "sha256": "f3dd2ceaa75bf1e250b4e77d5d90bb27075a77c739bd08172ded9be5ad27c5ca"
+  },
+  "sources": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/README.md",
+      "bytes": 3208,
+      "sha256": "d36f717e8d77d73121ec7ed00a88bc841b642bb635fce2636f938481450d3e93"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/RESTORE.txt",
+      "bytes": 1698,
+      "sha256": "a3786f18d9a8f79a220ba5846b92c2f7f50a15c42c1a3334b946e780478e3627"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/acquire_assets.py",
+      "bytes": 9043,
+      "sha256": "1583da98df25610e5a891e9df1debfbf7a929caef7d17b12ce1b306ce10dd914"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/asset-acquisition.json",
+      "bytes": 580,
+      "sha256": "bf4be22f79a4ce7e74f70708e582c0ff1d7ea3af0adc26083ca9c635a6b96e0e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/assets.lock.json",
+      "bytes": 6069,
+      "sha256": "83c54272dee7804a5e89d53adab498c697b022b63ed18d78480bc0da7449e4a3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/config.json",
+      "bytes": 3708,
+      "sha256": "f3dd2ceaa75bf1e250b4e77d5d90bb27075a77c739bd08172ded9be5ad27c5ca"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/freeze_manifest.py",
+      "bytes": 5070,
+      "sha256": "b93c4776f3067b652bd06252c3fa28671e01fe69a33f163d4d73e6ac2eea0779"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/model-assets.lock.json",
+      "bytes": 772,
+      "sha256": "10b4fb05aa47e85d22fe4ca4791b45f26dfdade24f02b5bcfafb010b857b9f9d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/model-choice.json",
+      "bytes": 4468,
+      "sha256": "6f6309754803ff661258de195f96e5e5eed8eddae4e3b930a5bdaa599e565e66"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/models.py",
+      "bytes": 11757,
+      "sha256": "5bf65ebf220953a0469a2944e8fba18933757472afdb924c14f013bd5c6ef2fb"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/onnx-static.json",
+      "bytes": 1912,
+      "sha256": "e0e59178870e1aa47b7df2975d5567e0050d8c0ab2c7d1e6b5e0490920f59c7f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/preflight_model.py",
+      "bytes": 1516,
+      "sha256": "e8c91d0c3b78aa5de700344ca4ecd8dec4dfa9282fedce728ea8c3e96d1df3e7"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/provenance.json",
+      "bytes": 2478,
+      "sha256": "218de89bf40c029ac4c05d419b5c444c1d1ec0c799ecefc557fd5df4f9c49416"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/runtime.py",
+      "bytes": 18522,
+      "sha256": "562f790e6dd48dc1ba91904b7d43663118ccefc98ff2ea5611d5825cc1d07d19"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/test_models.py",
+      "bytes": 8638,
+      "sha256": "4e92cb6b02cd760c5e237a1159334c755b3d26cdd867203c7462e921ce626158"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/test_runtime.py",
+      "bytes": 8849,
+      "sha256": "544b1b2ebea5e5765adb420e2051f24785577694ccfbcf5c4922e3f455b779a4"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/tests-result.json",
+      "bytes": 1159,
+      "sha256": "02eb9a30caa78327046e5641668c3c410be788b5c477cd13cea4be86bf3b2068"
+    }
+  ],
+  "read_only_code_dependencies": [
+    {
+      "path": "experiments/compounding/jevbench/cycle2/frozen-baseline/rules.py",
+      "bytes": 7880,
+      "sha256": "855b6b7a1a6d690ccee8d3bd8a4ff6268bb054e3209ff42ffc9291b42671cf98"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle2/round2/rules.py",
+      "bytes": 657,
+      "sha256": "691ef367b7a00f1a7d5e3deb6f327fcab8cd5f74061f139e5e9b30ad575ff3ad"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle2/round2/typed_numeric.py",
+      "bytes": 17463,
+      "sha256": "ca68e620eb0871e16d98f7242f3a874d72ae57569a6a201a6f6d57aa3c8af6b8"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/engine.py",
+      "bytes": 3940,
+      "sha256": "2263ca3740c43eb1a00816a0c625d70caad0eac67e9c42157056883b8c23e71c"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/freeze_round.py",
+      "bytes": 4683,
+      "sha256": "5725003743531e8e5dc72494c4d817701ec5715bdd6b1c72a44af0178db1c6cb"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/round1/probability.py",
+      "bytes": 10290,
+      "sha256": "31fb589b417f6590ea4bf13319ded417eae2e148b358f6be14ff1c8f39039abd"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/round1/rules.py",
+      "bytes": 665,
+      "sha256": "38227ac21558f6a1b435bda9963e4c22bb83c495a97855b71c1b608f890e35a0"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/round1/test_probability.py",
+      "bytes": 10917,
+      "sha256": "2c7e22bd7b0bade7867089b72ebf2264ef9092463bbded09c0521f3d2f89498d"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/round2/probability.py",
+      "bytes": 14189,
+      "sha256": "422651293ad4988b5f0f859479941914046493b5fdcaa9399a5aa0d58ad512c3"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/round2/rules.py",
+      "bytes": 665,
+      "sha256": "38227ac21558f6a1b435bda9963e4c22bb83c495a97855b71c1b608f890e35a0"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/round2/test_probability.py",
+      "bytes": 14794,
+      "sha256": "4674968e60a5ba67352d1526b9d589c8e92d124632fb750987155ec5436513bb"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/run.py",
+      "bytes": 12908,
+      "sha256": "414cb0e21f2210bce1bdc4c3b6565c2fdcebd3b0087c781fc6008a031cf2e7c6"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/save_attempt.py",
+      "bytes": 2715,
+      "sha256": "1e8aee550a93afedf665ccb8633a2547768191d6fde731349b0b21cf3db81c73"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/supervise.py",
+      "bytes": 2413,
+      "sha256": "f71737ef747fc1a94a82006b2b728ba3d6f95217d9c1d4e2f3633135df6d1ad3"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/test_engine.py",
+      "bytes": 1616,
+      "sha256": "5231d0c0c06c3019e60e7e642060ec95d18545d29d83517a85bcdd93a52e32df"
+    },
+    {
+      "path": "experiments/compounding/jevbench/cycle3/verify.py",
+      "bytes": 10382,
+      "sha256": "321e996280555e600623e295928385d5725be94b1b4e7e3e5e8cf7b2d70efe8b"
+    },
+    {
+      "path": "experiments/optimization/baseline-server.cjs",
+      "bytes": 3307,
+      "sha256": "acce673e82f571e939836142ebde5f4a4aadfd0d595d022cbcb49ae92fe84703"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch11/model-assets.lock.json",
+      "bytes": 3237,
+      "sha256": "26fa1cb66b5fda7034328172940095a17ac3506b057a09656ca0101da4512e45"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch11/model-choice.json",
+      "bytes": 3159,
+      "sha256": "47274482df76676385e230593f7dcc02aa20093b5eea2c29522e368fd3a23afa"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch11/proposal-manifest.json",
+      "bytes": 18607,
+      "sha256": "ce403b4d1ea7e1e6c1e5b6d60a427e09592a8035a07eba4562f94c8635095b07"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch11/provenance.json",
+      "bytes": 3968,
+      "sha256": "729a7ba9e4b7e5f880f5bca479135d31c1fa371b5c8735acb54acc081a5a18f1"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/models.py",
+      "bytes": 4708,
+      "sha256": "c5cf3500a89837e71adc754f0dc96d090e172068031545fc55ee349e80210716"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/runtime.py",
+      "bytes": 14155,
+      "sha256": "fdca85cf34c5fb50c1fa622192ad36c1d322fd7fee909c80e9e0d0f95154e649"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/assets.lock.json",
+      "bytes": 3975,
+      "sha256": "91f035c3bd5e24d6094a4656b2c2c35257bd0346eb7d278e5a8faf1ce817cfbd"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/config.json",
+      "bytes": 1025,
+      "sha256": "54620f15c84d562e1a2ab361acbe0431ffe9ba8278e1d1ca06a1cf685ba02f11"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/context.py",
+      "bytes": 2758,
+      "sha256": "ec7c77968c1b189a0b5f68e82a23b0967f0c4179fd35ecf3bfab757d3572fdbc"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/model-assets.lock.json",
+      "bytes": 4205,
+      "sha256": "0cf71f7476774716fbaf2c8c3002ac41dc7e61be14c7a0f2a97ef178ec4f9dff"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/models.py",
+      "bytes": 4504,
+      "sha256": "b6e7e3e6e8fe13b60e0efca2378f187d0d949467f611f1763cb8f0799a79aaab"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/proposal-manifest.json",
+      "bytes": 10277,
+      "sha256": "86a0f900c2dc1a8ae46c49a5c50af4da8ef98a2e7a0c3726b155ab96fa3530c1"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch4/runtime.py",
+      "bytes": 13126,
+      "sha256": "e93acc48ca3b8aade10179417e4c7090d1ec01ec31b1a6d4e3b04f8931ee91ae"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch5/preflight.py",
+      "bytes": 14094,
+      "sha256": "835a9e86c4f6983cab5531ee44c2d530738b7c55d61e9b8d9aa2ad6b24487a35"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch6/config.json",
+      "bytes": 1514,
+      "sha256": "27f1f8064516b73ba32515adec20d4bb53ce355b46944cd33ba8a7191fc412a1"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch6/context.py",
+      "bytes": 9205,
+      "sha256": "28bceb95282ec3e3e938f3211ccad04d2369fa29e1f191f187566339ae3b44d2"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch6/proposal-manifest.json",
+      "bytes": 13420,
+      "sha256": "337552710c2fdaf360fdc17f084a3f3df17d470322b114283b005c7130032eae"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch6/runtime.py",
+      "bytes": 12035,
+      "sha256": "8723ccb7dc8d8ae24133a98b76bf676fc3f005e9a684953ad70e4f53c3aab6a7"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch4/runtime-repair/official-package-closure.json",
+      "bytes": 3847,
+      "sha256": "3efc9666b549da8f70a22b0fca285dca68112f6835c767d08fd7f5946fc31726"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch5/typesafe-runtime-closure.json",
+      "bytes": 3310,
+      "sha256": "363bb39e63fd6fb212a0aed25974443f5a286ca5eaff867314f3daad5fbe0718"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/emit_round2_v2.py",
+      "bytes": 6073,
+      "sha256": "10f5f6d3fbc638a6b044fed34ae7ce0ca10eb23dc089731c1e09af7a4d47ac3c"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/engine.py",
+      "bytes": 3942,
+      "sha256": "a833b1772be7bf18f48a2be58b6dd315428e9efa920c5ff5f7867fc22e14e8e9"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/freeze_round2_v2.py",
+      "bytes": 3375,
+      "sha256": "ada2bbb5a60f5c74c489e1169fcd194696fb7c5b2f80f026aa550211aa19b35c"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round1/rules.py",
+      "bytes": 722,
+      "sha256": "fee7c41fccf65cd06ba39fbf23edf3540ec76ee8e3659aa82276dff6739fe057"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round1/test_relations.py",
+      "bytes": 9149,
+      "sha256": "028562825b2650086f0638212ecece76d0fc44f18bef0c1e0196513f4a4e08f4"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round1/typed_relations.py",
+      "bytes": 11915,
+      "sha256": "08b116e77d77df764dde3df0ca6170af099fa38c28b7fd640126f49f6851d6cc"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round2-v2/plan.json",
+      "bytes": 14784,
+      "sha256": "782db4034b2eb51ad9520a632ee94f7bdbb5bf0e8826ca44a91a055c15971f17"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round2-v2/rules.py",
+      "bytes": 722,
+      "sha256": "fee7c41fccf65cd06ba39fbf23edf3540ec76ee8e3659aa82276dff6739fe057"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round2-v2/test_relations.py",
+      "bytes": 14727,
+      "sha256": "154f805e45192e23ca32a34485d52f4f01f4f3d0b346370a077b5f0c7f80a6a2"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/round2-v2/typed_relations.py",
+      "bytes": 15580,
+      "sha256": "2a46e6de5782fcd917697b616cd2ae60591255c50b0cc1c084ab8ded3acbb145"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/run_round2_v2.py",
+      "bytes": 12919,
+      "sha256": "d4e47c80ee2d975eb87f27b7284b477eebca15102e43d2129dae43075c00ff0d"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/save_attempt.py",
+      "bytes": 2715,
+      "sha256": "1b29f6980d0882bec51ba15bf14573f8ab52fa4a9dbe49410cfacd3050378cdd"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/supervise_round2_v2.py",
+      "bytes": 2426,
+      "sha256": "496770cf2265b14eee1a92adfca0a92f35a0e3bfd4aa09f5905e9b1d0dfd2cac"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/test_engine.py",
+      "bytes": 1620,
+      "sha256": "25d7ba31422297b82ec177560c8d9267b30ee8c5948a7f012e01dccf92bd6383"
+    },
+    {
+      "path": "experiments/submission-2026-10-22/jevbench/verify_round2_v2.py",
+      "bytes": 10425,
+      "sha256": "39174381fbb1946c1d76616e5b98da4a6c96b670a4c45f2a7ddfec0043f57ef6"
+    },
+    {
+      "path": "experiments/swarm/jevbench-adapter/native-worker.cjs",
+      "bytes": 1523,
+      "sha256": "333e04b62bb13dfa578a26f86d6d69809485e4278dfca46fbae72aae41fd2d29"
+    },
+    {
+      "path": "experiments/swarm/jevbench-adapter/server.py",
+      "bytes": 17775,
+      "sha256": "aadde0913ee2276bcf188b1b49a2b6239004fa9f45ac9f90909b74e2de33b1ba"
+    },
+    {
+      "path": "experiments/swarm/jevbench-adapter/sources/jevbench_adapters_base.py",
+      "bytes": 2894,
+      "sha256": "fdddc42e4f71d774096f806c4ee844cc4c4b428385f01a017cb64153d7c089f4"
+    },
+    {
+      "path": "experiments/swarm/jevbench-adapter/sources/jevbench_adapters_typesafe.py",
+      "bytes": 5573,
+      "sha256": "780f879416479b645ee519bb85d0cce722d0df7aa2b41a029de92b76f2593e51"
+    },
+    {
+      "path": "experiments/swarm/jevbench-adapter/sources/jevbench_scoring.py",
+      "bytes": 5743,
+      "sha256": "6aa17d212ea20a3eeb6876149367842e8462c11dcb54d73df062fb406368331e"
+    },
+    {
+      "path": "experiments/swarm/jevbench-adapter/sources/jevbench_tasks.py",
+      "bytes": 4339,
+      "sha256": "b9c2f8ba9a7301519656d79d47c31b8ab0542a5545498ce3b339d5e93b976812"
+    },
+    {
+      "path": "retrieval/native-candidates.cjs",
+      "bytes": 1580,
+      "sha256": "45efc7fecd2d249aea7bd1f5e7d36bf26cfe57cd6f91de51ffd15adc039ec4a3"
+    }
+  ],
+  "assets_manifest": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch12/assets.lock.json",
+    "bytes": 6069,
+    "sha256": "83c54272dee7804a5e89d53adab498c697b022b63ed18d78480bc0da7449e4a3"
+  },
+  "data_role_pins": [
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch12/train-allowlist.json",
+      "bytes": 3864,
+      "sha256": "34e0d5f37d8fea16fd21d7c801df2f7455d808e3f05eeac3518b919515b72b3f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch12/data-contract.json",
+      "bytes": 5261,
+      "sha256": "bfb175660396473ef1f672903530792991725d68a8610aff2d887762597ce63b"
+    }
+  ],
+  "model_identity": {
+    "repo": "Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "a70e12f8244efae07cf6fdfa935df30e3ac4a060",
+    "onnx_sha256": "9fbf57959bd9143720289cd1eab1aaaa00fc99459fd25ffeff8eba1ccf955d2b",
+    "onnx_bytes": 1741989392,
+    "precision": "FP32",
+    "labels": {
+      "0": "entailment",
+      "1": "neutral",
+      "2": "contradiction"
+    },
+    "typed_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "mapping": "Yes=P(Entailment), No=P(Contradiction)+P(NotMentioned), T1, exact .5 tie No",
+    "layers": 24,
+    "hidden_size": 1024
+  },
+  "TRAIN_only_diagnostic_model": {
+    "repo": "Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "a70e12f8244efae07cf6fdfa935df30e3ac4a060",
+    "path": "experiments/sota-2026-10-22/candidate/epoch11/assets/nli-large-threeway/onnx/model_quantized.onnx",
+    "onnx_sha256": "f28cc7e69eb2834597c5ef2336f2adb7398b7bcb019282fb3f11d0130a3c0010",
+    "onnx_bytes": 642587600,
+    "use": "Only six frozen TRAIN-sanity primary native packed contexts. Never DEV/CONF; no fitted correction, threshold, model/precision choice or fallback."
+  },
+  "hypothesis": "Fixed FP32 primary tests numerical-variant fidelity and typed decision competence after e11 INT8 all-entailment collapse. The candidate is irrevocably FP32 before TRAIN outputs; no selection, calibration, fit or rescue. Same native/lexical/positional contexts and full three-way readout.",
+  "configs_in_grid": 1,
+  "fitting_training": [],
+  "calibration": [],
+  "training_or_calibration_fit": false,
+  "TRAIN_sanity_n": 6,
+  "TRAIN_already_exposed_groups": [
+    "original-contractnli:288",
+    "original-contractnli:239"
+  ],
+  "training_labels_read_by_candidate": false,
+  "precision_fixed_before_TRAIN_outputs": true,
+  "quantized_session_only_phase1_then_released_before_DEV": true,
+  "data_freeze_before_choice": {
+    "data_frozen_at": "2026-10-23T03:46:03.359178+00:00",
+    "choice_at": "2026-10-23T03:47:51.633800+00:00",
+    "data_contract_sha256": "bfb175660396473ef1f672903530792991725d68a8610aff2d887762597ce63b"
+  },
+  "exact_frozen_context_policy_sha256": "28bceb95282ec3e3e938f3211ccad04d2369fa29e1f191f187566339ae3b44d2",
+  "unchanged_policy_tokenizer_sha256": "a86f883318afa11c8c10466f1bf4efaeb6ded28a52cbe57217a8fa0d0a2a87df",
+  "actual_model_tokenizer_sha256": "7aa118770f066a74530d161c7d0b994d0629cc0ff3a0df213f184192773f960a",
+  "ranking_anchor_cap_all_arms": 40,
+  "same_neighbor_expansion_and512_token_context_policy": true,
+  "new_decoder_token_guard": 512,
+  "batch_size": 1,
+  "temperature": 1,
+  "padding": false,
+  "truncation": false,
+  "native_control": "Native104 on exactly primary packed excerpt, not original full champion",
+  "confirmation_separation": "New DEV24/8groups source-only frozen before fixed FP32 choice; TRAIN6 uses already exposed e10TRAIN groups only, no fitting. Existing CONF48 bank remains project-model-unused until parent gates. Unknown pretraining overlap; no confirmation labels used for fit/selection.",
+  "tests": {
+    "schema_version": 1,
+    "status": "PASS",
+    "tests_run": 17,
+    "failures": 0,
+    "errors": 0,
+    "exit_code": 0,
+    "verified_at": "2026-10-23T03:53:08.017844+00:00",
+    "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B -m unittest discover -s experiments/sota-2026-10-22/candidate/epoch12 -p test_*.py -v",
+    "scope": "Synthetic tokenizers and injected sessions only; config metadata read, no ORT initialization/forward/native calls or DEV/CONF/TRAIN labels",
+    "new_model_forwards": 0,
+    "new_native_calls": 0,
+    "new_evaluation_inputs_or_labels_read": 0,
+    "meaningful_cases": [
+      "Full three-way probability and neutral mass",
+      "Int64 singleton feeds and independent token guards",
+      "Common-logit-offset versus distribution-drift distinction",
+      "Identical semantic feed required for numerical comparison",
+      "Six immutable TRAIN IDs once each; unknown/mutated/duplicate blocked",
+      "Partial diagnostic failure retires ID and blocks DEV",
+      "INT8 release gates DEV and prevents any subsequent TRAIN reuse",
+      "Exact epoch6 context/packing and Native104 excerpt invariance"
+    ]
+  },
+  "static_model_check": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch12/onnx-static.json",
+    "bytes": 1912,
+    "sha256": "e0e59178870e1aa47b7df2975d5567e0050d8c0ab2c7d1e6b5e0490920f59c7f"
+  },
+  "variant_provenance_limit": "FP32 and INT8 are co-located exports at the same converter repository revision, not verified original-source exports or a bit-exact derivation proof. Difference alone cannot establish quantization causality. Exact upstream weight commit remains unverified. No pretrained weights are published.",
+  "new_model_forwards": 0,
+  "new_native_calls": 0,
+  "new_evaluation_inputs_or_labels_read": 0,
+  "free_public_FP32_asset_bytes_verified": 1741989392,
+  "paid_calls": 0,
+  "GPU": 0,
+  "execution_authority": "Parent only after independent source/data/runtime acceptance. One combined initialization+TRAIN6+INT8release+DEV24 process; conditional fixedFP32 CONF48 process; each CPU2/600s inclcleanup, max2nonretryable. No model/native probes or fitting outside these processes."
+}

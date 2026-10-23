@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "selected_at": "2026-10-23T03:47:51.633800+00:00",
+  "data_frozen_at": "2026-10-23T03:46:03.359178+00:00",
+  "data_contract_sha256": "bfb175660396473ef1f672903530792991725d68a8610aff2d887762597ce63b",
+  "configs_in_grid": 1,
+  "choice_before_any_FP32_asset_download": true,
+  "repo": "Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+  "revision": "a70e12f8244efae07cf6fdfa935df30e3ac4a060",
+  "onnx_remote_path": "onnx/model.onnx",
+  "onnx_bytes": 1741989392,
+  "onnx_sha256": "9fbf57959bd9143720289cd1eab1aaaa00fc99459fd25ffeff8eba1ccf955d2b",
+  "precision": "FP32",
+  "quantized_diagnostic": {
+    "repo": "Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "a70e12f8244efae07cf6fdfa935df30e3ac4a060",
+    "path": "experiments/sota-2026-10-22/candidate/epoch11/assets/nli-large-threeway/onnx/model_quantized.onnx",
+    "onnx_sha256": "f28cc7e69eb2834597c5ef2336f2adb7398b7bcb019282fb3f11d0130a3c0010",
+    "onnx_bytes": 642587600,
+    "use": "Only six frozen TRAIN-sanity primary native packed contexts. Never DEV/CONF; no fitted correction, threshold, model/precision choice or fallback."
+  },
+  "raw_id2label": {
+    "0": "entailment",
+    "1": "neutral",
+    "2": "contradiction"
+  },
+  "typed_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "binary_mapping": "Yes=P(Entailment), No=P(Contradiction)+P(NotMentioned), T1, exact .5 tie No",
+  "upstream": {
+    "repo": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "declared_model_license": "MIT",
+    "training_pairs": 885242,
+    "declared_training_datasets": [
+      "multi_nli",
+      "facebook/anli",
+      "fever",
+      "lingnli",
+      "alisawuffles/WANLI"
+    ],
+    "source_card_sha256": "216c3ac9ea77beec4e35a347c8b4edc47fbb3465e7c2a00dc923ae7b975cf346",
+    "source_config_sha256": "7f9d420b616691c5b575bab8839719aefbddc656d8e1316519414b097ce43e3d",
+    "source_API_sha256": "d61e448bd58e73b2aadbd812ea1007a18952490cbda806100b55c8ff50e2f232",
+    "conversion_provenance": "Xenova card explicitly links this exact upstream model name. No exact upstream weight commit or separate converter license is stated; source card/config/API revision is pinned, not claimed to identify converted weight provenance.",
+    "training_terms": "Upstreamdeclared MIT model; mixed training dataset terms remain. Prior officialANLI cc-by-nc4/FEVERmixedCCBYSA+GPL/MNLImixed terms apply; this study adds no training, republishes no pretrainedweights and makes no commercialor submissioneligibility guarantee. LingNLI/WANLI trainingrights notindependentlyaudited.",
+    "contamination": "No listed ContractNLI training, but unknown pretrainingoverlap and no record-level clean-training guarantee."
+  },
+  "variant_provenance_limit": "FP32 and INT8 are co-located exports at the same converter repository revision, not verified original-source exports or a bit-exact derivation proof. Difference alone cannot establish quantization causality. Exact upstream weight commit remains unverified. No pretrained weights are published.",
+  "hypothesis": "Fixed FP32 primary tests numerical-variant fidelity and typed decision competence after e11 INT8 all-entailment collapse. The candidate is irrevocably FP32 before TRAIN outputs; no selection, calibration, fit or rescue. Same native/lexical/positional contexts and full three-way readout.",
+  "model_quality_limit": "Higher numerical precision is not assumed greater legal accuracy. Architecture and broad five-dataset pretraining are unchanged from e11; observed gain requires frozen gates.",
+  "TRAIN_role": "Six diagnostics on two already exposed e10 TRAIN documents, no parameter fitting. Data labels never read by candidate code.",
+  "training_fit": [],
+  "calibration": [],
+  "CPU_feasibility": "Static reasoning only: 1.742GB FP32 weights and .643GB INT8 train diagnostic, CPU2 sequential singleton. INT8 session released before DEV. No timing/session probe; full initialization/TRAIN6/DEV24/cleanup under one600s watchdog, retain timeout as failure. CONF48 only after independent DEV and runtime gates.",
+  "metadata_research_repos": [
+    "Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "Xenova/roberta-large-mnli",
+    "Xenova/bart-large-mnli"
+  ],
+  "metadata_only_alternatives_not_measured_or_downloaded": true,
+  "new_model_calls": 0,
+  "new_native_calls": 0,
+  "new_paid_calls": 0,
+  "GPU_calls": 0
+}

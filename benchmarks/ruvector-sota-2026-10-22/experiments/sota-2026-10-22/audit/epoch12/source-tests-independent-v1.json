@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T03:57:47.043923+00:00",
+  "checks_passed": true,
+  "candidate_manifest_sha256": "e026244f921171860a8cb9a9b9ce0c03de61bd2330d6521653b16db9455b9aaf",
+  "independently_run_tests": {
+    "candidate_injected_and_pure": 17,
+    "controller_mocked": 24,
+    "total": 41,
+    "failures": 0,
+    "errors": 0
+  },
+  "source_review": {
+    "fixed_FP32": true,
+    "TRAIN6_once_allowlist_exactinputhashes_no_labels_to_model": true,
+    "TRAIN_never_fit_or_precision_selection": true,
+    "three_FP32_arms_and_one_native_context_INT8_TRAIN_only": true,
+    "quant_released_before_DEV_and_none_CONF": true,
+    "TRAIN_duplicates_unknown_mutations_and_evaluation_reuse_rejected": true,
+    "same_model_context_all_matched_retrieval_controls": true,
+    "new_controller_exact14closed_and60request_ceiling_within600phase": true,
+    "fsynced_Popen_invocation_marker_separate_confirmed_PID": true,
+    "owned_process_group_deadline_cleanup": true,
+    "native_input_vs_operation_envelope_separate": true,
+    "DEVgate_forecast_excludeTRAIN_rows": true,
+    "CONF_requires_DEV_and_runtime_and_train_completion_hashes": true
+  },
+  "sources": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/acquire_assets.py",
+      "sha256": "1583da98df25610e5a891e9df1debfbf7a929caef7d17b12ce1b306ce10dd914"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/freeze_manifest.py",
+      "sha256": "b93c4776f3067b652bd06252c3fa28671e01fe69a33f163d4d73e6ac2eea0779"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/models.py",
+      "sha256": "5bf65ebf220953a0469a2944e8fba18933757472afdb924c14f013bd5c6ef2fb"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/preflight_model.py",
+      "sha256": "e8c91d0c3b78aa5de700344ca4ecd8dec4dfa9282fedce728ea8c3e96d1df3e7"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/runtime.py",
+      "sha256": "562f790e6dd48dc1ba91904b7d43663118ccefc98ff2ea5611d5825cc1d07d19"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/test_models.py",
+      "sha256": "4e92cb6b02cd760c5e237a1159334c755b3d26cdd867203c7462e921ce626158"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch12/test_runtime.py",
+      "sha256": "544b1b2ebea5e5765adb420e2051f24785577694ccfbcf5c4922e3f455b779a4"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/controller/epoch12_loop.py",
+      "sha256": "1a2b2e3bbc7d1812e964b6c8ebdca6dfc8e61761a2cbe9c1e36078ab6bf32267"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/controller/epoch12_server.py",
+      "sha256": "43c323eb0e8ab2d6df2d22bf9b0cc1ea3423f8dd5a78084c7ccc056417057725"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/controller/test_epoch12_loop.py",
+      "sha256": "e4ab7cb86e4885226e90c5e1ebb0254d8463c05eae615255161a2cc497984e03"
+    }
+  ],
+  "model_native_fit_paid_calls": 0,
+  "synthetics_are_benchmark_generalization": false,
+  "scope": "Independent source reading and pure/mocked test execution only; actual provider/native/runtime performance first exercised inside authorized corpus process."
+}

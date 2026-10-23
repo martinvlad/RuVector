@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "tests_run": 17,
+  "failures": 0,
+  "errors": 0,
+  "exit_code": 0,
+  "verified_at": "2026-10-23T03:53:08.017844+00:00",
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B -m unittest discover -s experiments/sota-2026-10-22/candidate/epoch12 -p test_*.py -v",
+  "scope": "Synthetic tokenizers and injected sessions only; config metadata read, no ORT initialization/forward/native calls or DEV/CONF/TRAIN labels",
+  "new_model_forwards": 0,
+  "new_native_calls": 0,
+  "new_evaluation_inputs_or_labels_read": 0,
+  "meaningful_cases": [
+    "Full three-way probability and neutral mass",
+    "Int64 singleton feeds and independent token guards",
+    "Common-logit-offset versus distribution-drift distinction",
+    "Identical semantic feed required for numerical comparison",
+    "Six immutable TRAIN IDs once each; unknown/mutated/duplicate blocked",
+    "Partial diagnostic failure retires ID and blocks DEV",
+    "INT8 release gates DEV and prevents any subsequent TRAIN reuse",
+    "Exact epoch6 context/packing and Native104 excerpt invariance"
+  ]
+}

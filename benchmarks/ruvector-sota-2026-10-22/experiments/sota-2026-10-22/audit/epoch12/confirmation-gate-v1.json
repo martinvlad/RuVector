@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-23T03:44:12.735048+00:00",
+  "scope": "One fixed FP32 three-way pretrained reader with actual native RuVector evidence and matched FP32 lexical/positional controls; internal public ContractNLI pilot only.",
+  "data": "Exact reserved CONF48/16 groups SHA256 850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50. Project-model-unused; public-source pretraining overlap unknown. Never use previously exposed f018 CONF96, easy48 or Legal96 as fresh confirmation.",
+  "required": {
+    "complete_queries": 48,
+    "groups": 16,
+    "queries_per_group": 3,
+    "strict_valid_each_arm": 48,
+    "errors_each_arm": 0,
+    "finite_metrics_all4arms": true,
+    "accuracy_point_nondecrease": "Primary correct >= each of all three controls.",
+    "proper_loss_point_nonincrease": "Primary Brier and NLL <= each of all three controls + 1e-12.",
+    "accuracy_supported_gain": "Paired document-cluster percentile bootstrap 95% lower bound > 0 against EACH of all three controls, including same-excerpt Native104.",
+    "proper_noninferiority_supported": "Bootstrap 95% lower bound >= -1e-12 for control-minus-primary Brier and NLL against EACH of all three controls.",
+    "strict_proper_gain_matched": "At least one point proper loss gain > 1e-12 against EACH matched FP32 lexical and positional control.",
+    "native_and_controls": "Exact same pinned FP32 model, tokenizer, decoder T1 and context policy in all three selectors; Native104 receives the primary packed excerpt plus original question. No hidden fallback/lookup.",
+    "execution": "Only strict DEV24 + frozen runtime-admitted CONF48, one separate nonretryable CPU2 <=600s process including initialization and cleanup. No TRAIN, INT8 session, fitting or calibration in confirmation."
+  },
+  "bootstrap": {
+    "unit": "16 document groups; mean three correlated query gains per group; paired resampling of 16 groups with replacement.",
+    "draws": 2000,
+    "seed": 20261022,
+    "interval": "Two-sided percentile 2.5%,97.5%; scorer index int(p*(draws-1)).",
+    "gain_sign": "Accuracy = primary minus control; proper = control loss minus primary loss.",
+    "multiplicity": "Nominal unadjusted exploratory intervals; no familywise, full-benchmark or official SOTA claim."
+  },
+  "failure": "Any gate failure rejects. ANY confirmation phase Popen invocation attempt conservatively retires all48 even without PID/HTTP; separately report actual requests/model consumption. No precision/context/threshold rescue or retry.",
+  "official_scope": "No submitted champion promotion or official JevBench/LegalBench/ClaimBench score/rank without independently accepted DEV+unusedCONF and matching publisher result/eligibility.",
+  "auditor_model_native_or_paid_calls": 0
+}

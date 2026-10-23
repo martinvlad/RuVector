@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T04:18:05.357037+00:00",
+  "checks_passed": true,
+  "diagnostic_sha256": "731720f3811d52e7c54ca7d3e9e7d0c2fa69d0588596d2278d45105c84fbe449",
+  "findings_sha256": "4e6b32528be8bfc9460de601e05084c1627e1dbee1ce404630bd6c8f5f2d887f",
+  "public6file_allowlist_sha256": "430b9d48beaf28926c6d40b6d39b84152a6abdf2c522a0c62ad5a70bd821b692",
+  "both_deterministic_replays_byteexact": true,
+  "independently_run_pure_boundary_tests": 6,
+  "candidate_manifest_e026_unchanged": true,
+  "TRAIN6_versus_DEV24_roles_and_no_confirmation_read": true,
+  "paired_variant_oracles_match_full_independent_replay": true,
+  "typed_prediction_counts_native": {
+    "Contradiction": 1,
+    "Entailment": 17,
+    "NotMentioned": 6
+  },
+  "native_binary_confusion_gold_threeway_to_YesNo": {
+    "NotMentioned": {
+      "Yes": 5,
+      "No": 3
+    },
+    "Entailment": {
+      "No": 4,
+      "Yes": 9
+    },
+    "Contradiction": {
+      "Yes": 2,
+      "No": 1
+    }
+  },
+  "contradiction_scope": "Native typed Contradiction correctly0/3; binary No correctly1/3 true contradictions. Distinct measurements; do not conflate.",
+  "proper_scoring_scope": {
+    "authoritative_frozen_canonical_report_sha256": "35dbc7137e5367c7c565d1571e4b19c33d279e58e64d97369bdbcc386ee957f8",
+    "diagnostic_always_renormalizes_within_tolerance": true,
+    "frozen_protocol_native104_Brier": 0.5010783329477261,
+    "frozen_protocol_native104_NLL": 0.6942255198899348,
+    "postrun_normalized_native104_Brier": 0.5010783329108904,
+    "postrun_normalized_native104_NLL": 0.6942255269732676,
+    "native104_NLL_difference": 7.083332809187937e-09,
+    "scope": "Postrun normalized proper values are descriptive under its public source hash; only frozen canonical evaluator metrics authorize gate decisions/results tables. Differences are tiny and do not alter this rejection."
+  },
+  "evidence_scope": "Number/character retention is per-query source-position exposure, not annotation coverage, numeric truth or sufficiency. No full-source or confirmation projection opened by candidate postrun code.",
+  "model_native_fit_paid_calls": 0,
+  "official_score": null,
+  "official_rank": null
+}

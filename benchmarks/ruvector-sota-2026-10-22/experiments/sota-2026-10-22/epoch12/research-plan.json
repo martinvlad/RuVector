@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "epoch": 12,
+  "frozen_at": "2026-10-23T04:00:40.591367+00:00",
+  "parent_checkpoint": "edb193532821ddc43084eca932f36ec29d045b60",
+  "lease_commit": "6ac6e7305c81d7bac165784742f49d28fece493a",
+  "hypothesis": "One irrevocably fixed FP32 version of the epoch11 larger pretrained three-way NLI checkpoint, with actual native RuVector evidence and matched same-model lexical/positional context. Six already-exposed TRAIN questions compare FP32 versus quantized logits on exactly the same primary context; descriptive numerical fidelity only, no fitting, precision selection, thresholds or fallback. Source-original upstream weight fidelity remains unknown.",
+  "scientific_scope": "Internal CC-BY original ContractNLI three-predicate NDA pilot. TRAIN sanity is exposed diagnostic data, never benchmark generalization. FP32-versus-quantized comparison is not original-upstream verification. No current JevBench300, full LegalBench or ClaimBench score/rank.",
+  "train": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch12/train-sanity6.jsonl",
+    "sha256": "b2a0dcfbbe72b9051ff0cf1bf5a73ca066156ef134e72dbe5e60b710accd1ad1",
+    "queries": 6,
+    "questions": 6,
+    "document_groups": 2,
+    "status": "REUSED_TRAIN_SANITY_NO_FIT_NO_SELECTION; already exposed, never fresh benchmark generalization",
+    "allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch12/train-allowlist.json",
+    "allowlist_sha256": "34e0d5f37d8fea16fd21d7c801df2f7455d808e3f05eeac3518b919515b72b3f"
+  },
+  "train_sanity_questions": 6,
+  "training_feature_questions": 0,
+  "calibration": [],
+  "fitting": false,
+  "temperature": 1,
+  "primary_precision": "FP32_FIXED_BEFORE_TRAIN",
+  "development": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch12/development24.jsonl",
+    "sha256": "05f579f4f3e0fc0b799ba3d3c0ffcddbb8af03e3ca525991cfb5de0596c4891d",
+    "queries": 24,
+    "document_groups": 8,
+    "status": "New project-unused groups; one frozen gate, no fitting, selection or calibration"
+  },
+  "confirmation": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+    "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "queries": 48,
+    "document_groups": 16,
+    "status": "Existing epoch9 bank unchanged/project-model-unused; no labels for selection or fitting; scorer/auditor only after frozen gates",
+    "allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch12/confirmation-allowlist.json",
+    "allowlist_sha256": "65485b57d37a3341031cd4e125539e6c052f34844a60f93be7f1035db68c913e"
+  },
+  "data_ordering": {
+    "contract_frozen_at": "2026-10-23T03:46:03.359178+00:00",
+    "document_role_frozen_at": "2026-10-23T03:46:03.108742+00:00",
+    "candidate_choice_after_data": true
+  },
+  "model_identity": {
+    "repo": "Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "a70e12f8244efae07cf6fdfa935df30e3ac4a060",
+    "onnx_sha256": "9fbf57959bd9143720289cd1eab1aaaa00fc99459fd25ffeff8eba1ccf955d2b",
+    "onnx_bytes": 1741989392,
+    "precision": "FP32",
+    "labels": {
+      "0": "entailment",
+      "1": "neutral",
+      "2": "contradiction"
+    },
+    "typed_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "mapping": "Yes=P(Entailment), No=P(Contradiction)+P(NotMentioned), T1, exact .5 tie No",
+    "layers": 24,
+    "hidden_size": 1024
+  },
+  "candidate_manifest_sha256": "e026244f921171860a8cb9a9b9ce0c03de61bd2330d6521653b16db9455b9aaf",
+  "independent_acceptance_sha256": "f8850d7fdb0326a0a96dc4c9d2969a5c5d35339649c4c75f1c75b51118ecb3f7",
+  "confirmation_gate_sha256": "4974c23606637d5b56ab3af4d96c706f234f800a93c21550e8c13d00f4516bdb",
+  "DEV_gate": "Primary>=each3controls+2correct; Brier/NLL nonworse ALL3, strict proper gain both matched; all24 strictvalid/errors0. TRAIN outcomes never select or gate the candidate.",
+  "confirmation_gate": "Frozen nominal2000 seed20261022 paired16doc bootstrap: accuracygainCI lower>0 ALL3 and proper improvementCI lower>=-1e-12 ALL3; point losses nonworse; independent review.",
+  "budget": {
+    "native_attempt_cap": 2,
+    "attempts_started_before": 0,
+    "automatic_retries": 0,
+    "seconds_per_phase_including_init_cleanup": 600,
+    "CPU_cores": 2,
+    "ORT_intra": 2,
+    "ORT_inter": 1,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "lifetime_attempts_before": 14
+  },
+  "context_policy": "Exact reviewed epoch6 context source/policy tokenizer;40anchors+same-paragraph neighbors/source-order/raw512 wholeclaim guard. Same epoch11 active tokenizer for both FP32 and quantized precision and matched retrieval arms. No clipping/padding/truncation or grid.",
+  "runtime_admission": {
+    "formula_id": "48xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "max_DEV_units": 24,
+    "max_confirmation_units": 57,
+    "formula": "48*maxDEVHTTPseconds*max(1,maxCONFunits/maxDEVunits)+2*phase1initseconds+60; require<=600 and lease_remaining>=forecast+30",
+    "scope": "Conservative admission estimate; only24DEV timings, no TRAIN timings or confirmation labels/model outputs. Actual phase watchdog600seconds."
+  },
+  "TRAIN_pairing": "6 already exposed TRAIN-only source-frozen identities. Exactly one quantized forward on the same native packed context per TRAIN question alongside primary FP32. Quantized session released after complete6 beforeDEV; never quantized DEV/CONF. Saved raw/centered logits/posteriors/agreements descriptive only.",
+  "evidence_scope": "Whole-document labels; packed evidence can omit information. Retrieval miss cannot establish absence or ClaimBench insufficiency. ClaimBench pilot requires verified data/scorer/license/access.",
+  "numeric_scope": "Source-position retention and omission only; no numeric truth or sufficiency certificate.",
+  "source_license": "Original ContractNLI CC-BY4 source/attribution pinned. Upstream model MIT declaration preserved; mixed training-data terms, converter exact-upstream-weight-commit/license gaps and unknown pretraining overlap disclosed. FP32 and INT8 are from the exact same converter revision; no pretrained weights published.",
+  "study_contract_sha256": "07bd4fdcf398379a3616b81778d5891916774f50066bb659967f0c806b1b3fea",
+  "prior_exposures": "All prior easy48/Legal96/originaldevCONF96 and173originaltrain groups remain exposed. Reuse2 priorTRAIN groups adds0 exposure. NewDEV8 chosen source-only before model choice; project-unused16groupCONF48 unchanged.",
+  "replay_reproduction": {
+    "active_source": {
+      "path": "experiments/sota-2026-10-22/audit/epoch12/replay_actual_v1.py",
+      "sha256": "d040e9f3567bfba98dcc49b4fe5cd2a886cbcfe2d15c07246cc784241b5df0c2"
+    },
+    "method": {
+      "path": "experiments/sota-2026-10-22/audit/epoch12/saved-replay-method-v1.json",
+      "sha256": "8daf4fa0788c7cd7956ba1e48d728801a04886d6128dda5f3c0ef8d904236bdb"
+    },
+    "scope": "Pure saved-output replay; no model/native/session initialization or fitting. Exactsource/assets/runtime closure required; modelbinaries separately acquired andhashverified. Active verifier source prepared BEFORE actual.",
+    "command": "OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B experiments/sota-2026-10-22/audit/epoch12/replay_actual_v1.py --project . --out /tmp/ruvector-epoch12-audit-replay-UNUSED.json --expected-plan-sha PLAN_SHA",
+    "output_rule": "Use actuallyunusedoutputpath; verifierrefusesoverwrite. PLAN_SHA placeholder resolved toimmutableplan identity in finalmanifest."
+  }
+}

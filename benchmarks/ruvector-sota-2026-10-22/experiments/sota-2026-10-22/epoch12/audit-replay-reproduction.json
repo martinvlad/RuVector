@@ -1,0 +1,21 @@
+{
+  "active_source": {
+    "path": "experiments/sota-2026-10-22/audit/epoch12/replay_actual_v2.py",
+    "sha256": "339328395ddaf3a1ba8d6638e89faa7ada94ac2029605e5ad30fbd3336c9faf3"
+  },
+  "method": {
+    "path": "experiments/sota-2026-10-22/audit/epoch12/saved-replay-method-v2.json",
+    "sha256": "6f068a823a7c548efa66eebb8164e6141ff72ca624ad7db0f421683ba0edc08a"
+  },
+  "scope": "Successful complete phase saved-output verification: all source pins, literal operation envelope/native input, deterministic packing, raw tokenizer feeds, FP32/INT8 TRAIN pairs/counters/release, complete DEV/conditionalCONF scores/CIs/runtime/resources. No model/native/session/fit calls.",
+  "command": "OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B experiments/sota-2026-10-22/audit/epoch12/replay_actual_v2.py --project . --out /tmp/ruvector-epoch12-audit-replay-UNUSED.json --expected-plan-sha PLAN_SHA",
+  "output_rule": "Choose an actually unused path; verifier refuses overwrite.",
+  "prepared_before_measurements": false,
+  "method_correction": {
+    "path": "experiments/sota-2026-10-22/audit/epoch12/saved-replay-method-correction-v2.json",
+    "sha256": "2ab2681da3f816ce4e4bd973bd78e300157f44f4ff166faec12e9925f4157ec6"
+  },
+  "original_frozen_v1_preserved": true,
+  "scientific_plan_and_actual_measurements_unchanged": true,
+  "new_model_native_fit_calls": 0
+}

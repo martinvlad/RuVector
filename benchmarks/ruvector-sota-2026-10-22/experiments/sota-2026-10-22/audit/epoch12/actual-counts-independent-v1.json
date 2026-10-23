@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T04:13:32.405734+00:00",
+  "checks_passed": true,
+  "audit_source": "replay_counts_data_v1.py",
+  "audit_source_sha256": "cc045ec81aedefa7f08ae55f14f7bf2b93f22e7d6467c7c06fff3ea5c003d42d",
+  "scope": "Independent saved literal wire/server/records/bundle/precision-feed/token/count/role/proper-score/resource arithmetic. All201 frozen pins byte-hashed, including unusedCONF bytes only; no CONF JSON parse or model/native/session/fit execution.",
+  "plan_sha256": "c2b0ca8a7e3b2ba15d2bb906b84417db8ea39c025ad22d54597fe418e606899b",
+  "frozen_source_pins_checked": 201,
+  "snapshot_files_both_actual_outer_exact": 51,
+  "matched_started_wire_records_server": 30,
+  "TRAIN_sanity_requests": 6,
+  "training_feature_requests": 0,
+  "DEV_requests": 24,
+  "CONF_requests": 0,
+  "errors": 0,
+  "finite_hash_valid_native_vectorbundles": 30,
+  "metrics": {
+    "train": {
+      "ruvector_top2": {
+        "n": 6,
+        "correct": 3,
+        "brier": 0.753052759471077,
+        "nll": 1.1868276234728363
+      },
+      "same_nli_lexical_top2": {
+        "n": 6,
+        "correct": 2,
+        "brier": 1.1425861339696977,
+        "nll": 2.52664622272008
+      },
+      "same_nli_positional_first2": {
+        "n": 6,
+        "correct": 3,
+        "brier": 0.8019445292363652,
+        "nll": 1.763519685092901
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 6,
+        "correct": 3,
+        "brier": 0.5004325422536412,
+        "nll": 0.6935797083619712
+      }
+    },
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 13,
+        "brier": 0.7523063615926262,
+        "nll": 1.5531993051958914
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 10,
+        "brier": 0.9311965138375332,
+        "nll": 1.901207534558715
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.7835669019563983,
+        "nll": 1.5058595140860065
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 8,
+        "brier": 0.5010783329477261,
+        "nll": 0.6942255198899348
+      }
+    }
+  },
+  "latency_whole_HTTP_seconds": {
+    "train": {
+      "p50": 10.485810979502276,
+      "p95": 12.079960253253375,
+      "max": 12.473058768002375
+    },
+    "development": {
+      "p50": 8.67762943750131,
+      "p95": 9.596949020250396,
+      "max": 12.012085554000805
+    }
+  },
+  "wall_seconds": 295.0868231479981,
+  "CPU_seconds_worker_plus_terminated_children": 558.696281,
+  "resources": {
+    "at": "2026-10-23T04:07:26.380727+00:00",
+    "worker_cpu_user_seconds": 540.670955,
+    "worker_cpu_system_seconds": 10.851048,
+    "worker_peak_RSS_bytes": 5330251776,
+    "terminated_children_cpu_user_seconds": 6.527764,
+    "terminated_children_cpu_system_seconds": 0.6465139999999999,
+    "largest_terminated_child_peak_RSS_bytes": 5330251776,
+    "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+    "allowed_CPU_ids": [
+      0,
+      1
+    ],
+    "configured_ORT_threads": 2,
+    "whole_pipeline": "Phase1 TRAIN sanity6 paired INT8 diagnostics plus all FP32 matched arms/native104/evidence; primary-only deployment not measured"
+  },
+  "execution_counters": {
+    "requests_attempted": 30,
+    "requests_completed": 30,
+    "native104_requests_attempted": 30,
+    "native104_requests_completed": 30,
+    "native_core_searches_attempted": 30,
+    "native_core_searches_completed": 30,
+    "bge_forward_batches_attempted": 52,
+    "bge_forward_batches_completed": 52,
+    "bge_texts_attempted": 172,
+    "bge_texts_completed": 172,
+    "nli_forward_pairs_attempted": 96,
+    "nli_forward_pairs_completed": 96,
+    "nli_input_tokens_attempted": 45834,
+    "nli_input_tokens_completed": 45834,
+    "context_partitions_attempted": 30,
+    "context_partitions_completed": 30,
+    "context_packs_attempted": 90,
+    "context_packs_completed": 90,
+    "bge_forward_wall_seconds": 7.146079072954308,
+    "nli_forward_wall_seconds": 255.2774767620358,
+    "nli_fp32_forward_pairs_attempted": 90,
+    "nli_fp32_forward_pairs_completed": 90,
+    "nli_fp32_input_tokens_attempted": 43051,
+    "nli_fp32_input_tokens_completed": 43051,
+    "nli_fp32_forward_wall_seconds": 246.18974312602222,
+    "nli_int8_diagnostic_forward_pairs_attempted": 6,
+    "nli_int8_diagnostic_forward_pairs_completed": 6,
+    "nli_int8_diagnostic_input_tokens_attempted": 2783,
+    "nli_int8_diagnostic_input_tokens_completed": 2783,
+    "nli_int8_diagnostic_forward_wall_seconds": 9.087733636013581,
+    "training_sanity_requests_attempted": 6,
+    "training_sanity_requests_completed": 6
+  },
+  "TRAIN_pairing": {
+    "same_input_feed_pairs": 6,
+    "binary_agreements": 4,
+    "typed_agreements": 5,
+    "quantized_session_released_before_DEV": true,
+    "fitting_or_precision_selection": false,
+    "original_upstream_fidelity_established": false
+  },
+  "process_attempts": {
+    "conservative_Popen_invocations": 1,
+    "PID_confirmed_native_process_starts": 1,
+    "closed_cap": 2,
+    "unspent_slots": 1,
+    "allowed_further": 0
+  },
+  "runtime_forecast_seconds_NOT_executed_CONFIRM": 1466.7872854580928,
+  "cumulative": {
+    "attempts": 15,
+    "completed_batches": 13,
+    "successful_HTTP": 789,
+    "learned_feature_HTTP": 144,
+    "TRAIN_sanity_HTTP": 6,
+    "evaluation_HTTP": 639,
+    "historical_failed_HTTP": 2
+  },
+  "identities": {
+    "prior_exposed": 173,
+    "new_DEV_groups_retired": 8,
+    "reused_TRAIN_groups_new_exposure": 0,
+    "exposed_now": 181,
+    "unreserved_after_fixed_draw": 226,
+    "CONF_reserved_groups": 16,
+    "CONF_reserved_queries": 48,
+    "confirmation_model_unused": true
+  },
+  "server_USD_cost_reported": null,
+  "paid_API_calls_verified": 0,
+  "auditor_models_native_fits_paid_calls": 0,
+  "official_score": null,
+  "official_rank": null
+}

@@ -1,0 +1,97 @@
+{
+  "inputs": [
+    {
+      "name": "input_ids",
+      "tensor_element_type": 7,
+      "dimensions": [
+        {
+          "parameter": "batch_size"
+        },
+        {
+          "parameter": "sequence_length"
+        }
+      ]
+    },
+    {
+      "name": "attention_mask",
+      "tensor_element_type": 7,
+      "dimensions": [
+        {
+          "parameter": "batch_size"
+        },
+        {
+          "parameter": "sequence_length"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "logits",
+      "tensor_element_type": 1,
+      "dimensions": [
+        {
+          "parameter": "batch_size"
+        },
+        {
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "opsets": [
+    {
+      "domain": "",
+      "version": 12
+    }
+  ],
+  "operators": {
+    "::Identity": 48,
+    "::Constant": 2389,
+    "::Gather": 314,
+    "::ReduceMean": 100,
+    "::Sub": 75,
+    "::Pow": 50,
+    "::Add": 440,
+    "::Sqrt": 122,
+    "::Div": 173,
+    "::Mul": 224,
+    "::Unsqueeze": 730,
+    "::Cast": 296,
+    "::Squeeze": 317,
+    "::Shape": 722,
+    "::Slice": 316,
+    "::Range": 1,
+    "::Sign": 1,
+    "::Less": 1,
+    "::Greater": 1,
+    "::And": 1,
+    "::Abs": 1,
+    "::Where": 98,
+    "::Log": 1,
+    "::Ceil": 1,
+    "::LessOrEqual": 1,
+    "::MatMul": 288,
+    "::Concat": 384,
+    "::Reshape": 384,
+    "::Transpose": 240,
+    "::ConstantOfShape": 96,
+    "::Expand": 96,
+    "::Tile": 48,
+    "::Clip": 2,
+    "::Equal": 48,
+    "::GatherElements": 48,
+    "::Neg": 1,
+    "::Softmax": 24,
+    "::Erf": 25,
+    "::Gemm": 2
+  },
+  "external_initializers": [],
+  "session_initialized": false,
+  "model_forwards": 0,
+  "ir_version": 7,
+  "weight_sha256": "9fbf57959bd9143720289cd1eab1aaaa00fc99459fd25ffeff8eba1ccf955d2b",
+  "weight_bytes": 1741989392,
+  "forwards": 0,
+  "scope": "Static protobuf graph metadata. No ABI/provider/execution/performance or exact-original-weight fidelity claim."
+}

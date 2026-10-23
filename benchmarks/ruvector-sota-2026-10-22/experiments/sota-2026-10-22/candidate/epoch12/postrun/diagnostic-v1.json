@@ -1,0 +1,833 @@
+{
+  "TRAIN_paired": {
+    "n": 6,
+    "document_groups": 2,
+    "binary_agreement_count": 4,
+    "typed_agreement_count": 5,
+    "differences": {
+      "raw_logits_max_absolute_difference": {
+        "mean": 1.440979465842247,
+        "max": 2.172300100326538,
+        "min": 0.31913459300994873
+      },
+      "raw_logits_RMS_difference": {
+        "mean": 1.0916216503793916,
+        "max": 1.667527249702147,
+        "min": 0.25752839890595147
+      },
+      "centered_logits_max_absolute_difference": {
+        "mean": 1.4402363782541618,
+        "max": 2.274563709894816,
+        "min": 0.34903231263160706
+      },
+      "typed_probability_max_absolute_difference": {
+        "mean": 0.22435189634562708,
+        "max": 0.6780664299480341,
+        "min": 0.020203081427607968
+      },
+      "posterior_total_variation": {
+        "mean": 0.22435189634562708,
+        "max": 0.6780664299480341,
+        "min": 0.020203081427607888
+      },
+      "Jensen_Shannon_divergence_nats": {
+        "mean": 0.06741939954062733,
+        "max": 0.25935521298994,
+        "min": 0.005430452883247558
+      }
+    },
+    "precision_scores": {
+      "FP32": {
+        "binary": {
+          "n": 6,
+          "correct": 3,
+          "brier": 0.753052759471077,
+          "nll": 1.186827623472836
+        },
+        "threeway": {
+          "n": 6,
+          "correct": 2,
+          "brier": 0.908432847911294,
+          "nll": 1.5582705250340398
+        }
+      },
+      "INT8": {
+        "binary": {
+          "n": 6,
+          "correct": 1,
+          "brier": 1.186589165290259,
+          "nll": 1.8706869410945424
+        },
+        "threeway": {
+          "n": 6,
+          "correct": 1,
+          "brier": 1.2858606580068488,
+          "nll": 2.510043909224434
+        }
+      }
+    },
+    "examples": [
+      {
+        "raw_logits_max_absolute_difference": 0.31913459300994873,
+        "raw_logits_RMS_difference": 0.25752839890595147,
+        "centered_logits_max_absolute_difference": 0.34903231263160706,
+        "typed_probability_max_absolute_difference": 0.08116179468546281,
+        "posterior_total_variation": 0.0811617946854628,
+        "Jensen_Shannon_divergence_nats": 0.005430452883247558,
+        "typed_decision_agrees": true,
+        "binary_decision_agrees": true,
+        "FP32_binary_probabilities": {
+          "Yes": 0.8453685290022358,
+          "No": 0.15463147099776425
+        },
+        "INT8_binary_probabilities": {
+          "Yes": 0.764206734316773,
+          "No": 0.23579326568322706
+        },
+        "FP32_typed_probabilities": {
+          "Entailment": 0.8453685290022358,
+          "Contradiction": 0.08115522826480004,
+          "NotMentioned": 0.07347624273296423
+        },
+        "INT8_typed_probabilities": {
+          "Entailment": 0.764206734316773,
+          "Contradiction": 0.11405498119505726,
+          "NotMentioned": 0.12173828448816978
+        },
+        "identical_feed_tokens": 489,
+        "id": "original-contractnli:train:epoch12:train_sanity:288:nda-17",
+        "source_group": "original-contractnli:288",
+        "gold_binary": "No",
+        "gold_threeway": "Contradiction"
+      },
+      {
+        "raw_logits_max_absolute_difference": 0.6953658908605576,
+        "raw_logits_RMS_difference": 0.488666680482625,
+        "centered_logits_max_absolute_difference": 0.6910453401505947,
+        "typed_probability_max_absolute_difference": 0.19109774636774052,
+        "posterior_total_variation": 0.19109774636774057,
+        "Jensen_Shannon_divergence_nats": 0.024311541499862976,
+        "typed_decision_agrees": true,
+        "binary_decision_agrees": false,
+        "FP32_binary_probabilities": {
+          "Yes": 0.44438240550453384,
+          "No": 0.5556175944954661
+        },
+        "INT8_binary_probabilities": {
+          "Yes": 0.5766312461971014,
+          "No": 0.42336875380289873
+        },
+        "FP32_typed_probabilities": {
+          "Entailment": 0.44438240550453384,
+          "Contradiction": 0.20238093778361002,
+          "NotMentioned": 0.3532366567118561
+        },
+        "INT8_typed_probabilities": {
+          "Entailment": 0.5766312461971014,
+          "Contradiction": 0.26122984345878314,
+          "NotMentioned": 0.1621389103441156
+        },
+        "identical_feed_tokens": 455,
+        "id": "original-contractnli:train:epoch12:train_sanity:288:nda-7",
+        "source_group": "original-contractnli:288",
+        "gold_binary": "No",
+        "gold_threeway": "Contradiction"
+      },
+      {
+        "raw_logits_max_absolute_difference": 2.172300100326538,
+        "raw_logits_RMS_difference": 1.667527249702147,
+        "centered_logits_max_absolute_difference": 2.274563709894816,
+        "typed_probability_max_absolute_difference": 0.031191944718828246,
+        "posterior_total_variation": 0.031191944718828198,
+        "Jensen_Shannon_divergence_nats": 0.009441014766852362,
+        "typed_decision_agrees": true,
+        "binary_decision_agrees": true,
+        "FP32_binary_probabilities": {
+          "Yes": 0.998992378373065,
+          "No": 0.00100762162693507
+        },
+        "INT8_binary_probabilities": {
+          "Yes": 0.9678004336542367,
+          "No": 0.03219956634576322
+        },
+        "FP32_typed_probabilities": {
+          "Entailment": 0.998992378373065,
+          "Contradiction": 0.0005523005365498796,
+          "NotMentioned": 0.0004553210903851904
+        },
+        "INT8_typed_probabilities": {
+          "Entailment": 0.9678004336542367,
+          "Contradiction": 0.009602328312085453,
+          "NotMentioned": 0.022597238033677768
+        },
+        "identical_feed_tokens": 478,
+        "id": "original-contractnli:train:epoch12:train_sanity:288:nda-3",
+        "source_group": "original-contractnli:288",
+        "gold_binary": "Yes",
+        "gold_threeway": "Entailment"
+      },
+      {
+        "raw_logits_max_absolute_difference": 1.5981459617614746,
+        "raw_logits_RMS_difference": 1.3030912602302918,
+        "centered_logits_max_absolute_difference": 1.6696296234925587,
+        "typed_probability_max_absolute_difference": 0.020203081427607968,
+        "posterior_total_variation": 0.020203081427607888,
+        "Jensen_Shannon_divergence_nats": 0.005842477327425448,
+        "typed_decision_agrees": true,
+        "binary_decision_agrees": true,
+        "FP32_binary_probabilities": {
+          "Yes": 0.9700437739320223,
+          "No": 0.029956226067977754
+        },
+        "INT8_binary_probabilities": {
+          "Yes": 0.9769042598421674,
+          "No": 0.023095740157832497
+        },
+        "FP32_typed_probabilities": {
+          "Entailment": 0.9700437739320223,
+          "Contradiction": 0.027442112640880364,
+          "NotMentioned": 0.0025141134270973893
+        },
+        "INT8_typed_probabilities": {
+          "Entailment": 0.9769042598421674,
+          "Contradiction": 0.007239031213272397,
+          "NotMentioned": 0.0158567089445601
+        },
+        "identical_feed_tokens": 453,
+        "id": "original-contractnli:train:epoch12:train_sanity:239:nda-17",
+        "source_group": "original-contractnli:239",
+        "gold_binary": "No",
+        "gold_threeway": "Contradiction"
+      },
+      {
+        "raw_logits_max_absolute_difference": 1.7048080563545227,
+        "raw_logits_RMS_difference": 1.3504596631768466,
+        "centered_logits_max_absolute_difference": 1.6651724676291146,
+        "typed_probability_max_absolute_difference": 0.34439038092608887,
+        "posterior_total_variation": 0.3443903809260889,
+        "Jensen_Shannon_divergence_nats": 0.10013569777643562,
+        "typed_decision_agrees": true,
+        "binary_decision_agrees": true,
+        "FP32_binary_probabilities": {
+          "Yes": 0.6002683268751845,
+          "No": 0.39973167312481545
+        },
+        "INT8_binary_probabilities": {
+          "Yes": 0.9446587078012734,
+          "No": 0.05534129219872649
+        },
+        "FP32_typed_probabilities": {
+          "Entailment": 0.6002683268751845,
+          "Contradiction": 0.2611231540335428,
+          "NotMentioned": 0.13860851909127264
+        },
+        "INT8_typed_probabilities": {
+          "Entailment": 0.9446587078012734,
+          "Contradiction": 0.015062232553443565,
+          "NotMentioned": 0.04027905964528292
+        },
+        "identical_feed_tokens": 461,
+        "id": "original-contractnli:train:epoch12:train_sanity:239:nda-7",
+        "source_group": "original-contractnli:239",
+        "gold_binary": "No",
+        "gold_threeway": "Contradiction"
+      },
+      {
+        "raw_logits_max_absolute_difference": 2.1561221927404404,
+        "raw_logits_RMS_difference": 1.4824566497784881,
+        "centered_logits_max_absolute_difference": 1.9919748157262804,
+        "typed_probability_max_absolute_difference": 0.6780664299480341,
+        "posterior_total_variation": 0.6780664299480341,
+        "Jensen_Shannon_divergence_nats": 0.25935521298994,
+        "typed_decision_agrees": false,
+        "binary_decision_agrees": false,
+        "FP32_binary_probabilities": {
+          "Yes": 0.21383779686639665,
+          "No": 0.7861622031336034
+        },
+        "INT8_binary_probabilities": {
+          "Yes": 0.8919042268144307,
+          "No": 0.10809577318556932
+        },
+        "FP32_typed_probabilities": {
+          "Entailment": 0.21383779686639665,
+          "Contradiction": 0.0462178673499661,
+          "NotMentioned": 0.7399443357836373
+        },
+        "INT8_typed_probabilities": {
+          "Entailment": 0.8919042268144307,
+          "Contradiction": 0.016491016035462772,
+          "NotMentioned": 0.09160475715010655
+        },
+        "identical_feed_tokens": 447,
+        "id": "original-contractnli:train:epoch12:train_sanity:239:nda-3",
+        "source_group": "original-contractnli:239",
+        "gold_binary": "No",
+        "gold_threeway": "NotMentioned"
+      }
+    ],
+    "scope": "Paired co-located published FP32/INT8 exports on identical native packed contexts from already exposed TRAIN documents; descriptive, no fit/selection or benchmark generalization."
+  },
+  "DEV": {
+    "n": 24,
+    "document_groups": 8,
+    "gold_binary_counts": {
+      "No": 11,
+      "Yes": 13
+    },
+    "gold_threeway_counts": {
+      "NotMentioned": 8,
+      "Entailment": 13,
+      "Contradiction": 3
+    },
+    "arms": {
+      "ruvector_top2": {
+        "binary": {
+          "n": 24,
+          "correct": 13,
+          "brier": 0.7523063615926262,
+          "nll": 1.5531993051958914
+        },
+        "binary_predicted_counts": {
+          "No": 8,
+          "Yes": 16
+        },
+        "wrong_confidence_mean": 0.8812716031690155,
+        "wrong_confidence_at_least_0_8": 9,
+        "threeway": {
+          "n": 24,
+          "correct": 13,
+          "brier": 0.7874670796748429,
+          "nll": 1.8971259463830037
+        },
+        "typed_predicted_counts": {
+          "Contradiction": 1,
+          "Entailment": 17,
+          "NotMentioned": 6
+        },
+        "typed_confusion_gold_to_prediction": {
+          "Entailment": {
+            "Entailment": 10,
+            "Contradiction": 1,
+            "NotMentioned": 2
+          },
+          "Contradiction": {
+            "Entailment": 2,
+            "Contradiction": 0,
+            "NotMentioned": 1
+          },
+          "NotMentioned": {
+            "Entailment": 5,
+            "Contradiction": 0,
+            "NotMentioned": 3
+          }
+        },
+        "source_retention": {
+          "numeric_mentions_total_per_query": 690,
+          "numeric_mentions_retained_per_query": 170,
+          "numeric_retention_fraction": 0.2463768115942029,
+          "mean_document_character_coverage_per_query": 0.27199505610043434,
+          "scope": "Repeated per-query source-position exposure counts, not unique document totals, numeric truth, annotation coverage or evidence sufficiency."
+        }
+      },
+      "same_nli_lexical_top2": {
+        "binary": {
+          "n": 24,
+          "correct": 10,
+          "brier": 0.9311965138375331,
+          "nll": 1.901207534558715
+        },
+        "binary_predicted_counts": {
+          "No": 13,
+          "Yes": 11
+        },
+        "wrong_confidence_mean": 0.8611178710721745,
+        "wrong_confidence_at_least_0_8": 9,
+        "threeway": {
+          "n": 24,
+          "correct": 10,
+          "brier": 0.994756150861484,
+          "nll": 2.2113605550612476
+        },
+        "typed_predicted_counts": {
+          "Contradiction": 5,
+          "Entailment": 12,
+          "NotMentioned": 7
+        },
+        "typed_confusion_gold_to_prediction": {
+          "Entailment": {
+            "Entailment": 6,
+            "Contradiction": 3,
+            "NotMentioned": 4
+          },
+          "Contradiction": {
+            "Entailment": 0,
+            "Contradiction": 2,
+            "NotMentioned": 1
+          },
+          "NotMentioned": {
+            "Entailment": 6,
+            "Contradiction": 0,
+            "NotMentioned": 2
+          }
+        },
+        "source_retention": {
+          "numeric_mentions_total_per_query": 690,
+          "numeric_mentions_retained_per_query": 150,
+          "numeric_retention_fraction": 0.21739130434782608,
+          "mean_document_character_coverage_per_query": 0.26518323167573254,
+          "scope": "Repeated per-query source-position exposure counts, not unique document totals, numeric truth, annotation coverage or evidence sufficiency."
+        }
+      },
+      "same_nli_positional_first2": {
+        "binary": {
+          "n": 24,
+          "correct": 12,
+          "brier": 0.7835669019563983,
+          "nll": 1.5058595140860065
+        },
+        "binary_predicted_counts": {
+          "No": 13,
+          "Yes": 11
+        },
+        "wrong_confidence_mean": 0.8705001952583724,
+        "wrong_confidence_at_least_0_8": 8,
+        "threeway": {
+          "n": 24,
+          "correct": 11,
+          "brier": 0.8803005649627327,
+          "nll": 1.9648127921281864
+        },
+        "typed_predicted_counts": {
+          "Contradiction": 2,
+          "Entailment": 11,
+          "NotMentioned": 11
+        },
+        "typed_confusion_gold_to_prediction": {
+          "Entailment": {
+            "Entailment": 6,
+            "Contradiction": 2,
+            "NotMentioned": 5
+          },
+          "Contradiction": {
+            "Entailment": 2,
+            "Contradiction": 0,
+            "NotMentioned": 1
+          },
+          "NotMentioned": {
+            "Entailment": 3,
+            "Contradiction": 0,
+            "NotMentioned": 5
+          }
+        },
+        "source_retention": {
+          "numeric_mentions_total_per_query": 690,
+          "numeric_mentions_retained_per_query": 188,
+          "numeric_retention_fraction": 0.27246376811594203,
+          "mean_document_character_coverage_per_query": 0.25866324620566306,
+          "scope": "Repeated per-query source-position exposure counts, not unique document totals, numeric truth, annotation coverage or evidence sufficiency."
+        }
+      },
+      "native104_on_ruvector_evidence": {
+        "binary": {
+          "n": 24,
+          "correct": 8,
+          "brier": 0.5010783329108904,
+          "nll": 0.6942255269732676
+        },
+        "binary_predicted_counts": {
+          "No": 7,
+          "Yes": 17
+        },
+        "wrong_confidence_mean": 0.501978072168086,
+        "wrong_confidence_at_least_0_8": 0
+      }
+    },
+    "errors": [
+      {
+        "id": "original-contractnli:train:epoch12:dev:318:nda-17",
+        "arm": "ruvector_top2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.9953860713159605
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:318:nda-7",
+        "arm": "ruvector_top2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.9920994174137818
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:311:nda-17",
+        "arm": "ruvector_top2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.9799031207821566
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:311:nda-7",
+        "arm": "ruvector_top2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.5262496116123933
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:475:nda-17",
+        "arm": "ruvector_top2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.9882987920347872
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:475:nda-7",
+        "arm": "ruvector_top2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.6115863170440222
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:179:nda-7",
+        "arm": "ruvector_top2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.870382090301253
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:577:nda-17",
+        "arm": "ruvector_top2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.9275226906033246
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:517:nda-7",
+        "arm": "ruvector_top2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.8200314418122367
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:617:nda-17",
+        "arm": "ruvector_top2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.9878578869389664
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:416:nda-17",
+        "arm": "ruvector_top2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.994670195000289
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:318:nda-17",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.9795126117089381
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:318:nda-7",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.9920994174137818
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:318:nda-3",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.8708870241977452
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:311:nda-17",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.5801155790120844
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:311:nda-7",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.5229431336967236
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:311:nda-3",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.9902635246683746
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:475:nda-7",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.7302294221142754
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:475:nda-3",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.7517041130557667
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:577:nda-17",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.6968490257587777
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:577:nda-3",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.994005211434221
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:617:nda-17",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.984040755891549
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:416:nda-17",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.9826078421876646
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:416:nda-7",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.9840627377434606
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:416:nda-3",
+        "arm": "same_nli_lexical_top2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.9963297961270804
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:318:nda-17",
+        "arm": "same_nli_positional_first2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.9795126117089381
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:318:nda-7",
+        "arm": "same_nli_positional_first2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.9920994174137818
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:318:nda-3",
+        "arm": "same_nli_positional_first2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.8708870241977452
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:311:nda-7",
+        "arm": "same_nli_positional_first2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.9919894887835127
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:475:nda-7",
+        "arm": "same_nli_positional_first2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.996090359623259
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:179:nda-17",
+        "arm": "same_nli_positional_first2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.5086698212028793
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:179:nda-7",
+        "arm": "same_nli_positional_first2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.7710489592365487
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:577:nda-17",
+        "arm": "same_nli_positional_first2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.7961619811804101
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:517:nda-7",
+        "arm": "same_nli_positional_first2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.8200314418122367
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:617:nda-17",
+        "arm": "same_nli_positional_first2",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.939479461401631
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:617:nda-7",
+        "arm": "same_nli_positional_first2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.7903689927801179
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:416:nda-7",
+        "arm": "same_nli_positional_first2",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.989662783759409
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:318:nda-17",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.5011804
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:318:nda-7",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.5025091748745413
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:311:nda-17",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.503062234908133
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:311:nda-7",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.5006119449816416
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:311:nda-3",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.5012591100251822
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:475:nda-17",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.5024542
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:475:nda-3",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.5006364
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:179:nda-17",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.502986
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:179:nda-7",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.5030981149070566
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:179:nda-3",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.5030453402436272
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:577:nda-17",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.5004743799810248
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:517:nda-17",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.5009751
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:517:nda-7",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.5007441299553521
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:617:nda-7",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "Yes",
+        "prediction": "No",
+        "confidence": 0.50063205
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:617:nda-3",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.5027570849172874
+      },
+      {
+        "id": "original-contractnli:train:epoch12:dev:416:nda-17",
+        "arm": "native104_on_ruvector_evidence",
+        "gold_binary": "No",
+        "prediction": "Yes",
+        "confidence": 0.5052234898955302
+      }
+    ],
+    "latency_seconds": {
+      "p50": 8.67762943750131,
+      "scope": "Whole saved HTTP request; three FP32 arms plus Native104/evidence, not primary-only deployment."
+    }
+  },
+  "new_model_calls": 0,
+  "new_native_calls": 0,
+  "new_fits": 0,
+  "confirmation_labels_read": false,
+  "source_original_fidelity_established": false,
+  "schema_version": 1,
+  "saved_records_sha256": "9390d6de9c2f3c88616dc3a7fe65f4a7faa0372191617b30686d7ec8b0e3f779",
+  "frozen_candidate_manifest_sha256": "e026244f921171860a8cb9a9b9ce0c03de61bd2330d6521653b16db9455b9aaf",
+  "scope": "Pure postmeasurement analysis of already consumed30saved outputs only; no CONF/full-source/model access."
+}

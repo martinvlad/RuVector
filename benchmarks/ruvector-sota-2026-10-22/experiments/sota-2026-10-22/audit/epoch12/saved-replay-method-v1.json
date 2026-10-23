@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "active_verifier": "experiments/sota-2026-10-22/audit/epoch12/replay_actual_v1.py",
+  "source_sha256": "d040e9f3567bfba98dcc49b4fe5cd2a886cbcfe2d15c07246cc784241b5df0c2",
+  "prepared_before_measurements": true,
+  "command": "OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B experiments/sota-2026-10-22/audit/epoch12/replay_actual_v1.py --project . --out /tmp/ruvector-epoch12-audit-replay-UNUSED.json --expected-plan-sha PLAN_SHA",
+  "plan_placeholder": "Replace PLAN_SHA with immutable actual frozen epoch12/plan.json SHA256; plan/source/RP never edited to resolve this placeholder.",
+  "output_rule": "Choose an actually unused path; verifier refuses overwrite.",
+  "scope": "Successful complete phase saved-output verification: all source pins, literal operation envelope/native input, deterministic packing, raw tokenizer feeds, FP32/INT8 TRAIN pairs/counters/release, complete DEV/conditionalCONF scores/CIs/runtime/resources. No model/native/session/fit calls.",
+  "failure_rule": "If a phase fails/partially completes, retain every trace and perform a separately versioned partial-evidence audit; never retry or claim the successful-complete verifier passed.",
+  "confirmation": "Only parse confirmation labels if an actual confirmation phase ran after frozen DEV/runtime gates; otherwise hash file bytes and inspect metadata only.",
+  "auditor_model_native_or_fit_calls": 0
+}

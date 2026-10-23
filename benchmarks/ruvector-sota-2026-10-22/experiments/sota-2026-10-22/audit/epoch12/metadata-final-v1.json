@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T04:16:55.060568+00:00",
+  "checks_passed": true,
+  "scope": "Independent postmeasurement READONLY root EPOCH/RESULTS/USED_IDENTITIES/REJECTION_LEDGER fact check before staging; actual scalar arithmetic comes from independent saved-count helper. No generated future stage/remote publication claimed executed.",
+  "reviewed_files": [
+    {
+      "path": "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch12/EPOCH_MANIFEST.json",
+      "bytes": 28660,
+      "sha256": "ac5c97a8f8ce9051045289a665252e40e65b1e7ef5c49668b61df4e01e0b4a90"
+    },
+    {
+      "path": "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch12/RESULTS.md",
+      "bytes": 8126,
+      "sha256": "b4b1db406043516ee872458ba448f45bc2e5c0962ecfa97cbdeef6c598d667bc"
+    },
+    {
+      "path": "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch12/USED_IDENTITIES.json",
+      "bytes": 14109,
+      "sha256": "3aec71a33c1efe39149f3ccdacc3c279c879e86690b0316c1343696d4e103f32"
+    },
+    {
+      "path": "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch12/REJECTION_LEDGER.json",
+      "bytes": 15744,
+      "sha256": "7015258ef6a5d10f542a137064a43e478469cbc3d40111c22206f3ec7607198f"
+    }
+  ],
+  "independent_counts_report_sha256": "1c2820a45a3424ae023a4adeda6c89ae4dbcc7ea77e21bf09868e98f8150051a",
+  "root_metadata_metrics_counts_roles_resources_latency_and_failed_acceptance_consistent": true,
+  "prior11_rejection_prefix_preserved": true,
+  "cumulative": {
+    "attempts": 15,
+    "completed_batches": 13,
+    "successful_HTTP": 789,
+    "learned_feature_HTTP": 144,
+    "TRAIN_sanity_HTTP": 6,
+    "evaluation_HTTP": 639,
+    "historical_failed_HTTP": 2
+  },
+  "source_identities": {
+    "prior_exposed": 173,
+    "new_DEV_groups_retired": 8,
+    "reused_TRAIN_groups_new_exposure": 0,
+    "exposed_now": 181,
+    "unreserved_after_fixed_draw": 226,
+    "CONF_reserved_groups": 16,
+    "CONF_reserved_queries": 48,
+    "confirmation_model_unused": true
+  },
+  "active_replay": {
+    "active_source": {
+      "path": "experiments/sota-2026-10-22/audit/epoch12/replay_actual_v2.py",
+      "sha256": "339328395ddaf3a1ba8d6638e89faa7ada94ac2029605e5ad30fbd3336c9faf3"
+    },
+    "method": {
+      "path": "experiments/sota-2026-10-22/audit/epoch12/saved-replay-method-v2.json",
+      "sha256": "6f068a823a7c548efa66eebb8164e6141ff72ca624ad7db0f421683ba0edc08a"
+    },
+    "scope": "Successful complete phase saved-output verification: all source pins, literal operation envelope/native input, deterministic packing, raw tokenizer feeds, FP32/INT8 TRAIN pairs/counters/release, complete DEV/conditionalCONF scores/CIs/runtime/resources. No model/native/session/fit calls.",
+    "command": "OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B experiments/sota-2026-10-22/audit/epoch12/replay_actual_v2.py --project . --out /tmp/ruvector-epoch12-audit-replay-UNUSED.json --expected-plan-sha c2b0ca8a7e3b2ba15d2bb906b84417db8ea39c025ad22d54597fe418e606899b",
+    "output_rule": "Choose an actually unused path; verifier refuses overwrite.",
+    "prepared_before_measurements": false,
+    "method_correction": {
+      "path": "experiments/sota-2026-10-22/audit/epoch12/saved-replay-method-correction-v2.json",
+      "sha256": "2ab2681da3f816ce4e4bd973bd78e300157f44f4ff166faec12e9925f4157ec6"
+    },
+    "original_frozen_v1_preserved": true,
+    "scientific_plan_and_actual_measurements_unchanged": true,
+    "new_model_native_fit_calls": 0
+  },
+  "original_frozen_RP_v1_preserved": true,
+  "postmeasurement_method_fix": "Only four NumPy scalar-to-Python float casts in newly versioned saved-output verifier; exact inverse reconstructs frozen v1. No scientific model/source/data/gate/plan change. Active v2 correctly states prepared_before_measurements=false.",
+  "RESULTS_table_matches_independent_binary_scores": true,
+  "scope_limits_preserved": [
+    "TRAIN sanity is exposed/no fit/no precision selection; no cross-epoch causal accuracy claim.",
+    "Same-model matched retrieval gains are descriptive; failed positional margin and proper losses retained.",
+    "Native104 control is on same excerpt, not full champion rerun.",
+    "Whole-HTTP latency and process high-water RSS are scoped; infrastructure spend not independently priced.",
+    "CONF forecast is estimate only; no CONF attempt or label use.",
+    "Original publisher queue115 is not rank; no RuVector official result/SOTA/ClaimBench score.",
+    "Source/upstream conversion/license/unknown contamination uncertainty retained."
+  ],
+  "models_native_fits_paid_calls": 0,
+  "existing_source_edits": 0,
+  "staged_metadata_review_pending_stage_generation": true
+}

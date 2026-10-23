@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "status": "REJECTED_DEV_GATE",
+  "TRAIN_fidelity": {
+    "binary_agreement": "4/6",
+    "threeway_agreement": "5/6",
+    "max_posterior_total_variation": 0.6780664299480341,
+    "mean_posterior_total_variation": 0.22435189634562708,
+    "max_centered_logit_difference": 2.274563709894816,
+    "binary_proper_scores": {
+      "FP32": {
+        "n": 6,
+        "correct": 3,
+        "brier": 0.753052759471077,
+        "nll": 1.186827623472836
+      },
+      "INT8": {
+        "n": 6,
+        "correct": 1,
+        "brier": 1.186589165290259,
+        "nll": 1.8706869410945424
+      }
+    },
+    "interpretation": "Exact same-input variant differences are measured on six exposed TRAIN inputs; they do not establish source-original fidelity, a pure quantization causal effect or held-out accuracy superiority. No precision was selected from these outputs."
+  },
+  "DEV": {
+    "native": {
+      "binary": {
+        "n": 24,
+        "correct": 13,
+        "brier": 0.7523063615926262,
+        "nll": 1.5531993051958914
+      },
+      "binary_predicted_counts": {
+        "No": 8,
+        "Yes": 16
+      },
+      "wrong_confidence_mean": 0.8812716031690155,
+      "wrong_confidence_at_least_0_8": 9,
+      "threeway": {
+        "n": 24,
+        "correct": 13,
+        "brier": 0.7874670796748429,
+        "nll": 1.8971259463830037
+      },
+      "typed_predicted_counts": {
+        "Contradiction": 1,
+        "Entailment": 17,
+        "NotMentioned": 6
+      },
+      "typed_confusion_gold_to_prediction": {
+        "Entailment": {
+          "Entailment": 10,
+          "Contradiction": 1,
+          "NotMentioned": 2
+        },
+        "Contradiction": {
+          "Entailment": 2,
+          "Contradiction": 0,
+          "NotMentioned": 1
+        },
+        "NotMentioned": {
+          "Entailment": 5,
+          "Contradiction": 0,
+          "NotMentioned": 3
+        }
+      },
+      "source_retention": {
+        "numeric_mentions_total_per_query": 690,
+        "numeric_mentions_retained_per_query": 170,
+        "numeric_retention_fraction": 0.2463768115942029,
+        "mean_document_character_coverage_per_query": 0.27199505610043434,
+        "scope": "Repeated per-query source-position exposure counts, not unique document totals, numeric truth, annotation coverage or evidence sufficiency."
+      }
+    },
+    "positional": {
+      "binary": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.7835669019563983,
+        "nll": 1.5058595140860065
+      },
+      "binary_predicted_counts": {
+        "No": 13,
+        "Yes": 11
+      },
+      "wrong_confidence_mean": 0.8705001952583724,
+      "wrong_confidence_at_least_0_8": 8,
+      "threeway": {
+        "n": 24,
+        "correct": 11,
+        "brier": 0.8803005649627327,
+        "nll": 1.9648127921281864
+      },
+      "typed_predicted_counts": {
+        "Contradiction": 2,
+        "Entailment": 11,
+        "NotMentioned": 11
+      },
+      "typed_confusion_gold_to_prediction": {
+        "Entailment": {
+          "Entailment": 6,
+          "Contradiction": 2,
+          "NotMentioned": 5
+        },
+        "Contradiction": {
+          "Entailment": 2,
+          "Contradiction": 0,
+          "NotMentioned": 1
+        },
+        "NotMentioned": {
+          "Entailment": 3,
+          "Contradiction": 0,
+          "NotMentioned": 5
+        }
+      },
+      "source_retention": {
+        "numeric_mentions_total_per_query": 690,
+        "numeric_mentions_retained_per_query": 188,
+        "numeric_retention_fraction": 0.27246376811594203,
+        "mean_document_character_coverage_per_query": 0.25866324620566306,
+        "scope": "Repeated per-query source-position exposure counts, not unique document totals, numeric truth, annotation coverage or evidence sufficiency."
+      }
+    },
+    "excerpt104": {
+      "binary": {
+        "n": 24,
+        "correct": 8,
+        "brier": 0.5010783329108904,
+        "nll": 0.6942255269732676
+      },
+      "binary_predicted_counts": {
+        "No": 7,
+        "Yes": 17
+      },
+      "wrong_confidence_mean": 0.501978072168086,
+      "wrong_confidence_at_least_0_8": 0
+    },
+    "all_arms_binary_correct": {
+      "ruvector_top2": 13,
+      "same_nli_lexical_top2": 10,
+      "same_nli_positional_first2": 12,
+      "native104_on_ruvector_evidence": 8
+    },
+    "interpretation": "The fixed FP32 native arm must pass every frozen control/proper-score condition; a gain against one retrieval selector cannot override another failed gate. New DEV documents differ from e11, so cross-epoch13vs12 is not a causal accuracy gain."
+  },
+  "next_direction": "Use the saved paired variant evidence and legal contradiction/neutral errors to prioritize a separately frozen source-verifiable legal decision model. Do not rescue or select a precision, threshold, context or fallback on this exposed DEV. Any new study needs its own checkpoint lock and frozen source/data/budget gates within the existing authorization.",
+  "limits": [
+    "Only two TRAIN and eight DEV document groups",
+    "Unknown pretraining overlap and exact upstream weight/conversion provenance",
+    "Numeric and character retention are source-position exposure, not evidence sufficiency",
+    "No confirmation attempt, champion promotion, official score/rank or SOTA established"
+  ],
+  "new_model_calls": 0,
+  "new_native_calls": 0,
+  "new_fits": 0
+}

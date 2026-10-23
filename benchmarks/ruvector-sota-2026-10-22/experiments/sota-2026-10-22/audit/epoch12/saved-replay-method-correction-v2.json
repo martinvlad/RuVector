@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T04:11:21.961371+00:00",
+  "original_pinned_source_sha256": "d040e9f3567bfba98dcc49b4fe5cd2a886cbcfe2d15c07246cc784241b5df0c2",
+  "new_source": "experiments/sota-2026-10-22/audit/epoch12/replay_actual_v2.py",
+  "new_source_sha256": "339328395ddaf3a1ba8d6638e89faa7ada94ac2029605e5ad30fbd3336c9faf3",
+  "original_attempt": "Failed before writing any actual-independent-v1.json; strict proper_scores rejected locally reconstructed NumPy scalar probabilities in TRAIN diagnostic at line165. No scientific pass claimed.",
+  "error": "ValueError: Nonfinite, nonnumeric, or out-of-range probability",
+  "change": "Only cast four locally reconstructed FP32/INT8 TRAIN binary probabilities from NumPy float64 to Python float before the existing strict scorer. Values, labels, inputs, metrics, gates, sourceplan and actual model run unchanged.",
+  "exact_inverse_recovers_v1": true,
+  "frozen_actual_plan_sha256": "c2b0ca8a7e3b2ba15d2bb906b84417db8ea39c025ad22d54597fe418e606899b",
+  "new_model_native_fit_paid_calls": 0,
+  "scope": "Postmeasurement pure saved-output method correction only; preserve frozen v1/sourceplan. Never rerun actual native process."
+}

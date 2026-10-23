@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "epoch": 12,
+  "study_id": "native-fp32-quantization-fidelity-e12",
+  "frozen_at": "2026-10-23T04:00:40.591367+00:00",
+  "authorization": "Current explicit continuation; at most two nonretryable CPU2 processes,600seconds each including all model initialization/TRAIN sanity/DEV/cleanup. No actual probes before this freeze.",
+  "hypothesis": "One irrevocably fixed FP32 version of the epoch11 larger pretrained three-way NLI checkpoint, with actual native RuVector evidence and matched same-model lexical/positional context. Six already-exposed TRAIN questions compare FP32 versus quantized logits on exactly the same primary context; descriptive numerical fidelity only, no fitting, precision selection, thresholds or fallback. Source-original upstream weight fidelity remains unknown.",
+  "prior_closed_studies": {
+    "original": 6,
+    "epoch5": 1,
+    "epoch6": 1,
+    "epoch7": 1,
+    "epoch8": 2,
+    "epoch9": 1,
+    "epoch10": 1,
+    "epoch11": 1,
+    "lifetime_before": 14
+  },
+  "new_study": {
+    "native_attempt_cap": 2,
+    "attempts_started_before": 0,
+    "automatic_retries": 0,
+    "seconds_per_phase_including_init_cleanup": 600,
+    "CPU_cores": 2,
+    "ORT_intra": 2,
+    "ORT_inter": 1,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "candidate_source_manifest_sha256": "e026244f921171860a8cb9a9b9ce0c03de61bd2330d6521653b16db9455b9aaf",
+  "data_contract_sha256": "bfb175660396473ef1f672903530792991725d68a8610aff2d887762597ce63b",
+  "train": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch12/train-sanity6.jsonl",
+    "sha256": "b2a0dcfbbe72b9051ff0cf1bf5a73ca066156ef134e72dbe5e60b710accd1ad1",
+    "queries": 6,
+    "questions": 6,
+    "document_groups": 2,
+    "status": "REUSED_TRAIN_SANITY_NO_FIT_NO_SELECTION; already exposed, never fresh benchmark generalization",
+    "allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch12/train-allowlist.json",
+    "allowlist_sha256": "34e0d5f37d8fea16fd21d7c801df2f7455d808e3f05eeac3518b919515b72b3f"
+  },
+  "training_feature_questions": 0,
+  "train_sanity_questions": 6,
+  "calibration": [],
+  "fitting": false,
+  "primary_precision": "FP32_FIXED_BEFORE_TRAIN",
+  "development": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch12/development24.jsonl",
+    "sha256": "05f579f4f3e0fc0b799ba3d3c0ffcddbb8af03e3ca525991cfb5de0596c4891d",
+    "queries": 24,
+    "document_groups": 8,
+    "status": "New project-unused groups; one frozen gate, no fitting, selection or calibration"
+  },
+  "confirmation": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+    "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "queries": 48,
+    "document_groups": 16,
+    "status": "Existing epoch9 bank unchanged/project-model-unused; no labels for selection or fitting; scorer/auditor only after frozen gates",
+    "allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch12/confirmation-allowlist.json",
+    "allowlist_sha256": "65485b57d37a3341031cd4e125539e6c052f34844a60f93be7f1035db68c913e"
+  },
+  "data_frozen_at": "2026-10-23T03:46:03.359178+00:00",
+  "lease_expires_unix": 1792730396.2882364,
+  "champion": "Submitted Native104/RRF10 unchanged until independently accepted development and unused confirmation, then publisher eligibility/protocol required; no automatic promotion/submission"
+}

@@ -1,0 +1,12 @@
+Restore source/data with the reviewed checkpoint bootstrap.py and restore_checkpoint.py.
+Restore original pinned CC-BY-4.0 ContractNLI data through the reviewed epoch3 helper.
+Restore the exact22 native runtime files through candidate/epoch5/reconstruction/restore_runtime.py.
+Restore the inherited16 context/BGE/native assets using their pinned source helpers and assets.lock.json.
+Restore the exact six epoch11 metadata/tokenizer/INT8 files through candidate/epoch11/acquire_assets.py with its pinned immutable revision.
+Restore exactly one additional published FP32 ONNX file with candidate/epoch12/acquire_assets.py and model-assets.lock.json.
+The only supported modes are explicit --download, exact --cache-dir, or --verify-only; paths, bytes and SHA256 are enforced before acceptance.
+The FP32 export is1741989392 bytes/SHA2569fbf57959bd9143720289cd1eab1aaaa00fc99459fd25ffeff8eba1ccf955d2b at Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli revisiona70e12f8244efae07cf6fdfa935df30e3ac4a060.
+Model binaries are omitted from the checkpoint. Source-only restore is not full model/runtime readiness. No archived controller or model/native initialization is performed by restoration.
+Python versions: numpy2.2.6, onnxruntime1.22.1, tokenizers0.21.4.
+The parent-only phase1 constructor enables TRAIN sanity, which loads fixed FP32 plus INT8 diagnostic, BGE and native104 inside its600second watchdog. Exactly six metadata-allowlisted TRAIN diagnostics precede finish_training_sanity(); this releases INT8 and opens FP32 DEV.
+Phase2, if gates admit it, initializes FP32 only and cannot run diagnostic INT8. No new precision/model/source choice can be made from TRAIN/DEV or confirmation labels.

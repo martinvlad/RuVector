@@ -1,0 +1,727 @@
+{
+  "schema_version": 1,
+  "epoch": 12,
+  "study_id": "native-fp32-quantization-fidelity-e12",
+  "saved_at": "2026-10-23T04:14:23.178404+00:00",
+  "parent_checkpoint": "edb193532821ddc43084eca932f36ec29d045b60",
+  "lease_commit": "6ac6e7305c81d7bac165784742f49d28fece493a",
+  "frozen_plan_sha256": "c2b0ca8a7e3b2ba15d2bb906b84417db8ea39c025ad22d54597fe418e606899b",
+  "status": "REJECTED_DEV_GATE",
+  "hypothesis": "One irrevocably fixed FP32 version of the epoch11 larger pretrained three-way NLI checkpoint, with actual native RuVector evidence and matched same-model lexical/positional context. Six already-exposed TRAIN questions compare FP32 versus quantized logits on exactly the same primary context; descriptive numerical fidelity only, no fitting, precision selection, thresholds or fallback. Source-original upstream weight fidelity remains unknown.",
+  "scientific_scope": "Internal CC-BY original ContractNLI three-predicate NDA pilot. TRAIN sanity is exposed diagnostic data, never benchmark generalization. FP32-versus-quantized comparison is not original-upstream verification. No current JevBench300, full LegalBench or ClaimBench score/rank.",
+  "source_and_data_frozen_before_measurement": true,
+  "candidate_manifest": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch12/proposal-manifest.json",
+    "sha256": "e026244f921171860a8cb9a9b9ce0c03de61bd2330d6521653b16db9455b9aaf"
+  },
+  "premeasurement_acceptance": {
+    "path": "experiments/sota-2026-10-22/audit/epoch12/premeasurement-acceptance-v1.json",
+    "sha256": "bd71b1d99670a3e32bf4de95b6f6806b0ce913c8cd2c321498d4620d59046d7a"
+  },
+  "independent_actual_report": {
+    "path": "experiments/sota-2026-10-22/audit/epoch12/actual-independent-v1.json",
+    "sha256": "35dbc7137e5367c7c565d1571e4b19c33d279e58e64d97369bdbcc386ee957f8"
+  },
+  "actual_results": {
+    "TRAIN_declared": 6,
+    "training_feature_HTTP": 0,
+    "training_sanity_HTTP": 6,
+    "training_sanity_decisions_completed": 6,
+    "training_sanity_requests_started": 6,
+    "TRAIN_sanity_metrics": {
+      "ruvector_top2": {
+        "n": 6,
+        "correct": 3,
+        "brier": 0.753052759471077,
+        "nll": 1.1868276234728363,
+        "errors": 0,
+        "strict_valid": 6
+      },
+      "same_nli_lexical_top2": {
+        "n": 6,
+        "correct": 2,
+        "brier": 1.1425861339696977,
+        "nll": 2.52664622272008,
+        "errors": 0,
+        "strict_valid": 6
+      },
+      "same_nli_positional_first2": {
+        "n": 6,
+        "correct": 3,
+        "brier": 0.8019445292363652,
+        "nll": 1.763519685092901,
+        "errors": 0,
+        "strict_valid": 6
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 6,
+        "correct": 3,
+        "brier": 0.5004325422536412,
+        "nll": 0.6935797083619712,
+        "errors": 0,
+        "strict_valid": 6
+      }
+    },
+    "TRAIN_precision_fidelity": {
+      "n": 6,
+      "paired_identical_native_contexts": true,
+      "typed_decision_agreements": 5,
+      "binary_decision_agreements": 4,
+      "max_raw_logit_difference": 2.172300100326538,
+      "max_centered_logit_difference": 2.274563709894816,
+      "max_posterior_TV": 0.6780664299480341,
+      "precision_metrics": {
+        "FP32": {
+          "n": 6,
+          "correct": 3,
+          "brier": 0.753052759471077,
+          "nll": 1.1868276234728363
+        },
+        "INT8": {
+          "n": 6,
+          "correct": 1,
+          "brier": 1.186589165290259,
+          "nll": 1.8706869410945421
+        }
+      },
+      "rows": [
+        {
+          "id": "original-contractnli:train:epoch12:train_sanity:288:nda-17",
+          "fidelity": {
+            "input_text_sha256": "6f0898091539e73159c282c07087be78901a0231538038cdbbca422b7304c8a6",
+            "identical_feed_tokens": 489,
+            "raw_logits_max_absolute_difference": 0.31913459300994873,
+            "raw_logits_RMS_difference": 0.25752839890595147,
+            "centered_logits_max_absolute_difference": 0.34903231263160706,
+            "typed_probability_max_absolute_difference": 0.08116179468546281,
+            "typed_probability_L1_difference": 0.1623235893709256,
+            "Jensen_Shannon_divergence_nats": 0.005430452883247559,
+            "FP32_typed_decision": "Entailment",
+            "INT8_typed_decision": "Entailment",
+            "typed_decision_agrees": true,
+            "FP32_binary_decision": "Yes",
+            "INT8_binary_decision": "Yes",
+            "binary_decision_agrees": true,
+            "source_original_fidelity_established": false
+          },
+          "gold": "No",
+          "typed_gold": "Contradiction"
+        },
+        {
+          "id": "original-contractnli:train:epoch12:train_sanity:288:nda-7",
+          "fidelity": {
+            "input_text_sha256": "6928d0abb4093b899cde2c9c17f688cf4fd7a123a133cd866754ddeaa26771d9",
+            "identical_feed_tokens": 455,
+            "raw_logits_max_absolute_difference": 0.6953658908605576,
+            "raw_logits_RMS_difference": 0.488666680482625,
+            "centered_logits_max_absolute_difference": 0.6910453401505947,
+            "typed_probability_max_absolute_difference": 0.19109774636774052,
+            "typed_probability_L1_difference": 0.38219549273548115,
+            "Jensen_Shannon_divergence_nats": 0.024311541499862976,
+            "FP32_typed_decision": "Entailment",
+            "INT8_typed_decision": "Entailment",
+            "typed_decision_agrees": true,
+            "FP32_binary_decision": "No",
+            "INT8_binary_decision": "Yes",
+            "binary_decision_agrees": false,
+            "source_original_fidelity_established": false
+          },
+          "gold": "No",
+          "typed_gold": "Contradiction"
+        },
+        {
+          "id": "original-contractnli:train:epoch12:train_sanity:288:nda-3",
+          "fidelity": {
+            "input_text_sha256": "06bad165ed1947cc0fcc65b7e4fcbe256959843221fd41ef12f27e179337b945",
+            "identical_feed_tokens": 478,
+            "raw_logits_max_absolute_difference": 2.172300100326538,
+            "raw_logits_RMS_difference": 1.667527249702147,
+            "centered_logits_max_absolute_difference": 2.274563709894816,
+            "typed_probability_max_absolute_difference": 0.031191944718828024,
+            "typed_probability_L1_difference": 0.06238388943765617,
+            "Jensen_Shannon_divergence_nats": 0.009441014766852362,
+            "FP32_typed_decision": "Entailment",
+            "INT8_typed_decision": "Entailment",
+            "typed_decision_agrees": true,
+            "FP32_binary_decision": "Yes",
+            "INT8_binary_decision": "Yes",
+            "binary_decision_agrees": true,
+            "source_original_fidelity_established": false
+          },
+          "gold": "Yes",
+          "typed_gold": "Entailment"
+        },
+        {
+          "id": "original-contractnli:train:epoch12:train_sanity:239:nda-17",
+          "fidelity": {
+            "input_text_sha256": "d6e1eb3b611148d0567d9a2f97f5e8f165eb45cb8334863a3fac6f43da7f357f",
+            "identical_feed_tokens": 453,
+            "raw_logits_max_absolute_difference": 1.5981459617614746,
+            "raw_logits_RMS_difference": 1.3030912602302918,
+            "centered_logits_max_absolute_difference": 1.6696296234925587,
+            "typed_probability_max_absolute_difference": 0.020203081427607964,
+            "typed_probability_L1_difference": 0.040406162855216,
+            "Jensen_Shannon_divergence_nats": 0.005842477327425448,
+            "FP32_typed_decision": "Entailment",
+            "INT8_typed_decision": "Entailment",
+            "typed_decision_agrees": true,
+            "FP32_binary_decision": "Yes",
+            "INT8_binary_decision": "Yes",
+            "binary_decision_agrees": true,
+            "source_original_fidelity_established": false
+          },
+          "gold": "No",
+          "typed_gold": "Contradiction"
+        },
+        {
+          "id": "original-contractnli:train:epoch12:train_sanity:239:nda-7",
+          "fidelity": {
+            "input_text_sha256": "452b1466083a6dbcc1f0fcbd97347c76e20a5ee0e25075791a74fcbbef035cd9",
+            "identical_feed_tokens": 461,
+            "raw_logits_max_absolute_difference": 1.7048080563545227,
+            "raw_logits_RMS_difference": 1.3504596631768466,
+            "centered_logits_max_absolute_difference": 1.6651724676291146,
+            "typed_probability_max_absolute_difference": 0.344390380926089,
+            "typed_probability_L1_difference": 0.6887807618521778,
+            "Jensen_Shannon_divergence_nats": 0.10013569777643566,
+            "FP32_typed_decision": "Entailment",
+            "INT8_typed_decision": "Entailment",
+            "typed_decision_agrees": true,
+            "FP32_binary_decision": "Yes",
+            "INT8_binary_decision": "Yes",
+            "binary_decision_agrees": true,
+            "source_original_fidelity_established": false
+          },
+          "gold": "No",
+          "typed_gold": "Contradiction"
+        },
+        {
+          "id": "original-contractnli:train:epoch12:train_sanity:239:nda-3",
+          "fidelity": {
+            "input_text_sha256": "18514a07f42702f93e031648c1b5ec9496f0de3bbd8d24c831f65385d4ce2986",
+            "identical_feed_tokens": 447,
+            "raw_logits_max_absolute_difference": 2.1561221927404404,
+            "raw_logits_RMS_difference": 1.4824566497784881,
+            "centered_logits_max_absolute_difference": 1.9919748157262804,
+            "typed_probability_max_absolute_difference": 0.6780664299480341,
+            "typed_probability_L1_difference": 1.3561328598960682,
+            "Jensen_Shannon_divergence_nats": 0.25935521298994,
+            "FP32_typed_decision": "NotMentioned",
+            "INT8_typed_decision": "Entailment",
+            "typed_decision_agrees": false,
+            "FP32_binary_decision": "No",
+            "INT8_binary_decision": "Yes",
+            "binary_decision_agrees": false,
+            "source_original_fidelity_established": false
+          },
+          "gold": "No",
+          "typed_gold": "NotMentioned"
+        }
+      ],
+      "scope": "Already-exposed TRAIN-only numerical variants, no fitting or selection. Co-located exports do not prove original source fidelity or quantization causality."
+    },
+    "DEV_n": 24,
+    "DEV_declared": 24,
+    "DEV_document_groups": 8,
+    "candidate_correct": 13,
+    "successful_HTTP": 30,
+    "failed_HTTP": 0,
+    "started_without_final_wire_response": 0,
+    "completed_corpora": 1,
+    "metrics": {
+      "train": {
+        "ruvector_top2": {
+          "n": 6,
+          "correct": 3,
+          "brier": 0.753052759471077,
+          "nll": 1.1868276234728363,
+          "errors": 0,
+          "strict_valid": 6
+        },
+        "same_nli_lexical_top2": {
+          "n": 6,
+          "correct": 2,
+          "brier": 1.1425861339696977,
+          "nll": 2.52664622272008,
+          "errors": 0,
+          "strict_valid": 6
+        },
+        "same_nli_positional_first2": {
+          "n": 6,
+          "correct": 3,
+          "brier": 0.8019445292363652,
+          "nll": 1.763519685092901,
+          "errors": 0,
+          "strict_valid": 6
+        },
+        "native104_on_ruvector_evidence": {
+          "n": 6,
+          "correct": 3,
+          "brier": 0.5004325422536412,
+          "nll": 0.6935797083619712,
+          "errors": 0,
+          "strict_valid": 6
+        }
+      },
+      "development": {
+        "ruvector_top2": {
+          "n": 24,
+          "correct": 13,
+          "brier": 0.7523063615926262,
+          "nll": 1.5531993051958914,
+          "errors": 0,
+          "strict_valid": 24
+        },
+        "same_nli_lexical_top2": {
+          "n": 24,
+          "correct": 10,
+          "brier": 0.9311965138375332,
+          "nll": 1.901207534558715,
+          "errors": 0,
+          "strict_valid": 24
+        },
+        "same_nli_positional_first2": {
+          "n": 24,
+          "correct": 12,
+          "brier": 0.7835669019563983,
+          "nll": 1.5058595140860065,
+          "errors": 0,
+          "strict_valid": 24
+        },
+        "native104_on_ruvector_evidence": {
+          "n": 24,
+          "correct": 8,
+          "brier": 0.5010783329477261,
+          "nll": 0.6942255198899348,
+          "errors": 0,
+          "strict_valid": 24
+        }
+      }
+    },
+    "pipeline_latency_seconds": {
+      "train": {
+        "p50": 10.485810979502276,
+        "p95": 12.079960253253375,
+        "max": 12.473058768002375,
+        "scope": "Whole HTTP includes three FP32 arms, Native104 and evidence; TRAIN additionally one INT8 decode. Not primary-only deployment."
+      },
+      "development": {
+        "p50": 8.67762943750131,
+        "p95": 9.596949020250396,
+        "max": 12.012085554000805,
+        "scope": "Whole HTTP includes three FP32 arms, Native104 and evidence; TRAIN additionally one INT8 decode. Not primary-only deployment."
+      }
+    },
+    "completion": {
+      "development": {
+        "at": "2026-10-23T04:07:26.689949+00:00",
+        "phase": "development",
+        "exit_code": 0,
+        "error": null,
+        "wall_seconds_including_model_load": 295.0868231479981,
+        "source_plan_unchanged": true,
+        "native_attempts": 1,
+        "prior_closed_attempts": 14,
+        "lifetime_native_attempt": 15,
+        "owned_group_cleanup": {
+          "pgid": 28711,
+          "live_members_before": [],
+          "signals": [],
+          "hard_cleanup_deadline_unix": 1792728751.602808,
+          "live_members_after": [],
+          "finished_unix": 1792728446.6899283,
+          "finished_within_deadline": true
+        },
+        "new_paid_calls": 0,
+        "new_GPU_calls": 0,
+        "popen_invocation_reserved": true,
+        "native_process_started": true,
+        "official_score": null,
+        "official_rank": null
+      }
+    },
+    "resources": {
+      "development": {
+        "at": "2026-10-23T04:07:26.380727+00:00",
+        "worker_cpu_user_seconds": 540.670955,
+        "worker_cpu_system_seconds": 10.851048,
+        "worker_peak_RSS_bytes": 5330251776,
+        "terminated_children_cpu_user_seconds": 6.527764,
+        "terminated_children_cpu_system_seconds": 0.6465139999999999,
+        "largest_terminated_child_peak_RSS_bytes": 5330251776,
+        "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+        "allowed_CPU_ids": [
+          0,
+          1
+        ],
+        "configured_ORT_threads": 2,
+        "whole_pipeline": "Phase1 TRAIN sanity6 paired INT8 diagnostics plus all FP32 matched arms/native104/evidence; primary-only deployment not measured"
+      }
+    },
+    "actual_execution_counters": {
+      "development": {
+        "requests_attempted": 30,
+        "requests_completed": 30,
+        "native104_requests_attempted": 30,
+        "native104_requests_completed": 30,
+        "native_core_searches_attempted": 30,
+        "native_core_searches_completed": 30,
+        "bge_forward_batches_attempted": 52,
+        "bge_forward_batches_completed": 52,
+        "bge_texts_attempted": 172,
+        "bge_texts_completed": 172,
+        "nli_forward_pairs_attempted": 96,
+        "nli_forward_pairs_completed": 96,
+        "nli_input_tokens_attempted": 45834,
+        "nli_input_tokens_completed": 45834,
+        "context_partitions_attempted": 30,
+        "context_partitions_completed": 30,
+        "context_packs_attempted": 90,
+        "context_packs_completed": 90,
+        "bge_forward_wall_seconds": 7.146079072954308,
+        "nli_forward_wall_seconds": 255.2774767620358,
+        "nli_fp32_forward_pairs_attempted": 90,
+        "nli_fp32_forward_pairs_completed": 90,
+        "nli_fp32_input_tokens_attempted": 43051,
+        "nli_fp32_input_tokens_completed": 43051,
+        "nli_fp32_forward_wall_seconds": 246.18974312602222,
+        "nli_int8_diagnostic_forward_pairs_attempted": 6,
+        "nli_int8_diagnostic_forward_pairs_completed": 6,
+        "nli_int8_diagnostic_input_tokens_attempted": 2783,
+        "nli_int8_diagnostic_input_tokens_completed": 2783,
+        "nli_int8_diagnostic_forward_wall_seconds": 9.087733636013581,
+        "training_sanity_requests_attempted": 6,
+        "training_sanity_requests_completed": 6
+      }
+    },
+    "ANN_exact_top2_agreement_count": 30,
+    "ANN_exact_candidate_set_agreement_count": 30,
+    "same_context_singleton_logit_drift": 0.0,
+    "paired_document_bootstrap": {
+      "train": {
+        "same_nli_lexical_top2": {
+          "accuracy": {
+            "mean_improvement": 0.16666666666666666,
+            "ci95": [
+              0,
+              0.3333333333333333
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "brier": {
+            "mean_improvement": 0.38953337449862063,
+            "ci95": [
+              0.0,
+              0.7790667489972413
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "nll": {
+            "mean_improvement": 1.3398185992472438,
+            "ci95": [
+              0.0,
+              2.6796371984944876
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          }
+        },
+        "same_nli_positional_first2": {
+          "accuracy": {
+            "mean_improvement": 0,
+            "ci95": [
+              0,
+              0
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "brier": {
+            "mean_improvement": 0.04889176976528816,
+            "ci95": [
+              0.0,
+              0.09778353953057632
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "nll": {
+            "mean_improvement": 0.5766920616200648,
+            "ci95": [
+              0.0,
+              1.1533841232401296
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          }
+        },
+        "native104_on_ruvector_evidence": {
+          "accuracy": {
+            "mean_improvement": 0.0,
+            "ci95": [
+              -0.3333333333333333,
+              0.3333333333333333
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "brier": {
+            "mean_improvement": -0.2526202172174358,
+            "ci95": [
+              -0.3984614182295184,
+              -0.10677901620535325
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "nll": {
+            "mean_improvement": -0.493247915110865,
+            "ci95": [
+              -0.8624825539318668,
+              -0.12401327628986329
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          }
+        }
+      },
+      "development": {
+        "same_nli_lexical_top2": {
+          "accuracy": {
+            "mean_improvement": 0.125,
+            "ci95": [
+              -0.125,
+              0.3333333333333333
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "brier": {
+            "mean_improvement": 0.17889015224490695,
+            "ci95": [
+              -0.16692129671324576,
+              0.5488926374270607
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "nll": {
+            "mean_improvement": 0.3480082293628234,
+            "ci95": [
+              -0.36765061980542235,
+              1.1971212018737518
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          }
+        },
+        "same_nli_positional_first2": {
+          "accuracy": {
+            "mean_improvement": 0.041666666666666664,
+            "ci95": [
+              -0.125,
+              0.20833333333333331
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "brier": {
+            "mean_improvement": 0.031260540363772134,
+            "ci95": [
+              -0.10275075849179281,
+              0.18733358619765236
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "nll": {
+            "mean_improvement": -0.04733979110988497,
+            "ci95": [
+              -0.15232196131208156,
+              0.04039368254027242
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          }
+        },
+        "native104_on_ruvector_evidence": {
+          "accuracy": {
+            "mean_improvement": 0.20833333333333331,
+            "ci95": [
+              0.041666666666666664,
+              0.375
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "brier": {
+            "mean_improvement": -0.2512280286449001,
+            "ci95": [
+              -0.46427598202499787,
+              -0.08991812606352918
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          },
+          "nll": {
+            "mean_improvement": -0.8589737853059568,
+            "ci95": [
+              -1.5309225195734015,
+              -0.3409182654852751
+            ],
+            "draws": 2000,
+            "seed": 20261022
+          }
+        }
+      }
+    },
+    "threeway_metrics": {
+      "train": {
+        "ruvector_top2": {
+          "n": 6,
+          "correct": 2,
+          "brier": 0.908432847911294,
+          "nll": 1.5582705250340398
+        },
+        "same_nli_lexical_top2": {
+          "n": 6,
+          "correct": 1,
+          "brier": 1.2739773191880572,
+          "nll": 2.8813362147574426
+        },
+        "same_nli_positional_first2": {
+          "n": 6,
+          "correct": 2,
+          "brier": 1.0834358946242055,
+          "nll": 2.668325529261107
+        }
+      },
+      "development": {
+        "ruvector_top2": {
+          "n": 24,
+          "correct": 13,
+          "brier": 0.7874670796748429,
+          "nll": 1.8971259463830037
+        },
+        "same_nli_lexical_top2": {
+          "n": 24,
+          "correct": 10,
+          "brier": 0.994756150861484,
+          "nll": 2.2113605550612476
+        },
+        "same_nli_positional_first2": {
+          "n": 24,
+          "correct": 11,
+          "brier": 0.8803005649627326,
+          "nll": 1.9648127921281864
+        }
+      }
+    },
+    "uncertainty": "Only8DEV/16CONFdocumentgroups; nominalunadjusted pairedgroupbootstrap, unknownpretrainingoverlap, internalpublicsourcepilot not officialbenchmarkgeneralization."
+  },
+  "DEV_gate_passed": false,
+  "runtime_admission": {
+    "at": "2026-10-23T04:07:26.749163+00:00",
+    "formula_id": "48xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "max_DEV_HTTP_seconds": 12.012085554000805,
+    "max_DEV_units": 24,
+    "max_confirmation_units": 57,
+    "source_unit_ratio": 2.375,
+    "DEV_initialization_seconds": 18.704766151000513,
+    "projected_confirmation_seconds": 1466.7872854580928,
+    "allowed": false,
+    "forecast_limit_seconds": 600,
+    "actual_confirmation_watchdog_seconds": 600,
+    "scope": "Conservative admission forecast, not a performance guarantee. No confirmation labels/model outputs used."
+  },
+  "confirmation_consumed": false,
+  "confirmation_actual_model_consumed_per_independent_report": false,
+  "confirmation_attempted": false,
+  "confirmation_requests_started": 0,
+  "confirmation_requests_completed": 0,
+  "internal_confirmation_gate_passed": false,
+  "used_identities_sha256": "3aec71a33c1efe39149f3ccdacc3c279c879e86690b0316c1343696d4e103f32",
+  "rejection_or_acceptance_reason": "Primary13/24; lexical10,positional12,sameexcerpt1048; Brier0.7523063615926262,NLL1.5531993051958914. FrozenmeaningfulDEVgate=False.",
+  "next_research_priority": "Close this one fixed-FP32/quantized-TRAIN numerical-fidelity study; all14prior attempts stayclosed. Preserve submittedNative104/RRF10. Use saved pairedTRAIN logits and freshDEV failure modes to distinguish quantization-relative effects from legal-domain/context failures; exact upstream original-weight fidelity remains unknown. No precision/model/readout/context/threshold rescue on exposed DEV. A genuinely distinct next hypothesis requires new frozen licensed roles/source/runtime and unused confirmation. No currentJev300/fullLegalBench/ClaimBench score/rank; officialSOTA requires matching publisher result/rank/eligibility. Existingepoch9CONF48 remainsproject-model-unused reservedbank850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50, notexecutedthisepoch. NewDEV8 permanentlyexposedafteractualphase1 evenpartialfailure;226unreservedoriginaltrain groupsremain.",
+  "budget": {
+    "all_prior_closed_attempts": 14,
+    "prior_studies": {
+      "original": 6,
+      "epoch5": 1,
+      "epoch6": 1,
+      "epoch7": 1,
+      "epoch8": 2,
+      "epoch9": 1,
+      "epoch10": 1,
+      "epoch11": 1
+    },
+    "new_study_used": 1,
+    "new_study_cap": 2,
+    "unspent_phase_slots": 1,
+    "allowed_further_attempts_in_closed_study": 0,
+    "new_study_status": "CLOSED_REJECTED_DEV_GATE",
+    "lifetime_native_attempts": 15,
+    "this_epoch_native_attempts": 1,
+    "confirmed_native_processes_started": 1,
+    "attempt_count_scope": "Conservative invocation reservation count from pre-Popen durablemarkers or PIDreceipts; does not imply model execution or question consumption",
+    "CPU_threads": 2,
+    "max_seconds_per_phase_including_init_cleanup": 600,
+    "automatic_retries": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "cleanup": {
+    "worker_and_owned_groups_absent": true,
+    "scoped_lock_held_until_compare_and_set_publication": true
+  },
+  "champions_unchanged": [
+    "submittedNative104",
+    "RRF10"
+  ],
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "new_publisher_submissions": 0,
+  "emails_sent": 0,
+  "source_license": "Original ContractNLI CC-BY4 source/attribution pinned. Upstream model MIT declaration preserved; mixed training-data terms, converter exact-upstream-weight-commit/license gaps and unknown pretraining overlap disclosed. FP32 and INT8 are from the exact same converter revision; no pretrained weights published.",
+  "original_premeasurement_replay_reproduction": {
+    "active_source": {
+      "path": "experiments/sota-2026-10-22/audit/epoch12/replay_actual_v1.py",
+      "sha256": "d040e9f3567bfba98dcc49b4fe5cd2a886cbcfe2d15c07246cc784241b5df0c2"
+    },
+    "method": {
+      "path": "experiments/sota-2026-10-22/audit/epoch12/saved-replay-method-v1.json",
+      "sha256": "8daf4fa0788c7cd7956ba1e48d728801a04886d6128dda5f3c0ef8d904236bdb"
+    },
+    "scope": "Pure saved-output replay; no model/native/session initialization or fitting. Exactsource/assets/runtime closure required; modelbinaries separately acquired andhashverified. Active verifier source prepared BEFORE actual.",
+    "command": "OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B experiments/sota-2026-10-22/audit/epoch12/replay_actual_v1.py --project . --out /tmp/ruvector-epoch12-audit-replay-UNUSED.json --expected-plan-sha PLAN_SHA",
+    "output_rule": "Use actuallyunusedoutputpath; verifierrefusesoverwrite. PLAN_SHA placeholder resolved toimmutableplan identity in finalmanifest."
+  },
+  "replay_reproduction": {
+    "active_source": {
+      "path": "experiments/sota-2026-10-22/audit/epoch12/replay_actual_v2.py",
+      "sha256": "339328395ddaf3a1ba8d6638e89faa7ada94ac2029605e5ad30fbd3336c9faf3"
+    },
+    "method": {
+      "path": "experiments/sota-2026-10-22/audit/epoch12/saved-replay-method-v2.json",
+      "sha256": "6f068a823a7c548efa66eebb8164e6141ff72ca624ad7db0f421683ba0edc08a"
+    },
+    "scope": "Successful complete phase saved-output verification: all source pins, literal operation envelope/native input, deterministic packing, raw tokenizer feeds, FP32/INT8 TRAIN pairs/counters/release, complete DEV/conditionalCONF scores/CIs/runtime/resources. No model/native/session/fit calls.",
+    "command": "OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 retrieval/.venv/bin/python -B experiments/sota-2026-10-22/audit/epoch12/replay_actual_v2.py --project . --out /tmp/ruvector-epoch12-audit-replay-UNUSED.json --expected-plan-sha c2b0ca8a7e3b2ba15d2bb906b84417db8ea39c025ad22d54597fe418e606899b",
+    "output_rule": "Choose an actually unused path; verifier refuses overwrite.",
+    "prepared_before_measurements": false,
+    "method_correction": {
+      "path": "experiments/sota-2026-10-22/audit/epoch12/saved-replay-method-correction-v2.json",
+      "sha256": "2ab2681da3f816ce4e4bd973bd78e300157f44f4ff166faec12e9925f4157ec6"
+    },
+    "original_frozen_v1_preserved": true,
+    "scientific_plan_and_actual_measurements_unchanged": true,
+    "new_model_native_fit_calls": 0
+  },
+  "snapshot_receipt": {
+    "path": "experiments/sota-2026-10-22/epoch12/actual-snapshot.json",
+    "sha256": "4f79ba6969c724d83e8307bdc865688a370adde103115cb92b11e37ef02d6bbc"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T03:59:06.658169+00:00",
+  "checks_passed": true,
+  "scope": "Independent READONLY source/AST/metadata arithmetic review of ROOT-owned builders BEFORE their execution; no root builder, model, native engine, fit, real scoring or external mutation executed by reviewer",
+  "reviewed_sources": [
+    {
+      "path": "/tmp/freeze_e12.py",
+      "bytes": 11018,
+      "sha256": "a64c63a1926dee0561b8ebee7b6501b6aad9030c462f4d16d0a2531c74493ce5"
+    },
+    {
+      "path": "/tmp/manifest_e12.py",
+      "bytes": 11314,
+      "sha256": "fdd210e308d1d45ee66c5cf85d46963d81a86c5b7da18a6723f955a13063afb2"
+    },
+    {
+      "path": "/tmp/stage_e12.py",
+      "bytes": 10624,
+      "sha256": "1e6db33a053080de9c6863c7030751408a5fcd8bfe3986ff21a2f793b53ad479"
+    },
+    {
+      "path": "/tmp/transport_e12.py",
+      "bytes": 2248,
+      "sha256": "fbb513f253a7d1fbbb345a79a9620314656ef39225ef903a29c37588e731903e"
+    }
+  ],
+  "baseline": {
+    "checkpoint_parent": "edb193532821ddc43084eca932f36ec29d045b60",
+    "lease_commit": "6ac6e7305c81d7bac165784742f49d28fece493a",
+    "lease_root_tree": "05baa3a59dc15974ca4ac63fc5f55b1778b17bd6",
+    "public_leaves": 1739,
+    "checkpoint_project_files": 1671,
+    "native_attempts": 14,
+    "completed_batches": 12,
+    "successful_HTTP": 759,
+    "learned_feature_HTTP": 144,
+    "evaluation_HTTP": 615,
+    "historical_failed_HTTP": 2
+  },
+  "fixed_roles": {
+    "TRAIN_sanity_queries": 6,
+    "TRAIN_sanity_reused_groups": 2,
+    "training_feature_queries": 0,
+    "fitting": false,
+    "precision_selection": false,
+    "DEV_queries": 24,
+    "DEV_new_groups": 8,
+    "prior_exposed_groups": 173,
+    "exposed_after_phase1_attempt": 181,
+    "unreserved_after_fixed_draw": 226,
+    "CONF_queries": 48,
+    "CONF_groups": 16,
+    "CONF_projection_parsed_by_builders": false,
+    "CONF_metadata_only_identification": true
+  },
+  "resolved_review_findings": [
+    {
+      "finding": "TRAIN HTTP200 accounting must remain distinct from scored-record completion",
+      "resolution": "Manifest counts TRAIN sanity HTTP from wire status200/phase train; separate training_sanity_decisions_completed preserves actual scored records."
+    },
+    {
+      "finding": "Historical manifest/ledger references must not rely on persistent outer filesystem",
+      "resolution": "Prior USED hash and old11 rejection ledger loaded from fresh durable-kit canonical files; hashes verified against fresh1671-file checkpoint."
+    }
+  ],
+  "replay_binding": {
+    "active_source": "experiments/sota-2026-10-22/audit/epoch12/replay_actual_v1.py",
+    "active_source_sha256": "d040e9f3567bfba98dcc49b4fe5cd2a886cbcfe2d15c07246cc784241b5df0c2",
+    "method_sha256": "8daf4fa0788c7cd7956ba1e48d728801a04886d6128dda5f3c0ef8d904236bdb",
+    "active_source_prepared_before_measurements": true,
+    "PLAN_SHA_resolution": "Immutable RP source retains placeholder; final epoch manifest substitutes exact frozen plan SHA without editing RP/plan/source."
+  },
+  "conditional_arithmetic_checks": [
+    {
+      "name": "hypothetical_complete_phase1",
+      "conditional_only_not_executed": true,
+      "successful_HTTP": 789,
+      "learned_feature_HTTP": 144,
+      "TRAIN_sanity_HTTP": 6,
+      "evaluation_HTTP": 639,
+      "native_attempts": 15,
+      "completed_batches": 13
+    },
+    {
+      "name": "hypothetical_partial_TRAIN",
+      "conditional_only_not_executed": true,
+      "successful_HTTP": 762,
+      "learned_feature_HTTP": 144,
+      "TRAIN_sanity_HTTP": 3,
+      "evaluation_HTTP": 615,
+      "native_attempts": 15,
+      "completed_batches": 12
+    },
+    {
+      "name": "hypothetical_TRAIN_HTTP200_no_scored_record",
+      "conditional_only_not_executed": true,
+      "successful_HTTP": 760,
+      "learned_feature_HTTP": 144,
+      "TRAIN_sanity_HTTP": 1,
+      "evaluation_HTTP": 615,
+      "native_attempts": 15,
+      "completed_batches": 12
+    },
+    {
+      "name": "hypothetical_complete_phase1_and_CONF",
+      "conditional_only_not_executed": true,
+      "successful_HTTP": 837,
+      "learned_feature_HTTP": 144,
+      "TRAIN_sanity_HTTP": 6,
+      "evaluation_HTTP": 687,
+      "native_attempts": 16,
+      "completed_batches": 14
+    }
+  ],
+  "other_checks": [
+    "All four builder modules parse as Python without execution.",
+    "Root stage preserves prior1671 project entries and archives before-epoch12 manifest; base1739 leaves append-only except3expected controls.",
+    "Old11 rejection history prefix loaded intact before one result append; independent postrun/staged proof remains required.",
+    "Conservative invocation attempts are separate from confirmed PID starts and completed corpora.",
+    "TRAIN sanity never included in DEV/confirmation score metrics or learned-feature counter.",
+    "CONF retirement follows any phase2 attempted state, even partial or zero-success invocation; actual consumption/completion separate.",
+    "Scoped CAS metadata6ac6/root05baa and Git transport checkpointprefix/mode100644 exact; no main/merge/release operation in reviewed builders.",
+    "Public candidate/data allowlists checked; root private publication journals and nested model/raw source caches excluded by stage traversal.",
+    "Scientific source/assets/gates remain frozen; actual source/evidence/cold/publication checks required later."
+  ],
+  "no_experiments_executed_by_this_review": true,
+  "real_model_native_fit_paid_calls": 0,
+  "source_edits_by_reviewer": 0,
+  "future_generated_artifacts_not_claimed_executed": true,
+  "premeasurement_metadata_versioning": {
+    "supersedes_report": "experiments/sota-2026-10-22/audit/epoch12/metadata-builders-independent-v1.json",
+    "supersedes_report_sha256": "bf40557c397f4873312067a4557969e9bef2971f7f8d1e632aaa6b86db289c19",
+    "new_active_acceptance": "experiments/sota-2026-10-22/audit/epoch12/acceptance-contract-v2.json",
+    "new_active_acceptance_sha256": "f8850d7fdb0326a0a96dc4c9d2969a5c5d35339649c4c75f1c75b51118ecb3f7",
+    "only_freeze_builder_change": "Reference acceptance-contract-v2.json instead of v1; byte-exact inverse reproduces reviewed v1 sourceSHA. Other three builders unchanged.",
+    "only_acceptance_change": "Formula identifier normalized to inherited controller ID; complete algebra/whole-phase1-init, data, gates, limits and scientific source unchanged. Extra correction metadata preserved.",
+    "generated_freeze_or_actual_models_executed_by_reviewer": false
+  }
+}

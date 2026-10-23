@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T04:01:47.358539+00:00",
+  "checks_passed": true,
+  "accepted_for_one_controlled_study": true,
+  "plan_sha256": "c2b0ca8a7e3b2ba15d2bb906b84417db8ea39c025ad22d54597fe418e606899b",
+  "source_pins_verified_outer_and_actual": 201,
+  "all_actual_pins_materialized_and_resolve_inside_project": true,
+  "candidate_manifest_sha256": "e026244f921171860a8cb9a9b9ce0c03de61bd2330d6521653b16db9455b9aaf",
+  "data_contract_sha256": "bfb175660396473ef1f672903530792991725d68a8610aff2d887762597ce63b",
+  "new_local_controller_verifier_passed": true,
+  "data_roles": {
+    "TRAIN": "Six diagnostics from two already-exposed e10 TRAIN groups; no fits or selection, preserves original TRAIN role.",
+    "DEV": "New24/8 source-only draw, excludes prior173/reserved16/official splits. All declared DEV retired conservatively after phase1 Popen.",
+    "CONF": "Exact unchanged project-model-unused48/16; no labels used for fitting/selection. Actual Popen attempt retires bank even0HTTP.",
+    "calibration": "none"
+  },
+  "source_guards": {
+    "one_fixed_FP32_chosen_before_TRAIN_outputs": true,
+    "Neutral_preserved_E_C_N_T1": true,
+    "same_context_and_model_all_matched_selectors": true,
+    "TRAIN3FP32_and1INT8_native_context_each_once": true,
+    "quant_released_before_DEV_and_not_initialized_CONF": true,
+    "TRAIN_outcomes_not_candidate_gate": true,
+    "no_fit_precision_selection_fallback_or_retry": true,
+    "literal_wire_envelope_preserves_native_input_no_labels": true,
+    "Popen_conservative_invocation_separate_confirmed_PID": true
+  },
+  "premeasurement_evidence": {
+    "data-independent-v1.json": "59b643664a1a7a22c736b55ae17b686bdd4fcc5d812b92fbe29aefecd4e09068",
+    "runtime-independent-v1.json": "05374ae2219f2349c29851926d287f580c1f80810cb6e6baec40393d6ea360d5",
+    "context-capacity-independent-v1.json": "f1e70810144f5db7203bd667d0beca1d50d8c0621e83299f06c162faae8bca6b",
+    "source-tests-independent-v1.json": "25e960c62725b4d515300fdeab6c223d84a123cd0089cd2fce0b12d04c56a351",
+    "model-static-independent-v1.json": "4f3b7a27d37c77efdbf6e29306667586c6d2a0afb8090b3d5901b04cd5eb7773",
+    "acceptance-contract-v1.json": "70ff27620ac3beffb6262fda3ac6d63c3d594bd4230375a6c4f2ea1a339d1bff",
+    "acceptance-contract-v2.json": "f8850d7fdb0326a0a96dc4c9d2969a5c5d35339649c4c75f1c75b51118ecb3f7",
+    "confirmation-gate-v1.json": "4974c23606637d5b56ab3af4d96c706f234f800a93c21550e8c13d00f4516bdb",
+    "saved-replay-method-v1.json": "8daf4fa0788c7cd7956ba1e48d728801a04886d6128dda5f3c0ef8d904236bdb"
+  },
+  "active_saved_replay": {
+    "path": "experiments/sota-2026-10-22/audit/epoch12/replay_actual_v1.py",
+    "sha256": "d040e9f3567bfba98dcc49b4fe5cd2a886cbcfe2d15c07246cc784241b5df0c2",
+    "prepared_before_actual_measurements": true,
+    "no_inference_or_fit": true
+  },
+  "budgets": {
+    "native_batches": 2,
+    "threads": 2,
+    "seconds_per_batch": 600,
+    "seconds_per_decision": 60,
+    "candidate_configs": 1,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "prior14_closed_new_cap2": true,
+  "runtime_admission": "48*maxDEVHTTP*max(1,57/24)+2*wholephase1init+60<=600 AND lease>=forecast+30;600s hard watchdog includes all model init/TRAIN/DEV/cleanup. No timing probe.",
+  "scope": "Approve bounded measurement only, not candidate promotion. Co-located FP32/INT8 variants are not verified original-upstream equivalence or exact quantization derivation. No causal quantization or official benchmark claim. Public-source unknown pretraining overlap and model license/converter gaps retained.",
+  "no_run_started_at_verification": true,
+  "model_initializations_native_or_paid_calls_by_auditor": 0
+}

@@ -1,0 +1,669 @@
+{
+  "at": "2026-10-23T22:30:17.660807+00:00",
+  "checks_passed": true,
+  "elapsed_seconds": 0.35160824000195134,
+  "epoch": 22,
+  "errors": 0,
+  "failures": 0,
+  "guard_violations": [],
+  "kind": "PURE_SYNTHETIC_ARITHMETIC_SOURCE_GROUP_AND_RECEIPT_FAULT_TESTS",
+  "model_native_tokenizer_parser_original_case_or_annotation_calls": 0,
+  "schema_version": 1,
+  "scope": "Authored synthetic fixtures only, not benchmark competence, capacity or generalization.",
+  "skipped": 0,
+  "source_identities": [
+    {
+      "bytes": 2302,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/common.py",
+      "sha256": "02919bb271feddffa23974cd7df3ee71a28f178e15c607750a4bbe5ede89f86e"
+    },
+    {
+      "bytes": 10854,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/metrics.py",
+      "sha256": "231894dabf8bc801d4564824158d14d47cdfe0727097254eb120a950d4f735c3"
+    },
+    {
+      "bytes": 16471,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/model_checks.py",
+      "sha256": "9c1bb111ebeb3bc9558c070b7b1619c8de241e67990a143df2093afb987b0d34"
+    },
+    {
+      "bytes": 8746,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/project_gold.py",
+      "sha256": "b577e8a9bd86f7f03d40b5b235f7eb4cbf47eef3fbe55b5071886834411ead29"
+    },
+    {
+      "bytes": 14243,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/replay.py",
+      "sha256": "375ff396d687369b2db69459c095059bf112691db0a858c032122fe7f454e356"
+    },
+    {
+      "bytes": 3513,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/run_pure_tests.py",
+      "sha256": "98924b2e69f105a59b7dffae3edc28ad5aff9e693630f61e09900a54a3f9f246"
+    },
+    {
+      "bytes": 19159,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/sentence_checks.py",
+      "sha256": "58ff6b1ddf729ada8df9fb43c9b20070ced8164b22a3a2def0b13eadfbbd5498"
+    },
+    {
+      "bytes": 11109,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/test_metrics.py",
+      "sha256": "6f011482695215f002300e7a5da42439b0122910169208ce0a89b58ac23f29eb"
+    },
+    {
+      "bytes": 15499,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/test_model.py",
+      "sha256": "3f35822d89de9574ae73c781d39a8e919787aabff8b170aa704c478a686d1423"
+    },
+    {
+      "bytes": 14240,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/test_replay.py",
+      "sha256": "c8acb45ca51bc5431eb1548ebd9f5ac0a92c8a689946e9c7633e0598ba2a80e2"
+    },
+    {
+      "bytes": 10171,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/test_sentence.py",
+      "sha256": "1469b5435d33b064eacba954ea2185776b5649a3bd09c48b2a92d006459e5295"
+    },
+    {
+      "bytes": 5879,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/tokenizer_replay.py",
+      "sha256": "02dc80c6fcdc46df1c154f501fa4aceea69ea8dad410a0189381f56196023443"
+    },
+    {
+      "bytes": 5678,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/tokenizer_source.py",
+      "sha256": "86dc890be4400259dc6e6a36cc29dc6894645ff548d7a5b0588160037c599373"
+    },
+    {
+      "bytes": 22663,
+      "path": "experiments/sota-2026-10-22/audit/epoch22/trace_checks.py",
+      "sha256": "d0259a40ba0e6d0a8be41f7f6a2316e7d7093bd77ae384257a87881817ee8d2c"
+    }
+  ],
+  "test_results": [
+    {
+      "status": "PASS",
+      "test": "test_metrics.GateTests.test_all_contradiction_cannot_pass_class_guard"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.GateTests.test_bool_document_gate_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.GateTests.test_bootstrap_deterministic_and_per_document"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.GateTests.test_bootstrap_recipe_not_mutable"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.GateTests.test_duplicate_phase_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.GateTests.test_equal_accuracy_cannot_pass"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.GateTests.test_json_never_emits_nonstandard_infinity"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.GateTests.test_meaningful_confirmation_ci_gain_passes"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.GateTests.test_meaningful_dev_gain_passes"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.GateTests.test_missing_gold_class_fails"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.GateTests.test_partial_phase_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_binary_metric_uses_entailment_marginal"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_bool_document_substitution_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_document_substitution_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_duplicate_expected_documents_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_duplicate_question_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_empty_metric_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_exact_identity_success"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_extra_arm_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_float_document_substitution_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_known_strong_metric"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_latency_percentile_literal"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_nonstring_question_substitution_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_reordered_question_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_string_document_substitution_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_swapped_document_assignments_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_uniform_categorical_brier_and_nll"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.MetricsTests.test_zero_gold_probability_not_clipped"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_binary_decision_mismatch_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_binary_half_tie_yes"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_binary_threshold_separate_from_argmax"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_logit_mismatch_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_mass_outside_tolerance_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_negative_probability_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_nonfinite_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_raw_cardinality_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_source_label_mapping"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_stable_large_logits"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_tie_order_canonical_not_raw"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_typed_decision_mismatch_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_unknown_class_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_metrics.ProbabilityTests.test_wrong_binary_marginal_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.CounterAndTokenProofFaultTests.test_ORT_sessions_before_engineering_pass_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.CounterAndTokenProofFaultTests.test_bool_completed_BGE_counter_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.CounterAndTokenProofFaultTests.test_bool_tokenizer_proof_index_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.CounterAndTokenProofFaultTests.test_exact_synthetic_counters_complete"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.CounterAndTokenProofFaultTests.test_exact_synthetic_counters_engineering"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.CounterAndTokenProofFaultTests.test_exact_synthetic_tokenizer_proof"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.CounterAndTokenProofFaultTests.test_hidden_extra_embedding_calls_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.CounterAndTokenProofFaultTests.test_placeholder_tokenizer_proof_rows_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.CounterAndTokenProofFaultTests.test_stale_tokenizer_execution_receipt_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.CounterAndTokenProofFaultTests.test_unplanned_ORT_sessions_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.CounterAndTokenProofFaultTests.test_wrong_tokenizer_proof_feed_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.CounterAndTokenProofFaultTests.test_wrong_tokenizer_proof_source_assets_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.CounterAndTokenProofFaultTests.test_wrong_tokenizer_proof_text_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.FeedFaultTests.test_actual_feed_hash_tampering_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.FeedFaultTests.test_attention_hole_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.FeedFaultTests.test_boolean_id_substitution_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.FeedFaultTests.test_missing_official_token_types_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.FeedFaultTests.test_nonfinite_latency_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.FeedFaultTests.test_silent_truncation_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.FeedFaultTests.test_structurally_valid_synthetic_feed"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.FeedFaultTests.test_text_pair_changed_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.FeedFaultTests.test_wrong_instance_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.FeedFaultTests.test_wrong_precision_state_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.GoldAndResourceGuardTests.test_boolean_counter_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.GoldAndResourceGuardTests.test_negative_duration_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.GoldAndResourceGuardTests.test_partial_predictions_never_open_gold"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.GoldAndResourceGuardTests.test_unapproved_gold_never_opens_source"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.GoldAndResourceGuardTests.test_unsafe_source_path_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.NativeFaultTests.test_boolean_hit_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.NativeFaultTests.test_changed_bundle_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.NativeFaultTests.test_duplicate_hit_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.NativeFaultTests.test_fabricated_reference_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.NativeFaultTests.test_negative_latency_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.NativeFaultTests.test_reference_not_substituted_for_observed_ANN"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.NativeFaultTests.test_reference_only_faked_native_flag_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.NativeFaultTests.test_synthetic_native_receipt_structure"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.NativeFaultTests.test_wrong_native_binary_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_replay.NativeFaultTests.test_zero_cosine_vector_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.AdditionalFeedFaultTests.test_bool_segment_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.AdditionalFeedFaultTests.test_extra_feed_key_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.AdditionalFeedFaultTests.test_model_reserved_vocab_boundary_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.AdditionalFeedFaultTests.test_nonmonotonic_segments_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.AdditionalFeedFaultTests.test_original_high_level_comparison_is_required"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.AdditionalFeedFaultTests.test_source_special_ids_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.AdditionalFeedFaultTests.test_wrong_observed_feed_dtype_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_actual_config_dtype_is_not_used_as_tensor_precision_proof"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_actual_declared_versions_match_immutable_wheel_metadata"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_actual_num_labels_cannot_change_or_be_boolean"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_actual_structural_config_or_source_config_cannot_change"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_all_four_loading_error_lists_mandatory_empty"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_any_unverified_source_parameter_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_asset_byte_hash_tampering_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_bool_position_shape_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_bool_source_counter_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_compared_boolean_tensor_count_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_duplicate_parameter_comparison_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_half_buffer_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_inference_downcast_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_missing_parameter_comparison_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_nonpersistent_position_is_not_optional"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_old_unused_pooler_exception_cannot_pass"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_parameter_order_not_ambiguous"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_parameter_source_dtype_and_dimension_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_prequalified_tokenizer_backend_cannot_change"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_raw_C_and_E_permutation_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_remote_code_or_non_safetensors_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_runtime_version_drift_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_saved_state_hash_must_match"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_source_FP16_cannot_be_reported_as_FP32"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_source_storage_config_is_distinct_from_loaded_architecture"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_source_tokenizer_identity_cannot_change"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_tokenizer_cannot_hide_type_ids"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_tokenizer_extra_learned_segments_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_valid_complete_synthetic_metadata"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_wrong_classifier_or_pooler_shape_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_model.ModelMetadataFaultTests.test_wrong_model_revision_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.AtomicPackingTests.test_all_ranked_groups_before_any_optional_neighbor"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.AtomicPackingTests.test_best_member_rank_maps_group_once"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.AtomicPackingTests.test_definition_priority_is_whole_group_and_claim_independent"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.AtomicPackingTests.test_exact_numeric_retention_only"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.AtomicPackingTests.test_fallback_definition_group_not_global_priority"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.AtomicPackingTests.test_incomplete_ranking_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.AtomicPackingTests.test_overbudget_group_rejected_entirely_no_fragment_fallback"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.AtomicPackingTests.test_whole_hypothesis_overcap_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.ContextProofFaultTests.test_changed_coverage_after_context_replay_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.ContextProofFaultTests.test_exact_complete_synthetic_context_proof"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.ContextProofFaultTests.test_missing_context_proof_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.ContextProofFaultTests.test_native_validation_not_optional"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.ContextProofFaultTests.test_no_context_replay_for_engineering_only"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.ContextProofFaultTests.test_reordered_arm_proof_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.ContextProofFaultTests.test_science_gates_and_metrics_unchanged"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.ContextProofFaultTests.test_tampered_attempt_proof_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.SourceSentenceTests.test_blank_paragraph_break_prevents_attachment"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.SourceSentenceTests.test_boolean_unit_identity_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.SourceSentenceTests.test_decimal_period_is_not_sentence_boundary"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.SourceSentenceTests.test_exact_whitespace_tail_and_unicode_spans"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.SourceSentenceTests.test_one_bullet_stripped_before_fixed_marker"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.SourceSentenceTests.test_oversized_atom_fallback_stays_one_atomic_group"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.SourceSentenceTests.test_qualifier_metadata_tampering_rejected"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.SourceSentenceTests.test_qualifiers_attach_transitively"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.SourceSentenceTests.test_semicolon_is_literal_boundary"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.SourceSentenceTests.test_source_over192_units_rejected_without_tail_clipping"
+    },
+    {
+      "status": "PASS",
+      "test": "test_sentence.SourceSentenceTests.test_source_tail_omission_rejected"
+    }
+  ],
+  "tests": 145
+}

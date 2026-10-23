@@ -1,0 +1,84 @@
+{
+  "CONF_document_ids": [
+    308,
+    159,
+    284,
+    501,
+    267,
+    494,
+    261,
+    313
+  ],
+  "CONF_questions": 24,
+  "DEV_document_ids": [
+    328,
+    350,
+    135,
+    248,
+    441,
+    123,
+    98,
+    87
+  ],
+  "DEV_questions": 24,
+  "actual_new_case_model_native_parser_calls": 0,
+  "arms": [
+    "ruvector_top2",
+    "same_nli_lexical_top2",
+    "same_nli_positional_first2"
+  ],
+  "at": "2026-10-23T22:22:46.106187+00:00",
+  "calibration": [],
+  "champion": "SubmittedNative104/RRF10 unchanged",
+  "context_contract": {
+    "bytes": 12602,
+    "path": "experiments/sota-2026-10-22/candidate/epoch22/context.py",
+    "sha256": "9ca2968ed800443bc75fac452daf2cbf17bf27cf1b3b75cbfb220bfa23a9e727"
+  },
+  "epoch": 22,
+  "hypothesis": "Hold the qualified original DeBERTa typed reader/state/probability math fixed; preselect complete source sentence/semicolon qualifier groups and admit all ranked groups before optional neighboring filler. This may reduce context exclusions without treating a miss as insufficient evidence.",
+  "limits": {
+    "CPU_threads": 2,
+    "GPU_calls": 0,
+    "candidate_configurations": 1,
+    "cleanup_margin_seconds": 5,
+    "complete_phase_NLI_forwards": 75,
+    "complete_phase_native_indexes": 9,
+    "complete_phase_native_queries": 27,
+    "interop_threads": 1,
+    "native_worker_attempts": 2,
+    "outer_hard_seconds": 598,
+    "paid_calls": 0,
+    "seconds_per_phase_including_init_cleanup": 600
+  },
+  "matched_control": "Exact same actual reader/state/tokenizer/whole hypothesis/512cap/grouping/packing for all three arms; only native/lexical/positional unit ranking differs. No oldpacking or cross-epoch causal ablation is claimed.",
+  "official_rank": null,
+  "official_score": null,
+  "promotion_or_submission_allowed": false,
+  "reader": {
+    "actual_adapter_unchanged_from21": true,
+    "compute": "ExplicitFP32CPU,all originaltrainedvaluesmandatory,all loading lists empty,noquantization",
+    "reader_py_unchanged_from21": true,
+    "repository": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "source_storage": "Original394 learnedF16 tensors andoneI64positionbuffer"
+  },
+  "readiness": "Same3 prior public E/C/N canaries mustallpass before any new legal projection.",
+  "roles": "Frozen ID-only data owner selection; no new source cases read by engine. All prior DEV including21 forever exposed. ReservedCONF previously public inputtext capacity-only access disclosed;0projectneuralpredictions/labels until independently acceptedDEV and runtime gate.",
+  "schema_version": 1,
+  "source_checkpoint": "c7823614cd5bc59f031445b55682f59230dc1901",
+  "source_context_contract_file": "experiments/sota-2026-10-22/candidate/epoch22/context-contract.json",
+  "source_header": {
+    "bytes": 105145,
+    "path": "experiments/sota-2026-10-22/candidate/epoch22/source-safetensors-header.json",
+    "sha256": "66e01a83a35e6de02dc7d224035495f092f7ee2c4c4130cc8aa7dc37f8de3eec"
+  },
+  "study_id": "native-deberta-v3-fp32-sentencegroups-e22",
+  "train": [],
+  "uncertainty": [
+    "This is a new local licensed ContractNLI train-derived development transfer diagnostic, not full LegalBench/JevBench/ClaimBench or official placement.",
+    "DEV documents differ from21; no paired oldpacking causal or cross-epoch accuracy comparison.",
+    "The literal qualifier prefix heuristic may miss non-prefix or discontinuous qualifications; whole oversized groups may be skipped and retained clauses may still be misclassified.",
+    "Exact pretrainedtraining corpus revisions and contamination remain unknown; source weights modelcard/MIT qualification remains pinned."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-23T22:18:33.594445+00:00",
+  "checks_passed": true,
+  "epoch": 22,
+  "only_source_delta": "Output receipt directory epoch21/preparation to epoch22/preparation; no source, model, runtime, installation, asset or verification policy changes.",
+  "permission_scope": "Source acceptance only; root must verify actual runtime postconditions. This does not admit inference or benchmark execution.",
+  "prior_source": {
+    "bytes": 10300,
+    "path": "experiments/sota-2026-10-22/epoch21/preparation/restore_public_runtime_cache_v1.py",
+    "sha256": "283bef2ea5882e81206b26686e91b22c778f451967244ef8cf65a7e13bfb08ef"
+  },
+  "review_harness_note": "Initial source delta assertion used a trailing slash absent from the actual quoted directory literal and failed before runtime/helper execution. Corrected exact quoted-prefix assertion passed; source bytes unchanged.",
+  "reviewer_model_native_tokenizer_parser_original_case_calls": 0,
+  "schema_version": 1,
+  "source": {
+    "bytes": 10300,
+    "path": "experiments/sota-2026-10-22/epoch22/preparation/restore_public_runtime_cache_v1.py",
+    "sha256": "328cb60925c97e54f460f7c64ec5d12cd1d2c4d3062a3aaaa7812fbd2d362c20"
+  },
+  "source_checks": {
+    "25_frozen_public_assets_only": true,
+    "31_exact_official_CPU_wheels_and_ZIP_RECORD_members": true,
+    "AST_compile": true,
+    "CPU_affinity_two": true,
+    "byte_equal_hardlinks_or_exact_wheel_extraction": true,
+    "fresh_venv_only_no_overlay": true,
+    "hashes_verified": true,
+    "no_original_case_or_annotation_JSON_parse": true,
+    "no_pip_hooks_or_network_or_neural_native_tokenizer_imports": true,
+    "strict_regular_nonsymlink_prepost_hashes": true
+  },
+  "status": "INDEPENDENT_RUNTIME_RESTORER_SOURCE_ACCEPTED"
+}

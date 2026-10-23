@@ -1,0 +1,85 @@
+{
+  "NNI_native_parser_benchmark_calls": 0,
+  "at": "2026-10-23T22:22:46.106187+00:00",
+  "attachment": "A marker at an atom beginning after stripping at most one bullet attaches the complete atom to the previous same-paragraph group, transitively. No attachment crosses blank-line paragraph boundaries.",
+  "attempt_fields": [
+    "group_id",
+    "unit_ids",
+    "role",
+    "anchor",
+    "source_span",
+    "candidate_pair_tokens",
+    "accepted",
+    "all_group_units_admitted_together"
+  ],
+  "bullet_regex": "^\\s*(?:(?:\\([a-zA-Z0-9]+\\)|[a-zA-Z0-9]+[.)])\\s+)?",
+  "epoch": 22,
+  "group_catalog_fields": [
+    "group_id",
+    "start",
+    "end",
+    "paragraph_id",
+    "unit_ids",
+    "sentence_ids",
+    "qualifier_sentence_ids",
+    "token_fallback"
+  ],
+  "hypothesis_claim": "Proposed mitigation of observed clause omission, not a proven causal fix. Retained-but-misclassified restrictions may remain wrong.",
+  "literal_sentence_boundary_limitation": "Exact inherited regex atoms include semicolon boundaries and may split abbreviations; this is not a linguistic sentence parser. Decimal punctuation followed by a digit is not a boundary. All source characters including whitespace/tails remain partitioned.",
+  "new_coverage_fields": [
+    "source_sentence_groups",
+    "qualifier_regex",
+    "bullet_regex",
+    "group_ranking_policy",
+    "group_ranking_ids",
+    "group_ranking_anchor_unit_ids",
+    "selected_group_ids_admission_order",
+    "all_selected_groups_complete"
+  ],
+  "packing": {
+    "coverage": "Whole selected/omitted unit/group spans, all original numeric spans and retained booleans, raw candidate token counts and full group admission attempts. Retention/omission are mechanical, never sufficiency annotations or a typed decision rule.",
+    "final_text": "Merge adjacent selected source-unit spans, retain global source order, join disjoint spans by two newlines. No rewritten aliases, predicates, numbers, selected evidence or hypotheses.",
+    "optional_neighbor_stage": "Only after all ranked groups. For each newly admitted ranked group in admission order, try previous then next same-paragraph group only if not among ranked groups, not already preselected/admitted and not already inspected. Each optional whole group considered once.",
+    "ranked_stage": "Deduplicate group IDs in order of first member among exact observed first min40 unit IDs. Scan each whole group once. Admit all its units together iff exact joint source-order premise plus whole claim fits512. Over-budget group is entirely omitted.",
+    "shared_definition_priority": "Original15 marker regex and160-token cap, but complete source groups only; groups containing token fallback fragments cannot become shared definitions. Claim-independent global source order; whole prelude must fit jointly with whole claim.",
+    "whole_claim_pair_cap": 512
+  },
+  "paragraph_regex": "(?:\\r?\\n)[ \\t]*(?:\\r?\\n)+",
+  "partition": {
+    "bge_cap": 256,
+    "greedy_adjacent_atom_merge": false,
+    "limit_failure": "Reject complete source before a forward if unit cap or indivisible token capacity fails; no clipping or adaptive second policy.",
+    "max_units": 192,
+    "nli_cap": 160,
+    "oversized_atom": "Exact prior6 token-offset partition fallback. Every fragment of an original atom shares one group and is admitted atomically with its attached qualifiers, never a partial group.",
+    "target": 128
+  },
+  "policy": "source-sentence-qualifier-groups-ranked-before-neighbors-v1",
+  "qualifier_regex": "^(?:provided\\b|however\\b|except\\b|unless\\b|notwithstanding\\b|subject\\s+to\\b|in\\s+(?:such|that)\\s+(?:case|event)\\b|in\\s+(?:the\\s+)?event\\b|such\\s+(?:disclosure|information|copies|copy)\\b|any\\s+such\\b|only\\b|to\\s+the\\s+extent\\b|upon\\b|at\\s+(?:the\\s+|a\\s+)?request\\b|and\\s+(?:only|provided)\\b|but\\b)",
+  "removed_counterfactual": "Old no-priority tokenization-only counterfactual removed; no extra model/control arm added.",
+  "retrieval": "Actual384D BGE vector per complete bounded unit, using unchanged query prefix. Native top40 unit order stays literal. Lexical same Jaccard/source tie and positional first40 unit controls unchanged. Group priority is first observed group-member in each selector unit order; no invented group scores or extra retrieval.",
+  "schema_version": 1,
+  "scope": "One preselected source-only evidence packing method shared identically by native/lexical/positional arms. No labels, corpus text, tokenizer parser or inference used to choose this contract.",
+  "sentence_or_semicolon_atom_regex": "[.!?;][\\\"\\'\\)\\]]*(?:\\s+|$)",
+  "source": {
+    "bytes": 12602,
+    "path": "experiments/sota-2026-10-22/candidate/epoch22/context.py",
+    "sha256": "9ca2968ed800443bc75fac452daf2cbf17bf27cf1b3b75cbfb220bfa23a9e727"
+  },
+  "source_checkpoint": "c7823614cd5bc59f031445b55682f59230dc1901",
+  "unit_fields": [
+    "start",
+    "end",
+    "token_fallback",
+    "fallback_origin when fallback",
+    "fallback_boundary when fallback",
+    "id",
+    "paragraph_id",
+    "sentence_id",
+    "sentence_span",
+    "group_id",
+    "qualifier_attached",
+    "nli_tokens",
+    "bge_tokens"
+  ]
+}

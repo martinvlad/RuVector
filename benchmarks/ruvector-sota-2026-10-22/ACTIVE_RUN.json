@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
   "run_id": "epoch20-f5588491b31d",
-  "state": "EPOCH20_EXCLUSIVE_PLANNING_LEASE",
+  "state": "EPOCH20_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
   "experiments_active": true,
   "native_allowed": 0,
-  "native_allowed_after_exact_remote_readback": 0,
-  "checkpoint_parent": "01c42365b8d79c968ea4f49120a5c1d71b9e0687",
+  "native_allowed_after_exact_remote_readback": 1,
+  "conditional_confirmation_after_independent_DEV_runtime_gates": 1,
+  "checkpoint_parent": "e17331586431dfcd401e6b7e9cf7e1dfd440e235",
   "started_at": "2026-10-23T18:19:16.024741+00:00",
-  "expires_at": "2026-10-23T21:19:16.024Z",
+  "expires_at": "2026-10-23T21:19:16.024755+00:00",
   "OS_lock_held": true,
-  "OS_lock_release_pending_final_remote_readback": true,
+  "OS_lock_release_pending_final_remote_readback": false,
   "limits": {
-    "native_corpus_batches": 2,
+    "worker_attempt_cap": 2,
     "CPU_threads": 2,
-    "seconds_per_process_including_initialization_cleanup": 600,
-    "paid_API_calls": 0,
-    "GPU_calls": 0
+    "seconds_per_process_including_init_cleanup": 600,
+    "paid_GPU_calls": 0
   },
-  "instruction": "Planning lease only. Reconstruct, qualify new source/roles/runtime and publish exact immutable source before any inference or labels; no existing study may be retried."
+  "instruction": "Source-only publication. Exact independent remote readback plus live exclusive-lock proof admits DEV once. CONF additionally requires independent frozen DEV and full-cost runtime gates. Engineering canaries precede all new legal parsing; no retries or promotion/submission."
 }

@@ -1,0 +1,66 @@
+{
+  "candidate_sources": [
+    {
+      "bytes": 14015,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/reader_pooler_v1.py",
+      "sha256": "30340f3ebe1b3ba38d47bc508268486788f20d9be03f42309b7f67a743df3bcb"
+    },
+    {
+      "bytes": 17868,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/worker_pooler_v1.py",
+      "sha256": "def946d3c774016534ae9265b708c025faaffc54a5464f13f72bd54b21ba97ff"
+    },
+    {
+      "bytes": 9748,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/launch_pooler_v1.py",
+      "sha256": "2ba3ff386b28e1671685db98bcefdb88a8bb09d55a018dcc7f4d99a723c0a48e"
+    },
+    {
+      "bytes": 3728,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/test_pooler_engineering.py",
+      "sha256": "c55a343242cee7de660eeeba129b689f5b3c731e9a0aaf07db73a4f36de76f91"
+    },
+    {
+      "bytes": 5838,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/proposal-pooler-v1.json",
+      "sha256": "8a0d383754a81f22352ef1041932ddc6bd7c15aeeea9f904521f62acc0a9ddd6"
+    },
+    {
+      "bytes": 8206,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/source-manifest.pooler-v1.json",
+      "sha256": "6acd644f1b37a435938f1707f6c3910c19028a7fd6b810a62d2dbfb1295f0ef3"
+    }
+  ],
+  "decision": "PASS_PREFREEZE_EXACT_UNUSED_POOLER_SOURCE_POLICY",
+  "epoch": 20,
+  "freeze_approval": "Pending revised active audit protocol and root source bindings. This report approves only the held new candidate source compatibility correction; no performance claim.",
+  "legal_source_or_annotation_reads": 0,
+  "model_forward_calls": 0,
+  "native_calls": 0,
+  "pure_tests": {
+    "errors": 0,
+    "failures": 0,
+    "framework_modules_loaded": [],
+    "output": ".......................\n----------------------------------------------------------------------\nRan 23 tests in 0.030s\n\nOK\n",
+    "run": 23,
+    "wall_seconds": 0.03408804199716542
+  },
+  "review_findings": [
+    "Exactly the two original roberta.pooler.dense.bias/weight unexpected keys are allowed; missing, mismatch, loading errors, absent/duplicate/extra unexpected keys fail closed. Raw loading information is retained unchanged.",
+    "Original checkpoint must contain395 FP32 tensors/356412419 elements with exact pooler shapes1024 and1024x1024. The stock active classification model must contain393 parameters/355362819 elements, pooler=None, exact trained dense/out-projection shapes and unused1049600-element delta.",
+    "Stock Transformers classification forward, original checkpoint bytes, singleton FP32/eager CPU inference, semantic canaries, native retrieval and phase deadlines are unchanged. There is no head reinitialization permission.",
+    "New worker and launcher differ from preserved old source only by selecting new reader/worker filenames. All13 preserved old top-level source/report files independently match their snapshots byte for byte."
+  ],
+  "reviewer": "independent_source_publication_agent",
+  "schema_version": 1,
+  "source_manifest": {
+    "all_listed_files_verified": 33,
+    "exact_public_tree_including_preserved_versions": true,
+    "external_assets_excluded_from_git": true
+  },
+  "static_independent_basis": {
+    "path": "experiments/sota-2026-10-22/epoch20/reviews/pooler-static-compatibility-independent-v1.json",
+    "sha256": "43d86e76474f6710344084ba5e3724dda20fd9fc3675bb569555b4a558409feb"
+  },
+  "tokenizer_parser_calls": 0
+}

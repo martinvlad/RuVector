@@ -1,0 +1,54 @@
+{
+  "actual_stdlib_ZIP_pickletools_disassembly": {
+    "pickle_metadata_SHA256": "03f6b2c227f35adc67dec2de95271aa5b797906f4f24a1e7a908fe25af474ca1",
+    "pickle_metadata_bytes": 84919,
+    "tensor_opcode_windows_shape_verified": {
+      "roberta.pooler.dense.bias": {
+        "elements": 1024,
+        "following_BINGET_3_tensor_rebuild": true,
+        "opcode_position": 57246,
+        "shape": [
+          1024
+        ]
+      },
+      "roberta.pooler.dense.weight": {
+        "elements": 1048576,
+        "following_BINGET_3_tensor_rebuild": true,
+        "opcode_position": 57115,
+        "shape": [
+          1024,
+          1024
+        ]
+      }
+    },
+    "unused_pooler_elements_total": 1049600
+  },
+  "actual_verified_installed_source": [
+    {
+      "bytes": 71641,
+      "path": "retrieval/.venv/lib/python3.12/site-packages/transformers/models/roberta/modeling_roberta.py",
+      "sha256": "b9f72d3b61002572c9afde63e61e8ee615658ab29cd55dfcd169770ddf379ef3"
+    },
+    {
+      "bytes": 305342,
+      "path": "retrieval/.venv/lib/python3.12/site-packages/transformers/modeling_utils.py",
+      "sha256": "3fb801fc5b5a14a2396bebb9d503dee6a88213e2a2ce56ac9041c488e7f8566a"
+    }
+  ],
+  "at": "2026-10-23T19:05:11.938201+00:00",
+  "checkpoint_identity": {
+    "bytes": 1425814813,
+    "path": "experiments/sota-2026-10-22/candidate/epoch20/assets/ynie-roberta-large/pytorch_model.bin",
+    "previously_stream_verified_SHA256": "a51c55cb7dc41c4c862f06a3d9c413a8aa0619222bc56f06cb6f2f5b2d3ee14a"
+  },
+  "checks_passed": true,
+  "epoch": 20,
+  "model_tokenizer_native_framework_imports_or_unpickle_calls": 0,
+  "permitted_prefreeze_correction": "Precisely allowONLY these2unused originalpoolerunexpectedkeys and exactshapes/elements; requirezero missing/mismatched/errors, allbackbone/classifierparameters loaded; expose originalstorage vs inferenceparametercounts. No postfreeze relaxation permitted.",
+  "schema_version": 1,
+  "scope": "Static architecture/key compatibility only. No torchload, semantic/benchmark prediction or outcome established; selectedreader/scorer v2 source review remains required.",
+  "source_code_or_gate_modified_by_reviewer": false,
+  "source_forward_path": "Stock sequenceclassifier builds RobertaModel(add_pooling_layer=False), takes outputs[0], passes it to classificationhead; headuses features[:,0,:]\u2192dropout\u2192dense\u2192tanh\u2192dropout\u2192out_proj. Pooleroutput is notread.",
+  "source_loader_policy": "No RoBERTa-specific unexpected-key ignore policy; basePreTrainedModel defaultNone. Exactly2originalpooler tensor keys will be unexpected under currentbuiltinclassifier.",
+  "status": "INDEPENDENT_STATIC_UNUSED_POOLER_FINDING_CONFIRMED_BEFORE_FREEZE"
+}

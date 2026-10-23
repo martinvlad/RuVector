@@ -1,0 +1,115 @@
+{
+  "active_entrypoints": {
+    "launcher": "experiments/sota-2026-10-22/candidate/epoch20/launch_pooler_v1.py",
+    "reader": "experiments/sota-2026-10-22/candidate/epoch20/reader_pooler_v1.py",
+    "worker": "experiments/sota-2026-10-22/candidate/epoch20/worker_pooler_v1.py"
+  },
+  "actual_results": null,
+  "arm_name_scope": "Historical interface names; all rank min40 anchor candidates and pack variable whole units under the same512pairtokens and shared160token definition priority, then source order; no top2 literal claim.",
+  "arms": [
+    "ruvector_top2",
+    "same_nli_lexical_top2",
+    "same_nli_positional_first2"
+  ],
+  "champion": "Submitted native104/RRF10 preserved",
+  "compatibility_static_evidence": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch20/static-unused-pooler-evidence-v1.json",
+    "sha256": "bdf94e1e9f453fb09480530f5da3dab71ab73e25d587a3205f4a8e52be0d462d"
+  },
+  "context": "Unchanged reviewed15 exact-source definition priority plus reviewed6 full partition and anchor/neighbor packing, with actual new reader tokenizer. Numerical mention retention is mechanical coverage only, not arithmetic truth or semantic sufficiency.",
+  "data_roles": {
+    "DEV": "Frozen ID-only24/8docdraw; lazy input projection after actual readiness. Gold only independent postrun scorer.",
+    "calibration": [],
+    "confirmation": "Exact unused reserved16/18 input identities, source-frozen; only independent DEV/runtime PASS can admit second process. Read-only published input tokenization capacity after readiness is recorded separately from prediction/label access.",
+    "engineering": "Exactly the three public exposed19canaries, not benchmark/generalization. Everyphase requires3/3 before any new legal source parse.",
+    "train": []
+  },
+  "engineering_tests": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch20/engineering-tests-pooler-v1.json",
+    "sha256": "4c3d7407d5eec72b88fcd84442a1e592dd3cc3add1c1fe401ac83d41e7d119b4"
+  },
+  "epoch": 20,
+  "forecast": "24*maxDEV(document_elapsed_seconds/3)*max(1,CONFmaxunits/DEVmaxunits)+2*whole_pipeline_initialization_seconds+60<=600; all pipeline overhead starts at outer launcher time before module imports.",
+  "historical_prototype": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch20/proposal-contract.json",
+    "sha256": "23c12d9ca9c84b513707aeb0e0e0a2c400355e118ce43fac9365f101d75ee43e",
+    "status": "PRESERVED_PREFREEZE_STRICT_PROTOTYPE_NOT_MEASURED"
+  },
+  "hypothesis": "A different original FP32 direct-three-way RoBERTa-large reader with declared SNLI/MNLI/FEVER/ANLI supervision may handle Neutral and legal decisions more reliably than the rejected xlarge dynamic-qint8 recipe. Semantic/legal competence and retrieval gain remain unmeasured.",
+  "implementation_revision": "stock-classification-unused-pooler-compatibility-v1",
+  "lexical_formula": "Jaccard sets of Unicode word tokens from casefolded text; descending score, ascending source ID ties.",
+  "model": {
+    "canonical_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "precision": "original checkpoint explicit FP32 CPU, eager attention, no quantization/export/fitting",
+    "raw_id2label": {
+      "0": "Entailment",
+      "1": "NotMentioned",
+      "2": "Contradiction"
+    },
+    "repository": "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+    "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+    "training_overlap": "No declared ContractNLI supervision; complete run lineage/record-level pretraining overlap unverified."
+  },
+  "native": "Actual pinned native RuVector core0.1.33, platform binary SHAff559e9f...;384d BGE vectors from supplied contract only; observed native ranking never replaced with cosine/lexical reference.",
+  "observed_model_native_calls_by_engine_author": 0,
+  "official_rank": null,
+  "official_score": null,
+  "per_phase_budget": {
+    "BGE_initializations_if_qualified": 1,
+    "CPU_affinity_count": 2,
+    "GPU_calls": 0,
+    "corpus_NLI_forwards_if_qualified": 72,
+    "engineering_NLI_forwards": 3,
+    "external_cap_seconds": 600,
+    "hard_worker_and_cleanup_seconds": 598,
+    "maximum_processes_epoch": 2,
+    "model_initializations": 1,
+    "native_corpus_queries_if_qualified": 24,
+    "native_engineering_queries": 3,
+    "native_indexes_if_qualified": 9,
+    "nonretryable_processes": 1,
+    "paid_API_calls": 0,
+    "quantization_initializations": 0,
+    "torch_interop": 1,
+    "torch_threads": 2
+  },
+  "promotion_or_submission_from_local_ablation": false,
+  "schema_version": 1,
+  "source_checkpoint": "01c42365b8d79c968ea4f49120a5c1d71b9e0687",
+  "study_id": "native-anli-roberta-fp32-typed-e20",
+  "unused_pooler_compatibility": {
+    "active_classification_parameter_elements": 355362819,
+    "active_classification_parameter_tensor_count": 393,
+    "all_used_backbone_and_trained_classification_head_parameters_must_load": true,
+    "allowed_unexpected_keys_exactly": [
+      "roberta.pooler.dense.bias",
+      "roberta.pooler.dense.weight"
+    ],
+    "checkpoint_bytes_modified": false,
+    "error_msgs": [],
+    "head_reinitialization_allowed": false,
+    "mismatched_keys": [],
+    "missing_keys": [],
+    "model_pooler_must_be_none": true,
+    "raw_loading_info_retained": true,
+    "source_dtype": "torch.float32",
+    "source_elements": 356412419,
+    "source_scope": "Two unused original checkpoint pooler tensors are not instantiated or used by stock classification forward. Do not claim all original learned tensors are retained in the active classification model.",
+    "source_tensor_count": 395,
+    "stock_forward_changed": false,
+    "unused_elements": 1049600,
+    "unused_source_shapes": {
+      "roberta.pooler.dense.bias": [
+        1024
+      ],
+      "roberta.pooler.dense.weight": [
+        1024,
+        1024
+      ]
+    }
+  }
+}

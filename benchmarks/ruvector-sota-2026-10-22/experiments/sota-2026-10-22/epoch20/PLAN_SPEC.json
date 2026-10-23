@@ -1,0 +1,95 @@
+{
+  "calibration": [],
+  "control_builder": {
+    "bytes": 11599,
+    "path": "experiments/sota-2026-10-22/epoch20/preparation/build_controls_v3.py",
+    "sha256": "945b1e1e4793e2db86e11201a4ec9c5a8b80bba0f278b8bc86506e9ae02961ee"
+  },
+  "counter_caps_per_process": {
+    "NLI_pairs": 75,
+    "native_indexes": 9,
+    "native_searches": 27
+  },
+  "epoch": 20,
+  "limits": {
+    "GPU_calls": 0,
+    "candidate_configs": 1,
+    "interop_threads": 1,
+    "native_batches": 2,
+    "paid_calls": 0,
+    "seconds_per_batch": 600,
+    "threads": 2,
+    "worker_attempts": 2
+  },
+  "phases": {
+    "confirmation": {
+      "expected_documents": 8,
+      "expected_rows": 24,
+      "gold_unavailable_to_worker": true,
+      "input_allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch20/confirmation-input-allowlist.json",
+      "input_allowlist_sha256": "884bd031ff9cf9312f1bc0c1bfca79dd8978ce680b7ebab54fb1b99d0f190990",
+      "input_recipe_path": "experiments/sota-2026-10-22/legal-transfer/epoch20/input-recipe.json",
+      "input_recipe_sha256": "b6cb5d62483b47a79f8118d2e159b4bc6f5c9ad065a16647f07e375ffcab5041",
+      "lazy_input_output_path": "experiments/sota-2026-10-22/legal-transfer/epoch20/inputs.confirmation.json"
+    },
+    "dev": {
+      "expected_documents": 8,
+      "expected_rows": 24,
+      "gold_unavailable_to_worker": true,
+      "input_allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch20/dev-input-allowlist.json",
+      "input_allowlist_sha256": "80d822f90ff95c215c0dffcdf061e32347a2590dc2818b90fd8c2f0254201e1c",
+      "input_recipe_path": "experiments/sota-2026-10-22/legal-transfer/epoch20/input-recipe.json",
+      "input_recipe_sha256": "b6cb5d62483b47a79f8118d2e159b4bc6f5c9ad065a16647f07e375ffcab5041",
+      "lazy_input_output_path": "experiments/sota-2026-10-22/legal-transfer/epoch20/inputs.dev.json"
+    }
+  },
+  "plan_builder": {
+    "bytes": 7507,
+    "path": "experiments/sota-2026-10-22/epoch20/preparation/build_plan_v2.py",
+    "sha256": "b35666345a3dac4071ef27ccd97554784673de8993bbf132b9cfce87000d6d5d"
+  },
+  "publication_helper": {
+    "bytes": 19552,
+    "path": "experiments/sota-2026-10-22/epoch20/publication/prepare_publication_v2.py",
+    "sha256": "bd2fa40b8f9a8dab3e34e717bda21ae2f111d348c9325f4173bbdc2d45e453c6"
+  },
+  "readiness": {
+    "benchmark_score_claim": false,
+    "fixed_engineering_canaries": 3,
+    "gates_before_any_new_legal_parse": true,
+    "required_correct": 3
+  },
+  "references": {
+    "audit_gold_projector": "experiments/sota-2026-10-22/audit/epoch20/project_gold_pooler_v1.py",
+    "audit_protocol": "experiments/sota-2026-10-22/audit/epoch20/protocol_pooler_v1.json",
+    "audit_runner": "experiments/sota-2026-10-22/audit/epoch20/replay_pooler_v1.py",
+    "audit_tokenizer_replay": "experiments/sota-2026-10-22/audit/epoch20/tokenizer_replay_pooler_v1.py",
+    "bge_assets_lock": "experiments/sota-2026-10-22/epoch20/preparation/bge-assets.lock.json",
+    "canaries": "experiments/sota-2026-10-22/legal-transfer/epoch19/canaries.json",
+    "candidate_launcher": "experiments/sota-2026-10-22/candidate/epoch20/launch_pooler_v1.py",
+    "confirmation_capacity_inputs": "experiments/sota-2026-10-22/legal-transfer/epoch18/confirmation-inputs-only.json",
+    "model_assets_lock": "experiments/sota-2026-10-22/legal-transfer/epoch20/model-assets.lock.json",
+    "native_closure": "experiments/sota-2026-10-22/epoch17/preparation/runtime-closure.json",
+    "operational_preflight": "experiments/sota-2026-10-22/epoch20/preparation/operational_preflight.py",
+    "wheel_lock": "experiments/sota-2026-10-22/epoch17/preparation/python-wheel-identities.json"
+  },
+  "schema_version": 1,
+  "source_model_selection": "One preselected original FP32 RoBERTa-large typed SNLI/MNLI/FEVER/ANLI checkpoint, stock classifier forward; original two unused pooler tensors excluded by exact premeasurement compatibility policy. All parameters used by the classification forward load exactly; no quantization or head reinitialization.",
+  "study_id": "native-anli-roberta-fp32-typed-e20",
+  "train": [],
+  "unused_pooler_compatibility": {
+    "all_other_loading_error_lists_empty": true,
+    "allowed_unexpected_keys": [
+      "roberta.pooler.dense.bias",
+      "roberta.pooler.dense.weight"
+    ],
+    "classification_forward_does_not_use_pooler": true,
+    "classification_parameter_elements": 355362819,
+    "classification_parameters": 393,
+    "original_checkpoint_bytes_unchanged": true,
+    "selected_policy_frozen_before_any_neural_forward": true,
+    "source_FP32_elements": 356412419,
+    "source_tensors": 395,
+    "unused_pooler_elements": 1049600
+  }
+}

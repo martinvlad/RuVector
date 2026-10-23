@@ -1,0 +1,65 @@
+{
+  "calibration": [],
+  "counter_caps_per_process": {
+    "NLI_pairs": 75,
+    "native_indexes": 9,
+    "native_searches": 27
+  },
+  "epoch": 20,
+  "limits": {
+    "GPU_calls": 0,
+    "candidate_configs": 1,
+    "interop_threads": 1,
+    "native_batches": 2,
+    "paid_calls": 0,
+    "seconds_per_batch": 600,
+    "threads": 2,
+    "worker_attempts": 2
+  },
+  "phases": {
+    "confirmation": {
+      "expected_documents": 8,
+      "expected_rows": 24,
+      "gold_unavailable_to_worker": true,
+      "input_allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch20/confirmation-input-allowlist.json",
+      "input_allowlist_sha256": "884bd031ff9cf9312f1bc0c1bfca79dd8978ce680b7ebab54fb1b99d0f190990",
+      "input_recipe_path": "experiments/sota-2026-10-22/legal-transfer/epoch20/input-recipe.json",
+      "input_recipe_sha256": "b6cb5d62483b47a79f8118d2e159b4bc6f5c9ad065a16647f07e375ffcab5041",
+      "lazy_input_output_path": "experiments/sota-2026-10-22/legal-transfer/epoch20/inputs.confirmation.json"
+    },
+    "dev": {
+      "expected_documents": 8,
+      "expected_rows": 24,
+      "gold_unavailable_to_worker": true,
+      "input_allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch20/dev-input-allowlist.json",
+      "input_allowlist_sha256": "80d822f90ff95c215c0dffcdf061e32347a2590dc2818b90fd8c2f0254201e1c",
+      "input_recipe_path": "experiments/sota-2026-10-22/legal-transfer/epoch20/input-recipe.json",
+      "input_recipe_sha256": "b6cb5d62483b47a79f8118d2e159b4bc6f5c9ad065a16647f07e375ffcab5041",
+      "lazy_input_output_path": "experiments/sota-2026-10-22/legal-transfer/epoch20/inputs.dev.json"
+    }
+  },
+  "publication_helper": {
+    "bytes": 19552,
+    "path": "experiments/sota-2026-10-22/epoch20/publication/prepare_publication_v2.py",
+    "sha256": "bd2fa40b8f9a8dab3e34e717bda21ae2f111d348c9325f4173bbdc2d45e453c6"
+  },
+  "readiness": {
+    "benchmark_score_claim": false,
+    "fixed_engineering_canaries": 3,
+    "gates_before_any_new_legal_parse": true,
+    "required_correct": 3
+  },
+  "references": {
+    "audit_protocol": "experiments/sota-2026-10-22/audit/epoch20/protocol.json",
+    "bge_assets_lock": "experiments/sota-2026-10-22/epoch20/preparation/bge-assets.lock.json",
+    "canaries": "experiments/sota-2026-10-22/legal-transfer/epoch19/canaries.json",
+    "confirmation_capacity_inputs": "experiments/sota-2026-10-22/legal-transfer/epoch18/confirmation-inputs-only.json",
+    "model_assets_lock": "experiments/sota-2026-10-22/legal-transfer/epoch20/model-assets.lock.json",
+    "native_closure": "experiments/sota-2026-10-22/epoch17/preparation/runtime-closure.json",
+    "wheel_lock": "experiments/sota-2026-10-22/epoch17/preparation/python-wheel-identities.json"
+  },
+  "schema_version": 1,
+  "source_model_selection": "One preregistered direct3way originalFP32 RoBERTa-large SNLI/MNLI/FEVER/ANLI checkpoint; all other model reviews metadata-only, no grid or inference.",
+  "study_id": "native-anli-roberta-fp32-typed-e20",
+  "train": []
+}

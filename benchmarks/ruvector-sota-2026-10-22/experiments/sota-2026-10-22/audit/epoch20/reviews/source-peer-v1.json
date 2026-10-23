@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-23T18:55:40.591873+00:00",
+  "checks_passed": false,
+  "epoch": 20,
+  "fault_reproduction_tool_chunk": "ce5927",
+  "faults": [
+    {
+      "actual": "Accepted without comparing each entry to actual rawforward pair hashes/feed hashes/token counts or exact outerexecution receipt.",
+      "function": "replay.tokenizer_report_replay",
+      "id": "TOKENIZER_PROOF_FEED_ROWS_UNBOUND",
+      "input": "Correct complete75-header/rawSHA/count75 and feeds=[{}]*75, mocked exact reportfile andread/hash only.",
+      "reproduced": true,
+      "required_correction": "Bind every saved proof row exactindex/input_text_sha256/feed_sha256/actual_tokens to canonicalrawforward order and exactexecutionfile identity."
+    },
+    {
+      "actual": "Accepted.",
+      "function": "replay.counters_replay",
+      "id": "ORT_SESSION_COUNTS_UNCHECKED",
+      "input": "Otherwisevalid syntheticcompletephase counters; ORT_sessions_attempted=ORT_sessions_completed=99.",
+      "reproduced": true,
+      "required_correction": "Require literalint ORTsessions attempted/completed1 forcompletecorpus and0 forengineeringrejection."
+    },
+    {
+      "actual": "Accepted due Pythonbool/int equality; onlyattemptedtypechecked.",
+      "function": "replay.counters_replay",
+      "id": "BGE_COMPLETED_COUNT_BOOLEAN_SUBSTITUTION",
+      "input": "BGE_forwards_attempted=1,completed=True; BGE_texts_attempted=1,completed=True.",
+      "reproduced": true,
+      "required_correction": "Require literalint forboth attempted andcompleted BGE forward/text counts."
+    }
+  ],
+  "files": [
+    {
+      "bytes": 18022,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/protocol.json",
+      "sha256": "7f9023a212f596fd136bbb8afa642af6c366e70f4cc1b4f7660a6c9e62d157d2"
+    },
+    {
+      "bytes": 10854,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/metrics.py",
+      "sha256": "231894dabf8bc801d4564824158d14d47cdfe0727097254eb120a950d4f735c3"
+    },
+    {
+      "bytes": 11109,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/test_metrics.py",
+      "sha256": "6f011482695215f002300e7a5da42439b0122910169208ce0a89b58ac23f29eb"
+    },
+    {
+      "bytes": 8730,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/project_gold.py",
+      "sha256": "497276a23f53a7a94d3d981ca2a8521a4aac7aa7e438134200d1197bec82256d"
+    },
+    {
+      "bytes": 7906,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/tokenizer_replay.py",
+      "sha256": "5369496abf3f348c4920a43dde5ecdf830f59503f0c7e5cbd92239ad37709ef2"
+    },
+    {
+      "bytes": 12393,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/test_replay.py",
+      "sha256": "68061a71f3eccfdef5c1e294640c941cbce6b639f5b19c696f5e383ad2e0c70f"
+    },
+    {
+      "bytes_at_review": 40893,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/replay.py",
+      "sha256_of_independently_tested_revision": "6d2ea125b9d8dd51c310f035ff0a0d430bc0324751a9a3e6684438076fa17019"
+    }
+  ],
+  "heavy_framework_imports": [],
+  "independent_pure_tests": {
+    "command": "python -B -m unittest -q test_metrics.py test_replay.py",
+    "elapsed_seconds": 0.083,
+    "failures": 0,
+    "passed": 80,
+    "tests": 80,
+    "tool_chunk": "a89389"
+  },
+  "kind": "PREFREEZE_INDEPENDENT_SOURCE_AND_SYNTHETIC_FAULT_REVIEW",
+  "limitations": [
+    "This initialreport is not finalsourceapproval, benchmarkacceptance or modelperformanceevidence. Parent is correctingthethreefaults beforefreeze."
+  ],
+  "model_native_or_paid_GPU_calls": 0,
+  "reviewed_coherent_areas": [
+    "RawE0/N1/C2 to canonicalE/C/N probabilitymapping and no binarymass repair.",
+    "Strict matchedtyped+binary point/proper gates and all-classguard; CONFpaired8-documentnominalbootstrap2000 seed20261022.",
+    "ObservednativeANN order retained; exactcosreference independentlyreplayed asdiagnosticonly.",
+    "Originalgoldchoices parsed onlyafter complete sealedpredictions/cleanup andconditionalCONFadmission.",
+    "Tokenizer-only helper imports noTorch/Transformers/candidate/model code."
+  ],
+  "reviewer": "independent-platform-agent-e20_audit/source_peer",
+  "schema_version": 1,
+  "scientific_sources_frozen": false,
+  "source_reads_scope": "Currentpublicprotocol/candidate/audit source and source-qualifiedmetadata only. No actualDEV/CONFinputs, oldCONFbank, sourceannotations or modelweights opened.",
+  "status": "FINDINGS_REQUIRE_CORRECTION_BEFORE_FREEZE"
+}

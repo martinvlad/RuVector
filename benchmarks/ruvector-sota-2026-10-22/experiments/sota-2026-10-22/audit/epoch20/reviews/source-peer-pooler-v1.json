@@ -1,0 +1,307 @@
+{
+  "acceptance_and_claim_limits": {
+    "benchmark_accuracy_established": false,
+    "candidate_accepted_for_confirmation": false,
+    "candidate_promoted": false,
+    "limitations": [
+      "Static checkpoint opcode and forward-path proof establishes compatibility only; no actual loader or semantic result was measured by this reviewer.",
+      "All runtime loading, FP32 state, canary, native, full feed replay, resource and cleanup receipts remain mandatory before postprediction gold or gate decisions.",
+      "Declared source training lineage and unknown record-level pretraining overlap do not establish legal benchmark generalization.",
+      "The unchanged prior strict source and reports remain historical premeasurement snapshots; the new source is a separately reviewed version, not an outcome-driven relaxation."
+    ],
+    "new_submission_authorized_by_this_review": false,
+    "official_rank": null,
+    "official_score": null,
+    "semantic_readiness_established": false,
+    "submitted_native104_champion_preserved": true
+  },
+  "all_six_candidate_archive_copies_byte_equal_to_untouched_old_paths": true,
+  "at": "2026-10-23T19:15:44.770084+00:00",
+  "checks_passed": true,
+  "classification_forward_source_independently_read": {
+    "bytes": 71641,
+    "constructor": "RobertaModel(config, add_pooling_layer=False)",
+    "constructor_line": 1165,
+    "forward": "outputs[0] sequence output passed to trained classification head",
+    "forward_lines": [
+      1213,
+      1214
+    ],
+    "head": "features[:,0,:] -> dropout -> dense -> tanh -> dropout -> out_proj",
+    "head_lines": [
+      1453,
+      1454,
+      1455,
+      1456,
+      1457,
+      1458
+    ],
+    "method": "Read and SHA256-check installed source bytes only; no import of the framework or source module.",
+    "path": "retrieval/.venv/lib/python3.12/site-packages/transformers/models/roberta/modeling_roberta.py",
+    "pooler_output_used_by_this_forward": false,
+    "sha256": "b9f72d3b61002572c9afde63e61e8ee615658ab29cd55dfcd169770ddf379ef3"
+  },
+  "compatibility_policy_review": {
+    "active_classification_parameter_elements": 355362819,
+    "active_classification_parameter_tensors": 393,
+    "actual_fp32_state_parameter_tensor_count_tied_to_compatibility": true,
+    "actual_loader_information_preserved_verbatim": true,
+    "actual_model_pooler_is_none_required": true,
+    "additional_unexpected_keys_allowed": false,
+    "all_classification_forward_parameters_loaded_required": true,
+    "checkpoint_byte_mutation_allowed": false,
+    "classification_head_reinitialization_allowed": false,
+    "error_msgs_required": [],
+    "mismatched_keys_required": [],
+    "missing_keys_required": [],
+    "policy": "EXACT_TWO_UNUSED_PRETRAINING_POOLER_KEYS_ONLY",
+    "policy_applies_to_original_unused_pooler_only": true,
+    "quantization_allowed": false,
+    "runtime_inventory_and_loading_dictionary_still_require_actual_bounded_worker_evidence": true,
+    "source_checkpoint_float32_elements": 356412419,
+    "source_checkpoint_tensor_count": 395,
+    "source_pooler_tensors": {
+      "roberta.pooler.dense.bias": {
+        "dtype": "torch.float32",
+        "elements": 1024,
+        "shape": [
+          1024
+        ]
+      },
+      "roberta.pooler.dense.weight": {
+        "dtype": "torch.float32",
+        "elements": 1048576,
+        "shape": [
+          1024,
+          1024
+        ]
+      }
+    },
+    "unexpected_keys_exact_unique": [
+      "roberta.pooler.dense.bias",
+      "roberta.pooler.dense.weight"
+    ],
+    "unused_pooler_elements": 1049600
+  },
+  "epoch": 20,
+  "independent_tests": {
+    "command": "python -B -m unittest -q test_metrics.py test_replay.py test_pooler_replay_v1.py",
+    "composition": "94 prior pure arithmetic, identity, replay and runtime tests plus 22 new exact unused-pooler policy and corruption tests.",
+    "engineering_owner_candidate_suite_independently_executed_by_this_reviewer": false,
+    "engineering_owner_test_receipt": {
+      "bytes": 1901,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/engineering-tests-pooler-v1.json",
+      "sha256": "dc90dc4ebd160810792ad26e92e71df6f769899f1a5a1101a0f869a8c8ca8d35"
+    },
+    "errors": 0,
+    "exit_code": 0,
+    "failures": 0,
+    "new_faults_cover": [
+      "missing trained keys",
+      "extra unexpected keys",
+      "duplicate pooler keys",
+      "wrong pooler shape/dtype/elements",
+      "wrong original tensor inventory",
+      "wrong active inventory or element delta",
+      "actual model pooler present",
+      "classification-parameter load not established",
+      "actual FP32 state tensor count mismatch",
+      "head reinitialization permission",
+      "checkpoint mutation permission",
+      "new helper/scorer binding and old source preservation"
+    ],
+    "observed_seconds": 0.101,
+    "subsequent_final_hash_and_AST_checks_passed": true,
+    "tests_run": 116,
+    "tool_chunk_id": "4fac6f",
+    "working_directory": "/tmp/ruvector-sota-2026-10-22/epoch20-f5588491b31d/project/experiments/sota-2026-10-22/audit/epoch20"
+  },
+  "integration_review": {
+    "gold_projection_and_tokenizer_replay_helpers_import_new_replay_module": true,
+    "launcher_change": "Only worker invocation and source-plan preflight worker import redirect to worker_pooler_v1; old launcher preserved.",
+    "new_replay_requires_exact_new_audit_protocol_path_and_sha256_in_plan": true,
+    "prior_probability_identity_feed_native_counter_resource_cleanup_gold_and_acceptance_checks_retained": true,
+    "root_responsibility_before_any_model_execution": "Freeze and publish exact new active source paths and hashes in the source plan, verify remote readback, and invoke the new launcher. This review does not itself publish a source freeze or admit execution.",
+    "worker_change": "Only reader import redirects to reader_pooler_v1; old worker preserved."
+  },
+  "model_identity_unchanged_in_protocol": {
+    "checkpoint_hash_scope": "Exact same pinned asset identity as old protocol; this reviewer did not reread the 1.4 GB tensor payload.",
+    "precision": "Original FP32 CPU, no quantization, eager attention",
+    "raw_label_indices": {
+      "Contradiction": 2,
+      "Entailment": 0,
+      "NotMentioned": 1
+    },
+    "repository": "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+    "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+    "source_checkpoint_bytes": 1425814813,
+    "source_checkpoint_sha256": "a51c55cb7dc41c4c862f06a3d9c413a8aa0619222bc56f06cb6f2f5b2d3ee14a"
+  },
+  "new_blocking_findings": [],
+  "new_source_freeze_performed_by_reviewer": false,
+  "premeasurement_review": true,
+  "preserved_candidate_archive_directory": "experiments/sota-2026-10-22/candidate/epoch20/pre-freeze-source-versions/pooler-strict-v1",
+  "preserved_old_sources_and_reviews": [
+    {
+      "bytes": 18260,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/protocol.json",
+      "sha256": "c209b2cd5bf244b45ea4b3e44080e5b62ece78ec5d0712b93f8bdf35c2cdff26"
+    },
+    {
+      "bytes": 10854,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/metrics.py",
+      "sha256": "231894dabf8bc801d4564824158d14d47cdfe0727097254eb120a950d4f735c3"
+    },
+    {
+      "bytes": 11109,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/test_metrics.py",
+      "sha256": "6f011482695215f002300e7a5da42439b0122910169208ce0a89b58ac23f29eb"
+    },
+    {
+      "bytes": 43634,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/replay.py",
+      "sha256": "289197bc421bd6e43fb2e1c8417e3b9e3ed59462cd526f3c0e1a4cc38ea9992a"
+    },
+    {
+      "bytes": 19188,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/test_replay.py",
+      "sha256": "39095b8a9b6a3bc2e3ca0a23c8c726df2516856489eb9af3031f670c3b96a987"
+    },
+    {
+      "bytes": 8746,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/project_gold.py",
+      "sha256": "c2060d66cf664e47885d5908e264af1a02b13c33623ea4e46901d454f3c2984d"
+    },
+    {
+      "bytes": 7906,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/tokenizer_replay.py",
+      "sha256": "5369496abf3f348c4920a43dde5ecdf830f59503f0c7e5cbd92239ad37709ef2"
+    },
+    {
+      "bytes": 4401,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/reviews/source-peer-v1.json",
+      "sha256": "2a84d4a2f297307cbc65171d1c34ff2ed4d0c6f9ba594dce857ab2169639af2a"
+    },
+    {
+      "bytes": 9084,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/reviews/source-peer-v2.json",
+      "sha256": "114fee2f57fd8ab6f15e5e8f5a0d51a38c7111304fc5954e3aa3316012ae82f8"
+    },
+    {
+      "bytes": 9908,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/common.py",
+      "sha256": "b887a09570570166ebbb68a1a4fccff19726a8f6a27c3cd67409d614b702319e"
+    },
+    {
+      "bytes": 10167,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/reader.py",
+      "sha256": "7c7a8ad98fcacaa5ea73fe0420c6c69aaf1fb2db0fd78beb9a46a9b0c7af721f"
+    },
+    {
+      "bytes": 7700,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/retrieval.py",
+      "sha256": "99153c085cd534d1ec29bfa72e0690ead447c549adf6d01f1f7f5c526e7e30c0"
+    },
+    {
+      "bytes": 17858,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/worker.py",
+      "sha256": "c4448b6491e63ecc26f5c4ffde0467d0df2f676591cd078c1ad668db84de4862"
+    },
+    {
+      "bytes": 9718,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/launch.py",
+      "sha256": "7dfdb11fb22e218d5fece88cb53d2fa785186418f1da8e47b3db28e21e7273e3"
+    },
+    {
+      "bytes": 9164,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/test_engineering.py",
+      "sha256": "cebdb444e00eb3f5b96069d23b8fbfca72e6541116b953c87e8a00118e72ebb4"
+    }
+  ],
+  "protocol_comparison": {
+    "change_scope": "New protocol revision and original-protocol reference, precise unused pooler compatibility and static proof references, explicit legacy arm-name clarification.",
+    "data_roles_identities_scoring_gates_bootstrap_seed_and_budget_unchanged": true,
+    "legacy_arm_names_are_aliases_not_literal_two_unit_retrieval": true,
+    "only_changed_top_level_keys": [
+      "active_protocol_revision",
+      "matched_comparison",
+      "model",
+      "unchanged_prior_strict_protocol"
+    ]
+  },
+  "review_scope": "Independent static source, exact file identity, installed stock classification forward, synthetic fault tests and preservation review. This is not model or benchmark acceptance.",
+  "reviewed_new_sources": [
+    {
+      "bytes": 20883,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/protocol_pooler_v1.json",
+      "sha256": "b14903de85084c8436b3b8c2053c59d94a5c221841b557cd45e8bdbeff051767"
+    },
+    {
+      "bytes": 46777,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/replay_pooler_v1.py",
+      "sha256": "fd8dd3f511f06384e470029bebb651658cff711170b6912c82afb8f87f8617da"
+    },
+    {
+      "bytes": 8756,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/project_gold_pooler_v1.py",
+      "sha256": "0c7e053fa484dec45624466b9439f1bdbd1f518bce2b424aad10f67bfc7c1f33"
+    },
+    {
+      "bytes": 7916,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/tokenizer_replay_pooler_v1.py",
+      "sha256": "9d0aa984bb9f5fc99335a548a960d418f6ffec3cc59eddffff2aa9428650a750"
+    },
+    {
+      "bytes": 7631,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/test_pooler_replay_v1.py",
+      "sha256": "9818d04aa912a9c1f4b0fcf0bbc133f7d299b5389015607b6a0741f403b8ae22"
+    },
+    {
+      "bytes": 14015,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/reader_pooler_v1.py",
+      "sha256": "30340f3ebe1b3ba38d47bc508268486788f20d9be03f42309b7f67a743df3bcb"
+    },
+    {
+      "bytes": 17868,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/worker_pooler_v1.py",
+      "sha256": "def946d3c774016534ae9265b708c025faaffc54a5464f13f72bd54b21ba97ff"
+    },
+    {
+      "bytes": 9748,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/launch_pooler_v1.py",
+      "sha256": "2ba3ff386b28e1671685db98bcefdb88a8bb09d55a018dcc7f4d99a723c0a48e"
+    },
+    {
+      "bytes": 3728,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/test_pooler_engineering.py",
+      "sha256": "c55a343242cee7de660eeeba129b689f5b3c731e9a0aaf07db73a4f36de76f91"
+    }
+  ],
+  "reviewer": "/root/e20_audit/source_peer",
+  "reviewer_execution_counts": {
+    "Git_mutations": 0,
+    "annotation_choices_opened": 0,
+    "fresh_DEV_or_confirmation_source_inputs_opened": 0,
+    "model_framework_imports": 0,
+    "model_tensor_loads_or_unpickle_calls": 0,
+    "native_search_calls": 0,
+    "neural_model_forwards": 0,
+    "paid_API_or_GPU_calls": 0,
+    "tokenizer_preflight_reruns": 0
+  },
+  "schema_version": 1,
+  "source_checkpoint_commit": "01c42365b8d79c968ea4f49120a5c1d71b9e0687",
+  "static_evidence_reviewed": [
+    {
+      "bytes": 36052,
+      "path": "experiments/sota-2026-10-22/candidate/epoch20/static-unused-pooler-evidence-v1.json",
+      "sha256": "bdf94e1e9f453fb09480530f5da3dab71ab73e25d587a3205f4a8e52be0d462d"
+    },
+    {
+      "bytes": 2709,
+      "path": "experiments/sota-2026-10-22/epoch20/reviews/pooler-static-compatibility-independent-v1.json",
+      "sha256": "43d86e76474f6710344084ba5e3724dda20fd9fc3675bb569555b4a558409feb"
+    }
+  ],
+  "status": "EXACT_UNUSED_POOLER_PREFREEZE_SOURCE_REVIEW_PASS"
+}

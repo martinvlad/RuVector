@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-23T18:31:24.427292+00:00",
+  "checks_passed": true,
+  "cleanup_receipt": {
+    "bytes": 1654,
+    "current_retired_runs": [
+      {
+        "pid": 38492,
+        "released_record": true,
+        "removed_file_absent": true,
+        "run": "epoch17-7eac822bc1f44d15bede2cbaa4b4e2f2",
+        "state": "Z"
+      },
+      {
+        "pid": 40632,
+        "released_record": true,
+        "removed_file_absent": true,
+        "run": "epoch18-e229426df6174a65bcdc567ccc372a95",
+        "state": "Z"
+      },
+      {
+        "pid": 45689,
+        "released_record": true,
+        "removed_file_absent": true,
+        "run": "epoch19-1a1698f9db5",
+        "state": "Z"
+      }
+    ],
+    "deleted_asset_matches_fresh_immutable_registry": true,
+    "past_pre_unlink_SHA_and_inode_counts_scope": "Reviewed source receipt; pre-unlink bytes/inode cannot be remeasured after deletion.",
+    "path": "experiments/sota-2026-10-22/epoch20/preparation/retired-model-cache-cleanup-v1.json",
+    "sha256": "89ca5325a9aaade405b103daef2a38988f4952bc39712a4a6a48221687743f09"
+  },
+  "epoch": 20,
+  "exact_diff_from_prior_reviewed_helper": "ONLY epoch20 receipt prefix and frozen asset filter22native+2BGE+originaltrain=25",
+  "helper": {
+    "bytes": 10300,
+    "path": "experiments/sota-2026-10-22/epoch20/preparation/restore_public_runtime_cache_v1.py",
+    "sha256": "c71f087fa02aaeb4a6001709ead28ad062532a66effa578e4bb1f68a85ca2b2e"
+  },
+  "invocation_precondition": "Parent must pass canonical nonsymlink project/public-cache/wheel-cache/receipt-dir paths under scoped work plan; receipt-dir must exist, outputs must be new. Actual helper no_symlink does not itself reject lexical dotdot arguments.",
+  "reviewer_runtime_restore_or_native_model_calls": 0,
+  "runtime_recipe": "31 official CPU wheels; every ZIP member RECORD SHA256 and every target byte rechecked; fresh venv; no pip hooks/model imports/network/entrypoint generation.",
+  "schema_version": 1,
+  "scope": "Independent helper source and path/cleanup evidence review only. Actual25assets/31wheel restoration and post-restoration hash/version verification are required before inference admission.",
+  "selected_assets": {
+    "BGE": 2,
+    "native": 22,
+    "opaque_licensed_original_train": 1,
+    "unique": 25
+  },
+  "stdlib_only_path_tests": {
+    "symlink_ancestor_rejected": true,
+    "unsafe_relative_cases_rejected": 7,
+    "unsafe_wheel_target_cases_rejected": 4
+  }
+}

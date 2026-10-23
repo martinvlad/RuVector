@@ -1,0 +1,354 @@
+{
+  "arms": [
+    "ruvector_top2",
+    "same_nli_lexical_top2",
+    "same_nli_positional_first2"
+  ],
+  "data": {
+    "CONF_document_ids": [
+      308,
+      159,
+      284,
+      501,
+      267,
+      494,
+      261,
+      313
+    ],
+    "DEV_document_ids": [
+      470,
+      423,
+      109,
+      418,
+      613,
+      580,
+      167,
+      393
+    ],
+    "all_historical_easy48_Legal96_DEV_forever": true,
+    "calibration": [],
+    "confirmation": "Exact project-model-unused epoch16/17/18 lazy24 bank; neither oldCONF48 nor otherreserved choices used.",
+    "documents_each_phase": 8,
+    "gold_projection": "Independent exact fixed24 original annotation choices only after completed immutable phase predictions + outer cleanup, exactsourcefreeze and role-specific authorization; CONF requires acceptedDEV/runtime admission and its own completed predictions.",
+    "hypothesis_ids": [
+      "nda-17",
+      "nda-7",
+      "nda-3"
+    ],
+    "license": "CC-BY-4.0 with preserved source attribution",
+    "new_DEV_selection": "Fixed ID-only draw from178unreserved, before source inputs/labels; no redraw or outcome selection.",
+    "question_key": "decision",
+    "raw_gold_to_binary": {
+      "Contradiction": "No",
+      "Entailment": "Yes",
+      "NotMentioned": "No"
+    },
+    "records_each_phase": 24,
+    "repository": "stanfordnlp/contract-nli",
+    "revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "row_id": "original-contractnli:train:epoch20:{phase}:{document_id}:{hypothesis_id}",
+    "source_document_id_type": "literalnonnegativeint; bool/float/string forbidden",
+    "source_train_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+    "train": []
+  },
+  "decisions": {
+    "CONF_valid_gate_failure": "REJECTED_CONFIRMATION_GATE; no promotion/submission.",
+    "DEV_valid_gate_failure": "REJECTED_DEV_GATE; noCONFmodels/labels; allremainingphase slots close.",
+    "champion_promotion_allowed": false,
+    "engineering_failure": "REJECTED_ENGINEERING_QUALIFICATION; no corpus inputs or choices; allremaining phase slots close.",
+    "incomplete_or_inconsistent": "INCONCLUSIVE_INVALID_OR_INCOMPLETE_EXECUTION; retain actual counters/errors/uncertainty; no retry.",
+    "official_SOTA_goal_verified": false,
+    "official_rank": null,
+    "official_score": null,
+    "publisher_submission_allowed": false,
+    "valid_PASS": "LOCAL_MATCHED_RETRIEVAL_RESEARCH_ACCEPTED_ONLY",
+    "why": "No direct full-input submittednative104 comparison or matching officialpublisher result/rank/eligibility is established by this NDA pilot."
+  },
+  "engineering": {
+    "engineering_before_any_corpus_parse_or_input_projection": true,
+    "fixtures": [
+      {
+        "expected_typed_label": "Entailment",
+        "hypothesis": "The lamp is on.",
+        "id": "semantic-e-v1",
+        "premise": "The lamp is on."
+      },
+      {
+        "expected_typed_label": "Contradiction",
+        "hypothesis": "The lamp is on.",
+        "id": "semantic-c-v1",
+        "premise": "The lamp is not on."
+      },
+      {
+        "expected_typed_label": "NotMentioned",
+        "hypothesis": "The lamp is on.",
+        "id": "semantic-n-v1",
+        "premise": "The box is blue."
+      }
+    ],
+    "forwards_each_phase": 3,
+    "license": "CC0-1.0 authored public engineering examples, exposedDEV forever",
+    "native_indexes_each_phase": 1,
+    "native_searches_each_phase": 3,
+    "native_vectors": "Exact epoch19 deterministic384d lamp/on/not/box/blue count vectors;3literalpremises; sourceorder ties",
+    "required_correct": 3,
+    "same_literal_pairs_unchanged_by_native_selection": true,
+    "scope": "Currentprocess semantic readiness/integration only; excluded from every benchmark metric and uncertainty estimate."
+  },
+  "epoch": 20,
+  "gates": {
+    "CONF": "EveryDEVpoint/class/validitygate on24freshconfirmation; additionally every typed+binarycontrol comparison needs paired-document accuracygainCI lower>0 and Brier/NLLgainCI lower>=0.",
+    "DEV": {
+      "Brier_and_NLL_nonincrease_each_comparison": true,
+      "all_gold_classes_present": true,
+      "at_least_one_proper_gain_each_comparison": 1e-06,
+      "primary_correct_each_E_C_N_at_least": 1,
+      "primary_correct_minus_each_control_binary_at_least": 2,
+      "primary_correct_minus_each_control_typed_at_least": 2,
+      "proper_scores_finite": true
+    },
+    "engineering": "All3fixed publiccanariescorrect each phase; otherwise stop before any phase input/goldprojection.",
+    "proper_gain_sign": "control loss minusprimary loss; positivefavorsprimary. Accuracygain primary-minuscontrol.",
+    "uncertainty": {
+      "draws": 2000,
+      "interval": "2.5/97.5percentile linear interpolation",
+      "scope": "Nominal paired8-document uncertainty; not familywise/fullbenchmark/officialpublisher inference.",
+      "seed": 20261022,
+      "unit": "documentgroup; sample8groupswithreplacement,all3queriesretained"
+    },
+    "validity": "Every source/model/tokenizer/feed/rawmapping/probability/native/context/identity/counter/resource/cleanup replay must pass; partial or inconsistent execution is inconclusive, not a fabricatedzero."
+  },
+  "historical_failures": {
+    "epoch18_quantization_causation": "UNPROVEN",
+    "epoch19_FP32_canaries_correct": 2,
+    "epoch19_INT8_canaries_correct": 1,
+    "frozen_limit": 0.05,
+    "max_probability_drift": 0.758825985740294,
+    "n_per_precision": 3,
+    "same_quantized_recipe_retried": false
+  },
+  "hypothesis": "A distinct FP32 RoBERTa-large reader supervised on SNLI/MNLI/FEVER/ANLI can support typed entailment/contradiction/neutral decisions and improve source-licensed fresh ContractNLI development/confirmation with actual native RuVector evidence. Neither semantic nor retrieval gain is assumed.",
+  "kind": "INDEPENDENT_FROZEN_TYPED_RETRIEVAL_RESEARCH_PROTOCOL",
+  "limits": {
+    "CPU_threads": 2,
+    "GPU_calls": 0,
+    "NLI_forwards_each_completed_phase": 75,
+    "automatic_retries": 0,
+    "benchmark_corpus_batches_max": 2,
+    "canary_forwards_each_phase": 3,
+    "corpus_forwards_each_completed_phase": 72,
+    "corpus_indexes_each_completed_phase": 8,
+    "corpus_native_queries_each_completed_phase": 24,
+    "engineering_indexes_each_phase": 1,
+    "engineering_native_queries_each_phase": 3,
+    "model_initializations_per_process": 1,
+    "native104_calls": 0,
+    "native_indexes_each_completed_phase": 9,
+    "native_queries_each_completed_phase": 27,
+    "paid_API_calls": 0,
+    "previous_reader_calls": 0,
+    "quantizations": 0,
+    "seconds_each_process_including_imports_load_hash_embedding_model_native_scoring_receipt_cleanup": 600,
+    "torch_interop_threads": 1,
+    "train_calibration_fits": 0,
+    "worker_attempts": 2
+  },
+  "matched_comparison": {
+    "context": "Frozen shared exact source-order priority160/evidence packing under complete512tokenpair; all selected premise bytes and source spans saved; no silent truncation.",
+    "native_scope": "Only source units from this supplied agreement; no external evidence/cross-document search.",
+    "negative_evidence": "Retrieval miss cannot establish contradiction or insufficient evidence.",
+    "numerical_checks": "Report literal numeric-token source coverage/retention; coverage does not establish arithmetic truth.",
+    "same_complete_input_and_context_budget": true,
+    "same_reader_model_state_tokenizer_hypothesis": true,
+    "source_only_selection": true
+  },
+  "model": {
+    "architecture": {
+      "attention_heads": 16,
+      "classes": 3,
+      "hidden_size": 1024,
+      "layers": 24,
+      "max_position_embeddings": 514,
+      "model_type": "roberta",
+      "vocab_size": 50265
+    },
+    "asset_lock": {
+      "bytes": 5653,
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch20/model-assets.lock.json",
+      "sha256": "ea5e4c687e3f2d046837f3792e8fa43409d26c3e2f8dd8791137c1db8a6e54f9"
+    },
+    "assets": [
+      {
+        "bytes": 3406,
+        "locally_acquired_and_hashed_before_this_source_qualification": true,
+        "path": "experiments/sota-2026-10-22/candidate/epoch20/assets/ynie-roberta-large/README.md",
+        "remote_path": "README.md",
+        "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+        "sha256": "bb8affaa741b518e536d09ac6ff8f85d7ea3aee215c56e111379c78eaed8a17c",
+        "source_url": "https://huggingface.co/ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli/resolve/5b605abab9b75bc87ab66cfc049ef58d9d64b8ed/README.md",
+        "upstream_git_blob_sha1": "15679d0e5b6f8e0289d2084bff38d7105a403d82",
+        "upstream_lfs_sha256": null
+      },
+      {
+        "bytes": 703,
+        "locally_acquired_and_hashed_before_this_source_qualification": true,
+        "path": "experiments/sota-2026-10-22/candidate/epoch20/assets/ynie-roberta-large/config.json",
+        "remote_path": "config.json",
+        "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+        "sha256": "9d074204b668902ea51bd8ecb323f01cd37040cb54e8601d872c8fdb0687131e",
+        "source_url": "https://huggingface.co/ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli/resolve/5b605abab9b75bc87ab66cfc049ef58d9d64b8ed/config.json",
+        "upstream_git_blob_sha1": "54748cd5c92b95ef761c2eb3d9f29e9610581f35",
+        "upstream_lfs_sha256": null
+      },
+      {
+        "bytes": 456318,
+        "locally_acquired_and_hashed_before_this_source_qualification": true,
+        "path": "experiments/sota-2026-10-22/candidate/epoch20/assets/ynie-roberta-large/merges.txt",
+        "remote_path": "merges.txt",
+        "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+        "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+        "source_url": "https://huggingface.co/ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli/resolve/5b605abab9b75bc87ab66cfc049ef58d9d64b8ed/merges.txt",
+        "upstream_git_blob_sha1": "226b0752cac7789c48f0cb3ec53eda48b7be36cc",
+        "upstream_lfs_sha256": null
+      },
+      {
+        "bytes": 898822,
+        "locally_acquired_and_hashed_before_this_source_qualification": true,
+        "path": "experiments/sota-2026-10-22/candidate/epoch20/assets/ynie-roberta-large/vocab.json",
+        "remote_path": "vocab.json",
+        "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+        "sha256": "06b4d46c8e752d410213d9548eb27a54db70fda0319b6271fb8d59dead5e1cab",
+        "source_url": "https://huggingface.co/ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli/resolve/5b605abab9b75bc87ab66cfc049ef58d9d64b8ed/vocab.json",
+        "upstream_git_blob_sha1": "0a39732b2d8be8e493cab3da68b68cc3e28221de",
+        "upstream_lfs_sha256": null
+      },
+      {
+        "bytes": 772,
+        "locally_acquired_and_hashed_before_this_source_qualification": true,
+        "path": "experiments/sota-2026-10-22/candidate/epoch20/assets/ynie-roberta-large/special_tokens_map.json",
+        "remote_path": "special_tokens_map.json",
+        "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+        "sha256": "c611b1f7d416eb001ee4f293d903ea8c88e703463f1d403f1866a0352743fd00",
+        "source_url": "https://huggingface.co/ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli/resolve/5b605abab9b75bc87ab66cfc049ef58d9d64b8ed/special_tokens_map.json",
+        "upstream_git_blob_sha1": "e97d1993365bb21c88f390e8703e4c1af564821f",
+        "upstream_lfs_sha256": null
+      },
+      {
+        "bytes": 49,
+        "locally_acquired_and_hashed_before_this_source_qualification": true,
+        "path": "experiments/sota-2026-10-22/candidate/epoch20/assets/ynie-roberta-large/tokenizer_config.json",
+        "remote_path": "tokenizer_config.json",
+        "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+        "sha256": "0f6d13e6f4da6f9e24f22ada6bc3be571123d858d7c0c05a8a7cd55a9c23c2e8",
+        "source_url": "https://huggingface.co/ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli/resolve/5b605abab9b75bc87ab66cfc049ef58d9d64b8ed/tokenizer_config.json",
+        "upstream_git_blob_sha1": "2ba5de7675473164e07f3b3531748c9a6f113a2c",
+        "upstream_lfs_sha256": null
+      },
+      {
+        "bytes": 1425814813,
+        "locally_acquired_and_hashed_before_this_source_qualification": false,
+        "path": "experiments/sota-2026-10-22/candidate/epoch20/assets/ynie-roberta-large/pytorch_model.bin",
+        "remote_path": "pytorch_model.bin",
+        "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+        "sha256": "a51c55cb7dc41c4c862f06a3d9c413a8aa0619222bc56f06cb6f2f5b2d3ee14a",
+        "source_url": "https://huggingface.co/ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli/resolve/5b605abab9b75bc87ab66cfc049ef58d9d64b8ed/pytorch_model.bin",
+        "upstream_git_blob_sha1": "b1612fdfa92fc593b05966567804c230c970395f",
+        "upstream_lfs_sha256": "a51c55cb7dc41c4c862f06a3d9c413a8aa0619222bc56f06cb6f2f5b2d3ee14a"
+      }
+    ],
+    "builtin_loader": "RobertaForSequenceClassification.from_pretrained(local_files_only=True,trust_remote_code=False,use_safetensors=False,weights_only=True,torch_dtype=torch.float32,output_loading_info=True)",
+    "classifier_shapes": {
+      "dense_bias": [
+        1024
+      ],
+      "dense_weight": [
+        1024,
+        1024
+      ],
+      "out_proj_bias": [
+        3
+      ],
+      "out_proj_weight": [
+        3,
+        1024
+      ]
+    },
+    "device": "cpu",
+    "inference_dtype": "torch.float32",
+    "known_ContractNLI_supervision": false,
+    "quantization": "NONE",
+    "raw_checkpoint_dtype": "Inspect and report actual original checkpoint inside bounded worker; do not infer storage precision from inference choice.",
+    "raw_label_indices": {
+      "Contradiction": 2,
+      "Entailment": 0,
+      "NotMentioned": 1
+    },
+    "record_level_pretraining_fuzzy_overlap_verified": false,
+    "repository": "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+    "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+    "state_hash_recipe": "Sorted named parameters then buffers; canonical JSON name/dtype/shape LF, contiguous tensor uint8 bytes LF",
+    "strict_loading_lists_empty": [
+      "missing_keys",
+      "unexpected_keys",
+      "mismatched_keys",
+      "error_msgs"
+    ],
+    "typed_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "versions": {
+      "numpy": "2.3.5",
+      "safetensors": "0.5.3",
+      "tokenizers": "0.21.4",
+      "torch": "2.7.1+cpu",
+      "transformers": "4.52.4"
+    }
+  },
+  "numerical": {
+    "NLL": "Natural logarithm; zero gold probability is +Infinity explicitly serialized, no clipping, probability repair or epsilon rescaling.",
+    "binary_Brier": "sum over Yes/No of (p_i-1[i=gold])^2",
+    "binary_decision": "Yes iff pEntailment>=0.5",
+    "binary_no": "pContradiction+pNotMentioned, no renormalization",
+    "binary_yes": "pEntailment",
+    "latency_percentiles": "Linear interpolation at(n-1)*p; p50/p95+max; directpair,wholeallarm,fullprocessscope distinguished.",
+    "raw_logit_probability_absolute_tolerance": 1e-10,
+    "softmax": "stdlib double stable softmax of literal raw saved float32 logits; temperature1; rawE/N/C to canonicalE/C/N",
+    "typed_Brier": "sum over all3classes of (p_i-1[i=gold])^2",
+    "typed_probability_mass_absolute_tolerance": 1e-10,
+    "typed_tie_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ]
+  },
+  "runtime_confirmation_gate": {
+    "CONF_FP32_state_tokenizer_match_accepted_DEV": true,
+    "DEV_document_elapsed_scope": "Complete partition/source context, all BGE embeddings/native index/searches and all three questions x three NLI arms; max(document_elapsed/3) is a conservative amortized whole-document unit cost, not direct serving request latency.",
+    "actual_second_process_watchdog_seconds": 600,
+    "confirmation_labels_or_modeloutputs_used": false,
+    "formula": "24*maxDEV(document_elapsed_seconds/3)*max(1,maxCONFsourceunits/maxDEVsourceunits)+2*whole_pipeline_initialization_seconds+60<=600",
+    "formula_id": "24xDEVmaxDocumentThirdxmax1UnitRatio+2xWholeInit+60-v1",
+    "fresh_exact_lock_and_source_admission_required": true,
+    "input_only_CONFIRMATION_capacity_allowed": true,
+    "scope": "Conservative admission forecast, not a performance guarantee.",
+    "whole_pipeline_initialization_scope": "From outer launcher invocation before source checks/imports/hash/model/canaries/lazy input projection/BGE initialization to immediately before first source document processing."
+  },
+  "schema_version": 1,
+  "source_head": "01c42365b8d79c968ea4f49120a5c1d71b9e0687",
+  "study_id": "native-anli-roberta-fp32-typed-e20",
+  "tokenizer": {
+    "backend": "BPE from exact official vocab/merges",
+    "bos_id": 0,
+    "builtin": "RobertaTokenizerFast",
+    "eos_id": 2,
+    "feed_types": "literalint torch.int64 input_ids and attention_mask; singletonbatch; allmaskones",
+    "pad_id": 1,
+    "padding": false,
+    "pair_format": "<s>P</s></s>H</s>",
+    "pair_token_cap": 512,
+    "token_type_ids_not_fed": true,
+    "truncation": false
+  }
+}

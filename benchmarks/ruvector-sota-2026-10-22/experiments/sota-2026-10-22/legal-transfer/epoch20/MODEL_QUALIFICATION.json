@@ -1,0 +1,84 @@
+{
+  "declared_model_license_evidence": [
+    {
+      "bytes": 3406,
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch20/model-README.md",
+      "sha256": "bb8affaa741b518e536d09ac6ff8f85d7ea3aee215c56e111379c78eaed8a17c"
+    },
+    {
+      "bytes": 2575,
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch20/model-api.json",
+      "sha256": "c9793ca5b9ce7be32a517d0402a9ff297bb266f51e02c8bce68fca9e56f38527"
+    }
+  ],
+  "epoch": 20,
+  "hypothesis": "A different FP32 adversarial-NLI RoBERTa-large reader with an explicitNeutral class may fix typed semantics before further legal draws; all legal gain and CPU feasibility remain unmeasured.",
+  "material_change": "Distinct24-layer RoBERTa-large original pretrained checkpoint and broaderSNLI/MNLI/FEVER/ANLIsupervision; fixedFP32,no dynamic-qint8. PriorRoBERTa usedcross-encoder/nli-roberta-base12layers and prior900Mreader usedMNLI+dynamicqint8.",
+  "metadata_only_model_repositories_examined": 5,
+  "nonselected_metadata_findings": {
+    "MoritzLaurer/ModernBERT-large-zeroshot-v2.0": {
+      "architecture": "ModernBertForSequenceClassification",
+      "declared_license": "Apache2.0",
+      "exact_config_sha256": "ababd87e19a2c783e08495996e5e32e7d6661ea66686ba41fd02f9e7d46d547f",
+      "model_or_weights_calls": 0,
+      "raw_id2label": {
+        "0": "entailment",
+        "1": "not_entailment"
+      },
+      "reason": "DirectbinaryheadcannotprovideexplicitContradiction/Neutral; rejectedsourcequalificationonly,nomeasuredperformance.",
+      "revision": "a51e07b524299e309dd2b88d48b0cfa2bd9ec598"
+    },
+    "other_candidates_not_selected": [
+      "cross-encoder/nli-deberta-v3-large@bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "FacebookAI/roberta-large-mnli@2a8f12d27941090092df78e4ba6f0928eb5eac98",
+      "facebook/bart-large-mnli@d7645e127eaf1aefc7862fd59a17a5aa8558b8ce"
+    ]
+  },
+  "official_config": {
+    "bytes": 703,
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch20/model-config.json",
+    "sha256": "9d074204b668902ea51bd8ecb323f01cd37040cb54e8601d872c8fdb0687131e"
+  },
+  "precision_choice": "FP32 frozen before canaries/DEV/CONF; no precisiongrid or selection from outcomes.",
+  "qualification_required_before_legal_DEV": "Three already-exposedE/C/N engineering canaries must allbe correct; model/native run still requires root sourcefreeze/readback and lock admission. Engineeringcanariesneverbenchmarkgeneralization.",
+  "schema_version": 1,
+  "selected_by_parent_before_new_legal_inputs_or_labels": true,
+  "selected_model": {
+    "architecture": "RobertaForSequenceClassification",
+    "asset_lock": {
+      "bytes": 5653,
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch20/model-assets.lock.json",
+      "sha256": "ea5e4c687e3f2d046837f3792e8fa43409d26c3e2f8dd8791137c1db8a6e54f9"
+    },
+    "attention_heads": 16,
+    "declared_supervision": [
+      "SNLI",
+      "MultiNLI",
+      "FEVER-NLI",
+      "ANLI-R1",
+      "ANLI-R2",
+      "ANLI-R3"
+    ],
+    "exact_training_data_revisions_verified": false,
+    "hidden_size": 1024,
+    "intermediate_size": 4096,
+    "known_ContractNLI_supervision": false,
+    "layers": 24,
+    "legal_superiority_established": false,
+    "license": "MIT declared by immutable official card/API; no separateLICENSEasset",
+    "max_position_embeddings": 514,
+    "pair_max_tokens": 512,
+    "pretraining_fuzzy_overlap_verified": false,
+    "raw_id2label": {
+      "0": "entailment",
+      "1": "neutral",
+      "2": "contradiction"
+    },
+    "repository": "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+    "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+    "vocabulary": 50265
+  },
+  "source_checkpoint": "01c42365b8d79c968ea4f49120a5c1d71b9e0687",
+  "source_only_no_predictions_fits_quantization_models_native_paid_GPU": true,
+  "source_review_scope": "Read actual head, CONTINUATION, epoch19rejection ledger/source manifest, exact priorassetlocks3/4/7/9/11/13,epoch14qualification and17qualification throughconnectedGitHub. Full freshrootrestoration separately verified allhistoricalartifacts."
+}

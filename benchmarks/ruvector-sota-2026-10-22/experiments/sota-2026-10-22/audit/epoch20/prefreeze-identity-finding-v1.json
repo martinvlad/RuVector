@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-23T18:29:02.979307+00:00",
+  "correction": "Require literal stringquestion IDs and exact typed doc identity, unique8expected document groups, reject bool and mixedtype substitutions before both identity and gate checks.",
+  "epoch": 20,
+  "finding": "Python True==1 allowed substitution of all document_id1 values with True to pass validate_identities against expected integer1.",
+  "kind": "INDEPENDENT_PREFREEZE_TYPE_IDENTITY_FAULT",
+  "measurement_sources_frozen": false,
+  "metrics_before_correction_sha256": "36569113e8516ea081d5fcfb9d61774e9f67b98767eac53f3d56fb088b9fdcee",
+  "model_native_corpus_calls": 0,
+  "reproducer": "test_metrics.rows(); replace document_id==1 by literalTrue; validate_identities using original orderedquestions andlist(range(8)) returnsTrue.",
+  "retained_source": "pre-freeze-source-versions/metrics-v1.py",
+  "reviewer": "e20_source_review",
+  "schema_version": 1
+}

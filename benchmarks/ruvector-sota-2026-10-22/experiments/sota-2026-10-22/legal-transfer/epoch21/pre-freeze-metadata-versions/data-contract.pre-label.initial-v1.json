@@ -1,0 +1,132 @@
+{
+  "CONF_document_ids": [
+    308,
+    159,
+    284,
+    501,
+    267,
+    494,
+    261,
+    313
+  ],
+  "DEV_document_ids": [
+    303,
+    176,
+    113,
+    186,
+    485,
+    512,
+    219,
+    520
+  ],
+  "benchmark_score_or_rank_established": false,
+  "binary_mapping": {
+    "Contradiction": "No",
+    "Entailment": "Yes",
+    "NotMentioned": "No"
+  },
+  "calibration": [],
+  "confirmation": {
+    "document_ids": [
+      308,
+      159,
+      284,
+      501,
+      267,
+      494,
+      261,
+      313
+    ],
+    "input_allowlist": {
+      "bytes": 12335,
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch20/confirmation-input-allowlist.json",
+      "sha256": "884bd031ff9cf9312f1bc0c1bfca79dd8978ce680b7ebab54fb1b99d0f190990"
+    },
+    "projection_requires": "Independent accepted DEV + runtime admission, identical reader/tokenizer state and current owned confirmation worker3of3 canaries.",
+    "queries": 24,
+    "scope": "Exact lazy original epoch16 reserved source identities, still project-model-unused; no new draw."
+  },
+  "development": {
+    "document_ids": [
+      470,
+      423,
+      109,
+      418,
+      613,
+      580,
+      167,
+      393
+    ],
+    "input_allowlist": {
+      "bytes": 5031,
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch20/dev-input-allowlist.json",
+      "sha256": "80d822f90ff95c215c0dffcdf061e32347a2590dc2818b90fd8c2f0254201e1c"
+    },
+    "projection_requires": "Owned CPU worker, exact published root source freeze and actual saved/replayed3of3 canaries; first source projection retires all selected DEV groups forever.",
+    "queries": 24
+  },
+  "epoch": 21,
+  "gold_extractor": "Independent auditor only after complete sealed phase outputs and verified cleanup; no gold projection by worker builder.",
+  "hypotheses": [
+    "nda-17",
+    "nda-7",
+    "nda-3"
+  ],
+  "input_recipe": {
+    "bytes": 2890,
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch20/input-recipe.json",
+    "sha256": "b6cb5d62483b47a79f8118d2e159b4bc6f5c9ad065a16647f07e375ffcab5041"
+  },
+  "original_corpus_cases_and_annotation_choices_read": 0,
+  "original_threeway_labels": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "original_train_partition": {
+    "exposed": 229,
+    "reserved": 24,
+    "unreserved": 170
+  },
+  "schema_version": 1,
+  "source_checkpoint": "0c4392bb8b13a901dc416882f850230c1075fb6a",
+  "source_license": "CC-BY-4.0; Koreeda and Manning2021 attribution/source notices preserved.",
+  "source_qualification": {
+    "bytes": 2007,
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch20/source-qualification.json",
+    "sha256": "a1fc6a19e05b7eae7d4ce50ceca19b1c1210b2fe9b11b003385bc40e116aa01a"
+  },
+  "source_roles": {
+    "confirmation": {
+      "documents": 8,
+      "input_allowlist": {
+        "bytes": 12335,
+        "path": "experiments/sota-2026-10-22/legal-transfer/epoch21/confirmation-input-allowlist.json",
+        "sha256": "c572b09720271a70f20ea2dc46b32b794e73751b0560043022d85ed14d16aa25"
+      },
+      "output_path": "experiments/sota-2026-10-22/legal-transfer/epoch21/inputs.confirmation.json",
+      "queries": 24
+    },
+    "dev": {
+      "documents": 8,
+      "input_allowlist": {
+        "bytes": 5031,
+        "path": "experiments/sota-2026-10-22/legal-transfer/epoch21/dev-input-allowlist.json",
+        "sha256": "c5f771a3b331b40775451eed2f996ae6d2e77c73b09d4045ea06ec37e98d1a19"
+      },
+      "output_path": "experiments/sota-2026-10-22/legal-transfer/epoch21/inputs.dev.json",
+      "queries": 24
+    }
+  },
+  "status": "FROZEN_IDENTITY_RECIPE_NO_FRESH_SOURCE_INPUTS_OR_CHOICES",
+  "train": [],
+  "typed_gold_schema": {
+    "document_id": "literal int, bool forbidden",
+    "gold": "Yes iff Entailment else No",
+    "hypothesis_id": "exact nda string",
+    "id": "exact string",
+    "input_sha256": "exact SHA256",
+    "original_threeway_label": "exact one of Entailment/Contradiction/NotMentioned"
+  },
+  "unverified_pretraining_fuzzy_overlap": true
+}

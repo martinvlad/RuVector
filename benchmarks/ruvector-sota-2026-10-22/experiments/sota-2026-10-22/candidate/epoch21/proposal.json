@@ -1,0 +1,97 @@
+{
+  "CONF_document_ids": [
+    308,
+    159,
+    284,
+    501,
+    267,
+    494,
+    261,
+    313
+  ],
+  "CONF_policy": "Exact project-NLI/label-unused reserved bank only after independent frozen DEV and full-cost runtime gates; tokenizer-only capacity scan of already public source inputs disclosed separately.",
+  "CONF_questions": 24,
+  "DEV_document_ids": [
+    303,
+    176,
+    113,
+    186,
+    485,
+    512,
+    219,
+    520
+  ],
+  "DEV_questions": 24,
+  "DEV_selection": "Once-only source-metadata SHA-rank selection among170 unreserved original train documents; no text, length, labels, class balancing or outcomes used.",
+  "actual_model_native_benchmark_calls_at_proposal": 0,
+  "arms": [
+    "ruvector_top2",
+    "same_nli_lexical_top2",
+    "same_nli_positional_first2"
+  ],
+  "at": "2026-10-23T20:12:27.916948+00:00",
+  "calibration": [],
+  "canonical_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "canonical_permutation": [
+    0,
+    2,
+    1
+  ],
+  "champion": "SubmittedNative104/RRF10 unchanged",
+  "confirmation_cost_gate": "24*max_DEV_document_elapsed/3*max(1,CONFmaxunits/DEVmaxunits)+2*whole_pipeline_initialization+60<=600; whole init includes imports/hash/model/canaries/projection/BGE/capacity.",
+  "epoch": 21,
+  "hypothesis": "One preselected DeBERTa-v3-large typed reader with declared heterogeneous MNLI/FEVER/ANLI/LingNLI/WANLI training may improve contradiction/context decisions with native RuVector evidence; this is unmeasured legal competence, not an accepted improvement.",
+  "inference_precision": "Explicit FP32 CPU, stock forward, no quantization, no trained-head initialization.",
+  "legacy_arm_name_disclosure": "Historical identifiers do not mean literal two-unit retrieval; every arm gets the same frozen budget and shared priority policy.",
+  "limits": {
+    "CPU_threads": 2,
+    "GPU_calls": 0,
+    "NLI_pairs_per_complete_phase": 75,
+    "candidate_configurations": 1,
+    "interop_threads": 1,
+    "native_indexes_per_complete_phase": 9,
+    "native_queries_per_complete_phase": 27,
+    "native_worker_attempts": 2,
+    "outer_hard_seconds": 598,
+    "paid_API_calls": 0,
+    "seconds_per_batch_including_init_cleanup": 600,
+    "worker_margin_seconds": 5
+  },
+  "matched_control": "All arms use same actual model instance/state, official tokenizer/backend, full positive hypothesis and exact budget; only evidence ranking differs.",
+  "model_repository": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+  "model_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+  "official_rank": null,
+  "official_score": null,
+  "pair_cap": 512,
+  "probability_policy": "Stdlib double stable softmax of literal original FP32 logits, canonical E/C/N, Yes=pE, No=pC+pN, Yes iff>=0.5, canonical E/C/N ties. No fits/calibration/gate tuning.",
+  "promotion_or_submission_allowed": false,
+  "raw_E_N_C_indices": [
+    0,
+    1,
+    2
+  ],
+  "reader_tokenization_effect": "Official Unigram replaces prior RoBERTa BPE. Source-unit boundaries and which whole units fit may change naturally with the reader tokenizer. This end-to-end reader substitution is not a pure weight-only or paired cross-model causal test.",
+  "readiness": "Exactly three prior public engineering E/C/N fixtures must all be correct within each owned worker before any new legal input projection. These fixtures are excluded from benchmark metrics.",
+  "runtime_admission": "Exact source freeze/publication/independent actual remote readback/current owner FLOCK precede a one-shot phase. Phase reservation persists immediately before Popen; no automatic retries or uncertain PID signals.",
+  "schema_version": 1,
+  "source_checkpoint": "0c4392bb8b13a901dc416882f850230c1075fb6a",
+  "source_header": {
+    "bytes": 105145,
+    "path": "experiments/sota-2026-10-22/candidate/epoch21/source-safetensors-header.json",
+    "sha256": "cae7517807249d26579b1774d2c58e469adece71d0c91cc32b6f7e38890b9ca8"
+  },
+  "source_storage": "Original safetensors learned parameters F16; original nonlearned position buffer I64.",
+  "study_id": "native-deberta-v3-fp32-typed-e21",
+  "train": [],
+  "uncertainty": [
+    "Exact training dataset revisions and record-level pretraining overlap unknown; no known ContractNLI supervision declared.",
+    "New DEV documents differ from epoch20; no paired cross-epoch accuracy comparison or official benchmark generalization.",
+    "Previous four C errors are exposed DEV diagnosis in three correlated documents, not evidence of a proven causal remedy.",
+    "Full JevBench300/scorer and complete ClaimBench data/scorer/license/submission access remain unverified."
+  ],
+  "unchanged_evidence_policy": "Epoch20 algorithm retained: BGE query prefix, target128 source units with NLI160/BGE256 bounds, max192units, shared definition-priority160, native/lexical/positional top40 anchors and same-para neighbors packed in original source order under exact512 pair tokens."
+}

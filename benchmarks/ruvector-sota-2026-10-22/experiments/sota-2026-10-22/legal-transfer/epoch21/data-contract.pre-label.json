@@ -1,0 +1,132 @@
+{
+  "CONF_document_ids": [
+    308,
+    159,
+    284,
+    501,
+    267,
+    494,
+    261,
+    313
+  ],
+  "DEV_document_ids": [
+    303,
+    176,
+    113,
+    186,
+    485,
+    512,
+    219,
+    520
+  ],
+  "benchmark_score_or_rank_established": false,
+  "binary_mapping": {
+    "Contradiction": "No",
+    "Entailment": "Yes",
+    "NotMentioned": "No"
+  },
+  "calibration": [],
+  "confirmation": {
+    "document_ids": [
+      308,
+      159,
+      284,
+      501,
+      267,
+      494,
+      261,
+      313
+    ],
+    "input_allowlist": {
+      "bytes": 12335,
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch21/confirmation-input-allowlist.json",
+      "sha256": "c572b09720271a70f20ea2dc46b32b794e73751b0560043022d85ed14d16aa25"
+    },
+    "projection_requires": "Independent accepted DEV + runtime admission, identical reader/tokenizer state and current owned confirmation worker3of3 canaries.",
+    "queries": 24,
+    "scope": "Exact lazy original epoch16 reserved source identities, project-NLI-prediction and label unused; prior tokenizer-only text capacity access is disclosed, no new draw."
+  },
+  "development": {
+    "document_ids": [
+      303,
+      176,
+      113,
+      186,
+      485,
+      512,
+      219,
+      520
+    ],
+    "input_allowlist": {
+      "bytes": 5031,
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch21/dev-input-allowlist.json",
+      "sha256": "c5f771a3b331b40775451eed2f996ae6d2e77c73b09d4045ea06ec37e98d1a19"
+    },
+    "projection_requires": "Owned CPU worker, exact published root source freeze and actual saved/replayed3of3 canaries; first source projection retires all selected DEV groups forever.",
+    "queries": 24
+  },
+  "epoch": 21,
+  "gold_extractor": "Independent auditor only after complete sealed phase outputs and verified cleanup; no gold projection by worker builder.",
+  "hypotheses": [
+    "nda-17",
+    "nda-7",
+    "nda-3"
+  ],
+  "input_recipe": {
+    "bytes": 2890,
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch21/input-recipe.json",
+    "sha256": "9fc61d5ac1faeeec1f3f67c9b275d5987217896269c90c88194d7733951e7a77"
+  },
+  "original_corpus_cases_and_annotation_choices_read": 0,
+  "original_threeway_labels": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "original_train_partition": {
+    "exposed": 229,
+    "reserved": 24,
+    "unreserved": 170
+  },
+  "schema_version": 1,
+  "source_checkpoint": "0c4392bb8b13a901dc416882f850230c1075fb6a",
+  "source_license": "CC-BY-4.0; Koreeda and Manning2021 attribution/source notices preserved.",
+  "source_qualification": {
+    "bytes": 2367,
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch21/source-qualification.json",
+    "sha256": "2c8f4f4b0bf787b139cd0513e8658dbe344ea813b8b7efda19d87f6dc83b571f"
+  },
+  "source_roles": {
+    "confirmation": {
+      "documents": 8,
+      "input_allowlist": {
+        "bytes": 12335,
+        "path": "experiments/sota-2026-10-22/legal-transfer/epoch21/confirmation-input-allowlist.json",
+        "sha256": "c572b09720271a70f20ea2dc46b32b794e73751b0560043022d85ed14d16aa25"
+      },
+      "output_path": "experiments/sota-2026-10-22/legal-transfer/epoch21/inputs.confirmation.json",
+      "queries": 24
+    },
+    "dev": {
+      "documents": 8,
+      "input_allowlist": {
+        "bytes": 5031,
+        "path": "experiments/sota-2026-10-22/legal-transfer/epoch21/dev-input-allowlist.json",
+        "sha256": "c5f771a3b331b40775451eed2f996ae6d2e77c73b09d4045ea06ec37e98d1a19"
+      },
+      "output_path": "experiments/sota-2026-10-22/legal-transfer/epoch21/inputs.dev.json",
+      "queries": 24
+    }
+  },
+  "status": "FROZEN_IDENTITY_RECIPE_NO_FRESH_SOURCE_INPUTS_OR_CHOICES",
+  "train": [],
+  "typed_gold_schema": {
+    "document_id": "literal int, bool forbidden",
+    "gold": "Yes iff Entailment else No",
+    "hypothesis_id": "exact nda string",
+    "id": "exact string",
+    "input_sha256": "exact SHA256",
+    "original_threeway_label": "exact one of Entailment/Contradiction/NotMentioned"
+  },
+  "unverified_pretraining_fuzzy_overlap": true
+}

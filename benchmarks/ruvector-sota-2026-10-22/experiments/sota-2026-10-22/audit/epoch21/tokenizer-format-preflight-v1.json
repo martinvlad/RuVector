@@ -1,0 +1,243 @@
+{
+  "assets": [
+    {
+      "bytes": 8648889,
+      "path": "experiments/sota-2026-10-22/candidate/epoch21/assets/official-deberta-v3-large-nli/tokenizer.json",
+      "sha256": "7aa118770f066a74530d161c7d0b994d0629cc0ff3a0df213f184192773f960a"
+    },
+    {
+      "bytes": 395,
+      "path": "experiments/sota-2026-10-22/candidate/epoch21/assets/official-deberta-v3-large-nli/tokenizer_config.json",
+      "sha256": "556a192d83e3edb45a09a6207095dd9295c3b2279062e5cc430feac4cb7a0817"
+    },
+    {
+      "bytes": 156,
+      "path": "experiments/sota-2026-10-22/candidate/epoch21/assets/official-deberta-v3-large-nli/special_tokens_map.json",
+      "sha256": "fcfbeb4e25cd37fb5b8030406394253b245230fd3b552750092bab7d24d827da"
+    },
+    {
+      "bytes": 18,
+      "path": "experiments/sota-2026-10-22/candidate/epoch21/assets/official-deberta-v3-large-nli/added_tokens.json",
+      "sha256": "cd0141b19e809eb963a8f8244fad72530233f729e1f6960d281e1fbb3537b2fb"
+    }
+  ],
+  "at": "2026-10-23T20:07:28.074543+00:00",
+  "automatic_retry": false,
+  "checks_passed": true,
+  "elapsed_seconds": 0.478182074992219,
+  "epoch": 21,
+  "fixtures": [
+    {
+      "feed": {
+        "attention_mask": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "input_ids": [
+          [
+            1,
+            279,
+            6693,
+            269,
+            277,
+            260,
+            2,
+            279,
+            6693,
+            269,
+            277,
+            260,
+            2
+          ]
+        ],
+        "token_type_ids": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "fixture_id": "semantic-e-v1",
+      "hypothesis": "The lamp is on.",
+      "premise": "The lamp is on."
+    },
+    {
+      "feed": {
+        "attention_mask": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "input_ids": [
+          [
+            1,
+            279,
+            6693,
+            269,
+            298,
+            277,
+            260,
+            2,
+            279,
+            6693,
+            269,
+            277,
+            260,
+            2
+          ]
+        ],
+        "token_type_ids": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "fixture_id": "semantic-c-v1",
+      "hypothesis": "The lamp is on.",
+      "premise": "The lamp is not on."
+    },
+    {
+      "feed": {
+        "attention_mask": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "input_ids": [
+          [
+            1,
+            279,
+            1352,
+            269,
+            1707,
+            260,
+            2,
+            279,
+            6693,
+            269,
+            277,
+            260,
+            2
+          ]
+        ],
+        "token_type_ids": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "fixture_id": "semantic-n-v1",
+      "hypothesis": "The lamp is on.",
+      "premise": "The box is blue."
+    }
+  ],
+  "kind": "TOKENIZER_ONLY_PUBLIC_ENGINEERING_FORMAT_PREFLIGHT",
+  "legal_DEV_or_CONF_texts_read": 0,
+  "model_native_forwards": 0,
+  "neural_framework_imports": [],
+  "original_annotations_read": 0,
+  "original_assets_unchanged": true,
+  "schema_version": 1,
+  "scope": "Exactly one parser/format qualification on three already-exposed CC0 strings; no semantic predictions or benchmark measurement.",
+  "status": "EXACT_SOURCE_TOKENIZER_JSON_PARSER_AND_PAIR_FORMAT_PASS",
+  "tokenizer_policy": {
+    "actual_padding": null,
+    "actual_truncation": null,
+    "configured_backend_bytes": 4551531,
+    "configured_backend_sha256": "a2b2ae8ced43b5dd84518c55b06f8c6d6c51b6240b835886433a094eb6d7f7bd",
+    "effective_vocab_with_added_tokens": 128001,
+    "explicit_runtime_policy": "Pinned tokenizers.Tokenizer.from_file(original JSON), no_padding(), no_truncation(); no manual schema edits or alternate constructor.",
+    "original_asset_bytes_modified": false,
+    "original_padding": null,
+    "original_tokenizer_json_sha256": "7aa118770f066a74530d161c7d0b994d0629cc0ff3a0df213f184192773f960a",
+    "original_truncation": {
+      "direction": "Right",
+      "max_length": 512,
+      "strategy": "LongestFirst",
+      "stride": 0
+    },
+    "source_asset_names": [
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "special_tokens_map.json",
+      "added_tokens.json"
+    ],
+    "source_model": "Unigram",
+    "source_vocab_entries": 128000
+  },
+  "tokenizers_version": "0.21.4"
+}

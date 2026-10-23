@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "run_id": "epoch21-dd6da5427108",
-  "state": "EPOCH21_EXCLUSIVE_PLANNING_LEASE",
+  "state": "EPOCH21_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
   "experiments_active": true,
   "native_allowed": 0,
-  "native_allowed_after_exact_remote_readback": 0,
-  "conditional_confirmation_after_independent_DEV_runtime_gates": 0,
-  "checkpoint_parent": "0c4392bb8b13a901dc416882f850230c1075fb6a",
+  "native_allowed_after_exact_remote_readback": 1,
+  "conditional_confirmation_after_independent_DEV_runtime_gates": 1,
+  "checkpoint_parent": "9a995890a3cde61f3457cb405d712f67bf5555df",
   "started_at": "2026-10-23T19:53:50.757769+00:00",
   "expires_at": "2026-10-23T22:53:50.757786+00:00",
   "OS_lock_held": true,
@@ -17,5 +17,5 @@
     "seconds_per_process_including_init_cleanup": 600,
     "paid_GPU_calls": 0
   },
-  "instruction": "Exclusive source preparation only. No new source-case or annotation projection, model/native execution or submission is admitted. Require new frozen source/roles/protocol, operational qualification and exact independent remote readback before a single owned DEV worker. Do not overlap another active lease or repeat an uncertain mutation."
+  "instruction": "Source-only publication. Exact independent remote readback plus live exclusive-lock proof admits DEV once. CONF additionally requires independent frozen DEV and full-cost runtime gates. Engineering canaries precede all new legal parsing; no retries or promotion/submission."
 }

@@ -1,0 +1,138 @@
+{
+  "AST_sources": [
+    {
+      "lines": 67,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/common.py"
+    },
+    {
+      "lines": 202,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/metrics.py"
+    },
+    {
+      "lines": 222,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/model_checks.py"
+    },
+    {
+      "lines": 68,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/parser_qualification.py"
+    },
+    {
+      "lines": 115,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/project_gold.py"
+    },
+    {
+      "lines": 161,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/replay.py"
+    },
+    {
+      "lines": 226,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/test_metrics.py"
+    },
+    {
+      "lines": 255,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/test_model.py"
+    },
+    {
+      "lines": 265,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/test_replay.py"
+    },
+    {
+      "lines": 62,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/tokenizer_replay.py"
+    },
+    {
+      "lines": 91,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/tokenizer_source.py"
+    },
+    {
+      "lines": 213,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/trace_checks.py"
+    }
+  ],
+  "actual_forbidden_imports": [],
+  "at": "2026-10-23T20:22:51.918733+00:00",
+  "blocked_forbidden_operations": [],
+  "checks_passed": true,
+  "command": "fresh CPU venv Python -B stdlib unittest test_metrics test_replay test_model",
+  "elapsed_seconds": 0.22179369599325582,
+  "epoch": 21,
+  "errors": 0,
+  "failures": 0,
+  "model_native_GPU_paid_calls": 0,
+  "original_annotations_or_legal_inputs_read": false,
+  "output": "test_all_contradiction_cannot_pass_class_guard (test_metrics.GateTests.test_all_contradiction_cannot_pass_class_guard) ... ok\ntest_bool_document_gate_rejected (test_metrics.GateTests.test_bool_document_gate_rejected) ... ok\ntest_bootstrap_deterministic_and_per_document (test_metrics.GateTests.test_bootstrap_deterministic_and_per_document) ... ok\ntest_bootstrap_recipe_not_mutable (test_metrics.GateTests.test_bootstrap_recipe_not_mutable) ... ok\ntest_duplicate_phase_rejected (test_metrics.GateTests.test_duplicate_phase_rejected) ... ok\ntest_equal_accuracy_cannot_pass (test_metrics.GateTests.test_equal_accuracy_cannot_pass) ... ok\ntest_json_never_emits_nonstandard_infinity (test_metrics.GateTests.test_json_never_emits_nonstandard_infinity) ... ok\ntest_meaningful_confirmation_ci_gain_passes (test_metrics.GateTests.test_meaningful_confirmation_ci_gain_passes) ... ok\ntest_meaningful_dev_gain_passes (test_metrics.GateTests.test_meaningful_dev_gain_passes) ... ok\ntest_missing_gold_class_fails (test_metrics.GateTests.test_missing_gold_class_fails) ... ok\ntest_partial_phase_rejected (test_metrics.GateTests.test_partial_phase_rejected) ... ok\ntest_binary_metric_uses_entailment_marginal (test_metrics.MetricsTests.test_binary_metric_uses_entailment_marginal) ... ok\ntest_bool_document_substitution_rejected (test_metrics.MetricsTests.test_bool_document_substitution_rejected) ... ok\ntest_document_substitution_rejected (test_metrics.MetricsTests.test_document_substitution_rejected) ... ok\ntest_duplicate_expected_documents_rejected (test_metrics.MetricsTests.test_duplicate_expected_documents_rejected) ... ok\ntest_duplicate_question_rejected (test_metrics.MetricsTests.test_duplicate_question_rejected) ... ok\ntest_empty_metric_rejected (test_metrics.MetricsTests.test_empty_metric_rejected) ... ok\ntest_exact_identity_success (test_metrics.MetricsTests.test_exact_identity_success) ... ok\ntest_extra_arm_rejected (test_metrics.MetricsTests.test_extra_arm_rejected) ... ok\ntest_float_document_substitution_rejected (test_metrics.MetricsTests.test_float_document_substitution_rejected) ... ok\ntest_known_strong_metric (test_metrics.MetricsTests.test_known_strong_metric) ... ok\ntest_latency_percentile_literal (test_metrics.MetricsTests.test_latency_percentile_literal) ... ok\ntest_nonstring_question_substitution_rejected (test_metrics.MetricsTests.test_nonstring_question_substitution_rejected) ... ok\ntest_reordered_question_rejected (test_metrics.MetricsTests.test_reordered_question_rejected) ... ok\ntest_string_document_substitution_rejected (test_metrics.MetricsTests.test_string_document_substitution_rejected) ... ok\ntest_swapped_document_assignments_rejected (test_metrics.MetricsTests.test_swapped_document_assignments_rejected) ... ok\ntest_uniform_categorical_brier_and_nll (test_metrics.MetricsTests.test_uniform_categorical_brier_and_nll) ... ok\ntest_zero_gold_probability_not_clipped (test_metrics.MetricsTests.test_zero_gold_probability_not_clipped) ... ok\ntest_binary_decision_mismatch_rejected (test_metrics.ProbabilityTests.test_binary_decision_mismatch_rejected) ... ok\ntest_binary_half_tie_yes (test_metrics.ProbabilityTests.test_binary_half_tie_yes) ... ok\ntest_binary_threshold_separate_from_argmax (test_metrics.ProbabilityTests.test_binary_threshold_separate_from_argmax) ... ok\ntest_logit_mismatch_rejected (test_metrics.ProbabilityTests.test_logit_mismatch_rejected) ... ok\ntest_mass_outside_tolerance_rejected (test_metrics.ProbabilityTests.test_mass_outside_tolerance_rejected) ... ok\ntest_negative_probability_rejected (test_metrics.ProbabilityTests.test_negative_probability_rejected) ... ok\ntest_nonfinite_rejected (test_metrics.ProbabilityTests.test_nonfinite_rejected) ... ok\ntest_raw_cardinality_rejected (test_metrics.ProbabilityTests.test_raw_cardinality_rejected) ... ok\ntest_source_label_mapping (test_metrics.ProbabilityTests.test_source_label_mapping) ... ok\ntest_stable_large_logits (test_metrics.ProbabilityTests.test_stable_large_logits) ... ok\ntest_tie_order_canonical_not_raw (test_metrics.ProbabilityTests.test_tie_order_canonical_not_raw) ... ok\ntest_typed_decision_mismatch_rejected (test_metrics.ProbabilityTests.test_typed_decision_mismatch_rejected) ... ok\ntest_unknown_class_rejected (test_metrics.ProbabilityTests.test_unknown_class_rejected) ... ok\ntest_wrong_binary_marginal_rejected (test_metrics.ProbabilityTests.test_wrong_binary_marginal_rejected) ... ok\ntest_ORT_sessions_before_engineering_pass_rejected (test_replay.CounterAndTokenProofFaultTests.test_ORT_sessions_before_engineering_pass_rejected) ... ok\ntest_bool_completed_BGE_counter_rejected (test_replay.CounterAndTokenProofFaultTests.test_bool_completed_BGE_counter_rejected) ... ok\ntest_bool_tokenizer_proof_index_rejected (test_replay.CounterAndTokenProofFaultTests.test_bool_tokenizer_proof_index_rejected) ... ok\ntest_exact_synthetic_counters_complete (test_replay.CounterAndTokenProofFaultTests.test_exact_synthetic_counters_complete) ... ok\ntest_exact_synthetic_counters_engineering (test_replay.CounterAndTokenProofFaultTests.test_exact_synthetic_counters_engineering) ... ok\ntest_exact_synthetic_tokenizer_proof (test_replay.CounterAndTokenProofFaultTests.test_exact_synthetic_tokenizer_proof) ... ok\ntest_hidden_extra_embedding_calls_rejected (test_replay.CounterAndTokenProofFaultTests.test_hidden_extra_embedding_calls_rejected) ... ok\ntest_placeholder_tokenizer_proof_rows_rejected (test_replay.CounterAndTokenProofFaultTests.test_placeholder_tokenizer_proof_rows_rejected) ... ok\ntest_stale_tokenizer_execution_receipt_rejected (test_replay.CounterAndTokenProofFaultTests.test_stale_tokenizer_execution_receipt_rejected) ... ok\ntest_unplanned_ORT_sessions_rejected (test_replay.CounterAndTokenProofFaultTests.test_unplanned_ORT_sessions_rejected) ... ok\ntest_wrong_tokenizer_proof_feed_rejected (test_replay.CounterAndTokenProofFaultTests.test_wrong_tokenizer_proof_feed_rejected) ... ok\ntest_wrong_tokenizer_proof_source_assets_rejected (test_replay.CounterAndTokenProofFaultTests.test_wrong_tokenizer_proof_source_assets_rejected) ... ok\ntest_wrong_tokenizer_proof_text_rejected (test_replay.CounterAndTokenProofFaultTests.test_wrong_tokenizer_proof_text_rejected) ... ok\ntest_actual_feed_hash_tampering_rejected (test_replay.FeedFaultTests.test_actual_feed_hash_tampering_rejected) ... ok\ntest_attention_hole_rejected (test_replay.FeedFaultTests.test_attention_hole_rejected) ... ok\ntest_boolean_id_substitution_rejected (test_replay.FeedFaultTests.test_boolean_id_substitution_rejected) ... ok\ntest_missing_official_token_types_rejected (test_replay.FeedFaultTests.test_missing_official_token_types_rejected) ... ok\ntest_nonfinite_latency_rejected (test_replay.FeedFaultTests.test_nonfinite_latency_rejected) ... ok\ntest_silent_truncation_rejected (test_replay.FeedFaultTests.test_silent_truncation_rejected) ... ok\ntest_structurally_valid_synthetic_feed (test_replay.FeedFaultTests.test_structurally_valid_synthetic_feed) ... ok\ntest_text_pair_changed_rejected (test_replay.FeedFaultTests.test_text_pair_changed_rejected) ... ok\ntest_wrong_instance_rejected (test_replay.FeedFaultTests.test_wrong_instance_rejected) ... ok\ntest_wrong_precision_state_rejected (test_replay.FeedFaultTests.test_wrong_precision_state_rejected) ... ok\ntest_boolean_counter_rejected (test_replay.GoldAndResourceGuardTests.test_boolean_counter_rejected) ... ok\ntest_negative_duration_rejected (test_replay.GoldAndResourceGuardTests.test_negative_duration_rejected) ... ok\ntest_partial_predictions_never_open_gold (test_replay.GoldAndResourceGuardTests.test_partial_predictions_never_open_gold) ... ok\ntest_unapproved_gold_never_opens_source (test_replay.GoldAndResourceGuardTests.test_unapproved_gold_never_opens_source) ... ok\ntest_unsafe_source_path_rejected (test_replay.GoldAndResourceGuardTests.test_unsafe_source_path_rejected) ... ok\ntest_boolean_hit_rejected (test_replay.NativeFaultTests.test_boolean_hit_rejected) ... ok\ntest_changed_bundle_rejected (test_replay.NativeFaultTests.test_changed_bundle_rejected) ... ok\ntest_duplicate_hit_rejected (test_replay.NativeFaultTests.test_duplicate_hit_rejected) ... ok\ntest_fabricated_reference_rejected (test_replay.NativeFaultTests.test_fabricated_reference_rejected) ... ok\ntest_negative_latency_rejected (test_replay.NativeFaultTests.test_negative_latency_rejected) ... ok\ntest_reference_not_substituted_for_observed_ANN (test_replay.NativeFaultTests.test_reference_not_substituted_for_observed_ANN) ... ok\ntest_reference_only_faked_native_flag_rejected (test_replay.NativeFaultTests.test_reference_only_faked_native_flag_rejected) ... ok\ntest_synthetic_native_receipt_structure (test_replay.NativeFaultTests.test_synthetic_native_receipt_structure) ... ok\ntest_wrong_native_binary_rejected (test_replay.NativeFaultTests.test_wrong_native_binary_rejected) ... ok\ntest_zero_cosine_vector_rejected (test_replay.NativeFaultTests.test_zero_cosine_vector_rejected) ... ok\ntest_bool_segment_rejected (test_model.AdditionalFeedFaultTests.test_bool_segment_rejected) ... ok\ntest_extra_feed_key_rejected (test_model.AdditionalFeedFaultTests.test_extra_feed_key_rejected) ... ok\ntest_model_reserved_vocab_boundary_rejected (test_model.AdditionalFeedFaultTests.test_model_reserved_vocab_boundary_rejected) ... ok\ntest_nonmonotonic_segments_rejected (test_model.AdditionalFeedFaultTests.test_nonmonotonic_segments_rejected) ... ok\ntest_original_high_level_comparison_is_required (test_model.AdditionalFeedFaultTests.test_original_high_level_comparison_is_required) ... ok\ntest_source_special_ids_rejected (test_model.AdditionalFeedFaultTests.test_source_special_ids_rejected) ... ok\ntest_wrong_observed_feed_dtype_rejected (test_model.AdditionalFeedFaultTests.test_wrong_observed_feed_dtype_rejected) ... ok\ntest_actual_config_dtype_is_not_used_as_tensor_precision_proof (test_model.ModelMetadataFaultTests.test_actual_config_dtype_is_not_used_as_tensor_precision_proof) ... ok\ntest_actual_declared_versions_match_immutable_wheel_metadata (test_model.ModelMetadataFaultTests.test_actual_declared_versions_match_immutable_wheel_metadata) ... ok\ntest_actual_num_labels_cannot_change_or_be_boolean (test_model.ModelMetadataFaultTests.test_actual_num_labels_cannot_change_or_be_boolean) ... ok\ntest_actual_structural_config_or_source_config_cannot_change (test_model.ModelMetadataFaultTests.test_actual_structural_config_or_source_config_cannot_change) ... ok\ntest_all_four_loading_error_lists_mandatory_empty (test_model.ModelMetadataFaultTests.test_all_four_loading_error_lists_mandatory_empty) ... ok\ntest_any_unverified_source_parameter_rejected (test_model.ModelMetadataFaultTests.test_any_unverified_source_parameter_rejected) ... ok\ntest_asset_byte_hash_tampering_rejected (test_model.ModelMetadataFaultTests.test_asset_byte_hash_tampering_rejected) ... ok\ntest_bool_position_shape_rejected (test_model.ModelMetadataFaultTests.test_bool_position_shape_rejected) ... ok\ntest_bool_source_counter_rejected (test_model.ModelMetadataFaultTests.test_bool_source_counter_rejected) ... ok\ntest_compared_boolean_tensor_count_rejected (test_model.ModelMetadataFaultTests.test_compared_boolean_tensor_count_rejected) ... ok\ntest_duplicate_parameter_comparison_rejected (test_model.ModelMetadataFaultTests.test_duplicate_parameter_comparison_rejected) ... ok\ntest_half_buffer_rejected (test_model.ModelMetadataFaultTests.test_half_buffer_rejected) ... ok\ntest_inference_downcast_rejected (test_model.ModelMetadataFaultTests.test_inference_downcast_rejected) ... ok\ntest_missing_parameter_comparison_rejected (test_model.ModelMetadataFaultTests.test_missing_parameter_comparison_rejected) ... ok\ntest_nonpersistent_position_is_not_optional (test_model.ModelMetadataFaultTests.test_nonpersistent_position_is_not_optional) ... ok\ntest_old_unused_pooler_exception_cannot_pass (test_model.ModelMetadataFaultTests.test_old_unused_pooler_exception_cannot_pass) ... ok\ntest_parameter_order_not_ambiguous (test_model.ModelMetadataFaultTests.test_parameter_order_not_ambiguous) ... ok\ntest_parameter_source_dtype_and_dimension_rejected (test_model.ModelMetadataFaultTests.test_parameter_source_dtype_and_dimension_rejected) ... ok\ntest_prequalified_tokenizer_backend_cannot_change (test_model.ModelMetadataFaultTests.test_prequalified_tokenizer_backend_cannot_change) ... ok\ntest_raw_C_and_E_permutation_rejected (test_model.ModelMetadataFaultTests.test_raw_C_and_E_permutation_rejected) ... ok\ntest_remote_code_or_non_safetensors_rejected (test_model.ModelMetadataFaultTests.test_remote_code_or_non_safetensors_rejected) ... ok\ntest_runtime_version_drift_rejected (test_model.ModelMetadataFaultTests.test_runtime_version_drift_rejected) ... ok\ntest_saved_state_hash_must_match (test_model.ModelMetadataFaultTests.test_saved_state_hash_must_match) ... ok\ntest_source_FP16_cannot_be_reported_as_FP32 (test_model.ModelMetadataFaultTests.test_source_FP16_cannot_be_reported_as_FP32) ... ok\ntest_source_storage_config_is_distinct_from_loaded_architecture (test_model.ModelMetadataFaultTests.test_source_storage_config_is_distinct_from_loaded_architecture) ... ok\ntest_source_tokenizer_identity_cannot_change (test_model.ModelMetadataFaultTests.test_source_tokenizer_identity_cannot_change) ... ok\ntest_tokenizer_cannot_hide_type_ids (test_model.ModelMetadataFaultTests.test_tokenizer_cannot_hide_type_ids) ... ok\ntest_tokenizer_extra_learned_segments_rejected (test_model.ModelMetadataFaultTests.test_tokenizer_extra_learned_segments_rejected) ... ok\ntest_valid_complete_synthetic_metadata (test_model.ModelMetadataFaultTests.test_valid_complete_synthetic_metadata) ... ok\ntest_wrong_classifier_or_pooler_shape_rejected (test_model.ModelMetadataFaultTests.test_wrong_classifier_or_pooler_shape_rejected) ... ok\ntest_wrong_model_revision_rejected (test_model.ModelMetadataFaultTests.test_wrong_model_revision_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 118 tests in 0.164s\n\nOK\n",
+  "parser_qualification_repeated": false,
+  "reason_for_new_run": "Prefreeze engine actual-config adapter includes actual structural num_labels3; pin it exactly and add a corruption test. Earlier117 PASS remains immutable.",
+  "schema_version": 1,
+  "scope": "Pure synthetic scorer, metadata, source guards and receipt fault tests; no native/parser/neural/corpus execution. Public fixed source-header metadata and wheel identities may be read.",
+  "skipped": 0,
+  "source_identities": [
+    {
+      "bytes": 2302,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/common.py",
+      "sha256": "61a63d8fded1719891d7d054757f2a1011191066673114acff46c108d6f6d25d"
+    },
+    {
+      "bytes": 10854,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/metrics.py",
+      "sha256": "231894dabf8bc801d4564824158d14d47cdfe0727097254eb120a950d4f735c3"
+    },
+    {
+      "bytes": 16471,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/model_checks.py",
+      "sha256": "dc28bd72c5371428013670150beae6814efa51284d9a554846f853e6bc71314b"
+    },
+    {
+      "bytes": 3961,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/parser_qualification.py",
+      "sha256": "43ddcbe4747763a0f65412d49c2480bef28ecd42adcbe36c1a97ac0505f6d4d3"
+    },
+    {
+      "bytes": 8746,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/project_gold.py",
+      "sha256": "32e37e9695c7c1372a6d181a9761cf6b6fcd3433a602da1f4726ac82a4b5242c"
+    },
+    {
+      "bytes": 13821,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/replay.py",
+      "sha256": "aebb723d2cc0ae8f5c5d4add4b5a92c653731976887dfa7f4cf0c339a05a5024"
+    },
+    {
+      "bytes": 11109,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/test_metrics.py",
+      "sha256": "6f011482695215f002300e7a5da42439b0122910169208ce0a89b58ac23f29eb"
+    },
+    {
+      "bytes": 15499,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/test_model.py",
+      "sha256": "69f2ac33bea4215adbd367c724a10cf8e1f90511609263d0901ab6cd7626206b"
+    },
+    {
+      "bytes": 14039,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/test_replay.py",
+      "sha256": "6cddf43ea2753f55b776364a724918052190b058cc7523e77bb2860ae91d6aa1"
+    },
+    {
+      "bytes": 4045,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/tokenizer_replay.py",
+      "sha256": "b0a9dd4f3f0f95d242eb50012a030620092d77c88e6c4e469943072170516e0f"
+    },
+    {
+      "bytes": 5678,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/tokenizer_source.py",
+      "sha256": "82c4723cd96cc4b04ae41bf904b14ccb68e06c24d5ac2a37957a415836222912"
+    },
+    {
+      "bytes": 20970,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/trace_checks.py",
+      "sha256": "94e8097e3ca3f6a27a84ced330bdcdc915e46686fb86bbc9c8a4f1de5c1e27ce"
+    },
+    {
+      "bytes": 24579,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/protocol.json",
+      "sha256": "a5de01619e51581356e29dfcb32f9e6abef9f65c64e909c2f3073f93ae838056"
+    }
+  ],
+  "source_unchanged": true,
+  "tests_run": 118
+}

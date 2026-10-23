@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "epoch": 21,
+  "kind": "PREFREEZE_PURE_TEST_FIXTURE_FAILURE",
+  "command": "python -B -m unittest -q test_engineering.py test_source_contract.py",
+  "tool_chunk_id": "884eb2",
+  "tests_run": 35,
+  "exit_code": 1,
+  "errors": 3,
+  "failures": 0,
+  "cause": "Synthetic test-header shapes shallow-copied mutable HEAD_SHAPES lists, so a fault fixture modified global shape constants used by later positive fixtures. No actual checkpoint/runtime/model/native/legal inputs were read.",
+  "correction": "Deep-copy the synthetic fixture head shapes; candidate loader/protocol was not relaxed.",
+  "model_native_tokenizer_calls": 0
+}

@@ -1,0 +1,99 @@
+{
+  "calibration": [],
+  "checkpoint_policy": {
+    "all_loading_error_lists_empty": true,
+    "every_parameter_exact_after_FP32_conversion": true,
+    "no_blanket_loading_exception": true,
+    "position_buffer_exact_arange512_and_registered_nonpersistent": true,
+    "source_FP16_learned_elements": 435064835,
+    "source_FP16_learned_parameter_tensors": 394,
+    "source_I64_nonlearned_position_buffer_elements": 512,
+    "source_tensors": 395,
+    "trained_source_keys_equal_all_loaded_named_parameters": true
+  },
+  "control_builder": {
+    "bytes": 11699,
+    "path": "experiments/sota-2026-10-22/epoch21/preparation/build_controls_v2.py",
+    "sha256": "cf7f0b7031d6618c9c60b0e6aa9509d0fef69af20cc4f0c0aa756325f64c0cd2"
+  },
+  "counter_caps_per_process": {
+    "NLI_pairs": 75,
+    "native_indexes": 9,
+    "native_searches": 27
+  },
+  "epoch": 21,
+  "limits": {
+    "GPU_calls": 0,
+    "candidate_configs": 1,
+    "interop_threads": 1,
+    "native_batches": 2,
+    "paid_calls": 0,
+    "seconds_per_batch": 600,
+    "threads": 2,
+    "worker_attempts": 2
+  },
+  "operational_tokenizer": {
+    "actual_feed_input_ids_attention_mask_token_type_ids_all_retained": true,
+    "backend_bytes": 4551531,
+    "original_JSON_sha256": "7aa118770f066a74530d161c7d0b994d0629cc0ff3a0df213f184192773f960a",
+    "original_asset_bytes_unchanged": true,
+    "qualified_disabled_padding_truncation_backend_sha256": "a2b2ae8ced43b5dd84518c55b06f8c6d6c51b6240b835886433a094eb6d7f7bd"
+  },
+  "phases": {
+    "confirmation": {
+      "expected_documents": 8,
+      "expected_rows": 24,
+      "gold_unavailable_to_worker": true,
+      "input_allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch21/confirmation-input-allowlist.json",
+      "input_allowlist_sha256": "c572b09720271a70f20ea2dc46b32b794e73751b0560043022d85ed14d16aa25",
+      "input_recipe_path": "experiments/sota-2026-10-22/legal-transfer/epoch21/input-recipe.json",
+      "input_recipe_sha256": "9fc61d5ac1faeeec1f3f67c9b275d5987217896269c90c88194d7733951e7a77",
+      "lazy_input_output_path": "experiments/sota-2026-10-22/legal-transfer/epoch21/inputs.confirmation.json"
+    },
+    "dev": {
+      "expected_documents": 8,
+      "expected_rows": 24,
+      "gold_unavailable_to_worker": true,
+      "input_allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch21/dev-input-allowlist.json",
+      "input_allowlist_sha256": "c5f771a3b331b40775451eed2f996ae6d2e77c73b09d4045ea06ec37e98d1a19",
+      "input_recipe_path": "experiments/sota-2026-10-22/legal-transfer/epoch21/input-recipe.json",
+      "input_recipe_sha256": "9fc61d5ac1faeeec1f3f67c9b275d5987217896269c90c88194d7733951e7a77",
+      "lazy_input_output_path": "experiments/sota-2026-10-22/legal-transfer/epoch21/inputs.dev.json"
+    }
+  },
+  "plan_builder": {
+    "bytes": 7687,
+    "path": "experiments/sota-2026-10-22/epoch21/preparation/build_plan_v1.py",
+    "sha256": "c5f6a336551bf127d2743307ff329a0895dc58b6f8dd8fbc8aa3cad7a0621351"
+  },
+  "publication_helper": {
+    "bytes": 20406,
+    "path": "experiments/sota-2026-10-22/epoch21/publication/prepare_publication_v1.py",
+    "sha256": "8310eae38218d09e661b565927ae731b077eb2bd6655ea37e73db45feca3bcf1"
+  },
+  "readiness": {
+    "benchmark_score_claim": false,
+    "fixed_engineering_canaries": 3,
+    "gates_before_any_new_legal_parse": true,
+    "required_correct": 3
+  },
+  "references": {
+    "audit_gold_projector": "experiments/sota-2026-10-22/audit/epoch21/project_gold.py",
+    "audit_protocol": "experiments/sota-2026-10-22/audit/epoch21/protocol.json",
+    "audit_runner": "experiments/sota-2026-10-22/audit/epoch21/replay.py",
+    "audit_tokenizer_replay": "experiments/sota-2026-10-22/audit/epoch21/tokenizer_replay.py",
+    "bge_assets_lock": "experiments/sota-2026-10-22/epoch21/preparation/bge-assets.lock.json",
+    "canaries": "experiments/sota-2026-10-22/legal-transfer/epoch19/canaries.json",
+    "candidate_launcher": "experiments/sota-2026-10-22/candidate/epoch21/launch.py",
+    "confirmation_capacity_inputs": "experiments/sota-2026-10-22/legal-transfer/epoch18/confirmation-inputs-only.json",
+    "model_assets_lock": "experiments/sota-2026-10-22/legal-transfer/epoch21/model-assets.lock.json",
+    "model_header": "experiments/sota-2026-10-22/candidate/epoch21/source-safetensors-header.json",
+    "native_closure": "experiments/sota-2026-10-22/epoch17/preparation/runtime-closure.json",
+    "operational_preflight": "experiments/sota-2026-10-22/epoch21/preparation/operational_preflight.py",
+    "wheel_lock": "experiments/sota-2026-10-22/epoch17/preparation/python-wheel-identities.json"
+  },
+  "schema_version": 1,
+  "source_model_selection": "One preselected broader typed DeBERTa-v3-large checkpoint with declared MNLI/FEVER/ANLI/LingNLI/WANLI training. Exact original FP16 source parameters, stock classification model loaded explicitly FP32. Evidence packing and all matched same-reader arms retain the prior method. No quantization, fitting, head reinitialization, model grid or semantic result at selection.",
+  "study_id": "native-deberta-v3-fp32-typed-e21",
+  "train": []
+}

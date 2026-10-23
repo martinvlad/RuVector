@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-23T23:32:00.391866+00:00",
+  "calls_this_review": {
+    "archive_decode_repeats": 0,
+    "cold_helper_executions": 0,
+    "model_tokenizer_native_case_gold_calls": 0,
+    "network_mutations": 0,
+    "tests_or_scientific_replays": 0
+  },
+  "champion_promoted": false,
+  "checks": {
+    "all_path_hash_byte_union_and_final_verification_guards_unchanged": true,
+    "all_resource_path_freshness_and_subprocess_commands_unchanged": true,
+    "failure_receipt_retains_prework_exit1_no_restore_or_science": true,
+    "original138_held_public_bytes_unchanged": true,
+    "v1_preserved_exact": true,
+    "v2_exact_only_canonical_three_field_KIT_projection": true
+  },
+  "checks_passed": true,
+  "epoch": 22,
+  "finding": "V1 compared a descriptive KIT record containing source_path against a canonical CP reference. V2 removes only descriptive fields before the existing exact path/bytes/SHA256 union. No identity requirement or cold final hash check is weakened. The first invocation stopped during metadata preparation before creating the work directory or launching extraction/bootstrap/restoration.",
+  "official_rank": null,
+  "official_score": null,
+  "required_launch": "Root must enforce a600-second bound on the complete new v2 cold invocation, CPU[0,1], Python-B/thread2. No archived scientific or guard tests are rerun.",
+  "reviewer": "Independent platform audit agent /root/e22_finish_audit",
+  "schema_version": 1,
+  "scope": "Small static bookkeeping helper delta only. A successful actual cold archive/bootstrap/restore/verify proof and independent phase2 review remain required.",
+  "source_identities": [
+    {
+      "bytes": 6537,
+      "path": "experiments/sota-2026-10-22/epoch22/publication/verify_archive_bootstrap_v1.py",
+      "sha256": "ed031f8d5a5629cbf6b7e77b9ca516608592d290adddbb2670df6ba183053295"
+    },
+    {
+      "bytes": 6605,
+      "path": "experiments/sota-2026-10-22/epoch22/publication/verify_archive_bootstrap_v2.py",
+      "sha256": "96fae77f505f4fca3f016a373cf71a9918c2353a17d26e6e1963333e70cb1ef4"
+    },
+    {
+      "bytes": 1188,
+      "path": "experiments/sota-2026-10-22/epoch22/publication/cold-preparation-failure-v1.json",
+      "sha256": "15bb1ec574b646cf1845af0eee2f8c71c516dcfb7a57583e280e2fbc58341753"
+    }
+  ],
+  "status": "PASS_COLD_HELPER_V2_CANONICAL_KIT_IDENTITY_DELTA"
+}

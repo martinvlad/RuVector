@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "epoch": 22,
+  "at": "2026-10-23T23:31:17.897896+00:00",
+  "status": "COLD_PREPARATION_METADATA_ASSERTION_BEFORE_ANY_RESTORE",
+  "failed_helper": {
+    "path": "experiments/sota-2026-10-22/epoch22/publication/verify_archive_bootstrap_v1.py",
+    "sha256": "ed031f8d5a5629cbf6b7e77b9ca516608592d290adddbb2670df6ba183053295"
+  },
+  "failed_stage": "CP/KIT union compared entire record dictionaries. KIT contains extra descriptive source_path, while canonical path/bytes/SHA256 are identical.",
+  "canonical_identity_fields_equal": true,
+  "fresh_work_created": false,
+  "extractor_bootstrap_restore_or_benchmark_started": false,
+  "preserved_v1_source": true,
+  "new_v2_delta": "Normalize KIT rows to canonical path/bytes/sha256 before exact identity union, matching the reviewed bootstrap contract. No hash, path, byte or benchmark guard relaxed.",
+  "replacement_helper": {
+    "path": "experiments/sota-2026-10-22/epoch22/publication/verify_archive_bootstrap_v2.py",
+    "bytes": 6605,
+    "sha256": "96fae77f505f4fca3f016a373cf71a9918c2353a17d26e6e1963333e70cb1ef4"
+  },
+  "new_native_model_tokenizer_gold_or_paid_calls": 0,
+  "failed_command_exit_code": 1
+}

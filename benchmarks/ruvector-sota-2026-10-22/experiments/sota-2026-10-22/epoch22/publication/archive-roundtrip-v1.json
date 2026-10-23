@@ -1,0 +1,105 @@
+{
+  "CPU_affinity": [
+    0,
+    1
+  ],
+  "CP_still_pins_exact_decoded_original_raw": true,
+  "Git_API_JSON_request_bound_below_16MiB": true,
+  "Git_API_JSON_request_bound_below_8MiB": true,
+  "Git_API_request": {
+    "Git_API_JSON_request_bound_bytes": 7940758,
+    "base64_content_encoding_JSON_bytes": 7936662,
+    "request_limit_bytes": 8388608,
+    "request_metadata_reserve_bytes": 4096
+  },
+  "actual_roundtrip": {
+    "fixture_metadata_files": [
+      "CHECKPOINT_MANIFEST.json",
+      "CONTINUATION.json",
+      "ACTIVE_RUN.json"
+    ],
+    "fixture_other_initial_files": [
+      "experiments/sota-2026-10-22/epoch22/publication/actualarchive.dev.raw.v1.json",
+      "experiments/sota-2026-10-22/epoch22/publication/restore_archived_artifact_v1.py"
+    ],
+    "restored_bytes": 21631719,
+    "restored_bytes_equal_sealed_original": true,
+    "restored_exclusive": true,
+    "restored_git_blob_sha1": "113b883813afc968e1dd24732f2f70be992d4cfa",
+    "restored_sha256": "2b012e1595bdb9b3bb1e5dacc242e9136a189638704f3a55229fe4d828cd0414",
+    "second_restore_matching_idempotent": true,
+    "verify_only_created_no_raw": true
+  },
+  "archive": {
+    "bytes": 5952471,
+    "path": "experiments/sota-2026-10-22/epoch22/publication/actualarchive.dev.raw.v1.json",
+    "sha256": "8ab3d8ec7856b423e6ff295f8e5ef74fc81dcaa3d3382fa2757e21563e0a99c6"
+  },
+  "archive_below_8MiB": true,
+  "artifact": {
+    "bytes": 21631719,
+    "git_blob_sha1": "113b883813afc968e1dd24732f2f70be992d4cfa",
+    "path": "experiments/sota-2026-10-22/epoch22/runs/dev/raw.json",
+    "sha256": "2b012e1595bdb9b3bb1e5dacc242e9136a189638704f3a55229fe4d828cd0414"
+  },
+  "at": "2026-10-23T23:26:56.932498+00:00",
+  "checks_passed": true,
+  "epoch": 22,
+  "guard_tests": {
+    "errors": 0,
+    "failures": 0,
+    "names": [
+      "test_actual_roundtrip_and_verify_only",
+      "test_archive_corruption",
+      "test_artifact_path_and_size_guards",
+      "test_bounded_gzip_and_trailing_member",
+      "test_checkpoint_hash_pin",
+      "test_deterministic_encoding_and_request_limit",
+      "test_duplicate_checkpoint_path",
+      "test_duplicate_json_members",
+      "test_existing_mismatch_preserved",
+      "test_extractor_own_source_pin",
+      "test_invalid_base64_and_extra_payload",
+      "test_raw_checkpoint_pin",
+      "test_symlink_archive",
+      "test_symlink_target_preserved",
+      "test_wrong_archive_path",
+      "test_wrong_expected_archive_hash"
+    ],
+    "run": 16
+  },
+  "gzip": {
+    "bytes": 4463986,
+    "mtime": 0,
+    "sha256": "ee67c21b4b8d953220263e75f5633b4b8868ca48a1ee963812bc5039afb6facc"
+  },
+  "kind": "OPAQUE_ARTIFACT_ARCHIVE_ROUNDTRIP_AND_TRANSPORT_GUARDS",
+  "restoration_order": "Run this CP-pinned extractor before the unchanged reviewed bootstrap.py and restore_checkpoint.py in a fresh kit; it does not replace either.",
+  "schema_version": 1,
+  "scope": {
+    "benchmark_generalization_claim": false,
+    "bootstrap_or_restore_checkpoint_run": false,
+    "model_native_tokenizer_calls": 0,
+    "network_calls": 0,
+    "original_corpus_or_gold_reads": 0,
+    "raw_parsed_as_JSON": false
+  },
+  "sources": {
+    "build_archive_v1.py": {
+      "bytes": 4038,
+      "path": "experiments/sota-2026-10-22/epoch22/publication/build_archive_v1.py",
+      "sha256": "3c85cbd4ce811f026a527c7f7cf93ea466e7b2c1e145f936f8c0d170652c64bf"
+    },
+    "restore_archived_artifact_v1.py": {
+      "bytes": 11810,
+      "path": "experiments/sota-2026-10-22/epoch22/publication/restore_archived_artifact_v1.py",
+      "sha256": "7691256e21cb201e9b64c64b2f880fd6d0274b562cfb4acfa03c5ce673a4ba8f"
+    },
+    "test_archive_v1.py": {
+      "bytes": 13156,
+      "path": "experiments/sota-2026-10-22/epoch22/publication/test_archive_v1.py",
+      "sha256": "820138e6ecb2508c2677535ff4e256bf6b735b8b2f95527bd7e6254584c1ae00"
+    }
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "epoch": 22,
+  "at": "2026-10-23T23:34:33.298340+00:00",
+  "status": "EXACT_TRACE_ARCHIVE_AND_COLD_BOOTSTRAP_VERIFIED_PENDING_FINAL_PUBLICATION",
+  "artifacts": {
+    "TRANSPORT_LIMIT.v1.json": {
+      "path": "experiments/sota-2026-10-22/epoch22/publication/TRANSPORT_LIMIT.v1.json",
+      "bytes": 1871,
+      "sha256": "3b5d615b5d6aa43e682e8f432ba1238feac606a11f460963d671b5466192601b"
+    },
+    "actualarchive.dev.raw.v1.json": {
+      "path": "experiments/sota-2026-10-22/epoch22/publication/actualarchive.dev.raw.v1.json",
+      "bytes": 5952471,
+      "sha256": "8ab3d8ec7856b423e6ff295f8e5ef74fc81dcaa3d3382fa2757e21563e0a99c6"
+    },
+    "restore_archived_artifact_v1.py": {
+      "path": "experiments/sota-2026-10-22/epoch22/publication/restore_archived_artifact_v1.py",
+      "bytes": 11810,
+      "sha256": "7691256e21cb201e9b64c64b2f880fd6d0274b562cfb4acfa03c5ce673a4ba8f"
+    },
+    "prepare_publication_archive_v1.py": {
+      "path": "experiments/sota-2026-10-22/epoch22/publication/prepare_publication_archive_v1.py",
+      "bytes": 15261,
+      "sha256": "b80631910513d6c88e516575de5babab370edafb9948da6da524c8cabcb75150"
+    },
+    "bind_archive_controls_v1.py": {
+      "path": "experiments/sota-2026-10-22/epoch22/publication/bind_archive_controls_v1.py",
+      "bytes": 4671,
+      "sha256": "040c8b9b7bed75538b5117dbdd3ed4d0cf7ebc2b19b5f1a4bf9396378e112798"
+    },
+    "verify_archive_bootstrap_v2.py": {
+      "path": "experiments/sota-2026-10-22/epoch22/publication/verify_archive_bootstrap_v2.py",
+      "bytes": 6605,
+      "sha256": "96fae77f505f4fca3f016a373cf71a9918c2353a17d26e6e1963333e70cb1ef4"
+    },
+    "cold-restoration-v2.json": {
+      "path": "experiments/sota-2026-10-22/epoch22/publication/cold-restoration-v2.json",
+      "bytes": 13639,
+      "sha256": "081fdaafa31fdcdd5fdc19eaa0ba948a4fc2c28a004ab054676efe40237c79d5"
+    },
+    "archive-source-independent-v1.json": {
+      "path": "experiments/sota-2026-10-22/epoch22/publication/archive-source-independent-v1.json",
+      "bytes": 6593,
+      "sha256": "23ca8e46b892c5ec1f91c2d3487bacbcbb7c58c7445b744bec0f07b6e2dedb9e"
+    },
+    "archive-cold-helper-delta-independent-v1.json": {
+      "path": "experiments/sota-2026-10-22/epoch22/publication/archive-cold-helper-delta-independent-v1.json",
+      "bytes": 2344,
+      "sha256": "9db3c3687b6e3ad6a3b758427c121ec387077282c45042c807783f1835716140"
+    },
+    "cold-preparation-failure-v1.json": {
+      "path": "experiments/sota-2026-10-22/epoch22/publication/cold-preparation-failure-v1.json",
+      "bytes": 1188,
+      "sha256": "15bb1ec574b646cf1845af0eee2f8c71c516dcfb7a57583e280e2fbc58341753"
+    }
+  },
+  "experiment_and_original138_public_files_unchanged": true,
+  "new_native_model_tokenizer_or_gold_calls": 0,
+  "all_epoch_slots_closed": true,
+  "champion_promoted": false,
+  "new_submission": false,
+  "new_paid_API_GPU_calls": 0,
+  "raw_project_artifact": {
+    "path": "experiments/sota-2026-10-22/epoch22/runs/dev/raw.json",
+    "bytes": 21631719,
+    "sha256": "2b012e1595bdb9b3bb1e5dacc242e9136a189638704f3a55229fe4d828cd0414",
+    "git_blob_sha1": "113b883813afc968e1dd24732f2f70be992d4cfa"
+  },
+  "transport": "Git publishes the reviewed gzip+base64 envelope instead of this one never-published oversized raw Git leaf. CP still pins decoded original raw; the pinned extractor materializes it in the staged kit before the unchanged bootstrap.py/restore_checkpoint.py. All historical and published source leaves remain exact.",
+  "restoration_order": [
+    "Stage exact connected Git snapshot into an isolated kit",
+    "Verify CONT/CP/extractor/archive hashes",
+    "Run pinned extractor before bootstrap",
+    "Run unchanged bootstrap.py, restore_checkpoint.py, then --verify-only"
+  ],
+  "cold_proof": {
+    "actual_executed": true,
+    "whole_invocation_timeout_seconds": 600,
+    "unique_project_files_verified": 3404,
+    "tested_checkpoint_files": 3325,
+    "elapsed_seconds": 4.4457851170009235,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "network_or_dependency_or_model_installations": 0,
+    "later_metadata_leaves": "Later receipt and final review files are additionally pinned and verified in the final checkpoint; this cold proof does not claim to have tested a future CP digest."
+  },
+  "temporary_copy_policy": "Generated cold kit/project copies may be removed after independent verification; original source, exact raw, archive and full execution/reconstruction receipts remain retained.",
+  "known_preparatory_failures": "Original MCP request rejected at16MiB and not retried; expected raw Git blob GET404 resolves absence. First cold preflight compared KIT descriptive source_path metadata against canonical CP fields and stopped before any restoration; v1 source/failure retained, one reviewed canonical-field v2 change then passed.",
+  "sizing_note": "Transport blocker recorded the staged content/encoding request payload bytes; MCP outer routing metadata was not measured. Archive sizing includes a4096-byte metadata reserve below8MiB."
+}

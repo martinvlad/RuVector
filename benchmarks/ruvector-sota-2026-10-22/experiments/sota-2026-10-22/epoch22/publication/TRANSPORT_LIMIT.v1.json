@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "epoch": 22,
+  "at": "2026-10-23T23:23:56.491814+00:00",
+  "status": "KNOWN_MCP_REQUEST_REJECTED_RESOLVED_WITHOUT_RETRY",
+  "source_branch_commit": "820f885f9d9c02e861c1a0ff47d7c8b26499424c",
+  "failed_request": {
+    "journal_intent": "final-blob-9-intent",
+    "journal_response": "final-blob-9-response",
+    "artifact_path": "experiments/sota-2026-10-22/epoch22/runs/dev/raw.json",
+    "artifact_bytes": 21631719,
+    "artifact_sha256": "2b012e1595bdb9b3bb1e5dacc242e9136a189638704f3a55229fe4d828cd0414",
+    "expected_Git_blob": "113b883813afc968e1dd24732f2f70be992d4cfa",
+    "MCP_request_bytes": 22478549,
+    "HTTP_status": 400,
+    "error": "MCP request body is invalid or exceeds the 16 MiB limit",
+    "request_repeated": false,
+    "expected_Git_blob_readback_HTTP": 404
+  },
+  "reconciliation": {
+    "known_successful_Git_mutations": 23,
+    "known_rejected_MCP_requests": 1,
+    "paired_mutation_journal_rows": 48,
+    "uncertain_mutations": 0,
+    "final_branch_update_occurred": false
+  },
+  "recovery": "Publish an independently reviewed, bounded gzip+base64 archive of the exact opaque raw bytes and a pinned safe extractor that runs in the staged kit BEFORE the unchanged reviewed bootstrap.py and restore_checkpoint.py. Original decoded raw project path/hash remain checkpoint-pinned. Only that unpublished oversized standalone Git leaf may be omitted; all historical/source leaves remain exact.",
+  "benchmark_effect": {
+    "new_measurements": 0,
+    "new_native_batches": 0,
+    "new_gold_or_tokenizer_or_model_calls": 0,
+    "scores_or_acceptance_changed": false,
+    "all_epoch_slots_remain_closed": true,
+    "new_paid_API_GPU_calls": 0
+  },
+  "privacy": "No credentials, raw mailbox/page data or model weights are admitted; the only archived payload is the exact already reviewed licensed public benchmark trace."
+}

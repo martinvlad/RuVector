@@ -1,0 +1,758 @@
+{
+ "aggregate_saved_facts": {
+  "DEV_documents": 8,
+  "DEV_questions": 24,
+  "binary_both_correct": 8,
+  "binary_both_wrong": 10,
+  "binary_disagreement_count": 6,
+  "binary_native_correct": 11,
+  "binary_positional_correct": 11,
+  "confirmation_gold_labels_accessed_this_analysis": 0,
+  "confirmation_model_predictions": 0,
+  "frozen_failed_checks": [
+   "binary:same_nli_positional_first2:NLL_nonincrease",
+   "binary:same_nli_positional_first2:accuracy_gain_at_least_two_correct"
+  ],
+  "lexical_typed_correct": 8,
+  "native_binary_NLL": 1.6531563520300174,
+  "native_correct_contradictions": 1,
+  "native_gold_contradictions": 7,
+  "native_only_binary_correct": 3,
+  "native_typed_correct": 11,
+  "positional_binary_NLL": 1.5408281444182974,
+  "positional_only_binary_correct": 3,
+  "positional_typed_correct": 9,
+  "runtime_gate_passed": true,
+  "six_native_contradiction_errors_all_predicted": "Entailment",
+  "sum_paired_binary_NLL_delta": 2.69587698268128
+ },
+ "at": "2026-10-23T23:03:02.985931+00:00",
+ "calls_this_analysis": {
+  "model_or_neural_imports": 0,
+  "network_paid_GPU_calls": 0,
+  "new_gold_projection_or_other_role_labels": 0,
+  "new_native_or_NLI_or_BGE_forwards": 0,
+  "original_corpus_parses": 0,
+  "scientific_source_edits": 0,
+  "tokenizer_parser_calls": 0
+ },
+ "cases": [
+  {
+   "arms": {
+    "native": {
+     "binary": "Yes",
+     "pair_tokens": 448,
+     "prediction": "Entailment",
+     "premise_sha256": "0f6fe4d090218db04ed5c241f351fb863e82689e0954c5fbfc69c46df5a3b1ec",
+     "probabilities": [
+      0.7985239103834204,
+      0.19913714037672875,
+      0.0023389492398508257
+     ]
+    },
+    "positional": {
+     "binary": "Yes",
+     "pair_tokens": 448,
+     "prediction": "Entailment",
+     "premise_sha256": "0f6fe4d090218db04ed5c241f351fb863e82689e0954c5fbfc69c46df5a3b1ec",
+     "probabilities": [
+      0.7985239103834204,
+      0.19913714037672875,
+      0.0023389492398508257
+     ]
+    }
+   },
+   "binary_NLL_delta_native_minus_positional": 0.0,
+   "gold": "Contradiction",
+   "hypothesis": "Receiving Party may create a copy of some Confidential Information in some circumstances.",
+   "id": "original-contractnli:train:epoch22:dev:123:nda-17",
+   "observation": "Complete document retained; native and positional premises and probabilities are identical. Gold is Contradiction but both predict Entailment. Omission cannot explain this saved error; permission/modality interpretation is an untested reader-level hypothesis.",
+   "raw_document_index": 5,
+   "source_evidence": [
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": true,
+        "pair_tokens_if_added": 398
+       },
+       "rank": 8,
+       "retained": true
+      },
+      "positional": {
+       "packing": {
+        "accepted": true,
+        "pair_tokens_if_added": 328
+       },
+       "rank": 9,
+       "retained": true
+      }
+     },
+     "exact_excerpt": "No copies will be made or retained of any written information without the permission of Manitoba Housing.\n",
+     "excerpt_span": [
+      1111,
+      1217
+     ],
+     "group": 7,
+     "span": [
+      1111,
+      1217
+     ],
+     "unit": 8
+    }
+   ]
+  },
+  {
+   "arms": {
+    "native": {
+     "binary": "Yes",
+     "pair_tokens": 512,
+     "prediction": "Entailment",
+     "premise_sha256": "b9afc1f2677127996a443e144412d15f94529f9b85f5c7284852fdcfe83d1cbe",
+     "probabilities": [
+      0.963847188573977,
+      0.023068476225245542,
+      0.013084335200777427
+     ]
+    },
+    "positional": {
+     "binary": "No",
+     "pair_tokens": 511,
+     "prediction": "NotMentioned",
+     "premise_sha256": "1ddae888db6b21350e3c0ba6e451b5f138a486a9ecd7e8b7a46a7aa12e724b77",
+     "probabilities": [
+      0.3683575743874123,
+      0.15025034449678307,
+      0.4813920811158046
+     ]
+    }
+   },
+   "binary_NLL_delta_native_minus_positional": 2.8605687350713906,
+   "gold": "Contradiction",
+   "hypothesis": "Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+   "id": "original-contractnli:train:epoch22:dev:135:nda-7",
+   "observation": "Both retain the employees-only restriction. Native also retains an incoming-third-party exception while omitting its governing exception header, yet predicts Entailment. This shows retained restrictive evidence plus incomplete exception scope; the saved output cannot isolate their effects.",
+   "raw_document_index": 2,
+   "source_evidence": [
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": true,
+        "pair_tokens_if_added": 467
+       },
+       "rank": 10,
+       "retained": true
+      },
+      "positional": {
+       "packing": {
+        "accepted": true,
+        "pair_tokens_if_added": 417
+       },
+       "rank": 13,
+       "retained": true
+      }
+     },
+     "exact_excerpt": "The CONFIDENTIAL INFORMATION shall not be disclosed or revealed to anyone except employees of RECIPIENT who have a need to know the CONFIDENTIAL INFORMATION for the PURPOSE and who agree to ",
+     "excerpt_span": [
+      1714,
+      1904
+     ],
+     "group": 12,
+     "span": [
+      1714,
+      1945
+     ],
+     "unit": 12
+    },
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 547
+       },
+       "rank": 13,
+       "retained": false
+      },
+      "positional": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 539
+       },
+       "rank": 18,
+       "retained": false
+      }
+     },
+     "exact_excerpt": "RECIPIENT‘s obligations under Paragraphs 2 and 3 above shall not extend to any part of the CONFIDENTIAL INFORMATION:\n(a) that can be demonstrated to have been in the public domain or publicl",
+     "excerpt_span": [
+      2258,
+      2448
+     ],
+     "group": 16,
+     "span": [
+      2258,
+      2542
+     ],
+     "unit": 17
+    },
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": true,
+        "pair_tokens_if_added": 209
+       },
+       "rank": 3,
+       "retained": true
+      },
+      "positional": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 537
+       },
+       "rank": 21,
+       "retained": false
+      }
+     },
+     "exact_excerpt": "or\n(d) that is subsequently disclosed to RECIPIENT by a third party who is not under an obligation of confidentiality to PROVIDER; ",
+     "excerpt_span": [
+      2898,
+      3029
+     ],
+     "group": 19,
+     "span": [
+      2898,
+      3029
+     ],
+     "unit": 20
+    }
+   ]
+  },
+  {
+   "arms": {
+    "native": {
+     "binary": "Yes",
+     "pair_tokens": 512,
+     "prediction": "Entailment",
+     "premise_sha256": "c307a919db15c9cbca2d79c9f2160b8e9f053707719d11e873b7c8538ea35d69",
+     "probabilities": [
+      0.8995455011429755,
+      0.004200599002448315,
+      0.09625389985457625
+     ]
+    },
+    "positional": {
+     "binary": "No",
+     "pair_tokens": 511,
+     "prediction": "NotMentioned",
+     "premise_sha256": "90cc1d6fb35a84f1013fb02130fa1f400971d7d9c05d11bacb279b9c37c26d97",
+     "probabilities": [
+      0.4371208738662927,
+      0.10125810634443529,
+      0.4616210197892721
+     ]
+    }
+   },
+   "binary_NLL_delta_native_minus_positional": 1.7233600317700553,
+   "gold": "NotMentioned",
+   "hypothesis": "Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+   "id": "original-contractnli:train:epoch22:dev:248:nda-7",
+   "observation": "Native keeps employee-sharing permission and lawful receipt from a third party, but omits the prior-written-approval restriction and exception header. Gold is NotMentioned. Receipt from a third party does not itself authorize onward disclosure; the observed error is consistent with direction/scope confusion.",
+   "raw_document_index": 3,
+   "source_evidence": [
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 557
+       },
+       "rank": 15,
+       "retained": false
+      },
+      "positional": {
+       "packing": {
+        "accepted": true,
+        "pair_tokens_if_added": 417
+       },
+       "rank": 14,
+       "retained": true
+      }
+     },
+     "exact_excerpt": "neither Party shall disclose or otherwise use the Confidential Information for any other purpose or in any other manner without the prior written approval of the Disclosing Party.\n",
+     "excerpt_span": [
+      1713,
+      1893
+     ],
+     "group": 13,
+     "span": [
+      1590,
+      1893
+     ],
+     "unit": 13
+    },
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": true,
+        "pair_tokens_if_added": 204
+       },
+       "rank": 2,
+       "retained": true
+      },
+      "positional": {
+       "packing": {
+        "accepted": true,
+        "pair_tokens_if_added": 474
+       },
+       "rank": 16,
+       "retained": true
+      }
+     },
+     "exact_excerpt": "The Confidential Information shared under this Agreement may be disclosed by the Receiving Party to other employees on a need to know basis, with written consent from the Disclosing Party, i",
+     "excerpt_span": [
+      1896,
+      2086
+     ],
+     "group": 15,
+     "span": [
+      1896,
+      2216
+     ],
+     "unit": 15
+    },
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 524
+       },
+       "rank": 28,
+       "retained": false
+      },
+      "positional": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 515
+       },
+       "rank": 20,
+       "retained": false
+      }
+     },
+     "exact_excerpt": "The confidentiality obligations under this Agreement shall not apply to Confidential Information which:\na. ",
+     "excerpt_span": [
+      2358,
+      2465
+     ],
+     "group": 19,
+     "span": [
+      2358,
+      2465
+     ],
+     "unit": 19
+    },
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": true,
+        "pair_tokens_if_added": 221
+       },
+       "rank": 3,
+       "retained": true
+      },
+      "positional": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 520
+       },
+       "rank": 25,
+       "retained": false
+      }
+     },
+     "exact_excerpt": "is later lawfully received by Receiving Party from a third party without any confidentiality restrictions applicable;\n",
+     "excerpt_span": [
+      2855,
+      2973
+     ],
+     "group": 24,
+     "span": [
+      2855,
+      2973
+     ],
+     "unit": 24
+    }
+   ]
+  },
+  {
+   "arms": {
+    "native": {
+     "binary": "Yes",
+     "pair_tokens": 511,
+     "prediction": "Entailment",
+     "premise_sha256": "2b1fcbd108a8d46a3eb13137749c00a610c7204592696a6c245e748463a816df",
+     "probabilities": [
+      0.9986959726073756,
+      0.0007405670570285551,
+      0.0005634603355956989
+     ]
+    },
+    "positional": {
+     "binary": "No",
+     "pair_tokens": 502,
+     "prediction": "NotMentioned",
+     "premise_sha256": "ec5ddd48883b548b4c15886dc8e9a1866518eb3f751ec56928b38d258e120bef",
+     "probabilities": [
+      0.009433028855322215,
+      0.00027527060266685434,
+      0.990291700542011
+     ]
+    }
+   },
+   "binary_NLL_delta_native_minus_positional": 6.6328200074280685,
+   "gold": "NotMentioned",
+   "hypothesis": "Receiving Party may create a copy of some Confidential Information in some circumstances.",
+   "id": "original-contractnli:train:epoch22:dev:87:nda-17",
+   "observation": "Native retains legally required record-copy retention but omits the preceding return/backup group. It predicts Entailment with 0.9987 probability against gold NotMentioned. Retention and creation differ. This is the largest binary NLL regression; no counterfactual repair was tested.",
+   "raw_document_index": 7,
+   "source_evidence": [
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 552
+       },
+       "rank": 9,
+       "retained": false
+      },
+      "positional": {
+       "packing": null,
+       "rank": null,
+       "retained": false
+      }
+     },
+     "exact_excerpt": "Upon termination of this Agreement, all Confidential Information in the possession or control of a Participating Entity and its Representatives that received such information shall be return",
+     "excerpt_span": [
+      9752,
+      9942
+     ],
+     "group": 40,
+     "span": [
+      9752,
+      10169
+     ],
+     "unit": 46
+    },
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 552
+       },
+       "rank": 16,
+       "retained": false
+      },
+      "positional": {
+       "packing": null,
+       "rank": null,
+       "retained": false
+      }
+     },
+     "exact_excerpt": "Notwithstanding the foregoing, if the Confidential Information is retained in the computer backup system of a Participating Entity, the Confidential Information will be destroyed in accordan",
+     "excerpt_span": [
+      10169,
+      10359
+     ],
+     "group": 40,
+     "span": [
+      10169,
+      10442
+     ],
+     "unit": 47
+    },
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": true,
+        "pair_tokens_if_added": 144
+       },
+       "rank": 1,
+       "retained": true
+      },
+      "positional": {
+       "packing": null,
+       "rank": null,
+       "retained": false
+      }
+     },
+     "exact_excerpt": "Notwithstanding anything in this paragraph 6 to the contrary, a Participating Entity may retain a record copy of any Confidential Information if required to do so by applicable law. ",
+     "excerpt_span": [
+      10627,
+      10809
+     ],
+     "group": 41,
+     "span": [
+      10627,
+      10809
+     ],
+     "unit": 49
+    }
+   ]
+  },
+  {
+   "arms": {
+    "native": {
+     "binary": "Yes",
+     "pair_tokens": 511,
+     "prediction": "Entailment",
+     "premise_sha256": "fcd43bd54ae496cf86748bad7ae5080eb6a330e0e01b8f005fd7d5c6d4339587",
+     "probabilities": [
+      0.7074851351266431,
+      0.2501436413728436,
+      0.04237122350051324
+     ]
+    },
+    "positional": {
+     "binary": "No",
+     "pair_tokens": 511,
+     "prediction": "NotMentioned",
+     "premise_sha256": "3378c87a11fb1bd6ea1794001c979d94c556f849433997ca2a1303980c361010",
+     "probabilities": [
+      0.049388710701798705,
+      0.013846737987680716,
+      0.9367645513105206
+     ]
+    }
+   },
+   "binary_NLL_delta_native_minus_positional": -2.66199474910133,
+   "gold": "Entailment",
+   "hypothesis": "Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+   "id": "original-contractnli:train:epoch22:dev:441:nda-7",
+   "observation": "Native retains direct affiliates/agents permission and conditioned attorneys/accountants/agents permission; positional omits both. Native is correctly Entailment. This supports a coverage explanation for this pair, without proving a causal retrieval effect.",
+   "raw_document_index": 4,
+   "source_evidence": [
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": true,
+        "pair_tokens_if_added": 210
+       },
+       "rank": 3,
+       "retained": true
+      },
+      "positional": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 542
+       },
+       "rank": 18,
+       "retained": false
+      }
+     },
+     "exact_excerpt": "Each party agrees that the other may disclose Proprietary Information received by it to its Affiliates, employees not permitted under the Credit Agreement and agents, subject to the terms of",
+     "excerpt_span": [
+      3603,
+      3793
+     ],
+     "group": 16,
+     "span": [
+      3603,
+      3810
+     ],
+     "unit": 17
+    },
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": true,
+        "pair_tokens_if_added": 356
+       },
+       "rank": 6,
+       "retained": true
+      },
+      "positional": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 627
+       },
+       "rank": 24,
+       "retained": false
+      }
+     },
+     "exact_excerpt": "attorneys, accountants and agents who have a non-disclosure obligation at least as restrictive as this Agreement) who need to know such information for purposes of the servicing or protectio",
+     "excerpt_span": [
+      4203,
+      4393
+     ],
+     "group": 22,
+     "span": [
+      3976,
+      4654
+     ],
+     "unit": 23
+    }
+   ]
+  },
+  {
+   "arms": {
+    "native": {
+     "binary": "No",
+     "pair_tokens": 508,
+     "prediction": "Contradiction",
+     "premise_sha256": "b6ac9e6dc2459906159da02b2777cc1217b86c670295d2c6185fe5bb1b307cb5",
+     "probabilities": [
+      0.2690768685532913,
+      0.6999661831180645,
+      0.03095694832864433
+     ]
+    },
+    "positional": {
+     "binary": "Yes",
+     "pair_tokens": 510,
+     "prediction": "Entailment",
+     "premise_sha256": "ec5ddd48883b548b4c15886dc8e9a1866518eb3f751ec56928b38d258e120bef",
+     "probabilities": [
+      0.9851000069656314,
+      0.0015130437523672951,
+      0.013386949282001388
+     ]
+    }
+   },
+   "binary_NLL_delta_native_minus_positional": -3.8929475534216387,
+   "gold": "Contradiction",
+   "hypothesis": "Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+   "id": "original-contractnli:train:epoch22:dev:87:nda-7",
+   "observation": "Native is correctly Contradiction, but both arms omit the direct no-third-party-disclosure clause. Native ranks that unit seventh before packing rejects it. Correct prediction therefore does not prove retention of the most direct restrictive evidence.",
+   "raw_document_index": 7,
+   "source_evidence": [
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 544
+       },
+       "rank": 7,
+       "retained": false
+      },
+      "positional": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 583
+       },
+       "rank": 17,
+       "retained": false
+      }
+     },
+     "exact_excerpt": "without the express permission of the Participating Entity providing such information, not to disclose such information to third parties, and (iii) to use such information only for the expre",
+     "excerpt_span": [
+      3612,
+      3802
+     ],
+     "group": 16,
+     "span": [
+      3496,
+      3996
+     ],
+     "unit": 16
+    },
+    {
+     "coverage": {
+      "native": {
+       "packing": {
+        "accepted": true,
+        "pair_tokens_if_added": 271
+       },
+       "rank": 2,
+       "retained": true
+      },
+      "positional": {
+       "packing": {
+        "accepted": false,
+        "pair_tokens_if_added": 589
+       },
+       "rank": 39,
+       "retained": false
+      }
+     },
+     "exact_excerpt": "(c) Unauthorized Disclosure: If a Participating Entity becomes aware that Confidential Information has been or likely has been disclosed to a third party in violation of this Agreement, the ",
+     "excerpt_span": [
+      8473,
+      8663
+     ],
+     "group": 34,
+     "span": [
+      8473,
+      9050
+     ],
+     "unit": 38
+    }
+   ]
+  }
+ ],
+ "epoch": 22,
+ "evidence": {
+  "existing_source_process_review": {
+   "bytes": 4301,
+   "path": "experiments/sota-2026-10-22/epoch22/reviews/postrun-dev-source-process-independent-v1.json",
+   "sha256": "2beea7f022dd1cc71440bd954192d1b6a53bd6412f39e358dbfa15f13130056f"
+  },
+  "independent_score": {
+   "bytes": 36757,
+   "path": "experiments/sota-2026-10-22/audit/epoch22/actual-independent.dev.json",
+   "sha256": "b63f51542880ef9b83aae15a5822cb41c563d7ecbc55efb5fbbd93ff366c7f94"
+  },
+  "saved_DEV_gold": {
+   "bytes": 8369,
+   "path": "experiments/sota-2026-10-22/audit/epoch22/gold.dev.json",
+   "sha256": "685398e3fe73cc8d8b129773d5034988a2766a8f6c254e5d73a1f268ded3cf49"
+  },
+  "sealed_raw": {
+   "bytes": 21631719,
+   "path": "experiments/sota-2026-10-22/epoch22/runs/dev/raw.json",
+   "sha256": "2b012e1595bdb9b3bb1e5dacc242e9136a189638704f3a55229fe4d828cd0414"
+  }
+ },
+ "interpretation": [
+  "Complete document retention does not eliminate the reader/gold mismatch; context omission cannot explain all errors.",
+  "Locally complete groups may omit a governing exception header or confuse receipt, onward disclosure, permission, creation and retention.",
+  "Native and positional trade three binary wins each. High-confidence native errors produce worse NLL despite equal binary accuracy. These saved cases do not establish causation or generalization."
+ ],
+ "limitations": [
+  "Post-hoc purposive six-case diagnosis on 8 documents and 24 exposed DEV labels.",
+  "Gold is the independently saved audit label; no original-corpus inspection or annotation adjudication.",
+  "Missing-clause effects require a new authorized experiment and are not inferred here."
+ ],
+ "next_direction": {
+  "boundary": "Freeze one materially different hypothesis and independent data roles before measurement. No threshold, prompt, grouping or retrieval grid on these 24 exposed DEV questions. Preserve unused confirmation roles; all epoch22 slots remain closed.",
+  "performed_now": "Saved-trace diagnosis only; no source edit, fitting, calibration, model rerun, counterfactual feed or confirmation use.",
+  "priority": "Prioritize independent legal typed-reader and scope qualification on separate licensed development examples: copy versus retention, incoming versus outgoing disclosure, permission conditions, and exception-header dependencies. A source-scope dependency representation is a distinct candidate hypothesis; do not assume it repairs complete-document reader errors."
+ },
+ "phase": "dev",
+ "reviewer": "Independent platform stage/process reviewer /root/e22_stage_peer",
+ "schema_version": 1,
+ "selection": "Six purposive cases, not a representative sample; cases overlap contradiction errors and binary disagreements.",
+ "status": "POSTHOC_SAVED_TRACE_DIAGNOSIS_ONLY_ALL_SLOTS_CLOSED",
+ "trace_keys": {
+  "arm_mapping": {
+   "native": "ruvector_top2",
+   "positional": "same_nli_positional_first2"
+  },
+  "locator": "sealed_raw.documents[raw_document_index].questions matched by id; source offsets refer to that saved document state. Full premises, feeds and coverage remain in sealed_raw. Each excerpt is exact, with explicit character span.",
+  "packing": "Saved whole-group attempt, not a rerun; null means no attempt recorded. All 12 displayed saved arm group-completeness flags are true.",
+  "probability_order": [
+   "Entailment",
+   "Contradiction",
+   "NotMentioned"
+  ],
+  "rank": "One-based observed top40 unit rank; null means not in saved top40."
+ }
+}

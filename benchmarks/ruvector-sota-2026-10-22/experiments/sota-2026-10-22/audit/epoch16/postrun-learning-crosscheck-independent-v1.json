@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T12:31:28.979377+00:00",
+  "checks_passed_for_stated_limited_scope": true,
+  "accepted": false,
+  "full_frozen_score_replay_passed": false,
+  "scope": "Independent bounded post-run crosscheck of saved causal transitions and exact retained contradiction wording; no scorer/source changes or inference, no review of hypothetical-context accuracy. Does not supersede frozen score audit failure.",
+  "model_error_analysis": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch16/postrun-error-analysis-v1.json",
+    "bytes": 260182,
+    "sha256": "7ea0332a8a4af5a4e16cfb3c504c36952a8db4b5fe61381d7dad5726fb304c1e"
+  },
+  "all_input_identities_and_77_frozen_source_hashes_unchanged": true,
+  "same_premise_causal_transitions": {
+    "binary": {
+      "recovered": [
+        "original-contractnli:train:epoch16:dev:339:nda-7"
+      ],
+      "regressed": [
+        "original-contractnli:train:epoch16:dev:260:nda-7"
+      ],
+      "net": 0
+    },
+    "typed": {
+      "recovered": [
+        "original-contractnli:train:epoch16:dev:339:nda-7",
+        "original-contractnli:train:epoch16:dev:556:nda-7"
+      ],
+      "regressed": [
+        "original-contractnli:train:epoch16:dev:260:nda-7"
+      ],
+      "net": 1
+    }
+  },
+  "pooled_C_prediction_counts_of24": {
+    "ruvector_top2": 0,
+    "same_nli_lexical_top2": 0,
+    "same_nli_positional_first2": 0
+  },
+  "official_gold_C_cases": 2,
+  "primary_correct_C_cases": 0,
+  "contradiction_case_saved_input_proofs": [
+    {
+      "id": "original-contractnli:train:epoch16:dev:222:nda-17",
+      "gold_C_unchanged": true,
+      "hypothesis": "Receiving Party may create a copy of some Confidential Information in some circumstances.",
+      "actual_premise_exact_quote": "the SP will not use (except as permitted in 3 above) or disclose or divulge or copy or reproduce or publish or circulate",
+      "quote_present_in_exact_state_and_actual_NLI_premise": true,
+      "state_quote_start": 4819,
+      "premise_quote_start": 1441,
+      "rawH": {
+        "Entailment": 0.06700166561213916,
+        "Contradiction": 0.002997566683103979,
+        "NotMentioned": 0.9300007677047569
+      },
+      "rawQ": {
+        "Entailment": 0.12863557352402116,
+        "Contradiction": 0.03122677488704654,
+        "NotMentioned": 0.8401376515889324
+      },
+      "pooled": {
+        "Entailment": 0.049114220249592846,
+        "Contradiction": 0.06581657010356257,
+        "NotMentioned": 0.8850692096468447
+      },
+      "typed_prediction": "NotMentioned",
+      "scope": "Retained wording only, not evidence-completeness/official contradiction adjudication or inference that retrieval miss implies insufficient evidence."
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:110:nda-17",
+      "gold_C_unchanged": true,
+      "hypothesis": "Receiving Party may create a copy of some Confidential Information in some circumstances.",
+      "actual_premise_exact_quote": "Visitor will not photograph, videotape, or otherwise make any record of or preserve any Confidential Information",
+      "quote_present_in_exact_state_and_actual_NLI_premise": true,
+      "state_quote_start": 1747,
+      "premise_quote_start": 1747,
+      "rawH": {
+        "Entailment": 0.03769121887659605,
+        "Contradiction": 0.001501520799746044,
+        "NotMentioned": 0.9608072603236579
+      },
+      "rawQ": {
+        "Entailment": 0.22275631224971498,
+        "Contradiction": 0.1024111937031189,
+        "NotMentioned": 0.674832494047166
+      },
+      "pooled": {
+        "Entailment": 0.07005120628985748,
+        "Contradiction": 0.11212891652473052,
+        "NotMentioned": 0.8178198771854119
+      },
+      "typed_prediction": "NotMentioned",
+      "scope": "Retained wording only, not evidence-completeness/official contradiction adjudication or inference that retrieval miss implies insufficient evidence."
+    }
+  ],
+  "near_boundary_typed_only_gain": {
+    "id": "original-contractnli:train:epoch16:dev:556:nda-7",
+    "pooled_typed_probabilities": {
+      "Entailment": 0.49906912960475863,
+      "Contradiction": 0.003965251777813873,
+      "NotMentioned": 0.49696561861742744
+    },
+    "typed_Entailment_argmax": true,
+    "binary_Yes_probability_below_half": true,
+    "binary_gain": false
+  },
+  "bounded_findings_verified": [
+    "Mirror changes native binary1recovery/1regression net0, typed2recovery/1regression net+1.",
+    "Both official C cases remain neutral despite exact copy/record restriction wording in actual primary input; model/role/exception interpretation remains unresolved.",
+    "All three pooled selectors predict C zero times. No typed contradiction competence established.",
+    "Cross-epoch14versus17correct is not a matched improvement comparison because DEVdocuments/classmix/context differ."
+  ],
+  "model_tokenization_counterfactual_scope_checked_only": "H-only source packing is explicitly tokenization-only, no actual model/native predictions or performance/accuracy claim. No extra model inference executed by auditor.",
+  "legacy104_proper_diagnostics_not_frozen_mass_guard_validated": true,
+  "no_CONF_gold_or_cases_read": true,
+  "auditor_model_native_fit_paid_GPU_calls": 0,
+  "official_score": null,
+  "official_rank": null,
+  "champion_promoted": false
+}

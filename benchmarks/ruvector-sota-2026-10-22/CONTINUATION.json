@@ -3,22 +3,22 @@
   "objective": "Reach independently verified SOTA using actual RuVector; initial target JevBench open-weights Capability under official caps.",
   "goal_met": false,
   "official_rank": null,
-  "champion": "SubmittedNative104/RRF10 unchanged; epoch15 REJECTED_DEV_GATE, no confirmation or promotion",
-  "prior_published_base_commit": "ff9bd05525b37d8eec12d4564fba9b5cb8a179e6",
-  "checkpoint_manifest_sha256": "758f3dc6697eb425232b8e8b08de13c5ab0b23eff15cfc1b68909c3994b82da4",
+  "champion": "SubmittedNative104/RRF10 unchanged; epoch16 independently rejected, no confirmation/promotion/new submission",
+  "prior_published_base_commit": "7d3812466cc2529f4348987e9d7796fabc307aed",
+  "checkpoint_manifest_sha256": "9b32696026dfbe926e58b5a53cde73a90f1f0e7d2991617da7d2c3fda18594e1",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
-    "native_corpus_batches": 15,
-    "actual_HTTP_decisions": 837,
+    "native_corpus_batches": 16,
+    "actual_HTTP_decisions": 861,
     "paid_inference_calls": 0,
     "new_GPU_rentals": 0,
-    "native_corpus_batches_completed": 15,
-    "native_corpus_attempts_including_failed_request": 17,
-    "actual_HTTP_successful_decisions": 837,
+    "native_corpus_batches_completed": 16,
+    "native_corpus_attempts_including_failed_request": 18,
+    "actual_HTTP_successful_decisions": 861,
     "actual_HTTP_failed_requests": 2,
     "counting_note": "Cumulative counts include historicaladaptivepublic/evaluationdiagnostics; notallfreshheldout. The144trainingfeature and6epoch12TRAINsanity diagnosticHTTP are preserved separately; epoch13 has no TRAIN/fitting/calibration. DEV/CONF evaluationdiagnostics are not officialbenchmarkgeneralization; scheduledwork notcalledexecuted.",
     "actual_HTTP_training_feature_requests": 144,
-    "actual_HTTP_evaluation_diagnostic_decisions": 687,
+    "actual_HTTP_evaluation_diagnostic_decisions": 711,
     "actual_HTTP_training_sanity_diagnostic_requests": 6
   },
   "epochs": [
@@ -179,6 +179,18 @@
       "same_model_positional_correct": 13,
       "native104_same_excerpt_correct": 12,
       "confirmation_consumed": false
+    },
+    {
+      "epoch": 16,
+      "status": "REJECTED_DEV_GATE_WITH_ADDITIONAL_FROZEN_AUDITOR_PROBABILITY_MASS_FAILURE",
+      "manifest": "experiments/sota-2026-10-22/epoch16/EPOCH_MANIFEST.json",
+      "native_attempts": 1,
+      "DEV_n": 24,
+      "binary_correct": 17,
+      "typed_correct": 16,
+      "typed_contradiction_correct": 0,
+      "full_frozen_score_replay_passed": false,
+      "confirmation_consumed": false
     }
   ],
   "used_confirmation_sets": [
@@ -192,33 +204,45 @@
     "Legal96zero-shotfourtaskadaptation,notfull162taskofficialLegalBench",
     "NoClaimBenchRuVectorscore; fullquestions/scorer/license/submissionnotverified"
   ],
-  "next_research_priority": "Native vector rankings exactly matched saved-vector cosine on24/24; stop ANN grids. The typed reader made no contradiction predictions and missed six oral-information entailments, including an explicit oral/written clause retained in its actual premise. Prioritize legally grounded typed decisions and confidence reliability with verified nonoverlapping licensed train/DEV/confirmation and a feasible CPU runtime; do not train/select on these DEV cases or the unused confirmation labels. Definition retention alone did not establish acceptance. Epoch15 fully closed, including unused conditional slot; never rerun archived controller or retest unchanged blockers. Next epoch requires a distinct frozen study with eligible source/data/model/CPU/runtime and independent acceptance. Official sealed/publisher results remain required for SOTA.",
+  "next_research_priority": "The fixed whole-proposition NOT mirror changed confidence but added no binary accuracy on its identical native premise; all three pooled readers still predicted zero contradictions, including two gold contradictions. Do not run negation-prefix/pool-weight/temperature/ANN grids or reclassify these exposed cases as fresh confirmation. Qualify a materially stronger legally grounded typed-decision reader AND genuinely eligible licensed data/annotation/party-role lineage; known ContractNLI-supervised models cannot use this source bank as fresh evaluation. Preserve both unused confirmation banks. A future independent study must exercise float32 output-format numerical invariants before new inputs/gold and freeze any justified source-scorer-aligned policy then; never relax this epoch's failed checker or call its full replay passed. Current CPU2/600s/paid0 limits remain; no new spend inferred.",
   "benchmark_targets": {
     "JevBench": {
       "leader_observed": "Chon-1.0-12B",
       "capability_observed": 85.336,
       "refresh_required": true,
-      "last_observed_at_UTC": "2026-10-23T08:21:08.376501+00:00",
+      "last_observed_at_UTC": "2026-10-23T11:26:07.584695+00:00",
       "latest_refresh_attempt": {
-        "at_UTC": "2026-10-23T08:21:08.376501+00:00",
-        "status": "OFFICIAL_HTTP200_BODY_HASH_VERIFIED",
         "source": "https://benchmarkheaven.com/jev-models",
-        "body_bytes": 16233210,
-        "body_sha256": "bef2cae4b56879c94bb03b80850df5b8d89f7e50947522a5c9fc1add2316baee",
+        "HTTP_status": 200,
+        "body_bytes": 16234929,
+        "body_sha256": "94c8e520a8c46ebcb6b4e36214902b980010dd8c50bd8bad0eb07ba951d9d2cf",
+        "board_version": "1.7.47",
         "leader": "Chon-1.0-12B",
+        "leader_id": "chon-1.0-12b",
         "Capability_attribute": 85.336,
-        "headline_display": 85.3
+        "headline_display": 85.3,
+        "runner_up": {
+          "model_id": "h2o-lightning-31b",
+          "Capability": 85.169
+        },
+        "scope": "First official open-weights Capability/Jev-class ranking. Capability averages Intelligence and Calibration; Jev-class cost/medianlatency eligibility applies.",
+        "RuVector_text_matches": 0,
+        "submission_reference_matches": 0,
+        "official_RuVector_score": null,
+        "official_RuVector_rank": null,
+        "current300_questions_scorer": "Not verified by this officialaggregate refresh; publisher sealed evaluation remains required."
       },
       "headline_display": 85.3
     },
     "ClaimBench": {
       "source": "https://www.vals.ai/benchmarks/claimbench",
       "decision_leader_observed": "decision/d1-ultra",
-      "accuracy_percent_observed": 100,
+      "accuracy_percent_observed": 100.0,
       "overall_language_models_at100": 4,
       "RuVector_measured": false,
-      "last_observed_at_UTC": "2026-10-23T08:21:08.376501+00:00",
-      "observation_scope": "Exact official aggregate fetchedHTTP200; body84052bytes SHA25650bbd722ac2f2922f33cf7e6b2e01154292da92d1172e2d9858d679e0c341f90; d1-ultra100.0%,fourLM100.0%. No RuVector score/full data/scorer/license/submission qualification."
+      "last_observed_at_UTC": "2026-10-23T11:26:07.584695+00:00",
+      "observation_scope": "Exact official aggregate fetchedHTTP200; body84052bytes SHA25650bbd722ac2f2922f33cf7e6b2e01154292da92d1172e2d9858d679e0c341f90; d1-ultra100.0%,fourLM100.0%. No RuVector score/full data/scorer/license/submission qualification.",
+      "full_access_verified": false
     }
   },
   "future_epoch_limits": {
@@ -238,9 +262,9 @@
   "active_run": {
     "path": "ACTIVE_RUN.json",
     "run_id": "epoch16-22ab774f8d194ecd8f7a262c5c4c3c3f",
-    "state": "EPOCH16_FROZEN_NATIVE_ADMISSION_PENDING_READBACK",
-    "experiments_active": true,
-    "native_allowed": 2
+    "state": "CLOSED_REJECTED_DEV_GATE_AUDIT_FAILURE",
+    "experiments_active": false,
+    "native_allowed": 0
   },
   "exposed_development_sets": [
     "old public183",
@@ -257,7 +281,8 @@
     "epoch11DEV24/8neworiginaltrain groups SHAd6a8dcbff2888b6ec72e5d8ba6345c43ca9d5d765876b83fe9a2010905abdf16 permanentlyDEVafterphase1attempt evenpartialfailure; TRAIN/calibrationempty. Totalexposedoriginaltrain=173; unreserved234; confirmation16retired=False",
     "epoch12DEV24/8neworiginaltrain groups SHA05f579f4f3e0fc0b799ba3d3c0ffcddbb8af03e3ca525991cfb5de0596c4891d permanentlyDEVafterphase1attempt evenpartialfailure; reusedTRAINsanity2priorTRAINgroups adds0newexposure, nofitting/calibration. Totalexposedoriginaltrain=181; unreserved226; confirmation16retired=False",
     "epoch13DEV24/8neworiginaltrain groups SHA4eb38bf37b98562d12433c0a2791b2122c6f62ebf597eea9c941e72bd566ec1a permanentlyDEVafterphase1attempt evenpartialfailure; TRAIN/calibrationempty. Totalexposedoriginaltrain=189; unreserved218; confirmation16retired=False",
-    "epoch15DEV24/8neworiginaltrain groups SHA3233c621709ef64af45b6feec640165f1d6477062d6218dd7005d47b4bb09f6f permanentlyDEV; total197exposed/210unreserved/16reservedCONF. Used-identities epoch15/USED_IDENTITIES.json"
+    "epoch15DEV24/8neworiginaltrain groups SHA3233c621709ef64af45b6feec640165f1d6477062d6218dd7005d47b4bb09f6f permanentlyDEV; total197exposed/210unreserved/16reservedCONF. Used-identities epoch15/USED_IDENTITIES.json",
+    "Epoch16 fixedDEV24/8groups2860bdc7249a40f0998e312bf73172f1be08544d317835ab431425add7665003 permanentlyDEV;205exposed/194unreserved/24reserved. Both confirmation banks remain project-model-unused; see epoch16/USED_IDENTITIES.json."
   ],
   "unused_confirmation_sets": [
     {
@@ -270,30 +295,67 @@
       "known_ContractNLI_supervised_candidates_ineligible": true,
       "globally_retired": false,
       "epoch15_project_model_unused": true,
-      "epoch15_annotation_choices_used": 0
+      "epoch15_annotation_choices_used": 0,
+      "epoch16_model_unused": true,
+      "epoch16_annotation_choices_used": 0
+    },
+    {
+      "input_only_allowlist": {
+        "path": "experiments/sota-2026-10-22/legal-transfer/epoch16/confirmation-input-allowlist.json",
+        "bytes": 9224,
+        "sha256": "c3970a800cdc609bcd8a1324d0def90ad11853c3f68c3b7eb9faafce8e720fdb"
+      },
+      "source_freeze": {
+        "path": "experiments/sota-2026-10-22/epoch16/candidate-source-freeze.json",
+        "bytes": 16396,
+        "sha256": "55032e94fa753fa080acfc2bd22e0b799cfdc6ced0f52461e579277f0809d379"
+      },
+      "builder": {
+        "path": "experiments/sota-2026-10-22/legal-transfer/epoch16/build.py",
+        "bytes": 15332,
+        "sha256": "78bf7b9987c13025bad1a787b621f703b927ff90438b5f6b9218d4c7465ec3ce"
+      },
+      "questions": 24,
+      "document_groups": 8,
+      "document_ids": [
+        308,
+        159,
+        284,
+        501,
+        267,
+        494,
+        261,
+        313
+      ],
+      "gold_file_exists": false,
+      "annotation_choices_projected": 0,
+      "status": "EXACT_LAZY_RECIPE_FROZEN_PROJECT_MODEL_UNUSED_RESERVED",
+      "globally_retired": false,
+      "epoch16_model_unused": true,
+      "epoch16_annotation_choices_used": 0
     }
   ],
-  "rejection_ledger": "experiments/sota-2026-10-22/epoch15/REJECTION_LEDGER.json",
-  "benchmark_refresh": "experiments/sota-2026-10-22/legal-transfer/epoch15/benchmark-refresh.json",
+  "rejection_ledger": "experiments/sota-2026-10-22/epoch16/REJECTION_LEDGER.json",
+  "benchmark_refresh": "experiments/sota-2026-10-22/legal-transfer/epoch16/benchmark-refresh.json",
   "restore_epoch3": "First restore_checkpoint.py; optional restore_epoch3_data.py materializes exact pinned original CC-BY data archive/train/dev/license. Existing bootstrap model flags do not acquire new NLI assets; obtain only official revisions in assets.lock.json/model-api, verify SHA. No inference during restore.",
-  "restoration_boundary": "Epoch15 fresh reconstruction verified2126 Git blobs,2055 projected checkpoint records+48base; selected7 pretrained assets,BGE2 and native22 exact regular-file bytes verified separately. No inference occurred before the frozen study snapshot. Historical restoration evidence remains unchanged.",
-  "publication_review": "experiments/sota-2026-10-22/audit/epoch15/acceptance-rejection-v1.json",
+  "restoration_boundary": "Epoch16 freshly verified2293 Gitblob files and2220projectCP+48base using reviewed bootstrap/restore; exact7officialNLI+BGE2/native22 restored separately. No model/native session occurred before reviewed source freeze/publication; actual oneDEV process is in epoch16_final. Never rerun archived controllers.",
+  "publication_review": "experiments/sota-2026-10-22/audit/epoch16/acceptance-rejection-v1.json",
   "cumulative_budget_ledger": {
     "original_study_native_attempt_cap": 6,
     "prior_epochs_attempts": 3,
     "epoch3_native_attempts_including_failed_request": 2,
-    "cumulative_native_attempts": 17,
+    "cumulative_native_attempts": 18,
     "remaining_in_original_study": 0,
     "current_epoch_closed": true,
     "publication_period_native_calls_allowed": 0,
     "next_epoch_rule": "Allhistoricalstudiesclosed, includinganyunspentconditional13slot; no retry. A newexplicitcontinuation permitsdistincthypothesis onlyafterfrozenlicensedTRAIN/DEV/calibration/project-unusedCONF/source/runtime, atmost2nonretryableCPU2/600sphases,paid0/GPU0. Oldf018DEVforever. Preserveepoch9CONF48ifunused; ifretiredneednewverifiedbank. No repeatedunchangedblockerprobes.",
     "original_study_status": "CLOSED_BUDGET_EXHAUSTED",
     "epoch4_native_attempts_including_failed_restoration": 1,
-    "new_study_id": "native-official-roberta-threeway-e13",
+    "new_study_id": "native-paired-whole-proposition-negation-e16",
     "new_study_attempt_cap": 2,
     "new_study_attempts_used": 1,
     "new_study_attempts_remaining": 0,
-    "total_historical_attempts": 17,
+    "total_historical_attempts": 18,
     "closed_epoch5_study": {
       "id": "native-deberta-base-resolved-2026-10-22-e5",
       "used": 1,
@@ -360,7 +422,7 @@
       "new_study_admitted": false,
       "all_16_prior_attempts_closed": true
     },
-    "scope": "ALL_EPOCHS_CLOSED_THROUGH15; legacy new_study fields refer to closedepoch13",
+    "scope": "ALL_EPOCHS_CLOSED_THROUGH16",
     "epoch15_active_study": {
       "study_id": "native-definition-priority-deberta-threeway-e15",
       "plan_path": "experiments/sota-2026-10-22/epoch15/plan.v2.json",
@@ -382,9 +444,22 @@
       "actual_BGE_forward_batches": 44,
       "actual_nativecore_searches": 24,
       "actual_native104_requests": 24
+    },
+    "closed_epoch16_study": {
+      "study_id": "native-paired-whole-proposition-negation-e16",
+      "cap": 2,
+      "actual_attempts": 1,
+      "completed_corpora": 1,
+      "successful_HTTP": 24,
+      "failed_HTTP": 0,
+      "unspent_slots": 1,
+      "allowed_further_attempts": 0,
+      "prior_attempts_closed": 17,
+      "total_attempts": 18,
+      "paid_GPU_calls": 0
     }
   },
-  "publisher_status": "experiments/sota-2026-10-22/legal-transfer/epoch15/publisher-status.json",
+  "publisher_status": "experiments/sota-2026-10-22/legal-transfer/epoch16/publisher-status.json",
   "restore_epoch4": "See EPOCH4_RUNTIME_SETUP.txt and EPOCH4_ASSET_SETUP.txt; seven native package source files now included, .node/modelweights remain omitted with exact helpers/hashes. No repaired-runtime benchmark was run.",
   "epoch4_restoration_limits": "experiments/sota-2026-10-22/epoch4/RESTORATION_LIMITS.json",
   "restore_epoch5": "See experiments/sota-2026-10-22/candidate/epoch5/RESTORE.txt and reconstruction/restore_runtime.py after existing official dependency/model setup. Full8corefiles+14TypeSafe files pinned; isolated actual path resolution and outcome evidence saved.",
@@ -403,9 +478,12 @@
     "output_rule": "Choose actually unused path; no overwrite."
   },
   "latest_learning": {
-    "path": "experiments/sota-2026-10-22/epoch15/EPOCH_MANIFEST.json",
-    "sha256": "a7924c2b06d8005d4bd2111095ed450cb278c475643e965dc654a4d2a511406b",
-    "direction": "Native vector rankings exactly matched saved-vector cosine on24/24; stop ANN grids. The typed reader made no contradiction predictions and missed six oral-information entailments, including an explicit oral/written clause retained in its actual premise. Prioritize legally grounded typed decisions and confidence reliability with verified nonoverlapping licensed train/DEV/confirmation and a feasible CPU runtime; do not train/select on these DEV cases or the unused confirmation labels. Definition retention alone did not establish acceptance."
+    "manifest": {
+      "path": "experiments/sota-2026-10-22/epoch16/EPOCH_MANIFEST.json",
+      "bytes": 18138,
+      "sha256": "9ae1b667e4a06161ac1e15db953fdfdd86cbd17414a772bfba078367b46b0fa3"
+    },
+    "direction": "The fixed whole-proposition NOT mirror changed confidence but added no binary accuracy on its identical native premise; all three pooled readers still predicted zero contradictions, including two gold contradictions. Do not run negation-prefix/pool-weight/temperature/ANN grids or reclassify these exposed cases as fresh confirmation. Qualify a materially stronger legally grounded typed-decision reader AND genuinely eligible licensed data/annotation/party-role lineage; known ContractNLI-supervised models cannot use this source bank as fresh evaluation. Preserve both unused confirmation banks. A future independent study must exercise float32 output-format numerical invariants before new inputs/gold and freeze any justified source-scorer-aligned policy then; never relax this epoch's failed checker or call its full replay passed. Current CPU2/600s/paid0 limits remain; no new spend inferred."
   },
   "source_closure_correction": {
     "path": "experiments/sota-2026-10-22/epoch13/SOURCE_CLOSURE_CORRECTION.v1.json",
@@ -418,7 +496,7 @@
     "unchanged": true,
     "new_model_native_calls": 0
   },
-  "publication_review_scope": "Source-only qualification/engineering publication; no native candidate accepted; no new reconstruction or benchmark performance",
+  "publication_review_scope": "Independent rejected native epoch16, retained frozen score-checker failure and valid NLI component/context diagnostics. No full-score acceptance, promotion, official rank/SOTA, new submission or paid work.",
   "restoration_boundary_prior_epoch13": "All public source/data/results hashrestored; native22filehelper verified. Coldproof explicitly lists deferredmodelassetpins(old/new); weights acquiredseparately via reviewedhelpers/exactofficialrevision+hashes. No inference or archivedcontroller rerun duringrestore.",
   "epoch14_preparation": {
     "source_manifest": {
@@ -845,5 +923,50 @@
     "prior_native_attempts_closed": 17,
     "paid_GPU_calls": 0,
     "champion_unchanged": true
-  }
+  },
+  "epoch16_frozen_study_scope": "Historical exact premeasurement freeze; current actual state is epoch16_final. All epoch16 attempts are closed.",
+  "epoch16_final": {
+    "manifest": {
+      "path": "experiments/sota-2026-10-22/epoch16/EPOCH_MANIFEST.json",
+      "bytes": 18138,
+      "sha256": "9ae1b667e4a06161ac1e15db953fdfdd86cbd17414a772bfba078367b46b0fa3"
+    },
+    "status": "REJECTED_DEV_GATE_WITH_ADDITIONAL_FROZEN_AUDITOR_PROBABILITY_MASS_FAILURE",
+    "accepted": false,
+    "native_attempts": 1,
+    "completed_corpora": 1,
+    "successful_HTTP": 24,
+    "confirmation_attempts": 0,
+    "both_confirmation_banks_unused": true,
+    "all_further_attempts_closed": true,
+    "full_frozen_score_replay_passed": false,
+    "append_only_prose_scope_clarification": {
+      "immutable_report_prose_scope": "Acceptance-v1/EPOCH_MANIFEST generic sentence that proper-score intervals include zero refers to BINARY proper-score intervals only. It must not be read as a statement about every typed proper interval. All numeric tables are preserved.",
+      "accuracy_gain_definition": "primary accuracy minus control accuracy; positive favors primary.",
+      "proper_gain_definition": "control proper score minus primary proper score; positive favors primary because lower Brier/NLL are better.",
+      "typed_positional_control_minus_primary_Brier_gain_CI": [
+        -0.1741385097100439,
+        -0.015489357583886348
+      ],
+      "typed_positional_control_minus_primary_NLL_gain_CI": [
+        -0.32093311223217846,
+        -0.01714510038758653
+      ],
+      "interpretation": "Both typed proper gain intervals are strictly negative, so primary typed Brier/NLL are worse than positional in this nominal paired eight-document DEV diagnostic. No official/generalization or familywise inference follows.",
+      "no_score_label_metric_policy_gate_or_checker_changed": true,
+      "no_acceptance_effect_or_rescue": true
+    }
+  },
+  "epoch16_final_publication_reviews": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch16/final-source-review-v1.json",
+      "bytes": 58723,
+      "sha256": "5f23ccda7aa091717acb3966bb8bc02473d4b7fa0cd351308d4b0ef658f5c15c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch16/final-privacy-review-v1.json",
+      "bytes": 68134,
+      "sha256": "87ed0a04b2b6676e8c1947f3cc315fcb990b93a9c24ecb4fc9ad15fdf9f7d9f1"
+    }
+  ]
 }

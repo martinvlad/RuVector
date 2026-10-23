@@ -1,0 +1,2529 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T12:26:37.085335+00:00",
+  "status": "NLI_COMPONENTS_WIRE_GOLD_RESOURCE_DIAGNOSTICS_VERIFIED_FULL_FROZEN_SCORE_REPLAY_REMAINS_FAILED",
+  "full_frozen_score_replay_passed": false,
+  "no_frozen_checker_source_or_tolerance_changed": true,
+  "no_probability_renormalization": true,
+  "component_scope": "Unmodified frozen raw_distribution/mirror/row_score/summary/CI functions invoked only on4actual valid NLI arms. Native104 hard labels independently checked; its proper scores are controller-published only and do not pass frozen auditor mass guard. This is post-run failure diagnosis, not replacement acceptance checker.",
+  "metrics_NLI4": {
+    "ruvector_top2": {
+      "n": 24,
+      "correct": 17,
+      "brier": 0.41190907666004567,
+      "nll": 0.6353470843605162,
+      "strict_valid": 24,
+      "errors": 0
+    },
+    "same_nli_lexical_top2": {
+      "n": 24,
+      "correct": 15,
+      "brier": 0.49248848354782365,
+      "nll": 0.7564913515509293,
+      "strict_valid": 24,
+      "errors": 0
+    },
+    "same_nli_positional_first2": {
+      "n": 24,
+      "correct": 17,
+      "brier": 0.36744628279290975,
+      "nll": 0.5330254994628546,
+      "strict_valid": 24,
+      "errors": 0
+    },
+    "same_nli_native_raw_h": {
+      "n": 24,
+      "correct": 17,
+      "brier": 0.5021226262075157,
+      "nll": 0.9390406243445178,
+      "strict_valid": 24,
+      "errors": 0
+    }
+  },
+  "typed_metrics": {
+    "ruvector_top2": {
+      "n": 24,
+      "correct": 16,
+      "brier": 0.5419062801618905,
+      "nll": 0.8933278853069924,
+      "strict_valid": 24,
+      "errors": 0,
+      "by_class": {
+        "Entailment": {
+          "n": 9,
+          "correct": 4
+        },
+        "Contradiction": {
+          "n": 2,
+          "correct": 0
+        },
+        "NotMentioned": {
+          "n": 13,
+          "correct": 12
+        }
+      }
+    },
+    "same_nli_lexical_top2": {
+      "n": 24,
+      "correct": 15,
+      "brier": 0.559795151460245,
+      "nll": 0.9397085562506136,
+      "strict_valid": 24,
+      "errors": 0,
+      "by_class": {
+        "Entailment": {
+          "n": 9,
+          "correct": 4
+        },
+        "Contradiction": {
+          "n": 2,
+          "correct": 0
+        },
+        "NotMentioned": {
+          "n": 13,
+          "correct": 11
+        }
+      }
+    },
+    "same_nli_positional_first2": {
+      "n": 24,
+      "correct": 16,
+      "brier": 0.4542390571939935,
+      "nll": 0.7447511746198784,
+      "strict_valid": 24,
+      "errors": 0,
+      "by_class": {
+        "Entailment": {
+          "n": 9,
+          "correct": 3
+        },
+        "Contradiction": {
+          "n": 2,
+          "correct": 0
+        },
+        "NotMentioned": {
+          "n": 13,
+          "correct": 13
+        }
+      }
+    },
+    "same_nli_native_raw_h": {
+      "n": 24,
+      "correct": 15,
+      "brier": 0.6589983634187393,
+      "nll": 1.452489123524276,
+      "strict_valid": 24,
+      "errors": 0,
+      "by_class": {
+        "Entailment": {
+          "n": 9,
+          "correct": 4
+        },
+        "Contradiction": {
+          "n": 2,
+          "correct": 0
+        },
+        "NotMentioned": {
+          "n": 13,
+          "correct": 11
+        }
+      }
+    }
+  },
+  "typed_confusions": {
+    "ruvector_top2": {
+      "NotMentioned->Entailment": 1,
+      "Entailment->Entailment": 4,
+      "NotMentioned->NotMentioned": 12,
+      "Contradiction->NotMentioned": 2,
+      "Entailment->NotMentioned": 5
+    },
+    "same_nli_lexical_top2": {
+      "NotMentioned->NotMentioned": 11,
+      "Entailment->Entailment": 4,
+      "Contradiction->Entailment": 1,
+      "Entailment->NotMentioned": 5,
+      "Contradiction->NotMentioned": 1,
+      "NotMentioned->Entailment": 2
+    },
+    "same_nli_positional_first2": {
+      "NotMentioned->NotMentioned": 13,
+      "Entailment->NotMentioned": 6,
+      "Contradiction->NotMentioned": 2,
+      "Entailment->Entailment": 3
+    },
+    "same_nli_native_raw_h": {
+      "NotMentioned->Entailment": 2,
+      "Entailment->Entailment": 4,
+      "NotMentioned->NotMentioned": 11,
+      "Contradiction->NotMentioned": 2,
+      "Entailment->NotMentioned": 5
+    }
+  },
+  "gold_class_counts": {
+    "NotMentioned": 13,
+    "Entailment": 9,
+    "Contradiction": 2
+  },
+  "NLI_binary_paired8doc_CIs": {
+    "same_nli_lexical_top2": {
+      "accuracy": {
+        "mean_improvement": 0.08333333333333333,
+        "ci95": [
+          -0.08333333333333333,
+          0.29166666666666663
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "brier": {
+        "mean_improvement": 0.08057940688777797,
+        "ci95": [
+          -0.15796463098485133,
+          0.32457591754381376
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "nll": {
+        "mean_improvement": 0.12114426719041303,
+        "ci95": [
+          -0.26648616156425664,
+          0.5032120913115559
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      }
+    },
+    "same_nli_positional_first2": {
+      "accuracy": {
+        "mean_improvement": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "brier": {
+        "mean_improvement": -0.04446279386713592,
+        "ci95": [
+          -0.13711552408315886,
+          0.039439970325023166
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "nll": {
+        "mean_improvement": -0.10232158489766166,
+        "ci95": [
+          -0.2843006416375842,
+          0.05208463310553042
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      }
+    },
+    "same_nli_native_raw_h": {
+      "accuracy": {
+        "mean_improvement": 0.0,
+        "ci95": [
+          -0.125,
+          0.125
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "brier": {
+        "mean_improvement": 0.09021354954746999,
+        "ci95": [
+          -0.09390036022492662,
+          0.34546815139851855
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "nll": {
+        "mean_improvement": 0.3036935399840016,
+        "ci95": [
+          -0.13522505389890382,
+          0.9739378444571295
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      }
+    }
+  },
+  "NLI_typed_paired8doc_CIs": {
+    "same_nli_lexical_top2": {
+      "accuracy": {
+        "mean_improvement": 0.041666666666666664,
+        "ci95": [
+          -0.125,
+          0.25
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "brier": {
+        "mean_improvement": 0.01788887129835455,
+        "ci95": [
+          -0.19141864516181628,
+          0.2342167754397652
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "nll": {
+        "mean_improvement": 0.04638067094362118,
+        "ci95": [
+          -0.33734694814411703,
+          0.4306283399847573
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      }
+    },
+    "same_nli_positional_first2": {
+      "accuracy": {
+        "mean_improvement": 0.0,
+        "ci95": [
+          -0.125,
+          0.125
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "brier": {
+        "mean_improvement": -0.08766722296789697,
+        "ci95": [
+          -0.1741385097100439,
+          -0.015489357583886348
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "nll": {
+        "mean_improvement": -0.14857671068711406,
+        "ci95": [
+          -0.32093311223217846,
+          -0.01714510038758653
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      }
+    },
+    "same_nli_native_raw_h": {
+      "accuracy": {
+        "mean_improvement": 0.041666666666666664,
+        "ci95": [
+          -0.08333333333333333,
+          0.16666666666666666
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "brier": {
+        "mean_improvement": 0.1170920832568488,
+        "ci95": [
+          -0.06819267056822961,
+          0.36520171784917715
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      },
+      "nll": {
+        "mean_improvement": 0.5591612382172837,
+        "ci95": [
+          -0.007955941437051712,
+          1.2485360273477726
+        ],
+        "draws": 2000,
+        "seed": 20261022
+      }
+    }
+  },
+  "native104_hard_labels_only": {
+    "n": 24,
+    "correct": 13,
+    "paired_accuracy_CI": {
+      "mean_improvement": 0.16666666666666666,
+      "ci95": [
+        0.041666666666666664,
+        0.3333333333333333
+      ],
+      "draws": 2000,
+      "seed": 20261022
+    },
+    "proper_guard_passed": false,
+    "frozen_mass_valid": 6,
+    "frozen_mass_invalid": 18,
+    "maximum_mass_deviation": 7.999999995789153e-08,
+    "literal_probabilities": [
+      {
+        "id": "original-contractnli:train:epoch16:dev:382:nda-17",
+        "probabilities": {
+          "No": 0.5015231,
+          "Yes": 0.49847692
+        },
+        "mass_error": 1.999999987845058e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:382:nda-7",
+        "probabilities": {
+          "No": 0.5025132,
+          "Yes": 0.4974868
+        },
+        "mass_error": 0.0,
+        "frozen_auditor_mass_valid": true
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:382:nda-3",
+        "probabilities": {
+          "No": 0.5012951,
+          "Yes": 0.49870494
+        },
+        "mass_error": 3.9999999978945766e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:339:nda-17",
+        "probabilities": {
+          "No": 0.5046447,
+          "Yes": 0.4953553
+        },
+        "mass_error": 0.0,
+        "frozen_auditor_mass_valid": true
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:339:nda-7",
+        "probabilities": {
+          "No": 0.50430334,
+          "Yes": 0.49569663
+        },
+        "mass_error": 3.0000000039720476e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:339:nda-3",
+        "probabilities": {
+          "No": 0.5018928,
+          "Yes": 0.4981072
+        },
+        "mass_error": 0.0,
+        "frozen_auditor_mass_valid": true
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:222:nda-17",
+        "probabilities": {
+          "No": 0.49944192,
+          "Yes": 0.5005581
+        },
+        "mass_error": 1.999999987845058e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:222:nda-7",
+        "probabilities": {
+          "No": 0.4974054,
+          "Yes": 0.5025946
+        },
+        "mass_error": 0.0,
+        "frozen_auditor_mass_valid": true
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:222:nda-3",
+        "probabilities": {
+          "No": 0.49809596,
+          "Yes": 0.5019041
+        },
+        "mass_error": 6.000000007944095e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:260:nda-17",
+        "probabilities": {
+          "No": 0.5029489,
+          "Yes": 0.4970511
+        },
+        "mass_error": 0.0,
+        "frozen_auditor_mass_valid": true
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:260:nda-7",
+        "probabilities": {
+          "No": 0.5018343,
+          "Yes": 0.49816573
+        },
+        "mass_error": 2.999999981767587e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:260:nda-3",
+        "probabilities": {
+          "No": 0.5011768,
+          "Yes": 0.49882317
+        },
+        "mass_error": 3.0000000039720476e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:556:nda-17",
+        "probabilities": {
+          "No": 0.5022081,
+          "Yes": 0.49779192
+        },
+        "mass_error": 2.0000000100495186e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:556:nda-7",
+        "probabilities": {
+          "No": 0.5020029,
+          "Yes": 0.49799708
+        },
+        "mass_error": 1.9999999989472883e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:556:nda-3",
+        "probabilities": {
+          "No": 0.5008579,
+          "Yes": 0.4991421
+        },
+        "mass_error": 0.0,
+        "frozen_auditor_mass_valid": true
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:110:nda-17",
+        "probabilities": {
+          "No": 0.5019727,
+          "Yes": 0.49802735
+        },
+        "mass_error": 5.000000014021566e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:110:nda-7",
+        "probabilities": {
+          "No": 0.5011315,
+          "Yes": 0.49886853
+        },
+        "mass_error": 2.999999981767587e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:110:nda-3",
+        "probabilities": {
+          "No": 0.500506,
+          "Yes": 0.49949408
+        },
+        "mass_error": 7.999999995789153e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:233:nda-17",
+        "probabilities": {
+          "No": 0.49830702,
+          "Yes": 0.50169295
+        },
+        "mass_error": 3.0000000039720476e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:233:nda-7",
+        "probabilities": {
+          "No": 0.49781844,
+          "Yes": 0.50218153
+        },
+        "mass_error": 3.0000000039720476e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:233:nda-3",
+        "probabilities": {
+          "No": 0.49619994,
+          "Yes": 0.50380003
+        },
+        "mass_error": 3.0000000039720476e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:286:nda-17",
+        "probabilities": {
+          "No": 0.49981818,
+          "Yes": 0.50018185
+        },
+        "mass_error": 3.0000000039720476e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:286:nda-7",
+        "probabilities": {
+          "No": 0.49999753,
+          "Yes": 0.5000025
+        },
+        "mass_error": 3.0000000039720476e-08,
+        "frozen_auditor_mass_valid": false
+      },
+      {
+        "id": "original-contractnli:train:epoch16:dev:286:nda-3",
+        "probabilities": {
+          "No": 0.5003614,
+          "Yes": 0.49963862
+        },
+        "mass_error": 1.999999987845058e-08,
+        "frozen_auditor_mass_valid": false
+      }
+    ],
+    "controller_published_metrics_not_independently_validated_under_frozen_mass_guard": {
+      "n": 24,
+      "correct": 13,
+      "accuracy": 0.5416666666666666,
+      "brier": 0.4994572935577449,
+      "nll": 0.6926044473691576,
+      "strict_valid": 24,
+      "errors": 0,
+      "ece10": 0.03982964999999994,
+      "by_type": {
+        "choice": {
+          "n": 24,
+          "correct": 13,
+          "accuracy": 0.5416666666666666,
+          "brier": 0.4994572935577449,
+          "nll": 0.6926044473691576,
+          "strict_valid": 24,
+          "errors": 0,
+          "ece10": 0.03982964999999994
+        }
+      },
+      "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+      "official_score": null,
+      "official_rank": null
+    }
+  },
+  "paired_rawH_to_pool_changes": {
+    "binary": {
+      "rawH_wrong_to_primary_correct": 1,
+      "rawH_correct_to_primary_wrong": 1
+    },
+    "typed": {
+      "rawH_wrong_to_primary_correct": 2,
+      "rawH_correct_to_primary_wrong": 1
+    }
+  },
+  "by_hypothesis_binary_typed_correct_of8": {
+    "nda-17": {
+      "ruvector_top2": [
+        7,
+        5
+      ],
+      "same_nli_lexical_top2": [
+        5,
+        5
+      ],
+      "same_nli_positional_first2": [
+        7,
+        5
+      ],
+      "same_nli_native_raw_h": [
+        7,
+        5
+      ]
+    },
+    "nda-7": {
+      "ruvector_top2": [
+        4,
+        5
+      ],
+      "same_nli_lexical_top2": [
+        4,
+        5
+      ],
+      "same_nli_positional_first2": [
+        4,
+        5
+      ],
+      "same_nli_native_raw_h": [
+        4,
+        4
+      ]
+    },
+    "nda-3": {
+      "ruvector_top2": [
+        6,
+        6
+      ],
+      "same_nli_lexical_top2": [
+        6,
+        5
+      ],
+      "same_nli_positional_first2": [
+        6,
+        6
+      ],
+      "same_nli_native_raw_h": [
+        6,
+        6
+      ]
+    }
+  },
+  "same_input_logit_max_drift": 0,
+  "source_recipe": {
+    "role": "dev",
+    "source_gold_choices_independently_verified": 24,
+    "data_SHA256": "2860bdc7249a40f0998e312bf73172f1be08544d317835ab431425add7665003",
+    "identity_allowlist_SHA256": "2411d2a5708a70456efe940f4752c584367f1333894077681854a6e9f6b8130a",
+    "old_confirmation48_annotation_choices_read": 0
+  },
+  "latency_all_arm_HTTP": {
+    "n": 24,
+    "p50": 8.869198986496485,
+    "p95": 10.147275569055635,
+    "max": 11.511648803003482,
+    "sum": 210.30370411499462,
+    "not_primary_only_deployment_latency": true
+  },
+  "full_phase_initialization_seconds": 12.385550022125244,
+  "wall_seconds_including_init_cleanup": 223.56361867600936,
+  "resources": {
+    "at": "2026-10-23T12:21:25.427751+00:00",
+    "worker_cpu_user_seconds": 410.20886,
+    "worker_cpu_system_seconds": 7.712177,
+    "worker_peak_RSS_bytes": 2171600896,
+    "terminated_children_cpu_user_seconds": 5.730048,
+    "terminated_children_cpu_system_seconds": 1.230219,
+    "largest_terminated_child_peak_RSS_bytes": 2171600896,
+    "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+    "allowed_CPU_ids": [
+      0,
+      1
+    ],
+    "configured_ORT_threads": 2,
+    "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+  },
+  "total_observed_worker_plus_terminated_child_CPU_seconds": 424.881304,
+  "cleanup": {
+    "at": "2026-10-23T12:21:25.427973+00:00",
+    "engine_close_called": true,
+    "cleanup_errors": [],
+    "native_child_pids": [
+      35153
+    ],
+    "native_child_pids_absent": true
+  },
+  "owned_group_cleanup": {
+    "pgid": 35146,
+    "live_members_before": [],
+    "signals": [],
+    "hard_cleanup_deadline_unix": 1792758462.1311665,
+    "live_members_after": [],
+    "finished_unix": 1792758085.6947765,
+    "finished_within_deadline": true
+  },
+  "runtime_forecast": {
+    "at": "2026-10-23T12:21:25.739228+00:00",
+    "formula_id": "24xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "max_DEV_HTTP_seconds": 11.511648803003482,
+    "max_DEV_units": 34,
+    "max_confirmation_units": 20,
+    "source_unit_ratio": 1.0,
+    "DEV_initialization_seconds": 12.385550022125244,
+    "projected_confirmation_seconds": 361.05067131633405,
+    "allowed": true,
+    "forecast_limit_seconds": 600,
+    "actual_confirmation_watchdog_seconds": 600,
+    "scope": "Conservative admission forecast, not a performance guarantee. No confirmation labels/model outputs used."
+  },
+  "wire_HTTP_successes": 24,
+  "wire_HTTP_errors": 0,
+  "native_attempts": 1,
+  "lifetime_attempts": 18,
+  "further_attempts_allowed": 0,
+  "confirmation_attempted_or_projected": false,
+  "auditor_DEV_gold_choices_read": 24,
+  "auditor_new_CONF_and_old_CONF48_gold_choices_read": 0,
+  "auditor_model_native_fit_paid_GPU_calls": 0,
+  "official_score": null,
+  "official_rank": null,
+  "champion_promoted": false,
+  "rows": [
+    {
+      "id": "original-contractnli:train:epoch16:dev:382:nda-17",
+      "source_group": "original-contractnli:382",
+      "hypothesis_id": "nda-17",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.9252762869911137,
+            "No": 0.07472371300888633
+          },
+          "correct": false,
+          "brier": 1.7122724145361237,
+          "nll": 2.5939577939930887,
+          "typed": {
+            "Entailment": 0.9252762869911137,
+            "Contradiction": 0.011096454427976493,
+            "NotMentioned": 0.06362725858090984
+          },
+          "typed_correct": false,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.24101609405207483,
+            "No": 0.7589839059479251
+          },
+          "correct": true,
+          "brier": 0.1161775151842372,
+          "nll": 0.27577470609600485,
+          "typed": {
+            "Entailment": 0.24101609405207483,
+            "Contradiction": 0.08202720981967543,
+            "NotMentioned": 0.6769566961282497
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.06077115013520183,
+            "No": 0.9392288498647982
+          },
+          "correct": true,
+          "brier": 0.007386265377510485,
+          "nll": 0.06269611289200443,
+          "typed": {
+            "Entailment": 0.06077115013520183,
+            "Contradiction": 0.0723592489244621,
+            "NotMentioned": 0.866869600940336
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.8912072338664516,
+            "No": 0.10879276613354849
+          },
+          "correct": false,
+          "brier": 1.5885006673917843,
+          "nll": 2.2183104345138234,
+          "typed": {
+            "Entailment": 0.8912072338664516,
+            "Contradiction": 0.004071416371837949,
+            "NotMentioned": 0.10472134976171055
+          },
+          "typed_correct": false,
+          "typed_prediction": "Entailment"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:382:nda-7",
+      "source_group": "original-contractnli:382",
+      "hypothesis_id": "nda-7",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.9361809366742222,
+            "No": 0.06381906332577789
+          },
+          "correct": true,
+          "brier": 0.008145745687559285,
+          "nll": 0.06594651277357814,
+          "typed": {
+            "Entailment": 0.9361809366742221,
+            "Contradiction": 0.018727640149045037,
+            "NotMentioned": 0.04509142317673284
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.9361809366742222,
+            "No": 0.06381906332577789
+          },
+          "correct": true,
+          "brier": 0.008145745687559285,
+          "nll": 0.06594651277357814,
+          "typed": {
+            "Entailment": 0.9361809366742221,
+            "Contradiction": 0.018727640149045037,
+            "NotMentioned": 0.04509142317673284
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.1562029736935794,
+            "No": 0.8437970263064205
+          },
+          "correct": false,
+          "brier": 1.4239868432071163,
+          "nll": 1.8565990040267846,
+          "typed": {
+            "Entailment": 0.1562029736935794,
+            "Contradiction": 0.09738273411032478,
+            "NotMentioned": 0.7464142921960958
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.9349719070020227,
+            "No": 0.06502809299797728
+          },
+          "correct": true,
+          "brier": 0.008457305757907166,
+          "nll": 0.06723879613198126,
+          "typed": {
+            "Entailment": 0.9349719070020227,
+            "Contradiction": 0.002829719243003167,
+            "NotMentioned": 0.06219837375497411
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:382:nda-3",
+      "source_group": "original-contractnli:382",
+      "hypothesis_id": "nda-3",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.34834595319074524,
+            "No": 0.6516540468092548
+          },
+          "correct": true,
+          "brier": 0.24268980620873776,
+          "nll": 0.4282414609283895,
+          "typed": {
+            "Entailment": 0.3483459531907452,
+            "Contradiction": 0.0466410584167865,
+            "NotMentioned": 0.6050129883924683
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.34834595319074524,
+            "No": 0.6516540468092548
+          },
+          "correct": true,
+          "brier": 0.24268980620873776,
+          "nll": 0.4282414609283895,
+          "typed": {
+            "Entailment": 0.3483459531907452,
+            "Contradiction": 0.0466410584167865,
+            "NotMentioned": 0.6050129883924683
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.14293297333990598,
+            "No": 0.8570670266600939
+          },
+          "correct": true,
+          "brier": 0.040859669735572576,
+          "nll": 0.15423915263741902,
+          "typed": {
+            "Entailment": 0.14293297333990598,
+            "Contradiction": 0.17757108182081593,
+            "NotMentioned": 0.679495944839278
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.006673265542466926,
+            "No": 0.9933267344575331
+          },
+          "correct": true,
+          "brier": 8.906494600055303e-05,
+          "nll": 0.006695631336419844,
+          "typed": {
+            "Entailment": 0.006673265542466926,
+            "Contradiction": 0.00027084475155852734,
+            "NotMentioned": 0.9930558897059746
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:339:nda-17",
+      "source_group": "original-contractnli:339",
+      "hypothesis_id": "nda-17",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.08814975899983066,
+            "No": 0.9118502410001693
+          },
+          "correct": true,
+          "brier": 0.015540760023456456,
+          "nll": 0.0922795118212891,
+          "typed": {
+            "Entailment": 0.08814975899983066,
+            "Contradiction": 0.06016420035243357,
+            "NotMentioned": 0.8516860406477358
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.08814975899983066,
+            "No": 0.9118502410001693
+          },
+          "correct": true,
+          "brier": 0.015540760023456456,
+          "nll": 0.0922795118212891,
+          "typed": {
+            "Entailment": 0.08814975899983066,
+            "Contradiction": 0.06016420035243357,
+            "NotMentioned": 0.8516860406477358
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.08814975899983066,
+            "No": 0.9118502410001693
+          },
+          "correct": true,
+          "brier": 0.015540760023456456,
+          "nll": 0.0922795118212891,
+          "typed": {
+            "Entailment": 0.08814975899983066,
+            "Contradiction": 0.06016420035243357,
+            "NotMentioned": 0.8516860406477358
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.13111204528237674,
+            "No": 0.8688879547176234
+          },
+          "correct": true,
+          "brier": 0.03438073683625599,
+          "nll": 0.14054109791274766,
+          "typed": {
+            "Entailment": 0.13111204528237674,
+            "Contradiction": 0.00302741588539797,
+            "NotMentioned": 0.8658605388322254
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:339:nda-7",
+      "source_group": "original-contractnli:339",
+      "hypothesis_id": "nda-7",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.4297503933724015,
+            "No": 0.5702496066275986
+          },
+          "correct": true,
+          "brier": 0.36937080120746757,
+          "nll": 0.561681107642343,
+          "typed": {
+            "Entailment": 0.4297503933724015,
+            "Contradiction": 0.11099855534735291,
+            "NotMentioned": 0.4592510512802456
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.4297503933724015,
+            "No": 0.5702496066275986
+          },
+          "correct": true,
+          "brier": 0.36937080120746757,
+          "nll": 0.561681107642343,
+          "typed": {
+            "Entailment": 0.4297503933724015,
+            "Contradiction": 0.11099855534735291,
+            "NotMentioned": 0.4592510512802456
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.4297503933724015,
+            "No": 0.5702496066275986
+          },
+          "correct": true,
+          "brier": 0.36937080120746757,
+          "nll": 0.561681107642343,
+          "typed": {
+            "Entailment": 0.4297503933724015,
+            "Contradiction": 0.11099855534735291,
+            "NotMentioned": 0.4592510512802456
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.7679287931227693,
+            "No": 0.23207120687723082
+          },
+          "correct": false,
+          "brier": 1.179429262613986,
+          "nll": 1.4607110282130755,
+          "typed": {
+            "Entailment": 0.7679287931227693,
+            "Contradiction": 0.008040401998231863,
+            "NotMentioned": 0.22403080487899896
+          },
+          "typed_correct": false,
+          "typed_prediction": "Entailment"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:339:nda-3",
+      "source_group": "original-contractnli:339",
+      "hypothesis_id": "nda-3",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.030795432606091737,
+            "No": 0.9692045673939083
+          },
+          "correct": true,
+          "brier": 0.0018967173387926767,
+          "nll": 0.03127957751072565,
+          "typed": {
+            "Entailment": 0.030795432606091733,
+            "Contradiction": 0.05539839140507039,
+            "NotMentioned": 0.9138061759888378
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.030795432606091737,
+            "No": 0.9692045673939083
+          },
+          "correct": true,
+          "brier": 0.0018967173387926767,
+          "nll": 0.03127957751072565,
+          "typed": {
+            "Entailment": 0.030795432606091733,
+            "Contradiction": 0.05539839140507039,
+            "NotMentioned": 0.9138061759888378
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.030795432606091737,
+            "No": 0.9692045673939083
+          },
+          "correct": true,
+          "brier": 0.0018967173387926767,
+          "nll": 0.03127957751072565,
+          "typed": {
+            "Entailment": 0.030795432606091733,
+            "Contradiction": 0.05539839140507039,
+            "NotMentioned": 0.9138061759888378
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.006140415717066731,
+            "No": 0.9938595842829332
+          },
+          "correct": true,
+          "brier": 7.540941035680119e-05,
+          "nll": 0.0061593456010101775,
+          "typed": {
+            "Entailment": 0.006140415717066731,
+            "Contradiction": 0.00015762935246096515,
+            "NotMentioned": 0.9937019549304722
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:222:nda-17",
+      "source_group": "original-contractnli:222",
+      "hypothesis_id": "nda-17",
+      "gold_binary": "No",
+      "gold_typed": "Contradiction",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.049114220249592846,
+            "No": 0.9508857797504072
+          },
+          "correct": true,
+          "brier": 0.004824413261451025,
+          "nll": 0.05036132906490372,
+          "typed": {
+            "Entailment": 0.049114220249592846,
+            "Contradiction": 0.06581657010356257,
+            "NotMentioned": 0.8850692096468447
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.7897406523969518,
+            "No": 0.2102593476030482
+          },
+          "correct": false,
+          "brier": 1.2473805960967261,
+          "nll": 1.5594135216498424,
+          "typed": {
+            "Entailment": 0.7897406523969518,
+            "Contradiction": 0.09174596931844835,
+            "NotMentioned": 0.11851337828459986
+          },
+          "typed_correct": false,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.42889672875519397,
+            "No": 0.5711032712448059
+          },
+          "correct": true,
+          "brier": 0.36790480787381297,
+          "nll": 0.5601852253557305,
+          "typed": {
+            "Entailment": 0.42889672875519397,
+            "Contradiction": 0.13146348745607012,
+            "NotMentioned": 0.4396397837887358
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.06700166561213916,
+            "No": 0.932998334387861
+          },
+          "correct": true,
+          "brier": 0.008978446389601807,
+          "nll": 0.06935186335840073,
+          "typed": {
+            "Entailment": 0.06700166561213916,
+            "Contradiction": 0.002997566683103979,
+            "NotMentioned": 0.9300007677047569
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "Yes"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:222:nda-7",
+      "source_group": "original-contractnli:222",
+      "hypothesis_id": "nda-7",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.6877937471296302,
+            "No": 0.31220625287036985
+          },
+          "correct": true,
+          "brier": 0.19494548866271463,
+          "nll": 0.3742662721424371,
+          "typed": {
+            "Entailment": 0.6877937471296303,
+            "Contradiction": 0.09853792300065371,
+            "NotMentioned": 0.21366832986971612
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.49198822500560946,
+            "No": 0.5080117749943907
+          },
+          "correct": false,
+          "brier": 0.5161519270659026,
+          "nll": 0.7093004956916537,
+          "typed": {
+            "Entailment": 0.49198822500560946,
+            "Contradiction": 0.14615178967005696,
+            "NotMentioned": 0.3618599853243336
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.6877937471296302,
+            "No": 0.31220625287036985
+          },
+          "correct": true,
+          "brier": 0.19494548866271463,
+          "nll": 0.3742662721424371,
+          "typed": {
+            "Entailment": 0.6877937471296303,
+            "Contradiction": 0.09853792300065371,
+            "NotMentioned": 0.21366832986971612
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.7945091729847279,
+            "No": 0.205490827015272
+          },
+          "correct": true,
+          "brier": 0.08445295997484092,
+          "nll": 0.2300307474650587,
+          "typed": {
+            "Entailment": 0.794509172984728,
+            "Contradiction": 0.008521404341903472,
+            "NotMentioned": 0.19696942267336856
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        }
+      },
+      "native104_hard_prediction": "Yes"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:222:nda-3",
+      "source_group": "original-contractnli:222",
+      "hypothesis_id": "nda-3",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.153328904629538,
+            "No": 0.846671095370462
+          },
+          "correct": true,
+          "brier": 0.04701950598978791,
+          "nll": 0.1664429768988306,
+          "typed": {
+            "Entailment": 0.15332890462953802,
+            "Contradiction": 0.07536962606565768,
+            "NotMentioned": 0.7713014693048044
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.10574288574720186,
+            "No": 0.8942571142527981
+          },
+          "correct": true,
+          "brier": 0.022363115772291588,
+          "nll": 0.11176194532218318,
+          "typed": {
+            "Entailment": 0.10574288574720186,
+            "Contradiction": 0.13032386928473502,
+            "NotMentioned": 0.763933244968063
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.22954985158962105,
+            "No": 0.770450148410379
+          },
+          "correct": true,
+          "brier": 0.1053862687296341,
+          "nll": 0.2607803266261162,
+          "typed": {
+            "Entailment": 0.22954985158962105,
+            "Contradiction": 0.07481029643229202,
+            "NotMentioned": 0.695639851978087
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.0045948906886041545,
+            "No": 0.9954051093113959
+          },
+          "correct": true,
+          "brier": 4.222604088044164e-05,
+          "nll": 0.00460547964801566,
+          "typed": {
+            "Entailment": 0.0045948906886041545,
+            "Contradiction": 0.00012946174186092825,
+            "NotMentioned": 0.995275647569535
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "Yes"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:260:nda-17",
+      "source_group": "original-contractnli:260",
+      "hypothesis_id": "nda-17",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.059709472818982964,
+            "No": 0.9402905271810171
+          },
+          "correct": true,
+          "brier": 0.007130442288641719,
+          "nll": 0.061566380001667746,
+          "typed": {
+            "Entailment": 0.059709472818982964,
+            "Contradiction": 0.035507046752824956,
+            "NotMentioned": 0.9047834804281921
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.059709472818982964,
+            "No": 0.9402905271810171
+          },
+          "correct": true,
+          "brier": 0.007130442288641719,
+          "nll": 0.061566380001667746,
+          "typed": {
+            "Entailment": 0.059709472818982964,
+            "Contradiction": 0.035507046752824956,
+            "NotMentioned": 0.9047834804281921
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.059709472818982964,
+            "No": 0.9402905271810171
+          },
+          "correct": true,
+          "brier": 0.007130442288641719,
+          "nll": 0.061566380001667746,
+          "typed": {
+            "Entailment": 0.059709472818982964,
+            "Contradiction": 0.035507046752824956,
+            "NotMentioned": 0.9047834804281921
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.06577839910155499,
+            "No": 0.934221600898445
+          },
+          "correct": true,
+          "brier": 0.008653595576726906,
+          "nll": 0.06804160883243698,
+          "typed": {
+            "Entailment": 0.06577839910155499,
+            "Contradiction": 0.0032294661234266867,
+            "NotMentioned": 0.9309921347750183
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:260:nda-7",
+      "source_group": "original-contractnli:260",
+      "hypothesis_id": "nda-7",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.44476938024189205,
+            "No": 0.5552306197581078
+          },
+          "correct": false,
+          "brier": 0.6165620822339452,
+          "nll": 0.8101993777995391,
+          "typed": {
+            "Entailment": 0.4447693802418921,
+            "Contradiction": 0.060847129912309256,
+            "NotMentioned": 0.4943834898457986
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.44476938024189205,
+            "No": 0.5552306197581078
+          },
+          "correct": false,
+          "brier": 0.6165620822339452,
+          "nll": 0.8101993777995391,
+          "typed": {
+            "Entailment": 0.4447693802418921,
+            "Contradiction": 0.060847129912309256,
+            "NotMentioned": 0.4943834898457986
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.44476938024189205,
+            "No": 0.5552306197581078
+          },
+          "correct": false,
+          "brier": 0.6165620822339452,
+          "nll": 0.8101993777995391,
+          "typed": {
+            "Entailment": 0.4447693802418921,
+            "Contradiction": 0.060847129912309256,
+            "NotMentioned": 0.4943834898457986
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.8214236490046418,
+            "No": 0.17857635099535804
+          },
+          "correct": true,
+          "brier": 0.06377902626963466,
+          "nll": 0.19671628678009764,
+          "typed": {
+            "Entailment": 0.8214236490046419,
+            "Contradiction": 0.013377557680234175,
+            "NotMentioned": 0.1651987933151239
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:260:nda-3",
+      "source_group": "original-contractnli:260",
+      "hypothesis_id": "nda-3",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.14151856303292537,
+            "No": 0.8584814369670745
+          },
+          "correct": false,
+          "brier": 1.4739807552341062,
+          "nll": 1.9553243829913338,
+          "typed": {
+            "Entailment": 0.1415185630329254,
+            "Contradiction": 0.1249306774240456,
+            "NotMentioned": 0.7335507595430288
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.021732105105642576,
+            "No": 0.9782678948943574
+          },
+          "correct": false,
+          "brier": 1.914016148362075,
+          "nll": 3.828964613858643,
+          "typed": {
+            "Entailment": 0.02173210510564258,
+            "Contradiction": 0.04024933904001297,
+            "NotMentioned": 0.9380185558543445
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.14151856303292537,
+            "No": 0.8584814369670745
+          },
+          "correct": false,
+          "brier": 1.4739807552341062,
+          "nll": 1.9553243829913338,
+          "typed": {
+            "Entailment": 0.1415185630329254,
+            "Contradiction": 0.1249306774240456,
+            "NotMentioned": 0.7335507595430288
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.019301024708325475,
+            "No": 0.9806989752916744
+          },
+          "correct": false,
+          "brier": 1.9235409602762805,
+          "nll": 3.9475970907850972,
+          "typed": {
+            "Entailment": 0.019301024708325475,
+            "Contradiction": 0.000957994217375997,
+            "NotMentioned": 0.9797409810742984
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:556:nda-17",
+      "source_group": "original-contractnli:556",
+      "hypothesis_id": "nda-17",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.9374134371961705,
+            "No": 0.06258656280382946
+          },
+          "correct": true,
+          "brier": 0.00783415568719538,
+          "nll": 0.06463085905800382,
+          "typed": {
+            "Entailment": 0.9374134371961705,
+            "Contradiction": 0.003890255827640861,
+            "NotMentioned": 0.058696306976188606
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.49896214975257913,
+            "No": 0.5010378502474209
+          },
+          "correct": false,
+          "brier": 0.5020778547611139,
+          "nll": 0.6952250383067822,
+          "typed": {
+            "Entailment": 0.49896214975257913,
+            "Contradiction": 0.0030649428333400564,
+            "NotMentioned": 0.4979729074140808
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.3579047977575504,
+            "No": 0.6420952022424496
+          },
+          "correct": false,
+          "brier": 0.8245724974855445,
+          "nll": 1.027488255998106,
+          "typed": {
+            "Entailment": 0.3579047977575504,
+            "Contradiction": 0.0442990554281439,
+            "NotMentioned": 0.5977961468143057
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.8893250360803248,
+            "No": 0.11067496391967538
+          },
+          "correct": true,
+          "brier": 0.024497895277242863,
+          "nll": 0.11729249040301701,
+          "typed": {
+            "Entailment": 0.8893250360803248,
+            "Contradiction": 0.0032277157278342112,
+            "NotMentioned": 0.10744724819184116
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:556:nda-7",
+      "source_group": "original-contractnli:556",
+      "hypothesis_id": "nda-7",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.49906912960475863,
+            "No": 0.5009308703952413
+          },
+          "correct": false,
+          "brier": 0.5018634738298681,
+          "nll": 0.6950106565438015,
+          "typed": {
+            "Entailment": 0.49906912960475863,
+            "Contradiction": 0.003965251777813873,
+            "NotMentioned": 0.49696561861742744
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.5076560965983349,
+            "No": 0.4923439034016651
+          },
+          "correct": true,
+          "brier": 0.4848050384335763,
+          "nll": 0.6779510358549649,
+          "typed": {
+            "Entailment": 0.5076560965983349,
+            "Contradiction": 0.008909485587328136,
+            "NotMentioned": 0.483434417814337
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.92630325275514,
+            "No": 0.07369674724486011
+          },
+          "correct": true,
+          "brier": 0.010862421108945572,
+          "nll": 0.07655361117143848,
+          "typed": {
+            "Entailment": 0.92630325275514,
+            "Contradiction": 0.011131733592118546,
+            "NotMentioned": 0.06256501365274157
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.031049454588728948,
+            "No": 0.968950545411271
+          },
+          "correct": false,
+          "brier": 1.8777303189055992,
+          "nll": 3.472174036337314,
+          "typed": {
+            "Entailment": 0.031049454588728948,
+            "Contradiction": 0.00044100042282843057,
+            "NotMentioned": 0.9685095449884426
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:556:nda-3",
+      "source_group": "original-contractnli:556",
+      "hypothesis_id": "nda-3",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.38650619254361795,
+            "No": 0.613493807456382
+          },
+          "correct": false,
+          "brier": 0.7527493035746567,
+          "nll": 0.9506073889779212,
+          "typed": {
+            "Entailment": 0.38650619254361795,
+            "Contradiction": 0.016388813742723333,
+            "NotMentioned": 0.5971049937136587
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.33796544171319814,
+            "No": 0.6620345582868018
+          },
+          "correct": false,
+          "brier": 0.8765795127320017,
+          "nll": 1.084811632178413,
+          "typed": {
+            "Entailment": 0.33796544171319814,
+            "Contradiction": 0.030903253679279707,
+            "NotMentioned": 0.6311313046075221
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.48488982363315236,
+            "No": 0.5151101763668476
+          },
+          "correct": false,
+          "brier": 0.5306769875933698,
+          "nll": 0.7238335816178555,
+          "typed": {
+            "Entailment": 0.48488982363315236,
+            "Contradiction": 0.0034207812436246347,
+            "NotMentioned": 0.511689395123223
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.004483771622434231,
+            "No": 0.9955162283775657
+          },
+          "correct": false,
+          "brier": 1.9821051219261874,
+          "nll": 5.407290706729804,
+          "typed": {
+            "Entailment": 0.004483771622434231,
+            "Contradiction": 0.000251903084106175,
+            "NotMentioned": 0.9952643252934595
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:110:nda-17",
+      "source_group": "original-contractnli:110",
+      "hypothesis_id": "nda-17",
+      "gold_binary": "No",
+      "gold_typed": "Contradiction",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.07005120628985748,
+            "No": 0.9299487937101425
+          },
+          "correct": true,
+          "brier": 0.009814343005328338,
+          "nll": 0.07262575487745038,
+          "typed": {
+            "Entailment": 0.07005120628985748,
+            "Contradiction": 0.11212891652473052,
+            "NotMentioned": 0.8178198771854119
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.07005120628985748,
+            "No": 0.9299487937101425
+          },
+          "correct": true,
+          "brier": 0.009814343005328338,
+          "nll": 0.07262575487745038,
+          "typed": {
+            "Entailment": 0.07005120628985748,
+            "Contradiction": 0.11212891652473052,
+            "NotMentioned": 0.8178198771854119
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.07005120628985748,
+            "No": 0.9299487937101425
+          },
+          "correct": true,
+          "brier": 0.009814343005328338,
+          "nll": 0.07262575487745038,
+          "typed": {
+            "Entailment": 0.07005120628985748,
+            "Contradiction": 0.11212891652473052,
+            "NotMentioned": 0.8178198771854119
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.03769121887659605,
+            "No": 0.962308781123404
+          },
+          "correct": true,
+          "brier": 0.002841255960806936,
+          "nll": 0.038419901520187434,
+          "typed": {
+            "Entailment": 0.03769121887659605,
+            "Contradiction": 0.001501520799746044,
+            "NotMentioned": 0.9608072603236579
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:110:nda-7",
+      "source_group": "original-contractnli:110",
+      "hypothesis_id": "nda-7",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.1961298612364031,
+            "No": 0.8038701387635969
+          },
+          "correct": true,
+          "brier": 0.07693384493722147,
+          "nll": 0.21831754179951127,
+          "typed": {
+            "Entailment": 0.1961298612364031,
+            "Contradiction": 0.1758336647208769,
+            "NotMentioned": 0.62803647404272
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.1961298612364031,
+            "No": 0.8038701387635969
+          },
+          "correct": true,
+          "brier": 0.07693384493722147,
+          "nll": 0.21831754179951127,
+          "typed": {
+            "Entailment": 0.1961298612364031,
+            "Contradiction": 0.1758336647208769,
+            "NotMentioned": 0.62803647404272
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.1961298612364031,
+            "No": 0.8038701387635969
+          },
+          "correct": true,
+          "brier": 0.07693384493722147,
+          "nll": 0.21831754179951127,
+          "typed": {
+            "Entailment": 0.1961298612364031,
+            "Contradiction": 0.1758336647208769,
+            "NotMentioned": 0.62803647404272
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.29748615068783446,
+            "No": 0.7025138493121655
+          },
+          "correct": true,
+          "brier": 0.17699601970212991,
+          "nll": 0.35309016364519363,
+          "typed": {
+            "Entailment": 0.29748615068783446,
+            "Contradiction": 0.01424683573379945,
+            "NotMentioned": 0.6882670135783661
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:110:nda-3",
+      "source_group": "original-contractnli:110",
+      "hypothesis_id": "nda-3",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.06627087607667519,
+            "No": 0.9337291239233247
+          },
+          "correct": true,
+          "brier": 0.00878365803194009,
+          "nll": 0.06856890002913356,
+          "typed": {
+            "Entailment": 0.06627087607667519,
+            "Contradiction": 0.11158512155563362,
+            "NotMentioned": 0.8221440023676911
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.06627087607667519,
+            "No": 0.9337291239233247
+          },
+          "correct": true,
+          "brier": 0.00878365803194009,
+          "nll": 0.06856890002913356,
+          "typed": {
+            "Entailment": 0.06627087607667519,
+            "Contradiction": 0.11158512155563362,
+            "NotMentioned": 0.8221440023676911
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.06627087607667519,
+            "No": 0.9337291239233247
+          },
+          "correct": true,
+          "brier": 0.00878365803194009,
+          "nll": 0.06856890002913356,
+          "typed": {
+            "Entailment": 0.06627087607667519,
+            "Contradiction": 0.11158512155563362,
+            "NotMentioned": 0.8221440023676911
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.0036904849812284045,
+            "No": 0.9963095150187715
+          },
+          "correct": true,
+          "brier": 2.72393587933454e-05,
+          "nll": 0.0036973116218454913,
+          "typed": {
+            "Entailment": 0.0036904849812284045,
+            "Contradiction": 0.00045215844021857625,
+            "NotMentioned": 0.9958573565785529
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "No"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:233:nda-17",
+      "source_group": "original-contractnli:233",
+      "hypothesis_id": "nda-17",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.026118148632950658,
+            "No": 0.9738818513670494
+          },
+          "correct": true,
+          "brier": 0.001364315376025801,
+          "nll": 0.026465285195240846,
+          "typed": {
+            "Entailment": 0.02611814863295066,
+            "Contradiction": 0.05146293325518844,
+            "NotMentioned": 0.9224189181118609
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.9370221899441847,
+            "No": 0.06297781005581532
+          },
+          "correct": false,
+          "brier": 1.7560211688955913,
+          "nll": 2.764972835971373,
+          "typed": {
+            "Entailment": 0.9370221899441847,
+            "Contradiction": 0.010934368613291286,
+            "NotMentioned": 0.052043441442524034
+          },
+          "typed_correct": false,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.20410179343271523,
+            "No": 0.7958982065672848
+          },
+          "correct": true,
+          "brier": 0.08331508416490149,
+          "nll": 0.22828398251212983,
+          "typed": {
+            "Entailment": 0.20410179343271523,
+            "Contradiction": 0.12467633200890593,
+            "NotMentioned": 0.6712218745583789
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.027815306733209887,
+            "No": 0.9721846932667901
+          },
+          "correct": true,
+          "brier": 0.0015473825773251013,
+          "nll": 0.02820947892304383,
+          "typed": {
+            "Entailment": 0.02781530673320989,
+            "Contradiction": 0.0018763744979183048,
+            "NotMentioned": 0.9703083187688718
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "Yes"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:233:nda-7",
+      "source_group": "original-contractnli:233",
+      "hypothesis_id": "nda-7",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.13995172135994713,
+            "No": 0.8600482786400528
+          },
+          "correct": false,
+          "brier": 1.4793660831834359,
+          "nll": 1.9664577632753297,
+          "typed": {
+            "Entailment": 0.13995172135994713,
+            "Contradiction": 0.08062438608755743,
+            "NotMentioned": 0.7794238925524954
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.13995172135994713,
+            "No": 0.8600482786400528
+          },
+          "correct": false,
+          "brier": 1.4793660831834359,
+          "nll": 1.9664577632753297,
+          "typed": {
+            "Entailment": 0.13995172135994713,
+            "Contradiction": 0.08062438608755743,
+            "NotMentioned": 0.7794238925524954
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.23549875629445005,
+            "No": 0.76450124370555
+          },
+          "correct": false,
+          "brier": 1.1689243032546655,
+          "nll": 1.4460496466672104,
+          "typed": {
+            "Entailment": 0.23549875629445005,
+            "Contradiction": 0.13865264036450645,
+            "NotMentioned": 0.6258486033410435
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.24419700687395277,
+            "No": 0.7558029931260473
+          },
+          "correct": false,
+          "brier": 1.1424763288365838,
+          "nll": 1.409779974244069,
+          "typed": {
+            "Entailment": 0.24419700687395277,
+            "Contradiction": 0.01923782300862096,
+            "NotMentioned": 0.7365651701174263
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "Yes"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:233:nda-3",
+      "source_group": "original-contractnli:233",
+      "hypothesis_id": "nda-3",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.47105826091294234,
+            "No": 0.5289417390870577
+          },
+          "correct": true,
+          "brier": 0.4437917703486513,
+          "nll": 0.6368769872399683,
+          "typed": {
+            "Entailment": 0.47105826091294234,
+            "Contradiction": 0.010822870872570063,
+            "NotMentioned": 0.5181188682144876
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.4991723854863508,
+            "No": 0.5008276145136493
+          },
+          "correct": true,
+          "brier": 0.4983461408642679,
+          "nll": 0.691493319914431,
+          "typed": {
+            "Entailment": 0.4991723854863508,
+            "Contradiction": 0.0024612198045113466,
+            "NotMentioned": 0.49836639470913796
+          },
+          "typed_correct": false,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.4904565421025344,
+            "No": 0.5095434578974656
+          },
+          "correct": true,
+          "brier": 0.4810952393823502,
+          "nll": 0.6742401347703953,
+          "typed": {
+            "Entailment": 0.4904565421025344,
+            "Contradiction": 0.005103879924009641,
+            "NotMentioned": 0.504439577973456
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.011702257501330193,
+            "No": 0.98829774249867
+          },
+          "correct": true,
+          "brier": 0.00027388566125487364,
+          "nll": 0.011771267829391087,
+          "typed": {
+            "Entailment": 0.011702257501330193,
+            "Contradiction": 0.000815891239744197,
+            "NotMentioned": 0.9874818512589257
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "Yes"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:286:nda-17",
+      "source_group": "original-contractnli:286",
+      "hypothesis_id": "nda-17",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.2040104528897324,
+            "No": 0.7959895471102677
+          },
+          "correct": true,
+          "brier": 0.08324052977654742,
+          "nll": 0.22816922499499698,
+          "typed": {
+            "Entailment": 0.2040104528897324,
+            "Contradiction": 0.1363230561894105,
+            "NotMentioned": 0.6596664909208572
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.007515755134542621,
+            "No": 0.9924842448654574
+          },
+          "correct": true,
+          "brier": 0.00011297315048480741,
+          "nll": 0.007544140737762801,
+          "typed": {
+            "Entailment": 0.007515755134542621,
+            "Contradiction": 0.037716467819354546,
+            "NotMentioned": 0.9547677770461028
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.1085715151705295,
+            "No": 0.8914284848294705
+          },
+          "correct": true,
+          "brier": 0.023575547812849044,
+          "nll": 0.1149300638204091,
+          "typed": {
+            "Entailment": 0.10857151517052951,
+            "Contradiction": 0.07269219577125835,
+            "NotMentioned": 0.8187362890582122
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.2681741980354478,
+            "No": 0.7318258019645523
+          },
+          "correct": true,
+          "brier": 0.1438348009839111,
+          "nll": 0.31221276879973997,
+          "typed": {
+            "Entailment": 0.2681741980354478,
+            "Contradiction": 0.01037745428449378,
+            "NotMentioned": 0.7214483476800585
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "Yes"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:286:nda-7",
+      "source_group": "original-contractnli:286",
+      "hypothesis_id": "nda-7",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.04491602250068291,
+            "No": 0.9550839774993171
+          },
+          "correct": false,
+          "brier": 1.824370808151832,
+          "nll": 3.102960699321687,
+          "typed": {
+            "Entailment": 0.04491602250068291,
+            "Contradiction": 0.0473559019824056,
+            "NotMentioned": 0.9077280755169115
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.28305747591656194,
+            "No": 0.7169425240834381
+          },
+          "correct": false,
+          "brier": 1.0280131656782623,
+          "nll": 1.2621053068483934,
+          "typed": {
+            "Entailment": 0.28305747591656194,
+            "Contradiction": 0.15576197665970615,
+            "NotMentioned": 0.5611805474237319
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.4352102054693041,
+            "No": 0.5647897945306959
+          },
+          "correct": false,
+          "brier": 0.6379750240120513,
+          "nll": 0.8319261336480179,
+          "typed": {
+            "Entailment": 0.43521020546930417,
+            "Contradiction": 0.13890021257285032,
+            "NotMentioned": 0.4258895819578456
+          },
+          "typed_correct": true,
+          "typed_prediction": "Entailment"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.05180665382269229,
+            "No": 0.9481933461773078
+          },
+          "correct": false,
+          "brier": 1.7981412434698394,
+          "nll": 2.960236685790447,
+          "typed": {
+            "Entailment": 0.05180665382269229,
+            "Contradiction": 0.001891975005290715,
+            "NotMentioned": 0.9463013711720171
+          },
+          "typed_correct": false,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "Yes"
+    },
+    {
+      "id": "original-contractnli:train:epoch16:dev:286:nda-3",
+      "source_group": "original-contractnli:286",
+      "hypothesis_id": "nda-3",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "binary": {
+            "Yes": 0.02575481766203509,
+            "No": 0.9742451823379648
+          },
+          "correct": true,
+          "brier": 0.0013266212656093573,
+          "nll": 0.02609227977121882,
+          "typed": {
+            "Entailment": 0.02575481766203509,
+            "Contradiction": 0.05514947273326759,
+            "NotMentioned": 0.9190957096046972
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_lexical_top2": {
+          "binary": {
+            "Yes": 0.10354748670226152,
+            "No": 0.8964525132977386
+          },
+          "correct": true,
+          "brier": 0.021444164004710036,
+          "nll": 0.10930995633289733,
+          "typed": {
+            "Entailment": 0.10354748670226152,
+            "Contradiction": 0.09794070280526834,
+            "NotMentioned": 0.7985118104924702
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_positional_first2": {
+          "binary": {
+            "Yes": 0.41062813732615533,
+            "No": 0.5893718626738447
+          },
+          "correct": true,
+          "brier": 0.33723093432789575,
+          "nll": 0.5286979487494616,
+          "typed": {
+            "Entailment": 0.41062813732615533,
+            "Contradiction": 0.03483229215294946,
+            "NotMentioned": 0.5545395705208952
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        },
+        "same_nli_native_raw_h": {
+          "binary": {
+            "Yes": 0.006777714823086679,
+            "No": 0.9932222851769134
+          },
+          "correct": true,
+          "brier": 9.187483644617733e-05,
+          "nll": 0.006800787846210043,
+          "typed": {
+            "Entailment": 0.006777714823086679,
+            "Contradiction": 0.0004028678484032641,
+            "NotMentioned": 0.9928194173285101
+          },
+          "typed_correct": true,
+          "typed_prediction": "NotMentioned"
+        }
+      },
+      "native104_hard_prediction": "No"
+    }
+  ]
+}

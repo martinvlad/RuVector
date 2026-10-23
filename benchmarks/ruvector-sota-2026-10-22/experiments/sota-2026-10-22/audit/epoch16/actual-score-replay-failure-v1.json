@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_SCORE_REPLAY_FAILED_NO_SOURCE_TOLERANCE_OR_SCORE_CHANGES",
+  "run": {
+    "chunk_id": "059007",
+    "wall_time_seconds": 0.981457504,
+    "exit_code": 1,
+    "original_token_count": 296,
+    "output": "Traceback (most recent call last):\n  File \"/tmp/ruvector-sota-2026-10-22/epoch16-22ab774f8d194ecd8f7a262c5c4c3c3f/project/experiments/sota-2026-10-22/audit/epoch16/replay_scores_v1.py\", line 339, in <module>\n    if __name__ == '__main__': main()\n                               ^^^^^^\n  File \"/tmp/ruvector-sota-2026-10-22/epoch16-22ab774f8d194ecd8f7a262c5c4c3c3f/project/experiments/sota-2026-10-22/audit/epoch16/replay_scores_v1.py\", line 330, in main\n    result = audit(a.project.resolve(), plan, a.expected_plan_sha)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ruvector-sota-2026-10-22/epoch16-22ab774f8d194ecd8f7a262c5c4c3c3f/project/experiments/sota-2026-10-22/audit/epoch16/replay_scores_v1.py\", line 226, in audit\n    probability = M.distribution(answer['probabilities'], ['Yes','No'])\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ruvector-sota-2026-10-22/epoch16-22ab774f8d194ecd8f7a262c5c4c3c3f/project/experiments/sota-2026-10-22/audit/epoch16/math_v1.py\", line 25, in distribution\n    assert abs(sum(values.values()) - 1) <= 1e-10\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  "classification": "Frozen auditor probability-mass tolerance1e-10 rejects18 legacy native104 float32 probability renderings (max mass deviation8e-8). All4 actual NLI arms satisfy the original strict tolerance. No renormalization or full score replay PASS is authorized."
+}

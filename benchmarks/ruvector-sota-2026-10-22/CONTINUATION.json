@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "f55bc2c77247a67ea84d6b2db1cbed192f16b94c",
-  "checkpoint_manifest_sha256": "5e4acf03ef8f068745ff601f6f75fb201dc9272edc26ff3c6bba5204ed19eab2",
+  "prior_published_base_commit": "b4f32720a212f1735ba71cbfee539152715c883a",
+  "checkpoint_manifest_sha256": "278b03ea97c6600455455fb145ab4ef2a238e0f4a720833c6ee95ad749411a25",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "native_corpus_batches": 17,
@@ -19,7 +19,10 @@
     "counting_note": "Cumulative counts include historicaladaptivepublic/evaluationdiagnostics; notallfreshheldout. The144trainingfeature and6epoch12TRAINsanity diagnosticHTTP are preserved separately; epoch13 has no TRAIN/fitting/calibration. DEV/CONF evaluationdiagnostics are not officialbenchmarkgeneralization; scheduledwork notcalledexecuted.",
     "actual_HTTP_training_feature_requests": 144,
     "actual_HTTP_evaluation_diagnostic_decisions": 735,
-    "actual_HTTP_training_sanity_diagnostic_requests": 6
+    "actual_HTTP_training_sanity_diagnostic_requests": 6,
+    "native_qualification_attempts": 1,
+    "engineering_NLI_pair_forwards": 6,
+    "engineering_native_searches": 3
   },
   "epochs": [
     {
@@ -207,6 +210,16 @@
       "manifest": "experiments/sota-2026-10-22/epoch18/EPOCH_MANIFEST.json",
       "native_attempts": 1,
       "confirmation_consumed": false
+    },
+    {
+      "epoch": 19,
+      "kind": "ENGINEERING_QUALIFICATION_ONLY",
+      "status": "REJECTED_ENGINEERING_QUALIFICATION",
+      "manifest": "experiments/sota-2026-10-22/epoch19/EPOCH_MANIFEST.json",
+      "native_qualification_attempts": 1,
+      "benchmark_native_corpus_batches": 0,
+      "benchmark_HTTP_requests": 0,
+      "confirmation_consumed": false
     }
   ],
   "used_confirmation_sets": [
@@ -220,7 +233,7 @@
     "Legal96zero-shotfourtaskadaptation,notfull162taskofficialLegalBench",
     "NoClaimBenchRuVectorscore; fullquestions/scorer/license/submissionnotverified"
   ],
-  "next_research_priority": "Before another legal benchmark draw, freeze and source-review a generic typed E/C/N semantic readiness and tokenizer/label-provenance protocol, with a matched fixed original-FP32 versus dynamic-int8 diagnostic or a separately justified pretrained model. No such neural probe was executed in epoch18. Future execution needs a new frozen source/identity/scorer/budget plan; keep generic canaries separate from benchmark generalization, do not tune or select on the reserved confirmation labels, and do not reuse epoch18 DEV as fresh confirmation. The observed collapse has no established causal diagnosis.",
+  "next_research_priority": "Reject this exact xlarge dynamic-qint8 recipe for promotion. Before another legal draw, freeze a materially different licensed pretrained typed-NLI model/precision hypothesis with credible Neutral handling and semantic/fidelity qualification. Any later native-vs-matched-same-model retrieval benchmark needs a new frozen fresh DEV and genuinely unused CONF gate plus proper-score/runtime checks. Do not infer epoch18 causation, repeat this unchanged recipe, or treat engineering canaries/exposed DEV as benchmark confirmation.",
   "benchmark_targets": {
     "JevBench": {
       "leader_observed": "Chon-1.0-12B",
@@ -323,11 +336,10 @@
   },
   "active_run": {
     "run_id": "epoch19-1a1698f9db5",
-    "state": "EPOCH19_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
-    "experiments_active": true,
+    "state": "EPOCH19_CLOSED",
+    "experiments_active": false,
     "native_allowed": 0,
-    "path": "ACTIVE_RUN.json",
-    "native_allowed_after_exact_remote_readback": 1
+    "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
     "old public183",
@@ -404,7 +416,11 @@
       "epoch18_annotation_choices_used": 0
     }
   ],
-  "rejection_ledger": "experiments/sota-2026-10-22/epoch18/REJECTION_LEDGER.json",
+  "rejection_ledger": {
+    "path": "experiments/sota-2026-10-22/epoch19/REJECTION_LEDGER.json",
+    "bytes": 31221,
+    "sha256": "fd94e0067f3885a72541d2d285bf62ffb249f7f0f408b85f752269f08e08f72d"
+  },
   "benchmark_refresh": {
     "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/benchmark-refresh.json",
     "bytes": 4524,
@@ -419,14 +435,14 @@
     "epoch3_native_attempts_including_failed_request": 2,
     "cumulative_native_attempts": 19,
     "remaining_in_original_study": 0,
-    "current_epoch_closed": false,
+    "current_epoch_closed": true,
     "publication_period_native_calls_allowed": 0,
     "next_epoch_rule": "Allhistoricalstudiesclosed, includinganyunspentconditional13slot; no retry. A newexplicitcontinuation permitsdistincthypothesis onlyafterfrozenlicensedTRAIN/DEV/calibration/project-unusedCONF/source/runtime, atmost2nonretryableCPU2/600sphases,paid0/GPU0. Oldf018DEVforever. Preserveepoch9CONF48ifunused; ifretiredneednewverifiedbank. No repeatedunchangedblockerprobes.",
     "original_study_status": "CLOSED_BUDGET_EXHAUSTED",
     "epoch4_native_attempts_including_failed_restoration": 1,
     "new_study_id": "native-semantic-precision-qualification-e19",
     "new_study_attempt_cap": 1,
-    "new_study_attempts_used": 0,
+    "new_study_attempts_used": 1,
     "new_study_attempts_remaining": 0,
     "total_historical_attempts": 19,
     "closed_epoch5_study": {
@@ -441,7 +457,7 @@
       "cap": 1,
       "remaining": 0
     },
-    "new_study_unspent_phase_slots": 1,
+    "new_study_unspent_phase_slots": 0,
     "allowed_further_attempts_in_closed_study": 0,
     "closed_epoch7_study": {
       "id": "native-large-binary-nli-e7",
@@ -495,7 +511,7 @@
       "new_study_admitted": false,
       "all_16_prior_attempts_closed": true
     },
-    "scope": "PRIOR18_CLOSED_EPOCH19_SOURCE_PENDING_ADMISSION",
+    "scope": "ALL_EPOCHS_CLOSED_THROUGH19",
     "epoch15_active_study": {
       "study_id": "native-definition-priority-deberta-threeway-e15",
       "plan_path": "experiments/sota-2026-10-22/epoch15/plan.v2.json",
@@ -567,7 +583,18 @@
       "cap": 2,
       "remaining": 0
     },
-    "conditional_qualification_allowance_after_exact_remote_readback": 1
+    "epoch19_closed_qualification": {
+      "cap": 1,
+      "used": 1,
+      "allowed_further": 0,
+      "benchmark_corpora": 0,
+      "benchmark_HTTP": 0,
+      "paid_GPU_calls": 0
+    },
+    "cumulative_corpus_attempts_preserved": 19,
+    "cumulative_qualification_attempts": 1,
+    "cumulative_native_process_attempts_including_qualification": 20,
+    "count_scope": "Legacy cumulative_native_attempts19 refers to corpus attempts. The new explicit native-process total also includes this one engineering qualification; HTTP/corpus counters remain separate."
   },
   "publisher_status": {
     "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/publisher-status.json",
@@ -593,11 +620,11 @@
   },
   "latest_learning": {
     "manifest": {
-      "path": "experiments/sota-2026-10-22/epoch18/EPOCH_MANIFEST.json",
-      "bytes": 22072,
-      "sha256": "73a12a5958ad477d7cf98a44c3dc937bc7f1b937b0014a134fbcb90afbf9a891"
+      "path": "experiments/sota-2026-10-22/epoch19/EPOCH_MANIFEST.json",
+      "bytes": 11323,
+      "sha256": "07e141b0a967d71e78ca0a517d6fb0dba5018a5e339d9f79f0aafec6a328af8d"
     },
-    "direction": "Before another legal benchmark draw, freeze and source-review a generic typed E/C/N semantic readiness and tokenizer/label-provenance protocol, with a matched fixed original-FP32 versus dynamic-int8 diagnostic or a separately justified pretrained model. No such neural probe was executed in epoch18. Future execution needs a new frozen source/identity/scorer/budget plan; keep generic canaries separate from benchmark generalization, do not tune or select on the reserved confirmation labels, and do not reuse epoch18 DEV as fresh confirmation. The observed collapse has no established causal diagnosis."
+    "direction": "Reject this exact xlarge dynamic-qint8 recipe for promotion. Before another legal draw, freeze a materially different licensed pretrained typed-NLI model/precision hypothesis with credible Neutral handling and semantic/fidelity qualification. Any later native-vs-matched-same-model retrieval benchmark needs a new frozen fresh DEV and genuinely unused CONF gate plus proper-score/runtime checks. Do not infer epoch18 causation, repeat this unchanged recipe, or treat engineering canaries/exposed DEV as benchmark confirmation."
   },
   "source_closure_correction": {
     "path": "experiments/sota-2026-10-22/epoch13/SOURCE_CLOSURE_CORRECTION.v1.json",
@@ -1311,9 +1338,7 @@
     },
     "benchmark_roles_empty": true,
     "new_legal_cases": 0,
-    "promotion_or_submission_allowed": false,
-    "conditional_native_allowance_after_exact_remote_readback": 1,
-    "conditional_native_admission_conditions": "Exactly one frozen qualification worker only after matching independent source publication readback, unchanged plan c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31, and fresh live exclusive scoped kernel-lock admission. Publication alone admits zero calls; no automatic retry or benchmark continuation."
+    "promotion_or_submission_allowed": false
   },
   "restoration_epoch19": {
     "fresh_source_commit": "6eb624feef9ea93c3b1a8f76c20e8442c6bece50",
@@ -1327,12 +1352,70 @@
     "reviewed_bootstrap_restore_used": true,
     "no_prior_filesystem_trust": true
   },
-  "epoch19_planning": {
-    "kind": "ENGINEERING_ONLY_SEMANTIC_PRECISION_QUALIFICATION",
-    "actual_native_attempts": 0,
-    "planned_max_qualification_attempts": 1,
-    "new_benchmark_cases": 0,
-    "confirmation_calls": 0,
-    "promotion_allowed": false
+  "epoch19_final": {
+    "manifest": {
+      "path": "experiments/sota-2026-10-22/epoch19/EPOCH_MANIFEST.json",
+      "bytes": 11323,
+      "sha256": "07e141b0a967d71e78ca0a517d6fb0dba5018a5e339d9f79f0aafec6a328af8d"
+    },
+    "results": {
+      "path": "experiments/sota-2026-10-22/epoch19/RESULTS.json",
+      "bytes": 31253,
+      "sha256": "cfa713425f3c19676690d6514930a753bebc40d4d818189dafa9d4d7634fb778"
+    },
+    "used_identities": {
+      "path": "experiments/sota-2026-10-22/epoch19/USED_IDENTITIES.json",
+      "bytes": 3579,
+      "sha256": "c6adad3cc7cc9e242991cdc9ea9ee68e46c8c03457a9774ecbbc5e54420cbaa2"
+    },
+    "source_manifest": {
+      "path": "experiments/sota-2026-10-22/epoch19/SOURCE_MANIFEST.json",
+      "bytes": 21963,
+      "sha256": "20049722976b9111574c273dcf7bb8d86efb01df282ea50201530059ffa9eab0"
+    },
+    "rejection_ledger": {
+      "path": "experiments/sota-2026-10-22/epoch19/REJECTION_LEDGER.json",
+      "bytes": 31221,
+      "sha256": "fd94e0067f3885a72541d2d285bf62ffb249f7f0f408b85f752269f08e08f72d"
+    },
+    "status": "REJECTED_ENGINEERING_QUALIFICATION",
+    "engineering_qualified": false,
+    "benchmark_accepted": false,
+    "all_slots_closed": true,
+    "actual_execution": {
+      "qualification_worker_attempts": 1,
+      "verified_worker_starts": 1,
+      "completed_qualification_workers": 1,
+      "NLI_forward_pairs_attempted": 6,
+      "NLI_forward_pairs_completed": 6,
+      "FP32_forwards": 3,
+      "INT8_forwards": 3,
+      "native_index_initializations": 1,
+      "native_searches_completed": 3,
+      "model_initializations": 1,
+      "quantization_initializations": 1,
+      "converted_Linear_modules": 146,
+      "benchmark_corpora": 0,
+      "benchmark_HTTP_requests": 0,
+      "TRAIN_calibration_fits": 0,
+      "CONF_calls": 0,
+      "new_legal_inputs_or_labels": 0,
+      "paid_API_calls": 0,
+      "GPU_calls": 0,
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "torch_interop_threads": 1,
+      "wall_seconds_including_init_cleanup": 33.80274683200696,
+      "user_seconds": 36.878628,
+      "system_seconds": 6.429664,
+      "peak_RSS_bytes": 5746819072,
+      "memory_scope": "Outer Linux RUSAGE_CHILDREN for this one worker and reaped descendants; peak is largest child high-water, not simultaneous RSS sum.",
+      "errors": 0,
+      "owned_live_processes_closed": true,
+      "all_unused_slots_closed": true,
+      "allowed_further_epoch19_attempts": 0
+    }
   }
 }

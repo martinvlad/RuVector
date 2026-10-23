@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "at": "2026-10-23T17:08:10.492781+00:00",
+  "checks_passed": true,
+  "kind": "READ_ONLY_ACTUAL_EXECUTION_IDENTITY_RESOURCE_AND_PUBLICATION_REVIEW",
+  "status": "VALID_COMPLETED_ENGINEERING_EVIDENCE_REJECTED_BY_FROZEN_GATES",
+  "actual_execution": {
+    "schema_version": 1,
+    "epoch": 19,
+    "at": "2026-10-23T17:05:20.722012+00:00",
+    "plan_sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31",
+    "qualification_worker_attempts": 1,
+    "verified_worker_starts": 1,
+    "worker_pid": 47576,
+    "worker_pgid": 47576,
+    "native_helper_pid": 47577,
+    "worker_exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 33.80274683200696,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "user_seconds": 36.878628,
+    "system_seconds": 6.429664,
+    "peak_RSS_bytes": 5746819072,
+    "resource_scope": "Outer Linux RUSAGE_CHILDREN for this one worker and reaped descendants; peak is largest child high-water, not simultaneous RSS sum.",
+    "source_plan_unchanged": true,
+    "raw_sha256": "b4ffcba1fce19d65eb72640a378dafe505c3a614eeae4d43e29d8498a324f2a6",
+    "cleanup": {
+      "worker_exited": true,
+      "native_helper_exited": true,
+      "process_group_empty": true,
+      "owned_live_pids": [],
+      "details": {
+        "pgid": 47576,
+        "signals": [],
+        "owned_live_before": [],
+        "owned_live_pids": [],
+        "finished_within_deadline": true
+      }
+    },
+    "benchmark_corpora": 0,
+    "benchmark_HTTP_requests": 0,
+    "new_paid_API_GPU_calls": 0,
+    "unspent_epoch_slots_closed": true,
+    "allowed_further_qualification_attempts": 0,
+    "automatic_retry": false,
+    "status": "COMPLETED_AWAITING_INDEPENDENT_ENGINEERING_REPLAY"
+  },
+  "independent_replay": {
+    "path": "experiments/sota-2026-10-22/audit/epoch19/acceptance-rejection-independent-v1.json",
+    "bytes": 6705,
+    "sha256": "a1950b37cdbf4b5c45a877fa9f98c834263805538d085a508ccad2e1e43f0f64"
+  },
+  "raw_identity": {
+    "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/raw.json",
+    "bytes": 111098,
+    "sha256": "b4ffcba1fce19d65eb72640a378dafe505c3a614eeae4d43e29d8498a324f2a6"
+  },
+  "admission_identity": {
+    "path": "experiments/sota-2026-10-22/epoch19/NATIVE_ADMISSION.json",
+    "bytes": 1255,
+    "sha256": "554eff0a69e27feee70b0bc3519ae8ae1aa2cc94b8bee7da740dcff684014997"
+  },
+  "additional_independent_current_OS_cleanup_check": {
+    "worker47576_absent": true,
+    "native47577_absent": true,
+    "owned_live_group47576_members": []
+  },
+  "exact_saved_gate_outcomes": {
+    "FP32_3_of_3_correct": false,
+    "INT8_3_of_3_correct": false,
+    "all_INT8_labels_match_FP32": false,
+    "maximum_probability_drift_le_0_05": false,
+    "all_source_distribution_feed_native_counter_resource_cleanup_replays": true
+  },
+  "precision_summary_from_saved_independent_replay": {
+    "FP32_correct": 2,
+    "INT8_correct": 1,
+    "maximum_absolute_per_class_probability_delta": 0.758825985740294,
+    "scope": "Only3 exposed CC0 engineering fixtures; not benchmark accuracy or placement. No reviewer re-scoring or inference."
+  },
+  "raw_top_level_schema_keys_only": [
+    "schema_version",
+    "epoch",
+    "status",
+    "at",
+    "plan_sha256",
+    "worker_pid",
+    "worker_pgid",
+    "spec_sha256",
+    "fixture_manifest_sha256",
+    "model_provenance",
+    "tokenizer",
+    "fp32_state",
+    "int8_state",
+    "forwards",
+    "native_trace",
+    "counters",
+    "resources",
+    "cleanup",
+    "finished_at"
+  ],
+  "saved_prior_source68_rehashed": 68,
+  "saved_plan_pins_rehashed": 2855,
+  "reviewer_model_native_score_calls": 0,
+  "reviewer_Git_calls": 0,
+  "public_report_not_yet_appended": true,
+  "next": "Root final results/identity/ledger/source reporting must preserve immutable published68 and exact real execution counters; then exact final allowlist/transport/remote review."
+}

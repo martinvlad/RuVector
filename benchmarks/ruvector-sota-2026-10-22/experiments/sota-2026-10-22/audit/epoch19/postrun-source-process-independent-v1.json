@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "at": "2026-10-23T17:09:27.365554+00:00",
+  "kind": "INDEPENDENT_POSTRUN_FROZEN_SOURCE_ASSET_PACKAGE_PROCESS_AND_IDENTITY_REPLAY",
+  "checks_passed": true,
+  "engineering_qualified": false,
+  "accepted": false,
+  "status": "VALID_ACTUAL_EXECUTION_REJECTED_FROZEN_ENGINEERING_GATES",
+  "independent_decision": {
+    "path": "experiments/sota-2026-10-22/audit/epoch19/acceptance-rejection-independent-v1.json",
+    "bytes": 6705,
+    "sha256": "a1950b37cdbf4b5c45a877fa9f98c834263805538d085a508ccad2e1e43f0f64"
+  },
+  "plan": {
+    "path": "experiments/sota-2026-10-22/epoch19/plan.json",
+    "bytes": 555081,
+    "sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31"
+  },
+  "source_freeze": {
+    "path": "experiments/sota-2026-10-22/epoch19/candidate-source-freeze.json",
+    "bytes": 613656,
+    "sha256": "37a8ce4a8660b6453b3a9efb3ad3d0328b5869f61ca49d5523fb6947761eff0e"
+  },
+  "actual_raw": {
+    "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/raw.json",
+    "bytes": 111098,
+    "sha256": "b4ffcba1fce19d65eb72640a378dafe505c3a614eeae4d43e29d8498a324f2a6"
+  },
+  "actual_outer_execution": {
+    "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/execution.json",
+    "bytes": 1371,
+    "sha256": "2ae127523c0b51ea237ecf91a8b7a57def3d12d6e982bdfb306e75d8ac4a66f6"
+  },
+  "source_publication_commit": "b4f32720a212f1735ba71cbfee539152715c883a",
+  "independent_remote_source_readback": {
+    "path": "experiments/sota-2026-10-22/epoch19/reviews/remote-source-readback-independent-v1.json",
+    "bytes": 3515,
+    "sha256": "0b5f32bfd972047fc648868db7af15a0d4f43ef195614cac9bf5122d51367aa7"
+  },
+  "late_admission": {
+    "path": "experiments/sota-2026-10-22/epoch19/NATIVE_ADMISSION.json",
+    "bytes": 1255,
+    "sha256": "554eff0a69e27feee70b0bc3519ae8ae1aa2cc94b8bee7da740dcff684014997"
+  },
+  "postrun_frozen_plan_pins_verified": 2855,
+  "postrun_exact_model_asset_files_verified": 6,
+  "postrun_exact_native_core_asset_files_verified": 8,
+  "postrun_exact_installed_official_wheel_member_files_verified": 17498,
+  "all_original_source_scientific_checker_role_and_gate_bytes_unchanged": true,
+  "observed_actual_counts": {
+    "model_initializations_attempted": 1,
+    "model_initializations_completed": 1,
+    "quantization_initializations_attempted": 1,
+    "quantization_initializations_completed": 1,
+    "nli_forward_pairs_attempted": 6,
+    "nli_forward_pairs_completed": 6,
+    "fp32_forwards_attempted": 3,
+    "fp32_forwards_completed": 3,
+    "int8_forwards_attempted": 3,
+    "int8_forwards_completed": 3,
+    "native_invocations_attempted": 1,
+    "native_invocations_completed": 1,
+    "model_initializations": 1,
+    "quantization_initializations": 1,
+    "native_invocations": 1,
+    "native_queries": 3,
+    "checkpoint_metadata_loads": 1,
+    "native_queries_attempted": 3,
+    "native_queries_completed": 3,
+    "other_model_forwards": 0,
+    "BGE_forwards": 0,
+    "ORT_sessions": 0,
+    "previous_reader_forwards": 0,
+    "native104_calls": 0,
+    "benchmark_HTTP_requests": 0,
+    "benchmark_corpora": 0,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "train_fits": 0,
+    "calibration_fits": 0,
+    "CONF_calls": 0
+  },
+  "observed_serialized_checkpoint_precision": {
+    "dtype_tensor_counts": {
+      "torch.float16": 398
+    },
+    "dtype_element_counts": {
+      "torch.float16": 886958595
+    },
+    "interpretation": "Original official checkpoint is stored FP16; tested FP32 path explicitly loads those same values into FP32 CPU parameters. This is not a claim to possess original full-precision training weights."
+  },
+  "loaded_parameter_count": 886958595,
+  "FP32_state_sha256": "a8312067137e9548f5663951b73f10583e64619958402f639a474bd6e3601e52",
+  "INT8_state_sha256": "761691b82314f2b86d8396adfe1eac01ea5fd0c03e26090311b473f3af3b5015",
+  "converted_Linear_modules": 146,
+  "FP32_correct": 2,
+  "INT8_correct": 1,
+  "FP32_predictions": [
+    "Entailment",
+    "Contradiction",
+    "Contradiction"
+  ],
+  "INT8_predictions": [
+    "Contradiction",
+    "Contradiction",
+    "Contradiction"
+  ],
+  "maximum_absolute_probability_drift": 0.758825985740294,
+  "FP32_proper_scores": {
+    "n": 3,
+    "per_fixture": [
+      {
+        "fixture_id": "semantic-e-v1",
+        "Brier_sum_over_three_classes": 8.336079400774897e-05,
+        "NLL": 0.0067178314721197474,
+        "NLL_is_positive_infinity": false
+      },
+      {
+        "fixture_id": "semantic-c-v1",
+        "Brier_sum_over_three_classes": 3.0274264852487495e-05,
+        "NLL": 0.004352315982346569,
+        "NLL_is_positive_infinity": false
+      },
+      {
+        "fixture_id": "semantic-n-v1",
+        "Brier_sum_over_three_classes": 1.2297807746483487,
+        "NLL": 1.5983374426909884,
+        "NLL_is_positive_infinity": false
+      }
+    ],
+    "Brier": 0.4099648032357363,
+    "NLL": 0.5364691967151516,
+    "NLL_is_positive_infinity": false,
+    "scope": "These three public engineering fixtures only; no benchmark estimate"
+  },
+  "INT8_proper_scores": {
+    "n": 3,
+    "per_fixture": [
+      {
+        "fixture_id": "semantic-e-v1",
+        "Brier_sum_over_three_classes": 0.9014904295737055,
+        "NLL": 1.4503905396841745,
+        "NLL_is_positive_infinity": false
+      },
+      {
+        "fixture_id": "semantic-c-v1",
+        "Brier_sum_over_three_classes": 0.38459453429130086,
+        "NLL": 0.7041716444778381,
+        "NLL_is_positive_infinity": false
+      },
+      {
+        "fixture_id": "semantic-n-v1",
+        "Brier_sum_over_three_classes": 0.7783912791225895,
+        "NLL": 1.2326975448059834,
+        "NLL_is_positive_infinity": false
+      }
+    ],
+    "Brier": 0.6881587476625319,
+    "NLL": 1.1290865763226654,
+    "NLL_is_positive_infinity": false,
+    "scope": "These three public engineering fixtures only; no benchmark estimate"
+  },
+  "FP32_latency": {
+    "n": 3,
+    "p50_seconds": 1.4258634780126158,
+    "p95_seconds": 1.432690146304958,
+    "maximum_seconds": 1.4334486650041072,
+    "percentile_method": "linear interpolation at (n-1)*p",
+    "scope": "Measured direct pair forward/feed latency from saved worker receipts; three exposed engineering examples per precision, no serving/benchmark latency claim"
+  },
+  "INT8_latency": {
+    "n": 3,
+    "p50_seconds": 0.2910875039960956,
+    "p95_seconds": 0.3011236173013458,
+    "maximum_seconds": 0.30223874100192916,
+    "percentile_method": "linear interpolation at (n-1)*p",
+    "scope": "Measured direct pair forward/feed latency from saved worker receipts; three exposed engineering examples per precision, no serving/benchmark latency claim"
+  },
+  "native_search_latency": {
+    "p50_ms": 0.1787700000000001,
+    "p95_ms": 1.1893071,
+    "n": 3,
+    "scope": "Three deterministic engineering-vector searches only; no embedding/model retrieval cost or benchmark serving claim"
+  },
+  "resources": {
+    "schema_version": 1,
+    "epoch": 19,
+    "at": "2026-10-23T17:05:20.722012+00:00",
+    "plan_sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31",
+    "qualification_worker_attempts": 1,
+    "verified_worker_starts": 1,
+    "worker_pid": 47576,
+    "worker_pgid": 47576,
+    "native_helper_pid": 47577,
+    "worker_exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 33.80274683200696,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "user_seconds": 36.878628,
+    "system_seconds": 6.429664,
+    "peak_RSS_bytes": 5746819072,
+    "resource_scope": "Outer Linux RUSAGE_CHILDREN for this one worker and reaped descendants; peak is largest child high-water, not simultaneous RSS sum.",
+    "source_plan_unchanged": true,
+    "raw_sha256": "b4ffcba1fce19d65eb72640a378dafe505c3a614eeae4d43e29d8498a324f2a6",
+    "cleanup": {
+      "worker_exited": true,
+      "native_helper_exited": true,
+      "process_group_empty": true,
+      "owned_live_pids": [],
+      "details": {
+        "pgid": 47576,
+        "signals": [],
+        "owned_live_before": [],
+        "owned_live_pids": [],
+        "finished_within_deadline": true
+      }
+    },
+    "benchmark_corpora": 0,
+    "benchmark_HTTP_requests": 0,
+    "new_paid_API_GPU_calls": 0,
+    "unspent_epoch_slots_closed": true,
+    "allowed_further_qualification_attempts": 0,
+    "automatic_retry": false,
+    "status": "COMPLETED_AWAITING_INDEPENDENT_ENGINEERING_REPLAY"
+  },
+  "actual_OS_pid_paths_absent": {
+    "47576": true,
+    "47577": true
+  },
+  "actual_OS_owned_process_group_live_members": [],
+  "qualification_fixture_identities": [
+    {
+      "id": "semantic-e-v1",
+      "sha256": "570e78e00f5132b20f1cf9aef87db8b34c5e07a3a23365fbacc7fc759b1a671b"
+    },
+    {
+      "id": "semantic-c-v1",
+      "sha256": "3a6b7462fe77acfc40fd4eecc7bb1f19160f1976ba1f8be6dcdb3f5d24830d1a"
+    },
+    {
+      "id": "semantic-n-v1",
+      "sha256": "4b9d77bb69e5c3022d157bf1a1fec9d957e24face5126beeaf2ed2eb397cf187"
+    }
+  ],
+  "new_legal_DEV_draws_labels_or_confirmation_identities": [],
+  "legal_identity_partition_unchanged": {
+    "exposed": 221,
+    "unreserved": 178,
+    "reserved_unused": 24
+  },
+  "submitted_champion": "SubmittedNative104/RRF10 unchanged",
+  "official_score": null,
+  "official_rank": null,
+  "benchmark_promotion_submission_allowed": false,
+  "remaining_qualification_attempts": 0,
+  "remaining_epoch_slots_closed": true,
+  "extra_neural_native_or_tokenizer_calls_by_this_audit": 0,
+  "actual_held_CLI_scorer_runs_on_actual_evidence": 1,
+  "uncertainty": "Same-input FP32/INT8 difference is demonstrated on these three authored fixtures; neither path met semantic readiness. Cause of epoch18 legal all-C outcomes and broader legal/benchmark behavior remain unproven. No label-map or probability repair performed.",
+  "next_priority": "Do not run this failed INT8 recipe or promote FP32 on fresh legal confirmation. Choose a separately frozen, source-licensed pretrained typed/NLI candidate or source-justified precision implementation with independent engineering admission before any new legal DEV/unused-CONF epoch. No retry or further forward in19."
+}

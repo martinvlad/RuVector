@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "at": "2026-10-23T17:13:02.992333+00:00",
+  "kind": "SAVED_PRECISION_PROVENANCE_CROSS_EPOCH_COMPARISON",
+  "checks_passed": true,
+  "old_actual_epoch18_final_engine": {
+    "path": "experiments/sota-2026-10-22/epoch18/runs/development/final-engine.json",
+    "bytes": 55854,
+    "sha256": "14d1c196a2176c9d314539dd8d074b44ae116981b3333f7f90aa7db1d379e885"
+  },
+  "new_actual_epoch19_raw": {
+    "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/raw.json",
+    "bytes": 111098,
+    "sha256": "b4ffcba1fce19d65eb72640a378dafe505c3a614eeae4d43e29d8498a324f2a6"
+  },
+  "old_reader_field": "receipt_after_close.new_reader",
+  "matching_quantized_tensor_state_sha256": "761691b82314f2b86d8396adfe1eac01ea5fd0c03e26090311b473f3af3b5015",
+  "matching_converted_tokenizer_backend_sha256": "0648876e308adfe2e0a3a3d358067c6c715cf1b78f3908f0c9235e455c2892c8",
+  "matching_six_runtime_versions": {
+    "torch": "2.7.1+cpu",
+    "transformers": "4.52.4",
+    "sentencepiece": "0.2.0",
+    "tokenizers": "0.21.4",
+    "safetensors": "0.5.3",
+    "protobuf": "5.29.5"
+  },
+  "same_recorded_existing_INT8_tensor_state": true,
+  "new_fitted_head_or_quantization_recipe": false,
+  "comparison_method": "Compare existing saved receipts only; canonical tensor-state and tokenizer hashes plus six versions, not another model or native execution.",
+  "source_checkpoint_storage_precision_observed_in_epoch19": {
+    "torch.float16_tensors": 398,
+    "torch.float16_elements": 886958595,
+    "FP32_path_meaning": "Original vendor FP16 stored values explicitly loaded as FP32 CPU parameters; not original full-precision training weights"
+  },
+  "interpretation": "The six engineering forwards compare FP32 and the same recorded INT8 tensor state used in18. Their fixture-scoped precision difference and failed semantic gates do not establish the cause of18 legal all-C outcomes or broader benchmark behavior. No label map, probability, fixture or scientific-gate repair was performed.",
+  "new_model_tokenizer_native_forwards": 0,
+  "new_training_calibration_or_fit_calls": 0,
+  "new_benchmark_or_confirmation_labels": 0,
+  "benchmark_promotion_or_submission_allowed": false,
+  "official_score": null,
+  "official_rank": null
+}

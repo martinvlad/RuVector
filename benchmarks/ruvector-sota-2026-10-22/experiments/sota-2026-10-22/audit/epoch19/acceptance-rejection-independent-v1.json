@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "kind": "INDEPENDENT_ENGINEERING_QUALIFICATION_REPLAY",
+  "checks_passed": true,
+  "engineering_qualified": false,
+  "accepted": false,
+  "status": "REJECTED_ENGINEERING_QUALIFICATION",
+  "failures": [],
+  "benchmark_promotion_allowed": false,
+  "submission_allowed": false,
+  "CONF_consumed": false,
+  "official_score": null,
+  "official_rank": null,
+  "cause_of_epoch18_collapse": "UNPROVEN",
+  "interpretation": "Three exposed CC0 engineering fixtures and a deterministic-vector native integration trace; no legal/benchmark generalization or SOTA claim.",
+  "gates": {
+    "FP32_3_of_3_correct": false,
+    "INT8_3_of_3_correct": false,
+    "all_INT8_labels_match_FP32": false,
+    "maximum_probability_drift_le_0_05": false,
+    "all_source_distribution_feed_native_counter_resource_cleanup_replays": true
+  },
+  "FP32_correct": 2,
+  "INT8_correct": 1,
+  "labels_matching": 2,
+  "maximum_absolute_per_class_probability_delta": 0.758825985740294,
+  "per_fixture_probability_deltas": [
+    {
+      "Entailment": 0.758825985740294,
+      "Contradiction": 0.4882145642062448,
+      "NotMentioned": 0.2706114215340492
+    },
+    {
+      "Entailment": 0.22381982858878527,
+      "Contradiction": 0.5011391002281186,
+      "NotMentioned": 0.2773192716393333
+    },
+    {
+      "Entailment": 0.21347042412246736,
+      "Contradiction": 0.3027431302809096,
+      "NotMentioned": 0.08927270615844235
+    }
+  ],
+  "FP32_proper_scores": {
+    "n": 3,
+    "per_fixture": [
+      {
+        "fixture_id": "semantic-e-v1",
+        "Brier_sum_over_three_classes": 8.336079400774897e-05,
+        "NLL": 0.0067178314721197474,
+        "NLL_is_positive_infinity": false
+      },
+      {
+        "fixture_id": "semantic-c-v1",
+        "Brier_sum_over_three_classes": 3.0274264852487495e-05,
+        "NLL": 0.004352315982346569,
+        "NLL_is_positive_infinity": false
+      },
+      {
+        "fixture_id": "semantic-n-v1",
+        "Brier_sum_over_three_classes": 1.2297807746483487,
+        "NLL": 1.5983374426909884,
+        "NLL_is_positive_infinity": false
+      }
+    ],
+    "Brier": 0.4099648032357363,
+    "NLL": 0.5364691967151516,
+    "NLL_is_positive_infinity": false,
+    "scope": "These three public engineering fixtures only; no benchmark estimate"
+  },
+  "INT8_proper_scores": {
+    "n": 3,
+    "per_fixture": [
+      {
+        "fixture_id": "semantic-e-v1",
+        "Brier_sum_over_three_classes": 0.9014904295737055,
+        "NLL": 1.4503905396841745,
+        "NLL_is_positive_infinity": false
+      },
+      {
+        "fixture_id": "semantic-c-v1",
+        "Brier_sum_over_three_classes": 0.38459453429130086,
+        "NLL": 0.7041716444778381,
+        "NLL_is_positive_infinity": false
+      },
+      {
+        "fixture_id": "semantic-n-v1",
+        "Brier_sum_over_three_classes": 0.7783912791225895,
+        "NLL": 1.2326975448059834,
+        "NLL_is_positive_infinity": false
+      }
+    ],
+    "Brier": 0.6881587476625319,
+    "NLL": 1.1290865763226654,
+    "NLL_is_positive_infinity": false,
+    "scope": "These three public engineering fixtures only; no benchmark estimate"
+  },
+  "FP32_predictions": [
+    "Entailment",
+    "Contradiction",
+    "Contradiction"
+  ],
+  "INT8_predictions": [
+    "Contradiction",
+    "Contradiction",
+    "Contradiction"
+  ],
+  "FP32_latency": {
+    "n": 3,
+    "p50_seconds": 1.4258634780126158,
+    "p95_seconds": 1.432690146304958,
+    "maximum_seconds": 1.4334486650041072,
+    "percentile_method": "linear interpolation at (n-1)*p",
+    "scope": "Measured direct pair forward/feed latency from saved worker receipts; three exposed engineering examples per precision, no serving/benchmark latency claim"
+  },
+  "INT8_latency": {
+    "n": 3,
+    "p50_seconds": 0.2910875039960956,
+    "p95_seconds": 0.3011236173013458,
+    "maximum_seconds": 0.30223874100192916,
+    "percentile_method": "linear interpolation at (n-1)*p",
+    "scope": "Measured direct pair forward/feed latency from saved worker receipts; three exposed engineering examples per precision, no serving/benchmark latency claim"
+  },
+  "native_search_latency_ms": [
+    1.3015889999999999,
+    0.1787700000000001,
+    0.12109199999999731
+  ],
+  "actual_outer_resources": {
+    "schema_version": 1,
+    "epoch": 19,
+    "at": "2026-10-23T17:05:20.722012+00:00",
+    "plan_sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31",
+    "qualification_worker_attempts": 1,
+    "verified_worker_starts": 1,
+    "worker_pid": 47576,
+    "worker_pgid": 47576,
+    "native_helper_pid": 47577,
+    "worker_exit_code": 0,
+    "error": null,
+    "elapsed_seconds": 33.80274683200696,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "user_seconds": 36.878628,
+    "system_seconds": 6.429664,
+    "peak_RSS_bytes": 5746819072,
+    "resource_scope": "Outer Linux RUSAGE_CHILDREN for this one worker and reaped descendants; peak is largest child high-water, not simultaneous RSS sum.",
+    "source_plan_unchanged": true,
+    "raw_sha256": "b4ffcba1fce19d65eb72640a378dafe505c3a614eeae4d43e29d8498a324f2a6",
+    "cleanup": {
+      "worker_exited": true,
+      "native_helper_exited": true,
+      "process_group_empty": true,
+      "owned_live_pids": [],
+      "details": {
+        "pgid": 47576,
+        "signals": [],
+        "owned_live_before": [],
+        "owned_live_pids": [],
+        "finished_within_deadline": true
+      }
+    },
+    "benchmark_corpora": 0,
+    "benchmark_HTTP_requests": 0,
+    "new_paid_API_GPU_calls": 0,
+    "unspent_epoch_slots_closed": true,
+    "allowed_further_qualification_attempts": 0,
+    "automatic_retry": false,
+    "status": "COMPLETED_AWAITING_INDEPENDENT_ENGINEERING_REPLAY"
+  },
+  "actual_qualification_forwards": 6,
+  "actual_benchmark_HTTP_requests": 0,
+  "actual_benchmark_corpus_batches": 0,
+  "used_benchmark_confirmation_identities": [],
+  "all_unused_epoch_slots_must_close": true,
+  "plan_sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31",
+  "raw_receipt_identity": {
+    "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/raw.json",
+    "bytes": 111098,
+    "sha256": "b4ffcba1fce19d65eb72640a378dafe505c3a614eeae4d43e29d8498a324f2a6"
+  },
+  "outer_execution_identity": {
+    "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/execution.json",
+    "bytes": 1371,
+    "sha256": "2ae127523c0b51ea237ecf91a8b7a57def3d12d6e982bdfb306e75d8ac4a66f6"
+  },
+  "audit_protocol": {
+    "path": "experiments/sota-2026-10-22/audit/epoch19/protocol.json",
+    "bytes": 11528,
+    "sha256": "fdb9e1464e41b48fe23b7f7957b145dc0e97a524b5f10b451f5a0c184e44ae6b"
+  },
+  "scorer_source_sha256": "60ce4dc4039c25ef5a26ab6f7ab5d19378a42f45099289d2af04b8d4a64c364d"
+}

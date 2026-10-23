@@ -1,0 +1,1464 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "at": "2026-10-23T17:14:54.510844+00:00",
+  "status": "REJECTED_ENGINEERING_QUALIFICATION",
+  "checks_passed": true,
+  "engineering_qualified": false,
+  "benchmark_accepted": false,
+  "evidence": {
+    "independent_acceptance": {
+      "path": "experiments/sota-2026-10-22/audit/epoch19/acceptance-rejection-independent-v1.json",
+      "bytes": 6705,
+      "sha256": "a1950b37cdbf4b5c45a877fa9f98c834263805538d085a508ccad2e1e43f0f64"
+    },
+    "postrun_source_process": {
+      "path": "experiments/sota-2026-10-22/audit/epoch19/postrun-source-process-independent-v1.json",
+      "bytes": 10058,
+      "sha256": "199a8354d087192cc74bf2c3ede93b56b5bcea1fb0be2bb2c68156d7e6a23613"
+    },
+    "postrun_identities": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/postrun-identity-retirement-v1.json",
+      "bytes": 14121,
+      "sha256": "4c4e3a017b4aeecbeafb0704436ed05112050e6396687ccf42b7b94740b9c473"
+    },
+    "raw": {
+      "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/raw.json",
+      "bytes": 111098,
+      "sha256": "b4ffcba1fce19d65eb72640a378dafe505c3a614eeae4d43e29d8498a324f2a6"
+    },
+    "execution": {
+      "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/execution.json",
+      "bytes": 1371,
+      "sha256": "2ae127523c0b51ea237ecf91a8b7a57def3d12d6e982bdfb306e75d8ac4a66f6"
+    },
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch19/plan.json",
+      "bytes": 555081,
+      "sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31"
+    },
+    "source_freeze": {
+      "path": "experiments/sota-2026-10-22/epoch19/candidate-source-freeze.json",
+      "bytes": 613656,
+      "sha256": "37a8ce4a8660b6453b3a9efb3ad3d0328b5869f61ca49d5523fb6947761eff0e"
+    },
+    "precision_provenance_cross_epoch": {
+      "path": "experiments/sota-2026-10-22/audit/epoch19/precision-provenance-cross-epoch-v1.json",
+      "bytes": 2259,
+      "sha256": "a5ef612a202dbec1d4091c6fa85cc54ece85e31b64835ebd66d38200c5864912"
+    }
+  },
+  "actual_execution": {
+    "qualification_worker_attempts": 1,
+    "verified_worker_starts": 1,
+    "completed_qualification_workers": 1,
+    "NLI_forward_pairs_attempted": 6,
+    "NLI_forward_pairs_completed": 6,
+    "FP32_forwards": 3,
+    "INT8_forwards": 3,
+    "native_index_initializations": 1,
+    "native_searches_completed": 3,
+    "model_initializations": 1,
+    "quantization_initializations": 1,
+    "converted_Linear_modules": 146,
+    "benchmark_corpora": 0,
+    "benchmark_HTTP_requests": 0,
+    "TRAIN_calibration_fits": 0,
+    "CONF_calls": 0,
+    "new_legal_inputs_or_labels": 0,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "torch_interop_threads": 1,
+    "wall_seconds_including_init_cleanup": 33.80274683200696,
+    "user_seconds": 36.878628,
+    "system_seconds": 6.429664,
+    "peak_RSS_bytes": 5746819072,
+    "memory_scope": "Outer Linux RUSAGE_CHILDREN for this one worker and reaped descendants; peak is largest child high-water, not simultaneous RSS sum.",
+    "errors": 0,
+    "owned_live_processes_closed": true,
+    "all_unused_slots_closed": true,
+    "allowed_further_epoch19_attempts": 0
+  },
+  "engineering_metrics": {
+    "FP32_correct": 2,
+    "INT8_correct": 1,
+    "n_per_precision": 3,
+    "FP32_predictions": [
+      "Entailment",
+      "Contradiction",
+      "Contradiction"
+    ],
+    "INT8_predictions": [
+      "Contradiction",
+      "Contradiction",
+      "Contradiction"
+    ],
+    "labels_matching": 2,
+    "maximum_absolute_per_class_probability_delta": 0.758825985740294,
+    "FP32_proper_scores": {
+      "n": 3,
+      "per_fixture": [
+        {
+          "fixture_id": "semantic-e-v1",
+          "Brier_sum_over_three_classes": 8.336079400774897e-05,
+          "NLL": 0.0067178314721197474,
+          "NLL_is_positive_infinity": false
+        },
+        {
+          "fixture_id": "semantic-c-v1",
+          "Brier_sum_over_three_classes": 3.0274264852487495e-05,
+          "NLL": 0.004352315982346569,
+          "NLL_is_positive_infinity": false
+        },
+        {
+          "fixture_id": "semantic-n-v1",
+          "Brier_sum_over_three_classes": 1.2297807746483487,
+          "NLL": 1.5983374426909884,
+          "NLL_is_positive_infinity": false
+        }
+      ],
+      "Brier": 0.4099648032357363,
+      "NLL": 0.5364691967151516,
+      "NLL_is_positive_infinity": false,
+      "scope": "These three public engineering fixtures only; no benchmark estimate"
+    },
+    "INT8_proper_scores": {
+      "n": 3,
+      "per_fixture": [
+        {
+          "fixture_id": "semantic-e-v1",
+          "Brier_sum_over_three_classes": 0.9014904295737055,
+          "NLL": 1.4503905396841745,
+          "NLL_is_positive_infinity": false
+        },
+        {
+          "fixture_id": "semantic-c-v1",
+          "Brier_sum_over_three_classes": 0.38459453429130086,
+          "NLL": 0.7041716444778381,
+          "NLL_is_positive_infinity": false
+        },
+        {
+          "fixture_id": "semantic-n-v1",
+          "Brier_sum_over_three_classes": 0.7783912791225895,
+          "NLL": 1.2326975448059834,
+          "NLL_is_positive_infinity": false
+        }
+      ],
+      "Brier": 0.6881587476625319,
+      "NLL": 1.1290865763226654,
+      "NLL_is_positive_infinity": false,
+      "scope": "These three public engineering fixtures only; no benchmark estimate"
+    },
+    "FP32_latency": {
+      "n": 3,
+      "p50_seconds": 1.4258634780126158,
+      "p95_seconds": 1.432690146304958,
+      "maximum_seconds": 1.4334486650041072,
+      "percentile_method": "linear interpolation at (n-1)*p",
+      "scope": "Measured direct pair forward/feed latency from saved worker receipts; three exposed engineering examples per precision, no serving/benchmark latency claim"
+    },
+    "INT8_latency": {
+      "n": 3,
+      "p50_seconds": 0.2910875039960956,
+      "p95_seconds": 0.3011236173013458,
+      "maximum_seconds": 0.30223874100192916,
+      "percentile_method": "linear interpolation at (n-1)*p",
+      "scope": "Measured direct pair forward/feed latency from saved worker receipts; three exposed engineering examples per precision, no serving/benchmark latency claim"
+    },
+    "native_search_latency": {
+      "p50_ms": 0.1787700000000001,
+      "p95_ms": 1.1893071,
+      "n": 3,
+      "scope": "Three deterministic engineering-vector searches only; no embedding/model retrieval cost or benchmark serving claim"
+    },
+    "scope": "Engineering-only; no benchmark accuracy or generalization."
+  },
+  "frozen_gates": {
+    "FP32_3_of_3_correct": false,
+    "INT8_3_of_3_correct": false,
+    "all_INT8_labels_match_FP32": false,
+    "maximum_probability_drift_le_0_05": false,
+    "all_source_distribution_feed_native_counter_resource_cleanup_replays": true
+  },
+  "raw_forward_predictions_and_probabilities": [
+    {
+      "precision": "FP32",
+      "fixture_id": "semantic-e-v1",
+      "fixture_sha256": "570e78e00f5132b20f1cf9aef87db8b34c5e07a3a23365fbacc7fc759b1a671b",
+      "premise": "The lamp is on.",
+      "hypothesis": "The lamp is on.",
+      "input_ids": [
+        1,
+        23,
+        6111,
+        13,
+        21,
+        4,
+        2,
+        23,
+        6111,
+        13,
+        21,
+        4,
+        2
+      ],
+      "attention_mask": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "token_type_ids": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "high_level_pair_feed": {
+        "input_ids": [
+          1,
+          23,
+          6111,
+          13,
+          21,
+          4,
+          2,
+          23,
+          6111,
+          13,
+          21,
+          4,
+          2
+        ],
+        "attention_mask": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "token_type_ids": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "raw_logits": [
+        -3.1554458141326904,
+        -0.6570647358894348,
+        4.421576976776123
+      ],
+      "typed_probabilities": {
+        "Entailment": 0.9933046827140105,
+        "Contradiction": 0.0005086549737787814,
+        "NotMentioned": 0.006186662312210796
+      },
+      "prediction": "Entailment",
+      "truncated": false,
+      "padding": false,
+      "feed_dtype": "torch.int64",
+      "feed_device": "cpu",
+      "batch_size": 1,
+      "raw_logit_dtype": "torch.float32",
+      "raw_logit_shape": [
+        1,
+        3
+      ],
+      "inference_mode_enabled": true,
+      "grad_enabled": false,
+      "elapsed_seconds": 1.4258634780126158,
+      "input_pair_sha256": "04690078b1768f2a5f612751d6a9af0b295896e794dc20c09e1c3f800008e978"
+    },
+    {
+      "precision": "FP32",
+      "fixture_id": "semantic-c-v1",
+      "fixture_sha256": "3a6b7462fe77acfc40fd4eecc7bb1f19160f1976ba1f8be6dcdb3f5d24830d1a",
+      "premise": "The lamp is not on.",
+      "hypothesis": "The lamp is on.",
+      "input_ids": [
+        1,
+        23,
+        6111,
+        13,
+        40,
+        21,
+        4,
+        2,
+        23,
+        6111,
+        13,
+        21,
+        4,
+        2
+      ],
+      "attention_mask": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "token_type_ids": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "high_level_pair_feed": {
+        "input_ids": [
+          1,
+          23,
+          6111,
+          13,
+          40,
+          21,
+          4,
+          2,
+          23,
+          6111,
+          13,
+          21,
+          4,
+          2
+        ],
+        "attention_mask": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "token_type_ids": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "raw_logits": [
+        3.794332981109619,
+        -2.947352170944214,
+        -1.9561810493469238
+      ],
+      "typed_probabilities": {
+        "Entailment": 0.0031673299076951378,
+        "Contradiction": 0.9956571416190603,
+        "NotMentioned": 0.0011755284732446764
+      },
+      "prediction": "Contradiction",
+      "truncated": false,
+      "padding": false,
+      "feed_dtype": "torch.int64",
+      "feed_device": "cpu",
+      "batch_size": 1,
+      "raw_logit_dtype": "torch.float32",
+      "raw_logit_shape": [
+        1,
+        3
+      ],
+      "inference_mode_enabled": true,
+      "grad_enabled": false,
+      "elapsed_seconds": 1.4334486650041072,
+      "input_pair_sha256": "858287f1ed2dc45c9a767e1aeef967951c90a52501da6bc8422a4fb15ad1679d"
+    },
+    {
+      "precision": "FP32",
+      "fixture_id": "semantic-n-v1",
+      "fixture_sha256": "4b9d77bb69e5c3022d157bf1a1fec9d957e24face5126beeaf2ed2eb397cf187",
+      "premise": "The box is blue.",
+      "hypothesis": "The lamp is on.",
+      "input_ids": [
+        1,
+        23,
+        1035,
+        13,
+        1386,
+        4,
+        2,
+        23,
+        6111,
+        13,
+        21,
+        4,
+        2
+      ],
+      "attention_mask": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "token_type_ids": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "high_level_pair_feed": {
+        "input_ids": [
+          1,
+          23,
+          1035,
+          13,
+          1386,
+          4,
+          2,
+          23,
+          6111,
+          13,
+          21,
+          4,
+          2
+        ],
+        "attention_mask": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "token_type_ids": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "raw_logits": [
+        1.3789770603179932,
+        0.04228735342621803,
+        -1.9354476928710938
+      ],
+      "typed_probabilities": {
+        "Entailment": 0.02798539564494637,
+        "Contradiction": 0.7697821426432827,
+        "NotMentioned": 0.20223246171177084
+      },
+      "prediction": "Contradiction",
+      "truncated": false,
+      "padding": false,
+      "feed_dtype": "torch.int64",
+      "feed_device": "cpu",
+      "batch_size": 1,
+      "raw_logit_dtype": "torch.float32",
+      "raw_logit_shape": [
+        1,
+        3
+      ],
+      "inference_mode_enabled": true,
+      "grad_enabled": false,
+      "elapsed_seconds": 1.3759508229995845,
+      "input_pair_sha256": "6383698af2ec85a8c26d83238dafe7ce9f82e4c9c97e3259775ad87d0df5015e"
+    },
+    {
+      "precision": "INT8",
+      "fixture_id": "semantic-e-v1",
+      "fixture_sha256": "570e78e00f5132b20f1cf9aef87db8b34c5e07a3a23365fbacc7fc759b1a671b",
+      "premise": "The lamp is on.",
+      "hypothesis": "The lamp is on.",
+      "input_ids": [
+        1,
+        23,
+        6111,
+        13,
+        21,
+        4,
+        2,
+        23,
+        6111,
+        13,
+        21,
+        4,
+        2
+      ],
+      "attention_mask": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "token_type_ids": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "high_level_pair_feed": {
+        "input_ids": [
+          1,
+          23,
+          6111,
+          13,
+          21,
+          4,
+          2,
+          23,
+          6111,
+          13,
+          21,
+          4,
+          2
+        ],
+        "attention_mask": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "token_type_ids": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "raw_logits": [
+        0.6859279870986938,
+        0.11741997301578522,
+        -0.04850358888506889
+      ],
+      "typed_probabilities": {
+        "Entailment": 0.23447869697371648,
+        "Contradiction": 0.4887232191800236,
+        "NotMentioned": 0.27679808384626003
+      },
+      "prediction": "Contradiction",
+      "truncated": false,
+      "padding": false,
+      "feed_dtype": "torch.int64",
+      "feed_device": "cpu",
+      "batch_size": 1,
+      "raw_logit_dtype": "torch.float32",
+      "raw_logit_shape": [
+        1,
+        3
+      ],
+      "inference_mode_enabled": true,
+      "grad_enabled": false,
+      "elapsed_seconds": 0.2910875039960956,
+      "input_pair_sha256": "04690078b1768f2a5f612751d6a9af0b295896e794dc20c09e1c3f800008e978"
+    },
+    {
+      "precision": "INT8",
+      "fixture_id": "semantic-c-v1",
+      "fixture_sha256": "3a6b7462fe77acfc40fd4eecc7bb1f19160f1976ba1f8be6dcdb3f5d24830d1a",
+      "premise": "The lamp is not on.",
+      "hypothesis": "The lamp is on.",
+      "input_ids": [
+        1,
+        23,
+        6111,
+        13,
+        40,
+        21,
+        4,
+        2,
+        23,
+        6111,
+        13,
+        21,
+        4,
+        2
+      ],
+      "attention_mask": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "token_type_ids": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "high_level_pair_feed": {
+        "input_ids": [
+          1,
+          23,
+          6111,
+          13,
+          40,
+          21,
+          4,
+          2,
+          23,
+          6111,
+          13,
+          21,
+          4,
+          2
+        ],
+        "attention_mask": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "token_type_ids": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "raw_logits": [
+        0.6374667286872864,
+        0.06328248232603073,
+        -0.1412234604358673
+      ],
+      "typed_probabilities": {
+        "Entailment": 0.2269871584964804,
+        "Contradiction": 0.4945180413909417,
+        "NotMentioned": 0.278494800112578
+      },
+      "prediction": "Contradiction",
+      "truncated": false,
+      "padding": false,
+      "feed_dtype": "torch.int64",
+      "feed_device": "cpu",
+      "batch_size": 1,
+      "raw_logit_dtype": "torch.float32",
+      "raw_logit_shape": [
+        1,
+        3
+      ],
+      "inference_mode_enabled": true,
+      "grad_enabled": false,
+      "elapsed_seconds": 0.30223874100192916,
+      "input_pair_sha256": "858287f1ed2dc45c9a767e1aeef967951c90a52501da6bc8422a4fb15ad1679d"
+    },
+    {
+      "precision": "INT8",
+      "fixture_id": "semantic-n-v1",
+      "fixture_sha256": "4b9d77bb69e5c3022d157bf1a1fec9d957e24face5126beeaf2ed2eb397cf187",
+      "premise": "The box is blue.",
+      "hypothesis": "The lamp is on.",
+      "input_ids": [
+        1,
+        23,
+        1035,
+        13,
+        1386,
+        4,
+        2,
+        23,
+        6111,
+        13,
+        21,
+        4,
+        2
+      ],
+      "attention_mask": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "token_type_ids": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "offsets": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "high_level_pair_feed": {
+        "input_ids": [
+          1,
+          23,
+          1035,
+          13,
+          1386,
+          4,
+          2,
+          23,
+          6111,
+          13,
+          21,
+          4,
+          2
+        ],
+        "attention_mask": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "token_type_ids": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "raw_logits": [
+        0.5796983242034912,
+        0.10834326595067978,
+        -0.08002795279026031
+      ],
+      "typed_probabilities": {
+        "Entailment": 0.24145581976741373,
+        "Contradiction": 0.4670390123623731,
+        "NotMentioned": 0.2915051678702132
+      },
+      "prediction": "Contradiction",
+      "truncated": false,
+      "padding": false,
+      "feed_dtype": "torch.int64",
+      "feed_device": "cpu",
+      "batch_size": 1,
+      "raw_logit_dtype": "torch.float32",
+      "raw_logit_shape": [
+        1,
+        3
+      ],
+      "inference_mode_enabled": true,
+      "grad_enabled": false,
+      "elapsed_seconds": 0.2908537719922606,
+      "input_pair_sha256": "6383698af2ec85a8c26d83238dafe7ce9f82e4c9c97e3259775ad87d0df5015e"
+    }
+  ],
+  "model_provenance": {
+    "repo": "microsoft/deberta-v2-xlarge-mnli",
+    "revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+    "original_checkpoint_sha256": "cc41eeb065c6ab3f7e88f8dab756334abb1f77a1136fec8cf02442143934c253",
+    "config_sha256": "617f9d0b46fe934497a5aab5b44b1b343a751c0c43fec3e56e26b21e76b77c60",
+    "asset_identities": [
+      {
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/assets/official-deberta-v2-xlarge-mnli/.gitattributes",
+        "bytes": 690,
+        "sha256": "98cf30ae2568ea1d18641cc0d1d9a2f9041cc43aea81f5d719654abd9e290e0d"
+      },
+      {
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/assets/official-deberta-v2-xlarge-mnli/README.md",
+        "bytes": 3956,
+        "sha256": "e9cab79bfb344526b1955b00bf646d2e6f179a4df616a4c31afd2563a72e8385"
+      },
+      {
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/assets/official-deberta-v2-xlarge-mnli/config.json",
+        "bytes": 952,
+        "sha256": "617f9d0b46fe934497a5aab5b44b1b343a751c0c43fec3e56e26b21e76b77c60"
+      },
+      {
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/assets/official-deberta-v2-xlarge-mnli/tokenizer_config.json",
+        "bytes": 70,
+        "sha256": "0704f75eb3defe60aab06311d14756aa2f48c9aae758c8e5f78aa02dd92cc757"
+      },
+      {
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/assets/official-deberta-v2-xlarge-mnli/spm.model",
+        "bytes": 2447305,
+        "sha256": "5598d5e96f339a8d980c15f9afd405a2e5e1be7db41de3ed13b0f03fac1e8c17"
+      },
+      {
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/assets/official-deberta-v2-xlarge-mnli/pytorch_model.bin",
+        "bytes": 1773982007,
+        "sha256": "cc41eeb065c6ab3f7e88f8dab756334abb1f77a1136fec8cf02442143934c253"
+      }
+    ],
+    "native_asset_identities": [
+      {
+        "path": "retrieval/node_modules/@ruvector/core/index.js",
+        "bytes": 1357,
+        "sha256": "eeba197be4085adb3492b8bc53cd61870f57d6bc18a9a5f1cd2ebec4b1908bee"
+      },
+      {
+        "path": "retrieval/node_modules/@ruvector/core/package.json",
+        "bytes": 1669,
+        "sha256": "729e07f6c040bd47ba687cde8ad5681088187e53812e89d77d646ff48088a5e4"
+      },
+      {
+        "path": "retrieval/node_modules/@ruvector/core/README.md",
+        "bytes": 7890,
+        "sha256": "82b4f4845e0753732a66dc88ddd801502449b60ad1100b273ae34d1035e8b932"
+      },
+      {
+        "path": "retrieval/node_modules/@ruvector/core/index.d.ts",
+        "bytes": 768,
+        "sha256": "36411710e6879c76dca228c4cff97993c4e95cee70388c2f936c79b01536ac54"
+      },
+      {
+        "path": "retrieval/node_modules/ruvector-core-linux-x64-gnu/index.js",
+        "bytes": 330,
+        "sha256": "f392127e6cd14141107fa432a43bbccc2fa1d574630a6fe2611688c66a48a7e9"
+      },
+      {
+        "path": "retrieval/node_modules/ruvector-core-linux-x64-gnu/package.json",
+        "bytes": 1130,
+        "sha256": "afca994434efaadf637eb7d28bfd48da9dda69f24513bfb498c4ab9459d2fdf4"
+      },
+      {
+        "path": "retrieval/node_modules/ruvector-core-linux-x64-gnu/README.md",
+        "bytes": 3727,
+        "sha256": "dd25a68639af6bf44b4e0cd1388eb119047a7bd4f21ef99ece9ded424d3a4a89"
+      },
+      {
+        "path": "retrieval/node_modules/ruvector-core-linux-x64-gnu/ruvector.node",
+        "bytes": 5403040,
+        "sha256": "ff559e9fac2e3d29a8b32e890fdb047bcd4bd28f389b4731ad72148b221d5a2e"
+      }
+    ],
+    "versions": {
+      "torch": "2.7.1+cpu",
+      "transformers": "4.52.4",
+      "sentencepiece": "0.2.0",
+      "tokenizers": "0.21.4",
+      "safetensors": "0.5.3",
+      "protobuf": "5.29.5"
+    },
+    "all31_installed_versions": {
+      "MarkupSafe": "3.0.2",
+      "certifi": "2026.10.19",
+      "charset_normalizer": "3.5.2",
+      "coloredlogs": "15.0.1",
+      "filelock": "4.2.4",
+      "flatbuffers": "25.12.19",
+      "fsspec": "2026.9.0",
+      "hf_xet": "1.7.0",
+      "huggingface_hub": "0.36.2",
+      "humanfriendly": "10.0",
+      "idna": "3.20",
+      "jinja2": "3.1.6",
+      "mpmath": "1.3.0",
+      "networkx": "3.4.2",
+      "numpy": "2.2.6",
+      "onnxruntime": "1.22.1",
+      "packaging": "26.3",
+      "protobuf": "5.29.5",
+      "pyyaml": "6.0.3",
+      "regex": "2024.11.6",
+      "requests": "2.34.2",
+      "safetensors": "0.5.3",
+      "sentencepiece": "0.2.0",
+      "setuptools": "84.2.1",
+      "sympy": "1.14.0",
+      "tokenizers": "0.21.4",
+      "torch": "2.7.1+cpu",
+      "tqdm": "4.70.1",
+      "transformers": "4.52.4",
+      "typing_extensions": "4.16.0",
+      "urllib3": "2.8.0"
+    },
+    "expected_architecture": {
+      "layers": 24,
+      "hidden_size": 1536,
+      "attention_heads": 24,
+      "classes": 3
+    },
+    "architecture": {
+      "layers": 24,
+      "hidden_size": 1536,
+      "attention_heads": 24,
+      "classes": 3
+    },
+    "source_storage_dtype_inventory": {
+      "torch.float16": 398
+    },
+    "source_storage_dtype_element_counts": {
+      "torch.float16": 886958595
+    },
+    "source_storage_tensor_count": 398,
+    "source_storage_inspection": "torch.load(weights_only=True,map_location=meta); original serialized dtype/shape, not original device claim",
+    "source_classifier": {
+      "classifier.weight": [
+        3,
+        1536
+      ],
+      "classifier.bias": [
+        3
+      ]
+    },
+    "raw_label_indices": {
+      "contradiction": 0,
+      "neutral": 1,
+      "entailment": 2
+    },
+    "typed_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "loading_info": {
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "mismatched_keys": [],
+      "error_msgs": []
+    },
+    "loading_flags": {
+      "local_files_only": true,
+      "trust_remote_code": false,
+      "use_safetensors": false,
+      "weights_only": true,
+      "torch_dtype": "torch.float32",
+      "output_loading_info": true
+    }
+  },
+  "loaded_parameter_count": 886958595,
+  "FP32_state_sha256": "a8312067137e9548f5663951b73f10583e64619958402f639a474bd6e3601e52",
+  "INT8_state_sha256": "761691b82314f2b86d8396adfe1eac01ea5fd0c03e26090311b473f3af3b5015",
+  "uncertainty": [
+    "Exactly three publicly authored exposed CC0 engineering examples, not a random or benchmark sample; no legal/generalization/official placement estimate.",
+    "FP32 inference got the neutral fixture wrong; dynamic INT8 changed one prediction and distributions. These fixed-pair observations do not identify the cause of epoch18 legal errors.",
+    "Three short direct-pair timings per precision and three tiny deterministic-vector searches; no full serving, legal-context, embedding or benchmark deployment performance claim.",
+    "One CPU configuration and one process; no precision/model/ANN grid, confidence/calibration fitting or confirmation selection.",
+    "Official publisher score/rank and complete ClaimBench dataset/scorer/license/submission access remain unverified."
+  ],
+  "official_score": null,
+  "official_rank": null,
+  "champion_promoted": false
+}

@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "kind": "REAL_NATIVE_ENGINEERING_SEMANTIC_PRECISION_QUALIFICATION",
+  "created_at": "2026-10-23T17:14:54.510844+00:00",
+  "finished_at": "2026-10-23T17:05:20.722012+00:00",
+  "status": "REJECTED_ENGINEERING_QUALIFICATION",
+  "checks_passed": true,
+  "engineering_qualified": false,
+  "accepted": false,
+  "source_checkpoint": "6eb624feef9ea93c3b1a8f76c20e8442c6bece50",
+  "published_premeasurement_commit": "b4f32720a212f1735ba71cbfee539152715c883a",
+  "evidence": {
+    "independent_acceptance": {
+      "path": "experiments/sota-2026-10-22/audit/epoch19/acceptance-rejection-independent-v1.json",
+      "bytes": 6705,
+      "sha256": "a1950b37cdbf4b5c45a877fa9f98c834263805538d085a508ccad2e1e43f0f64"
+    },
+    "postrun_source_process": {
+      "path": "experiments/sota-2026-10-22/audit/epoch19/postrun-source-process-independent-v1.json",
+      "bytes": 10058,
+      "sha256": "199a8354d087192cc74bf2c3ede93b56b5bcea1fb0be2bb2c68156d7e6a23613"
+    },
+    "postrun_identities": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/postrun-identity-retirement-v1.json",
+      "bytes": 14121,
+      "sha256": "4c4e3a017b4aeecbeafb0704436ed05112050e6396687ccf42b7b94740b9c473"
+    },
+    "raw": {
+      "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/raw.json",
+      "bytes": 111098,
+      "sha256": "b4ffcba1fce19d65eb72640a378dafe505c3a614eeae4d43e29d8498a324f2a6"
+    },
+    "execution": {
+      "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/execution.json",
+      "bytes": 1371,
+      "sha256": "2ae127523c0b51ea237ecf91a8b7a57def3d12d6e982bdfb306e75d8ac4a66f6"
+    },
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch19/plan.json",
+      "bytes": 555081,
+      "sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31"
+    },
+    "source_freeze": {
+      "path": "experiments/sota-2026-10-22/epoch19/candidate-source-freeze.json",
+      "bytes": 613656,
+      "sha256": "37a8ce4a8660b6453b3a9efb3ad3d0328b5869f61ca49d5523fb6947761eff0e"
+    },
+    "precision_provenance_cross_epoch": {
+      "path": "experiments/sota-2026-10-22/audit/epoch19/precision-provenance-cross-epoch-v1.json",
+      "bytes": 2259,
+      "sha256": "a5ef612a202dbec1d4091c6fa85cc54ece85e31b64835ebd66d38200c5864912"
+    }
+  },
+  "actual_execution": {
+    "qualification_worker_attempts": 1,
+    "verified_worker_starts": 1,
+    "completed_qualification_workers": 1,
+    "NLI_forward_pairs_attempted": 6,
+    "NLI_forward_pairs_completed": 6,
+    "FP32_forwards": 3,
+    "INT8_forwards": 3,
+    "native_index_initializations": 1,
+    "native_searches_completed": 3,
+    "model_initializations": 1,
+    "quantization_initializations": 1,
+    "converted_Linear_modules": 146,
+    "benchmark_corpora": 0,
+    "benchmark_HTTP_requests": 0,
+    "TRAIN_calibration_fits": 0,
+    "CONF_calls": 0,
+    "new_legal_inputs_or_labels": 0,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "torch_interop_threads": 1,
+    "wall_seconds_including_init_cleanup": 33.80274683200696,
+    "user_seconds": 36.878628,
+    "system_seconds": 6.429664,
+    "peak_RSS_bytes": 5746819072,
+    "memory_scope": "Outer Linux RUSAGE_CHILDREN for this one worker and reaped descendants; peak is largest child high-water, not simultaneous RSS sum.",
+    "errors": 0,
+    "owned_live_processes_closed": true,
+    "all_unused_slots_closed": true,
+    "allowed_further_epoch19_attempts": 0
+  },
+  "engineering_metrics": {
+    "FP32_correct": 2,
+    "INT8_correct": 1,
+    "n_per_precision": 3,
+    "FP32_predictions": [
+      "Entailment",
+      "Contradiction",
+      "Contradiction"
+    ],
+    "INT8_predictions": [
+      "Contradiction",
+      "Contradiction",
+      "Contradiction"
+    ],
+    "labels_matching": 2,
+    "maximum_absolute_per_class_probability_delta": 0.758825985740294,
+    "FP32_proper_scores": {
+      "n": 3,
+      "per_fixture": [
+        {
+          "fixture_id": "semantic-e-v1",
+          "Brier_sum_over_three_classes": 8.336079400774897e-05,
+          "NLL": 0.0067178314721197474,
+          "NLL_is_positive_infinity": false
+        },
+        {
+          "fixture_id": "semantic-c-v1",
+          "Brier_sum_over_three_classes": 3.0274264852487495e-05,
+          "NLL": 0.004352315982346569,
+          "NLL_is_positive_infinity": false
+        },
+        {
+          "fixture_id": "semantic-n-v1",
+          "Brier_sum_over_three_classes": 1.2297807746483487,
+          "NLL": 1.5983374426909884,
+          "NLL_is_positive_infinity": false
+        }
+      ],
+      "Brier": 0.4099648032357363,
+      "NLL": 0.5364691967151516,
+      "NLL_is_positive_infinity": false,
+      "scope": "These three public engineering fixtures only; no benchmark estimate"
+    },
+    "INT8_proper_scores": {
+      "n": 3,
+      "per_fixture": [
+        {
+          "fixture_id": "semantic-e-v1",
+          "Brier_sum_over_three_classes": 0.9014904295737055,
+          "NLL": 1.4503905396841745,
+          "NLL_is_positive_infinity": false
+        },
+        {
+          "fixture_id": "semantic-c-v1",
+          "Brier_sum_over_three_classes": 0.38459453429130086,
+          "NLL": 0.7041716444778381,
+          "NLL_is_positive_infinity": false
+        },
+        {
+          "fixture_id": "semantic-n-v1",
+          "Brier_sum_over_three_classes": 0.7783912791225895,
+          "NLL": 1.2326975448059834,
+          "NLL_is_positive_infinity": false
+        }
+      ],
+      "Brier": 0.6881587476625319,
+      "NLL": 1.1290865763226654,
+      "NLL_is_positive_infinity": false,
+      "scope": "These three public engineering fixtures only; no benchmark estimate"
+    },
+    "FP32_latency": {
+      "n": 3,
+      "p50_seconds": 1.4258634780126158,
+      "p95_seconds": 1.432690146304958,
+      "maximum_seconds": 1.4334486650041072,
+      "percentile_method": "linear interpolation at (n-1)*p",
+      "scope": "Measured direct pair forward/feed latency from saved worker receipts; three exposed engineering examples per precision, no serving/benchmark latency claim"
+    },
+    "INT8_latency": {
+      "n": 3,
+      "p50_seconds": 0.2910875039960956,
+      "p95_seconds": 0.3011236173013458,
+      "maximum_seconds": 0.30223874100192916,
+      "percentile_method": "linear interpolation at (n-1)*p",
+      "scope": "Measured direct pair forward/feed latency from saved worker receipts; three exposed engineering examples per precision, no serving/benchmark latency claim"
+    },
+    "native_search_latency": {
+      "p50_ms": 0.1787700000000001,
+      "p95_ms": 1.1893071,
+      "n": 3,
+      "scope": "Three deterministic engineering-vector searches only; no embedding/model retrieval cost or benchmark serving claim"
+    },
+    "scope": "Engineering-only; no benchmark accuracy or generalization."
+  },
+  "uncertainty": [
+    "Exactly three publicly authored exposed CC0 engineering examples, not a random or benchmark sample; no legal/generalization/official placement estimate.",
+    "FP32 inference got the neutral fixture wrong; dynamic INT8 changed one prediction and distributions. These fixed-pair observations do not identify the cause of epoch18 legal errors.",
+    "Three short direct-pair timings per precision and three tiny deterministic-vector searches; no full serving, legal-context, embedding or benchmark deployment performance claim.",
+    "One CPU configuration and one process; no precision/model/ANN grid, confidence/calibration fitting or confirmation selection.",
+    "Official publisher score/rank and complete ClaimBench dataset/scorer/license/submission access remain unverified."
+  ],
+  "actual_checkpoint_storage_precision": {
+    "dtype_tensor_counts": {
+      "torch.float16": 398
+    },
+    "dtype_element_counts": {
+      "torch.float16": 886958595
+    },
+    "interpretation": "Original official checkpoint is stored FP16; tested FP32 path explicitly loads those same values into FP32 CPU parameters. This is not a claim to possess original full-precision training weights."
+  },
+  "loaded_inference_precisions": [
+    "Explicit FP32 from original FP16 tensors",
+    "Same loaded model dynamic-qint8 Linear, FP32 remainder, fbgemm"
+  ],
+  "model_repository": "microsoft/deberta-v2-xlarge-mnli",
+  "model_revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+  "source_licenses": {
+    "fixtures": "CC0-1.0",
+    "model_card": "MIT",
+    "source_code_native_package": "Original notices preserved"
+  },
+  "frozen_scorer": {
+    "path": "experiments/sota-2026-10-22/audit/epoch19/scorer.py",
+    "sha256": "60ce4dc4039c25ef5a26ab6f7ab5d19378a42f45099289d2af04b8d4a64c364d"
+  },
+  "roles": {
+    "TRAIN": [],
+    "DEV": [],
+    "calibration": [],
+    "fresh_confirmation": []
+  },
+  "budget": {
+    "user_process_slot_maximum": 2,
+    "frozen_qualification_attempt_cap": 1,
+    "used": 1,
+    "all_remaining_slots_closed": true,
+    "CPU_threads": 2,
+    "seconds_limit_including_init_cleanup": 600,
+    "new_paid_GPU_cost_USD": 0
+  },
+  "cumulative": {
+    "prior_corpus_attempts": 19,
+    "prior_completed_corpora": 17,
+    "prior_successful_HTTP": 885,
+    "prior_failed_HTTP": 2,
+    "new_qualification_attempts": 1,
+    "bounded_worker_attempts_total": 20,
+    "new_benchmark_corpora": 0,
+    "new_benchmark_HTTP": 0,
+    "scope": "Engineering and corpus counts are deliberately distinct."
+  },
+  "results": {
+    "path": "experiments/sota-2026-10-22/epoch19/RESULTS.json",
+    "bytes": 31253,
+    "sha256": "cfa713425f3c19676690d6514930a753bebc40d4d818189dafa9d4d7634fb778"
+  },
+  "used_identities": {
+    "path": "experiments/sota-2026-10-22/epoch19/USED_IDENTITIES.json",
+    "bytes": 3579,
+    "sha256": "c6adad3cc7cc9e242991cdc9ea9ee68e46c8c03457a9774ecbbc5e54420cbaa2"
+  },
+  "rejection_ledger": {
+    "path": "experiments/sota-2026-10-22/epoch19/REJECTION_LEDGER.json",
+    "bytes": 31221,
+    "sha256": "fd94e0067f3885a72541d2d285bf62ffb249f7f0f408b85f752269f08e08f72d"
+  },
+  "next_research_priority": "Reject this exact xlarge dynamic-qint8 recipe for promotion. Before another legal draw, freeze a materially different licensed pretrained typed-NLI model/precision hypothesis with credible Neutral handling and semantic/fidelity qualification. Any later native-vs-matched-same-model retrieval benchmark needs a new frozen fresh DEV and genuinely unused CONF gate plus proper-score/runtime checks. Do not infer epoch18 causation, repeat this unchanged recipe, or treat engineering canaries/exposed DEV as benchmark confirmation.",
+  "champion": "SubmittedNative104/RRF10 unchanged",
+  "champion_promoted": false,
+  "publisher_submission_allowed": false,
+  "new_submission_or_author_email": false,
+  "official_score": null,
+  "official_rank": null,
+  "official_SOTA_verified": false,
+  "publisher_status": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/publisher-status.json",
+    "bytes": 2602,
+    "sha256": "4bafcfaa41b9ca7dbdd31fbe4bd99ccc071b118ae1f8e7cd9d1cb803a38a5ed2"
+  },
+  "benchmark_refresh": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/benchmark-refresh.json",
+    "bytes": 4524,
+    "sha256": "9235a79d821d2950b13fe8f60ebc0f51fc56d390a9a14bd7783400b6ce816fe3"
+  },
+  "host_work_lock_release": "Pending exact final checkpoint publication/readback; all owned native processes are already closed."
+}

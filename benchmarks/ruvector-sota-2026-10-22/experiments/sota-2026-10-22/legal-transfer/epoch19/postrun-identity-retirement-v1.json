@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "epoch": 19,
+  "audited_at_UTC": "2026-10-23T17:09:48.347589+00:00",
+  "reviewer": "Platform data agent, independent from qualification worker implementation and engineering acceptance auditor.",
+  "independence_disclosure": "This agent authored the frozen canary/role/source qualification metadata. Postrun identity replay is independent from worker execution and score acceptance, not independent authorship of fixtures.",
+  "decision": "ENGINEERING_CANARIES_PUBLIC_EXPOSED_PRESERVE_ALL_BENCHMARK_ROLES_AND_BOTH_UNUSED_CONFIRMATION_BANKS",
+  "checks_passed": true,
+  "scope": "Identity/direct-source-pair/process-counter/preservation replay only. No semantic confirmation annotation parse, benchmark inference, benchmark scoring or new input selection.",
+  "frozen_data_files_unchanged": [
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/canaries.json",
+      "bytes": 1921,
+      "sha256": "4bd2e363117600603d6f215813bd77ea0f62acedb8c399700e8ae210161c7820"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/role-manifest.json",
+      "bytes": 2343,
+      "sha256": "52c56ec89e2b5a4d704408bde825d13f0784b078317b44c5d6206639e3f2da64"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/source-qualification.json",
+      "bytes": 5507,
+      "sha256": "a5541b133467f6be7f09b3738b0832db5f9b5e40d9ebf6a36416526469db9f2e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/benchmark-refresh.json",
+      "bytes": 4524,
+      "sha256": "9235a79d821d2950b13fe8f60ebc0f51fc56d390a9a14bd7783400b6ce816fe3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/publisher-status.json",
+      "bytes": 2602,
+      "sha256": "4bafcfaa41b9ca7dbdd31fbe4bd99ccc071b118ae1f8e7cd9d1cb803a38a5ed2"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/engineering-checks.json",
+      "bytes": 1468,
+      "sha256": "95418391bb1d7091f80554a6b6609820d315926a398350e1562e4f2229cf61a5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/source-manifest.pre-qualification.json",
+      "bytes": 2155,
+      "sha256": "1e88849978bd78a04ab85da8b72ce81e61944df73a3c7b5b4da5ed95d0719bc3"
+    }
+  ],
+  "actual_execution": {
+    "worker_attempts": 1,
+    "verified_worker_starts": 1,
+    "worker_pid": 47576,
+    "native_helper_pid": 47577,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "elapsed_seconds": 33.80274683200696,
+    "worker_exit_code": 0,
+    "cleanup_exited_and_group_empty": true,
+    "further_qualification_attempts_allowed": 0,
+    "actual_counters": {
+      "model_initializations_attempted": 1,
+      "model_initializations_completed": 1,
+      "quantization_initializations_attempted": 1,
+      "quantization_initializations_completed": 1,
+      "nli_forward_pairs_attempted": 6,
+      "nli_forward_pairs_completed": 6,
+      "fp32_forwards_attempted": 3,
+      "fp32_forwards_completed": 3,
+      "int8_forwards_attempted": 3,
+      "int8_forwards_completed": 3,
+      "native_invocations_attempted": 1,
+      "native_invocations_completed": 1,
+      "model_initializations": 1,
+      "quantization_initializations": 1,
+      "native_invocations": 1,
+      "native_queries": 3,
+      "checkpoint_metadata_loads": 1,
+      "native_queries_attempted": 3,
+      "native_queries_completed": 3,
+      "other_model_forwards": 0,
+      "BGE_forwards": 0,
+      "ORT_sessions": 0,
+      "previous_reader_forwards": 0,
+      "native104_calls": 0,
+      "benchmark_HTTP_requests": 0,
+      "benchmark_corpora": 0,
+      "paid_API_calls": 0,
+      "GPU_calls": 0,
+      "train_fits": 0,
+      "calibration_fits": 0,
+      "CONF_calls": 0
+    }
+  },
+  "engineering_canaries": {
+    "count_distinct": 3,
+    "license": "CC0-1.0",
+    "source_spec": {
+      "path": "experiments/sota-2026-10-22/epoch18/reporting/SEMANTIC_PRECISION_QUALIFICATION_SPEC.json",
+      "bytes": 9201,
+      "sha256": "93564659aa991dc85a6ee129cc5ab2964946f26696b987352006dcde648f74ae"
+    },
+    "manifest": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/canaries.json",
+      "bytes": 1921,
+      "sha256": "4bd2e363117600603d6f215813bd77ea0f62acedb8c399700e8ae210161c7820"
+    },
+    "records_always_public_and_exposed_engineering_only": true,
+    "fresh_benchmark_or_confirmation_status": false,
+    "actual_forward_identities": [
+      {
+        "precision": "FP32",
+        "fixture_id": "semantic-e-v1",
+        "fixture_sha256": "570e78e00f5132b20f1cf9aef87db8b34c5e07a3a23365fbacc7fc759b1a671b",
+        "input_pair_sha256": "04690078b1768f2a5f612751d6a9af0b295896e794dc20c09e1c3f800008e978",
+        "literal_premise_and_hypothesis_unchanged": true
+      },
+      {
+        "precision": "FP32",
+        "fixture_id": "semantic-c-v1",
+        "fixture_sha256": "3a6b7462fe77acfc40fd4eecc7bb1f19160f1976ba1f8be6dcdb3f5d24830d1a",
+        "input_pair_sha256": "858287f1ed2dc45c9a767e1aeef967951c90a52501da6bc8422a4fb15ad1679d",
+        "literal_premise_and_hypothesis_unchanged": true
+      },
+      {
+        "precision": "FP32",
+        "fixture_id": "semantic-n-v1",
+        "fixture_sha256": "4b9d77bb69e5c3022d157bf1a1fec9d957e24face5126beeaf2ed2eb397cf187",
+        "input_pair_sha256": "6383698af2ec85a8c26d83238dafe7ce9f82e4c9c97e3259775ad87d0df5015e",
+        "literal_premise_and_hypothesis_unchanged": true
+      },
+      {
+        "precision": "INT8",
+        "fixture_id": "semantic-e-v1",
+        "fixture_sha256": "570e78e00f5132b20f1cf9aef87db8b34c5e07a3a23365fbacc7fc759b1a671b",
+        "input_pair_sha256": "04690078b1768f2a5f612751d6a9af0b295896e794dc20c09e1c3f800008e978",
+        "literal_premise_and_hypothesis_unchanged": true
+      },
+      {
+        "precision": "INT8",
+        "fixture_id": "semantic-c-v1",
+        "fixture_sha256": "3a6b7462fe77acfc40fd4eecc7bb1f19160f1976ba1f8be6dcdb3f5d24830d1a",
+        "input_pair_sha256": "858287f1ed2dc45c9a767e1aeef967951c90a52501da6bc8422a4fb15ad1679d",
+        "literal_premise_and_hypothesis_unchanged": true
+      },
+      {
+        "precision": "INT8",
+        "fixture_id": "semantic-n-v1",
+        "fixture_sha256": "4b9d77bb69e5c3022d157bf1a1fec9d957e24face5126beeaf2ed2eb397cf187",
+        "input_pair_sha256": "6383698af2ec85a8c26d83238dafe7ce9f82e4c9c97e3259775ad87d0df5015e",
+        "literal_premise_and_hypothesis_unchanged": true
+      }
+    ],
+    "exactly_once_per_precision_per_fixture": true,
+    "no_rewording_redraw_new_fixture_or_post_observation_selection": true,
+    "not_used_as_training_calibration_or_benchmark_performance_estimate": true,
+    "actual_native_queries": 3,
+    "native_bundle_sha256": "6615618a9e27b628dafef9640a65b6175c76b9085c949d90a4b46a9f4a6b23f8",
+    "native_sourceIDs": [
+      "semantic-e-v1",
+      "semantic-c-v1",
+      "semantic-n-v1"
+    ],
+    "native_selection_affects_NLI": false,
+    "direct_literal_NLI_pairs_verified_for_all6": true
+  },
+  "benchmark_roles": {
+    "train": [],
+    "development": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "originaltrain_partition_preserved": {
+    "exposed": 221,
+    "unreserved": 178,
+    "reserved": 24,
+    "official_documents": 423,
+    "disjoint_exhaustive_document_identity_partition_replayed": true,
+    "prior_partition": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch18/postrun-identity-retirement-v1.json",
+      "bytes": 31080,
+      "sha256": "d960eb1f36cdc5e7d95f27944e0153be6deb29ea9d6e6e06d987bc11593b2413"
+    }
+  },
+  "all_prior_DEV_including_epoch18_eight_groups_exposed_forever": true,
+  "both_confirmation_banks": {
+    "old48": {
+      "raw_file": {
+        "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+        "bytes": 656272,
+        "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50"
+      },
+      "queries": 48,
+      "documents": 16,
+      "raw_bytes_hashed_only_JSON_not_parsed": true,
+      "globally_retired": false
+    },
+    "exact_unused16_17_18_bank24": {
+      "input_only_file": {
+        "path": "experiments/sota-2026-10-22/legal-transfer/epoch18/confirmation-inputs-only.json",
+        "bytes": 206191,
+        "sha256": "778fd8e080612744a1cbc6470c354f011e2c3a29ec560d90836fdd770708a266"
+      },
+      "input_identity_allowlist": {
+        "path": "experiments/sota-2026-10-22/legal-transfer/epoch18/confirmation-input-allowlist.json",
+        "bytes": 9224,
+        "sha256": "006e139c967daf036de436401f6eb4bdc83fe4f9af7e4625c655b125c1a687f3"
+      },
+      "queries": 24,
+      "documents": 8,
+      "raw_bytes_hashed_only_JSON_not_parsed": true,
+      "new_annotation_choices_projected": 0,
+      "model_or_benchmark_phase_attempts": 0,
+      "globally_retired": false
+    },
+    "missing_new_confirmation_gold_or_selection_artifacts": [
+      "experiments/sota-2026-10-22/legal-transfer/epoch16/confirmation24.jsonl",
+      "experiments/sota-2026-10-22/legal-transfer/epoch17/confirmation24.jsonl",
+      "experiments/sota-2026-10-22/legal-transfer/epoch18/confirmation24.jsonl",
+      "experiments/sota-2026-10-22/legal-transfer/epoch19/confirmation24.jsonl",
+      "experiments/sota-2026-10-22/legal-transfer/epoch19/confirmation-materialization.json",
+      "experiments/sota-2026-10-22/epoch19/confirmation-selection-lock.json"
+    ]
+  },
+  "proofs": [
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/canaries.json",
+      "bytes": 1921,
+      "sha256": "4bd2e363117600603d6f215813bd77ea0f62acedb8c399700e8ae210161c7820"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/role-manifest.json",
+      "bytes": 2343,
+      "sha256": "52c56ec89e2b5a4d704408bde825d13f0784b078317b44c5d6206639e3f2da64"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/source-qualification.json",
+      "bytes": 5507,
+      "sha256": "a5541b133467f6be7f09b3738b0832db5f9b5e40d9ebf6a36416526469db9f2e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/benchmark-refresh.json",
+      "bytes": 4524,
+      "sha256": "9235a79d821d2950b13fe8f60ebc0f51fc56d390a9a14bd7783400b6ce816fe3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/publisher-status.json",
+      "bytes": 2602,
+      "sha256": "4bafcfaa41b9ca7dbdd31fbe4bd99ccc071b118ae1f8e7cd9d1cb803a38a5ed2"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/engineering-checks.json",
+      "bytes": 1468,
+      "sha256": "95418391bb1d7091f80554a6b6609820d315926a398350e1562e4f2229cf61a5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch19/source-manifest.pre-qualification.json",
+      "bytes": 2155,
+      "sha256": "1e88849978bd78a04ab85da8b72ce81e61944df73a3c7b5b4da5ed95d0719bc3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/reporting/SEMANTIC_PRECISION_QUALIFICATION_SPEC.json",
+      "bytes": 9201,
+      "sha256": "93564659aa991dc85a6ee129cc5ab2964946f26696b987352006dcde648f74ae"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/raw.json",
+      "bytes": 111098,
+      "sha256": "b4ffcba1fce19d65eb72640a378dafe505c3a614eeae4d43e29d8498a324f2a6"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/execution.json",
+      "bytes": 1371,
+      "sha256": "2ae127523c0b51ea237ecf91a8b7a57def3d12d6e982bdfb306e75d8ac4a66f6"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch19/plan.json",
+      "bytes": 555081,
+      "sha256": "c65eaafcef514f7ec0aa7c3489d6c851974e1cd0a2bd1293a8d87c9d7b2e6d31"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch19/candidate-source-freeze.json",
+      "bytes": 613656,
+      "sha256": "37a8ce4a8660b6453b3a9efb3ad3d0328b5869f61ca49d5523fb6947761eff0e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/attempt.json",
+      "bytes": 440,
+      "sha256": "6ac8d682bb0c93f3be3d911c5c722923d385be823f2219697141c7d924b32e02"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/native-attempt.json",
+      "bytes": 205,
+      "sha256": "ee9b499dd7d5dd5cb024309d4b97ece79b9f8533dc5ec312297723c6b6eb9a77"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/popen-attempt.json",
+      "bytes": 346,
+      "sha256": "6ca8af56bac2d90ed32f72731cb7351af8e3ae855da65a32ec59d234118766f7"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch19/runs/qualification/reservation.json",
+      "bytes": 172,
+      "sha256": "f7d5575caf87763a239e197b3eee34eded138f30a4403f21954fcf279cc4901e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/USED_IDENTITIES.json",
+      "bytes": 20354,
+      "sha256": "26b9524bd919e2bdeba2691984b4f42393cdff66f067a90ffa3392e4b88130ec"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch18/postrun-identity-retirement-v1.json",
+      "bytes": 31080,
+      "sha256": "d960eb1f36cdc5e7d95f27944e0153be6deb29ea9d6e6e06d987bc11593b2413"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+      "bytes": 656272,
+      "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch18/confirmation-inputs-only.json",
+      "bytes": 206191,
+      "sha256": "778fd8e080612744a1cbc6470c354f011e2c3a29ec560d90836fdd770708a266"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch18/confirmation-input-allowlist.json",
+      "bytes": 9224,
+      "sha256": "006e139c967daf036de436401f6eb4bdc83fe4f9af7e4625c655b125c1a687f3"
+    }
+  ],
+  "model_native_fit_paid_GPU_calls_by_this_auditor": 0,
+  "new_benchmark_cases_or_annotation_labels_accessed": 0,
+  "benchmark_metrics": null,
+  "benchmark_generalization_claim": false,
+  "official_score": null,
+  "official_rank": null,
+  "champion_promoted": false,
+  "engineering_acceptance_delegated_to_independent_auditor": true,
+  "no_existing_frozen_scientific_role_or_gate_file_changed": true
+}

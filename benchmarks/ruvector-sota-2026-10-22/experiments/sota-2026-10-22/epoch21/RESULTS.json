@@ -1,0 +1,454 @@
+{
+  "actual_execution": {
+    "BGE_forwards": 26,
+    "BGE_initializations": 1,
+    "BGE_texts": 144,
+    "CONF_NLI_pairs": 0,
+    "CONF_annotation_choices": 0,
+    "CONF_capacity_text_tokenization_documents": 8,
+    "CONF_worker_attempts": 0,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "DEV_annotation_choices_after_seal": 24,
+    "DEV_documents": 8,
+    "DEV_questions": 24,
+    "GPU_calls": 0,
+    "NLI_forward_pairs_attempted": 75,
+    "NLI_forward_pairs_completed": 75,
+    "TRAIN_calibration_fits": 0,
+    "all_unused_slots_closed": true,
+    "allowed_further_epoch21_attempts": 0,
+    "benchmark_HTTP_requests": 0,
+    "completed_native_corpus_batches": 1,
+    "engineering_NLI_pairs": 3,
+    "engineering_native_searches": 3,
+    "errors": 0,
+    "legal_matched_arm_NLI_pairs": 72,
+    "legal_native_searches": 24,
+    "model_initializations": 1,
+    "native_index_initializations": 9,
+    "native_searches_completed": 27,
+    "owned_live_processes_closed": true,
+    "paid_API_calls": 0,
+    "peak_RSS_bytes": 3171602432,
+    "quantization_initializations": 0,
+    "resource_scope": "Outer Linux RUSAGE_CHILDREN for one owned worker plus reaped descendants; maximum is largest child high-water, not simultaneous RSS sum.",
+    "system_seconds": 33.812217,
+    "user_seconds": 460.525251,
+    "verified_worker_starts": 1,
+    "wall_seconds_including_init_cleanup": 264.6280996900023,
+    "worker_attempts": 1
+  },
+  "actual_resources": {
+    "inside_worker": {
+      "after_runtime": {
+        "allowed_CPU_ids": [
+          0,
+          1
+        ],
+        "largest_terminated_child_peak_RSS_bytes": 3171602432,
+        "scope": "Process and child maxima are separate observations, never a simultaneous RSS sum.",
+        "terminated_children_cpu_system_seconds": 0.172902,
+        "terminated_children_cpu_user_seconds": 0.27736299999999997,
+        "worker_cpu_system_seconds": 33.58881,
+        "worker_cpu_user_seconds": 459.279694,
+        "worker_peak_RSS_bytes": 3171602432
+      },
+      "before_runtime": {
+        "allowed_CPU_ids": [
+          0,
+          1
+        ],
+        "largest_terminated_child_peak_RSS_bytes": 0,
+        "scope": "Process and child maxima are separate observations, never a simultaneous RSS sum.",
+        "terminated_children_cpu_system_seconds": 0.0,
+        "terminated_children_cpu_user_seconds": 0.0,
+        "worker_cpu_system_seconds": 0.181037,
+        "worker_cpu_user_seconds": 0.599684,
+        "worker_peak_RSS_bytes": 22622208
+      }
+    },
+    "outer": {
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "allowed_further_attempts_in_this_phase": 0,
+      "at": "2026-10-23T20:39:37.602659+00:00",
+      "automatic_retry": false,
+      "benchmark_HTTP_requests": 0,
+      "cleanup": {
+        "all_native_helpers_exited": true,
+        "details": {
+          "finished_within_deadline": true,
+          "owned_live_before": [],
+          "owned_live_pids": [],
+          "pgid": 54822,
+          "signals": []
+        },
+        "owned_live_pids": [],
+        "process_group_empty": true,
+        "worker_exited": true
+      },
+      "elapsed_seconds": 264.6280996900023,
+      "epoch": 21,
+      "error": null,
+      "native_helper_pids": [
+        54873,
+        54858,
+        54888,
+        54931,
+        54843,
+        54904,
+        54916,
+        54943,
+        54823
+      ],
+      "new_paid_API_GPU_calls": 0,
+      "observed_worker_status": "COMPLETED_CORPUS_AWAITING_INDEPENDENT_SCORE",
+      "peak_RSS_bytes": 3171602432,
+      "phase": "dev",
+      "plan_sha256": "22650c8d7fc569e45c5a1129b58b8db5feabac2f105b9227648088e9d6f8b6ba",
+      "raw_sha256": "ed86bc69cdf6627e5ef10909ca49771d1da72c95fa360173c71cc175af1fd03f",
+      "resource_scope": "Outer Linux RUSAGE_CHILDREN for one owned worker plus reaped descendants; maximum is largest child high-water, not simultaneous RSS sum.",
+      "schema_version": 1,
+      "source_plan_unchanged": true,
+      "status": "COMPLETED_AWAITING_INDEPENDENT_REPLAY",
+      "system_seconds": 33.812217,
+      "user_seconds": 460.525251,
+      "verified_worker_starts": 1,
+      "worker_attempts": 1,
+      "worker_exit_code": 0,
+      "worker_pgid": 54822,
+      "worker_pid": 54822
+    },
+    "scope": "CPU counters and each process high-water are retained separately; no simultaneous RSS aggregate or primary-only deployment claim."
+  },
+  "at": "2026-10-23T20:46:13.662467+00:00",
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "checks_passed": true,
+  "engineering_metrics": {
+    "correct": 3,
+    "latency_seconds": [
+      0.542060184001457,
+      0.5567774269875372,
+      0.6260189579916187
+    ],
+    "n": 3,
+    "native": {
+      "latency_ms": [
+        1.058555000000002,
+        0.17512400000000383,
+        0.123115999999996
+      ],
+      "native_order_matches_saved_vector_reference": [
+        true,
+        true,
+        true
+      ],
+      "queries": 3,
+      "scope": "Agreement is reported, not used to substitute reference rankings or prove semantic retrieval efficacy."
+    },
+    "passed": true,
+    "predictions": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "scope": "Exposed engineering canaries only; not a benchmark score."
+  },
+  "engineering_qualified": true,
+  "epoch": 21,
+  "evidence": {
+    "benchmark_refresh": {
+      "bytes": 3287,
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch21/benchmark-refresh.json",
+      "sha256": "373dd820ae0f8080e660192a50c5afafcacc83648ba934c56fa0e9fce101c0c1"
+    },
+    "closed_slots": {
+      "bytes": 994,
+      "path": "experiments/sota-2026-10-22/epoch21/CLOSED_SLOTS.json",
+      "sha256": "30e8c770ab59ae331d2da3e8281f8866cf31599075bcc9759bacf0cfd8d501cd"
+    },
+    "execution": {
+      "bytes": 1485,
+      "path": "experiments/sota-2026-10-22/epoch21/runs/dev/execution.json",
+      "sha256": "455e79a0c2f96ba0b36b42ca67297a19d4d967c1c8052463236e3b65ba9ed1d7"
+    },
+    "independent_acceptance": {
+      "bytes": 36691,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/acceptance-rejection.dev.json",
+      "sha256": "56063f53d0ed44267c04e9798eb592d7342f73e37a90ffbf6c2d15eab3199170"
+    },
+    "independent_postprediction_gold": {
+      "bytes": 8376,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/gold.dev.json",
+      "sha256": "044c1836c7b9c8808ee8d6ff6ef496855b05982b4ccb0112db0073f1141c98b9"
+    },
+    "independent_tokenizer_replay": {
+      "bytes": 21518,
+      "path": "experiments/sota-2026-10-22/audit/epoch21/tokenizer-feed-replay.dev.json",
+      "sha256": "e971b7a4c3de162696dd437da2c690990c4bb7b5cc528c4a2de497bed1c6eefe"
+    },
+    "plan": {
+      "bytes": 690860,
+      "path": "experiments/sota-2026-10-22/epoch21/plan.json",
+      "sha256": "22650c8d7fc569e45c5a1129b58b8db5feabac2f105b9227648088e9d6f8b6ba"
+    },
+    "post_hoc_context_diagnosis": {
+      "bytes": 97280,
+      "path": "experiments/sota-2026-10-22/epoch21/analysis/contradiction-context-v1.json",
+      "sha256": "a5454ed76d3af7b88b82d7aaa7ab0426749d787c8b40aef6ee9d8ada45205783"
+    },
+    "postrun_identities": {
+      "bytes": 68278,
+      "path": "experiments/sota-2026-10-22/epoch21/reviews/postrun-data-identities-independent-v1.json",
+      "sha256": "3363a53144fcf29a8ad547b26d31d2bb7a75444aad8b5d7e3be5cf43faa8ff24"
+    },
+    "postrun_source_process": {
+      "bytes": 3431,
+      "path": "experiments/sota-2026-10-22/epoch21/reviews/postrun-dev-source-process-independent-v1.json",
+      "sha256": "93cd97f081baf62ea69305dcbb84af337fc8b74c5b74ba8da6e237447d7cd128"
+    },
+    "publisher_status": {
+      "bytes": 981,
+      "path": "experiments/sota-2026-10-22/epoch21/preparation/publisher-status.json",
+      "sha256": "c55d1324892746fb8a0993dc19857ddc11301d19ea74c6de87e1870e5e505b9d"
+    },
+    "raw": {
+      "bytes": 8581827,
+      "path": "experiments/sota-2026-10-22/epoch21/runs/dev/raw.json",
+      "sha256": "ed86bc69cdf6627e5ef10909ca49771d1da72c95fa360173c71cc175af1fd03f"
+    },
+    "source_freeze": {
+      "bytes": 685340,
+      "path": "experiments/sota-2026-10-22/epoch21/candidate-source-freeze.json",
+      "sha256": "69d1b0556346d93a8cda8b162f2c6190761f0a6f1ebf15b381d59d47c161da3f"
+    },
+    "source_publication_readback": {
+      "bytes": 4422,
+      "path": "experiments/sota-2026-10-22/epoch21/reviews/source-publication-remote-independent-v1.json",
+      "sha256": "fdd18bbf10a9f485995d8b4da975fb29de8fbcb318d34cae44505da267a257a1"
+    }
+  },
+  "latency": {
+    "direct_all_arm_request": {
+      "max_seconds": 10.704526032001013,
+      "n": 24,
+      "p50_seconds": 10.049116029003926,
+      "p95_seconds": 10.459942042752663,
+      "scope": "Three matched NLIarms perquestion; document preparation is reported separately."
+    },
+    "direct_pair": {
+      "max_seconds": 3.5958849919989007,
+      "n": 72,
+      "p50_seconds": 3.1753275125010987,
+      "p95_seconds": 3.512058872292255,
+      "scope": "72corpus matched-arm direct pair forwards; no engineering cases."
+    },
+    "document_amortized": {
+      "max_seconds": 10.855630318668167,
+      "n": 8,
+      "p50_seconds": 10.250108920166289,
+      "p95_seconds": 10.766547571884681,
+      "scope": "Complete source partition/embedding/native and3questionsx3NLIarms perdocument, dividedby3; amortized full-document unit, not serving latency."
+    }
+  },
+  "legacy_arm_name_disclosure": "ruvector_top2, same_nli_lexical_top2 and same_nli_positional_first2 are legacy identifiers, not literal two-unit contexts. Frozen arms scan ranked anchors under the same512-token pair budget and shared definition priority.",
+  "matched_DEV_metrics": {
+    "binary_metrics": {
+      "ruvector_top2": {
+        "Brier": 0.579832136631765,
+        "NLL": 1.0914423087840592,
+        "accuracy": 0.625,
+        "correct": 15,
+        "n": 24
+      },
+      "same_nli_lexical_top2": {
+        "Brier": 0.6335652124470812,
+        "NLL": 1.2623150539254298,
+        "accuracy": 0.5833333333333334,
+        "correct": 14,
+        "n": 24
+      },
+      "same_nli_positional_first2": {
+        "Brier": 0.7230065397897034,
+        "NLL": 1.5613664855603873,
+        "accuracy": 0.5833333333333334,
+        "correct": 14,
+        "n": 24
+      }
+    },
+    "champion_promotion_allowed": false,
+    "checks": {
+      "all_gold_classes_present": true,
+      "all_three_classes_correct_at_least_once": false,
+      "binary:same_nli_lexical_top2:Brier_nonincrease": true,
+      "binary:same_nli_lexical_top2:NLL_nonincrease": true,
+      "binary:same_nli_lexical_top2:accuracy_gain_at_least_two_correct": false,
+      "binary:same_nli_lexical_top2:finite_proper_scores": true,
+      "binary:same_nli_lexical_top2:strict_proper_gain": true,
+      "binary:same_nli_positional_first2:Brier_nonincrease": true,
+      "binary:same_nli_positional_first2:NLL_nonincrease": true,
+      "binary:same_nli_positional_first2:accuracy_gain_at_least_two_correct": false,
+      "binary:same_nli_positional_first2:finite_proper_scores": true,
+      "binary:same_nli_positional_first2:strict_proper_gain": true,
+      "typed:same_nli_lexical_top2:Brier_nonincrease": true,
+      "typed:same_nli_lexical_top2:NLL_nonincrease": true,
+      "typed:same_nli_lexical_top2:accuracy_gain_at_least_two_correct": false,
+      "typed:same_nli_lexical_top2:finite_proper_scores": true,
+      "typed:same_nli_lexical_top2:strict_proper_gain": true,
+      "typed:same_nli_positional_first2:Brier_nonincrease": true,
+      "typed:same_nli_positional_first2:NLL_nonincrease": true,
+      "typed:same_nli_positional_first2:accuracy_gain_at_least_two_correct": false,
+      "typed:same_nli_positional_first2:finite_proper_scores": true,
+      "typed:same_nli_positional_first2:strict_proper_gain": true
+    },
+    "confirmation_intervals": null,
+    "passed": false,
+    "publisher_submission_allowed": false,
+    "scope": "Frozen matched-reader retrieval research; nominal paired8-document intervals, not official benchmark placement or a direct full-input native104 comparison.",
+    "typed_metrics": {
+      "ruvector_top2": {
+        "Brier": 0.7802429192568471,
+        "NLL": 1.7952277499245357,
+        "accuracy": 0.5,
+        "by_class": {
+          "Contradiction": {
+            "correct": 0,
+            "n": 4
+          },
+          "Entailment": {
+            "correct": 9,
+            "n": 13
+          },
+          "NotMentioned": {
+            "correct": 3,
+            "n": 7
+          }
+        },
+        "correct": 12,
+        "n": 24
+      },
+      "same_nli_lexical_top2": {
+        "Brier": 0.8393016915870454,
+        "NLL": 1.9220445405643172,
+        "accuracy": 0.4583333333333333,
+        "by_class": {
+          "Contradiction": {
+            "correct": 1,
+            "n": 4
+          },
+          "Entailment": {
+            "correct": 7,
+            "n": 13
+          },
+          "NotMentioned": {
+            "correct": 3,
+            "n": 7
+          }
+        },
+        "correct": 11,
+        "n": 24
+      },
+      "same_nli_positional_first2": {
+        "Brier": 0.8186974472072714,
+        "NLL": 1.9248475807535403,
+        "accuracy": 0.4583333333333333,
+        "by_class": {
+          "Contradiction": {
+            "correct": 0,
+            "n": 4
+          },
+          "Entailment": {
+            "correct": 8,
+            "n": 13
+          },
+          "NotMentioned": {
+            "correct": 3,
+            "n": 7
+          }
+        },
+        "correct": 11,
+        "n": 24
+      }
+    }
+  },
+  "new_submission": false,
+  "official_rank": null,
+  "official_score": null,
+  "primary_failure": "Frozen all-class gate fails: native Contradiction0/4. Each of four typed/binary matched-control accuracy gains is1, below required2. All proper-score and runtime gates pass but cannot override rejection.",
+  "runtime_forecast": {
+    "allowed": true,
+    "capacity_receipt": {
+      "annotation_choices_accessed": 0,
+      "confirmation_NLI_predictions": 0,
+      "document_units": [
+        {
+          "document_id": 308,
+          "units": 9
+        },
+        {
+          "document_id": 159,
+          "units": 18
+        },
+        {
+          "document_id": 284,
+          "units": 8
+        },
+        {
+          "document_id": 501,
+          "units": 6
+        },
+        {
+          "document_id": 267,
+          "units": 15
+        },
+        {
+          "document_id": 494,
+          "units": 14
+        },
+        {
+          "document_id": 261,
+          "units": 20
+        },
+        {
+          "document_id": 313,
+          "units": 12
+        }
+      ],
+      "max_units": 20,
+      "model_forwards": 0,
+      "scope": "INPUT_ONLY_TOKENIZATION_CAPACITY",
+      "source_path": "experiments/sota-2026-10-22/legal-transfer/epoch18/confirmation-inputs-only.json",
+      "source_sha256": "778fd8e080612744a1cbc6470c354f011e2c3a29ec560d90836fdd770708a266",
+      "text_previously_published": true,
+      "training_selection_on_confirmation_labels": false
+    },
+    "formula_id": "24xDEVmaxDocumentThirdxmax1UnitRatio+2xWholeInit+60-v1",
+    "limit_seconds": 600,
+    "max_CONFIRMATION_source_units": 20,
+    "max_DEV_document_seconds_divided_by3": 10.855630318668167,
+    "max_DEV_source_units": 30,
+    "projected_confirmation_seconds": 352.0319399916334,
+    "scope": "Conservative complete-document amortized forecast; no confirmation labels/predictions used and no guarantee of future completion.",
+    "source_unit_ratio": 1,
+    "whole_pipeline_initialization_seconds": 15.748406171798706
+  },
+  "schema_version": 1,
+  "status": "REJECTED_DEV_GATE",
+  "uncertainty": [
+    "One preselected reader, eight new DEV contracts and24 questions; no confirmation execution. Different DEV documents prevent a direct reader comparison to epoch20.",
+    "Matched-reader retrieval diagnostics are not a direct native104 comparison, full LegalBench score, JevBench rank, ClaimBench score or official SOTA.",
+    "Native made no correct contradiction decision on four cases. Saved feed/context differences are descriptive, not official evidence sufficiency annotations or a proven causal remedy.",
+    "The immutable official model card declares training lineage and MIT licensing; exact training corpus revisions and record-level pretraining overlap remain unknown.",
+    "Reserved confirmation input texts were already public and tokenized only for capacity. Zero confirmation neural predictions or annotation choices; do not claim previously unseen input text.",
+    "Original corpus JSON annotation fields enter memory during logical role-only input projection; logical access controls do not establish OS label isolation.",
+    "Reported request latency covers all three matched arms, not primary-only serving. Peak RSS is largest reaped-child high-water, not simultaneous aggregate memory.",
+    "A premeasurement exec transport disconnection recovered before any worker. Source/asset hashes, absent interrupted draft and same exact kernel lock were reverified before resuming; no uncertain external mutation was retried.",
+    "Official publisher result/rank and sealed JevBench scorer remain unverified; full licensed ClaimBench data/scoring/submission access remains unverified."
+  ]
+}

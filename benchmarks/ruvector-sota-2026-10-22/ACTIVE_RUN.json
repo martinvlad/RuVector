@@ -1,21 +1,25 @@
 {
   "schema_version": 1,
   "run_id": "epoch21-dd6da5427108",
-  "state": "EPOCH21_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
-  "experiments_active": true,
+  "state": "EPOCH21_CLOSED",
+  "experiments_active": false,
   "native_allowed": 0,
-  "native_allowed_after_exact_remote_readback": 1,
-  "conditional_confirmation_after_independent_DEV_runtime_gates": 1,
-  "checkpoint_parent": "9a995890a3cde61f3457cb405d712f67bf5555df",
+  "native_allowed_after_exact_remote_readback": 0,
+  "conditional_confirmation_after_independent_DEV_runtime_gates": 0,
+  "checkpoint_parent": "43d9cc4230d1fcb3eb0e2758c1980af24f72bbb3",
   "started_at": "2026-10-23T19:53:50.757769+00:00",
   "expires_at": "2026-10-23T22:53:50.757786+00:00",
   "OS_lock_held": true,
-  "OS_lock_release_pending_final_remote_readback": false,
+  "OS_lock_release_pending_final_remote_readback": true,
   "limits": {
     "worker_attempt_cap": 2,
     "CPU_threads": 2,
     "seconds_per_process_including_init_cleanup": 600,
     "paid_GPU_calls": 0
   },
-  "instruction": "Source-only publication. Exact independent remote readback plus live exclusive-lock proof admits DEV once. CONF additionally requires independent frozen DEV and full-cost runtime gates. Engineering canaries precede all new legal parsing; no retries or promotion/submission."
+  "instruction": "Closed; no further epoch21 execution.",
+  "actual_epoch21_worker_attempts": 1,
+  "all_unspent_epoch21_slots_permanently_closed": true,
+  "owned_native_groups_closed": true,
+  "closed_at": "2026-10-23T20:46:13.662467+00:00"
 }

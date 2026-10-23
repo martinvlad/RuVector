@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "epoch": 16,
+  "observed_at_UTC": "2026-10-23T11:35:45.292658+00:00",
+  "kind": "BOUNDED_METADATA_ONLY_NEW_SOURCE_QUALIFICATION",
+  "new_source_family_cap": 2,
+  "new_source_families_examined": 2,
+  "selected_new_outside_training_confirmation_bank": null,
+  "no_unseen_case_rows_or_annotation_choices_accessed": true,
+  "data_case_files_downloaded": 0,
+  "families": [
+    {
+      "family": "ConTRoL",
+      "repository": "csitfun/ConTRoL-dataset",
+      "revision": "d7acc335bef6c716f2830e1413d0d90c133ad6e9",
+      "license": "CC-BY-NC-SA-4.0 declared in README; repo API genericlicense=null didnotmeanunlicensed",
+      "document_receipt": {
+        "kind": "ConTRoL-readme",
+        "repository": "csitfun/ConTRoL-dataset",
+        "revision": "d7acc335bef6c716f2830e1413d0d90c133ad6e9",
+        "path": "readme.md",
+        "git_blob": "2a2ef683144f13c87c49337493f2c63f26f65378",
+        "bytes": 1081,
+        "sha256": "98d4359315ce69418c97e78efc0f59d5e3da5e7caacceca43efe0e164ccffc4b"
+      },
+      "qualification": "NOT_SELECTED_OUTSIDE_TRAINING_BANK",
+      "reasons": [
+        "Modelowner independently reports selectedstronglegalModernBERT candidate declaresConTRoL supervision; no exact cleantraining/selectionlineageverified for a newbank.",
+        "Noncommercial/sharealike data terms differ from code/modelApache declarations; no casefiles acquired or redistributed."
+      ],
+      "next_gate": "Exact chosenmodeltraining/split/selectionlineage and fulllicensedeligiblebank beforeadmission; do notrepeatunchangedprobe."
+    },
+    {
+      "family": "LegalBench",
+      "canonical_repository": "HazyResearch/legalbench",
+      "revision": "b46bf4ffae90524b2b72aaa30e7745fe9db64481",
+      "canonical_verified_from_official_dataset_card": "https://huggingface.co/datasets/nguha/legalbench",
+      "dataset_card_SHA256": "b5ef37b47d836f746b3bbb082a6eab2d97342e1363a5816b19092b7b2ba6822d",
+      "official_card_license_declaration": "CC-BY-4.0 broadmetadata; individualcomponenttermsstillgovern.",
+      "tasks": [
+        {
+          "task": "insurance_policy_interpretation",
+          "license": "CC-BY-4.0",
+          "declared_samples": 138,
+          "classes": [
+            "Yes",
+            "No",
+            "It’s ambiguous"
+          ],
+          "label_construction": "Crowdsourcedcoveragejudgments discretizedwith95%multinomialCI; eachlabelneeds lowerbound>=.5, otherwiseambiguous.",
+          "document_receipt": {
+            "kind": "LegalBench-insurance-readme",
+            "repository": "HazyResearch/legalbench",
+            "revision": "b46bf4ffae90524b2b72aaa30e7745fe9db64481",
+            "path": "tasks/insurance_policy_interpretation/README.md",
+            "git_blob": "9ee6eca86a8c246090814121cdd431191e818e52",
+            "bytes": 2010,
+            "sha256": "73fb37956d3363558a3a37ebaa5eccb0b0255d5892df62ce73a8545a2561d16e"
+          },
+          "qualification": "METADATA_SOURCE_LEAD_ONLY_NOT_ADMITTED",
+          "reasons": [
+            "Coverageambiguity is not automatically ContractNLINotMentioned; cannot relabeltask to fit3wayNLI.",
+            "Exact fullcase/scorer revision, selectedmodeltrainingoverlap and eligiblebankidentities unverified; no caserows accessed."
+          ]
+        },
+        {
+          "task": "consumer_contracts_qa",
+          "license": "CC-BY-NC-4.0 explicittaskREADME, unlikebroadCCBYcard",
+          "declared_samples": 400,
+          "classes": [
+            "Yes",
+            "No"
+          ],
+          "document_receipt": {
+            "kind": "LegalBench-consumer-readme",
+            "repository": "HazyResearch/legalbench",
+            "revision": "b46bf4ffae90524b2b72aaa30e7745fe9db64481",
+            "path": "tasks/consumer_contracts_qa/README.md",
+            "git_blob": "37ea3c63957b56b47aa8a745aef0d4a98e88352f",
+            "bytes": 1648,
+            "sha256": "3dee99717700ebcad231fe157e13c1ba9a857125557bca5699abcc11faa3ac12"
+          },
+          "qualification": "NOT_SELECTED_TYPED_THREEWAY_BANK",
+          "reasons": [
+            "Binaryrights/obligationsQA has no contradiction-vs-neutralgoldsplit.",
+            "Task-specificNCterms; no licensedtypedbank/runtime/training-overlapadmission established."
+          ]
+        }
+      ]
+    }
+  ],
+  "new_source_selection": "Selectedepisode uses existingCCBYoriginalContractNLI210unreservedIDs with sameSNLI+MultiNLIdeclaredreader; not these alternatives.",
+  "operational_corrections": [
+    "ConnectedGitHubglobalrepositorysearchURLunsupported; one publicHTTPmetadata searchused, no credentials or mutations.",
+    "Historicalnguha/legalbench GitHubURL404; officialHFdatasetcard identifiedcanonicalHazyResearch/legalbench and immutableheadverified."
+  ],
+  "old_CNLItrained_model_currentbank_blocker": "Preserved fromepoch14, not re-tested as a new outcome. No originaltestautomaticallydeclaredfresh.",
+  "model_native_fit_paid_GPU_calls": 0,
+  "official_score": null,
+  "official_rank": null
+}

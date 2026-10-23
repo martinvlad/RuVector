@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T12:01:01.651493+00:00",
+  "checks_passed": true,
+  "scope": "Pre-label independent numerical/context/saved-output validator engineering; no actual benchmark/model/native measurement",
+  "initial_math_tests": {
+    "run": 19,
+    "passed": 19
+  },
+  "prehandoff_alignment": "Typed tie order aligned with the stable frozen E,C,N contract before gold; binary ties remain No.",
+  "first_integrated_run": {
+    "run": 28,
+    "passed": 25,
+    "failed": 3,
+    "receipt": "engineering-first-fixture-failure.json",
+    "cause": "Synthetic positive fixtures assigned different invented model logits to identical exact premise/hypothesis pairs. Independent deterministic-input drift guard correctly rejected them.",
+    "correction": "Fixture selectors now choose distinct exact paragraphs in synthetic input; checker drift guard unchanged. Added explicit negative conflicting-logit fixture."
+  },
+  "final_integrated_run": {
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "wall_seconds": 1.966,
+    "exit_code": 0,
+    "command": "OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 NUMEXPR_NUM_THREADS=2 TOKENIZERS_PARALLELISM=false retrieval/.venv/bin/python -B -m unittest -v test_math_v1.py test_replay_v1.py test_context_v1.py",
+    "cwd": "experiments/sota-2026-10-22/audit/epoch16"
+  },
+  "coverage": [
+    "Exact probability/mirror/neutral/proper-score and positive/negative gate tests",
+    "Complete DEV/runtime-block and conditional-CONF saved-output fixtures",
+    "Partial request failure and initialization failure retain uncertainty instead of invented accuracy",
+    "Actual Unigram tokenizer, independent whole-source pair-budget reconstruction, counterclaim/trace/numeric/source tamper failures"
+  ],
+  "fixture_gold_recipe_injection": "Engineering fixtures replace the real source-gold recipe only in unittest scope to avoid reading new cohort gold. Actual replay CLI retains strict real-source identity/gold verification.",
+  "auditor_model_sessions": 0,
+  "auditor_native_sessions": 0,
+  "paid_calls": 0,
+  "GPU_calls": 0,
+  "new_role_annotation_choices_read": 0,
+  "source_pins": [
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch16/math_v1.py",
+      "bytes": 7923,
+      "sha256": "0081d4c70a5d32848d3a27306c58d03f71b3fa386c6d815152b814a2b57f6b7b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch16/source_math_v1.py",
+      "bytes": 6850,
+      "sha256": "89b50738281350b29208deb9b68bec68e5ad739d20316b94bb6c8e7c8583a506"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch16/replay_scores_v1.py",
+      "bytes": 23187,
+      "sha256": "752c3d341416a8abdde154dd1371ef39b884aef377e22a647e64d2317a4da559"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch16/replay_context_v1.py",
+      "bytes": 20665,
+      "sha256": "c6914fcef417b6e2b36c3aec4d7a40fe614bf33ef0c3a91492d0995bc4ae330b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch16/test_math_v1.py",
+      "bytes": 5968,
+      "sha256": "8d782fc3618d225c2b3dc5b05becb42985d99b851b30ac9dd8f01e7da296840d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch16/test_replay_v1.py",
+      "bytes": 13662,
+      "sha256": "d75c432bb25d5c45aaf213f0dc35b8af4c327ddbd494fafa0367e581dd058c83"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch16/test_context_v1.py",
+      "bytes": 4030,
+      "sha256": "4de2d9ee7d67af051b4f8c26042701c09c90ecc696def4481f3f859f84cb4e29"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch16/acceptance-contract-v1.json",
+      "bytes": 7619,
+      "sha256": "e8b01dcba62970467d8332596963a982a8edc3d7c647f7f2dd0f8c72a9b3aa48"
+    }
+  ]
+}

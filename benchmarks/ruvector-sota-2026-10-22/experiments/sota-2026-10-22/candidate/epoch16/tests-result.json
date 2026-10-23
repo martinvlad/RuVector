@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "epoch": 16,
+  "kind": "PURE_AND_INJECTED_ENGINEERING_ONLY",
+  "actual_model_native_fit_paid_GPU_calls": 0,
+  "actual_tokenizer_SHA256": "5124ef2ead1a10a717703bc436de7f353da76d6340e4587719b42b1693707964",
+  "tokenizer_usage": "Observed actual Unigram serialization/packing only, no session/NNforward",
+  "commands": [
+    {
+      "command": "OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 NUMEXPR_NUM_THREADS=2 TOKENIZERS_PARALLELISM=false retrieval/.venv/bin/python -B -m unittest discover -s experiments/sota-2026-10-22/candidate/epoch16 -p test_*.py -v",
+      "tests": 16,
+      "elapsed_unittest_seconds": 1.682,
+      "exit_code": 0,
+      "result": "OK"
+    },
+    {
+      "command": "same2threadenv retrieval/.venv/bin/python -B experiments/sota-2026-10-22/candidate/epoch16/test_runtime.py RuntimeTests.test_all_fixed_families_keep_exact_whole_H_and_Q_through_real_validator -v",
+      "tests": 1,
+      "elapsed_unittest_seconds": 0.592,
+      "exit_code": 0,
+      "result": "OK",
+      "scope": "One added total-3hypothesis wire/validator test; previouslypassing tests not redundantlyrerun"
+    }
+  ],
+  "unique_tests_passed": 17,
+  "tests_skipped": 0,
+  "new_case_or_confirmation_labels_read": 0,
+  "fixtures_scope": "Public engineering fixture source strings; injected fake NLI and native104 only. No benchmarkgeneralization score or retrievalperformance inferred.",
+  "test_sources": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch16/test_pairing.py",
+      "bytes": 2694,
+      "sha256": "96445a25a5e97c5b636f1ede3ecaed045c9dc9fe1fe23c9b805b9364b7409b41"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch16/test_context.py",
+      "bytes": 3728,
+      "sha256": "090e89c2e3e4261143e91f3db3bcf2bcadb0e9698a66214977423e99b18bcf8c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch16/test_runtime.py",
+      "bytes": 7474,
+      "sha256": "1303c4a343434304967e480c0cd1f47612855682cdadfb82350260b0b7b2ab99"
+    }
+  ],
+  "checks": [
+    "ExactHtable+verbatimfullNOT includingcase/punctuation",
+    "UnknownH/allquery/dualbudgetfailurebeforeany injectednative/BGE/NLIcall",
+    "Probabilitymass/neutral/labelswapequivariance/conflictkeptdistributional",
+    "Same actualtokenizerpremise fits BOTHpairs/no clipping/sourceorder/numericspanretention",
+    "Exactlysix injectedreaderpasses, originalHretrievalonly, same104excerpt, rawHsemanticcontrolzeroextra",
+    "Invalidartifactrefused before patchedbaseconstructorcouldinitialize"
+  ]
+}

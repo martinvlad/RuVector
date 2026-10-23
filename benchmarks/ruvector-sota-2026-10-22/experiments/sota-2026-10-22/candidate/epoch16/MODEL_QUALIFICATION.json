@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "epoch": 16,
+  "selected_model_changed": false,
+  "selected_model": {
+    "repo": "cross-encoder/nli-deberta-v3-large",
+    "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+    "graph_sha256": "821dc4407d10a9d25c20c57fcb742ddc20c09bc55c8093557091efb825256754",
+    "official_license_declaration": "Apache-2.0 model",
+    "declared_training": "SNLI+MultiNLI; no declaredContractNLIsupervision",
+    "lineage_limits": "No independentfulltraining/pretraining/fuzzyoverlap proof",
+    "asset_lock": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/model-assets.lock.json",
+      "sha256": "0771ff15231f8431bc10610571b01a0b718bf19978f0611c06ed932af4ddeec8"
+    }
+  },
+  "bounded_new_models_not_selected": [
+    {
+      "repository": "tasksource/ModernBERT-large-nli",
+      "revision": "ca476cb923a8637073d4ceb0f19f7fc236e260d4",
+      "license_declaration": "Apache-2.0; component training-data terms remain",
+      "architecture": "ModernBertForSequenceClassification,28layers1024hidden,2048positions,3classes E0/N1/C2",
+      "declared_training": "All card-table tasks including ContractNLI seg/full,ConTRoL,LexGLUE;200ksteps",
+      "publisher_aggregate_scope": "Author reports separate task heads; generic3wayreader legal accuracy not established",
+      "official_ONNX_files": [],
+      "qualification": "NOT_SELECTED; known originaltrain bank ineligibility + unknown exact checkpoint-selection/dataset-revision lineage + export/CPU2 runtime unverified",
+      "no_unchanged_blocker_native_probe": true,
+      "receipts": [
+        {
+          "file": "model-0-api.json",
+          "bytes": 3590,
+          "sha256": "54d8dcee691807bd6da102c4f86189949e77f948409e2f678ff2a8f79950355a"
+        },
+        {
+          "file": "model-0-README.md",
+          "bytes": 9893,
+          "sha256": "c887479fed2a43925cd81e580a8bb6cda2a9a32e7a1e37b8d175351be79f5a7c"
+        },
+        {
+          "file": "model-0-config.json",
+          "bytes": 5571,
+          "sha256": "97a0f2b487b248bb2fe2b9b4a7b699b162cccca7649605a92c68f184a7ba0a55"
+        }
+      ]
+    },
+    {
+      "repository": "MoritzLaurer/ModernBERT-large-zeroshot-v2.0",
+      "revision": "a51e07b524299e309dd2b88d48b0cfa2bd9ec598",
+      "license_declaration": "Apache-2.0; component data terms remain",
+      "architecture": "ModernBertForSequenceClassification,28layers1024hidden,8192positions,2classes E0/notE1",
+      "declared_training": "Same dataset mix as zeroshot-v2.0 collection; full immutable data lineage not established in this bounded review",
+      "official_ONNX_found": true,
+      "qualification": "NOT_SELECTED; binary collapse does not provide direct typedC/N decision, legal superiority not verified; publisher says slightly worse thanDeBERTav3 on tested tasks",
+      "receipts": [
+        {
+          "file": "model-1-api.json",
+          "bytes": 2327,
+          "sha256": "2c1f29e388056586e4e1cd4e236484348e0e60c36e10855679c4c24e77e1ef0f"
+        },
+        {
+          "file": "model-1-README.md",
+          "bytes": 3245,
+          "sha256": "f5edbc9131c60af9e108be1e2ea2d4edfe75e606218114994059cee65e5f4d1b"
+        },
+        {
+          "file": "model-1-config.json",
+          "bytes": 1471,
+          "sha256": "ababd87e19a2c783e08495996e5e32e7d6661ea66686ba41fd02f9e7d46d547f"
+        }
+      ]
+    }
+  ],
+  "qualification_scope": "Metadataonly,two newofficialmodelrepos, no weights/sessions/probes. No eligible legallystrongerready3wayreader establishedwithincap; notproofnoneexists. Do not executeunchangedknownoverlap/runtimeblockers.",
+  "actual_pretrained_or_legal_competence_improvement_claim": false,
+  "new_mechanism": "ExactwholepropositionNOT pairedthreewayviewpool; empiricaldiagnostic, notnewpretrainedmodel or synthetictestgeneralization."
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "epoch": 16,
+  "frozen_at": "2026-10-23T11:31:24.906548+00:00",
+  "checkpoint_parent": "e4360639a5ff1577263569b863bd7a594cea2ff2",
+  "source_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+  "source_commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+  "eligibility_manifest_sha256": "275eee798d7abbff480567ab359691e0e0c2e3ccff21018e0902ea8376030f50",
+  "salt": "ruvector-sota-epoch16-new-dev24-confirmation24-v1|",
+  "hypotheses": [
+    "nda-17",
+    "nda-7",
+    "nda-3"
+  ],
+  "dev_documents": 8,
+  "confirmation_documents": 8,
+  "train": [],
+  "calibration": [],
+  "old_confirmation_preserved_sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+  "selection": "One SHA256(salt+str(documentID))rank over210eligibleIDs. First8DEV,next8CONF. No source/textlength/labels/outcomes/classpresence used; no balancing or redraw.",
+  "selected_model_repository": "cross-encoder/nli-deberta-v3-large",
+  "selected_model_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+  "declared_supervision": "SNLI+MultiNLI, no knownContractNLI; exactpretraining/fuzzyoverlapunknown",
+  "mechanism": "Fixedwhole-proposition NOT prefix +symmetric3way probabilitypooling on same exactpretrainedreader; logicalcomplement hypothesis, not officialannotationCguarantee.",
+  "role_change": "NewCONF24is a prospectivelyfrozen8documentbank. OldCONF48unchanged; no postoutputhalving ofoldbank. Smallerbankreducesprecision; retain8docuncertainty.",
+  "annotation_projection": "Blockeduntil rootcandidate/sourcefreeze; DEV24onlyafterexplicitauthorization; CONF24onlyafterfixedDEV+runtimegates. No classbalance/redraw if classesabsent."
+}

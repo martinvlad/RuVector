@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "epoch": 16,
+  "kind": "SELECTED_FULL_PROPOSITION_POLARITY_CONTRACT_PRE_LABEL",
+  "at": "2026-10-23T11:25:14.932097+00:00",
+  "source_checkpoint": "e4360639a5ff1577263569b863bd7a594cea2ff2",
+  "selected_or_implemented": true,
+  "model_repositories_examined": 2,
+  "repository_cap": 2,
+  "weights_downloaded": 0,
+  "native_model_fit_paid_GPU_calls": 0,
+  "new_case_or_confirmation_labels_read": 0,
+  "models": [
+    {
+      "repository": "tasksource/ModernBERT-large-nli",
+      "revision": "ca476cb923a8637073d4ceb0f19f7fc236e260d4",
+      "license_declaration": "Apache-2.0; component training-data terms remain",
+      "architecture": "ModernBertForSequenceClassification,28layers1024hidden,2048positions,3classes E0/N1/C2",
+      "declared_training": "All card-table tasks including ContractNLI seg/full,ConTRoL,LexGLUE;200ksteps",
+      "publisher_aggregate_scope": "Author reports separate task heads; generic3wayreader legal accuracy not established",
+      "official_ONNX_files": [],
+      "qualification": "NOT_SELECTED; known originaltrain bank ineligibility + unknown exact checkpoint-selection/dataset-revision lineage + export/CPU2 runtime unverified",
+      "no_unchanged_blocker_native_probe": true,
+      "receipts": [
+        {
+          "file": "model-0-api.json",
+          "bytes": 3590,
+          "sha256": "54d8dcee691807bd6da102c4f86189949e77f948409e2f678ff2a8f79950355a"
+        },
+        {
+          "file": "model-0-README.md",
+          "bytes": 9893,
+          "sha256": "c887479fed2a43925cd81e580a8bb6cda2a9a32e7a1e37b8d175351be79f5a7c"
+        },
+        {
+          "file": "model-0-config.json",
+          "bytes": 5571,
+          "sha256": "97a0f2b487b248bb2fe2b9b4a7b699b162cccca7649605a92c68f184a7ba0a55"
+        }
+      ]
+    },
+    {
+      "repository": "MoritzLaurer/ModernBERT-large-zeroshot-v2.0",
+      "revision": "a51e07b524299e309dd2b88d48b0cfa2bd9ec598",
+      "license_declaration": "Apache-2.0; component data terms remain",
+      "architecture": "ModernBertForSequenceClassification,28layers1024hidden,8192positions,2classes E0/notE1",
+      "declared_training": "Same dataset mix as zeroshot-v2.0 collection; full immutable data lineage not established in this bounded review",
+      "official_ONNX_found": true,
+      "qualification": "NOT_SELECTED; binary collapse does not provide direct typedC/N decision, legal superiority not verified; publisher says slightly worse thanDeBERTav3 on tested tasks",
+      "receipts": [
+        {
+          "file": "model-1-api.json",
+          "bytes": 2327,
+          "sha256": "2c1f29e388056586e4e1cd4e236484348e0e60c36e10855679c4c24e77e1ef0f"
+        },
+        {
+          "file": "model-1-README.md",
+          "bytes": 3245,
+          "sha256": "f5edbc9131c60af9e108be1e2ea2d4edfe75e606218114994059cee65e5f4d1b"
+        },
+        {
+          "file": "model-1-config.json",
+          "bytes": 1471,
+          "sha256": "ababd87e19a2c783e08495996e5e32e7d6661ea66686ba41fd02f9e7d46d547f"
+        }
+      ]
+    }
+  ],
+  "proposal": {
+    "name": "full-proposition-NOT-mirrored-mean",
+    "model": "Unchanged officialcross-encoder/nli-deberta-v3-large exactepoch15 graph/revision/tokenizer",
+    "model_change": false,
+    "new_semantic_mechanism": true,
+    "equations": {
+      "E": "(p_E(H)+p_C(NOT_H))/2",
+      "C": "(p_C(H)+p_E(NOT_H))/2",
+      "N": "(p_N(H)+p_N(NOT_H))/2"
+    },
+    "temperature": 1,
+    "fitting": null,
+    "calibration": null,
+    "semantic_invariants": [
+      "Each input3wayprobabilityvector normalized/nonnegative",
+      "P(H)=swap_EC(P(NOT_H)) exactly when both forwards exchanged",
+      "Neutral mass is averaged directly; absence of E is never converted into C",
+      "Conflictingpositive/counterclaims retainuncertainty; no semantic insufficiency conclusion from retrieval miss"
+    ],
+    "hypotheses": [
+      {
+        "id": "nda-17",
+        "positive": "Receiving Party may create a copy of some Confidential Information in some circumstances.",
+        "counterclaim": "It is not the case that Receiving Party may create a copy of some Confidential Information in some circumstances.",
+        "working_logic": "Classicalouternegation ofentireverbatimmodal/quantifiedproposition;notapublisherannotationmapping"
+      },
+      {
+        "id": "nda-7",
+        "positive": "Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+        "counterclaim": "It is not the case that Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+        "working_logic": "Classicalouternegation ofentireverbatimmodal/quantifiedproposition;notapublisherannotationmapping"
+      },
+      {
+        "id": "nda-3",
+        "positive": "Confidential Information may include verbally conveyed information.",
+        "counterclaim": "It is not the case that Confidential Information may include verbally conveyed information.",
+        "working_logic": "Classicalouternegation ofentireverbatimmodal/quantifiedproposition;notapublisherannotationmapping"
+      }
+    ],
+    "counterclaim_status": "Rootapprovedandindependentlyauditedfullpropositionqcontract;no assumptiontheNNunderstandsnegation, nogoldlabelchanges.",
+    "same_source_context": "Pack ONE identical source premise fitting both positive andcounterclaim pairedtokenlength<=512; originalH-onlyretrievalquery; no confirmationlabelaccess; all3selectors use identical policy.",
+    "matched_retrieval": [
+      "nativeRuVector",
+      "sameNLIlexical",
+      "sameNLIpositional"
+    ],
+    "semantic_ablation": "OriginalH rawNLI output retained from existingfirstforward, zero extra inference. Its context is samepaired-budgetcontext; not advertised exactsame input as oldepoch15.",
+    "native104_control": "Reads exactprimaryselectedsourcepremise; not fullsubmittedchampion comparison.",
+    "forwards_per_HTTP": 6,
+    "runtime": "OneDEV24 then conditionalCONF24 nonretryableCPU2/600sec processes, incl modelinit+cleanup; staticinputcapacity beforelabels, actualDEV conservativeCONFforecast frozen. Never shrink cohorts after outputs.",
+    "roles": "Frozenprelabelcontract aad15820...;24DEV+24NEWCONF, old48untouched; noannotationprojectionyet",
+    "gate_proposal": "Root/auditor owns fixed binary+typed+rawHsemanticgates; candidatecode doesnotselect orsoftenpolicy.",
+    "limitations": [
+      "Does not establish strongerpretrainedlegalcompetence",
+      "No source rewrite,training,temperaturegrid,annaccuracygrid",
+      "Unknownpretraining/sourcefuzzyoverlap remains",
+      "Validlogicalnegation doesnotguarantee benchmarkannotationpolarity, especially exceptions/conditions",
+      "Twoforwards/request doubleNLIcost; runtimeadmission mayfail andmustnotbeoverridden"
+    ]
+  },
+  "supersedes": "research/unexecuted-manual-proposal-v1.json; nevermeasured/manualparaphrases notused",
+  "config_sha256": "9219a0c8b1af2b30847bc9ede7b08df39c1326b82e751709479cfe666a49d0ae",
+  "runtime_sha256": "5260dbcfb8b0656ef9346395b93a2ae870656363812dbc9d534056a838b062d4",
+  "pairing_source_sha256": "78fe1cd927a7a836bc09ea22358ece1f33e16b94293e5c56d8e5ce3ec878238d",
+  "paired_context_source_sha256": "055cbe5a766fdb276282bfc983ade394e94704924c64f67d2572dd313221ead8"
+}

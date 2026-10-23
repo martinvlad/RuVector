@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "epoch": 16,
+  "kind": "OFFICIAL_ANNOTATION_SEMANTICS_REVIEW",
+  "observed_at_UTC": "2026-10-23T11:35:45.292658+00:00",
+  "purpose": "Review permission/conditionalexception semantics before assuming wholepropositionnegation aligns with benchmarkContradiction. No relabeling and no CONFchoiceinspection.",
+  "source_index": {
+    "kind": "ContractNLI-index",
+    "repository": "stanfordnlp/contract-nli",
+    "revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "path": "index.md",
+    "git_blob": "f7e9d48f33822f348db70c5c274255095630df98",
+    "bytes": 10914,
+    "sha256": "e3aeaeb25e0c81baf0b280cb297ea7701647676f4f3a7b83002364a315a399ee"
+  },
+  "official_paper": {
+    "url": "https://aclanthology.org/2021.findings-emnlp.164.pdf",
+    "bytes": 1118938,
+    "sha256": "a60bfb31fb5d9b5aa7697715380e241a47704049913f0b8dd3c48401fd2bccd3",
+    "text_extraction": "pdftotext -layout; sourcePDFretainedoutsideproject, extractedpaperSHA256=95bbdc26f0c92fb10c6454f80f6a66c1c00722e7b70d5c2d18e293fae20acc12"
+  },
+  "verified_findings": [
+    {
+      "source": "Officialindex Task specification",
+      "finding": "Document-level Entailment/Contradiction/NotMentioned and evidenceidentification. Evidenceannotations definedonlyforE/C, and redundantrelevant spans needcomprehensivecoverage."
+    },
+    {
+      "source": "Papersection5.2 NegationbyException",
+      "finding": "A generalprohibition canbe flipped by asubsequentexception. Relevant clauses may occurwithinonespan orpagesapart. Thus prefixnegation/operatorsemantics cannot ignore exceptions."
+    },
+    {
+      "source": "PaperAppendixA.1.1 DetailsonContractAnnotation",
+      "finding": "Hypotheses reviewedbyparalegals; example-oriented annotationguideline foreachfixedhypothesis; primaryannotator consolidatedNLIlabelling and evidence, with differentreviewcoverage acrosssplits."
+    }
+  ],
+  "not_verified": [
+    "The full per-hypothesisexampleguidelines were not located in reviewed officialrepoindex/resources/paper.",
+    "No explicit annotationrule forassuming futurethirdpartyconsent, interpreting withoutwrittenconsent as existentialpermission, or mapping everylogicalcounterclaim to operationalgoldContradiction wasfound.",
+    "Absencefromrevieweddocs is not proof no suchguidelineexistselsewhere."
+  ],
+  "important_identity_warning": "PaperTable10ordinalnumbers differ from JSONnda-*keys; bind exacthypothesistext and actualsourcekey ratherthan matching ordinalnumbers.",
+  "counterclaim_scope": "q=It is not the case that +verbatimH is a whole-propositionlogicalcomplement, but its3waylabelmirror is an empiricaldecisionmechanism, not an officialannotationrule or establishedbenchmarkaccuracy.",
+  "preservation": [
+    "Alloriginalthreewayannotations preserved.",
+    "No goldrewriting, classbalancing or replacingcases becausemissingContradiction.",
+    "NotMentioned cannot be inferred solely from a retrievalmiss.",
+    "Structuralsource/numericretention is not semanticor arithmetictruth."
+  ],
+  "new_originaltrain_source_or_annotation_choices_accessed_for_this_review": false,
+  "model_native_fit_paid_GPU_calls": 0
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-23T11:32:21.754Z",
+  "epoch": 16,
+  "scope": "Candidate-specific independent acceptance policy frozen before new DEV/CONF annotations or any epoch16 model/native session. Policy alone does not admit native execution.",
+  "source_checkpoint": "e4360639a5ff1577263569b863bd7a594cea2ff2",
+  "exclusive_planning_lease": "ff9bd05525b37d8eec12d4564fba9b5cb8a179e6",
+  "prior_closed_native_attempts": 17,
+  "hypothesis": {
+    "kind": "PAIRED_WHOLE_PROPOSITION_NEGATION_MIRRORED_POOL",
+    "selected_model_repo": "cross-encoder/nli-deberta-v3-large",
+    "selected_model_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+    "graph_SHA256": "821dc4407d10a9d25c20c57fcb742ddc20c09bc55c8093557091efb825256754",
+    "graph": "Official QUINT8_AVX2; same model as rejected epoch15, no stronger legal model claim",
+    "positive": "H is EXACT frozen original declarative hypothesis.",
+    "counterclaim": "Q='It is not the case that '+H VERBATIM, including all original capitalization/punctuation.",
+    "mapping": "C0/E1/N2 stable raw softmax T1. Pool E=(E_H+C_Q)/2,C=(C_H+E_Q)/2,N=(N_H+N_Q)/2. Yes=pooledE,No=pooledC+pooledN.",
+    "logical_scope": "Outer logical NOT of entire declarative proposition, including modality/quantifiers. Formal working semantics only; official annotation operational-complement guarantee not verified. No per-family wording changes, notE=>C, Bayesian independence or source/label rewriting.",
+    "mechanical_properties": [
+      "Probability mass and neutral mass conservation",
+      "Exact label-swap equivariance under swapping pair roles",
+      "Retain all6actual raw logits/probabilities per selector and full pooled3way values",
+      "Unknown originalH rejected before any BGE/native/NLI forward"
+    ],
+    "context": "OriginalH drives native/lexical ranking only. Same exact whole-source premise must fit BOTH H/Q pairs<=512 actual tokenizer tokens; unchanged epoch15 shared160token definitionpriority, sourceorder,numeric surface checks. No fabricated premise, aliases or clipping. Native104 and rawH control read exact primary paired-budget premise.",
+    "empirical_scope": "Source-licensed originalContractNLI NDA diagnostic; not current Jev300/fullLegalBench/ClaimBench; rawHcontrol isolates pool effect under same newly paired context only, not cross-epoch model/context causal attribution"
+  },
+  "data": {
+    "train": [],
+    "calibration": [],
+    "development": {
+      "groups": 8,
+      "queries": 24,
+      "predicates": 3,
+      "source": "One ID-only draw from210unreserved originaltrain after excluding197exposed+16reservedoldCONF",
+      "no_label_balancing_or_redraw": true
+    },
+    "confirmation": {
+      "groups": 8,
+      "queries": 24,
+      "source": "Same one frozen ID-only draw, distinct next8 groups; oldCONF48untouched",
+      "lazy_gold": "Exact original-source hash + frozen IDs/input hashes + builder code/recipe bound before measurements. Project24gold only inside actual conditional CONF worker after fixed DEV/runtime/lease admission; record actual dataset hash and24annotation projections then.",
+      "not_train_selection_labels": true
+    },
+    "exposure": "DEV phase prePopen reservation conservatively retires all8newDEVgroups even0HTTP; earlier DEVgoldprojection is exposedDEV already. CONF phase prePopen reservation retires newCONF24even0HTTP, actual projection/model use reported separately. Old easy48/Legal96/f018 stayDEV forever.",
+    "upstream_overlap": "Non-CNLI-trained declared selected model; unknown pretraining/fuzzy overlap disclosed. No knownCNLI-supervised model can use originaltrainCONF."
+  },
+  "arms": {
+    "binary": [
+      "ruvector_top2",
+      "same_nli_lexical_top2",
+      "same_nli_positional_first2",
+      "native104_on_ruvector_evidence",
+      "same_nli_native_raw_h"
+    ],
+    "typed": [
+      "ruvector_top2",
+      "same_nli_lexical_top2",
+      "same_nli_positional_first2",
+      "same_nli_native_raw_h"
+    ],
+    "free_diagnostics": "RawHpositive probabilities for lexical/positional retained without extra inference; no post-output extra candidate selection"
+  },
+  "budget": {
+    "new_native_process_cap": 2,
+    "threads": 2,
+    "seconds_each_including_verification_initialization_owned_cleanup": 600,
+    "phase1": "One nonretryableDEV24 actualnativeprocess;6NLIforwards/request. No probe/warmup or replay of archivedcontrollers.",
+    "phase2": "Only frozenDEV+runtime+lease passes: one nonretryableCONF24 actualnativeprocess including lazy goldprojection+allinitcleanup. No retries.",
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "attempt_numbers": [
+      18,
+      19
+    ],
+    "terminal": "Every terminal outcome closes all unused slots permanently."
+  },
+  "gates": {
+    "validity": "All5binary arms full n24, strictvalid24,error0,finitepropermetrics; all4typedarms full n24,properfinite. Gold E/C/N each>=1 in each measured phase; absence =>inconclusive gatefailure, no redraw. Primary Ccorrect>=1 in eachphase.",
+    "DEV_binary": "Primarycorrect>=EACH4controls+2; Brier AND NLL<=eachcontrol+1e-12; strictBrier OR strictNLL improvement>1e-12 against EACH3NLIcontrols, including free same-native-evidence rawH.",
+    "DEV_typed": "Primary3waycorrect>=EACH3typedcontrols+2; typedBrier AND typedNLL<=each+1e-12; strictBrier OR strictNLL improvement>1e-12 EACH. Confidence-only pooling or binaryNo wins cannot qualify.",
+    "CONF_points": "Primary binarycorrect>=EACH4controls, bothbinarypropernonworseall4 and strictpropergain EACH3NLIcontrols; typedcorrect>=EACH3typedcontrols,both3waypropernonworseall3 andstrictpropereach. Validity/classguardsstillrequired.",
+    "CONF_uncertainty": "Paired8-document bootstrap2000draws seed20261022 for primary-minus-control accuracy and control-minus-primary Brier/NLL. Binary accuracy CI lower>0ALL4,properCI lower>=-1e-12ALL4. Typed accuracy CI lower>0ALL3,typedproperCI lower>=-1e-12ALL3. Empiricalpercentile floorindices int(.025*1999),int(.975*1999). Nominal,notfamilywise;8groupssmall-bankpowerlimitsreported.",
+    "official": "No championpromotion/newsubmission without actual independently accepted meaningfulDEV+unusedCONF plus verifiedpublisherprotocol/eligibility. Actual matchingpublisherresult/rank1/eligibility required for SOTA/automationgoal."
+  },
+  "runtime_admission": {
+    "formula_id": "24xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "formula": "24*maxactualDEVwholeHTTPseconds*max(1,maxCONFsourceunits/maxDEVsourceunits)+2*wholeDEVinitializationseconds+60",
+    "source_capacity": "Exact label-free frozen-input counts before outcomes; no timing probe,post-output bank shrink/source/model swap.",
+    "allowed": "Strict DEV passes AND forecast<=600 AND lease_remaining>=forecast+30; actual600s owned-process watchdog mandatory; forecast is conservative heuristic,not guaranteed runtime."
+  },
+  "replay_handoff": "Audit pure source/gate/token/context/score/wire/process/resource replay helpers and tests must be frozen and exact-byte handoff accepted BEFORE any newDEVgoldprojection. No source/policy/checker adaptation after gold; failures retained.",
+  "resources": "Report all-arm p50/p95,accuracy,binary and3wayproper,typedconfusion/errors,wall inclinit/cleanup,worker/childCPU andRSS highwater scope,actualBGE/NLI/nativecounts; no primary-onlydeploymentlatencyclaim.",
+  "preservation": "Native104/RRF10 unchanged, main/merge/release/packages untouched, no credentials/private mail/raw publisherHTML/fullClaimaggregate, no duplicateemails/submissions or unrelatedmessages.",
+  "native_execution_admitted": false,
+  "auditor_model_native_fit_paid_GPU_calls": 0
+}

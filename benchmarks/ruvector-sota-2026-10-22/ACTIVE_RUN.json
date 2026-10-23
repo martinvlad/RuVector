@@ -1,24 +1,21 @@
 {
   "schema_version": 1,
-  "run_id": "epoch19-1a1698f9db5",
-  "state": "EPOCH19_CLOSED",
-  "experiments_active": false,
+  "run_id": "epoch20-f5588491b31d",
+  "state": "EPOCH20_EXCLUSIVE_PLANNING_LEASE",
+  "experiments_active": true,
   "native_allowed": 0,
   "native_allowed_after_exact_remote_readback": 0,
-  "checkpoint_parent": "b4f32720a212f1735ba71cbfee539152715c883a",
-  "started_at": "2026-10-23T16:19:42.219432+00:00",
-  "expires_at": "2026-10-23T19:19:42.219446+00:00",
+  "checkpoint_parent": "01c42365b8d79c968ea4f49120a5c1d71b9e0687",
+  "started_at": "2026-10-23T18:19:16.024741+00:00",
+  "expires_at": "2026-10-23T21:19:16.024Z",
   "OS_lock_held": true,
   "OS_lock_release_pending_final_remote_readback": true,
   "limits": {
-    "qualification_worker_attempt_cap": 1,
+    "native_corpus_batches": 2,
     "CPU_threads": 2,
-    "seconds_per_process_including_init_cleanup": 600,
-    "paid_GPU_calls": 0
+    "seconds_per_process_including_initialization_cleanup": 600,
+    "paid_API_calls": 0,
+    "GPU_calls": 0
   },
-  "instruction": "Closed; no further epoch19 execution.",
-  "actual_epoch19_qualification_attempts": 1,
-  "all_unspent_epoch19_slots_permanently_closed": true,
-  "owned_native_groups_closed": true,
-  "closed_at": "2026-10-23T17:05:20.722012+00:00"
+  "instruction": "Planning lease only. Reconstruct, qualify new source/roles/runtime and publish exact immutable source before any inference or labels; no existing study may be retried."
 }

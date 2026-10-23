@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "status": "PREFREEZE_SOURCE_RUNTIME_RESTORATION_FAILURE_RETAINED",
+  "helper": "experiments/sota-2026-10-22/epoch18/preparation/restore_public_runtime_cache.py",
+  "helper_SHA256": "93c7b9aa8ec2cca5d78b9724b48780abe61db0973879e24ebb23ad4a1e99e7a2",
+  "actual_exception": "ValueError: Exactly one official wheel RECORD required",
+  "stack": [
+    "restore_public_runtime_cache.py:162 main",
+    "line161 restore(args)",
+    "line122 for info,h in wheel_members(archive)",
+    "line60 len(record)!=1"
+  ],
+  "cause": "Official setuptools84.2.1wheel includes12vendored nested.dist-info/RECORD and one outer setuptools-84.2.1.dist-info/RECORD; v1incorrectly countedall13.",
+  "metadata_inspection": "Exactlyone metadata-onlyall31wheelRecordpathinspection; onlysetuptools hadmultiple.",
+  "completed_public_assets_receipt": "public-runtime-asset-cache-receipt.json",
+  "public_asset_bytes_restored": true,
+  "partial_venv_retained_outside_project": true,
+  "fresh_venv_path_absent_after_archive": true,
+  "correction": "Append-onlyv2selectsonlyrootwheel.dist-info/RECORD; allnestedvendorRECORDfilesremainhashvalidatedbyouterRECORD. No wheel/runtimeversionchange, no overlay, no modelsourcechange.",
+  "new_case_input_or_annotation_choices_read": 0,
+  "model_native_fit_paid_GPU_calls": 0,
+  "benchmark_failure": false
+}

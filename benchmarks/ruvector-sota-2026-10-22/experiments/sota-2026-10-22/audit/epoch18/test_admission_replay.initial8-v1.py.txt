@@ -1,0 +1,157 @@
+"""Generic saved-receipt fault fixtures; no real admission/models/cases."""
+from pathlib import Path
+import copy
+import json
+import tempfile
+import unittest
+import replay_scores_v1 as S
+
+PREFIX = 'experiments/sota-2026-10-22/'
+RECEIPT = PREFIX+'audit/epoch18/prelabel-operational-admission-v1.json'
+
+
+def put(root, path, value):
+    file = root/path; file.parent.mkdir(parents=True, exist_ok=True)
+    file.write_text(json.dumps(value, sort_keys=True))
+    return S.sha(file)
+
+
+def admission_fixture(root):
+    source = PREFIX+'epoch18/candidate-source-freeze.json'
+    source_sha = put(root, source, {'fixture': 'generic source metadata'})
+    controller = PREFIX+'controller/epoch18/loop.py'
+    inherited = PREFIX+'controller/epoch3_loop.py'
+    controller_sha = put(root, controller, {'fixture': 'generic controller bytes'})
+    inherited_sha = put(root, inherited, {'fixture': 'generic inherited bytes'})
+    pending = dict(schema_version=1, epoch=18, controller_version='generic', revision='generic',
+        study_id='generic', limits={'seconds_per_decision':30}, train=[], calibration=[],
+        datasets={'development':'generic/dev','confirmation':'generic/conf'},
+        lazy_confirmation={'source_freeze_path':source,'source_freeze_sha256':source_sha},
+        expected_native_receipt={}, expected_nli_revision='generic', expected_nli_sha256='a'*64,
+        expected_new_reader_receipt={}, expected_previous_reader_receipt={},
+        binary_probability_policy={}, actual_project=str(root), lease_expires_unix=123456,
+        candidate_manifest_sha256='b'*64, inference_python='generic/python',
+        prior_closed_study_native_attempts=18, new_study_native_attempt_cap=2,
+        new_study_native_attempts_before=0, prior_closed_epoch17_native_attempts=0,
+        runtime_admission={'formula_id':'generic fixed formula','max_DEV_units':1,
+                           'max_confirmation_units':1,'capacity_pending_label_free_inputs':True},
+        measurement_plan=False, operational_prelabel_only=True)
+    contract = {k:v for k,v in pending.items() if k not in
+                ('runtime_admission','measurement_plan','operational_prelabel_only')}
+    contract['runtime_formula_id'] = pending['runtime_admission']['formula_id']
+    op_path = PREFIX+'epoch18/operational-plan.json'
+    op_sha = put(root, op_path, pending)
+    receipt = dict(checks_passed=True,
+        status='FULL_UNMOCKED_OPERATIONAL_PRELABEL_ADMISSION_PASS',
+        operational_prelabel_only=True, native_execution_admitted=False,
+        actual_full_require_plan_calls=1, original_case_inputs_or_annotation_choices_projected=0,
+        model_native_fit_paid_GPU_calls=0, source_freeze_path=source,source_freeze_sha256=source_sha,
+        controller_source_sha256=controller_sha, inherited_verifier_sha256=inherited_sha,
+        plan_path=op_path,plan_sha256=op_sha,operational_contract_sha256=S.text_hash(S.canonical(contract)))
+    receipt_sha = put(root, RECEIPT, receipt)
+    final = copy.deepcopy(pending)
+    final.update(measurement_plan=True, operational_prelabel_only=False,
+        prelabel_operational_admission={'path':RECEIPT,'sha256':receipt_sha},
+        pins=[{'path':RECEIPT,'sha256':receipt_sha},{'path':op_path,'sha256':op_sha}])
+    final['runtime_admission'].update(max_DEV_units=5,max_confirmation_units=7,
+                                    capacity_pending_label_free_inputs=False)
+    return final, receipt
+
+
+class AdmissionReplayFixtures(unittest.TestCase):
+    def test_final_capacity_can_differ_only_after_source_admission(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td); final,_=admission_fixture(root)
+            self.assertTrue(S.verify_operational_admission(final,root))
+
+    def test_operational_template_cannot_masquerade_as_final(self):
+        for key, bad in [('measurement_plan',False),('operational_prelabel_only',True)]:
+            with tempfile.TemporaryDirectory() as td:
+                root=Path(td); final,_=admission_fixture(root); final[key]=bad
+                with self.subTest(key=key),self.assertRaises(AssertionError):
+                    S.verify_operational_admission(final,root)
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td); final,_=admission_fixture(root)
+            final['runtime_admission']['capacity_pending_label_free_inputs']=True
+            with self.assertRaises(AssertionError):S.verify_operational_admission(final,root)
+
+    def test_model_budget_project_lease_or_formula_drift_fails(self):
+        for key,bad in [('candidate_manifest_sha256','c'*64),('actual_project','/different'),
+                        ('lease_expires_unix',123457),('new_study_native_attempt_cap',3),
+                        ('inference_python','different/python')]:
+            with tempfile.TemporaryDirectory() as td:
+                root=Path(td); final,_=admission_fixture(root); final[key]=bad
+                with self.subTest(key=key),self.assertRaises(AssertionError):
+                    S.verify_operational_admission(final,root)
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);final,_=admission_fixture(root)
+            final['runtime_admission']['formula_id']='different'
+            with self.assertRaises(AssertionError):S.verify_operational_admission(final,root)
+
+    def test_changed_operational_report_or_source_bytes_fail(self):
+        for path in [RECEIPT,PREFIX+'epoch18/operational-plan.json',
+                     PREFIX+'epoch18/candidate-source-freeze.json',PREFIX+'controller/epoch18/loop.py',
+                     PREFIX+'controller/epoch3_loop.py']:
+            with tempfile.TemporaryDirectory() as td:
+                root=Path(td);final,_=admission_fixture(root);(root/path).write_text('changed')
+                with self.subTest(path=path),self.assertRaises(AssertionError):
+                    S.verify_operational_admission(final,root)
+
+    def test_false_pass_fingerprint_and_duplicate_pin_fail_even_rehashed(self):
+        for key,bad in [('native_execution_admitted',True),('actual_full_require_plan_calls',0),
+                        ('original_case_inputs_or_annotation_choices_projected',1),
+                        ('model_native_fit_paid_GPU_calls',1),('operational_contract_sha256','f'*64)]:
+            with tempfile.TemporaryDirectory() as td:
+                root=Path(td); final,receipt=admission_fixture(root);receipt[key]=bad
+                new_sha=put(root,RECEIPT,receipt)
+                final['prelabel_operational_admission']['sha256']=new_sha
+                final['pins'][0]['sha256']=new_sha
+                with self.subTest(key=key),self.assertRaises(AssertionError):
+                    S.verify_operational_admission(final,root)
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);final,_=admission_fixture(root);final['pins'].append(copy.deepcopy(final['pins'][0]))
+            with self.assertRaises(AssertionError):S.verify_operational_admission(final,root)
+
+
+class ReaderReceiptFixtures(unittest.TestCase):
+    def fixture(self):
+        new = dict(repo='microsoft/deberta-v2-xlarge-mnli',revision=S.NEW_REV,
+            original_checkpoint_sha256=S.NEW_SHA,tokenizer_sha256=S.NEW_SPM,config_sha256=S.NEW_CONFIG,
+            label_indices={'contradiction':0,'neutral':1,'entailment':2},
+            loaded_parameter_dtypes_before_quantization=['torch.float32'],
+            device='cpu',threads=2,interop_threads=1,deterministic_algorithms=True,
+            training_or_calibration_fit=False,model_initializations=1,quantization_initializations=1,
+            initialization_model_forwards=0,versions={'torch':'2.7.1+cpu','transformers':'4.52.4',
+            'sentencepiece':'0.2.0','tokenizers':'0.21.4','safetensors':'0.5.3','protobuf':'5.29.5'},
+            batch_size=1,temperature=1,pair_token_cap=512,padding=False,truncation=False,
+            hidden_size=1536,layers=24,quantized_linear_count=1,
+            quantized_linear_modules=[{'name':'generic.linear','weight_dtype':'torch.qint8'}],
+            quantized_weight_state_sha256='a'*64)
+        previous = dict(revision=S.MODEL_REV,model_sha256=S.MODEL_SHA,
+            label_indices={'contradiction':0,'entailment':1,'neutral':2},
+            provider='CPUExecutionProvider',threads=2,onnxruntime='1.22.1',tokenizers='0.21.4',
+            numpy='2.2.6',precision='OFFICIAL_QUINT8_AVX2')
+        return {'new_reader':new,'previous_reader':previous,
+                'bge':{'provider':'CPUExecutionProvider','threads':2,'onnxruntime':'1.22.1'}}
+
+    def test_exact_pinned_both_readers_and_bge_receipts(self):
+        self.assertTrue(S.verify_reader_receipt(self.fixture()))
+
+    def test_provider_version_thread_and_warmup_drift_fail(self):
+        for arm,key,bad in [('previous_reader','provider','CUDAExecutionProvider'),
+                            ('previous_reader','onnxruntime','different'),
+                            ('previous_reader','threads',4),('previous_reader','numpy','different'),
+                            ('bge','provider','CUDAExecutionProvider'),('bge','threads',4),
+                            ('new_reader','initialization_model_forwards',1),
+                            ('new_reader','quantization_initializations',2),
+                            ('new_reader','device','cuda')]:
+            receipt=self.fixture();receipt[arm][key]=bad
+            with self.subTest(arm=arm,key=key),self.assertRaises(AssertionError):
+                S.verify_reader_receipt(receipt)
+
+    def test_float_weights_misreported_as_quantized_fail(self):
+        receipt=self.fixture();receipt['new_reader']['quantized_linear_modules'][0]['weight_dtype']='torch.float32'
+        with self.assertRaises(AssertionError):S.verify_reader_receipt(receipt)
+
+
+if __name__ == '__main__':unittest.main()

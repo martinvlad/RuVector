@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T14:23:17.738785+00:00",
+  "checks_passed": true,
+  "status": "INDEPENDENT_PRE_EXECUTION_PUBLIC_CACHE_HELPER_SOURCE_AND_GENERIC_FIXTURES_PASS",
+  "helper": {
+    "path": "experiments/sota-2026-10-22/epoch18/preparation/restore_public_runtime_cache.py",
+    "bytes": 10062,
+    "sha256": "93c7b9aa8ec2cca5d78b9724b48780abe61db0973879e24ebb23ad4a1e99e7a2"
+  },
+  "tests": {
+    "path": "experiments/sota-2026-10-22/audit/epoch18/test_public_cache_v1.py",
+    "bytes": 6046,
+    "sha256": "fdeadcb193360f69ea08ddcd6ff747d2b456cf5f4253b223800dc9d422e0973d"
+  },
+  "generic_tests": 11,
+  "passed": 11,
+  "original_public_metadata_hashes_against_actual_source_CP": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch17/preparation/runtime-closure.json",
+      "bytes": 6057,
+      "sha256": "63328fd3914d9f8f07339e469f71c593657b636e92d14c619544c80ac19ae046"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch17/preparation/python-wheel-identities.json",
+      "bytes": 6063,
+      "sha256": "6689210699a4171b54a38f8d14edba78c4b4b6390c76b6b05293a32f1ea2b8de"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch17/external-registry.json",
+      "bytes": 15024,
+      "sha256": "e2cc2c2f559c3a43fe8a2cacc15f1b6ca066fdd932463bf70beea86db52f2298"
+    }
+  ],
+  "reviewed_behavior": [
+    "All exact public asset cache hashes verified before hardlinks; destination mismatch preserved",
+    "All31 official cached wheel whole SHA256/size pinned from fresh current source metadata",
+    "Each actual non-RECORD ZIP member SHA256/length compared to official RECORD; exact whole wheel also binds RECORD bytes",
+    "Unsafe/duplicate ZIP paths/rows and symlinks fail closed; only verified identical installed members may hardlink",
+    "Fresh venv from trusted base interpreter; no old cache interpreter executed; official wheel bytes extracted on member mismatch",
+    "No neural/native imports or probes, no network or setup hooks, no copied console entrypoints; module-only runtime",
+    "All linked/extracted destinations rehashed; isolated31 distribution metadata emitted"
+  ],
+  "actual_invocation_requirements": [
+    "Use trusted current base Python (sys.prefix==sys.base_prefix verified by reviewer)",
+    "Existing receipt-dir must be within current isolated scope and have no symlink ancestors; parent controls this exact CLI argument",
+    "Stop on failure; never blindly overlay an existing partially created venv"
+  ],
+  "not_established": [
+    "Actual neural ABI/model construction or inference compatibility",
+    "Actual end-to-end runtime restoration outcome before root executes once"
+  ],
+  "source_checkpoint": "0eac156990f5a4ee0084af635eb3089913b437ff",
+  "new_case_inputs_or_annotations_read": 0,
+  "model_native_fit_paid_GPU_calls": 0,
+  "reviewer_actual_runtime_restorations": 0
+}

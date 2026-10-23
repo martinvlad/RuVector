@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "epoch": 18,
+  "status": "SOURCE_ONLY_REUSE_OF_UNMEASURED_OFFICIAL_READER",
+  "source_checkpoint": "0eac156990f5a4ee0084af635eb3089913b437ff",
+  "selected_model": {
+    "repo": "microsoft/deberta-v2-xlarge-mnli",
+    "revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+    "official_architecture": {
+      "layers": 24,
+      "hidden_size": 1536,
+      "attention_heads": 24,
+      "classes": 3
+    },
+    "labels": {
+      "contradiction": 0,
+      "neutral": 1,
+      "entailment": 2
+    },
+    "model_card_license": "MIT",
+    "declared_finetuning": "MNLI",
+    "known_ContractNLI_supervision": false,
+    "legal_competence_established": false,
+    "record_level_pretraining_overlap_verified": false
+  },
+  "epoch17_actual_native_model_calls": 0,
+  "epoch18_implementation_native_model_calls": 0,
+  "cause": "Epoch17 frozen decision60 policy conflicted with unchanged inherited max30 verifier. Epoch18 creates a separately frozen compatible30 policy; no epoch17 policy/checker/source is mutated.",
+  "shared_asset_folder": "experiments/sota-2026-10-22/candidate/epoch17/assets/official-deberta-v2-xlarge-mnli",
+  "model_qualification": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch17/research/MODEL_QUALIFICATION.epoch17.json",
+    "bytes": 12488,
+    "sha256": "d80eb22cc7f0d2d810c6f8482b528c20332c62b5a33c5ea94d8fb3c1abc31dad"
+  },
+  "exact_reused_sources": [
+    {
+      "new": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch18/torch_reader.py",
+        "bytes": 14712,
+        "sha256": "7818296c731be4817ca08777c0124782a65c8512a6a36d97d324a0fb1cdba6b9"
+      },
+      "original": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/torch_reader.py",
+        "bytes": 14712,
+        "sha256": "7818296c731be4817ca08777c0124782a65c8512a6a36d97d324a0fb1cdba6b9"
+      }
+    },
+    {
+      "new": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch18/context.py",
+        "bytes": 4347,
+        "sha256": "d191f4b0402a26df82180f75414305237a58f0ef0b94805ca97fcd33f27eaac9"
+      },
+      "original": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/context.py",
+        "bytes": 4347,
+        "sha256": "d191f4b0402a26df82180f75414305237a58f0ef0b94805ca97fcd33f27eaac9"
+      }
+    },
+    {
+      "new": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch18/model-assets.lock.json",
+        "bytes": 2900,
+        "sha256": "5f3a0538b71cb3691200b88996d56a4800e4b3f81caa43b290c56f6cbeb422f2"
+      },
+      "original": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/model-assets.lock.json",
+        "bytes": 2900,
+        "sha256": "5f3a0538b71cb3691200b88996d56a4800e4b3f81caa43b290c56f6cbeb422f2"
+      }
+    },
+    {
+      "new": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch18/acquire_assets.py",
+        "bytes": 9134,
+        "sha256": "488e376bad6db96cd6886f4eb2fda4d39b38a64ef45e23f2342ba6f63706031e"
+      },
+      "original": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/acquire_assets.py",
+        "bytes": 9134,
+        "sha256": "488e376bad6db96cd6886f4eb2fda4d39b38a64ef45e23f2342ba6f63706031e"
+      }
+    },
+    {
+      "new": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch18/requirements-cpu.txt",
+        "bytes": 147,
+        "sha256": "36cbdf82187d95ecd43d58c0f92ecfeab90f92fdfe233a5b6909ced59b544a52"
+      },
+      "original": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch17/requirements-cpu.txt",
+        "bytes": 147,
+        "sha256": "36cbdf82187d95ecd43d58c0f92ecfeab90f92fdfe233a5b6909ced59b544a52"
+      }
+    }
+  ],
+  "fresh_roles": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch18/data-contract.pre-label.json",
+    "bytes": 8850,
+    "sha256": "3bdf60676285e54513fc51ec45ff66bbe059a5af878dab56de14dc978914c2ae"
+  },
+  "confirmation_labels_used_for_source_or_model_selection": false,
+  "independent_label_free_capacity_and_full_prelabel_admission_required": true,
+  "legal_superiority_established": false,
+  "champion_replaced": false
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "epoch": 18,
+  "kind": "PRESERVED_OFFICIAL_TYPED_ANNOTATION_LINEAGE_NO_RELABEL",
+  "prior_semantics_review": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch16/annotation-semantics.json",
+    "bytes": 3133,
+    "sha256": "c86fc940956d128b7fe93598210681ade33be7d05641d23f9487a2cbf1cd0994"
+  },
+  "official_source_commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+  "source_license": "CC-BY-4.0",
+  "hypothesis_keys_bound_to_exact_original_source_text": [
+    "nda-17",
+    "nda-7",
+    "nda-3"
+  ],
+  "paper_ordinal_numbers_not_JSON_keys": true,
+  "original_gold_classes": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "binary_mapping": {
+    "Entailment": "Yes",
+    "Contradiction": "No",
+    "NotMentioned": "No"
+  },
+  "official_verified_findings": [
+    {
+      "source": "Officialindex Task specification",
+      "finding": "Document-level Entailment/Contradiction/NotMentioned and evidenceidentification. Evidenceannotations definedonlyforE/C, and redundantrelevant spans needcomprehensivecoverage."
+    },
+    {
+      "source": "Papersection5.2 NegationbyException",
+      "finding": "A generalprohibition canbe flipped by asubsequentexception. Relevant clauses may occurwithinonespan orpagesapart. Thus prefixnegation/operatorsemantics cannot ignore exceptions."
+    },
+    {
+      "source": "PaperAppendixA.1.1 DetailsonContractAnnotation",
+      "finding": "Hypotheses reviewedbyparalegals; example-oriented annotationguideline foreachfixedhypothesis; primaryannotator consolidatedNLIlabelling and evidence, with differentreviewcoverage acrosssplits."
+    }
+  ],
+  "annotation_uncertainty_retained": [
+    "The full per-hypothesisexampleguidelines were not located in reviewed officialrepoindex/resources/paper.",
+    "No explicit annotationrule forassuming futurethirdpartyconsent, interpreting withoutwrittenconsent as existentialpermission, or mapping everylogicalcounterclaim to operationalgoldContradiction wasfound.",
+    "Absencefromrevieweddocs is not proof no suchguidelineexistselsewhere."
+  ],
+  "missing_retrieval_is_not_NotMentioned_proof": true,
+  "numeric_surface_retention_is_not_arithmetic_truth": true,
+  "no_counterclaim_pool_or_annotation_complement_assumption": true,
+  "case_inputs_original_source_or_annotation_choices_accessed": 0,
+  "model_native_fit_paid_GPU_calls": 0,
+  "unchanged_previous_lineage": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch17/annotation-lineage.json",
+    "bytes": 2373,
+    "sha256": "3c1122bd98db99a1225926b96d6f993970186b0fd8371ee966f6bb5e369fba1a"
+  }
+}

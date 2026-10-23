@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "reviewer": "independent-platform-agent-e18_source_review",
+  "status": "REPRODUCED_PRE_FREEZE_ROOT_METADATA_GUARD_GAPS",
+  "scope": "Generic temporary project roots and public source metadata only. No benchmark examples, annotation choices, model imports, actual operational CLI or native processes.",
+  "command": "python -B experiments/sota-2026-10-22/epoch18/reviews/test_root_metadata_guards.py",
+  "exit_code": 1,
+  "tests": 6,
+  "passed": 1,
+  "failed_assertions": 3,
+  "synthetic_boundary_errors": 2,
+  "results": {
+    "normal_source_freeze_accepts_generic_metadata": "PASS",
+    "source_freeze_rejects_dangling_projection_symlink": "FAILED: rejection was not raised",
+    "source_freeze_rejects_ancestor_symlink_in_handoff": "FAILED: rejection was not raised",
+    "snapshot_rejects_ancestor_symlink": "FAILED: rejection was not raised",
+    "final_freeze_rejects_changed_dev_bytes": "ERROR: SYNTHETIC_VALIDATOR_BOUNDARY_REACHED",
+    "final_freeze_rejects_changed_dev_allowlist_bytes": "ERROR: SYNTHETIC_VALIDATOR_BOUNDARY_REACHED"
+  },
+  "interpretation": "Root source helpers need ancestor-symlink and dangling-link absence guards. Final study helper needs to bind actual projected DEV data and allowlist bytes to the immutable materialization receipt before writing the measurement plan. These probes do not establish a native admission bypass: the real downstream operational validator independently checks source paths and other full admission gates were not exercised here.",
+  "separate_public_source_closure_fixtures": {
+    "command": "node experiments/sota-2026-10-22/epoch18/test_source_closure.mjs",
+    "tests": 53,
+    "passed": 53,
+    "exit_code": 0
+  },
+  "actual_full_require_plan_calls": 0,
+  "model_native_fit_paid_GPU_calls": 0,
+  "original_benchmark_case_inputs_read": 0,
+  "original_annotation_choices_read": 0,
+  "official_score": null,
+  "official_rank": null,
+  "champion_promoted": false
+}

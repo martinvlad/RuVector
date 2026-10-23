@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T14:42:44.631037+00:00",
+  "reviewer": "independent-platform-agent-e18_source_review",
+  "status": "SOURCE_TOOLING_REVIEW_PASS_ONLY",
+  "checks_passed": true,
+  "source_checkpoint": "0eac156990f5a4ee0084af635eb3089913b437ff",
+  "planning_lease": "2e6aa4fca5acd9a5149c9f6b37aaf4360c035a45",
+  "scope": "Static root source/freezer/operational metadata review plus generic temporary-root fault probes and public source-closure fixtures. No original benchmark inputs or annotation choices, real operational admission, model import or native measurement.",
+  "reviewed_root_helpers": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/freeze_sources.py",
+      "bytes": 4413,
+      "sha256": "4cb38a0e6b47a8532195e71e851592d2aa2879fc33f6cf07e8868658e2433d70"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/study_metadata.py",
+      "bytes": 4208,
+      "sha256": "34c356eef1f7e3e43ae64d5320a72718cd26e008d79ee37f3264fd95ca2fec02"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/freeze_operational.py",
+      "bytes": 513,
+      "sha256": "14a1d2b210663bb0e3d8fad70dea6ce3242c10be6d56ea700ba9637fcb955b08"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/freeze_study.py",
+      "bytes": 3628,
+      "sha256": "b1529dc5f24087de89f3b1c20c075ba0b7b19a39ac004a43dd6d82579478277e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/source_closure.mjs",
+      "bytes": 1019,
+      "sha256": "04a7005291f468ea7bef6f5edb0570cc158452aadf0dc95471d990517977d261"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/source_closure_cli.mjs",
+      "bytes": 4358,
+      "sha256": "5462fb6d711162ac0b583f39c6c0b0adee26b0787f186bd919c95d39e874d601"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/make_source_closure_inputs.py",
+      "bytes": 2669,
+      "sha256": "677e2cb48fce2eb94972af11c070adf3d2841b5c182440ba39684a8610c5afd7"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/test_source_closure.mjs",
+      "bytes": 2963,
+      "sha256": "da0db0f4424b313a9f6810eaf6efc5ef43181d1e3c3bf7d8c91d186d475e495f"
+    }
+  ],
+  "review_test": {
+    "path": "experiments/sota-2026-10-22/epoch18/reviews/test_root_metadata_guards.py",
+    "bytes": 9814,
+    "sha256": "88ef9d5e37c80295a66eea38542631b778dcaa52f9cf4afcd8b1e43c107105a2"
+  },
+  "initial_faults_retained": {
+    "path": "experiments/sota-2026-10-22/epoch18/reviews/initial-root-metadata-faults-v1.json",
+    "bytes": 1955,
+    "sha256": "43af2e6d973ca5bc1075bc0c4ce76e4da123cb1ddb1a0a483985867966973709"
+  },
+  "validated": [
+    "Reviewed independent handoff source sizes and digests are checked before freezing current sources; original checkpoint project records are also rehashed by the freezer.",
+    "Lexical project containment, parent traversal and all symlink ancestors are rejected by root helper safe(); lexists-based absence rejects dangling projection links.",
+    "Source freeze precedes new inputs/gold; nonmeasurement operational metadata fixes decision budget30, capacity pending1/1 and frozen source references. Actual real inherited verification is delegated to the mandatory operational CLI, not these fixtures.",
+    "Final plan clones immutable operational metadata, binds actual DEV data and allowlist digests to the materialization receipt and checks their internal data-hash agreement before writing the plan.",
+    "Final capacity is positive integer label-free capacity; final flags invert operational flags; actual selected controller require_plan and measurement guard are called before final freeze receipt.",
+    "Static controller review confirms operational_preflight contains a real single controller.require_plan call and no substituted T.verify_plan; both parent and worker check final measurement admission before reservation/model import.",
+    "Source-closure metadata derives from immutable project manifests and current sources; external registry remains the20 exact immutable17 source assets with no public alias. Actual closure CLI streams actual pin hashes and rejects ancestor symlinks before reporting PASS.",
+    "owner.json is an explicitly external operational lease input under the coordinator host lock, not scientific source or a public capsule artifact."
+  ],
+  "resolved_pre_freeze_findings": [
+    {
+      "id": "ROOT-PATH-01",
+      "finding": "Leaf-only source checks accepted symlinked ancestors and exists() missed dangling projection links.",
+      "resolution": "Bounded lexical ROOT containment, parent traversal/ancestor link checks and lexists absence added; all three fault probes now reject."
+    },
+    {
+      "id": "ROOT-DEV-BIND-02",
+      "finding": "Final helper did not bind real projected DEV and allowlist bytes to materialization receipt before plan write.",
+      "resolution": "Exact data_sha256, allowlist_sha256 and allowlist internal data_sha256 checks added before plan write; all three corruption probes reject."
+    }
+  ],
+  "executed_checks": [
+    {
+      "command": "python -B experiments/sota-2026-10-22/epoch18/reviews/test_root_metadata_guards.py",
+      "tests": 8,
+      "passed": 8,
+      "exit_code": 0,
+      "scope": "Two valid generic controls; ancestor/dangling path failures; three actual-byte/hash corruptions. Synthetic final module sentinel is only a boundary assertion, never actual admission."
+    },
+    {
+      "command": "node experiments/sota-2026-10-22/epoch18/test_source_closure.mjs",
+      "tests": 53,
+      "passed": 53,
+      "exit_code": 0,
+      "scope": "Six exact official model provenance plus unchanged licensed dataset closure metadata fixtures."
+    }
+  ],
+  "remaining_required_real_steps": [
+    "Freeze exact reviewed sources, roles and policy; run actual full unmocked operational CLI once before any new input/gold projection.",
+    "Use frozen builder for input-only projection, label-free actual capacity, then DEV-only annotation projection; freeze final plan and run actual full selected/inherited require_plan plus final measurement guard.",
+    "Execute actual full source closure; independently review public capsule and connected-GitHub compare-and-set publication/readback before any model/native process.",
+    "Only the authorized actual bounded native batches and independent scientific acceptance can evaluate the candidate. This review does not authorize promotion or establish benchmark placement."
+  ],
+  "root_helpers_ready_for_source_freeze": true,
+  "native_execution_admitted": false,
+  "actual_full_require_plan_calls": 0,
+  "model_native_fit_paid_GPU_calls": 0,
+  "original_benchmark_case_inputs_read": 0,
+  "original_annotation_choices_read": 0,
+  "official_score": null,
+  "official_rank": null,
+  "champion_promoted": false
+}

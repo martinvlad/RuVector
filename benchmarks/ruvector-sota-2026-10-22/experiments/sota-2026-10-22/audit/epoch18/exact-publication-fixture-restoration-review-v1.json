@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T14:53:07.014220+00:00",
+  "checks_passed": true,
+  "status": "ACCEPTABLE_CONDITIONAL_EXACT_BYTE_OPERATIONAL_FIXTURE_RESTORATION_ONLY",
+  "immutable_plan": {
+    "path": "experiments/sota-2026-10-22/epoch18/plan.json",
+    "bytes": 81706,
+    "sha256": "f2eb56b436bc499f4a63d724dc6055a5e1e69e82892cb41d1db4e023af49e7eb"
+  },
+  "failed_final_admission": {
+    "path": "experiments/sota-2026-10-22/epoch18/final-freeze-first-failure.json",
+    "bytes": 1756,
+    "sha256": "a316fcdf29912bedbf57dc6ff1d8b4ffa2b6f2cc923ed430bebd2a32c2e1d232"
+  },
+  "target_current_before_restoration": {
+    "path": "experiments/sota-2026-10-22/epoch18/reviews/test_publication_metadata_v1.py",
+    "bytes": 7358,
+    "sha256": "f8b6fd56b112246849c78c591d5b04a284cf19faff93b12ff1ea319b43bd55e3"
+  },
+  "exact_original_fixture": {
+    "bytes": 7132,
+    "sha256": "bcde91dca0db426b53726953f899199be63b09bbc64a9e2be79e05660e020bda",
+    "recovery_evidence_manifest_sha256": "3849aab38ce2b2cf2044ae089cab9dd1069fb0585ca0df30eee5fe782cb79a53"
+  },
+  "independent_checks": {
+    "all414_other_plan_pins_actual_rehashed_unchanged": true,
+    "all88_scientific_snapshot_members_actual_rehashed_unchanged": true,
+    "target_not_in_frozen88_scientific_source": true,
+    "complete_original7132bytes_match_actual_immutable_plan_pin": true,
+    "all_three_recovery_variants_actual_size_and_hash_verified": true,
+    "original_vs_current_diff_only_generic_publication_fixture_inputs_and_final_control_assertion": true,
+    "fixture_not_imported_by_scientific_candidate_controller_or_acceptance_checkers": true,
+    "final_freeze_receipt_absent": true,
+    "native_launch_and_runs_absent": true,
+    "CONF_gold_absent": true
+  },
+  "provenance": "Prior complete bytes recovered by reversing the two documented ancillary generic-fixture patches and independently matched to the pre-existing immutable plan SHA256 pin. The cryptographic match fixes exact original identity; no guess of candidate source, labels or scientific gates is permitted.",
+  "required_next_steps": [
+    "Root preserves current7358B variant, intermediate variant and first failure plus provenance as append-only public artifacts",
+    "Hold all projected-project source writers",
+    "Restore ONLY the exact7132 original bytes to the already-pinned ancillary fixture path",
+    "Keep immutable plan f2eb56b436bc499f4a63d724dc6055a5e1e69e82892cb41d1db4e023af49e7eb and all88 scientific source bytes unchanged",
+    "Perform a distinct recorded completion admission on the existing plan, retain first failure, and report two total final-validator attempts if completion passes",
+    "Review and run the completed current publication fixture from an append-only renamed path; historical original fixture is retained for identity and is not claimed as passing",
+    "All usual source-publication/readback, scoped lock and bounded native execution gates remain required"
+  ],
+  "restoration_performed_by_auditor": false,
+  "actual_validator_reruns_by_auditor": 0,
+  "model_native_fit_paid_GPU_calls": 0,
+  "auditor_DEV_or_CONF_annotation_choices_read": 0,
+  "no_scientific_plan_gate_role_or_model_repair_authorized": true,
+  "native_execution_admitted": false,
+  "champion_promoted": false,
+  "official_score": null,
+  "official_rank": null
+}

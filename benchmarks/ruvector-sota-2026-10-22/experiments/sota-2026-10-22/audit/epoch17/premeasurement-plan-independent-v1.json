@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T13:36:39.442523+00:00",
+  "checks_passed": false,
+  "status": "BLOCKED_PRE_NATIVE_FROZEN_PLAN_INHERITED_DECISION_TIMEOUT_CONFLICT",
+  "source_immutable_head": "cec9a7bbdc8c4ced83e5d1b826bce67da18339df",
+  "plan": {
+    "path": "experiments/sota-2026-10-22/epoch17/plan.json",
+    "bytes": 62450,
+    "sha256": "9b2d0bb2460b8c44f71e7d82bf185d543c0862ebbac98aac7ff21a6af7499973"
+  },
+  "source_freeze": {
+    "path": "experiments/sota-2026-10-22/epoch17/candidate-source-freeze.json",
+    "bytes": 19315,
+    "sha256": "ef9d0de8418c763125533bb333a0ec70e0ce4db99e5da08358be4217310f8e73"
+  },
+  "handoff": {
+    "path": "experiments/sota-2026-10-22/audit/epoch17/code-handoff-v1.json",
+    "bytes": 21645,
+    "sha256": "d881a29ac35a1ddae7dab506887266e44e652076bdebe2eda21ee4d103513032"
+  },
+  "policy": {
+    "path": "experiments/sota-2026-10-22/audit/epoch17/acceptance-contract-v1.json",
+    "bytes": 9795,
+    "sha256": "d212bdb1ca36eb3caec5aa5182a1994624ecd329ad8b85d4744b0cb622e798e8"
+  },
+  "capacity": {
+    "path": "experiments/sota-2026-10-22/audit/epoch17/context-capacity-independent-v1.json",
+    "bytes": 22605,
+    "sha256": "36695236816e90486748241fdbe52cf20297a19e4b19196dc79d2677863aa7e3"
+  },
+  "inherited_limit_source": {
+    "path": "experiments/sota-2026-10-22/controller/epoch3_loop.py",
+    "bytes": 19742,
+    "sha256": "0b4ac6af58b4f421681d5b62d3243d17cc8c8426c47ee738a36eaae195d388d1"
+  },
+  "inherited_limit_source_lines": [
+    {
+      "line": 88,
+      "text": "    for key, maximum in ((\"threads\", 2), (\"seconds_per_batch\", 600), (\"seconds_per_decision\", 30), (\"candidate_configs\", 6)):"
+    },
+    {
+      "line": 216,
+      "text": "                connection = http.client.HTTPConnection(\"127.0.0.1\", httpd.server_port, timeout=plan[\"limits\"][\"seconds_per_decision\"])"
+    }
+  ],
+  "actual_exception": "ValueError: Execution limit invalid: seconds_per_decision",
+  "exception_stack": [
+    "audit pure premeasurement import and controller17.require_plan(plan_path,exactSHA)",
+    "controller/epoch17/loop.py:70 T.verify_plan(plan)",
+    "controller/epoch3_loop.py:91 raise ValueError(Execution limit invalid: seconds_per_decision)"
+  ],
+  "frozen_plan_seconds_per_decision": 60,
+  "inherited_maximum_seconds_per_decision": 30,
+  "passed_before_exception": {
+    "all_312_plan_pin_SHA256_and_no_symlinks": true,
+    "all_91_sourcefreeze_members_unchanged": true,
+    "handoff_policy_capacity_SHA256_identities": true,
+    "CPU2_nativecap2_600batch_paid0_GPU0_60decision_plan": true,
+    "lifetime_prior18_closed_new_slots19_20": true,
+    "binary_strict_literal1e3_and_typed1e10_policy": true,
+    "runtime_capacityDEV37_CONF20": true,
+    "DEV_dataset_hashed_only_root_projected24_and_otherrole0_old48choice0": true,
+    "CONF_dataset_and_materialization_absent": true,
+    "no_launch_or_runs_before_exception": true
+  },
+  "native_execution_admitted": false,
+  "actual_new_native_process_attempts_at_detection": 0,
+  "actual_new_model_forward_calls_at_detection": 0,
+  "auditor_new_role_annotation_choices_read": 0,
+  "auditor_model_native_fit_paid_GPU_calls": 0,
+  "source_policy_checker_or_old_file_mutations": 0,
+  "frozen_epoch_repair_or_retry_permitted": false,
+  "decision": "Do not invoke actual native worker or repair frozen17 source/policy/checker afterDEVgold. Preserve this exact failed premeasurement admission and all source bytes; close unused epoch slots. This is an integration admission failure, not measured accuracy, model rejection or resource performance. Any future source repair belongs to a separately reviewed append-only epoch with a new premeasurement freeze, honestDEVexposure accounting and unusedCONF preserved.",
+  "champion_promoted": false,
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false
+}

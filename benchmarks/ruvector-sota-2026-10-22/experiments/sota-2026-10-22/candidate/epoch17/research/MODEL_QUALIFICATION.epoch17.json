@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "epoch": 17,
+  "recorded_at": "2026-10-23T13:08:48.747554+00:00",
+  "status": "NEW_LARGER_TYPED_READER_SOURCE_QUALIFIED_RUNTIME_UNVERIFIED_NO_MODEL_OR_NATIVE_EXECUTION",
+  "selected_model": {
+    "repository": "microsoft/deberta-v2-xlarge-mnli",
+    "revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+    "declared_license": "MIT (official model card, no separate LICENSE asset)",
+    "declared_training": "MNLI fine-tuned; official card states 80GB pretraining and900M parameter architecture. No declared ContractNLI supervision; full corpus/revision/pretraining/fuzzy-overlap lineage not proven.",
+    "architecture": {
+      "type": "DebertaV2ForSequenceClassification",
+      "layers": 24,
+      "hidden_size": 1536,
+      "intermediate_size": 6144,
+      "attention_heads": 24,
+      "max_position_embeddings": 512,
+      "vocab_size": 128100,
+      "author_parameter_count": "900M"
+    },
+    "typed_raw_label_map": {
+      "0": "CONTRADICTION",
+      "1": "NEUTRAL",
+      "2": "ENTAILMENT"
+    },
+    "canonical_mapping": {
+      "Contradiction": 0,
+      "NotMentioned": 1,
+      "Entailment": 2
+    },
+    "weight_asset": {
+      "rfilename": "pytorch_model.bin",
+      "blobId": "79b30a94773da8251e36293f3c094d95a8bb0500",
+      "size": 1773982007,
+      "lfs": {
+        "sha256": "cc41eeb065c6ab3f7e88f8dab756334abb1f77a1136fec8cf02442143934c253",
+        "size": 1773982007,
+        "pointerSize": 135
+      }
+    },
+    "SPM_asset": {
+      "rfilename": "spm.model",
+      "blobId": "c146a1df1f80d26596bbb4d0fadc43bca9a8145c",
+      "size": 2447305,
+      "lfs": {
+        "sha256": "5598d5e96f339a8d980c15f9afd405a2e5e1be7db41de3ed13b0f03fac1e8c17",
+        "size": 2447305,
+        "pointerSize": 132
+      }
+    },
+    "official_ONNX_assets": [],
+    "tokenizer_json_available": false,
+    "publisher_aggregate": {
+      "MNLI_m": 91.7,
+      "MNLI_mm": 91.6,
+      "scope": "Model-card aggregate, not independent benchmark reproduction, legal competence or a matched proof against prior selected v3 model."
+    },
+    "material_change": "900M24x1536 typed reader vs prior435M24x1024; substantially larger representation, distinct original pretrained checkpoint. Legal superiority remains an unmeasured hypothesis.",
+    "eligibility": "OriginalContractNLI bank is project-unused conditional data only, with no declared ContractNLI training for this model; unknown pretraining/fuzzy document overlap remains. Known ContractNLI-supervised alternatives remain ineligible for this bank."
+  },
+  "backup_not_selected": {
+    "repository": "microsoft/deberta-v2-xxlarge-mnli",
+    "revision": "8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06",
+    "architecture": "48layers1536hidden author1.5B C0/N1/E2",
+    "weight_asset": {
+      "rfilename": "pytorch_model.bin",
+      "blobId": "aba315cb1d255ada5671f0de52bcbc5148771376",
+      "size": 3133958098,
+      "lfs": {
+        "sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+        "size": 3133958098,
+        "pointerSize": 135
+      }
+    },
+    "license_declaration": "MIT",
+    "official_ONNX_assets": [],
+    "reason": "Prefer xlarge lower runtime/memory/disk burden within CPU2/600s; do not download or benchmark-select backup in this bounded epoch."
+  },
+  "runtime_proposal_NOT_EXECUTED": {
+    "backend": "CPU PyTorch builtin DebertaV2ForSequenceClassification; no remote code or unofficial ONNX converter",
+    "dependencies_proposed_not_resolved": {
+      "torch": "2.7.1+cpu",
+      "transformers": "4.52.4",
+      "tokenizers": "0.21.4",
+      "sentencepiece": "0.2.0",
+      "safetensors": "0.5.3",
+      "protobuf": "5.29.5"
+    },
+    "dependency_requirement": "Root must resolve exact CPU wheels/transitive versions/hashes before source freeze; no CUDA packages or unpinned installation.",
+    "safe_offline_load": "Original exact-hash pytorch_model.bin, torch>=2.6, weights_only=True, local_files_only=True, trust_remote_code=False, use_safetensors=False, explicit float32 CPU eval; never unrestricted pickle/remote repo code.",
+    "fixed_weight_only_quantization": "torch.ao.quantization.quantize_dynamic(model,{torch.nn.Linear},dtype=torch.qint8,inplace=True), engine=fbgemm, eval/inference_mode, threads2/interops1. No label/data calibration or precision selection.",
+    "within_actual_batch_only": [
+      "model/PyTorch import",
+      "weight/model construction",
+      "FP32 cast",
+      "fixed dynamic int8 transformation",
+      "old paired ONNX reader initialization",
+      "all forwards",
+      "owned cleanup"
+    ],
+    "outside_batch_forbidden": [
+      "model/warmup probes",
+      "export tracing forwards",
+      "sanity forwards",
+      "precision grids",
+      "candidate model selection from benchmark outcomes"
+    ],
+    "cost_scope": "Four singleton NLI passes/request: new reader on native/lexical/positional, actual original old reader on identical native premise;96passes for24queries, no NOT pairing.",
+    "context_scope": "One exact source premise per selector fitting whole H with both actual tokenizers<=512. Preserve exact source/definitions/numerical surfaces; no clipping or aliases. Raw model labels differ from old reader and must map independently.",
+    "runtime_estimate": "Rough unvalidated ~300s hypothesis from width-squared cost versus prior measured reader; not actual execution evidence or admission guarantee. Actual hard600s watchdog must include loading, quantization and teardown.",
+    "memory_estimate": "Unvalidated transient8-12GB possible; observed17GiB cgroup cap, large clean file cache. Runtime must measure actual peaks and retain failure.",
+    "disk_strategy": "Single direct immutable download target; no duplicate HF cache/copy of1,773,982,007B weights; observed~5.96GB free before root reconstruction/runtime restore."
+  },
+  "exact_source_receipts": [
+    {
+      "url": "https://huggingface.co/api/models/microsoft/deberta-v2-xlarge-mnli?blobs=true",
+      "at": "2026-10-23T13:04:12.197875+00:00",
+      "status": 200,
+      "final_url": "https://huggingface.co/api/models/microsoft/deberta-v2-xlarge-mnli?blobs=true",
+      "path": "model-0-api.json",
+      "bytes": 2225,
+      "sha256": "e5afb5376b4eb621a6696bd3556b25ce57b5571f657c6fd562546a47632d9ec3"
+    },
+    {
+      "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/README.md",
+      "at": "2026-10-23T13:04:12.519904+00:00",
+      "status": 200,
+      "final_url": "https://huggingface.co/api/resolve-cache/models/microsoft/deberta-v2-xlarge-mnli/2b65bccdedcead4bc685988bcc30153d4922a789/README.md?%2Fmicrosoft%2Fdeberta-v2-xlarge-mnli%2Fresolve%2F2b65bccdedcead4bc685988bcc30153d4922a789%2FREADME.md=&etag=%229c7f8afe96ec25944d16d98442b73fba16954d61%22",
+      "path": "model-0-README.md",
+      "bytes": 3956,
+      "sha256": "e9cab79bfb344526b1955b00bf646d2e6f179a4df616a4c31afd2563a72e8385"
+    },
+    {
+      "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/config.json",
+      "at": "2026-10-23T13:04:12.827921+00:00",
+      "status": 200,
+      "final_url": "https://huggingface.co/api/resolve-cache/models/microsoft/deberta-v2-xlarge-mnli/2b65bccdedcead4bc685988bcc30153d4922a789/config.json?%2Fmicrosoft%2Fdeberta-v2-xlarge-mnli%2Fresolve%2F2b65bccdedcead4bc685988bcc30153d4922a789%2Fconfig.json=&etag=%221c2c9c1de6ea84b4cd8885e4157209d67e40fa2e%22",
+      "path": "model-0-config.json",
+      "bytes": 952,
+      "sha256": "617f9d0b46fe934497a5aab5b44b1b343a751c0c43fec3e56e26b21e76b77c60"
+    },
+    {
+      "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/tokenizer_config.json",
+      "at": "2026-10-23T13:04:13.191322+00:00",
+      "status": 200,
+      "final_url": "https://huggingface.co/api/resolve-cache/models/microsoft/deberta-v2-xlarge-mnli/2b65bccdedcead4bc685988bcc30153d4922a789/tokenizer_config.json?%2Fmicrosoft%2Fdeberta-v2-xlarge-mnli%2Fresolve%2F2b65bccdedcead4bc685988bcc30153d4922a789%2Ftokenizer_config.json=&etag=%224ea5c00f5d92ba9c6e7f9323f35c475094ba9b70%22",
+      "path": "model-0-tokenizer_config.json",
+      "bytes": 70,
+      "sha256": "0704f75eb3defe60aab06311d14756aa2f48c9aae758c8e5f78aa02dd92cc757"
+    },
+    {
+      "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/special_tokens_map.json",
+      "at": "2026-10-23T13:04:13.433296+00:00",
+      "status": 404,
+      "final_url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/special_tokens_map.json",
+      "path": "model-0-special_tokens_map.json",
+      "bytes": 15,
+      "sha256": "f36668ddf22403a332f978057d527cf285b01468bc3431b04094a7bafa6aba59"
+    },
+    {
+      "url": "https://huggingface.co/api/models/microsoft/deberta-v2-xxlarge-mnli?blobs=true",
+      "at": "2026-10-23T13:04:12.198299+00:00",
+      "status": 200,
+      "final_url": "https://huggingface.co/api/models/microsoft/deberta-v2-xxlarge-mnli?blobs=true",
+      "path": "model-1-api.json",
+      "bytes": 2229,
+      "sha256": "a9207712a3c99bf826796d1b72e442cbbd7b810c23af052a8e97b9f31ad0e880"
+    },
+    {
+      "url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/README.md",
+      "at": "2026-10-23T13:04:12.477550+00:00",
+      "status": 200,
+      "final_url": "https://huggingface.co/api/resolve-cache/models/microsoft/deberta-v2-xxlarge-mnli/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/README.md?%2Fmicrosoft%2Fdeberta-v2-xxlarge-mnli%2Fresolve%2F8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06%2FREADME.md=&etag=%22462f5b2738d899688ac0d7dacc4c4b904382db22%22",
+      "path": "model-1-README.md",
+      "bytes": 4795,
+      "sha256": "258dd0d3b2d1c60dfb95fe797a7076d1bce5205ae66277567df3c6a73b3a6157"
+    },
+    {
+      "url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/config.json",
+      "at": "2026-10-23T13:04:12.932425+00:00",
+      "status": 200,
+      "final_url": "https://huggingface.co/api/resolve-cache/models/microsoft/deberta-v2-xxlarge-mnli/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/config.json?%2Fmicrosoft%2Fdeberta-v2-xxlarge-mnli%2Fresolve%2F8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06%2Fconfig.json=&etag=%22f18b80c18e1b552d3da1af51f99b1d572bb78280%22",
+      "path": "model-1-config.json",
+      "bytes": 952,
+      "sha256": "2c2de12b575824b4caec3ae5cc03c3f80837b1b3617541b8a5333cdc3db9b57c"
+    },
+    {
+      "url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/tokenizer_config.json",
+      "at": "2026-10-23T13:04:13.250314+00:00",
+      "status": 200,
+      "final_url": "https://huggingface.co/api/resolve-cache/models/microsoft/deberta-v2-xxlarge-mnli/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/tokenizer_config.json?%2Fmicrosoft%2Fdeberta-v2-xxlarge-mnli%2Fresolve%2F8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06%2Ftokenizer_config.json=&etag=%22acfd94e399c5659e4bed75f91b4ee24b111fc7a6%22",
+      "path": "model-1-tokenizer_config.json",
+      "bytes": 52,
+      "sha256": "3f3978e0c036f2c2588cac34a6047cbb0af0b0dc1814254e291028529805496d"
+    },
+    {
+      "url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/special_tokens_map.json",
+      "at": "2026-10-23T13:04:13.593789+00:00",
+      "status": 404,
+      "final_url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/special_tokens_map.json",
+      "path": "model-1-special_tokens_map.json",
+      "bytes": 15,
+      "sha256": "f36668ddf22403a332f978057d527cf285b01468bc3431b04094a7bafa6aba59"
+    }
+  ],
+  "qualification_script": {
+    "path": "qualify.py",
+    "sha256": "5f55668e309f5ef7a39e5ae1d09889bbd5ebf371f0df6c497ebda35b7cd3ece5"
+  },
+  "source_review": "Exact epoch16 model rejection/ledger reviewed from inherited connected-Git source; child direct Git fetch_file returned404 and no mutation, so source will be re-read from fresh verified kit when root provides it.",
+  "counts": {
+    "new_model_repositories_metadata_only": 2,
+    "weight_bytes_downloaded": 0,
+    "model_sessions": 0,
+    "native_inference": 0,
+    "fit_calibration": 0,
+    "new_DEV_or_confirmation_labels_read": 0,
+    "paid_API_GPU_calls": 0,
+    "Git_mutations": 0
+  }
+}

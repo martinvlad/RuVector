@@ -1,0 +1,380 @@
+[
+  {
+    "repo": "microsoft/deberta-v2-xlarge-mnli",
+    "revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+    "cardData": {
+      "language": "en",
+      "tags": [
+        "deberta",
+        "deberta-mnli"
+      ],
+      "tasks": "mnli",
+      "thumbnail": "https://huggingface.co/front/thumbnails/microsoft.png",
+      "license": "mit",
+      "widget": [
+        {
+          "text": "[CLS] I love you. [SEP] I like you. [SEP]"
+        }
+      ]
+    },
+    "pipeline_tag": "text-classification",
+    "tags": [
+      "transformers",
+      "pytorch",
+      "deberta-v2",
+      "text-classification",
+      "deberta",
+      "deberta-mnli",
+      "en",
+      "arxiv:2006.03654",
+      "license:mit",
+      "endpoints_compatible",
+      "deploy:azure",
+      "region:us"
+    ],
+    "files": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "07f0db3339ad9053dc95b284c4ae14e014efff89",
+        "size": 690
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "9c7f8afe96ec25944d16d98442b73fba16954d61",
+        "size": 3956
+      },
+      {
+        "rfilename": "config.json",
+        "blobId": "1c2c9c1de6ea84b4cd8885e4157209d67e40fa2e",
+        "size": 952
+      },
+      {
+        "rfilename": "pytorch_model.bin",
+        "blobId": "79b30a94773da8251e36293f3c094d95a8bb0500",
+        "size": 1773982007,
+        "lfs": {
+          "sha256": "cc41eeb065c6ab3f7e88f8dab756334abb1f77a1136fec8cf02442143934c253",
+          "size": 1773982007,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "spm.model",
+        "blobId": "c146a1df1f80d26596bbb4d0fadc43bca9a8145c",
+        "size": 2447305,
+        "lfs": {
+          "sha256": "5598d5e96f339a8d980c15f9afd405a2e5e1be7db41de3ed13b0f03fac1e8c17",
+          "size": 2447305,
+          "pointerSize": 132
+        }
+      },
+      {
+        "rfilename": "tokenizer_config.json",
+        "blobId": "4ea5c00f5d92ba9c6e7f9323f35c475094ba9b70",
+        "size": 70
+      }
+    ],
+    "config": {
+      "num_labels": 3,
+      "architectures": [
+        "DebertaV2ForSequenceClassification"
+      ],
+      "id2label": {
+        "0": "CONTRADICTION",
+        "1": "NEUTRAL",
+        "2": "ENTAILMENT"
+      },
+      "label2id": {
+        "CONTRADICTION": 0,
+        "NEUTRAL": 1,
+        "ENTAILMENT": 2
+      },
+      "model_type": "deberta-v2",
+      "attention_probs_dropout_prob": 0.1,
+      "hidden_act": "gelu",
+      "hidden_dropout_prob": 0.1,
+      "hidden_size": 1536,
+      "initializer_range": 0.02,
+      "intermediate_size": 6144,
+      "max_position_embeddings": 512,
+      "relative_attention": true,
+      "position_buckets": 256,
+      "norm_rel_ebd": "layer_norm",
+      "share_att_key": true,
+      "pos_att_type": "p2c|c2p",
+      "layer_norm_eps": 1e-07,
+      "conv_kernel_size": 3,
+      "conv_act": "gelu",
+      "max_relative_positions": -1,
+      "position_biased_input": false,
+      "num_attention_heads": 24,
+      "attention_head_size": 64,
+      "num_hidden_layers": 24,
+      "type_vocab_size": 0,
+      "vocab_size": 128100,
+      "pooling": {
+        "dropout": 0,
+        "hidden_act": "gelu"
+      }
+    },
+    "tokenizer_config": {
+      "do_lower_case": false,
+      "vocab_type": "spm",
+      "model_max_length": 512
+    },
+    "receipts": [
+      {
+        "url": "https://huggingface.co/api/models/microsoft/deberta-v2-xlarge-mnli?blobs=true",
+        "at": "2026-10-23T13:04:12.197875+00:00",
+        "status": 200,
+        "final_url": "https://huggingface.co/api/models/microsoft/deberta-v2-xlarge-mnli?blobs=true",
+        "path": "model-0-api.json",
+        "bytes": 2225,
+        "sha256": "e5afb5376b4eb621a6696bd3556b25ce57b5571f657c6fd562546a47632d9ec3"
+      },
+      {
+        "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/README.md",
+        "at": "2026-10-23T13:04:12.519904+00:00",
+        "status": 200,
+        "final_url": "https://huggingface.co/api/resolve-cache/models/microsoft/deberta-v2-xlarge-mnli/2b65bccdedcead4bc685988bcc30153d4922a789/README.md?%2Fmicrosoft%2Fdeberta-v2-xlarge-mnli%2Fresolve%2F2b65bccdedcead4bc685988bcc30153d4922a789%2FREADME.md=&etag=%229c7f8afe96ec25944d16d98442b73fba16954d61%22",
+        "path": "model-0-README.md",
+        "bytes": 3956,
+        "sha256": "e9cab79bfb344526b1955b00bf646d2e6f179a4df616a4c31afd2563a72e8385"
+      },
+      {
+        "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/config.json",
+        "at": "2026-10-23T13:04:12.827921+00:00",
+        "status": 200,
+        "final_url": "https://huggingface.co/api/resolve-cache/models/microsoft/deberta-v2-xlarge-mnli/2b65bccdedcead4bc685988bcc30153d4922a789/config.json?%2Fmicrosoft%2Fdeberta-v2-xlarge-mnli%2Fresolve%2F2b65bccdedcead4bc685988bcc30153d4922a789%2Fconfig.json=&etag=%221c2c9c1de6ea84b4cd8885e4157209d67e40fa2e%22",
+        "path": "model-0-config.json",
+        "bytes": 952,
+        "sha256": "617f9d0b46fe934497a5aab5b44b1b343a751c0c43fec3e56e26b21e76b77c60"
+      },
+      {
+        "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/tokenizer_config.json",
+        "at": "2026-10-23T13:04:13.191322+00:00",
+        "status": 200,
+        "final_url": "https://huggingface.co/api/resolve-cache/models/microsoft/deberta-v2-xlarge-mnli/2b65bccdedcead4bc685988bcc30153d4922a789/tokenizer_config.json?%2Fmicrosoft%2Fdeberta-v2-xlarge-mnli%2Fresolve%2F2b65bccdedcead4bc685988bcc30153d4922a789%2Ftokenizer_config.json=&etag=%224ea5c00f5d92ba9c6e7f9323f35c475094ba9b70%22",
+        "path": "model-0-tokenizer_config.json",
+        "bytes": 70,
+        "sha256": "0704f75eb3defe60aab06311d14756aa2f48c9aae758c8e5f78aa02dd92cc757"
+      },
+      {
+        "url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/special_tokens_map.json",
+        "at": "2026-10-23T13:04:13.433296+00:00",
+        "status": 404,
+        "final_url": "https://huggingface.co/microsoft/deberta-v2-xlarge-mnli/resolve/2b65bccdedcead4bc685988bcc30153d4922a789/special_tokens_map.json",
+        "path": "model-0-special_tokens_map.json",
+        "bytes": 15,
+        "sha256": "f36668ddf22403a332f978057d527cf285b01468bc3431b04094a7bafa6aba59"
+      }
+    ],
+    "official_ONNX": [],
+    "weight_files": [
+      {
+        "rfilename": "pytorch_model.bin",
+        "blobId": "79b30a94773da8251e36293f3c094d95a8bb0500",
+        "size": 1773982007,
+        "lfs": {
+          "sha256": "cc41eeb065c6ab3f7e88f8dab756334abb1f77a1136fec8cf02442143934c253",
+          "size": 1773982007,
+          "pointerSize": 135
+        }
+      }
+    ],
+    "weights_downloaded": 0,
+    "model_sessions": 0,
+    "native_fit_paid_GPU_calls": 0
+  },
+  {
+    "repo": "microsoft/deberta-v2-xxlarge-mnli",
+    "revision": "8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06",
+    "cardData": {
+      "language": "en",
+      "tags": [
+        "deberta",
+        "deberta-mnli"
+      ],
+      "tasks": "mnli",
+      "thumbnail": "https://huggingface.co/front/thumbnails/microsoft.png",
+      "license": "mit",
+      "widget": [
+        {
+          "text": "[CLS] I love you. [SEP] I like you. [SEP]"
+        }
+      ]
+    },
+    "pipeline_tag": "text-classification",
+    "tags": [
+      "transformers",
+      "pytorch",
+      "deberta-v2",
+      "text-classification",
+      "deberta",
+      "deberta-mnli",
+      "en",
+      "arxiv:2006.03654",
+      "license:mit",
+      "endpoints_compatible",
+      "deploy:azure",
+      "region:us"
+    ],
+    "files": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "07f0db3339ad9053dc95b284c4ae14e014efff89",
+        "size": 690
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "462f5b2738d899688ac0d7dacc4c4b904382db22",
+        "size": 4795
+      },
+      {
+        "rfilename": "config.json",
+        "blobId": "f18b80c18e1b552d3da1af51f99b1d572bb78280",
+        "size": 952
+      },
+      {
+        "rfilename": "ds_config.json",
+        "blobId": "b2abd69e05e7a8d79afea76f6233c6697a4ab8bc",
+        "size": 294
+      },
+      {
+        "rfilename": "pytorch_model.bin",
+        "blobId": "aba315cb1d255ada5671f0de52bcbc5148771376",
+        "size": 3133958098,
+        "lfs": {
+          "sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+          "size": 3133958098,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "spm.model",
+        "blobId": "c146a1df1f80d26596bbb4d0fadc43bca9a8145c",
+        "size": 2447305,
+        "lfs": {
+          "sha256": "5598d5e96f339a8d980c15f9afd405a2e5e1be7db41de3ed13b0f03fac1e8c17",
+          "size": 2447305,
+          "pointerSize": 132
+        }
+      },
+      {
+        "rfilename": "tokenizer_config.json",
+        "blobId": "acfd94e399c5659e4bed75f91b4ee24b111fc7a6",
+        "size": 52
+      }
+    ],
+    "config": {
+      "num_labels": 3,
+      "architectures": [
+        "DebertaV2ForSequenceClassification"
+      ],
+      "id2label": {
+        "0": "CONTRADICTION",
+        "1": "NEUTRAL",
+        "2": "ENTAILMENT"
+      },
+      "label2id": {
+        "CONTRADICTION": 0,
+        "NEUTRAL": 1,
+        "ENTAILMENT": 2
+      },
+      "model_type": "deberta-v2",
+      "attention_probs_dropout_prob": 0.1,
+      "hidden_act": "gelu",
+      "hidden_dropout_prob": 0.1,
+      "hidden_size": 1536,
+      "initializer_range": 0.02,
+      "intermediate_size": 6144,
+      "max_position_embeddings": 512,
+      "relative_attention": true,
+      "position_buckets": 256,
+      "norm_rel_ebd": "layer_norm",
+      "share_att_key": true,
+      "pos_att_type": "p2c|c2p",
+      "layer_norm_eps": 1e-07,
+      "conv_kernel_size": 3,
+      "conv_act": "gelu",
+      "max_relative_positions": -1,
+      "position_biased_input": false,
+      "num_attention_heads": 24,
+      "attention_head_size": 64,
+      "num_hidden_layers": 48,
+      "type_vocab_size": 0,
+      "vocab_size": 128100,
+      "pooling": {
+        "dropout": 0,
+        "hidden_act": "gelu"
+      }
+    },
+    "tokenizer_config": {
+      "do_lower_case": false,
+      "vocab_type": "spm"
+    },
+    "receipts": [
+      {
+        "url": "https://huggingface.co/api/models/microsoft/deberta-v2-xxlarge-mnli?blobs=true",
+        "at": "2026-10-23T13:04:12.198299+00:00",
+        "status": 200,
+        "final_url": "https://huggingface.co/api/models/microsoft/deberta-v2-xxlarge-mnli?blobs=true",
+        "path": "model-1-api.json",
+        "bytes": 2229,
+        "sha256": "a9207712a3c99bf826796d1b72e442cbbd7b810c23af052a8e97b9f31ad0e880"
+      },
+      {
+        "url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/README.md",
+        "at": "2026-10-23T13:04:12.477550+00:00",
+        "status": 200,
+        "final_url": "https://huggingface.co/api/resolve-cache/models/microsoft/deberta-v2-xxlarge-mnli/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/README.md?%2Fmicrosoft%2Fdeberta-v2-xxlarge-mnli%2Fresolve%2F8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06%2FREADME.md=&etag=%22462f5b2738d899688ac0d7dacc4c4b904382db22%22",
+        "path": "model-1-README.md",
+        "bytes": 4795,
+        "sha256": "258dd0d3b2d1c60dfb95fe797a7076d1bce5205ae66277567df3c6a73b3a6157"
+      },
+      {
+        "url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/config.json",
+        "at": "2026-10-23T13:04:12.932425+00:00",
+        "status": 200,
+        "final_url": "https://huggingface.co/api/resolve-cache/models/microsoft/deberta-v2-xxlarge-mnli/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/config.json?%2Fmicrosoft%2Fdeberta-v2-xxlarge-mnli%2Fresolve%2F8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06%2Fconfig.json=&etag=%22f18b80c18e1b552d3da1af51f99b1d572bb78280%22",
+        "path": "model-1-config.json",
+        "bytes": 952,
+        "sha256": "2c2de12b575824b4caec3ae5cc03c3f80837b1b3617541b8a5333cdc3db9b57c"
+      },
+      {
+        "url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/tokenizer_config.json",
+        "at": "2026-10-23T13:04:13.250314+00:00",
+        "status": 200,
+        "final_url": "https://huggingface.co/api/resolve-cache/models/microsoft/deberta-v2-xxlarge-mnli/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/tokenizer_config.json?%2Fmicrosoft%2Fdeberta-v2-xxlarge-mnli%2Fresolve%2F8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06%2Ftokenizer_config.json=&etag=%22acfd94e399c5659e4bed75f91b4ee24b111fc7a6%22",
+        "path": "model-1-tokenizer_config.json",
+        "bytes": 52,
+        "sha256": "3f3978e0c036f2c2588cac34a6047cbb0af0b0dc1814254e291028529805496d"
+      },
+      {
+        "url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/special_tokens_map.json",
+        "at": "2026-10-23T13:04:13.593789+00:00",
+        "status": 404,
+        "final_url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/special_tokens_map.json",
+        "path": "model-1-special_tokens_map.json",
+        "bytes": 15,
+        "sha256": "f36668ddf22403a332f978057d527cf285b01468bc3431b04094a7bafa6aba59"
+      }
+    ],
+    "official_ONNX": [],
+    "weight_files": [
+      {
+        "rfilename": "pytorch_model.bin",
+        "blobId": "aba315cb1d255ada5671f0de52bcbc5148771376",
+        "size": 3133958098,
+        "lfs": {
+          "sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+          "size": 3133958098,
+          "pointerSize": 135
+        }
+      }
+    ],
+    "weights_downloaded": 0,
+    "model_sessions": 0,
+    "native_fit_paid_GPU_calls": 0
+  }
+]

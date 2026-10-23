@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "epoch": 17,
+  "status": "PRELABEL_HYPOTHESIS_SOURCE_REVIEW",
+  "prior_rejection_direction": {
+    "epoch16_binary_correct": 17,
+    "epoch16_binary_n": 24,
+    "same_premise_rawH_binary_correct": 17,
+    "epoch16_primary_typed_correct": 16,
+    "epoch16_positional_typed_correct": 17,
+    "correct_gold_contradictions": 0,
+    "gold_contradictions": 2,
+    "old_full_frozen_score_replay_passed": false,
+    "old16files_policy_and_rejection_immutable": true
+  },
+  "new_model": "microsoft/deberta-v2-xlarge-mnli@2b65bccdedcead4bc685988bcc30153d4922a789",
+  "new_generic_publisher_MNLI_mismatched_percent": 91.6,
+  "previous_cross_encoder_publisher_MNLI_mismatched_percent": 90.49,
+  "publisher_difference_percentage_points": 1.11,
+  "capacity": "900M24x1536 vs previous435M24x1024",
+  "evidence_scope": "Different publisher model-card aggregates; not matched independent reproduction, quantized precision validation, legal accuracy or fresh benchmark generalization. Dynamic-int8 actual performance remains unmeasured.",
+  "hypothesis": "A substantially larger pretrained typed-decision reader with a stronger published generic MNLI aggregate may fix typed contradictions when supplied native source evidence. Actual same-premise old-reader control separates reader from context, and matched native/lexical/positional new-reader arms test retrieval.",
+  "fixed_choices": "One model, one dynamic-int8 recipe, raw original H only, joint whole-source512 token cap under both tokenizers, priority160, exact numerical source trace; no NOT/pooling/temperature/ANN grid, no training/calibration.",
+  "data_policy": "FreshDEV8 fixed IDs once from194eligible. Only exact unused original16CONF24 retained for conditional gate. No new confirmation draw; old48 unchanged. Known ContractNLI-supervised reader cannot use this bank as fresh evaluation; complete pretraining/fuzzy overlap unproven.",
+  "old_card": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch15/assets/official-deberta-v3-large/README.md",
+    "bytes": 2934,
+    "sha256": "2510c58dd047cc8ab0599247e93542b6e04ce4e3a21415c28f1169de38940502"
+  },
+  "new_card": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch17/research/model-0-README.md",
+    "bytes": 3956,
+    "sha256": "e9cab79bfb344526b1955b00bf646d2e6f179a4df616a4c31afd2563a72e8385"
+  },
+  "model_native_fit_paid_GPU_calls": 0,
+  "new_case_input_or_annotation_choices_read": 0,
+  "official_score": null,
+  "official_rank": null
+}

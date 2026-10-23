@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "epoch": 17,
+  "status": "PRELABEL_SINGLE_CANDIDATE_NO_REAL_EXECUTION_BY_IMPLEMENTER",
+  "source_checkpoint": "cec9a7bbdc8c4ced83e5d1b826bce67da18339df",
+  "hypothesis": "Official24-layer1536 DeBERTa-v2-xlarge MNLI typed reader capacity/pretraining with native exact evidence may improve decisions vs unchanged15 reader on SAME new premise; unknown legal competence. Three same-model native/lexical/positional retrieval arms, one previous-reader native same-premise control. No training/calibration, NOT pairing, pooling, aliases, threshold or precision grids.",
+  "selected_model": {
+    "repo": "microsoft/deberta-v2-xlarge-mnli",
+    "revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+    "official_architecture": {
+      "layers": 24,
+      "hidden_size": 1536,
+      "attention_heads": 24,
+      "classes": 3
+    },
+    "labels": {
+      "contradiction": 0,
+      "neutral": 1,
+      "entailment": 2
+    },
+    "model_card_license": "MIT",
+    "declared_finetuning": "MNLI",
+    "known_ContractNLI_supervision": false,
+    "legal_competence_established": false,
+    "record_level_pretraining_overlap_verified": false
+  },
+  "previous_reader": {
+    "repo": "cross-encoder/nli-deberta-v3-large",
+    "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+    "labels": {
+      "contradiction": 0,
+      "entailment": 1,
+      "neutral": 2
+    },
+    "actual_model_sha256": "821dc4407d10a9d25c20c57fcb742ddc20c09bc55c8093557091efb825256754",
+    "scope": "Unchanged15 actual reader on exact SAME native premise and H, not an old-context score"
+  },
+  "retrieval_ablation": "New fixed reader on native, lexical and positional evidence with same policy, priority160 and joint max BOTH512tokenizers cap; source-only packed global order",
+  "forwards": {
+    "new_primary_native": 1,
+    "new_lexical": 1,
+    "new_positional": 1,
+    "previous_native_same_premise": 1,
+    "total_per_question": 4,
+    "initialization_warmup": 0,
+    "other_counterfactual_forwards": 0
+  },
+  "quantization": {
+    "runtime": "torch2.7.1+cpu transformers4.52.4",
+    "original_storage_dtype": "Not independently inspected",
+    "loaded_dtype": "FP32 CPU",
+    "recipe": "torch.ao.quantization.quantize_dynamic(model,{torch.nn.Linear},dtype=torch.qint8,inplace=True);eval;FP32 original loading;fbgemm",
+    "backend": "fbgemm",
+    "threads": 2,
+    "interop_threads": 1,
+    "dynamic_linear_count_and_state_sha_recorded_after_actual_conversion": true,
+    "all_import_load_quantize_inside_actual_worker_budget": true,
+    "no_export_no_calibration_no_warmup": true
+  },
+  "resources": {
+    "max_native_corpus_batches": 2,
+    "max_cpu_threads": 2,
+    "seconds_per_batch_including_initialization_and_cleanup": 600,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "data_contract": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch17/data-contract.pre-label.json",
+    "sha256": "775db3284c530551b210669d9c4c8e71569e75c9eae4ff609ef1fab27f089a85",
+    "train": [],
+    "calibration": [],
+    "root_freezes_fresh_dev_and_unused_confirmation_before_input_or_gold": true,
+    "confirmation_selection_on_labels": false
+  },
+  "wire": {
+    "primary_answers": "answers[key] stable binary choice/probabilities/confidence plus typed_probabilities and typed_prediction E/C/N",
+    "ablations": [
+      "same_nli_lexical_top2",
+      "same_nli_positional_first2",
+      "previous_reader_native_same_premise"
+    ],
+    "binary_control": "baseline104_response unchanged actual native104 on exact same primary excerpt",
+    "trace": "diagnostics[key].arms[native|lexical|positional alias].new_decoding for three; primary additionally previous_decoding",
+    "new_raw_order": "C0/N1/E2",
+    "previous_raw_order": "C0/E1/N2",
+    "canonical_typed_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "typed_tie": "E,C,N first maximum; binary .5 tie No from unchanged answer_for",
+    "counters": "generic nli_forward_pairs_attempted/completed=4N; new_reader_forward_pairs_attempted/completed=3N; previous_reader_forward_pairs_attempted/completed=N",
+    "coverage": "new_reader_joint_pair_tokens/previous_reader_joint_pair_tokens/joint_pair_tokens=max; packing_attempts candidate_new_reader_pair_tokens/candidate_previous_reader_pair_tokens/max"
+  },
+  "limitations": [
+    "Larger architecture and published MNLI aggregate do not establish legal competence",
+    "Record-level pretraining overlap and full training run lineage unproven",
+    "Source/numeric retention does not prove truth or sufficiency; a retrieval miss never proves NotMentioned",
+    "Engineering fixtures are not benchmark generalization",
+    "Conditional unused confirmation and independent acceptance remain necessary; champion unchanged"
+  ]
+}

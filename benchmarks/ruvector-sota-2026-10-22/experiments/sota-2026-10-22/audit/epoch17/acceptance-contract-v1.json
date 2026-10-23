@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-23T13:17:59.478852+00:00",
+  "epoch": 17,
+  "scope": "Independent candidate-specific acceptance policy frozen before epoch17 input/gold projection and any new model/native session. Policy alone does not admit native execution.",
+  "source_checkpoint": "cec9a7bbdc8c4ced83e5d1b826bce67da18339df",
+  "exclusive_planning_lease": "15c99814e08879b5591651389ce45086d02e5e1f",
+  "prior_closed_native_attempts": 18,
+  "hypothesis": {
+    "kind": "OFFICIAL_900M_MNLI_TYPED_READER_WITH_NATIVE_RUVECTOR_WHOLE_SOURCE_EVIDENCE",
+    "selected_model_repo": "microsoft/deberta-v2-xlarge-mnli",
+    "selected_model_revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+    "original_checkpoint_bytes": 1773982007,
+    "original_checkpoint_SHA256": "cc41eeb065c6ab3f7e88f8dab756334abb1f77a1136fec8cf02442143934c253",
+    "architecture": "Builtin DebertaV2ForSequenceClassification 900M 24layers1536hidden; MIT official modelcard; MNLI supervised, unknown full/pretrain overlap",
+    "precision": "Original checkpoint storage dtype not independently inspected; loaded weights_only=True, explicit FP32 eval then fixed in-place dynamic qint8 nn.Linear/fbgemm; Torch2.7.1+cpu Transformers4.52.4. No inference/calibration/warmup outside actual phase. Emit converted module count and canonical quantized tensor-state hash, versions and dtypes.",
+    "mapping": "New raw C0/N1/E2 stable softmax T1\u2192canonicalE/C/N. Yes=E,No=C+N. Prior15 reader C0/E1/N2 unchanged. No pooling, NOT, head fitting, threshold/temperature tuning.",
+    "previous_reader_control": {
+      "repo": "cross-encoder/nli-deberta-v3-large",
+      "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "official_ONNX_SHA256": "821dc4407d10a9d25c20c57fcb742ddc20c09bc55c8093557091efb825256754",
+      "same_input": "Exact native-selected premise and exact H; 1 actual pass, not archived predictions"
+    },
+    "context": "Exact original H only. Whole source units, shared definition-priority/context policy, joint max-of-both actual tokenizers for unit160 cap and pair512 cap. Identical native premise fits both exact actual feeds incl specials. No source rewrite, evidence clipping, numerical inference from retrieval miss, or synthesized rationale.",
+    "empirical_scope": "Original CC-BY4 ContractNLI NDA diagnostic only. Not Jev300/fullLegalBench/ClaimBench, and model capacity/MNLI strength alone is not evidence of typed legal competence."
+  },
+  "data": {
+    "train": [],
+    "calibration": [],
+    "development": {
+      "groups": 8,
+      "queries": 24,
+      "predicates": 3,
+      "source": "One frozen ID-only draw from194unreserved original train after excluding205exposed and24reserved groups.",
+      "no_label_balancing_or_redraw": true,
+      "document_ids": [
+        264,
+        214,
+        297,
+        570,
+        365,
+        281,
+        483,
+        139
+      ]
+    },
+    "confirmation": {
+      "groups": 8,
+      "queries": 24,
+      "source": "Reuse exact never-projected/model-unused epoch16 CONF24 reservation by strict documented identity exception, not a newly fresh-ID draw.",
+      "lazy_gold": "Exact original-source hash + frozen IDs/input hashes + builder code/recipe bound before measurements. Project24gold only inside actual conditional CONF worker after fixed DEV/runtime/lease admission; record actual dataset hash and24annotation projections then.",
+      "not_train_selection_labels": true,
+      "document_ids": [
+        308,
+        159,
+        284,
+        501,
+        267,
+        494,
+        261,
+        313
+      ],
+      "unchanged_input_allowlist_sha256": "c3970a800cdc609bcd8a1324d0def90ad11853c3f68c3b7eb9faafce8e720fdb",
+      "old_CONF48_sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50"
+    },
+    "exposure": "DEV8 irreversibly exposed upon goldprojection, conservatively retired before actual Popen even0HTTP. CONF24 remains reserved unless conditional prePopen phase admission; actual goldprojection/model use reported separately. OldCONF48 untouched; easy48/Legal96/all historical exposed cases remain DEV forever.",
+    "upstream_overlap": "Non-CNLI-trained declared selected model; unknown pretraining/fuzzy overlap disclosed. No knownCNLI-supervised model can use originaltrainCONF."
+  },
+  "arms": {
+    "binary": [
+      "ruvector_top2",
+      "same_nli_lexical_top2",
+      "same_nli_positional_first2",
+      "native104_on_ruvector_evidence",
+      "previous_reader_native_same_premise"
+    ],
+    "typed": [
+      "ruvector_top2",
+      "same_nli_lexical_top2",
+      "same_nli_positional_first2",
+      "previous_reader_native_same_premise"
+    ],
+    "matched_ablation": "New reader identical source/definition context and H, native vs lexical/positional selection; unchanged previous15 reader exact same native premise isolates reader change under shared context."
+  },
+  "budget": {
+    "new_native_process_cap": 2,
+    "threads": 2,
+    "seconds_each_including_verification_initialization_owned_cleanup": 600,
+    "phase1": "One nonretryable DEV24 actualnative process; 4actual singleton NLI forwards/request:3new,1previous.",
+    "phase2": "Only fixed DEV+runtime+lease passes: one nonretryable CONF24 native phase including lazy gold projection/all imports/loading/casting/quantization/cleanup. No retries, probes, warming, export or alternate candidates.",
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "attempt_numbers": [
+      19,
+      20
+    ],
+    "terminal": "Every terminal outcome closes all unused slots permanently.",
+    "seconds_per_decision": 60
+  },
+  "gates": {
+    "validity": "All5binary arms full n24, strictvalid24,error0,finitepropermetrics; all4typedarms full n24,properfinite. Gold E/C/N each>=1 in each measured phase; absence =>inconclusive gatefailure, no redraw. Primary Ccorrect>=1 in eachphase.",
+    "DEV_binary": "Primarycorrect>=EACH4controls+2; Brier AND NLL<=eachcontrol+1e-12; strictBrier OR strictNLL improvement>1e-12 against EACH3NLIcontrols, including unchanged previous-reader exact same native evidence.",
+    "DEV_typed": "Primary3waycorrect>=EACH3typedcontrols+2; typedBrier AND typedNLL<=each+1e-12; strictBrier OR strictNLL improvement>1e-12 EACH. BinaryNo and confidence-only wins cannot qualify typed competence.",
+    "CONF_points": "Primary binarycorrect>=EACH4controls, bothbinarypropernonworseall4 and strictpropergain EACH3NLIcontrols; typedcorrect>=EACH3typedcontrols,both3waypropernonworseall3 andstrictpropereach. Validity/classguardsstillrequired.",
+    "CONF_uncertainty": "Paired8-document bootstrap2000draws seed20261022 for primary-minus-control accuracy and control-minus-primary Brier/NLL. Binary accuracy CI lower>0ALL4,properCI lower>=-1e-12ALL4. Typed accuracy CI lower>0ALL3,typedproperCI lower>=-1e-12ALL3. Empiricalpercentile floorindices int(.025*1999),int(.975*1999). Nominal,notfamilywise;8groupssmall-bankpowerlimitsreported.",
+    "official": "No championpromotion/newsubmission without actual independently accepted meaningfulDEV+unusedCONF plus verifiedpublisherprotocol/eligibility. Actual matchingpublisherresult/rank1/eligibility required for SOTA/automationgoal."
+  },
+  "runtime_admission": {
+    "formula_id": "24xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "formula": "24*maxactualDEVwholeHTTPseconds*max(1,maxCONFsourceunits/maxDEVsourceunits)+2*wholeDEVinitializationseconds+60",
+    "source_capacity": "Exact label-free frozen-input counts before outcomes; no timing probe,post-output bank shrink/source/model swap.",
+    "allowed": "Strict DEV passes AND forecast<=600 AND lease_remaining>=forecast+30; actual600s owned-process watchdog mandatory; forecast is conservative heuristic,not guaranteed runtime."
+  },
+  "replay_handoff": "Pure source/gate/token/context/score/wire/process/resource checkers plus generic fixtures must be frozen and handed off before any new inputs/gold. No source/policy/checker adaptation after gold; initial failures retained. Same-input logit drift keyed by model identity AND exact input text hash.",
+  "resources": "Report binary+typed accuracy/proper/confusions/errors; whole all-arm p50/p95/max; exact attempted/completed NLI counters3new+1previous=4/request; model load/quantization count separate from inference; BGE/nativecounts; worker/children CPU/RSS/allocation; initfail/partial preserved; actual2CPU/600s incl allinit+owned cleanup and deadchild evidence. No primary-only deployment latency claim.",
+  "preservation": "Native104/RRF10 unchanged, main/merge/release/packages untouched, no credentials/private mail/raw publisherHTML/fullClaimaggregate, no duplicateemails/submissions or unrelatedmessages.",
+  "native_execution_admitted": false,
+  "auditor_model_native_fit_paid_GPU_calls": 0,
+  "probability_policy": {
+    "source_path": "experiments/sota-2026-10-22/benchmark/sources/jevbench_scoring.py",
+    "source_sha256": "6aa17d212ea20a3eeb6876149367842e8462c11dcb54d73df062fb406368331e",
+    "binary_wire_mass_tolerance": 0.001,
+    "actual_source_constant": "SUM_TOL",
+    "require_source_strict_valid": true,
+    "require_source_renormalized": false,
+    "literal_probabilities": "Exact Yes/No nonbool finite values in[0,1], no normalization/repair. RENORM_TOL branch never passes. Proper scores preserve emitted literal probabilities. Binary tie picksNo.",
+    "typed_and_internal_softmax_mass_tolerance": 1e-10,
+    "typed_tie_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "format_checks_before_labels": "Generic float32, edge, invalid/beyondSUM_TOL/RENORM-only fixtures against actual pinned scorer. No benchmark examples required.",
+    "historical_preservation": "Old epoch16 scorechecker1e-10 guard remains failed and all old bytes immutable; new policy never rescues old outcomes."
+  }
+}

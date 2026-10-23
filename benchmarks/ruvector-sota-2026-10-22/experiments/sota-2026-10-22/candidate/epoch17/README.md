@@ -1,0 +1,7 @@
+# Epoch17 prelabel candidate
+
+One materially larger official MNLI typed reader, Microsoft DeBERTa-v2-xlarge at exact revision2b65bccdedcead4bc685988bcc30153d4922a789. Legal competence is unproven. Three same-model native/lexical/positional selectors share complete original source, definition priority160 and BOTH actual tokenizer512pair limits. A fourth actual unchanged15 reader pass uses the exact same native premise/H. Native104 remains a same-excerpt binary control. No source rewriting, NOT pairing, fitting, calibration, threshold/precision grid or extra model warmup.
+
+Original .bin is loaded with weights_only=True into builtin FP32 CPU model; every nn.Linear is dynamically quantized qint8 in place with fixed fbgemm. All neural imports, loading, quantization, inference and cleanup belong to the real bounded600s CPU2 worker. Constructor makes zero model forwards. Raw logits, both actual complete model feeds, mappings, source identities, quantizer module list and canonical actual weight-state hash are retained.
+
+The six asset lock entries are public upstream provenance. Large original weights are restored only to the isolated runtime and excluded from publication. No credentials or private data are needed. Root acquires/finalizes source, train/dev/unused confirmation identities and actual acceptance plan before any new inputs or labels.14 engineering checks use synthetic or injected fixtures only; they are not benchmark scores. The first fixture wire-key failure is retained.

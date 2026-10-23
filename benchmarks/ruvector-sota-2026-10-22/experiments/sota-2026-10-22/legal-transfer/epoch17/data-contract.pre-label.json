@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "epoch": 17,
+  "frozen_at": "2026-10-23T13:23:25.379031+00:00",
+  "frozen_roles_before_new_annotation_projection": true,
+  "candidate_source_freeze_by_root_still_required": true,
+  "checkpoint_parent": "cec9a7bbdc8c4ced83e5d1b826bce67da18339df",
+  "scope": "Internal CC-BY-4.0 original ContractNLI three-predicate NDA diagnostic. Not current Jev300, full LegalBench, ClaimBench, rank or verified benchmark generalization.",
+  "train": [],
+  "calibration": [],
+  "training_feature_questions": 0,
+  "fit_or_model_threshold_selection": false,
+  "development": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch17/development24.jsonl",
+    "queries": 24,
+    "document_groups": 8,
+    "document_ids": [
+      264,
+      214,
+      297,
+      570,
+      365,
+      281,
+      483,
+      139
+    ],
+    "hypotheses": [
+      "nda-17",
+      "nda-7",
+      "nda-3"
+    ],
+    "file_sha256": "TO_BE_BOUND_BY_IMMUTABLE_DEV_MATERIALIZATION_AFTER_ROOT_FREEZE_BEFORE_INFERENCE",
+    "status": "One fixed ID-only DEV8 draw from194 metadata-only unreserved IDs. No source text, lengths, choices, class balancing or outcomes used. Exact root code/source freeze and explicit DEV projection authorization required; no redraw."
+  },
+  "confirmation": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch17/confirmation24.jsonl",
+    "queries": 24,
+    "document_groups": 8,
+    "document_ids": [
+      308,
+      159,
+      284,
+      501,
+      267,
+      494,
+      261,
+      313
+    ],
+    "hypotheses": [
+      "nda-17",
+      "nda-7",
+      "nda-3"
+    ],
+    "status": "EXACT REUSE of original epoch16 model-unused CONF24 bank, not a new draw or newly fresh rowIDs. Choices remain unprojected. Lazy projection only inside a durable same-PID bounded native worker after immutable DEV and runtime gates pass.",
+    "file_sha256": "LAZY_NOT_PROJECTED; bind exact file SHA only if conditional native phase admitted",
+    "origin_input_allowlist": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch16/confirmation-input-allowlist.json",
+      "bytes": 9224,
+      "sha256": "c3970a800cdc609bcd8a1324d0def90ad11853c3f68c3b7eb9faafce8e720fdb"
+    },
+    "exact_source16_input_validation": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch16/pre-gold-input-validation.json",
+      "bytes": 27169,
+      "sha256": "5e91d1387170267588b00781f8b57e05d2efc562a589f119c53b080732af1c92"
+    },
+    "reuse_identity_manifest": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch17/reserved-confirmation-reuse.json",
+      "bytes": 14241,
+      "sha256": "14e91682e5fd6ecfb872391653a848d6bdf1762a27d749ef600491fedb704337"
+    },
+    "current_label_free_input_allowlist": "experiments/sota-2026-10-22/legal-transfer/epoch17/confirmation-input-allowlist.json",
+    "precision_limit": "Eight document groups /24 queries; class coverage and paired uncertainty may be underpowered. Never redraw if C absent."
+  },
+  "preserved_old_confirmation": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+    "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "queries": 48,
+    "document_groups": 16,
+    "document_ids": [
+      141,
+      163,
+      178,
+      183,
+      217,
+      224,
+      276,
+      316,
+      325,
+      371,
+      414,
+      431,
+      477,
+      554,
+      615,
+      624
+    ],
+    "project_model_unused": true,
+    "parsed_or_choices_accessed_by_this_builder": false,
+    "role": "Reserved unused older bank; no halving, replacement, cross-bank selection or relabeling."
+  },
+  "source": {
+    "repository": "stanfordnlp/contract-nli",
+    "commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "member": "contract-nli/train.json",
+    "member_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+    "archive_sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+    "license": "CC-BY-4.0",
+    "license_sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+    "attribution": "KoreedaandManning2021,ContractNLI:A DatasetforDocument-levelNaturalLanguageInferenceforContracts."
+  },
+  "draw": {
+    "builder_sha256": "869913d2e8201c7376018a815df6381a2dbe07de0808bcdb2220f53fc981f106",
+    "plan_sha256": "67e87e76d49fe294af7d706bd0d81deaa6c5406467a4be870e93dab08778398d",
+    "selection_sha256": "3a4ebb6e647d4a00634b5d6fd4d1f808022e3c0d98fa1a041bb356a798bf5d76",
+    "eligibility_manifest_sha256": "e45d81c4dbde70bc8e368f7bd78a4c101ae015f938d9933fa54e6765bce969c7",
+    "prior_exposed_originaltrain_groups": 205,
+    "old_reserved_confirmation48_groups": 16,
+    "existing_unused_confirmation24_groups": 8,
+    "eligible_unreserved_before": 194,
+    "new_fixed_DEV_groups": 8,
+    "new_confirmation_draw_groups": 0,
+    "reused_unchanged_CONF_groups": 8,
+    "conservative_exposed_if_DEVprojected_or_attempted": 213,
+    "total_reserved_confirmation_if_CONFunused": 24,
+    "unreserved_after_fixed_roles": 186,
+    "conservative_exposed_if_CONFattempted": 221,
+    "old_reserved_after_newCONFconsumed": 16,
+    "all_prior_roles_preserved": true,
+    "no_redraw_for_collision_missing_class_or_outcome": true
+  },
+  "selected_pretrained_model": {
+    "repository": "microsoft/deberta-v2-xlarge-mnli",
+    "revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+    "declared_supervision": "MNLI; no declared ContractNLI training. Unknown pretraining/fuzzy overlap.",
+    "author_parameter_count": "900M",
+    "known_CNLIsupervised_models_ineligible_for_originaltrainbanks": true,
+    "unknown_pretraining_fuzzy_overlap": true,
+    "larger_legal_accuracy_gain_established": false
+  },
+  "candidate_mechanism_scope": "Materially larger pretrained typed-decision reader with native RuVector exact evidence selection, whole context under both actual tokenizer budgets, numerical-surface retention. Matched same-model lexical/positional retrieval and prior same-premise reader controls. No NOT synthesis, new labels, training, calibration or precision grid.",
+  "original_threeway_classes": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "binary_mapping": {
+    "Entailment": "Yes",
+    "Contradiction": "No",
+    "NotMentioned": "No"
+  },
+  "full_threeway_required_for_frozen_acceptance": true,
+  "binaryNo_does_not_prove_contradiction_competence": true,
+  "inference_boundary": {
+    "only": [
+      "state",
+      "questions"
+    ],
+    "forbidden": [
+      "gold",
+      "annotation_spans",
+      "recordIDs_as_features",
+      "sourcegroups",
+      "roles",
+      "provenance"
+    ],
+    "annotationfield": "evaluation.original_threeway_label"
+  },
+  "annotation_projection": {
+    "code_and_roles_freeze_before_any_newchoices": true,
+    "DEV_choices_accessed_so_far": 0,
+    "CONF_choices_accessed_so_far": 0,
+    "source_corpus_opened_so_far": false,
+    "source_freeze_receipt_exactSHArequired_by_builder": true,
+    "source_freeze_binds_current_members": [
+      "build.py",
+      "draw-plan.json",
+      "eligibility-manifest.json",
+      "reserved-confirmation-reuse.json",
+      "document-selection.json"
+    ],
+    "CONFprojection_guard_owner": "Builder plus frozen root controller: strict bound DEV+runtime pass, current PID==PGID durable native attempt, exact plan/source-freeze, then exact unused16 input reuse before choices."
+  },
+  "model_native_fit_paid_GPU_calls": 0,
+  "official_score": null,
+  "official_rank": null
+}

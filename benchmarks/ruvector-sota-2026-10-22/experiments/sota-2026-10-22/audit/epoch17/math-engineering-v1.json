@@ -1,0 +1,97 @@
+{
+  "schema": "ruvector-epoch17-independent-math-engineering-v1",
+  "status": "PASS_ENGINEERING_ONLY_BEFORE_NEW_INPUTS_OR_GOLD",
+  "scope": "Pure arithmetic and generic saved-receipt fault injection; this is not a benchmark accuracy or generalization result.",
+  "python_version": "3.12.14",
+  "mutated_old_files": false,
+  "model_forwards": 0,
+  "native_sessions": 0,
+  "benchmark_inputs_read": 0,
+  "benchmark_gold_read": 0,
+  "network_calls": 0,
+  "Git_mutations": 0,
+  "old_epoch16_failure_preserved": true,
+  "source_basis": {
+    "benchmark/sources/jevbench_scoring.py": "6aa17d212ea20a3eeb6876149367842e8462c11dcb54d73df062fb406368331e",
+    "benchmark/evaluate.py": "7c66c315928628279ed7e964f9651bad94443dc0daba12ed203f5397067164f8"
+  },
+  "files": {
+    "math_v1.py": {"sha256": "a764abc1d8f55504353b9343d6bc1b1d8e39831e5a4b643356aa9950f9cd013c", "bytes": 12127},
+    "test_math_v1.py": {"sha256": "d1a1196c5b0a6964a048b5489bb589367364388c796774510126e0b52e6826c0", "bytes": 18097},
+    "test_process_v1.py": {"sha256": "49b356270b95e671defcc40a7557ec775b692ce9a32c17169c2164e95e84d232", "bytes": 15056}
+  },
+  "process_source_snapshot_tested": {
+    "owner": "/root/e17_audit",
+    "path": "process_v1.py",
+    "sha256": "e50786ae142c9f55cb702e25bd7f43672fdf6372789fb1aaefb88400c798df3e",
+    "bytes": 6466
+  },
+  "executions": [
+    {
+      "command": "python -B -m unittest discover -s experiments/sota-2026-10-22/audit/epoch17 -p test_math_v1.py -v",
+      "stage": "initial generic math suite",
+      "tests": 25,
+      "exit_code": 0,
+      "unittest_seconds": 0.278,
+      "result": "OK"
+    },
+    {
+      "command": "python -B -m unittest discover -s experiments/sota-2026-10-22/audit/epoch17 -p test_math_v1.py -v",
+      "stage": "final suite after adding explicit near-8e-8 float32 fixture",
+      "tests": 26,
+      "exit_code": 0,
+      "unittest_seconds": 0.339,
+      "result": "OK"
+    },
+    {
+      "command": "python -B -m unittest discover -s experiments/sota-2026-10-22/audit/epoch17 -p test_process_v1.py -v",
+      "stage": "first generic process suite against reviewed source fixes",
+      "tests": 17,
+      "exit_code": 0,
+      "unittest_seconds": 0.002,
+      "result": "OK"
+    }
+  ],
+  "test_failures": [],
+  "preexecution_review_findings": [
+    "Process phase names needed exact development/confirmation validation.",
+    "Process source/cleanup flags needed exact boolean validation rather than accepting truthy strings.",
+    "Owned cleanup finish timestamps needed finite nonnegative values and start/deadline bounds.",
+    "Saved initialization receipt wall time needed finite nonnegative validation."
+  ],
+  "preexecution_findings_resolution": "Parent process source owner applied fixes before the first process test execution; fault-injection tests pass.",
+  "frozen_math_policy": {
+    "binary_transport_sum_tolerance": 0.001,
+    "binary_transport_source_flags": {"valid": true, "strict_valid": true, "renormalized": false},
+    "binary_transport_preserves_literal_values": true,
+    "normalization_or_repair": false,
+    "NLI_internal_sum_tolerance": 1e-10,
+    "proper_metric_epsilon": 1e-12,
+    "binary_tie": "No",
+    "typed_tie_order": ["Entailment", "Contradiction", "NotMentioned"],
+    "new_reader_map": {"contradiction": 0, "neutral": 1, "entailment": 2},
+    "previous_reader_map": {"contradiction": 0, "entailment": 1, "neutral": 2},
+    "binary_arms": ["ruvector_top2", "same_nli_lexical_top2", "same_nli_positional_first2", "native104_on_ruvector_evidence", "previous_reader_native_same_premise"],
+    "typed_arms_exclude": ["native104_on_ruvector_evidence"],
+    "development_minimum_correct_gain_each_control": 2,
+    "confirmation_minimum_correct_gain_each_control": 0,
+    "all_three_gold_classes_required": true,
+    "primary_correct_contradiction_minimum": 1,
+    "proper_scores_each_control": "Both Brier and NLL nonworse within 1e-12; strict Brier or NLL gain greater than 1e-12 versus every NLI control.",
+    "native104_strict_proper_gain_required": false,
+    "bootstrap": {"grouping": "8 documents each exactly 3 observations", "draws": 2000, "seed": 20261022, "percentiles": "floor indices int(.025*1999), int(.975*1999)", "accuracy_gain": "primary-control", "proper_gain": "control-primary", "nominal_not_familywise": true},
+    "confirmation_intervals": "Accuracy lower bound >0 for every control; both proper-gain lower bounds >=-1e-12.",
+    "latency_percentile": "linear interpolation at q*(n-1)"
+  },
+  "diagnostic_fixture_coverage": [
+    "Pinned source SUM_TOL and RENORM_TOL; generic struct-float32 mass error 7.450580596923828e-8 remains literal and strict-valid, while old 1e-10 validation fails.",
+    "Mass just inside/outside 1e-3; renorm-only legacy headline-valid distributions rejected; invalid keys/types/boolean/NaN/Inf/range/zero mass rejected.",
+    "Three-way internal tolerance stays 1e-10; stable extreme-logit softmax and revision-specific label permutations; canonical typed ties and binary No tie.",
+    "Literal unnormalized Brier/NLL values and 1e-15 log floor; binary No can arise from NotMentioned and is not typed Contradiction competence.",
+    "Every binary/typed control checked for +2 development correct answers and both proper metrics; class coverage and correct contradiction mandatory; partial/error/nonfinite metrics rejected.",
+    "Nominal deterministic document bootstrap, equal document weighting, correct difference signs, exact 8x3 shape, strict confirmation accuracy lower bound and proper bound epsilon.",
+    "Saved complete24, partial0/2, initialization failure and uncertain-no-PID evidence; no real worker launched.",
+    "Two CPU/thread settings, zero paid/GPU budget, wall/init/model/cleanup/lease limits, live owned worker and child detection.",
+    "Exact complete counters 4N=3N+N, complete hidden-forward/warmup rejection, partial saved-work lower bounds, frozen runtime forecast and lease boundary."
+  ]
+}

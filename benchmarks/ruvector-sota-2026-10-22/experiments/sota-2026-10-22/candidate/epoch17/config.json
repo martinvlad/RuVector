@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "epoch": 17,
+  "hypothesis": "Official24-layer1536 DeBERTa-v2-xlarge MNLI typed reader capacity/pretraining with native exact evidence may improve decisions vs unchanged15 reader on SAME new premise; unknown legal competence. Three same-model native/lexical/positional retrieval arms, one previous-reader native same-premise control. No training/calibration, NOT pairing, pooling, aliases, threshold or precision grids.",
+  "query_prefix": "Represent this sentence for searching relevant passages: ",
+  "source_partition": {
+    "target": 128,
+    "nli_cap": 160,
+    "bge_cap": 256,
+    "max_units": 192,
+    "paragraph_boundary": "blank-line break, including its exact whitespace",
+    "atom_boundary": "sentence or semicolon followed by whitespace",
+    "oversize_policy": "Explicit observed NLI token-offset fallback, complete source retained"
+  },
+  "ranking_depth": 40,
+  "ranking_depth_scope": "min(40, total_units) anchor candidates for native, lexical and positional arms; same-paragraph neighbor expansion may inspect additional units under the same512-token budget",
+  "packing": "Reviewed15 whole-unit source definition priority160 uses max of two actual tokenizer counts; same original H and whole source premise must fit BOTH actual512pair caps; final source order",
+  "joint_pair_token_cap": 512,
+  "decoder": "Official original PyTorch checkpoint; FP32 CPU loading; fixed dynamic qint8 nn.Linear fbgemm inplaceTrue; new C0/N1/E2; old unchanged C0/E1/N2; raw softmaxT1 Yes=E No=C+N; exact.5tieNo",
+  "temperature": 1.0,
+  "training": [],
+  "calibration": [],
+  "paid_calls": 0,
+  "legacy_arm_names": "ruvector_top2/same_nli_lexical_top2/same_nli_positional_first2 are interface aliases; epoch6 ranks up to40 anchor candidates, may inspect same-paragraph neighbors outside that ranking, and packs a variable number identically under512 tokens",
+  "model_repo": "microsoft/deberta-v2-xlarge-mnli",
+  "model_revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+  "frozen_context_config_sha256": "27f1f8064516b73ba32515adec20d4bb53ce355b46944cd33ba8a7191fc412a1",
+  "frozen_context_algorithm_sha256": "28bceb95282ec3e3e938f3211ccad04d2369fa29e1f191f187566339ae3b44d2",
+  "unchanged_epoch6_context_algorithm": false,
+  "unchanged_epoch6_context_policy": false,
+  "exact_epoch6_context_strings": false,
+  "context_selection": "Exact reviewed15 source/priority/neighbor rules adapted only to two actual tokenizers and sameH admission; numeric source retention traced; no arithmetic truth inference",
+  "confirmation_separation": "TRAIN/calibration empty. Root freezes current freshDEV groups and genuinely unused originalContractNLI confirmation identities before inputs/gold. Existing exposed data DEV forever. No confirmation labels used for source/model selection. Unknown pretraining overlap and legal competence remain.",
+  "data_contract_path": "experiments/sota-2026-10-22/legal-transfer/epoch17/data-contract.pre-label.json",
+  "GPU_calls": 0,
+  "definition_priority": {
+    "token_cap": 160,
+    "claim_independent": true,
+    "whole_existing_partition_units_only": true,
+    "token_fallback_units_admitted": false,
+    "initial_party_character_cap": 2048,
+    "final_global_source_order": true,
+    "literal_first_text_guaranteed": false
+  },
+  "new_assets_lock_sha256": "5f3a0538b71cb3691200b88996d56a4800e4b3f81caa43b290c56f6cbeb422f2",
+  "definition_context_sha256": "d191f4b0402a26df82180f75414305237a58f0ef0b94805ca97fcd33f27eaac9",
+  "new_pretrained_model_architecture": {
+    "layers": 24,
+    "hidden_size": 1536,
+    "attention_heads": 24,
+    "classes": 3
+  },
+  "new_reader_forwards_per_question": 3,
+  "previous_reader_forwards_per_question": 1,
+  "total_nli_forwards_per_question": 4,
+  "model_initialization_scope": "All Torch imports/model load/quantization and old15ORT initialization inside actual bounded600second worker; no warmup/export/calibration outside budget",
+  "previous_reader": "cross-encoder/nli-deberta-v3-large@bab4bc7178836f731dcfd18c06ca9def0a137712 OFFICIAL_QUINT8_AVX2 unchanged15 decoder, actual same native premise",
+  "typed_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "new_label_indices": {
+    "contradiction": 0,
+    "neutral": 1,
+    "entailment": 2
+  },
+  "previous_label_indices": {
+    "contradiction": 0,
+    "entailment": 1,
+    "neutral": 2
+  },
+  "reader_source_sha256": "7818296c731be4817ca08777c0124782a65c8512a6a36d97d324a0fb1cdba6b9",
+  "data_contract_sha256": "775db3284c530551b210669d9c4c8e71569e75c9eae4ff609ef1fab27f089a85"
+}

@@ -4,7 +4,7 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "9c79f7d65c7182f9139d1d558acfb9f4ef9d1fad",
+  "prior_published_base_commit": "0c4392bb8b13a901dc416882f850230c1075fb6a",
   "checkpoint_manifest_sha256": "96f7cb566db59102b79bd9d9b6f935e642a930b8014887e879349bc84dc4a74b",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
@@ -359,9 +359,9 @@
     "JevBench_public_tasks": "Original upstream license preserved in the pinned base kit"
   },
   "active_run": {
-    "run_id": "epoch20-f5588491b31d",
-    "state": "EPOCH20_CLOSED",
-    "experiments_active": false,
+    "run_id": "epoch21-dd6da5427108",
+    "state": "EPOCH21_EXCLUSIVE_PLANNING_LEASE",
+    "experiments_active": true,
     "native_allowed": 0,
     "path": "ACTIVE_RUN.json"
   },
@@ -1681,5 +1681,46 @@
       "reserved": 24,
       "unreserved": 178
     }
+  },
+  "epoch21_planning": {
+    "actual_source_checkpoint": "0c4392bb8b13a901dc416882f850230c1075fb6a",
+    "all21_prior_bounded_worker_attempts_closed": true,
+    "actual_new_worker_attempts": 0,
+    "actual_new_model_native_calls": 0,
+    "new_DEV_or_CONF_case_choices_projected": 0,
+    "preselected_reader": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "preselected_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "hypothesis": "Broader typed pretrained reader with unchanged native/lexical/positional evidence packing; original source FP16 storage, explicit FP32 inference, no quantization or fitting. No inference yet.",
+    "fresh_restoration": {
+      "schema_version": 1,
+      "epoch": 21,
+      "source_commit": "0c4392bb8b13a901dc416882f850230c1075fb6a",
+      "source_filemap_sha256": "7a20bbd31f09eb1be72d5bcc73d5cc2c00a0612bfff7405396ab0fe5d7782b58",
+      "source_Git_blobs": 3090,
+      "CP_files": 3013,
+      "KIT_files": 61,
+      "BASE_files": 48,
+      "unique_project_files": 3092,
+      "all_project_file_sizes_SHA256_verified": true,
+      "reviewed_bootstrap_sha256": "eceb2ca259feaf642bc81172aca57a2a209cc34cd17f9b281861c51f21b95806",
+      "reviewed_restore_sha256": "affd9ecf660f380c3632f78cd14fb7a36e00797ceb097cf48c0c60136fac0be8",
+      "CP_SHA256": "96f7cb566db59102b79bd9d9b6f935e642a930b8014887e879349bc84dc4a74b",
+      "actual_commands": [
+        "bootstrap.py",
+        "restore_checkpoint.py",
+        "restore_checkpoint.py --verify-only"
+      ],
+      "model_native_calls": 0,
+      "weights_runtime_not_copied": true,
+      "project": "/tmp/ruvector-sota-2026-10-22/epoch21-dd6da5427108/project",
+      "kit": "/workspace/ruvector-epoch21-dd6da5427108-kit"
+    },
+    "all_prior_exposed_DEV_forever": true,
+    "confirmation_bank_project_NLI_and_label_unused": true,
+    "phase_attempt_cap": 2,
+    "paid_GPU_cap": 0,
+    "champion_preserved": true,
+    "official_rank": null,
+    "goal_verified": false
   }
 }

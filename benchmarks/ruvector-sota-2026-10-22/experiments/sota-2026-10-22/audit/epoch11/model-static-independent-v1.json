@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T02:38:14.521550+00:00",
+  "checks_passed": true,
+  "actual_project": "/workspace/ruvector-eval/experiments/sota-2026-10-22/epoch11/project",
+  "model_choice_sha256": "47274482df76676385e230593f7dcc02aa20093b5eea2c29522e368fd3a23afa",
+  "choice_after_frozen_data_verified": true,
+  "new_assets_lock_sha256": "26fa1cb66b5fda7034328172940095a17ac3506b057a09656ca0101da4512e45",
+  "new6assets_verified_both_outer_actual": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch11/assets/nli-large-threeway/config.json",
+      "remote_path": "config.json",
+      "url": "https://huggingface.co/Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/resolve/a70e12f8244efae07cf6fdfa935df30e3ac4a060/config.json",
+      "bytes": 1062,
+      "sha256": "c16aea2945965ae2de9982808aea38750d4cc1afda670f43964a558586ff82d3",
+      "git_blob_id": "03b49c503e92bed21a09fc6afb85317c933c5641"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch11/assets/nli-large-threeway/tokenizer.json",
+      "remote_path": "tokenizer.json",
+      "url": "https://huggingface.co/Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/resolve/a70e12f8244efae07cf6fdfa935df30e3ac4a060/tokenizer.json",
+      "bytes": 8648889,
+      "sha256": "7aa118770f066a74530d161c7d0b994d0629cc0ff3a0df213f184192773f960a",
+      "git_blob_id": "08e1fd9af8a65c4ab19cb0b3f6e1a83ee911f8fb"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch11/assets/nli-large-threeway/tokenizer_config.json",
+      "remote_path": "tokenizer_config.json",
+      "url": "https://huggingface.co/Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/resolve/a70e12f8244efae07cf6fdfa935df30e3ac4a060/tokenizer_config.json",
+      "bytes": 492,
+      "sha256": "64c74bfe22b045501100885982d45e3280d33fd17e8ea576cdca4988e10a6ad9",
+      "git_blob_id": "f5d4e777b1807af07821640a4c2ee7bbaf6ba8a3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch11/assets/nli-large-threeway/special_tokens_map.json",
+      "remote_path": "special_tokens_map.json",
+      "url": "https://huggingface.co/Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/resolve/a70e12f8244efae07cf6fdfa935df30e3ac4a060/special_tokens_map.json",
+      "bytes": 173,
+      "sha256": "311de3f4eed9d76a43bf0d71f10e62e086ca65ccce9f15d5da0d2098bf519ecc",
+      "git_blob_id": "e5cc7333cad21d1cec0eaded41e64d7eccf8230d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch11/assets/nli-large-threeway/README.md",
+      "remote_path": "README.md",
+      "url": "https://huggingface.co/Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/resolve/a70e12f8244efae07cf6fdfa935df30e3ac4a060/README.md",
+      "bytes": 1234,
+      "sha256": "c2e8834430365086ddbbdee6ac6b4b125395c8d0008cf5430cbb0b2d44f4b382",
+      "git_blob_id": "2a02f76093533b57970d447fa687724d1f5e0943"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch11/assets/nli-large-threeway/onnx/model_quantized.onnx",
+      "remote_path": "onnx/model_quantized.onnx",
+      "url": "https://huggingface.co/Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/resolve/a70e12f8244efae07cf6fdfa935df30e3ac4a060/onnx/model_quantized.onnx",
+      "bytes": 642587600,
+      "sha256": "f28cc7e69eb2834597c5ef2336f2adb7398b7bcb019282fb3f11d0130a3c0010",
+      "git_blob_id": "74ad3e74e9536673df053f2ca141d1c5356b4a8d"
+    }
+  ],
+  "old16assets_verified_actual": true,
+  "new_model_weight_sha256": "f28cc7e69eb2834597c5ef2336f2adb7398b7bcb019282fb3f11d0130a3c0010",
+  "config_class_mapping": {
+    "entailment": 0,
+    "neutral": 1,
+    "contradiction": 2
+  },
+  "canonical_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "production_binary": "Yes=P(E),No=P(C)+P(N),T1, all3class softmax; never E/(E+C)",
+  "pure_random_logit_checks": 1000,
+  "neutral_preservation_checked": true,
+  "same_old_policy_new_model_tokenizer_bytes": false,
+  "active_policy_tokenizer_domain_compatibility_guarded": true,
+  "architecture": {
+    "layers": 24,
+    "hidden_size": 1024,
+    "attention_heads": 16,
+    "comparison_base9": {
+      "layers": 12,
+      "hidden_size": 768
+    },
+    "new_quality_or_generalization_claim": false
+  },
+  "context_domain_report_sha256": "a72557a5f6f5273f6f757ae2d5d8989ae4fc6439a43780cfc18eed21f88718b7",
+  "onnx_static": {
+    "inputs": [
+      {
+        "name": "input_ids",
+        "tensor_element_type": 7,
+        "dimensions": [
+          {
+            "parameter": "batch_size"
+          },
+          {
+            "parameter": "sequence_length"
+          }
+        ]
+      },
+      {
+        "name": "attention_mask",
+        "tensor_element_type": 7,
+        "dimensions": [
+          {
+            "parameter": "batch_size"
+          },
+          {
+            "parameter": "sequence_length"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "logits",
+        "tensor_element_type": 1,
+        "dimensions": [
+          {
+            "parameter": "batch_size"
+          },
+          {
+            "value": 3
+          }
+        ]
+      }
+    ],
+    "opsets": [
+      {
+        "domain": "",
+        "version": 12
+      }
+    ],
+    "operators": {
+      "::Constant": 2389,
+      "::Unsqueeze": 730,
+      "::ReduceMean": 100,
+      "::Gather": 314,
+      "::Identity": 48,
+      "::Cast": 442,
+      "::Sub": 75,
+      "::DequantizeLinear": 1,
+      "::Squeeze": 317,
+      "::Pow": 50,
+      "::Mul": 516,
+      "::Add": 442,
+      "::Sqrt": 122,
+      "::Div": 173,
+      "::Slice": 316,
+      "::MatMul": 144,
+      "::Shape": 722,
+      "::DynamicQuantizeLinear": 98,
+      "::Reshape": 384,
+      "::MatMulInteger": 146,
+      "::Transpose": 240,
+      "::Range": 1,
+      "::Sign": 1,
+      "::Less": 1,
+      "::Greater": 1,
+      "::Abs": 1,
+      "::And": 1,
+      "::Concat": 384,
+      "::Where": 98,
+      "::LessOrEqual": 1,
+      "::Log": 1,
+      "::Ceil": 1,
+      "::ConstantOfShape": 96,
+      "::Neg": 1,
+      "::Expand": 96,
+      "::Equal": 48,
+      "::Clip": 2,
+      "::Tile": 48,
+      "::GatherElements": 48,
+      "::Softmax": 24,
+      "::Erf": 25
+    },
+    "external_initializers": [],
+    "session_initialized": false,
+    "model_forwards": 0,
+    "ir_version": 7
+  },
+  "recursive_all_tensor_closure": {
+    "counts": {
+      "graphs": 1,
+      "nodes": 8648,
+      "tensor_messages": 3221,
+      "sparse_tensor_messages": 0
+    },
+    "external_tensor_references": 0,
+    "nested_graph_tensor_attributes_checked": true,
+    "training_info_or_functions_present": false
+  },
+  "provenance_scope": "Distinct higher-capacity24layer1024 threeway model vs priorbase12layer768, broader5dataset declared training. Architecture/source rationale does not establish newquality. Upstream MIT declaration and mixed dataset terms; converter has no separate license/exact upstream weight commit. No known ContractNLI roster entry does not prove absence of pretraining contamination.",
+  "model_initializations_forwards_native_paid_calls": 0,
+  "ABI_and_ORT_provider_execution_tested": false
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "frozen": true,
+  "frozen_at": "2026-10-23T02:28:30.622337+00:00",
+  "checkpoint_parent": "80e54e1bf6bd8ff8605e16424d3905aadb07ff31",
+  "scope": "Internal source-licensed originalContractNLI3predicate NDApilot, zero-shot highercapacity pretrained typedreader. NewDEV24; existingCONF48 remains project-model-unused. No fullLegalBench/Jev300/ClaimBenchscore.",
+  "train": [],
+  "calibration": [],
+  "fitting": {
+    "train_queries": 0,
+    "calibration_queries": 0,
+    "supervised_fit": false,
+    "temperature": 1.0
+  },
+  "development": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch11/development24.jsonl",
+    "sha256": "d6a8dcbff2888b6ec72e5d8ba6345c43ca9d5d765876b83fe9a2010905abdf16",
+    "queries": 24,
+    "document_groups": 8,
+    "status": "New project-unused groups; only frozen gate, nofit/calibration"
+  },
+  "confirmation": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+    "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "queries": 48,
+    "document_groups": 16,
+    "status": "Existingepoch9bankunchanged/project-model-unused; no labels forselect/fit; onlyscorer/auditor afterfrozengates",
+    "allowlist_path": "experiments/sota-2026-10-22/legal-transfer/epoch11/confirmation-allowlist.json",
+    "allowlist_sha256": "65485b57d37a3341031cd4e125539e6c052f34844a60f93be7f1035db68c913e"
+  },
+  "roles_frozen_before_new_gold_projection_at": "2026-10-23T02:28:30.543802+00:00",
+  "draw": {
+    "plan_sha256": "6f1adbca567b8259ab3355551ce37ed591fc58b363e9a22a8b5002a3b346c0a6",
+    "selection_sha256": "7f1bcae2b08da4df36a2f1f2435335678d6134fd9daaaca17b883b4f7d605f9b",
+    "eligible_unreserved_before": 242,
+    "new_DEV_groups": 8,
+    "unreserved_remaining_after": 234,
+    "prior_exposed_train_groups": 165,
+    "reserved_confirmation_groups": 16,
+    "selection_uses_labels_or_outcomes": false
+  },
+  "source": {
+    "repository": "stanfordnlp/contract-nli",
+    "commit": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "member": "contract-nli/train.json",
+    "member_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+    "archive_sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+    "license": "CC-BY-4.0",
+    "license_sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+  },
+  "inference_boundary": {
+    "only": [
+      "state",
+      "questions"
+    ],
+    "forbidden": [
+      "gold",
+      "evidence annotations",
+      "record IDs",
+      "source groups",
+      "roles",
+      "provenance"
+    ],
+    "original_threeway_label_field": "evaluation.original_threeway_label",
+    "binary_mapping": {
+      "Entailment": "Yes",
+      "Contradiction": "No",
+      "NotMentioned": "No"
+    }
+  },
+  "metadata_only_allowlists": {
+    "dev": {
+      "path": "dev-allowlist.json",
+      "sha256": "d7304277b9a7f40333e910bbc40a51c579b4af645deb33c0132cb620eb64293b"
+    },
+    "confirmation": {
+      "path": "confirmation-allowlist.json",
+      "sha256": "65485b57d37a3341031cd4e125539e6c052f34844a60f93be7f1035db68c913e"
+    }
+  },
+  "data_files": {
+    "development24.jsonl": {
+      "sha256": "d6a8dcbff2888b6ec72e5d8ba6345c43ca9d5d765876b83fe9a2010905abdf16",
+      "queries": 24,
+      "document_groups": 8,
+      "role": "dev"
+    },
+    "confirmation48.jsonl": {
+      "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+      "queries": 48,
+      "document_groups": 16,
+      "role": "confirmation",
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl"
+    }
+  },
+  "limitations": "Publicsource projectnovelty only; unknownpretraining/fuzzydocumentversions notruledout. AlloldDEV remains permanentlyexposed. No modelstrength/generalization claim beforeactualmeasurement.",
+  "native_model_paid_calls": 0,
+  "official_score": null,
+  "official_rank": null
+}

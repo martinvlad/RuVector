@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "status": "REJECTED_DEV_GATE",
+  "diagnostic_sha256": "a40436270d2668eb1b55a15e448b2996e75e085bf21b3521638f07a113c4732c",
+  "scope": "One completedlicensedoriginalContractNLI3predicateDEV24/8documentgroups; no currentJev300/fullLegalBench/ClaimBench score, officialrank or SOTA.",
+  "metrics": {
+    "ruvector_top2": {
+      "n": 24,
+      "correct": 12,
+      "accuracy": 0.5,
+      "brier": 0.8722703894804444,
+      "nll": 1.580674520685237,
+      "predicted_counts": {
+        "Yes": 24
+      },
+      "wrong_confidence_at_least_0_8": 11,
+      "mean_wrong_confidence": 0.9260223064154866
+    },
+    "same_nli_lexical_top2": {
+      "n": 24,
+      "correct": 12,
+      "accuracy": 0.5,
+      "brier": 0.9457001845610077,
+      "nll": 1.7040064144055693,
+      "predicted_counts": {
+        "Yes": 24
+      },
+      "wrong_confidence_at_least_0_8": 12,
+      "mean_wrong_confidence": 0.9449751670546289
+    },
+    "same_nli_positional_first2": {
+      "n": 24,
+      "correct": 12,
+      "accuracy": 0.5,
+      "brier": 0.8437233653387962,
+      "nll": 1.449875420321296,
+      "predicted_counts": {
+        "Yes": 24
+      },
+      "wrong_confidence_at_least_0_8": 10,
+      "mean_wrong_confidence": 0.9037731685192405
+    },
+    "native104_on_ruvector_evidence": {
+      "n": 24,
+      "correct": 13,
+      "accuracy": 0.5416666666666666,
+      "brier": 0.4988288010573727,
+      "nll": 0.6919759282524093,
+      "predicted_counts": {
+        "Yes": 19,
+        "No": 5
+      },
+      "wrong_confidence_at_least_0_8": 0,
+      "mean_wrong_confidence": 0.5020804181818181
+    }
+  },
+  "frozen_gate_failure": {
+    "primary_two_correct_gain_vs_each_control": false,
+    "proper_nonincrease_vs_all_controls": false,
+    "reason": "Native12tiesbothmatchedreaders12 andtrails excerptNative10413; properlossesworsepositionalandexcerpt104."
+  },
+  "typed_reader_collapse": {
+    "gold_binary_counts": {
+      "No": 12,
+      "Yes": 12
+    },
+    "gold_threeway_counts": {
+      "Contradiction": 3,
+      "Entailment": 12,
+      "NotMentioned": 9
+    },
+    "Yes_predictions_by_selector": {
+      "ruvector_top2": 24,
+      "same_nli_lexical_top2": 24,
+      "same_nli_positional_first2": 24
+    },
+    "Entailment_predictions_by_true_class": {
+      "ruvector_top2": {
+        "Contradiction": 3,
+        "Entailment": 12,
+        "NotMentioned": 9
+      },
+      "same_nli_lexical_top2": {
+        "Contradiction": 3,
+        "Entailment": 12,
+        "NotMentioned": 9
+      },
+      "same_nli_positional_first2": {
+        "Contradiction": 3,
+        "Entailment": 12,
+        "NotMentioned": 9
+      }
+    },
+    "primary_wrong_confidence_mean": 0.9260223064154866,
+    "primary_wrong_confidence_at_least_0_8": 11,
+    "interpretation": "All24inputs inall3selectors predictYes/Entailment despite3Contradiction/9NotMentionedgold. Full3wayprobabilityreplay retainedNeutral, so discardedNeutralreadout cannotexplainthisrun. Exactpretrainedconversionfidelity andlegal-domainsemanticcompetence remainseparateunmeasuredcauses."
+  },
+  "evidence_and_context": {
+    "coverage": {
+      "ruvector_top2": {
+        "numeric_total": 510,
+        "numeric_retained": 73,
+        "mean_source_character_coverage": 0.2816183862793432,
+        "annotated_cases": 15,
+        "any_gold_overlap": 11,
+        "all_gold_characters": 10,
+        "fully_retained_binary_wrong": 1
+      },
+      "same_nli_lexical_top2": {
+        "numeric_total": 510,
+        "numeric_retained": 94,
+        "mean_source_character_coverage": 0.28352461279357183,
+        "annotated_cases": 15,
+        "any_gold_overlap": 10,
+        "all_gold_characters": 8,
+        "fully_retained_binary_wrong": 2
+      },
+      "same_nli_positional_first2": {
+        "numeric_total": 510,
+        "numeric_retained": 120,
+        "mean_source_character_coverage": 0.27703106083492035,
+        "annotated_cases": 15,
+        "any_gold_overlap": 7,
+        "all_gold_characters": 5,
+        "fully_retained_binary_wrong": 1
+      }
+    },
+    "ANN_top2_set_agreements": 24,
+    "ANN_candidate_set_agreements": 24,
+    "ANN_full_order_agreements": 24,
+    "same_context_max_logit_drift": 0.0,
+    "interpretation": "Native11any/10fullannotationretentionof15annotatedcases exceedspositional7/5, yetonefullyretainednativecaseiswrong andallselectorscollapseYes. Exactcosineagreement character/numberexposure do notcertifylegalcontext,sufficiency or numerictruth. Retrievalmiss neverprovesClaimBenchinsufficiency."
+  },
+  "whole_HTTP_latency_seconds": {
+    "p50": 5.006463911500759,
+    "p95": 5.897243189898654,
+    "max": 6.965789430003497,
+    "scope": "All3NLIarms+Native104excerpt+BGE/nativeindex, not primary-onlydeployment"
+  },
+  "actual_request_counts": {
+    "started": 24,
+    "wire": 24,
+    "HTTP200": 24,
+    "failed_HTTP": 0,
+    "parsed_successful_records": 24,
+    "started_without_wire": 0
+  },
+  "next_distinct_research_question": {
+    "status": "Unimplemented/unmeasured; no currentcandidate rescue, new threshold/calibration/grid or probe",
+    "direction": "Beforeanothercapacityincrease, freeze a TRAIN-only source-licensed typed-decision sanity and converted-versus-reference numerical-fidelity question withinfutureCPU/runtime budget. Evaluate a legal-domain-capable pretrained reader with genuine unused DEV/CONF andmatchednative/lexical/positional evidence. Do nottrain/select onthis exposedDEV or reservedconfirmationlabels."
+  },
+  "uncertainty": "Only8documentgroups, no pairedsameinputs basevslarge causalcomparison. Unknownpretrainingoverlap; upstreamsourcecardMIT/converterweightcommitgap/mixedtrainingterms retained. Onequantizedcheckpointdoesnotidentifyarchitecture-caused failure.",
+  "preservation": {
+    "submitted_Native104_RRF10_champion_unchanged": true,
+    "unused_CONFIRM48_unopened_by_this_diagnostic": true,
+    "all13prior_attempts_and_this_epoch_closed": true,
+    "no_frozen_source_or_gate_changes": true
+  },
+  "new_model_calls": 0,
+  "new_native_calls": 0,
+  "new_optimizer_fits": 0,
+  "official_score": null,
+  "official_rank": null
+}

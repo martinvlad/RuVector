@@ -1,0 +1,1985 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE_DEV_DIAGNOSTIC",
+  "parent_terminal_status": "REJECTED_DEV_GATE",
+  "scope": "Pure cached DEVsuccesses only; no CONF text/labels/files opened, no models/native calls/fit/calibration/candidatevariants. Partialrows are not fullcorpus scores.",
+  "DEV_complete": true,
+  "successful_DEV_records": 24,
+  "document_groups": 8,
+  "gold_binary_counts": {
+    "No": 12,
+    "Yes": 12
+  },
+  "gold_threeway_counts": {
+    "Contradiction": 3,
+    "Entailment": 12,
+    "NotMentioned": 9
+  },
+  "four_arm_metrics": {
+    "ruvector_top2": {
+      "n": 24,
+      "correct": 12,
+      "accuracy": 0.5,
+      "brier": 0.8722703894804444,
+      "nll": 1.580674520685237,
+      "predicted_counts": {
+        "Yes": 24
+      },
+      "wrong_confidence_at_least_0_8": 11,
+      "mean_wrong_confidence": 0.9260223064154866
+    },
+    "same_nli_lexical_top2": {
+      "n": 24,
+      "correct": 12,
+      "accuracy": 0.5,
+      "brier": 0.9457001845610077,
+      "nll": 1.7040064144055693,
+      "predicted_counts": {
+        "Yes": 24
+      },
+      "wrong_confidence_at_least_0_8": 12,
+      "mean_wrong_confidence": 0.9449751670546289
+    },
+    "same_nli_positional_first2": {
+      "n": 24,
+      "correct": 12,
+      "accuracy": 0.5,
+      "brier": 0.8437233653387962,
+      "nll": 1.449875420321296,
+      "predicted_counts": {
+        "Yes": 24
+      },
+      "wrong_confidence_at_least_0_8": 10,
+      "mean_wrong_confidence": 0.9037731685192405
+    },
+    "native104_on_ruvector_evidence": {
+      "n": 24,
+      "correct": 13,
+      "accuracy": 0.5416666666666666,
+      "brier": 0.4988288010573727,
+      "nll": 0.6919759282524093,
+      "predicted_counts": {
+        "Yes": 19,
+        "No": 5
+      },
+      "wrong_confidence_at_least_0_8": 0,
+      "mean_wrong_confidence": 0.5020804181818181
+    }
+  },
+  "threeway_confusions": {
+    "ruvector_top2": [
+      {
+        "gold": "Contradiction",
+        "predicted": "Entailment",
+        "n": 3
+      },
+      {
+        "gold": "Entailment",
+        "predicted": "Entailment",
+        "n": 12
+      },
+      {
+        "gold": "NotMentioned",
+        "predicted": "Entailment",
+        "n": 9
+      }
+    ],
+    "same_nli_lexical_top2": [
+      {
+        "gold": "Contradiction",
+        "predicted": "Entailment",
+        "n": 3
+      },
+      {
+        "gold": "Entailment",
+        "predicted": "Entailment",
+        "n": 12
+      },
+      {
+        "gold": "NotMentioned",
+        "predicted": "Entailment",
+        "n": 9
+      }
+    ],
+    "same_nli_positional_first2": [
+      {
+        "gold": "Contradiction",
+        "predicted": "Entailment",
+        "n": 3
+      },
+      {
+        "gold": "Entailment",
+        "predicted": "Entailment",
+        "n": 12
+      },
+      {
+        "gold": "NotMentioned",
+        "predicted": "Entailment",
+        "n": 9
+      }
+    ]
+  },
+  "paired_disagreements": {
+    "same_nli_lexical_top2": {
+      "both_wrong": 12,
+      "both_right": 12
+    },
+    "same_nli_positional_first2": {
+      "both_wrong": 12,
+      "both_right": 12
+    },
+    "native104_on_ruvector_evidence": {
+      "both_wrong": 9,
+      "both_right": 10,
+      "other_only_right": 3,
+      "native_only_right": 2
+    }
+  },
+  "per_document_correct": {
+    "original-contractnli:332": {
+      "ruvector_top2": 2,
+      "same_nli_lexical_top2": 2,
+      "same_nli_positional_first2": 2,
+      "native104_on_ruvector_evidence": 2
+    },
+    "original-contractnli:436": {
+      "ruvector_top2": 1,
+      "same_nli_lexical_top2": 1,
+      "same_nli_positional_first2": 1,
+      "native104_on_ruvector_evidence": 2
+    },
+    "original-contractnli:397": {
+      "ruvector_top2": 0,
+      "same_nli_lexical_top2": 0,
+      "same_nli_positional_first2": 0,
+      "native104_on_ruvector_evidence": 1
+    },
+    "original-contractnli:197": {
+      "ruvector_top2": 2,
+      "same_nli_lexical_top2": 2,
+      "same_nli_positional_first2": 2,
+      "native104_on_ruvector_evidence": 1
+    },
+    "original-contractnli:410": {
+      "ruvector_top2": 3,
+      "same_nli_lexical_top2": 3,
+      "same_nli_positional_first2": 3,
+      "native104_on_ruvector_evidence": 3
+    },
+    "original-contractnli:232": {
+      "ruvector_top2": 2,
+      "same_nli_lexical_top2": 2,
+      "same_nli_positional_first2": 2,
+      "native104_on_ruvector_evidence": 2
+    },
+    "original-contractnli:504": {
+      "ruvector_top2": 1,
+      "same_nli_lexical_top2": 1,
+      "same_nli_positional_first2": 1,
+      "native104_on_ruvector_evidence": 1
+    },
+    "original-contractnli:234": {
+      "ruvector_top2": 1,
+      "same_nli_lexical_top2": 1,
+      "same_nli_positional_first2": 1,
+      "native104_on_ruvector_evidence": 1
+    }
+  },
+  "case_decisions_only": [
+    {
+      "id": "original-contractnli:train:epoch11:dev:332:nda-17",
+      "source_group": "original-contractnli:332",
+      "gold_binary": "No",
+      "gold_threeway": "Contradiction",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:332:nda-7",
+      "source_group": "original-contractnli:332",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:332:nda-3",
+      "source_group": "original-contractnli:332",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:436:nda-17",
+      "source_group": "original-contractnli:436",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "No"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:436:nda-7",
+      "source_group": "original-contractnli:436",
+      "gold_binary": "No",
+      "gold_threeway": "Contradiction",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:436:nda-3",
+      "source_group": "original-contractnli:436",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:397:nda-17",
+      "source_group": "original-contractnli:397",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:397:nda-7",
+      "source_group": "original-contractnli:397",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "No"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:397:nda-3",
+      "source_group": "original-contractnli:397",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:197:nda-17",
+      "source_group": "original-contractnli:197",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:197:nda-7",
+      "source_group": "original-contractnli:197",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:197:nda-3",
+      "source_group": "original-contractnli:197",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "No"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:410:nda-17",
+      "source_group": "original-contractnli:410",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:410:nda-7",
+      "source_group": "original-contractnli:410",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:410:nda-3",
+      "source_group": "original-contractnli:410",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:232:nda-17",
+      "source_group": "original-contractnli:232",
+      "gold_binary": "No",
+      "gold_threeway": "Contradiction",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:232:nda-7",
+      "source_group": "original-contractnli:232",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:232:nda-3",
+      "source_group": "original-contractnli:232",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:504:nda-17",
+      "source_group": "original-contractnli:504",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:504:nda-7",
+      "source_group": "original-contractnli:504",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:504:nda-3",
+      "source_group": "original-contractnli:504",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:234:nda-17",
+      "source_group": "original-contractnli:234",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "Yes"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:234:nda-7",
+      "source_group": "original-contractnli:234",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "No"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch11:dev:234:nda-3",
+      "source_group": "original-contractnli:234",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "predictions": {
+        "ruvector_top2": "Yes",
+        "same_nli_lexical_top2": "Yes",
+        "same_nli_positional_first2": "Yes",
+        "native104_on_ruvector_evidence": "No"
+      },
+      "typed_predictions": {
+        "ruvector_top2": "Entailment",
+        "same_nli_lexical_top2": "Entailment",
+        "same_nli_positional_first2": "Entailment"
+      }
+    }
+  ],
+  "coverage": {
+    "ruvector_top2": {
+      "numeric_total": 510,
+      "numeric_retained": 73,
+      "mean_source_character_coverage": 0.2816183862793432,
+      "annotated_cases": 15,
+      "any_gold_overlap": 11,
+      "all_gold_characters": 10,
+      "fully_retained_binary_wrong": 1
+    },
+    "same_nli_lexical_top2": {
+      "numeric_total": 510,
+      "numeric_retained": 94,
+      "mean_source_character_coverage": 0.28352461279357183,
+      "annotated_cases": 15,
+      "any_gold_overlap": 10,
+      "all_gold_characters": 8,
+      "fully_retained_binary_wrong": 2
+    },
+    "same_nli_positional_first2": {
+      "numeric_total": 510,
+      "numeric_retained": 120,
+      "mean_source_character_coverage": 0.27703106083492035,
+      "annotated_cases": 15,
+      "any_gold_overlap": 7,
+      "all_gold_characters": 5,
+      "fully_retained_binary_wrong": 1
+    }
+  },
+  "gold_annotation_retention_available": true,
+  "coverage_scope": "Character/numerical retention is exposure, not sufficiency or numericaltruth. NotMentioned has no positiveannotation; noabsenceproof. Counts repeatdocumentsthreehypotheses.",
+  "saved_vector_native_audit": {
+    "requests": 24,
+    "top2_set_agreements": 24,
+    "candidate_set_agreements": 24,
+    "full_order_agreements": 24,
+    "rows": [
+      {
+        "native_ids": [
+          4,
+          2,
+          11,
+          13,
+          9,
+          3,
+          7,
+          5,
+          10,
+          12,
+          6,
+          14,
+          17,
+          18,
+          16,
+          21,
+          8,
+          20,
+          1,
+          15,
+          19,
+          0
+        ],
+        "saved_cosine_ids": [
+          4,
+          2,
+          11,
+          13,
+          9,
+          3,
+          7,
+          5,
+          10,
+          12,
+          6,
+          14,
+          17,
+          18,
+          16,
+          21,
+          8,
+          20,
+          1,
+          15,
+          19,
+          0
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/6f8cedb625ca2906c9ab1f384c2fc2e6d971f8bfeb1b5500f6cd431fdeddb296.json",
+          "bytes": 185654,
+          "sha256": "6f8cedb625ca2906c9ab1f384c2fc2e6d971f8bfeb1b5500f6cd431fdeddb296"
+        }
+      },
+      {
+        "native_ids": [
+          13,
+          2,
+          4,
+          9,
+          3,
+          5,
+          12,
+          8,
+          11,
+          6,
+          1,
+          16,
+          18,
+          17,
+          14,
+          21,
+          10,
+          7,
+          20,
+          0,
+          15,
+          19
+        ],
+        "saved_cosine_ids": [
+          13,
+          2,
+          4,
+          9,
+          3,
+          5,
+          12,
+          8,
+          11,
+          6,
+          1,
+          16,
+          18,
+          17,
+          14,
+          21,
+          10,
+          7,
+          20,
+          0,
+          15,
+          19
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/062857520bdf400538783dee10d5361ab062c98eb482fc1062db467b9224d12c.json",
+          "bytes": 185651,
+          "sha256": "062857520bdf400538783dee10d5361ab062c98eb482fc1062db467b9224d12c"
+        }
+      },
+      {
+        "native_ids": [
+          4,
+          3,
+          12,
+          5,
+          11,
+          9,
+          10,
+          13,
+          6,
+          17,
+          2,
+          8,
+          16,
+          14,
+          18,
+          7,
+          15,
+          20,
+          21,
+          0,
+          19,
+          1
+        ],
+        "saved_cosine_ids": [
+          4,
+          3,
+          12,
+          5,
+          11,
+          9,
+          10,
+          13,
+          6,
+          17,
+          2,
+          8,
+          16,
+          14,
+          18,
+          7,
+          15,
+          20,
+          21,
+          0,
+          19,
+          1
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/1d31da17cf4e81ee9ddffda6bd9920fb5e97c66e7bd236edf407e76ce641822d.json",
+          "bytes": 185632,
+          "sha256": "1d31da17cf4e81ee9ddffda6bd9920fb5e97c66e7bd236edf407e76ce641822d"
+        }
+      },
+      {
+        "native_ids": [
+          3,
+          4,
+          5,
+          2,
+          1,
+          6,
+          0,
+          7
+        ],
+        "saved_cosine_ids": [
+          3,
+          4,
+          5,
+          2,
+          1,
+          6,
+          0,
+          7
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/e481c6acd02a885c16f6b8e556ee2c9c487933e8445c762bd277331283bf14e3.json",
+          "bytes": 72767,
+          "sha256": "e481c6acd02a885c16f6b8e556ee2c9c487933e8445c762bd277331283bf14e3"
+        }
+      },
+      {
+        "native_ids": [
+          4,
+          3,
+          1,
+          5,
+          2,
+          0,
+          6,
+          7
+        ],
+        "saved_cosine_ids": [
+          4,
+          3,
+          1,
+          5,
+          2,
+          0,
+          6,
+          7
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/aef72d99d87da03185dc1e12862e20b309384f6a24074b7f4915846df693e7c8.json",
+          "bytes": 72764,
+          "sha256": "aef72d99d87da03185dc1e12862e20b309384f6a24074b7f4915846df693e7c8"
+        }
+      },
+      {
+        "native_ids": [
+          4,
+          3,
+          1,
+          2,
+          5,
+          0,
+          6,
+          7
+        ],
+        "saved_cosine_ids": [
+          4,
+          3,
+          1,
+          2,
+          5,
+          0,
+          6,
+          7
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/c265ad49d950abe13f71fd8e547b0035db1157a60d25bbd721876b344c43611a.json",
+          "bytes": 72745,
+          "sha256": "c265ad49d950abe13f71fd8e547b0035db1157a60d25bbd721876b344c43611a"
+        }
+      },
+      {
+        "native_ids": [
+          17,
+          7,
+          23,
+          15,
+          18,
+          6,
+          16,
+          14,
+          20,
+          8,
+          21,
+          19,
+          9,
+          12,
+          11,
+          13,
+          1,
+          22,
+          10,
+          3,
+          4,
+          5,
+          24,
+          2,
+          0
+        ],
+        "saved_cosine_ids": [
+          17,
+          7,
+          23,
+          15,
+          18,
+          6,
+          16,
+          14,
+          20,
+          8,
+          21,
+          19,
+          9,
+          12,
+          11,
+          13,
+          1,
+          22,
+          10,
+          3,
+          4,
+          5,
+          24,
+          2,
+          0
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/e4cb5159321bcf661f69c9ee3dadce1e04a27ed2007476b8c3e06f94676ecc08.json",
+          "bytes": 210023,
+          "sha256": "e4cb5159321bcf661f69c9ee3dadce1e04a27ed2007476b8c3e06f94676ecc08"
+        }
+      },
+      {
+        "native_ids": [
+          6,
+          17,
+          7,
+          23,
+          16,
+          14,
+          15,
+          18,
+          20,
+          8,
+          21,
+          9,
+          3,
+          11,
+          19,
+          2,
+          4,
+          10,
+          5,
+          22,
+          1,
+          12,
+          24,
+          0,
+          13
+        ],
+        "saved_cosine_ids": [
+          6,
+          17,
+          7,
+          23,
+          16,
+          14,
+          15,
+          18,
+          20,
+          8,
+          21,
+          9,
+          3,
+          11,
+          19,
+          2,
+          4,
+          10,
+          5,
+          22,
+          1,
+          12,
+          24,
+          0,
+          13
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/32d8025da5f7eab19dc74a6a70e0080bcd6ee9862de599abf0aa74805e1013da.json",
+          "bytes": 210020,
+          "sha256": "32d8025da5f7eab19dc74a6a70e0080bcd6ee9862de599abf0aa74805e1013da"
+        }
+      },
+      {
+        "native_ids": [
+          17,
+          6,
+          16,
+          14,
+          7,
+          15,
+          23,
+          9,
+          20,
+          18,
+          21,
+          12,
+          19,
+          8,
+          11,
+          13,
+          3,
+          4,
+          5,
+          1,
+          2,
+          22,
+          24,
+          10,
+          0
+        ],
+        "saved_cosine_ids": [
+          17,
+          6,
+          16,
+          14,
+          7,
+          15,
+          23,
+          9,
+          20,
+          18,
+          21,
+          12,
+          19,
+          8,
+          11,
+          13,
+          3,
+          4,
+          5,
+          1,
+          2,
+          22,
+          24,
+          10,
+          0
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/4cbd5b8435106c3c95ac89d8b39482cc1fb9306e668f43c997532358e4aabf9a.json",
+          "bytes": 210001,
+          "sha256": "4cbd5b8435106c3c95ac89d8b39482cc1fb9306e668f43c997532358e4aabf9a"
+        }
+      },
+      {
+        "native_ids": [
+          3,
+          5,
+          8,
+          6,
+          13,
+          16,
+          1,
+          7,
+          14,
+          12,
+          10,
+          2,
+          20,
+          9,
+          4,
+          11,
+          19,
+          18,
+          21,
+          0,
+          15,
+          17
+        ],
+        "saved_cosine_ids": [
+          3,
+          5,
+          8,
+          6,
+          13,
+          16,
+          1,
+          7,
+          14,
+          12,
+          10,
+          2,
+          20,
+          9,
+          4,
+          11,
+          19,
+          18,
+          21,
+          0,
+          15,
+          17
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/83ddcddcc04ae1eed1292ca2de50bab90c0eda8be4f4df38b4a948a20e2bbc92.json",
+          "bytes": 185746,
+          "sha256": "83ddcddcc04ae1eed1292ca2de50bab90c0eda8be4f4df38b4a948a20e2bbc92"
+        }
+      },
+      {
+        "native_ids": [
+          6,
+          5,
+          3,
+          16,
+          1,
+          7,
+          8,
+          4,
+          14,
+          2,
+          20,
+          9,
+          13,
+          10,
+          11,
+          12,
+          0,
+          19,
+          15,
+          21,
+          18,
+          17
+        ],
+        "saved_cosine_ids": [
+          6,
+          5,
+          3,
+          16,
+          1,
+          7,
+          8,
+          4,
+          14,
+          2,
+          20,
+          9,
+          13,
+          10,
+          11,
+          12,
+          0,
+          19,
+          15,
+          21,
+          18,
+          17
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/41ab273000ea33bad10307d16facabf614c50815043fe16a57ccf52e23503589.json",
+          "bytes": 185743,
+          "sha256": "41ab273000ea33bad10307d16facabf614c50815043fe16a57ccf52e23503589"
+        }
+      },
+      {
+        "native_ids": [
+          1,
+          2,
+          4,
+          7,
+          8,
+          6,
+          5,
+          16,
+          13,
+          9,
+          3,
+          10,
+          20,
+          14,
+          19,
+          12,
+          11,
+          18,
+          0,
+          21,
+          17,
+          15
+        ],
+        "saved_cosine_ids": [
+          1,
+          2,
+          4,
+          7,
+          8,
+          6,
+          5,
+          16,
+          13,
+          9,
+          3,
+          10,
+          20,
+          14,
+          19,
+          12,
+          11,
+          18,
+          0,
+          21,
+          17,
+          15
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/ad4a183e59f4e18bdb90dca71fadffb753672a88791dac446710e1bf5b446960.json",
+          "bytes": 185724,
+          "sha256": "ad4a183e59f4e18bdb90dca71fadffb753672a88791dac446710e1bf5b446960"
+        }
+      },
+      {
+        "native_ids": [
+          3,
+          10,
+          6,
+          8,
+          9,
+          1,
+          12,
+          15,
+          2,
+          11,
+          14,
+          22,
+          13,
+          21,
+          17,
+          18,
+          5,
+          16,
+          4,
+          7,
+          24,
+          20,
+          19,
+          23,
+          25,
+          0
+        ],
+        "saved_cosine_ids": [
+          3,
+          10,
+          6,
+          8,
+          9,
+          1,
+          12,
+          15,
+          2,
+          11,
+          14,
+          22,
+          13,
+          21,
+          17,
+          18,
+          5,
+          16,
+          4,
+          7,
+          24,
+          20,
+          19,
+          23,
+          25,
+          0
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/d2a9e3d47a2aa9946a655fcd323345d67262befe255c66531abeab787e3d897a.json",
+          "bytes": 218186,
+          "sha256": "d2a9e3d47a2aa9946a655fcd323345d67262befe255c66531abeab787e3d897a"
+        }
+      },
+      {
+        "native_ids": [
+          3,
+          10,
+          1,
+          22,
+          2,
+          14,
+          9,
+          6,
+          8,
+          21,
+          15,
+          17,
+          4,
+          16,
+          11,
+          18,
+          12,
+          13,
+          7,
+          5,
+          19,
+          20,
+          24,
+          23,
+          0,
+          25
+        ],
+        "saved_cosine_ids": [
+          3,
+          10,
+          1,
+          22,
+          2,
+          14,
+          9,
+          6,
+          8,
+          21,
+          15,
+          17,
+          4,
+          16,
+          11,
+          18,
+          12,
+          13,
+          7,
+          5,
+          19,
+          20,
+          24,
+          23,
+          0,
+          25
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/4f59dd84a3ef3ba1ea259fa0b408561f941d838cea4ba3ea2fb65408972c025e.json",
+          "bytes": 218183,
+          "sha256": "4f59dd84a3ef3ba1ea259fa0b408561f941d838cea4ba3ea2fb65408972c025e"
+        }
+      },
+      {
+        "native_ids": [
+          9,
+          10,
+          5,
+          8,
+          3,
+          4,
+          22,
+          6,
+          12,
+          15,
+          14,
+          11,
+          2,
+          16,
+          13,
+          1,
+          21,
+          7,
+          17,
+          24,
+          23,
+          25,
+          20,
+          0,
+          18,
+          19
+        ],
+        "saved_cosine_ids": [
+          9,
+          10,
+          5,
+          8,
+          3,
+          4,
+          22,
+          6,
+          12,
+          15,
+          14,
+          11,
+          2,
+          16,
+          13,
+          1,
+          21,
+          7,
+          17,
+          24,
+          23,
+          25,
+          20,
+          0,
+          18,
+          19
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/b1342d2bc5cb3e8d3a34e5623cda06f622748f54d6395161d890c623d855ec85.json",
+          "bytes": 218164,
+          "sha256": "b1342d2bc5cb3e8d3a34e5623cda06f622748f54d6395161d890c623d855ec85"
+        }
+      },
+      {
+        "native_ids": [
+          5,
+          2,
+          6,
+          4,
+          8,
+          7,
+          3,
+          9,
+          10,
+          11,
+          12,
+          14,
+          0,
+          1,
+          13
+        ],
+        "saved_cosine_ids": [
+          5,
+          2,
+          6,
+          4,
+          8,
+          7,
+          3,
+          9,
+          10,
+          11,
+          12,
+          14,
+          0,
+          1,
+          13
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/d3d03486e73b19f095680f00f467b0191d15a8260cd6c41c2b015959d3569a79.json",
+          "bytes": 129276,
+          "sha256": "d3d03486e73b19f095680f00f467b0191d15a8260cd6c41c2b015959d3569a79"
+        }
+      },
+      {
+        "native_ids": [
+          2,
+          5,
+          4,
+          6,
+          8,
+          3,
+          9,
+          7,
+          11,
+          10,
+          0,
+          1,
+          13,
+          14,
+          12
+        ],
+        "saved_cosine_ids": [
+          2,
+          5,
+          4,
+          6,
+          8,
+          3,
+          9,
+          7,
+          11,
+          10,
+          0,
+          1,
+          13,
+          14,
+          12
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/6c0bedff10d13dbee5900bd75a4c5399e1e6b918d9e0b2d13e9c72d78c29c99a.json",
+          "bytes": 129273,
+          "sha256": "6c0bedff10d13dbee5900bd75a4c5399e1e6b918d9e0b2d13e9c72d78c29c99a"
+        }
+      },
+      {
+        "native_ids": [
+          2,
+          5,
+          6,
+          8,
+          4,
+          3,
+          9,
+          10,
+          7,
+          13,
+          11,
+          0,
+          12,
+          14,
+          1
+        ],
+        "saved_cosine_ids": [
+          2,
+          5,
+          6,
+          8,
+          4,
+          3,
+          9,
+          10,
+          7,
+          13,
+          11,
+          0,
+          12,
+          14,
+          1
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/c3d76c33bc67015227d62a044e4f73abeda3439528e977ba972a3ef72f16b89c.json",
+          "bytes": 129254,
+          "sha256": "c3d76c33bc67015227d62a044e4f73abeda3439528e977ba972a3ef72f16b89c"
+        }
+      },
+      {
+        "native_ids": [
+          8,
+          5,
+          4,
+          3,
+          19,
+          21,
+          2,
+          16,
+          7,
+          9,
+          1,
+          10,
+          12,
+          28,
+          25,
+          17,
+          11,
+          18,
+          13,
+          22,
+          23,
+          6,
+          24,
+          15,
+          27,
+          14,
+          26,
+          0,
+          29,
+          20
+        ],
+        "saved_cosine_ids": [
+          8,
+          5,
+          4,
+          3,
+          19,
+          21,
+          2,
+          16,
+          7,
+          9,
+          1,
+          10,
+          12,
+          28,
+          25,
+          17,
+          11,
+          18,
+          13,
+          22,
+          23,
+          6,
+          24,
+          15,
+          27,
+          14,
+          26,
+          0,
+          29,
+          20
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/66cd17176fda321e71e04c7cd7e81f1c4fb2db3e1eed93a7d0e43f643244a50b.json",
+          "bytes": 250505,
+          "sha256": "66cd17176fda321e71e04c7cd7e81f1c4fb2db3e1eed93a7d0e43f643244a50b"
+        }
+      },
+      {
+        "native_ids": [
+          8,
+          4,
+          19,
+          5,
+          3,
+          21,
+          7,
+          16,
+          1,
+          17,
+          2,
+          25,
+          18,
+          11,
+          28,
+          9,
+          6,
+          10,
+          12,
+          22,
+          15,
+          27,
+          23,
+          24,
+          0,
+          14,
+          13,
+          20,
+          26,
+          29
+        ],
+        "saved_cosine_ids": [
+          8,
+          4,
+          19,
+          5,
+          3,
+          21,
+          7,
+          16,
+          1,
+          17,
+          2,
+          25,
+          18,
+          11,
+          28,
+          9,
+          6,
+          10,
+          12,
+          22,
+          15,
+          27,
+          23,
+          24,
+          0,
+          14,
+          13,
+          20,
+          26,
+          29
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/d4786e5fc9612237a209a77e5e33b1931927dc17913c746ce0f16f0c1948868d.json",
+          "bytes": 250502,
+          "sha256": "d4786e5fc9612237a209a77e5e33b1931927dc17913c746ce0f16f0c1948868d"
+        }
+      },
+      {
+        "native_ids": [
+          5,
+          11,
+          2,
+          9,
+          8,
+          6,
+          21,
+          19,
+          1,
+          10,
+          3,
+          4,
+          7,
+          25,
+          12,
+          13,
+          17,
+          16,
+          18,
+          22,
+          0,
+          28,
+          24,
+          27,
+          26,
+          14,
+          23,
+          15,
+          20,
+          29
+        ],
+        "saved_cosine_ids": [
+          5,
+          11,
+          2,
+          9,
+          8,
+          6,
+          21,
+          19,
+          1,
+          10,
+          3,
+          4,
+          7,
+          25,
+          12,
+          13,
+          17,
+          16,
+          18,
+          22,
+          0,
+          28,
+          24,
+          27,
+          26,
+          14,
+          23,
+          15,
+          20,
+          29
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/4fb5384f7373daf990ad66a3366d391f6a0b00a8a790f4add50a1275d719c537.json",
+          "bytes": 250483,
+          "sha256": "4fb5384f7373daf990ad66a3366d391f6a0b00a8a790f4add50a1275d719c537"
+        }
+      },
+      {
+        "native_ids": [
+          4,
+          0,
+          1,
+          3,
+          2,
+          6,
+          5
+        ],
+        "saved_cosine_ids": [
+          4,
+          0,
+          1,
+          3,
+          2,
+          6,
+          5
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/b6e3dfd862c0080425ac3ffcd986f7d100b52f7c014bf3082baa173c1b737165.json",
+          "bytes": 64645,
+          "sha256": "b6e3dfd862c0080425ac3ffcd986f7d100b52f7c014bf3082baa173c1b737165"
+        }
+      },
+      {
+        "native_ids": [
+          0,
+          1,
+          3,
+          2,
+          4,
+          6,
+          5
+        ],
+        "saved_cosine_ids": [
+          0,
+          1,
+          3,
+          2,
+          4,
+          6,
+          5
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/dbb56d7e5a055268759a37ffaf79cb513800c5d34ed3afaa4add9f0ffd731b75.json",
+          "bytes": 64642,
+          "sha256": "dbb56d7e5a055268759a37ffaf79cb513800c5d34ed3afaa4add9f0ffd731b75"
+        }
+      },
+      {
+        "native_ids": [
+          0,
+          1,
+          3,
+          2,
+          6,
+          4,
+          5
+        ],
+        "saved_cosine_ids": [
+          0,
+          1,
+          3,
+          2,
+          6,
+          4,
+          5
+        ],
+        "top2_set_agreement": true,
+        "candidate_set_agreement": true,
+        "full_order_agreement": true,
+        "bundle": {
+          "path": "experiments/sota-2026-10-22/epoch11/runs/development/bundles/6a3501ba5120c99fa8db8496c38c45a947af450b36c465e4f7e80fcb67219cbb.json",
+          "bytes": 64623,
+          "sha256": "6a3501ba5120c99fa8db8496c38c45a947af450b36c465e4f7e80fcb67219cbb"
+        }
+      }
+    ],
+    "scope": "Purecosine arithmetic on savedvectors; no newANN/native search. Disagreements retained."
+  },
+  "same_context_max_logit_drift": 0.0,
+  "max_actual_model_pair_tokens": 512,
+  "whole_HTTP_latency_seconds": {
+    "p50": 5.006463911500759,
+    "p95": 5.897243189898654,
+    "max": 6.965789430003497,
+    "scope": "All3NLIarms+Native104excerpt+BGE/nativeindex, not primary-onlydeployment"
+  },
+  "actual_request_counts": {
+    "started": 24,
+    "wire": 24,
+    "HTTP200": 24,
+    "failed_HTTP": 0,
+    "parsed_successful_records": 24,
+    "started_without_wire": 0
+  },
+  "resource_receipt": {
+    "at": "2026-10-23T02:47:59.223377+00:00",
+    "worker_cpu_user_seconds": 235.776814,
+    "worker_cpu_system_seconds": 1.243125,
+    "worker_peak_RSS_bytes": 2070634496,
+    "terminated_children_cpu_user_seconds": 5.430696,
+    "terminated_children_cpu_system_seconds": 0.622589,
+    "largest_terminated_child_peak_RSS_bytes": 2070634496,
+    "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+    "allowed_CPU_ids": [
+      0,
+      1
+    ],
+    "configured_ORT_threads": 2,
+    "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+  },
+  "statistical_unit": "Atmost8documentgroups,3correlatedhypotheses each; descriptive only, no cross-epochcausality or independentquery inference",
+  "source_result_pins": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch11/study-completion.json",
+      "bytes": 3935,
+      "sha256": "547814337109a46ec53b912f54480cca956bcc49309080570d507705317ee7fb"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch11/proposal-manifest.json",
+      "bytes": 18607,
+      "sha256": "ce403b4d1ea7e1e6c1e5b6d60a427e09592a8035a07eba4562f94c8635095b07"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch11/plan.json",
+      "bytes": 33836,
+      "sha256": "003babf0964750668ed0a418469a7d58d5682ae02a2efbe6efbd4cd030f72e09"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch11/runs/development/records.jsonl",
+      "bytes": 2238410,
+      "sha256": "3587d8502c6190138b33ced0168a85a3cea47c24a9b3f967d20bf5a941e295a7"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch11/runs/development/wire.jsonl",
+      "bytes": 2296353,
+      "sha256": "2421f7fc3afc74e0e45a4b2fb8bfba31e4fe57d7639cf61061d584e8f57de9a2"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch11/runs/development/completion.json",
+      "bytes": 718,
+      "sha256": "faf23e7835ecdbcff96aa9dd89237085af6e5321eb4d8169442dc51182254deb"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch11/runs/development/resources.json",
+      "bytes": 667,
+      "sha256": "c115ec072245e55b7a9115cc619d31fcd484d35bcee9f1e7d4d51d484ceddf71"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch11/development-evidence-projection-v1.json",
+      "bytes": 10468,
+      "sha256": "fa860072c6867a2f2d9c0ecd6e703a81fa52a59c862e2a324e2dc56232a05188"
+    }
+  ],
+  "new_model_calls": 0,
+  "new_native_calls": 0,
+  "new_optimizer_fits": 0,
+  "candidate_or_gate_changes": 0,
+  "official_score": null,
+  "official_rank": null
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T02:40:09.357311+00:00",
+  "status": "PASS_DATA_AND_CONTROLLER_INTERFACES_PENDING_FINAL_MATERIALIZED_PLAN",
+  "scope": "Independent DATA worker review of frozen data interfaces, root freeze/controller source and metadata builder. Root/main auditor owns final model/source/math/plan acceptance. No actual measurements launched by this review.",
+  "source_pins": {
+    "/tmp/freeze_e11.py": "f28f7d0d92c2db2dbdca946a45be644911129107a9ea4ab3bc0e93ae22119e1c",
+    "/tmp/manifest_e11.py": "dba27645cc133fae7de3a59115605caab89d303a5baf2690007ee49ae200266f",
+    "/workspace/ruvector-eval/experiments/sota-2026-10-22/controller/epoch11_loop.py": "6e1e5aab720cf4317e35968ba79afd0182584cef14ff94af1894233e0252d092",
+    "/workspace/ruvector-eval/experiments/sota-2026-10-22/controller/test_epoch11_loop.py": "4fc97348f1453bdbc8ef76498625f2df314eebea6ca0115ecd96da5db9b849ff",
+    "/workspace/ruvector-eval/experiments/sota-2026-10-22/legal-transfer/epoch11/data-contract.json": "17fac2bdba674fc81768b975bf559f58053f35c684331e8a212d865cdff328c8",
+    "/workspace/ruvector-eval/experiments/sota-2026-10-22/legal-transfer/epoch11/source-manifest.json": "488a5c52687d9691929c21bf1003f9df8decaa08e7d1310b163ac49d57903312",
+    "/workspace/ruvector-eval/experiments/sota-2026-10-22/legal-transfer/epoch11/publication-files.json": "a5b38dd972d86056e2f579899583ce1d1175ee9b22c31f410a33ceb43a381d2b"
+  },
+  "checks": {
+    "metadata_only_counts": {
+      "TRAIN": 0,
+      "calibration": 0,
+      "DEV_queries": 24,
+      "DEV_groups": 8,
+      "CONF_queries": 48,
+      "CONF_groups": 16
+    },
+    "exact_development_and_preserved_confirmation_paths": true,
+    "prior_exposed165_reserved16_eligible242_draw8_unreserved234": true,
+    "DEV_distinct_normalized_fulltext_count": 8,
+    "labels_excluded_from_HTTP_projection": true,
+    "CONF_rows_only_read_in_admitted_phase_after_frozen_locks": true,
+    "CONF_metadata_builder_uses_allowlist_not_unused_labels": true,
+    "all_21_data_publication_pins_verified": true,
+    "no_train_or_calibration_route": true,
+    "at_most2_nonretryable600s_CPU2_paid0_GPU0": true,
+    "all13_prior_attempts_closed": true,
+    "same24DEV_and_conditional48_counts_in_controller": true,
+    "strictDEV_plus2_all3controls_and_proper_nonworse_strictmatched": true,
+    "new_prePopen_marker_consumes_slot_and_retires_fullCONF_on_invocation_even_noPID_noHTTP": true,
+    "postPopen_PID_receipt_failure_cleans_known_group": true,
+    "no_PID_receipt_is_distinguished_from_successful_process_start": true,
+    "all17_independently_reexecuted_mock_tests_pass": true,
+    "mock_tests_real_model_native_paid_calls": 0,
+    "freeze_script_records17_tests": true
+  },
+  "resolved_findings": [
+    {
+      "id": "unused-confirmation-label-parse",
+      "fix": "Root replaced fullCONF rows parse in metadata builder with label-free confirmation-allowlist.records; bytehash identity remains."
+    },
+    {
+      "id": "prePopen-uncertainty-marker",
+      "fix": "Root added durable marker immediatelybeforePopen, conservative count/bankretirement, process-start distinction and2failure injection tests beforefreeze."
+    }
+  ],
+  "metadata_builder_failure_edge_pending": "Check report.json absence handling for Popen failure; root notified. Actual report schema/arithmetic require postterminal validation.",
+  "frozen_data_unchanged": true,
+  "plan_executed_by_this_worker": false,
+  "new_model_native_fitting_paid_calls": 0,
+  "confirmation_labels_inspected": false,
+  "builders_executed": false
+}

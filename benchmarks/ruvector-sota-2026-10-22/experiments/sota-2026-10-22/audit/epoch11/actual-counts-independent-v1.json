@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T02:57:06.648070+00:00",
+  "checks_passed": true,
+  "audit_source": "replay_counts_data_v4.py",
+  "audit_source_sha256": "f275dcfee93587d6adfc5c45a9a25f60c27210b444a3af9f900a178cd4ba50a0",
+  "server_USD_cost_reported": null,
+  "paid_API_calls_verified": 0,
+  "scope": "Saved actual count/resource/identity/probability arithmetic only; no model/native imports, new fit, inference, or CONF label parse. This data worker directly hashes172/173pins, excluding unused fullCONF and referring to mainauditor all173proof.",
+  "plan_sha256": "003babf0964750668ed0a418469a7d58d5682ae02a2efbe6efbd4cd030f72e09",
+  "direct_frozen_pins_checked": 172,
+  "excluded_full_confirmation_pin": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl",
+  "main_auditor_all173pin_reference_sha256": "e2264c2babe036b3e3e4ffdbb96fbaeec47d95aeee316cdacd3e338c6638b91b",
+  "matched_started_wire_records_server": 24,
+  "TRAIN_requests": 0,
+  "DEV_requests": 24,
+  "CONF_requests": 0,
+  "errors": 0,
+  "finite_hash_valid_native_vectorbundles": 24,
+  "metrics": {
+    "ruvector_top2": {
+      "n": 24,
+      "correct": 12,
+      "brier": 0.8722703894804444,
+      "nll": 1.580674520685237
+    },
+    "same_nli_lexical_top2": {
+      "n": 24,
+      "correct": 12,
+      "brier": 0.9457001845610077,
+      "nll": 1.7040064144055693
+    },
+    "same_nli_positional_first2": {
+      "n": 24,
+      "correct": 12,
+      "brier": 0.8437233653387962,
+      "nll": 1.449875420321296
+    },
+    "native104_on_ruvector_evidence": {
+      "n": 24,
+      "correct": 13,
+      "brier": 0.4988288010573727,
+      "nll": 0.6919759282524093
+    }
+  },
+  "latency_whole_HTTP_seconds": {
+    "p50": 5.006463911500759,
+    "p95": 5.897243189898654,
+    "max": 6.965789430003497
+  },
+  "wall_seconds": 129.03449994399853,
+  "CPU_seconds_worker_plus_terminated_children": 243.073224,
+  "resource_scopes": {
+    "at": "2026-10-23T02:47:59.223377+00:00",
+    "worker_cpu_user_seconds": 235.776814,
+    "worker_cpu_system_seconds": 1.243125,
+    "worker_peak_RSS_bytes": 2070634496,
+    "terminated_children_cpu_user_seconds": 5.430696,
+    "terminated_children_cpu_system_seconds": 0.622589,
+    "largest_terminated_child_peak_RSS_bytes": 2070634496,
+    "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+    "allowed_CPU_ids": [
+      0,
+      1
+    ],
+    "configured_ORT_threads": 2,
+    "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+  },
+  "execution_counters": {
+    "requests_attempted": 24,
+    "requests_completed": 24,
+    "native104_requests_attempted": 24,
+    "native104_requests_completed": 24,
+    "native_core_searches_attempted": 24,
+    "native_core_searches_completed": 24,
+    "bge_forward_batches_attempted": 46,
+    "bge_forward_batches_completed": 46,
+    "bge_texts_attempted": 179,
+    "bge_texts_completed": 179,
+    "nli_forward_pairs_attempted": 72,
+    "nli_forward_pairs_completed": 72,
+    "nli_input_tokens_attempted": 35119,
+    "nli_input_tokens_completed": 35119,
+    "context_partitions_attempted": 24,
+    "context_partitions_completed": 24,
+    "context_packs_attempted": 72,
+    "context_packs_completed": 72,
+    "bge_forward_wall_seconds": 7.341942915030813,
+    "nli_forward_wall_seconds": 105.7449727359708
+  },
+  "process_attempts": {
+    "conservative_Popen_invocations": 1,
+    "PID_confirmed_native_process_starts": 1,
+    "closed_cap": 2,
+    "unspent_slots": 1,
+    "allowed_further": 0
+  },
+  "cumulative": {
+    "attempts": 14,
+    "completed_batches": 12,
+    "success_HTTP": 759,
+    "TRAIN_HTTP": 144,
+    "evaluation_HTTP": 615,
+    "historic_failed_HTTP": 2
+  },
+  "identities": {
+    "prior_exposed": 165,
+    "new_DEV_groups_retired": 8,
+    "exposed_now": 173,
+    "unreserved_after_fixed_draw": 234,
+    "CONF_reserved_groups": 16,
+    "CONF_reserved_queries": 48,
+    "confirmation_model_unused": true
+  },
+  "source_data_raw_unchanged": true,
+  "confirmation_labels_inspected": false,
+  "auditor_models_native_fits_paid_calls": 0
+}

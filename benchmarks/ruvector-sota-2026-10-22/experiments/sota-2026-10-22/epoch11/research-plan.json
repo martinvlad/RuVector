@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "epoch": 11,
+  "frozen_at": "2026-10-23T02:40:26.388671+00:00",
+  "parent_checkpoint": "80e54e1bf6bd8ff8605e16424d3905aadb07ff31",
+  "lease_commit": "ee183aae53215cd30f13681c110cea3712b9b825",
+  "hypothesis": "One higher-capacity 24layer/1024hidden broader pretrained THREE-WAY NLI decoder retainingNeutral, actualnativeRuVector/BGE evidence and exactepoch6contextpolicy with independentnewactivetokenizerguards. Same decoder/model/context across lexical/positional retrievalcontrols; Native104identicalprimarypackedexcerpt. No learnedhead,OOFauxiliary or calibration; architecturalcapacity is not assumedscoregain.",
+  "scientific_scope": "Internal licensed originalContractNLI3predicate binary+threeway NDApilot. Higherarchitecturalcapacity/broaderpretraining, not proven modelstrength or causalcross-epoch gain. No currentJev300/fullLegalBench/ClaimBenchscore/rank.",
+  "train": "none",
+  "calibration": "none",
+  "temperature": 1,
+  "development": {
+    "sha256": "d6a8dcbff2888b6ec72e5d8ba6345c43ca9d5d765876b83fe9a2010905abdf16",
+    "queries": 24,
+    "document_groups": 8,
+    "role": "dev"
+  },
+  "confirmation": {
+    "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "queries": 48,
+    "document_groups": 16,
+    "role": "confirmation",
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch9/confirmation48.jsonl"
+  },
+  "data_ordering": {
+    "contract_frozen_at": "2026-10-23T02:28:30.622337+00:00",
+    "document_role_frozen_at": "2026-10-23T02:28:30.543802+00:00",
+    "candidate_choice_after_data": true
+  },
+  "model_identity": {
+    "repo": "Xenova/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "a70e12f8244efae07cf6fdfa935df30e3ac4a060",
+    "onnx_sha256": "f28cc7e69eb2834597c5ef2336f2adb7398b7bcb019282fb3f11d0130a3c0010",
+    "onnx_bytes": 642587600,
+    "labels": {
+      "0": "entailment",
+      "1": "neutral",
+      "2": "contradiction"
+    },
+    "raw_id2label": {
+      "0": "entailment",
+      "1": "neutral",
+      "2": "contradiction"
+    },
+    "typed_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "mapping": "Yes=P(Entailment);No=P(Contradiction)+P(NotMentioned);T1;lexical No on exact .5 tie",
+    "layers": 24,
+    "hidden_size": 1024
+  },
+  "candidate_manifest_sha256": "ce403b4d1ea7e1e6c1e5b6d60a427e09592a8035a07eba4562f94c8635095b07",
+  "independent_acceptance_sha256": "afc2de3fe6f356c232971e3c5073292cc29a3f5653ca0d5b620fa8b72ad54a64",
+  "confirmation_gate_sha256": "1f8c8b1170a667d06d35712a9c46645964965cf863fd6bd905b5887229ef0e60",
+  "DEV_gate": "primary>=eachcontrol+2correct; Brier/NLL nonworseALL3,strictpropergainbothmatched; strictvalid24/errors0all",
+  "confirmation_gate": "Frozen nominal2000seed20261022 paired16docbootstrap primarygainaccuracyCI lower>0ALL3 andpropernoninferiorityCI lower>=-1e-12ALL3; pointsnonworse; independentacceptanceonly",
+  "budget": {
+    "native_attempt_cap": 2,
+    "attempts_started_before": 0,
+    "retries": 0,
+    "seconds_per_phase_including_init_cleanup": 600,
+    "CPU_cores": 2,
+    "ORT_intra": 2,
+    "ORT_inter": 1,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "lifetime_attempts_before": 13
+  },
+  "context_policy": "Exactepoch6source28bceb/oldtokenizera86f;40rankedanchors+sameparagraphneighbors/singletonraw512/wholeclaim; ownnewtokenizer raw512guard, no clipping/padding/grid. Sameall3arms.",
+  "runtime_admission": {
+    "formula_id": "48xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "max_DEV_units": 30,
+    "max_confirmation_units": 57,
+    "formula": "48*maxDEVHTTPseconds*max(1,maxCONFunits/maxDEVunits)+2*DEVinitseconds+60; require<=600 andlease_remaining>=forecast+30",
+    "scope": "Conservative admission only; no confirmationlabels/modeloutputs; actual watchdog remains600"
+  },
+  "evidence_scope": "Goldlabels describewholeoriginaldocument; packedcontextmayomitevidence. StatisticalNotMentioned is not absenceproof; retrievalmissneverprovesClaimBenchinsufficiency. NoClaimBenchpilotwithoutverifieddata/scorer/license/access.",
+  "numeric_scope": "Source-position number retention/omission audit only; no numerictruthcertification/answerlookup.",
+  "source_license": "ContractNLI CC-BY4attribution/sourcecommit pinned; modelupstreamMIT declaration/converterinheritedscope, mixedtrainingterms/unknowncontamination/upstreamweightrevision gap disclosed in candidateprovenance. No pretrainedweights published.",
+  "study_contract_sha256": "685ddbfeb1772d4d0c87b3f1e6a8cef3f973ecc0581e266b2938641c331a4deb",
+  "prior_exposures": "Allhistoricaleasy48/Legal96/originaldevCONF96f018 plus165originaltrain groups permanentlyDEV. NewDEV8groups fixedbeforeexactmodelchoice; reservedCONF16unchanged. No oldsetrelabeling; TRAIN/calibrationempty."
+}

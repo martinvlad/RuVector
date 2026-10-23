@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T02:55:24.527577+00:00",
+  "checks_passed": true,
+  "decision": "REJECTED_DEV_GATE_DO_NOT_PROMOTE",
+  "independent_actual_report_sha256": "e2264c2babe036b3e3e4ffdbb96fbaeec47d95aeee316cdacd3e338c6638b91b",
+  "frozen_plan_sha256": "003babf0964750668ed0a418469a7d58d5682ae02a2efbe6efbd4cd030f72e09",
+  "actual173pins_reverified": true,
+  "raw_snapshot_files_both_actual_and_outer_verified": 43,
+  "terminal_snapshot_sha256": "bf2e8c2c0d5f042767ae4e9367ff32e5d0736a4fa511cab27f97ad669c908e5a",
+  "metrics": {
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.8722703894804444,
+        "nll": 1.580674520685237,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.9457001845610077,
+        "nll": 1.7040064144055693,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.8437233653387962,
+        "nll": 1.449875420321296,
+        "errors": 0,
+        "strict_valid": 24
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 13,
+        "brier": 0.4988288010573727,
+        "nll": 0.6919759282524093,
+        "errors": 0,
+        "strict_valid": 24
+      }
+    }
+  },
+  "threeway_metrics": {
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.8968309446054064,
+        "nll": 1.87015587573226
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.9522996500558635,
+        "nll": 1.9883528236383616
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.8710690750876082,
+        "nll": 1.7642566292921171
+      }
+    }
+  },
+  "rejection_reason": "Primary12/24 ties both matched lexical/positional12 and trails same-excerptNative10413. Frozen gate requires+2correct againstEACH3controls. PrimaryBrier.8722703894804444/NLL1.580674520685237 improves lexical properloss, worsens positional and104. Do not rescue by changing threshold, labels, readout or context afterDEV.",
+  "confirmation48": "No confirmation phase directory, invocation, HTTP or model use; byteidentical850b bank remains reserved/project-model-unused. Tokenizer-only source capacity is not model use. Unknown pretrained contamination persists.",
+  "training": "No TRAIN, calibration, head, fitting or model grid. One frozen higher-capacity pretrained threeway reader, T1, E0/N1/C2 mapping. Capacity is an architecture fact, not demonstrated quality gain.",
+  "native_evidence": {
+    "native_core_searches": 24,
+    "native104_excerpt_predictions": 24,
+    "NLI_singleton_pairs": 72,
+    "NLI_input_tokens": 35119,
+    "BGE_texts": 179,
+    "BGE_batches": 46,
+    "all24literal_bundles_vectors_and_observed_native_ranks_verified": true,
+    "exact_cosine_top2_candidate_sets_full_order_matches": 24,
+    "same_context_pretrained_logit_drift": 0.0,
+    "scope": "Exact cosine diagnostics corroborate observed actualnative ranking, never replace it. Existing top2 arm names are legacy aliases for shared512token multianchor coherentcontext."
+  },
+  "resources": {
+    "phase_wall_seconds": 129.03449994399853,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "ORT_threads": 2,
+    "worker_CPU_seconds": 237.019939,
+    "terminated_children_CPU_seconds": 6.053285,
+    "worker_peak_RSS_bytes": 2070634496,
+    "child_largest_peak_RSS_bytes": 2070634496,
+    "scope": "Linuxprocess high-water marks are neither sum nor simultaneous totalRSS. WholeHTTP includes all3NLI arms+excerpt104+embedding/index; primarydeployment latency not measured."
+  },
+  "latency": {
+    "development": {
+      "p50": 5.006463911500759,
+      "p95": 5.897243189898654,
+      "max": 6.965789430003497,
+      "scope": "Whole HTTP request includesall3NLIcontrols+native104excerpt+evidenceencoding/index; not primary-only deployment"
+    }
+  },
+  "runtime_admission": {
+    "at": "2026-10-23T02:47:59.547709+00:00",
+    "formula_id": "48xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "max_DEV_HTTP_seconds": 6.965789430003497,
+    "max_DEV_units": 30,
+    "max_confirmation_units": 57,
+    "source_unit_ratio": 1.9,
+    "DEV_initialization_seconds": 4.629322044995206,
+    "projected_confirmation_seconds": 704.5386401063093,
+    "allowed": false,
+    "forecast_limit_seconds": 600,
+    "actual_confirmation_watchdog_seconds": 600,
+    "scope": "Conservative admission forecast, not a performance guarantee. No confirmation labels/model outputs used."
+  },
+  "uncertainty": {
+    "development": {
+      "same_nli_lexical_top2": {
+        "accuracy": {
+          "mean_improvement": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.0734297950805632,
+          "ci95": [
+            0.0018320634933843118,
+            0.15319322484582368
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.12333189372033211,
+          "ci95": [
+            -0.17363195566346992,
+            0.41922028984366216
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "same_nli_positional_first2": {
+        "accuracy": {
+          "mean_improvement": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.02854702414164825,
+          "ci95": [
+            -0.09053183529004734,
+            0.02627781249938448
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.13079910036394118,
+          "ci95": [
+            -0.24706397265650176,
+            -0.003080044750993079
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "native104_on_ruvector_evidence": {
+        "accuracy": {
+          "mean_improvement": -0.041666666666666664,
+          "ci95": [
+            -0.16666666666666666,
+            0.08333333333333333
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.37344158842307174,
+          "ci95": [
+            -0.6539144834534122,
+            -0.06369929391012105
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.8886985924328279,
+          "ci95": [
+            -1.2790065319184791,
+            -0.4001300771272712
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      }
+    }
+  },
+  "bootstrap_scope": "2000paired doc-group draws seed20261022, nearest empirical 2.5/97.5percentiles inherited frozen verifier; nominal unadjusted intervals.",
+  "budget": {
+    "prior13closed": true,
+    "new_invocation_reservations": 1,
+    "new_confirmed_native_process_starts": 1,
+    "new_cap": 2,
+    "lifetime_conservative_native_attempts": 14,
+    "lifetime_completed_native_batches": 12,
+    "unspent_phase_slots": 1,
+    "further_attempts_allowed_in_closed_study": 0,
+    "successful_HTTP_this_epoch": 24,
+    "TRAIN_feature_HTTP": 0,
+    "DEV_evaluation_HTTP": 24,
+    "CONF_HTTP": 0,
+    "lifetime_successful_HTTP": 759,
+    "lifetime_TRAIN_feature_HTTP": 144,
+    "lifetime_evaluation_diagnostic_HTTP": 615,
+    "historic_failed_HTTP": 2,
+    "newerrors": 0,
+    "paid": 0,
+    "GPU": 0
+  },
+  "exposure": {
+    "newDEV8_permanently_retired": true,
+    "originaltrain_exposed_groups_total": 173,
+    "unreserved_groups_after_draw": 234,
+    "reserved_confirmation_groups": 16,
+    "reserved_confirmation_queries": 48
+  },
+  "scope_limits": [
+    "Licensed internal3hypothesis originalContractNLI NDApilot, not fullLegalBench/currentJev300/ClaimBench or official benchmark rank.",
+    "DEVonly8documentgroups; nominal unadjusted bootstrap, no fresh confirmation/generalization claim. Lexical Brier improvement alone cannot pass all-controls gate.",
+    "No causal cross-epoch model gain claim on differentDEV. No selection based on unused confirmation labels.",
+    "Annotation ANY overlap or each-span SOME overlap, where reported, does not imply complete annotation retention or legal sufficiency. Numeric-source retention is a provenance check, not truth.",
+    "Converter metadata links upstreamMITsource but exactupstreamweightcommit/separateconvertedlicense/mixedtrainingterms/unknowncontamination remain disclosed limits."
+  ],
+  "next_step": "Preserve negative result, unusedconfirmation and champion. A future distinct mechanism needs a new frozen plan, appropriateunused roles and same-model controls. Runtime704.54s projection also blocks this unchanged candidateCONF under600s cap; do not reattempt unchanged blocker.",
+  "champion": "SubmittedNative104/RRF10 unchanged",
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "new_submissions_or_emails": 0,
+  "auditor_model_native_paid_calls": 0
+}

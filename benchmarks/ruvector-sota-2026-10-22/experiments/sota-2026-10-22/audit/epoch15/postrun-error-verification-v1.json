@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T09:29:29.358363+00:00",
+  "scope": "Post hoc exact saved-source/trace validation on now-exposedDEV only; no candidate/source change, hypothesis selection or extra model/native call.",
+  "checks_passed": true,
+  "actual_records_SHA256": "f52495409beaae25fd6481fe3aa1ece0133112704b82720a08b57ce635d139ce",
+  "independent_score_report_SHA256": "28763ff1b690937095beb0e72540c03d5d1fddf539ce0f7d8b9e6ba1260b5052",
+  "original_source_SHA256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+  "six_false_negative_entailments_all_same_oral_information_hypothesis": {
+    "count": 6,
+    "hypothesis_id": "nda-3",
+    "hypothesis": "Confidential Information may include verbally conveyed information.",
+    "case_IDs": [
+      "original-contractnli:train:epoch15:dev:603:nda-3",
+      "original-contractnli:train:epoch15:dev:238:nda-3",
+      "original-contractnli:train:epoch15:dev:155:nda-3",
+      "original-contractnli:train:epoch15:dev:192:nda-3",
+      "original-contractnli:train:epoch15:dev:623:nda-3",
+      "original-contractnli:train:epoch15:dev:270:nda-3"
+    ]
+  },
+  "retained_explicit_clause_counterexample": {
+    "id": "original-contractnli:train:epoch15:dev:155:nda-3",
+    "original_gold": "Entailment",
+    "source_character_span": [
+      493,
+      813
+    ],
+    "exact_source_clause": "As used herein, \"Confidential Information\" shall mean any and all oral and written proprietary information provided by one party (the \"Provider\") to the other (the \"Recipient\"), including but not limited to financial documents, customer lists, development plans, business plans, trade secrets, and intellectual property.",
+    "exact_clause_retained_in_all3_actual_model_premises": true,
+    "primary_saved_typed_prediction": "NotMentioned",
+    "primary_saved_typed_probabilities": {
+      "Entailment": 0.008264990494955457,
+      "Contradiction": 0.00042007628813158686,
+      "NotMentioned": 0.991314933216913
+    },
+    "exact_source_context_and_tokenIDs_already_verified_by": "actual-context-independent-v1.json"
+  },
+  "interpretation": "Supports diagnosing a typed-reader/semantic error despite retention of the explicit oral/written clause on this exposed case. Does not establish sufficiency of every premise, model/context causal attribution, prevalence beyond this fixedDEV draw, or benefit of a proposed future candidate.",
+  "model_native_fit_paid_GPU_calls": 0
+}

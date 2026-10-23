@@ -3,22 +3,22 @@
   "objective": "Reach independently verified SOTA using actual RuVector; initial target JevBench open-weights Capability under official caps.",
   "goal_met": false,
   "official_rank": null,
-  "champion": "SubmittedNative104/RRF10unchanged; epoch14 SOURCE_ONLY_NATIVE_NOT_RUN; epoch13 remains REJECTED_DEV_GATE",
-  "prior_published_base_commit": "0a6379a108919c9aa5ab52966ce1a9aacab8a0f4",
-  "checkpoint_manifest_sha256": "e1492a2d74527ca6ce03a32d72437326252e2ceddd53c606331e6a91a1f63b49",
+  "champion": "SubmittedNative104/RRF10 unchanged; epoch15 REJECTED_DEV_GATE, no confirmation or promotion",
+  "prior_published_base_commit": "1692519a843102ad1493e35148a10957ac127b4a",
+  "checkpoint_manifest_sha256": "37899065b3b2618a43fa8e5819294ed7a07e6f679d91f83ee0968335007264a5",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
-    "native_corpus_batches": 14,
-    "actual_HTTP_decisions": 813,
+    "native_corpus_batches": 15,
+    "actual_HTTP_decisions": 837,
     "paid_inference_calls": 0,
     "new_GPU_rentals": 0,
-    "native_corpus_batches_completed": 14,
-    "native_corpus_attempts_including_failed_request": 16,
-    "actual_HTTP_successful_decisions": 813,
+    "native_corpus_batches_completed": 15,
+    "native_corpus_attempts_including_failed_request": 17,
+    "actual_HTTP_successful_decisions": 837,
     "actual_HTTP_failed_requests": 2,
     "counting_note": "Cumulative counts include historicaladaptivepublic/evaluationdiagnostics; notallfreshheldout. The144trainingfeature and6epoch12TRAINsanity diagnosticHTTP are preserved separately; epoch13 has no TRAIN/fitting/calibration. DEV/CONF evaluationdiagnostics are not officialbenchmarkgeneralization; scheduledwork notcalledexecuted.",
     "actual_HTTP_training_feature_requests": 144,
-    "actual_HTTP_evaluation_diagnostic_decisions": 663,
+    "actual_HTTP_evaluation_diagnostic_decisions": 687,
     "actual_HTTP_training_sanity_diagnostic_requests": 6
   },
   "epochs": [
@@ -170,9 +170,14 @@
     },
     {
       "epoch": 15,
-      "status": "FROZEN_NATIVE_NOT_STARTED",
-      "manifest": "experiments/sota-2026-10-22/epoch15/FROZEN_STUDY_MANIFEST.pre-native.json",
-      "native_attempts": 0,
+      "status": "REJECTED_DEV_GATE",
+      "manifest": "experiments/sota-2026-10-22/epoch15/EPOCH_MANIFEST.json",
+      "native_attempts": 1,
+      "DEV_n": 24,
+      "candidate_correct": 14,
+      "same_model_lexical_correct": 10,
+      "same_model_positional_correct": 13,
+      "native104_same_excerpt_correct": 12,
       "confirmation_consumed": false
     }
   ],
@@ -187,7 +192,7 @@
     "Legal96zero-shotfourtaskadaptation,notfull162taskofficialLegalBench",
     "NoClaimBenchRuVectorscore; fullquestions/scorer/license/submissionnotverified"
   ],
-  "next_research_priority": "Continue ONLY this exclusive frozen epoch15 study using plan.v2.json and its strict gates. No overlapping run or retry. Native DEV has not started in this snapshot; no result, improvement or rank claimed. Preserve Native104 and eligible unusedCONF48. If runtime state or native reservation is uncertain, stop and reconcile evidence instead of repeating.",
+  "next_research_priority": "Native vector rankings exactly matched saved-vector cosine on24/24; stop ANN grids. The typed reader made no contradiction predictions and missed six oral-information entailments, including an explicit oral/written clause retained in its actual premise. Prioritize legally grounded typed decisions and confidence reliability with verified nonoverlapping licensed train/DEV/confirmation and a feasible CPU runtime; do not train/select on these DEV cases or the unused confirmation labels. Definition retention alone did not establish acceptance. Epoch15 fully closed, including unused conditional slot; never rerun archived controller or retest unchanged blockers. Next epoch requires a distinct frozen study with eligible source/data/model/CPU/runtime and independent acceptance. Official sealed/publisher results remain required for SOTA.",
   "benchmark_targets": {
     "JevBench": {
       "leader_observed": "Chon-1.0-12B",
@@ -233,10 +238,11 @@
   "active_run": {
     "path": "ACTIVE_RUN.json",
     "run_id": "epoch15-f9b6eb28f760446c95952824088e939c",
-    "state": "FROZEN_NATIVE_NOT_STARTED",
-    "experiments_active": true,
-    "native_allowed": 2,
-    "publication_complete_in_this_commit": false
+    "state": "CLOSED_REJECTED_DEV_GATE",
+    "experiments_active": false,
+    "native_allowed": 0,
+    "native_attempts": 1,
+    "all_further_epoch15_attempts_closed": true
   },
   "exposed_development_sets": [
     "old public183",
@@ -252,7 +258,8 @@
     "epoch10DEV24/8neworiginaltrain groups SHAb33c63e727b2990b2efea24234af5b7b9890e4b0ed2634534d4e1e942ca9a86e permanentlyDEVafterphase1attempt evenfitfailure; reusedTRAIN24adds0newexposures. Totalexposedoriginaltrain=165; unreserved242; confirmation16retired=False",
     "epoch11DEV24/8neworiginaltrain groups SHAd6a8dcbff2888b6ec72e5d8ba6345c43ca9d5d765876b83fe9a2010905abdf16 permanentlyDEVafterphase1attempt evenpartialfailure; TRAIN/calibrationempty. Totalexposedoriginaltrain=173; unreserved234; confirmation16retired=False",
     "epoch12DEV24/8neworiginaltrain groups SHA05f579f4f3e0fc0b799ba3d3c0ffcddbb8af03e3ca525991cfb5de0596c4891d permanentlyDEVafterphase1attempt evenpartialfailure; reusedTRAINsanity2priorTRAINgroups adds0newexposure, nofitting/calibration. Totalexposedoriginaltrain=181; unreserved226; confirmation16retired=False",
-    "epoch13DEV24/8neworiginaltrain groups SHA4eb38bf37b98562d12433c0a2791b2122c6f62ebf597eea9c941e72bd566ec1a permanentlyDEVafterphase1attempt evenpartialfailure; TRAIN/calibrationempty. Totalexposedoriginaltrain=189; unreserved218; confirmation16retired=False"
+    "epoch13DEV24/8neworiginaltrain groups SHA4eb38bf37b98562d12433c0a2791b2122c6f62ebf597eea9c941e72bd566ec1a permanentlyDEVafterphase1attempt evenpartialfailure; TRAIN/calibrationempty. Totalexposedoriginaltrain=189; unreserved218; confirmation16retired=False",
+    "epoch15DEV24/8neworiginaltrain groups SHA3233c621709ef64af45b6feec640165f1d6477062d6218dd7005d47b4bb09f6f permanentlyDEV; total197exposed/210unreserved/16reservedCONF. Used-identities epoch15/USED_IDENTITIES.json"
   ],
   "unused_confirmation_sets": [
     {
@@ -263,19 +270,21 @@
       "status": "PROJECT_MODEL_UNUSED_RESERVED; sourcepublic,unknownpretrainingoverlap; nofit/selection",
       "epoch14_project_model_unused": true,
       "known_ContractNLI_supervised_candidates_ineligible": true,
-      "globally_retired": false
+      "globally_retired": false,
+      "epoch15_project_model_unused": true,
+      "epoch15_annotation_choices_used": 0
     }
   ],
-  "rejection_ledger": "experiments/sota-2026-10-22/epoch14/REJECTION_LEDGER.json",
+  "rejection_ledger": "experiments/sota-2026-10-22/epoch15/REJECTION_LEDGER.json",
   "benchmark_refresh": "experiments/sota-2026-10-22/legal-transfer/epoch15/benchmark-refresh.json",
   "restore_epoch3": "First restore_checkpoint.py; optional restore_epoch3_data.py materializes exact pinned original CC-BY data archive/train/dev/license. Existing bootstrap model flags do not acquire new NLI assets; obtain only official revisions in assets.lock.json/model-api, verify SHA. No inference during restore.",
   "restoration_boundary": "Epoch15 fresh reconstruction verified2126 Git blobs,2055 projected checkpoint records+48base; selected7 pretrained assets,BGE2 and native22 exact regular-file bytes verified separately. No inference occurred before the frozen study snapshot. Historical restoration evidence remains unchanged.",
-  "publication_review": "experiments/sota-2026-10-22/audit/epoch15/premeasurement-acceptance-v2.json",
+  "publication_review": "experiments/sota-2026-10-22/audit/epoch15/acceptance-rejection-v1.json",
   "cumulative_budget_ledger": {
     "original_study_native_attempt_cap": 6,
     "prior_epochs_attempts": 3,
     "epoch3_native_attempts_including_failed_request": 2,
-    "cumulative_native_attempts": 16,
+    "cumulative_native_attempts": 17,
     "remaining_in_original_study": 0,
     "current_epoch_closed": true,
     "publication_period_native_calls_allowed": 0,
@@ -286,7 +295,7 @@
     "new_study_attempt_cap": 2,
     "new_study_attempts_used": 1,
     "new_study_attempts_remaining": 0,
-    "total_historical_attempts": 16,
+    "total_historical_attempts": 17,
     "closed_epoch5_study": {
       "id": "native-deberta-base-resolved-2026-10-22-e5",
       "used": 1,
@@ -353,22 +362,28 @@
       "new_study_admitted": false,
       "all_16_prior_attempts_closed": true
     },
-    "scope": "HISTORICAL_CLOSED_THROUGH_EPOCH14; legacy current/newstudy fields refer to closedepoch13",
+    "scope": "ALL_EPOCHS_CLOSED_THROUGH15; legacy new_study fields refer to closedepoch13",
     "epoch15_active_study": {
       "study_id": "native-definition-priority-deberta-threeway-e15",
       "plan_path": "experiments/sota-2026-10-22/epoch15/plan.v2.json",
       "plan_SHA256": "82cfe2fd0ab18ad1c7c1f6372df97925061832d6e809701cfcc9a53a37dcfc3f",
-      "status": "FROZEN_NATIVE_NOT_STARTED",
-      "actual_native_attempts": 0,
-      "actual_model_calls": 0,
+      "status": "CLOSED_REJECTED_DEV_GATE",
+      "actual_native_attempts": 1,
       "cap": 2,
-      "native_allowed": 2,
+      "native_allowed": 0,
       "confirmation_only_after_DEV_and_runtime_gates": true,
       "CPU_threads": 2,
       "seconds_each_including_init_cleanup": 600,
       "paid_calls": 0,
       "GPU_calls": 0,
-      "all16_historical_attempts_closed": true
+      "all16_historical_attempts_closed": true,
+      "unspent_phase_slots": 1,
+      "allowed_further_attempts": 0,
+      "confirmation_attempts": 0,
+      "actual_NLI_forward_pairs": 72,
+      "actual_BGE_forward_batches": 44,
+      "actual_nativecore_searches": 24,
+      "actual_native104_requests": 24
     }
   },
   "publisher_status": "experiments/sota-2026-10-22/legal-transfer/epoch15/publisher-status.json",
@@ -390,8 +405,9 @@
     "output_rule": "Choose actually unused path; no overwrite."
   },
   "latest_learning": {
-    "path": "experiments/sota-2026-10-22/epoch14/MODEL_QUALIFICATION.json",
-    "sha256": "b3467c9dc2dd8429956f05d51c434beb424a7cda731f10866ea3562e9150ff52"
+    "path": "experiments/sota-2026-10-22/epoch15/EPOCH_MANIFEST.json",
+    "sha256": "a7924c2b06d8005d4bd2111095ed450cb278c475643e965dc654a4d2a511406b",
+    "direction": "Native vector rankings exactly matched saved-vector cosine on24/24; stop ANN grids. The typed reader made no contradiction predictions and missed six oral-information entailments, including an explicit oral/written clause retained in its actual premise. Prioritize legally grounded typed decisions and confidence reliability with verified nonoverlapping licensed train/DEV/confirmation and a feasible CPU runtime; do not train/select on these DEV cases or the unused confirmation labels. Definition retention alone did not establish acceptance."
   },
   "source_closure_correction": {
     "path": "experiments/sota-2026-10-22/epoch13/SOURCE_CLOSURE_CORRECTION.v1.json",
@@ -470,6 +486,346 @@
       "path": "experiments/sota-2026-10-22/legal-transfer/epoch15/publication-privacy-review-v1.json",
       "bytes": 36683,
       "sha256": "eb975845ef90776cfbd25e45819ad96c472dbdec69e0885701efa56c995dcbb0"
+    }
+  ],
+  "epoch15_final": {
+    "schema_version": 1,
+    "epoch": 15,
+    "status": "REJECTED_DEV_GATE",
+    "recorded_at": "2026-10-23T09:30:19.294987+00:00",
+    "resolved_source_commit": "0a6379a108919c9aa5ab52966ce1a9aacab8a0f4",
+    "exclusive_lease_commit": "4b8999f776906ecc85e5a91d605be5cd75cb0d4f",
+    "frozen_study_commit": "1692519a843102ad1493e35148a10957ac127b4a",
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch15/plan.v2.json",
+      "bytes": 38602,
+      "sha256": "82cfe2fd0ab18ad1c7c1f6372df97925061832d6e809701cfcc9a53a37dcfc3f"
+    },
+    "model_qualification": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/MODEL_QUALIFICATION.json",
+      "bytes": 9560,
+      "sha256": "dffaf90d385d66cc7579fa765fa5b3e3dc645f730d44bccd436b1c7dd2d55ca7"
+    },
+    "model_assets_lock": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/assets.lock.json",
+      "bytes": 4415,
+      "sha256": "baf917109a5f1d1026b3a16356530252254d188fe71a7a60ead0506ad2a171af"
+    },
+    "source_manifest": "experiments/sota-2026-10-22/epoch15/SOURCE_MANIFEST.json",
+    "execution": {
+      "native_attempts": 1,
+      "completed_corpora": 1,
+      "successful_HTTP": 24,
+      "failed_HTTP": 0,
+      "native_core_searches": 24,
+      "native104_requests": 24,
+      "NLI_pairs": 72,
+      "NLI_tokens": 34448,
+      "BGE_texts": 159,
+      "BGE_batches": 44,
+      "training_calibration_fits": 0,
+      "paid_API_calls": 0,
+      "GPU_calls": 0,
+      "wall_seconds_including_model_initialization_and_cleanup": 119.71484335699643,
+      "owned_native_process_cleanup_verified": true,
+      "all_further_epoch15_attempts_closed": true
+    },
+    "metrics": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 14,
+        "brier": 0.7278608741057794,
+        "nll": 1.534083315018541,
+        "strict_valid": 24,
+        "errors": 0
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 10,
+        "brier": 0.868292642764401,
+        "nll": 1.7949648372020586,
+        "strict_valid": 24,
+        "errors": 0
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 13,
+        "brier": 0.8258607349680095,
+        "nll": 1.737450025790403,
+        "strict_valid": 24,
+        "errors": 0
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.5007809996698155,
+        "nll": 0.6939281896837629,
+        "strict_valid": 24,
+        "errors": 0
+      }
+    },
+    "typed_metrics": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 13,
+        "brier": 0.8263674934066939,
+        "nll": 2.035503960535953
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 9,
+        "brier": 0.9653331422756838,
+        "nll": 2.2131888415249397
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 11,
+        "brier": 0.9657318789603136,
+        "nll": 2.299521992212747
+      }
+    },
+    "latency": {
+      "p50": 4.556525667496317,
+      "p95": 5.965351283598284,
+      "max": 6.171271323997644,
+      "scope": "Whole all-arm request; not primary-only deployment"
+    },
+    "resources": {
+      "at": "2026-10-23T09:23:10.740730+00:00",
+      "worker_cpu_user_seconds": 208.239956,
+      "worker_cpu_system_seconds": 4.886772,
+      "worker_peak_RSS_bytes": 2263527424,
+      "terminated_children_cpu_user_seconds": 5.559995,
+      "terminated_children_cpu_system_seconds": 1.255894,
+      "largest_terminated_child_peak_RSS_bytes": 2263527424,
+      "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+      "allowed_CPU_ids": [
+        0,
+        1
+      ],
+      "configured_ORT_threads": 2,
+      "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+    },
+    "paired_document_uncertainty": {
+      "same_nli_lexical_top2": {
+        "accuracy": {
+          "mean_improvement": 0.16666666666666666,
+          "ci95": [
+            -0.041666666666666664,
+            0.375
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.14043176865862156,
+          "ci95": [
+            -0.09015273164173121,
+            0.4023658836143846
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.26088152218351784,
+          "ci95": [
+            -0.14803549460821783,
+            0.7912617857237962
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "same_nli_positional_first2": {
+        "accuracy": {
+          "mean_improvement": 0.041666666666666664,
+          "ci95": [
+            -0.08333333333333333,
+            0.16666666666666666
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.09799986086223014,
+          "ci95": [
+            -0.08175666714732156,
+            0.2641526647695751
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.2033667107718624,
+          "ci95": [
+            -0.11911819136663014,
+            0.5236806914859098
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "native104_on_ruvector_evidence": {
+        "accuracy": {
+          "mean_improvement": 0.08333333333333333,
+          "ci95": [
+            -0.16666666666666666,
+            0.3333333333333333
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.22707987443596392,
+          "ci95": [
+            -0.43062469451221635,
+            0.039698871961378626
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.840155125334778,
+          "ci95": [
+            -1.292086910768982,
+            -0.2339040003185443
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      }
+    },
+    "nominal_intervals_not_familywise": true,
+    "independent_score_audit": {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/actual-scores-independent-v1.json",
+      "bytes": 59002,
+      "sha256": "28763ff1b690937095beb0e72540c03d5d1fddf539ce0f7d8b9e6ba1260b5052"
+    },
+    "independent_context_audit": {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/actual-context-independent-v1.json",
+      "bytes": 104580,
+      "sha256": "6549b0e731bdb4b003b74552141cdd7729e8e7a392cd5b65b2088f4708b8d748"
+    },
+    "independent_decision": {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/acceptance-rejection-v1.json",
+      "bytes": 19157,
+      "sha256": "919c06c517d2fdf340b77ec5bf20d164ff90b38fd0d9abc384e215251be95a1d"
+    },
+    "independent_identity_retirement": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch15/postrun-identity-retirement-v1.json",
+      "bytes": 19630,
+      "sha256": "b3e079c7d6948c250c5112b3faf1eacbf726f5d0e5c2215ee3c67915248ec270"
+    },
+    "postrun_error_analysis": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/postrun-error-analysis-v1.json",
+      "bytes": 69382,
+      "sha256": "f74cd6c2a3f50d9545fb854e0b176b3626ac2e383b92fb8336eb5d2ba25ec5a5"
+    },
+    "independent_postrun_error_verification": {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/postrun-error-verification-v1.json",
+      "bytes": 2451,
+      "sha256": "9df7f1c1a72ebb097df4746706d7a80ff88983caac12275c13f12f416ed73230"
+    },
+    "used_identities": {
+      "path": "experiments/sota-2026-10-22/epoch15/USED_IDENTITIES.json",
+      "bytes": 23757,
+      "sha256": "bf22a133bbb414b5fba744233440013516863050891a4505ead0bd7d16be9032"
+    },
+    "rejection_ledger": {
+      "path": "experiments/sota-2026-10-22/epoch15/REJECTION_LEDGER.json",
+      "bytes": 19576,
+      "sha256": "c361750dc28909502e2739f1a10971a7915d705f467f8c9ea3ad7010b92edd9f"
+    },
+    "cumulative_execution": {
+      "native_corpus_batches": 15,
+      "actual_HTTP_decisions": 837,
+      "paid_inference_calls": 0,
+      "new_GPU_rentals": 0,
+      "native_corpus_batches_completed": 15,
+      "native_corpus_attempts_including_failed_request": 17,
+      "actual_HTTP_successful_decisions": 837,
+      "actual_HTTP_failed_requests": 2,
+      "counting_note": "Cumulative counts include historicaladaptivepublic/evaluationdiagnostics; notallfreshheldout. The144trainingfeature and6epoch12TRAINsanity diagnosticHTTP are preserved separately; epoch13 has no TRAIN/fitting/calibration. DEV/CONF evaluationdiagnostics are not officialbenchmarkgeneralization; scheduledwork notcalledexecuted.",
+      "actual_HTTP_training_feature_requests": 144,
+      "actual_HTTP_evaluation_diagnostic_decisions": 687,
+      "actual_HTTP_training_sanity_diagnostic_requests": 6
+    },
+    "confirmation": {
+      "attempted": false,
+      "model_consumed": false,
+      "annotation_choices_used": 0,
+      "project_model_unused": true,
+      "globally_retired": false,
+      "sha256": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+      "runtime_admission": {
+        "at": "2026-10-23T09:23:11.026450+00:00",
+        "formula_id": "48xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+        "max_DEV_HTTP_seconds": 6.171271323997644,
+        "max_DEV_units": 29,
+        "max_confirmation_units": 57,
+        "source_unit_ratio": 1.9655172413793103,
+        "DEV_initialization_seconds": 7.7956027619948145,
+        "projected_confirmation_seconds": 657.81873457425,
+        "allowed": false,
+        "forecast_limit_seconds": 600,
+        "actual_confirmation_watchdog_seconds": 600,
+        "scope": "Conservative admission forecast, not a performance guarantee. No confirmation labels/model outputs used."
+      }
+    },
+    "data_roles": {
+      "train": [],
+      "calibration": [],
+      "DEV_groups": 8,
+      "DEV_queries": 24,
+      "originaltrain_exposed_groups": 197,
+      "unreserved": 210,
+      "reserved_unused_CONFIRMATION": 16,
+      "all_easy48_Legal96_f018_forever_DEV": true
+    },
+    "interpretation": {
+      "full_benchmark_generalization": false,
+      "causal_model_vs_context_effect": false,
+      "matched_same_model_retrieval": true,
+      "reliable_retrieval_gain_established": false,
+      "numerical_retention_not_arithmetic_truth": true,
+      "unknown_pretraining_fuzzy_overlap": true
+    },
+    "official_refresh": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch15/benchmark-refresh.json",
+      "bytes": 5629,
+      "sha256": "8ad86f28615353dfc1dcad76fdb6952c6ea4c7deee066cf9f8fac96e1501071a"
+    },
+    "publisher_status": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch15/publisher-status.json",
+      "bytes": 955,
+      "sha256": "bdad83233b7563572a11967d7322ecf37d25b1ace0ead76c5090cbd84224725a"
+    },
+    "acceptance": {
+      "DEV": false,
+      "confirmation": "NOT_ATTEMPTED",
+      "champion_promoted": false,
+      "champion": "SubmittedNative104/RRF10 preserved",
+      "new_submission": false,
+      "official_score": null,
+      "official_rank": null,
+      "official_SOTA_verified": false
+    },
+    "next_priority": "Native vector rankings exactly matched saved-vector cosine on24/24; stop ANN grids. The typed reader made no contradiction predictions and missed six oral-information entailments, including an explicit oral/written clause retained in its actual premise. Prioritize legally grounded typed decisions and confidence reliability with verified nonoverlapping licensed train/DEV/confirmation and a feasible CPU runtime; do not train/select on these DEV cases or the unused confirmation labels. Definition retention alone did not establish acceptance.",
+    "main_merge_release_packages_changed": false,
+    "credentials_private_data_raw_mail_published": false
+  },
+  "epoch15_frozen_study_scope": "Historical immutable premeasurement snapshot; zero counts there refer to before actual execution. Current actual state is epoch15_final and execution_observed. All epoch15 attempts are closed.",
+  "epoch15_result_publication_review_scope": "Scientific score/context and rejection reports plus separately appended final source/privacy capsule reviews. No new submission/score/rank/SOTA or paid calls.",
+  "epoch15_final_publication_reviews": [
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/final-publication-review-v1.json",
+      "bytes": 19180,
+      "sha256": "180dc62ecda0e666210d477baf9815630e64a8ffd1dedfb1f8740c583ef3bc8b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch15/final-publication-privacy-review-v1.json",
+      "bytes": 25554,
+      "sha256": "61e066d8588e6508f03216e0c627c0e65fc8c9e5610360aa24ccc4462ed8dca1"
     }
   ]
 }

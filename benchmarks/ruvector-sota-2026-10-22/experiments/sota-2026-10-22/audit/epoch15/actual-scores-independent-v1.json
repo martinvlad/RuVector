@@ -1,0 +1,1860 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T09:23:57.198508+00:00",
+  "status": "REJECTED_DEV_GATE",
+  "scope": "Independent saved-output numerical/wire/process/resource replay only; exact source-context/native-vector execution requires separate bound verifier. No new inference.",
+  "checks_passed": true,
+  "epoch": 15,
+  "plan_SHA256": "82cfe2fd0ab18ad1c7c1f6372df97925061832d6e809701cfcc9a53a37dcfc3f",
+  "bound_plan_path": "experiments/sota-2026-10-22/epoch15/plan.v2.json",
+  "metrics": {
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 14,
+        "brier": 0.7278608741057794,
+        "nll": 1.534083315018541,
+        "strict_valid": 24,
+        "errors": 0
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 10,
+        "brier": 0.868292642764401,
+        "nll": 1.7949648372020586,
+        "strict_valid": 24,
+        "errors": 0
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 13,
+        "brier": 0.8258607349680095,
+        "nll": 1.737450025790403,
+        "strict_valid": 24,
+        "errors": 0
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.5007809996698155,
+        "nll": 0.6939281896837629,
+        "strict_valid": 24,
+        "errors": 0
+      }
+    }
+  },
+  "multiclass_metrics": {
+    "development": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 13,
+        "brier": 0.8263674934066939,
+        "nll": 2.035503960535953
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 9,
+        "brier": 0.9653331422756838,
+        "nll": 2.2131888415249397
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 11,
+        "brier": 0.9657318789603136,
+        "nll": 2.299521992212747
+      }
+    }
+  },
+  "typed_confusions": {
+    "development": {
+      "ruvector_top2": {
+        "NotMentioned->Entailment": 2,
+        "Entailment->Entailment": 7,
+        "Entailment->NotMentioned": 6,
+        "Contradiction->Entailment": 2,
+        "NotMentioned->NotMentioned": 6,
+        "Contradiction->NotMentioned": 1
+      },
+      "same_nli_lexical_top2": {
+        "NotMentioned->Entailment": 2,
+        "Entailment->NotMentioned": 10,
+        "Entailment->Entailment": 3,
+        "Contradiction->Entailment": 2,
+        "NotMentioned->NotMentioned": 6,
+        "Contradiction->NotMentioned": 1
+      },
+      "same_nli_positional_first2": {
+        "NotMentioned->NotMentioned": 7,
+        "Entailment->NotMentioned": 9,
+        "NotMentioned->Entailment": 1,
+        "Entailment->Entailment": 4,
+        "Contradiction->Entailment": 1,
+        "Contradiction->NotMentioned": 2
+      }
+    }
+  },
+  "DEV_gate_passed": false,
+  "internal_confirmation_gate_passed": false,
+  "confirmation_consumed": false,
+  "paired_doc_bootstrap": {
+    "development": {
+      "same_nli_lexical_top2": {
+        "accuracy": {
+          "mean_improvement": 0.16666666666666666,
+          "ci95": [
+            -0.041666666666666664,
+            0.375
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.14043176865862156,
+          "ci95": [
+            -0.09015273164173121,
+            0.4023658836143846
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.26088152218351784,
+          "ci95": [
+            -0.14803549460821783,
+            0.7912617857237962
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "same_nli_positional_first2": {
+        "accuracy": {
+          "mean_improvement": 0.041666666666666664,
+          "ci95": [
+            -0.08333333333333333,
+            0.16666666666666666
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.09799986086223014,
+          "ci95": [
+            -0.08175666714732156,
+            0.2641526647695751
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.2033667107718624,
+          "ci95": [
+            -0.11911819136663014,
+            0.5236806914859098
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "native104_on_ruvector_evidence": {
+        "accuracy": {
+          "mean_improvement": 0.08333333333333333,
+          "ci95": [
+            -0.16666666666666666,
+            0.3333333333333333
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.22707987443596392,
+          "ci95": [
+            -0.43062469451221635,
+            0.039698871961378626
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.840155125334778,
+          "ci95": [
+            -1.292086910768982,
+            -0.2339040003185443
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      }
+    }
+  },
+  "nominal_intervals_not_familywise": true,
+  "counts": {
+    "NLI_pairs": 72,
+    "NLI_tokens": 34448,
+    "BGE_texts": 159,
+    "BGE_batches": 44,
+    "native_searches": 24
+  },
+  "maximum_same_input_logit_drift": 0,
+  "runtime_admission_independently_recomputed": {
+    "at": "2026-10-23T09:23:11.026450+00:00",
+    "formula_id": "48xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+    "max_DEV_HTTP_seconds": 6.171271323997644,
+    "max_DEV_units": 29,
+    "max_confirmation_units": 57,
+    "source_unit_ratio": 1.9655172413793103,
+    "DEV_initialization_seconds": 7.7956027619948145,
+    "projected_confirmation_seconds": 657.81873457425,
+    "allowed": false,
+    "forecast_limit_seconds": 600,
+    "actual_confirmation_watchdog_seconds": 600,
+    "scope": "Conservative admission forecast, not a performance guarantee. No confirmation labels/model outputs used."
+  },
+  "latency_by_phase_seconds": {
+    "development": {
+      "p50": 4.556525667496317,
+      "p95": 5.965351283598284,
+      "max": 6.171271323997644,
+      "scope": "Whole all-arm request; not primary-only deployment"
+    }
+  },
+  "resources": {
+    "development": {
+      "at": "2026-10-23T09:23:10.740730+00:00",
+      "worker_cpu_user_seconds": 208.239956,
+      "worker_cpu_system_seconds": 4.886772,
+      "worker_peak_RSS_bytes": 2263527424,
+      "terminated_children_cpu_user_seconds": 5.559995,
+      "terminated_children_cpu_system_seconds": 1.255894,
+      "largest_terminated_child_peak_RSS_bytes": 2263527424,
+      "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+      "allowed_CPU_ids": [
+        0,
+        1
+      ],
+      "configured_ORT_threads": 2,
+      "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+    }
+  },
+  "completions": {
+    "development": {
+      "at": "2026-10-23T09:23:10.996510+00:00",
+      "phase": "development",
+      "exit_code": 0,
+      "error": null,
+      "wall_seconds_including_model_load": 119.71484335699643,
+      "source_plan_unchanged": true,
+      "native_attempts": 1,
+      "prior_closed_attempts": 16,
+      "lifetime_native_attempt": 17,
+      "owned_group_cleanup": {
+        "pgid": 32741,
+        "live_members_before": [],
+        "signals": [],
+        "hard_cleanup_deadline_unix": 1792747871.2815924,
+        "live_members_after": [],
+        "finished_unix": 1792747390.9964924,
+        "finished_within_deadline": true
+      },
+      "new_paid_calls": 0,
+      "new_GPU_calls": 0,
+      "popen_invocation_reserved": true,
+      "native_process_started": true,
+      "official_score": null,
+      "official_rank": null
+    }
+  },
+  "rows": [
+    {
+      "id": "original-contractnli:train:epoch15:dev:603:nda-17",
+      "phase": "development",
+      "source_group": "original-contractnli:603",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.7678225990665675,
+            "No": 0.23217740093343245
+          },
+          "correct": false,
+          "brier": 1.1791030872746777,
+          "nll": 1.460253540322893,
+          "typed_probabilities": {
+            "Entailment": 0.7678225990665675,
+            "Contradiction": 0.00796051061040808,
+            "NotMentioned": 0.22421689032302436
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": false
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.7678225990665675,
+            "No": 0.23217740093343245
+          },
+          "correct": false,
+          "brier": 1.1791030872746777,
+          "nll": 1.460253540322893,
+          "typed_probabilities": {
+            "Entailment": 0.7678225990665675,
+            "Contradiction": 0.00796051061040808,
+            "NotMentioned": 0.22421689032302436
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.01929906279654817,
+            "No": 0.9807009372034519
+          },
+          "correct": true,
+          "brier": 0.0007449076496502181,
+          "nll": 0.01948772093687146,
+          "typed_probabilities": {
+            "Entailment": 0.01929906279654817,
+            "Contradiction": 0.0005396087158044501,
+            "NotMentioned": 0.9801613284876474
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.496695,
+            "Yes": 0.503305
+          },
+          "correct": false,
+          "brier": 0.50663184605,
+          "nll": 0.6997791233579932
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:603:nda-7",
+      "phase": "development",
+      "source_group": "original-contractnli:603",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.8746912500670313,
+            "No": 0.12530874993296867
+          },
+          "correct": true,
+          "brier": 0.03140456561952656,
+          "nll": 0.13388431195947556,
+          "typed_probabilities": {
+            "Entailment": 0.8746912500670313,
+            "Contradiction": 0.007665149821377598,
+            "NotMentioned": 0.11764360011159108
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.42900867756164707,
+            "No": 0.5709913224383529
+          },
+          "correct": false,
+          "brier": 0.6520621805997983,
+          "nll": 0.8462781328422648,
+          "typed_probabilities": {
+            "Entailment": 0.429008677561647,
+            "Contradiction": 0.019906381733689672,
+            "NotMentioned": 0.5510849407046633
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.011785491062357573,
+            "No": 0.9882145089376425
+          },
+          "correct": false,
+          "brier": 1.9531358313497316,
+          "nll": 4.440886075039782,
+          "typed_probabilities": {
+            "Entailment": 0.011785491062357573,
+            "Contradiction": 0.0005588110702264484,
+            "NotMentioned": 0.987655697867416
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.49692094,
+            "Yes": 0.50307906
+          },
+          "correct": true,
+          "brier": 0.49386084122096713,
+          "nll": 0.6870079442950289
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:603:nda-3",
+      "phase": "development",
+      "source_group": "original-contractnli:603",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.005447890190415433,
+            "No": 0.9945521098095846
+          },
+          "correct": false,
+          "brier": 1.978267798253392,
+          "nll": 5.212526866282364,
+          "typed_probabilities": {
+            "Entailment": 0.005447890190415433,
+            "Contradiction": 0.0002985382826676777,
+            "NotMentioned": 0.994253571526917
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.005447890190415433,
+            "No": 0.9945521098095846
+          },
+          "correct": false,
+          "brier": 1.978267798253392,
+          "nll": 5.212526866282364,
+          "typed_probabilities": {
+            "Entailment": 0.005447890190415433,
+            "Contradiction": 0.0002985382826676777,
+            "NotMentioned": 0.994253571526917
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.004421676097694133,
+            "No": 0.9955783239023059
+          },
+          "correct": false,
+          "brier": 1.9823523980482494,
+          "nll": 5.421236447150463,
+          "typed_probabilities": {
+            "Entailment": 0.004421676097694133,
+            "Contradiction": 0.00037561481349856574,
+            "NotMentioned": 0.9952027090888074
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.4981463,
+            "Yes": 0.5018537
+          },
+          "correct": true,
+          "brier": 0.49629947240738004,
+          "nll": 0.6894466360285737
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:238:nda-17",
+      "phase": "development",
+      "source_group": "original-contractnli:238",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.6283184904556398,
+            "No": 0.37168150954436036
+          },
+          "correct": false,
+          "brier": 0.7895682508969075,
+          "nll": 0.9897179485596534,
+          "typed_probabilities": {
+            "Entailment": 0.6283184904556397,
+            "Contradiction": 0.00675207607176081,
+            "NotMentioned": 0.3649294334725995
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": false
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.6283184904556398,
+            "No": 0.37168150954436036
+          },
+          "correct": false,
+          "brier": 0.7895682508969075,
+          "nll": 0.9897179485596534,
+          "typed_probabilities": {
+            "Entailment": 0.6283184904556397,
+            "Contradiction": 0.00675207607176081,
+            "NotMentioned": 0.3649294334725995
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.6283184904556398,
+            "No": 0.37168150954436036
+          },
+          "correct": false,
+          "brier": 0.7895682508969075,
+          "nll": 0.9897179485596534,
+          "typed_probabilities": {
+            "Entailment": 0.6283184904556397,
+            "Contradiction": 0.00675207607176081,
+            "NotMentioned": 0.3649294334725995
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": false
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.50165164,
+            "Yes": 0.49834833
+          },
+          "correct": true,
+          "brier": 0.49670214592847856,
+          "nll": 0.6898493444042575
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:238:nda-7",
+      "phase": "development",
+      "source_group": "original-contractnli:238",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.7395263107521052,
+            "No": 0.2604736892478949
+          },
+          "correct": true,
+          "brier": 0.13569308558081777,
+          "nll": 0.30174541835385227,
+          "typed_probabilities": {
+            "Entailment": 0.7395263107521051,
+            "Contradiction": 0.027712143324249303,
+            "NotMentioned": 0.23276154592364554
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.8348998527590065,
+            "No": 0.1651001472409936
+          },
+          "correct": true,
+          "brier": 0.05451611723799551,
+          "nll": 0.1804434981398377,
+          "typed_probabilities": {
+            "Entailment": 0.8348998527590065,
+            "Contradiction": 0.0063975630639464326,
+            "NotMentioned": 0.15870258417704716
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.8348998527590065,
+            "No": 0.1651001472409936
+          },
+          "correct": true,
+          "brier": 0.05451611723799551,
+          "nll": 0.1804434981398377,
+          "typed_probabilities": {
+            "Entailment": 0.8348998527590065,
+            "Contradiction": 0.0063975630639464326,
+            "NotMentioned": 0.15870258417704716
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.50181913,
+            "Yes": 0.49818087
+          },
+          "correct": false,
+          "brier": 0.5036448784679138,
+          "nll": 0.6967920751249291
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:238:nda-3",
+      "phase": "development",
+      "source_group": "original-contractnli:238",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.008216652251868403,
+            "No": 0.9917833477481316
+          },
+          "correct": false,
+          "brier": 1.9672684177409827,
+          "nll": 4.801592421499589,
+          "typed_probabilities": {
+            "Entailment": 0.008216652251868403,
+            "Contradiction": 0.0008085502723386241,
+            "NotMentioned": 0.990974797475793
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.01662957596446201,
+            "No": 0.9833704240355381
+          },
+          "correct": false,
+          "brier": 1.9340347817356678,
+          "nll": 4.096572484330768,
+          "typed_probabilities": {
+            "Entailment": 0.01662957596446201,
+            "Contradiction": 0.00041478366675569325,
+            "NotMentioned": 0.9829556403687824
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.01662957596446201,
+            "No": 0.9833704240355381
+          },
+          "correct": false,
+          "brier": 1.9340347817356678,
+          "nll": 4.096572484330768,
+          "typed_probabilities": {
+            "Entailment": 0.01662957596446201,
+            "Contradiction": 0.00041478366675569325,
+            "NotMentioned": 0.9829556403687824
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.5020883,
+            "Yes": 0.4979117
+          },
+          "correct": false,
+          "brier": 0.5041853219937801,
+          "nll": 0.697332526915573
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:259:nda-17",
+      "phase": "development",
+      "source_group": "original-contractnli:259",
+      "gold_binary": "No",
+      "gold_typed": "Contradiction",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.7645291917200991,
+            "No": 0.2354708082799008
+          },
+          "correct": false,
+          "brier": 1.1690097699843762,
+          "nll": 1.4461683295575043,
+          "typed_probabilities": {
+            "Entailment": 0.7645291917200991,
+            "Contradiction": 0.006965913469585675,
+            "NotMentioned": 0.22850489481031513
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": false
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.8001081248681338,
+            "No": 0.19989187513186618
+          },
+          "correct": false,
+          "brier": 1.2803460229600025,
+          "nll": 1.6099786829648,
+          "typed_probabilities": {
+            "Entailment": 0.8001081248681338,
+            "Contradiction": 0.009387464606586347,
+            "NotMentioned": 0.19050441052527983
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.7645291917200991,
+            "No": 0.2354708082799008
+          },
+          "correct": false,
+          "brier": 1.1690097699843762,
+          "nll": 1.4461683295575043,
+          "typed_probabilities": {
+            "Entailment": 0.7645291917200991,
+            "Contradiction": 0.006965913469585675,
+            "NotMentioned": 0.22850489481031513
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": false
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.5000293,
+            "Yes": 0.49997067
+          },
+          "correct": true,
+          "brier": 0.49994137171873887,
+          "nll": 0.6930885822768582
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:259:nda-7",
+      "phase": "development",
+      "source_group": "original-contractnli:259",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.3073654314121336,
+            "No": 0.6926345685878664
+          },
+          "correct": true,
+          "brier": 0.18894701685433402,
+          "nll": 0.36725273692832167,
+          "typed_probabilities": {
+            "Entailment": 0.3073654314121336,
+            "Contradiction": 0.012835793590448076,
+            "NotMentioned": 0.6797987749974184
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.44409238655460925,
+            "No": 0.5559076134453907
+          },
+          "correct": true,
+          "brier": 0.394436095591537,
+          "nll": 0.5871531614061357,
+          "typed_probabilities": {
+            "Entailment": 0.44409238655460925,
+            "Contradiction": 0.023255503949168633,
+            "NotMentioned": 0.5326521094962221
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.3073654314121336,
+            "No": 0.6926345685878664
+          },
+          "correct": true,
+          "brier": 0.18894701685433402,
+          "nll": 0.36725273692832167,
+          "typed_probabilities": {
+            "Entailment": 0.3073654314121336,
+            "Contradiction": 0.012835793590448076,
+            "NotMentioned": 0.6797987749974184
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.50000286,
+            "Yes": 0.49999717
+          },
+          "correct": true,
+          "brier": 0.49999431001618844,
+          "nll": 0.6931414605763043
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:259:nda-3",
+      "phase": "development",
+      "source_group": "original-contractnli:259",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.011578125081649866,
+            "No": 0.9884218749183501
+          },
+          "correct": true,
+          "brier": 0.00026810596081266026,
+          "nll": 0.01164567346714613,
+          "typed_probabilities": {
+            "Entailment": 0.011578125081649866,
+            "Contradiction": 0.0007271667974529813,
+            "NotMentioned": 0.9876947081208971
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.035661668912016345,
+            "No": 0.9643383310879837
+          },
+          "correct": true,
+          "brier": 0.002543509259180541,
+          "nll": 0.0363130800867977,
+          "typed_probabilities": {
+            "Entailment": 0.035661668912016345,
+            "Contradiction": 0.0012299009960169088,
+            "NotMentioned": 0.9631084300919668
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.011578125081649866,
+            "No": 0.9884218749183501
+          },
+          "correct": true,
+          "brier": 0.00026810596081266026,
+          "nll": 0.01164567346714613,
+          "typed_probabilities": {
+            "Entailment": 0.011578125081649866,
+            "Contradiction": 0.0007271667974529813,
+            "NotMentioned": 0.9876947081208971
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.5003882,
+            "Yes": 0.49961182
+          },
+          "correct": true,
+          "brier": 0.49922392138295246,
+          "nll": 0.6923710818025124
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:115:nda-17",
+      "phase": "development",
+      "source_group": "original-contractnli:115",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.9442934608481152,
+            "No": 0.05570653915188489
+          },
+          "correct": true,
+          "brier": 0.006206437008560963,
+          "nll": 0.057318291604065916,
+          "typed_probabilities": {
+            "Entailment": 0.9442934608481152,
+            "Contradiction": 0.0030894495315592547,
+            "NotMentioned": 0.05261708962032564
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.012365054578528364,
+            "No": 0.9876349454214717
+          },
+          "correct": false,
+          "brier": 1.9508455708353467,
+          "nll": 4.3928809640655375,
+          "typed_probabilities": {
+            "Entailment": 0.012365054578528364,
+            "Contradiction": 0.000619055727444426,
+            "NotMentioned": 0.9870158896940272
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.5778536311357287,
+            "No": 0.4221463688642712
+          },
+          "correct": true,
+          "brier": 0.3564151134905787,
+          "nll": 0.5484346757079221,
+          "typed_probabilities": {
+            "Entailment": 0.5778536311357287,
+            "Contradiction": 0.007916461278393142,
+            "NotMentioned": 0.4142299075858781
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.5032673,
+            "Yes": 0.49673268
+          },
+          "correct": false,
+          "brier": 0.5065559706292724,
+          "nll": 0.6997032647911813
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:115:nda-7",
+      "phase": "development",
+      "source_group": "original-contractnli:115",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.9662548158997528,
+            "No": 0.03374518410024716
+          },
+          "correct": true,
+          "brier": 0.0022774748999191494,
+          "nll": 0.03432769497933963,
+          "typed_probabilities": {
+            "Entailment": 0.9662548158997528,
+            "Contradiction": 0.0008308451529065929,
+            "NotMentioned": 0.03291433894734057
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.3439201941470626,
+            "No": 0.6560798058529375
+          },
+          "correct": false,
+          "brier": 0.860881423296056,
+          "nll": 1.0673456422819925,
+          "typed_probabilities": {
+            "Entailment": 0.3439201941470626,
+            "Contradiction": 0.02750211707860254,
+            "NotMentioned": 0.628577688774335
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.3182879201585573,
+            "No": 0.6817120798414428
+          },
+          "correct": false,
+          "brier": 0.9294627196034911,
+          "nll": 1.1447988965340845,
+          "typed_probabilities": {
+            "Entailment": 0.3182879201585573,
+            "Contradiction": 0.01252509337987991,
+            "NotMentioned": 0.6691869864615628
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.50287193,
+            "Yes": 0.49712804
+          },
+          "correct": false,
+          "brier": 0.5057603861361665,
+          "nll": 0.6989076603107973
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:115:nda-3",
+      "phase": "development",
+      "source_group": "original-contractnli:115",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.0044725860457635715,
+            "No": 0.9955274139542365
+          },
+          "correct": true,
+          "brier": 4.0008051873517445e-05,
+          "nll": 0.004482617982373859,
+          "typed_probabilities": {
+            "Entailment": 0.0044725860457635715,
+            "Contradiction": 0.0005204007800565541,
+            "NotMentioned": 0.9950070131741799
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.0044725860457635715,
+            "No": 0.9955274139542365
+          },
+          "correct": true,
+          "brier": 4.0008051873517445e-05,
+          "nll": 0.004482617982373859,
+          "typed_probabilities": {
+            "Entailment": 0.0044725860457635715,
+            "Contradiction": 0.0005204007800565541,
+            "NotMentioned": 0.9950070131741799
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.003430734438792854,
+            "No": 0.9965692655612072
+          },
+          "correct": true,
+          "brier": 2.3539877579038447e-05,
+          "nll": 0.003436632902760559,
+          "typed_probabilities": {
+            "Entailment": 0.003430734438792854,
+            "Contradiction": 0.00035666589348754864,
+            "NotMentioned": 0.9962125996677196
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.5024288,
+            "Yes": 0.4975712
+          },
+          "correct": true,
+          "brier": 0.49515419813888,
+          "nll": 0.6883013406303897
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:155:nda-17",
+      "phase": "development",
+      "source_group": "original-contractnli:155",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.6452487063309671,
+            "No": 0.35475129366903296
+          },
+          "correct": true,
+          "brier": 0.25169696071970493,
+          "nll": 0.43811944529674934,
+          "typed_probabilities": {
+            "Entailment": 0.6452487063309671,
+            "Contradiction": 0.033921237206484614,
+            "NotMentioned": 0.32083005646254836
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.3903916702680986,
+            "No": 0.6096083297319014
+          },
+          "correct": false,
+          "brier": 0.7432446313570372,
+          "nll": 0.9406047610742598,
+          "typed_probabilities": {
+            "Entailment": 0.3903916702680986,
+            "Contradiction": 0.037163372696642674,
+            "NotMentioned": 0.5724449570352587
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.06695151845012522,
+            "No": 0.9330484815498746
+          },
+          "correct": false,
+          "brier": 1.7411589378450536,
+          "nll": 2.7037865267418044,
+          "typed_probabilities": {
+            "Entailment": 0.06695151845012522,
+            "Contradiction": 0.0023401756631888327,
+            "NotMentioned": 0.9307083058866858
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.50141126,
+            "Yes": 0.49858877
+          },
+          "correct": false,
+          "brier": 0.5028264732249005,
+          "nll": 0.6959736312109084
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:155:nda-7",
+      "phase": "development",
+      "source_group": "original-contractnli:155",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.912492669011736,
+            "No": 0.08750733098826396
+          },
+          "correct": true,
+          "brier": 0.015315065953379175,
+          "nll": 0.0915752275175043,
+          "typed_probabilities": {
+            "Entailment": 0.912492669011736,
+            "Contradiction": 0.007256811670876973,
+            "NotMentioned": 0.080250519317387
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.912492669011736,
+            "No": 0.08750733098826396
+          },
+          "correct": true,
+          "brier": 0.015315065953379175,
+          "nll": 0.0915752275175043,
+          "typed_probabilities": {
+            "Entailment": 0.912492669011736,
+            "Contradiction": 0.007256811670876973,
+            "NotMentioned": 0.080250519317387
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.912492669011736,
+            "No": 0.08750733098826396
+          },
+          "correct": true,
+          "brier": 0.015315065953379175,
+          "nll": 0.0915752275175043,
+          "typed_probabilities": {
+            "Entailment": 0.912492669011736,
+            "Contradiction": 0.007256811670876973,
+            "NotMentioned": 0.080250519317387
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.50064725,
+            "Yes": 0.49935278
+          },
+          "correct": false,
+          "brier": 0.501295307826291,
+          "nll": 0.6944424590710818
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:155:nda-3",
+      "phase": "development",
+      "source_group": "original-contractnli:155",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.008264990494955457,
+            "No": 0.9917350095050446
+          },
+          "correct": false,
+          "brier": 1.9670766581559416,
+          "nll": 4.795726697745448,
+          "typed_probabilities": {
+            "Entailment": 0.008264990494955457,
+            "Contradiction": 0.00042007628813158686,
+            "NotMentioned": 0.991314933216913
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.010772692610883832,
+            "No": 0.9892273073891161
+          },
+          "correct": false,
+          "brier": 1.9571413313686417,
+          "nll": 4.530740808765586,
+          "typed_probabilities": {
+            "Entailment": 0.010772692610883832,
+            "Contradiction": 0.0009504228452156293,
+            "NotMentioned": 0.9882768845439005
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.008264990494955457,
+            "No": 0.9917350095050446
+          },
+          "correct": false,
+          "brier": 1.9670766581559416,
+          "nll": 4.795726697745448,
+          "typed_probabilities": {
+            "Entailment": 0.008264990494955457,
+            "Contradiction": 0.00042007628813158686,
+            "NotMentioned": 0.991314933216913
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.49975047,
+            "Yes": 0.50024956
+          },
+          "correct": true,
+          "brier": 0.4995010345454145,
+          "nll": 0.692648185078901
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:192:nda-17",
+      "phase": "development",
+      "source_group": "original-contractnli:192",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.03745523801969487,
+            "No": 0.9625447619803051
+          },
+          "correct": true,
+          "brier": 0.0028057897102239915,
+          "nll": 0.03817470794800231,
+          "typed_probabilities": {
+            "Entailment": 0.03745523801969487,
+            "Contradiction": 0.0008130837498056078,
+            "NotMentioned": 0.9617316782304995
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.16177618357507875,
+            "No": 0.8382238164249214
+          },
+          "correct": true,
+          "brier": 0.05234306714423512,
+          "nll": 0.17647013012136092,
+          "typed_probabilities": {
+            "Entailment": 0.16177618357507875,
+            "Contradiction": 0.002691889611654312,
+            "NotMentioned": 0.835531926813267
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.04699754037395354,
+            "No": 0.9530024596260466
+          },
+          "correct": true,
+          "brier": 0.004417537602402775,
+          "nll": 0.04813779440152097,
+          "typed_probabilities": {
+            "Entailment": 0.04699754037395354,
+            "Contradiction": 0.0008252248029757879,
+            "NotMentioned": 0.9521772348230708
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.49856183,
+            "Yes": 0.5014382
+          },
+          "correct": false,
+          "brier": 0.5028805067521889,
+          "nll": 0.6960276651752997
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:192:nda-7",
+      "phase": "development",
+      "source_group": "original-contractnli:192",
+      "gold_binary": "No",
+      "gold_typed": "Contradiction",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.2951356408085997,
+            "No": 0.7048643591914002
+          },
+          "correct": true,
+          "brier": 0.17421009295100562,
+          "nll": 0.3497498929908682,
+          "typed_probabilities": {
+            "Entailment": 0.2951356408085997,
+            "Contradiction": 0.003906802703101607,
+            "NotMentioned": 0.7009575564882986
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.6591667545910734,
+            "No": 0.3408332454089267
+          },
+          "correct": false,
+          "brier": 0.8690016207162568,
+          "nll": 1.0763619377022424,
+          "typed_probabilities": {
+            "Entailment": 0.6591667545910733,
+            "Contradiction": 0.01831439564623122,
+            "NotMentioned": 0.3225188497626954
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.0645501734631459,
+            "No": 0.9354498265368542
+          },
+          "correct": true,
+          "brier": 0.008333449788244443,
+          "nll": 0.066727767483562,
+          "typed_probabilities": {
+            "Entailment": 0.0645501734631459,
+            "Contradiction": 0.0014956107765829484,
+            "NotMentioned": 0.9339542157602712
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.49824244,
+            "Yes": 0.5017575
+          },
+          "correct": false,
+          "brier": 0.5035212378234035,
+          "nll": 0.6966684931102162
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:192:nda-3",
+      "phase": "development",
+      "source_group": "original-contractnli:192",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.012859152710693992,
+            "No": 0.987140847289306
+          },
+          "correct": false,
+          "brier": 1.9488941047740977,
+          "nll": 4.353699447981321,
+          "typed_probabilities": {
+            "Entailment": 0.012859152710693992,
+            "Contradiction": 0.0004137884228661854,
+            "NotMentioned": 0.9867270588664397
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.0029048213024033104,
+            "No": 0.9970951786975968
+          },
+          "correct": false,
+          "brier": 1.9883975907639848,
+          "nll": 5.841383404372961,
+          "typed_probabilities": {
+            "Entailment": 0.0029048213024033104,
+            "Contradiction": 0.00025916963761821627,
+            "NotMentioned": 0.9968360090599786
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.017569803986342464,
+            "No": 0.9824301960136574
+          },
+          "correct": false,
+          "brier": 1.930338180078867,
+          "nll": 4.041573533001169,
+          "typed_probabilities": {
+            "Entailment": 0.017569803986342464,
+            "Contradiction": 0.0003963221864826966,
+            "NotMentioned": 0.9820338738271748
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.49865055,
+            "Yes": 0.50134945
+          },
+          "correct": true,
+          "brier": 0.49730474203060504,
+          "nll": 0.6904519160508019
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:623:nda-17",
+      "phase": "development",
+      "source_group": "original-contractnli:623",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.34982783420047037,
+            "No": 0.6501721657995297
+          },
+          "correct": true,
+          "brier": 0.2447590271627835,
+          "nll": 0.4305180807036269,
+          "typed_probabilities": {
+            "Entailment": 0.34982783420047037,
+            "Contradiction": 0.007972739594561983,
+            "NotMentioned": 0.6421994262049677
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.08079080887267298,
+            "No": 0.9192091911273271
+          },
+          "correct": true,
+          "brier": 0.013054309596601532,
+          "nll": 0.08424155344696432,
+          "typed_probabilities": {
+            "Entailment": 0.08079080887267298,
+            "Contradiction": 0.0028573632121022736,
+            "NotMentioned": 0.9163518279152248
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.08697050156755891,
+            "No": 0.9130294984324411
+          },
+          "correct": true,
+          "brier": 0.015127736285825536,
+          "nll": 0.09098708956360471,
+          "typed_probabilities": {
+            "Entailment": 0.08697050156755891,
+            "Contradiction": 0.004663379597365174,
+            "NotMentioned": 0.9083661188350759
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.50033134,
+            "Yes": 0.4996687
+          },
+          "correct": true,
+          "brier": 0.49933757954588565,
+          "nll": 0.6924847200353805
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:623:nda-7",
+      "phase": "development",
+      "source_group": "original-contractnli:623",
+      "gold_binary": "No",
+      "gold_typed": "Contradiction",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.7211182074652639,
+            "No": 0.2788817925347361
+          },
+          "correct": false,
+          "brier": 1.0400229382758308,
+          "nll": 1.2769672696108305,
+          "typed_probabilities": {
+            "Entailment": 0.7211182074652639,
+            "Contradiction": 0.011049078216196877,
+            "NotMentioned": 0.2678327143185392
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": false
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.2846763101740032,
+            "No": 0.7153236898259968
+          },
+          "correct": true,
+          "brier": 0.16208120314857055,
+          "nll": 0.33502012568840983,
+          "typed_probabilities": {
+            "Entailment": 0.2846763101740032,
+            "Contradiction": 0.013881063967355292,
+            "NotMentioned": 0.7014426258586415
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.4414855712353518,
+            "No": 0.5585144287646482
+          },
+          "correct": true,
+          "brier": 0.3898190192180098,
+          "nll": 0.5824748259549427,
+          "typed_probabilities": {
+            "Entailment": 0.4414855712353518,
+            "Contradiction": 0.017162309467769244,
+            "NotMentioned": 0.541352119296879
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.5005824,
+            "Yes": 0.49941754
+          },
+          "correct": true,
+          "brier": 0.4988358184494116,
+          "nll": 0.6919830584131408
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:623:nda-3",
+      "phase": "development",
+      "source_group": "original-contractnli:623",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.011662260642366714,
+            "No": 0.9883377393576332
+          },
+          "correct": false,
+          "brier": 1.953622974077114,
+          "nll": 4.451397236717749,
+          "typed_probabilities": {
+            "Entailment": 0.011662260642366714,
+            "Contradiction": 0.00027476334481733075,
+            "NotMentioned": 0.9880629760128159
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.01446459329007073,
+            "No": 0.9855354067099293
+          },
+          "correct": false,
+          "brier": 1.9425600757578114,
+          "nll": 4.236051457778171,
+          "typed_probabilities": {
+            "Entailment": 0.01446459329007073,
+            "Contradiction": 0.0005340873752358277,
+            "NotMentioned": 0.9850013193346935
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.007934187419330557,
+            "No": 0.9920658125806695
+          },
+          "correct": false,
+          "brier": 1.968389152982688,
+          "nll": 4.836574334868704,
+          "typed_probabilities": {
+            "Entailment": 0.007934187419330557,
+            "Contradiction": 0.00019628941113570677,
+            "NotMentioned": 0.9918695231695338
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.5009397,
+            "Yes": 0.4990603
+          },
+          "correct": false,
+          "brier": 0.50188116607218,
+          "nll": 0.6950283488480197
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:270:nda-17",
+      "phase": "development",
+      "source_group": "original-contractnli:270",
+      "gold_binary": "No",
+      "gold_typed": "NotMentioned",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.0803068154356125,
+            "No": 0.9196931845643874
+          },
+          "correct": true,
+          "brier": 0.01289836921081907,
+          "nll": 0.08371515959959755,
+          "typed_probabilities": {
+            "Entailment": 0.08030681543561251,
+            "Contradiction": 0.003159288133759374,
+            "NotMentioned": 0.9165338964306281
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.10278066157997405,
+            "No": 0.8972193384200259
+          },
+          "correct": true,
+          "brier": 0.02112772878963432,
+          "nll": 0.10845492237752731,
+          "typed_probabilities": {
+            "Entailment": 0.10278066157997406,
+            "Contradiction": 0.008016896010553411,
+            "NotMentioned": 0.8892024424094727
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.0803068154356125,
+            "No": 0.9196931845643874
+          },
+          "correct": true,
+          "brier": 0.01289836921081907,
+          "nll": 0.08371515959959755,
+          "typed_probabilities": {
+            "Entailment": 0.08030681543561251,
+            "Contradiction": 0.003159288133759374,
+            "NotMentioned": 0.9165338964306281
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": true
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.50328404,
+            "Yes": 0.49671596
+          },
+          "correct": true,
+          "brier": 0.4934534898374432,
+          "nll": 0.6866005764119363
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:270:nda-7",
+      "phase": "development",
+      "source_group": "original-contractnli:270",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.5338389506082021,
+            "No": 0.466161049391798
+          },
+          "correct": true,
+          "brier": 0.4346122479401246,
+          "nll": 0.6276610761308841,
+          "typed_probabilities": {
+            "Entailment": 0.5338389506082021,
+            "Contradiction": 0.008612644709758043,
+            "NotMentioned": 0.45754840468203994
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.8917890387355879,
+            "No": 0.1082109612644121
+          },
+          "correct": true,
+          "brier": 0.02341922427553619,
+          "nll": 0.11452567803318332,
+          "typed_probabilities": {
+            "Entailment": 0.8917890387355879,
+            "Contradiction": 0.008125261210679899,
+            "NotMentioned": 0.10008570005373221
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.5338389506082021,
+            "No": 0.466161049391798
+          },
+          "correct": true,
+          "brier": 0.4346122479401246,
+          "nll": 0.6276610761308841,
+          "typed_probabilities": {
+            "Entailment": 0.5338389506082021,
+            "Contradiction": 0.008612644709758043,
+            "NotMentioned": 0.45754840468203994
+          },
+          "typed_prediction": "Entailment",
+          "typed_correct": true
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.50306255,
+            "Yes": 0.49693742
+          },
+          "correct": false,
+          "brier": 0.5061438886087588,
+          "nll": 0.6992911763064872
+        }
+      }
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:270:nda-3",
+      "phase": "development",
+      "source_group": "original-contractnli:270",
+      "gold_binary": "Yes",
+      "gold_typed": "Entailment",
+      "arms": {
+        "ruvector_top2": {
+          "probabilities": {
+            "Yes": 0.006346959074371191,
+            "No": 0.9936530409256288
+          },
+          "correct": false,
+          "brier": 1.9746927314814986,
+          "nll": 5.05977946670582,
+          "typed_probabilities": {
+            "Entailment": 0.006346959074371191,
+            "Contradiction": 0.000520188447860373,
+            "NotMentioned": 0.9931328524777684
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_lexical_top2": {
+          "probabilities": {
+            "Yes": 0.006346959074371191,
+            "No": 0.9936530409256288
+          },
+          "correct": false,
+          "brier": 1.9746927314814986,
+          "nll": 5.05977946670582,
+          "typed_probabilities": {
+            "Entailment": 0.006346959074371191,
+            "Contradiction": 0.000520188447860373,
+            "NotMentioned": 0.9931328524777684
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "same_nli_positional_first2": {
+          "probabilities": {
+            "Yes": 0.006346959074371191,
+            "No": 0.9936530409256288
+          },
+          "correct": false,
+          "brier": 1.9746927314814986,
+          "nll": 5.05977946670582,
+          "typed_probabilities": {
+            "Entailment": 0.006346959074371191,
+            "Contradiction": 0.000520188447860373,
+            "NotMentioned": 0.9931328524777684
+          },
+          "typed_prediction": "NotMentioned",
+          "typed_correct": false
+        },
+        "native104_on_ruvector_evidence": {
+          "probabilities": {
+            "No": 0.50190043,
+            "Yes": 0.49809957
+          },
+          "correct": false,
+          "brier": 0.5038080832683698,
+          "nll": 0.6969552821837378
+        }
+      }
+    }
+  ],
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "auditor_model_native_session_fit_paid_GPU_calls": 0,
+  "archived_numerical_selfcheck_only": false,
+  "archived_missing_asset_pins_not_verified": [],
+  "current_native_admission_proof": false
+}

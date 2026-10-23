@@ -1,0 +1,488 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-23T09:26:23.265365+00:00",
+  "decision": "REJECTED_DEV_GATE_AND_CONFIRMATION_RUNTIME_ADMISSION",
+  "independent_replay_checks_passed": true,
+  "candidate_accepted": false,
+  "champion_promoted": false,
+  "candidate_source_changed_after_outputs": false,
+  "epoch": 15,
+  "plan": {
+    "path": "experiments/sota-2026-10-22/epoch15/plan.v2.json",
+    "bytes": 38602,
+    "sha256": "82cfe2fd0ab18ad1c7c1f6372df97925061832d6e809701cfcc9a53a37dcfc3f"
+  },
+  "frozen_source_published_before_execution_commit": "1692519a843102ad1493e35148a10957ac127b4a",
+  "model_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+  "model_graph_SHA256": "821dc4407d10a9d25c20c57fcb742ddc20c09bc55c8093557091efb825256754",
+  "active_acceptance_contract": {
+    "path": "experiments/sota-2026-10-22/audit/epoch15/acceptance-contract-v2.json",
+    "bytes": 7360,
+    "sha256": "7b004718dc92bb4a2f7d37d83dbf20ef329c5ec6ab3f9b55316f889a61d5f12e"
+  },
+  "independent_score_audit": {
+    "path": "experiments/sota-2026-10-22/audit/epoch15/actual-scores-independent-v1.json",
+    "bytes": 59002,
+    "sha256": "28763ff1b690937095beb0e72540c03d5d1fddf539ce0f7d8b9e6ba1260b5052"
+  },
+  "independent_exact_context_vector_audit": {
+    "path": "experiments/sota-2026-10-22/audit/epoch15/actual-context-independent-v1.json",
+    "bytes": 104580,
+    "sha256": "6549b0e731bdb4b003b74552141cdd7729e8e7a392cd5b65b2088f4708b8d748"
+  },
+  "frozen_replay_sources": [
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/replay_scores_v2.py",
+      "bytes": 15919,
+      "sha256": "df6d5a63a3e2baf4f34edf0ffed31d9b9d26b9bc13fe57ab1b96663cf42983e2"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/replay_context_v2.py",
+      "bytes": 10712,
+      "sha256": "a934528a79f78418eab5dd65f43751aa8482e1950e36a04f19de1f1588d1c786"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch15/context_math_v1.py",
+      "bytes": 6850,
+      "sha256": "89b50738281350b29208deb9b68bec68e5ad739d20316b94bb6c8e7c8583a506"
+    }
+  ],
+  "actual_result": {
+    "role": "One project-unused fixed24query8document DEV draw; exposedDEV forever after this epoch. Public-source NDA pilot only.",
+    "binary_metrics": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 14,
+        "brier": 0.7278608741057794,
+        "nll": 1.534083315018541,
+        "strict_valid": 24,
+        "errors": 0
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 10,
+        "brier": 0.868292642764401,
+        "nll": 1.7949648372020586,
+        "strict_valid": 24,
+        "errors": 0
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 13,
+        "brier": 0.8258607349680095,
+        "nll": 1.737450025790403,
+        "strict_valid": 24,
+        "errors": 0
+      },
+      "native104_on_ruvector_evidence": {
+        "n": 24,
+        "correct": 12,
+        "brier": 0.5007809996698155,
+        "nll": 0.6939281896837629,
+        "strict_valid": 24,
+        "errors": 0
+      }
+    },
+    "typed3way_metrics": {
+      "ruvector_top2": {
+        "n": 24,
+        "correct": 13,
+        "brier": 0.8263674934066939,
+        "nll": 2.035503960535953
+      },
+      "same_nli_lexical_top2": {
+        "n": 24,
+        "correct": 9,
+        "brier": 0.9653331422756838,
+        "nll": 2.2131888415249397
+      },
+      "same_nli_positional_first2": {
+        "n": 24,
+        "correct": 11,
+        "brier": 0.9657318789603136,
+        "nll": 2.299521992212747
+      }
+    },
+    "primary_class_counts": {
+      "NotMentioned": {
+        "n": 8,
+        "correct": 6,
+        "predictions": {
+          "Entailment": 2,
+          "NotMentioned": 6
+        }
+      },
+      "Entailment": {
+        "n": 13,
+        "correct": 7,
+        "predictions": {
+          "Entailment": 7,
+          "NotMentioned": 6
+        }
+      },
+      "Contradiction": {
+        "n": 3,
+        "correct": 0,
+        "predictions": {
+          "Entailment": 2,
+          "NotMentioned": 1
+        }
+      }
+    },
+    "typed_confusions_all_readers": {
+      "ruvector_top2": {
+        "NotMentioned->Entailment": 2,
+        "Entailment->Entailment": 7,
+        "Entailment->NotMentioned": 6,
+        "Contradiction->Entailment": 2,
+        "NotMentioned->NotMentioned": 6,
+        "Contradiction->NotMentioned": 1
+      },
+      "same_nli_lexical_top2": {
+        "NotMentioned->Entailment": 2,
+        "Entailment->NotMentioned": 10,
+        "Entailment->Entailment": 3,
+        "Contradiction->Entailment": 2,
+        "NotMentioned->NotMentioned": 6,
+        "Contradiction->NotMentioned": 1
+      },
+      "same_nli_positional_first2": {
+        "NotMentioned->NotMentioned": 7,
+        "Entailment->NotMentioned": 9,
+        "NotMentioned->Entailment": 1,
+        "Entailment->Entailment": 4,
+        "Contradiction->Entailment": 1,
+        "Contradiction->NotMentioned": 2
+      }
+    },
+    "all96_arm_predictions_strict_valid_errors0": true,
+    "comparisons": {
+      "same_nli_lexical_top2": {
+        "primary_minus_control_correct": 4,
+        "required_at_least_two_accuracy_gain": true,
+        "primary_minus_control_Brier": -0.14043176865862161,
+        "primary_minus_control_NLL": -0.2608815221835177,
+        "Brier_nonincrease": true,
+        "NLL_nonincrease": true
+      },
+      "same_nli_positional_first2": {
+        "primary_minus_control_correct": 1,
+        "required_at_least_two_accuracy_gain": false,
+        "primary_minus_control_Brier": -0.09799986086223011,
+        "primary_minus_control_NLL": -0.2033667107718622,
+        "Brier_nonincrease": true,
+        "NLL_nonincrease": true
+      },
+      "native104_on_ruvector_evidence": {
+        "primary_minus_control_correct": 2,
+        "required_at_least_two_accuracy_gain": true,
+        "primary_minus_control_Brier": 0.2270798744359639,
+        "primary_minus_control_NLL": 0.840155125334778,
+        "Brier_nonincrease": false,
+        "NLL_nonincrease": false
+      }
+    },
+    "rejection_reasons": [
+      "Primary14correct versus positional13gives+1, below fixed+2gate.",
+      "PrimaryBrier0.7278608741057794 andNLL1.534083315018541 are worse than sameexcerptNative1040.5007809996698155/0.6939281896837629.",
+      "Independently frozen confirmation cost forecast657.81873457425seconds exceeds600secondadmission cap; this remains a separate failure even if the DEV gate had passed."
+    ],
+    "paired_8document_nominal_bootstrap2000_seed20261022": {
+      "same_nli_lexical_top2": {
+        "accuracy": {
+          "mean_improvement": 0.16666666666666666,
+          "ci95": [
+            -0.041666666666666664,
+            0.375
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.14043176865862156,
+          "ci95": [
+            -0.09015273164173121,
+            0.4023658836143846
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.26088152218351784,
+          "ci95": [
+            -0.14803549460821783,
+            0.7912617857237962
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "same_nli_positional_first2": {
+        "accuracy": {
+          "mean_improvement": 0.041666666666666664,
+          "ci95": [
+            -0.08333333333333333,
+            0.16666666666666666
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": 0.09799986086223014,
+          "ci95": [
+            -0.08175666714732156,
+            0.2641526647695751
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": 0.2033667107718624,
+          "ci95": [
+            -0.11911819136663014,
+            0.5236806914859098
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      },
+      "native104_on_ruvector_evidence": {
+        "accuracy": {
+          "mean_improvement": 0.08333333333333333,
+          "ci95": [
+            -0.16666666666666666,
+            0.3333333333333333
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "brier": {
+          "mean_improvement": -0.22707987443596392,
+          "ci95": [
+            -0.43062469451221635,
+            0.039698871961378626
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        },
+        "nll": {
+          "mean_improvement": -0.840155125334778,
+          "ci95": [
+            -1.292086910768982,
+            -0.2339040003185443
+          ],
+          "draws": 2000,
+          "seed": 20261022
+        }
+      }
+    },
+    "uncertainty": "All3nominal95%binaryaccuracygain intervals crosszero. These8groups/3fixedpredicates do not establish reproducible retrieval superiority, general benchmark improvement, model/context causal attribution or official placement. Intervals are not familywise.",
+    "threeway_failure": "No contradiction predictions across24primary cases; all3goldContradiction cases fail typeddecision. Entailment7/13, NotMentioned6/8. BinaryNo correctness cannot establish contradiction competence."
+  },
+  "source_and_native_verification": {
+    "all24_native_complete_ranking_orders_match_independent_saved_vector_exactcosine": true,
+    "same24_top2_candidate_sets_match": true,
+    "all72exactsourcecontext_packs_and_tokenIDs_attentionmask_types_complete512cap_verified": true,
+    "same8_document_source_priority_shared_all3selectors": true,
+    "native104_reads_exact_primary_excerpt": true,
+    "max_same_input_logit_drift": 0,
+    "definition_context_counterfactual": {
+      "ruvector_top2": {
+        "source_changed_vs_tokenizer_only_no_priority": 11,
+        "priority_introduced_case_count": 11,
+        "units_displaced_total": 12,
+        "source_characters_delta_sum": -2004,
+        "numeric_mentions_delta_sum": 3,
+        "numeric_retention_decreased_case_count": 5,
+        "scope": "Tokenization-only source context counterfactual; no no-priority model predictions or accuracy effect was measured."
+      },
+      "lexical_top2": {
+        "source_changed_vs_tokenizer_only_no_priority": 16,
+        "priority_introduced_case_count": 16,
+        "units_displaced_total": 19,
+        "source_characters_delta_sum": -1982,
+        "numeric_mentions_delta_sum": 0,
+        "numeric_retention_decreased_case_count": 7,
+        "scope": "Tokenization-only source context counterfactual; no no-priority model predictions or accuracy effect was measured."
+      },
+      "positional_first2": {
+        "source_changed_vs_tokenizer_only_no_priority": 0,
+        "priority_introduced_case_count": 0,
+        "units_displaced_total": 0,
+        "source_characters_delta_sum": 0,
+        "numeric_mentions_delta_sum": 0,
+        "numeric_retention_decreased_case_count": 0,
+        "scope": "Tokenization-only source context counterfactual; no no-priority model predictions or accuracy effect was measured."
+      }
+    },
+    "limitations": "Whole source units/priority/numerical surface retention are structural guarantees only. No arithmetic truth, evidence completeness, definition causal benefit or semantic insufficiency inference established."
+  },
+  "actual_execution": {
+    "native_attempts": 1,
+    "native_processes_started": 1,
+    "native_corpus_batches_completed": 1,
+    "lifetime_native_attempt": 17,
+    "successful_HTTP_decisions": 24,
+    "HTTP_errors": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "configured_ORT_threads": 2,
+    "wall_seconds_including_model_load_and_owned_cleanup": 119.71484335699643,
+    "initialization_seconds": 7.7956027619948145,
+    "latency_whole_all_arm_requests": {
+      "p50": 4.556525667496317,
+      "p95": 5.965351283598284,
+      "max": 6.171271323997644,
+      "scope": "Whole all-arm request; not primary-only deployment"
+    },
+    "resources": {
+      "at": "2026-10-23T09:23:10.740730+00:00",
+      "worker_cpu_user_seconds": 208.239956,
+      "worker_cpu_system_seconds": 4.886772,
+      "worker_peak_RSS_bytes": 2263527424,
+      "terminated_children_cpu_user_seconds": 5.559995,
+      "terminated_children_cpu_system_seconds": 1.255894,
+      "largest_terminated_child_peak_RSS_bytes": 2263527424,
+      "peak_memory_scope": "Linux getrusage process high-water marks; child maximum is not sum or simultaneous total memory",
+      "allowed_CPU_ids": [
+        0,
+        1
+      ],
+      "configured_ORT_threads": 2,
+      "whole_pipeline": "All matched NLI arms + native104 evidence reader + evidence embedding/index; primary-only deployment cost not measured"
+    },
+    "nonoverlapping_worker_plus_terminated_child_CPU_seconds": 219.942617,
+    "forward_counters": {
+      "requests_attempted": 24,
+      "requests_completed": 24,
+      "native104_requests_attempted": 24,
+      "native104_requests_completed": 24,
+      "native_core_searches_attempted": 24,
+      "native_core_searches_completed": 24,
+      "bge_forward_batches_attempted": 44,
+      "bge_forward_batches_completed": 44,
+      "bge_texts_attempted": 159,
+      "bge_texts_completed": 159,
+      "nli_forward_pairs_attempted": 72,
+      "nli_forward_pairs_completed": 72,
+      "nli_input_tokens_attempted": 34448,
+      "nli_input_tokens_completed": 34448,
+      "context_partitions_attempted": 24,
+      "context_partitions_completed": 24,
+      "context_packs_attempted": 72,
+      "context_packs_completed": 72,
+      "bge_forward_wall_seconds": 6.714923058025306,
+      "nli_forward_wall_seconds": 92.75907837906561
+    },
+    "all_terminal_counters_reconciled_with_saved_requests": true,
+    "worker_process_absent_at_independent_audit": true,
+    "owned_group_completion": {
+      "pgid": 32741,
+      "live_members_before": [],
+      "signals": [],
+      "hard_cleanup_deadline_unix": 1792747871.2815924,
+      "live_members_after": [],
+      "finished_unix": 1792747390.9964924,
+      "finished_within_deadline": true
+    },
+    "confirmation_runtime_admission": {
+      "at": "2026-10-23T09:23:11.026450+00:00",
+      "formula_id": "48xDEVmaxHTTPxunitratio+2xDEVinit+60-v1",
+      "max_DEV_HTTP_seconds": 6.171271323997644,
+      "max_DEV_units": 29,
+      "max_confirmation_units": 57,
+      "source_unit_ratio": 1.9655172413793103,
+      "DEV_initialization_seconds": 7.7956027619948145,
+      "projected_confirmation_seconds": 657.81873457425,
+      "allowed": false,
+      "forecast_limit_seconds": 600,
+      "actual_confirmation_watchdog_seconds": 600,
+      "scope": "Conservative admission forecast, not a performance guarantee. No confirmation labels/model outputs used."
+    },
+    "resource_limit_note": "RSS values are Linux per-process/largest-terminated-child high-water marks, not simultaneous sum. AllarmHTTPtiming does not measure primary-only deployment latency.",
+    "unspent_slots": 1,
+    "allowed_further_epoch15_attempts": 0
+  },
+  "roles_and_confirmation": {
+    "train": [],
+    "calibration": [],
+    "DEV_allowlist": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch15/dev-allowlist.json",
+      "bytes": 8886,
+      "sha256": "3773ed3ff0629139314cf80715e76e14bfc7684813a538b712aac146825bb398"
+    },
+    "DEV_data": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch15/development24.jsonl",
+      "bytes": 275549,
+      "sha256": "3233c621709ef64af45b6feec640165f1d6477062d6218dd7005d47b4bb09f6f"
+    },
+    "DEV24_IDs": [
+      "original-contractnli:train:epoch15:dev:603:nda-17",
+      "original-contractnli:train:epoch15:dev:603:nda-7",
+      "original-contractnli:train:epoch15:dev:603:nda-3",
+      "original-contractnli:train:epoch15:dev:238:nda-17",
+      "original-contractnli:train:epoch15:dev:238:nda-7",
+      "original-contractnli:train:epoch15:dev:238:nda-3",
+      "original-contractnli:train:epoch15:dev:259:nda-17",
+      "original-contractnli:train:epoch15:dev:259:nda-7",
+      "original-contractnli:train:epoch15:dev:259:nda-3",
+      "original-contractnli:train:epoch15:dev:115:nda-17",
+      "original-contractnli:train:epoch15:dev:115:nda-7",
+      "original-contractnli:train:epoch15:dev:115:nda-3",
+      "original-contractnli:train:epoch15:dev:155:nda-17",
+      "original-contractnli:train:epoch15:dev:155:nda-7",
+      "original-contractnli:train:epoch15:dev:155:nda-3",
+      "original-contractnli:train:epoch15:dev:192:nda-17",
+      "original-contractnli:train:epoch15:dev:192:nda-7",
+      "original-contractnli:train:epoch15:dev:192:nda-3",
+      "original-contractnli:train:epoch15:dev:623:nda-17",
+      "original-contractnli:train:epoch15:dev:623:nda-7",
+      "original-contractnli:train:epoch15:dev:623:nda-3",
+      "original-contractnli:train:epoch15:dev:270:nda-17",
+      "original-contractnli:train:epoch15:dev:270:nda-7",
+      "original-contractnli:train:epoch15:dev:270:nda-3"
+    ],
+    "new_DEV_groups": [
+      603,
+      238,
+      259,
+      115,
+      155,
+      192,
+      623,
+      270
+    ],
+    "all24_and8groups_permanently_DEV": true,
+    "originaltrain_exposed_groups_after_epoch": 197,
+    "unreserved_originaltrain_groups": 210,
+    "reserved_confirmation_groups": 16,
+    "CONF_allowlist": {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch15/confirmation-allowlist.json",
+      "bytes": 12773,
+      "sha256": "65485b57d37a3341031cd4e125539e6c052f34844a60f93be7f1035db68c913e"
+    },
+    "CONF_data_SHA256_unchanged": "850b1f1d61d81ee83227ff3e62696011a9571b9349cbf926d61243bfacadbf50",
+    "CONF48_used_or_attempted": false,
+    "CONF_native_model_inference_count": 0,
+    "CONF_labels_parsed_by_auditor": false,
+    "CONF_project_model_unused": true,
+    "known_ContractNLI_supervised_models_remain_ineligible_for_this_CONF_bank": true,
+    "old_easy48_Legal96_originaldev96_f018_permanently_DEV": true
+  },
+  "direction_from_failure": [
+    "Successful real native execution and exactvector ranking rule out a native search execution failure in this measured epoch.",
+    "Typed contradiction errors and substantial overconfidence remain a decision-model/context-semantic bottleneck; the exactsourceprelude did not establish adequate legaldecision performance.",
+    "NLI forwardwall92.75907837906561seconds dominates measured119.71484335699643secondwholephase; any next fixed model needs both legally appropriate decision competence and a frozen budget forecast.",
+    "No further generic-reader/temperature/precision/sourcepriority grid on these exposedquestions. A legally trained nextmodel requires a genuinely eligible fresh confirmation source independent of its supervised data; preserve current unusedbank for eligiblemodels.",
+    "Model and context both changed, and newDEV differs from past epochs; no attribution of pointchanges to either component. No no-priority forward was run."
+  ],
+  "preservation": "Submittednative104/RRF10unchanged. No new publisher submission,email,main/merge/release/packages orproduction change. No official score/rank/SOTA.",
+  "official_score": null,
+  "official_rank": null,
+  "SOTA_established": false,
+  "auditor_model_native_session_fit_paid_GPU_calls": 0
+}

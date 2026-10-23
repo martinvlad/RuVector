@@ -1,0 +1,1905 @@
+{
+  "schema_version": 1,
+  "epoch": 15,
+  "kind": "POSTRUN_SAVED_DEV_ONLY_ERROR_TAXONOMY",
+  "generated_at_UTC": "2026-10-23T09:28:58.353918+00:00",
+  "status": "REJECTED_DEV_GATE_PRESERVE_CHAMPION",
+  "input_files": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch15/study-completion.json",
+      "bytes": 4184,
+      "sha256": "b27b75eaf387bcaaab5cc7dd5a24d96819068a20a96db690a2e6115fefb5a4a9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch15/runs/development/records.jsonl",
+      "bytes": 2288812,
+      "sha256": "f52495409beaae25fd6481fe3aa1ece0133112704b82720a08b57ce635d139ce"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch15/runs/development/development-comparison.json",
+      "bytes": 3674,
+      "sha256": "0c7adbd48a1fce4b2ee2bde3796f8c12717bb5dca0191dec2a14acdf7cf81571"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/proposal-manifest.json",
+      "bytes": 23035,
+      "sha256": "d08312546400cbab7e7be0c4b597d699fdadd5898afef7a97187dbb247b748c5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/config.json",
+      "bytes": 4153,
+      "sha256": "e465632385bc729d28a557721db0c79f03861366889d6aaedfa3c36a926daff2"
+    }
+  ],
+  "scope": "Only saved completed DEV24 outputs/source and frozen metadata. No inference, fits, retrieval replay, candidate edits, confirmation records or new measurements. All24 permanently DEV;8documentgroups are clustered, not24independent documents.",
+  "scientific_status": {
+    "official_benchmark_score_or_rank": null,
+    "confirmation_consumed": false,
+    "candidate_promoted": false,
+    "all_current_study_native_slots_closed": true,
+    "new_model_native_paid_GPU_calls_from_analysis": 0,
+    "cross_epoch_model_or_policy_causal_gain_claim": false
+  },
+  "observed_frozen_gate": {
+    "status": "REJECTED_DEV_GATE",
+    "correct_native": 14,
+    "correct_same_model_lexical": 10,
+    "correct_same_model_positional": 13,
+    "correct_native104_same_excerpt": 12,
+    "failed_conditions": [
+      "Only+1correct versus positional; frozen gate requiresatleast+2 versus each control",
+      "Native Brier0.7278608741057794 andNLL1.534083315018541 exceed same-excerpt1040.5007809996698155/0.6939281896837629"
+    ],
+    "confirmation_not_attempted": true
+  },
+  "gold_counts": {
+    "NotMentioned": 8,
+    "Entailment": 13,
+    "Contradiction": 3
+  },
+  "arms": {
+    "ruvector_top2": {
+      "recorded_frozen_metrics": {
+        "n": 24,
+        "correct": 14,
+        "accuracy": 0.5833333333333334,
+        "brier": 0.7278608741057794,
+        "nll": 1.534083315018541,
+        "strict_valid": 24,
+        "errors": 0,
+        "ece10": 0.34622445050660045,
+        "by_type": {
+          "choice": {
+            "n": 24,
+            "correct": 14,
+            "accuracy": 0.5833333333333334,
+            "brier": 0.7278608741057794,
+            "nll": 1.534083315018541,
+            "strict_valid": 24,
+            "errors": 0,
+            "ece10": 0.34622445050660045
+          }
+        },
+        "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+        "official_score": null,
+        "official_rank": null
+      },
+      "binary_confusion": [
+        {
+          "gold": "No",
+          "predicted": "No",
+          "count": 7
+        },
+        {
+          "gold": "No",
+          "predicted": "Yes",
+          "count": 4
+        },
+        {
+          "gold": "Yes",
+          "predicted": "No",
+          "count": 6
+        },
+        {
+          "gold": "Yes",
+          "predicted": "Yes",
+          "count": 7
+        }
+      ],
+      "correct_by_family": {
+        "nda-17": {
+          "n": 8,
+          "correct": 5
+        },
+        "nda-3": {
+          "n": 8,
+          "correct": 2
+        },
+        "nda-7": {
+          "n": 8,
+          "correct": 7
+        }
+      },
+      "wrong_count": 10,
+      "wrong_confidence_ge_0_90": 6,
+      "wrong_confidence_ge_0_95": 6,
+      "wrong_confidence_ge_0_99": 4,
+      "wrong_case_ids": [
+        "original-contractnli:train:epoch15:dev:603:nda-17",
+        "original-contractnli:train:epoch15:dev:603:nda-3",
+        "original-contractnli:train:epoch15:dev:238:nda-17",
+        "original-contractnli:train:epoch15:dev:238:nda-3",
+        "original-contractnli:train:epoch15:dev:259:nda-17",
+        "original-contractnli:train:epoch15:dev:155:nda-3",
+        "original-contractnli:train:epoch15:dev:192:nda-3",
+        "original-contractnli:train:epoch15:dev:623:nda-7",
+        "original-contractnli:train:epoch15:dev:623:nda-3",
+        "original-contractnli:train:epoch15:dev:270:nda-3"
+      ],
+      "typed_prediction_counts": {
+        "Entailment": 11,
+        "NotMentioned": 13
+      },
+      "typed_correct": 13,
+      "typed_confusion": [
+        {
+          "gold": "Contradiction",
+          "predicted": "Entailment",
+          "count": 2
+        },
+        {
+          "gold": "Contradiction",
+          "predicted": "NotMentioned",
+          "count": 1
+        },
+        {
+          "gold": "Entailment",
+          "predicted": "Entailment",
+          "count": 7
+        },
+        {
+          "gold": "Entailment",
+          "predicted": "NotMentioned",
+          "count": 6
+        },
+        {
+          "gold": "NotMentioned",
+          "predicted": "Entailment",
+          "count": 2
+        },
+        {
+          "gold": "NotMentioned",
+          "predicted": "NotMentioned",
+          "count": 6
+        }
+      ],
+      "mechanical_context": {
+        "priority_nonempty_queries": 24,
+        "priority_tokens": {
+          "min": 125,
+          "median": 137.5,
+          "mean": 138.375,
+          "max": 151
+        },
+        "joint_pair_tokens": {
+          "min": 431,
+          "median": 489.0,
+          "mean": 483.875,
+          "max": 509
+        },
+        "source_character_coverage": {
+          "min": 0.13636363636363635,
+          "median": 0.30079811504351905,
+          "mean": 0.32857934216994467,
+          "max": 0.8809788654060067
+        },
+        "numeric_mentions_retained_query_weighted": 79,
+        "numeric_mentions_omitted_query_weighted": 356,
+        "queries_with_omitted_numeric_mentions": 21,
+        "no_priority_context_changed_queries": 11,
+        "no_priority_displaced_queries": 11,
+        "numeric_retention_delta_vs_tokenization_only_no_priority": 3,
+        "counterfactual_scope": "Saved tokenization-only context selection. No unobserved prediction/accuracy effect or sufficiency inferred."
+      }
+    },
+    "same_nli_lexical_top2": {
+      "recorded_frozen_metrics": {
+        "n": 24,
+        "correct": 10,
+        "accuracy": 0.4166666666666667,
+        "brier": 0.868292642764401,
+        "nll": 1.7949648372020588,
+        "strict_valid": 24,
+        "errors": 0,
+        "ece10": 0.42283728311607016,
+        "by_type": {
+          "choice": {
+            "n": 24,
+            "correct": 10,
+            "accuracy": 0.4166666666666667,
+            "brier": 0.868292642764401,
+            "nll": 1.7949648372020588,
+            "strict_valid": 24,
+            "errors": 0,
+            "ece10": 0.42283728311607016
+          }
+        },
+        "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+        "official_score": null,
+        "official_rank": null
+      },
+      "binary_confusion": [
+        {
+          "gold": "No",
+          "predicted": "No",
+          "count": 7
+        },
+        {
+          "gold": "No",
+          "predicted": "Yes",
+          "count": 4
+        },
+        {
+          "gold": "Yes",
+          "predicted": "No",
+          "count": 10
+        },
+        {
+          "gold": "Yes",
+          "predicted": "Yes",
+          "count": 3
+        }
+      ],
+      "correct_by_family": {
+        "nda-17": {
+          "n": 8,
+          "correct": 3
+        },
+        "nda-3": {
+          "n": 8,
+          "correct": 2
+        },
+        "nda-7": {
+          "n": 8,
+          "correct": 5
+        }
+      },
+      "wrong_count": 14,
+      "wrong_confidence_ge_0_90": 7,
+      "wrong_confidence_ge_0_95": 7,
+      "wrong_confidence_ge_0_99": 3,
+      "wrong_case_ids": [
+        "original-contractnli:train:epoch15:dev:603:nda-17",
+        "original-contractnli:train:epoch15:dev:603:nda-7",
+        "original-contractnli:train:epoch15:dev:603:nda-3",
+        "original-contractnli:train:epoch15:dev:238:nda-17",
+        "original-contractnli:train:epoch15:dev:238:nda-3",
+        "original-contractnli:train:epoch15:dev:259:nda-17",
+        "original-contractnli:train:epoch15:dev:115:nda-17",
+        "original-contractnli:train:epoch15:dev:115:nda-7",
+        "original-contractnli:train:epoch15:dev:155:nda-17",
+        "original-contractnli:train:epoch15:dev:155:nda-3",
+        "original-contractnli:train:epoch15:dev:192:nda-7",
+        "original-contractnli:train:epoch15:dev:192:nda-3",
+        "original-contractnli:train:epoch15:dev:623:nda-3",
+        "original-contractnli:train:epoch15:dev:270:nda-3"
+      ],
+      "typed_prediction_counts": {
+        "Entailment": 7,
+        "NotMentioned": 17
+      },
+      "typed_correct": 9,
+      "typed_confusion": [
+        {
+          "gold": "Contradiction",
+          "predicted": "Entailment",
+          "count": 2
+        },
+        {
+          "gold": "Contradiction",
+          "predicted": "NotMentioned",
+          "count": 1
+        },
+        {
+          "gold": "Entailment",
+          "predicted": "Entailment",
+          "count": 3
+        },
+        {
+          "gold": "Entailment",
+          "predicted": "NotMentioned",
+          "count": 10
+        },
+        {
+          "gold": "NotMentioned",
+          "predicted": "Entailment",
+          "count": 2
+        },
+        {
+          "gold": "NotMentioned",
+          "predicted": "NotMentioned",
+          "count": 6
+        }
+      ],
+      "mechanical_context": {
+        "priority_nonempty_queries": 24,
+        "priority_tokens": {
+          "min": 125,
+          "median": 137.5,
+          "mean": 138.375,
+          "max": 151
+        },
+        "joint_pair_tokens": {
+          "min": 431,
+          "median": 477.0,
+          "mean": 475.3333333333333,
+          "max": 510
+        },
+        "source_character_coverage": {
+          "min": 0.09675324675324676,
+          "median": 0.30079811504351905,
+          "mean": 0.2935598129656001,
+          "max": 0.6414534668149796
+        },
+        "numeric_mentions_retained_query_weighted": 88,
+        "numeric_mentions_omitted_query_weighted": 347,
+        "queries_with_omitted_numeric_mentions": 24,
+        "no_priority_context_changed_queries": 16,
+        "no_priority_displaced_queries": 16,
+        "numeric_retention_delta_vs_tokenization_only_no_priority": 0,
+        "counterfactual_scope": "Saved tokenization-only context selection. No unobserved prediction/accuracy effect or sufficiency inferred."
+      }
+    },
+    "same_nli_positional_first2": {
+      "recorded_frozen_metrics": {
+        "n": 24,
+        "correct": 13,
+        "accuracy": 0.5416666666666666,
+        "brier": 0.8258607349680095,
+        "nll": 1.7374500257904033,
+        "strict_valid": 24,
+        "errors": 0,
+        "ece10": 0.4467309575267624,
+        "by_type": {
+          "choice": {
+            "n": 24,
+            "correct": 13,
+            "accuracy": 0.5416666666666666,
+            "brier": 0.8258607349680095,
+            "nll": 1.7374500257904033,
+            "strict_valid": 24,
+            "errors": 0,
+            "ece10": 0.4467309575267624
+          }
+        },
+        "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+        "official_score": null,
+        "official_rank": null
+      },
+      "binary_confusion": [
+        {
+          "gold": "No",
+          "predicted": "No",
+          "count": 9
+        },
+        {
+          "gold": "No",
+          "predicted": "Yes",
+          "count": 2
+        },
+        {
+          "gold": "Yes",
+          "predicted": "No",
+          "count": 9
+        },
+        {
+          "gold": "Yes",
+          "predicted": "Yes",
+          "count": 4
+        }
+      ],
+      "correct_by_family": {
+        "nda-17": {
+          "n": 8,
+          "correct": 5
+        },
+        "nda-3": {
+          "n": 8,
+          "correct": 2
+        },
+        "nda-7": {
+          "n": 8,
+          "correct": 6
+        }
+      },
+      "wrong_count": 11,
+      "wrong_confidence_ge_0_90": 8,
+      "wrong_confidence_ge_0_95": 7,
+      "wrong_confidence_ge_0_99": 4,
+      "wrong_case_ids": [
+        "original-contractnli:train:epoch15:dev:603:nda-7",
+        "original-contractnli:train:epoch15:dev:603:nda-3",
+        "original-contractnli:train:epoch15:dev:238:nda-17",
+        "original-contractnli:train:epoch15:dev:238:nda-3",
+        "original-contractnli:train:epoch15:dev:259:nda-17",
+        "original-contractnli:train:epoch15:dev:115:nda-7",
+        "original-contractnli:train:epoch15:dev:155:nda-17",
+        "original-contractnli:train:epoch15:dev:155:nda-3",
+        "original-contractnli:train:epoch15:dev:192:nda-3",
+        "original-contractnli:train:epoch15:dev:623:nda-3",
+        "original-contractnli:train:epoch15:dev:270:nda-3"
+      ],
+      "typed_prediction_counts": {
+        "NotMentioned": 18,
+        "Entailment": 6
+      },
+      "typed_correct": 11,
+      "typed_confusion": [
+        {
+          "gold": "Contradiction",
+          "predicted": "Entailment",
+          "count": 1
+        },
+        {
+          "gold": "Contradiction",
+          "predicted": "NotMentioned",
+          "count": 2
+        },
+        {
+          "gold": "Entailment",
+          "predicted": "Entailment",
+          "count": 4
+        },
+        {
+          "gold": "Entailment",
+          "predicted": "NotMentioned",
+          "count": 9
+        },
+        {
+          "gold": "NotMentioned",
+          "predicted": "Entailment",
+          "count": 1
+        },
+        {
+          "gold": "NotMentioned",
+          "predicted": "NotMentioned",
+          "count": 7
+        }
+      ],
+      "mechanical_context": {
+        "priority_nonempty_queries": 24,
+        "priority_tokens": {
+          "min": 125,
+          "median": 137.5,
+          "mean": 138.375,
+          "max": 151
+        },
+        "joint_pair_tokens": {
+          "min": 431,
+          "median": 479.0,
+          "mean": 476.125,
+          "max": 510
+        },
+        "source_character_coverage": {
+          "min": 0.13027711625893051,
+          "median": 0.28307367300859887,
+          "mean": 0.31749036599934094,
+          "max": 0.8809788654060067
+        },
+        "numeric_mentions_retained_query_weighted": 105,
+        "numeric_mentions_omitted_query_weighted": 330,
+        "queries_with_omitted_numeric_mentions": 21,
+        "no_priority_context_changed_queries": 0,
+        "no_priority_displaced_queries": 0,
+        "numeric_retention_delta_vs_tokenization_only_no_priority": 0,
+        "counterfactual_scope": "Saved tokenization-only context selection. No unobserved prediction/accuracy effect or sufficiency inferred."
+      }
+    },
+    "native104_on_ruvector_evidence": {
+      "recorded_frozen_metrics": {
+        "n": 24,
+        "correct": 12,
+        "accuracy": 0.5,
+        "brier": 0.5007809996698155,
+        "nll": 0.6939281896837629,
+        "strict_valid": 24,
+        "errors": 0,
+        "ece10": 0.00165578749999995,
+        "by_type": {
+          "choice": {
+            "n": 24,
+            "correct": 12,
+            "accuracy": 0.5,
+            "brier": 0.5007809996698155,
+            "nll": 0.6939281896837629,
+            "strict_valid": 24,
+            "errors": 0,
+            "ece10": 0.00165578749999995
+          }
+        },
+        "metric_scope": "legacy-public accuracy and local proper-score diagnostics; not current official Capability",
+        "official_score": null,
+        "official_rank": null
+      },
+      "binary_confusion": [
+        {
+          "gold": "No",
+          "predicted": "No",
+          "count": 8
+        },
+        {
+          "gold": "No",
+          "predicted": "Yes",
+          "count": 3
+        },
+        {
+          "gold": "Yes",
+          "predicted": "No",
+          "count": 9
+        },
+        {
+          "gold": "Yes",
+          "predicted": "Yes",
+          "count": 4
+        }
+      ],
+      "correct_by_family": {
+        "nda-17": {
+          "n": 8,
+          "correct": 4
+        },
+        "nda-3": {
+          "n": 8,
+          "correct": 5
+        },
+        "nda-7": {
+          "n": 8,
+          "correct": 3
+        }
+      },
+      "wrong_count": 12,
+      "wrong_confidence_ge_0_90": 0,
+      "wrong_confidence_ge_0_95": 0,
+      "wrong_confidence_ge_0_99": 0,
+      "wrong_case_ids": [
+        "original-contractnli:train:epoch15:dev:603:nda-17",
+        "original-contractnli:train:epoch15:dev:238:nda-7",
+        "original-contractnli:train:epoch15:dev:238:nda-3",
+        "original-contractnli:train:epoch15:dev:115:nda-17",
+        "original-contractnli:train:epoch15:dev:115:nda-7",
+        "original-contractnli:train:epoch15:dev:155:nda-17",
+        "original-contractnli:train:epoch15:dev:155:nda-7",
+        "original-contractnli:train:epoch15:dev:192:nda-17",
+        "original-contractnli:train:epoch15:dev:192:nda-7",
+        "original-contractnli:train:epoch15:dev:623:nda-3",
+        "original-contractnli:train:epoch15:dev:270:nda-7",
+        "original-contractnli:train:epoch15:dev:270:nda-3"
+      ]
+    }
+  },
+  "paired_correctness": {
+    "same_nli_lexical_top2": {
+      "native_only_correct": 5,
+      "control_only_correct": 1,
+      "both_correct": 9,
+      "both_wrong": 9,
+      "net_correct_gain": 4,
+      "groups": 8,
+      "n": 24,
+      "scope": "Matched same cases, conditional on fixed new model and definition-priority policy. Native104 comparator uses identical selected excerpt, not full submitted champion.",
+      "identical_premise_queries": 6
+    },
+    "same_nli_positional_first2": {
+      "native_only_correct": 3,
+      "control_only_correct": 2,
+      "both_correct": 11,
+      "both_wrong": 8,
+      "net_correct_gain": 1,
+      "groups": 8,
+      "n": 24,
+      "scope": "Matched same cases, conditional on fixed new model and definition-priority policy. Native104 comparator uses identical selected excerpt, not full submitted champion.",
+      "identical_premise_queries": 9
+    },
+    "native104_on_ruvector_evidence": {
+      "native_only_correct": 8,
+      "control_only_correct": 6,
+      "both_correct": 6,
+      "both_wrong": 4,
+      "net_correct_gain": 2,
+      "groups": 8,
+      "n": 24,
+      "scope": "Matched same cases, conditional on fixed new model and definition-priority policy. Native104 comparator uses identical selected excerpt, not full submitted champion."
+    }
+  },
+  "taxonomy": {
+    "native_binary_errors": 10,
+    "native_false_entailment_gold_NotMentioned": 2,
+    "native_false_entailment_gold_Contradiction": 2,
+    "native_false_negative_Entailment_to_NotMentioned": 6,
+    "native_typed_Contradiction_to_NotMentioned_hidden_by_binary_No": 1,
+    "no_Contradiction_predicted_by_any_reader_arm": true,
+    "all_three_reader_arms_binary_wrong": 8,
+    "all_three_reader_arms_typed_wrong": 10
+  },
+  "six_nda3_high_confidence_false_negatives": {
+    "cases": [
+      {
+        "id": "original-contractnli:train:epoch15:dev:603:nda-3",
+        "family": "nda-3",
+        "gold_threeway": "Entailment",
+        "predicted_threeway": "NotMentioned",
+        "probability_of_gold": 0.005447890190415433,
+        "binary_confidence": 0.9945521098095846,
+        "selected_oral_lexical_markers": [],
+        "full_source_oral_lexical_markers": [
+          "oral"
+        ],
+        "source_character_coverage": 0.29557482265510643,
+        "selected_source_spans": [
+          [
+            711,
+            1437
+          ],
+          [
+            2195,
+            3970
+          ],
+          [
+            8757,
+            8881
+          ]
+        ],
+        "no_priority_displaced_unit_ids": [
+          3
+        ],
+        "Brier_case_contribution": 1.9782677982533918,
+        "NLL_case_contribution": 5.212526866282364
+      },
+      {
+        "id": "original-contractnli:train:epoch15:dev:238:nda-3",
+        "family": "nda-3",
+        "gold_threeway": "Entailment",
+        "predicted_threeway": "NotMentioned",
+        "probability_of_gold": 0.008216652251868403,
+        "binary_confidence": 0.9917833477481316,
+        "selected_oral_lexical_markers": [],
+        "full_source_oral_lexical_markers": [
+          "oral",
+          "oral"
+        ],
+        "source_character_coverage": 0.36100513090382846,
+        "selected_source_spans": [
+          [
+            0,
+            638
+          ],
+          [
+            2149,
+            4255
+          ]
+        ],
+        "no_priority_displaced_unit_ids": [
+          7
+        ],
+        "Brier_case_contribution": 1.9672684177409827,
+        "NLL_case_contribution": 4.801592421499589
+      },
+      {
+        "id": "original-contractnli:train:epoch15:dev:155:nda-3",
+        "family": "nda-3",
+        "gold_threeway": "Entailment",
+        "predicted_threeway": "NotMentioned",
+        "probability_of_gold": 0.008264990494955457,
+        "binary_confidence": 0.9917350095050446,
+        "selected_oral_lexical_markers": [
+          "oral"
+        ],
+        "full_source_oral_lexical_markers": [
+          "oral",
+          "Oral",
+          "oral"
+        ],
+        "source_character_coverage": 0.31189845166689917,
+        "selected_source_spans": [
+          [
+            0,
+            2236
+          ]
+        ],
+        "no_priority_displaced_unit_ids": [],
+        "Brier_case_contribution": 1.9670766581559416,
+        "NLL_case_contribution": 4.795726697745448
+      },
+      {
+        "id": "original-contractnli:train:epoch15:dev:192:nda-3",
+        "family": "nda-3",
+        "gold_threeway": "Entailment",
+        "predicted_threeway": "NotMentioned",
+        "probability_of_gold": 0.012859152710693992,
+        "binary_confidence": 0.987140847289306,
+        "selected_oral_lexical_markers": [
+          "orally"
+        ],
+        "full_source_oral_lexical_markers": [
+          "orally"
+        ],
+        "source_character_coverage": 0.2074586513994911,
+        "selected_source_spans": [
+          [
+            661,
+            3270
+          ]
+        ],
+        "no_priority_displaced_unit_ids": [],
+        "Brier_case_contribution": 1.9488941047740977,
+        "NLL_case_contribution": 4.353699447981321
+      },
+      {
+        "id": "original-contractnli:train:epoch15:dev:623:nda-3",
+        "family": "nda-3",
+        "gold_threeway": "Entailment",
+        "predicted_threeway": "NotMentioned",
+        "probability_of_gold": 0.011662260642366714,
+        "binary_confidence": 0.9883377393576332,
+        "selected_oral_lexical_markers": [
+          "orally"
+        ],
+        "full_source_oral_lexical_markers": [
+          "orally",
+          "oral",
+          "oral"
+        ],
+        "source_character_coverage": 0.1556613985711193,
+        "selected_source_spans": [
+          [
+            550,
+            3426
+          ]
+        ],
+        "no_priority_displaced_unit_ids": [
+          13
+        ],
+        "Brier_case_contribution": 1.953622974077114,
+        "NLL_case_contribution": 4.451397236717749
+      },
+      {
+        "id": "original-contractnli:train:epoch15:dev:270:nda-3",
+        "family": "nda-3",
+        "gold_threeway": "Entailment",
+        "predicted_threeway": "NotMentioned",
+        "probability_of_gold": 0.006346959074371191,
+        "binary_confidence": 0.9936530409256288,
+        "selected_oral_lexical_markers": [],
+        "full_source_oral_lexical_markers": [],
+        "source_character_coverage": 0.30502810268874375,
+        "selected_source_spans": [
+          [
+            0,
+            1851
+          ],
+          [
+            5843,
+            5996
+          ],
+          [
+            6579,
+            6583
+          ]
+        ],
+        "no_priority_displaced_unit_ids": [
+          3
+        ],
+        "Brier_case_contribution": 1.9746927314814986,
+        "NLL_case_contribution": 5.05977946670582
+      }
+    ],
+    "all_share_family": "nda-3",
+    "whole_hypothesis": "Confidential Information may include verbally conveyed information.",
+    "gold": "Entailment",
+    "prediction": "NotMentioned",
+    "binary_confidence_range": {
+      "min": 0.987140847289306,
+      "median": 0.991759178626588,
+      "mean": 0.9912003491058882,
+      "max": 0.9945521098095846
+    },
+    "share_of_total_native_Brier_sum": 0.6749127880475515,
+    "share_of_total_native_NLL_sum": 0.7788234689355221,
+    "selected_lexical_oral_marker_present": 3,
+    "full_source_marker_present_but_selected_missing": 2,
+    "full_source_marker_absent": 1,
+    "interpretation_limit": "Lexical markers are descriptive, not annotation references or semantic sufficiency. Missing retrieval cannot prove insufficient evidence."
+  },
+  "priority_engagement": {
+    "document_groups": 8,
+    "groups_nonempty": 8,
+    "groups_initial_party_only": 3,
+    "group_priority_tokens": {
+      "min": 125,
+      "median": 137.5,
+      "mean": 138.375,
+      "max": 151
+    },
+    "groups_rejecting_additional_qualifying_unit_due_budget": 7,
+    "per_group": {
+      "original-contractnli:603": {
+        "priority_receipt": {
+          "policy": "Claim-independent exact whole-unit preselection; global source order, no aliases, rewrites or semantic inference",
+          "selected_unit_ids": [
+            2
+          ],
+          "selected_source_spans": [
+            [
+              711,
+              1437
+            ]
+          ],
+          "priority_text_sha256": "beeb21ce729894e55ca51d76ccfbec290ccbfec29aa7a9b35ab44977ece17f22",
+          "priority_tokens": 125,
+          "priority_token_cap": 160,
+          "initial_party_character_cap": 2048,
+          "definition_regex": "(?:\\bhereinafter\\b|\\breferred\\s+to\\s+as\\b|\\bdefined\\s+as\\b|[\"\u201c][^\"\u201d\\r\\n]{1,80}[\"\u201d]\\s*(?:shall\\s+)?(?:means?|includes?)\\b)",
+          "named_parenthetical_regex": "\\([^()\\r\\n]{0,96}[\"\u201c\u2018']\\s*(?:(?:confidential|proprietary|non[\\s\\-\\u2010-\\u2015]*public)[\\s\\-\\u2010-\\u2015]+information|data[\\s\\-\\u2010-\\u2015]+recipient|receiving[\\s\\-\\u2010-\\u2015]+party|disclosing[\\s\\-\\u2010-\\u2015]+party|vendor|recipient)\\s*[\"\u201d\u2019'][^()\\r\\n]{0,32}\\)",
+          "party_regex": "\\b(?:agreement|parties|party|recipient|disclosing|receiving)\\b",
+          "between_regex": "\\bbetween\\b",
+          "candidate_attempts": [
+            {
+              "unit_id": 2,
+              "span": [
+                711,
+                1437
+              ],
+              "source_sha256": "beeb21ce729894e55ca51d76ccfbec290ccbfec29aa7a9b35ab44977ece17f22",
+              "triggers": [
+                "explicit-quoted-named-term-parenthetical",
+                "initial-party-declaration"
+              ],
+              "candidate_priority_tokens": 125,
+              "accepted": true,
+              "reason": "admitted-whole-source-unit"
+            },
+            {
+              "unit_id": 3,
+              "span": [
+                1437,
+                2195
+              ],
+              "source_sha256": "5d4584e1f77ba9706f41551caa13115d40c137c1cdea7f485293edc15da3b7bc",
+              "triggers": [
+                "explicit-quoted-named-term-parenthetical"
+              ],
+              "candidate_priority_tokens": 261,
+              "accepted": false,
+              "reason": "whole-unit-exceeds-remaining160-token-priority-budget"
+            }
+          ],
+          "whole_units_only": true,
+          "token_fallback_admitted": false,
+          "literal_first_text_guaranteed": false,
+          "claim_dependent": false
+        },
+        "queries": 3,
+        "initial_party_only": false
+      },
+      "original-contractnli:238": {
+        "priority_receipt": {
+          "policy": "Claim-independent exact whole-unit preselection; global source order, no aliases, rewrites or semantic inference",
+          "selected_unit_ids": [
+            0
+          ],
+          "selected_source_spans": [
+            [
+              0,
+              638
+            ]
+          ],
+          "priority_text_sha256": "8b5892d6cca8b7ce67ed5e28bdce93a836e67010bf4e1446e43a6d5dd8ca9ff4",
+          "priority_tokens": 133,
+          "priority_token_cap": 160,
+          "initial_party_character_cap": 2048,
+          "definition_regex": "(?:\\bhereinafter\\b|\\breferred\\s+to\\s+as\\b|\\bdefined\\s+as\\b|[\"\u201c][^\"\u201d\\r\\n]{1,80}[\"\u201d]\\s*(?:shall\\s+)?(?:means?|includes?)\\b)",
+          "named_parenthetical_regex": "\\([^()\\r\\n]{0,96}[\"\u201c\u2018']\\s*(?:(?:confidential|proprietary|non[\\s\\-\\u2010-\\u2015]*public)[\\s\\-\\u2010-\\u2015]+information|data[\\s\\-\\u2010-\\u2015]+recipient|receiving[\\s\\-\\u2010-\\u2015]+party|disclosing[\\s\\-\\u2010-\\u2015]+party|vendor|recipient)\\s*[\"\u201d\u2019'][^()\\r\\n]{0,32}\\)",
+          "party_regex": "\\b(?:agreement|parties|party|recipient|disclosing|receiving)\\b",
+          "between_regex": "\\bbetween\\b",
+          "candidate_attempts": [
+            {
+              "unit_id": 0,
+              "span": [
+                0,
+                638
+              ],
+              "source_sha256": "8b5892d6cca8b7ce67ed5e28bdce93a836e67010bf4e1446e43a6d5dd8ca9ff4",
+              "triggers": [
+                "initial-party-declaration"
+              ],
+              "candidate_priority_tokens": 133,
+              "accepted": true,
+              "reason": "admitted-whole-source-unit"
+            },
+            {
+              "unit_id": 1,
+              "span": [
+                638,
+                1466
+              ],
+              "source_sha256": "1946f79c72c1231f721be621bcd452caa1a5a6ca0fe996cd3ca73e93604240cd",
+              "triggers": [
+                "explicit-quoted-named-term-parenthetical"
+              ],
+              "candidate_priority_tokens": 287,
+              "accepted": false,
+              "reason": "whole-unit-exceeds-remaining160-token-priority-budget"
+            }
+          ],
+          "whole_units_only": true,
+          "token_fallback_admitted": false,
+          "literal_first_text_guaranteed": false,
+          "claim_dependent": false
+        },
+        "queries": 3,
+        "initial_party_only": true
+      },
+      "original-contractnli:259": {
+        "priority_receipt": {
+          "policy": "Claim-independent exact whole-unit preselection; global source order, no aliases, rewrites or semantic inference",
+          "selected_unit_ids": [
+            0
+          ],
+          "selected_source_spans": [
+            [
+              0,
+              586
+            ]
+          ],
+          "priority_text_sha256": "c95b79471cc885330faacffdf655d31e0b961642e91b3b32354f5cc96a59f7f3",
+          "priority_tokens": 142,
+          "priority_token_cap": 160,
+          "initial_party_character_cap": 2048,
+          "definition_regex": "(?:\\bhereinafter\\b|\\breferred\\s+to\\s+as\\b|\\bdefined\\s+as\\b|[\"\u201c][^\"\u201d\\r\\n]{1,80}[\"\u201d]\\s*(?:shall\\s+)?(?:means?|includes?)\\b)",
+          "named_parenthetical_regex": "\\([^()\\r\\n]{0,96}[\"\u201c\u2018']\\s*(?:(?:confidential|proprietary|non[\\s\\-\\u2010-\\u2015]*public)[\\s\\-\\u2010-\\u2015]+information|data[\\s\\-\\u2010-\\u2015]+recipient|receiving[\\s\\-\\u2010-\\u2015]+party|disclosing[\\s\\-\\u2010-\\u2015]+party|vendor|recipient)\\s*[\"\u201d\u2019'][^()\\r\\n]{0,32}\\)",
+          "party_regex": "\\b(?:agreement|parties|party|recipient|disclosing|receiving)\\b",
+          "between_regex": "\\bbetween\\b",
+          "candidate_attempts": [
+            {
+              "unit_id": 0,
+              "span": [
+                0,
+                586
+              ],
+              "source_sha256": "c95b79471cc885330faacffdf655d31e0b961642e91b3b32354f5cc96a59f7f3",
+              "triggers": [
+                "initial-party-declaration"
+              ],
+              "candidate_priority_tokens": 142,
+              "accepted": true,
+              "reason": "admitted-whole-source-unit"
+            }
+          ],
+          "whole_units_only": true,
+          "token_fallback_admitted": false,
+          "literal_first_text_guaranteed": false,
+          "claim_dependent": false
+        },
+        "queries": 3,
+        "initial_party_only": true
+      },
+      "original-contractnli:115": {
+        "priority_receipt": {
+          "policy": "Claim-independent exact whole-unit preselection; global source order, no aliases, rewrites or semantic inference",
+          "selected_unit_ids": [
+            0
+          ],
+          "selected_source_spans": [
+            [
+              0,
+              500
+            ]
+          ],
+          "priority_text_sha256": "45ac228a8c7cd1cb5d61c533368714b726237ec3a74593fb1d7d0eaacafa44ee",
+          "priority_tokens": 139,
+          "priority_token_cap": 160,
+          "initial_party_character_cap": 2048,
+          "definition_regex": "(?:\\bhereinafter\\b|\\breferred\\s+to\\s+as\\b|\\bdefined\\s+as\\b|[\"\u201c][^\"\u201d\\r\\n]{1,80}[\"\u201d]\\s*(?:shall\\s+)?(?:means?|includes?)\\b)",
+          "named_parenthetical_regex": "\\([^()\\r\\n]{0,96}[\"\u201c\u2018']\\s*(?:(?:confidential|proprietary|non[\\s\\-\\u2010-\\u2015]*public)[\\s\\-\\u2010-\\u2015]+information|data[\\s\\-\\u2010-\\u2015]+recipient|receiving[\\s\\-\\u2010-\\u2015]+party|disclosing[\\s\\-\\u2010-\\u2015]+party|vendor|recipient)\\s*[\"\u201d\u2019'][^()\\r\\n]{0,32}\\)",
+          "party_regex": "\\b(?:agreement|parties|party|recipient|disclosing|receiving)\\b",
+          "between_regex": "\\bbetween\\b",
+          "candidate_attempts": [
+            {
+              "unit_id": 0,
+              "span": [
+                0,
+                500
+              ],
+              "source_sha256": "45ac228a8c7cd1cb5d61c533368714b726237ec3a74593fb1d7d0eaacafa44ee",
+              "triggers": [
+                "explicit-definition-marker",
+                "explicit-quoted-named-term-parenthetical",
+                "initial-party-declaration"
+              ],
+              "candidate_priority_tokens": 139,
+              "accepted": true,
+              "reason": "admitted-whole-source-unit"
+            },
+            {
+              "unit_id": 2,
+              "span": [
+                1320,
+                2061
+              ],
+              "source_sha256": "51b7c9f6604f83f1b584907bb394394231627ce68ad67a00626931c01b997fc0",
+              "triggers": [
+                "explicit-definition-marker"
+              ],
+              "candidate_priority_tokens": 274,
+              "accepted": false,
+              "reason": "whole-unit-exceeds-remaining160-token-priority-budget"
+            }
+          ],
+          "whole_units_only": true,
+          "token_fallback_admitted": false,
+          "literal_first_text_guaranteed": false,
+          "claim_dependent": false
+        },
+        "queries": 3,
+        "initial_party_only": false
+      },
+      "original-contractnli:155": {
+        "priority_receipt": {
+          "policy": "Claim-independent exact whole-unit preselection; global source order, no aliases, rewrites or semantic inference",
+          "selected_unit_ids": [
+            0
+          ],
+          "selected_source_spans": [
+            [
+              0,
+              464
+            ]
+          ],
+          "priority_text_sha256": "3a61a55bd6be2c5797c88868581f760612d421667305da93e0aeb8b8708e751d",
+          "priority_tokens": 136,
+          "priority_token_cap": 160,
+          "initial_party_character_cap": 2048,
+          "definition_regex": "(?:\\bhereinafter\\b|\\breferred\\s+to\\s+as\\b|\\bdefined\\s+as\\b|[\"\u201c][^\"\u201d\\r\\n]{1,80}[\"\u201d]\\s*(?:shall\\s+)?(?:means?|includes?)\\b)",
+          "named_parenthetical_regex": "\\([^()\\r\\n]{0,96}[\"\u201c\u2018']\\s*(?:(?:confidential|proprietary|non[\\s\\-\\u2010-\\u2015]*public)[\\s\\-\\u2010-\\u2015]+information|data[\\s\\-\\u2010-\\u2015]+recipient|receiving[\\s\\-\\u2010-\\u2015]+party|disclosing[\\s\\-\\u2010-\\u2015]+party|vendor|recipient)\\s*[\"\u201d\u2019'][^()\\r\\n]{0,32}\\)",
+          "party_regex": "\\b(?:agreement|parties|party|recipient|disclosing|receiving)\\b",
+          "between_regex": "\\bbetween\\b",
+          "candidate_attempts": [
+            {
+              "unit_id": 0,
+              "span": [
+                0,
+                464
+              ],
+              "source_sha256": "3a61a55bd6be2c5797c88868581f760612d421667305da93e0aeb8b8708e751d",
+              "triggers": [
+                "initial-party-declaration"
+              ],
+              "candidate_priority_tokens": 136,
+              "accepted": true,
+              "reason": "admitted-whole-source-unit"
+            },
+            {
+              "unit_id": 1,
+              "span": [
+                464,
+                814
+              ],
+              "source_sha256": "94489164129dda68f8f63c689da8c731463f843b229487a29348ec6d6855a386",
+              "triggers": [
+                "explicit-definition-marker",
+                "explicit-quoted-named-term-parenthetical"
+              ],
+              "candidate_priority_tokens": 204,
+              "accepted": false,
+              "reason": "whole-unit-exceeds-remaining160-token-priority-budget"
+            }
+          ],
+          "whole_units_only": true,
+          "token_fallback_admitted": false,
+          "literal_first_text_guaranteed": false,
+          "claim_dependent": false
+        },
+        "queries": 3,
+        "initial_party_only": true
+      },
+      "original-contractnli:192": {
+        "priority_receipt": {
+          "policy": "Claim-independent exact whole-unit preselection; global source order, no aliases, rewrites or semantic inference",
+          "selected_unit_ids": [
+            2
+          ],
+          "selected_source_spans": [
+            [
+              661,
+              1447
+            ]
+          ],
+          "priority_text_sha256": "1c09f7daa11be3b113cecf115eb8fc82ce5e2e96941a3fa5db80b83237eb34e7",
+          "priority_tokens": 151,
+          "priority_token_cap": 160,
+          "initial_party_character_cap": 2048,
+          "definition_regex": "(?:\\bhereinafter\\b|\\breferred\\s+to\\s+as\\b|\\bdefined\\s+as\\b|[\"\u201c][^\"\u201d\\r\\n]{1,80}[\"\u201d]\\s*(?:shall\\s+)?(?:means?|includes?)\\b)",
+          "named_parenthetical_regex": "\\([^()\\r\\n]{0,96}[\"\u201c\u2018']\\s*(?:(?:confidential|proprietary|non[\\s\\-\\u2010-\\u2015]*public)[\\s\\-\\u2010-\\u2015]+information|data[\\s\\-\\u2010-\\u2015]+recipient|receiving[\\s\\-\\u2010-\\u2015]+party|disclosing[\\s\\-\\u2010-\\u2015]+party|vendor|recipient)\\s*[\"\u201d\u2019'][^()\\r\\n]{0,32}\\)",
+          "party_regex": "\\b(?:agreement|parties|party|recipient|disclosing|receiving)\\b",
+          "between_regex": "\\bbetween\\b",
+          "candidate_attempts": [
+            {
+              "unit_id": 0,
+              "span": [
+                0,
+                498
+              ],
+              "source_sha256": "f44e640b5bc27e3537dcb88284d247c894dae98c22fde0c8c659c5d8963caa88",
+              "triggers": [
+                "explicit-definition-marker",
+                "initial-party-declaration"
+              ],
+              "candidate_priority_tokens": 128,
+              "accepted": false,
+              "reason": "token-fallback-not-whole-original-atom"
+            },
+            {
+              "unit_id": 1,
+              "span": [
+                498,
+                661
+              ],
+              "source_sha256": "0406d3319cc1bfaefc2d4974c8ce9f38720fd7740859dc9d1f63dc97252b265c",
+              "triggers": [
+                "explicit-definition-marker"
+              ],
+              "candidate_priority_tokens": 35,
+              "accepted": false,
+              "reason": "token-fallback-not-whole-original-atom"
+            },
+            {
+              "unit_id": 2,
+              "span": [
+                661,
+                1447
+              ],
+              "source_sha256": "1c09f7daa11be3b113cecf115eb8fc82ce5e2e96941a3fa5db80b83237eb34e7",
+              "triggers": [
+                "explicit-definition-marker",
+                "explicit-quoted-named-term-parenthetical",
+                "initial-party-declaration"
+              ],
+              "candidate_priority_tokens": 151,
+              "accepted": true,
+              "reason": "admitted-whole-source-unit"
+            },
+            {
+              "unit_id": 3,
+              "span": [
+                1447,
+                2114
+              ],
+              "source_sha256": "5a5551dd2afda19be7e07b5f6f87b06e9b6bc40201719845e38dd613577ea6ae",
+              "triggers": [
+                "explicit-definition-marker",
+                "explicit-quoted-named-term-parenthetical"
+              ],
+              "candidate_priority_tokens": 271,
+              "accepted": false,
+              "reason": "whole-unit-exceeds-remaining160-token-priority-budget"
+            }
+          ],
+          "whole_units_only": true,
+          "token_fallback_admitted": false,
+          "literal_first_text_guaranteed": false,
+          "claim_dependent": false
+        },
+        "queries": 3,
+        "initial_party_only": false
+      },
+      "original-contractnli:623": {
+        "priority_receipt": {
+          "policy": "Claim-independent exact whole-unit preselection; global source order, no aliases, rewrites or semantic inference",
+          "selected_unit_ids": [
+            1
+          ],
+          "selected_source_spans": [
+            [
+              550,
+              1361
+            ]
+          ],
+          "priority_text_sha256": "939dab4978ddb82f28da9063cf3a40d677c429ebef2a838e22e77861e91357c4",
+          "priority_tokens": 145,
+          "priority_token_cap": 160,
+          "initial_party_character_cap": 2048,
+          "definition_regex": "(?:\\bhereinafter\\b|\\breferred\\s+to\\s+as\\b|\\bdefined\\s+as\\b|[\"\u201c][^\"\u201d\\r\\n]{1,80}[\"\u201d]\\s*(?:shall\\s+)?(?:means?|includes?)\\b)",
+          "named_parenthetical_regex": "\\([^()\\r\\n]{0,96}[\"\u201c\u2018']\\s*(?:(?:confidential|proprietary|non[\\s\\-\\u2010-\\u2015]*public)[\\s\\-\\u2010-\\u2015]+information|data[\\s\\-\\u2010-\\u2015]+recipient|receiving[\\s\\-\\u2010-\\u2015]+party|disclosing[\\s\\-\\u2010-\\u2015]+party|vendor|recipient)\\s*[\"\u201d\u2019'][^()\\r\\n]{0,32}\\)",
+          "party_regex": "\\b(?:agreement|parties|party|recipient|disclosing|receiving)\\b",
+          "between_regex": "\\bbetween\\b",
+          "candidate_attempts": [
+            {
+              "unit_id": 1,
+              "span": [
+                550,
+                1361
+              ],
+              "source_sha256": "939dab4978ddb82f28da9063cf3a40d677c429ebef2a838e22e77861e91357c4",
+              "triggers": [
+                "explicit-definition-marker"
+              ],
+              "candidate_priority_tokens": 145,
+              "accepted": true,
+              "reason": "admitted-whole-source-unit"
+            },
+            {
+              "unit_id": 3,
+              "span": [
+                1678,
+                2407
+              ],
+              "source_sha256": "7128e39f1bbfb6e21241d23da96572863316374972d226cc3f22d69dc8a81dc9",
+              "triggers": [
+                "explicit-definition-marker"
+              ],
+              "candidate_priority_tokens": 273,
+              "accepted": false,
+              "reason": "token-fallback-not-whole-original-atom"
+            },
+            {
+              "unit_id": 7,
+              "span": [
+                4254,
+                4959
+              ],
+              "source_sha256": "98d64f406aba6f256be3645867901516788d3b26c4852eaa166e78017339ca51",
+              "triggers": [
+                "explicit-definition-marker"
+              ],
+              "candidate_priority_tokens": 281,
+              "accepted": false,
+              "reason": "whole-unit-exceeds-remaining160-token-priority-budget"
+            }
+          ],
+          "whole_units_only": true,
+          "token_fallback_admitted": false,
+          "literal_first_text_guaranteed": false,
+          "claim_dependent": false
+        },
+        "queries": 3,
+        "initial_party_only": false
+      },
+      "original-contractnli:270": {
+        "priority_receipt": {
+          "policy": "Claim-independent exact whole-unit preselection; global source order, no aliases, rewrites or semantic inference",
+          "selected_unit_ids": [
+            0
+          ],
+          "selected_source_spans": [
+            [
+              0,
+              430
+            ]
+          ],
+          "priority_text_sha256": "cf4b1cedeb21a564c0789783f1e0f01e860c3ca2e47cedc9cca10c3e5ec3eecc",
+          "priority_tokens": 136,
+          "priority_token_cap": 160,
+          "initial_party_character_cap": 2048,
+          "definition_regex": "(?:\\bhereinafter\\b|\\breferred\\s+to\\s+as\\b|\\bdefined\\s+as\\b|[\"\u201c][^\"\u201d\\r\\n]{1,80}[\"\u201d]\\s*(?:shall\\s+)?(?:means?|includes?)\\b)",
+          "named_parenthetical_regex": "\\([^()\\r\\n]{0,96}[\"\u201c\u2018']\\s*(?:(?:confidential|proprietary|non[\\s\\-\\u2010-\\u2015]*public)[\\s\\-\\u2010-\\u2015]+information|data[\\s\\-\\u2010-\\u2015]+recipient|receiving[\\s\\-\\u2010-\\u2015]+party|disclosing[\\s\\-\\u2010-\\u2015]+party|vendor|recipient)\\s*[\"\u201d\u2019'][^()\\r\\n]{0,32}\\)",
+          "party_regex": "\\b(?:agreement|parties|party|recipient|disclosing|receiving)\\b",
+          "between_regex": "\\bbetween\\b",
+          "candidate_attempts": [
+            {
+              "unit_id": 0,
+              "span": [
+                0,
+                430
+              ],
+              "source_sha256": "cf4b1cedeb21a564c0789783f1e0f01e860c3ca2e47cedc9cca10c3e5ec3eecc",
+              "triggers": [
+                "explicit-definition-marker",
+                "initial-party-declaration"
+              ],
+              "candidate_priority_tokens": 136,
+              "accepted": true,
+              "reason": "admitted-whole-source-unit"
+            },
+            {
+              "unit_id": 1,
+              "span": [
+                430,
+                1168
+              ],
+              "source_sha256": "fa3f03fa5aa47bf7a338cf6cf05eff62b1e4129a61de36cd7cef2cd353c1c203",
+              "triggers": [
+                "explicit-quoted-named-term-parenthetical"
+              ],
+              "candidate_priority_tokens": 262,
+              "accepted": false,
+              "reason": "whole-unit-exceeds-remaining160-token-priority-budget"
+            }
+          ],
+          "whole_units_only": true,
+          "token_fallback_admitted": false,
+          "literal_first_text_guaranteed": false,
+          "claim_dependent": false
+        },
+        "queries": 3,
+        "initial_party_only": false
+      }
+    },
+    "interpretation": "Concrete source preselection operates, but source-order greediness can consume the cap on introductions and reject later definitions. Eleven native contexts changed relative to saved tokenization-only no-priority trace; no reader ran that counterfactual, so no prefix accuracy gain is established."
+  },
+  "saved_output_mechanical_integrity_checks": {
+    "all_primary_premises_exact_source_spans": true,
+    "all_arms_shared_priority": true,
+    "all_arms_pair_cap512": true,
+    "whole_claim_preserved": true
+  },
+  "bounded_manual_observations": [
+    {
+      "id": "original-contractnli:train:epoch15:dev:155:nda-3",
+      "hypothesis": "Confidential Information may include verbally conveyed information.",
+      "selected_exact_quote": "any and all oral and written proprietary information",
+      "gold_threeway": "Entailment",
+      "native_typed_probabilities": {
+        "Entailment": 0.008264990494955457,
+        "Contradiction": 0.00042007628813158686,
+        "NotMentioned": 0.991314933216913
+      },
+      "observation": "Direct oral/written wording is present in the actual premise, yet the fixed reader gives NotMentioned0.9913. This refutes a blanket claim that all six errors are explained by omission of every oral marker; it is not a complete proof of legal sufficiency."
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:270:nda-3",
+      "hypothesis": "Confidential Information may include verbally conveyed information.",
+      "selected_exact_quote": "Disclosed in any other manner and identified as confidential",
+      "gold_threeway": "Entailment",
+      "native_typed_probabilities": {
+        "Entailment": 0.006346959074371191,
+        "Contradiction": 0.000520188447860373,
+        "NotMentioned": 0.9931328524777684
+      },
+      "observation": "The selected text includes indirect modality with a written-summary condition. It has no explicit oral/verbal keyword even in the full source. Pure lexical marker absence therefore cannot establish lack of relevant information."
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:259:nda-17",
+      "hypothesis": "Receiving Party may create a copy of some Confidential Information in some circumstances.",
+      "selected_exact_quote": "not to reproduce said materials without written consent",
+      "gold_threeway": "Contradiction",
+      "native_typed_probabilities": {
+        "Entailment": 0.7645291917200991,
+        "Contradiction": 0.006965913469585675,
+        "NotMentioned": 0.22850489481031513
+      },
+      "observation": "GoldContradiction remains unchanged; the reader predictsEntailment. The observed clause is a conditional prohibition, while the hypothesis says may create a copy in some circumstances. Permission/condition versus benchmark annotation semantics require careful documented review; this analysis does not relabel the example or adjudicate the gold."
+    }
+  ],
+  "case_summaries": [
+    {
+      "id": "original-contractnli:train:epoch15:dev:603:nda-17",
+      "source_group": "original-contractnli:603",
+      "family": "nda-17",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "native_binary": "Yes",
+      "native_typed": "Entailment",
+      "native_confidence": 0.7678225990665675,
+      "native_typed_probabilities": {
+        "Entailment": 0.7678225990665675,
+        "Contradiction": 0.00796051061040808,
+        "NotMentioned": 0.22421689032302436
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.2997410201553879,
+      "priority_ids": [
+        2
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:603:nda-7",
+      "source_group": "original-contractnli:603",
+      "family": "nda-7",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "native_binary": "Yes",
+      "native_typed": "Entailment",
+      "native_confidence": 0.8746912500670313,
+      "native_typed_probabilities": {
+        "Entailment": 0.8746912500670313,
+        "Contradiction": 0.007665149821377598,
+        "NotMentioned": 0.11764360011159108
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.2997410201553879,
+      "priority_ids": [
+        2
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:603:nda-3",
+      "source_group": "original-contractnli:603",
+      "family": "nda-3",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "native_binary": "No",
+      "native_typed": "NotMentioned",
+      "native_confidence": 0.9945521098095846,
+      "native_typed_probabilities": {
+        "Entailment": 0.005447890190415433,
+        "Contradiction": 0.0002985382826676777,
+        "NotMentioned": 0.994253571526917
+      },
+      "all_three_reader_arms_binary_wrong": true,
+      "all_three_reader_arms_typed_wrong": true,
+      "source_coverage": 0.29557482265510643,
+      "priority_ids": [
+        2
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:238:nda-17",
+      "source_group": "original-contractnli:238",
+      "family": "nda-17",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "native_binary": "Yes",
+      "native_typed": "Entailment",
+      "native_confidence": 0.6283184904556398,
+      "native_typed_probabilities": {
+        "Entailment": 0.6283184904556398,
+        "Contradiction": 0.006752076071760811,
+        "NotMentioned": 0.36492943347259954
+      },
+      "all_three_reader_arms_binary_wrong": true,
+      "all_three_reader_arms_typed_wrong": true,
+      "source_coverage": 0.31535324299434286,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:238:nda-7",
+      "source_group": "original-contractnli:238",
+      "family": "nda-7",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "native_binary": "Yes",
+      "native_typed": "Entailment",
+      "native_confidence": 0.7395263107521052,
+      "native_typed_probabilities": {
+        "Entailment": 0.7395263107521052,
+        "Contradiction": 0.027712143324249306,
+        "NotMentioned": 0.23276154592364556
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.32179976318905407,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:238:nda-3",
+      "source_group": "original-contractnli:238",
+      "family": "nda-3",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "native_binary": "No",
+      "native_typed": "NotMentioned",
+      "native_confidence": 0.9917833477481316,
+      "native_typed_probabilities": {
+        "Entailment": 0.008216652251868403,
+        "Contradiction": 0.0008085502723386241,
+        "NotMentioned": 0.990974797475793
+      },
+      "all_three_reader_arms_binary_wrong": true,
+      "all_three_reader_arms_typed_wrong": true,
+      "source_coverage": 0.36100513090382846,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:259:nda-17",
+      "source_group": "original-contractnli:259",
+      "family": "nda-17",
+      "gold_binary": "No",
+      "gold_threeway": "Contradiction",
+      "native_binary": "Yes",
+      "native_typed": "Entailment",
+      "native_confidence": 0.7645291917200991,
+      "native_typed_probabilities": {
+        "Entailment": 0.7645291917200991,
+        "Contradiction": 0.006965913469585675,
+        "NotMentioned": 0.22850489481031513
+      },
+      "all_three_reader_arms_binary_wrong": true,
+      "all_three_reader_arms_typed_wrong": true,
+      "source_coverage": 0.8809788654060067,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:259:nda-7",
+      "source_group": "original-contractnli:259",
+      "family": "nda-7",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "native_binary": "No",
+      "native_typed": "NotMentioned",
+      "native_confidence": 0.6926345685878664,
+      "native_typed_probabilities": {
+        "Entailment": 0.3073654314121336,
+        "Contradiction": 0.012835793590448076,
+        "NotMentioned": 0.6797987749974184
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.8809788654060067,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:259:nda-3",
+      "source_group": "original-contractnli:259",
+      "family": "nda-3",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "native_binary": "No",
+      "native_typed": "NotMentioned",
+      "native_confidence": 0.9884218749183501,
+      "native_typed_probabilities": {
+        "Entailment": 0.011578125081649866,
+        "Contradiction": 0.0007271667974529813,
+        "NotMentioned": 0.9876947081208971
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.8809788654060067,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:115:nda-17",
+      "source_group": "original-contractnli:115",
+      "family": "nda-17",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "native_binary": "Yes",
+      "native_typed": "Entailment",
+      "native_confidence": 0.9442934608481152,
+      "native_typed_probabilities": {
+        "Entailment": 0.9442934608481152,
+        "Contradiction": 0.0030894495315592547,
+        "NotMentioned": 0.05261708962032564
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.1647186147186147,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:115:nda-7",
+      "source_group": "original-contractnli:115",
+      "family": "nda-7",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "native_binary": "Yes",
+      "native_typed": "Entailment",
+      "native_confidence": 0.9662548158997528,
+      "native_typed_probabilities": {
+        "Entailment": 0.9662548158997528,
+        "Contradiction": 0.0008308451529065929,
+        "NotMentioned": 0.03291433894734057
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.14098124098124099,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:115:nda-3",
+      "source_group": "original-contractnli:115",
+      "family": "nda-3",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "native_binary": "No",
+      "native_typed": "NotMentioned",
+      "native_confidence": 0.9955274139542365,
+      "native_typed_probabilities": {
+        "Entailment": 0.0044725860457635715,
+        "Contradiction": 0.0005204007800565541,
+        "NotMentioned": 0.9950070131741799
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.13636363636363635,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:155:nda-17",
+      "source_group": "original-contractnli:155",
+      "family": "nda-17",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "native_binary": "Yes",
+      "native_typed": "Entailment",
+      "native_confidence": 0.6452487063309671,
+      "native_typed_probabilities": {
+        "Entailment": 0.6452487063309671,
+        "Contradiction": 0.033921237206484614,
+        "NotMentioned": 0.32083005646254836
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.30185520993165016,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:155:nda-7",
+      "source_group": "original-contractnli:155",
+      "family": "nda-7",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "native_binary": "Yes",
+      "native_typed": "Entailment",
+      "native_confidence": 0.912492669011736,
+      "native_typed_probabilities": {
+        "Entailment": 0.912492669011736,
+        "Contradiction": 0.007256811670876973,
+        "NotMentioned": 0.080250519317387
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.31189845166689917,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:155:nda-3",
+      "source_group": "original-contractnli:155",
+      "family": "nda-3",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "native_binary": "No",
+      "native_typed": "NotMentioned",
+      "native_confidence": 0.9917350095050446,
+      "native_typed_probabilities": {
+        "Entailment": 0.008264990494955457,
+        "Contradiction": 0.00042007628813158686,
+        "NotMentioned": 0.991314933216913
+      },
+      "all_three_reader_arms_binary_wrong": true,
+      "all_three_reader_arms_typed_wrong": true,
+      "source_coverage": 0.31189845166689917,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:192:nda-17",
+      "source_group": "original-contractnli:192",
+      "family": "nda-17",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "native_binary": "No",
+      "native_typed": "NotMentioned",
+      "native_confidence": 0.9625447619803051,
+      "native_typed_probabilities": {
+        "Entailment": 0.03745523801969487,
+        "Contradiction": 0.0008130837498056078,
+        "NotMentioned": 0.9617316782304995
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.2074586513994911,
+      "priority_ids": [
+        2
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:192:nda-7",
+      "source_group": "original-contractnli:192",
+      "family": "nda-7",
+      "gold_binary": "No",
+      "gold_threeway": "Contradiction",
+      "native_binary": "No",
+      "native_typed": "NotMentioned",
+      "native_confidence": 0.7048643591914002,
+      "native_typed_probabilities": {
+        "Entailment": 0.2951356408085997,
+        "Contradiction": 0.003906802703101607,
+        "NotMentioned": 0.7009575564882986
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": true,
+      "source_coverage": 0.2074586513994911,
+      "priority_ids": [
+        2
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:192:nda-3",
+      "source_group": "original-contractnli:192",
+      "family": "nda-3",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "native_binary": "No",
+      "native_typed": "NotMentioned",
+      "native_confidence": 0.987140847289306,
+      "native_typed_probabilities": {
+        "Entailment": 0.012859152710693992,
+        "Contradiction": 0.0004137884228661854,
+        "NotMentioned": 0.9867270588664397
+      },
+      "all_three_reader_arms_binary_wrong": true,
+      "all_three_reader_arms_typed_wrong": true,
+      "source_coverage": 0.2074586513994911,
+      "priority_ids": [
+        2
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:623:nda-17",
+      "source_group": "original-contractnli:623",
+      "family": "nda-17",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "native_binary": "No",
+      "native_typed": "NotMentioned",
+      "native_confidence": 0.6501721657995297,
+      "native_typed_probabilities": {
+        "Entailment": 0.34982783420047037,
+        "Contradiction": 0.007972739594561983,
+        "NotMentioned": 0.6421994262049677
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.1444576748213899,
+      "priority_ids": [
+        1
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:623:nda-7",
+      "source_group": "original-contractnli:623",
+      "family": "nda-7",
+      "gold_binary": "No",
+      "gold_threeway": "Contradiction",
+      "native_binary": "Yes",
+      "native_typed": "Entailment",
+      "native_confidence": 0.7211182074652639,
+      "native_typed_probabilities": {
+        "Entailment": 0.7211182074652639,
+        "Contradiction": 0.011049078216196877,
+        "NotMentioned": 0.2678327143185392
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": true,
+      "source_coverage": 0.1444576748213899,
+      "priority_ids": [
+        1
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:623:nda-3",
+      "source_group": "original-contractnli:623",
+      "family": "nda-3",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "native_binary": "No",
+      "native_typed": "NotMentioned",
+      "native_confidence": 0.9883377393576332,
+      "native_typed_probabilities": {
+        "Entailment": 0.011662260642366714,
+        "Contradiction": 0.00027476334481733075,
+        "NotMentioned": 0.9880629760128159
+      },
+      "all_three_reader_arms_binary_wrong": true,
+      "all_three_reader_arms_typed_wrong": true,
+      "source_coverage": 0.1556613985711193,
+      "priority_ids": [
+        1
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:270:nda-17",
+      "source_group": "original-contractnli:270",
+      "family": "nda-17",
+      "gold_binary": "No",
+      "gold_threeway": "NotMentioned",
+      "native_binary": "No",
+      "native_typed": "NotMentioned",
+      "native_confidence": 0.9196931845643874,
+      "native_typed_probabilities": {
+        "Entailment": 0.0803068154356125,
+        "Contradiction": 0.003159288133759374,
+        "NotMentioned": 0.9165338964306281
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.30502810268874375,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:270:nda-7",
+      "source_group": "original-contractnli:270",
+      "family": "nda-7",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "native_binary": "Yes",
+      "native_typed": "Entailment",
+      "native_confidence": 0.5338389506082021,
+      "native_typed_probabilities": {
+        "Entailment": 0.5338389506082021,
+        "Contradiction": 0.008612644709758043,
+        "NotMentioned": 0.45754840468203994
+      },
+      "all_three_reader_arms_binary_wrong": false,
+      "all_three_reader_arms_typed_wrong": false,
+      "source_coverage": 0.30502810268874375,
+      "priority_ids": [
+        0
+      ]
+    },
+    {
+      "id": "original-contractnli:train:epoch15:dev:270:nda-3",
+      "source_group": "original-contractnli:270",
+      "family": "nda-3",
+      "gold_binary": "Yes",
+      "gold_threeway": "Entailment",
+      "native_binary": "No",
+      "native_typed": "NotMentioned",
+      "native_confidence": 0.9936530409256288,
+      "native_typed_probabilities": {
+        "Entailment": 0.006346959074371191,
+        "Contradiction": 0.000520188447860373,
+        "NotMentioned": 0.9931328524777684
+      },
+      "all_three_reader_arms_binary_wrong": true,
+      "all_three_reader_arms_typed_wrong": true,
+      "source_coverage": 0.30502810268874375,
+      "priority_ids": [
+        0
+      ]
+    }
+  ],
+  "next_hypotheses_not_executed": [
+    {
+      "priority": 1,
+      "hypothesis": "Establish typed legal semantic competence for permission, conditional exceptions, modality and oral-information scope using an actually stronger eligible pretrained model or source-licensed TRAIN-only adaptation. Test a frozen semantic mechanism on exposedTRAIN/DEV without selecting on confirmation; require a separate genuinely unused confirmation gate.",
+      "reason": "NoContradiction predictions across all3arms, and explicit oral wording can remain while high-confidence NotMentioned persists. Another generic reader/precision/temperature grid is not justified.",
+      "gates": "Known ContractNLI-supervised legal models invalidate current originaltrainCONF48; require clean source/training/selection lineage and eligiblebank before native admission."
+    },
+    {
+      "priority": 2,
+      "hypothesis": "Evaluate one source-licensed structured evidence policy that prioritizes claim-relevant definitions plus operative permissions/exceptions and conserves exact source spans, rather than always spending mostprioritybudget on earliest introductoryunit.",
+      "reason": "Definitions engage but additional candidates are rejected in7/8groups, and2/6high-confidence oral false-negatives omit explicit full-sourceoralmarkers. Shared-context failures also remain.",
+      "gates": "Design on exposeddata only; new unusedDEV/CONF roles/source/CPU2/2x600s budget frozen before measurements; matched same-model retrieval controls; no semantic absence inference from misses."
+    },
+    {
+      "priority": 3,
+      "hypothesis": "Document benchmark annotation treatment of conditional prohibitions versus inferred permissions before proposing any typed-label head change.",
+      "reason": "One saved goldContradiction case includes not reproduce without written consent while the hypothesis asks permission in some circumstances. This is a reviewable semantic ambiguity, not authority to changegold.",
+      "gates": "Preserve original labels, isolate TRAIN/DEV investigation and retain uncertainty. No confirmation-label analysis."
+    }
+  ],
+  "rejected_shortcuts": [
+    "Do not promote on14/24alone or compare it causally with12/24fromdifferentepoch13documents/model/precision/context",
+    "Do not retune temperature/threshold/prelude size or runanothergrid on these24asfreshconfirmation",
+    "Do not call a definition/number retained or omitted sufficient proof of entailment/contradiction/absence",
+    "Do not consumeCONF after failedDEV, duplicatepublisher submission, or claim currentJev300/fullLegalBench/ClaimBench placement"
+  ]
+}

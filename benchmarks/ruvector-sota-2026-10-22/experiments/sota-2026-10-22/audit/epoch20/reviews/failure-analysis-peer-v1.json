@@ -1,0 +1,165 @@
+{
+  "all_twelve_arm_receipts_checked": {
+    "all_anchor_packing_attempts_match_without_retokenization": true,
+    "all_no_priority_trace_fields_match_saved_tokenization_only_receipts": true,
+    "anchor_ranks_unit_retention_and_quote_presence_match": true,
+    "arm_names_treated_as_legacy_identifiers_not_literal_two_unit_counts": true,
+    "binary_predictions_exactly_raw": true,
+    "claim_evidence_truncation_flags_and_pair_token_counts_match": true,
+    "definition_priority_unit_ids_match": true,
+    "feed_and_input_hashes_exactly_raw": true,
+    "no_priority_receipt_model_forwards": 0,
+    "premise_SHA256_matches_literal_saved_premise": true,
+    "selected_and_omitted_unit_ids_source_spans_retained_characters_and_coverage_match": true,
+    "selected_span_lengths_equal_reported_retained_source_characters": true,
+    "typed_probabilities_and_predictions_exactly_raw": true
+  },
+  "at": "2026-10-23T19:39:11.733937+00:00",
+  "case_join_and_literal_checks": {
+    "all_24_gold_ids_join_exactly_to_24_sealed_question_ids": true,
+    "all_four_quote_bytes_equal_exact_saved_state_slices": true,
+    "all_four_quote_spans_contained_in_claimed_saved_source_units": true,
+    "case_ids": [
+      "original-contractnli:train:epoch20:dev:470:nda-17",
+      "original-contractnli:train:epoch20:dev:470:nda-7",
+      "original-contractnli:train:epoch20:dev:423:nda-7",
+      "original-contractnli:train:epoch20:dev:393:nda-7"
+    ],
+    "distinct_documents": 3,
+    "document_470_contributes_two_hypotheses": true,
+    "document_id_hypothesis_id_and_hypothesis_text_match": true,
+    "four_reported_cases_are_exactly_all_four_gold_Contradiction_rows": true,
+    "literal_restriction_anchors_are_posthoc_not_official_evidence_annotations": true,
+    "source_document_SHA256_and_source_unit_counts_match_raw": true
+  },
+  "checks_passed": true,
+  "epoch": 20,
+  "finding_and_resolution": {
+    "all_original_numeric_case_prediction_gold_gate_and_causal_limit_contents_unchanged": true,
+    "exact_diff_verified": true,
+    "finding_id": "UNSUPPORTED_HUMAN_ATTRIBUTION_IN_V1",
+    "original_finding": "Each of four literal-anchor scopes said a human identified the clause. Allowed receipts establish posthoc inspection, not human authorship.",
+    "original_v1_preserved_byte_exact": true,
+    "resolved_by": "Immutable analysis v2 replaces only four scope phrases with Posthoc inspection identified and adds narrative version, correction timestamp and supersedes metadata.",
+    "severity": "Narrative attribution only; no numeric or gate effect.",
+    "unresolved_findings": []
+  },
+  "limits": [
+    "Only the three sealed DEV evidence receipts and the two posthoc narrative versions were read for this review.",
+    "This review does not reproduce model inference, retokenize contexts, re-establish source truth or validate the legal annotations.",
+    "Tokenization-only no-priority traces were compared as saved receipts; they provide no observed alternative model outcome.",
+    "This is a peer review of posthoc DEV diagnosis. It does not reopen the rejected candidate, consume confirmation, permit another epoch20 inference, promote the champion or establish any official score/rank."
+  ],
+  "metrics_and_rejection_review": {
+    "Contradiction_loss_sums_equal_sums_of_four_reported_case_losses": true,
+    "accepted_for_confirmation": false,
+    "all_loss_distribution_sum_mean_fraction_identities_consistent_with_saved_aggregates": true,
+    "all_other_saved_DEV_point_checks_true": true,
+    "all_remaining_epoch20_slots_must_close": true,
+    "all_three_arm_confusion_matrices_and_per_class_counts_match_saved_gold_prediction_joins": true,
+    "analysis_aggregate_metrics_are_exact_copies_of_sealed_acceptance_metrics": true,
+    "binary_correct_in_native_lexical_positional_order": [
+      12,
+      8,
+      10
+    ],
+    "champion_promoted": false,
+    "engineering_canaries_correct": 3,
+    "engineering_canaries_total": 3,
+    "four_case_NLL_exponent_and_Brier_probability_identities_checked": true,
+    "primary_class_Contradiction_correct": 0,
+    "primary_class_Contradiction_total": 4,
+    "rows_per_arm": 24,
+    "saved_runtime_gate_passed": true,
+    "score_scope": "Saved aggregate proper scores were compared, not rescored; descriptive case/loss identities and counts were checked without importing or invoking a scorer/gate.",
+    "sole_frozen_failed_DEV_check": "all_three_classes_correct_at_least_once",
+    "status": "REJECTED_DEV_GATE",
+    "submission_allowed": false,
+    "typed_correct_in_native_lexical_positional_order": [
+      10,
+      5,
+      6
+    ]
+  },
+  "observational_and_causal_wording_review": {
+    "423_nda7_native_vs_positional_difference_has_multiple_changed_units_and_no_single_unit_causal_attribution": true,
+    "470_nda7_unit4_rank3_525tokens_and_393_nda7_unit5_rank8_568tokens_are_observed_packing_exclusions": true,
+    "domain_coreference_conditional_interpretation_and_context_interference_causes_left_unknown": true,
+    "gold_annotations_used_as_frozen_without_relabeling_or_adjudication": true,
+    "next_epoch_direction_is_proposed_only_and_no_execution_claimed": true,
+    "no_official_benchmark_generalization_placement_or_native104_improvement_claim": true,
+    "no_priority_diagnostics_not_treated_as_measured_performance_counterfactual": true,
+    "no_total_Contradiction_output_collapse_claim": true,
+    "restriction_unit_omission_not_treated_as_proof_evidence_absent": true,
+    "restriction_unit_retention_not_treated_as_sufficient_complete_evidence": true,
+    "retained_literal_clause_errors_not_attributed_to_retrieval_miss_alone": true,
+    "small_correlated_failure_set_and_exposed_DEV_status_explicit": true
+  },
+  "phase": "dev",
+  "reviewed_receipts": {
+    "acceptance": {
+      "bytes": 36653,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/acceptance-rejection.dev.json",
+      "sha256": "195bfe8c568ae4ce46e6a2be6e659a97d8ab99deb1f044b3087c31eeae2bdca3"
+    },
+    "analysis_v1": {
+      "bytes": 46533,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/failure-analysis-independent-v1.json",
+      "sha256": "26d8f6a3372648d62729e981344bae808ce97804cb4fd8abae83eb39458e717b"
+    },
+    "analysis_v2": {
+      "bytes": 47219,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/failure-analysis-independent-v2.json",
+      "sha256": "fb36c0ec2e372212e5b742e028366fdf00add223814d5e20c89925d3310a3aa2"
+    },
+    "gold": {
+      "bytes": 8378,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/gold.dev.json",
+      "sha256": "3e660f1810649830458877d0e3f6e078d341946670dbb188ee398142fbb766e1"
+    },
+    "raw": {
+      "bytes": 8424073,
+      "path": "experiments/sota-2026-10-22/epoch20/runs/dev/raw.json",
+      "sha256": "344582455760189f9ffcd1839a2f65f9c4822949919a40e230b290bc95018219"
+    }
+  },
+  "reviewer": "/root/e20_audit/source_peer",
+  "reviewer_execution_counts": {
+    "Git_mutations": 0,
+    "model_forwards": 0,
+    "native_calls": 0,
+    "new_or_confirmation_annotation_choices_read": 0,
+    "original_source_corpus_reads": 0,
+    "paid_GPU_API_calls": 0,
+    "scorer_or_gate_invocations": 0,
+    "source_edits": 0,
+    "tokenizer_calls": 0
+  },
+  "same_context_aliases_verified": [
+    {
+      "arms": [
+        "ruvector_top2",
+        "same_nli_positional_first2"
+      ],
+      "question_id": "original-contractnli:train:epoch20:dev:470:nda-7",
+      "same_literal_premise_raw_logits_and_typed_probabilities": true
+    },
+    {
+      "all_three_literal_premises_raw_logits_and_typed_probabilities_identical": true,
+      "arms": [
+        "ruvector_top2",
+        "same_nli_lexical_top2",
+        "same_nli_positional_first2"
+      ],
+      "question_id": "original-contractnli:train:epoch20:dev:393:nda-7"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Review of already exposed DEV sealed predictions, independent gold and saved acceptance report only. No scorer/gate, neural, native, tokenizer or source-corpus execution; no new labels.",
+  "status": "INDEPENDENT_POSTHOC_FAILURE_ANALYSIS_PEER_REVIEW_PASS_FOR_NARRATIVE_V2",
+  "validation_evidence": {
+    "exact_v2_narrative_only_diff_checks_tool_chunk": "1e7329",
+    "final_five_file_SHA256_checks_performed_before_review_write": true,
+    "receipt_join_span_probability_alias_and_saved_arithmetic_checks_tool_chunk": "18ae17"
+  }
+}

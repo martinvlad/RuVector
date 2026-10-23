@@ -1,0 +1,1386 @@
+{
+  "aggregate_metrics_as_independently_frozen_scored": {
+    "binary": {
+      "ruvector_top2": {
+        "Brier": 0.6133088773667054,
+        "NLL": 1.109646293729604,
+        "accuracy": 0.5,
+        "correct": 12,
+        "n": 24
+      },
+      "same_nli_lexical_top2": {
+        "Brier": 0.9260276871951633,
+        "NLL": 1.4192485350352426,
+        "accuracy": 0.3333333333333333,
+        "correct": 8,
+        "n": 24
+      },
+      "same_nli_positional_first2": {
+        "Brier": 0.8804833413577775,
+        "NLL": 1.4890710359458605,
+        "accuracy": 0.4166666666666667,
+        "correct": 10,
+        "n": 24
+      }
+    },
+    "typed": {
+      "ruvector_top2": {
+        "Brier": 0.8584419067316826,
+        "NLL": 1.9237125476176915,
+        "accuracy": 0.4166666666666667,
+        "by_class": {
+          "Contradiction": {
+            "correct": 0,
+            "n": 4
+          },
+          "Entailment": {
+            "correct": 6,
+            "n": 11
+          },
+          "NotMentioned": {
+            "correct": 4,
+            "n": 9
+          }
+        },
+        "correct": 10,
+        "n": 24
+      },
+      "same_nli_lexical_top2": {
+        "Brier": 1.1507937940696695,
+        "NLL": 2.3236943983586333,
+        "accuracy": 0.20833333333333334,
+        "by_class": {
+          "Contradiction": {
+            "correct": 0,
+            "n": 4
+          },
+          "Entailment": {
+            "correct": 3,
+            "n": 11
+          },
+          "NotMentioned": {
+            "correct": 2,
+            "n": 9
+          }
+        },
+        "correct": 5,
+        "n": 24
+      },
+      "same_nli_positional_first2": {
+        "Brier": 1.21152860582479,
+        "NLL": 2.69590602596625,
+        "accuracy": 0.25,
+        "by_class": {
+          "Contradiction": {
+            "correct": 1,
+            "n": 4
+          },
+          "Entailment": {
+            "correct": 4,
+            "n": 11
+          },
+          "NotMentioned": {
+            "correct": 1,
+            "n": 9
+          }
+        },
+        "correct": 6,
+        "n": 24
+      }
+    }
+  },
+  "analysis_boundary": {
+    "existing_sources_modified": false,
+    "fresh_confirmation_predictions_or_labels": false,
+    "gold_relabeling": false,
+    "labels_are_DEV_forever": true,
+    "new_model_native_GPU_paid_calls": 0,
+    "new_scoring_gate_execution": false,
+    "not_official_benchmark_score_or_placement": true,
+    "only_already_exposed_DEV_raw_predictions_gold_and_accepted_audit_receipts_read": true,
+    "original_corpus_reread": false,
+    "training_calibration_or_candidate_selection": false
+  },
+  "at": "2026-10-23T19:35:15.701373+00:00",
+  "epoch": 20,
+  "four_failed_Contradiction_cases_in_three_documents": [
+    {
+      "analyst_posthoc_literal_anchor": {
+        "literal_quote": "not be copied or distributed, disclosed, or disseminated in any way or form by the Receiving Party to any third party without the written permission of MyPoints.com first obtained;",
+        "quote_span": [
+          2825,
+          3005
+        ],
+        "scope": "A human identified restriction-bearing literal clause after DEV exposure. Its presence is not a sufficiency proof, and its omission does not prove absence of evidence.",
+        "source": "Already sealed raw receipt state only; no official evidence annotation or original corpus reread.",
+        "unit_id": 4,
+        "unit_span": [
+          2369,
+          3009
+        ]
+      },
+      "arms": {
+        "ruvector_top2": {
+          "analyst_literal_restriction_quote_in_actual_premise": true,
+          "analyst_restriction_unit_rank_1based": 1,
+          "analyst_restriction_unit_selected": true,
+          "binary_prediction": "Yes",
+          "claim_truncated": false,
+          "definition_priority_selected_units": [
+            0
+          ],
+          "document_character_coverage": 0.28453333333333336,
+          "feed_sha256": "562ca2322d908a65dc314cb78027598d2738ba7e29cb106a9d36b7e98fcb0072",
+          "input_text_sha256": "0cb6391b4f1d4fca214cdffcbb92b136306e824563fb035ecceb042b34667e6f",
+          "joint_pair_tokens": 499,
+          "no_priority_tokenization_only": {
+            "displaced_unit_ids": [
+              5,
+              9
+            ],
+            "introduced_unit_ids": [
+              0,
+              11
+            ],
+            "model_forwards": 0,
+            "selected_chunk_ids_source_order": [
+              3,
+              4,
+              5,
+              9
+            ],
+            "status": "TOKENIZATION_ONLY"
+          },
+          "omitted_unit_ids": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "packing_attempts_for_analyst_restriction_unit": [
+            {
+              "accepted": true,
+              "anchor": 4,
+              "candidate_pair_tokens": 273,
+              "role": "ranked-anchor",
+              "unit_id": 4
+            }
+          ],
+          "premise_sha256": "b308ab160162db747b60b62352427f2c255e6d5d3e7612f018ffc8d959259c06",
+          "retained_source_characters": 2134,
+          "selected_evidence_truncated": false,
+          "selected_source_spans": [
+            [
+              0,
+              473
+            ],
+            [
+              1702,
+              3009
+            ],
+            [
+              7146,
+              7500
+            ]
+          ],
+          "selected_unit_ids": [
+            0,
+            3,
+            4,
+            11
+          ],
+          "source_document_characters": 7500,
+          "typed_Brier": 1.9933214766409668,
+          "typed_NLL": 7.0412164033341424,
+          "typed_prediction": "Entailment",
+          "typed_probabilities": {
+            "Contradiction": 0.0008750614868987164,
+            "Entailment": 0.9975310990429832,
+            "NotMentioned": 0.0015938394701180548
+          }
+        },
+        "same_nli_lexical_top2": {
+          "analyst_literal_restriction_quote_in_actual_premise": true,
+          "analyst_restriction_unit_rank_1based": 2,
+          "analyst_restriction_unit_selected": true,
+          "binary_prediction": "Yes",
+          "claim_truncated": false,
+          "definition_priority_selected_units": [
+            0
+          ],
+          "document_character_coverage": 0.3088,
+          "feed_sha256": "1709ae7248e11d5633b577c38682f99e6fa3d53c99ef815d7cd76962c9a55785",
+          "input_text_sha256": "d7c2a1db0c8efabbbc14f79125aa1f6f27d9cf94aad40200572446658e9531cb",
+          "joint_pair_tokens": 505,
+          "no_priority_tokenization_only": {
+            "displaced_unit_ids": [
+              10,
+              11
+            ],
+            "introduced_unit_ids": [
+              0,
+              4
+            ],
+            "model_forwards": 0,
+            "selected_chunk_ids_source_order": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "status": "TOKENIZATION_ONLY"
+          },
+          "omitted_unit_ids": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            10,
+            11
+          ],
+          "packing_attempts_for_analyst_restriction_unit": [
+            {
+              "accepted": true,
+              "anchor": 4,
+              "candidate_pair_tokens": 505,
+              "role": "ranked-anchor",
+              "unit_id": 4
+            }
+          ],
+          "premise_sha256": "185080e45ef9704a1064dce54abdbee26c2cbc4c0ec7ad75276a8e30d0bbb3ad",
+          "retained_source_characters": 2316,
+          "selected_evidence_truncated": false,
+          "selected_source_spans": [
+            [
+              0,
+              473
+            ],
+            [
+              2369,
+              3009
+            ],
+            [
+              5233,
+              6436
+            ]
+          ],
+          "selected_unit_ids": [
+            0,
+            4,
+            8,
+            9
+          ],
+          "source_document_characters": 7500,
+          "typed_Brier": 1.8012504405607246,
+          "typed_NLL": 5.285841999634945,
+          "typed_prediction": "Entailment",
+          "typed_probabilities": {
+            "Contradiction": 0.005062767544574219,
+            "Entailment": 0.8952124381606448,
+            "NotMentioned": 0.09972479429478098
+          }
+        },
+        "same_nli_positional_first2": {
+          "analyst_literal_restriction_quote_in_actual_premise": false,
+          "analyst_restriction_unit_rank_1based": 5,
+          "analyst_restriction_unit_selected": false,
+          "binary_prediction": "No",
+          "claim_truncated": false,
+          "definition_priority_selected_units": [
+            0
+          ],
+          "document_character_coverage": 0.2886666666666667,
+          "feed_sha256": "fdc5db27f2534dcc5463c2090296a7f08529bafc8bc1b279bee0abeea24ce1ef",
+          "input_text_sha256": "bb7fe53c469984fa4322814b2063ecf8a469148ccaee1d834f632250cd60c896",
+          "joint_pair_tokens": 472,
+          "no_priority_tokenization_only": {
+            "displaced_unit_ids": [],
+            "introduced_unit_ids": [],
+            "model_forwards": 0,
+            "selected_chunk_ids_source_order": [
+              0,
+              1,
+              2,
+              9
+            ],
+            "status": "TOKENIZATION_ONLY"
+          },
+          "omitted_unit_ids": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            11
+          ],
+          "packing_attempts_for_analyst_restriction_unit": [
+            {
+              "accepted": false,
+              "anchor": 4,
+              "candidate_pair_tokens": 517,
+              "role": "ranked-anchor",
+              "unit_id": 4
+            }
+          ],
+          "premise_sha256": "1c0c12828ebff21485be6cfb1b80d1b28ce07addcb6d285aa6dc995aededff2d",
+          "retained_source_characters": 2165,
+          "selected_evidence_truncated": false,
+          "selected_source_spans": [
+            [
+              0,
+              1702
+            ],
+            [
+              5973,
+              6436
+            ]
+          ],
+          "selected_unit_ids": [
+            0,
+            1,
+            2,
+            9
+          ],
+          "source_document_characters": 7500,
+          "typed_Brier": 1.9918597741238995,
+          "typed_NLL": 7.47336376774888,
+          "typed_prediction": "NotMentioned",
+          "typed_probabilities": {
+            "Contradiction": 0.0005680144111915459,
+            "Entailment": 0.00294475097533655,
+            "NotMentioned": 0.9964872346134719
+          }
+        }
+      },
+      "document_id": 470,
+      "gold": "Contradiction",
+      "hypothesis": "Receiving Party may create a copy of some Confidential Information in some circumstances.",
+      "hypothesis_id": "nda-17",
+      "question_id": "original-contractnli:train:epoch20:dev:470:nda-17",
+      "same_premise_raw_logits_and_probabilities_pairs": [],
+      "source_document_sha256": "a30a696cd283450aec83346acc178eb4733979a50d9bff5efa50b57785bf2be4",
+      "source_unit_count": 12
+    },
+    {
+      "analyst_posthoc_literal_anchor": {
+        "literal_quote": "not be copied or distributed, disclosed, or disseminated in any way or form by the Receiving Party to any third party without the written permission of MyPoints.com first obtained;",
+        "quote_span": [
+          2825,
+          3005
+        ],
+        "scope": "A human identified restriction-bearing literal clause after DEV exposure. Its presence is not a sufficiency proof, and its omission does not prove absence of evidence.",
+        "source": "Already sealed raw receipt state only; no official evidence annotation or original corpus reread.",
+        "unit_id": 4,
+        "unit_span": [
+          2369,
+          3009
+        ]
+      },
+      "arms": {
+        "ruvector_top2": {
+          "analyst_literal_restriction_quote_in_actual_premise": false,
+          "analyst_restriction_unit_rank_1based": 3,
+          "analyst_restriction_unit_selected": false,
+          "binary_prediction": "No",
+          "claim_truncated": false,
+          "definition_priority_selected_units": [
+            0
+          ],
+          "document_character_coverage": 0.2886666666666667,
+          "feed_sha256": "077c3cc13ea1ebde9af55c77566ae7e7a8d18b9a8898b6d4f83cc5e507e6de59",
+          "input_text_sha256": "a6eaebbfeba88d7cc2b8cdf3c6304eb0df5a8af721747c3dfda47d7eef508605",
+          "joint_pair_tokens": 480,
+          "no_priority_tokenization_only": {
+            "displaced_unit_ids": [
+              3
+            ],
+            "introduced_unit_ids": [
+              0
+            ],
+            "model_forwards": 0,
+            "selected_chunk_ids_source_order": [
+              1,
+              2,
+              3,
+              9
+            ],
+            "status": "TOKENIZATION_ONLY"
+          },
+          "omitted_unit_ids": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            11
+          ],
+          "packing_attempts_for_analyst_restriction_unit": [
+            {
+              "accepted": false,
+              "anchor": 4,
+              "candidate_pair_tokens": 525,
+              "role": "ranked-anchor",
+              "unit_id": 4
+            }
+          ],
+          "premise_sha256": "1c0c12828ebff21485be6cfb1b80d1b28ce07addcb6d285aa6dc995aededff2d",
+          "retained_source_characters": 2165,
+          "selected_evidence_truncated": false,
+          "selected_source_spans": [
+            [
+              0,
+              1702
+            ],
+            [
+              5973,
+              6436
+            ]
+          ],
+          "selected_unit_ids": [
+            0,
+            1,
+            2,
+            9
+          ],
+          "source_document_characters": 7500,
+          "typed_Brier": 1.9916876716501806,
+          "typed_NLL": 7.591954478740587,
+          "typed_prediction": "NotMentioned",
+          "typed_probabilities": {
+            "Contradiction": 0.0005044940668273356,
+            "Entailment": 0.0031590035575470507,
+            "NotMentioned": 0.9963365023756257
+          }
+        },
+        "same_nli_lexical_top2": {
+          "analyst_literal_restriction_quote_in_actual_premise": false,
+          "analyst_restriction_unit_rank_1based": 6,
+          "analyst_restriction_unit_selected": false,
+          "binary_prediction": "Yes",
+          "claim_truncated": false,
+          "definition_priority_selected_units": [
+            0
+          ],
+          "document_character_coverage": 0.3056,
+          "feed_sha256": "017e8adce5dd3e8b1e1f3509dd9d56cb5446c175da9aa3b1b7206960fd53647c",
+          "input_text_sha256": "8ac5fd14662e31bfc7619cb6e269fa0aad07a08be1a773b066716ec220a6ad40",
+          "joint_pair_tokens": 501,
+          "no_priority_tokenization_only": {
+            "displaced_unit_ids": [
+              10,
+              11
+            ],
+            "introduced_unit_ids": [
+              0,
+              2
+            ],
+            "model_forwards": 0,
+            "selected_chunk_ids_source_order": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "status": "TOKENIZATION_ONLY"
+          },
+          "omitted_unit_ids": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10,
+            11
+          ],
+          "packing_attempts_for_analyst_restriction_unit": [
+            {
+              "accepted": false,
+              "anchor": 4,
+              "candidate_pair_tokens": 633,
+              "role": "ranked-anchor",
+              "unit_id": 4
+            }
+          ],
+          "premise_sha256": "1a7374589e20001f913ea84135f751747a5918c72e1b12ad5dd6eef3e243352b",
+          "retained_source_characters": 2292,
+          "selected_evidence_truncated": false,
+          "selected_source_spans": [
+            [
+              0,
+              473
+            ],
+            [
+              1086,
+              1702
+            ],
+            [
+              5233,
+              6436
+            ]
+          ],
+          "selected_unit_ids": [
+            0,
+            2,
+            8,
+            9
+          ],
+          "source_document_characters": 7500,
+          "typed_Brier": 1.492315711356111,
+          "typed_NLL": 5.644878065496573,
+          "typed_prediction": "Entailment",
+          "typed_probabilities": {
+            "Contradiction": 0.003535579483965905,
+            "Entailment": 0.5363353553026026,
+            "NotMentioned": 0.46012906521343155
+          }
+        },
+        "same_nli_positional_first2": {
+          "analyst_literal_restriction_quote_in_actual_premise": false,
+          "analyst_restriction_unit_rank_1based": 5,
+          "analyst_restriction_unit_selected": false,
+          "binary_prediction": "No",
+          "claim_truncated": false,
+          "definition_priority_selected_units": [
+            0
+          ],
+          "document_character_coverage": 0.2886666666666667,
+          "feed_sha256": "077c3cc13ea1ebde9af55c77566ae7e7a8d18b9a8898b6d4f83cc5e507e6de59",
+          "input_text_sha256": "a6eaebbfeba88d7cc2b8cdf3c6304eb0df5a8af721747c3dfda47d7eef508605",
+          "joint_pair_tokens": 480,
+          "no_priority_tokenization_only": {
+            "displaced_unit_ids": [],
+            "introduced_unit_ids": [],
+            "model_forwards": 0,
+            "selected_chunk_ids_source_order": [
+              0,
+              1,
+              2,
+              9
+            ],
+            "status": "TOKENIZATION_ONLY"
+          },
+          "omitted_unit_ids": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            11
+          ],
+          "packing_attempts_for_analyst_restriction_unit": [
+            {
+              "accepted": false,
+              "anchor": 4,
+              "candidate_pair_tokens": 525,
+              "role": "ranked-anchor",
+              "unit_id": 4
+            }
+          ],
+          "premise_sha256": "1c0c12828ebff21485be6cfb1b80d1b28ce07addcb6d285aa6dc995aededff2d",
+          "retained_source_characters": 2165,
+          "selected_evidence_truncated": false,
+          "selected_source_spans": [
+            [
+              0,
+              1702
+            ],
+            [
+              5973,
+              6436
+            ]
+          ],
+          "selected_unit_ids": [
+            0,
+            1,
+            2,
+            9
+          ],
+          "source_document_characters": 7500,
+          "typed_Brier": 1.9916876716501806,
+          "typed_NLL": 7.591954478740587,
+          "typed_prediction": "NotMentioned",
+          "typed_probabilities": {
+            "Contradiction": 0.0005044940668273356,
+            "Entailment": 0.0031590035575470507,
+            "NotMentioned": 0.9963365023756257
+          }
+        }
+      },
+      "document_id": 470,
+      "gold": "Contradiction",
+      "hypothesis": "Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+      "hypothesis_id": "nda-7",
+      "question_id": "original-contractnli:train:epoch20:dev:470:nda-7",
+      "same_premise_raw_logits_and_probabilities_pairs": [
+        [
+          "ruvector_top2",
+          "same_nli_positional_first2"
+        ]
+      ],
+      "source_document_sha256": "a30a696cd283450aec83346acc178eb4733979a50d9bff5efa50b57785bf2be4",
+      "source_unit_count": 12
+    },
+    {
+      "analyst_posthoc_literal_anchor": {
+        "literal_quote": "The receiving party shall hold in trust and confidence, and not disclose to others, by any means, any and all INFORMATION disclosed under this Agreement.",
+        "quote_span": [
+          2192,
+          2345
+        ],
+        "scope": "A human identified restriction-bearing literal clause after DEV exposure. Its presence is not a sufficiency proof, and its omission does not prove absence of evidence.",
+        "source": "Already sealed raw receipt state only; no official evidence annotation or original corpus reread.",
+        "unit_id": 3,
+        "unit_span": [
+          1918,
+          2516
+        ]
+      },
+      "arms": {
+        "ruvector_top2": {
+          "analyst_literal_restriction_quote_in_actual_premise": true,
+          "analyst_restriction_unit_rank_1based": 3,
+          "analyst_restriction_unit_selected": true,
+          "binary_prediction": "No",
+          "claim_truncated": false,
+          "definition_priority_selected_units": [
+            1
+          ],
+          "document_character_coverage": 0.3079015544041451,
+          "feed_sha256": "def7acd0ce326ae599e9eb7c631977f963ce8a1b5898195b68749e9f2db6eb32",
+          "input_text_sha256": "b323b2e1b0235c8ac8a2fded421704fbd3cf9756b4121ee7a1d9d97b4961a5c4",
+          "joint_pair_tokens": 479,
+          "no_priority_tokenization_only": {
+            "displaced_unit_ids": [
+              5
+            ],
+            "introduced_unit_ids": [
+              1
+            ],
+            "model_forwards": 0,
+            "selected_chunk_ids_source_order": [
+              3,
+              4,
+              5,
+              11
+            ],
+            "status": "TOKENIZATION_ONLY"
+          },
+          "omitted_unit_ids": [
+            0,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "packing_attempts_for_analyst_restriction_unit": [
+            {
+              "accepted": true,
+              "anchor": 4,
+              "candidate_pair_tokens": 439,
+              "role": "same-paragraph-neighbor",
+              "unit_id": 3
+            }
+          ],
+          "premise_sha256": "048b4347fbae9b8312d5aaf0613b96342beed1cf26cc878278ead2babe5b2152",
+          "retained_source_characters": 2377,
+          "selected_evidence_truncated": false,
+          "selected_source_spans": [
+            [
+              510,
+              1306
+            ],
+            [
+              1918,
+              3301
+            ],
+            [
+              7522,
+              7720
+            ]
+          ],
+          "selected_unit_ids": [
+            1,
+            3,
+            4,
+            11
+          ],
+          "source_document_characters": 7720,
+          "typed_Brier": 1.6951631799346392,
+          "typed_NLL": 2.556862463315981,
+          "typed_prediction": "NotMentioned",
+          "typed_probabilities": {
+            "Contradiction": 0.07754766779975125,
+            "Entailment": 0.003631518971182168,
+            "NotMentioned": 0.9188208132290665
+          }
+        },
+        "same_nli_lexical_top2": {
+          "analyst_literal_restriction_quote_in_actual_premise": false,
+          "analyst_restriction_unit_rank_1based": 5,
+          "analyst_restriction_unit_selected": false,
+          "binary_prediction": "No",
+          "claim_truncated": false,
+          "definition_priority_selected_units": [
+            1
+          ],
+          "document_character_coverage": 0.29650259067357515,
+          "feed_sha256": "cd877e3321f58717839d06ffc49d29ca8f4369a0961d77781ba2d4ec46c25a69",
+          "input_text_sha256": "b52b3d1eaa2480255e8250336a7388086053f487d373eb5c4a3db746f4919872",
+          "joint_pair_tokens": 462,
+          "no_priority_tokenization_only": {
+            "displaced_unit_ids": [],
+            "introduced_unit_ids": [],
+            "model_forwards": 0,
+            "selected_chunk_ids_source_order": [
+              0,
+              1,
+              4,
+              11
+            ],
+            "status": "TOKENIZATION_ONLY"
+          },
+          "omitted_unit_ids": [
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "packing_attempts_for_analyst_restriction_unit": [
+            {
+              "accepted": false,
+              "anchor": 4,
+              "candidate_pair_tokens": 531,
+              "role": "same-paragraph-neighbor",
+              "unit_id": 3
+            },
+            {
+              "accepted": false,
+              "anchor": 3,
+              "candidate_pair_tokens": 531,
+              "role": "ranked-anchor",
+              "unit_id": 3
+            }
+          ],
+          "premise_sha256": "1ca6de5520f320fd35b5a751fbb25df21a26b3c3ccf40baa96e048779125c915",
+          "retained_source_characters": 2289,
+          "selected_evidence_truncated": false,
+          "selected_source_spans": [
+            [
+              0,
+              1306
+            ],
+            [
+              2516,
+              3301
+            ],
+            [
+              7522,
+              7720
+            ]
+          ],
+          "selected_unit_ids": [
+            0,
+            1,
+            4,
+            11
+          ],
+          "source_document_characters": 7720,
+          "typed_Brier": 1.581120894822581,
+          "typed_NLL": 3.963365209881825,
+          "typed_prediction": "NotMentioned",
+          "typed_probabilities": {
+            "Contradiction": 0.018999070731469038,
+            "Entailment": 0.22822517034980652,
+            "NotMentioned": 0.7527757589187245
+          }
+        },
+        "same_nli_positional_first2": {
+          "analyst_literal_restriction_quote_in_actual_premise": true,
+          "analyst_restriction_unit_rank_1based": 4,
+          "analyst_restriction_unit_selected": true,
+          "binary_prediction": "No",
+          "claim_truncated": false,
+          "definition_priority_selected_units": [
+            1
+          ],
+          "document_character_coverage": 0.32590673575129536,
+          "feed_sha256": "e494ca24990f82084e169480376fe70ef9df00489ffbafd7ddda72d2a8b9f4e8",
+          "input_text_sha256": "51d1e810d4959837ba1bbed8e80bb09c208bfee8f189fdb08bc78dc411dd1c97",
+          "joint_pair_tokens": 504,
+          "no_priority_tokenization_only": {
+            "displaced_unit_ids": [],
+            "introduced_unit_ids": [],
+            "model_forwards": 0,
+            "selected_chunk_ids_source_order": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "status": "TOKENIZATION_ONLY"
+          },
+          "omitted_unit_ids": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "packing_attempts_for_analyst_restriction_unit": [
+            {
+              "accepted": true,
+              "anchor": 2,
+              "candidate_pair_tokens": 504,
+              "role": "same-paragraph-neighbor",
+              "unit_id": 3
+            }
+          ],
+          "premise_sha256": "2074e0538c8056f6a1429b9042ce23951cee93198a8e51f23350b634412bf588",
+          "retained_source_characters": 2516,
+          "selected_evidence_truncated": false,
+          "selected_source_spans": [
+            [
+              0,
+              2516
+            ]
+          ],
+          "selected_unit_ids": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "source_document_characters": 7720,
+          "typed_Brier": 0.002543046495708126,
+          "typed_NLL": 0.04131947286275954,
+          "typed_prediction": "Contradiction",
+          "typed_probabilities": {
+            "Contradiction": 0.9595225395641559,
+            "Entailment": 0.013703851079592887,
+            "NotMentioned": 0.0267736093562512
+          }
+        }
+      },
+      "document_id": 423,
+      "gold": "Contradiction",
+      "hypothesis": "Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+      "hypothesis_id": "nda-7",
+      "question_id": "original-contractnli:train:epoch20:dev:423:nda-7",
+      "same_premise_raw_logits_and_probabilities_pairs": [],
+      "source_document_sha256": "90e14c9da5ad35db1df04cda6f475dd60c5077d644caae13cd1dfaece3871a34",
+      "source_unit_count": 12
+    },
+    {
+      "analyst_posthoc_literal_anchor": {
+        "literal_quote": "it will not distribute, disclose or disseminate Proprietary Information to anyone except its employees with a need to know who are involved in the consideration or performance of the business arrangements described herein.",
+        "quote_span": [
+          3278,
+          3500
+        ],
+        "scope": "A human identified restriction-bearing literal clause after DEV exposure. Its presence is not a sufficiency proof, and its omission does not prove absence of evidence.",
+        "source": "Already sealed raw receipt state only; no official evidence annotation or original corpus reread.",
+        "unit_id": 5,
+        "unit_span": [
+          3268,
+          3886
+        ]
+      },
+      "arms": {
+        "ruvector_top2": {
+          "analyst_literal_restriction_quote_in_actual_premise": false,
+          "analyst_restriction_unit_rank_1based": 8,
+          "analyst_restriction_unit_selected": false,
+          "binary_prediction": "Yes",
+          "claim_truncated": false,
+          "definition_priority_selected_units": [
+            0
+          ],
+          "document_character_coverage": 0.31740412979351035,
+          "feed_sha256": "303b27e4aa10934faabae55965ebcbfd9b95da355b7a3051df00d0552fd77ed2",
+          "input_text_sha256": "04835ef896945cf2f71a90bc7cbe948e6ad340ad95d263d07422a5b085f3b503",
+          "joint_pair_tokens": 481,
+          "no_priority_tokenization_only": {
+            "displaced_unit_ids": [],
+            "introduced_unit_ids": [],
+            "model_forwards": 0,
+            "selected_chunk_ids_source_order": [
+              0,
+              1,
+              2,
+              10
+            ],
+            "status": "TOKENIZATION_ONLY"
+          },
+          "omitted_unit_ids": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "packing_attempts_for_analyst_restriction_unit": [
+            {
+              "accepted": false,
+              "anchor": 5,
+              "candidate_pair_tokens": 568,
+              "role": "ranked-anchor",
+              "unit_id": 5
+            }
+          ],
+          "premise_sha256": "a04b23099384c6e9778ce52e89e479dad2c3236b8a9885ffe62505f4c8f20320",
+          "retained_source_characters": 2152,
+          "selected_evidence_truncated": false,
+          "selected_source_spans": [
+            [
+              0,
+              1975
+            ],
+            [
+              6603,
+              6780
+            ]
+          ],
+          "selected_unit_ids": [
+            0,
+            1,
+            2,
+            10
+          ],
+          "source_document_characters": 6780,
+          "typed_Brier": 1.6153438729408764,
+          "typed_NLL": 6.059026837641927,
+          "typed_prediction": "Entailment",
+          "typed_probabilities": {
+            "Contradiction": 0.0023366737443515084,
+            "Entailment": 0.7461631250444694,
+            "NotMentioned": 0.25150020121117916
+          }
+        },
+        "same_nli_lexical_top2": {
+          "analyst_literal_restriction_quote_in_actual_premise": false,
+          "analyst_restriction_unit_rank_1based": 3,
+          "analyst_restriction_unit_selected": false,
+          "binary_prediction": "Yes",
+          "claim_truncated": false,
+          "definition_priority_selected_units": [
+            0
+          ],
+          "document_character_coverage": 0.31740412979351035,
+          "feed_sha256": "303b27e4aa10934faabae55965ebcbfd9b95da355b7a3051df00d0552fd77ed2",
+          "input_text_sha256": "04835ef896945cf2f71a90bc7cbe948e6ad340ad95d263d07422a5b085f3b503",
+          "joint_pair_tokens": 481,
+          "no_priority_tokenization_only": {
+            "displaced_unit_ids": [
+              3
+            ],
+            "introduced_unit_ids": [
+              0
+            ],
+            "model_forwards": 0,
+            "selected_chunk_ids_source_order": [
+              1,
+              2,
+              3,
+              10
+            ],
+            "status": "TOKENIZATION_ONLY"
+          },
+          "omitted_unit_ids": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "packing_attempts_for_analyst_restriction_unit": [
+            {
+              "accepted": false,
+              "anchor": 5,
+              "candidate_pair_tokens": 568,
+              "role": "ranked-anchor",
+              "unit_id": 5
+            }
+          ],
+          "premise_sha256": "a04b23099384c6e9778ce52e89e479dad2c3236b8a9885ffe62505f4c8f20320",
+          "retained_source_characters": 2152,
+          "selected_evidence_truncated": false,
+          "selected_source_spans": [
+            [
+              0,
+              1975
+            ],
+            [
+              6603,
+              6780
+            ]
+          ],
+          "selected_unit_ids": [
+            0,
+            1,
+            2,
+            10
+          ],
+          "source_document_characters": 6780,
+          "typed_Brier": 1.6153438729408764,
+          "typed_NLL": 6.059026837641927,
+          "typed_prediction": "Entailment",
+          "typed_probabilities": {
+            "Contradiction": 0.0023366737443515084,
+            "Entailment": 0.7461631250444694,
+            "NotMentioned": 0.25150020121117916
+          }
+        },
+        "same_nli_positional_first2": {
+          "analyst_literal_restriction_quote_in_actual_premise": false,
+          "analyst_restriction_unit_rank_1based": 6,
+          "analyst_restriction_unit_selected": false,
+          "binary_prediction": "Yes",
+          "claim_truncated": false,
+          "definition_priority_selected_units": [
+            0
+          ],
+          "document_character_coverage": 0.31740412979351035,
+          "feed_sha256": "303b27e4aa10934faabae55965ebcbfd9b95da355b7a3051df00d0552fd77ed2",
+          "input_text_sha256": "04835ef896945cf2f71a90bc7cbe948e6ad340ad95d263d07422a5b085f3b503",
+          "joint_pair_tokens": 481,
+          "no_priority_tokenization_only": {
+            "displaced_unit_ids": [],
+            "introduced_unit_ids": [],
+            "model_forwards": 0,
+            "selected_chunk_ids_source_order": [
+              0,
+              1,
+              2,
+              10
+            ],
+            "status": "TOKENIZATION_ONLY"
+          },
+          "omitted_unit_ids": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "packing_attempts_for_analyst_restriction_unit": [
+            {
+              "accepted": false,
+              "anchor": 5,
+              "candidate_pair_tokens": 568,
+              "role": "ranked-anchor",
+              "unit_id": 5
+            }
+          ],
+          "premise_sha256": "a04b23099384c6e9778ce52e89e479dad2c3236b8a9885ffe62505f4c8f20320",
+          "retained_source_characters": 2152,
+          "selected_evidence_truncated": false,
+          "selected_source_spans": [
+            [
+              0,
+              1975
+            ],
+            [
+              6603,
+              6780
+            ]
+          ],
+          "selected_unit_ids": [
+            0,
+            1,
+            2,
+            10
+          ],
+          "source_document_characters": 6780,
+          "typed_Brier": 1.6153438729408764,
+          "typed_NLL": 6.059026837641927,
+          "typed_prediction": "Entailment",
+          "typed_probabilities": {
+            "Contradiction": 0.0023366737443515084,
+            "Entailment": 0.7461631250444694,
+            "NotMentioned": 0.25150020121117916
+          }
+        }
+      },
+      "document_id": 393,
+      "gold": "Contradiction",
+      "hypothesis": "Receiving Party may share some Confidential Information with some third-parties (including consultants, agents and professional advisors).",
+      "hypothesis_id": "nda-7",
+      "question_id": "original-contractnli:train:epoch20:dev:393:nda-7",
+      "same_premise_raw_logits_and_probabilities_pairs": [
+        [
+          "ruvector_top2",
+          "same_nli_lexical_top2"
+        ],
+        [
+          "ruvector_top2",
+          "same_nli_positional_first2"
+        ],
+        [
+          "same_nli_lexical_top2",
+          "same_nli_positional_first2"
+        ]
+      ],
+      "source_document_sha256": "b30181e7a1bdef58315d0ef53046af7131afddacc792460791ff3ac7a5dae489",
+      "source_unit_count": 11
+    }
+  ],
+  "frozen_gate_outcome": {
+    "DEV_gate_passed": false,
+    "accepted_for_confirmation": false,
+    "all_other_frozen_DEV_point_checks_passed": true,
+    "all_remaining_epoch20_slots_must_close": true,
+    "champion_promoted": false,
+    "checks_passed": true,
+    "engineering_canaries_correct": 3,
+    "engineering_canaries_total": 3,
+    "primary_Contradiction_correct": 0,
+    "primary_Contradiction_n": 4,
+    "runtime_gate_passed": true,
+    "sole_failed_DEV_check": "all_three_classes_correct_at_least_once",
+    "status": "REJECTED_DEV_GATE",
+    "submission_allowed": false
+  },
+  "inputs": {
+    "acceptance_rejection": {
+      "bytes": 36653,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/acceptance-rejection.dev.json",
+      "sha256": "195bfe8c568ae4ce46e6a2be6e659a97d8ab99deb1f044b3087c31eeae2bdca3"
+    },
+    "gold": {
+      "bytes": 8378,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/gold.dev.json",
+      "sha256": "3e660f1810649830458877d0e3f6e078d341946670dbb188ee398142fbb766e1"
+    },
+    "raw": {
+      "bytes": 8424073,
+      "path": "experiments/sota-2026-10-22/epoch20/runs/dev/raw.json",
+      "sha256": "344582455760189f9ffcd1839a2f65f9c4822949919a40e230b290bc95018219"
+    }
+  },
+  "loss_distribution_and_confusion": {
+    "ruvector_top2": {
+      "Contradiction_fraction_of_examples": 0.16666666666666666,
+      "Contradiction_fraction_of_typed_Brier_sum": 0.35410647981132465,
+      "Contradiction_fraction_of_typed_NLL_sum": 0.5035631971935391,
+      "all_typed_Brier_sum": 20.602605761560383,
+      "all_typed_NLL_sum": 46.169101142824594,
+      "by_gold_class": {
+        "Contradiction": {
+          "correct": 0,
+          "n": 4,
+          "typed_Brier_mean": 1.8238790502916657,
+          "typed_Brier_sum": 7.295516201166663,
+          "typed_NLL_mean": 5.812265045758159,
+          "typed_NLL_sum": 23.249060183032636
+        },
+        "Entailment": {
+          "correct": 6,
+          "n": 11,
+          "typed_Brier_mean": 0.581248658580919,
+          "typed_Brier_sum": 6.3937352443901085,
+          "typed_NLL_mean": 1.0809143662068303,
+          "typed_NLL_sum": 11.890058028275133
+        },
+        "NotMentioned": {
+          "correct": 4,
+          "n": 9,
+          "typed_Brier_mean": 0.7681504795559569,
+          "typed_Brier_sum": 6.913354316003613,
+          "typed_NLL_mean": 1.2255536590574247,
+          "typed_NLL_sum": 11.029982931516823
+        }
+      },
+      "confusion_matrix_gold_rows_predicted_columns": {
+        "Contradiction": {
+          "Contradiction": 0,
+          "Entailment": 2,
+          "NotMentioned": 2
+        },
+        "Entailment": {
+          "Contradiction": 0,
+          "Entailment": 6,
+          "NotMentioned": 5
+        },
+        "NotMentioned": {
+          "Contradiction": 1,
+          "Entailment": 4,
+          "NotMentioned": 4
+        }
+      }
+    },
+    "same_nli_lexical_top2": {
+      "Contradiction_fraction_of_examples": 0.16666666666666666,
+      "Contradiction_fraction_of_typed_Brier_sum": 0.23498384887041515,
+      "Contradiction_fraction_of_typed_NLL_sum": 0.3757147835980448,
+      "all_typed_Brier_sum": 27.619051057672067,
+      "all_typed_NLL_sum": 55.768665560607204,
+      "by_gold_class": {
+        "Contradiction": {
+          "correct": 0,
+          "n": 4,
+          "typed_Brier_mean": 1.6225077299200732,
+          "typed_Brier_sum": 6.490030919680293,
+          "typed_NLL_mean": 5.238278028163817,
+          "typed_NLL_sum": 20.95311211265527
+        },
+        "Entailment": {
+          "correct": 3,
+          "n": 11,
+          "typed_Brier_mean": 0.9570975119752848,
+          "typed_Brier_sum": 10.528072631728133,
+          "typed_NLL_mean": 1.5389618871791106,
+          "typed_NLL_sum": 16.928580758970217
+        },
+        "NotMentioned": {
+          "correct": 2,
+          "n": 9,
+          "typed_Brier_mean": 1.1778830562515157,
+          "typed_Brier_sum": 10.60094750626364,
+          "typed_NLL_mean": 1.9874414098868571,
+          "typed_NLL_sum": 17.886972688981714
+        }
+      },
+      "confusion_matrix_gold_rows_predicted_columns": {
+        "Contradiction": {
+          "Contradiction": 0,
+          "Entailment": 3,
+          "NotMentioned": 1
+        },
+        "Entailment": {
+          "Contradiction": 2,
+          "Entailment": 3,
+          "NotMentioned": 6
+        },
+        "NotMentioned": {
+          "Contradiction": 2,
+          "Entailment": 5,
+          "NotMentioned": 2
+        }
+      }
+    },
+    "same_nli_positional_first2": {
+      "Contradiction_fraction_of_examples": 0.16666666666666666,
+      "Contradiction_fraction_of_typed_Brier_sum": 0.1926434897437308,
+      "Contradiction_fraction_of_typed_NLL_sum": 0.327126643651709,
+      "all_typed_Brier_sum": 29.076686539794956,
+      "all_typed_NLL_sum": 64.70174462319,
+      "by_gold_class": {
+        "Contradiction": {
+          "correct": 1,
+          "n": 4,
+          "typed_Brier_mean": 1.4003585913026662,
+          "typed_Brier_sum": 5.601434365210665,
+          "typed_NLL_mean": 5.291416139248538,
+          "typed_NLL_sum": 21.16566455699415
+        },
+        "Entailment": {
+          "correct": 4,
+          "n": 11,
+          "typed_Brier_mean": 0.9301082081528622,
+          "typed_Brier_sum": 10.231190289681484,
+          "typed_NLL_mean": 1.7814147471393165,
+          "typed_NLL_sum": 19.595562218532482
+        },
+        "NotMentioned": {
+          "correct": 1,
+          "n": 9,
+          "typed_Brier_mean": 1.4715624316558678,
+          "typed_Brier_sum": 13.24406188490281,
+          "typed_NLL_mean": 2.660057538629262,
+          "typed_NLL_sum": 23.940517847663358
+        }
+      },
+      "confusion_matrix_gold_rows_predicted_columns": {
+        "Contradiction": {
+          "Contradiction": 1,
+          "Entailment": 1,
+          "NotMentioned": 2
+        },
+        "Entailment": {
+          "Contradiction": 3,
+          "Entailment": 4,
+          "NotMentioned": 4
+        },
+        "NotMentioned": {
+          "Contradiction": 2,
+          "Entailment": 6,
+          "NotMentioned": 1
+        }
+      }
+    }
+  },
+  "next_epoch_direction_without_execution": {
+    "action": "Keep this candidate rejected; preserve the champion and the unused confirmation bank. Before a new genuinely frozen DEV draw, address typed legal contradiction/context composition with a materially different, source-licensed hypothesis and the same matched-reader retrieval comparison.",
+    "constraints": "No tuning grid or fresh-confirmation claim on these24 exposed rows; no retrospective gate relaxation or extra epoch20 inference. Evidence anchors here may be used only as DEV engineering diagnoses.",
+    "execution_claim": "No future candidate or scheduled experiment has executed."
+  },
+  "phase": "dev",
+  "proven_observations": [
+    {
+      "fact": "The four gold Contradiction rows are from three documents; document470 contributes two different hypotheses. Four rows are not four independent document replications.",
+      "id": "small_correlated_failure_set"
+    },
+    {
+      "fact": "The three fixed exposed E/C/N engineering canaries passed. The same frozen reader emits a correct Contradiction for the positional context of document423/nda-7, p(C)=0.9595225395641559. Native emits Contradiction once elsewhere on a gold Neutral row. A total C-output collapse or universal class-index reversal is not supported.",
+      "id": "reader_not_globally_unable_to_emit_C"
+    },
+    {
+      "fact": "Native includes the literal restriction-bearing source unit for470/nda-17 and423/nda-7 but predicts Entailment and Neutral respectively. A retrieval miss alone cannot explain all four errors. Clause retention is not a proof that the entire required evidence is sufficient.",
+      "id": "retained_clause_errors"
+    },
+    {
+      "fact": "Native considers470/nda-7 restriction unit4 at rank3 but rejects its whole unit at525 pair tokens>512, and393/nda-7 unit5 at rank8 at568>512. These are observed context-packing exclusions, not an ANN failure to return the units.",
+      "id": "packing_exclusions"
+    },
+    {
+      "fact": "For470/nda-7 native and positional have exactly the same premise/logits/probabilities; for393/nda-7 all three arms are identical. Selector changes that produce identical packed text cannot improve those existing predictions.",
+      "id": "matched_context_aliases"
+    },
+    {
+      "fact": "For423/nda-7 native and positional both retain restriction unit3, but native units[1,3,4,11] predict Neutral p=.9188208132290665 while positional units[0,1,2,3] predict Contradiction p=.9595225395641559. Multiple surrounding units differ together; no single-unit causal attribution follows.",
+      "id": "context_sensitive_observed_pair"
+    },
+    {
+      "fact": "Gold Contradiction is4/24 examples but contributes50.35631971935391% of primary typed NLL and35.41064798113246% of primary typed Brier. Primary class-C NLL mean5.812265045758159; all four C probabilities are below.078.",
+      "id": "loss_concentration"
+    }
+  ],
+  "schema_version": 1,
+  "status": "INDEPENDENT_POSTHOC_DEV_CONTRADICTION_FAILURE_ANALYSIS_NO_NEW_PREDICTIONS",
+  "uncertain_causes_not_claimed": [
+    "Whether a shorter, longer or otherwise reformatted premise would correct any error has not been measured.",
+    "Whether pretrained domain mismatch, party/coreference resolution, conditional written-permission interpretation, adjacent-context interference or missing additional clauses caused a specific error is unknown.",
+    "The source annotations are used exactly as frozen. This analysis does not validate or invalidate any annotation and does not relabel conditional or existential claims.",
+    "The tokenizer-only no-priority traces are coverage diagnostics; they have zero model forwards and cannot establish a performance counterfactual.",
+    "No claim of legal benchmark generalization, native104 champion improvement, ClaimBench score, or official JevBench result follows from this small exposed DEV draw."
+  ]
+}

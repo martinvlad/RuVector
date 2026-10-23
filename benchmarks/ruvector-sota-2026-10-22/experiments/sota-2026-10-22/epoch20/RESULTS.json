@@ -1,0 +1,458 @@
+{
+  "actual_execution": {
+    "BGE_forwards": 26,
+    "BGE_initializations": 1,
+    "BGE_texts": 143,
+    "CONF_NLI_pairs": 0,
+    "CONF_annotation_choices": 0,
+    "CONF_capacity_text_tokenization_documents": 8,
+    "CONF_worker_attempts": 0,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "DEV_annotation_choices_after_seal": 24,
+    "DEV_documents": 8,
+    "DEV_questions": 24,
+    "GPU_calls": 0,
+    "NLI_forward_pairs_attempted": 75,
+    "NLI_forward_pairs_completed": 75,
+    "TRAIN_calibration_fits": 0,
+    "all_unused_slots_closed": true,
+    "allowed_further_epoch20_attempts": 0,
+    "benchmark_HTTP_requests": 0,
+    "completed_native_corpus_batches": 1,
+    "engineering_NLI_pairs": 3,
+    "engineering_native_searches": 3,
+    "errors": 0,
+    "legal_matched_arm_NLI_pairs": 72,
+    "legal_native_searches": 24,
+    "model_initializations": 1,
+    "native_index_initializations": 9,
+    "native_searches_completed": 27,
+    "owned_live_processes_closed": true,
+    "paid_API_calls": 0,
+    "peak_RSS_bytes": 2252591104,
+    "quantization_initializations": 0,
+    "resource_scope": "Outer Linux RUSAGE_CHILDREN for one owned worker plus reaped descendants; maximum is largest child high-water, not simultaneous RSS sum.",
+    "system_seconds": 20.290322,
+    "user_seconds": 369.400988,
+    "verified_worker_starts": 1,
+    "wall_seconds_including_init_cleanup": 211.43857896899863,
+    "worker_attempts": 1
+  },
+  "actual_resources": {
+    "inside_worker": {
+      "after_runtime": {
+        "allowed_CPU_ids": [
+          0,
+          1
+        ],
+        "largest_terminated_child_peak_RSS_bytes": 2252591104,
+        "scope": "Process and child maxima are separate observations, never a simultaneous RSS sum.",
+        "terminated_children_cpu_system_seconds": 0.185589,
+        "terminated_children_cpu_user_seconds": 0.329681,
+        "worker_cpu_system_seconds": 20.08178,
+        "worker_cpu_user_seconds": 368.148501,
+        "worker_peak_RSS_bytes": 2252591104
+      },
+      "before_runtime": {
+        "allowed_CPU_ids": [
+          0,
+          1
+        ],
+        "largest_terminated_child_peak_RSS_bytes": 0,
+        "scope": "Process and child maxima are separate observations, never a simultaneous RSS sum.",
+        "terminated_children_cpu_system_seconds": 0.0,
+        "terminated_children_cpu_user_seconds": 0.0,
+        "worker_cpu_system_seconds": 0.152462,
+        "worker_cpu_user_seconds": 0.6486759999999999,
+        "worker_peak_RSS_bytes": 22364160
+      }
+    },
+    "outer": {
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "allowed_further_attempts_in_this_phase": 0,
+      "at": "2026-10-23T19:30:37.041460+00:00",
+      "automatic_retry": false,
+      "benchmark_HTTP_requests": 0,
+      "cleanup": {
+        "all_native_helpers_exited": true,
+        "details": {
+          "finished_within_deadline": true,
+          "owned_live_before": [],
+          "owned_live_pids": [],
+          "pgid": 50749,
+          "signals": []
+        },
+        "owned_live_pids": [],
+        "process_group_empty": true,
+        "worker_exited": true
+      },
+      "elapsed_seconds": 211.43857896899863,
+      "epoch": 20,
+      "error": null,
+      "native_helper_pids": [
+        50821,
+        50873,
+        50885,
+        50835,
+        50807,
+        50768,
+        50859,
+        50847,
+        50750
+      ],
+      "new_paid_API_GPU_calls": 0,
+      "observed_worker_status": "COMPLETED_CORPUS_AWAITING_INDEPENDENT_SCORE",
+      "peak_RSS_bytes": 2252591104,
+      "phase": "dev",
+      "plan_sha256": "71a57839575aada391bb544a61d3b03902f3bb6ab28c9a1d455efdefb99bf7ba",
+      "raw_sha256": "344582455760189f9ffcd1839a2f65f9c4822949919a40e230b290bc95018219",
+      "resource_scope": "Outer Linux RUSAGE_CHILDREN for one owned worker plus reaped descendants; maximum is largest child high-water, not simultaneous RSS sum.",
+      "schema_version": 1,
+      "source_plan_unchanged": true,
+      "status": "COMPLETED_AWAITING_INDEPENDENT_REPLAY",
+      "system_seconds": 20.290322,
+      "user_seconds": 369.400988,
+      "verified_worker_starts": 1,
+      "worker_attempts": 1,
+      "worker_exit_code": 0,
+      "worker_pgid": 50749,
+      "worker_pid": 50749
+    },
+    "scope": "CPU counters and each process high-water are retained separately; no simultaneous RSS aggregate or primary-only deployment claim."
+  },
+  "arm_display_names": {
+    "ruvector_top2": "native RuVector evidence",
+    "same_nli_lexical_top2": "matched lexical evidence",
+    "same_nli_positional_first2": "matched positional evidence"
+  },
+  "at": "2026-10-23T19:36:54.345883+00:00",
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "checks_passed": true,
+  "engineering_metrics": {
+    "correct": 3,
+    "latency_seconds": [
+      0.2623743599979207,
+      0.24604771299345884,
+      0.22246358200209215
+    ],
+    "n": 3,
+    "native": {
+      "latency_ms": [
+        1.2918510000000083,
+        0.24311600000000055,
+        0.15337099999999282
+      ],
+      "native_order_matches_saved_vector_reference": [
+        true,
+        true,
+        true
+      ],
+      "queries": 3,
+      "scope": "Agreement is reported, not used to substitute reference rankings or prove semantic retrieval efficacy."
+    },
+    "passed": true,
+    "predictions": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "scope": "Exposed engineering canaries only; not a benchmark score."
+  },
+  "engineering_qualified": true,
+  "epoch": 20,
+  "evidence": {
+    "benchmark_refresh": {
+      "bytes": 3197,
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch20/benchmark-refresh.json",
+      "sha256": "1c093bb492b9835a20f711fb24f754967c02f0c000ef2f9a76f1efab49228af4"
+    },
+    "closed_slots": {
+      "bytes": 793,
+      "path": "experiments/sota-2026-10-22/epoch20/CLOSED_SLOTS.json",
+      "sha256": "4ef64b0f55963b2afbc6c8d18bb7fa2ab4b4efecdbd64964eebf99ed9fc8a87c"
+    },
+    "execution": {
+      "bytes": 1486,
+      "path": "experiments/sota-2026-10-22/epoch20/runs/dev/execution.json",
+      "sha256": "fda14adc50ef94b032902f1c75fb95a9efa8e0e1033898dc47e39172cebf408c"
+    },
+    "independent_acceptance": {
+      "bytes": 36653,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/acceptance-rejection.dev.json",
+      "sha256": "195bfe8c568ae4ce46e6a2be6e659a97d8ab99deb1f044b3087c31eeae2bdca3"
+    },
+    "independent_failure_analysis": {
+      "bytes": 46533,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/failure-analysis-independent-v1.json",
+      "sha256": "26d8f6a3372648d62729e981344bae808ce97804cb4fd8abae83eb39458e717b"
+    },
+    "independent_postprediction_gold": {
+      "bytes": 8378,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/gold.dev.json",
+      "sha256": "3e660f1810649830458877d0e3f6e078d341946670dbb188ee398142fbb766e1"
+    },
+    "independent_tokenizer_replay": {
+      "bytes": 20230,
+      "path": "experiments/sota-2026-10-22/audit/epoch20/tokenizer-feed-replay.dev.json",
+      "sha256": "755911c1d11a43ed9ca9de68eb568c7d07e84e777b3387290a29b4c7511dc595"
+    },
+    "plan": {
+      "bytes": 656999,
+      "path": "experiments/sota-2026-10-22/epoch20/plan.json",
+      "sha256": "71a57839575aada391bb544a61d3b03902f3bb6ab28c9a1d455efdefb99bf7ba"
+    },
+    "postrun_identities": {
+      "bytes": 61795,
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch20/postrun-identity-retirement-v1.json",
+      "sha256": "759dcf75b6cacfa9bcc7335091364c9024afc30c04cc50476d40b215ccbf73a5"
+    },
+    "postrun_source_process": {
+      "bytes": 3945,
+      "path": "experiments/sota-2026-10-22/epoch20/reviews/postrun-dev-source-process-independent-v1.json",
+      "sha256": "e3f108f0c0ff48711661ea986c6fb7fbf0eb8f05b05ea5d8c1ece3a75543798f"
+    },
+    "publisher_status": {
+      "bytes": 1416,
+      "path": "experiments/sota-2026-10-22/epoch20/preparation/publisher-status.json",
+      "sha256": "bce2ea06489ff570dce5c05ba6cde7fe32204b92a6b89f06a470f0fc5c86c79c"
+    },
+    "raw": {
+      "bytes": 8424073,
+      "path": "experiments/sota-2026-10-22/epoch20/runs/dev/raw.json",
+      "sha256": "344582455760189f9ffcd1839a2f65f9c4822949919a40e230b290bc95018219"
+    },
+    "source_freeze": {
+      "bytes": 651808,
+      "path": "experiments/sota-2026-10-22/epoch20/candidate-source-freeze.json",
+      "sha256": "5103ea339fc41b2f693b5491e8be3dde38dfdf5201f2668f2360932301d5246b"
+    },
+    "source_publication_readback": {
+      "bytes": 4310,
+      "path": "experiments/sota-2026-10-22/epoch20/reviews/source-publication-remote-independent-v1.json",
+      "sha256": "a4ee0a7c26b8bd6a7e5715f056bfa59c8781ba31c8587ae54090f0f1eadc6883"
+    }
+  },
+  "latency": {
+    "direct_all_arm_request": {
+      "max_seconds": 8.8994056800002,
+      "n": 24,
+      "p50_seconds": 7.710499749504379,
+      "p95_seconds": 8.832542803906835,
+      "scope": "Three matched NLIarms perquestion; document preparation is reported separately."
+    },
+    "direct_pair": {
+      "max_seconds": 3.3702824960055295,
+      "n": 72,
+      "p50_seconds": 2.448054331500316,
+      "p95_seconds": 2.8489717115458917,
+      "scope": "72corpus matched-arm direct pair forwards; no engineering cases."
+    },
+    "document_amortized": {
+      "max_seconds": 8.682461605334538,
+      "n": 8,
+      "p50_seconds": 8.126605314668268,
+      "p95_seconds": 8.617003427585587,
+      "scope": "Complete source partition/embedding/native and3questionsx3NLIarms perdocument, dividedby3; amortized full-document unit, not serving latency."
+    }
+  },
+  "legacy_arm_name_disclosure": "Names are historical identifiers, not literal two-unit retrieval; all arms use the same frozen 512-token pair/context budget and shared priority context.",
+  "matched_DEV_metrics": {
+    "binary_metrics": {
+      "ruvector_top2": {
+        "Brier": 0.6133088773667054,
+        "NLL": 1.109646293729604,
+        "accuracy": 0.5,
+        "correct": 12,
+        "n": 24
+      },
+      "same_nli_lexical_top2": {
+        "Brier": 0.9260276871951633,
+        "NLL": 1.4192485350352426,
+        "accuracy": 0.3333333333333333,
+        "correct": 8,
+        "n": 24
+      },
+      "same_nli_positional_first2": {
+        "Brier": 0.8804833413577775,
+        "NLL": 1.4890710359458605,
+        "accuracy": 0.4166666666666667,
+        "correct": 10,
+        "n": 24
+      }
+    },
+    "champion_promotion_allowed": false,
+    "checks": {
+      "all_gold_classes_present": true,
+      "all_three_classes_correct_at_least_once": false,
+      "binary:same_nli_lexical_top2:Brier_nonincrease": true,
+      "binary:same_nli_lexical_top2:NLL_nonincrease": true,
+      "binary:same_nli_lexical_top2:accuracy_gain_at_least_two_correct": true,
+      "binary:same_nli_lexical_top2:finite_proper_scores": true,
+      "binary:same_nli_lexical_top2:strict_proper_gain": true,
+      "binary:same_nli_positional_first2:Brier_nonincrease": true,
+      "binary:same_nli_positional_first2:NLL_nonincrease": true,
+      "binary:same_nli_positional_first2:accuracy_gain_at_least_two_correct": true,
+      "binary:same_nli_positional_first2:finite_proper_scores": true,
+      "binary:same_nli_positional_first2:strict_proper_gain": true,
+      "typed:same_nli_lexical_top2:Brier_nonincrease": true,
+      "typed:same_nli_lexical_top2:NLL_nonincrease": true,
+      "typed:same_nli_lexical_top2:accuracy_gain_at_least_two_correct": true,
+      "typed:same_nli_lexical_top2:finite_proper_scores": true,
+      "typed:same_nli_lexical_top2:strict_proper_gain": true,
+      "typed:same_nli_positional_first2:Brier_nonincrease": true,
+      "typed:same_nli_positional_first2:NLL_nonincrease": true,
+      "typed:same_nli_positional_first2:accuracy_gain_at_least_two_correct": true,
+      "typed:same_nli_positional_first2:finite_proper_scores": true,
+      "typed:same_nli_positional_first2:strict_proper_gain": true
+    },
+    "confirmation_intervals": null,
+    "passed": false,
+    "publisher_submission_allowed": false,
+    "scope": "Frozen matched-reader retrieval research; nominal paired8-document intervals, not official benchmark placement or a direct full-input native104 comparison.",
+    "typed_metrics": {
+      "ruvector_top2": {
+        "Brier": 0.8584419067316826,
+        "NLL": 1.9237125476176915,
+        "accuracy": 0.4166666666666667,
+        "by_class": {
+          "Contradiction": {
+            "correct": 0,
+            "n": 4
+          },
+          "Entailment": {
+            "correct": 6,
+            "n": 11
+          },
+          "NotMentioned": {
+            "correct": 4,
+            "n": 9
+          }
+        },
+        "correct": 10,
+        "n": 24
+      },
+      "same_nli_lexical_top2": {
+        "Brier": 1.1507937940696695,
+        "NLL": 2.3236943983586333,
+        "accuracy": 0.20833333333333334,
+        "by_class": {
+          "Contradiction": {
+            "correct": 0,
+            "n": 4
+          },
+          "Entailment": {
+            "correct": 3,
+            "n": 11
+          },
+          "NotMentioned": {
+            "correct": 2,
+            "n": 9
+          }
+        },
+        "correct": 5,
+        "n": 24
+      },
+      "same_nli_positional_first2": {
+        "Brier": 1.21152860582479,
+        "NLL": 2.69590602596625,
+        "accuracy": 0.25,
+        "by_class": {
+          "Contradiction": {
+            "correct": 1,
+            "n": 4
+          },
+          "Entailment": {
+            "correct": 4,
+            "n": 11
+          },
+          "NotMentioned": {
+            "correct": 1,
+            "n": 9
+          }
+        },
+        "correct": 6,
+        "n": 24
+      }
+    }
+  },
+  "new_submission": false,
+  "official_rank": null,
+  "official_score": null,
+  "post_hoc_observations_not_causal_proof": "The four contradiction errors occur in three documents. Two literal restriction-containing units were retained but misclassified; two other restriction-containing units were omitted by the frozen whole-unit packing budget. On one shared restriction, positional context predicts contradiction while native context predicts neutral. These are observed feed differences, not official evidence sufficiency annotations or a proven remedy.",
+  "primary_failure": "Frozen all-class gate: primary Contradiction correct0/4. Every accuracy-gain/proper-score comparison and the runtime gate passed; acceptance still fails.",
+  "runtime_forecast": {
+    "allowed": true,
+    "capacity_receipt": {
+      "annotation_choices_accessed": 0,
+      "confirmation_NLI_predictions": 0,
+      "document_units": [
+        {
+          "document_id": 308,
+          "units": 9
+        },
+        {
+          "document_id": 159,
+          "units": 18
+        },
+        {
+          "document_id": 284,
+          "units": 7
+        },
+        {
+          "document_id": 501,
+          "units": 8
+        },
+        {
+          "document_id": 267,
+          "units": 16
+        },
+        {
+          "document_id": 494,
+          "units": 15
+        },
+        {
+          "document_id": 261,
+          "units": 21
+        },
+        {
+          "document_id": 313,
+          "units": 8
+        }
+      ],
+      "max_units": 21,
+      "model_forwards": 0,
+      "scope": "INPUT_ONLY_TOKENIZATION_CAPACITY",
+      "source_path": "experiments/sota-2026-10-22/legal-transfer/epoch18/confirmation-inputs-only.json",
+      "source_sha256": "778fd8e080612744a1cbc6470c354f011e2c3a29ec560d90836fdd770708a266",
+      "text_previously_published": true,
+      "training_selection_on_confirmation_labels": false
+    },
+    "formula_id": "24xDEVmaxDocumentThirdxmax1UnitRatio+2xWholeInit+60-v1",
+    "limit_seconds": 600,
+    "max_CONFIRMATION_source_units": 21,
+    "max_DEV_document_seconds_divided_by3": 8.682461605334538,
+    "max_DEV_source_units": 29,
+    "projected_confirmation_seconds": 294.75800242100377,
+    "scope": "Conservative complete-document amortized forecast; no confirmation labels/predictions used and no guarantee of future completion.",
+    "source_unit_ratio": 1,
+    "whole_pipeline_initialization_seconds": 13.189461946487427
+  },
+  "schema_version": 1,
+  "status": "REJECTED_DEV_GATE",
+  "uncertainty": [
+    "One preselected original FP32 reader, three matched evidence arms, eight development documents and 24 questions; no fresh confirmation was executed.",
+    "Native evidence selection gains are local matched-reader DEV results, not a direct native104 comparison, full LegalBench score, JevBench rank, ClaimBench score or official SOTA.",
+    "The primary reader missed all four contradiction cases. Saved feeds can distinguish observed evidence/prediction differences but do not alone identify a causal remedy.",
+    "Training lineage is declared by the pinned model card; exact pretraining dataset revisions and record-level contamination remain unknown.",
+    "The fixed reserved confirmation input text was tokenized for capacity only; zero confirmation neural predictions and zero annotation choices were used.",
+    "Latency covers this CPU2 diagnostic. Three-arm request and document-amortized timings are not primary-only serving latency; RSS is a process high-water, not a simultaneous aggregate.",
+    "Official matching publisher result/rank, sealed JevBench 300-question scorer and complete licensed ClaimBench data/scoring/submission access remain unverified."
+  ]
+}

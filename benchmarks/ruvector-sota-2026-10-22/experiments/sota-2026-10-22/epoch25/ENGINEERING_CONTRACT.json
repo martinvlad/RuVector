@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "epoch": 25,
+  "scope": "Finite supplied-excerpt evidence qualification and matched typed zero-shot reader engineering; no benchmark claim.",
+  "wrapper": {
+    "exact_keys": [
+      "schema_version",
+      "epoch",
+      "contract_sha256",
+      "license",
+      "authorship",
+      "scope",
+      "cases"
+    ],
+    "schema_version": 1,
+    "epoch": 25,
+    "license": "CC0-1.0",
+    "cases": 6,
+    "contract_sha256": "SHA256 of these exact contract file bytes"
+  },
+  "raw_case": {
+    "exact_keys": [
+      "id",
+      "hypothesis",
+      "query",
+      "sources"
+    ],
+    "query": "Verbatim hypothesis; no separately annotated retrieval hints.",
+    "source_exact_keys": [
+      "source_id",
+      "text"
+    ],
+    "sources_min": 1,
+    "sources_max": 16,
+    "source_text_chars_max": 8192,
+    "hypothesis_chars_max": 2048,
+    "identifiers": "[A-Za-z0-9][A-Za-z0-9_.:-]{0,95}; unique case IDs and source IDs within case.",
+    "annotations": "Gold, spans, units, references, graphs, expected decisions and derived evidence fields rejected."
+  },
+  "segmentation": "One entire provided source text is one indivisible evidence unit. Exact character [0,len(text)] and UTF8 byte spans; no paragraph or sentence parser.",
+  "retrieval": {
+    "arms": [
+      "actual_native",
+      "lexical",
+      "positional"
+    ],
+    "top_k": 1,
+    "same_pack_policy": true,
+    "BGE_query_prefix": "Represent this sentence for searching relevant passages: ",
+    "BGE_dimensions": 384,
+    "native": "Exact @ruvector/core0.1.33/platform0.1.31/core2.3.0 actual insert/search; observed order preserved, no rerank or Python vector ranking.",
+    "lexical": "Casefolded Unicode word-set Jaccard, source-index tie break.",
+    "positional": "Input source order.",
+    "isolation": "Every native index contains only supplied sources for that case."
+  },
+  "packing": {
+    "context": "Exact selected source.text with no added evidence, reformatting or truncation.",
+    "token_budget": 512,
+    "budget_scope": "Actual complete rendered model prompt tokens, including context and hypothesis, validated before each forward. Overbudget fails the attempt without a forward.",
+    "forwards": "Exactly six cases x three arms =18 sequential batch-size-one pairs; shared one reader and fixed prompt."
+  },
+  "numeric_provenance": {
+    "extraction": "Source-only exact number/year-candidate, currency, scale, percent and finite period lexemes with exact char and UTF8 offsets. No amount arithmetic, conversions, broad numeric parser or legal inference.",
+    "year_candidate": "A four-digit numeric lexeme in [1000,2999], explicitly lexical candidate only.",
+    "ambiguity_markers": [
+      "unit(s)/currency [is/are] unspecified|unclear|unknown|ambiguous|not stated",
+      "without [a] stated unit|currency",
+      "[reporting] period/year [is/are] unspecified|unclear|unknown|ambiguous|not stated",
+      "without [a] stated period|year"
+    ],
+    "ambiguity_result": {
+      "status": "STRUCTURAL_UNKNOWN",
+      "decision": null
+    },
+    "absence": "Missing evidence, retrieval miss, absent number/year or absent marker never independently yields global insufficiency or legal insufficiency.",
+    "guard_scope": "Selected source only; source guard decision always null. Main reader decision null on structural unknown. Separate author-owned guards never call NLI."
+  },
+  "reader_output": {
+    "labels": [
+      "entailment",
+      "contradiction",
+      "not_mentioned"
+    ],
+    "probabilities": "Uncalibrated conditional valid-label/code softmax from one fixed causal forward, not native NLI probabilities.",
+    "generation_calls": 0,
+    "generated_tokens": 0,
+    "training_steps": 0,
+    "optimizer_steps": 0
+  },
+  "initialization_gate": "All BGE/tokenizer/native/Qwen initialization only after worker validates frozen plan, actual remote admission, exact owner lease and all source/runtime pins.",
+  "retention": "One worker reservation, no retry. Fsync progress before/after model initialization and each forward; raw failure and partial counts retained."
+}

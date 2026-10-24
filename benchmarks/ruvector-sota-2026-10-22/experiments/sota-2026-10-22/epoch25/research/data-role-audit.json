@@ -1,0 +1,145 @@
+{
+  "schema": "ruvector.epoch25.independent-data-role-audit.v1",
+  "actual_repository": "ruvnet/RuVector",
+  "actual_head": "a09506046843bc0c4e28e30865b610b283942e2d",
+  "prefix": "benchmarks/ruvector-sota-2026-10-22/",
+  "scope": "Live connected Git read-only metadata and existing exposure evidence; zero new source cases, confirmation text, annotation choices, labels, weights, model/tokenizer/native/scorer execution, outgoing messages or repository writes.",
+  "source_evidence": [
+    {
+      "path": "CONTINUATION.json",
+      "git_blob": "5db1122782fb91c79287d4b318b81488a4fadac5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch24/REJECTION_LEDGER.json",
+      "git_blob": "f29f5a0ed8634289e96330d1b0fb4125721cbfcb"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch24/SOURCE_MANIFEST.json",
+      "git_blob": "747f153915f64a02eeac36e7196ad7654554a540"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch22/eligibility-manifest.json",
+      "git_blob": "be10651bf0884c792b14c51ac639141a9f13abe4"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch22/reviews/postrun-data-identities-independent-v1.json",
+      "git_blob": "db1358beae4c5ffe81441b8945451dd38266dd48"
+    }
+  ],
+  "confirmed_current_state": {
+    "original_ContractNLI_train_partition": {
+      "exposed": 245,
+      "reserved_NLI_label_unused": 24,
+      "total": 423,
+      "unreserved": 154
+    },
+    "reserved_16groups_48queries": [
+      141,
+      163,
+      178,
+      183,
+      217,
+      224,
+      276,
+      316,
+      325,
+      371,
+      414,
+      431,
+      477,
+      554,
+      615,
+      624
+    ],
+    "reserved_8groups_24queries": [
+      308,
+      159,
+      284,
+      501,
+      267,
+      494,
+      261,
+      313
+    ],
+    "reserved_hypotheses": [
+      "nda-17",
+      "nda-7",
+      "nda-3"
+    ],
+    "reserved_confirmation_annotation_choices_projected": 0,
+    "reserved_confirmation_model_forwards": 0,
+    "reserved_confirmation_text_access": "Prior/current tokenizer-only text capacity reads disclosed; project-model/annotation-label unused does not mean text unread.",
+    "old_easy48_Legal96_CNLIDEV_and245_train_exposures": "Permanently exposed; never fresh confirmation.",
+    "all_epoch24_authored_cases": "24 structural cases permanently exposed engineering DEV.",
+    "epoch24_status": "ENGINEERING_QUALIFIED_SEMANTIC_READER_ADMISSION_BLOCKED",
+    "epoch24_semantic_metrics": null,
+    "champion": "SubmittedNative104/RRF10 unchanged",
+    "official_rank": null,
+    "goal_met": false
+  },
+  "license": {
+    "repository": "stanfordnlp/contract-nli",
+    "revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "source_license": "CC-BY-4.0",
+    "license_git_blob": "4ea99c213c5c0c005ae4e80df8e52169d06896ec",
+    "license_bytes": 18656,
+    "license_sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+    "archive_git_blob": "757fd1dafd29a997fba00c60c6d40b2930a36159",
+    "archive_bytes": 65362913,
+    "archive_downloaded_or_decoded_this_audit": false,
+    "retention": "Retain Koreeda and Manning 2021 citation, source URL, CC-BY-4.0 link/text, attribution and indicate transformations."
+  },
+  "role_eligibility_rules": [
+    "Existing TRAIN may be used only under its historical role; exposure does not become new heldout DEV or fresh CONF.",
+    "Any reader trained or selected/calibrated on all423 original TRAIN documents cannot use the old16group or8group TRAIN confirmation banks.",
+    "154 unreserved original TRAIN IDs are a metadata pool, not automatically eligible fresh data for a chosen pretrained reader; exact supervised/selection/calibration lineage still governs.",
+    "Official DEV61 and TEST123 are licensed source splits, not automatically independent confirmation pools.",
+    "Fix exact model/head/tokenizer/weights/training-selection-calibration records and candidate/scorer/builder hashes before unseen source inputs or labels.",
+    "Freeze role assignment once at normalized-document group level using ID/hash metadata only; no class balancing, difficulty or length/performance driven redrawing.",
+    "Do not inspect CONF choices, tune, train, select checkpoints, calibrate thresholds or choose methods with CONF labels.",
+    "Prefer independent input-only projection; postprediction auditor alone joins fixed labels after sealed outputs and cleanup.",
+    "Complete annotated JSON parsed into candidate RAM is logical separation only, never OS-enforced label isolation; disclose it.",
+    "Retrieval miss, overflow, unresolved reference, unit/period ambiguity or source truncation remains unknown and cannot establish legal NotMentioned or insufficient evidence."
+  ],
+  "inherited_test_metadata_checks": {
+    "status": "Inherited epoch22 identity metadata; these are not new dataset findings, requalification or source case reads.",
+    "official_test_ids": 123,
+    "unique_normalized_documents": 122,
+    "internal_duplicate": {
+      "document_ids": [
+        52,
+        97
+      ],
+      "normalized_document_sha256": "3d1fb35d6cf4d6f9b5e8d2b0f818397d89148c5d256579860859ee25d7682e72"
+    },
+    "old_blocked269_collision": {
+      "document_id": 537,
+      "normalized_document_sha256": "92f0c6c9c812ae06f59b6ebed9b4c9bc60eca0f60fb377cbdcc360bb925fd25c"
+    },
+    "LegalBench_row59_alias": {
+      "document_id": 389,
+      "file_name": "71297_0000071297-97-000059_document_6.txt",
+      "normalized_document_sha256": "6984e567bab4bb92f7c57e13baf55ec86ab8cfe1e92627e7020557900ecc4ae3"
+    },
+    "preliminary_unique_doc_upper_bound_after_only_these_exclusions": 120,
+    "fresh_confirmation_qualified": false,
+    "remaining_gate": "All old banks and transformations/excerpts/input hashes plus chosen reader exact training, selection and calibration records; unknown pretraining/fuzzy overlap remains.",
+    "labels_or_test_text_opened": false
+  },
+  "source_container_disclosure": {
+    "OS_enforced_label_isolation": false,
+    "explanation": "The guarded builder parses the complete annotated JSON into worker RAM, then indexes only selected document text and hypothesis definitions. Zero source annotation choices accessed is a logical control and code/receipt claim, not OS-enforced label isolation.",
+    "isolation_type": "LOGICAL_CONTROL_ONLY",
+    "reported_worker_annotation_choice_field_accesses": 0,
+    "worker_parses_complete_annotated_source_JSON_into_RAM": true
+  },
+  "new_reader_status": "No new reader admitted by this data audit; root provenance agent owns two new reader examinations. Do not repeat Solvi/Stanford unchanged HOLD.",
+  "next_independent_scope": "After shared finite contract and candidate freeze: newly authored CC0 numerical-evidence provenance and arithmetic engineering holdout, matched native/lexical/positional retrieval with the identical deterministic typed evaluator; zero semantic benchmark/generalization or promotion claim.",
+  "activity": {
+    "new_benchmark_roles_drawn": 0,
+    "new_case_rows_or_labels_opened": 0,
+    "new_Train_dev_calibration_Conf_examples": 0,
+    "model_tokenizer_native_scorer_execution": 0,
+    "Git_writes_submissions_outgoing_secrets_paid_GPU": 0
+  }
+}

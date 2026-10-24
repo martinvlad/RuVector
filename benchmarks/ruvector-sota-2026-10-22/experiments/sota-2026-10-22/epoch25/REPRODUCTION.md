@@ -1,0 +1,9 @@
+# Epoch25 authored typed-reader qualification
+
+This is six independently authored CC0 technical cases with two examples per E/C/N class. It is not a JevBench, LegalBench, ClaimBench, or generalization score. Native104 is unchanged; benchmark TRAIN/DEV/calibration/confirmation are empty. No promotion or publisher submission can follow this qualification alone.
+
+Reconstruct with the reviewed branch bootstrap/restore and inherited epoch22 archive before bootstrap, verifying all hashes. The frozen plan pins candidate/runtime/source/protocol and the independent scorer seal. Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca is Apache2; full training/SFT overlap and exact base training revision are unknown. Fixed A/B/C next-token logits are normalized over three codes, uncalibrated. No generation, thinking, fit, calibration, optimizer or label-order selection.
+
+Actual pinned BGE/native RuVector top1 source evidence is compared with lexical Jaccard and positional source controls under the same reader/prompt/512token budget. Exact numeric/source spans are retained; structural unknown and retrieval miss cannot prove global insufficient evidence. One owned two-CPU600s process, no retry. All original failures and incomplete work are retained. Source guard cases owned by the implementer are exposed smoke checks only.
+
+The independent manual gold/scorer are sealed before execution and published unchanged only after the candidate is frozen and the single real run closes. Six other privately authored source guard cases are unexecuted, excluded and unpublished; their authoring script is excluded. Existing public and historical datasets retain their original licenses. Weights/native binaries/wheels/private mail/pages/credentials are not checkpoint publication payloads. Process/absolute-path identities are historical receipts, not authorization to rerun a spent attempt.

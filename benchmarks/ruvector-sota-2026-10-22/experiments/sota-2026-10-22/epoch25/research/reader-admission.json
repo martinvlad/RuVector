@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "epoch": 25,
+  "scope": "Metadata-only research of exactly two new official pretrained reader candidates. No weights, model initialization, tokenizer initialization, native initialization, project labels, or project test results were read or executed.",
+  "project_anchor": {
+    "repository": "ruvnet/RuVector",
+    "branch": "benchmarks/ruvector-sota-2026-10-22",
+    "head_supplied_by_coordinator": "a09506046843bc0c4e28e30865b610b283942e2d"
+  },
+  "overall": {
+    "fully_qualified_stronger_reader": false,
+    "modernbert": "HOLD: checkpoint-specific fine-tuning/selection lineage is not established; binary not_entailment cannot supply a native three-way legal decision.",
+    "qwen3": "CONDITIONAL_METADATA_ELIGIBLE_NOT_QUALIFIED: official licensed foundation checkpoint can support a future frozen typed-score prototype. Unknown foundation/SFT overlap is retained as unknown, not treated as proof of contamination. Typed-score correctness, calibration, project-unused confirmation, and bounded CPU completion have not been qualified.",
+    "no_benchmark_gain_claim": true,
+    "pretraining_overlap": "Unknown for both candidates. This report does not require impossible global pretraining record provenance and does not infer clean separation from absent evidence."
+  },
+  "cached_runtime": {
+    "interpreter": "/tmp/ruvector-sota-2026-10-22/epoch24-8be8f0fec36e/project/retrieval/.venv/bin/python",
+    "inspection": "importlib.metadata only; no torch, transformers, tokenizers, model, or native imports",
+    "python": "3.12.14",
+    "torch": "2.7.1+cpu",
+    "transformers": "4.52.4",
+    "tokenizers": "0.21.4",
+    "onnxruntime": "1.22.1",
+    "numpy": "2.2.6",
+    "safetensors": "0.5.3",
+    "architecture_version_blocker": false,
+    "source_hashes": "cached-runtime-source.json",
+    "important_correction": "The cached runtime is new enough for both candidates; the initial warning about an old 4.x runtime was not confirmed."
+  },
+  "candidates": [
+    {
+      "id": "MoritzLaurer/ModernBERT-large-zeroshot-v2.0",
+      "revision": "a51e07b524299e309dd2b88d48b0cfa2bd9ec598",
+      "official_url": "https://huggingface.co/MoritzLaurer/ModernBERT-large-zeroshot-v2.0/tree/a51e07b524299e309dd2b88d48b0cfa2bd9ec598",
+      "base": {
+        "id": "answerdotai/ModernBERT-large",
+        "current_metadata_revision": "45bb4654a4d5aaff24dd11d4781fa46d39bf8c13",
+        "base_revision_used_by_finetune": "Not pinned in the fine-tuned checkpoint card/config; current base revision is not proof of training-time identity.",
+        "license": "Apache-2.0 explicitly declared in official base card for architecture, weights, and training code",
+        "official_code_repository_revision": "AnswerDotAI/ModernBERT@c6d942312f1b0b24d423628b8e477a3e97c7038f",
+        "full_license_url": "https://github.com/AnswerDotAI/ModernBERT/blob/c6d942312f1b0b24d423628b8e477a3e97c7038f/LICENSE"
+      },
+      "architecture": {
+        "class": "ModernBertForSequenceClassification",
+        "parameters_per_hub_metadata": 395833346,
+        "layers": 28,
+        "hidden_size": 1024,
+        "attention_heads": 16,
+        "maximum_positions": 8192,
+        "pooling": "attention-mask-weighted mean, then prediction head, dropout, and a two-output linear classifier",
+        "labels": {"0": "entailment", "1": "not_entailment"},
+        "probability_semantics": "softmax(logits)[0] is the learned binary entailment score. not_entailment merges contradiction and neutral/absence; it cannot be relabeled as contradiction. Per-hypothesis scores are not a calibrated three-way legal decision probability."
+      },
+      "licenses": {
+        "checkpoint": "Apache-2.0 declared in official model card; no separate LICENSE file listed in this model repository",
+        "base": "Apache-2.0",
+        "training_code": "Apache-2.0",
+        "training_code_license_url": "https://github.com/MoritzLaurer/zeroshot-classifier/blob/e680edcb6d92d8ca09f3d39b70358ccac8ccbd2f/LICENSE",
+        "upstream_data": "Not one blanket Apache license. Official dataset overview includes noncommercial and unknown licenses; complete checkpoint-specific source license reconciliation is absent.",
+        "examples_from_official_overview": {"anli": "CC-BY-NC-4.0", "financial_phrasebank": "CC-BY-NC-SA-3.0", "trueteacher": "CC-BY-NC-4.0", "lingnli": "unknown", "app_reviews": "unknown"}
+      },
+      "training_selection_calibration": {
+        "checkpoint_card": "Says it fine-tunes the same dataset mix as zeroshot-v2.0, but does not bind an exact training code revision, data revisions, record manifest, or calibration set.",
+        "official_training_repository": "MoritzLaurer/zeroshot-classifier@e680edcb6d92d8ca09f3d39b70358ccac8ccbd2f",
+        "source_url": "https://github.com/MoritzLaurer/zeroshot-classifier/blob/e680edcb6d92d8ca09f3d39b70358ccac8ccbd2f/v2_synthetic_data/synth_train_eval.ipynb",
+        "source_limit": "This generic v2 notebook predates the ModernBERT release and is not a verified training receipt for this exact checkpoint.",
+        "train_sources_in_generic_v2_code": [
+          {"id": "MoritzLaurer/synthetic_zeroshot_mixtral_v0.1", "configs": ["mixtral_written_texts_for_tasks_v4", "mixtral_refinedweb_nli"], "split": "train", "revision": "not specified", "sampling": "maximum 50000 per config after shuffle seed 42"},
+          {"id": "MoritzLaurer/dataset_train_nli", "split": "train", "revision": "not specified", "filter": "task_name != mixtral_small_zeroshot"},
+          {"id": "MoritzLaurer/mnli_fever_clean", "split": "train", "revision": "not specified", "role": "alternate commercially-friendly path; exact checkpoint path not established"}
+        ],
+        "selection_evidence_in_generic_code": "dataset_test_concat_nli['train'] is encoded as encoded_dataset_test; Trainer eval_dataset uses it; evaluation_strategy='epoch', load_best_model_at_end=True, metric_for_best_model='f1_macro'. Thus nominal test data is used for checkpoint selection in the published generic recipe. This is not proof that the exact ModernBERT release used that recipe unchanged.",
+        "other_evaluation_identity": "MoritzLaurer/zeroshot_test_downsampled, without revision pin",
+        "independent_calibration": "Not documented in checkpoint-specific metadata.",
+        "record_level_project_confirmation_nonoverlap": "Not established. No project-unused source-licensed confirmation manifest was supplied or inspected. No confirmation labels were used."
+      },
+      "bounded_cpu": {
+        "minimum_transformers_from_official_base_card": "4.48.0",
+        "cached_runtime_version_compatible": true,
+        "cpu_source_behavior": "Installed 4.52.4 ModernBERT source explicitly disables reference_compile for cpu. Future smoke should force CPU and eager/sdpa with reference_compile=False, avoiding GPU flash-attention assumptions.",
+        "weights_bytes_observed_as_metadata_only": "Approximately 792 MB BF16; weights were not downloaded.",
+        "under_2cpu_600s": "Unverified. Public speed claims in this card concern GPU throughput and do not establish this CPU budget.",
+        "semantic_limit": "Binary head cannot directly produce entailment/contradiction/not-mentioned, regardless of CPU feasibility."
+      },
+      "status": "HOLD_FOR_TYPED_DECISION_QUALIFICATION",
+      "new_blockers_once": [
+        "No checkpoint-specific train/selection/calibration manifest; generic published recipe selects checkpoints with a nominal test set.",
+        "Binary not_entailment collapses contradiction and neutral, so a new fixed and independently qualified typed-decision mapping would be required.",
+        "Complete source-data license reconciliation and a project-unused confirmation manifest are not established."
+      ]
+    },
+    {
+      "id": "Qwen/Qwen3-0.6B",
+      "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+      "official_url": "https://huggingface.co/Qwen/Qwen3-0.6B/tree/c1899de289a04d12100db370d81485cdf75e47ca",
+      "base": {"id": "Qwen/Qwen3-0.6B-Base", "current_metadata_revision": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd", "training_time_base_revision": "not pinned in instruction checkpoint card"},
+      "architecture": {
+        "class": "Qwen3ForCausalLM",
+        "advertised_parameters": "0.6B",
+        "hub_safetensors_parameter_entries": 751632384,
+        "base_hub_safetensors_parameter_entries": 596049920,
+        "parameter_count_caution": "Instruction and base Hub entry counts differ by one 151936 x 1024 embedding-sized matrix, while config tie_word_embeddings is true. Do not silently substitute advertised size for serialized entry count or claim resolution without inspecting weights in a separately authorized step.",
+        "layers": 28,
+        "hidden_size": 1024,
+        "query_heads": 16,
+        "kv_heads": 8,
+        "vocab_size_in_config": 151936,
+        "context_in_card": 32768,
+        "maximum_positions_in_instruction_config": 40960,
+        "head": "Causal vocabulary LM head, not an NLI classifier.",
+        "probability_semantics": "Full-vocabulary softmax gives next-token probabilities conditioned on the frozen prompt. Renormalizing three fixed legal decision code logits gives a conditional choice score, not a calibrated probability that the legal proposition is true. Token IDs, prompt, code mapping, thinking=False, and any suffix must be frozen before independent confirmation. Prefer one forward pass with logits_to_keep=1 after verifying the label codes are each one token; no open-ended reasoning generation."
+      },
+      "licenses": {
+        "checkpoint": "Apache-2.0 full LICENSE fetched",
+        "checkpoint_license_url": "https://huggingface.co/Qwen/Qwen3-0.6B/blob/c1899de289a04d12100db370d81485cdf75e47ca/LICENSE",
+        "base": "Apache-2.0 full LICENSE fetched",
+        "base_license_url": "https://huggingface.co/Qwen/Qwen3-0.6B-Base/blob/da87bfb608c14b7cf20ba1ce41287e8de496c0cd/LICENSE",
+        "both_license_sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+        "foundation_data_source_licenses": "Not enumerated at record level; weight licensing is documented, global training-text rights and overlap are not proven. Retain as unknown."
+      },
+      "training_selection_calibration": {
+        "official_report": "https://arxiv.org/html/2505.09388v1",
+        "official_docs_code_revision": "QwenLM/Qwen3@7a2f61ffc7a20d47efcd2bf97f6f2bf52729042e",
+        "pretraining": "Official report section 3 describes approximately 36T multilingual tokens including web, books, PDF-derived and synthetic text, with three training stages. Dataset names, revisions, record manifests, and full source license chains are not published there.",
+        "small_model_posttraining": "Section 4.5 specifically includes 0.6B in off-policy response distillation and on-policy logit/KL distillation using Qwen3-32B or Qwen3-235B-A22B teachers. Generic four-stage flagship RL descriptions must not be assigned uncritically to the 0.6B release.",
+        "train_dev_selection_ids": "Not provided for this exact distilled checkpoint. The report mentions a reserved validation query set in the flagship cold-start process, but no record-level linkage to 0.6B distillation or a legal decision calibration set.",
+        "known_contractnli_finetune_or_selection_overlap": "None established by the inspected official metadata; absence of disclosure is not evidence of absence or evidence of overlap.",
+        "foundation_overlap_policy": "Retain unknown; do not reject solely because global pretraining/SFT records are undisclosed.",
+        "project_specific_confirmation": "Not yet established as source-licensed, project-unused, frozen, and separate from prompt selection/calibration. No confirmation labels were read or used."
+      },
+      "bounded_cpu": {
+        "minimum_transformers_from_official_card": "4.51.0",
+        "cached_runtime_version_compatible": true,
+        "installed_source_semantics": "4.52.4 source supports logits_to_keep and the causal LM head. Exact installed file hashes recorded separately.",
+        "memory_and_time": "One bounded prefill and one-step typed scoring is structurally cheaper than generation, but model load, prompt length, pair count, memory, and completion within 2 CPU / 600 seconds were not measured. BF16 CPU speed cannot be assumed.",
+        "under_2cpu_600s": "UNVERIFIED, not a proven incompatibility."
+      },
+      "status": "CONDITIONAL_METADATA_ELIGIBLE_NOT_QUALIFIED",
+      "new_blockers_once": [
+        "No frozen typed-decision prompt/code adapter and no independent qualification of its scores or abstention behavior.",
+        "No admitted source-licensed project-unused confirmation manifest separate from prompt selection/calibration.",
+        "No observed CPU time/RSS proof for the exact bounded workload."
+      ],
+      "what_is_not_a_blocker": [
+        "Transformers architecture version: cached runtime supports qwen3.",
+        "Unknown foundation training text overlap alone: remains an acknowledged uncertainty, not invented contamination proof."
+      ]
+    }
+  ],
+  "source_dependency_pins": {
+    "inspected_upstream_transformers_tag": "v4.51.3",
+    "tag_object": "b99fa8251c7327130243a0b76e36d0a922492e41",
+    "peeled_commit": "5f4ecf2d9f867a1255131d2461d75793c0cf1db2",
+    "actual_cached_transformers": "4.52.4; exact local source SHA256s in cached-runtime-source.json are authoritative for a future run, not the older inspected tag.",
+    "upstream_source_hash_manifest": "source-files.json",
+    "model_metadata_hash_manifest": "metadata-files.json"
+  },
+  "independent_native_experiment_recommendation": {
+    "name": "Pinned native cosine correctness across insertion order and persisted reload",
+    "purpose": "Qualify useful native numerical behavior independently of the raw grammar parser and exposed legal questions.",
+    "inputs": "New fixed analytic 384D vectors and query vectors with a recorded generator/version/seed and CC0 declaration; no model initialization or QA labels. Include ordinary separated vectors, near ties, rescaled vectors, and declared finite-input limits.",
+    "oracle": "Exact float64 cosine top-k with tie-tolerant set acceptance and frozen tolerance. Explicitly define handling of zero norms before execution.",
+    "matched_comparison": "Same pinned native binary and vectors, at least two insertion orders, before and after persisted reload; fixed k and fixed HNSW parameters. No parameter grid and no selection on exposed questions.",
+    "measurements": ["exact-oracle recall and finite IDs/scores", "score/distance monotonicity", "insertion-order sensitivity", "reload consistency", "time and RSS"],
+    "interpretation_limit": "Native numerical/retrieval engineering evidence only. It cannot establish legal decision accuracy or benchmark gains."
+  },
+  "handling_notes": {
+    "no_paid_or_gpu_actions": true,
+    "no_git_mutations": true,
+    "no_contact_or_submission": true,
+    "upstream_aggregate_tables": "Official model cards and broad paper fetches incidentally included public upstream aggregate evaluation tables. They were not used for candidate selection or project claims; saved model-card copies remove evaluation sections/tables. No project confirmation/test labels or results were accessed.",
+    "disk": "Temporary ENOSPC blocked five small optional dataset API saves. Empty owned files were removed after coordinator recovered space. No further remote searches were made after the coordinator requested the bounded search stop."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "epoch": 25,
+  "kind": "PRETRAINED_TYPED_READER_AUTHOR_QUALIFICATION_NOT_BENCHMARK_GENERALIZATION",
+  "source_checkpoint": "a09506046843bc0c4e28e30865b610b283942e2d",
+  "hypothesis": "A fixed licensed Qwen3-0.6B causal model with one frozen conditional A/B/C label-token score can pass a finite typed supplied-evidence qualification under actual native RuVector selection and matched same-model lexical/positional controls, with exact numerical-source provenance and512total prompt token budget.",
+  "contract_path": "experiments/sota-2026-10-22/epoch25/ENGINEERING_CONTRACT.json",
+  "benchmark_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "authored_qualification": "6new independently authored CC0 source/hypothesis cases,2perE/C/N; labels and oracle sealed outside worker input until source/candidate held. Not benchmark/generalization/unused confirmation.",
+  "reader": "Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca; Apache2; BF16 source values represented as FP32CPU; exactHF4.52.4/torch2.7.1CPU; no quantization/generation/thinking/fitting/calibration. Unknownfoundation/SFT/base-training-revision overlap retained.",
+  "probabilities": "Uncalibrated conditional valid-label-token softmax A32/B33/C34; proper diagnostic Brier(sum3)/NLL only authored6cases, not calibrated semantic benchmark probabilities.",
+  "retrieval": "Actual frozen BGE/nativebinary sourceonlytop1; same segmentation/context/prompt/model andbudgetforlexicalJaccard andpositional. Missingretrievalnever globalinsuff; selectedsource numericambiguitystructuralunknown withnullmaindecision.",
+  "limits": {
+    "worker_attempts": 1,
+    "native_corpus_batches": 1,
+    "user_max_native_corpus_batches": 2,
+    "cpu_threads": 2,
+    "seconds_per_batch": 600,
+    "NLI_model_initializations": 1,
+    "NLI_forward_pairs": 18,
+    "generation_calls": 0,
+    "generated_tokens": 0,
+    "training_steps": 0,
+    "optimizer_steps": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "acceptance": "Frozen independentprotocol:6/6native correctlytyped, finite normalizedprobs+allclasses, nativeaccuracyandBrier/NLLnotworse thanbothmatchedcontrols, sourceoffset/token/numericroundtrip+realnative/prompt/model/procidentity,0forbiddenoperations,CPU2/600swholeinitcleanup. Qualification only; anyfailure retained withno rerun/tuning.",
+  "promotion_or_submission_allowed": false,
+  "proper_benchmark_accuracy": null,
+  "proper_benchmark_scores": null,
+  "uncertainty": [
+    "Foundation/SFT training overlapunknown; no claimglobaldecontamination.",
+    "751632384BF16parametersconvertedFP32 mayfailCPU/memory/readiness; oneboundedrun determinesqualification.",
+    "Even6/6authoredresults do not establishLegalBench/JevBench/ClaimBench or officialeligibility."
+  ],
+  "prior_history": "Epoch24 limitedrawgrammarqualification remainsengineeringDEVforever; alloldeasy48/Legal96/CNLIDEV/confirmationretirements preserved. Native104unchanged."
+}

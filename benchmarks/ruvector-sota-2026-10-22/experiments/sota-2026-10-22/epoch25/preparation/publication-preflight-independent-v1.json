@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "epoch": 25,
+  "at": "2026-10-24T04:24:36.206290+00:00",
+  "status": "PASS_EPOCH25_INDEPENDENT_PUBLICATION_PREFLIGHT",
+  "checks_passed": true,
+  "checks": {
+    "actual_branch_exact_planning_lease": true,
+    "sole_parent_A095": true,
+    "actual_main_unchanged": true,
+    "actual_root_bench_scope_chain": true,
+    "all_trees_nontruncated": true,
+    "all3541_five_tuples_exact_except2_controls": true,
+    "actual2raw_controls_exact_local_bytes": true,
+    "CP_unchanged_and_CONT_hash_bound": true,
+    "CONT_history_preserved_except_active_and1planning_field": true,
+    "planning_execution_closed": true,
+    "root_bench_siblings_unchanged": true,
+    "actual12rows6ordered_knownsuccess_pairs0uncertain": true,
+    "guardian_exact_original_identity_live": true,
+    "guardian_exact_FD_device_inode_FLOCK_CPU01": true,
+    "no_release_and_fresh_heartbeat": true,
+    "no_admission_or_launch_artifact": true
+  },
+  "planning_lease_commit": "b6b48549737a94ed613432a330a0fae9b7576b45",
+  "source_checkpoint": "a09506046843bc0c4e28e30865b610b283942e2d",
+  "root_tree": "b5388a623955e20f68f6cc256cc1d04950c009b5",
+  "benchmark_tree": "7e3507c4271607ec40c9d415608caa26644f53c6",
+  "scope_tree": "f69cfa1a7a0e049b7b5e7b93a22b90ec354d4785",
+  "actual_readonly_connected_GETs": 8,
+  "actual_remote_canonical_five_tuple_sha256": "82a51597f97ea0ecf4c7b646028468103998510b4dd78d32aa0480f536e49e97",
+  "actual_connected_snapshot": "/tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986-connected-lease-read-independent-v1.json",
+  "journal": {
+    "rows": 12,
+    "known_successful_pairs": 6,
+    "uncertain_mutations": 0,
+    "pairs": [
+      {
+        "id": "lease-cont-blob",
+        "kind": "mcp__codex_apps__github_create_blob",
+        "known_success": true
+      },
+      {
+        "id": "lease-scope-tree",
+        "kind": "mcp__codex_apps__github_create_tree",
+        "known_success": true
+      },
+      {
+        "id": "lease-bench-tree",
+        "kind": "mcp__codex_apps__github_create_tree",
+        "known_success": true
+      },
+      {
+        "id": "lease-root-tree",
+        "kind": "mcp__codex_apps__github_create_tree",
+        "known_success": true
+      },
+      {
+        "id": "lease-commit",
+        "kind": "mcp__codex_apps__github_create_commit",
+        "known_success": true
+      },
+      {
+        "id": "lease-ref",
+        "kind": "mcp__codex_apps__github_update_ref",
+        "known_success": true
+      }
+    ],
+    "bytes": 3355,
+    "sha256": "5e0c004b9a77c368acccc088f7c69b43d625f9ea52faceafef791ef5e23bdbb1"
+  },
+  "fresh_owner": {
+    "pid": 70365,
+    "startticks": 13868579,
+    "lock_inode": 13626,
+    "device_major_minor": [
+      0,
+      33
+    ],
+    "original_expiry": "2026-10-24T07:09:43.879883+00:00",
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "heartbeat_age_seconds": 0.9505352973937988,
+    "kernel_FLOCK_rows": [
+      "1: FLOCK  ADVISORY  WRITE 70365 00:21:13626 0 EOF"
+    ],
+    "independent_contender_attempts": 0
+  },
+  "point_in_time_resource_facts_only": {
+    "filesystem_available_bytes": 2432745472,
+    "memory_max_bytes": "17179869184",
+    "memory_current_bytes": "10302672896",
+    "MemAvailable": "MemAvailable:   10693356 kB"
+  },
+  "approval_boundary": "Planning lease readback only. Execution remains closed; no source publication or model/tokenizer/native/qualification/benchmark call is admitted. Root is sole external writer.",
+  "remaining_blockers": [],
+  "reviewer_executions": {
+    "Git_mutations": 0,
+    "project_writes": 0,
+    "helpers_or_tests": 0,
+    "candidate_native_model_tokenizer_fixture_oracle_scorer": 0
+  },
+  "limitations": [
+    "Resource free-byte facts are point-in-time; no weight integrity or initialization-memory qualification claimed.",
+    "No independent lock acquisition attempted under read-only scope; exact physical /proc device/inode owner and FD3 verified.",
+    "Root-reported aborted orchestration is not counted as a new Git attempt; only six persisted unique ordered success pairs are credited."
+  ]
+}

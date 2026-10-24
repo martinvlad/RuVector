@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "audit": "independent initial source restoration and physical guardian audit",
+  "run_id": "epoch25-46f9adff3986",
+  "observed_at": "2026-10-24T04:16:32.087325+00:00",
+  "scope": "read-only stdlib hashing and process/lock inspection; no helper/model/tokenizer/native/scorer/test execution",
+  "connected_actual_Git": {
+    "branch": "a09506046843bc0c4e28e30865b610b283942e2d",
+    "source": "a09506046843bc0c4e28e30865b610b283942e2d",
+    "root_tree": "719bff18f35c73da680e514131d6dfa68f3b6072",
+    "bench_tree": "cf11fc31f89f14ff38bbf86a1c9b07c3dd0a726e",
+    "scope_tree": "b100f032cbb7faafebe253594d925f81f21688f0",
+    "main": "46d816ddc4c2a8a06cd3613534a79b1d557d858b",
+    "recursive_truncated": false,
+    "leaf_count": 3541,
+    "sourcefilemap_exact_match": true,
+    "ancestry_connected_read_checked": true,
+    "snapshot_file": "/tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986-connected-source-read-independent-v1.json"
+  },
+  "kit": {
+    "expected_files": 3541,
+    "actual_files": 3542,
+    "missing": [],
+    "extra": [
+      "experiments/sota-2026-10-22/epoch22/runs/dev/raw.json"
+    ],
+    "Git_blob_hash_mismatches": [],
+    "verified_restoration_extra": {
+      "path": "experiments/sota-2026-10-22/epoch22/runs/dev/raw.json",
+      "CP_size_and_SHA256_match": true,
+      "sha256": "2b012e1595bdb9b3bb1e5dacc242e9136a189638704f3a55229fe4d828cd0414",
+      "kind": "decoded reviewed archive22 payload; not an additional Git leaf"
+    },
+    "unexplained_extra": []
+  },
+  "restored_project": {
+    "CP_rows": 3465,
+    "CP_SHA256": "53628f69d231d7574988fe10dca25fb647a3a1a1202aacad02264806bcaba60c",
+    "CP_matches_continuation": true,
+    "KIT_rows": 61,
+    "BASE_rows": 48,
+    "expected_union": 3544,
+    "actual_files_at_read": 3549,
+    "manifest_conflicts": [],
+    "hash_mismatches": [],
+    "missing": [],
+    "additions_after_baseline": [
+      "experiments/sota-2026-10-22/epoch25/publication/publication_common_v1.py",
+      "experiments/sota-2026-10-22/epoch25/publication/stage_publication_v1.py",
+      "experiments/sota-2026-10-22/epoch25/publication/test_integrated_publication_v2.py",
+      "experiments/sota-2026-10-22/epoch25/publication/test_publication_guards_v1.py",
+      "experiments/sota-2026-10-22/epoch25/publication/validate_ref_guard_v1.py"
+    ],
+    "archive22_decoded_raw_sha256": "2b012e1595bdb9b3bb1e5dacc242e9136a189638704f3a55229fe4d828cd0414",
+    "ENOSPC_record_present": true,
+    "restoration_log_zero_execution_claims_observed": true,
+    "independent_execution_calls": 0
+  },
+  "physical_guardian": {
+    "owner": {
+      "run_id": "epoch25-46f9adff3986",
+      "pid": 70365,
+      "startticks": 13868579,
+      "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
+      "lock_inode": 13626,
+      "started_unix": 1792814983.879883,
+      "expires_unix": 1792825783.879883,
+      "started_at": "2026-10-24T04:09:43.879883+00:00",
+      "expires_at": "2026-10-24T07:09:43.879883+00:00",
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+      "generation": 1
+    },
+    "proc_startticks": 13868579,
+    "proc_state": "S",
+    "cmdline": "python3 -B /tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986/lock_supervisor.py ",
+    "affinity": [
+      0,
+      1
+    ],
+    "lock_stat": {
+      "inode": 13626,
+      "device_major": 0,
+      "device_minor": 33,
+      "regular_file": true,
+      "symlink": false
+    },
+    "fd_targets": {
+      "0": "/dev/null",
+      "1": "pipe:[408444]",
+      "2": "pipe:[408445]",
+      "3": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock"
+    },
+    "proc_lock_rows": [
+      "1: FLOCK  ADVISORY  WRITE 70365 00:21:13626 0 EOF"
+    ],
+    "heartbeat_age_seconds": 0.03203558921813965,
+    "unexpired": true,
+    "release_request_exists": false,
+    "released_exists": false,
+    "old_epoch24_exact_guardian_alive": false,
+    "old_epoch24_released_record_exists": true
+  },
+  "limitations": [
+    "Physical proof is a point-in-time observation and must be refreshed immediately before each root CAS.",
+    "Hashing confirms byte identities; it does not claim model eligibility, qualification success, official benchmark results, or unknown pretraining overlap resolution."
+  ],
+  "status": "PASS",
+  "checks_passed": true,
+  "remaining_blockers": []
+}

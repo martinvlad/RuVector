@@ -1,0 +1,941 @@
+{
+  "authorship": "Independent audit agent authored these engineering strings and source-scope dependency graphs for this epoch; no benchmark text or labels.",
+  "cases": [
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "Disclosure is forbidden unless one of these exceptions applies:\nThe recipient obtains prior written consent.\nA court compels disclosure.\nMarketing use remains forbidden."
+        }
+      ],
+      "id": "consent-header",
+      "query": "The recipient obtains prior written consent.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 63,
+          "excerpt_id": "source",
+          "id": "rule",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 108,
+          "excerpt_id": "source",
+          "id": "consent",
+          "requires": [
+            "rule"
+          ],
+          "start": 64
+        },
+        {
+          "end": 136,
+          "excerpt_id": "source",
+          "id": "court",
+          "requires": [
+            "rule"
+          ],
+          "start": 109
+        },
+        {
+          "end": 169,
+          "excerpt_id": "source",
+          "id": "marketing",
+          "requires": [],
+          "start": 137
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "No transfer may occur except as follows:\nTransfer to an adviser is permitted only if:\nThe adviser signs a confidentiality promise.\nAn unrestricted onward transfer is forbidden."
+        }
+      ],
+      "id": "nested-exception",
+      "query": "The adviser signs a confidentiality promise.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 40,
+          "excerpt_id": "source",
+          "id": "root",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 85,
+          "excerpt_id": "source",
+          "id": "inner",
+          "requires": [
+            "root"
+          ],
+          "start": 41
+        },
+        {
+          "end": 130,
+          "excerpt_id": "source",
+          "id": "leaf",
+          "requires": [
+            "inner"
+          ],
+          "start": 86
+        },
+        {
+          "end": 176,
+          "excerpt_id": "source",
+          "id": "other",
+          "requires": [],
+          "start": 131
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "A",
+          "text": "Company A permits staff disclosure only under this condition:\nCompany A staff must work on Project Cedar."
+        },
+        {
+          "id": "B",
+          "text": "Company B permits adviser disclosure only under this condition:\nCompany B advisers must work on Project Birch."
+        }
+      ],
+      "id": "two-supplied-excerpts",
+      "query": "Company A staff must work on Project Cedar.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 61,
+          "excerpt_id": "A",
+          "id": "a-rule",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 105,
+          "excerpt_id": "A",
+          "id": "a-staff",
+          "requires": [
+            "a-rule"
+          ],
+          "start": 62
+        },
+        {
+          "end": 63,
+          "excerpt_id": "B",
+          "id": "b-rule",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 110,
+          "excerpt_id": "B",
+          "id": "b-adviser",
+          "requires": [
+            "b-rule"
+          ],
+          "start": 64
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "The following permission is limited to internal review:\nA draft may be shown to the review panel.\nNo public circulation is authorized."
+        }
+      ],
+      "id": "qualifier-preservation",
+      "query": "A draft may be shown to the review panel.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 55,
+          "excerpt_id": "source",
+          "id": "scope",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 97,
+          "excerpt_id": "source",
+          "id": "draft",
+          "requires": [
+            "scope"
+          ],
+          "start": 56
+        },
+        {
+          "end": 134,
+          "excerpt_id": "source",
+          "id": "public",
+          "requires": [],
+          "start": 98
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "All amounts below use U.S. dollars and millions:\nThe annual ceiling is 5.\nThe reserve target is 2.\nNo currency conversion is stated."
+        }
+      ],
+      "id": "currency-scale",
+      "query": "The annual ceiling is 5.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 48,
+          "excerpt_id": "source",
+          "id": "currency",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 73,
+          "excerpt_id": "source",
+          "id": "ceiling",
+          "requires": [
+            "currency"
+          ],
+          "start": 49
+        },
+        {
+          "end": 98,
+          "excerpt_id": "source",
+          "id": "reserve",
+          "requires": [
+            "currency"
+          ],
+          "start": 74
+        },
+        {
+          "end": 132,
+          "excerpt_id": "source",
+          "id": "no-conversion",
+          "requires": [],
+          "start": 99
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "Annual changes in this list use basis points:\nThe trigger is 25 basis points.\nA separate column reports 2%.\nThe two units are not interchangeable."
+        }
+      ],
+      "id": "basis-points",
+      "query": "The trigger is 25 basis points.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 45,
+          "excerpt_id": "source",
+          "id": "basis",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 77,
+          "excerpt_id": "source",
+          "id": "trigger",
+          "requires": [
+            "basis"
+          ],
+          "start": 46
+        },
+        {
+          "end": 107,
+          "excerpt_id": "source",
+          "id": "percent",
+          "requires": [],
+          "start": 78
+        },
+        {
+          "end": 146,
+          "excerpt_id": "source",
+          "id": "unit-warning",
+          "requires": [],
+          "start": 108
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 2,
+        "max_utf8_bytes": 86
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "Résumé records are protected under § 4:\nDisclosure of café names requires consent.\n报告 data remains in its supplied source."
+        }
+      ],
+      "id": "utf8-exact-fit",
+      "query": "Disclosure of café names requires consent.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 39,
+          "excerpt_id": "source",
+          "id": "accent-rule",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 82,
+          "excerpt_id": "source",
+          "id": "cafe",
+          "requires": [
+            "accent-rule"
+          ],
+          "start": 40
+        },
+        {
+          "end": 122,
+          "excerpt_id": "source",
+          "id": "han",
+          "requires": [],
+          "start": 83
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 4,
+        "max_utf8_bytes": 128
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "Amount: $5 million. Payment is due in 30 days."
+        }
+      ],
+      "id": "overlap-source-union",
+      "query": "$5",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 19,
+          "excerpt_id": "source",
+          "id": "amount",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 10,
+          "excerpt_id": "source",
+          "id": "number",
+          "requires": [
+            "amount"
+          ],
+          "start": 8
+        },
+        {
+          "end": 19,
+          "excerpt_id": "source",
+          "id": "scale",
+          "requires": [
+            "amount"
+          ],
+          "start": 11
+        },
+        {
+          "end": 46,
+          "excerpt_id": "source",
+          "id": "days",
+          "requires": [],
+          "start": 20
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 2,
+        "max_utf8_bytes": 43
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "Do not disclose. Unless consent is written."
+        }
+      ],
+      "id": "touching-intervals",
+      "query": "Unless consent is written.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 17,
+          "excerpt_id": "source",
+          "id": "prefix",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 43,
+          "excerpt_id": "source",
+          "id": "condition",
+          "requires": [
+            "prefix"
+          ],
+          "start": 17
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "EXCEPTION:\n\n\tA permitted copy must retain attribution.  \nNo extra copy is permitted."
+        }
+      ],
+      "id": "whitespace-preserved",
+      "query": "A permitted copy must retain attribution.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 10,
+          "excerpt_id": "source",
+          "id": "white-header",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 56,
+          "excerpt_id": "source",
+          "id": "white-copy",
+          "requires": [
+            "white-header"
+          ],
+          "start": 11
+        },
+        {
+          "end": 84,
+          "excerpt_id": "source",
+          "id": "white-other",
+          "requires": [],
+          "start": 57
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "left-source",
+          "text": "The left excerpt states that Cedar reports are retained."
+        },
+        {
+          "id": "right-source",
+          "text": "The right excerpt states that Birch records are reviewed."
+        }
+      ],
+      "id": "independent-excerpt-boundaries",
+      "query": "Cedar reports and Birch records.",
+      "seed_limit": 2,
+      "units": [
+        {
+          "end": 56,
+          "excerpt_id": "left-source",
+          "id": "left",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 57,
+          "excerpt_id": "right-source",
+          "id": "right",
+          "requires": [],
+          "start": 0
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 8,
+        "max_utf8_bytes": 33
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "A delivery is permitted only after the recipient completes the full written approval process.\nDeliver the report.\nStore safely."
+        }
+      ],
+      "id": "atomic-byte-overflow",
+      "query": "Deliver the report.",
+      "seed_limit": 3,
+      "units": [
+        {
+          "end": 93,
+          "excerpt_id": "source",
+          "id": "long-parent",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 113,
+          "excerpt_id": "source",
+          "id": "delivery",
+          "requires": [
+            "long-parent"
+          ],
+          "start": 94
+        },
+        {
+          "end": 127,
+          "excerpt_id": "source",
+          "id": "short-independent",
+          "requires": [],
+          "start": 114
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 2,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "A transfer is restricted.\nThe adviser condition applies.\nThe adviser signs a promise.\nStore safely."
+        }
+      ],
+      "id": "atomic-node-overflow",
+      "query": "The adviser signs a promise.",
+      "seed_limit": 3,
+      "units": [
+        {
+          "end": 25,
+          "excerpt_id": "source",
+          "id": "node-root",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 56,
+          "excerpt_id": "source",
+          "id": "node-parent",
+          "requires": [
+            "node-root"
+          ],
+          "start": 26
+        },
+        {
+          "end": 85,
+          "excerpt_id": "source",
+          "id": "node-leaf",
+          "requires": [
+            "node-parent"
+          ],
+          "start": 57
+        },
+        {
+          "end": 99,
+          "excerpt_id": "source",
+          "id": "node-independent",
+          "requires": [],
+          "start": 86
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "This excerpt states only that reports are kept securely."
+        }
+      ],
+      "id": "empty-effective-retrieval",
+      "query": "Reports are kept securely.",
+      "seed_limit": 0,
+      "units": [
+        {
+          "end": 56,
+          "excerpt_id": "source",
+          "id": "secure",
+          "requires": [],
+          "start": 0
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 2,
+        "max_utf8_bytes": 26
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "Header alpha.\nIGNORED MIDDLE TEXT\nChild omega."
+        }
+      ],
+      "id": "separator-exact-fit",
+      "query": "Child omega.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 13,
+          "excerpt_id": "source",
+          "id": "gap-header",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 46,
+          "excerpt_id": "source",
+          "id": "gap-child",
+          "requires": [
+            "gap-header"
+          ],
+          "start": 34
+        },
+        {
+          "end": 33,
+          "excerpt_id": "source",
+          "id": "middle",
+          "requires": [],
+          "start": 14
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 8,
+        "max_utf8_bytes": 0
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "The supplied excerpt says that an archive is retained."
+        }
+      ],
+      "id": "zero-byte-capacity",
+      "query": "An archive is retained.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 54,
+          "excerpt_id": "source",
+          "id": "archive",
+          "requires": [],
+          "start": 0
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "The figures use euros and a twelve-month period:\nRevenue is €12.50; margin is −3.5%; total is 1,200.\nNo rounding rule is supplied."
+        }
+      ],
+      "id": "numeric-symbols-exact",
+      "query": "Revenue is €12.50; margin is −3.5%; total is 1,200.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 48,
+          "excerpt_id": "source",
+          "id": "euro-period",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 100,
+          "excerpt_id": "source",
+          "id": "figures",
+          "requires": [
+            "euro-period"
+          ],
+          "start": 49
+        },
+        {
+          "end": 130,
+          "excerpt_id": "source",
+          "id": "rounding",
+          "requires": [],
+          "start": 101
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "A child condition is stated."
+        }
+      ],
+      "id": "invalid-missing-parent",
+      "query": "Child condition.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 28,
+          "excerpt_id": "source",
+          "id": "child",
+          "requires": [
+            "absent-parent"
+          ],
+          "start": 0
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "Alpha rule.\nBeta condition."
+        }
+      ],
+      "id": "invalid-cycle",
+      "query": "Beta condition.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 11,
+          "excerpt_id": "source",
+          "id": "alpha",
+          "requires": [
+            "beta"
+          ],
+          "start": 0
+        },
+        {
+          "end": 27,
+          "excerpt_id": "source",
+          "id": "beta",
+          "requires": [
+            "alpha"
+          ],
+          "start": 12
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "local-source",
+          "text": "A local permission is stated."
+        },
+        {
+          "id": "remote-source",
+          "text": "A remote exception is stated."
+        }
+      ],
+      "id": "invalid-cross-excerpt-edge",
+      "query": "A local permission is stated.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 29,
+          "excerpt_id": "local-source",
+          "id": "local",
+          "requires": [
+            "remote"
+          ],
+          "start": 0
+        },
+        {
+          "end": 29,
+          "excerpt_id": "remote-source",
+          "id": "remote",
+          "requires": [],
+          "start": 0
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "A bounded source."
+        }
+      ],
+      "id": "invalid-out-of-range",
+      "query": "Bounded source.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 27,
+          "excerpt_id": "source",
+          "id": "bounded",
+          "requires": [],
+          "start": 0
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "The source says 5 dollars."
+        }
+      ],
+      "id": "invalid-forged-unit-text",
+      "query": "5 dollars.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 25,
+          "excerpt_id": "source",
+          "id": "five",
+          "requires": [],
+          "start": 16,
+          "text": "50 dollars"
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "text": "First clause.\nSecond clause."
+        }
+      ],
+      "id": "invalid-duplicate-unit-id",
+      "query": "Second clause.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 13,
+          "excerpt_id": "source",
+          "id": "same",
+          "requires": [],
+          "start": 0
+        },
+        {
+          "end": 28,
+          "excerpt_id": "source",
+          "id": "same",
+          "requires": [],
+          "start": 14
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "document_id": "A",
+      "excerpts": [
+        {
+          "document_id": "A",
+          "id": "source",
+          "text": "A source belongs to Document A."
+        }
+      ],
+      "id": "invalid-document-identity",
+      "query": "Document A.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "document_id": "B",
+          "end": 31,
+          "excerpt_id": "source",
+          "id": "document",
+          "requires": [],
+          "start": 0
+        }
+      ]
+    },
+    {
+      "budget": {
+        "max_nodes": 64,
+        "max_utf8_bytes": 4096
+      },
+      "excerpts": [
+        {
+          "id": "source",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "text": "The excerpt has an exact identity."
+        }
+      ],
+      "id": "invalid-forged-excerpt-hash",
+      "query": "Exact identity.",
+      "seed_limit": 1,
+      "units": [
+        {
+          "end": 34,
+          "excerpt_id": "source",
+          "id": "exact",
+          "requires": [],
+          "start": 0
+        }
+      ]
+    }
+  ],
+  "contract_sha256": "e493ce94cb47022c46669750643b87ef5c79b1da840bb2f2e6741e0cc330a502",
+  "epoch": 23,
+  "license": "CC0-1.0",
+  "schema_version": 1,
+  "scope": "Structural source-scope qualification only. Dependencies are supplied annotations, not automatic legal parsing or semantic evidence labels."
+}

@@ -1,19 +1,26 @@
 {
   "schema_version": 1,
   "run_id": "epoch23-488d3a6a248e",
-  "state": "EPOCH23_EXCLUSIVE_OWNER_RECOVERY_LEASE",
+  "state": "EPOCH23_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
   "work_active": true,
   "experiments_active": false,
   "native_allowed": 0,
-  "OS_lock_held": true,
+  "native_allowed_after_exact_remote_readback": 1,
+  "conditional_confirmation_after_independent_DEV_runtime_gates": 0,
+  "checkpoint_parent": "8f21a2e849a1c8d80c014a67359fa01b55b9ec44",
   "owner_pid": 66088,
   "owner_startticks": 12864421,
   "lock_inode": 13626,
   "started_at": "2026-10-24T01:22:22.306113+00:00",
   "expires_at": "2026-10-24T03:18:23.952152+00:00",
-  "checkpoint_parent": "eb40957109b64815cae17e98aa1f637cc7433a35",
-  "purpose": "Bounded source-scope engineering epoch after stronger legal reader admission remained unverified; no benchmark scores implied.",
-  "instruction": "STOP other scoped work while this exclusive work lease remains active; no native execution before frozen source publication and independent admission.",
-  "owner_generation": 2,
-  "original_expiry_preserved": true
+  "OS_lock_held": true,
+  "OS_lock_release_pending_final_remote_readback": false,
+  "limits": {
+    "worker_attempt_cap": 1,
+    "CPU_threads": 2,
+    "seconds_per_process_including_init_cleanup": 600,
+    "paid_API_calls": 0,
+    "GPU_calls": 0
+  },
+  "instruction": "No execution now. One frozen source-scope engineering worker only after independent actual remote source/readback and live exclusive-lock admission; no retry, benchmark/confirmation inference, fit, promotion or submission."
 }

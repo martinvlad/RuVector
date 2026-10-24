@@ -1,0 +1,41 @@
+{
+  "api": "pack_scope(case, observed_seed_ids, close_dependencies)",
+  "arms": [
+    "actual_native",
+    "lexical",
+    "positional"
+  ],
+  "benchmark_roles": {
+    "calibration": [],
+    "confirmation": [],
+    "dev": [],
+    "train": []
+  },
+  "budget": {
+    "max_nodes": "number of selected unit IDs including overlapping annotations",
+    "max_utf8_bytes": "rendered context UTF8 bytes including literal LF separators"
+  },
+  "case_fields": [
+    "id",
+    "query",
+    "excerpts",
+    "units",
+    "budget",
+    "seed_limit"
+  ],
+  "char_budget_allowed": false,
+  "epoch": 23,
+  "excerpts": "[{id,text}] supplied source only",
+  "fixtures_author": "independent audit agent",
+  "implementation_author": "model research agent",
+  "invalid_graph": "INVALID_GRAPH_UNKNOWN, empty context, no native query required",
+  "matched_baseline": "same exact observed effective seed IDs with close_dependencies=False",
+  "offset_unit": "Unicode codepoint half-open",
+  "omitted_seed_or_overflow_or_empty_effective_seeds": "INCOMPLETE_UNKNOWN; never insufficient evidence",
+  "proper_scores_and_accuracy": null,
+  "rendering": "merge overlapping/touching spans within excerpt; sort excerpt input order then start/end; join merged span text by one LF; never rewrite source bytes",
+  "schema_version": 1,
+  "semantic_scope": "Author-supplied dependencies only; not automatic legal parsing, NLI/token-window admission, benchmark accuracy or SOTA",
+  "status": "FINAL_ROOT_CONTRACT_SUPERSEDES_ALL_CHAT_DRAFTS",
+  "units": "[{id,excerpt_id,start,end,requires:[]}]"
+}

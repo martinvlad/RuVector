@@ -1,0 +1,131 @@
+{
+  "BASE_files": 48,
+  "CP_files": 3329,
+  "Git_kit_leaves_sha1_and_size_verified": 3405,
+  "KIT_files": 61,
+  "actual_root_restore_wall_seconds": 3.073951493992354,
+  "all48_BASE_cache_official_pins_verified": true,
+  "archived_raw_project_only_exception_verified": {
+    "bytes": 21631719,
+    "path": "experiments/sota-2026-10-22/epoch22/runs/dev/raw.json",
+    "sha256": "2b012e1595bdb9b3bb1e5dacc242e9136a189638704f3a55229fe4d828cd0414"
+  },
+  "at": "2026-10-24T00:26:51.791935+00:00",
+  "audit_preflight_race": "Auditor no-v3-intent precondition observed root v3 already starting; no source mismatch or auditor restore execution; this full post-execution verification supersedes preflight-only intent.",
+  "auditor_Git_mutations": 0,
+  "auditor_restore_or_native_model_tokenizer_gold_calls": 0,
+  "checks_passed": true,
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/ruvector-epoch23-488d3a6a248e-kit/experiments/sota-2026-10-22/epoch22/publication/restore_archived_artifact_v1.py",
+        "--kit-root",
+        "/workspace/ruvector-epoch23-488d3a6a248e-kit",
+        "--archive",
+        "experiments/sota-2026-10-22/epoch22/publication/actualarchive.dev.raw.v1.json",
+        "--expected-archive-sha256",
+        "8ab3d8ec7856b423e6ff295f8e5ef74fc81dcaa3d3382fa2757e21563e0a99c6"
+      ],
+      "exit_code": 0,
+      "intent": "restore-v2-0-intent.json",
+      "result": "restore-v2-0-result.json",
+      "status": "RESTORED_EXCLUSIVE",
+      "stderr_bytes": 0,
+      "stdout_sha256": "109d3e82b7ac6cc81dce01ac0a173db1f033c048e1fe1c3e9cbc5e6e7fcbde36"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/ruvector-epoch23-488d3a6a248e-kit/bootstrap.py",
+        "--dest",
+        "/tmp/ruvector-sota-2026-10-22/epoch23-488d3a6a248e/project",
+        "--base-local-directory",
+        "/tmp/ruvector-sota-2026-10-22/epoch23-488d3a6a248e/base-cache"
+      ],
+      "exit_code": 0,
+      "intent": "restore-v3-0-intent.json",
+      "result": "restore-v3-0-result.json",
+      "status": "PROJECTED_SOURCES_VERIFIED",
+      "stderr_bytes": 0,
+      "stdout_sha256": "3b5a3e369dda21ebe1a98e14437bbddf28b9075bcf3675c247eba28fe0585bae"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/ruvector-epoch23-488d3a6a248e-kit/restore_checkpoint.py",
+        "--dest",
+        "/tmp/ruvector-sota-2026-10-22/epoch23-488d3a6a248e/project",
+        "--base-local-directory",
+        "/tmp/ruvector-sota-2026-10-22/epoch23-488d3a6a248e/base-cache"
+      ],
+      "exit_code": 0,
+      "intent": "restore-v3-1-intent.json",
+      "result": "restore-v3-1-result.json",
+      "status": "PUBLIC_CHECKPOINT_RESTORED",
+      "stderr_bytes": 0,
+      "stdout_sha256": "45705f991d5bb12dc1aa691ccced99c4d0a161f1d84ce2764521c10b5092b396"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/ruvector-epoch23-488d3a6a248e-kit/restore_checkpoint.py",
+        "--dest",
+        "/tmp/ruvector-sota-2026-10-22/epoch23-488d3a6a248e/project",
+        "--base-local-directory",
+        "/tmp/ruvector-sota-2026-10-22/epoch23-488d3a6a248e/base-cache",
+        "--verify-only"
+      ],
+      "exit_code": 0,
+      "intent": "restore-v3-2-intent.json",
+      "result": "restore-v3-2-result.json",
+      "status": "PUBLIC_CHECKPOINT_RESTORED",
+      "stderr_bytes": 0,
+      "stdout_sha256": "45705f991d5bb12dc1aa691ccced99c4d0a161f1d84ce2764521c10b5092b396"
+    }
+  ],
+  "connected_source_tree_all_full_tuples_match": true,
+  "current_CP_sha256": "7a0aa8d1fa036cab78bc20185c4d8b2b78959b67be9960610abc55e38a07dd7d",
+  "fresh_exclusive_owner_rechecked": {
+    "independent_contender_denied": true,
+    "inode": 13626,
+    "pid": 64876,
+    "startticks": 12480585
+  },
+  "preparation_failures_retained": [
+    "v1 absolute archive argument rejected before artifact write",
+    "v2 extractor succeeded; bootstrap missing local BASE dependency, resolved with 48 pinned source cache files"
+  ],
+  "root_tree": "ad57a77c54286b694a1e133cb397cf44880e6966",
+  "schema_version": 1,
+  "scope": "Source/cache identity and successful restoration only; no runtime/model/benchmark acceptance or rank claim.",
+  "scope_tree": "58be452a6b6f8d6226a270a9fe271a7dada87c62",
+  "source_commit": "99efd3517516f3089ea2c669add1c2b1fa521fb1",
+  "source_restorers": [
+    {
+      "bytes": 5601,
+      "path": "bootstrap.py",
+      "sha256": "eceb2ca259feaf642bc81172aca57a2a209cc34cd17f9b281861c51f21b95806",
+      "unchanged": true
+    },
+    {
+      "bytes": 1556,
+      "path": "restore_checkpoint.py",
+      "sha256": "affd9ecf660f380c3632f78cd14fb7a36e00797ceb097cf48c0c60136fac0be8",
+      "unchanged": true
+    },
+    {
+      "bytes": 11810,
+      "path": "experiments/sota-2026-10-22/epoch22/publication/restore_archived_artifact_v1.py",
+      "sha256": "7691256e21cb201e9b64c64b2f880fd6d0274b562cfb4acfa03c5ce673a4ba8f",
+      "unchanged": true
+    }
+  ],
+  "status": "INDEPENDENT_FRESH_SOURCE_RESTORATION_PASS",
+  "successful_extractor_not_repeated": true,
+  "unique_reconstructed_project_files_sha256_and_bytes_verified": 3408
+}

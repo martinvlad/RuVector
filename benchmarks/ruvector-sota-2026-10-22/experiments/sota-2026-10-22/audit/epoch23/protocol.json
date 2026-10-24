@@ -1,0 +1,243 @@
+{
+  "acceptance": {
+    "accuracy": null,
+    "all17_valid_queries_execute_actual_native": true,
+    "all51_forced_seed_guards_pass": true,
+    "all_capacity_limits_respected": true,
+    "all_invalid_graph_attacks_fail_closed": true,
+    "all_seed_origins_match_frozen_controls": true,
+    "benchmark_acceptance_or_champion_promotion_allowed": false,
+    "fitting_observed_components_must_not_be_empty": true,
+    "global_evidence_completeness": "UNKNOWN",
+    "native_nonempty_scope_repairs_over_baseline_minimum": 1,
+    "new_submission_allowed": false,
+    "proper_scores": null,
+    "semantic_decision": "NOT_EVALUATED",
+    "zero_cross_source_or_source_rewrites": true,
+    "zero_silent_dependency_breaks_in_closure": true
+  },
+  "authorship": {
+    "candidate": "Separate model research/implementation agent",
+    "fixtures_and_oracle": "Independent audit agent",
+    "source_review_and_integration": "Root coordinator"
+  },
+  "bounds": {
+    "CPU_threads": 2,
+    "NLI_forward_calls": 0,
+    "benchmark_annotation_reads": 0,
+    "native_corpus_batches_cap": 2,
+    "new_paid_API_GPU_calls": 0,
+    "no_automatic_retry_or_parameter_grid": true,
+    "one_frozen_engineering_configuration": true,
+    "remaining_slots_close_after_epoch_result": true,
+    "seconds_per_batch_including_initialization_cleanup": 600,
+    "worker_attempts_cap": 2
+  },
+  "contract": {
+    "bytes": 1555,
+    "path": "ENGINEERING_CONTRACT.v1.json",
+    "sha256": "e493ce94cb47022c46669750643b87ef5c79b1da840bb2f2e6741e0cc330a502"
+  },
+  "data": {
+    "benchmark_records_or_labels": 0,
+    "calibration": [],
+    "confirmation": [],
+    "dev": [],
+    "fixtures_have_no_expected_or_oracle_fields": true,
+    "fresh_confirmation_consumed": false,
+    "license": "CC0-1.0",
+    "logical_source_expectation_separation_not_OS_isolation": true,
+    "new_authored_engineering_strings": true,
+    "train": []
+  },
+  "epoch": 23,
+  "fixtures": {
+    "capacity_requires_actual_frozen_worker_preflight": true,
+    "fixture_case_cap": 64,
+    "fixture_units_per_case_cap": 256,
+    "invalid_global_graph_attacks": [
+      "invalid-missing-parent",
+      "invalid-cycle",
+      "invalid-cross-excerpt-edge",
+      "invalid-out-of-range",
+      "invalid-forged-unit-text",
+      "invalid-duplicate-unit-id",
+      "invalid-document-identity",
+      "invalid-forged-excerpt-hash"
+    ],
+    "invalid_graph_native_queries_allowed": 0,
+    "query_count_requiring_actual_native": 17,
+    "total": 25,
+    "unit_query_BGE_token_capacity": 256,
+    "valid_corpus_units": 52,
+    "valid_retrieval": [
+      "consent-header",
+      "nested-exception",
+      "two-supplied-excerpts",
+      "qualifier-preservation",
+      "currency-scale",
+      "basis-points",
+      "utf8-exact-fit",
+      "overlap-source-union",
+      "touching-intervals",
+      "whitespace-preserved",
+      "independent-excerpt-boundaries",
+      "atomic-byte-overflow",
+      "atomic-node-overflow",
+      "empty-effective-retrieval",
+      "separator-exact-fit",
+      "zero-byte-capacity",
+      "numeric-symbols-exact"
+    ]
+  },
+  "forced_seed_guards": {
+    "additional_native_model_queries": 0,
+    "modes": [
+      "baseline",
+      "closure"
+    ],
+    "not_native_observed_order": true,
+    "origin": "FORCED_SCOPE_GUARD_ONLY_NOT_NATIVE",
+    "per_valid_case": [
+      {
+        "kind": "unknown_seed",
+        "required": "explicit empty unknown error failure",
+        "seed_ids": [
+          "__engineering_unknown_seed__"
+        ]
+      },
+      {
+        "kind": "duplicate_seed",
+        "required": "stable safe dedup or explicit empty unknown error failure",
+        "seed_ids": "[first_input_unit_id,first_input_unit_id]"
+      },
+      {
+        "kind": "empty_seed",
+        "required": "empty INCOMPLETE_UNKNOWN",
+        "seed_ids": []
+      }
+    ],
+    "records": 51
+  },
+  "inputs": [
+    {
+      "bytes": 21410,
+      "path": "experiments/sota-2026-10-22/audit/epoch23/fixtures.json",
+      "sha256": "d226a1cc3a2a33a730da91d803e9b954f918dd4d12c2eba3bcef7eb2876f99b3"
+    },
+    {
+      "bytes": 27370,
+      "path": "experiments/sota-2026-10-22/audit/epoch23/oracle.py",
+      "sha256": "d9a01e3b3cc6e162e776643ec34df04359625f75d5f58746478cca46df1330f1"
+    },
+    {
+      "bytes": 2218,
+      "path": "experiments/sota-2026-10-22/audit/epoch23/oracle-selfcheck-v2.json",
+      "sha256": "5fdd5431e6442dc66b4a01fb2cc3d9c33331c02e68550e88844175ee44eabe51"
+    },
+    {
+      "bytes": 5382,
+      "path": "experiments/sota-2026-10-22/audit/epoch23/source-restoration-independent-v1.json",
+      "sha256": "c13bf67b225d4f691374fc96a5cccf0bf91e64a5785a66689e99b8888ac6b30e"
+    }
+  ],
+  "measurements": {
+    "engineering": "retained effective seeds, missing declared dependencies, nonempty scope repairs, exact source UTF8 bytes/node count, independent source numeric-literal retention",
+    "latency": "Saved actual per-case component elapsed: BGE source/query encoding + literal native insertion/search + three-arm baseline/closure packing. Excludes shared source admission, forced guards and common encoder initialization; latter is also reported amortized by the worker. Oracle reports p50/p95 from17 saved observations; root records full outer initialization/cleanup wall, CPU, peak RSS and errors.",
+    "numeric_scope": "Exact literal/range retention including currency/percent/sign/unit headers; no answer arithmetic or semantic numerical correctness.",
+    "peak_RSS": "Linux largest child/process high-water if RUSAGE_CHILDREN; never claim simultaneous aggregate."
+  },
+  "official_goal": "Engineering acceptance establishes no official score/rank/SOTA or eligibility. Preserve submitted native104 and unused confirmation bank.",
+  "oracle_execution": {
+    "candidate_imports": 0,
+    "command": "python3 -B oracle.py --fixtures ABS_FIXTURES --raw ABS_RAW --expected-raw-sha256 SEALED_RAW_SHA256 --out ABS_UNIQUE_REPORT",
+    "failure_retention": "Rejection preserves raw traces/counters; no rerun or changed expected outcome.",
+    "independent_graph_validation": "Kahn cycle test, supplied range/hash/document checks",
+    "independent_rendering": "Interval sweep, exact source equality, UTF8 capacity audit",
+    "native_model_tokenizer_gold_calls": 0
+  },
+  "packing": {
+    "admission": "Whole transitive seed component admitted atomically or dropped; no orphan dependency-only output. A fitting observed component must not yield useless empty context.",
+    "api": "pack_scope(case, observed_seed_ids, close_dependencies)",
+    "budget": {
+      "max_nodes": "Number of selected unit IDs including overlapping annotations",
+      "max_utf8_bytes": "UTF8 byte length of rendered exact source text including LF separators"
+    },
+    "capacity_and_missing": "Dropped/overflow/empty seeds imply INCOMPLETE_UNKNOWN, never insufficient evidence. Complete annotation closure proves only declared graph closure; global evidence completeness UNKNOWN, semantic decision NOT_EVALUATED.",
+    "dependencies": "Supplied author annotations only. Global cycles, missing parent IDs, cross-excerpt edges, forged text/hash/range or document mismatch invalidate entire graph.",
+    "offsets": "Unicode codepoint half-open [start,end)",
+    "rendering": "Merge overlapping/touching selected intervals within the same supplied excerpt, preserve original text exactly, sort by excerpt input order then start/end, join merged spans by one LF. Source IDs are metadata, never generated rendered-text headers.",
+    "same_policy_all_arms": true
+  },
+  "preparation": {
+    "oracle_selfcheck": "22 independent oracle falsification guards executed with no candidate imports/native/model/tokenizer/gold calls; not candidate measurement.",
+    "protocol_builder_error": "An initial Python-literal quoting error aborted at parse time before any protocol output write or execution; final structured JSON writer corrects preparation only.",
+    "semantic_guard_prefreeze_correction": {
+      "candidate_native_model_calls": 0,
+      "old_oracle_sha256": "e867b30f1ca1c69d0b369c1fc808900e4c95d2be6d8088d53477a8c13f9a5d39",
+      "preserved_outside_sources": [
+        "oracle.prefreeze-v1.py",
+        "protocol.prefreeze-v1.json"
+      ],
+      "reason": "Explicitly inspect actual candidate entailment_or_insufficiency_decision and reject retrieval_miss_implies_insufficient_evidence; no candidate run or performance selection.",
+      "scorer_test_report": "oracle-selfcheck-v2.json"
+    }
+  },
+  "publication": "Freeze inputs/candidate/checker/asset revisions and roles before actual execution; connected scoped GitHub CAS only. Public reviewed artifacts; no credentials/private mail/raw pages.",
+  "purpose": "Qualify exact supplied-source dependency closure after actual native RuVector seed selection; avoid silent qualifier/exception/unit omission under explicit capacity. No automatic legal parsing, semantic entailment, numeric answer correctness, benchmark generalization or SOTA claim.",
+  "raw_schema": {
+    "arms": "actual_native/lexical/positional each observed_seed_ids,effective_seed_ids,baseline,closure",
+    "forced": "case_id,kind,seed_ids,origin,baseline,closure",
+    "invalid_case": "id,graph_validation,native:null,arms:{},closure:INVALID_GRAPH_UNKNOWN",
+    "pack_core": [
+      "status",
+      "selected_unit_ids",
+      "spans",
+      "context",
+      "dropped_seed_ids",
+      "errors",
+      "unknown",
+      "global_evidence_completeness"
+    ],
+    "span_core": [
+      "excerpt_id",
+      "start",
+      "end",
+      "text"
+    ],
+    "top_level": [
+      "schema_version",
+      "contract_sha256",
+      "fixtures_sha256",
+      "cases",
+      "forced_seed_checks",
+      "actual_execution"
+    ],
+    "valid_case": [
+      "id",
+      "graph_validation",
+      "native",
+      "arms",
+      "latency_seconds"
+    ]
+  },
+  "retrieval": {
+    "arms": [
+      "actual_native",
+      "lexical",
+      "positional"
+    ],
+    "empty_effective_case": "seed_limit0 still actual native k>=1 and nonempty raw ranking; effective seeds explicitly [].",
+    "lexical": {
+      "order": "descending score, stable input-unit-index ties",
+      "score": "Jaccard intersection_size/max(1,union_size)",
+      "tokens": "sets from re.findall(r'\\w+',text.casefold()) on query and exact source unit"
+    },
+    "matched_ablation": "Every arm baseline(false)/closure(true) receives identical effective seeds and capacity/rendering policy; baseline scope omissions remain explicitly unknown.",
+    "native": "Actual native helper order verbatim, with no cosine/NumPy/reference replacement. k=min(max(1,seed_limit),unit_count); effective IDs=observed[:seed_limit].",
+    "positional": "Full input-unit order"
+  },
+  "schema_version": 1,
+  "source_checkpoint": "99efd3517516f3089ea2c669add1c2b1fa521fb1",
+  "status": "FROZEN_INDEPENDENT_ENGINEERING_PROTOCOL"
+}

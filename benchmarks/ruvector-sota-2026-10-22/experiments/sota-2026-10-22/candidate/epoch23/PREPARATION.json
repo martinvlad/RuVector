@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "epoch": 23,
+  "status": "PREFREEZE_SOURCE_ONLY_INTEGRATION_CORRECTIONS_NO_MEASUREMENT",
+  "corrections": [
+    {
+      "schema_version": 1,
+      "epoch": 23,
+      "status": "PREFREEZE_METADATA_SCHEMA_CORRECTION_NO_EXECUTION",
+      "previous_worker": {
+        "bytes": 23503,
+        "sha256": "d1763e87814a5cc94dfef54d607753ba9330a8907914574967d4b06e75ba1c1c",
+        "outside_archive": "worker.pre-freeze-v1.py"
+      },
+      "corrected_worker": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch23/worker.py",
+        "bytes": 23771,
+        "sha256": "7c6fa35c662a3bc9a56995ed445da81c7f894f84da7362abb293083d5933c48c"
+      },
+      "reason": "Independent static review found strict four-key fixture metadata guard incompatible with the independently frozen seven-key input schema. The guard now requires exactly the seven known keys and nonempty source/authorship metadata; no oracle/expected fields admitted.",
+      "fixtures_or_oracle_or_protocol_changed": false,
+      "budget_or_pack_or_retrieval_changed": false,
+      "worker_starts": 0,
+      "BGE_tokenizer_native_NLI_fit_paid_GPU_calls": 0,
+      "validation": "AST syntax parse only; no candidate imports or fixture measurements."
+    },
+    {
+      "reason": "Root launcher isolation changed to Python -I. Independent source review found the sibling import incompatible because isolated mode excludes the script directory. Replace that one sibling import with absolute importlib loading of the already pinned scope.py, after verify has checked all source pins.",
+      "previous_worker": {
+        "bytes": 23771,
+        "sha256": "7c6fa35c662a3bc9a56995ed445da81c7f894f84da7362abb293083d5933c48c",
+        "outside_archive": "worker.pre-freeze-v2.py"
+      },
+      "corrected_worker": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch23/worker.py",
+        "bytes": 24018,
+        "sha256": "b8e3caa4909be120c8dddea8938f556c662b41ad9554de82ee1715e9a31c5458"
+      },
+      "candidate_graph_pack_retrieval_or_BGE_logic_changed": false,
+      "fixtures_or_oracle_or_protocol_changed": false,
+      "worker_starts": 0,
+      "BGE_tokenizer_native_NLI_fit_paid_GPU_calls": 0,
+      "validation": "AST syntax parse only, no module import or candidate execution."
+    }
+  ],
+  "final_worker": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch23/worker.py",
+    "bytes": 24018,
+    "sha256": "b8e3caa4909be120c8dddea8938f556c662b41ad9554de82ee1715e9a31c5458"
+  },
+  "all_corrections_before_first_worker_or_model_native_execution": true
+}

@@ -1,0 +1,138 @@
+{
+  "at": "2026-10-24T01:20:30.295292+00:00",
+  "auditor_executions": {
+    "BGE": 0,
+    "Git_mutations": 0,
+    "NLI": 0,
+    "candidate": 0,
+    "fit": 0,
+    "fixtures": 0,
+    "native": 0,
+    "network": 0,
+    "oracle_scorer": 0,
+    "paid_GPU": 0,
+    "tokenizer": 0
+  },
+  "auditor_writes": [
+    "experiments/sota-2026-10-22/audit/epoch23/premeasurement-admission.json"
+  ],
+  "checks": {
+    "585deadline_and_bounded_cleanup3_3_1_owned_session": true,
+    "CC0_25cases17native8invalid51sourceguards": true,
+    "all24_plan_pins_unique_regular_nosymlink_exact_bytes_SHA256": true,
+    "candidate_runtime_launcher_reviews_current_pin_match": true,
+    "canonical_contract_exact_UTF8_nodebudget": true,
+    "engineering_only_accuracy_properscores_null": true,
+    "exact_freeze7030B_SHAab8cf0ef": true,
+    "exact_plan6877B_SHA85dba296": true,
+    "freeze_exact23_sourceentries_plus_freeze_pin": true,
+    "fresh_independent_contender_denied": false,
+    "fresh_kernel_owned_FLOCK": false,
+    "fresh_owner_CPU_affinity01": false,
+    "fresh_owner_PID_startticks_live": false,
+    "no_actual_worker_reservation_execution_yet": true,
+    "no_semantic_reader_promotion_confirmation_submission": true,
+    "one_worker_one_nativebatch_CPU2_600_zero_paid_GPU": true,
+    "owner_manifest_expected_and_unexpired": true,
+    "prior_held_candidate-source-independent-v1": true,
+    "prior_held_runtime-launcher-independent-v1": true,
+    "prior_held_source-restoration-independent-v1": true,
+    "prior_source3405Git3408project3329CP_evidence_not_repeated": true,
+    "retained_runtime31wheels17498members_provenance": true,
+    "runtime10_freeze_lock_and_actual_bytes_SHA256": true,
+    "source_project_parent_and_freeze_bound": true,
+    "source_runtime_licensing_retained": true,
+    "train_dev_calibration_confirmation_all_empty": true
+  },
+  "checks_passed": false,
+  "contract_sha256": "e493ce94cb47022c46669750643b87ef5c79b1da840bb2f2e6741e0cc330a502",
+  "epoch": 23,
+  "exact_blocker": "Original guardian PID64876 is absent from /proc, no kernel FLOCK for PID64876/device0:33/inode13626 exists, and nonblocking contender acquired then immediately released the lock. Stale unexpired owner.json does not prove ownership; no execution admission.",
+  "fresh_exclusive_owner": {
+    "actual_lock_device_major_minor": [
+      0,
+      33
+    ],
+    "claimed_lock_inode": 13626,
+    "claimed_pid": 64876,
+    "claimed_startticks": 12480585,
+    "contender_if_acquired_immediately_unlocked": true,
+    "manifest_expires_at": "2026-10-24T03:18:23.952152+00:00",
+    "matching_FLOCK_records": 0,
+    "nonblocking_contender_denied": false,
+    "owner_manifest_identity": {
+      "bytes": 412,
+      "sha256": "6fbe6703bbc53675284316e5f25f87784a5b1753b0a520913f97aeab5a1f70b2"
+    },
+    "owner_proc_exists": false
+  },
+  "plan": {
+    "bytes": 6877,
+    "path": "experiments/sota-2026-10-22/epoch23/plan.json",
+    "sha256": "85dba296706246e401fd3e9f7cb89aac24fce056c87e49a4e5f8175e4b5e5f9c"
+  },
+  "planned_bounds": {
+    "CPU_threads": 2,
+    "NLI_confirmation_fits_paid_GPU_network_benchmark_calls": 0,
+    "all_unspent_slots_close": true,
+    "cleanup_wait_seconds": [
+      3,
+      3,
+      1
+    ],
+    "expected_BGE_use": "POSITIVE actual CPU embeddings",
+    "expected_actual_native_queries": 17,
+    "internal_deadline_seconds": 585,
+    "native_corpus_batches": 1,
+    "whole_process_cap_seconds": 600,
+    "worker_attempts": 1
+  },
+  "preparation_note": "Initial read-only verifier aborted on missing /proc/64876/stat before any report write; final verifier records that absence as a blocker. No scientific execution or source change occurred.",
+  "prior_independent_reviews": {
+    "audit/epoch23/candidate-source-independent-v1.json": {
+      "checks_passed": true,
+      "identity": {
+        "bytes": 3780,
+        "sha256": "ec8e5f57786376961c5196d4f8143d9e1ca87aed0fb3970478b049d70b84b591"
+      },
+      "status": "INDEPENDENT_CANDIDATE_STATIC_SOURCE_REVIEW_PASS"
+    },
+    "audit/epoch23/source-restoration-independent-v1.json": {
+      "checks_passed": true,
+      "identity": {
+        "bytes": 5382,
+        "sha256": "c13bf67b225d4f691374fc96a5cccf0bf91e64a5785a66689e99b8888ac6b30e"
+      },
+      "status": "INDEPENDENT_FRESH_SOURCE_RESTORATION_PASS"
+    },
+    "epoch23/reviews/runtime-launcher-independent-v1.json": {
+      "checks_passed": true,
+      "identity": {
+        "bytes": 6368,
+        "sha256": "2cd2f9c67a4a4a50b46253c52359daacd0751edb25e720870881f59eaeb543f7"
+      },
+      "status": "PASS_PREFREEZE_ROOT_RUNTIME_AND_LAUNCHER_SOURCE_REVIEW"
+    }
+  },
+  "publication_parent": "eb40957109b64815cae17e98aa1f637cc7433a35",
+  "remaining_blockers": [
+    "fresh_owner_PID_startticks_live",
+    "fresh_owner_CPU_affinity01",
+    "fresh_kernel_owned_FLOCK",
+    "fresh_independent_contender_denied"
+  ],
+  "review_limitations": [
+    "The prior3405Git/3408project/3329CP restoration and17498wheel-member audits were read and credited, not repeated.",
+    "This reviewer authored no candidate, fixtures, oracle, runtime or publication helper.",
+    "Actual remote source readback admission, actual outcome and process closure remain separate mandatory gates."
+  ],
+  "review_scope": "Independent exact frozen-plan/source/runtime/ownership admission review only; no candidate/fixture/native/model/tokenizer/scorer execution.",
+  "schema_version": 1,
+  "source_checkpoint": "99efd3517516f3089ea2c669add1c2b1fa521fb1",
+  "source_freeze": {
+    "bytes": 7030,
+    "path": "experiments/sota-2026-10-22/epoch23/source-freeze.json",
+    "sha256": "ab8cf0ef6cd59e30466231ddc2bf065d7ea72b8a04eded9c4df161eba2d9187a"
+  },
+  "status": "BLOCKED_INDEPENDENT_FROZEN_PREMEASUREMENT_ADMISSION"
+}

@@ -1,0 +1,61 @@
+{
+  "Git_mutations": 0,
+  "actual_command": "taskset -c 0,1 python3 -B experiments/sota-2026-10-22/epoch23/publication/test_publication_guards_v1.py",
+  "actual_project_stages": 0,
+  "benchmark_case_or_gold_reads": 0,
+  "combined_tool_output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.387s\n\nOK\n",
+  "current_sources_also_pass_public_text_policy": true,
+  "exit_code": 0,
+  "fixtures": "Small temporary author-created texts/tuples plus read-only helper-source policy checks. Tests never invoke prepare() or build() on the real project; no worker admission implied.",
+  "model_or_tokenizer_calls": 0,
+  "native_calls": 0,
+  "network_calls": 0,
+  "prehold_source_policy_correction": {
+    "core_common_builder_stager_changed": false,
+    "correction": "Construct the exact same runtime fixture bytes from two adjacent bytes expressions, and add a guard checking all four helper/test sources under the public-text policy.",
+    "guard_suite_rerun_after_this_change": 1,
+    "initial_issue": "An authored raw-page rejection fixture had a literal opening HTML tag in Python source; the source gate would reject that test file. Found before actual staging or source publication.",
+    "prehold_original_retained_outside_publication": true,
+    "prehold_test_source_bytes": 8349,
+    "prehold_test_source_sha256": "e0b1418c8a269a4b9f78335e71d4ddec4c8e505be1c15344c25765daa148feb7"
+  },
+  "prior_guard_receipt": {
+    "bytes": 2398,
+    "path": "experiments/sota-2026-10-22/epoch23/publication/guard-tests.v1.json",
+    "scope": "Historical first10fixture pass before source-policy selfcheck; its then-test-source hash is historical, not current.",
+    "sha256": "9326e8a57c36ef98e6cd9ed09dd3463322bb63fd4acbb222c8f4f6a01a0dcff7"
+  },
+  "project_files_written_by_tests": 0,
+  "reported_unittest_seconds": 0.387,
+  "schema_version": 2,
+  "scope": "AUTHOR_ONLY_SYNTHETIC_PUBLICATION_GUARDS_NOT_BENCHMARK_GENERALIZATION",
+  "source_AST_parse_passed": true,
+  "source_files": [
+    {
+      "bytes": 11448,
+      "lines": 267,
+      "path": "experiments/sota-2026-10-22/epoch23/publication/publication_common_v1.py",
+      "sha256": "9427e925b025a24eb71e5a867ee168866cc7a4c2abc194e7fa4e1c73082249d5"
+    },
+    {
+      "bytes": 9933,
+      "lines": 168,
+      "path": "experiments/sota-2026-10-22/epoch23/publication/build_controls_v1.py",
+      "sha256": "caf7fd54829b053b59819c0d0ecf7cffb2c645c77ceae3a95cf298eb20b715dc"
+    },
+    {
+      "bytes": 15742,
+      "lines": 292,
+      "path": "experiments/sota-2026-10-22/epoch23/publication/stage_publication_v1.py",
+      "sha256": "b4f7dd3478c3389bc1930341a5fd8dbc5b4f0f069fc5c09990be858b64b58f7c"
+    },
+    {
+      "bytes": 8748,
+      "lines": 158,
+      "path": "experiments/sota-2026-10-22/epoch23/publication/test_publication_guards_v1.py",
+      "sha256": "60e129ceabe05625bc0be22ff2eba1b0838bb2419655ac7904b09d226e7806f5"
+    }
+  ],
+  "status": "PASS",
+  "test_methods": 11
+}

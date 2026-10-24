@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "820f885f9d9c02e861c1a0ff47d7c8b26499424c",
-  "checkpoint_manifest_sha256": "7a0aa8d1fa036cab78bc20185c4d8b2b78959b67be9960610abc55e38a07dd7d",
+  "prior_published_base_commit": "8f21a2e849a1c8d80c014a67359fa01b55b9ec44",
+  "checkpoint_manifest_sha256": "45e9efa12891483d87266baa92ba709c4953a4c20b64db546562b4175ed2ec1e",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -403,21 +403,28 @@
   "active_run": {
     "schema_version": 1,
     "run_id": "epoch23-488d3a6a248e",
-    "state": "EPOCH23_EXCLUSIVE_OWNER_RECOVERY_LEASE",
+    "state": "EPOCH23_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
     "work_active": true,
     "experiments_active": false,
     "native_allowed": 0,
-    "OS_lock_held": true,
+    "native_allowed_after_exact_remote_readback": 1,
+    "conditional_confirmation_after_independent_DEV_runtime_gates": 0,
+    "checkpoint_parent": "8f21a2e849a1c8d80c014a67359fa01b55b9ec44",
     "owner_pid": 66088,
     "owner_startticks": 12864421,
     "lock_inode": 13626,
     "started_at": "2026-10-24T01:22:22.306113+00:00",
     "expires_at": "2026-10-24T03:18:23.952152+00:00",
-    "checkpoint_parent": "eb40957109b64815cae17e98aa1f637cc7433a35",
-    "purpose": "Bounded source-scope engineering epoch after stronger legal reader admission remained unverified; no benchmark scores implied.",
-    "instruction": "STOP other scoped work while this exclusive work lease remains active; no native execution before frozen source publication and independent admission.",
-    "owner_generation": 2,
-    "original_expiry_preserved": true,
+    "OS_lock_held": true,
+    "OS_lock_release_pending_final_remote_readback": false,
+    "limits": {
+      "worker_attempt_cap": 1,
+      "CPU_threads": 2,
+      "seconds_per_process_including_init_cleanup": 600,
+      "paid_API_calls": 0,
+      "GPU_calls": 0
+    },
+    "instruction": "No execution now. One frozen source-scope engineering worker only after independent actual remote source/readback and live exclusive-lock admission; no retry, benchmark/confirmation inference, fit, promotion or submission.",
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -504,9 +511,9 @@
     "sha256": "bb6367c460b5aa225db1f64a02215ac8c912174623f18cb5cf00b674062e1be3"
   },
   "benchmark_refresh": {
-    "path": "experiments/sota-2026-10-22/legal-transfer/epoch22/benchmark-refresh.json",
-    "bytes": 5066,
-    "sha256": "8d49cce3569f8e862646aaf368538ac3de1fe3fa9725b18222ae228dc3a8a2e6"
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch23/benchmark-refresh.json",
+    "bytes": 6101,
+    "sha256": "525d38dfbf156028c0806d010747c6ddc9f921924fa1d10dc70ca22bea0e60cd"
   },
   "restore_epoch3": "First restore_checkpoint.py; optional restore_epoch3_data.py materializes exact pinned original CC-BY data archive/train/dev/license. Existing bootstrap model flags do not acquire new NLI assets; obtain only official revisions in assets.lock.json/model-api, verify SHA. No inference during restore.",
   "restoration_boundary": "Epoch16 freshly verified2293 Gitblob files and2220projectCP+48base using reviewed bootstrap/restore; exact7officialNLI+BGE2/native22 restored separately. No model/native session occurred before reviewed source freeze/publication; actual oneDEV process is in epoch16_final. Never rerun archived controllers.",
@@ -2248,6 +2255,41 @@
     "benchmark_train_dev_calibration_confirmation": [],
     "paid_API_GPU_budget": 0,
     "champion_unchanged": true
+  },
+  "epoch23_frozen_study": {
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch23/plan.json",
+      "bytes": 7726,
+      "sha256": "bf747030f4fb47e602bb59a41d6937ec494155a82d8131e81579ef68299abd02"
+    },
+    "source_freeze": {
+      "path": "experiments/sota-2026-10-22/epoch23/source-freeze.json",
+      "bytes": 7837,
+      "sha256": "bea93e70e770b0ec5158a948a44997afd49dce0a80b3cb9e2a7a0f2c848288b6"
+    },
+    "specification": {
+      "path": "experiments/sota-2026-10-22/epoch23/PLAN_SPEC.json",
+      "bytes": 3949,
+      "sha256": "c19fa3a590f6bf6b5737bf713959dd018bbbcf386bc735f7f792b23db9e6d85a"
+    },
+    "audit_protocol": {
+      "path": "experiments/sota-2026-10-22/audit/epoch23/protocol.json",
+      "bytes": 10816,
+      "sha256": "44d1aaa414d926cc5feed55fa66e15a913d2177f82cc76b50656b675e1282c98"
+    },
+    "source_checkpoint": "99efd3517516f3089ea2c669add1c2b1fa521fb1",
+    "kind": "SOURCE_SCOPE_ENGINEERING",
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": [],
+    "worker_attempt_cap": 1,
+    "benchmark_promotion_or_submission_allowed": false
+  },
+  "epoch23_official_refresh": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch23/benchmark-refresh.json",
+    "bytes": 6101,
+    "sha256": "525d38dfbf156028c0806d010747c6ddc9f921924fa1d10dc70ca22bea0e60cd"
   },
   "epoch23_owner_recovery": {
     "old_owner_pid": 64876,

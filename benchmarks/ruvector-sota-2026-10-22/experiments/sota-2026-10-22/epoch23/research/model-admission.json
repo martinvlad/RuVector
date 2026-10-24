@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "epoch": 23,
+  "source_checkpoint": "99efd3517516f3089ea2c669add1c2b1fa521fb1",
+  "status": "NO_NEW_PRETRAINED_READER_ADMITTED",
+  "scope": "Official model/source metadata research only; no measured model-strength or benchmark-generalization claim.",
+  "repository_cap": 3,
+  "repositories_examined": 3,
+  "selected_model": null,
+  "new_model_weight_or_header_downloads": 0,
+  "new_NLI_forward_pairs": 0,
+  "new_fits": 0,
+  "new_paid_API_or_GPU_calls": 0,
+  "benchmark_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "prior_learning": {
+    "epoch22_status": "REJECTED_DEV_GATE",
+    "typed": {
+      "native_correct": 11,
+      "lexical_correct": 8,
+      "positional_correct": 9,
+      "n": 24
+    },
+    "binary": {
+      "native_correct": 11,
+      "positional_correct": 11,
+      "n": 24,
+      "native_NLL": 1.6531563520300174,
+      "positional_NLL": 1.5408281444182974
+    },
+    "decision": "No new grid on these exposed24; prioritize a stronger qualified legal conditional reader. If qualification fails, advance independent source-scope engineering."
+  },
+  "candidates": [
+    {
+      "repository": "epequeno/legal-entailment-deberta-v3-large",
+      "revision": "97688784f0dde32a3377d3d10a58aade8004c5e5",
+      "license_declaration": "Apache-2.0 model card; original training-record rights and split identities not verified.",
+      "architecture": "Stock DebertaV2ForSequenceClassification,24 layers,hidden1024,maxpositions512,FOUR labels. Config maps LABEL_0..LABEL_3; immutable README usage orders entailed,partially_entailed,contradicted,neutral.",
+      "README": {
+        "bytes": 8263,
+        "sha256": "85cab481cc34803360b25bb0e578ea70969a28cf8329ea0c40c9b13e1995f575"
+      },
+      "config": {
+        "bytes": 1138,
+        "sha256": "267367d8ad9fb89a08df01ea04dd884d558fc67d3059d481a9ea6094a5e56221"
+      },
+      "publisher_weight_pointer": {
+        "remote_path": "model.safetensors",
+        "bytes": 831925117,
+        "sha256": "b815467e4971b18e53b9f71aba714d5caee1a760b847ada993bd1543edebec43",
+        "actual_tensor_bytes_acquired_or_rehashed": false
+      },
+      "API_parameter_metadata": {
+        "F32": 435065860,
+        "actual_tensor_representation_verified": false,
+        "inconsistency": "API F32 parameter count implies substantially more raw bytes than the LFS file size. Do not treat API summary/config dtype as proven operational tensor dtype."
+      },
+      "author_reported_metrics": {
+        "expanded_evaluation_cases": 243,
+        "binary_accuracy": 0.728,
+        "four_class_accuracy": 0.506,
+        "partially_entailed_class_accuracy": 0.153,
+        "audited_partial_labels_incorrect_fraction": 0.84,
+        "in_distribution_test_cases": 453,
+        "in_distribution_four_class_accuracy": 0.958,
+        "not_RuVector_measurements": true
+      },
+      "declared_training": {
+        "train": 6199,
+        "validation": 906,
+        "test": 453,
+        "base": "cross-encoder/nli-deberta-v3-large",
+        "source_counts": {
+          "private_pipeline_logs": 3338,
+          "LLM_generated_synthetic": 2353,
+          "curated": 83,
+          "perturbation": 294,
+          "cross_passage": 131
+        },
+        "record_level_split_manifest_verified": false
+      },
+      "qualification": "NOT_ADMITTED",
+      "blockers": [
+        "Four-class partial support is not identical to full entailment; collapsing it into ContractNLI Entailment lacks a justified frozen semantic mapping.",
+        "Private/LLM-generated training source identities, rights and record-level split separation from future DEV/calibration/CONF unverified.",
+        "Author acknowledges poor partial-class annotation quality; reported aggregates do not prove materially stronger typed reasoning.",
+        "No acquired exact-tensor/CPU2/600s operational admission.",
+        "Linked official GitHub legalkit/legalkit returned404 once; request not repeated."
+      ],
+      "sources": [
+        "https://huggingface.co/api/models/epequeno/legal-entailment-deberta-v3-large?blobs=true",
+        "https://huggingface.co/epequeno/legal-entailment-deberta-v3-large/blob/97688784f0dde32a3377d3d10a58aade8004c5e5/README.md",
+        "https://huggingface.co/epequeno/legal-entailment-deberta-v3-large/blob/97688784f0dde32a3377d3d10a58aade8004c5e5/config.json",
+        "https://api.github.com/repos/legalkit/legalkit"
+      ]
+    },
+    {
+      "repository": "cs-552-2026-Clanker-Scientists/safeguard-deberta-contractnli-v2",
+      "revision": "982f1dd78c75120940c2eac9097fe61bcb03b17f",
+      "license_declaration": "MIT model card; component training-data terms remain.",
+      "architecture": "Stock DebertaV2ForSequenceClassification,24 layers,hidden1024,maxpositions512,three labels:0entailment,1neutral,2contradiction.",
+      "README": {
+        "bytes": 2057,
+        "sha256": "590b71163fc10777edb86f0712e04f858da32fa5b641116c62eb8fd7332d73cd"
+      },
+      "config": {
+        "bytes": 1060,
+        "sha256": "ca58c2cf9fc030c022facdee0d33539c33af9bf65d0e2d7c5c4bc9a8027b77ab"
+      },
+      "publisher_weight_pointer": {
+        "remote_path": "model.safetensors",
+        "bytes": 1740308548,
+        "sha256": "a547e10467b391fb248dba1d92376b116ad5c790fcedd2febbde58e5c76787b1",
+        "actual_tensor_bytes_acquired_or_rehashed": false
+      },
+      "declared_training": {
+        "base": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+        "source": "kiddothe2b/contract-nli",
+        "triples": 8228,
+        "epochs": 3,
+        "record_level_split_manifest_verified": false,
+        "observation_not_proof": "8228 equals(423+61)*17, consistent with original train+development documents combined; exact run composition is not proven by this arithmetic."
+      },
+      "author_reported_metrics": {
+        "LegalBench_task": "contract_nli_explicit_identification",
+        "cases": 100,
+        "seed": 0,
+        "macro_F1": 0.838,
+        "not_RuVector_measurements": true
+      },
+      "qualification": "DISQUALIFIED_FOR_CURRENT_ORIGINALTRAIN_CONFIRMATION_AND_NOT_RUNTIME_ADMITTED",
+      "blockers": [
+        "ContractNLI supervision makes currently reserved original-train CONF unsafe for this candidate.",
+        "Exact training document identities, source revision and checkpoint-selection split manifest missing.",
+        "A different eligible unused bank and exact CPU/runtime/asset admission are unverified."
+      ],
+      "sources": [
+        "https://huggingface.co/api/models/cs-552-2026-Clanker-Scientists/safeguard-deberta-contractnli-v2?blobs=true",
+        "https://huggingface.co/cs-552-2026-Clanker-Scientists/safeguard-deberta-contractnli-v2/blob/982f1dd78c75120940c2eac9097fe61bcb03b17f/README.md",
+        "https://huggingface.co/cs-552-2026-Clanker-Scientists/safeguard-deberta-contractnli-v2/blob/982f1dd78c75120940c2eac9097fe61bcb03b17f/config.json"
+      ]
+    },
+    {
+      "repository": "Agreemind/contractnli-legalbert-nda-weighted",
+      "revision": "bfa672c59623ed61291c9a35760e42ae2ecc0a04",
+      "license_declaration": "MIT downstream model card; base nlpaueb/legal-bert-base-uncased@15b570cbf88259610b082a167dacc190124f60f6 declares CC-BY-SA-4.0. Downstream MIT does not establish overriding upstream terms.",
+      "architecture": "Stock BertForSequenceClassification,12 layers,hidden768,maxpositions512,three labels0Entailment,1Contradiction,2NotMentioned.",
+      "README": {
+        "bytes": 3863,
+        "sha256": "49277e6beb9d0c8490f0549f9c0488408e722323c27e443ab9545667d04a234b"
+      },
+      "config": {
+        "bytes": 894,
+        "sha256": "281e53a43525838a8d90ded6e605be00d0022c745447fbf7cd7a9102c349ce28"
+      },
+      "publisher_weight_pointer": {
+        "remote_path": "model.safetensors",
+        "bytes": 437961724,
+        "sha256": "267085b2b3255bbc2ecb57f28306ce33fac7385b4f1d9cfaa07ae68e28a330da",
+        "actual_tensor_bytes_acquired_or_rehashed": false
+      },
+      "declared_training": {
+        "dataset": "Original Stanford ContractNLI",
+        "train_documents": 423,
+        "development_documents": 61,
+        "test_documents": 123,
+        "training_examples_span_level": 33974,
+        "validation_examples_span_level": 5131,
+        "test_examples_span_level": 9373,
+        "epochs": 5,
+        "early_stopping_patience": 3,
+        "record_level_split_manifest_verified": false
+      },
+      "author_reported_metrics": {
+        "micro_F1": 0.873,
+        "macro_F1": 0.793,
+        "not_RuVector_measurements": true
+      },
+      "qualification": "DISQUALIFIED_FOR_CURRENT_ORIGINALTRAIN_CONFIRMATION_AND_NOT_RUNTIME_ADMITTED",
+      "blockers": [
+        "Known original-train supervision invalidates current original-train CONF for this candidate.",
+        "Published split counts are not an exact identity/checkpoint-selection manifest; original test cannot automatically be called genuinely unused.",
+        "Upstream/component terms must be retained and exact asset/runtime admission remains unverified."
+      ],
+      "sources": [
+        "https://huggingface.co/api/models/Agreemind/contractnli-legalbert-nda-weighted?blobs=true",
+        "https://huggingface.co/Agreemind/contractnli-legalbert-nda-weighted/blob/bfa672c59623ed61291c9a35760e42ae2ecc0a04/README.md",
+        "https://huggingface.co/Agreemind/contractnli-legalbert-nda-weighted/blob/bfa672c59623ed61291c9a35760e42ae2ecc0a04/config.json",
+        "https://huggingface.co/nlpaueb/legal-bert-base-uncased/tree/15b570cbf88259610b082a167dacc190124f60f6"
+      ]
+    }
+  ],
+  "incidental_public_exposure": {
+    "origin": "Broad web-search snippet, not targeted dataset or confirmation-label acquisition.",
+    "dataset": "Public duplicate LegalBench explicit-identification row",
+    "row": 59,
+    "filename": "71297_0000071297-97-000059_document_6.txt",
+    "binary_label_was_visible": true,
+    "label_used_for_training_selection_or_measurement": false,
+    "source": "https://huggingface.co/datasets/Aindri1974/legalbench/commit/09da461f44cbd355f684e48d16e31a481e11a730",
+    "action": "Retire matching input identity as exposed DEV if not already retired. Resolve filename via input-only metadata; never certify this row as fresh.",
+    "identity_resolution": "Delegated to root/data; not inferred from labels."
+  },
+  "research_transport": {
+    "successful_HuggingFace_metadata_card_config_GETs": 22,
+    "connected_GitHub_GETs": 1,
+    "connected_GitHub_known_404": 1,
+    "web_search_tool_calls": 3,
+    "web_search_queries": 6,
+    "web_open_model_or_dataset_cards": 3,
+    "weight_or_header_downloads": 0,
+    "corpus_downloads": 0,
+    "retries_of_404": 0
+  },
+  "independent_useful_step": {
+    "kind": "SUPPLIED_SOURCE_DEPENDENCY_CLOSURE_ENGINEERING",
+    "contract_sha256": "e493ce94cb47022c46669750643b87ef5c79b1da840bb2f2e6741e0cc330a502",
+    "description": "One frozen actual native+BGE engineering batch on independently authored CC0 annotated fixtures; preserve exact source ranges and complete transitive qualifier/header dependencies atomically, or mark incomplete/unknown under a byte/node budget.",
+    "benchmark_accuracy_or_proper_scores": null,
+    "new_DEV_or_confirmation_draws": 0,
+    "no_general_legal_parser_or_SOTA_claim": true
+  }
+}
+

@@ -1,0 +1,54 @@
+{
+  "annotation_choice_evidence_reads": 0,
+  "blocking_source_findings": [],
+  "compatibility": {
+    "DEV_body_deferred_to_stat_size_only_when_unstarted": true,
+    "DEV_choice_attempts_and_accesses_remain_zero": true,
+    "closed_TRAIN_actual_receipt_and_DEV_NOT_STARTED_retained": true,
+    "code_path": {
+      "DEV_execution_absent_selects_train_source_checks": "score_dev.py:19-20",
+      "DEV_gold_reservation_and_choice_reads_unreachable": "score_dev.py:101-110",
+      "DEV_input_bank_parse_unreachable": "score_dev.py:69",
+      "initial_status_train_boolean_and_null_metrics": "score_dev.py:25-30",
+      "local_MODEL_and_parameter_evidence_checks": "score_dev.py:44-57",
+      "original_annotated_source_parse_unreachable": "score_dev.py:93",
+      "unstarted_DEV_fails_before_DEV_bank_or_gold": "score_dev.py:58"
+    },
+    "expected_failed_integrity_message": "DEV not fully completed/closed",
+    "frozen_status": "TRAINING_NOT_ACCEPTED_DEV_NOT_STARTED",
+    "local_MODEL_seal_may_be_retained_as_unpublished_evidence": true,
+    "local_seal_is_not_proof_of_Git_MODEL_publication": true,
+    "metrics_proper_scores_and_DEV_timing_remain_null": true,
+    "source_checks_does_not_require_lost_guardian_or_authorize_runtime": true,
+    "source_plan_pins_roles_and_limits_must_remain_exact": true,
+    "status_interpretation": "No accepted published MODEL and no started DEV; must not be described as failed TRAIN quality or failed training integrity.",
+    "unchanged_scorer_can_preserve_train_integrity_true": true
+  },
+  "epoch": 30,
+  "evaluation_calls": 0,
+  "kind": "REAL_NATIVE_LEGAL_PARAMETER_ADAPTATION_DIAGNOSTIC",
+  "model_native_calls": 0,
+  "project_source_changes": 0,
+  "recovery_requirements": [
+    "Independently establish current physical closure and a new final-publication-only guardian/WAL under parent-reviewed recovery process.",
+    "Preserve frozen scorer status, train_integrity_passed=true, failure record, raw/execution/artifact/source hashes and all historical ledgers verbatim.",
+    "Keep a separate recovery explanation that actual TRAIN passed, local MODEL publication was interrupted before Git acceptance, and DEV is permanently unstarted.",
+    "Do not create MODEL admission, revive former-owner runtime permissions, start DEV, retrain or join any labels."
+  ],
+  "schema_version": 1,
+  "scope": "Static review of unchanged frozen code only; evaluate, bind, model and label access not performed",
+  "scorer_bind_calls": 0,
+  "sources": {
+    "DEV_scorer": {
+      "bytes": 12786,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/score_dev.py",
+      "sha256": "66c7d0abd2c2720564eb6608e2d7fc2aa5a4bbf7cb223641ef6fcd80155e7e17"
+    },
+    "source_check_dependency": {
+      "bytes": 10443,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/phase_audit.py",
+      "sha256": "30f19f77ef66b1a3ea60e930b7975a7787fe5c2146a0ba791ac51542b5fe77bb"
+    }
+  },
+  "status": "PASS_SOURCE_ONLY_UNSTARTED_DEV_RECOVERY_EVALUATION_COMPATIBILITY"
+}

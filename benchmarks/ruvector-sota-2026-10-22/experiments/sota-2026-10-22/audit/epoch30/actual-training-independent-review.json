@@ -1,0 +1,156 @@
+{
+  "DEV_not_started": true,
+  "actual_operations": {
+    "BGE_forward_calls": 81,
+    "BGE_texts": 578,
+    "DEV_CONF_choices": 0,
+    "DEV_input_reads": 0,
+    "NLI_forwards": 24,
+    "TRAIN_selected_choices_accessed_by_this_review": 0,
+    "TRAIN_selected_choices_accessed_by_worker": 24,
+    "backwards": 24,
+    "errors": 0,
+    "native_indexes": 8,
+    "native_insertions": 554,
+    "native_queries": 24,
+    "optimizer_updates": 24,
+    "paid_GPU_HTTP_full104_calls": 0,
+    "training_steps": 24
+  },
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "epoch": 30,
+  "evidence": {
+    "execution": {
+      "bytes": 5297,
+      "path": "experiments/sota-2026-10-22/epoch30/runs/train/execution.json",
+      "sha256": "7a4b9cf062de1b56ef45d88717570b41e29c29418626a081f86a0e1ff6d44ec3"
+    },
+    "original_frozen_training_report": {
+      "bytes": 18329,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/train-integrity.json",
+      "sha256": "9bdf887f6672bd8f427572a6c28252ba0bfd9925fcc50dc65b9ab5cba344e4f1"
+    },
+    "parameter_artifact": {
+      "bytes": 5950520,
+      "path": "experiments/sota-2026-10-22/epoch30/runs/train/trained-parameters.public.json",
+      "sha256": "46bcb1c9bcf7a6bd9f7491f1233f38b65b1c3672de5370f4d1e1b5db24ae796f"
+    },
+    "raw": {
+      "bytes": 1937474,
+      "path": "experiments/sota-2026-10-22/epoch30/runs/train/raw.json",
+      "sha256": "2dbe91214848dc84d48f2160bf0631cf7aa20090146f4a597a5142be37242923"
+    },
+    "source_freeze": {
+      "bytes": 19979,
+      "path": "experiments/sota-2026-10-22/epoch30/source-freeze.json",
+      "sha256": "179a0463338808f2d39925fe480a02c4eb144ee634044594a8c68ca51a35e14a"
+    },
+    "source_plan": {
+      "bytes": 37823,
+      "path": "experiments/sota-2026-10-22/epoch30/plan.json",
+      "sha256": "d6c46944bbac2cb8ef65a51e68d927e10b869123004f941d56292cef1e0bd94b"
+    }
+  },
+  "findings": [],
+  "kind": "REAL_NATIVE_LEGAL_PARAMETER_ADAPTATION_DIAGNOSTIC",
+  "network": {
+    "OS_network_isolation_claim": false,
+    "capability_bind_and_close": "SUCCESS",
+    "forbidden_operations": 0,
+    "separate_source_bound_literal_capability_binds": 1
+  },
+  "new_submission": false,
+  "no_scoring_or_inference_repeat": {
+    "TRAIN_DEV_CONF_choice_or_evidence_reads": 0,
+    "frozen_TRAIN_scorer_runs_by_this_review": 0,
+    "original_weight_deserializations": 0,
+    "training_or_DEV_model_calls": 0
+  },
+  "original_frozen_TRAIN_evaluation_preserved": true,
+  "parameter_integrity": {
+    "all12_changed": true,
+    "all511_before_after_hashes_unchanged": true,
+    "delta_hash_boundary": "Independent mathematical BA nonzero witnesses from exact decoded float32 factors; producer TorchFP32/FMA delta hashes retained without a false exact-bit replay claim.",
+    "final_optimizer_step_artifact_manifest_bound": true,
+    "frozen_aggregate_sha256": "83fe6e4ede98c74a15e1457c3130c5ee71abd4d07e1dc5b0fd405e44f83f49db",
+    "frozen_original_parameters": 406291456,
+    "frozen_original_tensors": 511,
+    "initial_B_exact_zero": true,
+    "learned_parameters": 1085443,
+    "learned_tensors": 12,
+    "mechanisms": [
+      {
+        "finite_nonzero_gradient_updates": 24,
+        "independent_BA_witness": {
+          "column": 0,
+          "mathematical_BA_nonzero": true,
+          "row": 0
+        },
+        "max_B_gradient_l2": 0.14104065728179035,
+        "module": "model.decoder.layers.10.encoder_attn.q_proj",
+        "producer_effective_delta_sha256": "37f36fff465b7b68800b55c7b9e439ace83bd52df8e574103054f1eee3d11350"
+      },
+      {
+        "finite_nonzero_gradient_updates": 24,
+        "independent_BA_witness": {
+          "column": 0,
+          "mathematical_BA_nonzero": true,
+          "row": 0
+        },
+        "max_B_gradient_l2": 0.2772574363517365,
+        "module": "model.decoder.layers.10.encoder_attn.v_proj",
+        "producer_effective_delta_sha256": "7717d239ad6666169e3a1d43ec7d99472205619a7068526b3a403d3ae0b42b78"
+      },
+      {
+        "finite_nonzero_gradient_updates": 24,
+        "independent_BA_witness": {
+          "column": 0,
+          "mathematical_BA_nonzero": true,
+          "row": 0
+        },
+        "max_B_gradient_l2": 0.11313090906352215,
+        "module": "model.decoder.layers.11.encoder_attn.q_proj",
+        "producer_effective_delta_sha256": "2cd2b28cfd17d3fb1224cb6b4069a9b7a443e7c6ec1ef665104b5f426b0c8937"
+      },
+      {
+        "finite_nonzero_gradient_updates": 24,
+        "independent_BA_witness": {
+          "column": 0,
+          "mathematical_BA_nonzero": true,
+          "row": 0
+        },
+        "max_B_gradient_l2": 0.30230769939283314,
+        "module": "model.decoder.layers.11.encoder_attn.v_proj",
+        "producer_effective_delta_sha256": "52d9e2cfa37b0e7838f6fb5f2e187adc547fe3d005d78bd4b720fc52d1576155"
+      }
+    ],
+    "original_classifier_preserved_at_initialization": true
+  },
+  "physical_closure": {
+    "native_child_closed": true,
+    "remaining_owned_process_group_or_session_members": [],
+    "worker_identity": {
+      "pgid": 86120,
+      "pid": 86120,
+      "ppid": 86119,
+      "sid": 86120,
+      "state": "R",
+      "ticks": 18813885
+    }
+  },
+  "resources": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "actual_denied_syscall_attempt_count": "UNKNOWN",
+    "kernel_affinity_guard": "NoNewPrivs1/Seccomp2, inherited deny sched_setaffinity",
+    "observed_threads_within_CPU0_1": 5,
+    "peak_RSS_bytes": 2547351552,
+    "wall_seconds_including_initialization_cleanup": 126.63952734300983
+  },
+  "schema_version": 1,
+  "status": "PASS_ACTUAL_CLOSED_TRAIN_REPORT_AND_ARTIFACT_REVIEW",
+  "train_integrity_passed": true
+}

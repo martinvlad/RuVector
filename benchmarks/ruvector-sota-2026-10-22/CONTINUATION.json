@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "0928ca97b5a8942e6ad25fa7f4db70567e7848bc",
-  "checkpoint_manifest_sha256": "245530b2fd59d064db83818b26cb479df49209ee6b2ded83c019f4a84b9fab52",
+  "prior_published_base_commit": "8d1f126b9dffaef5d50712e80489f7a5f3984091",
+  "checkpoint_manifest_sha256": "9aa57320792550e9ee3255342dbc20254ba8057dc081cbf61d472c27b4551b88",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -394,7 +394,132 @@
       "raw_operation_counters_source": "raw.json",
       "operation_counts_complete": true,
       "backend_execution_since_checkpoint": "NOT_APPLICABLE_FINAL_RAW"
-    }
+    },
+    "epoch30_actual_execution": {
+      "train": {
+        "adapted_DEV_forward_calls_completed": 0,
+        "DEV_annotation_choices_attempted": 0,
+        "DEV_input_bank_reads": 0,
+        "Python_network_operations_attempted": 0,
+        "CONF_input_bank_reads": 0,
+        "training_steps": 24,
+        "BART_initializations_attempted": 1,
+        "TRAIN_forward_calls_completed": 24,
+        "DEV_annotation_choices_accessed": 0,
+        "CONF_annotation_choices_attempted": 0,
+        "source_evidence_lists_accessed": 0,
+        "other_role_annotation_choices_accessed": 0,
+        "LoRA_B_gradient_checks_attempted": 96,
+        "native_index_initializations_attempted": 8,
+        "LoRA_initializations_completed": 1,
+        "optimizer_initializations_attempted": 1,
+        "native_binary_loads_completed": 1,
+        "native_index_initializations_completed": 8,
+        "parameter_artifacts_write_completed": 1,
+        "full104_requests": 0,
+        "fits": 1,
+        "TRAIN_label_reads": 24,
+        "NLI_forward_calls_completed": 24,
+        "native_version_calls_attempted": 1,
+        "native_queries_completed": 24,
+        "TRAIN_contexts_completed": 24,
+        "DEV_contexts_completed": 0,
+        "native_len_calls_attempted": 16,
+        "native_version_calls_completed": 1,
+        "GPU_calls": 0,
+        "native_helper_starts_attempted": 1,
+        "ORT_sessions_attempted": 1,
+        "pair_tokenizations_completed": 24,
+        "native_helper_starts_completed": 1,
+        "original_DEV_forward_calls_attempted": 0,
+        "LoRA_initializations_attempted": 1,
+        "parameter_artifacts_load_completed": 0,
+        "BART_initializations_completed": 1,
+        "TRAIN_annotation_choices_accessed": 24,
+        "original_DEV_forward_calls_completed": 0,
+        "native_queries_attempted": 24,
+        "optimizer_steps_completed": 24,
+        "ORT_sessions_completed": 1,
+        "CONF_annotation_choices_accessed": 0,
+        "DEV_reads": 0,
+        "calibration_calls": 0,
+        "pair_tokenizations_attempted": 24,
+        "NLI_forward_calls_attempted": 24,
+        "TRAIN_input_bank_reads": 2,
+        "parameter_artifacts_load_attempted": 0,
+        "TRAIN_forward_calls_attempted": 24,
+        "adapted_DEV_forward_calls_attempted": 0,
+        "gradient_clips_attempted": 24,
+        "LoRA_B_gradient_checks_completed": 96,
+        "backward_calls_completed": 24,
+        "parameter_artifacts_write_attempted": 1,
+        "Node_network_operations_attempted": 0,
+        "TRAIN_annotation_choices_attempted": 24,
+        "BGE_initializations_attempted": 1,
+        "native_binary_loads_attempted": 1,
+        "generation_calls": 0,
+        "BGE_initializations_completed": 1,
+        "optimizer_initializations_completed": 1,
+        "optimizer_steps_attempted": 24,
+        "HTTP_requests": 0,
+        "native_len_calls_completed": 16,
+        "paid_calls": 0,
+        "gradient_clips_completed": 24,
+        "backward_calls_attempted": 24,
+        "BGE_forward_calls_attempted": 81,
+        "BGE_forward_calls_completed": 81,
+        "BGE_texts_attempted": 578,
+        "BGE_texts_completed": 578,
+        "BGE_forward_seconds": 14.011656355956802,
+        "automatically_extracted_units": 554,
+        "native_insertions_attempted": 554,
+        "native_insertions_completed": 554,
+        "native_hit_source_validations": 960,
+        "Python_literal_loopback_capability_binds_allowed": 1,
+        "phase": "train",
+        "worker_attempts": 1,
+        "verified_worker_starts": 1,
+        "uncertain_start": false,
+        "wall_seconds_including_init_cleanup": 126.63952734300983,
+        "CPU_affinity": [
+          0,
+          1
+        ],
+        "owned_live_processes_closed": true,
+        "owned_live_group_members": [],
+        "owned_process_closure_observation": "OBSERVED",
+        "peak_RSS_bytes": 2547351552,
+        "user_seconds": 204.15186,
+        "system_seconds": 5.017896,
+        "errors": 0,
+        "raw_operation_counters_source": "raw.json",
+        "operation_counts_complete": true,
+        "backend_execution_since_checkpoint": "NOT_APPLICABLE_FINAL_RAW"
+      },
+      "dev": {
+        "phase": "dev",
+        "status": "NOT_STARTED",
+        "worker_attempts": 0,
+        "verified_worker_starts": 0,
+        "raw_operation_counters_source": "NOT_STARTED",
+        "operation_counts_complete": false,
+        "backend_execution_since_checkpoint": "NOT_STARTED",
+        "errors": null,
+        "resources": null
+      },
+      "worker_attempts": 1,
+      "verified_worker_starts": 1,
+      "completed_corpus_batches": 1,
+      "wall_seconds_including_init_cleanup": 126.63952734300983,
+      "peak_RSS_bytes": 2547351552,
+      "owned_live_processes_closed": true,
+      "errors": 0,
+      "resource_scope": "Sum of observed whole-phase wall times; maximum largest-child high-water RSS across phases, not simultaneous aggregate RSS. Unstarted phase internal operations/resources unmeasured."
+    },
+    "epoch30_cumulative_corpus_attempts": 25,
+    "epoch30_cumulative_completed_corpus_batches": 23,
+    "epoch30_cumulative_bounded_native_process_attempts": 31,
+    "epoch30_counting_scope": "All historical flat fields remain unchanged; explicit prior E27 corpus24attempts/22complete plus current phase reservations/completions. Boundednative prior30 plus reservations; qualifications6 and HTTP885success/2fail unchanged."
   },
   "epochs": [
     {
@@ -697,6 +822,28 @@
       },
       "engineering_qualified": true,
       "official_rank": null
+    },
+    {
+      "benchmark_accepted": false,
+      "champion_promoted": false,
+      "new_submission": false,
+      "official_SOTA_verified": false,
+      "official_rank": null,
+      "epoch": 30,
+      "kind": "REAL_NATIVE_LEGAL_PARAMETER_ADAPTATION_DIAGNOSTIC",
+      "status": "TRAINING_NOT_ACCEPTED_DEV_NOT_STARTED",
+      "manifest": {
+        "path": "experiments/sota-2026-10-22/epoch30/EPOCH_MANIFEST.json",
+        "bytes": 36258,
+        "sha256": "82d22f8dfe89ab845f481395e192cd0802627821bd6ae094e68822ac6e1e1634"
+      },
+      "results": {
+        "path": "experiments/sota-2026-10-22/epoch30/RESULTS.json",
+        "bytes": 9609,
+        "sha256": "6073965a60aebc8913590ee8ecded7db919256a5decf69d879e6a2670829f4f8"
+      },
+      "diagnostic_qualified": false,
+      "train_integrity_passed": true
     }
   ],
   "used_confirmation_sets": [
@@ -848,10 +995,10 @@
     "schema_version": 1,
     "run_id": "epoch30-9f13c9bb6e47",
     "epoch": 30,
-    "state": "EPOCH30_SOURCE_FROZEN_TRAIN_PENDING_ADMISSION",
-    "work_active": true,
+    "state": "EPOCH30_CLOSED",
+    "work_active": false,
     "experiments_active": false,
-    "checkpoint_parent": "0928ca97b5a8942e6ad25fa7f4db70567e7848bc",
+    "checkpoint_parent": "8d1f126b9dffaef5d50712e80489f7a5f3984091",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
       "run_id": "epoch30-9f13c9bb6e47",
@@ -876,8 +1023,49 @@
     "conditional_confirmation_allowed": 0,
     "confirmation_allowed": 0,
     "instruction": "Only named phase after independent actual Git readback and source/model admission. Two nonretryable CPU2/600s phases total. No CONF/full104/benchmark acceptance/promotion/submission. FINAL closes every slot.",
-    "conditional_train_allowed": 1,
+    "conditional_train_allowed": 0,
     "conditional_dev_allowed": 0,
+    "all_unspent_epoch30_slots_permanently_closed": true,
+    "owned_native_groups_closed": true,
+    "physical_owner_role": "HISTORICAL_FROZEN_EXECUTION_IDENTITY_NOT_CURRENT_PUBLICATION_AUTHORITY",
+    "publication_recovery": {
+      "kind": "FINAL_ONLY_PUBLICATION_RECOVERY",
+      "generation": 2,
+      "publication_recovery_owner": {
+        "run_id": "epoch30-9f13c9bb6e47",
+        "pid": 86359,
+        "startticks": 18881796,
+        "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
+        "lock_inode": 13626,
+        "started_unix": 1792865116.0493217,
+        "expires_unix": 1792868716.0493217,
+        "started_at": "2026-10-24T18:05:16.049322+00:00",
+        "expires_at": "2026-10-24T19:05:16.049322+00:00",
+        "CPU_affinity": [
+          0,
+          1
+        ],
+        "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+        "generation": 2
+      },
+      "protocol": {
+        "path": "experiments/sota-2026-10-22/epoch30/recovery/protocol.json",
+        "bytes": 6433,
+        "sha256": "fc5b070ac824ec91c74f09444d292cb6237ab9bcb04ea86155972917d7d9a0ca"
+      },
+      "independent_recovery_proof": {
+        "path": "experiments/sota-2026-10-22/audit/epoch30/recovery-physical-retention-independent.json",
+        "bytes": 11759,
+        "sha256": "4d57d6ce20be0cd82c0e6fc66bef3448b28f71b1c673aba27e43a4234ec02166"
+      },
+      "reason": "Original frozen execution guardian was lost after completed independently accepted TRAIN and before actual MODEL publication. Generation2 authority may only retain truthful failed/unstarted diagnostic evidence and publish FINAL; no retraining, MODEL publication, DEV admission, benchmark acceptance or promotion.",
+      "original_physical_owner_role": "HISTORICAL_FROZEN_EXECUTION_IDENTITY_NOT_CURRENT_PUBLICATION_AUTHORITY",
+      "scientific_gates_unchanged": true,
+      "MODEL_published": false,
+      "DEV_admitted": false,
+      "new_model_native_or_label_calls": 0
+    },
+    "OS_lock_held_by": "publication_recovery.publication_recovery_owner",
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -1067,9 +1255,9 @@
     }
   ],
   "rejection_ledger": {
-    "path": "experiments/sota-2026-10-22/epoch29/REJECTION_LEDGER.json",
-    "bytes": 75864,
-    "sha256": "ed14951c6918148e9293c8d2f25c07ea08e626114d679aee9a998f00644cb030"
+    "path": "experiments/sota-2026-10-22/epoch30/REJECTION_LEDGER.json",
+    "bytes": 83547,
+    "sha256": "5b120f306f4b982b5f5e369a6c3d5f726a1058b7676ae54d880fdaa7cb76499e"
   },
   "benchmark_refresh": {
     "path": "experiments/sota-2026-10-22/legal-transfer/epoch29/benchmark-refresh.json",
@@ -1811,6 +1999,15 @@
       "all_unspent_slots_permanently_closed": true
     },
     "epoch29_budget": {
+      "worker_attempts_used": 1,
+      "workers_remaining": 0,
+      "native_corpus_batches_remaining": 0,
+      "confirmation_remaining": 0,
+      "all_unspent_slots_permanently_closed": true
+    },
+    "epoch30_budget": {
+      "train_worker_attempts_used": 1,
+      "dev_worker_attempts_used": 0,
       "worker_attempts_used": 1,
       "workers_remaining": 0,
       "native_corpus_batches_remaining": 0,
@@ -4516,5 +4713,65 @@
       "total": 423
     },
     "all16_document_ids_permanently_exposed_after_projection": true
+  },
+  "epoch30_final": {
+    "benchmark_accepted": false,
+    "champion_promoted": false,
+    "new_submission": false,
+    "official_SOTA_verified": false,
+    "official_rank": null,
+    "manifest": {
+      "path": "experiments/sota-2026-10-22/epoch30/EPOCH_MANIFEST.json",
+      "bytes": 36258,
+      "sha256": "82d22f8dfe89ab845f481395e192cd0802627821bd6ae094e68822ac6e1e1634"
+    },
+    "results": {
+      "path": "experiments/sota-2026-10-22/epoch30/RESULTS.json",
+      "bytes": 9609,
+      "sha256": "6073965a60aebc8913590ee8ecded7db919256a5decf69d879e6a2670829f4f8"
+    },
+    "status": "TRAINING_NOT_ACCEPTED_DEV_NOT_STARTED",
+    "diagnostic_qualified": false,
+    "train_integrity_passed": true,
+    "goal_met": false,
+    "fresh_confirmation_consumed": false,
+    "all_unspent_slots_closed": true
+  },
+  "epoch30_publication_recovery": {
+    "kind": "FINAL_ONLY_PUBLICATION_RECOVERY",
+    "generation": 2,
+    "publication_recovery_owner": {
+      "run_id": "epoch30-9f13c9bb6e47",
+      "pid": 86359,
+      "startticks": 18881796,
+      "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
+      "lock_inode": 13626,
+      "started_unix": 1792865116.0493217,
+      "expires_unix": 1792868716.0493217,
+      "started_at": "2026-10-24T18:05:16.049322+00:00",
+      "expires_at": "2026-10-24T19:05:16.049322+00:00",
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+      "generation": 2
+    },
+    "protocol": {
+      "path": "experiments/sota-2026-10-22/epoch30/recovery/protocol.json",
+      "bytes": 6433,
+      "sha256": "fc5b070ac824ec91c74f09444d292cb6237ab9bcb04ea86155972917d7d9a0ca"
+    },
+    "independent_recovery_proof": {
+      "path": "experiments/sota-2026-10-22/audit/epoch30/recovery-physical-retention-independent.json",
+      "bytes": 11759,
+      "sha256": "4d57d6ce20be0cd82c0e6fc66bef3448b28f71b1c673aba27e43a4234ec02166"
+    },
+    "reason": "Original frozen execution guardian was lost after completed independently accepted TRAIN and before actual MODEL publication. Generation2 authority may only retain truthful failed/unstarted diagnostic evidence and publish FINAL; no retraining, MODEL publication, DEV admission, benchmark acceptance or promotion.",
+    "original_physical_owner_role": "HISTORICAL_FROZEN_EXECUTION_IDENTITY_NOT_CURRENT_PUBLICATION_AUTHORITY",
+    "scientific_gates_unchanged": true,
+    "MODEL_published": false,
+    "DEV_admitted": false,
+    "new_model_native_or_label_calls": 0
   }
 }

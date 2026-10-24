@@ -2,10 +2,10 @@
   "schema_version": 1,
   "run_id": "epoch30-9f13c9bb6e47",
   "epoch": 30,
-  "state": "EPOCH30_SOURCE_FROZEN_TRAIN_PENDING_ADMISSION",
-  "work_active": true,
+  "state": "EPOCH30_CLOSED",
+  "work_active": false,
   "experiments_active": false,
-  "checkpoint_parent": "0928ca97b5a8942e6ad25fa7f4db70567e7848bc",
+  "checkpoint_parent": "8d1f126b9dffaef5d50712e80489f7a5f3984091",
   "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
   "physical_owner": {
     "run_id": "epoch30-9f13c9bb6e47",
@@ -30,6 +30,47 @@
   "conditional_confirmation_allowed": 0,
   "confirmation_allowed": 0,
   "instruction": "Only named phase after independent actual Git readback and source/model admission. Two nonretryable CPU2/600s phases total. No CONF/full104/benchmark acceptance/promotion/submission. FINAL closes every slot.",
-  "conditional_train_allowed": 1,
-  "conditional_dev_allowed": 0
+  "conditional_train_allowed": 0,
+  "conditional_dev_allowed": 0,
+  "all_unspent_epoch30_slots_permanently_closed": true,
+  "owned_native_groups_closed": true,
+  "physical_owner_role": "HISTORICAL_FROZEN_EXECUTION_IDENTITY_NOT_CURRENT_PUBLICATION_AUTHORITY",
+  "publication_recovery": {
+    "kind": "FINAL_ONLY_PUBLICATION_RECOVERY",
+    "generation": 2,
+    "publication_recovery_owner": {
+      "run_id": "epoch30-9f13c9bb6e47",
+      "pid": 86359,
+      "startticks": 18881796,
+      "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
+      "lock_inode": 13626,
+      "started_unix": 1792865116.0493217,
+      "expires_unix": 1792868716.0493217,
+      "started_at": "2026-10-24T18:05:16.049322+00:00",
+      "expires_at": "2026-10-24T19:05:16.049322+00:00",
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+      "generation": 2
+    },
+    "protocol": {
+      "path": "experiments/sota-2026-10-22/epoch30/recovery/protocol.json",
+      "bytes": 6433,
+      "sha256": "fc5b070ac824ec91c74f09444d292cb6237ab9bcb04ea86155972917d7d9a0ca"
+    },
+    "independent_recovery_proof": {
+      "path": "experiments/sota-2026-10-22/audit/epoch30/recovery-physical-retention-independent.json",
+      "bytes": 11759,
+      "sha256": "4d57d6ce20be0cd82c0e6fc66bef3448b28f71b1c673aba27e43a4234ec02166"
+    },
+    "reason": "Original frozen execution guardian was lost after completed independently accepted TRAIN and before actual MODEL publication. Generation2 authority may only retain truthful failed/unstarted diagnostic evidence and publish FINAL; no retraining, MODEL publication, DEV admission, benchmark acceptance or promotion.",
+    "original_physical_owner_role": "HISTORICAL_FROZEN_EXECUTION_IDENTITY_NOT_CURRENT_PUBLICATION_AUTHORITY",
+    "scientific_gates_unchanged": true,
+    "MODEL_published": false,
+    "DEV_admitted": false,
+    "new_model_native_or_label_calls": 0
+  },
+  "OS_lock_held_by": "publication_recovery.publication_recovery_owner"
 }

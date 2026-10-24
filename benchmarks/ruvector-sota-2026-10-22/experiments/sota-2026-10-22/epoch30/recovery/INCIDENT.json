@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "epoch": 30,
+  "incident": "EXECUTOR_LOSS_AFTER_CLOSED_TRAIN_BEFORE_MODEL_PUBLICATION",
+  "recorded_at_unix": 1792865261.4382405,
+  "source_commit": "8d1f126b9dffaef5d50712e80489f7a5f3984091",
+  "main_unchanged": "46d816ddc4c2a8a06cd3613534a79b1d557d858b",
+  "actual_TRAIN": {
+    "worker_attempts_consumed": 1,
+    "training_steps": 24,
+    "native_corpus_batches": 1,
+    "native_queries": 24,
+    "wall_seconds_including_initialization_and_cleanup": 126.63952734300983,
+    "largest_child_peak_RSS_bytes": 2547351552,
+    "worker_closed": true,
+    "original_frozen_integrity_audit_passed": true,
+    "independent_actual_artifact_review_passed": true
+  },
+  "actual_DEV": {
+    "worker_attempts": 0,
+    "predictions": 0,
+    "annotation_choices_attempted": 0,
+    "annotation_choices_accessed": 0,
+    "permanently_closed_after_guardian_loss": true
+  },
+  "actual_CONFIRMATION": {
+    "attempts": 0,
+    "used_identities": []
+  },
+  "paid_calls": 0,
+  "GPU_calls": 0,
+  "model_checkpoint_was_published": false,
+  "benchmark_accuracy_or_proper_scores": null,
+  "official_score_or_rank": null,
+  "champion_promoted": false,
+  "new_submission": false,
+  "old_guardian": {
+    "pid": 84004,
+    "startticks": 18294638,
+    "lock_inode": 13626,
+    "generation": 1,
+    "old_owner_file_preserved": true,
+    "old_guardian_observed_absent_after_access_returned": true,
+    "no_old_release_request_created": true
+  },
+  "recovery_publication_owner": {
+    "run_id": "epoch30-9f13c9bb6e47",
+    "pid": 86359,
+    "startticks": 18881796,
+    "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
+    "lock_inode": 13626,
+    "started_unix": 1792865116.0493217,
+    "expires_unix": 1792868716.0493217,
+    "started_at": "2026-10-24T18:05:16.049322+00:00",
+    "expires_at": "2026-10-24T19:05:16.049322+00:00",
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+    "generation": 2
+  },
+  "recovery_scope": "Retain real TRAIN evidence and close this exact epoch under a new exclusive final-publication-only lock. No retraining, DEV, MODEL publication, confirmation, scientific source edits or gate waiver. Frozen status TRAINING_NOT_ACCEPTED_DEV_NOT_STARTED means MODEL/DEV admission was not completed; TRAIN integrity itself passed.",
+  "local_command_resolution": {
+    "original_MODEL_stager_failed_before_any_output": "Missing exact outside-project output parent",
+    "following_mkdir_and_local_receipt_command_transport_failed": true,
+    "after_access_returned_parent_and_receipt_both_absent": true,
+    "MODEL_stage_directory_absent": true,
+    "no_uncertain_external_Git_mutation": true,
+    "old_journal_rows": 40,
+    "old_successful_request_response_pairs": 20,
+    "old_journal_sha256": "ad9a3f9c0c31badc5ce20a18384dfb61d631f5a32553737c711094c493270326"
+  },
+  "executor_observation": "Execution tool reported unavailable; platform context marked unavailable; configuration status410 reported connected/running. No root cause inferred. Access subsequently returned with matching files and free original lock inode.",
+  "frozen_scientific_source": {
+    "plan_sha256": "d6c46944bbac2cb8ef65a51e68d927e10b869123004f941d56292cef1e0bd94b",
+    "source_freeze_sha256": "179a0463338808f2d39925fe480a02c4eb144ee634044594a8c68ca51a35e14a",
+    "no_changes": true
+  },
+  "learned_artifact": {
+    "path": "experiments/sota-2026-10-22/epoch30/runs/train/trained-parameters.public.json",
+    "bytes": 5950520,
+    "sha256": "46bcb1c9bcf7a6bd9f7491f1233f38b65b1c3672de5370f4d1e1b5db24ae796f",
+    "preserved_for_reproduction_only": true
+  },
+  "automation_goal_verified": false
+}

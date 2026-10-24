@@ -1,0 +1,203 @@
+{
+  "ML_native_imports_or_calls": 0,
+  "actual_annotation_value_reads": 0,
+  "blocking_defects_found": [],
+  "candidate_or_scorer_tests_executed": 0,
+  "checks_passed": true,
+  "created_at": "2026-10-24T17:51:20.894105+00:00",
+  "epoch": 30,
+  "independent_arithmetic_examples": {
+    "Brier_threeway_sum": 0.945,
+    "C_ceiling_boundary": "If original Ccorrect equals Ctotal, the required+1 C gain cannot pass; frozen gate rejects with no relaxation.",
+    "NLL": 1.3862943611198906,
+    "asymmetric_C_gold_probabilities_E_C_N": [
+      0.6,
+      0.25,
+      0.15
+    ],
+    "exact_half_binary_choice": "No",
+    "native_all_logits_equal_typed_choice": "Contradiction",
+    "zero_gold_probability_clipped_NLL": 27.631021115928547
+  },
+  "input_banks_and_original_annotations_opened_by_reviewer": false,
+  "kind": "INDEPENDENT_FROZEN_SCORER_SOURCE_REVIEW_ONLY",
+  "network_or_mail_calls": 0,
+  "pipeline_preconditions": [
+    "Root supplies the canonical sealed TRAIN report named by MODEL_SEAL; evaluate binds its embedded artifact/raw/execution/plan/freeze refs, while runtime MODEL admission checks the sealed report bytes and positive verdict.",
+    "Only actual closed TRAIN/DEV artifacts from current immutable source/model admissions are scored; source review cannot establish runtime gradient/timing/CPU/network success.",
+    "Final bind consumes the frozen evaluator replay and does not repeat the gold join."
+  ],
+  "project_writes": 0,
+  "schema_version": 1,
+  "scope_limits": [
+    "Actual parameter tensors, gradients, learned artifacts, model outputs and source annotation values were not read.",
+    "The producer FP32 effective-delta hash is not independently recomputed with an assumed FMA/float32 rounding order; mathematical BA nonzero is independently checked from factor bytes by the frozen scorer.",
+    "Missing class or C-ceiling impossibility yields failed frozen diagnostic gates; no data redraw, calibration, CONF, threshold tuning or promotion is authorized.",
+    "Runtime enforcement/publication guards were separately reviewed by their owners; this focused report grants no execution or scoring admission."
+  ],
+  "scorer_source_freeze": {
+    "bytes": 5500,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/audit/epoch30/scorer-source-freeze.json",
+    "sha256": "5e9bef6a2266ea3f0524264edc199e27e3fc4c002f2fe4edce5f0e482473f7b3"
+  },
+  "source_checks": [
+    {
+      "assessment": "Independently specified four r4 A/B pairs and four existing head tensors; canonical base64, exact float32le byte/hash identity and finiteness are checked.",
+      "check": "artifact_exact_names_shapes_lossless_payload",
+      "passed": true,
+      "source": "artifact_audit.py:tensor/audit_artifact"
+    },
+    {
+      "assessment": "Row-major B[1024,4] times A[4,1024] indexing is correct. This proves mathematical nonzero BA from decoded factors. Producer FP32/FMA delta hashes and norms are explicitly not claimed as independent bit-exact float64 replay.",
+      "check": "independent_BA_order_and_nonzero",
+      "passed": true,
+      "source": "artifact_audit.py:audit_artifact"
+    },
+    {
+      "assessment": "All511 unique stock backbone names/shapes are independently generated; complete before/after hash aggregates, original head identity and exact initial-zero B are required.",
+      "check": "all511_frozen_and_initial_head_binding",
+      "passed": true,
+      "source": "artifact_audit.py:frozen_shapes/audit_artifact"
+    },
+    {
+      "assessment": "Each intended tensor must change; every module has at least one finite nonzero B-gradient step matching raw receipts and maximum norm. Last-step trainable manifest is bound to exported tensor hashes.",
+      "check": "all12_changed_and_gradient_receipt_binding",
+      "passed": true,
+      "source": "artifact_audit.py:audit_artifact;score_train.py:audit"
+    },
+    {
+      "assessment": "TRAIN auditor uses existing closed raw/inputs/artifact, not original annotation choices; checks fixed ordered24 forward/backward/optimizer steps and corrected2 bank reads.",
+      "check": "TRAIN_no_gold_join_and_exact24",
+      "passed": true,
+      "source": "score_train.py:audit"
+    },
+    {
+      "assessment": "T1 all-head stable softmax maps C,N,E to E,C,N; native first-maximum tie order and exact-half binary No are preserved, without renormalizing E against C.",
+      "check": "native_CNE_softmax_to_ECN_and_ties",
+      "passed": true,
+      "source": "nli_metrics.py:reader_check"
+    },
+    {
+      "assessment": "Brier is the sum of three squared probability errors per case, averaged across24; NLL uses fixed1e-12 floor with clipping count and unclipped-finiteness disclosure.",
+      "check": "proper_3way_metric_definitions",
+      "passed": true,
+      "source": "nli_metrics.py:metrics"
+    },
+    {
+      "assessment": "Frozen+2 total improvement,+1 contradiction improvement, each-class presence/correctness and nonincrease in both proper scores apply against original/native and both retrieval comparators. No C-ceiling relaxation or redraw branch exists.",
+      "check": "fixed_adaptation_and_retrieval_gates",
+      "passed": true,
+      "source": "nli_metrics.py:diagnostic_gates"
+    },
+    {
+      "assessment": "Closed actual DEV phase, source/runtime integrity and all96 complete reader outputs are required before original annotated-source read. Failed/partial phases retain rejection without gold-derived metrics.",
+      "check": "closed_complete96_before_original_gold_source_read",
+      "passed": true,
+      "source": "score_dev.py:evaluate;phase_audit.py:physical_closure"
+    },
+    {
+      "assessment": "Fresh original-head/no-LoRA state and sealed adapted-state manifests are checked; original/adapted native token/text identities match exactly.",
+      "check": "same_native_context_and_original_before_adaptation",
+      "passed": true,
+      "source": "score_dev.py:evaluate;nli_metrics.py:reader_check"
+    },
+    {
+      "assessment": "Exclusive reservation and per-choice fsynced attempt log precede each of exactly24 fixed DEV choice traversals; source authenticity is verified first and the other roles/evidence fields are unused.",
+      "check": "one_DEV_join_reservation_and_writeahead_log",
+      "passed": true,
+      "source": "score_dev.py:evaluate"
+    },
+    {
+      "assessment": "Final publication binding compares current actual execution, exact evidence references and canonical results with frozen replay; publication checks_passed is separated from evaluated integrity/diagnostic verdicts and no promotion/rank claim is admitted.",
+      "check": "canonical_RESULTS_binding_preserves_scientific_verdict",
+      "passed": true,
+      "source": "score_dev.py:bind"
+    }
+  ],
+  "source_input_bank_refs_verified_from_frozen_metadata_only": [
+    {
+      "bytes": 297401,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/audit/epoch30/data/train.inputs.json",
+      "sha256": "bf1eff95845e301b56abd1a5284df0dcbbf531b952ea4dd1d89351fef845570a"
+    },
+    {
+      "bytes": 296328,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/audit/epoch30/data/dev.inputs.json",
+      "sha256": "5e6ab03f00b6f0581057457ff2a8278113576b1f5ea699895d5126144019aaf4"
+    }
+  ],
+  "status": "PASS_FOCUSED_SCORER_SOURCE_REVIEW",
+  "verified_source_and_metadata_files": [
+    {
+      "bytes": 12134,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/artifact_audit.py",
+      "sha256": "0f2ba13f2d948391604fe37365f64345ea0fdde656699eccc0545f2058900126"
+    },
+    {
+      "bytes": 5853,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/nli_metrics.py",
+      "sha256": "55760e357dcac1309e0ead938ef5a55ba545d22c9be38657695217144ded694c"
+    },
+    {
+      "bytes": 10443,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/phase_audit.py",
+      "sha256": "30f19f77ef66b1a3ea60e930b7975a7787fe5c2146a0ba791ac51542b5fe77bb"
+    },
+    {
+      "bytes": 9525,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/evidence_audit.py",
+      "sha256": "77c704461f445280fda8363238631c89f7886d23762a3fb295d9154a470a2a3f"
+    },
+    {
+      "bytes": 7631,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/score_train.py",
+      "sha256": "61b2ebf221b39a2825b29c4bdf94538bc3d1cec81ccca732aa0a39d5523b011c"
+    },
+    {
+      "bytes": 12786,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/score_dev.py",
+      "sha256": "66c7d0abd2c2720564eb6608e2d7fc2aa5a4bbf7cb223641ef6fcd80155e7e17"
+    },
+    {
+      "bytes": 11398,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/preflight_scorers.py",
+      "sha256": "96a706cfb90d23bced09ee8afd648fb7c21df775e066212794602eb7a809295f"
+    },
+    {
+      "bytes": 3104,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/scorer-preflight-v2.json",
+      "sha256": "d46377757764a07475afaebe4bbeb82a6750279dc25bee538330835cdb893918"
+    },
+    {
+      "bytes": 2410,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/data_common.py",
+      "sha256": "fa078a24a802bb8eb3b2259fc66f5c14b46c49a4300e90209ca91226d69c06e0"
+    },
+    {
+      "bytes": 11377,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/protocol.json",
+      "sha256": "d6325c3a5f442410225d65d38c9fa335a13d8297451d44720c2fd4fb1396899c"
+    },
+    {
+      "bytes": 11266,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/selection.json",
+      "sha256": "de8c3c0a0ec3136918080a8f8e98656f63b715b328e21f50f940dc085d0ef86b"
+    },
+    {
+      "bytes": 4445,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/runtime-policy-addendum-v1.json",
+      "sha256": "c4b3c3243ac089d5966e394f3ead60f57a15f59cc24b496960334124c14dbacd"
+    },
+    {
+      "bytes": 2141,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/runtime-policy-wire-schema-v1.json",
+      "sha256": "5325a53c03ce0e8173fc56095b68269ae965186dc4ec08263de6fa6ab273cefd"
+    },
+    {
+      "bytes": 2007,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/mechanism-integrity-binding-v1.json",
+      "sha256": "b1e5d997b9c2e76f96a136b26879000140ba0430a68e2228b3b5163b912dccea"
+    }
+  ],
+  "weights_deserializations": 0
+}

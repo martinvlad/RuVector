@@ -1,0 +1,574 @@
+{
+  "DEV_input_bank_reads_by_auditor": 0,
+  "TRAIN_source_choice_or_evidence_reads_by_auditor": 0,
+  "actual_execution": {
+    "BART_initializations_attempted": 1,
+    "BART_initializations_completed": 1,
+    "BGE_forward_calls_attempted": 81,
+    "BGE_forward_calls_completed": 81,
+    "BGE_forward_seconds": 14.011656355956802,
+    "BGE_initializations_attempted": 1,
+    "BGE_initializations_completed": 1,
+    "BGE_texts_attempted": 578,
+    "BGE_texts_completed": 578,
+    "CONF_annotation_choices_accessed": 0,
+    "CONF_annotation_choices_attempted": 0,
+    "CONF_input_bank_reads": 0,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "DEV_annotation_choices_accessed": 0,
+    "DEV_annotation_choices_attempted": 0,
+    "DEV_contexts_completed": 0,
+    "DEV_input_bank_reads": 0,
+    "DEV_reads": 0,
+    "GPU_calls": 0,
+    "HTTP_requests": 0,
+    "LoRA_B_gradient_checks_attempted": 96,
+    "LoRA_B_gradient_checks_completed": 96,
+    "LoRA_initializations_attempted": 1,
+    "LoRA_initializations_completed": 1,
+    "NLI_forward_calls_attempted": 24,
+    "NLI_forward_calls_completed": 24,
+    "Node_network_operations_attempted": 0,
+    "ORT_sessions_attempted": 1,
+    "ORT_sessions_completed": 1,
+    "Python_literal_loopback_capability_binds_allowed": 1,
+    "Python_network_operations_attempted": 0,
+    "TRAIN_annotation_choices_accessed": 24,
+    "TRAIN_annotation_choices_attempted": 24,
+    "TRAIN_contexts_completed": 24,
+    "TRAIN_forward_calls_attempted": 24,
+    "TRAIN_forward_calls_completed": 24,
+    "TRAIN_input_bank_reads": 2,
+    "TRAIN_label_reads": 24,
+    "adapted_DEV_forward_calls_attempted": 0,
+    "adapted_DEV_forward_calls_completed": 0,
+    "automatically_extracted_units": 554,
+    "backend_execution_since_checkpoint": "NOT_APPLICABLE_FINAL_RAW",
+    "backward_calls_attempted": 24,
+    "backward_calls_completed": 24,
+    "calibration_calls": 0,
+    "errors": 0,
+    "fits": 1,
+    "full104_requests": 0,
+    "generation_calls": 0,
+    "gradient_clips_attempted": 24,
+    "gradient_clips_completed": 24,
+    "native_binary_loads_attempted": 1,
+    "native_binary_loads_completed": 1,
+    "native_helper_starts_attempted": 1,
+    "native_helper_starts_completed": 1,
+    "native_hit_source_validations": 960,
+    "native_index_initializations_attempted": 8,
+    "native_index_initializations_completed": 8,
+    "native_insertions_attempted": 554,
+    "native_insertions_completed": 554,
+    "native_len_calls_attempted": 16,
+    "native_len_calls_completed": 16,
+    "native_queries_attempted": 24,
+    "native_queries_completed": 24,
+    "native_version_calls_attempted": 1,
+    "native_version_calls_completed": 1,
+    "operation_counts_complete": true,
+    "optimizer_initializations_attempted": 1,
+    "optimizer_initializations_completed": 1,
+    "optimizer_steps_attempted": 24,
+    "optimizer_steps_completed": 24,
+    "original_DEV_forward_calls_attempted": 0,
+    "original_DEV_forward_calls_completed": 0,
+    "other_role_annotation_choices_accessed": 0,
+    "owned_live_group_members": [],
+    "owned_live_processes_closed": true,
+    "owned_process_closure_observation": "OBSERVED",
+    "paid_calls": 0,
+    "pair_tokenizations_attempted": 24,
+    "pair_tokenizations_completed": 24,
+    "parameter_artifacts_load_attempted": 0,
+    "parameter_artifacts_load_completed": 0,
+    "parameter_artifacts_write_attempted": 1,
+    "parameter_artifacts_write_completed": 1,
+    "peak_RSS_bytes": 2547351552,
+    "phase": "train",
+    "raw_operation_counters_source": "raw.json",
+    "source_evidence_lists_accessed": 0,
+    "system_seconds": 5.017896,
+    "training_steps": 24,
+    "uncertain_start": false,
+    "user_seconds": 204.15186,
+    "verified_worker_starts": 1,
+    "wall_seconds_including_init_cleanup": 126.63952734300983,
+    "worker_attempts": 1
+  },
+  "artifact_audit": {
+    "TRAIN_choice_or_example_reads": 0,
+    "algorithm": {
+      "DEV_order": "fresh original native24 before reading/applying learned tensor values, then adapted native/lexical/positional72",
+      "attention": "sdpa",
+      "attribution": {
+        "base_license_source": "experiments/sota-2026-10-22/candidate/epoch27/reader/LICENSE.fairseq",
+        "base_model_license": "MIT; retain pinned fairseq model licence/copyright",
+        "change_notice": "Rank4 final-decoder cross-attention LoRA and existing classifier adapted on exactly24 fixed TRAIN choices; no DEV/CONF choice fit.",
+        "legal_training_data_citation": "Koreeda and Manning (2021), ContractNLI",
+        "legal_training_data_license": "CC-BY-4.0",
+        "legal_training_source_revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+        "legal_training_source_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5"
+      },
+      "batch_size": 1,
+      "binary_rule": "Yes=P(E),No=P(C)+P(N);Yes only ifP(E)>0.5, exact-half No",
+      "canonical_probability_permutation": [
+        2,
+        0,
+        1
+      ],
+      "dropout": "all disabled by recursive eval mode",
+      "epochs": 1,
+      "existing_pretrained_head_parameters": [
+        "classification_head.dense.weight",
+        "classification_head.dense.bias",
+        "classification_head.out_proj.weight",
+        "classification_head.out_proj.bias"
+      ],
+      "frozen_pretrained_parameters": 406291456,
+      "gradient_clip_global_norm": 1.0,
+      "gradient_integrity_gate": "Each of four LoRA B tensors has a finite nonzero gradient in at least one of24 fixed updates; all intended tensors changed and effective BA deltas nonzero; every other pretrained parameter bit-unchanged.",
+      "lora": {
+        "A_initialization": "uniform[-1/32,1/32] dedicated CPU generator seed30030, module order fixed",
+        "B_initialization": "exact zero",
+        "alpha": 8,
+        "dropout": 0,
+        "global_seed_reset_immediately_before_injection": true,
+        "rank": 4,
+        "scale": 2.0
+      },
+      "max_true_pair_tokens": 512,
+      "model_mode": "eval with gradients enabled only during TRAIN",
+      "module_order": [
+        "model.decoder.layers.10.encoder_attn.q_proj",
+        "model.decoder.layers.10.encoder_attn.v_proj",
+        "model.decoder.layers.11.encoder_attn.q_proj",
+        "model.decoder.layers.11.encoder_attn.v_proj"
+      ],
+      "name": "original2020-BART-final2-crossattention-qv-r4-plus-existing-head-one-epoch",
+      "no_early_stopping_checkpoint_selection_calibration_or_retry": true,
+      "objective": "unweighted native-C/N/E three-way cross entropy; equal example weights",
+      "optimizer": {
+        "amsgrad": false,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "capturable": false,
+        "differentiable": false,
+        "epsilon": 1e-08,
+        "foreach": false,
+        "fused": false,
+        "learning_rate": 0.0001,
+        "maximize": false,
+        "name": "AdamW",
+        "weight_decay": 0.01
+      },
+      "precision": "CPU float32",
+      "raw_logit_order": [
+        "contradiction",
+        "not_mentioned",
+        "entailment"
+      ],
+      "seed": 30030,
+      "temperature": 1.0,
+      "threeway_tie_rule": "first maximum in native C,N,E order",
+      "train_case_order": [
+        "original-contractnli:train:epoch30:train:237:nda-17",
+        "original-contractnli:train:epoch30:train:237:nda-7",
+        "original-contractnli:train:epoch30:train:237:nda-3",
+        "original-contractnli:train:epoch30:train:120:nda-17",
+        "original-contractnli:train:epoch30:train:120:nda-7",
+        "original-contractnli:train:epoch30:train:120:nda-3",
+        "original-contractnli:train:epoch30:train:187:nda-17",
+        "original-contractnli:train:epoch30:train:187:nda-7",
+        "original-contractnli:train:epoch30:train:187:nda-3",
+        "original-contractnli:train:epoch30:train:422:nda-17",
+        "original-contractnli:train:epoch30:train:422:nda-7",
+        "original-contractnli:train:epoch30:train:422:nda-3",
+        "original-contractnli:train:epoch30:train:464:nda-17",
+        "original-contractnli:train:epoch30:train:464:nda-7",
+        "original-contractnli:train:epoch30:train:464:nda-3",
+        "original-contractnli:train:epoch30:train:207:nda-17",
+        "original-contractnli:train:epoch30:train:207:nda-7",
+        "original-contractnli:train:epoch30:train:207:nda-3",
+        "original-contractnli:train:epoch30:train:294:nda-17",
+        "original-contractnli:train:epoch30:train:294:nda-7",
+        "original-contractnli:train:epoch30:train:294:nda-3",
+        "original-contractnli:train:epoch30:train:250:nda-17",
+        "original-contractnli:train:epoch30:train:250:nda-7",
+        "original-contractnli:train:epoch30:train:250:nda-3"
+      ],
+      "trainable_parameters": 1085443,
+      "training_steps": 24,
+      "use_cache": false
+    },
+    "artifact": {
+      "bytes": 5950520,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/epoch30/runs/train/trained-parameters.public.json",
+      "sha256": "46bcb1c9bcf7a6bd9f7491f1233f38b65b1c3672de5370f4d1e1b5db24ae796f"
+    },
+    "delta_SHA_scope": "Producer TorchFP32 matmul receipt; factorbytes and mathematical nonzero independently replayed; no false exact-FMA-bit claim",
+    "epoch": 30,
+    "frozen_aggregate_sha256": "83fe6e4ede98c74a15e1457c3130c5ee71abd4d07e1dc5b0fd405e44f83f49db",
+    "frozen_original_parameters": 406291456,
+    "frozen_original_tensors": 511,
+    "kind": "REAL_NATIVE_LEGAL_PARAMETER_ADAPTATION_DIAGNOSTIC",
+    "mechanism": [
+      {
+        "B_nonzero_gradient_steps": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "independent_BA_nonzero": true,
+        "max_B_gradient_l2": 0.14104065728179035,
+        "module": "model.decoder.layers.10.encoder_attn.q_proj"
+      },
+      {
+        "B_nonzero_gradient_steps": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "independent_BA_nonzero": true,
+        "max_B_gradient_l2": 0.2772574363517365,
+        "module": "model.decoder.layers.10.encoder_attn.v_proj"
+      },
+      {
+        "B_nonzero_gradient_steps": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "independent_BA_nonzero": true,
+        "max_B_gradient_l2": 0.11313090906352215,
+        "module": "model.decoder.layers.11.encoder_attn.q_proj"
+      },
+      {
+        "B_nonzero_gradient_steps": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "independent_BA_nonzero": true,
+        "max_B_gradient_l2": 0.30230769939283314,
+        "module": "model.decoder.layers.11.encoder_attn.v_proj"
+      }
+    ],
+    "mechanism_flags": {
+      "all12_changed": true,
+      "all4_B_mechanisms_nonzero": true,
+      "all_base_unchanged": true,
+      "initial_B_zero": true,
+      "original_head_preserved": true
+    },
+    "original_head_manifest": [
+      {
+        "bytes": 4194304,
+        "dtype": "float32le",
+        "name": "classification_head.dense.weight",
+        "numel": 1048576,
+        "sha256": "a284169efd7f317fed95c952050673be3ee9fa6426311a354b0a5bc53708c0e6",
+        "shape": [
+          1024,
+          1024
+        ]
+      },
+      {
+        "bytes": 4096,
+        "dtype": "float32le",
+        "name": "classification_head.dense.bias",
+        "numel": 1024,
+        "sha256": "3fdc80680d896fbaecf5164c3663b7425a352c262f45c1914ffd38f3c96e88f1",
+        "shape": [
+          1024
+        ]
+      },
+      {
+        "bytes": 12288,
+        "dtype": "float32le",
+        "name": "classification_head.out_proj.weight",
+        "numel": 3072,
+        "sha256": "ac55e52ebbd1d6c25c63f877b4019161d6a9da2facb60a413db4ed98ca40b076",
+        "shape": [
+          3,
+          1024
+        ]
+      },
+      {
+        "bytes": 12,
+        "dtype": "float32le",
+        "name": "classification_head.out_proj.bias",
+        "numel": 3,
+        "sha256": "f2b770822246ead1d79a9271b330bbb84c713341337110640be460014196fa8a",
+        "shape": [
+          3
+        ]
+      }
+    ],
+    "original_weights_or_models_loaded_by_auditor": 0,
+    "schema_version": 1,
+    "status": "PASS_LEARNED_PARAMETER_AND_COMPLETE_FROZEN_BACKBONE_EVIDENCE",
+    "trainable_parameters": 1085443,
+    "trainable_tensors": 12
+  },
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "checks_passed": true,
+  "confirmation": [],
+  "context_audit": {
+    "cases": 24,
+    "documents": 8,
+    "model_tokenizer_native_calls": 0,
+    "native_hits_verified": 960,
+    "source_choices_or_evidence_labels_read": 0,
+    "source_index_vectors": 554,
+    "source_query_vectors": 24,
+    "status": "PASS_EXACT_SOURCE_MATCHED_CONTEXT_AND_NATIVE_F32_REPLAY"
+  },
+  "epoch": 30,
+  "evidence": {
+    "artifact": {
+      "bytes": 5950520,
+      "path": "experiments/sota-2026-10-22/epoch30/runs/train/trained-parameters.public.json",
+      "sha256": "46bcb1c9bcf7a6bd9f7491f1233f38b65b1c3672de5370f4d1e1b5db24ae796f"
+    },
+    "execution": {
+      "bytes": 5297,
+      "path": "experiments/sota-2026-10-22/epoch30/runs/train/execution.json",
+      "sha256": "7a4b9cf062de1b56ef45d88717570b41e29c29418626a081f86a0e1ff6d44ec3"
+    },
+    "freeze": {
+      "bytes": 19979,
+      "path": "experiments/sota-2026-10-22/epoch30/source-freeze.json",
+      "sha256": "179a0463338808f2d39925fe480a02c4eb144ee634044594a8c68ca51a35e14a"
+    },
+    "plan": {
+      "bytes": 37823,
+      "path": "experiments/sota-2026-10-22/epoch30/plan.json",
+      "sha256": "d6c46944bbac2cb8ef65a51e68d927e10b869123004f941d56292cef1e0bd94b"
+    },
+    "raw": {
+      "bytes": 1937474,
+      "path": "experiments/sota-2026-10-22/epoch30/runs/train/raw.json",
+      "sha256": "2dbe91214848dc84d48f2160bf0631cf7aa20090146f4a597a5142be37242923"
+    }
+  },
+  "failures": [],
+  "kind": "REAL_NATIVE_LEGAL_PARAMETER_ADAPTATION_DIAGNOSTIC",
+  "loss_summary": {
+    "finite": true,
+    "first": 0.4573523700237274,
+    "last": 1.0475280284881592,
+    "mean": 1.3519749530823901,
+    "scope": "Observed24pre-update unweighted losses only; no quality/checkpoint-selection gate"
+  },
+  "mechanism_flags": {
+    "all12_changed": true,
+    "all4_B_mechanisms_nonzero": true,
+    "all_base_unchanged": true,
+    "initial_B_zero": true,
+    "original_head_preserved": true
+  },
+  "model_native_tokenizer_or_original_weight_loads_by_auditor": 0,
+  "new_submission": false,
+  "phase": "train",
+  "phase_integrity": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "network_policy": {
+      "allowed_capability_binds": 1,
+      "forbidden_network_operations": 0,
+      "scope": "Public API interposition, not OS network isolation"
+    },
+    "opaque_native_internals": "UNKNOWN; actual API counts and observed threads only",
+    "physical_closure": {
+      "remaining_owned_members": [],
+      "worker_identity": {
+        "pgid": 86120,
+        "pid": 86120,
+        "ppid": 86119,
+        "sid": 86120,
+        "state": "R",
+        "ticks": 18813885
+      }
+    }
+  },
+  "resources": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "child_system_seconds": 0.599418,
+    "child_user_seconds": 0.302769,
+    "largest_child_peak_RSS_bytes": 2367250432,
+    "memory_scope": "Separate high-water observations, not simultaneous summed RSS.",
+    "worker": {
+      "Cpus_allowed_list": "0-1",
+      "NoNewPrivs": "1",
+      "Seccomp": "2",
+      "Seccomp_filters": "1",
+      "Threads": "4",
+      "VmHWM_bytes": 2547351552,
+      "VmRSS_bytes": 2190426112,
+      "observability_scope": "Read-only current tasks; helper thread count need not equal2.",
+      "observed_thread_affinities": [
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 86120
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 86123
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 86124
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 86125
+        }
+      ],
+      "thread_status_disappearance_races": []
+    },
+    "worker_peak_RSS_bytes": 2547351552,
+    "worker_system_seconds": 4.367798,
+    "worker_user_seconds": 202.932599
+  },
+  "schema_version": 1,
+  "source_checks": {
+    "DEV_input_bytes_deferred_in_TRAIN": true,
+    "freeze": {
+      "bytes": 19979,
+      "path": "experiments/sota-2026-10-22/epoch30/source-freeze.json",
+      "sha256": "179a0463338808f2d39925fe480a02c4eb144ee634044594a8c68ca51a35e14a"
+    },
+    "pins_verified": 101
+  },
+  "status": "TRAIN_INTEGRITY_PASSED_ARTIFACT_FROZEN",
+  "step_seconds": [
+    3.5794754739908967,
+    3.13771264499519,
+    3.2443478369968943,
+    3.189837874000659,
+    3.19205740900361,
+    3.1613641410076525,
+    3.1560097729961853,
+    3.1439501399872825,
+    3.2651249220070895,
+    3.2085591120121535,
+    3.2722352870041505,
+    3.352186584001174,
+    3.391008195991162,
+    3.574920535000274,
+    3.4720078649988864,
+    3.368160133017227,
+    3.1681070660124533,
+    3.0604453799896874,
+    3.280805523012532,
+    3.229750544996932,
+    3.267060828016838,
+    3.243483788013691,
+    3.1370826560014393,
+    3.197958386008395
+  ],
+  "train_integrity_passed": true,
+  "training_steps": 24
+}

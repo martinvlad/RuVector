@@ -416,21 +416,19 @@
   },
   "active_run": {
     "schema_version": 1,
-    "run_id": "epoch23-488d3a6a248e",
-    "state": "EPOCH23_CLOSED",
-    "work_active": false,
+    "run_id": "epoch24-8be8f0fec36e",
+    "state": "EPOCH24_PLANNING_EXCLUSIVE",
+    "work_active": true,
     "experiments_active": false,
     "native_allowed": 0,
     "native_allowed_after_exact_remote_readback": 0,
-    "conditional_confirmation_after_independent_DEV_runtime_gates": 0,
-    "checkpoint_parent": "3ecca377b498b4b87f3f00a46dacc5769504135c",
-    "owner_pid": 66088,
-    "owner_startticks": 12864421,
+    "checkpoint_parent": "cbebac41850908bcb69bb7a1a7d18aa67312e8f8",
+    "owner_pid": 68322,
+    "owner_startticks": 13304876,
     "lock_inode": 13626,
-    "started_at": "2026-10-24T01:22:22.306113+00:00",
-    "expires_at": "2026-10-24T03:18:23.952152+00:00",
+    "started_at": "2026-10-24T02:35:46.850011+00:00",
+    "expires_at": "2026-10-24T05:35:46.850011+00:00",
     "OS_lock_held": true,
-    "OS_lock_release_pending_final_remote_readback": true,
     "limits": {
       "worker_attempt_cap": 1,
       "CPU_threads": 2,
@@ -438,10 +436,7 @@
       "paid_API_calls": 0,
       "GPU_calls": 0
     },
-    "instruction": "Closed; all unspent epoch23 slots permanently closed.",
-    "actual_epoch23_worker_attempts": 1,
-    "all_unspent_epoch23_slots_permanently_closed": true,
-    "owned_native_groups_closed": true,
+    "instruction": "Exclusive epoch24 planning; stop overlaps; no execution before independently frozen source and actual remote admission. Engineering raw-text structure fallback; champion unchanged.",
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -2457,5 +2452,14 @@
     "source_rebinding_scope": "Only owner PID/startticks; preserve all old versions and refreeze unchanged scientific inputs/algorithm before execution.",
     "supervisor_loss_cause": "UNPROVEN",
     "allowed_native_execution_before_refreeze_and_exact_remote_admission": 0
+  },
+  "epoch24_planning": {
+    "source_commit": "cbebac41850908bcb69bb7a1a7d18aa67312e8f8",
+    "restored_Git_leaves": 3473,
+    "restored_project_files": 3476,
+    "CP_rows_preserved": 3397,
+    "typed_reader_status": "Solvi provenance/selection separation unresolved; no weights or labels accessed",
+    "fallback": "automatic source structure/dependency extraction, engineering only",
+    "prior_epoch23_physical_lock_released_and_absent": true
   }
 }

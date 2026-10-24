@@ -4,7 +4,7 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "5a428c040e06663ddf4ecd6de9b96c67c8045757",
+  "prior_published_base_commit": "5acc487d6f968319a95a211fb7b3287900ca4a22",
   "checkpoint_manifest_sha256": "e6bb5adfe7999b8ef8bb1d66e9d3caeefd2420f6f1dabe36590fc8658312cc20",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
@@ -521,32 +521,35 @@
   },
   "active_run": {
     "schema_version": 1,
-    "run_id": "epoch25-46f9adff3986",
-    "state": "EPOCH25_CLOSED",
-    "work_active": false,
+    "run_id": "epoch26-3a1d40cb6d1d",
+    "epoch": 26,
+    "state": "EPOCH26_EXCLUSIVE_PLANNING",
+    "work_active": true,
     "experiments_active": false,
-    "native_allowed": 0,
-    "native_allowed_after_exact_remote_readback": 0,
-    "checkpoint_parent": "5a428c040e06663ddf4ecd6de9b96c67c8045757",
-    "owner_pid": 70365,
-    "owner_startticks": 13868579,
-    "lock_inode": 13626,
-    "started_at": "2026-10-24T04:09:43.879883+00:00",
-    "expires_at": "2026-10-24T07:09:43.879883+00:00",
-    "OS_lock_held": true,
-    "limits": {
-      "worker_attempt_cap": 1,
-      "CPU_threads": 2,
-      "seconds_per_process_including_init_cleanup": 600,
-      "paid_API_calls": 0,
-      "GPU_calls": 0
+    "checkpoint_parent": "5acc487d6f968319a95a211fb7b3287900ca4a22",
+    "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+    "physical_owner": {
+      "run_id": "epoch26-3a1d40cb6d1d",
+      "pid": 72224,
+      "startticks": 14702559,
+      "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
+      "lock_inode": 13626,
+      "started_unix": 1792823323.679049,
+      "expires_unix": 1792834123.679049,
+      "started_at": "2026-10-24T06:28:43.679049+00:00",
+      "expires_at": "2026-10-24T09:28:43.679049+00:00",
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+      "generation": 1
     },
-    "instruction": "Closed rejected epoch25; all slots spent or permanently closed. Preserve original counter1/failed verdict. Release lock only after independent actualfinalremote readback.",
-    "conditional_confirmation_after_independent_DEV_runtime_gates": 0,
-    "actual_epoch25_worker_attempts": 1,
-    "all_unspent_epoch25_slots_permanently_closed": true,
-    "owned_native_groups_closed": true,
-    "OS_lock_release_pending_final_remote_readback": true,
+    "OS_lock_held": true,
+    "OS_lock_release_pending": true,
+    "native_allowed": 0,
+    "conditional_confirmation_allowed": 0,
+    "instruction": "Exclusive epoch26 source-licensed real DEV-only trained three-way NLI/native evidence diagnostic preparation. No model/native initialization before frozen source and independent remote admission. Unknown supervised model lineage prohibits fresh CONF, promotion, submission. Native104 preserved. One planned nonretryable CPU2 worker <=600s incl cleanup after freeze; <=2 native corpus attempts total, zero paid/GPU/generation/fitting/confirmation. Preserve all existing sources and burns.",
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -2752,5 +2755,34 @@
     "fresh_confirmation_consumed": false,
     "all_unspent_slots_closed": true,
     "blocked_socket_bind_attempts": 1
+  },
+  "epoch26_planning": {
+    "restored_source_head": "5acc487d6f968319a95a211fb7b3287900ca4a22",
+    "restoration": {
+      "verified": true,
+      "source_head": "5acc487d6f968319a95a211fb7b3287900ca4a22",
+      "actual_Git_leaves": 3617,
+      "CP_rows": 3541,
+      "project_union": 3620,
+      "all_bytes_SHA256_verified": true,
+      "archive_restored_first": true,
+      "model_native_calls": 0,
+      "logs": {
+        "restore-0.log": "3a2b42c24447f243742c4a819b89e150a7fc6a422409d04c3b2ba0ac807f5c61",
+        "restore-1.log": "8ffb4b5cd69b570df17cb9f3c0da48567916895f933b39d257173f94d180c3cf",
+        "restore-2.log": "8ffb4b5cd69b570df17cb9f3c0da48567916895f933b39d257173f94d180c3cf"
+      }
+    },
+    "candidate": "mrm8488/ModernBERT-large-ft-all-nli@afa5e4b89a8a23d3b19da2ed0fa7daf2496c7c47",
+    "scope": "DEV-only diagnostic, no confirmation/promotion due unknown supervised data lineage",
+    "epoch_limit": {
+      "native_corpus_batches": 2,
+      "CPU_threads": 2,
+      "seconds_per_batch_including_cleanup": 600,
+      "paid_API_GPU_calls": 0
+    },
+    "planned_workers": 1,
+    "confirmation_identity": [],
+    "inference_calls_so_far": 0
   }
 }

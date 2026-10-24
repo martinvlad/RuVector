@@ -1,0 +1,2362 @@
+{
+  "actual_execution": {
+    "dev": {
+      "Node_network_operations_attempted": 0,
+      "native_index_initializations_attempted": 8,
+      "NLI_forward_calls_completed": 96,
+      "adapted_DEV_forward_calls_attempted": 72,
+      "optimizer_steps_attempted": 0,
+      "TRAIN_annotation_choices_accessed": 0,
+      "native_queries_attempted": 24,
+      "CONF_input_bank_reads": 0,
+      "gradient_clips_attempted": 0,
+      "BGE_initializations_completed": 1,
+      "LoRA_initializations_attempted": 1,
+      "ORT_sessions_attempted": 1,
+      "TRAIN_input_bank_reads": 0,
+      "source_evidence_lists_accessed": 0,
+      "pair_tokenizations_completed": 96,
+      "full104_requests": 0,
+      "native_binary_loads_completed": 1,
+      "DEV_reads": 1,
+      "BGE_initializations_attempted": 1,
+      "native_binary_loads_attempted": 1,
+      "native_len_calls_completed": 16,
+      "parameter_artifacts_write_completed": 0,
+      "original_DEV_forward_calls_attempted": 24,
+      "optimizer_steps_completed": 0,
+      "DEV_input_bank_reads": 1,
+      "native_helper_starts_completed": 1,
+      "parameter_artifacts_write_attempted": 0,
+      "TRAIN_forward_calls_completed": 0,
+      "backward_calls_completed": 0,
+      "TRAIN_forward_calls_attempted": 0,
+      "native_version_calls_completed": 1,
+      "parameter_artifacts_load_attempted": 1,
+      "other_role_annotation_choices_accessed": 0,
+      "native_version_calls_attempted": 1,
+      "optimizer_initializations_attempted": 0,
+      "NLI_forward_calls_attempted": 96,
+      "DEV_annotation_choices_attempted": 0,
+      "ORT_sessions_completed": 1,
+      "TRAIN_contexts_completed": 0,
+      "DEV_annotation_choices_accessed": 0,
+      "LoRA_initializations_completed": 1,
+      "native_queries_completed": 24,
+      "optimizer_initializations_completed": 0,
+      "original_DEV_forward_calls_completed": 24,
+      "CONF_annotation_choices_accessed": 0,
+      "native_helper_starts_attempted": 1,
+      "LoRA_B_gradient_checks_completed": 0,
+      "Python_network_operations_attempted": 0,
+      "BART_initializations_completed": 1,
+      "TRAIN_annotation_choices_attempted": 0,
+      "fits": 0,
+      "generation_calls": 0,
+      "training_steps": 0,
+      "TRAIN_label_reads": 0,
+      "backward_calls_attempted": 0,
+      "parameter_artifacts_load_completed": 1,
+      "BART_initializations_attempted": 1,
+      "HTTP_requests": 0,
+      "gradient_clips_completed": 0,
+      "calibration_calls": 0,
+      "CONF_annotation_choices_attempted": 0,
+      "adapted_DEV_forward_calls_completed": 72,
+      "native_index_initializations_completed": 8,
+      "pair_tokenizations_attempted": 96,
+      "paid_calls": 0,
+      "DEV_contexts_completed": 72,
+      "LoRA_B_gradient_checks_attempted": 0,
+      "GPU_calls": 0,
+      "native_len_calls_attempted": 16,
+      "BGE_forward_calls_attempted": 72,
+      "BGE_forward_calls_completed": 72,
+      "BGE_texts_attempted": 510,
+      "BGE_texts_completed": 510,
+      "BGE_forward_seconds": 13.204389493970666,
+      "automatically_extracted_units": 486,
+      "native_insertions_attempted": 486,
+      "native_insertions_completed": 486,
+      "native_hit_source_validations": 933,
+      "Python_literal_loopback_capability_binds_allowed": 1,
+      "phase": "dev",
+      "worker_attempts": 1,
+      "verified_worker_starts": 1,
+      "uncertain_start": false,
+      "wall_seconds_including_init_cleanup": 337.3193812579848,
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "owned_live_processes_closed": true,
+      "owned_live_group_members": [],
+      "owned_process_closure_observation": "OBSERVED",
+      "peak_RSS_bytes": 2535309312,
+      "user_seconds": 593.86389,
+      "system_seconds": 4.299735,
+      "errors": 0,
+      "raw_operation_counters_source": "raw.json",
+      "operation_counts_complete": true,
+      "backend_execution_since_checkpoint": "NOT_APPLICABLE_FINAL_RAW"
+    },
+    "worker_attempts": 1,
+    "verified_worker_starts": 1,
+    "completed_corpus_batches": 1,
+    "wall_seconds_including_init_cleanup": 337.3193812579848,
+    "peak_RSS_bytes": 2535309312,
+    "owned_live_processes_closed": true,
+    "supervisor_observed_closure": {
+      "path": "experiments/sota-2026-10-22/epoch31/SUPERVISOR_OBSERVED_CLOSURE.json",
+      "bytes": 1465,
+      "sha256": "5f8a90be9304eab5b216d994db9bb74b212ddf70dd52f4ebc9c32065471fcf3f"
+    },
+    "physical_supervisor_absent": false,
+    "observed_supervisor_state": "Z",
+    "errors": 0,
+    "logical_budget_scope": "One logical slot is max(dispatch reservation, DEV reservation), never their sum; missing captured execution preserves backend/resource UNKNOWN.",
+    "physical_closure_scope": "Independent observed supervisor/known-worker closure; original captured DEV closure remains unchanged. Terminal Z/X may be closed without absent.",
+    "resource_scope": "Observed one whole DEV phase including init/cleanup; largest-child high-water RSS, not simultaneous aggregate RSS. Unstarted/internal unobserved operations remain UNKNOWN."
+  },
+  "annotation_choices_accessed": 24,
+  "annotation_choices_attempted": 24,
+  "archived_model_audit": {
+    "TRAIN_choice_or_example_reads": 0,
+    "algorithm": {
+      "DEV_order": "fresh original native24 before reading/applying learned tensor values, then adapted native/lexical/positional72",
+      "attention": "sdpa",
+      "attribution": {
+        "base_license_source": "experiments/sota-2026-10-22/candidate/epoch27/reader/LICENSE.fairseq",
+        "base_model_license": "MIT; retain pinned fairseq model licence/copyright",
+        "change_notice": "Rank4 final-decoder cross-attention LoRA and existing classifier adapted on exactly24 fixed TRAIN choices; no DEV/CONF choice fit.",
+        "legal_training_data_citation": "Koreeda and Manning (2021), ContractNLI",
+        "legal_training_data_license": "CC-BY-4.0",
+        "legal_training_source_revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+        "legal_training_source_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5"
+      },
+      "batch_size": 1,
+      "binary_rule": "Yes=P(E),No=P(C)+P(N);Yes only ifP(E)>0.5, exact-half No",
+      "canonical_probability_permutation": [
+        2,
+        0,
+        1
+      ],
+      "dropout": "all disabled by recursive eval mode",
+      "epochs": 1,
+      "existing_pretrained_head_parameters": [
+        "classification_head.dense.weight",
+        "classification_head.dense.bias",
+        "classification_head.out_proj.weight",
+        "classification_head.out_proj.bias"
+      ],
+      "frozen_pretrained_parameters": 406291456,
+      "gradient_clip_global_norm": 1.0,
+      "gradient_integrity_gate": "Each of four LoRA B tensors has a finite nonzero gradient in at least one of24 fixed updates; all intended tensors changed and effective BA deltas nonzero; every other pretrained parameter bit-unchanged.",
+      "lora": {
+        "A_initialization": "uniform[-1/32,1/32] dedicated CPU generator seed30030, module order fixed",
+        "B_initialization": "exact zero",
+        "alpha": 8,
+        "dropout": 0,
+        "global_seed_reset_immediately_before_injection": true,
+        "rank": 4,
+        "scale": 2.0
+      },
+      "max_true_pair_tokens": 512,
+      "model_mode": "eval with gradients enabled only during TRAIN",
+      "module_order": [
+        "model.decoder.layers.10.encoder_attn.q_proj",
+        "model.decoder.layers.10.encoder_attn.v_proj",
+        "model.decoder.layers.11.encoder_attn.q_proj",
+        "model.decoder.layers.11.encoder_attn.v_proj"
+      ],
+      "name": "original2020-BART-final2-crossattention-qv-r4-plus-existing-head-one-epoch",
+      "no_early_stopping_checkpoint_selection_calibration_or_retry": true,
+      "objective": "unweighted native-C/N/E three-way cross entropy; equal example weights",
+      "optimizer": {
+        "amsgrad": false,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "capturable": false,
+        "differentiable": false,
+        "epsilon": 1e-08,
+        "foreach": false,
+        "fused": false,
+        "learning_rate": 0.0001,
+        "maximize": false,
+        "name": "AdamW",
+        "weight_decay": 0.01
+      },
+      "precision": "CPU float32",
+      "raw_logit_order": [
+        "contradiction",
+        "not_mentioned",
+        "entailment"
+      ],
+      "seed": 30030,
+      "temperature": 1.0,
+      "threeway_tie_rule": "first maximum in native C,N,E order",
+      "train_case_order": [
+        "original-contractnli:train:epoch30:train:237:nda-17",
+        "original-contractnli:train:epoch30:train:237:nda-7",
+        "original-contractnli:train:epoch30:train:237:nda-3",
+        "original-contractnli:train:epoch30:train:120:nda-17",
+        "original-contractnli:train:epoch30:train:120:nda-7",
+        "original-contractnli:train:epoch30:train:120:nda-3",
+        "original-contractnli:train:epoch30:train:187:nda-17",
+        "original-contractnli:train:epoch30:train:187:nda-7",
+        "original-contractnli:train:epoch30:train:187:nda-3",
+        "original-contractnli:train:epoch30:train:422:nda-17",
+        "original-contractnli:train:epoch30:train:422:nda-7",
+        "original-contractnli:train:epoch30:train:422:nda-3",
+        "original-contractnli:train:epoch30:train:464:nda-17",
+        "original-contractnli:train:epoch30:train:464:nda-7",
+        "original-contractnli:train:epoch30:train:464:nda-3",
+        "original-contractnli:train:epoch30:train:207:nda-17",
+        "original-contractnli:train:epoch30:train:207:nda-7",
+        "original-contractnli:train:epoch30:train:207:nda-3",
+        "original-contractnli:train:epoch30:train:294:nda-17",
+        "original-contractnli:train:epoch30:train:294:nda-7",
+        "original-contractnli:train:epoch30:train:294:nda-3",
+        "original-contractnli:train:epoch30:train:250:nda-17",
+        "original-contractnli:train:epoch30:train:250:nda-7",
+        "original-contractnli:train:epoch30:train:250:nda-3"
+      ],
+      "trainable_parameters": 1085443,
+      "training_steps": 24,
+      "use_cache": false
+    },
+    "artifact": {
+      "bytes": 5950520,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch31-de468eba3faa/project/experiments/sota-2026-10-22/epoch30/runs/train/trained-parameters.public.json",
+      "sha256": "46bcb1c9bcf7a6bd9f7491f1233f38b65b1c3672de5370f4d1e1b5db24ae796f"
+    },
+    "delta_SHA_scope": "Producer TorchFP32 matmul receipt; factorbytes and mathematical nonzero independently replayed; no false exact-FMA-bit claim",
+    "epoch": 30,
+    "frozen_aggregate_sha256": "83fe6e4ede98c74a15e1457c3130c5ee71abd4d07e1dc5b0fd405e44f83f49db",
+    "frozen_original_parameters": 406291456,
+    "frozen_original_tensors": 511,
+    "kind": "REAL_NATIVE_LEGAL_PARAMETER_ADAPTATION_DIAGNOSTIC",
+    "mechanism": [
+      {
+        "B_nonzero_gradient_steps": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "independent_BA_nonzero": true,
+        "max_B_gradient_l2": 0.14104065728179035,
+        "module": "model.decoder.layers.10.encoder_attn.q_proj"
+      },
+      {
+        "B_nonzero_gradient_steps": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "independent_BA_nonzero": true,
+        "max_B_gradient_l2": 0.2772574363517365,
+        "module": "model.decoder.layers.10.encoder_attn.v_proj"
+      },
+      {
+        "B_nonzero_gradient_steps": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "independent_BA_nonzero": true,
+        "max_B_gradient_l2": 0.11313090906352215,
+        "module": "model.decoder.layers.11.encoder_attn.q_proj"
+      },
+      {
+        "B_nonzero_gradient_steps": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "independent_BA_nonzero": true,
+        "max_B_gradient_l2": 0.30230769939283314,
+        "module": "model.decoder.layers.11.encoder_attn.v_proj"
+      }
+    ],
+    "mechanism_flags": {
+      "all12_changed": true,
+      "all4_B_mechanisms_nonzero": true,
+      "all_base_unchanged": true,
+      "initial_B_zero": true,
+      "original_head_preserved": true
+    },
+    "original_head_manifest": [
+      {
+        "bytes": 4194304,
+        "dtype": "float32le",
+        "name": "classification_head.dense.weight",
+        "numel": 1048576,
+        "sha256": "a284169efd7f317fed95c952050673be3ee9fa6426311a354b0a5bc53708c0e6",
+        "shape": [
+          1024,
+          1024
+        ]
+      },
+      {
+        "bytes": 4096,
+        "dtype": "float32le",
+        "name": "classification_head.dense.bias",
+        "numel": 1024,
+        "sha256": "3fdc80680d896fbaecf5164c3663b7425a352c262f45c1914ffd38f3c96e88f1",
+        "shape": [
+          1024
+        ]
+      },
+      {
+        "bytes": 12288,
+        "dtype": "float32le",
+        "name": "classification_head.out_proj.weight",
+        "numel": 3072,
+        "sha256": "ac55e52ebbd1d6c25c63f877b4019161d6a9da2facb60a413db4ed98ca40b076",
+        "shape": [
+          3,
+          1024
+        ]
+      },
+      {
+        "bytes": 12,
+        "dtype": "float32le",
+        "name": "classification_head.out_proj.bias",
+        "numel": 3,
+        "sha256": "f2b770822246ead1d79a9271b330bbb84c713341337110640be460014196fa8a",
+        "shape": [
+          3
+        ]
+      }
+    ],
+    "original_weights_or_models_loaded_by_auditor": 0,
+    "schema_version": 1,
+    "status": "PASS_LEARNED_PARAMETER_AND_COMPLETE_FROZEN_BACKBONE_EVIDENCE",
+    "trainable_parameters": 1085443,
+    "trainable_tensors": 12
+  },
+  "archived_training_integrity_passed": true,
+  "benchmark_accepted": false,
+  "calibration": [],
+  "champion_promoted": false,
+  "checks_passed": true,
+  "confirmation": [],
+  "context_audit": {
+    "cases": 24,
+    "documents": 8,
+    "model_tokenizer_native_calls": 0,
+    "native_hits_verified": 933,
+    "source_choices_or_evidence_labels_read": 0,
+    "source_index_vectors": 486,
+    "source_query_vectors": 24,
+    "status": "PASS_EXACT_SOURCE_MATCHED_CONTEXT_AND_NATIVE_F32_REPLAY"
+  },
+  "current_TRAIN_choices_or_fits": 0,
+  "diagnostic_checks": {
+    "adaptation_C_correct_gain_at_least1": false,
+    "adaptation_correct_gain_at_least2": true,
+    "adapted_lexical:Brier_nonincrease": false,
+    "adapted_lexical:NLL_nonincrease": false,
+    "adapted_lexical:correct_gain_at_least2": true,
+    "adapted_native_one_correct_per_class": false,
+    "adapted_positional:Brier_nonincrease": true,
+    "adapted_positional:NLL_nonincrease": true,
+    "adapted_positional:correct_gain_at_least2": true,
+    "every_gold_class_present": true,
+    "original_native:Brier_nonincrease": true,
+    "original_native:NLL_nonincrease": true
+  },
+  "diagnostic_qualified": false,
+  "epoch": 31,
+  "evidence": {
+    "archived_model_seal": {
+      "bytes": 1882,
+      "path": "experiments/sota-2026-10-22/epoch31/ARCHIVED_MODEL_SEAL.json",
+      "sha256": "843335b798cde107e074606187205ee3b072c27609c3b2dbf7bce52284eaeccf"
+    },
+    "execution": {
+      "bytes": 6023,
+      "path": "experiments/sota-2026-10-22/epoch31/runs/dev/execution.json",
+      "sha256": "1e95e40c3992ac949deaa9067104aa730eb6ad1278b74ce51b4bbe4713486cf2"
+    },
+    "freeze": {
+      "bytes": 22890,
+      "path": "experiments/sota-2026-10-22/epoch31/source-freeze.json",
+      "sha256": "9970ec1e03bbd4fa4a67add78a1b18d1857d12903d3981081a9ae44ee1531b57"
+    },
+    "gold_access_log": {
+      "bytes": 1775,
+      "path": "experiments/sota-2026-10-22/audit/epoch31/DEV_GOLD_ACCESS.jsonl",
+      "sha256": "d779123f41a5ade79f10289d33cbad4a724e6f84fc307be63a0edccf6aea1bb1"
+    },
+    "gold_reservation": {
+      "bytes": 1985,
+      "path": "experiments/sota-2026-10-22/audit/epoch31/DEV_GOLD_JOIN_RESERVATION.json",
+      "sha256": "8a38255b8f881594d7c8a6619a9badd4cd5f033e8ed4a608c12c76e435f74fb7"
+    },
+    "parameter_artifact": {
+      "bytes": 5950520,
+      "path": "experiments/sota-2026-10-22/epoch30/runs/train/trained-parameters.public.json",
+      "sha256": "46bcb1c9bcf7a6bd9f7491f1233f38b65b1c3672de5370f4d1e1b5db24ae796f"
+    },
+    "plan": {
+      "bytes": 39968,
+      "path": "experiments/sota-2026-10-22/epoch31/plan.json",
+      "sha256": "b1f63e8f0df4558c2eb91c856f7d98451f76f738ab375a6158e95b4f973b7196"
+    },
+    "raw": {
+      "bytes": 3209525,
+      "path": "experiments/sota-2026-10-22/epoch31/runs/dev/raw.json",
+      "sha256": "52520683f138abf09a9c5f40cea2062c3b2b6a257ae8296b7294a9074bffc4f0"
+    },
+    "scorer_source": {
+      "bytes": 15084,
+      "path": "experiments/sota-2026-10-22/audit/epoch31/score_dev.py",
+      "sha256": "9450a017dacc6246171a0e34218fdfc4208cc42d8106252445355ca3a7786660"
+    },
+    "supervisor_observed_closure": {
+      "bytes": 1465,
+      "path": "experiments/sota-2026-10-22/epoch31/SUPERVISOR_OBSERVED_CLOSURE.json",
+      "sha256": "5f8a90be9304eab5b216d994db9bb74b212ddf70dd52f4ebc9c32065471fcf3f"
+    }
+  },
+  "failed_diagnostic_checks": [
+    "adapted_native_one_correct_per_class",
+    "adaptation_C_correct_gain_at_least1",
+    "adapted_lexical:Brier_nonincrease",
+    "adapted_lexical:NLL_nonincrease"
+  ],
+  "failed_integrity_checks": [],
+  "frozen_DEV_gates_passed": false,
+  "kind": "REAL_NATIVE_ARCHIVED_LEGAL_ADAPTATION_DIAGNOSTIC",
+  "metrics": {
+    "adapted_lexical": {
+      "Brier": 0.4607247114808881,
+      "NLL_clip_count": 0,
+      "NLL_clipped_1e-12": 0.7066972259356793,
+      "accuracy": 0.5833333333333334,
+      "by_class": {
+        "contradiction": {
+          "correct": 0,
+          "n": 1
+        },
+        "entailment": {
+          "correct": 8,
+          "n": 12
+        },
+        "not_mentioned": {
+          "correct": 6,
+          "n": 11
+        }
+      },
+      "confusion": {
+        "contradiction": {
+          "contradiction": 0,
+          "entailment": 0,
+          "not_mentioned": 1
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 8,
+          "not_mentioned": 4
+        },
+        "not_mentioned": {
+          "contradiction": 0,
+          "entailment": 5,
+          "not_mentioned": 6
+        }
+      },
+      "correct": 14,
+      "n": 24,
+      "scores": [
+        {
+          "Brier": 1.0440025809650606,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.332803754662979,
+          "correct": 0,
+          "document_id": 145,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:145:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.028369001800755772,
+            "entailment": 0.2637367705075441,
+            "not_mentioned": 0.7078942276917002
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.674765100136757,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.9388931314279317,
+          "correct": 0,
+          "document_id": 145,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:145:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.06100105716314711,
+            "entailment": 0.5479384944252705,
+            "not_mentioned": 0.3910604484115824
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.01772651334215382,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.09965000876697143,
+          "correct": 1,
+          "document_id": 145,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:145:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.0014179595268038923,
+            "entailment": 0.9051541586245697,
+            "not_mentioned": 0.09342788184862634
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.009811654168434849,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.07629516581135347,
+          "correct": 1,
+          "document_id": 597,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:597:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.007422619108195754,
+            "entailment": 0.0660346984205412,
+            "not_mentioned": 0.9265426824712631
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.410925968601773,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 2.9563928295773794,
+          "correct": 0,
+          "document_id": 597,
+          "gold": "contradiction",
+          "id": "original-contractnli:train:epoch31:dev:597:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.05200617436934989,
+            "entailment": 0.2966730164406121,
+            "not_mentioned": 0.651320809190038
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.0592072888739068,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.19153188628377046,
+          "correct": 1,
+          "document_id": 597,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:597:nda-3",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.0045911071258022875,
+            "entailment": 0.1697155964782312,
+            "not_mentioned": 0.8256932963959664
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.5428978896989773,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 2.125780771779399,
+          "correct": 0,
+          "document_id": 191,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:191:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.0046959937841064186,
+            "entailment": 0.11933975476953644,
+            "not_mentioned": 0.875964251446357
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.8157737850212569,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.094991036169974,
+          "correct": 0,
+          "document_id": 191,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:191:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.05748020067377389,
+            "entailment": 0.3345426057182215,
+            "not_mentioned": 0.6079771936080046
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.11823293332271245,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.2952520270107732,
+          "correct": 1,
+          "document_id": 191,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:191:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.027346862838426324,
+            "entailment": 0.7443439690389428,
+            "not_mentioned": 0.22830916812263088
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.07560763039103154,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.21726871801927047,
+          "correct": 1,
+          "document_id": 620,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:620:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.0017199481676123357,
+            "entailment": 0.19356635265524763,
+            "not_mentioned": 0.80471369917714
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.012064567469762944,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.08154742224513156,
+          "correct": 1,
+          "document_id": 620,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:620:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.00130283518152213,
+            "entailment": 0.9216890002557866,
+            "not_mentioned": 0.07700816456269127
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.00022240137358529478,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.010698235772540745,
+          "correct": 1,
+          "document_id": 620,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:620:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.00019477754377253891,
+            "entailment": 0.989358786823564,
+            "not_mentioned": 0.010446435632663537
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.23923074860451557,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.43395636419459477,
+          "correct": 1,
+          "document_id": 254,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:254:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.012763172907925434,
+            "entailment": 0.33929629881677537,
+            "not_mentioned": 0.6479405282752991
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.838072640768023,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.099506380974166,
+          "correct": 0,
+          "document_id": 254,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:254:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.04124090428631952,
+            "entailment": 0.6257236599552228,
+            "not_mentioned": 0.3330354357584577
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.00012961664719440306,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.008325525412036726,
+          "correct": 1,
+          "document_id": 254,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:254:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.0005049796637287017,
+            "entailment": 0.9917090357947476,
+            "not_mentioned": 0.007785984541523719
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.10582573828361122,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.26792640844791216,
+          "correct": 1,
+          "document_id": 160,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:160:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.010366415067569456,
+            "entailment": 0.22466951100743845,
+            "not_mentioned": 0.7649640739249921
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.37595811213738545,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.5931465100876263,
+          "correct": 1,
+          "document_id": 160,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:160:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.0291705176783714,
+            "entailment": 0.5525858295312022,
+            "not_mentioned": 0.41824365279042647
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.5732654784951163,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.846488788060522,
+          "correct": 0,
+          "document_id": 160,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:160:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.08052372089236283,
+            "entailment": 0.4905579649445012,
+            "not_mentioned": 0.42891831416313597
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.018015997650221018,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.10318868641809584,
+          "correct": 1,
+          "document_id": 384,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:384:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.006611207133738832,
+            "entailment": 0.09143202243403162,
+            "not_mentioned": 0.9019567704322294
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.004226877708116088,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.050497095164162564,
+          "correct": 1,
+          "document_id": 384,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:384:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.007453043781998024,
+            "entailment": 0.9507566904604228,
+            "not_mentioned": 0.04179026575757913
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.1094613927204278,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.3935769913493588,
+          "correct": 0,
+          "document_id": 384,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:384:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.014227013231075818,
+            "entailment": 0.7375870308027629,
+            "not_mentioned": 0.2481859559661613
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.440356273305227,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.915125346141175,
+          "correct": 0,
+          "document_id": 571,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:571:nda-17",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.008145713824060938,
+            "entailment": 0.8445309211624817,
+            "not_mentioned": 0.14732336501345727
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.006293292604790153,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.057842228409155164,
+          "correct": 1,
+          "document_id": 571,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:571:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.00021297431184909188,
+            "entailment": 0.9437988403354322,
+            "not_mentioned": 0.05598818535271881
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.5653185932512743,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.7700481102700234,
+          "correct": 0,
+          "document_id": 571,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:571:nda-3",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.010870889679007194,
+            "entailment": 0.46299079316332326,
+            "not_mentioned": 0.5261383171576696
+          },
+          "unclipped_NLL_finite": true
+        }
+      ],
+      "unclipped_NLL_finite": true
+    },
+    "adapted_native": {
+      "Brier": 0.465166480346952,
+      "NLL_clip_count": 0,
+      "NLL_clipped_1e-12": 0.7451547103248896,
+      "accuracy": 0.6666666666666666,
+      "by_class": {
+        "contradiction": {
+          "correct": 0,
+          "n": 1
+        },
+        "entailment": {
+          "correct": 10,
+          "n": 12
+        },
+        "not_mentioned": {
+          "correct": 6,
+          "n": 11
+        }
+      },
+      "confusion": {
+        "contradiction": {
+          "contradiction": 0,
+          "entailment": 0,
+          "not_mentioned": 1
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 10,
+          "not_mentioned": 2
+        },
+        "not_mentioned": {
+          "contradiction": 0,
+          "entailment": 5,
+          "not_mentioned": 6
+        }
+      },
+      "correct": 16,
+      "n": 24,
+      "scores": [
+        {
+          "Brier": 0.07001310746080082,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.20875585985649825,
+          "correct": 1,
+          "document_id": 145,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:145:nda-17",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.0026404728439559997,
+            "entailment": 0.8115933539760131,
+            "not_mentioned": 0.1857661731800309
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.19987193189080898,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.39356203333495743,
+          "correct": 1,
+          "document_id": 145,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:145:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.01933567664421529,
+            "entailment": 0.3060148578332839,
+            "not_mentioned": 0.6746494655225008
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.0010638711999157694,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.023464133360884848,
+          "correct": 1,
+          "document_id": 145,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:145:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.0002566663045031909,
+            "entailment": 0.9768090088967666,
+            "not_mentioned": 0.022934324798730192
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.012504923881314753,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.08597588162357563,
+          "correct": 1,
+          "document_id": 597,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:597:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.007101290382444385,
+            "entailment": 0.07528234724744864,
+            "not_mentioned": 0.917616362370107
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.238634690793262,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 2.3459883324204736,
+          "correct": 0,
+          "document_id": 597,
+          "gold": "contradiction",
+          "id": "original-contractnli:train:epoch31:dev:597:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.09575252002962349,
+            "entailment": 0.3742153539022473,
+            "not_mentioned": 0.5300321260681293
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.08321939811076212,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.22895768637317607,
+          "correct": 1,
+          "document_id": 597,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:597:nda-3",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.0013128504555265958,
+            "entailment": 0.2033249620926051,
+            "not_mentioned": 0.7953621874518684
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.6440618377139313,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 2.458041418802507,
+          "correct": 0,
+          "document_id": 191,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:191:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.01568008634118343,
+            "entailment": 0.08560244622888634,
+            "not_mentioned": 0.8987174674299302
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.6092079971916903,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.8749322001625564,
+          "correct": 0,
+          "document_id": 191,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:191:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.06886383276247714,
+            "entailment": 0.4168902838138201,
+            "not_mentioned": 0.5142458834237028
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.1437295469815152,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.3196258252497293,
+          "correct": 1,
+          "document_id": 191,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:191:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.011367964845253146,
+            "entailment": 0.7264207945475191,
+            "not_mentioned": 0.2622112406072278
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.036412749609810745,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.1485498015509031,
+          "correct": 1,
+          "document_id": 620,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:620:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.006455584355483839,
+            "entailment": 0.131587336342307,
+            "not_mentioned": 0.8619570793022092
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.22104180395206321,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.43120760935136776,
+          "correct": 1,
+          "document_id": 620,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:620:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.03911980220983894,
+            "entailment": 0.6497240079918272,
+            "not_mentioned": 0.3111561897983338
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.0026951778053255957,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.03815483390477265,
+          "correct": 1,
+          "document_id": 620,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:620:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.0014991035877432609,
+            "entailment": 0.9625638918266083,
+            "not_mentioned": 0.03593700458564855
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.357783365895438,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.753971532418621,
+          "correct": 0,
+          "document_id": 254,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:254:nda-17",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.00596438464311633,
+            "entailment": 0.8209504520945923,
+            "not_mentioned": 0.1730851632622913
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.234861646191168,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.6298656538696403,
+          "correct": 0,
+          "document_id": 254,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:254:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.037926411013702054,
+            "entailment": 0.7661176907110475,
+            "not_mentioned": 0.19595589827525048
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.0005995588106788287,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.01787093359071211,
+          "correct": 1,
+          "document_id": 254,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:254:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.0008256553870641987,
+            "entailment": 0.9822878045369287,
+            "not_mentioned": 0.016886540076007144
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.1464039029319811,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.3201304115035098,
+          "correct": 1,
+          "document_id": 160,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:160:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.006906363418224913,
+            "entailment": 0.267039291521183,
+            "not_mentioned": 0.7260543450605921
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.23520494759464056,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.44761751088607626,
+          "correct": 1,
+          "document_id": 160,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:160:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.03920771708080168,
+            "entailment": 0.6391491048595663,
+            "not_mentioned": 0.32164317805963194
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.5619608132997865,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.8641181530193315,
+          "correct": 0,
+          "document_id": 160,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:160:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.11632342208354719,
+            "entailment": 0.46225355848437416,
+            "not_mentioned": 0.4214230194320787
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.0027385134197475316,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.03976340745233275,
+          "correct": 1,
+          "document_id": 384,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:384:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.004342740359976164,
+            "entailment": 0.03464047797380805,
+            "not_mentioned": 0.9610167816662158
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.4695059345890855,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.7082466544699759,
+          "correct": 1,
+          "document_id": 384,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:384:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.04980757502079476,
+            "entailment": 0.49250697577016056,
+            "not_mentioned": 0.4576854492090447
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.5726430221109664,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 2.6174406845851825,
+          "correct": 0,
+          "document_id": 384,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:384:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.0869285225701065,
+            "entailment": 0.8400820504769941,
+            "not_mentioned": 0.07298942695289937
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.0435884002517444,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.2850621417978432,
+          "correct": 0,
+          "document_id": 571,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:571:nda-17",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.00203102218079593,
+            "entailment": 0.7213355852177257,
+            "not_mentioned": 0.27663339260147846
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.13833497031764677,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.32201660412571326,
+          "correct": 1,
+          "document_id": 571,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:571:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.026665024120029055,
+            "entailment": 0.7246861574499445,
+            "not_mentioned": 0.24864881843002648
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.13791341632276502,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.3203937440870089,
+          "correct": 1,
+          "document_id": 571,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:571:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.024847826987523306,
+            "entailment": 0.7258631764657112,
+            "not_mentioned": 0.24928899654676562
+          },
+          "unclipped_NLL_finite": true
+        }
+      ],
+      "unclipped_NLL_finite": true
+    },
+    "adapted_positional": {
+      "Brier": 0.5388165231973279,
+      "NLL_clip_count": 0,
+      "NLL_clipped_1e-12": 0.8526200348189169,
+      "accuracy": 0.5833333333333334,
+      "by_class": {
+        "contradiction": {
+          "correct": 0,
+          "n": 1
+        },
+        "entailment": {
+          "correct": 6,
+          "n": 12
+        },
+        "not_mentioned": {
+          "correct": 8,
+          "n": 11
+        }
+      },
+      "confusion": {
+        "contradiction": {
+          "contradiction": 0,
+          "entailment": 0,
+          "not_mentioned": 1
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 6,
+          "not_mentioned": 6
+        },
+        "not_mentioned": {
+          "contradiction": 0,
+          "entailment": 3,
+          "not_mentioned": 8
+        }
+      },
+      "correct": 14,
+      "n": 24,
+      "scores": [
+        {
+          "Brier": 1.7742093611727359,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 2.9051307095265426,
+          "correct": 0,
+          "document_id": 145,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:145:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.00682917400953335,
+            "entailment": 0.0547416348806626,
+            "not_mentioned": 0.9384291911098039
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.20596856544224493,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.4088177342221346,
+          "correct": 1,
+          "document_id": 145,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:145:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.03165172206352248,
+            "entailment": 0.3039129528287593,
+            "not_mentioned": 0.6644353251077182
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.556259286410288,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 2.1508286709613342,
+          "correct": 0,
+          "document_id": 145,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:145:nda-3",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.0029991662227664153,
+            "entailment": 0.11638767071802654,
+            "not_mentioned": 0.880613163059207
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.054784669538753654,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.1868613390766198,
+          "correct": 1,
+          "document_id": 597,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:597:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.010356268272271749,
+            "entailment": 0.1600849759337807,
+            "not_mentioned": 0.8295587557939474
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.2083304109024275,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 2.252240418784714,
+          "correct": 0,
+          "document_id": 597,
+          "gold": "contradiction",
+          "id": "original-contractnli:train:epoch31:dev:597:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.10516335048628021,
+            "entailment": 0.38728735547722026,
+            "not_mentioned": 0.5075492940364995
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.8877891463392378,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.1233096256229667,
+          "correct": 0,
+          "document_id": 597,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:597:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.01743034719918874,
+            "entailment": 0.6573679371433562,
+            "not_mentioned": 0.3252017156574551
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.8436117955029316,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 3.264324578585532,
+          "correct": 0,
+          "document_id": 191,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:191:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.0033488098923283778,
+            "entailment": 0.03822274282617234,
+            "not_mentioned": 0.9584284472814992
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.3164232468052437,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.7759813913368712,
+          "correct": 0,
+          "document_id": 191,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:191:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.040259821974810574,
+            "entailment": 0.16931720150090424,
+            "not_mentioned": 0.7904229765242853
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.032982213369126184,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.14223507846059744,
+          "correct": 1,
+          "document_id": 191,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:191:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.008780630011291753,
+            "entailment": 0.8674173213878713,
+            "not_mentioned": 0.1238020486008369
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.003582072709587883,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.04505367437967924,
+          "correct": 1,
+          "document_id": 620,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:620:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.0037107621447502177,
+            "entailment": 0.040343067216901556,
+            "not_mentioned": 0.9559461706383482
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.022756621250123996,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.11900099779546486,
+          "correct": 1,
+          "document_id": 620,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:620:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.012075588796426466,
+            "entailment": 0.8878069149117948,
+            "not_mentioned": 0.10011749629177885
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.00022331141277615935,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.01069391112972049,
+          "correct": 1,
+          "document_id": 620,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:620:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.00014184443253345078,
+            "entailment": 0.9893630654561899,
+            "not_mentioned": 0.010495090111276709
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.1241236701386015,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.29890549482126255,
+          "correct": 1,
+          "document_id": 254,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:254:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.019661984846586527,
+            "entailment": 0.23870852120224717,
+            "not_mentioned": 0.7416294939511663
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.6451616472052001,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.8948561207040623,
+          "correct": 0,
+          "document_id": 254,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:254:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.05005685342322605,
+            "entailment": 0.5412767535327709,
+            "not_mentioned": 0.40866639304400293
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.00017478326730300563,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.0097011003068467,
+          "correct": 1,
+          "document_id": 254,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:254:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.0006451127845262366,
+            "entailment": 0.9903458035711231,
+            "not_mentioned": 0.0090090836443507
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.00523802761574096,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.054263818020876715,
+          "correct": 1,
+          "document_id": 160,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:160:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.0034584584209560927,
+            "entailment": 0.04935935177278441,
+            "not_mentioned": 0.9471821898062595
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.034208920544086203,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.1420038978404827,
+          "correct": 1,
+          "document_id": 160,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:160:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.003257050121055843,
+            "entailment": 0.8676178746432478,
+            "not_mentioned": 0.1291250752356965
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.2615997133803687,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.46607625204205466,
+          "correct": 1,
+          "document_id": 160,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:160:nda-3",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.022838327784381624,
+            "entailment": 0.34970223505585574,
+            "not_mentioned": 0.6274594371597626
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.0009731442502903138,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.02311705688926834,
+          "correct": 1,
+          "document_id": 384,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:384:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.001683521556867644,
+            "entailment": 0.021168383281086254,
+            "not_mentioned": 0.977148095162046
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.9265950456285399,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.2286264950775088,
+          "correct": 0,
+          "document_id": 384,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:384:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.056859094317022726,
+            "entailment": 0.2926943188086624,
+            "not_mentioned": 0.6504465868743149
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.7737666947617858,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.1751286464866721,
+          "correct": 0,
+          "document_id": 384,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:384:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.1766613945364091,
+            "entailment": 0.5145593516969706,
+            "not_mentioned": 0.30877925376662024
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.10873825546187567,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.2725765777706361,
+          "correct": 1,
+          "document_id": 571,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:571:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.011231953416591457,
+            "entailment": 0.22735292711316596,
+            "not_mentioned": 0.7614151194702425
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.024881025953039603,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.12148843596882532,
+          "correct": 1,
+          "document_id": 571,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:571:nda-7",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.005962499884623004,
+            "entailment": 0.8856012944106302,
+            "not_mentioned": 0.10843620570474678
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.1192149276735592,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.39165880984333,
+          "correct": 0,
+          "document_id": 571,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:571:nda-3",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.006580139257672511,
+            "entailment": 0.24866247855925375,
+            "not_mentioned": 0.7447573821830737
+          },
+          "unclipped_NLL_finite": true
+        }
+      ],
+      "unclipped_NLL_finite": true
+    },
+    "original_native": {
+      "Brier": 0.7335427319472139,
+      "NLL_clip_count": 0,
+      "NLL_clipped_1e-12": 1.2675277254703021,
+      "accuracy": 0.5,
+      "by_class": {
+        "contradiction": {
+          "correct": 0,
+          "n": 1
+        },
+        "entailment": {
+          "correct": 4,
+          "n": 12
+        },
+        "not_mentioned": {
+          "correct": 8,
+          "n": 11
+        }
+      },
+      "confusion": {
+        "contradiction": {
+          "contradiction": 0,
+          "entailment": 0,
+          "not_mentioned": 1
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 4,
+          "not_mentioned": 8
+        },
+        "not_mentioned": {
+          "contradiction": 1,
+          "entailment": 2,
+          "not_mentioned": 8
+        }
+      },
+      "correct": 12,
+      "n": 24,
+      "scores": [
+        {
+          "Brier": 0.23487395218288318,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.4303372996329018,
+          "correct": 1,
+          "document_id": 145,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:145:nda-17",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.014499245561151407,
+            "entailment": 0.6502897152448558,
+            "not_mentioned": 0.3352110391939928
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.0022925293712953653,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.038487598643256696,
+          "correct": 1,
+          "document_id": 145,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:145:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.01009709231667475,
+            "entailment": 0.027659269890874697,
+            "not_mentioned": 0.9622436377924506
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.02479050943312673,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.12022010457431889,
+          "correct": 1,
+          "document_id": 145,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:145:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.003988762408665661,
+            "entailment": 0.8867252429542872,
+            "not_mentioned": 0.10928599463704712
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.0022938788445154143,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.03951530317593447,
+          "correct": 1,
+          "document_id": 597,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:597:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.014781919384592909,
+            "entailment": 0.023962836995477323,
+            "not_mentioned": 0.9612552436199298
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.8477492101625739,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 3.5427961415266696,
+          "correct": 0,
+          "document_id": 597,
+          "gold": "contradiction",
+          "id": "original-contractnli:train:epoch31:dev:597:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.02893231502688378,
+            "entailment": 0.020082160265941867,
+            "not_mentioned": 0.9509855247071743
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.007395615279190435,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.0645935038453723,
+          "correct": 1,
+          "document_id": 597,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:597:nda-3",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.003648144683167589,
+            "entailment": 0.05890340018834481,
+            "not_mentioned": 0.9374484551284877
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.7791539736238235,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 3.3682331323585277,
+          "correct": 0,
+          "document_id": 191,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:191:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.04646921427310302,
+            "entailment": 0.03445045299167601,
+            "not_mentioned": 0.9190803327352209
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.8722696018478777,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 3.892083181959758,
+          "correct": 0,
+          "document_id": 191,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:191:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.02458166856728376,
+            "entailment": 0.02040279899391429,
+            "not_mentioned": 0.955015532438802
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.9105349594687502,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.2430696812871092,
+          "correct": 0,
+          "document_id": 191,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:191:nda-3",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.0808143380759959,
+            "entailment": 0.2884972626519594,
+            "not_mentioned": 0.6306883992720447
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.04523729542716125,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.17726778874686108,
+          "correct": 1,
+          "document_id": 620,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:620:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.028048232827924527,
+            "entailment": 0.13439630061147098,
+            "not_mentioned": 0.8375554665606044
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.5658027642086854,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 2.2696917048815752,
+          "correct": 0,
+          "document_id": 620,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:620:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.024173006637890123,
+            "entailment": 0.10334403563409675,
+            "not_mentioned": 0.8724829577280131
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.11557849792941205,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.28318023116643926,
+          "correct": 1,
+          "document_id": 620,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:620:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.012969173210465423,
+            "entailment": 0.7533839923470756,
+            "not_mentioned": 0.23364683444245882
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.8552175297797705,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.0945284652908323,
+          "correct": 0,
+          "document_id": 254,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:254:nda-17",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.02339721160620455,
+            "entailment": 0.6419053972114723,
+            "not_mentioned": 0.33469739118232306
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.10299851311446287,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.28073716532376924,
+          "correct": 1,
+          "document_id": 254,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:254:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.04136918769052365,
+            "entailment": 0.20340400311942336,
+            "not_mentioned": 0.755226809190053
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.028782177682702307,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.13313520367010984,
+          "correct": 1,
+          "document_id": 254,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:254:nda-3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.01000779029500445,
+            "entailment": 0.8753467340166695,
+            "not_mentioned": 0.11464547568832616
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.06875554641672126,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.22394704143678193,
+          "correct": 1,
+          "document_id": 160,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:160:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.03563198352126978,
+            "entailment": 0.16501055040738732,
+            "not_mentioned": 0.799357466071343
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.7070221964413823,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 2.756412382558031,
+          "correct": 0,
+          "document_id": 160,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:160:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.02578818706846728,
+            "entailment": 0.06351924281341458,
+            "not_mentioned": 0.9106925701181182
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.2339764185512951,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.4635600974767573,
+          "correct": 1,
+          "document_id": 160,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:160:nda-3",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.3028674365984452,
+            "entailment": 0.06809235341405391,
+            "not_mentioned": 0.6290402099875009
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.0022832108943658712,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.03979507503819293,
+          "correct": 1,
+          "document_id": 384,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:384:nda-17",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.01926864943908817,
+            "entailment": 0.019745001494276385,
+            "not_mentioned": 0.9609863490666354
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.8991679991541144,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 4.059068261077723,
+          "correct": 0,
+          "document_id": 384,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:384:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.01675383527078521,
+            "entailment": 0.017265098187412547,
+            "not_mentioned": 0.9659810665418023
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.0098499828751182,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.461345165509077,
+          "correct": 0,
+          "document_id": 384,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:384:nda-3",
+          "prediction": "contradiction",
+          "probabilities": {
+            "contradiction": 0.6339770224977606,
+            "entailment": 0.1340988889810691,
+            "not_mentioned": 0.23192408852117025
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.8949420716681872,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.1121444756746117,
+          "correct": 0,
+          "document_id": 571,
+          "gold": "not_mentioned",
+          "id": "original-contractnli:train:epoch31:dev:571:nda-17",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.004450717748774544,
+            "entailment": 0.666696295108898,
+            "not_mentioned": 0.3288529871423273
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.4403201997801993,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.9588207211508488,
+          "correct": 0,
+          "document_id": 571,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:571:nda-7",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.021099284534838444,
+            "entailment": 0.14102463026187984,
+            "not_mentioned": 0.8378760852032817
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.953736932595517,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.367695685281793,
+          "correct": 0,
+          "document_id": 571,
+          "gold": "entailment",
+          "id": "original-contractnli:train:epoch31:dev:571:nda-3",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.1271808648740397,
+            "entailment": 0.25469317711518047,
+            "not_mentioned": 0.6181259580107799
+          },
+          "unclipped_NLL_finite": true
+        }
+      ],
+      "unclipped_NLL_finite": true
+    }
+  },
+  "model_native_tokenizer_calls_by_scorer": 0,
+  "new_submission": false,
+  "official_SOTA_verified": false,
+  "official_rank": null,
+  "original_annotated_source_json_parsed": true,
+  "other_role_annotation_choices_accessed": 0,
+  "paired_differences": {
+    "adapted_lexical": {
+      "adapted_native_minus_correct": 2,
+      "other_minus_Brier": -0.0044417688660639,
+      "other_minus_NLL": -0.03845748438921026
+    },
+    "adapted_positional": {
+      "adapted_native_minus_correct": 2,
+      "other_minus_Brier": 0.07365004285037585,
+      "other_minus_NLL": 0.10746532449402735
+    },
+    "original_native": {
+      "adapted_native_minus_correct": 4,
+      "other_minus_Brier": 0.26837625160026185,
+      "other_minus_NLL": 0.5223730151454126
+    }
+  },
+  "phase_integrity": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "network_policy": {
+      "allowed_capability_binds": 1,
+      "forbidden_network_operations": 0,
+      "scope": "Public API interposition, not OS network isolation"
+    },
+    "opaque_native_internals": "UNKNOWN; actual API counts and observed threads only",
+    "physical_closure": {
+      "remaining_owned_members": [],
+      "worker_identity": {
+        "pgid": 89770,
+        "pid": 89770,
+        "ppid": 89769,
+        "sid": 89770,
+        "state": "R",
+        "ticks": 19641390
+      }
+    }
+  },
+  "reader_timing": {
+    "adapted_lexical": {
+      "n": 24,
+      "p50_seconds": 3.0355774005001877,
+      "p95_seconds": 3.2588737213489365,
+      "scope": "Pairtokenization/tensorprep/fullmodel/softmax; state verification/init/retrieval separate"
+    },
+    "adapted_native": {
+      "n": 24,
+      "p50_seconds": 3.0010803245095303,
+      "p95_seconds": 3.450718395343574,
+      "scope": "Pairtokenization/tensorprep/fullmodel/softmax; state verification/init/retrieval separate"
+    },
+    "adapted_positional": {
+      "n": 24,
+      "p50_seconds": 3.0258326254988788,
+      "p95_seconds": 3.194279977610859,
+      "scope": "Pairtokenization/tensorprep/fullmodel/softmax; state verification/init/retrieval separate"
+    },
+    "original_native": {
+      "n": 24,
+      "p50_seconds": 3.0093802330084145,
+      "p95_seconds": 3.424562714040803,
+      "scope": "Pairtokenization/tensorprep/fullmodel/softmax; state verification/init/retrieval separate"
+    }
+  },
+  "sampling_scope": "8newDEVdocuments,3correlatedhypotheses each; first fixed archived-state diagnostic only",
+  "schema_version": 1,
+  "source_checks": {
+    "current_TRAIN_phase_authorized": false,
+    "freeze": {
+      "bytes": 22890,
+      "path": "experiments/sota-2026-10-22/epoch31/source-freeze.json",
+      "sha256": "9970ec1e03bbd4fa4a67add78a1b18d1857d12903d3981081a9ae44ee1531b57"
+    },
+    "pins_verified": 125
+  },
+  "source_evidence_lists_accessed": 0,
+  "status": "REJECTED_DEV_DIAGNOSTIC",
+  "supervisor_physical_closure": {
+    "current_original_supervisor_state": "Z",
+    "evidence": {
+      "bytes": 1465,
+      "path": "experiments/sota-2026-10-22/epoch31/SUPERVISOR_OBSERVED_CLOSURE.json",
+      "sha256": "5f8a90be9304eab5b216d994db9bb74b212ddf70dd52f4ebc9c32065471fcf3f"
+    },
+    "physical_closure_passed": true,
+    "proof_observed_supervisor_absent": false,
+    "proof_observed_supervisor_state": "Z",
+    "supervisor_exit_code_observed": null
+  },
+  "uncertainty": [
+    "Same original2020backbone; no new pretrained model or quality claim before DEV evidence",
+    "Foundation/fuzzy overlap and laterpublisherreselection unknown",
+    "Retrievedexcerpt NotMentioned is not proof of global legalabsence",
+    "NetLoRA+classifier effect; no exclusiveLoRAcausal or officialbenchmark inference"
+  ],
+  "source_checkpoint": "b27d0c39ed3102cd16ba616b1225b7684b76851b",
+  "published_frozen_source_commit": "8d6f6a34d302cbfc1cd5904cc4d59939d4fb840e",
+  "used_confirmation_identities": [],
+  "data_roles": {
+    "train": [],
+    "dev": [
+      145,
+      597,
+      191,
+      620,
+      254,
+      160,
+      384,
+      571
+    ],
+    "calibration": [],
+    "confirmation": []
+  },
+  "reason": "Frozen current DEV archived-adaptation diagnostic acceptance did not pass; retain all original failures, unstarted phases and incomplete/unknown captured counters. No retry or confirmation is authorized.",
+  "cumulative_execution": {
+    "corpus_attempts": 26,
+    "completed_corpus_batches": 24,
+    "bounded_native_process_attempts": 32,
+    "qualification_attempts": 6,
+    "benchmark_HTTP_successes": 885,
+    "benchmark_HTTP_failures": 2
+  },
+  "qualification_replay": {
+    "path": "experiments/sota-2026-10-22/audit/epoch31/qualification-replay.json",
+    "bytes": 79998,
+    "sha256": "574aae3f621407dd18625b077d05f8ac9aaaff48a18398a1afbec4b7291a7361"
+  },
+  "all_slots_closed": true,
+  "scope": "One96-forward current DEV diagnostic of the exact BASE-published E30 learned artifact, with original native baseline and matched same archived adapted model native/lexical/positional retrieval. Zero current TRAIN/fit/MODEL phase. No CONF, full104 retry, benchmark placement, champion promotion or new submission.",
+  "future_confirmation": "None consumed or authorized. All8 current DEV document identities remain exposed forever; archived E30TRAIN8 are historical and remain retired separately."
+}

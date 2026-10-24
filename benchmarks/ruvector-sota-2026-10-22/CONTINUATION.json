@@ -679,23 +679,23 @@
   },
   "active_run": {
     "schema_version": 1,
-    "run_id": "epoch27-0471ff09d550",
-    "epoch": 27,
-    "state": "EPOCH27_CLOSED",
-    "work_active": false,
+    "run_id": "epoch28-aa09a8d75110",
+    "epoch": 28,
+    "state": "EPOCH28_PLANNING_LEASE",
+    "work_active": true,
     "experiments_active": false,
-    "checkpoint_parent": "e072e780449446d8a01c8988c36b8860fa216604",
+    "checkpoint_parent": "585c476cec6011b1db9c79147e3b0ff80124a6a3",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
-      "run_id": "epoch27-0471ff09d550",
-      "pid": 75591,
-      "startticks": 15190845,
+      "run_id": "epoch28-aa09a8d75110",
+      "pid": 77846,
+      "startticks": 16105893,
       "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
       "lock_inode": 13626,
-      "started_unix": 1792828206.537772,
-      "expires_unix": 1792839006.537772,
-      "started_at": "2026-10-24T07:50:06.537772+00:00",
-      "expires_at": "2026-10-24T10:50:06.537772+00:00",
+      "started_unix": 1792837357.0221736,
+      "expires_unix": 1792848157.0221736,
+      "started_at": "2026-10-24T10:22:37.022174+00:00",
+      "expires_at": "2026-10-24T13:22:37.022174+00:00",
       "CPU_affinity": [
         0,
         1
@@ -707,13 +707,8 @@
     "OS_lock_release_pending": true,
     "native_allowed": 0,
     "conditional_confirmation_allowed": 0,
-    "instruction": "Closed rejectedepoch27. Allslots spentorpermanentlyclosed. PreserveNative104 andexactscientificrejection. Releasephysical lockonlyafterindependentactualfinalremote readback.",
-    "native_allowed_after_exact_remote_readback": 0,
     "confirmation_allowed": 0,
-    "actual_epoch27_worker_attempts": 1,
-    "all_unspent_epoch27_slots_permanently_closed": true,
-    "owned_native_groups_closed": true,
-    "OS_lock_release_pending_final_remote_readback": true,
+    "instruction": "Planning and hash-verified reconstruction only. Zero native/model starts until candidate/source freeze, actual remote admission and independent acceptance. Preserve Native104, all exposed data roles, archive transports and zero paid/GPU budget.",
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -3512,5 +3507,32 @@
     "goal_met": false,
     "fresh_confirmation_consumed": false,
     "all_unspent_slots_closed": true
+  },
+  "epoch28_planning": {
+    "base_commit": "585c476cec6011b1db9c79147e3b0ff80124a6a3",
+    "run_id": "epoch28-aa09a8d75110",
+    "guardian": {
+      "run_id": "epoch28-aa09a8d75110",
+      "pid": 77846,
+      "startticks": 16105893,
+      "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
+      "lock_inode": 13626,
+      "started_unix": 1792837357.0221736,
+      "expires_unix": 1792848157.0221736,
+      "started_at": "2026-10-24T10:22:37.022174+00:00",
+      "expires_at": "2026-10-24T13:22:37.022174+00:00",
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+      "generation": 1
+    },
+    "maximum_native_corpus_batches": 2,
+    "CPU_threads": 2,
+    "maximum_seconds_each_including_init_cleanup": 600,
+    "paid_API_GPU_calls": 0,
+    "full104_comparator_closure_and_legal_trained_reader_admission": "pending bounded source review",
+    "new_confirmation_access": false
   }
 }

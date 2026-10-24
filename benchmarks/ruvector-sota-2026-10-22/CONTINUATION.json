@@ -403,19 +403,21 @@
   "active_run": {
     "schema_version": 1,
     "run_id": "epoch23-488d3a6a248e",
-    "state": "EPOCH23_EXCLUSIVE_PLANNING_LEASE",
+    "state": "EPOCH23_EXCLUSIVE_OWNER_RECOVERY_LEASE",
     "work_active": true,
     "experiments_active": false,
     "native_allowed": 0,
     "OS_lock_held": true,
-    "owner_pid": 64876,
-    "owner_startticks": 12480585,
+    "owner_pid": 66088,
+    "owner_startticks": 12864421,
     "lock_inode": 13626,
-    "started_at": "2026-10-24T00:18:23.952152+00:00",
+    "started_at": "2026-10-24T01:22:22.306113+00:00",
     "expires_at": "2026-10-24T03:18:23.952152+00:00",
-    "checkpoint_parent": "99efd3517516f3089ea2c669add1c2b1fa521fb1",
+    "checkpoint_parent": "eb40957109b64815cae17e98aa1f637cc7433a35",
     "purpose": "Bounded source-scope engineering epoch after stronger legal reader admission remained unverified; no benchmark scores implied.",
     "instruction": "STOP other scoped work while this exclusive work lease remains active; no native execution before frozen source publication and independent admission.",
+    "owner_generation": 2,
+    "original_expiry_preserved": true,
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -2246,5 +2248,22 @@
     "benchmark_train_dev_calibration_confirmation": [],
     "paid_API_GPU_budget": 0,
     "champion_unchanged": true
+  },
+  "epoch23_owner_recovery": {
+    "old_owner_pid": 64876,
+    "old_owner_startticks": 12480585,
+    "new_owner_pid": 66088,
+    "new_owner_startticks": 12864421,
+    "old_owner_absent": true,
+    "independent_contender_acquired_then_released_old_lock": true,
+    "new_owner_kernel_lock_verified": true,
+    "native_admission_and_reservation_absent": true,
+    "native_BGE_NLI_workers_or_calls": 0,
+    "old_plan_sha256": "85dba296706246e401fd3e9f7cb89aac24fce056c87e49a4e5f8175e4b5e5f9c",
+    "old_freeze_sha256": "ab8cf0ef6cd59e30466231ddc2bf065d7ea72b8a04eded9c4df161eba2d9187a",
+    "original_expiry_preserved": true,
+    "source_rebinding_scope": "Only owner PID/startticks; preserve all old versions and refreeze unchanged scientific inputs/algorithm before execution.",
+    "supervisor_loss_cause": "UNPROVEN",
+    "allowed_native_execution_before_refreeze_and_exact_remote_admission": 0
   }
 }

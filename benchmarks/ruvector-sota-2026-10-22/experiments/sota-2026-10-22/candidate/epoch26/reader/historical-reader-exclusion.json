@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "epoch": 26,
+  "status": "HISTORICAL_READER_EXCLUSION",
+  "scope": "Metadata only. Two suggested repositories confirmed historical; no new trained-head admitted.",
+  "metadata_only_repositories_rechecked": [
+    "cross-encoder/nli-deberta-v3-large",
+    "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli"
+  ],
+  "new_candidate_repositories_examined": 0,
+  "weight_or_tokenizer_asset_downloads": 0,
+  "model_or_tokenizer_initializations": 0,
+  "labels_or_per_example_outputs_read": false,
+  "paid_or_GPU_or_Git_or_external_message_actions": 0,
+  "candidates": [
+    {
+      "repository": "cross-encoder/nli-deberta-v3-large",
+      "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "status": "ALREADY_SELECTED_AND_ACQUIRED_HISTORICALLY_DO_NOT_REPEAT",
+      "historical_metadata_path": "/tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986/project/experiments/sota-2026-10-22/candidate/epoch15/MODEL_QUALIFICATION.json",
+      "historical_metadata_sha256": "dffaf90d385d66cc7579fa765fa5b3e3dc645f730d44bccd436b1c7dd2d55ca7",
+      "id2label": {
+        "0": "contradiction",
+        "1": "entailment",
+        "2": "neutral"
+      },
+      "license": "apache-2.0",
+      "supervised_training": [
+        "nyu-mll/multi_nli",
+        "stanfordnlp/snli"
+      ],
+      "new_source": false,
+      "native_probabilities": "stable softmax of raw three-way sequence-classification logits with temperature1; explicitly permute to study E,C,N, no binary not_entailment proxy",
+      "weights": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1740312740,
+          "sha256": "01cb91b046c0c88c538c06c6d2a8ab8b11f9b9c5f9c2ef0c8e20c4086710063c",
+          "downloaded_or_rehashed": false
+        },
+        {
+          "path": "onnx/model.onnx",
+          "bytes": 1742010231,
+          "sha256": "522031148bd5696cf67ca4a682ee56090cd5219558f29b62b311ea345e9f0fb7",
+          "downloaded_or_rehashed": false
+        },
+        {
+          "path": "onnx/model_O1.onnx",
+          "bytes": 1839911421,
+          "sha256": "de2f95a699e08164ecec72f5a49abaa81434d719f1abf751196dcb3a71bee5a7",
+          "downloaded_or_rehashed": false
+        },
+        {
+          "path": "onnx/model_qint8_arm64.onnx",
+          "bytes": 642857090,
+          "sha256": "9411944eb4cfb593a2fea3b3e51f1c4c6531afaa59ef1b8f2713b6eec427126c",
+          "downloaded_or_rehashed": false
+        },
+        {
+          "path": "onnx/model_qint8_avx512.onnx",
+          "bytes": 642857090,
+          "sha256": "9411944eb4cfb593a2fea3b3e51f1c4c6531afaa59ef1b8f2713b6eec427126c",
+          "downloaded_or_rehashed": false
+        },
+        {
+          "path": "onnx/model_qint8_avx512_vnni.onnx",
+          "bytes": 642857090,
+          "sha256": "9411944eb4cfb593a2fea3b3e51f1c4c6531afaa59ef1b8f2713b6eec427126c",
+          "downloaded_or_rehashed": false
+        },
+        {
+          "path": "onnx/model_quint8_avx2.onnx",
+          "bytes": 642857089,
+          "sha256": "821dc4407d10a9d25c20c57fcb742ddc20c09bc55c8093557091efb825256754",
+          "downloaded_or_rehashed": false
+        },
+        {
+          "path": "pytorch_model.bin",
+          "bytes": 1740435986,
+          "sha256": "9c33255910cf2783a71731b2798bec3732f6ad9585682bea7c8233608e4c7d34",
+          "downloaded_or_rehashed": false
+        },
+        {
+          "path": "spm.model",
+          "bytes": 2464616,
+          "sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+          "downloaded_or_rehashed": false
+        }
+      ]
+    },
+    {
+      "repository": "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+      "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+      "status": "ALREADY_SELECTED_AND_ACQUIRED_HISTORICALLY_DO_NOT_REPEAT",
+      "historical_metadata_path": "/tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986/project/experiments/sota-2026-10-22/legal-transfer/epoch20/MODEL_QUALIFICATION.json",
+      "historical_metadata_sha256": "e96edaa9c338d37d451873037c9f2b6d7da9389ee47e32f4138b9eb98a699779",
+      "id2label": {
+        "0": "entailment",
+        "1": "neutral",
+        "2": "contradiction"
+      },
+      "license": "mit",
+      "supervised_training": [
+        "snli",
+        "anli",
+        "multi_nli",
+        "multi_nli_mismatch",
+        "fever"
+      ],
+      "new_source": false,
+      "native_probabilities": "stable softmax of raw three-way sequence-classification logits with temperature1; explicitly permute to study E,C,N, no binary not_entailment proxy",
+      "weights": [
+        {
+          "path": "flax_model.msgpack",
+          "bytes": 1421465327,
+          "sha256": "b721364c24be9a3b8b736d41cbe54a437db81d14572f6ed47b002023ff91bdd3",
+          "downloaded_or_rehashed": false
+        },
+        {
+          "path": "pytorch_model.bin",
+          "bytes": 1425814813,
+          "sha256": "a51c55cb7dc41c4c862f06a3d9c413a8aa0619222bc56f06cb6f2f5b2d3ee14a",
+          "downloaded_or_rehashed": false
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/cross-encoder--nli-deberta-v3-large--README.md",
+      "bytes": 2934,
+      "sha256": "2510c58dd047cc8ab0599247e93542b6e04ce4e3a21415c28f1169de38940502"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/cross-encoder--nli-deberta-v3-large--api.json",
+      "bytes": 6425,
+      "sha256": "47196c07643235f54504b67ee19118f02448b9378d871acff835bd0b18d16413"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/cross-encoder--nli-deberta-v3-large--config.json",
+      "bytes": 1100,
+      "sha256": "30d88fd93586a85330162d169f68161aecc242e1be23dc41db335c069fbbab8f"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/ynie--roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli--README.md",
+      "bytes": 3406,
+      "sha256": "bb8affaa741b518e536d09ac6ff8f85d7ea3aee215c56e111379c78eaed8a17c"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/ynie--roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli--api.json",
+      "bytes": 2575,
+      "sha256": "c9793ca5b9ce7be32a517d0402a9ff297bb266f51e02c8bce68fca9e56f38527"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/ynie--roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli--config.json",
+      "bytes": 703,
+      "sha256": "9d074204b668902ea51bd8ecb323f01cd37040cb54e8601d872c8fdb0687131e"
+    }
+  ]
+}

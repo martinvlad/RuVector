@@ -1,0 +1,58 @@
+{
+  "allowed_local_bind_events": {
+    "address_matching": "Literal exact strings only; no DNS, aliases, integer IP forms, wildcards, nonloopback literals or nonzero IPv6 scope IDs. Validate socket family AF_INET/AF_INET6 and exact address tuple shape; integer port0..65535 excluding bool; IPv6 flowinfo/scopeid zero. Fail closed for any unverified address/class.",
+    "addresses": [
+      "127.0.0.1",
+      "::1"
+    ],
+    "mechanism": "Noncommunicating local socket construction is permitted only to support these recorded binds; no listener or connection is permitted.",
+    "no_address_redaction_or_classification_waiver": true,
+    "operations": [
+      "socket.bind"
+    ],
+    "receipt": "Record each bind attempt before execution: event counter, exact address tuple, family/type/protocol metadata, bounded Python call stack, monotonic timestamp and success/failure. Distinct count allowed_local_bind_events; bind attempts classified unknown/nonallowed increment forbidden counter and raise."
+  },
+  "at": "2026-10-24T06:37:10.662077+00:00",
+  "enforcement_review": "Root must freeze exact worker guard implementation and independent review after this policy; this document alone is no runtime admission.",
+  "epoch": 26,
+  "epoch25": "Epoch25 rejected unknown bind counter1 remains rejected. No retroactive allowance, success reclassification, measurement reuse or acceptance relaxation.",
+  "forbidden_network_operations": {
+    "caught_exception_does_not_clear_counter": true,
+    "fail_after_finally_if_any_attempt": true,
+    "fallback_outputs_never_qualify_after_forbidden_attempt": true,
+    "operations": [
+      "DNS/resolution/getaddrinfo/gethostby*",
+      "connect/connect_ex/create_connection",
+      "send/sendall/sendto/sendmsg",
+      "recv/recvfrom/recvmsg",
+      "listen/accept",
+      "nonliteral or nonloopback bind",
+      "all other network communication attempts"
+    ],
+    "persistent_fatal_attempt_counter": true,
+    "zero_required": true
+  },
+  "invariants_unchanged": {
+    "GPU_calls": 0,
+    "benchmark_accepted": false,
+    "calibration": 0,
+    "champion_promoted": false,
+    "confirmation": [],
+    "paid_API_calls": 0,
+    "training_fits": 0,
+    "unknown_model_supervised_lineage": true
+  },
+  "prior_data_source_freeze": {
+    "bytes": 1539,
+    "path": "/tmp/ruvector-e26-independent-audit/data-source-freeze.json",
+    "sha256": "8d8c996b472929dbb11cecb741449b39648a63e1cc47a1b4b87ba9028b6cba92"
+  },
+  "prior_protocol": {
+    "bytes": 5778,
+    "path": "/tmp/ruvector-e26-independent-audit/protocol.json",
+    "sha256": "ecc7db6cf104423e390265c326fd4cc3d5d2d0749146cd317e9ecbb9a2a6a9a8"
+  },
+  "schema_version": 1,
+  "scope": "Clarifies execution_limits.network_during_worker=0 as zero forbidden communication operations. No measured epoch26 or prior epoch policy/result is retroactively changed.",
+  "status": "PROSPECTIVE_POLICY_AMENDMENT_BEFORE_GIT_SOURCE_FREEZE_OR_MODEL_MEASUREMENT"
+}

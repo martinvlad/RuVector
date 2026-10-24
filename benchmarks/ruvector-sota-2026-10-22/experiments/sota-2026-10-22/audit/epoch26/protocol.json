@@ -1,0 +1,115 @@
+{
+  "DEV_document_ids": [
+    437,
+    614,
+    194,
+    174,
+    256,
+    490,
+    317,
+    196
+  ],
+  "canonical_class_order": [
+    "entailment",
+    "contradiction",
+    "not_mentioned"
+  ],
+  "comparison_to_prior_banks": "Any prior11/24 outcome uses different documents/models/context; descriptive historical result only, not a paired improvement claim.",
+  "descriptive_gates": {
+    "all_original_classes_present": true,
+    "complete24cases72predictions_no_errors": true,
+    "native_Brier_nonincrease_vs_each_control": true,
+    "native_NLL_nonincrease_vs_each_control": true,
+    "native_at_least_one_correct_each_original_gold_class": true,
+    "native_correct_gain_vs_each_control_at_least": 2,
+    "runtime_sources_and_process_closure_verified": true
+  },
+  "epoch": 26,
+  "execution_limits": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "GPU_calls": 0,
+    "NLI_pairs_max": 72,
+    "arms": [
+      "actual_native",
+      "lexical",
+      "positional"
+    ],
+    "calibration_calls": 0,
+    "cases": 24,
+    "network_during_worker": 0,
+    "owned_workers": 1,
+    "paid_calls": 0,
+    "training_steps": 0,
+    "true_joint_pair_tokens_max": 512,
+    "wall_seconds_max_including_initialization_cleanup": 600
+  },
+  "exposure_retirement": "Any selected source input projection retires all8fixeddocs as projectDEV forever, including failed attempts; 245\u2192253 exposed,24reserved unchanged,154\u2192146unreserved,total423",
+  "gold_protocol": "Auditor validates fixed ordered24inputs/rawcaseidentities and all72finite3way logits/probabilities plus complete execution and owned-process closure before first selected annotation choice access. Then join only 24 predetermined choices. No class-based redraw or candidate changes.",
+  "hypotheses": [
+    "nda-17",
+    "nda-7",
+    "nda-3"
+  ],
+  "isolation": "Complete public annotated source JSON loaded in builder and auditor RAM; no labels projected by builder. Logical field access control only, never OS enforced label isolation.",
+  "matched_controls": "Same frozen classifier/tokenizer/softmax/context budget and source input; nativeRuVector/RRF/BGE versus lexical versus positional retrieval; exact literal premise, selected spans, UTF8 byte hashes, discarded numerical literals and unknown/overflow paths retained in raw",
+  "metrics": {
+    "Brier": "mean sum of three class squared errors",
+    "NLL": "mean -ln(max(p_gold,1e-12)); clipping count disclosed; probability vector not silently normalized",
+    "accuracy": "case count and every original class count/correct plus fullconfusion and perdocument outcomes",
+    "denominator": 24,
+    "errors": "All raw errors/attempts/counters retained. Partial/missing outputs have no complete-corpus metric or gold projection and remain failed.",
+    "latency": "p50/p95 linear interpolation at(n\u22121)*p; report reader forward distinct from retrieval/context/init and wholeworker",
+    "probability_mass_tolerance": 1e-06,
+    "proper_score_nonincrease_tolerance": 1e-12,
+    "sampling": "8document groups \u00d73correlated hypotheses; no IID24case confidence interval",
+    "softmax_replay_tolerance": 1e-06
+  },
+  "model": "mrm8488/ModernBERT-large-ft-all-nli",
+  "model_lineage": "Official card says unknown supervised dataset; training/evaluation/selection/calibration identities and training-data licenses unresolved. Base checkpoint training revision unpinned. Unknown pretrained/fuzzy/supervised overlap retained.",
+  "model_revision": "afa5e4b89a8a23d3b19da2ed0fa7daf2496c7c47",
+  "native_logit_order": [
+    "entailment",
+    "not_mentioned",
+    "contradiction"
+  ],
+  "new_data_claim": "Project-unused DEV only, never independent heldout generalization or benchmark acceptance",
+  "permanent_benchmark_gate": "benchmark_accepted=false/champion_promoted=false/official_SOTA_established=false regardless descriptive result; unresolved model lineage means CONF=[] HOLD and no reserved consumption",
+  "probability": "Frozen uncalibrated unit-temperature softmax; native argmax tie order E,N,C; no fitting, threshold adjustment or retraining",
+  "roles": {
+    "calibration": [],
+    "confirmation": [],
+    "dev": [
+      437,
+      614,
+      194,
+      174,
+      256,
+      490,
+      317,
+      196
+    ],
+    "train": []
+  },
+  "root_restoration_proof": {
+    "bytes": 537,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch26-3a1d40cb6d1d/restoration-proof.json",
+    "sha256": "75f4b0cdfd4674755e8c51f40e8bbb531159dd4d7216b3753421d9eadaced4a5"
+  },
+  "schema_version": 1,
+  "selection": "Metadata-only once; never redraw or rebalance after source, class, difficulty, length, runtime or performance findings",
+  "source": {
+    "bytes": 7608211,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch22-f190247e1a30/project/experiments/sota-2026-10-22/legal-transfer/epoch3/sources/original-train.json",
+    "sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5"
+  },
+  "source_attribution": "Koreeda and Manning (2021), ContractNLI: A Dataset for Document-level Natural Language Inference for Contracts, https://github.com/stanfordnlp/contract-nli; CC-BY-4.0 https://creativecommons.org/licenses/by/4.0/; select8originalTRAINdocs\u00d73hypotheses, exacttextpreserved, identitymetadataadded.",
+  "source_license": "CC-BY-4.0",
+  "source_revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+  "source_root_checkpoint": "5acc487d6f968319a95a211fb7b3287900ca4a22",
+  "status": "FIXED_PROJECT_DEV_ONLY_PROTOCOL_BEFORE_SOURCE_INPUT_PROJECTION",
+  "synthetic_generalization": false,
+  "unknown_boundary": "A retrieved-context classifier NotMentioned output is only a diagnostic class prediction; omission, retrieval miss, reference ambiguity, overflow or truncation cannot prove legal absence or globally insufficient evidence."
+}

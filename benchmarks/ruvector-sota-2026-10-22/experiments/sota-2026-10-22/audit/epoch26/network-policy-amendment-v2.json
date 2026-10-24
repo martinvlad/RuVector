@@ -1,0 +1,26 @@
+{
+  "all_other_prior_policy_requirements_unchanged": true,
+  "allowed_after_this_source_freeze_only": true,
+  "at": "2026-10-24T06:39:49.634561+00:00",
+  "candidate_model_native_tokenizer_calls_by_this_amendment": 0,
+  "epoch": 26,
+  "epoch25_rejection_unchanged": true,
+  "exact_allowed_bind_shapes": {
+    "AF_INET": "('127.0.0.1', port)",
+    "AF_INET6": [
+      "('::1', port)",
+      "('::1', port, 0, 0)"
+    ],
+    "flowinfo_scopeid": "when explicit, exact integer0, not bool",
+    "host": "Exact literal string only; no whitespace, hostname, zone identifier, wildcard or other127/8address",
+    "port": "type(port) is int, not bool,0\u2264port\u226465535"
+  },
+  "prior_amendment": {
+    "bytes": 2942,
+    "path": "/tmp/ruvector-e26-independent-audit/network-policy-amendment.json",
+    "sha256": "077367f5555daa0764221cca9e696be6bd738f5e1b11cd69679e9e413578df71"
+  },
+  "reason": "Python socket.bind accepts AF_INET6(host,port) with implicit flowinfo/scopeid0; the prospective literal::1 bind exception includes this standard noncommunicating form.",
+  "schema_version": 1,
+  "status": "PROSPECTIVE_IPV6_PYTHON_TUPLE_SHAPE_CLARIFICATION_BEFORE_MEASUREMENTS"
+}

@@ -1,0 +1,290 @@
+"""Pure local publication guards shared by the epoch26 control/stage CLIs.
+
+This module never installs packages, contacts services, starts workers, reads
+benchmark annotations, or changes project files. Only the four public epoch26
+roots are collected. Historical checkpoint bytes and the inherited archive
+exception remain mandatory; neither an allowlist nor a new control can erase
+published history.
+"""
+from __future__ import annotations
+import copy
+import fcntl
+import hashlib
+import json
+import math
+import os
+from pathlib import Path, PurePosixPath
+import re
+import stat
+import time
+
+P = 'experiments/sota-2026-10-22/'
+SCOPE = 'benchmarks/ruvector-sota-2026-10-22/'
+BASE_COMMIT = '5acc487d6f968319a95a211fb7b3287900ca4a22'
+OLD_CP_ROWS = 3541
+OWNER_PIN = (72224, 14702559, 13626)
+OWNER_RUN_ID = 'epoch26-3a1d40cb6d1d'
+OWNER_GENERATION = 1
+OWNER_EXPIRES_UNIX = 1792834123.679049
+OWNER_SCOPE_DIR = Path('/tmp/ruvector-sota-2026-10-22') / OWNER_RUN_ID
+OWNER_LOCK = OWNER_SCOPE_DIR.parent / 'exclusive.work.lock'
+ROOTS = tuple(P + p for p in ('candidate/epoch26', 'audit/epoch26',
+                              'legal-transfer/epoch26', 'epoch26'))
+CONTROLS = {'ACTIVE_RUN.json', 'CHECKPOINT_MANIFEST.json', 'CONTINUATION.json'}
+TRANSPORT_KEYS = {'format', 'archive', 'extractor', 'restored_artifact',
+                  'publication_helper', 'required_before_bootstrap',
+                  'standalone_Git_leaf_omitted'}
+EXTENSIONS = {'.py', '.js', '.mjs', '.cjs', '.json', '.jsonl', '.md', '.txt',
+              '.log', '.csv', '.tsv', '.yaml', '.yml', '.stdout', '.stderr'}
+BANNED = {'assets', '__pycache__', '.git', '.cache', 'cache', 'venv', '.venv',
+          'node_modules', 'site-packages', 'credentials', 'secrets', 'private',
+          'raw-pages', 'raw-email', 'inbox', 'mailbox', 'messages', 'models', 'weights'}
+PRIVATE_PATTERNS = tuple(re.compile(p, re.I | re.M) for p in (
+    r'-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----',
+    r'\bgh[pousr]_[A-Za-z0-9]{30,}\b',
+    r'\bgithub_pat_[A-Za-z0-9_]{30,}\b', r'\bAKIA[0-9A-Z]{16}\b',
+    r'\bsk-(?:proj-)?[A-Za-z0-9_-]{32,}\b',
+    r'\b(?:authorization|proxy-authorization)\s*[:=]\s*[\x22\x27]?(?:Bearer|Basic)\s+[A-Za-z0-9+/_.=-]{20,}',
+    r'^[ \t]*(?:Received:|DKIM-Signature:|Return-Path:|MIME-Version:)',
+    r'<(?:!DOCTYPE\s+html|html|head|body)(?:\s|>)'))
+
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def loads(data):
+    def unique(pairs):
+        answer = {}
+        for key, value in pairs:
+            require(key not in answer, 'Duplicate JSON object key')
+            answer[key] = value
+        return answer
+    def nonfinite(value):
+        raise ValueError('Nonfinite JSON number refused')
+    value = json.loads(data, object_pairs_hook=unique, parse_constant=nonfinite)
+    def finite_tree(item):
+        if isinstance(item, float): require(math.isfinite(item), 'Nonfinite JSON number refused')
+        elif isinstance(item, dict):
+            for child in item.values(): finite_tree(child)
+        elif isinstance(item, list):
+            for child in item: finite_tree(child)
+    finite_tree(value)
+    return value
+
+
+def encoded(value, pretty=False):
+    return (json.dumps(value, ensure_ascii=False, allow_nan=False,
+                       **({'indent': 2} if pretty else {'separators': (',', ':')}))
+            + ('\n' if pretty else '')).encode('utf-8')
+
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def gitsha(data):
+    return hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
+
+
+def relative(value):
+    require(isinstance(value, str) and value and '\\' not in value
+            and not PurePosixPath(value).is_absolute()
+            and not any(p in ('', '.', '..') for p in value.split('/')),
+            'Unsafe relative publication path')
+    return value
+
+
+def canonical(path):
+    path = Path(path).absolute()
+    require(path == path.resolve() and not any(p.is_symlink() for p in
+            (path, *path.parents)), 'Noncanonical/symlink path refused: ' + str(path))
+    return path
+
+
+def directory(path):
+    path = canonical(path)
+    require(path.is_dir(), 'Required directory absent: ' + str(path))
+    return path
+
+
+def content(path):
+    path = canonical(path)
+    require(stat.S_ISREG(path.lstat().st_mode), 'Nonregular source: ' + str(path))
+    return path.read_bytes()
+
+
+def parse(path):
+    return loads(content(path))
+
+
+def public_path(path):
+    parts = PurePosixPath(relative(path)).parts
+    require(not any(p.lower() in BANNED or '.private' in p.lower()
+                    or p.lower().startswith('.env') for p in parts),
+            'Private/model/cache directory refused: ' + path)
+    require(Path(path).suffix in EXTENSIONS, 'Unreviewed public extension: ' + path)
+
+
+def public_text(path, data):
+    public_path(path)
+    text = data.decode('utf-8', errors='strict')
+    require('\0' not in text and not any(ord(c) < 32 and c not in '\t\r\n'
+            for c in text), 'Binary/control payload refused: ' + path)
+    require(not any(p.search(text) for p in PRIVATE_PATTERNS),
+            'Credential/raw mail/raw page refused: ' + path)
+    return text
+
+
+def walk_current(project, allow_empty=False):
+    found = {}
+    for rel in ROOTS:
+        root = canonical(project / rel)
+        if not root.exists():
+            continue
+        directory(root)
+        for base, dirs, files in os.walk(root, followlinks=False):
+            dirs.sort(); files.sort()
+            for name in dirs:
+                d = directory(Path(base) / name)
+                require(not any(p.lower() in BANNED or p.lower().startswith('.env')
+                                for p in d.relative_to(project).parts),
+                        'Excluded runtime/private directory in public root')
+            for name in files:
+                file = Path(base) / name
+                name = file.relative_to(project).as_posix()
+                public_path(name)
+                data = content(file); public_text(name, data)
+                require(name not in found, 'Duplicate current path')
+                found[name] = data
+    require(found or allow_empty, 'No public epoch26 files selected')
+    return found
+
+
+def ref(project, path):
+    path = relative(path); data = content(project / path)
+    return {'path': path, 'bytes': len(data), 'sha256': sha(data)}
+
+
+def cp_rows(value):
+    require(isinstance(value, dict) and isinstance(value.get('project_files'), list),
+            'Checkpoint project_files required')
+    rows = {}
+    for row in value['project_files']:
+        require(isinstance(row, dict) and set(row) == {'path', 'bytes', 'sha256'},
+                'Checkpoint row must be canonical path/bytes/SHA256')
+        path = relative(row['path'])
+        require(type(row['bytes']) is int and row['bytes'] >= 0
+                and re.fullmatch('[0-9a-f]{64}', row['sha256'] or '')
+                and path not in rows, 'Invalid/duplicate checkpoint identity')
+        rows[path] = copy.deepcopy(row)
+    return rows
+
+
+def check_history(project, cp):
+    rows = cp_rows(cp)
+    for path, row in rows.items():
+        require(ref(project, path) == row, 'Historical project bytes changed: ' + path)
+    return rows
+
+
+def check_inherited_checkpoint(cp):
+    rows = cp_rows(cp)
+    require(len(rows) == OLD_CP_ROWS, 'Pinned inherited3541 CP identities required')
+    require(not any(any(path == root or path.startswith(root + '/') for root in ROOTS)
+                    for path in rows), 'Inherited checkpoint already contains epoch26')
+    return rows
+
+
+def check_transport(project, old_cont, new_cont, rows, git_paths=None):
+    transport = old_cont.get('artifact_transport')
+    require(isinstance(transport, dict) and set(transport) == TRANSPORT_KEYS
+            and new_cont.get('artifact_transport') == transport,
+            'Inherited exact seven-key artifact transport changed')
+    require(transport['format'] == 'gzip+base64'
+            and transport['required_before_bootstrap'] is True,
+            'Inherited archive must precede bootstrap')
+    raw = transport['restored_artifact']
+    require(transport['standalone_Git_leaf_omitted'] == raw['path'],
+            'Only the inherited raw artifact may lack a Git leaf')
+    for key in ('archive', 'extractor', 'publication_helper', 'restored_artifact'):
+        row = transport[key]
+        require(set(row) == {'path', 'bytes', 'sha256'} and rows.get(row['path']) == row
+                and ref(project, row['path']) == row, 'Archive/CP identity changed: ' + key)
+    if git_paths is not None:
+        require(raw['path'] not in git_paths, 'Archived raw must never be a Git payload')
+        require(all(transport[k]['path'] in git_paths for k in
+                    ('archive', 'extractor', 'publication_helper')),
+                'Published reconstruction sources missing')
+    return copy.deepcopy(transport)
+
+
+def new_output(path, forbidden):
+    out = canonical(path)
+    directory(out.parent)
+    require(not os.path.lexists(out), 'Output must be an exclusive new path')
+    require(not any(out.is_relative_to(p) or p.is_relative_to(out) for p in forbidden),
+            'Output must be outside project/kit/input control trees')
+    return out
+
+
+def write(path, data):
+    with path.open('xb') as stream:
+        stream.write(data); stream.flush(); os.fsync(stream.fileno())
+
+
+def check_owner_identity(owner, scope):
+    require(Path(scope) == OWNER_SCOPE_DIR
+            and owner.get('run_id') == OWNER_RUN_ID
+            and type(owner.get('generation')) is int
+            and owner['generation'] == OWNER_GENERATION
+            and owner.get('scope') == 'ruvnet/RuVector:' + SCOPE.rstrip('/')
+            and owner.get('lock') == str(OWNER_LOCK)
+            and owner.get('expires_unix') == OWNER_EXPIRES_UNIX,
+            'Owner scope/generation/original expiry changed')
+    require(all(type(owner.get(key)) is int for key in ('pid','startticks','lock_inode'))
+            and (owner['pid'],owner['startticks'],owner['lock_inode']) == OWNER_PIN,
+            'Owner differs from the pinned epoch26 guardian generation')
+    return owner
+
+
+def live_owner(scope):
+    scope = directory(scope)
+    owner = check_owner_identity(parse(scope / 'owner.json'), scope)
+    pid = owner['pid']; ticks = owner['startticks']
+    require((pid, ticks, owner.get('lock_inode')) == OWNER_PIN,
+            'Owner differs from the pinned epoch26 guardian generation')
+    require(type(pid) is int and pid > 0 and type(ticks) is int
+            and time.time() < owner['expires_unix']
+            and not (scope / 'release.request').exists(), 'Expired/released owner')
+    status = Path('/proc/' + str(pid) + '/stat').read_text().rsplit(')', 1)[1].split()
+    require(status[0] not in ('Z', 'X') and int(status[19]) == ticks,
+            'Owner PID/startticks not live')
+    require(owner['CPU_affinity'] in ([0, 1], 2)
+            and os.sched_getaffinity(pid) == {0, 1}, 'Owner CPU2 affinity changed')
+    path = canonical(owner['lock']); fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW)
+    try:
+        st = os.fstat(fd)
+        require(stat.S_ISREG(st.st_mode) and st.st_ino == owner['lock_inode'],
+                'Scoped lock inode changed')
+        identity = (os.major(st.st_dev), os.minor(st.st_dev), st.st_ino)
+        held = False
+        for line in Path('/proc/locks').read_text().splitlines():
+            parts = line.split()
+            if (len(parts) >= 8 and parts[1:4] == ['FLOCK', 'ADVISORY', 'WRITE']
+                    and parts[4] == str(pid)):
+                a, b, c = parts[5].split(':')
+                held |= (int(a, 16), int(b, 16), int(c)) == identity
+        require(held, 'Exact owned FLOCK absent')
+        try:
+            fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            pass
+        else:
+            fcntl.flock(fd, fcntl.LOCK_UN)
+            raise ValueError('Independent contender acquired lock; STOP')
+    finally:
+        os.close(fd)
+    return owner
+

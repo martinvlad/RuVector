@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "epoch": 26,
+  "scope": "SOURCE_READY_FOR_IMMUTABLE_REMOTE_PUBLICATION_NOT_EXECUTION",
+  "diagnostic_only": true,
+  "source_checkpoint": "5acc487d6f968319a95a211fb7b3287900ca4a22",
+  "owned_candidate_sources": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch26/common.py",
+      "bytes": 10839,
+      "sha256": "1c7b4c79ce41bd56296bb1cd2d5fe0a4028e272a51f7093c80dacefd25325286"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch26/worker.py",
+      "bytes": 23338,
+      "sha256": "304aea49fc6cd9e40e803e47bafcffbb4fb9b81a5d4ab5e4328e5b2d90c84465"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch26/native.cjs",
+      "bytes": 8872,
+      "sha256": "fa24e550a329c990d1a1fe4301db39fac32365df5a1e746df25f9671243b9255"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch26/evidence.py",
+      "bytes": 5714,
+      "sha256": "06b507db0b17602873b3d8d1c1101f4349dfdda2d4dc4e30342ff83d3234fcf5"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch26/network_guard.py",
+      "bytes": 5005,
+      "sha256": "a42b225eccb07398c5f41f06b3f34ca28f960f783cb1f08b2f01c1b812e7a3eb"
+    }
+  ],
+  "owned_preparation_sources": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch26/preparation/restore_runtime.py",
+      "bytes": 4736,
+      "sha256": "099a0aa3769ae0054c0366ae34d67d3dc9b3ba74c530b1984f3e78e1ceff68e0"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch26/preparation/launch_dev.py",
+      "bytes": 16483,
+      "sha256": "8c704d5b96f2381de9655ef73a7425728d4b4c73a62a513318a6a956e42ed97b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch26/preparation/static_validation.py",
+      "bytes": 10268,
+      "sha256": "249b787523126fd7953b85292e5a8492165a52b7b11bc7533315a18d16994c08"
+    }
+  ],
+  "static_validation": {
+    "path": "experiments/sota-2026-10-22/epoch26/preparation/static-validation-final-v3.json",
+    "bytes": 1761,
+    "sha256": "57afdc7d2ed80e494e283ad4f4e6a9c3c79dd795d6acfa9087d38d5b8b58d1e6"
+  },
+  "runtime_restoration": {
+    "path": "experiments/sota-2026-10-22/epoch26/preparation/runtime-restoration.json",
+    "bytes": 728,
+    "sha256": "4879df0bee78340ff343c2b20074e8345aea0af43d94cdfec67d08af4db714ef"
+  },
+  "runtime_assets_lock": {
+    "path": "experiments/sota-2026-10-22/epoch26/preparation/runtime-assets.lock.json",
+    "bytes": 2946,
+    "sha256": "0229a75ce29f70d2fbed3c2b99abd756a48d0c02eac393985c7b90fea1e4032f"
+  },
+  "wheel_members": {
+    "path": "experiments/sota-2026-10-22/epoch26/preparation/runtime-members/python-wheel-members.json",
+    "bytes": 4640799,
+    "sha256": "87254bbf6ec2aba6d08a4b55ff189faf29f78e1b1dd278fe8ffef9a8cc5523b9"
+  },
+  "runtime_versions_metadata_only": {
+    "torch": "2.7.1+cpu",
+    "transformers": "4.52.4",
+    "safetensors": "0.5.3",
+    "numpy": "2.2.6",
+    "tokenizers": "0.21.4",
+    "onnxruntime": "1.22.1"
+  },
+  "reused_context": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch22/context.py",
+    "sha256": "9ca2968ed800443bc75fac452daf2cbf17bf27cf1b3b75cbfb220bfa23a9e727",
+    "unchanged": true
+  },
+  "limits": {
+    "worker_attempts": 1,
+    "native_indexes": 8,
+    "native_queries": 24,
+    "NLI_model_initializations": 1,
+    "NLI_forward_pairs": 72,
+    "maximum_pair_tokens": 512,
+    "worker_seconds": 585,
+    "outer_seconds_including_cleanup": 600,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "threads": 2,
+    "interop": 1,
+    "UV_THREADPOOL_SIZE": 1
+  },
+  "performed_model_tokenizer_native_initializations": 0,
+  "performed_DEV_source_or_annotation_reads": 0,
+  "actual_benchmark_worker_starts": 0,
+  "training_lineage": "unknown",
+  "CONF_allowed": false,
+  "fit_or_calibration_allowed": false,
+  "promotion_or_benchmark_acceptance_allowed": false,
+  "prediction_policy": "Full native trained E/N/C head softmax T=1, canonical E/C/N names, native-logit argmax tie order; no context heuristic decision overrides.",
+  "network_policy": "Literal127.0.0.1IPv4tuple2/::1IPv6tuple2implicitzero or tuple4integerzeroflow/scope binds only, actual outcome+stack retained. All network communication/DNS and unverifiedbind persistently fatal. No dependency preimport concealment.",
+  "raw_schema": {
+    "cases": "Fixed ordered 24 IDs with input_sha256/document_sha256/hypothesis_sha256",
+    "arms": [
+      "actual_native",
+      "lexical",
+      "positional"
+    ],
+    "arm_fields": [
+      "observed_ranking",
+      "premise",
+      "context",
+      "joint_pair_tokens",
+      "context_seconds",
+      "native_query_seconds",
+      "reader",
+      "decision",
+      "semantic_decision_override"
+    ],
+    "reader_required": [
+      "raw_logits [E,N,C]",
+      "probabilities named entailment/contradiction/not_mentioned",
+      "prediction lowercase",
+      "latency_seconds",
+      "pair_tokens",
+      "token_count",
+      "premise_sha256",
+      "hypothesis_sha256"
+    ],
+    "provenance": "context.source_provenance exact selected char/UTF8 byte text/hash spans and all frozen-grammar numeric literal positions/retention, source text never normalized"
+  },
+  "remaining_gate": "Root immutable remote source readback admission and independent actual-source review before one reserved real DEV-only worker; root controls launch and post-output label join."
+}

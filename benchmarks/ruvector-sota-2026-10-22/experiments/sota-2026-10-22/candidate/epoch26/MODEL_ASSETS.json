@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "repository": "mrm8488/ModernBERT-large-ft-all-nli",
+  "revision": "afa5e4b89a8a23d3b19da2ed0fa7daf2496c7c47",
+  "source_git_commit": "b7f8285206189ba1ee0de95057957585ac097874",
+  "source_manifest_sha256": "2cea398d6abb438e3635e28afaf23c700c75d68e48bcb11821b159ca15e02aac",
+  "acquisition_plan_sha256": "d77affa325f5ceef0a89d41e576ec2d550d72700a8bcd80ab0d43fadd38e2a35",
+  "root_preparation_permit_sha256": "19b3f3e3f45051b8f5f8b0a5d97ab1a9f6eb8084dbacb6a98d8aaa12fc18f5f0",
+  "diagnostic_only": true,
+  "confirmation_ids": [],
+  "training_ids": [],
+  "calibration_ids": [],
+  "fitting_or_calibration": false,
+  "model_initializations": 0,
+  "tokenizer_initializations": 0,
+  "reader_contract": {
+    "max_pair_tokens": 512,
+    "attention": "sdpa",
+    "batch_size": 1,
+    "truncation": "only_first",
+    "precision": "FP32",
+    "reference_compile": false,
+    "cpu_threads": 2,
+    "interop_threads": 1,
+    "raw_labels": [
+      "E",
+      "N",
+      "C"
+    ],
+    "canonical_permutation": [
+      0,
+      2,
+      1
+    ],
+    "temperature": 1
+  },
+  "license_provenance": {
+    "checkpoint": "Apache-2.0 expressly declared in pinned official README and API; repository has no separate LICENSE file. Preserve this declaration and upstream notices.",
+    "base": "answerdotai/ModernBERT-large official base metadata declares Apache-2.0 for weights, architecture and training code. Candidate does not pin training-time base revision.",
+    "training_data": "Unknown. Candidate card says unknown dataset and supplies no train/eval record identities, selection/calibration splits or training-data licenses. The all-nli model name is not proof of source dataset identity.",
+    "known_positive_ContractNLI_supervision": false,
+    "supervised_overlap_absence_proven": false,
+    "unknown_pretraining_overlap": "Retained uncertainty, not positive contamination proof.",
+    "allowed_scope": "Explicitly nonpromotion DEV diagnostic only; CONF=[], no fit or calibration. Unknown supervised lineage blocks confirmation, benchmark acceptance and promotion.",
+    "base_full_license_source": {
+      "path": "base-ModernBERT-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/AnswerDotAI/ModernBERT/c6d942312f1b0b24d423628b8e477a3e97c7038f/LICENSE",
+      "bytes": 11355,
+      "sha256": "6000cff1fc348ff57108619330c26d67d596bf44c68661c749a6c561cdc3fb4f"
+    },
+    "base_weights_license_card": {
+      "path": "base-ModernBERT-large-README.md",
+      "url": "https://huggingface.co/answerdotai/ModernBERT-large/raw/45bb4654a4d5aaff24dd11d4781fa46d39bf8c13/README.md",
+      "bytes": 8427,
+      "sha256": "40539466fa1117be4693b8f1fdfdac81fac3c5db472ff57bc05d013d48eafa82",
+      "scope": "Current pinned official base card declares weights/architecture/training code Apache-2.0; not a candidate training-time base revision receipt."
+    }
+  },
+  "static_tensor_check": {
+    "header_bytes": 18248,
+    "tensor_count": 174,
+    "native_classifier_shape": [
+      3,
+      1024
+    ],
+    "floating_dtypes": [
+      "F32"
+    ],
+    "model_loaded_or_initialized": false
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1583,
+      "sha256": "0babb0b83fb553b8014aeec68e466ed321d3e2b782a6e05770851d98cd55bc24",
+      "publisher_sha256": "0babb0b83fb553b8014aeec68e466ed321d3e2b782a6e05770851d98cd55bc24",
+      "publisher_git_blob_sha1": "37d69cfe93a386f2fd1fc0ab3715ea7bff17ada9"
+    },
+    {
+      "path": "config.json",
+      "bytes": 1506,
+      "sha256": "db6c83e999450e7f2a8c75d58080fa8e2c10507d8d65f519c77259900d10ea61",
+      "publisher_sha256": "db6c83e999450e7f2a8c75d58080fa8e2c10507d8d65f519c77259900d10ea61",
+      "publisher_git_blob_sha1": "ea7cb2f670f7d064599f3ea35f5b43152ed87d6e"
+    },
+    {
+      "path": "model.safetensors",
+      "bytes": 1583355740,
+      "sha256": "a00110cace66b50896ea585c3aa4385812c5cd201d7fd948b1b04239d9b68af4",
+      "publisher_sha256": "a00110cace66b50896ea585c3aa4385812c5cd201d7fd948b1b04239d9b68af4",
+      "publisher_git_blob_sha1": null
+    },
+    {
+      "path": "special_tokens_map.json",
+      "bytes": 694,
+      "sha256": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+      "publisher_sha256": null,
+      "publisher_git_blob_sha1": "6bf65ea14185a88eef7e24b41c86a953a58dcbad"
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 3583228,
+      "sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+      "publisher_sha256": null,
+      "publisher_git_blob_sha1": "2f4d8583e507b7466d2490e2d6c045647a822698"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 20867,
+      "sha256": "9654072f7c873161814043cf08cb5ed72f71d0b935abcd4e267935cb34352c21",
+      "publisher_sha256": null,
+      "publisher_git_blob_sha1": "5158ad4f612379c1183ffb930b782d2cfbc3a628"
+    }
+  ],
+  "downloaded_bytes": 1586960529,
+  "copied_metadata_bytes": 3089,
+  "HTTP_retries_or_model_sessions": 0,
+  "launch_admission": "PENDING_ROOT_AND_INDEPENDENT_SOURCE_ASSET_REVIEW"
+}

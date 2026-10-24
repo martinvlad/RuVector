@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "epoch": 26,
+  "generated_at": "2026-10-24T06:28:11.305800+00:00",
+  "source_checkpoint_expected": "5acc487d6f968319a95a211fb7b3287900ca4a22",
+  "historical_copy_scope": "Read-only source cache at epoch25; root fresh source reconstruction must independently verify these historical exclusions against actual head.",
+  "status": "ONE_NEW_NATIVE_THREE_WAY_HEAD_IDENTIFIED_PROVENANCE_AND_RUNTIME_CONDITIONAL",
+  "scope": "Official metadata only. No weights, tokenizer assets, header downloads, imports of torch/model/tokenizer, sessions, forwards, native initialization, labels, per-example results, fits, paid/GPU, Git or outward messages.",
+  "new_candidate_repository_cap": 2,
+  "new_candidate_repositories_examined": [
+    "mrm8488/ModernBERT-large-ft-all-nli",
+    "param-bharat/ModernBERT-large-nli-scorer"
+  ],
+  "historical_repositories_rechecked": [
+    "cross-encoder/nli-deberta-v3-large",
+    "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli"
+  ],
+  "historical_exclusion_report": "historical-reader-exclusion.json",
+  "candidate_listing": {
+    "path": "official-modernbert-model-index.json",
+    "role": "Names-only official Hub index to find genuinely new ModernBERT NLI sources; not model/card/dataset evidence."
+  },
+  "candidates": [
+    {
+      "repository": "mrm8488/ModernBERT-large-ft-all-nli",
+      "revision": "afa5e4b89a8a23d3b19da2ed0fa7daf2496c7c47",
+      "architecture": "ModernBertForSequenceClassification",
+      "native_id2label": {
+        "0": "ENTAILMENT",
+        "1": "NEUTRAL",
+        "2": "CONTRADICTION"
+      },
+      "max_position_embeddings": 8192,
+      "layers": 28,
+      "hidden_size": 1024,
+      "attention_heads": 16,
+      "intermediate_size": 2624,
+      "config_dtype": "float32 declaration only; actual tensors not downloaded or inspected",
+      "pooling": "mean",
+      "model_license": "apache-2.0",
+      "weight_metadata": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1583355740,
+          "publisher_sha256": "a00110cace66b50896ea585c3aa4385812c5cd201d7fd948b1b04239d9b68af4",
+          "downloaded_or_rehashed": false
+        }
+      ],
+      "base_model": {
+        "id": "answerdotai/ModernBERT-large",
+        "finetune_training_time_revision": "Not pinned in candidate metadata",
+        "license": "Apache-2.0 declared for architecture/weights/training code in already preserved official base metadata",
+        "inherited_base_evidence": {
+          "id": "answerdotai/ModernBERT-large",
+          "current_metadata_revision": "45bb4654a4d5aaff24dd11d4781fa46d39bf8c13",
+          "base_revision_used_by_finetune": "Not pinned in the fine-tuned checkpoint card/config; current base revision is not proof of training-time identity.",
+          "license": "Apache-2.0 explicitly declared in official base card for architecture, weights, and training code",
+          "official_code_repository_revision": "AnswerDotAI/ModernBERT@c6d942312f1b0b24d423628b8e477a3e97c7038f",
+          "full_license_url": "https://github.com/AnswerDotAI/ModernBERT/blob/c6d942312f1b0b24d423628b8e477a3e97c7038f/LICENSE"
+        }
+      },
+      "project_history_search": {
+        "query": "mrm8488/ModernBERT-large-ft-all-nli",
+        "roots": [
+          "/tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986/project/experiments"
+        ],
+        "mode": "Source metadata/scripts only; excluded runs and per-example/raw outputs",
+        "matches": 0,
+        "certifies_global_or_fuzzy_nonoverlap": false
+      },
+      "status": "CONDITIONAL_METADATA_CANDIDATE_NOT_LAUNCH_ADMITTED",
+      "material_change": "Newly fine-tuned ModernBERT-large bidirectional sequence classifier, native E/N/C head and 8192 position capacity; differs from previous DeBERTa/RoBERTa heads and rejected Qwen causal-code scoring. No measured legal-superiority claim.",
+      "exact_scoring_if_frozen": "Native raw logits z=[E,N,C]; p_i=exp(z_i-max(z))/sum_j(exp(z_j-max(z))); T=1, no calibration. Typed study E,C,N=[p0,p2,p1]. Binary Yes=p0, No=p1+p2; exact-half tie No. No vocabulary masking or not_entailment relabeling.",
+      "training": {
+        "official_card": "Fine-tuned answerdotai/ModernBERT-large on an unknown dataset; Training and evaluation data: More information needed.",
+        "name_all_nli_is_not_dataset_provenance": true,
+        "epochs": 2,
+        "seed": 42,
+        "train_batch_size": 128,
+        "steps_per_epoch": 7360,
+        "reported_eval_accuracy": 0.9127,
+        "author_reported_not_RuVector_measurement": true,
+        "dataset_ids_revisions_records": "Not supplied",
+        "upstream_data_licenses": "Not established without training-data identity; cannot assign a blanket Apache license",
+        "checkpoint_selection_split_ids": "Not supplied",
+        "calibration_split_ids": "Not supplied",
+        "known_positive_ContractNLI_supervision": false,
+        "ContractNLI_supervised_exclusion_proven": false,
+        "foundation_pretraining_document_overlap": "Unknown; retain uncertainty, not positive contamination proof.",
+        "official_history": "4 training metadata commits from 2024-12-22 (initial/epoch1/epoch2/end); no discussions. No dataset or split lineage resolved."
+      },
+      "runtime_source_only": {
+        "interpreter": "/tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986/project/retrieval/.venv/bin/python",
+        "runtime_from_parent_cache": "torch2.7.1+CPU, transformers4.52.4, tokenizers0.21; versions not imported in this research",
+        "source_path": "/tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986/project/retrieval/.venv/lib/python3.12/site-packages/transformers/models/modernbert/modeling_modernbert.py",
+        "source_sha256": "4e46ee75fab88e0eb2e2108708f932e435cc208d15d199a137d4bd9c08f10f26",
+        "source_semantics": "ModernBertForSequenceClassification mean-pools masked hidden states, applies prediction head/dropout and 3-output classifier. _maybe_set_compile disables reference_compile on CPU.",
+        "recommended_if_subsequently_admitted": "CPU FP32/eval/inference mode, eager attention and reference_compile=False, trust_remote_code=False, local_files_only=True, 2 torch threads and 1 interop thread; exact flags/tokenization/context/pair count frozen before launch.",
+        "CPU2_600seconds": "UNVERIFIED; no timing, memory or operational claim. All future model/native init and work must fit single admitted bounded attempt; no warmup/probe/retry grid."
+      },
+      "prelaunch_gaps": [
+        "Root must resolve whether unknown supervised training-data identity is permitted for this proposed pilot. No positive ContractNLI overlap was found; unknown provenance is not proof of absence.",
+        "Checkpoint-specific source-data license and train/selection/calibration split identities are missing. Candidate name or reported generic accuracy cannot fill these gaps.",
+        "Exact asset acquisition/rehash/static tensor and actual tokenizer validation remain unperformed and require later assignment.",
+        "Frozen project-unused DEV/CONF identities, actual native/lexical/positional evidence policy, contextual and numerical checks, exact scorer/source closure and runtime contract remain root/auditor work.",
+        "No launch until root selects one candidate and independent review admits the concrete contract."
+      ]
+    },
+    {
+      "repository": "param-bharat/ModernBERT-large-nli-scorer",
+      "revision": "a3c113300af3005781ad8a18542a60df2860e2af",
+      "architecture": "ModernBertForSequenceClassification",
+      "native_id2label": {
+        "0": "False",
+        "1": "True"
+      },
+      "max_position_embeddings": 8192,
+      "layers": 28,
+      "hidden_size": 1024,
+      "attention_heads": 16,
+      "intermediate_size": 2624,
+      "config_dtype": "float32 declaration only; actual tensors not downloaded or inspected",
+      "pooling": "cls",
+      "model_license": null,
+      "weight_metadata": [
+        {
+          "path": "model.safetensors",
+          "bytes": 1583355808,
+          "publisher_sha256": "5add10fb48dfe697e9523e1b84b45bb617c28b27b918d7388ead1d2b5965ae67",
+          "downloaded_or_rehashed": false
+        }
+      ],
+      "base_model": {
+        "id": "answerdotai/ModernBERT-large",
+        "finetune_training_time_revision": "Not pinned in candidate metadata",
+        "license": "Apache-2.0 declared for architecture/weights/training code in already preserved official base metadata",
+        "inherited_base_evidence": {
+          "id": "answerdotai/ModernBERT-large",
+          "current_metadata_revision": "45bb4654a4d5aaff24dd11d4781fa46d39bf8c13",
+          "base_revision_used_by_finetune": "Not pinned in the fine-tuned checkpoint card/config; current base revision is not proof of training-time identity.",
+          "license": "Apache-2.0 explicitly declared in official base card for architecture, weights, and training code",
+          "official_code_repository_revision": "AnswerDotAI/ModernBERT@c6d942312f1b0b24d423628b8e477a3e97c7038f",
+          "full_license_url": "https://github.com/AnswerDotAI/ModernBERT/blob/c6d942312f1b0b24d423628b8e477a3e97c7038f/LICENSE"
+        }
+      },
+      "project_history_search": {
+        "query": "param-bharat/ModernBERT-large-nli-scorer",
+        "roots": [
+          "/tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986/project/experiments"
+        ],
+        "mode": "Source metadata/scripts only; excluded runs and per-example/raw outputs",
+        "matches": 0,
+        "certifies_global_or_fuzzy_nonoverlap": false
+      },
+      "status": "REJECTED_NOT_A_NATIVE_THREE_WAY_HEAD",
+      "reason": "Config has only False0/True1, so cannot directly distinguish contradiction from neutral. Neither official API nor card declares a model license. No model/assets acquired.",
+      "training": {
+        "declared_dataset": "param-bharat/scorers-nli",
+        "dataset_not_fetched": "No need after native-head disqualification",
+        "split_revision_manifest": "Not supplied",
+        "known_ContractNLI_supervision": "Unresolved, not asserted",
+        "license": "No model license declared in inspected metadata"
+      }
+    }
+  ],
+  "source_manifest": [
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/cross-encoder--nli-deberta-v3-large--README.md",
+      "bytes": 2934,
+      "sha256": "2510c58dd047cc8ab0599247e93542b6e04ce4e3a21415c28f1169de38940502"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/cross-encoder--nli-deberta-v3-large--api.json",
+      "bytes": 6425,
+      "sha256": "47196c07643235f54504b67ee19118f02448b9378d871acff835bd0b18d16413"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/cross-encoder--nli-deberta-v3-large--config.json",
+      "bytes": 1100,
+      "sha256": "30d88fd93586a85330162d169f68161aecc242e1be23dc41db335c069fbbab8f"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/historical-reader-exclusion.json",
+      "bytes": 6389,
+      "sha256": "d78ced3cfe5a937fefcd9ee58bb129e0ce27dc04a2b2655a60afa68d1e774544"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/mrm8488--ModernBERT-large-ft-all-nli--README.md",
+      "bytes": 1583,
+      "sha256": "0babb0b83fb553b8014aeec68e466ed321d3e2b782a6e05770851d98cd55bc24"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/mrm8488--ModernBERT-large-ft-all-nli--api.json",
+      "bytes": 3094,
+      "sha256": "d7d77adb34154cd0b3e07fccd6ce10c3aedf63ef8ff74c5d7d265a0e9d3fda0f"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/mrm8488--ModernBERT-large-ft-all-nli--commit-metadata.json",
+      "bytes": 1120,
+      "sha256": "a47e98bdc4f2c8fb44533fdc197d33ac92f26b488e05867a7896d1e5c9f819fc"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/mrm8488--ModernBERT-large-ft-all-nli--config.json",
+      "bytes": 1506,
+      "sha256": "db6c83e999450e7f2a8c75d58080fa8e2c10507d8d65f519c77259900d10ea61"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/mrm8488--ModernBERT-large-ft-all-nli--discussion-metadata.json",
+      "bytes": 63,
+      "sha256": "d0b07e7dcf5dc0134fd4ce14704403bba2c179fbcb81422f178b5e7620425379"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/official-modernbert-model-index.json",
+      "bytes": 129629,
+      "sha256": "757589f609f32d884c83f716c0cb38a4600e03137598316b84652f63b218ae18"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/param-bharat--ModernBERT-large-nli-scorer--README.md",
+      "bytes": 2763,
+      "sha256": "82ad2eb44e2a061f6842eef9b297afcdf18b96790c17c8a862a6253f75673778"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/param-bharat--ModernBERT-large-nli-scorer--api.json",
+      "bytes": 2531,
+      "sha256": "f7e814edd604ba2f0466d52c164aa2434d6686b721bb86d092b55083e6a7b6b3"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/param-bharat--ModernBERT-large-nli-scorer--config.json",
+      "bytes": 1621,
+      "sha256": "fed4b92bd4a0f446d4c7a6b3c0eb3f049dd467060d75c12fceb209ce93c59d22"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/ynie--roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli--README.md",
+      "bytes": 3406,
+      "sha256": "bb8affaa741b518e536d09ac6ff8f85d7ea3aee215c56e111379c78eaed8a17c"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/ynie--roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli--api.json",
+      "bytes": 2575,
+      "sha256": "c9793ca5b9ce7be32a517d0402a9ff297bb266f51e02c8bce68fca9e56f38527"
+    },
+    {
+      "path": "/tmp/ruvector-e26-reader-admission/ynie--roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli--config.json",
+      "bytes": 703,
+      "sha256": "9d074204b668902ea51bd8ecb323f01cd37040cb54e8601d872c8fdb0687131e"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "epoch": 32,
+  "kind": "REAL_NATIVE_TASKSOURCE_PRETRAINED_NLI_DIAGNOSTIC",
+  "status": "UNEXECUTED_SOURCE_COMPATIBILITY_AMENDMENT",
+  "prior_source_commit": "ab8548df202b75281a3bfff6496627659fb469f6",
+  "prior_source_trees": {
+    "root": "63aeb90f30958d57d033803d51f3b474ca6bc10f",
+    "bench": "3232e7a32034a3aecf41d28930ace1411d3bef49",
+    "scope": "fbe8fcab1a3a538e4723e462f42979bbb627f184"
+  },
+  "preserved_original_files": [
+    {
+      "canonical_path": "experiments/sota-2026-10-22/epoch32/plan.json",
+      "prior": {
+        "path": "experiments/sota-2026-10-22/epoch32/preparation/source-amendment-1/prior/plan.json",
+        "bytes": 44214,
+        "sha256": "8173421369b50736e9171da2115f1120c04db12674a138a7c41a1871aa12e6e8"
+      }
+    },
+    {
+      "canonical_path": "experiments/sota-2026-10-22/epoch32/source-freeze.json",
+      "prior": {
+        "path": "experiments/sota-2026-10-22/epoch32/preparation/source-amendment-1/prior/source-freeze.json",
+        "bytes": 28913,
+        "sha256": "af633a634de2fb92190e64f3455a7a536dfcf188a155320b9e1d88eddcbde08f"
+      }
+    },
+    {
+      "canonical_path": "experiments/sota-2026-10-22/epoch32/preparation/runtime-assets.lock.json",
+      "prior": {
+        "path": "experiments/sota-2026-10-22/epoch32/preparation/source-amendment-1/prior/runtime-assets.lock.json",
+        "bytes": 3847,
+        "sha256": "afb6504191e76f9c73bc523dbfc285392055aa82da7f93844cb03b30f27beee3"
+      }
+    }
+  ],
+  "added_runtime_lock_aliases": {
+    "wheel_members_reference_path": "experiments/sota-2026-10-22/epoch26/preparation/runtime-members/python-wheel-members.json",
+    "wheel_members_reference_sha256": "87254bbf6ec2aba6d08a4b55ff189faf29f78e1b1dd278fe8ffef9a8cc5523b9",
+    "wheel_members_reference_count": 17498
+  },
+  "reason": "Published original runtime lock used canonical python_member_manifest but frozen runtime/common.py requires exact flat wheel_members_reference aliases. Root detected this compatibility blocker before admission or reservation. The three aliases refer to the same already verified immutable member manifest and count; no dependency or scientific change.",
+  "evidence_before_amendment": {
+    "current_admission_dispatch_phase_reservations_and_runs_absent": true,
+    "source_only_no_model_native_tokenizer_or_label_calls": true
+  },
+  "candidate_scorer_observer_data_model_gates_budgets_unchanged": true,
+  "same_permanently_retired_DEV_ids": [
+    557,
+    184,
+    34,
+    404,
+    578,
+    246,
+    242,
+    448
+  ],
+  "new_measurement_attempts": 0,
+  "new_confirmation": [],
+  "prior_source_invalidated_for_execution": true,
+  "original_source_retained_immutably_in_Git_and_public_versions": true
+}

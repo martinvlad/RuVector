@@ -1,0 +1,86 @@
+// Reviewed narrow amendment; evaluate after controller.js and original reviewed_publish_phase.js.
+// Defines only publishSourceAmendment1; no external call until root invokes it.
+const publishSourceAmendment1 = async (proofPath) => {
+  const phase = "source-amend1";
+  if (S !== "/workspace/ruvector-epoch32-f8bcbc4ca7ec" || repo !== "ruvnet/RuVector" || branch !== "benchmarks/ruvector-sota-2026-10-22") throw Error("wrong exact isolated publisher scope");
+  const prefix = "https://api.github.com/repos/" + repo;
+  const scoped = "benchmarks/ruvector-sota-2026-10-22/";
+  const planPath = S + "/project/experiments/sota-2026-10-22/epoch32/plan.json";
+  const plan = await read(planPath);
+  const planPin = await readRequestMeta(planPath);
+  if (plan.epoch !== 32 || plan.kind !== "REAL_NATIVE_TASKSOURCE_PRETRAINED_NLI_DIAGNOSTIC" || plan.source_checkpoint !== "f8bcbc4ca7ec31c6732159cad60a6e223f93c539") throw Error("wrong frozen pretrained diagnostic plan");
+  const stage = plan.publication_stage_paths?.source;
+  if (typeof stage !== "string" || !stage.startsWith("/") || stage.includes("/../") || stage.includes("\\")) throw Error("wrong frozen publication stage path");
+  const metaPin = await readRequestMeta(stage + "/metadata.json");
+  const proof = await read(proofPath);
+  if (proof.checks_passed !== true || proof.stage !== stage || proof.manifest_sha256 !== metaPin.sha256 || proof.manifest_bytes !== metaPin.bytes) throw Error("independent stage proof mismatch");
+  const meta = await read(stage + "/metadata.json");
+  const guards = meta.CAS_guards;
+  if (meta.source_plan_sha256 !== planPin.sha256 || meta.stage !== phase || meta.scope !== scoped || guards.force !== false || guards.expected_branch_sha !== meta.publication_parent || !/^[0-9a-f]{40}$/.test(meta.read_only_main_observation) || "expected_main" in guards) throw Error("stage/parent/main/CAS guard mismatch");
+  if (meta.publication_parent !== "ab8548df202b75281a3bfff6496627659fb469f6" || meta.publication_parent !== plan.publication_parent) throw Error("source must extend exact frozen actual scoped planning/reservation commit");
+  const allowedChanges = ["ACTIVE_RUN.json", "CHECKPOINT_MANIFEST.json", "CONTINUATION.json", "experiments/sota-2026-10-22/epoch32/plan.json", "experiments/sota-2026-10-22/epoch32/preparation/runtime-assets.lock.json", "experiments/sota-2026-10-22/epoch32/source-freeze.json"];
+  if (stage !== S + "/stage-source-amend1" || !publisherSame(meta.changed_existing_allowlist, allowedChanges) || !Array.isArray(meta.original3_retained) || meta.original3_retained.length !== 3) throw Error("narrow unexecuted amendment allowlist differs");
+  const expectedPin = await readRequestMeta(stage + "/" + meta.expected_leaves.file);
+  if (meta.expected_leaves.file !== "expected-leaves.json" || expectedPin.bytes !== meta.expected_leaves.bytes || expectedPin.sha256 !== meta.expected_leaves.sha256) throw Error("staged expected tree identity differs");
+  const expected = publisherMap(await read(stage + "/expected-leaves.json"));
+  if (expected.size !== meta.expected_Git_leaves || expected.size !== meta.expected_leaves.count) throw Error("staged expected count mismatch");
+  const head = await get(prefix + "/git/ref/heads/" + branch);
+  const main = await get(prefix + "/git/ref/heads/main");
+  if (head.object.sha !== meta.publication_parent) throw Error("actual dedicated branch changed");
+  if (!/^[0-9a-f]{40}$/.test(main.object.sha)) throw Error("malformed read-only main observation");
+  const priorDir = meta.prior_controls_name;
+  const allowedPrior = ["controls-source-v1-published"];
+  if (!allowedPrior.includes(priorDir)) throw Error("wrong canonical prior controls for phase");
+  const priorActive = await read(S + "/" + priorDir + "/ACTIVE_RUN.json");
+  const priorCont = await read(S + "/" + priorDir + "/CONTINUATION.json");
+  const activeRemote = await get("https://raw.githubusercontent.com/" + repo + "/" + meta.publication_parent + "/" + scoped + "ACTIVE_RUN.json");
+  const contRemote = await get("https://raw.githubusercontent.com/" + repo + "/" + meta.publication_parent + "/" + scoped + "CONTINUATION.json");
+  if (!publisherSame(activeRemote, priorActive) || !publisherSame(contRemote, priorCont) || priorActive.run_id !== "epoch32-f8bcbc4ca7ec" || priorActive.work_active !== true || priorActive.native_allowed !== 0 || priorActive.state !== "EPOCH32_SOURCE_FROZEN_DEV_PENDING_ADMISSION") throw Error("exact owned scoped remote lease required");
+  const parent = await get(prefix + "/git/commits/" + meta.publication_parent);
+  if (parent.tree.sha !== guards.expected_root_tree) throw Error("actual parent root changed");
+  const parentRoot = await get(prefix + "/git/trees/" + parent.tree.sha);
+  const parentBenchSha = parentRoot.tree.find(x => x.path === "benchmarks")?.sha;
+  if (parentBenchSha !== guards.expected_benchmarks_tree) throw Error("actual parent bench changed");
+  const parentBench = await get(prefix + "/git/trees/" + parentBenchSha);
+  if (parentBench.tree.find(x => x.path === "ruvector-sota-2026-10-22")?.sha !== guards.expected_scope_tree) throw Error("actual parent scope changed");
+  for (let i = 0; i < meta.large_blob_requests.length; i++) {
+    const row = meta.large_blob_requests[i];
+    if (!publisherRelative(row.file) || !row.file.startsWith("transport/")) throw Error("unsafe blob request path");
+    const pin = await readRequestMeta(stage + "/" + row.file);
+    if (pin.bytes !== row.bytes || pin.sha256 !== row.sha256 || pin.bytes >= 8384512) throw Error("blob request drift/cap");
+    const args = await read(stage + "/" + row.file);
+    const blob = await publisherMutate("e32-amend1-blob-" + i, "mcp__codex_apps__github_create_blob", {repository_full_name: repo, ...args});
+    if (blob.sha !== row.expected_blob_sha1) throw Error("actual created blob differs");
+  }
+  let root = guards.expected_root_tree;
+  for (let i = 0; i < meta.create_tree_groups.length; i++) {
+    const row = meta.create_tree_groups[i];
+    if (!publisherRelative(row.file) || !row.file.startsWith("transport/")) throw Error("unsafe tree request path");
+    const pin = await readRequestMeta(stage + "/" + row.file);
+    if (pin.bytes !== row.bytes || pin.sha256 !== row.sha256 || pin.bytes >= 175904) throw Error("tree request drift/cap");
+    const args = await read(stage + "/" + row.file);
+    if (args.tree_elements.some(e => !e.path.startsWith(scoped) || !publisherRelative(e.path) || e.mode !== "100644" || e.type !== "blob")) throw Error("mutation scope escape");
+    const created = await publisherMutate("e32-amend1-tree-" + i, "mcp__codex_apps__github_create_tree", {repository_full_name: repo, base_tree_sha: root, ...args});
+    root = created.sha;
+  }
+  const rtree = await get(prefix + "/git/trees/" + root);
+  const bench = rtree.tree.find(x => x.path === "benchmarks")?.sha;
+  const btree = await get(prefix + "/git/trees/" + bench);
+  const scope = btree.tree.find(x => x.path === "ruvector-sota-2026-10-22")?.sha;
+  publisherCheckSiblings(rtree, await read(S + "/baseline-0.json"), "benchmarks", bench);
+  publisherCheckSiblings(btree, await read(S + "/baseline-1.json"), "ruvector-sota-2026-10-22", scope);
+  const leaves = publisherCheckLeaves(await get(prefix + "/git/trees/" + scope + "?recursive=1"), expected);
+  const before = await get(prefix + "/git/ref/heads/" + branch);
+  const mainBefore = await get(prefix + "/git/ref/heads/main");
+  if (before.object.sha !== meta.publication_parent) throw Error("late actual dedicated branch changed");
+  if (!/^[0-9a-f]{40}$/.test(mainBefore.object.sha)) throw Error("malformed late main observation");
+  const commit = await publisherMutate("e32-amend1-commit", "mcp__codex_apps__github_create_commit", {repository_full_name: repo, parent_sha: meta.publication_parent, tree_sha: root, message: "benchmarks: amend unexecuted epoch32 runtime member aliases and freeze corrected source"});
+  const actualCommit = await get(prefix + "/git/commits/" + commit.sha);
+  if (actualCommit.parents.length !== 1 || actualCommit.parents[0].sha !== meta.publication_parent || actualCommit.tree.sha !== root) throw Error("created commit identity differs");
+  await publisherMutate("e32-amend1-ref", "mcp__codex_apps__github_update_ref", {repository_full_name: repo, branch_name: branch, expected_sha: meta.publication_parent, force: false, sha: commit.sha});
+  const after = await get(prefix + "/git/ref/heads/" + branch);
+  if (after.object.sha !== commit.sha) throw Error("actual post-update ref differs; stop");
+  const mainAfter = await get(prefix + "/git/ref/heads/main");
+  if (!/^[0-9a-f]{40}$/.test(mainAfter.object.sha)) throw Error("malformed post-publication main observation");
+  return {read_only_main_observations: {staged: meta.read_only_main_observation, before: main.object.sha, before_ref_update: mainBefore.object.sha, after: mainAfter.object.sha}, phase, commit: commit.sha, root, bench, scope, parent: meta.publication_parent, leaves, verified_actual_full_tree: true, stage_metadata_sha256: metaPin.sha256, expected_leaves_sha256: expectedPin.sha256};
+};

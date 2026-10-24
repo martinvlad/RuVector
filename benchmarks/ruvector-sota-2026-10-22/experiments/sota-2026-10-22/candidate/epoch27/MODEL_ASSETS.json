@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "epoch": 27,
+  "repository": "facebook/bart-large-mnli",
+  "revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+  "source_git_commit": "4fed2fd4d8d94df71d52ac47c61c6f59ffbd2a67",
+  "source_manifest_sha256": "c707bf85b3d3ba25345fd3447d14a1cd54e860bdfcf0868d0fd945a17c4aa3a2",
+  "root_preparation_permit_sha256": "78841919f57b0f5f01dbeb1eab26481dd0712bf8f62eb2881e086ae9b80786f3",
+  "acquisition_plan_sha256": "8a16ca82aba985512c0c2ee5079ac6604f99165ddebf35fb58e496b68e59327c",
+  "lease": {
+    "pid": 75591,
+    "start_ticks": 15190845,
+    "checkpoint": "4fed2fd4d8d94df71d52ac47c61c6f59ffbd2a67"
+  },
+  "diagnostic_only": true,
+  "confirmation_ids": [],
+  "training_ids": [],
+  "calibration_ids": [],
+  "fitting_or_calibration": false,
+  "model_initializations": 0,
+  "tokenizer_initializations": 0,
+  "reader_contract": {
+    "max_pair_tokens": 512,
+    "attention": "sdpa",
+    "batch_size": 1,
+    "truncation": "only_first",
+    "require_no_truncation": true,
+    "precision": "FP32",
+    "cpu_threads": 2,
+    "interop_threads": 1,
+    "raw_labels": [
+      "C",
+      "N",
+      "E"
+    ],
+    "canonical_permutation": [
+      2,
+      0,
+      1
+    ],
+    "temperature": 1,
+    "use_safetensors": false,
+    "weights_only": true
+  },
+  "static_file_header": {
+    "bytes_read": 16,
+    "first_16_bytes_hex": "80028a0a6cfc9c46f9206aa850192e80",
+    "tensor_metadata_parsed": false,
+    "pickle_parsed": false,
+    "model_loaded_or_initialized": false
+  },
+  "runtime_tensor_checks": "DEFERRED_INSIDE_SINGLE_BOUNDED_ADMITTED_WORKER",
+  "license_provenance": {
+    "model": "MIT explicit in pinned card; full fairseq MIT text applies to pretrained models per official fairseq README.",
+    "code": "Transformers runtime Apache-2.0 independently.",
+    "MNLI_text": "Mixed OANC, CC BY3.0, CC BY-SA3.0, US public domain per official MultiNLI paper; no blanket MIT/Apache grant is assigned to data.",
+    "original_OANC_legaltext": "Not recovered; original license URL failed to fetch. Official current OANC site and corpus paper describe permissive use.",
+    "no_dataset_redistribution": true
+  },
+  "source_lineage_limits": [
+    "Exact current original .bin digest equals official2020-02-12 released-head identity. Official checkpoint card declares MNLI training.",
+    "Publisher train-row checksums, actual run-level checkpoint selection and calibration records are unpublished; official2020 MNLI recipe supplies reproduction defaults.",
+    "Original2020 publication predates ContractNLI2021 supervision and original checkpoint choice; undocumented later evaluation/reselection of unchanged weights is not proved absent.",
+    "Foundation pretraining document overlap remains unknown.",
+    "DEV-only diagnostic; CONF/TRAIN/CALIB empty; no full104 champion comparator or official confirmation eligibility."
+  ],
+  "files": [
+    {
+      "path": "config.json",
+      "bytes": 1154,
+      "sha256": "a0f9bcb245b680a96ccae0ad8d155f267ec3e3c971ef4a4937e52ea9ba368a86",
+      "publisher_sha256": "a0f9bcb245b680a96ccae0ad8d155f267ec3e3c971ef4a4937e52ea9ba368a86",
+      "publisher_git_blob_sha1": "dfc96c728b40cc131e46b1c424c8e072d52b6d74",
+      "source_url": "https://huggingface.co/facebook/bart-large-mnli/resolve/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/config.json"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3793,
+      "sha256": "d022b7cb54ca2f65fac41cf6c9601b4491b4ac22a301227288a38beef2a18aeb",
+      "publisher_sha256": "d022b7cb54ca2f65fac41cf6c9601b4491b4ac22a301227288a38beef2a18aeb",
+      "publisher_git_blob_sha1": "f67b8475b37be4707f603d2612c6e97db72fa26c",
+      "source_url": "https://huggingface.co/facebook/bart-large-mnli/resolve/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/README.md"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 26,
+      "sha256": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+      "publisher_sha256": null,
+      "publisher_git_blob_sha1": "be4d21d94f3b4687e5a54d84bf6ab46ed0f8defd",
+      "source_url": "https://huggingface.co/facebook/bart-large-mnli/resolve/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/tokenizer_config.json"
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 1355863,
+      "sha256": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e",
+      "publisher_sha256": null,
+      "publisher_git_blob_sha1": "ad0bcbeb288f0d1373d88e0762e66357f55b8311",
+      "source_url": "https://huggingface.co/facebook/bart-large-mnli/resolve/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/tokenizer.json"
+    },
+    {
+      "path": "merges.txt",
+      "bytes": 456318,
+      "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+      "publisher_sha256": null,
+      "publisher_git_blob_sha1": "226b0752cac7789c48f0cb3ec53eda48b7be36cc",
+      "source_url": "https://huggingface.co/facebook/bart-large-mnli/resolve/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/merges.txt"
+    },
+    {
+      "path": "vocab.json",
+      "bytes": 898822,
+      "sha256": "06b4d46c8e752d410213d9548eb27a54db70fda0319b6271fb8d59dead5e1cab",
+      "publisher_sha256": null,
+      "publisher_git_blob_sha1": "0a39732b2d8be8e493cab3da68b68cc3e28221de",
+      "source_url": "https://huggingface.co/facebook/bart-large-mnli/resolve/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/vocab.json"
+    },
+    {
+      "path": "pytorch_model.bin",
+      "bytes": 1629486723,
+      "sha256": "ce253627f98f9db22af6a86efee6e905f001f7d8dc02dd14a8b4b4710c302b17",
+      "publisher_sha256": "ce253627f98f9db22af6a86efee6e905f001f7d8dc02dd14a8b4b4710c302b17",
+      "publisher_git_blob_sha1": null,
+      "source_url": "https://huggingface.co/facebook/bart-large-mnli/resolve/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/pytorch_model.bin"
+    },
+    {
+      "path": "LICENSE.fairseq",
+      "bytes": 1086,
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85",
+      "publisher_sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85",
+      "publisher_git_blob_sha1": "b96dcb0480a0b0be0727976e5202a1e7b23edc3f",
+      "source_url": "https://github.com/facebookresearch/fairseq/blob/ad86e4f7abd0cec0043b19ca1b42c3dcc7f7b117/LICENSE"
+    }
+  ],
+  "downloaded_bytes": 1632197752,
+  "copied_metadata_bytes": 6033,
+  "HTTP_retries": 0,
+  "original_bin_only": true,
+  "launch_admission": "PENDING_ROOT_AND_INDEPENDENT_SOURCE_ASSET_REVIEW"
+}

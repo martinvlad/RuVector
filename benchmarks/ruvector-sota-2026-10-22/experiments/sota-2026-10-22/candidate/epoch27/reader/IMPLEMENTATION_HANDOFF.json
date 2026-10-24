@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "epoch": 27,
+  "status": "IMPLEMENTATION_READY_NO_ACQUISITION_OR_NATIVE_INIT",
+  "generated_at": "2026-10-24T08:11:52.924703+00:00",
+  "durable_lease_checkpoint": "4fed2fd4d8d94df71d52ac47c61c6f59ffbd2a67",
+  "base_checkpoint": "6e4ad4ab0b6a09a6a1083335ed0401637227d17f",
+  "lease": {
+    "pid": 75591,
+    "start_ticks": 15190845
+  },
+  "source_manifest": {
+    "path": "/tmp/ruvector-e27-reader-admission/implementation-source-manifest.json",
+    "bytes": 1997,
+    "sha256": "c707bf85b3d3ba25345fd3447d14a1cd54e860bdfcf0868d0fd945a17c4aa3a2"
+  },
+  "reader": {
+    "path": "/tmp/ruvector-e27-reader-admission/bart_reader.py",
+    "bytes": 15133,
+    "sha256": "4101d071c04aced320a902d7b84cb1fd1c30d474683201637150e486ede8b1d9"
+  },
+  "acquisition_helper": {
+    "path": "/tmp/ruvector-e27-reader-admission/acquire_bart_assets.py",
+    "bytes": 18030,
+    "sha256": "0401591e3fba4a9cddb0456495dfafc5142c67643961cf8211bba52c1c4fcfe7"
+  },
+  "acquisition_plan": {
+    "path": "/tmp/ruvector-e27-reader-admission/asset-acquisition-plan.json",
+    "bytes": 4331,
+    "sha256": "8a16ca82aba985512c0c2ee5079ac6604f99165ddebf35fb58e496b68e59327c"
+  },
+  "permit_exemplar": {
+    "path": "/tmp/ruvector-e27-reader-admission/prepare-permit.example.json",
+    "bytes": 1226,
+    "sha256": "6ccbce3a828056605800116682be329a63ef6acd65cc3e60024de38432f9c7df"
+  },
+  "test_source": {
+    "path": "/tmp/ruvector-e27-reader-admission/test_bart_reader.py",
+    "bytes": 9011,
+    "sha256": "052946bae0114aea4806aa55d979812950f9f30a29c99d54bde6e99173f2dec2"
+  },
+  "test_results": {
+    "tests_run": 11,
+    "failures": 0,
+    "errors": 0,
+    "kind": "stdlib-only synthetic numerics/import-laziness/permit/lease/replay and public lock exact-copy/tamper/extras/symlink checks",
+    "URL_calls": 0,
+    "model_or_tokenizer_initializations": 0
+  },
+  "independent_source_review": "Earlier reader source received independent review. The prospective metadata-copy integration fix is covered by synthetic stdlib tests; root/independent review remains available before GO. Native C,N,E and binary exacthalfNo unchanged.",
+  "exact_CLI_after_root_GO": "python <reader-dir>/acquire_bart_assets.py --execute --source-manifest <reader-dir>/implementation-source-manifest.json --permit <root-prepare-permit.json> --destination <S27>/project/models/bart-large-mnli-d7645e",
+  "root_permit_fields_to_fill": [
+    "preparation_go=true only after concrete root preparation GO",
+    "source_manifest_sha256=c707bf85b3d3ba25345fd3447d14a1cd54e860bdfcf0868d0fd945a17c4aa3a2",
+    "acquisition_plan_sha256=8a16ca82aba985512c0c2ee5079ac6604f99165ddebf35fb58e496b68e59327c",
+    "destination=actual absolute unused S27 model directory"
+  ],
+  "asset_bytes": 1632203785,
+  "downloaded_bytes_if_admitted": 1632197752,
+  "disk_reserve_bytes": 67108864,
+  "acquisition_seconds_cap": 300,
+  "attempt_replay_guard": "Sibling O_EXCL receipt survives success/failure; existing destination or receipt refuses retry/resume.",
+  "scope": {
+    "diagnostic_only": true,
+    "confirmation_ids": [],
+    "training_ids": [],
+    "calibration_ids": [],
+    "full104_champion_comparator_ready": false,
+    "confirmation_or_promotion_allowed": false,
+    "acquisition_attempts": 0,
+    "weights_downloaded": false,
+    "tokenizer_assets_downloaded": false,
+    "ML_imports_or_initializations": 0,
+    "current_benchmark_inputs_labels_results_read": false
+  },
+  "revision": 2,
+  "prospective_integration_fix": {
+    "issue": "Parent worker supplies source-pinned public MODEL_ASSETS.json, whereas actual model directory contains asset-lock.json.",
+    "behavior": "Accept actual direct asset-lock.json or an exact byte/SHA256 public metadata copy; fixed actual closure is eight required assets plus asset-lock.json; all input/asset path components reject symlinks and noncanonical paths.",
+    "model_pin_or_load_policy_changed": false,
+    "acquisition_run": false
+  }
+}

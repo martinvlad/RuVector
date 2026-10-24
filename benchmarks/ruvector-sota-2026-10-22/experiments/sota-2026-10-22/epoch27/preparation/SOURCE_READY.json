@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "epoch": 27,
+  "scope": "SOURCE_READY_FOR_IMMUTABLE_REMOTE_PUBLICATION_NOT_EXECUTION",
+  "diagnostic_only": true,
+  "source_checkpoint": "6e4ad4ab0b6a09a6a1083335ed0401637227d17f",
+  "owned_candidate_sources": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch27/common.py",
+      "bytes": 10928,
+      "sha256": "e89a57e76177de35b365390a35d5b101bade7e5af106fe64bf8e79176a610d78"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch27/worker.py",
+      "bytes": 25511,
+      "sha256": "8163d7a1bd430f26b9d84888ef1de2b9963ee9b50c3aa33c7bda40f1a08b0202"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch27/native.cjs",
+      "bytes": 15549,
+      "sha256": "9a51300676d1bbcecfe98f5e0ee39dee52c88174519fcdcd85e8ecd617ab3bbe"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch27/evidence.py",
+      "bytes": 5714,
+      "sha256": "01adbb8c8211d0b370336e2a4ddcb16441212814bc4f0e13626042c54f583d71"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch27/network_guard.py",
+      "bytes": 5030,
+      "sha256": "94ca154a9000d957931b5d760a0eb893dcd67ffb936cc674b4f8f78f109c054d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch27/RAW_SCHEMA.json",
+      "bytes": 5453,
+      "sha256": "37657d4cd9473f0581d316b955fa8020ce9b79986ded54101c019fd20a5d834e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch27/MODEL_ASSETS.json",
+      "bytes": 6401,
+      "sha256": "29eaa17d71b1b2bf2929eb0d22c370307ae2b1d47a97aa6b385e8abc363661b1"
+    }
+  ],
+  "owned_preparation_sources": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch27/preparation/launch_dev.py",
+      "bytes": 16483,
+      "sha256": "a237a210b04fb9acefca18fead49be502c4346cdc605b734a5aac379b0f82699"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch27/preparation/restore_runtime.py",
+      "bytes": 4899,
+      "sha256": "e027563e760d6c1372eb6ab5938a48f07d821634e5c0c58aa035e7295eab17f3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch27/preparation/seal_source_ready.py",
+      "bytes": 5891,
+      "sha256": "c86b1f1723b447ea622375a43937e6721db4c4a871ee0717d639884800782146"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch27/preparation/static_validation.py",
+      "bytes": 16461,
+      "sha256": "77a9678ec94ca69669fb957549b9ec75570bf80085ae2e3edc076291499a311a"
+    }
+  ],
+  "reader_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch27/reader/bart_reader.py",
+    "bytes": 15133,
+    "sha256": "4101d071c04aced320a902d7b84cb1fd1c30d474683201637150e486ede8b1d9"
+  },
+  "static_validation": {
+    "path": "experiments/sota-2026-10-22/epoch27/preparation/static-validation-final.json",
+    "bytes": 4733,
+    "sha256": "9e63b8de77e341d9f2ba120950071eb68975413963489d6f498df24f6389df66"
+  },
+  "runtime_restoration": {
+    "path": "experiments/sota-2026-10-22/epoch27/preparation/runtime-restoration.json",
+    "bytes": 1348,
+    "sha256": "d28c9540f0a9906004337c33ad37b865b68a05e71c541e4d86661022ed151265"
+  },
+  "runtime_assets_lock": {
+    "path": "experiments/sota-2026-10-22/epoch27/preparation/runtime-assets.lock.json",
+    "bytes": 2946,
+    "sha256": "0229a75ce29f70d2fbed3c2b99abd756a48d0c02eac393985c7b90fea1e4032f"
+  },
+  "wheel_members": {
+    "path": "experiments/sota-2026-10-22/epoch26/preparation/runtime-members/python-wheel-members.json",
+    "bytes": 4640799,
+    "sha256": "87254bbf6ec2aba6d08a4b55ff189faf29f78e1b1dd278fe8ffef9a8cc5523b9"
+  },
+  "runtime_versions_metadata_only": {
+    "torch": "2.7.1+cpu",
+    "transformers": "4.52.4",
+    "safetensors": "0.5.3",
+    "numpy": "2.2.6",
+    "tokenizers": "0.21.4",
+    "onnxruntime": "1.22.1"
+  },
+  "model_asset_public_copy": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch27/MODEL_ASSETS.json",
+    "bytes": 6401,
+    "sha256": "29eaa17d71b1b2bf2929eb0d22c370307ae2b1d47a97aa6b385e8abc363661b1"
+  },
+  "model_asset_public_copy_equals_actual_local_asset_lock": true,
+  "reader_contract": {
+    "max_pair_tokens": 512,
+    "attention": "sdpa",
+    "batch_size": 1,
+    "truncation": "only_first",
+    "require_no_truncation": true,
+    "precision": "FP32",
+    "cpu_threads": 2,
+    "interop_threads": 1,
+    "raw_labels": [
+      "C",
+      "N",
+      "E"
+    ],
+    "canonical_permutation": [
+      2,
+      0,
+      1
+    ],
+    "temperature": 1,
+    "use_safetensors": false,
+    "weights_only": true
+  },
+  "license_provenance": {
+    "model": "MIT explicit in pinned card; full fairseq MIT text applies to pretrained models per official fairseq README.",
+    "code": "Transformers runtime Apache-2.0 independently.",
+    "MNLI_text": "Mixed OANC, CC BY3.0, CC BY-SA3.0, US public domain per official MultiNLI paper; no blanket MIT/Apache grant is assigned to data.",
+    "original_OANC_legaltext": "Not recovered; original license URL failed to fetch. Official current OANC site and corpus paper describe permissive use.",
+    "no_dataset_redistribution": true
+  },
+  "source_lineage_limits": [
+    "Exact current original .bin digest equals official2020-02-12 released-head identity. Official checkpoint card declares MNLI training.",
+    "Publisher train-row checksums, actual run-level checkpoint selection and calibration records are unpublished; official2020 MNLI recipe supplies reproduction defaults.",
+    "Original2020 publication predates ContractNLI2021 supervision and original checkpoint choice; undocumented later evaluation/reselection of unchanged weights is not proved absent.",
+    "Foundation pretraining document overlap remains unknown.",
+    "DEV-only diagnostic; CONF/TRAIN/CALIB empty; no full104 champion comparator or official confirmation eligibility."
+  ],
+  "limits": {
+    "worker_attempts": 1,
+    "native_indexes": 8,
+    "native_queries": 24,
+    "NLI_model_initializations": 1,
+    "NLI_forward_pairs": 72,
+    "maximum_pair_tokens": 512,
+    "worker_seconds": 585,
+    "outer_seconds_including_cleanup": 600,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "threads": 2,
+    "interop": 1,
+    "UV_THREADPOOL_SIZE": 1
+  },
+  "performed_model_tokenizer_native_initializations": 0,
+  "performed_DEV_source_or_annotation_reads": 0,
+  "actual_benchmark_worker_starts": 0,
+  "CONF_allowed": false,
+  "fit_or_calibration_allowed": false,
+  "promotion_or_benchmark_acceptance_allowed": false,
+  "prediction_policy": "Full original MNLI native C/N/E head softmax T=1; canonical E/C/N permutation2,0,1; native-logit argmax tie order; no context heuristic override.",
+  "raw_schema": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch27/RAW_SCHEMA.json",
+    "bytes": 5453,
+    "sha256": "37657d4cd9473f0581d316b955fa8020ce9b79986ded54101c019fd20a5d834e"
+  },
+  "remaining_gate": "Root immutable remote source readback admission plus independent actual-source review before one reserved real DEV-only worker; root controls launch and sealed-output label join."
+}

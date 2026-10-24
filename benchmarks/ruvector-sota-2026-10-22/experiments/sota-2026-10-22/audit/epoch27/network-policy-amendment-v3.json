@@ -1,0 +1,92 @@
+{
+  "actual_socket_operations_by_policy_or_pure_review": 0,
+  "allowed_after_this_source_freeze_only": true,
+  "allowed_bind_receipt": {
+    "address": "Exact repr of supplied address, with exact family/type/protocol recorded.",
+    "counter": "Increment Python_literal_loopback_binds_allowed before attempting an admitted bind. Keep this counter and allowed event list separate from Python_network_operations_attempted and forbidden violations.",
+    "event": "Only the verified Python wrapper may admit socket.bind and suppress its matching underlying audit event. An unverified direct audit bind remains fatal.",
+    "not_network_permission": "Local bind permits no connect, listen, accept, DNS, send or receive operation, including loopback peers.",
+    "outcome": "PENDING event before the actual bind; terminal SUCCESS or ERROR event after actual bind. For ERROR retain exception type and available errno. Outcome must be complete in final raw audit.",
+    "progress": "Record both admission and outcome through the durable worker progress callback.",
+    "required_fields": [
+      "event",
+      "allowed",
+      "monotonic_seconds",
+      "family",
+      "socket_type",
+      "protocol",
+      "address",
+      "stack",
+      "bind_outcome"
+    ],
+    "stack": "Nonempty source stack recorded at bind admission."
+  },
+  "at": "2026-10-24T08:08:05.706948+00:00",
+  "benchmark_accepted": false,
+  "candidate_model_tokenizer_native_calls_by_this_policy": 0,
+  "champion_promoted": false,
+  "confirmation": [],
+  "epoch": 27,
+  "epoch25_original_rejection_unchanged": true,
+  "epoch26_original_v2_unchanged": true,
+  "exact_allowed_bind_shapes": {
+    "AF_INET": "type(address) is tuple, len(address)==2, type(host) is str, host=='127.0.0.1', type(port) is int,0<=port<=65535",
+    "AF_INET6": [
+      "type(address) is tuple, len(address)==2, type(host) is str, host=='::1', type(port) is int,0<=port<=65535",
+      "type(address) is tuple, len(address)==4, type(host) is str, host=='::1', type(port) is int,0<=port<=65535, type(flowinfo) is int and flowinfo==0, type(scopeid) is int and scopeid==0"
+    ],
+    "IPv6_implicit_flowinfo_scopeid": "The standard AF_INET6(host,port) tuple uses implicit0/0; an explicit four-tuple requires exact builtin int0 values.",
+    "host": "Exact literal builtin string only. No hostnames, whitespace, IPv4 aliases, other127/8addresses, wildcards, zone identifiers, IPv4-mapped IPv6 or nonloopback addresses.",
+    "port": "Exact builtin int, never bool, inclusive range0..65535.",
+    "rejected_types": "bool is not int for this policy. String subclasses, equality-overriding host objects, tuple subclasses and non-tuples are rejected."
+  },
+  "forbidden_operations": {
+    "Node": [
+      "connect/createConnection",
+      "all callback and promise DNS/name resolution entrypoints",
+      "HTTP/HTTPS request/get/fetch",
+      "datagram socket network operations",
+      "listen/accept",
+      "socket send/receive entrypoints",
+      "all bind operations; no Node bind exception is admitted"
+    ],
+    "Python": [
+      "connect",
+      "connect_ex",
+      "DNS/name resolution in any form",
+      "send/sendall/sendfile/sendto/sendmsg/sendmsg_afalg",
+      "recv/recv_into/recvfrom/recvfrom_into/recvmsg/recvmsg_into",
+      "listen",
+      "accept",
+      "socket.makefile",
+      "nonliteral/nonloopback/unverified bind",
+      "sethostname"
+    ],
+    "counts": "Python_network_operations_attempted and Node_network_operations_attempted must both equal0 for qualification; allowed Python literal-local bind attempts do not increment them.",
+    "persistent_rule": "Increment the corresponding forbidden-operation counter and append an event with address and stack BEFORE raising. A caught exception cannot clear the violations or counter. Any nonzero forbidden operation or persistent violation rejects the worker and epoch qualification; no posthoc waiver.",
+    "scope": "Instrumented Python/Node API guards plus reviewed offline-only candidate/native helper code. This is not OS-enforced syscall/network sandbox isolation."
+  },
+  "no_posthoc_waiver": true,
+  "prior_canonical_immutable_policy": {
+    "bytes": 1170,
+    "path": "experiments/sota-2026-10-22/audit/epoch26/network-policy-amendment-v2.json",
+    "sha256": "2f3a4480ac25a5d4a889d62952e6d70202c8c37fbab8679815b7b0558713d306"
+  },
+  "prior_policy_resolution": "Existing restored epoch26 v2 canonical file is a dependency reference, not duplicated or modified for epoch27. This new epoch27 v3 document states the complete policy.",
+  "pure_Python_guard_review": {
+    "bytes": 2348,
+    "path": "/tmp/ruvector-e27-independent-audit/network-guard-independent-review.json",
+    "sha256": "66de83929a91504023d1b9698b0dc73490dd9abdefe431ad76f29c5c1bd064f3"
+  },
+  "reason": "Retain the prospectively authorized noncommunicating literal-loopback bind exception, including standard Python IPv6 two-tuple form, and require host to be an exact builtin str before equality to its literal.",
+  "required_prelaunch_and_final_checks": [
+    "Freeze this exact new v3 policy and exact Python/Node guard source identities before worker admission",
+    "Independent pure validation of valid literal shapes, rejection of hostname/alias/type/flow/scope variants and persistent caught-violation behavior",
+    "Preserve every actual bind admission/outcome and every attempted forbidden operation in raw/progress outputs",
+    "Reject incomplete/PENDING bind receipts, unverified allowed addresses, counter/event mismatch or any forbidden attempt",
+    "Keep all current epoch25/epoch26 source and policy artifacts unchanged and all previous attempts closed"
+  ],
+  "schema_version": 3,
+  "source_annotation_choices_accessed": 0,
+  "status": "PROSPECTIVE_EXACT_LITERAL_LOCAL_BIND_POLICY_BEFORE_MEASUREMENTS"
+}

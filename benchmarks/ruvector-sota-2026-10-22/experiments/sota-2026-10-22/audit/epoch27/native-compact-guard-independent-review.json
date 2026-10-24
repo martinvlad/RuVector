@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "epoch": 27,
+  "status": "PASS_INDEPENDENT_PURE_NATIVE_FORMAT_AND_JS_GUARD_REVIEW",
+  "source": {
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch27-0471ff09d550/project/experiments/sota-2026-10-22/candidate/epoch27/native.cjs",
+    "bytes": 15549,
+    "sha256": "9a51300676d1bbcecfe98f5e0ee39dee52c88174519fcdcd85e8ecd617ab3bbe"
+  },
+  "checks": [
+    "canonical_base64_signed_zero_f32le_bits",
+    "preserve_native_id_score_optional_distance_and_actual_vector_digest",
+    "reject_wrong_block_sha",
+    "reject_noncanonical_base64",
+    "reject_wrong_query_rows",
+    "reject_native_metadata_present",
+    "reject_source_vector_mismatch",
+    "reject_non_float32_native_value",
+    "reject_noncanonical_hit_id",
+    "synthetic_guard_persistent:dns.resolveTxt",
+    "synthetic_guard_persistent:dns.resolveCaa",
+    "synthetic_guard_persistent:dns.lookupService",
+    "synthetic_guard_persistent:dns.promises.resolveTxt",
+    "synthetic_guard_persistent:Resolver.resolveCname",
+    "synthetic_guard_persistent:PromiseResolver.resolveCname",
+    "synthetic_guard_persistent:Socket.write",
+    "synthetic_guard_persistent:Socket.read",
+    "synthetic_guard_persistent:Server.listen",
+    "synthetic_guard_persistent:net.connect"
+  ],
+  "synthetic_guard_events": 10,
+  "actual_native_model_tokenizer_initializations": 0,
+  "actual_external_network_operations": 0,
+  "source_annotation_choices_accessed": 0,
+  "scope": "Require helper definitions without main or native core import; normalized toy byte vectors and denied stub API calls test losslessness and persistent interposition only. All synthetic guard events are in this separate test process, never worker execution. Owned stdout/stderr pipe logging stays available; no OS syscall isolation claim."
+}

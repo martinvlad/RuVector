@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "epoch": 27,
+  "prospective_before_measurement": true,
+  "raw_json_schema_version": 1,
+  "raw_serialization": "lossless UTF8 compact JSON; allow_nan false; no case, counters, errors or provenance omitted",
+  "case_count": 24,
+  "document_count": 8,
+  "arms": [
+    "actual_native",
+    "lexical",
+    "positional"
+  ],
+  "NLI_forward_pairs": 72,
+  "native_queries": 24,
+  "native_indexes": 8,
+  "reader_native_logit_order": [
+    "contradiction",
+    "not_mentioned",
+    "entailment"
+  ],
+  "canonical_probabilities": [
+    "entailment",
+    "contradiction",
+    "not_mentioned"
+  ],
+  "temperature": 1.0,
+  "raw_reader_fields": [
+    "raw_logits_C_N_E",
+    "raw_logits",
+    "probabilities_E_C_N",
+    "probabilities",
+    "typed_prediction",
+    "prediction",
+    "pair_tokens",
+    "full_pair_tokens",
+    "premise_truncated",
+    "require_no_truncation",
+    "token_count",
+    "latency_seconds",
+    "premise_sha256",
+    "hypothesis_sha256"
+  ],
+  "prediction": "native C,N,E logit argmax with lowest native class index ties; canonical permutation2,0,1; no semantic override",
+  "context_provenance": "same exact epoch22 source group packing and epoch26 mechanical provenance semantics; selected source character/UTF8 byte spans with literal text/hash; all frozen-grammar numeric literal occurrences and retained/omitted status",
+  "bundle": {
+    "filename": "native-bundle.json",
+    "schema_version": 3,
+    "vector_encoding": "base64_float32le_c_order",
+    "metadata_policy": "insert id and vector only; metadata absent",
+    "documents_fields": [
+      "document_id",
+      "vectors",
+      "query_vectors",
+      "queries"
+    ],
+    "queries_fields": [
+      "id"
+    ],
+    "vectors_block": {
+      "encoding": "base64",
+      "dtype": "float32le",
+      "shape": "[n,384],1<=n<=192",
+      "bytes": "n*384*4",
+      "sha256": "SHA256 actual decoded bytes",
+      "data_base64": "canonical RFC4648 standard alphabet with exact padding"
+    },
+    "query_vectors_block": "same shape [3,384] in queries ID order",
+    "actual_vector_encoding": "actual np.float32 embedding matrix astype(<f4,copy=False).tobytes(order=C), no quantization or precision loss",
+    "retained_once": true,
+    "maximum_matrix_rows": 1560,
+    "maximum_numeric_bytes": 2396160,
+    "maximum_base64_bytes": 3194880,
+    "maximum_total_file_bytes": 3300000
+  },
+  "native_result": {
+    "schema_version": 1,
+    "compact_schema": "epoch27-native-compact-f32le-v2",
+    "original_query_fields": [
+      "case_id",
+      "ids",
+      "raw_hits",
+      "requested_k",
+      "query_ms",
+      "native_order_used_without_replacement",
+      "score_semantics"
+    ],
+    "hit_fields": "all original nonvector native fields preserved including id and score; never rename score to distance; additional raw_keys,vector_receipt,metadata_receipt",
+    "raw_keys": "original actual Object.keys(hit) including vector",
+    "vector_receipt": {
+      "source_vector_index": "integer exact observed ID",
+      "dimensions": 384,
+      "dtype": "float32le",
+      "sha256": "SHA256 of exact1536 bytes,384 consecutive IEEE754 floats Buffer.writeFloatLE, no prefix",
+      "source_sha256": "independent hash of indexed source row bytes",
+      "source_equal_before_stripping": true
+    },
+    "metadata_receipt": {
+      "present": false,
+      "canonical_json": "{\"present\":false}",
+      "sha256": "SHA256 of UTF8 literal canonical_json without newline",
+      "source_equal_before_stripping": true
+    },
+    "strip_gate": "exact native numeric keys0..383, finite float32 values, source row byte equality and metadata absence checked before removing only vector numeric values",
+    "actual_core_calls": "same VectorDb dimensions384/Cosine insertFloat32/searchFloat32 as26;8 indexes/24 actual searches; no authored probes/warmups"
+  },
+  "raw_native_evidence": "bind saved single numeric bundle and compact native-result paths/SHA256 plus receipt method; every case keeps same native query and ranking",
+  "network_amendment": {
+    "epoch26_unchanged": true,
+    "epoch27_change": "literal host must have type(host) is str; previous exactloopback policy otherwise retained",
+    "allowed": "127.0.0.1 AF_INET tuple2; ::1 AF_INET6 tuple2 or tuple4 exact int zero flow/scope; exact int port0..65535",
+    "records": "actual outcome SUCCESS/ERROR, address,family,protocol,socket_type,monotonic timestamp,stack; runtime binds counted separately from synthetic tests",
+    "forbidden": "all other bind/DNS/connect/send/recv/listen/accept fatal and persistently recorded",
+    "instrumented_scope": "Python socket audit/method and Node public API interposition; not OS syscall isolation",
+    "Node_additions": "all callback/promise DNS lookup/resolve/reverse module functions and Resolver prototype chains; Socket write/end/read/send/recv/accept if exposed denied except exact stdout/stderr pipe logging"
+  },
+  "no_measurement_yet": {
+    "model_initializations": 0,
+    "tokenizer_initializations": 0,
+    "native_initializations": 0,
+    "DEV_source_or_annotation_reads": 0,
+    "benchmark_workers": 0
+  },
+  "pair_format": {
+    "special_tokens": 4,
+    "form": "<s>A</s></s>B</s>",
+    "packing_budget": "full native tokenizer pair encoding for every candidate, not overhead subtraction",
+    "truncation_policy": "full pair must already fit512; local only_first must use exactly same token IDs, so premise and claim never silently truncated"
+  }
+}

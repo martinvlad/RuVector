@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "f8bcbc4ca7ec31c6732159cad60a6e223f93c539",
-  "checkpoint_manifest_sha256": "8662d03427f700179d3684f6afed91eb0f3e5c0fcf5a703178b1e20a325cc339",
+  "prior_published_base_commit": "579c65f69149bfb939aed6bb273cb9702a4b0ede",
+  "checkpoint_manifest_sha256": "2ce095428bd2e960dcab32d44674c7b7d2fd9e73b3888eb2fe88ceca0772306b",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -1140,10 +1140,10 @@
     "schema_version": 1,
     "epoch": 32,
     "run_id": "epoch32-f8bcbc4ca7ec",
-    "state": "EPOCH32_PLANNING_LEASE",
+    "state": "EPOCH32_SOURCE_FROZEN_DEV_PENDING_ADMISSION",
     "work_active": true,
     "experiments_active": false,
-    "checkpoint_parent": "f8bcbc4ca7ec31c6732159cad60a6e223f93c539",
+    "checkpoint_parent": "579c65f69149bfb939aed6bb273cb9702a4b0ede",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
       "run_id": "epoch32-f8bcbc4ca7ec",
@@ -1168,13 +1168,13 @@
     "physical_guardian_directory": "/tmp/ruvector-sota-2026-10-22/epoch32-f8bcbc4ca7ec",
     "isolated_project": "/workspace/ruvector-epoch32-f8bcbc4ca7ec/project",
     "OS_lock_held": true,
-    "OS_lock_release_pending": false,
+    "OS_lock_release_pending": true,
     "native_allowed": 0,
     "conditional_train_allowed": 0,
-    "conditional_dev_allowed": 0,
+    "conditional_dev_allowed": 1,
     "confirmation_allowed": 0,
     "conditional_confirmation_allowed": 0,
-    "instruction": "Exclusive E32 source-only preparation and metadata-only eight-DEV retirement. No model/native/DEV-source projection before independent actual planning readback; no inference until independently reviewed frozen SOURCE and actual admission. One outer CPU2/600s worker, at most two conditional engineering/DEV native corpus helpers; no retry, TRAIN, calibration, CONF, paid/GPU, main write, champion replacement or publisher submission.",
+    "instruction": "Only current DEV after independent actual SOURCE readback and pretrained model/source admission. One nonretryable CPU2/600s phase total; zero current fits/TRAIN. No CONF/full104/benchmark acceptance/promotion/submission. FINAL closes every slot.",
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -1331,6 +1331,42 @@
           160,
           384,
           571
+        ],
+        "calibration": [],
+        "confirmation": []
+      },
+      "hypotheses": [
+        "nda-17",
+        "nda-7",
+        "nda-3"
+      ],
+      "all8_document_ids_permanently_retired": true,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 32,
+      "kind": "FROZEN_TASKSOURCE_NLI_DEV_ROLES",
+      "document_ids": [
+        557,
+        184,
+        34,
+        404,
+        578,
+        246,
+        242,
+        448
+      ],
+      "data_roles": {
+        "train": [],
+        "dev": [
+          557,
+          184,
+          34,
+          404,
+          578,
+          246,
+          242,
+          448
         ],
         "calibration": [],
         "confirmation": []
@@ -5159,5 +5195,60 @@
     "tokenizer_model_native_calls": 0,
     "full_source_CP_retirement_entry_append_at_SOURCE": true,
     "prepared_metadata_reference_scope": "Inline hashes only; no new uncovered canonical source ref3 before SOURCE."
+  },
+  "epoch32_frozen_study": {
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch32/plan.json",
+      "bytes": 44214,
+      "sha256": "8173421369b50736e9171da2115f1120c04db12674a138a7c41a1871aa12e6e8"
+    },
+    "source_freeze": {
+      "path": "experiments/sota-2026-10-22/epoch32/source-freeze.json",
+      "bytes": 28913,
+      "sha256": "af633a634de2fb92190e64f3455a7a536dfcf188a155320b9e1d88eddcbde08f"
+    }
+  },
+  "epoch32_data_roles": {
+    "train": [],
+    "dev": [
+      557,
+      184,
+      34,
+      404,
+      578,
+      246,
+      242,
+      448
+    ],
+    "calibration": [],
+    "confirmation": [],
+    "hypotheses": [
+      "nda-17",
+      "nda-7",
+      "nda-3"
+    ],
+    "used_confirmation_identities": [],
+    "retired_document_ids": [
+      557,
+      184,
+      34,
+      404,
+      578,
+      246,
+      242,
+      448
+    ],
+    "partition_after_projection": {
+      "exposed": 309,
+      "unreserved": 90,
+      "reserved_confirmation": 24,
+      "total": 423
+    },
+    "all8_current_DEV_document_ids_permanently_exposed": true
+  },
+  "epoch32_pretrained_model_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch32/PRETRAINED_MODEL_SOURCE.json",
+    "bytes": 1069,
+    "sha256": "dd07599379a5ad0b44fc7601793ec8e1e8201fc3642e386cc93a75b5e06171dc"
   }
 }

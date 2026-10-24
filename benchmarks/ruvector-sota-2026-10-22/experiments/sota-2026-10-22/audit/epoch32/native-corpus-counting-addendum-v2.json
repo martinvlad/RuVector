@@ -1,0 +1,46 @@
+{
+  "after": {
+    "BGE_initializations": 1,
+    "NLI_initializations": 1,
+    "ORT_sessions": 1,
+    "combined_CPU_affinity": [
+      0,
+      1
+    ],
+    "combined_wall_seconds_maximum": 600,
+    "conditional_DEV_documents": 8,
+    "conditional_DEV_queries": 24,
+    "engineering_documents": 6,
+    "engineering_queries": 6,
+    "maximum_NLI_forwards": 90,
+    "native_corpus_batches_maximum": 2,
+    "native_helper_starts_maximum": 2,
+    "outer_logical_workers_maximum": 1
+  },
+  "before": {
+    "native_corpus_batches_maximum": 1
+  },
+  "current_protocol": {
+    "bytes": 11017,
+    "path": "protocol.json",
+    "sha256": "dba897a1a7915d881555ae3c234a693f190fbed484292cc1ac2bad1cd9c3c7ef"
+  },
+  "epoch": 32,
+  "kind": "REAL_NATIVE_TASKSOURCE_PRETRAINED_NLI_DIAGNOSTIC",
+  "measurement_or_projection_calls_before_amendment": 0,
+  "prior_cumulative": {
+    "bounded_native_worker_attempts": 32,
+    "native_corpus_attempts": 26,
+    "native_corpus_completions": 24
+  },
+  "prospective_cumulative": "Add observed actual helper/corpus attempts/completions0..2 separately from one logical outer worker reservation; do not double-count dispatch and DEV claim. Unknown operation tails remain UNKNOWN.",
+  "reason": "Actual native indexing is two sequential corpora: authored engineering then conditional original DEV. Counting the outer worker alone would undercount native corpus batches.",
+  "schema_version": 1,
+  "status": "ROOT_APPROVED_PROSPECTIVE_NATIVE_CORPUS_COUNTING_CORRECTION_BEFORE_PUBLIC_COPY_PROJECTION_OR_MEASUREMENT",
+  "superseded_protocol": {
+    "bytes": 9915,
+    "path": "protocol-v1.json",
+    "sha256": "78d5adc90e82798a0ff0aae3f4ed436eb3e2650ce4442b777c9b0022717c59e9"
+  },
+  "unchanged": "Exact DEV8 IDs, authored native6/6 semantic gate, all18 engineering output integrity, conditional DEV72, strict DEV class/gain/proper gates, label timing, no retry/fit/CONF/promotion/submission."
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "epoch": 32,
+  "status": "SOURCE_REVIEW_READY",
+  "scope": "Outside-only source, no project/control/stage/native/model/Git mutation executed.",
+  "files": [
+    {
+      "path": "publication_common_v1.py",
+      "bytes": 17512,
+      "sha256": "4b9130fa3435b4b83ff92e58dd2f6ef5eb437b45ec29858c0c9834e5c3d95b2c"
+    },
+    {
+      "path": "phase_schema_v1.py",
+      "bytes": 1855,
+      "sha256": "fae5570c68a60248b6f8b963526d4f20463d1d52671e78241bc858c3e0bc8393"
+    },
+    {
+      "path": "phase_receipts_v1.py",
+      "bytes": 22954,
+      "sha256": "a4537df9820303eba6c8c1b340ad78bfd9cb89c40d7afe1b2cba97bcf099363f"
+    },
+    {
+      "path": "stage_publication_v1.py",
+      "bytes": 29031,
+      "sha256": "24fd186dffc191f26796c6a46cd27b5525c6314f5749109d7831e6d57c2bafaa"
+    },
+    {
+      "path": "build_controls_v1.py",
+      "bytes": 6911,
+      "sha256": "a36a439bd2e7c7d03290a3e5d65cbaddfd7a0a8a967ba4af45af855af217ea40"
+    },
+    {
+      "path": "test_publication_guards_v1.py",
+      "bytes": 19160,
+      "sha256": "7f7c07947fef872d4057112c66e0835de5a8e1e4b821dff4f4c5f9ca83c77143"
+    }
+  ],
+  "API": {
+    "phase": "dev",
+    "derive_actual": "derive_actual(raw,execution)",
+    "phase_evidence": "phase_evidence(root,'dev',plan_ref,rows=None,required=False)",
+    "aggregate_actual": "aggregate_actual(devEvidence)",
+    "cumulative_counts": "cumulative_counts(actual)"
+  },
+  "corpus_accounting": "Up to2 sequential native corpus batches within1 ownedworker/600s. Counter capture incomplete=>top actual/cumulative corpus totals null, known captured lowerbounds and durable reservation refs/count preserved.",
+  "verification": "35 pure guard cases PASS; Python AST, publisher Node syntax, mocked moving-main/CAS tests PASS.",
+  "data_roles": {
+    "train": [],
+    "dev": [
+      557,
+      184,
+      34,
+      404,
+      578,
+      246,
+      242,
+      448
+    ],
+    "calibration": [],
+    "confirmation": []
+  },
+  "main_policy": "Record point-in-time read-only observations; no equality gate or main mutation. Dedicated checkpoint branch expected_sha/force:false mandatory.",
+  "narrow_test_amendment": "Engineering refusal fixture uses exact captured WORKER_ENGINEERING_REJECTED/code2, corpus1/1 retained and positive DEV phase completion false. No helper logic changed.",
+  "narrow_source_amendment": "Only prospective external Python prefix changes oldE31 -> fresh S32/runtime/.venv in stager. No science/budget/receipt/main/Git guard changes. Approved old source bytes retained in versions/approved-helper-v3-prep-v2."
+}

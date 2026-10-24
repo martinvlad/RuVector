@@ -1,0 +1,57 @@
+{
+  "exclusions": [
+    {
+      "repository": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+      "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+      "status": "PRIOR_ACTUALLY_MEASURED_E21_E22_NO_REPEAT_CANDIDATE",
+      "why": "Original trained three-way head measured in both epochs; not genuinely new."
+    },
+    {
+      "repository": "microsoft/deberta-v2-xlarge-mnli",
+      "revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+      "status": "PRIOR_E18_INT8_LEGAL_E19_FP32_INT8_ENGINEERING_NO_REPEAT_CANDIDATE",
+      "why": "Same source head already used; FP32 full-legal measurement is not established, but unchanged failed engineering qualification cannot be relabeled new model."
+    },
+    {
+      "id2label": {
+        "0": "entailment",
+        "1": "not_entailment"
+      },
+      "repository": "MoritzLaurer/deberta-v3-large-zeroshot-v2.0",
+      "revision": "cf44676c28ba7312e5c5f8f8d2c22b3e0c9cdae2",
+      "status": "KNOWN_BINARY_FAMILY_NOT_TYPED_THREE_WAY",
+      "why": "Current exact config has two labels, so it cannot separate Contradiction from Neutral. Current card SHA424801aa... matches historical E7 card; this E32 recheck is recorded as a redundant known-family metadata read, not a new trained-head candidate."
+    }
+  ],
+  "local_source_cache": "R31 project; root owns actual Git/CP consistency verification",
+  "novelty_scope": "Specific large tasksource NLI checkpoint is new; the wider tasksource project and other tasksource model IDs were known before. No claim of entirely new tasksource methodology.",
+  "preferred_repository_exact_id_previously_seen_in_reviewed_qualification_or_ledger": false,
+  "references": [
+    {
+      "bytes": 91481,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch31-de468eba3faa/project/experiments/sota-2026-10-22/epoch31/REJECTION_LEDGER.json",
+      "sha256": "9144eb4cb2e9862d64b2ac1220354e71bd0b54890c1c0af8cff4452bce705489"
+    },
+    {
+      "bytes": 6881,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch31-de468eba3faa/project/experiments/sota-2026-10-22/legal-transfer/epoch21/MODEL_QUALIFICATION.json",
+      "sha256": "3c4115f6f830d6af86778591cc3d9031474c36882af1dc018c66deb6b8a341ad"
+    },
+    {
+      "bytes": 5507,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch31-de468eba3faa/project/experiments/sota-2026-10-22/legal-transfer/epoch19/source-qualification.json",
+      "sha256": "a5541b133467f6be7f09b3738b0832db5f9b5e40d9ebf6a36416526469db9f2e"
+    },
+    {
+      "bytes": 12488,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch31-de468eba3faa/project/experiments/sota-2026-10-22/candidate/epoch17/research/MODEL_QUALIFICATION.epoch17.json",
+      "sha256": "d80eb22cc7f0d2d810c6f8482b528c20332c62b5a33c5ea94d8fb3c1abc31dad"
+    },
+    {
+      "bytes": 26731,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch31-de468eba3faa/project/experiments/sota-2026-10-22/candidate/epoch27/reader/reader-admission.json",
+      "sha256": "321cbf14907769f78574e360d5e5e86283403e55c35886c25232408eabdcaafe"
+    }
+  ],
+  "source_checkpoint_expected": "f8bcbc4ca7ec31c6732159cad60a6e223f93c539"
+}

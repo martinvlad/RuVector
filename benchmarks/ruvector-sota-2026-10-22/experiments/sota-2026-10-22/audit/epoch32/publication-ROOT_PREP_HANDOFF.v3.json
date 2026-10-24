@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "epoch": 32,
+  "status": "ROOT_PREPARATION_REVIEW_READY",
+  "workspace": "/workspace/ruvector-epoch32-f8bcbc4ca7ec",
+  "guardian_scope": "/tmp/ruvector-sota-2026-10-22/epoch32-f8bcbc4ca7ec",
+  "files": [
+    {
+      "path": "build-plan.py",
+      "bytes": 10919,
+      "sha256": "abbce50095db679dead84d77fcd608765bd4c04ef80d8f8f7b53a630b3ab5fae"
+    },
+    {
+      "path": "build-results.py",
+      "bytes": 9788,
+      "sha256": "86362152862700f6a72908ff99b82bc7b9c4bf163e4daffad6547eb0e4c0a735"
+    },
+    {
+      "path": "publish-phase.js",
+      "bytes": 11987,
+      "sha256": "59e0e26ae66361dde9fb902058498c0d3ca04a36f33663cd7fe458838d118311"
+    },
+    {
+      "path": "test-publisher.cjs",
+      "bytes": 4708,
+      "sha256": "bee15fcea7cab86165559286aebfa33673b3c529d282eb38e2a6def650a4df0b"
+    }
+  ],
+  "copy_to_public_preparation": {
+    "build-plan.py": "reviewed_build_plan.py",
+    "build-results.py": "reviewed_build_results.py",
+    "publish-phase.js": "reviewed_publish_phase.js"
+  },
+  "model_native_labels_Git_calls": 0,
+  "executed_only": [
+    "35 pure guard cases",
+    "mocked publisher moving-main/CAS tests",
+    "Python AST",
+    "Node syntax"
+  ],
+  "plan_CLI": "<verified-external-venv>/bin/python -B <public-preparation>/reviewed_build_plan.py --scope <W> --scorer experiments/sota-2026-10-22/audit/epoch32/score_dev.py --source-parent <actual> --source-root <actual> --source-bench <actual> --source-scope <actual> --source-stage <frozen-source-stage> --final-stage <frozen-final-stage> [--check-only]",
+  "results_CLI": "<verified-external-venv>/bin/python -B <public-preparation>/reviewed_build_results.py --scope <W> --mode results|manifest --priorcontrols <W>/controls-source --replay <public-audit>/qualification-replay.json --acceptance <public-audit>/independent-acceptance.json",
+  "publisher_API": "publishPhase(source|final, independentStageProofPath) after exact W controller; no MODEL phase. Dedicated branch compare-and-set and fulltuple sibling proofs; main observations do not gate publication.",
+  "narrow_amendment": "Hypothesis wording materially stronger -> materially new; quality is unmeasured until actual frozen diagnostics. No gates, budgets or source/receipt logic changed.",
+  "narrow_source_amendment": "Prospective lexical fresh E32 runtime/.venv Python; explicit immutable inherited BGE/context code path+SHA pins. No science/gate/budget change. Previous approved source bytes retained under versions/approved-helper-v3-prep-v2."
+}

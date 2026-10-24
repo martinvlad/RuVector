@@ -1,0 +1,196 @@
+{
+  "DEV_bank_reads": 0,
+  "DEV_forwards": 0,
+  "DEV_metrics": null,
+  "Git_mutations_by_this_audit": 0,
+  "acceptance": "REJECTED_ENGINEERING_GATE_WITH_VALID_CAPTURE",
+  "acceptance_reason": "Native4/6 fails prespecified6/6engineering gate; independentsemanticreplay matchesfrozen scorer; noDEV allowed. Validcapture errors0 and physicalclosureestablished.",
+  "actual_execution": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "GPU_calls": 0,
+    "NLI_forwards": 18,
+    "corpus_batches_attempted": 1,
+    "corpus_batches_completed": 1,
+    "errors": 0,
+    "logical_worker_attempts": 1,
+    "native_queries": 6,
+    "paid_calls": 0,
+    "peak_RSS_bytes": 1998516224,
+    "peak_RSS_scope": "Observed one whole engineering-gated DEV worker including init/cleanup; largest-child high-water RSS, not simultaneous aggregate RSS. Unstarted/internal unobserved operations remain UNKNOWN.",
+    "verified_worker_starts": 1,
+    "wall_seconds_including_init_cleanup": 30.79878563300008
+  },
+  "all18_arms_use_full_supplied_authored_document": true,
+  "all6_same_model_arm_logits_identical": true,
+  "all8_DEV_ids_remain_retired": [
+    557,
+    184,
+    34,
+    404,
+    578,
+    246,
+    242,
+    448
+  ],
+  "annotation_choices_accessed_by_this_audit": 0,
+  "authored_engineering_is_benchmark_generalization": false,
+  "champion_preserved": "Native104/RRF10 unchanged; no promotion/submission/officialSOTA result",
+  "checked_at": "2026-10-24T23:53:15.315981+00:00",
+  "checks_passed": true,
+  "direction_change": "Materiallynew pretrainedtasksource NLI stillmisses anexplicit12-vs24-month contradiction and confuses unsupported governing-law claim withcontradiction, despitefullprovidedpremises. Futureworkneeds source-grounded typed/numerical consistency andunsupportedstatementreasoning improvements undernewfrozen gates; no posthoccurrentoverride/retryorretune onthisepoch.",
+  "epoch": 32,
+  "evidence": {
+    "RESULTS": {
+      "bytes": 29851,
+      "path": "/workspace/ruvector-epoch32-f8bcbc4ca7ec/project/experiments/sota-2026-10-22/epoch32/RESULTS.json",
+      "sha256": "3fa7f2d52d325846dd2edb7efbcbb76a7cc6e6f9eb0a91a65c5712b68f220a62"
+    },
+    "binding": {
+      "bytes": 28722,
+      "path": "/workspace/ruvector-epoch32-f8bcbc4ca7ec/independent-acceptance.json",
+      "sha256": "6eb7e230ca7c56abbdb033c584badfe9d77f73b3fe7e217dd59c99df38736b7c"
+    },
+    "raw": {
+      "bytes": 140715,
+      "path": "/workspace/ruvector-epoch32-f8bcbc4ca7ec/project/experiments/sota-2026-10-22/epoch32/runs/dev/raw.json",
+      "sha256": "2da36d8f9c93986bf33952d67d470516731f8f603d3384bfde1114e632724e1b"
+    },
+    "replay": {
+      "bytes": 28210,
+      "path": "/workspace/ruvector-epoch32-f8bcbc4ca7ec/qualification-replay.json",
+      "sha256": "2ecd372881e02eeffc00977c79b3420206a242e12275da1ab96e06dfd4eb72b8"
+    },
+    "supervisor_physical_closure": {
+      "bytes": 1466,
+      "path": "/workspace/ruvector-epoch32-f8bcbc4ca7ec/project/experiments/sota-2026-10-22/epoch32/SUPERVISOR_OBSERVED_CLOSURE.json",
+      "sha256": "723c719507459bb039428fdda97a4d1cfbbfe5c39a612cd9defe8181e75ffd6a"
+    }
+  },
+  "independent_numerical_replay": {
+    "lexical": {
+      "Brier": 0.29404928854532325,
+      "NLL": 0.4093489867441998,
+      "correct": 4,
+      "failures": [
+        {
+          "gold": "Contradiction",
+          "id": "epoch32:cc0:engineering:3",
+          "prediction": "Entailment",
+          "probabilities_E_C_N": [
+            0.6634624433074107,
+            0.22588916838203665,
+            0.11064838831055267
+          ]
+        },
+        {
+          "gold": "NotMentioned",
+          "id": "epoch32:cc0:engineering:5",
+          "prediction": "Contradiction",
+          "probabilities_E_C_N": [
+            0.002709497434241793,
+            0.5944670033910333,
+            0.4028234991747249
+          ]
+        }
+      ],
+      "reader_seconds": [
+        0.6336864329932723,
+        0.7178810710029211,
+        0.5720790390041657,
+        0.6844030149804894,
+        0.6684284950024448,
+        0.6137419109873008
+      ]
+    },
+    "native": {
+      "Brier": 0.29404928854532325,
+      "NLL": 0.4093489867441998,
+      "correct": 4,
+      "failures": [
+        {
+          "gold": "Contradiction",
+          "id": "epoch32:cc0:engineering:3",
+          "prediction": "Entailment",
+          "probabilities_E_C_N": [
+            0.6634624433074107,
+            0.22588916838203665,
+            0.11064838831055267
+          ]
+        },
+        {
+          "gold": "NotMentioned",
+          "id": "epoch32:cc0:engineering:5",
+          "prediction": "Contradiction",
+          "probabilities_E_C_N": [
+            0.002709497434241793,
+            0.5944670033910333,
+            0.4028234991747249
+          ]
+        }
+      ],
+      "reader_seconds": [
+        0.6818412549910136,
+        0.737593313009711,
+        0.5735031500225887,
+        0.6547450369980652,
+        0.6418315950140823,
+        0.637749129004078
+      ]
+    },
+    "positional": {
+      "Brier": 0.29404928854532325,
+      "NLL": 0.4093489867441998,
+      "correct": 4,
+      "failures": [
+        {
+          "gold": "Contradiction",
+          "id": "epoch32:cc0:engineering:3",
+          "prediction": "Entailment",
+          "probabilities_E_C_N": [
+            0.6634624433074107,
+            0.22588916838203665,
+            0.11064838831055267
+          ]
+        },
+        {
+          "gold": "NotMentioned",
+          "id": "epoch32:cc0:engineering:5",
+          "prediction": "Contradiction",
+          "probabilities_E_C_N": [
+            0.002709497434241793,
+            0.5944670033910333,
+            0.4028234991747249
+          ]
+        }
+      ],
+      "reader_seconds": [
+        0.6282233800156973,
+        0.7130232479830738,
+        0.6650140289857518,
+        0.6564096009824425,
+        0.6339723529818002,
+        0.6988798729726113
+      ]
+    }
+  },
+  "model_tokenizer_native_calls_by_this_audit": 0,
+  "observer_operations": {
+    "actual_invocations": 2,
+    "completed_strict_proofs": 1,
+    "first_failure": "Outputbasename rejectedbeforewrite; frozenobservations/sourceunchanged; correctedread-onlypathauthorizedbyroot",
+    "science_retries": 0
+  },
+  "original_DEV_gold_choices_accessed": 0,
+  "original_annotated_source_JSON_parsed": false,
+  "schema_version": 1,
+  "status": "ENGINEERING_REJECTED_DEV_NOT_STARTED",
+  "uncertainty": [
+    "Sixauthoredcases notbenchmarkgeneralization orrank.",
+    "Modeltaskcoverage/exactsupervisedselectioncalibrationlineage andContractNLIexclusionremainUNKNOWN; CONF/officialeligibilityHOLD.",
+    "Resourcepeak reportedlargest-child highwater, notsimultaneousaggregate memory."
+  ],
+  "used_confirmation_identities": []
+}

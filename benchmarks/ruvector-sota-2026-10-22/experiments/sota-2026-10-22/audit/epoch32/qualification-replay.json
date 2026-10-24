@@ -1,0 +1,794 @@
+{
+  "DEV_semantic_bank_reads_by_scorer": 0,
+  "actual_execution": {
+    "completed_corpus_batches": 1,
+    "completed_worker_batches": 0,
+    "corpus_batches_attempted": 1,
+    "dev": {
+      "BART_initializations_attempted": 0,
+      "BART_initializations_completed": 0,
+      "BGE_forward_calls_attempted": 12,
+      "BGE_forward_calls_completed": 12,
+      "BGE_forward_seconds": 0.10874681599671021,
+      "BGE_initializations_attempted": 1,
+      "BGE_initializations_completed": 1,
+      "BGE_texts_attempted": 17,
+      "BGE_texts_completed": 17,
+      "CONF_annotation_choices_accessed": 0,
+      "CONF_annotation_choices_attempted": 0,
+      "CONF_input_bank_reads": 0,
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "DEV_annotation_choices_accessed": 0,
+      "DEV_annotation_choices_attempted": 0,
+      "DEV_contexts_completed": 0,
+      "DEV_forward_calls_attempted": 0,
+      "DEV_forward_calls_completed": 0,
+      "DEV_input_bank_reads": 0,
+      "DEV_reads": 0,
+      "ENGINEERING_contexts_completed": 18,
+      "ENGINEERING_forward_calls_attempted": 18,
+      "ENGINEERING_forward_calls_completed": 18,
+      "ENGINEERING_input_bank_reads": 1,
+      "GPU_calls": 0,
+      "HTTP_requests": 0,
+      "NLI_capped_pair_tokenizer_calls_attempted": 18,
+      "NLI_capped_pair_tokenizer_calls_completed": 18,
+      "NLI_forward_calls_attempted": 18,
+      "NLI_forward_calls_completed": 18,
+      "NLI_full_pair_tokenizer_calls_attempted": 18,
+      "NLI_full_pair_tokenizer_calls_completed": 18,
+      "NLI_readouts_completed": 18,
+      "Node_network_operations_attempted": 0,
+      "ORT_sessions_attempted": 1,
+      "ORT_sessions_completed": 1,
+      "Python_literal_loopback_capability_binds_allowed": 1,
+      "Python_network_operations_attempted": 0,
+      "TRAIN_annotation_choices_accessed": 0,
+      "TRAIN_annotation_choices_attempted": 0,
+      "TRAIN_contexts_completed": 0,
+      "TRAIN_forward_calls_attempted": 0,
+      "TRAIN_forward_calls_completed": 0,
+      "TRAIN_input_bank_reads": 0,
+      "TRAIN_label_reads": 0,
+      "automatically_extracted_units": 11,
+      "backend_execution_since_checkpoint": "NOT_APPLICABLE_FINAL_RAW",
+      "backward_calls_attempted": 0,
+      "backward_calls_completed": 0,
+      "calibration_calls": 0,
+      "context_pair_tokenizer_calls_attempted": 111,
+      "context_pair_tokenizer_calls_completed": 111,
+      "context_single_tokenizer_calls_attempted": 46,
+      "context_single_tokenizer_calls_completed": 46,
+      "context_tokenizer_calls_attempted": 157,
+      "context_tokenizer_calls_completed": 157,
+      "corpus_batches_attempted": 1,
+      "corpus_batches_completed": 1,
+      "engineering_native_predictions_compared": 6,
+      "engineering_oracle_expected_labels_accessed": 6,
+      "engineering_oracle_reads": 1,
+      "errors": 0,
+      "fits": 0,
+      "full104_requests": 0,
+      "generation_calls": 0,
+      "gradient_clips_attempted": 0,
+      "gradient_clips_completed": 0,
+      "model_initializations_attempted": 1,
+      "model_initializations_completed": 1,
+      "native_binary_loads_attempted": 1,
+      "native_binary_loads_completed": 1,
+      "native_helper_starts_attempted": 1,
+      "native_helper_starts_completed": 1,
+      "native_hit_source_validations": 11,
+      "native_index_initializations_attempted": 6,
+      "native_index_initializations_completed": 6,
+      "native_insertions_attempted": 11,
+      "native_insertions_completed": 11,
+      "native_len_calls_attempted": 12,
+      "native_len_calls_completed": 12,
+      "native_queries_attempted": 6,
+      "native_queries_completed": 6,
+      "native_version_calls_attempted": 1,
+      "native_version_calls_completed": 1,
+      "operation_counts_complete": true,
+      "optimizer_initializations_attempted": 0,
+      "optimizer_initializations_completed": 0,
+      "optimizer_steps_attempted": 0,
+      "optimizer_steps_completed": 0,
+      "other_role_annotation_choices_accessed": 0,
+      "owned_live_group_members": [],
+      "owned_live_processes_closed": true,
+      "owned_process_closure_observation": "OBSERVED",
+      "paid_calls": 0,
+      "pair_tokenizations_attempted": 18,
+      "pair_tokenizations_completed": 18,
+      "parameter_artifacts_load_attempted": 0,
+      "parameter_artifacts_load_completed": 0,
+      "parameter_artifacts_write_attempted": 0,
+      "parameter_artifacts_write_completed": 0,
+      "peak_RSS_bytes": 1998516224,
+      "phase": "dev",
+      "raw_operation_counters_source": "raw.json",
+      "source_evidence_lists_accessed": 0,
+      "system_seconds": 1.747353,
+      "tokenizer_initializations_attempted": 1,
+      "tokenizer_initializations_completed": 1,
+      "training_steps": 0,
+      "uncertain_start": false,
+      "user_seconds": 37.868145,
+      "verified_worker_starts": 1,
+      "wall_seconds_including_init_cleanup": 30.79878563300008,
+      "worker_attempts": 1
+    },
+    "errors": 0,
+    "known_corpus_batches_attempted_at_last_capture": 1,
+    "known_corpus_batches_completed_at_last_capture": 1,
+    "known_corpus_reservation_count": 1,
+    "known_corpus_reservations": {
+      "dev": null,
+      "engineering": {
+        "bytes": 339,
+        "path": "experiments/sota-2026-10-22/epoch32/runs/dev/ENGINEERING_CORPUS_ATTEMPT_RESERVATION.json",
+        "sha256": "6b18b2c2114d44076e90061b451cb7fb0664ba91ac10bf66ac7f5f7a59f5ca01"
+      }
+    },
+    "logical_budget_scope": "One outer-worker slot is max(dispatch reservation, DEV reservation), never their sum. Up to2 sequential native corpus batches have separate attempted/completed counters; missing or partial capture leaves actual corpus totals UNKNOWN and retains captured lower bounds.",
+    "observed_supervisor_state": "Z",
+    "owned_live_processes_closed": true,
+    "peak_RSS_bytes": 1998516224,
+    "physical_closure_scope": "Independent observed supervisor/known-worker closure; original captured closure remains unchanged. Terminal Z/X may be closed without absent.",
+    "physical_supervisor_absent": false,
+    "resource_scope": "Observed one whole engineering-gated DEV worker including init/cleanup; largest-child high-water RSS, not simultaneous aggregate RSS. Unstarted/internal unobserved operations remain UNKNOWN.",
+    "supervisor_observed_closure": {
+      "bytes": 1466,
+      "path": "experiments/sota-2026-10-22/epoch32/SUPERVISOR_OBSERVED_CLOSURE.json",
+      "sha256": "723c719507459bb039428fdda97a4d1cfbbfe5c39a612cd9defe8181e75ffd6a"
+    },
+    "verified_worker_starts": 1,
+    "wall_seconds_including_init_cleanup": 30.79878563300008,
+    "worker_attempts": 1
+  },
+  "annotation_choices_accessed": 0,
+  "annotation_choices_attempted": 0,
+  "benchmark_accepted": false,
+  "calibration": [],
+  "champion_promoted": false,
+  "checks_passed": true,
+  "confirmation": [],
+  "current_TRAIN_choices_or_fits": 0,
+  "diagnostic_checks": {},
+  "diagnostic_qualified": false,
+  "engineering_checks": {
+    "authored_expected_class_counts": {
+      "contradiction": 2,
+      "entailment": 2,
+      "not_mentioned": 2
+    },
+    "gate_scope": "Only native6/6 is a semantic gate; lexical and positional correctness descriptive. All18 readout/evidence integrity checks remain mandatory.",
+    "native_all6_correct": false
+  },
+  "engineering_context_audit": {
+    "cases": 6,
+    "documents": 6,
+    "model_tokenizer_native_calls": 0,
+    "native_hits_verified": 11,
+    "role": "engineering",
+    "source_choices_or_evidence_labels_read": 0,
+    "source_index_vectors": 11,
+    "source_query_vectors": 6,
+    "status": "PASS_EXACT_SOURCE_MATCHED_CONTEXT_AND_NATIVE_F32_REPLAY"
+  },
+  "engineering_metrics": {
+    "lexical": {
+      "Brier": 0.29404928854532325,
+      "NLL_clip_count": 0,
+      "NLL_clipped_1e-12": 0.4093489867441998,
+      "accuracy": 0.6666666666666666,
+      "by_class": {
+        "contradiction": {
+          "correct": 1,
+          "n": 2
+        },
+        "entailment": {
+          "correct": 2,
+          "n": 2
+        },
+        "not_mentioned": {
+          "correct": 1,
+          "n": 2
+        }
+      },
+      "confusion": {
+        "contradiction": {
+          "contradiction": 1,
+          "entailment": 1,
+          "not_mentioned": 0
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 2,
+          "not_mentioned": 0
+        },
+        "not_mentioned": {
+          "contradiction": 1,
+          "entailment": 0,
+          "not_mentioned": 1
+        }
+      },
+      "correct": 4,
+      "n": 6,
+      "scores": [
+        {
+          "Brier": 0.0021946435959639054,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.03402604945071293,
+          "correct": 1,
+          "document_id": -32001,
+          "gold": "entailment",
+          "id": "epoch32:cc0:engineering:1",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.0006656854112872582,
+            "entailment": 0.9665463263086783,
+            "not_mentioned": 0.032787988280034444
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.00012788764452053927,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.008197955172457848,
+          "correct": 1,
+          "document_id": -32002,
+          "gold": "entailment",
+          "id": "epoch32:cc0:engineering:2",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.00034722271424150855,
+            "entailment": 0.9918355564239983,
+            "not_mentioned": 0.007817220861760227
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.0516730591434167,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.4877108053871206,
+          "correct": 0,
+          "document_id": -32003,
+          "gold": "contradiction",
+          "id": "epoch32:cc0:engineering:3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.22588916838203665,
+            "entailment": 0.6634624433074107,
+            "not_mentioned": 0.11064838831055267
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 4.530109400386975e-05,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.0053839481364339435,
+          "correct": 1,
+          "document_id": -32004,
+          "gold": "contradiction",
+          "id": "epoch32:cc0:engineering:4",
+          "prediction": "contradiction",
+          "probabilities": {
+            "contradiction": 0.9946305193366475,
+            "entailment": 0.003698177580028269,
+            "not_mentioned": 0.0016713030833243178
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.7100181326349808,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.9092567802795228,
+          "correct": 0,
+          "document_id": -32005,
+          "gold": "not_mentioned",
+          "id": "epoch32:cc0:engineering:5",
+          "prediction": "contradiction",
+          "probabilities": {
+            "contradiction": 0.5944670033910333,
+            "entailment": 0.002709497434241793,
+            "not_mentioned": 0.4028234991747249
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.00023670715905362323,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.011518382038950689,
+          "correct": 1,
+          "document_id": -32006,
+          "gold": "not_mentioned",
+          "id": "epoch32:cc0:engineering:6",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.010196855219242318,
+            "entailment": 0.0012554442221968387,
+            "not_mentioned": 0.9885477005585609
+          },
+          "unclipped_NLL_finite": true
+        }
+      ],
+      "unclipped_NLL_finite": true
+    },
+    "native": {
+      "Brier": 0.29404928854532325,
+      "NLL_clip_count": 0,
+      "NLL_clipped_1e-12": 0.4093489867441998,
+      "accuracy": 0.6666666666666666,
+      "by_class": {
+        "contradiction": {
+          "correct": 1,
+          "n": 2
+        },
+        "entailment": {
+          "correct": 2,
+          "n": 2
+        },
+        "not_mentioned": {
+          "correct": 1,
+          "n": 2
+        }
+      },
+      "confusion": {
+        "contradiction": {
+          "contradiction": 1,
+          "entailment": 1,
+          "not_mentioned": 0
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 2,
+          "not_mentioned": 0
+        },
+        "not_mentioned": {
+          "contradiction": 1,
+          "entailment": 0,
+          "not_mentioned": 1
+        }
+      },
+      "correct": 4,
+      "n": 6,
+      "scores": [
+        {
+          "Brier": 0.0021946435959639054,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.03402604945071293,
+          "correct": 1,
+          "document_id": -32001,
+          "gold": "entailment",
+          "id": "epoch32:cc0:engineering:1",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.0006656854112872582,
+            "entailment": 0.9665463263086783,
+            "not_mentioned": 0.032787988280034444
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.00012788764452053927,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.008197955172457848,
+          "correct": 1,
+          "document_id": -32002,
+          "gold": "entailment",
+          "id": "epoch32:cc0:engineering:2",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.00034722271424150855,
+            "entailment": 0.9918355564239983,
+            "not_mentioned": 0.007817220861760227
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.0516730591434167,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.4877108053871206,
+          "correct": 0,
+          "document_id": -32003,
+          "gold": "contradiction",
+          "id": "epoch32:cc0:engineering:3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.22588916838203665,
+            "entailment": 0.6634624433074107,
+            "not_mentioned": 0.11064838831055267
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 4.530109400386975e-05,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.0053839481364339435,
+          "correct": 1,
+          "document_id": -32004,
+          "gold": "contradiction",
+          "id": "epoch32:cc0:engineering:4",
+          "prediction": "contradiction",
+          "probabilities": {
+            "contradiction": 0.9946305193366475,
+            "entailment": 0.003698177580028269,
+            "not_mentioned": 0.0016713030833243178
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.7100181326349808,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.9092567802795228,
+          "correct": 0,
+          "document_id": -32005,
+          "gold": "not_mentioned",
+          "id": "epoch32:cc0:engineering:5",
+          "prediction": "contradiction",
+          "probabilities": {
+            "contradiction": 0.5944670033910333,
+            "entailment": 0.002709497434241793,
+            "not_mentioned": 0.4028234991747249
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.00023670715905362323,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.011518382038950689,
+          "correct": 1,
+          "document_id": -32006,
+          "gold": "not_mentioned",
+          "id": "epoch32:cc0:engineering:6",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.010196855219242318,
+            "entailment": 0.0012554442221968387,
+            "not_mentioned": 0.9885477005585609
+          },
+          "unclipped_NLL_finite": true
+        }
+      ],
+      "unclipped_NLL_finite": true
+    },
+    "positional": {
+      "Brier": 0.29404928854532325,
+      "NLL_clip_count": 0,
+      "NLL_clipped_1e-12": 0.4093489867441998,
+      "accuracy": 0.6666666666666666,
+      "by_class": {
+        "contradiction": {
+          "correct": 1,
+          "n": 2
+        },
+        "entailment": {
+          "correct": 2,
+          "n": 2
+        },
+        "not_mentioned": {
+          "correct": 1,
+          "n": 2
+        }
+      },
+      "confusion": {
+        "contradiction": {
+          "contradiction": 1,
+          "entailment": 1,
+          "not_mentioned": 0
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 2,
+          "not_mentioned": 0
+        },
+        "not_mentioned": {
+          "contradiction": 1,
+          "entailment": 0,
+          "not_mentioned": 1
+        }
+      },
+      "correct": 4,
+      "n": 6,
+      "scores": [
+        {
+          "Brier": 0.0021946435959639054,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.03402604945071293,
+          "correct": 1,
+          "document_id": -32001,
+          "gold": "entailment",
+          "id": "epoch32:cc0:engineering:1",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.0006656854112872582,
+            "entailment": 0.9665463263086783,
+            "not_mentioned": 0.032787988280034444
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.00012788764452053927,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.008197955172457848,
+          "correct": 1,
+          "document_id": -32002,
+          "gold": "entailment",
+          "id": "epoch32:cc0:engineering:2",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.00034722271424150855,
+            "entailment": 0.9918355564239983,
+            "not_mentioned": 0.007817220861760227
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 1.0516730591434167,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 1.4877108053871206,
+          "correct": 0,
+          "document_id": -32003,
+          "gold": "contradiction",
+          "id": "epoch32:cc0:engineering:3",
+          "prediction": "entailment",
+          "probabilities": {
+            "contradiction": 0.22588916838203665,
+            "entailment": 0.6634624433074107,
+            "not_mentioned": 0.11064838831055267
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 4.530109400386975e-05,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.0053839481364339435,
+          "correct": 1,
+          "document_id": -32004,
+          "gold": "contradiction",
+          "id": "epoch32:cc0:engineering:4",
+          "prediction": "contradiction",
+          "probabilities": {
+            "contradiction": 0.9946305193366475,
+            "entailment": 0.003698177580028269,
+            "not_mentioned": 0.0016713030833243178
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.7100181326349808,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.9092567802795228,
+          "correct": 0,
+          "document_id": -32005,
+          "gold": "not_mentioned",
+          "id": "epoch32:cc0:engineering:5",
+          "prediction": "contradiction",
+          "probabilities": {
+            "contradiction": 0.5944670033910333,
+            "entailment": 0.002709497434241793,
+            "not_mentioned": 0.4028234991747249
+          },
+          "unclipped_NLL_finite": true
+        },
+        {
+          "Brier": 0.00023670715905362323,
+          "NLL_clipped": false,
+          "NLL_clipped_1e-12": 0.011518382038950689,
+          "correct": 1,
+          "document_id": -32006,
+          "gold": "not_mentioned",
+          "id": "epoch32:cc0:engineering:6",
+          "prediction": "not_mentioned",
+          "probabilities": {
+            "contradiction": 0.010196855219242318,
+            "entailment": 0.0012554442221968387,
+            "not_mentioned": 0.9885477005585609
+          },
+          "unclipped_NLL_finite": true
+        }
+      ],
+      "unclipped_NLL_finite": true
+    }
+  },
+  "engineering_passed": false,
+  "engineering_timing": {
+    "lexical": {
+      "forward_p50_seconds": 0.6443035525007872,
+      "forward_p95_seconds": 0.7031660495194956,
+      "n": 6,
+      "reader_p50_seconds": 0.6510574639978586,
+      "reader_p95_seconds": 0.7095115569973132,
+      "scope": "Actual singleton call samples; reader includes pair-tokenization/tensor-preparation/model/readout; forward interval is model invocation, not isolated CPU kernel. Initialization/retrieval/cleanup separate."
+    },
+    "native": {
+      "forward_p50_seconds": 0.6412353644991526,
+      "forward_p95_seconds": 0.7171179527576896,
+      "n": 6,
+      "reader_p50_seconds": 0.6482883160060737,
+      "reader_p95_seconds": 0.7236552985050366,
+      "scope": "Actual singleton call samples; reader includes pair-tokenization/tensor-preparation/model/readout; forward interval is model invocation, not isolated CPU kernel. Initialization/retrieval/cleanup separate."
+    },
+    "positional": {
+      "forward_p50_seconds": 0.65406126450398,
+      "forward_p95_seconds": 0.7014585680008167,
+      "n": 6,
+      "reader_p50_seconds": 0.6607118149840971,
+      "reader_p95_seconds": 0.7094874042304582,
+      "scope": "Actual singleton call samples; reader includes pair-tokenization/tensor-preparation/model/readout; forward interval is model invocation, not isolated CPU kernel. Initialization/retrieval/cleanup separate."
+    }
+  },
+  "epoch": 32,
+  "evidence": {
+    "execution": {
+      "bytes": 7196,
+      "path": "experiments/sota-2026-10-22/epoch32/runs/dev/execution.json",
+      "sha256": "0a58dc1ced0dacdf0abbfdf33cd61b70baac5ab2c3061b36f8557c76541feeab"
+    },
+    "freeze": {
+      "bytes": 31832,
+      "path": "experiments/sota-2026-10-22/epoch32/source-freeze.json",
+      "sha256": "b20e03adbf6c7854a1d42058bceeccbeb6b6f171d894ac9acf51ebad9c420862"
+    },
+    "plan": {
+      "bytes": 47140,
+      "path": "experiments/sota-2026-10-22/epoch32/plan.json",
+      "sha256": "e743970341e68886d6b9a54a236f45b7393dcec023f9f4d50a8cf9c3dc96c409"
+    },
+    "pretrained_model_source": {
+      "bytes": 1069,
+      "path": "experiments/sota-2026-10-22/candidate/epoch32/PRETRAINED_MODEL_SOURCE.json",
+      "sha256": "dd07599379a5ad0b44fc7601793ec8e1e8201fc3642e386cc93a75b5e06171dc"
+    },
+    "raw": {
+      "bytes": 140715,
+      "path": "experiments/sota-2026-10-22/epoch32/runs/dev/raw.json",
+      "sha256": "2da36d8f9c93986bf33952d67d470516731f8f603d3384bfde1114e632724e1b"
+    },
+    "scorer_source": {
+      "bytes": 17865,
+      "path": "experiments/sota-2026-10-22/audit/epoch32/score_dev.py",
+      "sha256": "088171cf94d855be11e22a769ec3f1a2f894d8baf65ae39e9e7c6348adc0555c"
+    },
+    "supervisor_observed_closure": {
+      "bytes": 1466,
+      "path": "experiments/sota-2026-10-22/epoch32/SUPERVISOR_OBSERVED_CLOSURE.json",
+      "sha256": "723c719507459bb039428fdda97a4d1cfbbfe5c39a612cd9defe8181e75ffd6a"
+    }
+  },
+  "failed_diagnostic_checks": [],
+  "failed_engineering_checks": [
+    "native_all6_correct"
+  ],
+  "failed_integrity_checks": [],
+  "frozen_DEV_gates_passed": false,
+  "kind": "REAL_NATIVE_TASKSOURCE_PRETRAINED_NLI_DIAGNOSTIC",
+  "metrics": null,
+  "model_native_tokenizer_calls_by_scorer": 0,
+  "new_submission": false,
+  "official_SOTA_verified": false,
+  "official_rank": null,
+  "original_annotated_source_json_parsed": false,
+  "other_role_annotation_choices_accessed": 0,
+  "paired_differences": null,
+  "phase_integrity": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "network_policy": {
+      "allowed_capability_binds": 1,
+      "forbidden_network_operations": 0,
+      "scope": "Public API interposition, not OS network isolation"
+    },
+    "opaque_native_internals": "UNKNOWN; actual API counts and observed threads only",
+    "physical_closure": {
+      "remaining_owned_members": [],
+      "worker_identity": {
+        "pgid": 94757,
+        "pid": 94757,
+        "ppid": 94756,
+        "sid": 94757,
+        "state": "R",
+        "ticks": 20945674
+      }
+    }
+  },
+  "pretrained_model_audit": {
+    "buffer_source": "Exact mmap source int64 arange512 checked against stock nonpersistent buffer",
+    "classifier_manifest": {
+      "classifier.bias": {
+        "dtype": "float32",
+        "sha256": "1dc4d16ae832dd1d83e49f26515dfc509bd39b61cf4640dce8ea0c5b18019571",
+        "shape": [
+          3
+        ]
+      },
+      "classifier.weight": {
+        "dtype": "float32",
+        "sha256": "97f65dcbf4dda06aeb69fbf79488dcdb01f1eb0983110f0f0fc071a3bab7c6d8",
+        "shape": [
+          3,
+          1024
+        ]
+      },
+      "pooler.dense.bias": {
+        "dtype": "float32",
+        "sha256": "7127571aec4060ffb6e9fa6676ce90b5dbdd759b90dac264e30a4f7baef4fbeb",
+        "shape": [
+          1024
+        ]
+      },
+      "pooler.dense.weight": {
+        "dtype": "float32",
+        "sha256": "eec445b9b2b3f3a8514d524864906eadf5f3eb6a9ef1f4ebd166c83b56a81207",
+        "shape": [
+          1024,
+          1024
+        ]
+      }
+    },
+    "final_state_check": {
+      "scope": "Parameter storage identity/version counters plus exact head bytes; immutable source weight SHA reverified outside reader. No complete tensor clone.",
+      "unchanged": true
+    },
+    "learned_parameters": 435064835,
+    "role_state_checks": {
+      "engineering": {
+        "scope": "Parameter storage identity/version counters plus exact head bytes; immutable source weight SHA reverified outside reader. No complete tensor clone.",
+        "unchanged": true
+      }
+    },
+    "scope": "Byte-pinned original source plus actual strict loading metadata and storage/version/head-byte invariance. No independent full learned tensor decode, clone or hidden-forward claim.",
+    "status": "PASS_ORIGINAL_FROZEN_STOCK_TASKSOURCE_READER_METADATA",
+    "weights_sha256": "534780ea5d1f76d22be966d10de67cf2690ec25010aeb4b607d4aadcd2649ebc"
+  },
+  "pretrained_source_audit": {
+    "confirmation_eligibility": "HOLD",
+    "pretrained_model_source": {
+      "bytes": 1069,
+      "path": "experiments/sota-2026-10-22/candidate/epoch32/PRETRAINED_MODEL_SOURCE.json",
+      "sha256": "dd07599379a5ad0b44fc7601793ec8e1e8201fc3642e386cc93a75b5e06171dc"
+    },
+    "status": "PASS_FIXED_NEW_PRETRAINED_SOURCE_DIAGNOSTIC_ONLY",
+    "training_lineage_complete": false
+  },
+  "reader_timing": null,
+  "sampling_scope": "Six authored engineering cases separate; realDEV eight document clusters ×three correlated hypotheses.",
+  "schema_version": 1,
+  "source_checks": {
+    "current_TRAIN_phase_authorized": false,
+    "freeze": {
+      "bytes": 31832,
+      "path": "experiments/sota-2026-10-22/epoch32/source-freeze.json",
+      "sha256": "b20e03adbf6c7854a1d42058bceeccbeb6b6f171d894ac9acf51ebad9c420862"
+    },
+    "pins_verified": 157
+  },
+  "source_evidence_lists_accessed": 0,
+  "status": "ENGINEERING_REJECTED_DEV_NOT_STARTED",
+  "supervisor_physical_closure": {
+    "current_original_supervisor_state": "Z",
+    "evidence": {
+      "bytes": 1466,
+      "path": "experiments/sota-2026-10-22/epoch32/SUPERVISOR_OBSERVED_CLOSURE.json",
+      "sha256": "723c719507459bb039428fdda97a4d1cfbbfe5c39a612cd9defe8181e75ffd6a"
+    },
+    "physical_closure_passed": true,
+    "proof_observed_supervisor_absent": false,
+    "proof_observed_supervisor_state": "Z",
+    "supervisor_exit_code_observed": null
+  },
+  "uncertainty": [
+    "New pretrained model quality remains a hypothesis until this fixedDEV evidence.",
+    "Reported600/514/200 task counts and exact training/selection/calibration lineage incomplete; literal ContractNLI absence does not prove exclusion.",
+    "Foundation/fuzzy/semantic and record-level supervised overlap unknown; CONF/official eligibility HOLD.",
+    "Selected excerpt NotMentioned is not proof of legal absence in the full contract.",
+    "Eight document clusters, unknown class imbalance; no24-independent-case or officialSOTA/champion claim."
+  ]
+}

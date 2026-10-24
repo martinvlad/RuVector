@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "epoch": 32,
+  "status": "ENGINEERING_REJECTED_DEV_NOT_STARTED",
+  "scope": "Six authored CC0 engineering cases only; no benchmark generalization estimate.",
+  "results": {
+    "path": "experiments/sota-2026-10-22/epoch32/RESULTS.json",
+    "bytes": 29851,
+    "sha256": "3fa7f2d52d325846dd2edb7efbcbb76a7cc6e6f9eb0a91a65c5712b68f220a62"
+  },
+  "native_engineering_correct": 4,
+  "engineering_cases": 6,
+  "Brier": 0.29404928854532325,
+  "NLL": 0.4093489867441998,
+  "errors": [
+    {
+      "id": "epoch32:cc0:engineering:3",
+      "gold": "contradiction",
+      "prediction": "entailment"
+    },
+    {
+      "id": "epoch32:cc0:engineering:5",
+      "gold": "not_mentioned",
+      "prediction": "contradiction"
+    }
+  ],
+  "matched_same_model_ablation": "Native, lexical and positional arms had identical full-document premises and logits in all six engineering cases. Both decision errors persisted with complete supplied evidence; these cases do not support a retrieval change as the remedy.",
+  "failure_analysis": [
+    "An agreement ending exactly12months was classified as supporting exactly24months.",
+    "An unmentioned California governing-law claim was classified as contradicted."
+  ],
+  "next_research_priority": "Before another benchmark development run, preregister a typed numerical-consistency and unsupported-statement decision method using explicitly verified supplied-context coverage, with matched same-model retrieval controls. Require a source-pinned model and complete enough training lineage for intended eligibility. Current errors are exposed engineering regression cases; they are never fresh confirmation.",
+  "next_actions_status": "PROPOSED_ONLY_NOT_EXECUTED_OR_SCHEDULED",
+  "new_DEV_model_forwards": 0,
+  "new_DEV_annotation_choices": 0,
+  "confirmation_identities": [],
+  "permanently_retired_reserved_DEV_documents": [
+    557,
+    184,
+    34,
+    404,
+    578,
+    246,
+    242,
+    448
+  ],
+  "model_training_lineage_complete": false,
+  "official_eligibility": "HOLD",
+  "native104_champion_preserved": true,
+  "new_submission": false,
+  "official_rank": null,
+  "goal_verified": false
+}

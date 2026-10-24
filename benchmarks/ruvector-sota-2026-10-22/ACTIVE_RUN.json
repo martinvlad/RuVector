@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
   "run_id": "epoch23-488d3a6a248e",
-  "state": "EPOCH23_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
-  "work_active": true,
+  "state": "EPOCH23_CLOSED",
+  "work_active": false,
   "experiments_active": false,
   "native_allowed": 0,
-  "native_allowed_after_exact_remote_readback": 1,
+  "native_allowed_after_exact_remote_readback": 0,
   "conditional_confirmation_after_independent_DEV_runtime_gates": 0,
-  "checkpoint_parent": "8f21a2e849a1c8d80c014a67359fa01b55b9ec44",
+  "checkpoint_parent": "3ecca377b498b4b87f3f00a46dacc5769504135c",
   "owner_pid": 66088,
   "owner_startticks": 12864421,
   "lock_inode": 13626,
   "started_at": "2026-10-24T01:22:22.306113+00:00",
   "expires_at": "2026-10-24T03:18:23.952152+00:00",
   "OS_lock_held": true,
-  "OS_lock_release_pending_final_remote_readback": false,
+  "OS_lock_release_pending_final_remote_readback": true,
   "limits": {
     "worker_attempt_cap": 1,
     "CPU_threads": 2,
@@ -22,5 +22,8 @@
     "paid_API_calls": 0,
     "GPU_calls": 0
   },
-  "instruction": "No execution now. One frozen source-scope engineering worker only after independent actual remote source/readback and live exclusive-lock admission; no retry, benchmark/confirmation inference, fit, promotion or submission."
+  "instruction": "Closed; all unspent epoch23 slots permanently closed.",
+  "actual_epoch23_worker_attempts": 1,
+  "all_unspent_epoch23_slots_permanently_closed": true,
+  "owned_native_groups_closed": true
 }

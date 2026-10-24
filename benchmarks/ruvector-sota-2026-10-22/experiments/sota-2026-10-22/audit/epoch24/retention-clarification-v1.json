@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "epoch": 24,
+  "scope": "Descriptive aggregation from unchanged actual saved trace; no candidate/scorer execution, new threshold, oracle/gold/source edit or acceptance change.",
+  "raw_sha256": "b7a18fb1701a3530d9f97ad9cbc25995009577195d8a13aec605ee63e9088881",
+  "arms": {
+    "actual_native": {
+      "queries": 22,
+      "effective_seed_count": 22,
+      "baseline_retained_seed_count": 22,
+      "closure_retained_seed_count": 21,
+      "closure_dropped_seed_rows": [
+        {
+          "case_id": "e24-raw-17",
+          "dropped_seed_ids": [
+            "x::5(a)"
+          ]
+        }
+      ],
+      "baseline_unknown_cases": 21,
+      "closure_unknown_cases": 6
+    },
+    "lexical": {
+      "queries": 22,
+      "effective_seed_count": 22,
+      "baseline_retained_seed_count": 22,
+      "closure_retained_seed_count": 21,
+      "closure_dropped_seed_rows": [
+        {
+          "case_id": "e24-raw-17",
+          "dropped_seed_ids": [
+            "x::5(a)"
+          ]
+        }
+      ],
+      "baseline_unknown_cases": 21,
+      "closure_unknown_cases": 6
+    },
+    "positional": {
+      "queries": 22,
+      "effective_seed_count": 22,
+      "baseline_retained_seed_count": 22,
+      "closure_retained_seed_count": 22,
+      "closure_dropped_seed_rows": [],
+      "baseline_unknown_cases": 9,
+      "closure_unknown_cases": 5
+    }
+  },
+  "no_native_unknown_cases": [
+    "e24-raw-18",
+    "e24-raw-23"
+  ],
+  "interpretation": "Native and lexical closure retain21of22observed seeds; the deliberate max_nodes1overflow in e24-raw-17 drops x::5(a) atomically and remains unknown. Therefore20to0missing dependencies does not mean every baseline seed was retained;15repairs specifically retain the same seed. Unknown source/reference/budget cases stay unknown, never legal insufficient evidence.",
+  "benchmark_accepted": false,
+  "accuracy": null,
+  "proper_scores": null
+}

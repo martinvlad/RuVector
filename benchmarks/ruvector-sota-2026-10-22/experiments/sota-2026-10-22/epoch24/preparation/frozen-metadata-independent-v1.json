@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "epoch": 24,
+  "at": "2026-10-24T03:04:10.129580+00:00",
+  "scope": "Independent metadata/hash-only prepublication freeze review; no fixture/candidate/native/model/oracle evaluation.",
+  "plan_sha256": "a3e14bd7449332d730d8f99de838eec3fbcd3ea71f5f2db90cf5f68a34469749",
+  "source_freeze_sha256": "160cf4510c773a1cb1c85088af40388c4822130cef43a85e5405375224bbd4c8",
+  "source_entries": 39,
+  "plan_pins": 40,
+  "external_audit_seals": {
+    "oracle": {
+      "bytes": 23841,
+      "sha256": "c8a7899921b7be5bf75321392718c0be10a8a0785f4a298c68aea5cec2ffc95b",
+      "matches": true
+    },
+    "manual_gold": {
+      "bytes": 30069,
+      "sha256": "7cb2a3d4d00dcb8be9d67af7b8a9694ff6d4956218bbe30c1e71c325052dbe09",
+      "matches": true
+    },
+    "inputs": {
+      "bytes": 75557,
+      "sha256": "0d1bb698ace35b84e9d335d18f6f5e2d3c825352e3293ba3d9bd8cffa36173b0",
+      "matches": true
+    },
+    "protocol": {
+      "bytes": 6418,
+      "sha256": "f87c1bfaa60cff8adcdcb8986ec3dd09cac8c29b712d41b407ee65a3e57a3fa1",
+      "matches": true
+    },
+    "authorship_source": {
+      "bytes": 13360,
+      "sha256": "da78bd0510b9ac3f009a6aec0e72358670fcb25d46f7f3c24e093b9694d6936a",
+      "matches": true
+    }
+  },
+  "checks": {
+    "exact_plan_sha": true,
+    "exact_freeze_sha": true,
+    "plan_freeze_binding": true,
+    "all_plan_pins_match": true,
+    "all_external_audit_seals_match": true,
+    "empty_benchmark_roles": true,
+    "exact_limits": true,
+    "no_model_promotion_submission_confirmation": true,
+    "24_unique_raw_cases": true,
+    "raw_case_schema_only": true,
+    "fixture_contract_binding": true,
+    "fixture_input_binding": true,
+    "fixture_license": true,
+    "no_execution_artifacts": true,
+    "39_source_entries": true
+  },
+  "passed": true,
+  "pin_errors": [],
+  "role_separation": "Implementer held before holdout disclosure and states no auditor input/gold read; this review independently proves hash identity and schema, not arbitrary past filesystem reads.",
+  "remaining_gate": "Actual independent remote source readback/admission then one bounded actualworker; oracle remains sealed and unexecuted."
+}

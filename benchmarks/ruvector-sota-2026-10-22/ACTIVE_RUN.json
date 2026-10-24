@@ -2,10 +2,10 @@
   "schema_version": 1,
   "run_id": "epoch28-aa09a8d75110",
   "epoch": 28,
-  "state": "EPOCH28_PLANNING_LEASE",
+  "state": "EPOCH28_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
   "work_active": true,
   "experiments_active": false,
-  "checkpoint_parent": "585c476cec6011b1db9c79147e3b0ff80124a6a3",
+  "checkpoint_parent": "634e09a1ee7c114da7661d94aeb495145ac71eb8",
   "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
   "physical_owner": {
     "run_id": "epoch28-aa09a8d75110",
@@ -29,5 +29,6 @@
   "native_allowed": 0,
   "conditional_confirmation_allowed": 0,
   "confirmation_allowed": 0,
-  "instruction": "Planning and hash-verified reconstruction only. Zero native/model starts until candidate/source freeze, actual remote admission and independent acceptance. Preserve Native104, all exposed data roles, archive transports and zero paid/GPU budget."
+  "instruction": "One nonretryable actual full-input Native104 engineering qualification after exact independent actual remote source readback and local admission. CPU2 <=600 seconds including initialization and cleanup; no benchmark DEV/CONF/train/calibration/paid/GPU or promotion/submission. Authored cases are engineering evidence only.",
+  "native_allowed_after_exact_remote_readback": 1
 }

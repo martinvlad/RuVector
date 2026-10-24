@@ -1,0 +1,259 @@
+{
+  "actual_helper_dependency": {
+    "bytes": 16929,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/epoch28/publication/publication_common_v1.py",
+    "sha256": "2d37b854f410942db684c7da60c49033f02a890aaf30de96ebe3866374e3e82e"
+  },
+  "actual_publication_helper": {
+    "bytes": 39255,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/epoch28/publication/stage_publication_v1.py",
+    "sha256": "5b7d569902b5df3aeb4b4af45104c90807f97203a4ed78356bd4ab3bcb99511c"
+  },
+  "candidate_implementation_review": {
+    "bytes": 25441,
+    "path": "/tmp/ruvector-e28-reader-admission/source-review-implementation.json",
+    "sha256": "103fdd201972121aa409458e7a8d72befee107a616d6f4238d0e54abb7993878"
+  },
+  "candidate_owned_sources_and_receipts_reverified": [
+    {
+      "bytes": 7876,
+      "path": "experiments/sota-2026-10-22/candidate/epoch28/RAW_SCHEMA.json",
+      "sha256": "0f68ce850381116d06eceb2d18f917ca3a135e4c33178ac293af51cbf17dd651"
+    },
+    {
+      "bytes": 2798,
+      "path": "experiments/sota-2026-10-22/candidate/epoch28/README.md",
+      "sha256": "b380b1ca540a370d9f4f5d1ff51bb3dfed4080a2cbc7b912a4c6d842b6134da6"
+    },
+    {
+      "bytes": 7385,
+      "path": "experiments/sota-2026-10-22/candidate/epoch28/RUNTIME_ASSETS.json",
+      "sha256": "4e2c8a4d517b0b6443bfea4d3f56fddd83b0a216ba49bf9198223e4fb3ec518d"
+    },
+    {
+      "bytes": 8711,
+      "path": "experiments/sota-2026-10-22/candidate/epoch28/common.py",
+      "sha256": "e932df7289c155cd9bc945dbfbb64f83bf68caadceaf4eff1c736782678d621c"
+    },
+    {
+      "bytes": 4691,
+      "path": "experiments/sota-2026-10-22/candidate/epoch28/cpu_guard.py",
+      "sha256": "907b3ba00df294e52e03273d03edcf8a66fcd7af5d571f1b26834f7d2ac7e1c5"
+    },
+    {
+      "bytes": 13831,
+      "path": "experiments/sota-2026-10-22/candidate/epoch28/launch_engineering.py",
+      "sha256": "2a2c614711efea10b9381640729af03c012ac40a9daf961557d13bcb0721f918"
+    },
+    {
+      "bytes": 2012,
+      "path": "experiments/sota-2026-10-22/candidate/epoch28/network_guard.py",
+      "sha256": "ace1b4cc4fdc95b12bd91e62be2d361f8985603492f50a524096b6e5581bfc56"
+    },
+    {
+      "bytes": 7847,
+      "path": "experiments/sota-2026-10-22/candidate/epoch28/node_guard.cjs",
+      "sha256": "de05bf488af387e54cc6dc81c1494f8456d622d28e7f49aa617695d8af572f92"
+    },
+    {
+      "bytes": 2848,
+      "path": "experiments/sota-2026-10-22/candidate/epoch28/preflight.json",
+      "sha256": "f785f3c3bade156888a3f37b67aaf4b010afcfd7e08a35a15f7eb7fb687f57b4"
+    },
+    {
+      "bytes": 11800,
+      "path": "experiments/sota-2026-10-22/candidate/epoch28/preflight.py",
+      "sha256": "8c0adca36a974bafb68de3a8a311a263d2ef8fb718e784b856dc8513075ca89e"
+    },
+    {
+      "bytes": 362,
+      "path": "experiments/sota-2026-10-22/candidate/epoch28/synthetic-cpu-preexec.json",
+      "sha256": "43b6c1286ef99fc9793724b1a6da5354a7da2d2a43ca172fc6fda3530cbb7d9e"
+    },
+    {
+      "bytes": 34319,
+      "path": "experiments/sota-2026-10-22/candidate/epoch28/worker.py",
+      "sha256": "0d548c8ad61fdb74896905c7cbd2b478dac15344a29a0c968466863f94e29aeb"
+    }
+  ],
+  "canonical_copy_bytes_equal": true,
+  "canonical_published_scorer_copy": {
+    "bytes": 39835,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/audit/epoch28/score_engineering.py",
+    "sha256": "92ac562c0821a42315deb4bac44526c982f13e93dea176305491291f0923d704"
+  },
+  "canonical_source_freeze_copy": {
+    "bytes": 3064,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/audit/epoch28/scorer-source-freeze-v3.json",
+    "sha256": "f311ada0da87cbcde82d6c4160913ee946b98afa6c9f31286e5938716def4940"
+  },
+  "epoch": 28,
+  "focused_prelaunch_findings_resolved": [
+    "Original helper inferred partial mode from final-file absence and rejected malformed-final+valid-partial captured failure; corrected before measurement using explicit source discriminator.",
+    "Final V7 checked_final guards prevent relabelled partial-as-final and known-partial counter erasure behind malformed final UNKNOWN. derive_actual AST is unchanged from reviewed V5/76 helper.",
+    "Final V3 scorer changes only PUBLICATION_HELPER_SHA from final V2; exact diff independently checked. Test changes only source basename, helper identity, corresponding label and output basename. Contract/cases/oracle/gates unchanged."
+  ],
+  "independent_pure_verification": {
+    "actual_final_helper_four_modes": {
+      "bytes": 3692,
+      "path": "/tmp/ruvector-e28-reader-admission/source-review-scorer-checks/actual-helper-mode-probes-final-v7.json",
+      "sha256": "d29714f452cc6796b6719e0103360340f0bd389f3c679d12197c66dea3fc4ecf"
+    },
+    "actual_helper_four_mode_projection_exactly_matches_previously_reviewed76": true,
+    "candidate_worker_executions": 0,
+    "checks": [
+      "AST_parse",
+      "metrics_NA_without_invented_probabilities",
+      "latency_quantile_interpolation",
+      "original_choice_label_map_valid",
+      "reject_choice_missing_label",
+      "reject_choice_extra_label",
+      "reject_choice_mass",
+      "reject_choice_bool",
+      "reject_choice_choice",
+      "uncalibrated_noul_kept_as_score",
+      "preserve_absent_counts_unknown_not_zero",
+      "binding_preserves_failed_evaluation_absent",
+      "reject_qualification_absent",
+      "reject_invented_NLL_absent",
+      "reject_changed_counts_absent",
+      "preserve_known_partial_counts_not_complete",
+      "binding_preserves_failed_evaluation_partial",
+      "reject_qualification_partial",
+      "reject_invented_NLL_partial",
+      "reject_changed_counts_partial",
+      "actual_final_helper_retains_malformed_final_partial_discriminator",
+      "actual_helper_combined_scorer_malformed_final_partial_binding",
+      "cannot_hide_parseable_final_with_partial_selection"
+    ],
+    "checks_passed": 23,
+    "copied_preflight": {
+      "bytes": 1850,
+      "path": "/tmp/ruvector-e28-reader-admission/source-review-scorer-checks/finalv3/scorer-preflight-v4.json",
+      "sha256": "b9b13732349a1a260681f4697855872cc8a376851143c104e89ddf5a753ecdc4"
+    },
+    "helper_mode_checks": 4,
+    "helper_modes": [
+      "normal_final",
+      "partial_final_absent",
+      "full_absence",
+      "malformed_final_with_valid_partial"
+    ],
+    "scope": "Copies preserve original scorer/preflight basenames under reviewer-owned source-review-scorer-checks/finalv3. Tests use synthetic metadata, toy numeric formats and frozen helper only."
+  },
+  "open_source_review_blockers": [],
+  "operation_accounting_this_review": {
+    "DEV_CONF_source_or_annotation_reads": 0,
+    "Git_mutations": 0,
+    "actual_engineering_worker_starts": 0,
+    "benchmark_annotation_choices_accessed": 0,
+    "external_network_calls": 0,
+    "historical_inode_edits": 0,
+    "model_tokenizer_native_initializations": 0,
+    "project_edits": 0,
+    "proper_metric_computations": 0,
+    "writes_scope": "/tmp/ruvector-e28-reader-admission/source-review-* only"
+  },
+  "preflight_source": {
+    "bytes": 10997,
+    "path": "/tmp/ruvector-e28-independent-audit/preflight_score_engineering_v3.py",
+    "sha256": "242524c9424ed15436ae1a3fe96d843a12439b3670856c9cd763e0c9d866590a"
+  },
+  "protocol_and_licensed_authored_engineering_fixture_refs": [
+    {
+      "bytes": 10096,
+      "path": "/tmp/ruvector-e28-independent-audit/engineering-contract.json",
+      "sha256": "10e33b6a673e640142f63316d8fff923c8558852e65d132e450a4b8272182408"
+    },
+    {
+      "bytes": 43086,
+      "path": "/tmp/ruvector-e28-independent-audit/engineering-inputs.json",
+      "sha256": "c3a83ae2a834ecfe534ec421eea21e7414586cc9858e400d105ce5657ad1cc45"
+    },
+    {
+      "bytes": 4848,
+      "path": "/tmp/ruvector-e28-independent-audit/engineering-identities.json",
+      "sha256": "62056f9c8d8ebf7d2c91f57c6896de86cc4c860d81b34d58d85362c5454b29d3"
+    },
+    {
+      "bytes": 21103,
+      "path": "/tmp/ruvector-e28-independent-audit/full104-closure-audit.json",
+      "sha256": "2069213fac27e5bb8a5a83785e1617b0240a9e139317b4508fbd77507e9a398d"
+    },
+    {
+      "bytes": 3162,
+      "path": "/tmp/ruvector-e28-independent-audit/cpu-affinity-policy-v1.json",
+      "sha256": "98310d2468e8e81f95cae17b95b97a7eb572b20fe18bbc6f3aad337909bd9602"
+    }
+  ],
+  "remaining_runtime_gate": "Root must first publish/freshly verify actual source commit and obtain independent actual admission; this source-only PASS does not initialize or authorize a second worker. All benchmark roles empty; CONF[]; no benchmark acceptance, promotion or official rank claim.",
+  "reviewed_at_UTC": "2026-10-24T11:22:14.746757+00:00",
+  "reviewer": "/root/e27_reader_admission",
+  "runtime_launch_admission": false,
+  "schema_version": 1,
+  "scope": "Independent gold-free source/protocol and pure stdlib scorer/helper review. Engineering transport, original answer versions, runtime receipt and proof-route qualification only; no semantic generalization or model superiority conclusion.",
+  "scorer_exact_helper_pin_matches": true,
+  "scorer_source": {
+    "bytes": 39835,
+    "path": "/tmp/ruvector-e28-independent-audit/score_engineering_v3.py",
+    "sha256": "92ac562c0821a42315deb4bac44526c982f13e93dea176305491291f0923d704"
+  },
+  "scorer_source_freeze": {
+    "bytes": 3064,
+    "path": "/tmp/ruvector-e28-independent-audit/scorer-source-freeze-v3.json",
+    "sha256": "f311ada0da87cbcde82d6c4160913ee946b98afa6c9f31286e5938716def4940"
+  },
+  "source_review_findings": [
+    {
+      "evidence": "Explicit --project resolves immutable protocol, authored bank, identity oracle, CPU policy, plan and source pins. Scorer requires exact helper SHA and plan-pinned helper/dependency bytes before pure import; canonical scorer is byte-identical to final V3. Actual native addon/source/runtime/version/proc-maps receipts are required by evaluate and remain future execution evidence.",
+      "gate": "Scorer/native source closure",
+      "verdict": "PASS"
+    },
+    {
+      "evidence": "Exact historical CompositeEngine and original full-state transport, choice label/map semantics, final/baseline/native-original answer versions and expected original refusal are preserved. Historical choice path is normative for these authored cases; old noul suggestion does not replace it. Two word-count proofs verify original structural 1/0 routes only; fallback final and baseline must equal actual native. Native noul stays calibrated:false similarity score.",
+      "gate": "Submitted original semantics",
+      "verdict": "PASS"
+    },
+    {
+      "evidence": "Evaluate binds literal startup/stdin/stdout/stderr frame artifacts, request order, complete source input and normalization, native response/version and refusal fields. Internal jevToWire/FFI conversion is explicitly source-inferred, not separately observed. Expected/oracle/id metadata is outside inference input. Full transmitted input does not imply full BGE attention; original max256 tokens/native16KiB limits remain.",
+      "gate": "Raw pipe and inputs",
+      "verdict": "PASS"
+    },
+    {
+      "evidence": "Scorer requires one owned reservation, CPU affinity [0,1], <=600 seconds including initialization/cleanup, owned process absence, actual preexec NNP/Seccomp/affinity artifact equality, before-addon guard event and observed task masks, mapped original addon+ORT and original native2.4.0 receipt. Candidate kernel affinity filter remains narrow child-only CPU enforcement. Network guard is public API interposition, not kernel network isolation. No actual runtime receipt exists in this review.",
+      "gate": "CPU/time/process engineering gates",
+      "verdict": "PASS_SOURCE_ONLY"
+    },
+    {
+      "evidence": "Exact selected full raw seal and raw.json counter discriminator/complete flag/NOT_APPLICABLE_FINAL_RAW backend scope are required. Raw counters are API observations, separate from opaque backend operations. Final helper projects all raw counters plus exact captured launcher resources/errors; canonical actual_execution must equal the real frozen helper return.",
+      "gate": "Completed final raw",
+      "verdict": "PASS"
+    },
+    {
+      "evidence": "Original raw.partial.json requires exact captured partial bytes/SHA/counters, failed status, incomplete counts and UNKNOWN backend tail. A retained malformed full raw must remain at its original path with exact captured full bytes/SHA and strict parse failure. Parseable final raw cannot be hidden behind partial. Final V7 staging additionally refuses erasing known valid sealed checkpoint counters by selecting malformed-final UNKNOWN and binds selected raw path to the explicit discriminator.",
+      "gate": "Partial and malformed-final fallback",
+      "verdict": "PASS"
+    },
+    {
+      "evidence": "Null raw is allowed only for true captured early failure with no retained full/partial seal or hidden counters. Counter/error absence stays UNKNOWN/None; known reservation, process closure, launcher errors and resources remain separate facts. No invented zero native calls or zero errors.",
+      "gate": "Absent raw",
+      "verdict": "PASS"
+    },
+    {
+      "evidence": "Bind preserves evaluated_integrity_checks_passed and every error from the unchanged evaluation replay; publication_binding_checks_passed and checks_passed_scope explicitly describe artifact/result consistency. A successful bind never qualifies failed/incomplete execution. All metric values and permanent no-promotion/no-submission claims must match the replay.",
+      "gate": "Failed evaluation versus publication binding",
+      "verdict": "PASS"
+    },
+    {
+      "evidence": "benchmark_accuracy/NLL/Brier remain None, proper_score_metric_computations=0. No Bernoulli/typed semantic probability model is invented from native similarity. BGE forward/NLI/ANN operations and actual denied-affinity syscall totals remain UNKNOWN/None; synthetic EPERM tests are separate evidence.",
+      "gate": "Metrics and opaque operations",
+      "verdict": "PASS"
+    }
+  ],
+  "status": "PASS_SCORER_SOURCE_REVIEW_ONLY",
+  "unchanged_candidate_SOURCE_READY": {
+    "bytes": 5702,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch28/SOURCE_READY.json",
+    "sha256": "c0a587fac2476bc7fa5aaf9cd6b2cee2c160454a1454c61b616f45299b9bd173"
+  }
+}

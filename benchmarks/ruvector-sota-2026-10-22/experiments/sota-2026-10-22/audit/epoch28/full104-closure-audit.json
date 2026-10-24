@@ -1,0 +1,470 @@
+{
+  "API": "Exact original server.validate_request then CompositeEngine(round2-v2/rules.py).predict(full normalized state,questions). NativeEngine always runs first; preserve native_original_answer/baseline100_answer/final proofs. No new excerpt/RRF/adapter stage.",
+  "CP": {
+    "bytes": 823400,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch27-0471ff09d550/controls-final/CHECKPOINT_MANIFEST.json",
+    "sha256": "cce7cdadcb9ef95b8ad4ec8cc51e2f3d56bcee8658b9e192416ff5c3bc8dedb2"
+  },
+  "CP_rows": 3784,
+  "CP_verified_TypeSafe11_JS_files": [
+    {
+      "bytes": 1625,
+      "path": "node_modules/@ruvector/typesafe/package.json",
+      "sha256": "190a6c2bb33ce0d330efe85d120fdccde4caae94690818592f1dfa22d9f3d03c"
+    },
+    {
+      "bytes": 3101,
+      "path": "node_modules/@ruvector/typesafe/index.js",
+      "sha256": "736b000e3cd5541367baf0aa1c697eff195bb7eeadcec3c2f11407641413a927"
+    },
+    {
+      "bytes": 2536,
+      "path": "node_modules/@ruvector/typesafe/dist/binding.js",
+      "sha256": "940ce6513626dab25e8a0fcd325f1f8ef688a2d7e64a230105b347e9749a336d"
+    },
+    {
+      "bytes": 8122,
+      "path": "node_modules/@ruvector/typesafe/dist/client.js",
+      "sha256": "6527f0d37dd98cb75dad3796c308e71f29845cc2c07d8f33e0f8f06a99668e39"
+    },
+    {
+      "bytes": 1133,
+      "path": "node_modules/@ruvector/typesafe/dist/errors.js",
+      "sha256": "fa2007c4b15ea32d384b73a7e89729b640e06b2c6fa50143c759ef97428e57f2"
+    },
+    {
+      "bytes": 2673,
+      "path": "node_modules/@ruvector/typesafe/dist/index.js",
+      "sha256": "ef49586988bcd83b25a610da5a02f53d932bd9d7d25928c9438a73054cd5a56a"
+    },
+    {
+      "bytes": 4414,
+      "path": "node_modules/@ruvector/typesafe/dist/metrics.js",
+      "sha256": "0fef2b9a015f49879cbf41531f65ee0159e014b7a7a08b30a2d70510bee9b160"
+    },
+    {
+      "bytes": 469,
+      "path": "node_modules/@ruvector/typesafe/dist/optimize.js",
+      "sha256": "93f86330c64cfd6ad249054a1890e6d7ee71fb1b887d504c0a8865e39ae4a755"
+    },
+    {
+      "bytes": 1612,
+      "path": "node_modules/@ruvector/typesafe/dist/questions.js",
+      "sha256": "226f6e2864c1942f59d827f3cd10386d0d709caaa374a63036987e56ce074528"
+    },
+    {
+      "bytes": 5691,
+      "path": "node_modules/@ruvector/typesafe/dist/serve.js",
+      "sha256": "ddac08e46c9da1dcc6448a247082d7963c63a4982febcb8073818cd8e73d0380"
+    },
+    {
+      "bytes": 807,
+      "path": "node_modules/@ruvector/typesafe/dist/types.js",
+      "sha256": "b9360fead2733f71085a711649190e053f9c4ca03ee35cae0fe3a446e8d9b2dc"
+    }
+  ],
+  "ELF_metadata": {
+    "ORT_NEEDS": [
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6",
+      "ld-linux-x86-64.so.2"
+    ],
+    "host_Node_OS_ABI_and_system_linker_libraries": "Record exact run context; system libraries are host dependencies outside16application assets.",
+    "inspection": "readelf -d only, no ldd/dlopen/require/native start",
+    "native_NEEDS": [
+      "libonnxruntime.so.1",
+      "libc.so.6",
+      "ld-linux-x86-64.so.2",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libdl.so.2",
+      "librt.so.1",
+      "libpthread.so.0",
+      "libstdc++.so.6"
+    ],
+    "native_and_ORT_RUNPATH": "$ORIGIN"
+  },
+  "actual_Git_leaves": 3858,
+  "actual_Git_map": {
+    "bytes": 695847,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/actual-git-map.json",
+    "sha256": "c9bd48e5082a7f71f514afaa88e59de202ad19d091b44fe9453345d33008a825"
+  },
+  "actual_head_re_resolved_by_root": "585c476cec6011b1db9c79147e3b0ff80124a6a3",
+  "actual_scope_re_resolved_by_root": "690e7e03e4a60859de5353daa8e2b62e791dabb2",
+  "at": "2026-10-24T10:36:20.766749+00:00",
+  "benchmark_accepted": false,
+  "benchmark_gold_or_CONF_reads": 0,
+  "champion_promoted": false,
+  "confirmation": [],
+  "downloads_paid_GPU_calls": 0,
+  "epoch": 28,
+  "local_cache_availability_independently_hashed": [
+    {
+      "cache_root": "/tmp/ruvector-sota-2026-10-22/epoch27-0471ff09d550/project",
+      "missing": [
+        "node_modules/@ruvector/typesafe/native/linux-x64-gnu/libonnxruntime.so.1",
+        "node_modules/@ruvector/typesafe/native/linux-x64-gnu/libonnxruntime_providers_shared.so",
+        "node_modules/@ruvector/typesafe/native/linux-x64-gnu/typesafe.linux-x64-gnu.node"
+      ],
+      "verified": [
+        "node_modules/@ruvector/typesafe/package.json",
+        "node_modules/@ruvector/typesafe/index.js",
+        "node_modules/@ruvector/typesafe/dist/binding.js",
+        "node_modules/@ruvector/typesafe/dist/client.js",
+        "node_modules/@ruvector/typesafe/dist/errors.js",
+        "node_modules/@ruvector/typesafe/dist/index.js",
+        "node_modules/@ruvector/typesafe/dist/metrics.js",
+        "node_modules/@ruvector/typesafe/dist/optimize.js",
+        "node_modules/@ruvector/typesafe/dist/questions.js",
+        "node_modules/@ruvector/typesafe/dist/serve.js",
+        "node_modules/@ruvector/typesafe/dist/types.js",
+        "models/bge-small-en-v1.5/model.onnx",
+        "models/bge-small-en-v1.5/tokenizer.json"
+      ],
+      "verified_count": 13
+    },
+    {
+      "cache_root": "/workspace/ruvector-eval",
+      "missing": [],
+      "verified": [
+        "node_modules/@ruvector/typesafe/package.json",
+        "node_modules/@ruvector/typesafe/index.js",
+        "node_modules/@ruvector/typesafe/dist/binding.js",
+        "node_modules/@ruvector/typesafe/dist/client.js",
+        "node_modules/@ruvector/typesafe/dist/errors.js",
+        "node_modules/@ruvector/typesafe/dist/index.js",
+        "node_modules/@ruvector/typesafe/dist/metrics.js",
+        "node_modules/@ruvector/typesafe/dist/optimize.js",
+        "node_modules/@ruvector/typesafe/dist/questions.js",
+        "node_modules/@ruvector/typesafe/dist/serve.js",
+        "node_modules/@ruvector/typesafe/dist/types.js",
+        "node_modules/@ruvector/typesafe/native/linux-x64-gnu/libonnxruntime.so.1",
+        "node_modules/@ruvector/typesafe/native/linux-x64-gnu/libonnxruntime_providers_shared.so",
+        "node_modules/@ruvector/typesafe/native/linux-x64-gnu/typesafe.linux-x64-gnu.node",
+        "models/bge-small-en-v1.5/model.onnx",
+        "models/bge-small-en-v1.5/tokenizer.json"
+      ],
+      "verified_count": 16
+    },
+    {
+      "cache_root": "/tmp/ruvector-sota-2026-10-22/epoch22-f190247e1a30/project",
+      "missing": [],
+      "verified": [
+        "node_modules/@ruvector/typesafe/package.json",
+        "node_modules/@ruvector/typesafe/index.js",
+        "node_modules/@ruvector/typesafe/dist/binding.js",
+        "node_modules/@ruvector/typesafe/dist/client.js",
+        "node_modules/@ruvector/typesafe/dist/errors.js",
+        "node_modules/@ruvector/typesafe/dist/index.js",
+        "node_modules/@ruvector/typesafe/dist/metrics.js",
+        "node_modules/@ruvector/typesafe/dist/optimize.js",
+        "node_modules/@ruvector/typesafe/dist/questions.js",
+        "node_modules/@ruvector/typesafe/dist/serve.js",
+        "node_modules/@ruvector/typesafe/dist/types.js",
+        "node_modules/@ruvector/typesafe/native/linux-x64-gnu/libonnxruntime.so.1",
+        "node_modules/@ruvector/typesafe/native/linux-x64-gnu/libonnxruntime_providers_shared.so",
+        "node_modules/@ruvector/typesafe/native/linux-x64-gnu/typesafe.linux-x64-gnu.node",
+        "models/bge-small-en-v1.5/model.onnx",
+        "models/bge-small-en-v1.5/tokenizer.json"
+      ],
+      "verified_count": 16
+    }
+  ],
+  "materialization": "Copy/hardlink all16 exact assets with no symlink ancestry or namespace fallback. Preserve addon+both ORT libraries side-by-side. Pin original models/manifest and actual isolated package resolution. Assert native backend2.4.0 and exact isolated addon path/e4db hash; no WASM/hash embedder fallback. No download required.",
+  "model_tokenizer_native_initializations": 0,
+  "native_binary": {
+    "package": "@ruvector/typesafe",
+    "package_version": "0.2.0",
+    "runtime_version": "2.4.0",
+    "sha256": "e4db4b945a91b5cb8937765236e180763e8a3f4866b791e0f71a98d0018c289d"
+  },
+  "pipeline_source_files": [
+    {
+      "bytes": 14784,
+      "canonical_current_bindings": [],
+      "direct_snapshot_note": "No direct source snapshot found; exact bytes match fixed SHA256 in CP/Git-pinned full104 source map. This metadata/source-plan file is restored by that transitive pin.",
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "experiments/submission-2026-10-22/jevbench/round2-v2/plan.json",
+      "sha256": "782db4034b2eb51ad9520a632ee94f7bdbb5bf0e8826ca44a91a055c15971f17"
+    },
+    {
+      "bytes": 3942,
+      "canonical_current_bindings": [
+        {
+          "CP_verified": true,
+          "actual_Git_blob_sha1": "f8d9b3664132d1c186bdc0145b086a9d882ad356",
+          "canonical_snapshot_path": "experiments/sota-2026-10-22/epoch3/failed-attempt1/source/experiments/submission-2026-10-22/jevbench/engine.py"
+        }
+      ],
+      "direct_snapshot_note": null,
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "experiments/submission-2026-10-22/jevbench/engine.py",
+      "sha256": "a833b1772be7bf18f48a2be58b6dd315428e9efa920c5ff5f7867fc22e14e8e9"
+    },
+    {
+      "bytes": 722,
+      "canonical_current_bindings": [
+        {
+          "CP_verified": true,
+          "actual_Git_blob_sha1": "67eb895df0f7cf1d247b8abba1d69713c085acbd",
+          "canonical_snapshot_path": "experiments/sota-2026-10-22/epoch3/failed-attempt1/source/experiments/submission-2026-10-22/jevbench/round2-v2/rules.py"
+        }
+      ],
+      "direct_snapshot_note": null,
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "experiments/submission-2026-10-22/jevbench/round2-v2/rules.py",
+      "sha256": "fee7c41fccf65cd06ba39fbf23edf3540ec76ee8e3659aa82276dff6739fe057"
+    },
+    {
+      "bytes": 15580,
+      "canonical_current_bindings": [
+        {
+          "CP_verified": true,
+          "actual_Git_blob_sha1": "c83ff7069e81a9c3b3effccf5e133ff8b088ddc4",
+          "canonical_snapshot_path": "experiments/sota-2026-10-22/epoch3/failed-attempt1/source/experiments/submission-2026-10-22/jevbench/round2-v2/typed_relations.py"
+        }
+      ],
+      "direct_snapshot_note": null,
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "experiments/submission-2026-10-22/jevbench/round2-v2/typed_relations.py",
+      "sha256": "2a46e6de5782fcd917697b616cd2ae60591255c50b0cc1c084ab8ded3acbb145"
+    },
+    {
+      "bytes": 665,
+      "canonical_current_bindings": [
+        {
+          "CP_verified": true,
+          "actual_Git_blob_sha1": "21a2543d345a12086f587f36316737954aa868d9",
+          "canonical_snapshot_path": "experiments/sota-2026-10-22/epoch3/failed-attempt1/source/experiments/compounding/jevbench/cycle3/round2/rules.py"
+        }
+      ],
+      "direct_snapshot_note": null,
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "experiments/compounding/jevbench/cycle3/round2/rules.py",
+      "sha256": "38227ac21558f6a1b435bda9963e4c22bb83c495a97855b71c1b608f890e35a0"
+    },
+    {
+      "bytes": 14189,
+      "canonical_current_bindings": [
+        {
+          "CP_verified": true,
+          "actual_Git_blob_sha1": "54dd2acad3a128cdb0ba19db403b21030bb5050c",
+          "canonical_snapshot_path": "experiments/sota-2026-10-22/epoch3/failed-attempt1/source/experiments/compounding/jevbench/cycle3/round2/probability.py"
+        }
+      ],
+      "direct_snapshot_note": null,
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "experiments/compounding/jevbench/cycle3/round2/probability.py",
+      "sha256": "422651293ad4988b5f0f859479941914046493b5fdcaa9399a5aa0d58ad512c3"
+    },
+    {
+      "bytes": 657,
+      "canonical_current_bindings": [
+        {
+          "CP_verified": true,
+          "actual_Git_blob_sha1": "83ff8f5992c2e8d1b350578f3e41dab3fdca0b74",
+          "canonical_snapshot_path": "experiments/sota-2026-10-22/epoch3/failed-attempt1/source/experiments/compounding/jevbench/cycle2/round2/rules.py"
+        }
+      ],
+      "direct_snapshot_note": null,
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "experiments/compounding/jevbench/cycle2/round2/rules.py",
+      "sha256": "691ef367b7a00f1a7d5e3deb6f327fcab8cd5f74061f139e5e9b30ad575ff3ad"
+    },
+    {
+      "bytes": 17463,
+      "canonical_current_bindings": [
+        {
+          "CP_verified": true,
+          "actual_Git_blob_sha1": "308c8d667ee14f4e7e67a06003f836a7cee6dd91",
+          "canonical_snapshot_path": "experiments/sota-2026-10-22/epoch3/failed-attempt1/source/experiments/compounding/jevbench/cycle2/round2/typed_numeric.py"
+        }
+      ],
+      "direct_snapshot_note": null,
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "experiments/compounding/jevbench/cycle2/round2/typed_numeric.py",
+      "sha256": "ca68e620eb0871e16d98f7242f3a874d72ae57569a6a201a6f6d57aa3c8af6b8"
+    },
+    {
+      "bytes": 7880,
+      "canonical_current_bindings": [
+        {
+          "CP_verified": true,
+          "actual_Git_blob_sha1": "f3db10036becc52f133626578fe98d6904b073cb",
+          "canonical_snapshot_path": "experiments/sota-2026-10-22/epoch3/failed-attempt1/source/experiments/compounding/jevbench/cycle2/frozen-baseline/rules.py"
+        }
+      ],
+      "direct_snapshot_note": null,
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "experiments/compounding/jevbench/cycle2/frozen-baseline/rules.py",
+      "sha256": "855b6b7a1a6d690ccee8d3bd8a4ff6268bb054e3209ff42ffc9291b42671cf98"
+    },
+    {
+      "bytes": 17775,
+      "canonical_current_bindings": [
+        {
+          "CP_verified": true,
+          "actual_Git_blob_sha1": "ed68008f2ba303b2c43ab3d59b6f3536282dde72",
+          "canonical_snapshot_path": "experiments/sota-2026-10-22/epoch3/failed-attempt1/source/experiments/swarm/jevbench-adapter/server.py"
+        }
+      ],
+      "direct_snapshot_note": null,
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "experiments/swarm/jevbench-adapter/server.py",
+      "sha256": "aadde0913ee2276bcf188b1b49a2b6239004fa9f45ac9f90909b74e2de33b1ba"
+    },
+    {
+      "bytes": 1523,
+      "canonical_current_bindings": [
+        {
+          "CP_verified": true,
+          "actual_Git_blob_sha1": "81d70dad60a13a398fdc922322a54aab0fec3d43",
+          "canonical_snapshot_path": "experiments/sota-2026-10-22/epoch3/failed-attempt1/source/experiments/swarm/jevbench-adapter/native-worker.cjs"
+        }
+      ],
+      "direct_snapshot_note": null,
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "experiments/swarm/jevbench-adapter/native-worker.cjs",
+      "sha256": "333e04b62bb13dfa578a26f86d6d69809485e4278dfca46fbae72aae41fd2d29"
+    },
+    {
+      "bytes": 3307,
+      "canonical_current_bindings": [
+        {
+          "CP_verified": true,
+          "actual_Git_blob_sha1": "54e506dc43b117629e377a1beff5aa526f30644a",
+          "canonical_snapshot_path": "experiments/sota-2026-10-22/epoch3/failed-attempt1/source/experiments/optimization/baseline-server.cjs"
+        }
+      ],
+      "direct_snapshot_note": null,
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "experiments/optimization/baseline-server.cjs",
+      "sha256": "acce673e82f571e939836142ebde5f4a4aadfd0d595d022cbcb49ae92fe84703"
+    },
+    {
+      "bytes": 577,
+      "canonical_current_bindings": [],
+      "direct_snapshot_note": "No direct source snapshot found; exact bytes match fixed SHA256 in CP/Git-pinned full104 source map. This metadata/source-plan file is restored by that transitive pin.",
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "models/manifest.json",
+      "sha256": "fdca50d372d5993f347db244678f77c0c8fef5698d5fd479ddf1a060f77838a5"
+    },
+    {
+      "bytes": 3310,
+      "canonical_current_bindings": [
+        {
+          "CP_verified": true,
+          "actual_Git_blob_sha1": "ef9a10ebad2fca3bb56ccd7f5fef1d7369bd229e",
+          "canonical_snapshot_path": "experiments/sota-2026-10-22/epoch5/typesafe-runtime-closure.json"
+        }
+      ],
+      "direct_snapshot_note": null,
+      "metadata_pin_anchor": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "path": "experiments/sota-2026-10-22/epoch5/typesafe-runtime-closure.json",
+      "sha256": "363bb39e63fd6fb212a0aed25974443f5a286ca5eaff867314f3daad5fbe0718"
+    }
+  ],
+  "probability_and_capacity": {
+    "choice": "Preserve original choice/map/calibrated/head/model/temperature/usage; never renormalize or claim calibration.",
+    "error": "Original helper discards TypesafeError.kind, retaining message. Missing kind remainsunknown.",
+    "full_input_is_not_full_attention": true,
+    "max_state_utf8_bytes": 16384,
+    "noul": "Zero-label similarity score explicitlycalibrated:false; native wire drops criteria and keeps type+instructions. No invented calibrated Bernoulli probability.",
+    "original_manifest_max_tokens": 256,
+    "proof": "Original deterministic source proof0/1 retainscalibrated:false plus original native answer."
+  },
+  "required_runtime16": [
+    {
+      "bytes": 1625,
+      "path": "node_modules/@ruvector/typesafe/package.json",
+      "sha256": "190a6c2bb33ce0d330efe85d120fdccde4caae94690818592f1dfa22d9f3d03c"
+    },
+    {
+      "bytes": 3101,
+      "path": "node_modules/@ruvector/typesafe/index.js",
+      "sha256": "736b000e3cd5541367baf0aa1c697eff195bb7eeadcec3c2f11407641413a927"
+    },
+    {
+      "bytes": 2536,
+      "path": "node_modules/@ruvector/typesafe/dist/binding.js",
+      "sha256": "940ce6513626dab25e8a0fcd325f1f8ef688a2d7e64a230105b347e9749a336d"
+    },
+    {
+      "bytes": 8122,
+      "path": "node_modules/@ruvector/typesafe/dist/client.js",
+      "sha256": "6527f0d37dd98cb75dad3796c308e71f29845cc2c07d8f33e0f8f06a99668e39"
+    },
+    {
+      "bytes": 1133,
+      "path": "node_modules/@ruvector/typesafe/dist/errors.js",
+      "sha256": "fa2007c4b15ea32d384b73a7e89729b640e06b2c6fa50143c759ef97428e57f2"
+    },
+    {
+      "bytes": 2673,
+      "path": "node_modules/@ruvector/typesafe/dist/index.js",
+      "sha256": "ef49586988bcd83b25a610da5a02f53d932bd9d7d25928c9438a73054cd5a56a"
+    },
+    {
+      "bytes": 4414,
+      "path": "node_modules/@ruvector/typesafe/dist/metrics.js",
+      "sha256": "0fef2b9a015f49879cbf41531f65ee0159e014b7a7a08b30a2d70510bee9b160"
+    },
+    {
+      "bytes": 469,
+      "path": "node_modules/@ruvector/typesafe/dist/optimize.js",
+      "sha256": "93f86330c64cfd6ad249054a1890e6d7ee71fb1b887d504c0a8865e39ae4a755"
+    },
+    {
+      "bytes": 1612,
+      "path": "node_modules/@ruvector/typesafe/dist/questions.js",
+      "sha256": "226f6e2864c1942f59d827f3cd10386d0d709caaa374a63036987e56ce074528"
+    },
+    {
+      "bytes": 5691,
+      "path": "node_modules/@ruvector/typesafe/dist/serve.js",
+      "sha256": "ddac08e46c9da1dcc6448a247082d7963c63a4982febcb8073818cd8e73d0380"
+    },
+    {
+      "bytes": 807,
+      "path": "node_modules/@ruvector/typesafe/dist/types.js",
+      "sha256": "b9360fead2733f71085a711649190e053f9c4ca03ee35cae0fe3a446e8d9b2dc"
+    },
+    {
+      "bytes": 24268848,
+      "path": "node_modules/@ruvector/typesafe/native/linux-x64-gnu/libonnxruntime.so.1",
+      "sha256": "1461ef7cc3d9e49982591721683cc3e3a55580aeca9a5254e7aac47b75ee4bab"
+    },
+    {
+      "bytes": 14632,
+      "path": "node_modules/@ruvector/typesafe/native/linux-x64-gnu/libonnxruntime_providers_shared.so",
+      "sha256": "086ec1d5388f64153d9c63470d126693db9a182c8ce236d3a1119068471b8a0d"
+    },
+    {
+      "bytes": 4635848,
+      "path": "node_modules/@ruvector/typesafe/native/linux-x64-gnu/typesafe.linux-x64-gnu.node",
+      "sha256": "e4db4b945a91b5cb8937765236e180763e8a3f4866b791e0f71a98d0018c289d"
+    },
+    {
+      "bytes": 133093490,
+      "path": "models/bge-small-en-v1.5/model.onnx",
+      "sha256": "828e1496d7fabb79cfa4dcd84fa38625c0d3d21da474a00f08db0f559940cf35"
+    },
+    {
+      "bytes": 711396,
+      "path": "models/bge-small-en-v1.5/tokenizer.json",
+      "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Native104 decision-pipeline engineering closure only, not separate LegalBench RRF10 evaluation or benchmark generalization.",
+  "source_map": {
+    "bytes": 6813,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch27-0471ff09d550/project/experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+    "sha256": "a429bc7faa5658be89dca31c3bd8122e0d4c96758321e39f2105c24bbd21f127"
+  },
+  "status": "PASS_PINNED_SOURCE_AND_LOCAL16_ASSET_AVAILABILITY_NO_RUNTIME_ADMISSION",
+  "weights_loaded": 0
+}

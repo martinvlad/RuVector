@@ -1,0 +1,30 @@
+{
+  "acceptance": "Source-policy/filter identity and synthetic stdlib enforcement tests precede measurement; actual owned process enforcement/status and observed affinities must match. This proves CPU execution constraints, not semantic quality, benchmark improvement or model calibration.",
+  "at": "2026-10-24T10:55:23.816983+00:00",
+  "authorized_batches_or_time_increase": 0,
+  "benchmark_accepted": false,
+  "benchmark_source_labels_or_CONF_reads": 0,
+  "champion_promoted": false,
+  "confirmation": [],
+  "epoch": 28,
+  "kernel_boundary": "A successful process-local no_new_privs seccomp filter is inherited across exec/clone and cannot be removed by the child; native sched_setaffinity attempts remain EPERM, retaining the inheritedCPU0/1 bound. Only claim the supported ABI/kernel behavior actually tested and observed.",
+  "model_tokenizer_native_initializations_by_this_policy": 0,
+  "network_scope_unchanged": "Network restrictions remain Python/Node public API interposition plus source review; no OS-enforced network syscall isolation is claimed.",
+  "reason": "Taskset/environment settings alone do not prevent a native runtime from changing thread affinity. Enforce the authorized CPU0/1 bound without changing immutable model/code options.",
+  "required_sequence": [
+    "Require actual Linux x86_64 execution and exact source/policy/owner admission. Fail closed if unsupported.",
+    "Set/verify initial owned worker and native child affinity exactly CPUs0,1 before native addon import.",
+    "Before Node exec, set no_new_privs and install a process-local seccomp BPF filter which refuses sched_setaffinity (x86_64 syscall203) with EPERM. Enforce the declared architecture and disallow alternate ABI bypass; installation/architecture failures abort before model initialization.",
+    "Preserve all original submitted Native104 code, assets, constructor/model options and prediction inputs. Apply no head-fitting, model-thread option changes, affinity repairs or retries after an actual start.",
+    "Read native process NoNewPrivs/Seccomp/filter-count status and observed task/thread affinities after initialization and at saved progress checkpoints. Record original actual OS thread counts; do not assert Threads==2.",
+    "Any observed affinity outside0,1 or missing/failed required enforcement proof rejects qualification. Observed snapshot scope does not imply continuous observation of every short-lived thread.",
+    "Preserve native stderr, including any original runtime affinity warnings, without changing a response or hiding failure. A refused affinity syscall is the prospective CPU policy, not a network event."
+  ],
+  "schema_version": 1,
+  "scope": "Only the newly owned Node native child and its descendants/threads, before exec and before any original native addon/model initialization; no host or unrelated process changes.",
+  "status": "PROSPECTIVE_PROCESS_LOCAL_CPU_AFFINITY_ENFORCEMENT_BEFORE_NATIVE_MEASUREMENT",
+  "supplements_unchanged_engineering_contract": {
+    "path": "experiments/sota-2026-10-22/audit/epoch28/protocol.json",
+    "sha256": "10e33b6a673e640142f63316d8fff923c8558852e65d132e450a4b8272182408"
+  }
+}

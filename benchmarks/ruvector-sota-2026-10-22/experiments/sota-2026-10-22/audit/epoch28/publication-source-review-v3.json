@@ -1,0 +1,122 @@
+{
+  "checks_passed": true,
+  "source_review_complete": true,
+  "reviewed_at": "2026-10-24T11:01:36.747033+00:00",
+  "scope": "Pure-stdlib E28 publication guards before source freeze; actual source/final staged payload and remote admission remain separate gates.",
+  "handoff_revision": 3,
+  "handoff_sha256": "1accd4cb1919ca8d1fcd6b9da96c1aa947b294641d63758039e16017c788ee90",
+  "files": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/baseline-validation.v1.json",
+      "bytes": 739,
+      "sha256": "6ed1cf7436d0a8a94306c3182239317ee603e12e8f45632194caa3239da4f53f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/build_controls_v1.py",
+      "bytes": 7658,
+      "sha256": "06fabf0faaaca3fac64c5ef89689681ba418818991cbd451586a65e46d3252a9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/guard-tests.v1.json",
+      "bytes": 583,
+      "sha256": "826fe1d7fd8174e7bebc3802a5324e5827193b6dd481195a85bee089b292c4f6"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/publication_common_v1.py",
+      "bytes": 16929,
+      "sha256": "2d37b854f410942db684c7da60c49033f02a890aaf30de96ebe3866374e3e82e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/stage_publication_v1.py",
+      "bytes": 35018,
+      "sha256": "d6143f91ad59e8a807293e7aea2414872dec8268dfdccb2e2a6c9fa7f6ce1428"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/test_publication_guards_v1.py",
+      "bytes": 20544,
+      "sha256": "233ddcfcb16c413f95d52263c914184cd78c5d37e8ae42ccaec145f14ce3872c"
+    }
+  ],
+  "independent_author_suite": {
+    "tests_run": 45,
+    "failures": 0,
+    "errors": 0,
+    "success": true,
+    "output": ".............................................\n----------------------------------------------------------------------\nRan 45 tests in 0.105s\n\nOK\n",
+    "temporary_files_confined_to": "/tmp/ruvector-e28-publication-audit"
+  },
+  "independent_adversarial_and_interface_checks": {
+    "captured_worker_cannot_be_erased_with_claim_refs_rebound": {
+      "rejected": true,
+      "reason": "Published actual effort/resources differ from captured receipts",
+      "intended_guard_reached": true
+    },
+    "open_new_epoch_allowance_rejected": {
+      "rejected": true,
+      "reason": "Nonzero/ambiguous durable E28 allowance: epoch28_workers_remaining",
+      "intended_guard_reached": true
+    },
+    "current_failed_status_cannot_be_omitted": {
+      "rejected": true,
+      "reason": "Missing/inconsistent current E28 outcome status",
+      "intended_guard_reached": true
+    },
+    "historical_nonraw_CP_cannot_be_current_raw": {
+      "rejected": true,
+      "reason": "Unexpected reference path",
+      "intended_guard_reached": true
+    },
+    "CONT_budget_used_cannot_differ_from_capture_and_ledger": {
+      "rejected": true,
+      "reason": "Continuation/current-ledger E28 budget projections differ",
+      "intended_guard_reached": true
+    },
+    "CONT_final_verdict_cannot_differ_from_manifest": {
+      "rejected": true,
+      "reason": "Continuation current final summary differs from exact manifest/result outcome",
+      "intended_guard_reached": true
+    },
+    "CONT_epoch_summary_cannot_claim_benchmark_acceptance": {
+      "rejected": true,
+      "reason": "Current epoch summary differs from exact manifest/result outcome",
+      "intended_guard_reached": true
+    },
+    "actual_sole_parent_receipt_accepted": {
+      "passed": true
+    },
+    "conflicting_parent_aliases_rejected": {
+      "rejected": true,
+      "reason": "Parent/sole_parent absent or conflicting"
+    }
+  },
+  "all_reported_integrity_provenance_and_counter_findings_resolved": true,
+  "no_open_confirmed_high_critical_or_medium_findings": true,
+  "guard_semantics_reviewed": [
+    "Exact original3858 Git scope identity and3784CP historical byte/metadata preservation",
+    "Strict four-root review; canonical/no-symlink paths; public text/privacy/binary exclusions",
+    "Exact inherited3 CP-only archive/extractor/helper contracts and Git omissions unchanged",
+    "Source freeze coverage and immutable source/current CP references; benchmark roles empty and no CONF budget",
+    "Captured current E28 raw/execution provenance, plan and raw seals, reserved/verified/uncertain starts and complete resources",
+    "Honest absent or malformed raw remains failed/unqualified with unknown counts rather than invented zeros",
+    "Current closed budget and current outcome/rejection or qualification record; all historical rejection prefix preserved",
+    "CONT actual counters, budget used/remaining, final verdict and last epoch summary exactly bound to captured receipts/manifest/results",
+    "Actual parent/sole_parent receipt alias accepted, conflicts rejected",
+    "Strict serialized blob JSON<8384512 and tree JSON<175904; scoped modes, same expected leaf hashes and nonforce CAS interface"
+  ],
+  "publisher_requirements": [
+    "Use current baseline scope690e7e03e4a60859de5353daa8e2b62e791dabb2 and3858baseline leaves.",
+    "Perform separate exhaustive current source stage and actual connected source readback before any one-worker local admission.",
+    "Preserve immutable shared baseline hardlinks; write new sources/controls/runtime state to independent new paths.",
+    "Final evidence, current output/result meanings and actual execution still require independent replay/audit and final actual remote readback before physical release."
+  ],
+  "tool_coverage": {
+    "python": "3.12.14",
+    "Ruflo_pinned_local_runtime_available": false,
+    "external_scanner_or_dependency_download_performed": false,
+    "advisory_feed": "Not consulted; no dependency/CVE clearance claimed for this stdlib guard review."
+  },
+  "project_or_controller_modified_by_auditor": false,
+  "ML_native_Git_or_external_network_calls_for_tests": 0,
+  "new_import_bytecode_in_publication_root": false,
+  "independent_target_fixture_note": "Canonical-ref-rebound isolated checked_final cases; each baseline first passes, then the specific intended guard and rejection message are asserted. Historical preservation is separately covered by the45-test suite."
+}

@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "epoch": 28,
+  "kind": "REAL_ENGINEERING_FULL104_QUALIFICATION",
+  "engineering_only": true,
+  "license_of_authored_inputs": "CC0-1.0",
+  "source_checkpoint": "585c476cec6011b1db9c79147e3b0ff80124a6a3",
+  "pipeline": "byte-exact historical CompositeEngine(round2-v2/rules.py).predict(validate_request(record.input)) -> original NativeEngine -> original native-worker.cjs -> original baseline nativeEngine -> actual@ruvector/typesafe0.2.0 native2.4.0+BGE-small max256",
+  "inference_inputs": "Only full original authored state and exact frozen questions; no IDs, expectations, purpose, metadata, input hashes or oracle passed to predict. Preserve insertion order including criteria labels.",
+  "requests": {
+    "count": 8,
+    "questions_written": 8,
+    "successes": 7,
+    "expected_preserved_original_refusals": 1,
+    "native_initializations": 1,
+    "warmups": 0,
+    "retry": 0,
+    "data_roles": {
+      "train": [],
+      "dev": [],
+      "calibration": [],
+      "confirmation": []
+    }
+  },
+  "captures": {
+    "literal_input_json": "compact UTF8 original record.input; its independent canonical SHA preserved",
+    "normalized_state_and_questions": "full exact string/ordered question map returned by unchanged validate_request",
+    "native_stdin_literal": "actual synchronous NativeEngine stdin.write text including spaces/newline; raw UTF8 bytes also saved native.stdin.jsonl",
+    "native_stdout_literal": "actual NativeEngine stdout.readline text including startup ready line and8responses, saved native.stdout.jsonl; no preattached data listener",
+    "native_stderr": "complete child stderr file",
+    "response": "complete unchanged CompositeEngine response including every final answer, native_original_answer, baseline100_answer, native_fallback_used, symbolic_proof ifapplied, usage and original calibration/head fields",
+    "error": "original RuntimeError message+traceback plus exact original child refusal line; original error.kind is dropped by historical worker, so null/UNKNOWN retained and never invented",
+    "pipe_identity": "path/size/SHA256 eachcompleteartifact, perrequest literal hashes; all raw counters/errors retained",
+    "startup": "original parsed ready receipt plus actual raw startup stdout line inartifact, actual PID/ticks/session and actual.node path/SHA/load counts",
+    "actual_loaded_runtime": "Read-only /proc/nativepid/maps after ready and after requests, .node and required ORT path/SHA matched to exact closure; no model API instrumentation",
+    "partial_failure": "Atomic raw.partial.json complete snapshots at every progress event, stop signals blocked during write+replace; incomplete pendingbytes ifany retained as raw.partial.pending.json, alwayshashed bylauncher. Finalraw sealing isolated from progressfailure.",
+    "scratch": "Compiler/native temp bytes ifany stay outsidepublicproject in fixedS28/runtime28-tmp; publishscratch-receipt.json path/size/hash only, preservefilesforreview.",
+    "CPU_policy_actual": "native-preexec.json actual beforeexec record preserved as raw.cpu_guard_preexec and raw.cpu_guard_preexec_artifact; Node_guard_events source-admissionevent independentlyrecordsCPU_guard_actual_proc_status beforeactual.node load. Native_process_status includesNNP/Seccomp/filtercount andobservedthreadmasks."
+  },
+  "numeric_semantics": {
+    "native_noul": "actual uncalibrated similarity score unless its original calibrated flag states otherwise; do not relabel it calibrated probability",
+    "probabilities": "retain actual fieldnames/values/calibrated/head from original response; finite0..1 and mass tolerance1e-6 checked without conversion",
+    "proof_noul": "full exact_word_count proof routing final1/0 checked by independent engineering oracle; calibratedfalse remainsfalse",
+    "binary_decision": "No benchmark binary calibration or proper score calculated; any original supplied choice probabilities remain untouched",
+    "benchmark_accuracy": null,
+    "benchmark_NLL": null,
+    "benchmark_Brier": null,
+    "proper_metric_computations": 0
+  },
+  "limits": {
+    "state_bytes": "Original package accepts<=16384 UTF8 bytes and refuses16385 fixture; full state is never clipped or replaced bywrapper",
+    "embedding_tokens": "Original immutable BGE manifest max256 remains a separate internal limit, not proof of complete-document semantic coverage",
+    "CPU": "Enforced child CPU0,1 frombeforeNodeexec byinheritedseccomp blockingaffinitychanges; computationalenvironmentbudget2/UV1; allobservedthreadmaskssampledreadonlyatinit/progress andmuststaywithin0,1. TotalOSthreadcountneednotbe2. Unobservedthreadlifetimesunknown; no modeloptionedits.",
+    "seconds": "600 whole launcher initialization+worker+cleanup; worker585s with alarm7s before worker deadline to allow originalclose<=5s and final raw seal, then outer owned-session cleanup through600",
+    "opaque_internal_counts": "BGE forwards/token counts/ANNqueries/NLIcalls UNKNOWN unless original rawusage explicitly exposes a named value; never assert one perrequest"
+  },
+  "guards": {
+    "Python": "all socket bind/DNS/connect/send/receive/listen/accept persistently fatal; no exceptions needed for stdin",
+    "Node": "All exposed module+Resolver callback/promise DNS, TCP connect/send/receive/listen, UDP createSocket/Socket constructor/prototypes, HTTP/fetch APIs persistently fatal; only exact stdin/stdout/stderr pipe objects may read/write.",
+    "native_module": "preload validatessource/runtime/admission then records exactonlye4db... .node require, returns unchanged exports without wrappingmodel/decide APIs",
+    "scope": "Python/Node public API interposition; no OS syscall isolation or compiled-Rust instrumentation claimed",
+    "CPU": "Before the original Nodeexec in its child only: Linuxx86_64 single-thread-parent preexec pins0,1, verifiesmask, setsno_new_privs andclassicBPF seccomp thatreturnsEPERMfor203 and1073742027 sched_setaffinity. Filter inheritedbyallfuturethreads+exec; wrongarchitecturefailsclosed. No kernel/globalconfiguration or originalmodeloptionchanges. Nodepreload independentlyrequiresNNP1/Seccomp2/mask0,1 beforeaddonrequire. Actualdeny-syscalltotalsUNKNOWN; synthetic4denialsareseparate."
+  },
+  "completion": "raw status COMPLETED_AUTHORED_QUALIFICATION_AWAITING_INDEPENDENT_REPLAY plus exact1init/8requests/7success/1refusal/0forbidden/errors and closedownedprocesses; independent oracle determines engineering qualification only",
+  "publication": "SOURCE freeze and independent actual remote source readback admission precedeanymodel/tokenizer/native initialization; one exclusive nonretry reservation beforePopen; malformedpartialraw remains and failureseal recordsitsbytes/SHA",
+  "claims": {
+    "benchmark_generalization": false,
+    "promotion": false,
+    "CONF": false,
+    "DEV": false,
+    "paid": false,
+    "GPU": false,
+    "generation": false,
+    "fit": false,
+    "calibration": false
+  },
+  "counter_semantics": {
+    "native_stdin_write_calls_attempted": "8 normal; increments before actual stdin.write, including broken-pipe or timeout attempt",
+    "native_systemOne_requests": "8 normal complete original JSON frames accepted by stdin.write; not inferred backend execution",
+    "native_questions_written": "8 actual questions in accepted complete original frames",
+    "native_stdout_read_calls_attempted": "9 normal original readline API calls, includes startup; blocking/error reads stillattempted",
+    "native_stdout_lines_read": "9 actual nonempty original lines inclstartup, counted beforeJSONparse",
+    "native_response_lines": "8 actual nonstartup response lines counted beforeparse",
+    "native_request_reply_pairs_closed": "8 fullyobserved request/response pairs; separateswrittenattempts fromreplyclosure",
+    "unanswered_backend_execution": "UNKNOWN; missingreply never interpretedas0internalmodelcalls"
+  }
+}

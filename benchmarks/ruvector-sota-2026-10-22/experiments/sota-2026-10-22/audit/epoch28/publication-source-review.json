@@ -1,0 +1,107 @@
+{
+  "checks_passed": true,
+  "source_review_complete": true,
+  "reviewed_at": "2026-10-24T11:20:46.534126+00:00",
+  "handoff_revision": 7,
+  "handoff_sha256": "b231757476f4212eb830b5321c86e1c248a46707d188f6cbb5198d35eba8c058",
+  "files": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/baseline-validation.v1.json",
+      "bytes": 739,
+      "sha256": "6ed1cf7436d0a8a94306c3182239317ee603e12e8f45632194caa3239da4f53f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/build_controls_v1.py",
+      "bytes": 7658,
+      "sha256": "06fabf0faaaca3fac64c5ef89689681ba418818991cbd451586a65e46d3252a9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/guard-tests.v1.json",
+      "bytes": 628,
+      "sha256": "8b3bdcbfdd5b54eacfa8ecc66e10edca0b66c81d6165c00220ba0cd28659e693"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/publication_common_v1.py",
+      "bytes": 16929,
+      "sha256": "2d37b854f410942db684c7da60c49033f02a890aaf30de96ebe3866374e3e82e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/stage_publication_v1.py",
+      "bytes": 39255,
+      "sha256": "5b7d569902b5df3aeb4b4af45104c90807f97203a4ed78356bd4ab3bcb99511c"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/test_publication_guards_v1.py",
+      "bytes": 26294,
+      "sha256": "5165e99d3ac60ac40e1b38b5a0bf226559499260178bfbca144c976a6c1da5c4"
+    }
+  ],
+  "prior_combined_reviews_preserved": [
+    {
+      "path": "/tmp/ruvector-e28-publication-audit/publication-source-review-final.json",
+      "bytes": 6201,
+      "sha256": "f8f7afe3e91d642ba1fd5312b528f1fbc74db7ffc144c69587592cff4b92baa5"
+    },
+    {
+      "path": "/tmp/ruvector-e28-publication-audit/publication-source-review-final-v4.json",
+      "bytes": 5299,
+      "sha256": "6702470cd9c65a4ea6c69b30e90bb427a7599a289c0fca11a988e11e0e8351fd"
+    }
+  ],
+  "scope": "Focused sealed-malformed-final versus validated partial precedence and selected-evidence counter-source binding amendment to retained V3/V4 review.",
+  "prior_reported_findings_resolved": true,
+  "no_open_confirmed_high_critical_or_medium_findings": true,
+  "author_full_purestdlib_suite_reported": {
+    "tests": 52,
+    "status": "PASS",
+    "not_independently_repeated_in_this_focused_delta": true
+  },
+  "independent_focused_author_regressions": {
+    "tests_run": 3,
+    "success": true,
+    "failures": 0,
+    "errors": 0,
+    "names": [
+      "test_malformed_final_uses_sealed_partial_but_valid_final_takes_precedence",
+      "test_selected_partial_with_malformed_final_cannot_claim_complete_after_rebinding",
+      "test_known_partial_counters_cannot_hide_behind_malformed_final_unknown"
+    ],
+    "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.033s\n\nOK\n"
+  },
+  "independent_fully_rebound_fallback_tamper_cases": {
+    "partial_relabel_complete_with_nonnull_malformed_full_seal": {
+      "rejected": true,
+      "reason": "Selected partial evidence path cannot be relabelled as complete final raw",
+      "fully_rebound_claims": true
+    },
+    "known_partial_hidden_by_selecting_malformed_full_UNKNOWN": {
+      "rejected": true,
+      "reason": "Known sealed checkpoint counters cannot be hidden behind an unparseable final raw",
+      "fully_rebound_claims": true
+    }
+  },
+  "legitimate_sealed_malformed_full_plus_valid_partial_accepted": {
+    "reserved_worker": 1,
+    "checkpoint_observed_native_requests": 8,
+    "counter_source": "raw.partial.json",
+    "operation_counts_complete": false,
+    "backend_execution_since_checkpoint": "UNKNOWN",
+    "qualification": false,
+    "captured_malformed_full_bytes_and_SHA_checked_against_retained_CP_file": true
+  },
+  "valid_full_raw_takes_precedence": true,
+  "selected_partial_cannot_claim_final_complete_discriminator": true,
+  "known_valid_sealed_partial_counters_cannot_be_hidden_behind_malformed_full_UNKNOWN": true,
+  "original_malformed_full_and_partial_files_remain_distinct_and_preserved": true,
+  "fully_absent_counter_state_remains_UNKNOWN": true,
+  "publisher_requirements": [
+    "Freeze the exact current six helper refs and this latest combined review; retain prior V3/V4 reviews.",
+    "Actual current source-stage payload review, connected source readback and late physical admission remain separate prerequisites for one worker.",
+    "Final captured result/accounting/outcome audit, exact connected final readback, and physical release verification remain mandatory."
+  ],
+  "all_test_writes_confined_to": "/tmp/ruvector-e28-publication-audit",
+  "project_or_controller_modified_by_auditor": false,
+  "ML_native_Git_or_external_network_calls_for_focused_tests": 0,
+  "public_import_bytecode_created": false,
+  "advisory_or_dependency_clearance_claimed": false
+}

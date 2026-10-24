@@ -1,0 +1,44 @@
+{
+  "CLI": {
+    "bind": "python -B PUBLISHED_AUDIT/score_engineering.py bind --project R --replay PUBLISHED_AUDIT/qualification-replay.json --results Pepoch28/RESULTS.json --output OUTSIDE/independent-acceptance.json",
+    "evaluate": "python -B PUBLISHED_AUDIT/score_engineering.py evaluate --project R --raw Pepoch28/runs/engineering/raw.json --execution Pepoch28/execution.json --plan Pepoch28/plan.json --output OUTSIDE/qualification-replay.json"
+  },
+  "benchmark_annotation_or_model_tokenizer_native_initializations": 0,
+  "candidate_or_runtime_starts_by_this_preparation": 0,
+  "epoch": 28,
+  "files": [
+    {
+      "bytes": 38727,
+      "path": "/tmp/ruvector-e28-independent-audit/score_engineering.py",
+      "sha256": "82727c5135793e3f94e47fd99da7fcedaa4a5d4b8b195c86db2a90f6cdd891bd"
+    },
+    {
+      "bytes": 6572,
+      "path": "/tmp/ruvector-e28-independent-audit/preflight_score_engineering.py",
+      "sha256": "a1c1b1d5463b5113943cf7a5ffd02c571f10a833070a0c125f2f21d7f3fc133d"
+    },
+    {
+      "bytes": 1573,
+      "path": "/tmp/ruvector-e28-independent-audit/scorer-preflight-v2.json",
+      "sha256": "862aa5930671013a8acd721d020179e30ffaf96fab456f28b79813c0411b9a9b"
+    },
+    {
+      "bytes": 3162,
+      "path": "/tmp/ruvector-e28-independent-audit/cpu-affinity-policy-v1.json",
+      "sha256": "98310d2468e8e81f95cae17b95b97a7eb572b20fe18bbc6f3aad337909bd9602"
+    },
+    {
+      "bytes": 1076,
+      "path": "/tmp/ruvector-e28-independent-audit/contract-source-freeze.json",
+      "sha256": "be918faf29a3378a95e4c6f7583222e8c23b8304ae58d18eb8767bdd951d34e9"
+    }
+  ],
+  "frozen_at": "2026-10-24T11:07:20.381302+00:00",
+  "not_runtime_launch_admission": true,
+  "original_contract_and_fixtures_unchanged": true,
+  "partial_failure": "evaluate may use explicitly sealed original raw.partial.json after failed execution; partial counters retained with operation_counts_complete:false/backend_execution_since_checkpoint:UNKNOWN. True full absence retains null raw/counts. Binding calls exact pinned helperaa9ad3... and keeps original evaluation failure separate from publication provenance checks.",
+  "proper_metric_computations": 0,
+  "publication_helper_sha256": "aa9ad3d70cd9f80c45bcec5d740be9a3d4767602e42f8e27f8178e9807433d30",
+  "schema_version": 1,
+  "status": "INDEPENDENT_SCORER_READY_AND_SEALED_BEFORE_ANY_NATIVE_MEASUREMENT"
+}

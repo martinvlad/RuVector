@@ -1,0 +1,55 @@
+{
+  "CLI_bind": "python -B PUBLISHED_AUDIT/score_engineering.py bind --project R --replay PUBLISHED_AUDIT/qualification-replay.json --results Pepoch28/RESULTS.json --output OUTSIDE/independent-acceptance.json",
+  "CLI_evaluate": "python -B PUBLISHED_AUDIT/score_engineering.py evaluate --project R --raw SELECTED_FINAL_OR_ORIGINAL_PARTIAL --execution Pepoch28/execution.json --plan Pepoch28/plan.json --output OUTSIDE/qualification-replay.json",
+  "benchmark_annotation_reads": 0,
+  "epoch": 28,
+  "files": [
+    {
+      "bytes": 39835,
+      "path": "/tmp/ruvector-e28-independent-audit/score_engineering_v2.py",
+      "sha256": "0250c739703971ee463e32aae1dda697e4547c5fd68e6d13a24bf0e787d39261"
+    },
+    {
+      "bytes": 10994,
+      "path": "/tmp/ruvector-e28-independent-audit/preflight_score_engineering_v2.py",
+      "sha256": "d30f9c5c17dfe8a177e0e9c164690bd81206f98a06510865f6066916c1be9cba"
+    },
+    {
+      "bytes": 1777,
+      "path": "/tmp/ruvector-e28-independent-audit/scorer-preflight-v3.json",
+      "sha256": "6f53f95637c8174b0d7e4f80aeab0e4d1d1d12b2dba1ccae83124e67439cc27f"
+    },
+    {
+      "bytes": 3162,
+      "path": "/tmp/ruvector-e28-independent-audit/cpu-affinity-policy-v1.json",
+      "sha256": "98310d2468e8e81f95cae17b95b97a7eb572b20fe18bbc6f3aad337909bd9602"
+    },
+    {
+      "bytes": 1076,
+      "path": "/tmp/ruvector-e28-independent-audit/contract-source-freeze.json",
+      "sha256": "be918faf29a3378a95e4c6f7583222e8c23b8304ae58d18eb8767bdd951d34e9"
+    }
+  ],
+  "focused_pre_measurement_change": "Pin corrected76a616... publication helper and bind original malformed-full bytes/parsefailure before partial selection; parseable final cannot be hidden. Contract, fixed8cases/oracle and qualification thresholds unchanged.",
+  "frozen_at": "2026-10-24T11:15:16.640122+00:00",
+  "model_tokenizer_native_initializations": 0,
+  "not_runtime_launch_admission": true,
+  "original_v1_seal_preserved": {
+    "bytes": 2367,
+    "path": "/tmp/ruvector-e28-independent-audit/scorer-source-freeze.json",
+    "sha256": "172e0a6f2c60c21baab09fb28bbd1173f94c1ab6d191ef079b0d74974095b63d"
+  },
+  "original_v1_source_preserved": {
+    "bytes": 38727,
+    "path": "/tmp/ruvector-e28-independent-audit/score_engineering.py",
+    "sha256": "82727c5135793e3f94e47fd99da7fcedaa4a5d4b8b195c86db2a90f6cdd891bd"
+  },
+  "preflight_reproduction": "In a separate writable review directory preserve score_engineering_v2.py and preflight_score_engineering_v2.py basenames, then python -B preflight_score_engineering_v2.py; tests read the pinned actual76helper source and use temporary synthetic metadata only.",
+  "proper_metric_computations": 0,
+  "publication_helper_sha256": "76a616a6173c19078a92246c2d422fc085344f0224fce1c6f00832a90db25343",
+  "publication_target": "Copy score_engineering_v2.py bytes unchanged to canonical audit/epoch28/score_engineering.py. No dynamic basename assumptions; explicit --project resolves canonical oracles.",
+  "schema_version": 2,
+  "status": "INDEPENDENT_SCORER_V2_READY_BEFORE_SOURCE_PUBLICATION_OR_NATIVE_MEASUREMENT",
+  "stdlib_preflight_checks": 23,
+  "supersedes_v1_for_actual_execution": true
+}

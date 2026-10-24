@@ -1,0 +1,124 @@
+{
+  "checks_passed": true,
+  "source_review_complete": true,
+  "reviewed_at": "2026-10-24T11:06:56.332301+00:00",
+  "handoff_revision": 4,
+  "handoff_sha256": "d7b8a44fe5fa871cdc82e0bb87a9ad2bc01e3682fc9edc6652f2f8abbf0d16ed",
+  "files": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/baseline-validation.v1.json",
+      "bytes": 739,
+      "sha256": "6ed1cf7436d0a8a94306c3182239317ee603e12e8f45632194caa3239da4f53f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/build_controls_v1.py",
+      "bytes": 7658,
+      "sha256": "06fabf0faaaca3fac64c5ef89689681ba418818991cbd451586a65e46d3252a9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/guard-tests.v1.json",
+      "bytes": 608,
+      "sha256": "e7f85667eb07b373e2b8387ead8e79bc6fecf92845f5413eebe10d2d84577d04"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/publication_common_v1.py",
+      "bytes": 16929,
+      "sha256": "2d37b854f410942db684c7da60c49033f02a890aaf30de96ebe3866374e3e82e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/stage_publication_v1.py",
+      "bytes": 37011,
+      "sha256": "aa9ad3d70cd9f80c45bcec5d740be9a3d4767602e42f8e27f8178e9807433d30"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch28/publication/test_publication_guards_v1.py",
+      "bytes": 23618,
+      "sha256": "d1d159e962eacba4b9bcfc4ca1707947b972befc1329fbbce14f26128fc341d6"
+    }
+  ],
+  "prior_v3_source_review_retained": {
+    "path": "/tmp/ruvector-e28-publication-audit/publication-source-review-final.json",
+    "bytes": 6201,
+    "sha256": "f8f7afe3e91d642ba1fd5312b528f1fbc74db7ffc144c69587592cff4b92baa5"
+  },
+  "scope": "Mandatory premeasurement failed-partial provenance delta; previous history, counter, budget, outcome, path and CONT projection findings remain resolved.",
+  "independent_full_purestdlib_suite": {
+    "tests_run": 49,
+    "failures": 0,
+    "errors": 0,
+    "success": true,
+    "output": ".................................................\n----------------------------------------------------------------------\nRan 49 tests in 0.144s\n\nOK\n",
+    "temporary_files_confined_to": "/tmp/ruvector-e28-publication-audit"
+  },
+  "partial_validity_independently_confirmed": {
+    "worker_reservation_preserved": 1,
+    "observed_native_counter_at_checkpoint": 8,
+    "operation_counts_complete": false,
+    "backend_execution_since_checkpoint": "UNKNOWN",
+    "qualified": false,
+    "only_failed_execution_allowed": true,
+    "raw_partial_exact_path_and_captured_seal_required": true,
+    "raw_and_captured_partial_counters_must_agree": true,
+    "no_copy_or_relabel_to_final_raw": true
+  },
+  "independent_partial_adversarial_cases": {
+    "partial_counter_receipt_disagreement": {
+      "rejected": true,
+      "reason": "Captured raw/launcher counters differ",
+      "intended_guard_reached": true
+    },
+    "partial_byte_seal_mismatch": {
+      "rejected": true,
+      "reason": "Partial checkpoint must retain failed/incomplete status and exact captured partial seal",
+      "intended_guard_reached": true
+    },
+    "known_partial_hidden_as_absent": {
+      "rejected": true,
+      "reason": "Absent raw must be an explicit sealed failure without a hidden known partial",
+      "intended_guard_reached": true
+    },
+    "partial_relabelled_complete": {
+      "rejected": true,
+      "reason": "Captured full/partial/unknown counter source discriminator differs",
+      "intended_guard_reached": true
+    },
+    "partial_cannot_qualify": {
+      "rejected": true,
+      "reason": "Partial checkpoint must retain failed/incomplete status and exact captured partial seal",
+      "intended_guard_reached": true
+    },
+    "historical_partial_path_rejected": {
+      "rejected": true,
+      "reason": "Raw evidence is not an exact current E28 full/partial path",
+      "intended_guard_reached": true
+    }
+  },
+  "launcher_interface_checked": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch28/launch_engineering.py",
+    "fields": [
+      "raw_operation_counters_source",
+      "operation_counts_complete",
+      "backend_execution_since_checkpoint",
+      "partial_raw_bytes",
+      "partial_raw_sha256"
+    ],
+    "checked_as_source_only": true
+  },
+  "fully_absent_raw_remains_unknown_not_zero": true,
+  "prior_guard_regressions_covered_by_rerun49_suite": true,
+  "no_open_confirmed_high_critical_or_medium_findings": true,
+  "publisher_requirements": [
+    "Copy this combined revision4 source review and retain the exact prior V3 receipt before freeze.",
+    "Freeze exact reviewed helper refs with source plan; actual staged payload and connected source readback are still separate gates before one worker initialization.",
+    "Partial evidence can support only failed/unqualified closure and checkpoint-observed counts; later backend execution remains UNKNOWN.",
+    "Final actual connected remote and physical release checks remain mandatory."
+  ],
+  "project_or_controller_modified_by_auditor": false,
+  "ML_native_Git_or_external_network_calls_for_tests": 0,
+  "new_publication_import_bytecode": false,
+  "tool_coverage": {
+    "python": "3.12.14",
+    "Ruflo_scanner_or_external_download": false,
+    "dependency_CVE_clearance_claimed": false
+  }
+}

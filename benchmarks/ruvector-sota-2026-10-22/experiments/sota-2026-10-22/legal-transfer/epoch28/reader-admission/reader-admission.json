@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "epoch": 28,
+  "status": "HOLD_NO_CURRENT_BANK_READER_ADMITTED",
+  "frozen_at": "2026-10-24T10:32:13.252989+00:00",
+  "actual_source_checkpoint": "585c476cec6011b1db9c79147e3b0ff80124a6a3",
+  "actual_head_evidence": {
+    "path": "/tmp/ruvector-e28-reader-admission/actual-head-evidence.json",
+    "bytes": 1800,
+    "sha256": "8427e812016904c414d639e598024c7f281a40ec2fb9b7c951e6f44bc2841af7"
+  },
+  "cached_source_proof": {
+    "path": "/tmp/ruvector-e28-reader-admission/cached-source-proof.json",
+    "bytes": 1536,
+    "sha256": "3b26d7cbe17e5bec9225364899cd8a0ad606cc96732dee500481721a19e89278"
+  },
+  "source_identity": "Actual GitHub CONT fetched at exact585c476...; cached CHECKPOINT_MANIFEST matched both actual Git blob7226506ae1c742a7636ad734d92fbb6aef8bba1e and CONT SHA256 cce7cdadcb9ef95b8ad4ec8cc51e2f3d56bcee8658b9e192416ff5c3bc8dedb2. All six relied-on E27/source-history records exactly match that CP.",
+  "prior_failure": {
+    "epoch": 27,
+    "status": "REJECTED_DEV_DIAGNOSTIC",
+    "diagnostic_qualified": false,
+    "benchmark_accepted": false,
+    "champion_promoted": false,
+    "confirmation_status": "HOLD_EMPTY_no_materialized_actual_full104_paired_comparator_or_official_eligibility",
+    "confirmation_ids": [],
+    "data_roles": {
+      "train": [],
+      "dev": [
+        609,
+        380,
+        592,
+        454,
+        559,
+        515,
+        349,
+        223
+      ],
+      "calibration": [],
+      "confirmation": []
+    },
+    "predeclared_descriptive_diagnostic_checks": {
+      "every_gold_class_present": true,
+      "lexical:Brier_nonincrease": true,
+      "lexical:NLL_nonincrease": true,
+      "lexical:native_at_least2more_correct": true,
+      "native_at_least_one_correct_per_class": false,
+      "positional:Brier_nonincrease": true,
+      "positional:NLL_nonincrease": true,
+      "positional:native_at_least2more_correct": false,
+      "raw_errors_empty": true
+    },
+    "unknown_supervised_and_pretraining_overlap": true,
+    "comparison_scope": "Exact paired controls on these fixed24projectDEV cases only. Prior epochs use different banks/models and are not paired improvement evidence. No official JevBench/LegalBench/ClaimBench placement claimed. Retrieval miss and truncated context never establish global insufficient evidence.",
+    "model": {
+      "repository": "facebook/bart-large-mnli",
+      "revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+      "original_precision": "FP32",
+      "native_head": "C/N/E three-way",
+      "temperature": 1,
+      "fits": 0
+    },
+    "all_attempt_slots_closed": true,
+    "automatic_retry": false,
+    "metrics": {
+      "actual_native": {
+        "correct": 15,
+        "n": 24,
+        "accuracy": 0.625,
+        "Brier": 0.6707348155998405,
+        "NLL_clipped_1e-12": 1.3408947768047037,
+        "by_class": {
+          "contradiction": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 4
+          },
+          "entailment": {
+            "accuracy": 0.6,
+            "correct": 6,
+            "n": 10
+          },
+          "not_mentioned": {
+            "accuracy": 0.9,
+            "correct": 9,
+            "n": 10
+          }
+        }
+      },
+      "lexical": {
+        "correct": 12,
+        "n": 24,
+        "accuracy": 0.5,
+        "Brier": 0.7971632888418075,
+        "NLL_clipped_1e-12": 1.491101259359156,
+        "by_class": {
+          "contradiction": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 4
+          },
+          "entailment": {
+            "accuracy": 0.3,
+            "correct": 3,
+            "n": 10
+          },
+          "not_mentioned": {
+            "accuracy": 0.9,
+            "correct": 9,
+            "n": 10
+          }
+        }
+      },
+      "positional": {
+        "correct": 14,
+        "n": 24,
+        "accuracy": 0.5833333333333334,
+        "Brier": 0.6948500152112668,
+        "NLL_clipped_1e-12": 1.4448949694792201,
+        "by_class": {
+          "contradiction": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "n": 4
+          },
+          "entailment": {
+            "accuracy": 0.4,
+            "correct": 4,
+            "n": 10
+          },
+          "not_mentioned": {
+            "accuracy": 1.0,
+            "correct": 10,
+            "n": 10
+          }
+        }
+      }
+    },
+    "source_record": {
+      "path": "experiments/sota-2026-10-22/epoch27/RESULTS.json",
+      "bytes": 54461,
+      "sha256": "9c8e849e2fc1e4a854486fd2cae45de116f12108d303ffdb4677707cf13d3845",
+      "matches_actual_CP": true
+    },
+    "scope": "Aggregate previously exposed projectDEV results only. Per-example cases are not retained in this research package."
+  },
+  "original_TRAIN_role_counts": {
+    "exposed_project_DEV": 261,
+    "unreserved": 138,
+    "reserved_confirmation": 24,
+    "total": 423,
+    "TRAIN_or_CONF_annotation_choices_accessed_by_this_research": 0
+  },
+  "candidate_cap": 2,
+  "new_candidate_repositories_examined": [
+    "imanxch/distilbert-contractnli",
+    "Syamchand/contract-nli-bert"
+  ],
+  "additional_candidate_probing_allowed": false,
+  "historical_exclusion": {
+    "report": {
+      "path": "/tmp/ruvector-e28-reader-admission/historical-model-exclusion.json",
+      "bytes": 4076,
+      "sha256": "0babd2e1c835b3f3f78fcc34bb6aab316b8fcc073e76e78b348fe766e02cf506"
+    },
+    "hash_verification": {
+      "path": "/tmp/ruvector-e28-reader-admission/historical-source-hash-verification.json",
+      "bytes": 139041,
+      "sha256": "3e51f24a61bdf2a675c06652ccef00dca8f46b0fe38bff22b35bf0be1090f178"
+    },
+    "metadata_only_source_files_scanned": 672,
+    "CP_verified_metadata_files": 664,
+    "unmapped_base_source_files": 8,
+    "scope_note": "Eight unpinned base/helper files are listed separately and not relied on for new-source qualification. No global/fuzzy nonoverlap guarantee is claimed.",
+    "candidate_exact_ID_matches": {
+      "imanxch/distilbert-contractnli": 0,
+      "Syamchand/contract-nli-bert": 0
+    },
+    "unchanged_historical_HOLD": {
+      "repository": "Agreemind/contractnli-legalbert-nda-weighted",
+      "historical_revision": "bfa672c59623ed61291c9a35760e42ae2ecc0a04",
+      "current_names_index_revision": "bfa672c59623ed61291c9a35760e42ae2ecc0a04",
+      "card_or_config_reprobed": false
+    },
+    "not_repeated": [
+      "Original2020 BART E27 rejected",
+      "E8/E10 train-only residual heads rejected",
+      "Generic NLI head/threshold/retrieval grids on exposed banks",
+      "Unchanged Solvi and Agreemind provenance HOLDs"
+    ]
+  },
+  "precise_blocker": "The promising new legal contradiction head is explicitly ContractNLI-trained but has no immutable training-time source-dataset snapshot or original-document training/selection/calibration identity manifest. It cannot establish exclusion of the remaining originalTRAIN confirmation identities. Naming train/validation/test and saving on validation contradiction F1 do not supply that separation. No candidate is admitted for the current bank; do not activate or redraw CONF.",
+  "candidates": [
+    {
+      "repository": "imanxch/distilbert-contractnli",
+      "revision": "124bdcede741d1a3fd999512a7813269e9c0c29a",
+      "status": "HOLD_NOT_PROVEN_ELIGIBLE_NO_ACQUISITION",
+      "material_hypothesis": "Unlike a generic MNLI swap, the stock three-way head was adapted to contract passages and selected on validation contradiction F1. This is a concrete legal-contradiction training mechanism, not proven RuVector superiority.",
+      "architecture": "DistilBertForSequenceClassification",
+      "native_id2label": {
+        "0": "entailment",
+        "1": "neutral",
+        "2": "contradiction"
+      },
+      "layers": 6,
+      "hidden_dim": 768,
+      "max_position_embeddings": 512,
+      "declared_finetune_pair_limit": 384,
+      "declared_config_dtype": "float32 declaration only; tensor bytes not inspected",
+      "weights": [
+        {
+          "path": "model.safetensors",
+          "bytes": 267835644,
+          "publisher_sha256": "c4cc2c103dae2e66a45cd2d5c34d9eef02aaa9372ff0d9efeaa1b98bcf0ee9af",
+          "downloaded_or_rehashed": false
+        }
+      ],
+      "config": {
+        "path": "/tmp/ruvector-e28-reader-admission/imanxch--distilbert-contractnli--config.json",
+        "bytes": 765,
+        "sha256": "a00c0d37655dc7593487df06f2686af22930608f936f46f75cba7c29295957d5"
+      },
+      "card": {
+        "path": "/tmp/ruvector-e28-reader-admission/imanxch--distilbert-contractnli--README.md",
+        "bytes": 5016,
+        "sha256": "f41a2f9b8b128c1a5790ece9f8b1378dfce78897e5e981486fc4c7e2c1e52416"
+      },
+      "declared_training": {
+        "stage1": "100000 MultiNLI pairs,2epochs; best of six tracked experiments, MultiNLI validation_matched selection per card. No exact base or training snapshot hash supplied.",
+        "stage2": "ContractNLI contractnli_a train split,6819 relevant-passage pairs,3epochs,LR2e-5,batch16,maxlength384,only premise truncated. Weighted and unweighted variants compared; published model declared unweighted.",
+        "checkpoint_selection": "Official card and inspected current notebook code use validation contradiction F1 (watch_class2); save_pretrained only when this improves. Exact run/MLflow records are not in the repository snapshot.",
+        "test_use": "Card reports aggregate ContractNLI test comparison. No test rows/predictions/notebook outputs were inspected. Test evaluation is not itself proof of contamination-free selection.",
+        "calibration": "No calibration/temperature operation was found in inspected training code; a checkpoint-specific calibration manifest is not supplied. Do not assert historical absence from this observation."
+      },
+      "source_code_evidence": {
+        "repository": "iman-ch/contract-conflict-checker",
+        "current_source_commit": "e1780ffb3a8aa45c1e5e0ed972ce65e6eb7c1afd",
+        "source_commit_date": "2026-10-20T23:52:40Z",
+        "model_upload_date": "2026-10-10T23:12:08Z",
+        "training_time_code_identity": "Current source snapshot, not a publisher-attested training-time code/weight manifest.",
+        "training_notebook_path": "03_contract_nli.ipynb",
+        "notebook_git_blob_sha1": "ed0c99cce1604da5ce054796451790adca0a3ceb",
+        "notebook_bytes": 559557,
+        "preserved_evidence": {
+          "path": "/tmp/ruvector-e28-reader-admission/iman--training-code-only.json",
+          "bytes": 12166,
+          "sha256": "ed2448c17119adf050d44fc3eaacabeb6f833436751b79cd513a53602f41e0da"
+        },
+        "outputs_inspected_or_preserved": false,
+        "dataset_rows_inspected_or_preserved": false,
+        "loader": "load_dataset(kiddothe2b/contract-nli,data_dir=contractnli_a,revision=refs/convert/parquet)",
+        "revision_is_immutable_training_snapshot": false,
+        "loaders": "cnli[train] for training; cnli[validation] for checkpoint selection; cnli[test] for declared post-training evaluation. No train_test_split was substituted in the inspected code.",
+        "dataset_builder": "Pinned current mirror source routes subset=train/dev/test to train/validation/test, but yields only premise,hypothesis,label and does not retain original document identities. No dataset archive/Parquet/rows were fetched.",
+        "published_model_link": "Notebook saves the unweighted model and later pushes it to imanxch/distilbert-contractnli with explicit E0/N1/C2 labels. No released tensor/state checksum links that local save to the inspected notebook run."
+      },
+      "licenses": {
+        "declared_model_weights": "CC-BY-NC-SA-4.0; retain noncommercial/attribution/share-alike terms and scope. Explicit downstream terms are not overridden by different upstream terms.",
+        "declared_training_mirror": "kiddothe2b/contract-nli@059927b91122a6827e7dbb4f296f6da8f5dcee1c currently declares CC-BY-NC-SA-4.0. This current revision is not proof of the mutable conversion branch snapshot used at training.",
+        "original_ContractNLI": "Official stanfordnlp/contract-nli LICENSE is CC-BY-4.0; full text preserved, Git blob4ea99c213c5c0c005ae4e80df8e52169d06896ec. Keep original provenance distinct from mirror/model declarations; no incompatibility determination is inferred.",
+        "base_DistilBERT": "distilbert/distilbert-base-uncased current metadata revision12040accade4e8a0f71eabdb258fecc2e7e948be declares Apache-2.0. Training-time base revision not pinned by the candidate.",
+        "MultiNLI": "Retain mixed OANC/CC-BY3.0/CC-BY-SA3.0/public-domain source terms established in earlier preserved official corpus evidence; do not assign a blanket model license to data.",
+        "training_code_repository": "No LICENSE file at the inspected source commit; do not assume a code redistribution grant from model-weight terms.",
+        "scope": "No assertion that these declared terms are inherently incompatible. Original corpus/mirror transformations, exact training mapping and any redistribution obligations remain separate unresolved provenance questions."
+      },
+      "current_bank_eligibility": "Not proven. ContractNLI training is positive supervision evidence; no original-document manifest excludes any of the current138unreserved or24reserved originalTRAIN documents. Their labels were not read or sampled.",
+      "runtime": "CPU2<=600s unmeasured. Stock six-layer67M head and267.8MB publisher tensor pointer suggest a potentially bounded implementation, but no initialization, speed, memory or accuracy claim is established. It was saved by Transformers5.18.0; compatibility must be separately admitted before any future model call.",
+      "foundation_or_teacher_text_overlap": "Unknown; do not infer global decontamination or negative overlap from missing metadata.",
+      "author_reported_aggregate_only": {
+        "ContractNLI_test_accuracy": 0.824,
+        "contradiction_F1": 0.76,
+        "not_RuVector_measurements": true,
+        "not_acceptance_or_promotion_evidence": true
+      }
+    },
+    {
+      "repository": "Syamchand/contract-nli-bert",
+      "revision": "24d5c101b11c9b59dcf47b710516388290f661c0",
+      "status": "HOLD_MISSING_LICENSE_SEMANTIC_MAP_AND_LINEAGE",
+      "architecture": "BertForSequenceClassification",
+      "native_id2label": {
+        "0": "LABEL_0",
+        "1": "LABEL_1",
+        "2": "LABEL_2"
+      },
+      "layers": 12,
+      "hidden_size": 768,
+      "max_position_embeddings": 512,
+      "weights": [
+        {
+          "path": "model.safetensors",
+          "bytes": 437964772,
+          "publisher_sha256": "4006c412446fad08b46c01b455ede9b16234ea88e8e6b8ab7bc3082c3113aac8",
+          "downloaded_or_rehashed": false
+        }
+      ],
+      "config": {
+        "path": "/tmp/ruvector-e28-reader-admission/Syamchand--contract-nli-bert--config.json",
+        "bytes": 1032,
+        "sha256": "441566e506fc9e9497dec92c9dcf6032d9fec3dc1dd580849838925a86ae1d82"
+      },
+      "card": {
+        "path": "/tmp/ruvector-e28-reader-admission/Syamchand--contract-nli-bert--README.md",
+        "bytes": 5174,
+        "sha256": "0336368f8274a5ed09f54cee8d56a851ecee96026d9f391a6735762c16608a60"
+      },
+      "evidence": "Three output columns exist, but the card is an auto-generated placeholder. Model license, base revision, supervision source, training/selection/calibration identities and semantic meaning of LABEL_0/1/2 are unspecified. The repository name is not dataset or label-map provenance.",
+      "runtime": "No weights/header/model/tokenizer imported or downloaded. CPU budget and typed interpretation unadmitted.",
+      "further_probing": "Stopped after disqualifying metadata; no third candidate."
+    }
+  ],
+  "next_independent_useful_step": {
+    "decision": "Root is advancing exact full104 native qualification; no further generic reader retry is proposed.",
+    "existing_verified_source_map": {
+      "path": "/tmp/ruvector-e28-reader-admission/e27--full104-source-map.json",
+      "bytes": 6813,
+      "sha256": "a429bc7faa5658be89dca31c3bd8122e0d4c96758321e39f2105c24bbd21f127"
+    },
+    "concrete_protocol_review_targets": [
+      "Freeze the exact submitted CompositeEngine entrypoint and entire inherited source chain, original @ruvector/typesafe0.2.0/native2.4.0 binary SHAe4db4b945a91b5cb8937765236e180763e8a3f4866b791e0f71a98d0018c289d, BGE/tokenizer assets and runtime package closure.",
+      "Use an authored gold-free full-state fixture first. Prove the exact entire input document and fixed original question map are passed unchanged to CompositeEngine; no candidate-selected excerpt, source clipping, question rewrite, calibration or CONF projection.",
+      "Keep the opaque original native state/context behavior visible as a limitation; do not substitute a clipped state to make timing pass. Record raw literal request/response, complete pipeline/native answer and all proof decisions, probabilities, usage, process and cleanup counters.",
+      "Freeze CPU2/FP32/applicable native precision and at-most600s qualification admission before any native init. Preserve Python/Node network guards, including only the previously admitted literal loopback bind exception, and fail closed on any other attempt.",
+      "A source map or successful authored qualification is not a full paired benchmark comparator or official eligibility. CONF remains empty until exact original inputs, genuine unused identity separation, accepted DEV and frozen paired criteria are independently admitted.",
+      "Set any future candidate/champion binary half-tie convention prospectively before outputs; E27 diagnostic used exact-halfNo while the future comparator principles currently specify Yes>=0.5."
+    ],
+    "role_after_freeze": "This research worker remains available for independent gold-free full104 protocol/source review under /tmp/ruvector-e28-reader-admission. It will not edit candidate-worker implementation or initialize the comparator."
+  },
+  "scope_counters": {
+    "new_candidate_card_config_families": 2,
+    "names_only_model_index_queries": 2,
+    "existing_Agreemind_card_config_reprobes": 0,
+    "weight_or_tokenizer_asset_bytes_downloaded": 0,
+    "ML_imports_or_initializations": 0,
+    "native_initializations": 0,
+    "inference_calls": 0,
+    "dataset_archives_Parquet_or_rows_fetched": 0,
+    "notebook_outputs_inspected_or_preserved": 0,
+    "TRAIN_or_CONF_label_reads": 0,
+    "fits_or_calibration": 0,
+    "Git_mutations": 0,
+    "project_or_runtime_edits": 0,
+    "paid_GPU_calls": 0,
+    "external_messages": 0
+  },
+  "primary_source_urls": [
+    "https://huggingface.co/imanxch/distilbert-contractnli/blob/124bdcede741d1a3fd999512a7813269e9c0c29a/README.md",
+    "https://huggingface.co/imanxch/distilbert-contractnli/blob/124bdcede741d1a3fd999512a7813269e9c0c29a/config.json",
+    "https://huggingface.co/api/models/imanxch/distilbert-contractnli?blobs=true",
+    "https://github.com/iman-ch/contract-conflict-checker/blob/e1780ffb3a8aa45c1e5e0ed972ce65e6eb7c1afd/03_contract_nli.ipynb",
+    "https://github.com/iman-ch/contract-conflict-checker/blob/e1780ffb3a8aa45c1e5e0ed972ce65e6eb7c1afd/README.md",
+    "https://huggingface.co/datasets/kiddothe2b/contract-nli/blob/059927b91122a6827e7dbb4f296f6da8f5dcee1c/contract-nli.py",
+    "https://github.com/stanfordnlp/contract-nli/blob/gh-pages/LICENSE",
+    "https://huggingface.co/Syamchand/contract-nli-bert/blob/24d5c101b11c9b59dcf47b710516388290f661c0/README.md",
+    "https://huggingface.co/Syamchand/contract-nli-bert/blob/24d5c101b11c9b59dcf47b710516388290f661c0/config.json",
+    "https://github.com/ruvnet/RuVector/blob/585c476cec6011b1db9c79147e3b0ff80124a6a3/benchmarks/ruvector-sota-2026-10-22/CONTINUATION.json"
+  ]
+}

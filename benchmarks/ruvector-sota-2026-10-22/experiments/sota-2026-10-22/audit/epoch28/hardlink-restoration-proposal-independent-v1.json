@@ -1,0 +1,55 @@
+{
+  "checks_passed": true,
+  "checked_at": "2026-10-24T10:26:12.205926+00:00",
+  "approval_scope": "Storage-conserving reconstruction of the immutable hash-pinned baseline into new canonical kit/project namespaces. This uses shared regular-file inodes, not independent storage or copy-on-write.",
+  "source_commit": "585c476cec6011b1db9c79147e3b0ff80124a6a3",
+  "main": "46d816ddc4c2a8a06cd3613534a79b1d557d858b",
+  "actual_connected_scope_tree": "690e7e03e4a60859de5353daa8e2b62e791dabb2",
+  "actual3858_Git_leaf_tuples_and_local_kit_SHA1_size_independently_verified": true,
+  "current_R27_union3863_bytes_SHA256_independently_verified": true,
+  "CP_rows": 3784,
+  "CP_sha256": "cce7cdadcb9ef95b8ad4ec8cc51e2f3d56bcee8658b9e192416ff5c3bc8dedb2",
+  "KIT_rows": 61,
+  "BASE_rows": 48,
+  "union_rows": 3863,
+  "overlaps": 30,
+  "scripts": {
+    "bootstrap.py": {
+      "bytes": 5601,
+      "sha256": "eceb2ca259feaf642bc81172aca57a2a209cc34cd17f9b281861c51f21b95806"
+    },
+    "restore_checkpoint.py": {
+      "bytes": 1556,
+      "sha256": "affd9ecf660f380c3632f78cd14fb7a36e00797ceb097cf48c0c60136fac0be8"
+    },
+    "experiments/sota-2026-10-22/epoch22/publication/restore_archived_artifact_v1.py": {
+      "bytes": 11810,
+      "sha256": "7691256e21cb201e9b64c64b2f880fd6d0274b562cfb4acfa03c5ce673a4ba8f"
+    },
+    "experiments/sota-2026-10-22/epoch26/publication/restore_epoch26_archives_v1.py": {
+      "bytes": 16404,
+      "sha256": "a5495a2ce7375d7e502bde2004d131eac9f8651c38c17589c2e4ba2db6f2a25f"
+    }
+  },
+  "extractor_semantics": {
+    "epoch22_verify_only_always_strict_decodes_archive_before_existing_target_comparison": true,
+    "epoch26_verify_only_strict_decodes_both_archives_and_verifies_all3784_CP_rows": true,
+    "exact_existing_regular_hardlinks_are_accepted_without_writes": true,
+    "required_existing_status_all3": "VERIFIED_EXISTING",
+    "archive_only_status_is_insufficient_for_prelinked_existing_target_claim": true
+  },
+  "bootstrap_semantics": "Exact matching existing paths are hash-checked and returned without truncation/write; bootstrap and restore must still actually execute unchanged, then restore --verify-only.",
+  "mandatory_guards": [
+    "Current connected branch/main/commit/tree and complete3858 five-field tuples must match before cache use.",
+    "Canonical absolute paths, no symlinks or special files, regular same-device sources, exact current Git SHA1+size and canonical CP/KIT/BASE SHA256, unique paths and matching overlaps.",
+    "Create only fresh destination directories and exclusive os.link targets; never replace existing destinations.",
+    "Pin unchanged extractor/archive/manifest/helper bytes and current CONT/CP identity. Complete E22 verify-only first, then E26 verify-only before any bootstrap/restore invocation; retain exact outputs and completion ordering.",
+    "Prelinked R must contain exactly the3863 canonical union files. Invoke unchanged bootstrap then restore then verify-only with explicit base-local-directory and -B; no install/acquire/runtime/model/native flags.",
+    "Shared baseline files and metadata remain immutable: no overwrite/truncate/append/chmod/touch of any hardlinked file. New epoch sources, controls, admissions and mutable runtime/output files must be new independent paths outside immutable inputs.",
+    "Record shared-inode semantics honestly; validate all expected project hashes/inodes and absence of extras after scripts, and recheck original baseline before publication.",
+    "Use exact live guardian77846/ticks16105893/inode13626/originalexpiry1792848157.0221736, CPU01, kernelFLOCK and denied contender; prior E27 closure already verified."
+  ],
+  "project_or_controller_modified_by_auditor": false,
+  "ML_native_or_benchmark_execution_by_auditor": 0,
+  "actual_final_restoration_receipt": "PENDING completed bootstrap/restore/verify-only and independent union readback"
+}

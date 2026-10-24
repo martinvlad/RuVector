@@ -1,0 +1,366 @@
+{
+  "ML_native_imports_or_calls": 0,
+  "actual_label_value_reads": 0,
+  "blocking_defects_found_in_reviewed_stable_sources": [],
+  "blocking_defects_remaining_in_assigned_scope": [],
+  "checks": [
+    {
+      "check": "exact_attention_locations",
+      "interpretation": "Only decoder layers10/11 encoder cross-attention q/v are wrapped.",
+      "passed": true,
+      "source_evidence": "algorithm.py:MODULES; model.py:_inject_lora"
+    },
+    {
+      "check": "existing_head_shapes",
+      "interpretation": "The original classifier is trained in place; it is not reinitialized.",
+      "passed": true,
+      "source_evidence": "algorithm.py:HEAD_SHAPES; model.py:head/original_head_manifest"
+    },
+    {
+      "check": "parameter_arithmetic",
+      "interpretation": "Existing head1052675 +new factors32768 =1085443 learned scalars; frozen406291456 +existing head =407344131 original scalars.",
+      "passed": true,
+      "source_evidence": "algorithm.py:BASE_MODEL/TRAINABLE_COUNT/FROZEN_COUNT/PARAMETER_BYTES"
+    },
+    {
+      "check": "independent_stock_backbone_closure",
+      "interpretation": "Independent architecture arithmetic confirms511 unique frozen tensors, accounting for tied shared embeddings only once.",
+      "passed": true,
+      "source_evidence": "Original BART architecture dimensions; mechanism-integrity-binding-v1.json:frozen_architecture"
+    },
+    {
+      "check": "F_linear_factor_order",
+      "interpretation": "F.linear(value,A) then F.linear(...,B) implements x A^T B^T; effective weight addition is scale*B@A.",
+      "passed": true,
+      "source_evidence": "model.py:47"
+    },
+    {
+      "check": "scale_and_zero_initialization",
+      "interpretation": "Rank4/alpha8 gives scale2; B starts exactly zero, so initial parity is symbolic and needs no extra forward.",
+      "passed": true,
+      "source_evidence": "model.py:_lora_type; algorithm.py:ALGORITHM.lora"
+    },
+    {
+      "check": "TRAIN_gradients_and_CE",
+      "interpretation": "TRAIN uses genuine autograd and unweighted native-index cross entropy; detaching receipts does not detach loss logits.",
+      "passed": true,
+      "source_evidence": "model.py:269"
+    },
+    {
+      "check": "TRAIN_fixed_order_and_steps",
+      "interpretation": "One fixed24case epoch; no source-defined calibration, early stop or extra parity forward.",
+      "passed": true,
+      "source_evidence": "model.py:train_step; algorithm.py:TRAIN_CASE_IDS"
+    },
+    {
+      "check": "all_intended_gradient_and_preservation_gates",
+      "interpretation": "Producer checks finite gradients, per-module nonzero B-gradient evidence, all12 changed tensors, nonzero effective deltas and exact frozen hashes. Actual evidence remains runtime-dependent.",
+      "passed": true,
+      "source_evidence": "model.py:train_step/_effective_deltas/export_artifact"
+    },
+    {
+      "check": "fresh_original24_before_learned_load",
+      "interpretation": "DEV model is fresh original state; baseline blocks any injected adapter or loaded learned head and completes24 before artifact-value read/injection.",
+      "passed": true,
+      "source_evidence": "model.py:DEV initialization/score_original/load_adaptation"
+    },
+    {
+      "check": "true_pair512_and_native_class_indices",
+      "interpretation": "Reject over512 complete BART pairs and any changed token/mask; train C0/N1/E2 directly and report canonical E,C,N as p2,p0,p1.",
+      "passed": true,
+      "source_evidence": "model.py:_features/train_step; audit/epoch30/data_common.py:SOURCE_MAP; original reader:decisions"
+    },
+    {
+      "check": "lossless12_tensor_source_contract",
+      "interpretation": "Exact12 tensor shapes yield4341772 raw bytes and5789056 base64 characters before metadata; byte/hash/canonical-base64 checks preserve float32 bits.",
+      "passed": true,
+      "source_evidence": "parameter_codec.py; algorithm.py:EXPECTED_TENSORS"
+    },
+    {
+      "check": "independent_exact_rational_LoRA_algebra",
+      "interpretation": "Non-square dimensions independently catch the factor-order/transposition error that square BART dimensions could hide.",
+      "passed": true,
+      "source_evidence": "Independent stdlib Fraction fixture, rank4 with nonsquare3x5 projection"
+    },
+    {
+      "check": "independent_initial_zero_effective_delta",
+      "interpretation": "Initial delta is zero for every input; this is not a model-forward parity measurement.",
+      "passed": true,
+      "source_evidence": "Independent zero-B algebra"
+    },
+    {
+      "check": "independent_zeroB_gradient_mechanism",
+      "interpretation": "At B=0, gradient B can be nonzero through fixed A while gradient A is zero initially; real four-module B-gradient success cannot be inferred without worker evidence.",
+      "passed": true,
+      "source_evidence": "Independent synthetic softmax-CE derivative fixture"
+    },
+    {
+      "check": "independent_float32le_bit_roundtrip",
+      "interpretation": "Lossless encoding preserves exact bits; no weights or learned tensor values were read.",
+      "passed": true,
+      "source_evidence": "Independent stdlib struct/base64 fixture including signed zero/subnormals/max finite float32"
+    },
+    {
+      "check": "protocol_roles_and_no_confirmation",
+      "interpretation": "Prospective scientific protocol agrees with literal roles/24 updates; no calibration or CONF scope is opened.",
+      "passed": true,
+      "source_evidence": "protocol.json; algorithm.py"
+    },
+    {
+      "check": "worker_ML_and_input_preparation_after_admission",
+      "interpretation": "Phase-specific actual SOURCE/MODEL admission and CPU/source gates precede input-bank parsing and model/tokenizer/BGE initialization.",
+      "passed": true,
+      "source_evidence": "worker.py / RAW_SCHEMA.md / EXPECTED_COUNTERS.json"
+    },
+    {
+      "check": "native_bundle_phase_contract_resolved",
+      "interpretation": "The earlier prepare/helper integration question is resolved: worker supplies the required train/dev phase before serialization/native launch.",
+      "passed": true,
+      "source_evidence": "worker.py / RAW_SCHEMA.md / EXPECTED_COUNTERS.json"
+    },
+    {
+      "check": "all_contexts_before_TRAIN_choice_access",
+      "interpretation": "All24 labelblind native contexts are packed before the only selective TRAIN choice helper; records remain fixed and source-validated.",
+      "passed": true,
+      "source_evidence": "worker.py / RAW_SCHEMA.md / EXPECTED_COUNTERS.json"
+    },
+    {
+      "check": "exact_TRAIN24_single_ordered_updates",
+      "interpretation": "One call site runs once for each of24 ordered cases; model-level step/case guards and export-after24 close the loop. No warmup, validation or alternate checkpoint call site exists.",
+      "passed": true,
+      "source_evidence": "worker.py / RAW_SCHEMA.md / EXPECTED_COUNTERS.json"
+    },
+    {
+      "check": "DEV_original24_before_factor_decode_or_injection",
+      "interpretation": "Fresh original24 finish before the sole parameter load; adapted passes are exactly24cases x3 fixed arms.",
+      "passed": true,
+      "source_evidence": "worker.py / RAW_SCHEMA.md / EXPECTED_COUNTERS.json"
+    },
+    {
+      "check": "DEV_native_pair_identity_and_no_worker_gold",
+      "interpretation": "Original/adapted native evidence is matched by exact token/text identities. Worker does not join DEV choices or publish worker accuracy/proper scores.",
+      "passed": true,
+      "source_evidence": "worker.py / RAW_SCHEMA.md / EXPECTED_COUNTERS.json"
+    },
+    {
+      "check": "individual_TRAIN_targets_not_serialized",
+      "interpretation": "The retained choice receipt publishes selected identities and aggregate class counts, while target indices remain local to the training call.",
+      "passed": true,
+      "source_evidence": "worker.py / RAW_SCHEMA.md / EXPECTED_COUNTERS.json"
+    },
+    {
+      "check": "expected_counter_projection_matches_worker_AST",
+      "interpretation": "Independent literal AST projection reproduces both phase counter tables without importing or executing the worker.",
+      "passed": true,
+      "source_evidence": "worker.py / RAW_SCHEMA.md / EXPECTED_COUNTERS.json"
+    },
+    {
+      "check": "input_bank_reread_receipt_fix",
+      "interpretation": "Resolved before measurement: preparation parse plus selective helper authenticity reparse are counted as two semantic TRAIN bank reads;24choice/24step budgets stay fixed.",
+      "passed": true,
+      "source_evidence": "worker.py / RAW_SCHEMA.md / EXPECTED_COUNTERS.json"
+    },
+    {
+      "check": "forward_and_optimizer_budget_closure",
+      "interpretation": "Both phase tables retain exactly120 total NLI forwards,24 optimization steps, and8 native indexes/24queries per phase; no added parity/calibration/CONF calls.",
+      "passed": true,
+      "source_evidence": "worker.py / RAW_SCHEMA.md / EXPECTED_COUNTERS.json"
+    },
+    {
+      "check": "MODEL_admission_opaque_artifact_identity_only",
+      "interpretation": "Before baseline24, MODEL admission hashes artifact bytes and reads seal/execution/audit metadata without decoding learned tensor values. Actual decode stays in model.load_adaptation after baseline24.",
+      "passed": true,
+      "source_evidence": "worker.py / RAW_SCHEMA.md / EXPECTED_COUNTERS.json"
+    },
+    {
+      "check": "final_worker_source_has_no_ML_imports",
+      "interpretation": "Worker source contains only stdlib imports; model/BGE lazy initialization stays behind phase admission.",
+      "passed": true,
+      "source_evidence": "worker.py / RAW_SCHEMA.md / EXPECTED_COUNTERS.json"
+    }
+  ],
+  "checks_passed": true,
+  "created_at": "2026-10-24T17:25:37.821465+00:00",
+  "epoch": 30,
+  "final_delta_review": {
+    "new_source_checks": 12,
+    "new_source_files_or_hash_only_dependencies": [
+      "experiments/sota-2026-10-22/candidate/epoch30/worker.py",
+      "experiments/sota-2026-10-22/candidate/epoch30/RAW_SCHEMA.md",
+      "experiments/sota-2026-10-22/candidate/epoch30/EXPECTED_COUNTERS.json",
+      "experiments/sota-2026-10-22/candidate/epoch30/runtime/common.py",
+      "experiments/sota-2026-10-22/candidate/epoch30/runtime/launch.py",
+      "experiments/sota-2026-10-22/candidate/epoch3/models.py",
+      "experiments/sota-2026-10-22/candidate/epoch6/context.py",
+      "experiments/sota-2026-10-22/candidate/epoch15/context.py"
+    ],
+    "previously_reviewed_source_hash_changes": [],
+    "prior_report": {
+      "bytes": 10586,
+      "path": "/workspace/ruvector-e30-core-review/independent-report.v1.json",
+      "sha256": "afda8efee50773c6cfdc5fc84726781e1ec4919a3317acdde61e0a71d785f7d6"
+    },
+    "stable_source_checks_repeated": false
+  },
+  "independent_parameter_arithmetic": {
+    "LoRA_scalars": 32768,
+    "artifact_metadata_size_and_actual_numerics": "UNKNOWN before the single admitted TRAIN worker",
+    "base64_character_bytes_before_metadata": 5789056,
+    "frozen_scalars": 406291456,
+    "frozen_tensor_count": 511,
+    "learned_tensor_blocks": 12,
+    "original": 407344131,
+    "original_head_scalars": 1052675,
+    "raw_tensor_bytes": 4341772,
+    "trainable_scalars": 1085443
+  },
+  "measurement_or_training_admission_granted": false,
+  "network_or_mail_calls": 0,
+  "pending_integration_review": [],
+  "project_or_Git_writes": 0,
+  "raw_schema_path": "experiments/sota-2026-10-22/candidate/epoch30/RAW_SCHEMA.md",
+  "raw_schema_present_at_report": true,
+  "resolved_findings": [
+    {
+      "final_worker_sha256": "7f6134109a1d373258c43c95ffcf2962b89eb0ee1c1382a888fd82a3ab1a896a",
+      "id": "E30-CORE-001",
+      "problem": "Original worker/expected table reported one TRAIN semantic bank read although prepare_phase and frozen selective helper each parsed it.",
+      "resolution": "Core owner prospectively changed TRAIN_input_bank_reads to2, added an increment/event immediately before helper reread, and updated schema/expected tables. No scientific, label, optimizer or forward allowance changed.",
+      "severity": "receipt correctness",
+      "status": "RESOLVED_BEFORE_SOURCE_SEAL"
+    }
+  ],
+  "review_kind": "INDEPENDENT_SOURCE_AST_AND_STDLIB_MATH_ONLY",
+  "review_scope_note": "The requested core plus worker/schema/model-admission interaction was reviewed. Runtime enforcement and independent scorer operational validation remain separate owners; legacy BGE/context dependencies newly listed here were hash/syntax checked, not imported or rerun.",
+  "schema_version": 1,
+  "scope_limits": [
+    "No Torch/Transformers/ONNX/native package or project module imports; no weights deserialization or model/tokenizer/probe/ANN calls.",
+    "No TRAIN/DEV/CONF label values or projected input banks read. Only source code, prospective protocol/control metadata and independent synthetic arithmetic were inspected.",
+    "Source logic cannot establish actual gradient values, wall/RSS/CPU enforcement, frozen tensor byte identity, successful24step training, successful96DEV forwards, metrics, eligibility or admission.",
+    "Context/native source preserves exact source spans and vector identity without semantic overrides; omissions never prove NotMentioned.",
+    "The statistical protocol tests net LoRA-plus-existing-head adaptation, not exclusive causal attribution to LoRA."
+  ],
+  "source_hashes": [
+    {
+      "bytes": 27507,
+      "path": "experiments/sota-2026-10-22/candidate/epoch30/model.py",
+      "sha256": "d2aa6ea5e1507458d454f76c7643bbeb2d25ca1620588939ec45823f168939fd"
+    },
+    {
+      "bytes": 10262,
+      "path": "experiments/sota-2026-10-22/candidate/epoch30/parameter_codec.py",
+      "sha256": "03dc310a14acdf23e9494ba5d41b58f644e7d137177c344f5d4e012cdc03b42e"
+    },
+    {
+      "bytes": 4420,
+      "path": "experiments/sota-2026-10-22/candidate/epoch30/algorithm.py",
+      "sha256": "a6db5363122add0f3fde2ed2dc2667fa94e349f3d4f9dffb8bca54f3927a3fa9"
+    },
+    {
+      "bytes": 8815,
+      "path": "experiments/sota-2026-10-22/candidate/epoch30/context_engine.py",
+      "sha256": "feddafc88d655e97b7236ac3e126178cda751182a90c839ab1bd5e06795af50a"
+    },
+    {
+      "bytes": 6040,
+      "path": "experiments/sota-2026-10-22/candidate/epoch30/evidence.py",
+      "sha256": "8e1b66bcda6c2a4ea968d192d364abe3d018b1c58ff93c02f0a4bdd2b8660d8d"
+    },
+    {
+      "bytes": 10423,
+      "path": "experiments/sota-2026-10-22/candidate/epoch30/native_helper.cjs",
+      "sha256": "d06f514b05864566883b88eadf9248c25fcb2635b7fbc3290b22de5f21ddc218"
+    },
+    {
+      "bytes": 1657,
+      "path": "experiments/sota-2026-10-22/candidate/epoch30/vector_codec.py",
+      "sha256": "b2bfbb9fae8aacc3127a2516d387e3a8e99eb0db15d6cdfea0cf137fa19a3906"
+    },
+    {
+      "bytes": 15133,
+      "path": "experiments/sota-2026-10-22/candidate/epoch27/reader/bart_reader.py",
+      "sha256": "4101d071c04aced320a902d7b84cb1fd1c30d474683201637150e486ede8b1d9"
+    },
+    {
+      "bytes": 12602,
+      "path": "experiments/sota-2026-10-22/candidate/epoch22/context.py",
+      "sha256": "9ca2968ed800443bc75fac452daf2cbf17bf27cf1b3b75cbfb220bfa23a9e727"
+    },
+    {
+      "bytes": 11377,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/protocol.json",
+      "sha256": "d6325c3a5f442410225d65d38c9fa335a13d8297451d44720c2fd4fb1396899c"
+    },
+    {
+      "bytes": 2007,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/mechanism-integrity-binding-v1.json",
+      "sha256": "b1e5d997b9c2e76f96a136b26879000140ba0430a68e2228b3b5163b912dccea"
+    },
+    {
+      "bytes": 4445,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/runtime-policy-addendum-v1.json",
+      "sha256": "c4b3c3243ac089d5966e394f3ead60f57a15f59cc24b496960334124c14dbacd"
+    },
+    {
+      "bytes": 2141,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/runtime-policy-wire-schema-v1.json",
+      "sha256": "5325a53c03ce0e8173fc56095b68269ae965186dc4ec08263de6fa6ab273cefd"
+    },
+    {
+      "bytes": 2823,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/train_choices.py",
+      "sha256": "fe90a4608a3d022cfd849bb3aca3af7bf5c98900ac79c26ce9b4c4a7879a3f68"
+    },
+    {
+      "bytes": 2410,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/data_common.py",
+      "sha256": "fa078a24a802bb8eb3b2259fc66f5c14b46c49a4300e90209ca91226d69c06e0"
+    },
+    {
+      "bytes": 27107,
+      "path": "experiments/sota-2026-10-22/candidate/epoch30/worker.py",
+      "sha256": "7f6134109a1d373258c43c95ffcf2962b89eb0ee1c1382a888fd82a3ab1a896a"
+    },
+    {
+      "bytes": 8477,
+      "path": "experiments/sota-2026-10-22/candidate/epoch30/RAW_SCHEMA.md",
+      "sha256": "07ce6a26995bce99365edb3c9289e1933d2bd986ced94e5b1871bebe428f108d"
+    },
+    {
+      "bytes": 5296,
+      "path": "experiments/sota-2026-10-22/candidate/epoch30/EXPECTED_COUNTERS.json",
+      "sha256": "1d7b02a5205edf115b910cc231e8c7cf867ddbb361c178dfe1d04e6b856cd26e"
+    },
+    {
+      "bytes": 23604,
+      "path": "experiments/sota-2026-10-22/candidate/epoch30/runtime/common.py",
+      "sha256": "2db9b5c46c0ca0c68a186982d5b3c3705017c80205883b754bd550072742bea7"
+    },
+    {
+      "bytes": 17621,
+      "path": "experiments/sota-2026-10-22/candidate/epoch30/runtime/launch.py",
+      "sha256": "6801b23bfdc83f91080f47d30b4b75b253d0ae82abe30f7813dae72320ec5fd4"
+    },
+    {
+      "bytes": 4708,
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/models.py",
+      "sha256": "c5cf3500a89837e71adc754f0dc96d090e172068031545fc55ee349e80210716"
+    },
+    {
+      "bytes": 9205,
+      "path": "experiments/sota-2026-10-22/candidate/epoch6/context.py",
+      "sha256": "28bceb95282ec3e3e938f3211ccad04d2369fa29e1f191f187566339ae3b44d2"
+    },
+    {
+      "bytes": 11070,
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/context.py",
+      "sha256": "9bf168e90511708c2aa5e6248d1806c57e5fc48ffa1c97ceab218c757e5f76fb"
+    }
+  ],
+  "source_review_complete": true,
+  "source_snapshot_consistency": "All initial source hashes remained unchanged during the final worker/schema delta review. Newly reviewed source bytes are hashed and bound here. Subsequent edits require a delta review; no execution/admission is granted by this source report.",
+  "stable_core_source_checks_passed": true,
+  "status": "ASSIGNED_CORE_SOURCE_REVIEW_PASS",
+  "weights_deserializations": 0,
+  "worker_present_at_report": true
+}

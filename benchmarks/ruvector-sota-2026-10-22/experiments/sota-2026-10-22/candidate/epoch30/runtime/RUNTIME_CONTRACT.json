@@ -1,0 +1,135 @@
+{
+  "CPU_policy": "Whole Python worker preexec CPU0,1+NNP+inherited narrow seccomp before ORT/Torch/tokenizer/native imports; Node inherits; no second affinity setter.",
+  "CPU_receipt": "worker-cpu-preexec.json, including actual direct-child PID/PPID/ticks/PGID/SID",
+  "DEV_completion_status": "COMPLETED_DEV_AWAITING_INDEPENDENT_GOLD_JOIN",
+  "MODEL_SEAL_exact_keys": [
+    "schema_version",
+    "epoch",
+    "kind",
+    "status",
+    "base_model_sha256",
+    "parameter_artifact",
+    "train_raw",
+    "train_execution",
+    "independent_training_report",
+    "source_plan",
+    "source_freeze"
+  ],
+  "MODEL_SEAL_status": "TRAINED_PARAMETER_ARTIFACT_SEALED",
+  "TRAIN_completion_status": "COMPLETED_TRAIN_AWAITING_INDEPENDENT_MODEL_SEAL",
+  "absent_counter_map": null,
+  "actual_capability_probes_by_source_preflight": 0,
+  "admission_files": {
+    "dev": "epoch30/MODEL_ADMISSION.json",
+    "train": "epoch30/SOURCE_ADMISSION.json"
+  },
+  "allowed_capability_counter": "Python_literal_loopback_capability_binds_allowed",
+  "allowed_capability_maximum_per_phase": 1,
+  "base_model_sha256": "ce253627f98f9db22af6a86efee6e905f001f7d8dc02dd14a8b4b4710c302b17",
+  "capability_event_fields": [
+    "event",
+    "allowed",
+    "monotonic_seconds",
+    "family",
+    "socket_type",
+    "protocol",
+    "address",
+    "stack",
+    "source_provenance",
+    "bind_outcome",
+    "close_outcome",
+    "close_monotonic_seconds",
+    "file_descriptor_after_close"
+  ],
+  "capability_source": {
+    "address": "('::1', 0)",
+    "family": 10,
+    "function": "_has_ipv6",
+    "line": 127,
+    "protocol": 0,
+    "sha256": "2633bbdb69731e5ccb5cf4e4afd65605d86c7979cc5633126f50c92d5ad74a74",
+    "socket_type": 1
+  },
+  "checkpoint_backend_execution": "UNKNOWN",
+  "complete_counter_source": "raw.json",
+  "counter_source_values": [
+    "raw.json",
+    "raw.partial.json",
+    "UNKNOWN"
+  ],
+  "epoch": 30,
+  "forbidden_in_all_phases": [
+    "CONF choices/inputs",
+    "DEV annotation choices",
+    "other-role choices",
+    "source evidence lists",
+    "Native104/full104",
+    "calibration",
+    "generation",
+    "paid calls",
+    "GPU calls"
+  ],
+  "global_limits": {
+    "CONF_worker_attempts": 0,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "CPU_threads": 2,
+    "DEV_worker_attempts": 1,
+    "GPU_calls": 0,
+    "TRAIN_worker_attempts": 1,
+    "native_corpus_batches": 2,
+    "owned_workers": 2,
+    "paid_calls": 0,
+    "per_phase_owned_workers": 1,
+    "seconds_per_batch": 600
+  },
+  "kind": "REAL_NATIVE_LEGAL_PARAMETER_ADAPTATION_DIAGNOSTIC",
+  "network_policy_addendum": {
+    "path": "audit/epoch30/runtime-policy-addendum-v1.json",
+    "sha256": "c4b3c3243ac089d5966e394f3ead60f57a15f59cc24b496960334124c14dbacd"
+  },
+  "network_scope": "Public Python/Node API interposition only; no OS network isolation claim; all communication/DNS/listen/accept/nonexact binds fatal.",
+  "parameter_artifact": "epoch30/runs/train/trained-parameters.public.json",
+  "parameter_handling": "Byte hash only in guards; no tensor decode. Original24 DEV forwards precede trained parameter application in source-admitted core.",
+  "phase_execution_filename": "execution.json",
+  "phase_output_template": "epoch30/runs/<phase>",
+  "phase_raw_filenames": [
+    "raw.json",
+    "raw.partial.json",
+    "raw.partial.pending.json"
+  ],
+  "phases": [
+    "train",
+    "dev"
+  ],
+  "recovered_preexec_child_identity": "Physical direct-child proof or null; never upgrades verified_worker_starts.",
+  "remaining_gate": "Independent source review, actual SOURCE publication/readback before TRAIN; actual MODEL publication/readback before DEV.",
+  "reservations": {
+    "dev": "epoch30/DEV_ATTEMPT_RESERVATION.json",
+    "train": "epoch30/TRAIN_ATTEMPT_RESERVATION.json"
+  },
+  "schema_version": 1,
+  "source_only": true,
+  "unknown_closure_action": "Never MODEL/DEV/qualification; final/release refuses unresolved physical closure. Phase reservation remains burned.",
+  "unknown_closure_tuple": {
+    "exit_code": null,
+    "owned_live_group_members": null,
+    "owned_live_processes_closed": null,
+    "owned_process_closure_observation": "UNKNOWN_UNRETURNED_POPEN_WITHOUT_IDENTITY_PROOF",
+    "raw_operation_counters_source": "UNKNOWN",
+    "recovered_preexec_child_identity": null,
+    "recovered_preexec_exit_code": null,
+    "status": "WORKER_FAILED_OR_TIMEOUT",
+    "uncertain_start": true,
+    "verified_worker_starts": 0,
+    "worker_identity": null,
+    "worker_identity_source": "UNKNOWN"
+  },
+  "worker_identity_source_values": [
+    "returned_Popen",
+    "durable_preexec_only",
+    "UNKNOWN"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "DEV_scorer": {
+    "bytes": 12786,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/audit/epoch30/score_dev.py",
+    "sha256": "66c7d0abd2c2720564eb6608e2d7fc2aa5a4bbf7cb223641ef6fcd80155e7e17"
+  },
+  "actual_model_native_or_originalchoicecalls": 0,
+  "epoch": 30,
+  "gold_access_outputs": "Paudit30/DEV_GOLD_JOIN_RESERVATION.json and DEV_GOLD_ACCESS.jsonl are createdonlyafterfull96closedvalidation; rootfinalmanifestmustinclude",
+  "kind": "REAL_NATIVE_LEGAL_PARAMETER_ADAPTATION_DIAGNOSTIC",
+  "pipeline": {
+    "DEV_pipeline": "score_dev.py evaluate --project R --plan E30/plan.json --train-report Paudit30/train-integrity.json --source S30/data-source-cache/original-train.json --output S30/qualification-replay.json",
+    "TRAIN_pipeline": "score_train.py --project R --plan E30/plan.json --output S30/train-integrity.json",
+    "bind_pipeline": "score_dev.py bind --project R --replay Paudit30/qualification-replay.json --results E30/RESULTS.json --output S30/independent-acceptance.json"
+  },
+  "preflight": {
+    "bytes": 3104,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/audit/epoch30/scorer-preflight-v2.json",
+    "sha256": "d46377757764a07475afaebe4bbeb82a6750279dc25bee538330835cdb893918"
+  },
+  "required_RESULTS_fields": [
+    "status",
+    "diagnostic_qualified",
+    "frozen_DEV_gates_passed",
+    "train_integrity_passed",
+    "metrics",
+    "paired_differences",
+    "diagnostic_checks",
+    "failed_integrity_checks",
+    "failed_diagnostic_checks",
+    "reader_timing",
+    "actual_execution"
+  ],
+  "schema_version": 1,
+  "source_seal": {
+    "bytes": 5500,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/audit/epoch30/scorer-source-freeze.json",
+    "sha256": "5e9bef6a2266ea3f0524264edc199e27e3fc4c002f2fe4edce5f0e482473f7b3"
+  },
+  "status": "READY",
+  "train_scorer": {
+    "bytes": 7631,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/audit/epoch30/score_train.py",
+    "sha256": "61b2ebf221b39a2825b29c4bdf94538bc3d1cec81ccca732aa0a39d5523b011c"
+  }
+}

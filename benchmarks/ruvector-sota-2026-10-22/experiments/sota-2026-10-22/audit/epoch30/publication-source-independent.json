@@ -1,0 +1,83 @@
+{
+  "annotation_choices_reads": 0,
+  "checks_passed": true,
+  "epoch": 30,
+  "exact_tuple_negative_mutations_rejected": [
+    "verified_worker_starts",
+    "uncertain_start",
+    "status",
+    "exit_code",
+    "worker_identity_source",
+    "owned_process_closure_observation"
+  ],
+  "focused_tests": {
+    "failures": 0,
+    "log": "test_failed_unknown_physical_closure_preserved (test_publication_guards_v1.Guards.test_failed_unknown_physical_closure_preserved) ... ok\ntest_unknown_physical_closure_cannot_complete_or_MODEL (test_publication_guards_v1.Guards.test_unknown_physical_closure_cannot_complete_or_MODEL) ... ok\ntest_FINAL_unknown_physical_closure_refused (test_publication_guards_v1.Guards.test_FINAL_unknown_physical_closure_refused) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.005s\n\nOK\n",
+    "names": [
+      "test_failed_unknown_physical_closure_preserved",
+      "test_unknown_physical_closure_cannot_complete_or_MODEL",
+      "test_FINAL_unknown_physical_closure_refused"
+    ],
+    "ran": 3
+  },
+  "handoff": {
+    "bytes": 2479,
+    "path": "/workspace/ruvector-e30-publication-impl/HANDOFF.v2.json",
+    "sha256": "5708014a136a1297db697646aa0c5a628a38781a09247e8fcd5d067218b1771b"
+  },
+  "model_native_Git_calls": 0,
+  "prior_approved_review": {
+    "bytes": 5360,
+    "path": "/tmp/ruvector-e30-publication-audit/publication-source-review-final-v1.json",
+    "sha256": "3c3f6e7fcb9596dc0010da27bc8095b3e9514e7ff8d26cdbfbe9a5259a94148a"
+  },
+  "review_kind": "PUBLICATION_SOURCE_UNKNOWN_CLOSURE_AMENDMENT",
+  "reviewed_source_files": [
+    {
+      "bytes": 17117,
+      "path": "experiments/sota-2026-10-22/epoch30/publication/publication_common_v1.py",
+      "sha256": "5b4808450b6f0a72d82512102d66e15bf6b67e37bbeb65b97b8f0133db74ff0c"
+    },
+    {
+      "bytes": 1867,
+      "path": "experiments/sota-2026-10-22/epoch30/publication/phase_schema_v1.py",
+      "sha256": "573540c8ffcbe5433fc6b505b6a9fe55ecb7ea22073d53d72951fbcf105114e4"
+    },
+    {
+      "bytes": 12984,
+      "path": "experiments/sota-2026-10-22/epoch30/publication/phase_receipts_v1.py",
+      "sha256": "f42be530bade9fd3bc3bc392b77e0a09ddca04af0654dae8afa1fa7560cc1308"
+    },
+    {
+      "bytes": 9380,
+      "path": "experiments/sota-2026-10-22/epoch30/publication/parameter_artifact_v1.py",
+      "sha256": "a2122e517483e139fb2502876a1d524b2dca001daa97c60727b80fccc6744502"
+    },
+    {
+      "bytes": 31147,
+      "path": "experiments/sota-2026-10-22/epoch30/publication/stage_publication_v1.py",
+      "sha256": "6cea6e57ddaa8ab4d01aada364e05dc0ffef65215c6a9bc32b96067d9463810e"
+    },
+    {
+      "bytes": 7362,
+      "path": "experiments/sota-2026-10-22/epoch30/publication/build_controls_v1.py",
+      "sha256": "0912f701e43dd23c0fdc85c2255f86d734fe94645ca65ba77fb7c6b1c9c7c8e8"
+    },
+    {
+      "bytes": 1928,
+      "path": "experiments/sota-2026-10-22/epoch30/publication/build_model_seal_v1.py",
+      "sha256": "88c967b8ffd6575e754ec10e728056a343416933d13f0ffcd98a6434981e4a96"
+    },
+    {
+      "bytes": 15569,
+      "path": "experiments/sota-2026-10-22/epoch30/publication/test_publication_guards_v1.py",
+      "sha256": "543c30a5a0ac195516b8959b4673e522af90dfc7beade29dc80a99d7579f5e01"
+    }
+  ],
+  "verified_delta": [
+    "Only failed uncertain zero-verified-start, null exit/identities/groups/closure, UNKNOWN counter/identity/closure observation tuple may preserve unknown physical closure.",
+    "Per-phase closure null and groups null remain null through factual projection; aggregate closure remains null; reservation remains burned.",
+    "Unknown phase cannot complete or authorize MODEL/DEV; both FINAL control builder andstager call require_final_physical_closure before declaring closed.",
+    "All earlier scientific/data/counter/privacy/history/scopedpublication checks retained in referenced review."
+  ]
+}

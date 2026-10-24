@@ -1,0 +1,163 @@
+{
+  "CLI_argv": {
+    "dev": [
+      "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/retrieval/.venv/bin/python",
+      "-I",
+      "-B",
+      "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/candidate/epoch30/runtime/launch.py",
+      "--scope",
+      "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47",
+      "--phase",
+      "dev",
+      "--plan",
+      "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/epoch30/plan.json",
+      "--admission",
+      "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/epoch30/MODEL_ADMISSION.json",
+      "--expected-plan-sha",
+      "EXACT_FROZEN_PLAN_SHA256"
+    ],
+    "train": [
+      "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/retrieval/.venv/bin/python",
+      "-I",
+      "-B",
+      "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/candidate/epoch30/runtime/launch.py",
+      "--scope",
+      "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47",
+      "--phase",
+      "train",
+      "--plan",
+      "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/epoch30/plan.json",
+      "--admission",
+      "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/epoch30/SOURCE_ADMISSION.json",
+      "--expected-plan-sha",
+      "EXACT_FROZEN_PLAN_SHA256"
+    ]
+  },
+  "CPU_preexec_synthetic_receipt": {
+    "bytes": 475,
+    "path": "/workspace/ruvector-e30-runtime-impl/preflight-v2.cpu-preexec.json",
+    "sha256": "9ba1fac1501a4cc090905073b338bee7b06e0e40a628e0c4789f5d6e0cc0b49b"
+  },
+  "SOURCE_MODEL_gates": "Actual SOURCE admission before TRAIN; actual MODEL admission plus closed full24-update TRAIN and positive independent report before any DEV input content hash/read. TRAIN defers DEV input contents.",
+  "actual_SOURCE_or_MODEL_admission_by_this_source_worker": false,
+  "actual_capability_probes": 0,
+  "actual_science_workers": 0,
+  "current_TRAIN_DEV_CONF_inputs_choices_or_model_weights_read": 0,
+  "epoch": 30,
+  "files": [
+    {
+      "bytes": 5700,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/candidate/epoch30/runtime/README.md",
+      "sha256": "c8a1ced4f8626027026939d3e865a017d526d2bfcbf6772282285a446c5459db"
+    },
+    {
+      "bytes": 4587,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/candidate/epoch30/runtime/RUNTIME_CONTRACT.json",
+      "sha256": "a53bc39ae239582c606d969072bc76805fd7ce6aee4bcb83502b70e5a7e7c2df"
+    },
+    {
+      "bytes": 23604,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/candidate/epoch30/runtime/common.py",
+      "sha256": "2db9b5c46c0ca0c68a186982d5b3c3705017c80205883b754bd550072742bea7"
+    },
+    {
+      "bytes": 5191,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/candidate/epoch30/runtime/cpu_guard.py",
+      "sha256": "b774b3276c46b1c356435477f9b0385b19160ad9cd1932ec56071733420b5202"
+    },
+    {
+      "bytes": 20898,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/candidate/epoch30/runtime/launch.py",
+      "sha256": "3cdbb927fcf511055afc9296249ca93e64bd45796de1dc0ec26921e69adb1489"
+    },
+    {
+      "bytes": 6893,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/candidate/epoch30/runtime/network_guard.py",
+      "sha256": "6330b1cf2a46a838839f89cb9dfb1ee0145f470f018a89ed39f30c6c1c3bfeef"
+    },
+    {
+      "bytes": 15887,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/candidate/epoch30/runtime/node_guard.cjs",
+      "sha256": "6d4707175c63d251077b88470421ecf5eaa1ccd7bb37d7964055af16f7b906b7"
+    },
+    {
+      "bytes": 23153,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/candidate/epoch30/runtime/preflight.py",
+      "sha256": "c930506a627c3d214f8ed0c51c2745cb3dca1c6da7fc716597680c2e1417fd2b"
+    }
+  ],
+  "focused_fault_cases": 5,
+  "focused_fault_receipts": [
+    {
+      "bytes": 593,
+      "path": "/workspace/ruvector-e30-runtime-impl/train-startup-fault-v2.json",
+      "sha256": "c387cd1a4a58b096c431c0bea8b9150515f84ccd3e03b591623f464accd97558"
+    },
+    {
+      "bytes": 591,
+      "path": "/workspace/ruvector-e30-runtime-impl/dev-startup-fault-v2.json",
+      "sha256": "45247bddd8dcc5deb95a83efce3eae7583d378769fcab64f6be71cdb02aed6cc"
+    },
+    {
+      "bytes": 739,
+      "path": "/workspace/ruvector-e30-runtime-impl/lost-popen-train-v1.json",
+      "sha256": "732c8f685f31d995d9d7214fa26f3a0d3887a1c8140461fdc7298cf00e5386a5"
+    },
+    {
+      "bytes": 737,
+      "path": "/workspace/ruvector-e30-runtime-impl/lost-popen-dev-v1.json",
+      "sha256": "d48f4f4af4ad76a2c03ef8b93d94f80d87e938fc5458299aa85a430a58aba9fe"
+    },
+    {
+      "bytes": 730,
+      "path": "/workspace/ruvector-e30-runtime-impl/lost-popen-unknown-v1.json",
+      "sha256": "64d1e8dc8a43600389f55df96c7edca54959803179e5151285a96fd0c3946000"
+    }
+  ],
+  "focused_fault_sources": [
+    {
+      "bytes": 4966,
+      "path": "/workspace/ruvector-e30-runtime-impl/startup_fault_probe.py",
+      "sha256": "74cfdaa4c1c256a87ec01047df3b700dfcc3aac66b22e5889f1d5f1c020b7458"
+    },
+    {
+      "bytes": 6209,
+      "path": "/workspace/ruvector-e30-runtime-impl/lost_popen_probe.py",
+      "sha256": "322dfbc5d7a0ac05bdad45455b5ba5270c8ab8509e9d467ec80cc94a993cc551"
+    }
+  ],
+  "independent_review": {
+    "bytes": 6166,
+    "path": "/tmp/ruvector-e30-publication-audit/runtime-source-review-final-v1.json",
+    "sha256": "ff6c118024b16083e7989a2240a8485b5470bb89c5c48ff2edc8388ac40bf200"
+  },
+  "kernel_CPU_scope": "Whole Python worker preexec CPU0,1/NNP/inherited narrow sched_setaffinity seccomp before ORT/Torch imports; Node inherits unchanged. Actual denied syscall totals remain unobserved.",
+  "kind": "REAL_NATIVE_LEGAL_PARAMETER_ADAPTATION_DIAGNOSTIC",
+  "models_tokenizers_ORT_or_native_addon_initializations": 0,
+  "network_addendum": {
+    "path": "experiments/sota-2026-10-22/audit/epoch30/runtime-policy-addendum-v1.json",
+    "sha256": "c4b3c3243ac089d5966e394f3ead60f57a15f59cc24b496960334124c14dbacd"
+  },
+  "network_scope": "Persistent public API interposition, one pinned caller IPv6 literal capability bind max1/phase with close proof; no services/communication and no OS network syscall isolation claim.",
+  "no_further_logic_edits_planned": true,
+  "no_further_runtime_source_edits": true,
+  "phase_execution_paths": {
+    "dev": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/epoch30/runs/dev/execution.json",
+    "train": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/epoch30/runs/train/execution.json"
+  },
+  "phase_reservations": {
+    "dev": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/epoch30/DEV_ATTEMPT_RESERVATION.json",
+    "train": "/tmp/ruvector-sota-2026-10-22/epoch30-9f13c9bb6e47/project/experiments/sota-2026-10-22/epoch30/TRAIN_ATTEMPT_RESERVATION.json"
+  },
+  "preflight": {
+    "bytes": 4088,
+    "path": "/workspace/ruvector-e30-runtime-impl/preflight-v2.json",
+    "sha256": "f5d2c5a35da3cb01e3e13f49779e7ebb72c4c1b044c2bf8fdfec8b059229e71f"
+  },
+  "remaining_gate": "Root must publish/freshly verify actual SOURCE readback before one TRAIN worker; later publish/verify actual MODEL readback before one DEV worker. This seal does not execute either phase.",
+  "schema_version": 1,
+  "sealed_at_UTC": "2026-10-24T17:38:48.281809+00:00",
+  "status": "FINAL_RUNTIME_SOURCE_READY_INDEPENDENT_REVIEW_PASS_NO_MODEL_INITIALIZATION",
+  "stdlib_checks": 19,
+  "uncertain_start_scope": "Every reservation burns its phase. Lost Popen may recover cleanup only from exact durable direct-child/session proof, never promote verified starts. Unresolved proof preserves null closure/groups and prevents MODEL/DEV/qualification/FINAL release."
+}

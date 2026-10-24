@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "98015274a602301ff42660e33d92e1e2128c7df6",
-  "checkpoint_manifest_sha256": "62542c0148abc331dc006c2291851253c9d7da66ec9f870e97d7e055a24b37dd",
+  "prior_published_base_commit": "0928ca97b5a8942e6ad25fa7f4db70567e7848bc",
+  "checkpoint_manifest_sha256": "245530b2fd59d064db83818b26cb479df49209ee6b2ded83c019f4a84b9fab52",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -848,10 +848,10 @@
     "schema_version": 1,
     "run_id": "epoch30-9f13c9bb6e47",
     "epoch": 30,
-    "state": "EPOCH30_PLANNING_LEASE",
+    "state": "EPOCH30_SOURCE_FROZEN_TRAIN_PENDING_ADMISSION",
     "work_active": true,
     "experiments_active": false,
-    "checkpoint_parent": "228e3f25023f90e803283d0766e482e12930ce2f",
+    "checkpoint_parent": "0928ca97b5a8942e6ad25fa7f4db70567e7848bc",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
       "run_id": "epoch30-9f13c9bb6e47",
@@ -875,7 +875,9 @@
     "native_allowed": 0,
     "conditional_confirmation_allowed": 0,
     "confirmation_allowed": 0,
-    "instruction": "Exclusive planning/restoration/source preparation only. No ML/native/training/benchmark-label access before frozen roles/source and actual independent Git readback. Preserve Native104, original16-ID E29 HOLD/allrejections. ProposedTRAIN\u2192publishedMODELseal\u2192DEV is boundedCPU2/600each/2batches, paid0/GPU0, noCONF orsubmission.",
+    "instruction": "Only named phase after independent actual Git readback and source/model admission. Two nonretryable CPU2/600s phases total. No CONF/full104/benchmark acceptance/promotion/submission. FINAL closes every slot.",
+    "conditional_train_allowed": 1,
+    "conditional_dev_allowed": 0,
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -953,6 +955,59 @@
         "sha256": "2a2dd48bf50e07a3ef77db5a29ffc6cc0d69472c59fc6799b2ecce4780851f20"
       },
       "all16_fixed_ids_permanently_retired": true,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 30,
+      "kind": "FROZEN_TRAIN_DEV_PARAMETER_ADAPTATION_ROLES",
+      "document_ids": [
+        237,
+        120,
+        187,
+        422,
+        464,
+        207,
+        294,
+        250,
+        594,
+        343,
+        394,
+        103,
+        403,
+        481,
+        154,
+        306
+      ],
+      "data_roles": {
+        "train": [
+          237,
+          120,
+          187,
+          422,
+          464,
+          207,
+          294,
+          250
+        ],
+        "dev": [
+          594,
+          343,
+          394,
+          103,
+          403,
+          481,
+          154,
+          306
+        ],
+        "calibration": [],
+        "confirmation": []
+      },
+      "hypotheses": [
+        "nda-17",
+        "nda-7",
+        "nda-3"
+      ],
+      "all16_document_ids_permanently_retired": true,
       "confirmation_consumed": false
     }
   ],
@@ -4394,5 +4449,72 @@
     "new_submission": false,
     "official_rank": null,
     "publication_scope": "Inline premeasurement reservation and conservative retirement only. Full source/data/runtime/scorer files must be reviewed, checkpoint-covered and actually read back before TRAIN. Original E29 held16 IDs remain separately retired."
+  },
+  "epoch30_frozen_study": {
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch30/plan.json",
+      "bytes": 37823,
+      "sha256": "d6c46944bbac2cb8ef65a51e68d927e10b869123004f941d56292cef1e0bd94b"
+    },
+    "source_freeze": {
+      "path": "experiments/sota-2026-10-22/epoch30/source-freeze.json",
+      "bytes": 19979,
+      "sha256": "179a0463338808f2d39925fe480a02c4eb144ee634044594a8c68ca51a35e14a"
+    }
+  },
+  "epoch30_data_roles": {
+    "train": [
+      237,
+      120,
+      187,
+      422,
+      464,
+      207,
+      294,
+      250
+    ],
+    "dev": [
+      594,
+      343,
+      394,
+      103,
+      403,
+      481,
+      154,
+      306
+    ],
+    "calibration": [],
+    "confirmation": [],
+    "hypotheses": [
+      "nda-17",
+      "nda-7",
+      "nda-3"
+    ],
+    "used_confirmation_identities": [],
+    "retired_document_ids": [
+      237,
+      120,
+      187,
+      422,
+      464,
+      207,
+      294,
+      250,
+      594,
+      343,
+      394,
+      103,
+      403,
+      481,
+      154,
+      306
+    ],
+    "partition_after_projection": {
+      "exposed": 293,
+      "unreserved": 106,
+      "reserved_confirmation": 24,
+      "total": 423
+    },
+    "all16_document_ids_permanently_exposed_after_projection": true
   }
 }

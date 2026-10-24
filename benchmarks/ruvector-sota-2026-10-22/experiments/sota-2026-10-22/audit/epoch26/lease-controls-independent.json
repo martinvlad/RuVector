@@ -1,0 +1,73 @@
+{
+  "checks_passed": true,
+  "checked_at": "2026-10-24T06:34:05.836150+00:00",
+  "approval_scope": "Only creation of scoped epoch26 planning lease replacing CONTINUATION.json and ACTIVE_RUN.json; no model/native execution admission",
+  "source_parent": "5acc487d6f968319a95a211fb7b3287900ca4a22",
+  "source_parent_sole_parent": "5a428c040e06663ddf4ecd6de9b96c67c8045757",
+  "source_root": "e7953558d626274682967e8e6d298863387aaa50",
+  "main": "46d816ddc4c2a8a06cd3613534a79b1d557d858b",
+  "independent_actual_remote_GETs": "branch HEAD/main/git commit fetched via connected GitHub; tuple matches at review time",
+  "changed_CONT_keys": [
+    "active_run",
+    "epoch26_planning",
+    "prior_published_base_commit"
+  ],
+  "old_CP_identity_preserved": true,
+  "old_CP_rows_preserved": 3541,
+  "controls": {
+    "CONTINUATION.json": {
+      "bytes": 114388,
+      "sha256": "f2dc9be74bc07f299b1d4c3573ddd5d0774a7617b538aaf66046a5adbe36b355",
+      "git_blob_sha1": "e9c3dcb82340e58b42776e6545ce9cb46e59898e"
+    },
+    "ACTIVE_RUN.json": {
+      "bytes": 1457,
+      "sha256": "eab4a4b8a26a06a1c2b9a7a25edf613f315e692bf4521da24cfe28ad47e7718c",
+      "git_blob_sha1": "df83fc3fa728b2d911e6b9e621c3b6f371f1dd7a"
+    }
+  },
+  "native_allowed": 0,
+  "confirmation_allowed": 0,
+  "candidate_lineage": "unknown supervised training data; DEV-only diagnostic; CONF/promotion/submission prohibited",
+  "physical_lock": {
+    "pid": 72224,
+    "startticks_actual": 14702559,
+    "startticks_expected": 14702559,
+    "process_state": "S",
+    "inode_actual": 13626,
+    "inode_expected": 13626,
+    "fd_inode": 13626,
+    "same_device": true,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "not_expired": true,
+    "release_request_absent": true,
+    "kernel_FLOCK": true,
+    "contender_denied": true
+  },
+  "conditions": [
+    "Publisher must recheck actual branch/main/closed prior lease immediately before mutations and use expected_sha CAS.",
+    "Only two in-scope control files may change; full actual Git leaf tuples and parent/sibling trees must be checked before ref move.",
+    "All mutations require fresh physical guard, fsynced unique intent/response journal and no unresolved earlier intent.",
+    "Source freeze and independent actual remote admission remain necessary before native/model initialization."
+  ],
+  "project_or_controller_modified_by_auditor": false,
+  "baseline_source_restore_verified": true,
+  "runtime_assets_locally_copied": "Observed local runtime cache extras are not publication inputs or inference evidence.",
+  "independent_baseline_actual_remote_full_tuple_match": {
+    "Git_leaves": 3617,
+    "tuple_fields": [
+      "path",
+      "mode",
+      "type",
+      "sha",
+      "size"
+    ],
+    "root_tree_entries": 44,
+    "benchmarks_tree_entries": 13,
+    "all_recursive_trees_untruncated": true,
+    "canonical_filemap_exact_match": true
+  }
+}

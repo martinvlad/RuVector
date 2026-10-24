@@ -1,0 +1,21 @@
+{
+  "acceptance_thresholds_or_metrics_changed": false,
+  "actual_interval": "Worker time.perf_counter immediately before and after reader.score_pair(premise,hypothesis). Includes fast tokenizer, CPU tensor construction, model inference, three-way softmax and result construction.",
+  "component_latency": "context_seconds + reader.latency_seconds + native_query_seconds(if applicable); excludes model/encoder initialization, document partition/embedding setup, common asset verification, process launch and cleanup.",
+  "context_seconds": "Time to pack source context, verify literal/UTF8/numerical provenance and compute untruncated joint tokens; recorded separately.",
+  "correct_short_label": "Reader pair latency including tokenization and forward",
+  "epoch": 26,
+  "field": "cases[*].arms[*].reader.latency_seconds",
+  "frozen_scorer_scope_wording_correction": "Frozen score_dev.py reports Reader forward wall seconds only; interpret these exact saved p50/p95 as pair latency including tokenization and forward. No stored fields, source files, timing samples or scorer outputs are altered.",
+  "kind": "SAVED_TIMING_FIELD_INTERPRETATION_SOURCE_UNCHANGED",
+  "model_tokenizer_native_calls": 0,
+  "native_query_seconds": "Native VectorDb search wall time for actual_native arm; controls null.",
+  "schema_version": 1,
+  "source_annotation_choices_accessed": 0,
+  "whole_worker_latency": "Execution wall_seconds_including_init_cleanup; retains setup and cleanup bound; not per-question latency.",
+  "worker_source": {
+    "bytes": 23338,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch26-3a1d40cb6d1d/project/experiments/sota-2026-10-22/candidate/epoch26/worker.py",
+    "sha256": "304aea49fc6cd9e40e803e47bafcffbb4fb9b81a5d4ab5e4328e5b2d90c84465"
+  }
+}

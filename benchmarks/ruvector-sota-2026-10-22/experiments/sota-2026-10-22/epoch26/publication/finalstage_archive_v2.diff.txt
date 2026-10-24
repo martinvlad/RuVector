@@ -1,0 +1,50 @@
+--- frozen/stage_publication_v1.py
++++ new/finalstage_archive_v2.py
+@@ -16,6 +16,7 @@
+     check_history, check_transport, content, cp_rows, directory, encoded, gitsha,
+     live_owner, loads, new_output, parse, public_text, ref, relative, require,
+     sha, walk_current, write)
++from archive_stage_guards_v2 import archive_omissions, publication_items
+ 
+ MAX_BLOB_JSON = 8384512
+ MAX_TREE_JSON = 175904
+@@ -521,6 +522,7 @@
+ 
+ 
+ def prepare(args):
++    require(args.phase == 'final', 'Archive adapter is final rejected evidence transport only')
+     project, kit, controls, priorcontrols = map(directory,
+         (args.project, args.kit, args.controls, args.priorcontrols))
+     scope = directory(project.parent)
+@@ -555,8 +557,11 @@
+         for path in set(prior)-set(baseline):
+             require(ref(project, path) == source_rows[path] and leaf(path, content(project/path)) == prior[path],
+                     'Frozen source tuple/checkpoint bytes changed: '+path)
++    omitted = archive_omissions(project, kit, current, cp_rows(cp), cont, args.parent,
++        plan, frozen, cp_rows(loads(prior_bodies['CHECKPOINT_MANIFEST.json'])))
++    published = publication_items(current, bodies, omitted)
+     expected = copy.deepcopy(baseline)
+-    for path, body in {**current, **bodies}.items():
++    for path, body in published.items():
+         require(path not in baseline or path in CONTROLS, 'Original Git leaf overwrite: '+path)
+         expected[path] = leaf(path, body)
+     verify_prior(prior, baseline, expected)
+@@ -565,7 +570,7 @@
+         manifest = parse(project/(E+'EPOCH_MANIFEST.json'))
+         checked_final(project, manifest, cp_rows(cp), cont, parse(kit/'CONTINUATION.json'),
+                       args.parent, plan, frozen)
+-    changed = {p: b for p, b in {**current, **bodies}.items() if prior.get(p) != expected[p]}
++    changed = {p: b for p, b in published.items() if prior.get(p) != expected[p]}
+     require(changed and CONTROLS <= set(changed), 'All three control updates and nonduplicate stage required')
+     blobs, groups = transport_groups(changed)
+     metadata = {'schema_version': 1, 'stage': args.phase, 'scope': SCOPE,
+@@ -581,6 +586,9 @@
+         'changed_files': [], 'old_noncontrol_tuples_preserved': True,
+         'old_CP_metadata_preserved': True, 'frozen_source_tuples_preserved': True,
+         'inherited_archive_transport_unchanged': reconstruction,
++        'epoch26_artifact_transports': cont['epoch26_artifact_transports'],
++        'epoch26_CP_only_originals': [cp_rows(cp)[path] for path in sorted(omitted)],
++        'exact_Git_omissions': sorted(omitted | {reconstruction['standalone_Git_leaf_omitted']}),
+         'Git_mutations': 0, 'native_or_model_or_corpus_calls': 0,
+         'large_blob_requests': [], 'create_tree_groups': [],
+         'transport_limits': {'large_file_bytes': LARGE_FILE_BYTES,

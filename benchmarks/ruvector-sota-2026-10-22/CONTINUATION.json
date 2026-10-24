@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "b7f8285206189ba1ee0de95057957585ac097874",
-  "checkpoint_manifest_sha256": "a10e074a4fc92eeb344b6045ebf9d1a378d0e6eff4a8666cc3d88ab0b3917855",
+  "prior_published_base_commit": "00d49880e0b6a7dc2aea8cb155d64549f423c782",
+  "checkpoint_manifest_sha256": "5f235008f408f70d0570478c059f41c2a603e04c77b5400c17aabd55f3b41822",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -15,7 +15,7 @@
     "actual_HTTP_training_feature_requests": 144,
     "actual_HTTP_training_sanity_diagnostic_requests": 6,
     "counting_note": "Cumulative counts include historicaladaptivepublic/evaluationdiagnostics; notallfreshheldout. The144trainingfeature and6epoch12TRAINsanity diagnosticHTTP are preserved separately; epoch13 has no TRAIN/fitting/calibration. DEV/CONF evaluationdiagnostics are not officialbenchmarkgeneralization; scheduledwork notcalledexecuted.",
-    "cumulative_bounded_native_process_attempts_including_qualification": 26,
+    "cumulative_bounded_native_process_attempts_including_qualification": 27,
     "engineering_NLI_pair_forwards": 15,
     "engineering_native_searches": 29,
     "epoch20_bounded_worker_attempts": 1,
@@ -127,7 +127,78 @@
     },
     "epoch25_cumulative_engineering_native_searches": 57,
     "epoch25_cumulative_engineering_NLI_pair_forwards": 33,
-    "epoch25_counting_scope": "Legacy engineering_native_searches29 through23 and engineering_NLI_pair_forwards15 through24 remain preserved; current totals through25 are57native/33NLI. Corpus22attempts/20completed and885HTTPsuccess/2fail unchanged;4qualifications/26boundedprocessattempts. One blocked bind is not recorded as outboundHTTP/paidAPI."
+    "epoch25_counting_scope": "Legacy engineering_native_searches29 through23 and engineering_NLI_pair_forwards15 through24 remain preserved; current totals through25 are57native/33NLI. Corpus22attempts/20completed and885HTTPsuccess/2fail unchanged;4qualifications/26boundedprocessattempts. One blocked bind is not recorded as outboundHTTP/paidAPI.",
+    "epoch26_actual_execution": {
+      "Python_network_operations_attempted": 0,
+      "Node_network_operations_attempted": 0,
+      "benchmark_HTTP_requests": 0,
+      "benchmark_label_reads": 0,
+      "TRAIN_calibration_fits": 0,
+      "CONF_worker_attempts": 0,
+      "CONF_annotation_choices": 0,
+      "CONF_NLI_pairs": 0,
+      "paid_API_calls": 0,
+      "GPU_calls": 0,
+      "fits": 0,
+      "paid_calls": 0,
+      "confirmation_calls": 0,
+      "generation_calls": 0,
+      "generated_tokens": 0,
+      "training_steps": 0,
+      "optimizer_steps": 0,
+      "external_API_calls": 0,
+      "train_calls": 0,
+      "calibration_calls": 0,
+      "Python_literal_loopback_binds_allowed": 1,
+      "BGE_initializations_attempted": 1,
+      "BGE_initializations_completed": 1,
+      "ORT_sessions_attempted": 1,
+      "ORT_sessions_completed": 1,
+      "BGE_forwards_attempted": 77,
+      "BGE_forwards_completed": 77,
+      "BGE_texts_attempted": 546,
+      "BGE_texts_completed": 546,
+      "native_helper_starts": 1,
+      "native_index_initializations_attempted": 8,
+      "native_index_initializations_completed": 8,
+      "native_queries_attempted": 24,
+      "native_queries_completed": 24,
+      "NLI_model_initializations": 1,
+      "NLI_model_initializations_completed": 1,
+      "NLI_forward_pairs_attempted": 72,
+      "NLI_forward_pairs_completed": 72,
+      "NLI_forwards": 72,
+      "NLI_forward_calls_attempted": 72,
+      "NLI_forward_calls_completed": 72,
+      "DEV_input_bank_reads": 1,
+      "DEV_corpora": 8,
+      "DEV_questions": 24,
+      "DEV_pairs_completed": 72,
+      "DEV_cases_completed": 24,
+      "automatically_extracted_units": 522,
+      "BGE_forward_seconds": 15.091919551166939,
+      "worker_attempts": 1,
+      "verified_worker_starts": 1,
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "wall_seconds_including_init_cleanup": 217.25541506300215,
+      "owned_live_processes_closed": true,
+      "errors": 0,
+      "peak_RSS_bytes": 2259804160,
+      "user_seconds": 416.747145,
+      "system_seconds": 1.05028,
+      "resource_scope": "RUSAGE_CHILDREN largest-child high-water, not simultaneous aggregate RSS",
+      "BGE_initializations": 1,
+      "BGE_forwards": 77,
+      "BGE_texts": 546,
+      "native_index_initializations": 8,
+      "native_searches_completed": 24
+    },
+    "epoch26_cumulative_corpus_attempts": 23,
+    "epoch26_cumulative_completed_corpus_batches": 21,
+    "epoch26_counting_scope": "Prior22corpusattempts/20complete plus one completed source-licensed DEV corpus batch. Prior26bounded native process attempts plus one gives27;4qualificationattempts unchanged. Raw DEV_corpora8 means document inputs, not batch count. Prior885benchmarkHTTPsuccess/2fail unchanged; model asset acquisition free and separate; no paid/GPU/CONF/fits."
   },
   "epochs": [
     {
@@ -372,6 +443,14 @@
       "native_worker_attempts": 1,
       "kind": "SOURCE_SCOPE_ENGINEERING",
       "confirmation_consumed": false
+    },
+    {
+      "epoch": 26,
+      "status": "REJECTED_DEV_DIAGNOSTIC",
+      "manifest": "experiments/sota-2026-10-22/epoch26/EPOCH_MANIFEST.json",
+      "native_worker_attempts": 1,
+      "kind": "REAL_DEV_ONLY_TYPED_NLI_DIAGNOSTIC",
+      "confirmation_consumed": false
     }
   ],
   "used_confirmation_sets": [
@@ -385,7 +464,7 @@
     "Legal96zero-shotfourtaskadaptation,notfull162taskofficialLegalBench",
     "NoClaimBenchRuVectorscore; fullquestions/scorer/license/submissionnotverified"
   ],
-  "next_research_priority": "Preserve submitted Native104. Epoch25 fixed Qwen3-0.6B valid-label scorer failed authored qualification: native=lexical2of6, all18predictionsNotMentioned, zeroE/Ccorrect, nativeNLL3.59518789 exceeds positional3.51452061. All4nativeE/C selections contained manual support, so additional evidence reranking is not established as remedy. Prefer a materially stronger trained typed-decision/NLI head with exact licensed revisions and prospectively frozen source-licensed TRAIN/DEV/calibration/project-unusedCONF; no prompt/threshold grid on these6now-exposed authored cases. Separately repair numerical trailing-punctuation extraction and instrument/scope offline bind policy in a new premeasurement study; do not retroactively waive this original failed network/provenance gate. Unknown foundation/SFT overlap retained. Budget remainsCPU2/600satmost2batches paidGPU0 unless an actually authorized remaining paid cap and frozen price/time/cleanup plan exist. No currentJev300/fullLegalBench/ClaimBench score or publisher result/rank/eligibility; no duplicate submission/email or ClaimBench pilot without verifieddata/scorer/license/access.",
+  "next_research_priority": "Preserve submitted Native104/RRF10. Fixed newly trained ModernBERT-large NLI native BGE ANN obtained10/24 vs6lexical/8positional on new projectDEV only, better NLL/Brier, but failed frozen class gate: contradiction0/7 and no arm predicts contradiction. This is not paired improvement over earlier different banks, no official ranking or generalization. Prefer a materially stronger legal contradiction-aware typed/NLI head with verifiable licensed supervised training/selection/calibration identities, paired native retrieval/context/numeric checks, and genuinely model-unused confirmation only when eligible. Do not rerun a head/retrieval/threshold grid on these now-exposed8docs or earlier DEV. Unknown supervised/pretraining overlap remains; no freshCONF for this checkpoint. One worker217.255s CPU2,72NLI/24native, zero forbidden networks/paid/GPU/fit/gen/CONF; one prospectively allowed and fully logged literal::1 bind, originalepoch25 failure remains. JevBench openweightsCapabilityChon1.0-12B85.336 observed, submission7FEA2738 no matching publisher score/rank/eligibility;115originalqueueonly. ClaimBench full data/scorer/licence/access unverified, no RuVector score/pilot. Futureepochmax2batchesCPU2<=600s,zero paid/GPU unless actual remaining authorized cap and new price/time/cleanup plan. Do not duplicate submissions or author messages.",
   "benchmark_targets": {
     "JevBench": {
       "leader_observed": "Chon-1.0-12B",
@@ -523,10 +602,10 @@
     "schema_version": 1,
     "run_id": "epoch26-3a1d40cb6d1d",
     "epoch": 26,
-    "state": "EPOCH26_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
-    "work_active": true,
+    "state": "EPOCH26_CLOSED",
+    "work_active": false,
     "experiments_active": false,
-    "checkpoint_parent": "b7f8285206189ba1ee0de95057957585ac097874",
+    "checkpoint_parent": "00d49880e0b6a7dc2aea8cb155d64549f423c782",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
       "run_id": "epoch26-3a1d40cb6d1d",
@@ -549,9 +628,13 @@
     "OS_lock_release_pending": true,
     "native_allowed": 0,
     "conditional_confirmation_allowed": 0,
-    "instruction": "One nonretryable real legal DEV-only diagnostic worker after exact independent actual remote source readback and local NATIVE_ADMISSION; fixed24queries72same-head typed pairs CPU2 <=600s incl init cleanup. No CONF/train/calibration/generation/paid/GPU/promotion/submission; unknown supervised data lineage. Preserve Native104.",
-    "native_allowed_after_exact_remote_readback": 1,
+    "instruction": "Closed rejected epoch26 real DEV diagnostic. All worker/CONF/spend slots spent or permanently closed. Preserve Native104 and exact scientific rejection. Release physical lock only after independent actual final remote readback.",
+    "native_allowed_after_exact_remote_readback": 0,
     "confirmation_allowed": 0,
+    "actual_epoch26_worker_attempts": 1,
+    "all_unspent_epoch26_slots_permanently_closed": true,
+    "owned_native_groups_closed": true,
+    "OS_lock_release_pending_final_remote_readback": true,
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -575,7 +658,8 @@
     "Epoch18 fixedDEV8 projected once after actual full operational PASS and label-free capacity;221exposed/178unreserved/24reserved. These documents are DEV forever even if native fails.",
     "Epoch20 original ContractNLI DEV documents [470,423,109,418,613,580,167,393], all 24 query inputs and normalized identities, are permanently exposed DEV; never reuse as fresh confirmation.",
     "Epoch21 original ContractNLI DEV documents [303,176,113,186,485,512,219,520], all24 query inputs and normalized identities, are permanently exposed DEV; never fresh confirmation.",
-    "Epoch22 original ContractNLI DEV documents [328,350,135,248,441,123,98,87], all24 query inputs and normalized identities, are permanently exposed DEV; never fresh confirmation. Independent DEV gate rejected; all epoch22 slots permanently closed."
+    "Epoch22 original ContractNLI DEV documents [328,350,135,248,441,123,98,87], all24 query inputs and normalized identities, are permanently exposed DEV; never fresh confirmation. Independent DEV gate rejected; all epoch22 slots permanently closed.",
+    "Epoch26 original ContractNLI TRAIN DEV documents437,614,194,174,256,490,317,196 and all24fixedhypotheses are permanentlyDEV after inputprojection. Now253exposed/24reserved/146unreserved originalTRAINdocuments. No CONFchoices or inference. Diagnostic rejected contradiction0/7; Native104 preserved."
   ],
   "unused_confirmation_sets": [
     {
@@ -633,9 +717,9 @@
     }
   ],
   "rejection_ledger": {
-    "path": "experiments/sota-2026-10-22/epoch25/REJECTION_LEDGER.json",
-    "bytes": 60802,
-    "sha256": "88b785d44b3a0845d81bd18926357030767742682a9d81599dab13f50e5cd25c"
+    "path": "experiments/sota-2026-10-22/epoch26/REJECTION_LEDGER.json",
+    "bytes": 63325,
+    "sha256": "bdcb2b330fab4dd50bbe3f1c20fe396b7f823db3220ed766e534cc0095799c1a"
   },
   "benchmark_refresh": {
     "path": "experiments/sota-2026-10-22/legal-transfer/epoch26/benchmark-refresh.json",
@@ -656,7 +740,7 @@
     "next_epoch_rule": "Allhistoricalstudiesclosed, includinganyunspentconditional13slot; no retry. A newexplicitcontinuation permitsdistincthypothesis onlyafterfrozenlicensedTRAIN/DEV/calibration/project-unusedCONF/source/runtime, atmost2nonretryableCPU2/600sphases,paid0/GPU0. Oldf018DEVforever. Preserveepoch9CONF48ifunused; ifretiredneednewverifiedbank. No repeatedunchangedblockerprobes.",
     "original_study_status": "CLOSED_BUDGET_EXHAUSTED",
     "epoch4_native_attempts_including_failed_restoration": 1,
-    "new_study_id": "native-Qwen3-fixed-valid-label-authored-qualification-e25",
+    "new_study_id": "native-ModernBERT-threeway-real-DEV-only-e26",
     "new_study_attempt_cap": 1,
     "new_study_attempts_used": 1,
     "new_study_attempts_remaining": 0,
@@ -727,7 +811,7 @@
       "new_study_admitted": false,
       "paid_calls": 0
     },
-    "scope": "ALL_EPOCHS_CLOSED_THROUGH25",
+    "scope": "ALL_EPOCHS_CLOSED_THROUGH26",
     "epoch15_active_study": {
       "CPU_threads": 2,
       "GPU_calls": 0,
@@ -809,7 +893,7 @@
     },
     "cumulative_corpus_attempts_preserved": 19,
     "cumulative_qualification_attempts": 4,
-    "cumulative_native_process_attempts_including_qualification": 26,
+    "cumulative_native_process_attempts_including_qualification": 27,
     "count_scope": "Legacy native attempt fields count corpus attempts; current bounded-process total separately includes engineering qualifications. HTTP counters remain separate.",
     "conditional_DEV_after_exact_remote_readback": 0,
     "conditional_CONF_after_independent_DEV_runtime_gates": 0,
@@ -857,7 +941,7 @@
       "worker_attempts": 1
     },
     "cumulative_corpus_attempts_preserved_through19": 19,
-    "cumulative_corpus_attempts_current": 22,
+    "cumulative_corpus_attempts_current": 23,
     "epoch21_closed_study": {
       "BGE_forwards": 26,
       "BGE_initializations": 1,
@@ -1082,6 +1166,149 @@
       "generated_tokens": 0,
       "training_steps": 0,
       "optimizer_steps": 0
+    },
+    "epoch26_actual_execution": {
+      "Python_network_operations_attempted": 0,
+      "Node_network_operations_attempted": 0,
+      "benchmark_HTTP_requests": 0,
+      "benchmark_label_reads": 0,
+      "TRAIN_calibration_fits": 0,
+      "CONF_worker_attempts": 0,
+      "CONF_annotation_choices": 0,
+      "CONF_NLI_pairs": 0,
+      "paid_API_calls": 0,
+      "GPU_calls": 0,
+      "fits": 0,
+      "paid_calls": 0,
+      "confirmation_calls": 0,
+      "generation_calls": 0,
+      "generated_tokens": 0,
+      "training_steps": 0,
+      "optimizer_steps": 0,
+      "external_API_calls": 0,
+      "train_calls": 0,
+      "calibration_calls": 0,
+      "Python_literal_loopback_binds_allowed": 1,
+      "BGE_initializations_attempted": 1,
+      "BGE_initializations_completed": 1,
+      "ORT_sessions_attempted": 1,
+      "ORT_sessions_completed": 1,
+      "BGE_forwards_attempted": 77,
+      "BGE_forwards_completed": 77,
+      "BGE_texts_attempted": 546,
+      "BGE_texts_completed": 546,
+      "native_helper_starts": 1,
+      "native_index_initializations_attempted": 8,
+      "native_index_initializations_completed": 8,
+      "native_queries_attempted": 24,
+      "native_queries_completed": 24,
+      "NLI_model_initializations": 1,
+      "NLI_model_initializations_completed": 1,
+      "NLI_forward_pairs_attempted": 72,
+      "NLI_forward_pairs_completed": 72,
+      "NLI_forwards": 72,
+      "NLI_forward_calls_attempted": 72,
+      "NLI_forward_calls_completed": 72,
+      "DEV_input_bank_reads": 1,
+      "DEV_corpora": 8,
+      "DEV_questions": 24,
+      "DEV_pairs_completed": 72,
+      "DEV_cases_completed": 24,
+      "automatically_extracted_units": 522,
+      "BGE_forward_seconds": 15.091919551166939,
+      "worker_attempts": 1,
+      "verified_worker_starts": 1,
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "wall_seconds_including_init_cleanup": 217.25541506300215,
+      "owned_live_processes_closed": true,
+      "errors": 0,
+      "peak_RSS_bytes": 2259804160,
+      "user_seconds": 416.747145,
+      "system_seconds": 1.05028,
+      "resource_scope": "RUSAGE_CHILDREN largest-child high-water, not simultaneous aggregate RSS",
+      "BGE_initializations": 1,
+      "BGE_forwards": 77,
+      "BGE_texts": 546,
+      "native_index_initializations": 8,
+      "native_searches_completed": 24
+    },
+    "epoch26_closed_diagnostic": {
+      "used": 1,
+      "cap": 1,
+      "user_epoch_cap": 2,
+      "allowed_further": 0,
+      "all_unused_slots_closed": true,
+      "actual": {
+        "Python_network_operations_attempted": 0,
+        "Node_network_operations_attempted": 0,
+        "benchmark_HTTP_requests": 0,
+        "benchmark_label_reads": 0,
+        "TRAIN_calibration_fits": 0,
+        "CONF_worker_attempts": 0,
+        "CONF_annotation_choices": 0,
+        "CONF_NLI_pairs": 0,
+        "paid_API_calls": 0,
+        "GPU_calls": 0,
+        "fits": 0,
+        "paid_calls": 0,
+        "confirmation_calls": 0,
+        "generation_calls": 0,
+        "generated_tokens": 0,
+        "training_steps": 0,
+        "optimizer_steps": 0,
+        "external_API_calls": 0,
+        "train_calls": 0,
+        "calibration_calls": 0,
+        "Python_literal_loopback_binds_allowed": 1,
+        "BGE_initializations_attempted": 1,
+        "BGE_initializations_completed": 1,
+        "ORT_sessions_attempted": 1,
+        "ORT_sessions_completed": 1,
+        "BGE_forwards_attempted": 77,
+        "BGE_forwards_completed": 77,
+        "BGE_texts_attempted": 546,
+        "BGE_texts_completed": 546,
+        "native_helper_starts": 1,
+        "native_index_initializations_attempted": 8,
+        "native_index_initializations_completed": 8,
+        "native_queries_attempted": 24,
+        "native_queries_completed": 24,
+        "NLI_model_initializations": 1,
+        "NLI_model_initializations_completed": 1,
+        "NLI_forward_pairs_attempted": 72,
+        "NLI_forward_pairs_completed": 72,
+        "NLI_forwards": 72,
+        "NLI_forward_calls_attempted": 72,
+        "NLI_forward_calls_completed": 72,
+        "DEV_input_bank_reads": 1,
+        "DEV_corpora": 8,
+        "DEV_questions": 24,
+        "DEV_pairs_completed": 72,
+        "DEV_cases_completed": 24,
+        "automatically_extracted_units": 522,
+        "BGE_forward_seconds": 15.091919551166939,
+        "worker_attempts": 1,
+        "verified_worker_starts": 1,
+        "CPU_affinity": [
+          0,
+          1
+        ],
+        "wall_seconds_including_init_cleanup": 217.25541506300215,
+        "owned_live_processes_closed": true,
+        "errors": 0,
+        "peak_RSS_bytes": 2259804160,
+        "user_seconds": 416.747145,
+        "system_seconds": 1.05028,
+        "resource_scope": "RUSAGE_CHILDREN largest-child high-water, not simultaneous aggregate RSS",
+        "BGE_initializations": 1,
+        "BGE_forwards": 77,
+        "BGE_texts": 546,
+        "native_index_initializations": 8,
+        "native_searches_completed": 24
+      }
     }
   },
   "publisher_status": {
@@ -1108,11 +1335,11 @@
   },
   "latest_learning": {
     "manifest": {
-      "path": "experiments/sota-2026-10-22/epoch25/EPOCH_MANIFEST.json",
-      "bytes": 31081,
-      "sha256": "94f11ce12e5ac417d08a856f832e6c85134c983ca358636ef06aadb3567a8b5f"
+      "path": "experiments/sota-2026-10-22/epoch26/EPOCH_MANIFEST.json",
+      "bytes": 40758,
+      "sha256": "080d690207f9faf69249b91ce7e6f1919b4fd04485ffe56ae0b88e269b1aa4aa"
     },
-    "direction": "Preserve submitted Native104. Epoch25 fixed Qwen3-0.6B valid-label scorer failed authored qualification: native=lexical2of6, all18predictionsNotMentioned, zeroE/Ccorrect, nativeNLL3.59518789 exceeds positional3.51452061. All4nativeE/C selections contained manual support, so additional evidence reranking is not established as remedy. Prefer a materially stronger trained typed-decision/NLI head with exact licensed revisions and prospectively frozen source-licensed TRAIN/DEV/calibration/project-unusedCONF; no prompt/threshold grid on these6now-exposed authored cases. Separately repair numerical trailing-punctuation extraction and instrument/scope offline bind policy in a new premeasurement study; do not retroactively waive this original failed network/provenance gate. Unknown foundation/SFT overlap retained. Budget remainsCPU2/600satmost2batches paidGPU0 unless an actually authorized remaining paid cap and frozen price/time/cleanup plan exist. No currentJev300/fullLegalBench/ClaimBench score or publisher result/rank/eligibility; no duplicate submission/email or ClaimBench pilot without verifieddata/scorer/license/access."
+    "direction": "Preserve submitted Native104/RRF10. Fixed newly trained ModernBERT-large NLI native BGE ANN obtained10/24 vs6lexical/8positional on new projectDEV only, better NLL/Brier, but failed frozen class gate: contradiction0/7 and no arm predicts contradiction. This is not paired improvement over earlier different banks, no official ranking or generalization. Prefer a materially stronger legal contradiction-aware typed/NLI head with verifiable licensed supervised training/selection/calibration identities, paired native retrieval/context/numeric checks, and genuinely model-unused confirmation only when eligible. Do not rerun a head/retrieval/threshold grid on these now-exposed8docs or earlier DEV. Unknown supervised/pretraining overlap remains; no freshCONF for this checkpoint. One worker217.255s CPU2,72NLI/24native, zero forbidden networks/paid/GPU/fit/gen/CONF; one prospectively allowed and fully logged literal::1 bind, originalepoch25 failure remains. JevBench openweightsCapabilityChon1.0-12B85.336 observed, submission7FEA2738 no matching publisher score/rank/eligibility;115originalqueueonly. ClaimBench full data/scorer/licence/access unverified, no RuVector score/pilot. Futureepochmax2batchesCPU2<=600s,zero paid/GPU unless actual remaining authorized cap and new price/time/cleanup plan. Do not duplicate submissions or author messages."
   },
   "source_closure_correction": {
     "path": "experiments/sota-2026-10-22/epoch13/SOURCE_CLOSURE_CORRECTION.v1.json",
@@ -2846,5 +3073,107 @@
       "total": 423
     },
     "unknown_supervised_lineage_no_fresh_CONFIRM": true
+  },
+  "epoch26_final": {
+    "manifest": {
+      "path": "experiments/sota-2026-10-22/epoch26/EPOCH_MANIFEST.json",
+      "bytes": 40758,
+      "sha256": "080d690207f9faf69249b91ce7e6f1919b4fd04485ffe56ae0b88e269b1aa4aa"
+    },
+    "results": {
+      "path": "experiments/sota-2026-10-22/epoch26/RESULTS.json",
+      "bytes": 54304,
+      "sha256": "cee174c6e334d144e0cb74dba876c829c85c127213b330922e54240596c7ea4b"
+    },
+    "official_rank": null,
+    "goal_met": false,
+    "fresh_confirmation_consumed": false,
+    "all_unspent_slots_closed": true
+  },
+  "epoch26_artifact_transports": {
+    "manifest": {
+      "path": "experiments/sota-2026-10-22/epoch26/publication/archive-transport.v1.json",
+      "bytes": 2105,
+      "sha256": "9b79fc0119e1e5d15470201b7180f4b39e55b687a207dac1ff9f333d91a8ef24"
+    },
+    "descriptors": [
+      {
+        "archive": {
+          "bytes": 7084801,
+          "path": "experiments/sota-2026-10-22/epoch26/publication/archives/actualarchive.dev.raw.v1.json",
+          "sha256": "8541e03990c59782261e12c3f4eb900feae13b92c69db92b5e421286c5792906"
+        },
+        "extractor": {
+          "bytes": 16404,
+          "path": "experiments/sota-2026-10-22/epoch26/publication/restore_epoch26_archives_v1.py",
+          "sha256": "a5495a2ce7375d7e502bde2004d131eac9f8651c38c17589c2e4ba2db6f2a25f"
+        },
+        "format": "gzip+base64",
+        "publication_helper": {
+          "bytes": 8708,
+          "path": "experiments/sota-2026-10-22/epoch26/publication/prepare_epoch26_archives_v1.py",
+          "sha256": "779e148a78c80e343d7774f8a1b4a6512b84cc86cea6a4e09def447c9a1e5a27"
+        },
+        "required_before_bootstrap": true,
+        "restored_artifact": {
+          "bytes": 22784264,
+          "path": "experiments/sota-2026-10-22/epoch26/runs/dev/raw.json",
+          "sha256": "0e35f4d7c49baefbfaeb40d37d23579782551228315ea928e20f17e68e6fac28"
+        },
+        "source_commit": "00d49880e0b6a7dc2aea8cb155d64549f423c782",
+        "standalone_Git_leaf_omitted": "experiments/sota-2026-10-22/epoch26/runs/dev/raw.json"
+      },
+      {
+        "archive": {
+          "bytes": 5325702,
+          "path": "experiments/sota-2026-10-22/epoch26/publication/archives/actualarchive.dev.native-result.v1.json",
+          "sha256": "a50dd1cc2a203695e437e2ed0df1fd1b5f891b896c6bfa750971d00fbb3acd95"
+        },
+        "extractor": {
+          "bytes": 16404,
+          "path": "experiments/sota-2026-10-22/epoch26/publication/restore_epoch26_archives_v1.py",
+          "sha256": "a5495a2ce7375d7e502bde2004d131eac9f8651c38c17589c2e4ba2db6f2a25f"
+        },
+        "format": "gzip+base64",
+        "publication_helper": {
+          "bytes": 8708,
+          "path": "experiments/sota-2026-10-22/epoch26/publication/prepare_epoch26_archives_v1.py",
+          "sha256": "779e148a78c80e343d7774f8a1b4a6512b84cc86cea6a4e09def447c9a1e5a27"
+        },
+        "required_before_bootstrap": true,
+        "restored_artifact": {
+          "bytes": 9541777,
+          "path": "experiments/sota-2026-10-22/epoch26/runs/dev/native-result.json",
+          "sha256": "e0c5475d8a93a01975230c3c416825a9a9e697a9abee9f55476b08f98371ddcc"
+        },
+        "source_commit": "00d49880e0b6a7dc2aea8cb155d64549f423c782",
+        "standalone_Git_leaf_omitted": "experiments/sota-2026-10-22/epoch26/runs/dev/native-result.json"
+      }
+    ]
+  },
+  "epoch26_restore": {
+    "manifest": {
+      "path": "experiments/sota-2026-10-22/epoch26/publication/archive-transport.v1.json",
+      "bytes": 2105,
+      "sha256": "9b79fc0119e1e5d15470201b7180f4b39e55b687a207dac1ff9f333d91a8ef24"
+    },
+    "extractor": {
+      "bytes": 16404,
+      "path": "experiments/sota-2026-10-22/epoch26/publication/restore_epoch26_archives_v1.py",
+      "sha256": "a5495a2ce7375d7e502bde2004d131eac9f8651c38c17589c2e4ba2db6f2a25f"
+    },
+    "run_after_inherited_epoch22_restore": true,
+    "must_run_before_bootstrap": true,
+    "original_bootstrap": {
+      "path": "bootstrap.py",
+      "bytes": 5601,
+      "sha256": "eceb2ca259feaf642bc81172aca57a2a209cc34cd17f9b281861c51f21b95806"
+    },
+    "original_restore": {
+      "path": "restore_checkpoint.py",
+      "bytes": 1556,
+      "sha256": "affd9ecf660f380c3632f78cd14fb7a36e00797ceb097cf48c0c60136fac0be8"
+    },
+    "instructions": "Resolve actual branch/tree and verify all Git and CONT/CP/KIT/BASE hashes. Restore inherited epoch22 archive with its pinned extractor FIRST. Then run epoch26 restore_epoch26_archives_v1.py against the pinned archive-transport.v1.json expected SHA to restore BOTH original raw/native JSON artifacts. Verify all decoded bytes and CP identities. Only then run unchanged reviewed bootstrap.py and restore_checkpoint.py --verify-only using exact base files in a fresh isolated project. No model acquisition/init implicitly authorized by restoration; use new exclusive scoped lock and CAS for future epoch."
   }
 }

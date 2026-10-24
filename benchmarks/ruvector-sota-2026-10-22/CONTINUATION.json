@@ -846,23 +846,23 @@
   },
   "active_run": {
     "schema_version": 1,
-    "run_id": "epoch29-734329c6e9e6",
-    "epoch": 29,
-    "state": "EPOCH29_CLOSED",
-    "work_active": false,
+    "run_id": "epoch30-9f13c9bb6e47",
+    "epoch": 30,
+    "state": "EPOCH30_PLANNING_LEASE",
+    "work_active": true,
     "experiments_active": false,
-    "checkpoint_parent": "98015274a602301ff42660e33d92e1e2128c7df6",
+    "checkpoint_parent": "ccd765026806aa3d7e43e295238a741c874a46b8",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
-      "run_id": "epoch29-734329c6e9e6",
-      "pid": 80007,
-      "startticks": 17161777,
+      "run_id": "epoch30-9f13c9bb6e47",
+      "pid": 84004,
+      "startticks": 18294638,
       "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
       "lock_inode": 13626,
-      "started_unix": 1792847915.860032,
-      "expires_unix": 1792858715.860032,
-      "started_at": "2026-10-24T13:18:35.860032+00:00",
-      "expires_at": "2026-10-24T16:18:35.860032+00:00",
+      "started_unix": 1792859244.4698765,
+      "expires_unix": 1792870044.4698765,
+      "started_at": "2026-10-24T16:27:24.469877+00:00",
+      "expires_at": "2026-10-24T19:27:24.469877+00:00",
       "CPU_affinity": [
         0,
         1
@@ -875,10 +875,7 @@
     "native_allowed": 0,
     "conditional_confirmation_allowed": 0,
     "confirmation_allowed": 0,
-    "instruction": "Closed E29 engineering qualification. All slots permanently closed. Preserve Native104 and exact acceptance/rejection; release physical lock only after independent final actual remote readback.",
-    "native_allowed_after_exact_remote_readback": 0,
-    "all_unspent_epoch29_slots_permanently_closed": true,
-    "owned_native_groups_closed": true,
+    "instruction": "Exclusive planning/restoration/source preparation only. No ML/native/training/benchmark-label access before frozen roles/source and actual independent Git readback. Preserve Native104, original16-ID E29 HOLD/allrejections. ProposedTRAIN\u2192publishedMODELseal\u2192DEV is boundedCPU2/600each/2batches, paid0/GPU0, noCONF orsubmission.",
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -4307,5 +4304,33 @@
       "bytes": 7079,
       "sha256": "2a2dd48bf50e07a3ef77db5a29ffc6cc0d69472c59fc6799b2ecce4780851f20"
     }
+  },
+  "epoch30_planning": {
+    "base_commit": "ccd765026806aa3d7e43e295238a741c874a46b8",
+    "run_id": "epoch30-9f13c9bb6e47",
+    "guardian": {
+      "run_id": "epoch30-9f13c9bb6e47",
+      "pid": 84004,
+      "startticks": 18294638,
+      "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
+      "lock_inode": 13626,
+      "started_unix": 1792859244.4698765,
+      "expires_unix": 1792870044.4698765,
+      "started_at": "2026-10-24T16:27:24.469877+00:00",
+      "expires_at": "2026-10-24T19:27:24.469877+00:00",
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+      "generation": 1
+    },
+    "maximum_native_corpus_batches": 2,
+    "CPU_threads": 2,
+    "maximum_seconds_each_including_initialization_cleanup": 600,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "confirmation": [],
+    "proposed_hypothesis": "One fixed TRAIN-only cross-attention LoRA/classification-head adaptation of original2020 BART MNLI using native evidence; independently freeze eligible fresh TRAIN/DEV identities before source text/choices; publish exact learned parameter seal before paired original/adapted native/lexical/positional DEV. E29 related idea was never executed and originalheldallocation remainsretired; no newbackbone claim, no grid orCONF."
   }
 }

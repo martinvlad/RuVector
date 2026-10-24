@@ -1,0 +1,302 @@
+{
+  "actual_execution": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "counters": {
+      "BGE_forward_seconds": 12.8351513731468,
+      "BGE_forwards_attempted": 84,
+      "BGE_forwards_completed": 84,
+      "BGE_initializations_attempted": 1,
+      "BGE_initializations_completed": 1,
+      "BGE_texts_attempted": 603,
+      "BGE_texts_completed": 603,
+      "CONF_NLI_pairs": 0,
+      "CONF_annotation_choices": 0,
+      "CONF_worker_attempts": 0,
+      "DEV_cases_completed": 24,
+      "DEV_corpora": 8,
+      "DEV_input_bank_reads": 1,
+      "DEV_pairs_completed": 72,
+      "DEV_questions": 24,
+      "GPU_calls": 0,
+      "NLI_forward_calls_attempted": 72,
+      "NLI_forward_calls_completed": 72,
+      "NLI_forward_pairs_attempted": 72,
+      "NLI_forward_pairs_completed": 72,
+      "NLI_forwards": 72,
+      "NLI_model_initializations": 1,
+      "NLI_model_initializations_completed": 1,
+      "Node_network_operations_attempted": 0,
+      "ORT_sessions_attempted": 1,
+      "ORT_sessions_completed": 1,
+      "Python_literal_loopback_binds_allowed": 1,
+      "Python_network_operations_attempted": 0,
+      "TRAIN_calibration_fits": 0,
+      "automatically_extracted_units": 579,
+      "benchmark_HTTP_requests": 0,
+      "benchmark_label_reads": 0,
+      "calibration_calls": 0,
+      "confirmation_calls": 0,
+      "external_API_calls": 0,
+      "fits": 0,
+      "generated_tokens": 0,
+      "generation_calls": 0,
+      "native_helper_starts": 1,
+      "native_index_initializations_attempted": 8,
+      "native_index_initializations_completed": 8,
+      "native_queries_attempted": 24,
+      "native_queries_completed": 24,
+      "optimizer_steps": 0,
+      "paid_API_calls": 0,
+      "paid_calls": 0,
+      "train_calls": 0,
+      "training_steps": 0
+    },
+    "memory_scope": "RUSAGE_CHILDREN largest-child high-water, not simultaneous aggregate RSS",
+    "owned_live_processes_closed": true,
+    "peak_RSS_bytes": 2391855104,
+    "system_seconds": 1.808339,
+    "user_seconds": 392.96038,
+    "verified_worker_starts": 1,
+    "wall_seconds_including_initialization_and_cleanup": 204.03983004100155,
+    "worker_attempts": 1
+  },
+  "annotation_choices_accessed": 24,
+  "annotation_choices_join_invocations": 1,
+  "at": "2026-10-24T08:43:20.591355+00:00",
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "confirmation": [],
+  "diagnostic_failed_checks": [
+    "native_at_least_one_correct_per_class",
+    "positional:native_at_least2more_correct"
+  ],
+  "diagnostic_qualified": false,
+  "epoch": 27,
+  "evidence": {
+    "auditor-output-seal.json": {
+      "bytes": 2279,
+      "path": "/tmp/ruvector-e27-independent-audit/auditor-output-seal.json",
+      "sha256": "8b0c9a496f4b41d14ba1705c8a5cdf66b492a8d7de68cc6f4c9ea2d1f7df740f"
+    },
+    "data-identity-audit.json": {
+      "bytes": 1891,
+      "path": "/tmp/ruvector-e27-independent-audit/data-identity-audit.json",
+      "sha256": "f63592158e7c32c592e93ec61fe5eb5e9b633d7f450e115065cd5f5317845227"
+    },
+    "frozen-plan-review.json": {
+      "bytes": 23058,
+      "path": "/tmp/ruvector-e27-independent-audit/frozen-plan-review.json",
+      "sha256": "77baeedbfda2241063c06623fb4832c18049b5457dc203e502cfeeb10117eceb"
+    },
+    "postrun-closure-before-gold.json": {
+      "bytes": 2438,
+      "path": "/tmp/ruvector-e27-independent-audit/postrun-closure-before-gold.json",
+      "sha256": "fe0ef6d944c68f790fa1d5826bee02715e29a37f926ac32926d7691f5d4832ed"
+    },
+    "raw-structure-audit.json": {
+      "bytes": 8375,
+      "path": "/tmp/ruvector-e27-independent-audit/raw-structure-audit.json",
+      "sha256": "08c9d3fe51358e0ef24b85ade849a85aee8f04940b8bf32f51b92e2cc04aa5f5"
+    },
+    "scorer-result.json": {
+      "bytes": 55135,
+      "path": "/tmp/ruvector-e27-independent-audit/scorer-result.json",
+      "sha256": "27cf7d72c2b4a026e2a69e167c14c457db66784ac53c13d6a3849975b733370b"
+    },
+    "timing-interpretation.json": {
+      "bytes": 3688,
+      "path": "/tmp/ruvector-e27-independent-audit/timing-interpretation.json",
+      "sha256": "79861a5868daf99bb8bac7de0fe9d8e45b013d5fdf7f107048198f71abf8ce5a"
+    }
+  },
+  "gold_protocol": "Only unchanged pre-input-frozen scorer joined exactly24predetermined original source choices once, after PASS2937structurechecks, all72finite outputs sealed and worker/helper physically absent.",
+  "historical_comparison": "Prior epoch26 10/24 and earlier11/24 use different banks/models/context and cannot establish paired improvement or model superiority.",
+  "interpretation": "Actual native BGE ANN15/24 exceeds same-head lexical12/24 and positional14/24 on these same fixed DEV inputs. NLL/Brier improve against both, but native contradiction0/4 and native positional gain1<2 fail two frozen gates. All arms predict zero contradictions. Artifact/runtime integrity PASS does not qualify the diagnostic.",
+  "isolation": "Complete public annotated JSON parsed in RAM by builder/scorer. Field isolation is logical, not OS-enforced secrecy.",
+  "kind": "REAL_LICENSED_FIXED_PROJECT_DEV_ONLY_TYPED_NLI_DIAGNOSTIC",
+  "lineage_and_confirmation_HOLD": "Exact original2020 BART MNLI weight chronology excludes later ContractNLI labeled supervision/original checkpoint choice; undocumented later publisher reselection and foundation-text/fuzzy overlap remain unresolved. Exact full submitted104 comparator is not materialized. CONF=[]HOLD regardless descriptive DEV result.",
+  "metrics": {
+    "actual_native": {
+      "Brier": 0.6707348155998405,
+      "NLL_clipped_1e-12": 1.3408947768047037,
+      "NLL_clipped_case_count": 0,
+      "accuracy": 0.625,
+      "by_class": {
+        "contradiction": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "n": 4
+        },
+        "entailment": {
+          "accuracy": 0.6,
+          "correct": 6,
+          "n": 10
+        },
+        "not_mentioned": {
+          "accuracy": 0.9,
+          "correct": 9,
+          "n": 10
+        }
+      },
+      "confusion_matrix": {
+        "contradiction": {
+          "contradiction": 0,
+          "entailment": 0,
+          "not_mentioned": 4
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 6,
+          "not_mentioned": 4
+        },
+        "not_mentioned": {
+          "contradiction": 0,
+          "entailment": 1,
+          "not_mentioned": 9
+        }
+      },
+      "correct": 15,
+      "n": 24,
+      "unclipped_NLL_finite": true
+    },
+    "lexical": {
+      "Brier": 0.7971632888418075,
+      "NLL_clipped_1e-12": 1.491101259359156,
+      "NLL_clipped_case_count": 0,
+      "accuracy": 0.5,
+      "by_class": {
+        "contradiction": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "n": 4
+        },
+        "entailment": {
+          "accuracy": 0.3,
+          "correct": 3,
+          "n": 10
+        },
+        "not_mentioned": {
+          "accuracy": 0.9,
+          "correct": 9,
+          "n": 10
+        }
+      },
+      "confusion_matrix": {
+        "contradiction": {
+          "contradiction": 0,
+          "entailment": 0,
+          "not_mentioned": 4
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 3,
+          "not_mentioned": 7
+        },
+        "not_mentioned": {
+          "contradiction": 0,
+          "entailment": 1,
+          "not_mentioned": 9
+        }
+      },
+      "correct": 12,
+      "n": 24,
+      "unclipped_NLL_finite": true
+    },
+    "positional": {
+      "Brier": 0.6948500152112668,
+      "NLL_clipped_1e-12": 1.4448949694792201,
+      "NLL_clipped_case_count": 0,
+      "accuracy": 0.5833333333333334,
+      "by_class": {
+        "contradiction": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "n": 4
+        },
+        "entailment": {
+          "accuracy": 0.4,
+          "correct": 4,
+          "n": 10
+        },
+        "not_mentioned": {
+          "accuracy": 1.0,
+          "correct": 10,
+          "n": 10
+        }
+      },
+      "confusion_matrix": {
+        "contradiction": {
+          "contradiction": 0,
+          "entailment": 0,
+          "not_mentioned": 4
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 4,
+          "not_mentioned": 6
+        },
+        "not_mentioned": {
+          "contradiction": 0,
+          "entailment": 0,
+          "not_mentioned": 10
+        }
+      },
+      "correct": 14,
+      "n": 24,
+      "unclipped_NLL_finite": true
+    }
+  },
+  "new_submission": false,
+  "official_SOTA_established": false,
+  "official_rank": null,
+  "other_role_annotation_choices_accessed": 0,
+  "predeclared_descriptive_diagnostic_checks": {
+    "every_gold_class_present": true,
+    "lexical:Brier_nonincrease": true,
+    "lexical:NLL_nonincrease": true,
+    "lexical:native_at_least2more_correct": true,
+    "native_at_least_one_correct_per_class": false,
+    "positional:Brier_nonincrease": true,
+    "positional:NLL_nonincrease": true,
+    "positional:native_at_least2more_correct": false,
+    "raw_errors_empty": true
+  },
+  "predicted_contradiction_counts": {
+    "actual_native": 0,
+    "lexical": 0,
+    "positional": 0
+  },
+  "raw_structure_audit": {
+    "checks": 2937,
+    "compact_native_evidence": {
+      "bundle": {
+        "bytes": 1239613,
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch27-0471ff09d550/project/experiments/sota-2026-10-22/epoch27/runs/dev/native-bundle.json",
+        "sha256": "717fedb023f8945009247696ab85c58132a5897fdb6db14fd585c66e2b954cdc"
+      },
+      "observed_native_hits_verified": 774,
+      "result": {
+        "bytes": 430510,
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch27-0471ff09d550/project/experiments/sota-2026-10-22/epoch27/runs/dev/native-result.json",
+        "sha256": "e2c212c96ba2d56717a5b92487c935dd7c7f1621797a98a15f1498fa8a018634"
+      },
+      "schema": "epoch27-native-compact-f32le-v2",
+      "scope": "Independent saved-bundle float32 little-endian digest and source/metadata/ID/order replay. Native vectors were hashed before stripping by reviewed helper code; no model/native rerun or cosine reranking.",
+      "source_index_vectors_hashed": 579,
+      "source_metadata_absence_hash": "398b676e47d03a29016ee92fe378b8b4f1b3e965390c4c64ce78d27f79df74d1",
+      "source_query_vectors_hashed": 24,
+      "status": "PASS"
+    },
+    "failures": [],
+    "status": "PASS"
+  },
+  "retrieval_scope": "Actual BGE/RuVector ANN only; no RRF fusion in this candidate. Frozen independent protocol has a legacy RRF phrase; exact frozen plan and reviewed code are authoritative. Submitted native104/RRF10 remains unchanged.",
+  "schema_version": 1,
+  "source_scope": "Original ContractNLI TRAIN selected as projectDEV underCC-BY-4.0, fixed metadata-only before source text/length/labels. All8now permanentlyDEV:261exposed/138unreserved/24reserved.",
+  "statistical_scope": "8document groups\u00d73correlated hypotheses,24cases; no IID24-case confidence interval or population/generalization claim.",
+  "status": "AUDITED_REJECTED_DEV_DIAGNOSTIC",
+  "unknown_boundary": "Retrieved-context NotMentioned cannot establish full-document legal absence/global insufficiency; retrieval omission, numerical loss, ambiguity, references and overflow/truncation remain unknown paths."
+}

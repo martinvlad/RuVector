@@ -1,0 +1,62 @@
+{
+  "actual_reader_interval": "worker time.perf_counter immediately before/after reader.score_pair. Includes complete-pair token counting/tokenization, actual tensor tokenization, input validation and CPU tensor preparation, stock CPU model execution, logits extraction and Python full-threeway softmax/decision. It is not an isolated model kernel interval.",
+  "at": "2026-10-24T08:43:20.586948+00:00",
+  "context_plus_reader_plus_native_query": "Saved raw-structure component sums include packing/provenance/token-count preparation, complete reader call, and native query time for actual_native. They exclude whole-document partition/BGE embedding, index/model initialization and other worker overhead.",
+  "epoch": 27,
+  "frozen_legacy_field_note": "The unchanged scorer scope string says reader forward wall seconds only; interpret it as the measured complete reader.score_pair call described here, with separate context/retrieval/init. No raw observation, quantile or scorer source is altered.",
+  "memory_bytes": 2391855104,
+  "memory_scope": "RUSAGE_CHILDREN largest-child high-water, not simultaneous aggregate RSS",
+  "new_model_tokenizer_native_calls": 0,
+  "new_source_annotation_choices_accessed": 0,
+  "reader_latency": {
+    "actual_native": {
+      "n": 24,
+      "p50_seconds": 2.4931634230015334,
+      "p95_seconds": 2.8389320503571067,
+      "scope": "Reader forward wall seconds only; context/retrieval/model initialization reported separately by raw worker and execution"
+    },
+    "lexical": {
+      "n": 24,
+      "p50_seconds": 2.5470699169964064,
+      "p95_seconds": 2.6387538897892227,
+      "scope": "Reader forward wall seconds only; context/retrieval/model initialization reported separately by raw worker and execution"
+    },
+    "positional": {
+      "n": 24,
+      "p50_seconds": 2.564603012506268,
+      "p95_seconds": 2.7738543472733,
+      "scope": "Reader forward wall seconds only; context/retrieval/model initialization reported separately by raw worker and execution"
+    }
+  },
+  "schema_version": 1,
+  "source_bindings": {
+    "execution": {
+      "bytes": 3217,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch27-0471ff09d550/project/experiments/sota-2026-10-22/epoch27/execution.json",
+      "sha256": "270773a1b5edba53d8169cd02d2faabf5223f2988fa96a6d76fd8562c7a3b7b0"
+    },
+    "raw": {
+      "bytes": 4026311,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch27-0471ff09d550/project/experiments/sota-2026-10-22/epoch27/runs/dev/raw.json",
+      "sha256": "104963b36f9c0530e8b55aefd7cba5fba7a4fa7ec803d50f819b6c50dce8ddd8"
+    },
+    "reader": {
+      "bytes": 15133,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch27-0471ff09d550/project/experiments/sota-2026-10-22/candidate/epoch27/reader/bart_reader.py",
+      "sha256": "4101d071c04aced320a902d7b84cb1fd1c30d474683201637150e486ede8b1d9"
+    },
+    "scorer_result": {
+      "bytes": 55135,
+      "path": "/tmp/ruvector-e27-independent-audit/scorer-result.json",
+      "sha256": "27cf7d72c2b4a026e2a69e167c14c457db66784ac53c13d6a3849975b733370b"
+    },
+    "worker": {
+      "bytes": 25511,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch27-0471ff09d550/project/experiments/sota-2026-10-22/candidate/epoch27/worker.py",
+      "sha256": "8163d7a1bd430f26b9d84888ef1de2b9963ee9b50c3aa33c7bda40f1a08b0202"
+    }
+  },
+  "status": "SOURCE_DERIVED_TIMING_SCOPE_CLARIFICATION_NO_RAW_OR_SCORER_MUTATION",
+  "whole_worker_scope": "One full 8-document corpus with all72 matched-arm NLI pairs, all24nativequeries, initialization and cleanup. This is not primary-only deployment or isolated ANN latency.",
+  "whole_worker_seconds_including_initialization_and_cleanup": 204.03983004100155
+}

@@ -1,0 +1,89 @@
+{
+  "checks_passed": true,
+  "checked_at": "2026-10-24T08:33:17.056497+00:00",
+  "approval_scope": "One local nonretryable DEV worker may be admitted against exact published source e072e780449446d8a01c8988c36b8860fa216604 after root exclusively writes the frozen local NATIVE_ADMISSION. No CONF, generation, fit, paid/GPU, promotion or submission.",
+  "source_commit": "e072e780449446d8a01c8988c36b8860fa216604",
+  "source_remote_proof_sha256": "5350754fe76f8e5697878687f4373ee38371b5e9e9e7a33c1f107fcc81713493",
+  "physical_owner": {
+    "pid": 75591,
+    "startticks": 15190845,
+    "inode": 13626,
+    "same_FD_device_inode": true,
+    "kernel_FLOCK": true,
+    "independent_contender_denied": true,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "remaining_lease_seconds": 8209.481247663498,
+    "original_expiry": 1792839006.537772,
+    "release_request_absent": true
+  },
+  "live_epoch27_worker_or_native_helper_processes": [],
+  "no_existing_admission_raw_or_execution_at_review": true,
+  "limits": {
+    "owned_workers": 1,
+    "CPU_threads": 2,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "seconds_including_initialization_and_cleanup": 600,
+    "native_queries": 24,
+    "same_head_NLI_pairs": 72,
+    "confirmation": 0,
+    "generation": 0,
+    "fitting": 0,
+    "paid_API_GPU": 0
+  },
+  "resource_snapshot": {
+    "cgroup_memory_max_bytes": 17179869184,
+    "cgroup_memory_current_bytes": 15553990656,
+    "cgroup_memory_peak_bytes": 17180618752,
+    "unallocated_cgroup_headroom_bytes": 1625878528,
+    "conservative_inactive_regular_file_cache_reclaim_bytes": 3129446400,
+    "conservative_available_with_inactive_cache_bytes": 4755324928,
+    "expected_worker_peak_bytes": 4294967296,
+    "headroom_plus_inactive_cache_exceeds_expected_peak": true,
+    "margin_after_expected_peak_bytes": 460357632,
+    "cgroup_memory_events": {
+      "low": 0,
+      "high": 0,
+      "max": 49900,
+      "oom": 0,
+      "oom_kill": 0,
+      "oom_group_kill": 0
+    },
+    "historical_memory_max_events_are_not_OOM_events": true,
+    "cgroup_filecache_and_anon": {
+      "anon": 58982400,
+      "file": 14935478272,
+      "shmem": 9357688832,
+      "file_mapped": 24576,
+      "active_file": 2448343040,
+      "inactive_file": 3129446400,
+      "slab_reclaimable": 481336336,
+      "pagetables": 1802240
+    },
+    "host_meminfo": {
+      "MemTotal_bytes": 18882674688,
+      "MemFree_bytes": 2903162880,
+      "MemAvailable_bytes": 8607944704,
+      "Cached_bytes": 14860967936,
+      "SwapTotal_bytes": 0,
+      "SwapFree_bytes": 0
+    },
+    "tmp_total_bytes": 9441337344,
+    "tmp_used_bytes": 9357688832,
+    "tmp_available_bytes": 83648512,
+    "reviewed_scratch_envelope_bytes": 52428800,
+    "tmp_exceeds_reviewed_envelope": true
+  },
+  "model_native_tokenizer_initialized_by_auditor": false,
+  "project_or_controller_modified_by_auditor": false,
+  "conditions": [
+    "Root must recheck exact published source and live owner immediately before exclusive local admission and launch.",
+    "Only the one frozen CPU2 worker may initialize models/native; all setup and cleanup are inside600s and a prelaunch durable burn/reservation is mandatory.",
+    "Source remains frozen; retain failures and close all unused or conditional slots honestly."
+  ]
+}

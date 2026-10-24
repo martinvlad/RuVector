@@ -1,0 +1,73 @@
+{
+  "checks_passed": true,
+  "checked_at": "2026-10-24T08:04:41.105356+00:00",
+  "approval_scope": "Only scoped epoch27 planning lease: exactly CONTINUATION.json and ACTIVE_RUN.json. Native/model/CONF execution not admitted.",
+  "source_parent": "6e4ad4ab0b6a09a6a1083335ed0401637227d17f",
+  "source_parent_sole_parent": "00d49880e0b6a7dc2aea8cb155d64549f423c782",
+  "source_root": "c964bfc53d4c862d436fd42f5e6844051d3d9ad9",
+  "main": "46d816ddc4c2a8a06cd3613534a79b1d557d858b",
+  "independent_actual_remote_GETs": "Fresh connected GitHub branch HEAD and main GETs match pinned tuple at approval. Baseline full3734leaf tuple proof preserved.",
+  "changed_CONT_keys": [
+    "active_run",
+    "epoch27_planning",
+    "prior_published_base_commit"
+  ],
+  "old_CP_identity_preserved": true,
+  "old_CP_rows_preserved": 3660,
+  "controls": {
+    "CONTINUATION.json": {
+      "bytes": 132178,
+      "sha256": "92bcf5f0861d91c802bc9815ec9287d351bf9cdad182e7d27122e74bf540a7ad",
+      "git_blob_sha1": "988736339aba4f8600e88e5bd58dd28902a0e897"
+    },
+    "ACTIVE_RUN.json": {
+      "bytes": 1440,
+      "sha256": "d082f85025976079ca5d713872b9a97849ee62b9f98d4e0b5010f16eb2bc1a68",
+      "git_blob_sha1": "07cd515235f442b2f9e893a09f6b062326a0a34d"
+    }
+  },
+  "helpers": {
+    "controller.js": {
+      "bytes": 2767,
+      "sha256": "9bc9d8c61da2c4d38c8eb6d29b963d47023f3e2264723c1659b4b012e70153bb"
+    },
+    "mutation_guard.py": {
+      "bytes": 3119,
+      "sha256": "93e3a4b6dbc391638aefe57ab454cb8dbe71a1fd8b3dd5140007bdde5b31ec6d"
+    },
+    "publish-phase.js": {
+      "bytes": 5495,
+      "sha256": "50ffb2b6ec3892280d0515514076ad01fb3ac1dd7c817a99a067e6374a8e73a4"
+    }
+  },
+  "helper_unique_request_fix_verified": "reserve checks unique safe ID and no uncertain prior intent, creates request O_EXCL|O_NOFOLLOW0600 and fsyncs request+request dir+S before apply_patch; request bytes fsynced before intent; unique intent/response journal rows fsync file+S. Duplicate request cannot overwrite original.",
+  "helper_read_only_syntax_and_live_guard_passed": true,
+  "physical_owner": {
+    "run_id": "epoch27-0471ff09d550",
+    "pid": 75591,
+    "startticks": 15190845,
+    "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
+    "lock_inode": 13626,
+    "started_unix": 1792828206.537772,
+    "expires_unix": 1792839006.537772,
+    "started_at": "2026-10-24T07:50:06.537772+00:00",
+    "expires_at": "2026-10-24T10:50:06.537772+00:00",
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+    "generation": 1
+  },
+  "native_allowed": 0,
+  "confirmation_allowed": 0,
+  "no_mutations_at_review": true,
+  "baseline_source_restore_verified": true,
+  "conditions": [
+    "Recheck actual branch/main and prior exact CLOSED controls before mutations; expected_sha CAS required.",
+    "Only two scoped controls may differ; independently compare full actual leaf tuples and unchanged parent/sibling trees before ref move.",
+    "Each mutation requires fresh physical guard, exclusive reserved request, fsynced unique intent/response and no failed/unresolved prior intent.",
+    "Frozen source and separate independent actual remote admission required before native/model initialization."
+  ],
+  "project_or_controller_modified_by_auditor": false
+}

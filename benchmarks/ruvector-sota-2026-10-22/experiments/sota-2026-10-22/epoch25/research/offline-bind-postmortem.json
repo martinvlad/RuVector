@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "epoch": 25,
+  "scope": "Read-only postmortem of the single frozen authored engineering attempt. No imports, tokenizer/model initialization, inference, network operations, reproductions, retests, source edits, or oracle interference were performed for this postmortem.",
+  "conclusion": "The attempt remains FAILED_ENGINEERING_PROCESS with exit2. Its eighteen scored pairs and one model initialization completed, but a recorded forbidden socket.bind attempt set the offline counter to1 during tokenizer setup. The final zero-counter gate rejected the run. Completion is not qualification success.",
+  "evidence_identity": {
+    "root": "/tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986/project",
+    "progress_relative_path": "experiments/sota-2026-10-22/epoch25/runs/engineering/progress.jsonl",
+    "progress_sha256": "d9683b391c24cf6ca62e3de885bea1d6b3bcd84ac6edf70b6960d8f5bbd96b35",
+    "raw_relative_path": "experiments/sota-2026-10-22/epoch25/runs/engineering/raw.json",
+    "raw_sha256": "c51adfd0c94368a514695fcb9c8f9c3d7863c73f03800a061c09ce0ea887ec83",
+    "unchanged_reader_sha256": "a286dc987bc3fc0109f25534769f774835b3f49a9474af9206e622089063c783",
+    "unchanged_worker_sha256": "bb35e802349f44dced57b99047ca8d0cc1137063dc490586fb092bd38d63a820"
+  },
+  "observed_chronology_elapsed_seconds": [
+    {"at": 3.6040841810172424, "event": "BEFORE_TOKENIZER_INITIALIZATION", "network_counter": 0, "model_attempts": 0, "pairs_completed": 0},
+    {"at": 3.648937885009218, "event": "OFFLINE_NETWORK_REFUSAL", "audit_event": "socket.bind", "network_counter": 1, "model_attempts": 0, "pairs_completed": 0},
+    {"at": 4.858061527018435, "event": "TOKENIZER_INITIALIZATION_COMPLETED", "network_counter": 1, "model_attempts": 0, "pairs_completed": 0},
+    {"at": 4.885934471007204, "event": "BEFORE_MODEL_INITIALIZATION", "network_counter": 1, "model_attempts": 1, "pairs_completed": 0},
+    {"at": 8.43619452600251, "event": "MODEL_INITIALIZATION_COMPLETED", "network_counter": 1, "model_completed": 1, "pairs_completed": 0},
+    {"at": 29.546642706001876, "event": "FORWARD_COMPLETED", "pair": 18, "network_counter": 1, "model_completed": 1, "pairs_completed": 18},
+    {"at": 29.62415820301976, "event": "WORKER_FINAL", "status": "FAILED_ENGINEERING_PROCESS", "error": "ValueError: Forbidden operation counter nonzero", "network_counter": 1, "pairs_completed": 18}
+  ],
+  "log_schema_correction": "The event kind is present in the nested progress payload at .event.audit_event. It is socket.bind. The log does not contain the bind address, socket family, or call stack. It does not support describing the event as a getaddrinfo/connect attempt.",
+  "failure_mechanics": {
+    "frozen_worker_source": "worker.py470-475 checks socket.connect, socket.getaddrinfo, and socket.bind; increments Python_network_operations_attempted; fsyncs OFFLINE_NETWORK_REFUSAL including audit_event; then raises RuntimeError.",
+    "continuation": "The exception was suppressed somewhere in the caller/import path: the existing log next records tokenizer completion, model initialization, and all eighteen forwards. The current evidence does not locate that suppression frame.",
+    "final_gate": "worker.py499-502 checks the zero-only counters after perform() and raises ValueError when Python_network_operations_attempted is1, replacing the provisional completed status with FAILED_ENGINEERING_PROCESS.",
+    "paid_gpu_generation": "Recorded paid/API/GPU/generation/training/optimizer counters remain0. Node_network_operations_attempted is0. These are observed receipt facts, not a proof covering every possible native syscall.",
+    "successful_network_or_bind": "Not established. The hook was designed to raise before the audited operation. No destination or successful connection is recorded."
+  },
+  "plausible_static_origin_not_proven": {
+    "dependency": "urllib3 2.8.0",
+    "file": "retrieval/.venv/lib/python3.12/site-packages/urllib3/util/connection.py",
+    "sha256": "2633bbdb69731e5ccb5cf4e4afd65605d86c7979cc5633126f50c92d5ad74a74",
+    "source_behavior": "Lines114-137 define _has_ipv6(host), create an AF_INET6 socket, call sock.bind((host,0)), catch Exception, and execute HAS_IPV6=_has_ipv6('::1') at import time.",
+    "static_import_path": "transformers/utils/hub.py31 imports requests; requests/__init__.py45 imports urllib3. This can be reached when the lazy reader imports AutoTokenizer after its BEFORE_TOKENIZER_INITIALIZATION event.",
+    "why_plausible": "An import-time bind whose broad Exception handler suppresses the audit hook RuntimeError matches the timing and continued initialization.",
+    "uncertainty": "There is no recorded address or stack, so this does not establish that urllib3 caused the observed bind, or that the actual address was ::1, localhost, Unix IPC, or remote. PyTorch also contains optional port-binding helpers. No reproductions or imports were performed to choose among these possibilities."
+  },
+  "retained_runtime_observations": {
+    "NLI_model_initializations_attempted_completed": [1, 1],
+    "NLI_forward_pairs_attempted_completed": [18, 18],
+    "native_queries_completed": 6,
+    "BGE_initializations_completed": 1,
+    "BGE_forwards_completed": 12,
+    "BGE_texts_completed": 18,
+    "raw_worker_wall_seconds": 29.623989498999435,
+    "launcher_wall_seconds_reported_by_coordinator": 30.3469,
+    "worker_peak_RSS_bytes": 5149405184,
+    "CPU_affinity": [0, 1],
+    "interpretation": "The bounded workload completed computationally, with resource observations retained. The offline policy gate failed; authored accuracy/proper-score acceptance remains the independent auditor's separate assessment. No benchmark generalization or promotion follows."
+  },
+  "actionable_next_epoch_only": [
+    "Freeze better refusal evidence before execution: record audit event, normalized socket family/type and address, and a bounded file/function/line stack without locals or secrets. Persist it before raising. This would distinguish a bind/probe from an outbound connect without guessing.",
+    "Record separate attempted-bind, attempted-connect, and attempted-name-resolution counters with prospective policy semantics; retain the aggregate violation latch if the policy forbids all three.",
+    "Check the violation latch immediately before model initialization and every forward, so an optional dependency that catches the audit exception cannot consume the remaining inference budget after a forbidden attempt.",
+    "If a future study needs a local capability probe or IPC exception, establish and freeze a narrow policy using adequate address/stack evidence before the new run. Do not remove the bind guard or retroactively allow this recorded event based only on a plausible source path.",
+    "Keep this frozen source, failed attempt, counters, and scores unchanged. Do not retry or relabel this run as passing. Use a newly frozen protocol and fresh independent authored cases for any future qualification claim."
+  ],
+  "publication": "New external postmortem artifact only. The coordinator may copy it into final research records; no public frozen source was changed."
+}

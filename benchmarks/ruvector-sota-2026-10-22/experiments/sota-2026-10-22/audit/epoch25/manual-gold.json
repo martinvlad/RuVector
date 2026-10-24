@@ -1,0 +1,403 @@
+{
+  "schema_version": 1,
+  "epoch": 25,
+  "license": "CC0-1.0",
+  "labels_order": [
+    "entailment",
+    "contradiction",
+    "not_mentioned"
+  ],
+  "cases": [
+    {
+      "id": "e25-q01",
+      "label": "entailment",
+      "support": {
+        "source_id": "e25-s01b",
+        "text": "Luma's revenue was USD 4 million.",
+        "start": 12,
+        "end": 45,
+        "source_byte_start": 12,
+        "source_byte_end": 45
+      },
+      "manual_rationale": "The FY2025 source explicitly states the same revenue, currency and scale. FY2024 is a distinct distractor period.",
+      "truth_scope": "Complete supplied fictional sources for this case only; a retrieved miss does not assert global insufficiency."
+    },
+    {
+      "id": "e25-q02",
+      "label": "contradiction",
+      "support": {
+        "source_id": "e25-s02b",
+        "text": "the approved equipment budget is exactly USD 6 thousand.",
+        "start": 28,
+        "end": 84,
+        "source_byte_start": 28,
+        "source_byte_end": 84
+      },
+      "manual_rationale": "The same filing and equipment budget are exactly six thousand USD, which contradicts six million USD.",
+      "truth_scope": "Complete supplied fictional sources for this case only; a retrieved miss does not assert global insufficiency."
+    },
+    {
+      "id": "e25-q03",
+      "label": "not_mentioned",
+      "support": null,
+      "manual_rationale": "Both complete supplied sources describe crate storage and an inspection year; neither states an energy source nor denies solar power.",
+      "truth_scope": "Complete supplied fictional sources for this case only; a retrieved miss does not assert global insufficiency."
+    },
+    {
+      "id": "e25-q04",
+      "label": "entailment",
+      "support": {
+        "source_id": "e25-s04b",
+        "text": "Neri may make one backup copy for the auditor.",
+        "start": 61,
+        "end": 107,
+        "source_byte_start": 61,
+        "source_byte_end": 107
+      },
+      "manual_rationale": "The explicit auditor backup exception permits the stated ledger copy despite the general copying prohibition.",
+      "truth_scope": "Complete supplied fictional sources for this case only; a retrieved miss does not assert global insufficiency."
+    },
+    {
+      "id": "e25-q05",
+      "label": "contradiction",
+      "support": {
+        "source_id": "e25-s05b",
+        "text": "Neri is prohibited from sending the ledger to any outside reviewer, including the auditor.",
+        "start": 23,
+        "end": 113,
+        "source_byte_start": 23,
+        "source_byte_end": 113
+      },
+      "manual_rationale": "The exact 2026 policy explicitly prohibits sending the ledger to the auditor, contradicting permission.",
+      "truth_scope": "Complete supplied fictional sources for this case only; a retrieved miss does not assert global insufficiency."
+    },
+    {
+      "id": "e25-q06",
+      "label": "not_mentioned",
+      "support": null,
+      "manual_rationale": "The complete supplied sources specify agreement duration, renewal and archive encryption; they contain no termination-notice obligation or its negation.",
+      "truth_scope": "Complete supplied fictional sources for this case only; a retrieved miss does not assert global insufficiency."
+    }
+  ],
+  "manual_source_units": {
+    "e25-s01a": {
+      "source_id": "e25-s01a",
+      "source_sha256": "c330b87d80f8195f60667d51dbb8c549a051ba05650f1b695ea8f7ffdcfef95d",
+      "whole_span": {
+        "text": "For FY2024, Luma's revenue was USD 9 million.",
+        "start": 0,
+        "end": 45,
+        "source_byte_start": 0,
+        "source_byte_end": 45
+      },
+      "numeric_literals": [
+        {
+          "kind": "period",
+          "text": "FY2024",
+          "start": 4,
+          "end": 10,
+          "source_byte_start": 4,
+          "source_byte_end": 10
+        },
+        {
+          "kind": "currency",
+          "text": "USD",
+          "start": 31,
+          "end": 34,
+          "source_byte_start": 31,
+          "source_byte_end": 34
+        },
+        {
+          "kind": "number",
+          "text": "9",
+          "start": 35,
+          "end": 36,
+          "source_byte_start": 35,
+          "source_byte_end": 36
+        },
+        {
+          "kind": "scale",
+          "text": "million",
+          "start": 37,
+          "end": 44,
+          "source_byte_start": 37,
+          "source_byte_end": 44
+        }
+      ],
+      "structural_unknowns": []
+    },
+    "e25-s01b": {
+      "source_id": "e25-s01b",
+      "source_sha256": "481d904b842fec71bd4cb5777caffd9c06140cc2459210402dc4156da55f3e0b",
+      "whole_span": {
+        "text": "For FY2025, Luma's revenue was USD 4 million. A cash adjustment was -2 USD thousand.",
+        "start": 0,
+        "end": 84,
+        "source_byte_start": 0,
+        "source_byte_end": 84
+      },
+      "numeric_literals": [
+        {
+          "kind": "period",
+          "text": "FY2025",
+          "start": 4,
+          "end": 10,
+          "source_byte_start": 4,
+          "source_byte_end": 10
+        },
+        {
+          "kind": "currency",
+          "text": "USD",
+          "start": 31,
+          "end": 34,
+          "source_byte_start": 31,
+          "source_byte_end": 34
+        },
+        {
+          "kind": "number",
+          "text": "4",
+          "start": 35,
+          "end": 36,
+          "source_byte_start": 35,
+          "source_byte_end": 36
+        },
+        {
+          "kind": "scale",
+          "text": "million",
+          "start": 37,
+          "end": 44,
+          "source_byte_start": 37,
+          "source_byte_end": 44
+        },
+        {
+          "kind": "number",
+          "text": "-2",
+          "start": 68,
+          "end": 70,
+          "source_byte_start": 68,
+          "source_byte_end": 70
+        },
+        {
+          "kind": "currency",
+          "text": "USD",
+          "start": 71,
+          "end": 74,
+          "source_byte_start": 71,
+          "source_byte_end": 74
+        },
+        {
+          "kind": "scale",
+          "text": "thousand",
+          "start": 75,
+          "end": 83,
+          "source_byte_start": 75,
+          "source_byte_end": 83
+        }
+      ],
+      "structural_unknowns": []
+    },
+    "e25-s02a": {
+      "source_id": "e25-s02a",
+      "source_sha256": "5d2be9ed57ba622e396511edc113003ac59a8c283d3eadb49578dc4dee3ed05a",
+      "whole_span": {
+        "text": "The equipment is stored in a locked room.",
+        "start": 0,
+        "end": 41,
+        "source_byte_start": 0,
+        "source_byte_end": 41
+      },
+      "numeric_literals": [],
+      "structural_unknowns": []
+    },
+    "e25-s02b": {
+      "source_id": "e25-s02b",
+      "source_sha256": "f2f270a102cc070ed540703790cd35a47b36142df7e3bb92fde6308d0e113a39",
+      "whole_span": {
+        "text": "The 2025 filing states that the approved equipment budget is exactly USD 6 thousand.",
+        "start": 0,
+        "end": 84,
+        "source_byte_start": 0,
+        "source_byte_end": 84
+      },
+      "numeric_literals": [
+        {
+          "kind": "number",
+          "text": "2025",
+          "start": 4,
+          "end": 8,
+          "source_byte_start": 4,
+          "source_byte_end": 8,
+          "lexical_year_candidate": true
+        },
+        {
+          "kind": "currency",
+          "text": "USD",
+          "start": 69,
+          "end": 72,
+          "source_byte_start": 69,
+          "source_byte_end": 72
+        },
+        {
+          "kind": "number",
+          "text": "6",
+          "start": 73,
+          "end": 74,
+          "source_byte_start": 73,
+          "source_byte_end": 74
+        },
+        {
+          "kind": "scale",
+          "text": "thousand",
+          "start": 75,
+          "end": 83,
+          "source_byte_start": 75,
+          "source_byte_end": 83
+        }
+      ],
+      "structural_unknowns": []
+    },
+    "e25-s03a": {
+      "source_id": "e25-s03a",
+      "source_sha256": "8389502d86f972b9e381e4a58440f5f3bb5b38e22565a36b96458d8f92f171c5",
+      "whole_span": {
+        "text": "Oren's warehouse stores 40 crates.",
+        "start": 0,
+        "end": 34,
+        "source_byte_start": 0,
+        "source_byte_end": 34
+      },
+      "numeric_literals": [
+        {
+          "kind": "number",
+          "text": "40",
+          "start": 24,
+          "end": 26,
+          "source_byte_start": 24,
+          "source_byte_end": 26
+        }
+      ],
+      "structural_unknowns": []
+    },
+    "e25-s03b": {
+      "source_id": "e25-s03b",
+      "source_sha256": "4a7439651ee0ba3e1f790347d751fb56957bd40ca88f91662affdc18cc6640d0",
+      "whole_span": {
+        "text": "The warehouse's inspection was completed in 2025.",
+        "start": 0,
+        "end": 49,
+        "source_byte_start": 0,
+        "source_byte_end": 49
+      },
+      "numeric_literals": [
+        {
+          "kind": "number",
+          "text": "2025",
+          "start": 44,
+          "end": 48,
+          "source_byte_start": 44,
+          "source_byte_end": 48,
+          "lexical_year_candidate": true
+        }
+      ],
+      "structural_unknowns": []
+    },
+    "e25-s04a": {
+      "source_id": "e25-s04a",
+      "source_sha256": "16aa3afc4150aa3d442fc5cd9f8cb0481f62c7e60a8eff20efd0aaf3787eb80f",
+      "whole_span": {
+        "text": "The archive's weekly meeting takes place on Thursday.",
+        "start": 0,
+        "end": 53,
+        "source_byte_start": 0,
+        "source_byte_end": 53
+      },
+      "numeric_literals": [],
+      "structural_unknowns": []
+    },
+    "e25-s04b": {
+      "source_id": "e25-s04b",
+      "source_sha256": "ce5e433d473a591d245c6be6e9d79edc092b62cade33e56cb32d7efbf799f959",
+      "whole_span": {
+        "text": "The policy forbids Neri from copying the ledger, except that Neri may make one backup copy for the auditor.",
+        "start": 0,
+        "end": 107,
+        "source_byte_start": 0,
+        "source_byte_end": 107
+      },
+      "numeric_literals": [],
+      "structural_unknowns": []
+    },
+    "e25-s05a": {
+      "source_id": "e25-s05a",
+      "source_sha256": "b4446d5170bd15f1a70586e3b16f1e87c1a2607aea2d98fb5fce77a3ca3aa977",
+      "whole_span": {
+        "text": "The staff directory lists Neri as an archive clerk.",
+        "start": 0,
+        "end": 51,
+        "source_byte_start": 0,
+        "source_byte_end": 51
+      },
+      "numeric_literals": [],
+      "structural_unknowns": []
+    },
+    "e25-s05b": {
+      "source_id": "e25-s05b",
+      "source_sha256": "c38eb9e13fc1ac57d60c0eaa28ede246fb82215e3c810201476834f24678eec4",
+      "whole_span": {
+        "text": "Under the 2026 policy, Neri is prohibited from sending the ledger to any outside reviewer, including the auditor.",
+        "start": 0,
+        "end": 113,
+        "source_byte_start": 0,
+        "source_byte_end": 113
+      },
+      "numeric_literals": [
+        {
+          "kind": "number",
+          "text": "2026",
+          "start": 10,
+          "end": 14,
+          "source_byte_start": 10,
+          "source_byte_end": 14,
+          "lexical_year_candidate": true
+        }
+      ],
+      "structural_unknowns": []
+    },
+    "e25-s06a": {
+      "source_id": "e25-s06a",
+      "source_sha256": "451ce036a75b8b9f90131d7b03aca2aedfca371747423e47953d1f8018179b8c",
+      "whole_span": {
+        "text": "The agreement lasts for 12 months and renews automatically.",
+        "start": 0,
+        "end": 59,
+        "source_byte_start": 0,
+        "source_byte_end": 59
+      },
+      "numeric_literals": [
+        {
+          "kind": "number",
+          "text": "12",
+          "start": 24,
+          "end": 26,
+          "source_byte_start": 24,
+          "source_byte_end": 26
+        }
+      ],
+      "structural_unknowns": []
+    },
+    "e25-s06b": {
+      "source_id": "e25-s06b",
+      "source_sha256": "fac40cd77aa6b3af237b24699a0c43cf3359ab580eb3379f1d03d0370e18f40a",
+      "whole_span": {
+        "text": "Kito must keep the archive encrypted.",
+        "start": 0,
+        "end": 37,
+        "source_byte_start": 0,
+        "source_byte_end": 37
+      },
+      "numeric_literals": [],
+      "structural_unknowns": []
+    }
+  },
+  "scope": "Independent manual authored engineering judgments only; not official benchmark labels."
+}

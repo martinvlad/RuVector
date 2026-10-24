@@ -1,0 +1,515 @@
+{
+  "schema_version": 1,
+  "epoch": 25,
+  "status": "REJECTED_AUTHORED_ENGINEERING_QUALIFICATION",
+  "engineering_qualified": false,
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "new_submission": false,
+  "actual_execution": {
+    "worker_attempts": 1,
+    "verified_worker_starts": 1,
+    "BGE_initializations": 1,
+    "BGE_forwards": 12,
+    "BGE_texts": 18,
+    "native_index_initializations": 6,
+    "native_searches_completed": 6,
+    "native_engineering_batches": 1,
+    "errors": 1,
+    "owned_live_processes_closed": true,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "wall_seconds_including_init_cleanup": 30.346915839996655,
+    "peak_RSS_bytes": 5149405184,
+    "user_seconds": 50.323293,
+    "system_seconds": 1.254233,
+    "resource_scope": "RUSAGE_CHILDREN largest-child high-water, not simultaneous aggregate RSS",
+    "NLI_model_initializations": 1,
+    "NLI_forward_pairs_attempted": 18,
+    "NLI_forward_pairs_completed": 18,
+    "NLI_forwards": 18,
+    "benchmark_corpora": 0,
+    "benchmark_questions": 0,
+    "benchmark_HTTP_requests": 0,
+    "TRAIN_calibration_fits": 0,
+    "CONF_worker_attempts": 0,
+    "CONF_annotation_choices": 0,
+    "CONF_NLI_pairs": 0,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "fits": 0,
+    "paid_calls": 0,
+    "Python_network_operations_attempted": 1,
+    "confirmation_calls": 0,
+    "generation_calls": 0,
+    "generated_tokens": 0,
+    "training_steps": 0,
+    "optimizer_steps": 0
+  },
+  "raw_counters": {
+    "benchmark_corpora": 0,
+    "benchmark_questions": 0,
+    "benchmark_HTTP_requests": 0,
+    "TRAIN_calibration_fits": 0,
+    "CONF_worker_attempts": 0,
+    "CONF_annotation_choices": 0,
+    "CONF_NLI_pairs": 0,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "fits": 0,
+    "paid_calls": 0,
+    "Python_network_operations_attempted": 1,
+    "confirmation_calls": 0,
+    "generation_calls": 0,
+    "generated_tokens": 0,
+    "training_steps": 0,
+    "optimizer_steps": 0,
+    "Node_network_operations_attempted": 0,
+    "external_API_calls": 0,
+    "benchmark_corpus_reads": 0,
+    "benchmark_label_reads": 0,
+    "train_calls": 0,
+    "dev_calls": 0,
+    "calibration_calls": 0,
+    "BGE_initializations_attempted": 1,
+    "BGE_initializations_completed": 1,
+    "BGE_forwards_attempted": 12,
+    "BGE_forwards_completed": 12,
+    "BGE_texts_attempted": 18,
+    "BGE_texts_completed": 18,
+    "native_helper_starts": 1,
+    "native_indexes_completed": 6,
+    "native_index_initializations_attempted": 6,
+    "native_queries_attempted": 6,
+    "native_queries_completed": 6,
+    "source_cases_completed": 6,
+    "automatically_extracted_units": 12,
+    "numeric_literals_extracted": 18,
+    "structural_unknowns": 0,
+    "NLI_model_initializations": 1,
+    "NLI_forward_pairs_attempted": 18,
+    "NLI_forward_pairs_completed": 18,
+    "NLI_forwards": 18,
+    "NLI_model_initializations_completed": 1,
+    "NLI_forward_calls_attempted": 18,
+    "NLI_forward_calls_completed": 18,
+    "engineering_pairs_completed": 18,
+    "engineering_cases_completed": 6,
+    "BGE_forward_seconds": 0.11993300597532652
+  },
+  "counter_provenance": {
+    "measured": "Canonical BGE/native/NLI/forbidden counters copied directly from actual raw instrumentation; worker/process/resource aliases from exact outer receipt. Full raw counters and fsynced progress remain unchanged. No missing zeroes inferred.",
+    "network": "Observed exactly one blocked socket.bind during tokenizer initialization. Address and initiating stack not recorded. No outbound/HTTP/paid inference established. Counter1 and original failed statuses retained; no acceptance waiver.",
+    "publication": "New rejection-only v2 publisher records the adverse counter and false verdict. Frozen original publisher/candidate/reader/oracle/gold are unchanged. This is procedural failure retention, not scientific correction or authorization of success."
+  },
+  "rejected_execution_provenance": {
+    "raw_receipt": {
+      "path": "experiments/sota-2026-10-22/epoch25/runs/engineering/raw.json",
+      "bytes": 200277,
+      "sha256": "c51adfd0c94368a514695fcb9c8f9c3d7863c73f03800a061c09ce0ea887ec83"
+    },
+    "outer_receipt": {
+      "path": "experiments/sota-2026-10-22/epoch25/execution.json",
+      "bytes": 1259,
+      "sha256": "d3f8bd79e82c9855edf4144107ca9e38a2c22df624bad9590e5da51329d29b9e"
+    },
+    "progress_receipt": {
+      "path": "experiments/sota-2026-10-22/epoch25/runs/engineering/progress.jsonl",
+      "bytes": 256901,
+      "sha256": "d9683b391c24cf6ca62e3de885bea1d6b3bcd84ac6edf70b6960d8f5bbd96b35"
+    },
+    "reason": "Original offline guard rejected one blocked socket.bind; typed correctness/class/proper-score and numeric provenance gates independently also failed. All seven original oracle failures retained.",
+    "publication_scope": "REJECTION_ONLY_NOT_AUTHORIZED_SUCCESS",
+    "audit_event": "socket.bind",
+    "attempted_operations": 1,
+    "destination_and_initiator": "NOT_RECORDED"
+  },
+  "authored_qualification_metrics": {
+    "actual_native": {
+      "n": 6,
+      "correct": 2,
+      "accuracy": 0.3333333333333333,
+      "Brier": 1.0649631334311238,
+      "NLL": 3.595187893804312,
+      "by_class": {
+        "entailment": {
+          "n": 2,
+          "correct": 0
+        },
+        "contradiction": {
+          "n": 2,
+          "correct": 0
+        },
+        "not_mentioned": {
+          "n": 2,
+          "correct": 2
+        }
+      }
+    },
+    "lexical": {
+      "n": 6,
+      "correct": 2,
+      "accuracy": 0.3333333333333333,
+      "Brier": 1.0649631334311238,
+      "NLL": 3.595187893804312,
+      "by_class": {
+        "entailment": {
+          "n": 2,
+          "correct": 0
+        },
+        "contradiction": {
+          "n": 2,
+          "correct": 0
+        },
+        "not_mentioned": {
+          "n": 2,
+          "correct": 2
+        }
+      }
+    },
+    "positional": {
+      "n": 6,
+      "correct": 2,
+      "accuracy": 0.3333333333333333,
+      "Brier": 1.082032989846714,
+      "NLL": 3.5145206141420178,
+      "by_class": {
+        "entailment": {
+          "n": 2,
+          "correct": 0
+        },
+        "contradiction": {
+          "n": 2,
+          "correct": 0
+        },
+        "not_mentioned": {
+          "n": 2,
+          "correct": 2
+        }
+      }
+    }
+  },
+  "frozen_failed_checks": [
+    "worker completion and no errors",
+    "manual full source literal/UTF8 provenance:e25-q03",
+    "native six of six typed correctness",
+    "native every class two of two",
+    "native proper-score nonincrease:positional:NLL",
+    "forbidden zero:Python_network_operations_attempted",
+    "one owned completed worker"
+  ],
+  "independent_check_count": 390,
+  "independent_failure_count": 7,
+  "saved_trace_diagnostics": {
+    "schema_version": 1,
+    "epoch": 25,
+    "at": "2026-10-24T04:53:13.433922+00:00",
+    "scope": "Descriptive saved-trace aggregation only after the exact frozen oracle rejected. No source/gold/scorer change, extra inference, label selection or acceptance revision.",
+    "raw_sha256": "c51adfd0c94368a514695fcb9c8f9c3d7863c73f03800a061c09ce0ea887ec83",
+    "frozen_oracle_report_sha256": "80b11b77692c70a873ca08204776b8fb3a52936138d7ae2e40f11ba06158c047",
+    "original_status": "FAILED_ENGINEERING_PROCESS",
+    "original_errors": [
+      {
+        "type": "ValueError",
+        "message": "Forbidden operation counter nonzero"
+      }
+    ],
+    "network_evidence": {
+      "counter": 1,
+      "known_blocked_event": "socket.bind",
+      "elapsed_seconds": 3.648937885009218,
+      "before_any_reader_forward_completed": true,
+      "address_destination_or_call_stack": "Not recorded; unknown.",
+      "outbound_or_paid_call_inference": "No outbound/HTTP/paid inference established; guard raised before the observed bind action.",
+      "counter_preserved": true
+    },
+    "latency_seconds": {
+      "reader_forward": {
+        "n": 18,
+        "sum": 21.02088989299955,
+        "p50": 1.1983058544865344,
+        "p95": 1.3398762262935633,
+        "min": 0.9334322640206665,
+        "max": 1.3413206839759368,
+        "quantile": "Linear interpolation at (n-1)*p."
+      },
+      "reader_forward_by_arm": {
+        "actual_native": {
+          "n": 6,
+          "sum": 7.075639327958925,
+          "p50": 1.2337579804880079,
+          "p95": 1.3248417562354007,
+          "min": 0.9420226289948914,
+          "max": 1.3413206839759368,
+          "quantile": "Linear interpolation at (n-1)*p."
+        },
+        "lexical": {
+          "n": 6,
+          "sum": 7.08058262601844,
+          "p50": 1.2148987845139345,
+          "p95": 1.319952419748006,
+          "min": 0.9605300280090887,
+          "max": 1.339621321996674,
+          "quantile": "Linear interpolation at (n-1)*p."
+        },
+        "positional": {
+          "n": 6,
+          "sum": 6.864667939022183,
+          "p50": 1.1722944615030428,
+          "p95": 1.2560880742312293,
+          "min": 0.9334322640206665,
+          "max": 1.269441542972345,
+          "quantile": "Linear interpolation at (n-1)*p."
+        }
+      },
+      "BGE_source_query_encoding_per_case": {
+        "n": 6,
+        "sum": 0.12840858797426336,
+        "p50": 0.022243185492698103,
+        "p95": 0.0257702089875238,
+        "min": 0.016443252010503784,
+        "max": 0.026157038984820247,
+        "quantile": "Linear interpolation at (n-1)*p."
+      },
+      "BGE_initialization": 0.3697594859986566,
+      "Qwen_model_loading": 3.5500903489883058,
+      "worker_wall_including_initialization_cleanup": 29.623989498999435
+    },
+    "native_latency_ms": {
+      "query": {
+        "n": 6,
+        "sum": 1.024552000000007,
+        "p50": 0.11601950000000372,
+        "p95": 0.3625607500000001,
+        "min": 0.09588399999999808,
+        "max": 0.42528000000000077,
+        "quantile": "Linear interpolation at (n-1)*p."
+      },
+      "index_initialization": {
+        "n": 6,
+        "sum": 14.367644999999996,
+        "p50": 1.351039,
+        "p95": 5.765304999999994,
+        "min": 1.1215290000000095,
+        "max": 6.822043999999991,
+        "quantile": "Linear interpolation at (n-1)*p."
+      }
+    },
+    "rendered_prompt_tokens": {
+      "n": 18,
+      "sum": 2764.0,
+      "p50": 153.0,
+      "p95": 166.0,
+      "min": 140,
+      "max": 166,
+      "quantile": "Linear interpolation at (n-1)*p."
+    },
+    "manual_numeric_provenance_failure": [
+      {
+        "case_id": "e25-q03",
+        "source_id": "e25-s03b",
+        "text": "The warehouse's inspection was completed in 2025.",
+        "manual_expected_numeric_literals": [
+          {
+            "kind": "number",
+            "text": "2025",
+            "start": 44,
+            "end": 48,
+            "source_byte_start": 44,
+            "source_byte_end": 48,
+            "lexical_year_candidate": true
+          }
+        ],
+        "actual_numeric_literals": [],
+        "selected_by_arms": []
+      }
+    ],
+    "case_selection_and_typed_outputs": [
+      {
+        "id": "e25-q01",
+        "gold": "entailment",
+        "manual_support_source_id": "e25-s01b",
+        "arms": {
+          "actual_native": {
+            "selected_source_ids": [
+              "e25-s01b"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": true
+          },
+          "lexical": {
+            "selected_source_ids": [
+              "e25-s01b"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": true
+          },
+          "positional": {
+            "selected_source_ids": [
+              "e25-s01a"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": false
+          }
+        }
+      },
+      {
+        "id": "e25-q02",
+        "gold": "contradiction",
+        "manual_support_source_id": "e25-s02b",
+        "arms": {
+          "actual_native": {
+            "selected_source_ids": [
+              "e25-s02b"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": true
+          },
+          "lexical": {
+            "selected_source_ids": [
+              "e25-s02b"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": true
+          },
+          "positional": {
+            "selected_source_ids": [
+              "e25-s02a"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": false
+          }
+        }
+      },
+      {
+        "id": "e25-q03",
+        "gold": "not_mentioned",
+        "manual_support_source_id": null,
+        "arms": {
+          "actual_native": {
+            "selected_source_ids": [
+              "e25-s03a"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": null
+          },
+          "lexical": {
+            "selected_source_ids": [
+              "e25-s03a"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": null
+          },
+          "positional": {
+            "selected_source_ids": [
+              "e25-s03a"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": null
+          }
+        }
+      },
+      {
+        "id": "e25-q04",
+        "gold": "entailment",
+        "manual_support_source_id": "e25-s04b",
+        "arms": {
+          "actual_native": {
+            "selected_source_ids": [
+              "e25-s04b"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": true
+          },
+          "lexical": {
+            "selected_source_ids": [
+              "e25-s04b"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": true
+          },
+          "positional": {
+            "selected_source_ids": [
+              "e25-s04a"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": false
+          }
+        }
+      },
+      {
+        "id": "e25-q05",
+        "gold": "contradiction",
+        "manual_support_source_id": "e25-s05b",
+        "arms": {
+          "actual_native": {
+            "selected_source_ids": [
+              "e25-s05b"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": true
+          },
+          "lexical": {
+            "selected_source_ids": [
+              "e25-s05b"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": true
+          },
+          "positional": {
+            "selected_source_ids": [
+              "e25-s05a"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": false
+          }
+        }
+      },
+      {
+        "id": "e25-q06",
+        "gold": "not_mentioned",
+        "manual_support_source_id": null,
+        "arms": {
+          "actual_native": {
+            "selected_source_ids": [
+              "e25-s06b"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": null
+          },
+          "lexical": {
+            "selected_source_ids": [
+              "e25-s06b"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": null
+          },
+          "positional": {
+            "selected_source_ids": [
+              "e25-s06a"
+            ],
+            "prediction": "not_mentioned",
+            "contains_manual_support_source": null
+          }
+        }
+      }
+    ],
+    "interpretation": "All18 conditional A/B/C argmax outputs were not_mentioned. Native and lexical selected the same source in all6 cases. The four native E/C cases selected their manually supporting/contradicting source; they still failed typed readiness. Literal year2025 ending a sentence was absent from one unselected source-unit extraction. These are authored engineering observations, not semantic benchmark/generalization or ANN-superiority evidence.",
+    "source_literal_note": "The frozen numeric regex disallows a period immediately after a number, so a sentence-ending2025. is omitted. This descriptive mechanism is from reading unchanged source; no parser/gold/scorer repair was performed.",
+    "benchmark_accepted": false,
+    "engineering_qualified": false,
+    "champion_promoted": false,
+    "extra_private_guard_cases": "Unexecuted, excluded, unpublished."
+  },
+  "accuracy": null,
+  "Brier": null,
+  "NLL": null,
+  "proper_scores": null,
+  "benchmark_accuracy": null,
+  "benchmark_proper_scores": null,
+  "score_scope": "Authored6case conditional A/B/C token engineering diagnostics only; uncalibrated, not benchmark/generalization. Model weights/prompt/18pairs were not retried or tuned. Native=lexical, no ANN superiority.",
+  "official_rank": null,
+  "next_direction": "Preserve submitted Native104. Epoch25 fixed Qwen3-0.6B valid-label scorer failed authored qualification: native=lexical2of6, all18predictionsNotMentioned, zeroE/Ccorrect, nativeNLL3.59518789 exceeds positional3.51452061. All4nativeE/C selections contained manual support, so additional evidence reranking is not established as remedy. Prefer a materially stronger trained typed-decision/NLI head with exact licensed revisions and prospectively frozen source-licensed TRAIN/DEV/calibration/project-unusedCONF; no prompt/threshold grid on these6now-exposed authored cases. Separately repair numerical trailing-punctuation extraction and instrument/scope offline bind policy in a new premeasurement study; do not retroactively waive this original failed network/provenance gate. Unknown foundation/SFT overlap retained. Budget remainsCPU2/600satmost2batches paidGPU0 unless an actually authorized remaining paid cap and frozen price/time/cleanup plan exist. No currentJev300/fullLegalBench/ClaimBench score or publisher result/rank/eligibility; no duplicate submission/email or ClaimBench pilot without verifieddata/scorer/license/access."
+}

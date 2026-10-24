@@ -1,0 +1,493 @@
+{
+  "schema_version": 1,
+  "epoch": 25,
+  "at": "2026-10-24T04:51:35.535084+00:00",
+  "status": "REJECTED_AUTHORED_ENGINEERING_QUALIFICATION",
+  "engineering_qualified": false,
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "checks": 390,
+  "failures": [
+    "worker completion and no errors",
+    "manual full source literal/UTF8 provenance:e25-q03",
+    "native six of six typed correctness",
+    "native every class two of two",
+    "native proper-score nonincrease:positional:NLL",
+    "forbidden zero:Python_network_operations_attempted",
+    "one owned completed worker"
+  ],
+  "metrics": {
+    "actual_native": {
+      "n": 6,
+      "correct": 2,
+      "accuracy": 0.3333333333333333,
+      "Brier": 1.0649631334311238,
+      "NLL": 3.595187893804312,
+      "by_class": {
+        "entailment": {
+          "n": 2,
+          "correct": 0
+        },
+        "contradiction": {
+          "n": 2,
+          "correct": 0
+        },
+        "not_mentioned": {
+          "n": 2,
+          "correct": 2
+        }
+      }
+    },
+    "lexical": {
+      "n": 6,
+      "correct": 2,
+      "accuracy": 0.3333333333333333,
+      "Brier": 1.0649631334311238,
+      "NLL": 3.595187893804312,
+      "by_class": {
+        "entailment": {
+          "n": 2,
+          "correct": 0
+        },
+        "contradiction": {
+          "n": 2,
+          "correct": 0
+        },
+        "not_mentioned": {
+          "n": 2,
+          "correct": 2
+        }
+      }
+    },
+    "positional": {
+      "n": 6,
+      "correct": 2,
+      "accuracy": 0.3333333333333333,
+      "Brier": 1.082032989846714,
+      "NLL": 3.5145206141420178,
+      "by_class": {
+        "entailment": {
+          "n": 2,
+          "correct": 0
+        },
+        "contradiction": {
+          "n": 2,
+          "correct": 0
+        },
+        "not_mentioned": {
+          "n": 2,
+          "correct": 2
+        }
+      }
+    }
+  },
+  "case_scores": {
+    "actual_native": [
+      {
+        "id": "e25-q01",
+        "gold": "entailment",
+        "prediction": "not_mentioned",
+        "correct": false,
+        "Brier": 1.2079456997202127,
+        "NLL": 1.5017122713650328,
+        "probabilities": {
+          "entailment": 0.22274842767259215,
+          "contradiction": 0.00018937586462343351,
+          "not_mentioned": 0.7770621964627844
+        },
+        "selected_source_id": "e25-s01b"
+      },
+      {
+        "id": "e25-q02",
+        "gold": "contradiction",
+        "prediction": "not_mentioned",
+        "correct": false,
+        "Brier": 1.8006911123855616,
+        "NLL": 9.067024488912512,
+        "probabilities": {
+          "entailment": 0.11197495084885692,
+          "contradiction": 0.0001154094302937267,
+          "not_mentioned": 0.8879096397208494
+        },
+        "selected_source_id": "e25-s02b"
+      },
+      {
+        "id": "e25-q03",
+        "gold": "not_mentioned",
+        "prediction": "not_mentioned",
+        "correct": true,
+        "Brier": 0.010589097788832566,
+        "NLL": 0.07558298316454388,
+        "probabilities": {
+          "entailment": 0.07273004043837218,
+          "contradiction": 6.717444145501094e-05,
+          "not_mentioned": 0.9272027851201728
+        },
+        "selected_source_id": "e25-s03a"
+      },
+      {
+        "id": "e25-q04",
+        "gold": "entailment",
+        "prediction": "not_mentioned",
+        "correct": false,
+        "Brier": 1.4716573999946776,
+        "NLL": 1.951081658033,
+        "probabilities": {
+          "entailment": 0.14212026289329485,
+          "contradiction": 0.00015033102516550168,
+          "not_mentioned": 0.8577294060815397
+        },
+        "selected_source_id": "e25-s04b"
+      },
+      {
+        "id": "e25-q05",
+        "gold": "contradiction",
+        "prediction": "not_mentioned",
+        "correct": false,
+        "Brier": 1.880308492290164,
+        "NLL": 8.874252944810697,
+        "probabilities": {
+          "entailment": 0.063622623072742,
+          "contradiction": 0.0001399461370403509,
+          "not_mentioned": 0.9362374307902176
+        },
+        "selected_source_id": "e25-s05b"
+      },
+      {
+        "id": "e25-q06",
+        "gold": "not_mentioned",
+        "prediction": "not_mentioned",
+        "correct": true,
+        "Brier": 0.01858699840729418,
+        "NLL": 0.10147301654008647,
+        "probabilities": {
+          "entailment": 0.09631088992488988,
+          "contradiction": 0.0001835513557855917,
+          "not_mentioned": 0.9035055587193246
+        },
+        "selected_source_id": "e25-s06b"
+      }
+    ],
+    "lexical": [
+      {
+        "id": "e25-q01",
+        "gold": "entailment",
+        "prediction": "not_mentioned",
+        "correct": false,
+        "Brier": 1.2079456997202127,
+        "NLL": 1.5017122713650328,
+        "probabilities": {
+          "entailment": 0.22274842767259215,
+          "contradiction": 0.00018937586462343351,
+          "not_mentioned": 0.7770621964627844
+        },
+        "selected_source_id": "e25-s01b"
+      },
+      {
+        "id": "e25-q02",
+        "gold": "contradiction",
+        "prediction": "not_mentioned",
+        "correct": false,
+        "Brier": 1.8006911123855616,
+        "NLL": 9.067024488912512,
+        "probabilities": {
+          "entailment": 0.11197495084885692,
+          "contradiction": 0.0001154094302937267,
+          "not_mentioned": 0.8879096397208494
+        },
+        "selected_source_id": "e25-s02b"
+      },
+      {
+        "id": "e25-q03",
+        "gold": "not_mentioned",
+        "prediction": "not_mentioned",
+        "correct": true,
+        "Brier": 0.010589097788832566,
+        "NLL": 0.07558298316454388,
+        "probabilities": {
+          "entailment": 0.07273004043837218,
+          "contradiction": 6.717444145501094e-05,
+          "not_mentioned": 0.9272027851201728
+        },
+        "selected_source_id": "e25-s03a"
+      },
+      {
+        "id": "e25-q04",
+        "gold": "entailment",
+        "prediction": "not_mentioned",
+        "correct": false,
+        "Brier": 1.4716573999946776,
+        "NLL": 1.951081658033,
+        "probabilities": {
+          "entailment": 0.14212026289329485,
+          "contradiction": 0.00015033102516550168,
+          "not_mentioned": 0.8577294060815397
+        },
+        "selected_source_id": "e25-s04b"
+      },
+      {
+        "id": "e25-q05",
+        "gold": "contradiction",
+        "prediction": "not_mentioned",
+        "correct": false,
+        "Brier": 1.880308492290164,
+        "NLL": 8.874252944810697,
+        "probabilities": {
+          "entailment": 0.063622623072742,
+          "contradiction": 0.0001399461370403509,
+          "not_mentioned": 0.9362374307902176
+        },
+        "selected_source_id": "e25-s05b"
+      },
+      {
+        "id": "e25-q06",
+        "gold": "not_mentioned",
+        "prediction": "not_mentioned",
+        "correct": true,
+        "Brier": 0.01858699840729418,
+        "NLL": 0.10147301654008647,
+        "probabilities": {
+          "entailment": 0.09631088992488988,
+          "contradiction": 0.0001835513557855917,
+          "not_mentioned": 0.9035055587193246
+        },
+        "selected_source_id": "e25-s06b"
+      }
+    ],
+    "positional": [
+      {
+        "id": "e25-q01",
+        "gold": "entailment",
+        "prediction": "not_mentioned",
+        "correct": false,
+        "Brier": 1.317136818580203,
+        "NLL": 1.6691907564977777,
+        "probabilities": {
+          "entailment": 0.18839946500921062,
+          "contradiction": 0.00015653465572680437,
+          "not_mentioned": 0.8114440003350626
+        },
+        "selected_source_id": "e25-s01a"
+      },
+      {
+        "id": "e25-q02",
+        "gold": "contradiction",
+        "prediction": "not_mentioned",
+        "correct": false,
+        "Brier": 1.8174151268811707,
+        "NLL": 8.520899780958546,
+        "probabilities": {
+          "entailment": 0.10114427441622609,
+          "contradiction": 0.00019926005427624313,
+          "not_mentioned": 0.8986564655294976
+        },
+        "selected_source_id": "e25-s02a"
+      },
+      {
+        "id": "e25-q03",
+        "gold": "not_mentioned",
+        "prediction": "not_mentioned",
+        "correct": true,
+        "Brier": 0.010589097788832566,
+        "NLL": 0.07558298316454388,
+        "probabilities": {
+          "entailment": 0.07273004043837218,
+          "contradiction": 6.717444145501094e-05,
+          "not_mentioned": 0.9272027851201728
+        },
+        "selected_source_id": "e25-s03a"
+      },
+      {
+        "id": "e25-q04",
+        "gold": "entailment",
+        "prediction": "not_mentioned",
+        "correct": false,
+        "Brier": 1.502056887013195,
+        "NLL": 2.0154086508551097,
+        "probabilities": {
+          "entailment": 0.13326593299954925,
+          "contradiction": 0.00023023486468906414,
+          "not_mentioned": 0.8665038321357617
+        },
+        "selected_source_id": "e25-s04a"
+      },
+      {
+        "id": "e25-q05",
+        "gold": "contradiction",
+        "prediction": "not_mentioned",
+        "correct": false,
+        "Brier": 1.8156039920857734,
+        "NLL": 8.676707471414172,
+        "probabilities": {
+          "entailment": 0.10234998021983716,
+          "contradiction": 0.00017051155855719532,
+          "not_mentioned": 0.8974795082216056
+        },
+        "selected_source_id": "e25-s05a"
+      },
+      {
+        "id": "e25-q06",
+        "gold": "not_mentioned",
+        "prediction": "not_mentioned",
+        "correct": true,
+        "Brier": 0.029396016731110152,
+        "NLL": 0.12933404196195616,
+        "probabilities": {
+          "entailment": 0.12115091013236215,
+          "contradiction": 0.00016868947574405922,
+          "not_mentioned": 0.8786804003918937
+        },
+        "selected_source_id": "e25-s06a"
+      }
+    ]
+  },
+  "raw_worker_errors": [
+    {
+      "type": "ValueError",
+      "message": "Forbidden operation counter nonzero"
+    }
+  ],
+  "actual_execution": {
+    "benchmark_corpora": 0,
+    "benchmark_questions": 0,
+    "benchmark_HTTP_requests": 0,
+    "TRAIN_calibration_fits": 0,
+    "CONF_worker_attempts": 0,
+    "CONF_annotation_choices": 0,
+    "CONF_NLI_pairs": 0,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "fits": 0,
+    "paid_calls": 0,
+    "Python_network_operations_attempted": 1,
+    "confirmation_calls": 0,
+    "generation_calls": 0,
+    "generated_tokens": 0,
+    "training_steps": 0,
+    "optimizer_steps": 0,
+    "Node_network_operations_attempted": 0,
+    "external_API_calls": 0,
+    "benchmark_corpus_reads": 0,
+    "benchmark_label_reads": 0,
+    "train_calls": 0,
+    "dev_calls": 0,
+    "calibration_calls": 0,
+    "BGE_initializations_attempted": 1,
+    "BGE_initializations_completed": 1,
+    "BGE_forwards_attempted": 12,
+    "BGE_forwards_completed": 12,
+    "BGE_texts_attempted": 18,
+    "BGE_texts_completed": 18,
+    "native_helper_starts": 1,
+    "native_indexes_completed": 6,
+    "native_index_initializations_attempted": 6,
+    "native_queries_attempted": 6,
+    "native_queries_completed": 6,
+    "source_cases_completed": 6,
+    "automatically_extracted_units": 12,
+    "numeric_literals_extracted": 18,
+    "structural_unknowns": 0,
+    "NLI_model_initializations": 1,
+    "NLI_forward_pairs_attempted": 18,
+    "NLI_forward_pairs_completed": 18,
+    "NLI_forwards": 18,
+    "NLI_model_initializations_completed": 1,
+    "NLI_forward_calls_attempted": 18,
+    "NLI_forward_calls_completed": 18,
+    "engineering_pairs_completed": 18,
+    "engineering_cases_completed": 6,
+    "BGE_forward_seconds": 0.11993300597532652
+  },
+  "outer_execution": {
+    "epoch": 25,
+    "phase": "engineering",
+    "status": "WORKER_FAILED_OR_TIMEOUT",
+    "worker_attempts_reserved": 1,
+    "verified_worker_starts": 1,
+    "Popen_returned_pid": 71405,
+    "uncertain_start": false,
+    "worker_identity": {
+      "pid": 71405,
+      "state": "R",
+      "ppid": 71404,
+      "pgid": 71405,
+      "sid": 71405,
+      "ticks": 14099687
+    },
+    "exit_code": 2,
+    "launcher_error": null,
+    "cleanup_signals": [],
+    "cleanup_errors": [],
+    "stdout_stderr_capture_completed": true,
+    "owned_live_group_members": [],
+    "owned_live_processes_closed": true,
+    "wall_seconds_including_init_cleanup": 30.346915839996655,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "largest_child_peak_RSS_bytes": 5149405184,
+    "children_user_seconds": 50.323293,
+    "children_system_seconds": 1.254233,
+    "memory_scope": "RUSAGE_CHILDREN largest-child high-water, not simultaneous aggregate RSS",
+    "raw_bytes": 200277,
+    "raw_sha256": "c51adfd0c94368a514695fcb9c8f9c3d7863c73f03800a061c09ce0ea887ec83",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "allowed_further_epoch25_workers": 0,
+    "confirmation_calls": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "evidence": {
+    "inputs": {
+      "path": "/tmp/ruvector-e25-independent-audit/authored-inputs.json",
+      "bytes": 3453,
+      "sha256": "fd9654515677e013f01230c1ceaabc66f9d1375414abe58d3430a544276bb6cf"
+    },
+    "gold": {
+      "path": "/tmp/ruvector-e25-independent-audit/manual-gold.json",
+      "bytes": 12196,
+      "sha256": "21cdac12b5e7bd91617f29836b556a934de1521e101462077269264f74a29c51"
+    },
+    "raw": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986/project/experiments/sota-2026-10-22/epoch25/runs/engineering/raw.json",
+      "bytes": 200277,
+      "sha256": "c51adfd0c94368a514695fcb9c8f9c3d7863c73f03800a061c09ce0ea887ec83"
+    },
+    "execution": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986/project/experiments/sota-2026-10-22/epoch25/execution.json",
+      "bytes": 1259,
+      "sha256": "d3f8bd79e82c9855edf4144107ca9e38a2c22df624bad9590e5da51329d29b9e"
+    },
+    "plan": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986/project/experiments/sota-2026-10-22/epoch25/plan.json",
+      "bytes": 11569,
+      "sha256": "f656daaafeb6a7120ee7890e06dd7cccf6fc3603318e9f7dac988fc771b8a7a0"
+    },
+    "prompt": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch25-46f9adff3986/project/experiments/sota-2026-10-22/candidate/epoch25/prompt.json",
+      "bytes": 1349,
+      "sha256": "325c62adbfd4489de06297f84352183569b69a38690ee7953d475f24a6f90b6e"
+    }
+  },
+  "benchmark_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "global_insufficiency": "unknown",
+  "scope": "Six newly authored CC0 engineering cases; conditional A/B/C token probabilities are uncalibrated. No semantic benchmark, generalization, genuine confirmation, ANN superiority, promotion or official rank claim.",
+  "metrics_definition": {
+    "Brier": "Mean sum-of-three squared class errors",
+    "NLL": "Mean -log(max(p_gold,1e-12))",
+    "numeric_tolerances": {
+      "probability_mass": 1e-08,
+      "softmax_replay": 1e-12,
+      "proper_score_nonincrease": 1e-12
+    }
+  },
+  "source_guard_scope": "Four worker-owned exposed implementation guards checked from saved raw only; six extra private independent source guards unexecuted/excluded.",
+  "activity": "Independent JSON/hash/string/arithmetic replay only; no candidate imports, tokenizer/model/native execution, generation, training, calibration, gold changes or label selection."
+}

@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "run_id": "epoch25-46f9adff3986",
-  "state": "EPOCH25_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
-  "work_active": true,
+  "state": "EPOCH25_CLOSED",
+  "work_active": false,
   "experiments_active": false,
   "native_allowed": 0,
-  "native_allowed_after_exact_remote_readback": 1,
-  "checkpoint_parent": "b6b48549737a94ed613432a330a0fae9b7576b45",
+  "native_allowed_after_exact_remote_readback": 0,
+  "checkpoint_parent": "5a428c040e06663ddf4ecd6de9b96c67c8045757",
   "owner_pid": 70365,
   "owner_startticks": 13868579,
   "lock_inode": 13626,
@@ -20,6 +20,10 @@
     "paid_API_calls": 0,
     "GPU_calls": 0
   },
-  "instruction": "Only one nonretryable engineering worker after independent exact actual remote source readback and local NATIVE_ADMISSION. Only frozen authored NLI<=18forwards permitted; benchmark/fit/generation/CONF/paid/GPU/promotion/submission prohibited; preserve Native104.",
-  "conditional_confirmation_after_independent_DEV_runtime_gates": 0
+  "instruction": "Closed rejected epoch25; all slots spent or permanently closed. Preserve original counter1/failed verdict. Release lock only after independent actualfinalremote readback.",
+  "conditional_confirmation_after_independent_DEV_runtime_gates": 0,
+  "actual_epoch25_worker_attempts": 1,
+  "all_unspent_epoch25_slots_permanently_closed": true,
+  "owned_native_groups_closed": true,
+  "OS_lock_release_pending_final_remote_readback": true
 }

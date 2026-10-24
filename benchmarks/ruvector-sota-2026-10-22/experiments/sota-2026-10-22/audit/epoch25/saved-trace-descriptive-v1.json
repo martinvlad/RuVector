@@ -1,0 +1,301 @@
+{
+  "schema_version": 1,
+  "epoch": 25,
+  "at": "2026-10-24T04:53:13.433922+00:00",
+  "scope": "Descriptive saved-trace aggregation only after the exact frozen oracle rejected. No source/gold/scorer change, extra inference, label selection or acceptance revision.",
+  "raw_sha256": "c51adfd0c94368a514695fcb9c8f9c3d7863c73f03800a061c09ce0ea887ec83",
+  "frozen_oracle_report_sha256": "80b11b77692c70a873ca08204776b8fb3a52936138d7ae2e40f11ba06158c047",
+  "original_status": "FAILED_ENGINEERING_PROCESS",
+  "original_errors": [
+    {
+      "type": "ValueError",
+      "message": "Forbidden operation counter nonzero"
+    }
+  ],
+  "network_evidence": {
+    "counter": 1,
+    "known_blocked_event": "socket.bind",
+    "elapsed_seconds": 3.648937885009218,
+    "before_any_reader_forward_completed": true,
+    "address_destination_or_call_stack": "Not recorded; unknown.",
+    "outbound_or_paid_call_inference": "No outbound/HTTP/paid inference established; guard raised before the observed bind action.",
+    "counter_preserved": true
+  },
+  "latency_seconds": {
+    "reader_forward": {
+      "n": 18,
+      "sum": 21.02088989299955,
+      "p50": 1.1983058544865344,
+      "p95": 1.3398762262935633,
+      "min": 0.9334322640206665,
+      "max": 1.3413206839759368,
+      "quantile": "Linear interpolation at (n-1)*p."
+    },
+    "reader_forward_by_arm": {
+      "actual_native": {
+        "n": 6,
+        "sum": 7.075639327958925,
+        "p50": 1.2337579804880079,
+        "p95": 1.3248417562354007,
+        "min": 0.9420226289948914,
+        "max": 1.3413206839759368,
+        "quantile": "Linear interpolation at (n-1)*p."
+      },
+      "lexical": {
+        "n": 6,
+        "sum": 7.08058262601844,
+        "p50": 1.2148987845139345,
+        "p95": 1.319952419748006,
+        "min": 0.9605300280090887,
+        "max": 1.339621321996674,
+        "quantile": "Linear interpolation at (n-1)*p."
+      },
+      "positional": {
+        "n": 6,
+        "sum": 6.864667939022183,
+        "p50": 1.1722944615030428,
+        "p95": 1.2560880742312293,
+        "min": 0.9334322640206665,
+        "max": 1.269441542972345,
+        "quantile": "Linear interpolation at (n-1)*p."
+      }
+    },
+    "BGE_source_query_encoding_per_case": {
+      "n": 6,
+      "sum": 0.12840858797426336,
+      "p50": 0.022243185492698103,
+      "p95": 0.0257702089875238,
+      "min": 0.016443252010503784,
+      "max": 0.026157038984820247,
+      "quantile": "Linear interpolation at (n-1)*p."
+    },
+    "BGE_initialization": 0.3697594859986566,
+    "Qwen_model_loading": 3.5500903489883058,
+    "worker_wall_including_initialization_cleanup": 29.623989498999435
+  },
+  "native_latency_ms": {
+    "query": {
+      "n": 6,
+      "sum": 1.024552000000007,
+      "p50": 0.11601950000000372,
+      "p95": 0.3625607500000001,
+      "min": 0.09588399999999808,
+      "max": 0.42528000000000077,
+      "quantile": "Linear interpolation at (n-1)*p."
+    },
+    "index_initialization": {
+      "n": 6,
+      "sum": 14.367644999999996,
+      "p50": 1.351039,
+      "p95": 5.765304999999994,
+      "min": 1.1215290000000095,
+      "max": 6.822043999999991,
+      "quantile": "Linear interpolation at (n-1)*p."
+    }
+  },
+  "rendered_prompt_tokens": {
+    "n": 18,
+    "sum": 2764.0,
+    "p50": 153.0,
+    "p95": 166.0,
+    "min": 140,
+    "max": 166,
+    "quantile": "Linear interpolation at (n-1)*p."
+  },
+  "manual_numeric_provenance_failure": [
+    {
+      "case_id": "e25-q03",
+      "source_id": "e25-s03b",
+      "text": "The warehouse's inspection was completed in 2025.",
+      "manual_expected_numeric_literals": [
+        {
+          "kind": "number",
+          "text": "2025",
+          "start": 44,
+          "end": 48,
+          "source_byte_start": 44,
+          "source_byte_end": 48,
+          "lexical_year_candidate": true
+        }
+      ],
+      "actual_numeric_literals": [],
+      "selected_by_arms": []
+    }
+  ],
+  "case_selection_and_typed_outputs": [
+    {
+      "id": "e25-q01",
+      "gold": "entailment",
+      "manual_support_source_id": "e25-s01b",
+      "arms": {
+        "actual_native": {
+          "selected_source_ids": [
+            "e25-s01b"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": true
+        },
+        "lexical": {
+          "selected_source_ids": [
+            "e25-s01b"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": true
+        },
+        "positional": {
+          "selected_source_ids": [
+            "e25-s01a"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": false
+        }
+      }
+    },
+    {
+      "id": "e25-q02",
+      "gold": "contradiction",
+      "manual_support_source_id": "e25-s02b",
+      "arms": {
+        "actual_native": {
+          "selected_source_ids": [
+            "e25-s02b"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": true
+        },
+        "lexical": {
+          "selected_source_ids": [
+            "e25-s02b"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": true
+        },
+        "positional": {
+          "selected_source_ids": [
+            "e25-s02a"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": false
+        }
+      }
+    },
+    {
+      "id": "e25-q03",
+      "gold": "not_mentioned",
+      "manual_support_source_id": null,
+      "arms": {
+        "actual_native": {
+          "selected_source_ids": [
+            "e25-s03a"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": null
+        },
+        "lexical": {
+          "selected_source_ids": [
+            "e25-s03a"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": null
+        },
+        "positional": {
+          "selected_source_ids": [
+            "e25-s03a"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": null
+        }
+      }
+    },
+    {
+      "id": "e25-q04",
+      "gold": "entailment",
+      "manual_support_source_id": "e25-s04b",
+      "arms": {
+        "actual_native": {
+          "selected_source_ids": [
+            "e25-s04b"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": true
+        },
+        "lexical": {
+          "selected_source_ids": [
+            "e25-s04b"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": true
+        },
+        "positional": {
+          "selected_source_ids": [
+            "e25-s04a"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": false
+        }
+      }
+    },
+    {
+      "id": "e25-q05",
+      "gold": "contradiction",
+      "manual_support_source_id": "e25-s05b",
+      "arms": {
+        "actual_native": {
+          "selected_source_ids": [
+            "e25-s05b"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": true
+        },
+        "lexical": {
+          "selected_source_ids": [
+            "e25-s05b"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": true
+        },
+        "positional": {
+          "selected_source_ids": [
+            "e25-s05a"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": false
+        }
+      }
+    },
+    {
+      "id": "e25-q06",
+      "gold": "not_mentioned",
+      "manual_support_source_id": null,
+      "arms": {
+        "actual_native": {
+          "selected_source_ids": [
+            "e25-s06b"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": null
+        },
+        "lexical": {
+          "selected_source_ids": [
+            "e25-s06b"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": null
+        },
+        "positional": {
+          "selected_source_ids": [
+            "e25-s06a"
+          ],
+          "prediction": "not_mentioned",
+          "contains_manual_support_source": null
+        }
+      }
+    }
+  ],
+  "interpretation": "All18 conditional A/B/C argmax outputs were not_mentioned. Native and lexical selected the same source in all6 cases. The four native E/C cases selected their manually supporting/contradicting source; they still failed typed readiness. Literal year2025 ending a sentence was absent from one unselected source-unit extraction. These are authored engineering observations, not semantic benchmark/generalization or ANN-superiority evidence.",
+  "source_literal_note": "The frozen numeric regex disallows a period immediately after a number, so a sentence-ending2025. is omitted. This descriptive mechanism is from reading unchanged source; no parser/gold/scorer repair was performed.",
+  "benchmark_accepted": false,
+  "engineering_qualified": false,
+  "champion_promoted": false,
+  "extra_private_guard_cases": "Unexecuted, excluded, unpublished."
+}

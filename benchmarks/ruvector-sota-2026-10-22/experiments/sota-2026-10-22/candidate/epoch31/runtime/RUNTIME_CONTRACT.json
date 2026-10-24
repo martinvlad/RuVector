@@ -1,0 +1,126 @@
+{
+  "archived_seal_exact_keys": [
+    "schema_version",
+    "epoch",
+    "kind",
+    "status",
+    "source_checkpoint",
+    "parameter_artifact",
+    "train_raw",
+    "train_execution",
+    "independent_training_report",
+    "original_source_plan",
+    "original_source_freeze",
+    "historical_training_epoch",
+    "historical_training_document_ids",
+    "data_roles",
+    "hypotheses"
+  ],
+  "before_worker_Popen_failure_provenance": {
+    "launcher_error": "captured nonempty error required",
+    "scope": "Only a captured failure before irreversible Popen boundary; missing fields imply UNKNOWN. No execution alone does not establish zero starts.",
+    "worker_popen_attempted": false,
+    "worker_popen_attempts": 0,
+    "worker_start_boundary": "KNOWN_FAILURE_BEFORE_WORKER_POPEN"
+  },
+  "capture_discriminators": {
+    "backend_execution_since_checkpoint": [
+      "NOT_APPLICABLE_FINAL_RAW",
+      "UNKNOWN"
+    ],
+    "operation_counts_complete": "true only selected final raw",
+    "raw_operation_counters_source": [
+      "raw.json",
+      "raw.partial.json",
+      "UNKNOWN"
+    ]
+  },
+  "deadline": "same-boot dispatch monotonic/unix shared clocks;3s startup receipt wait and all static checks inside585work+15cleanup=600; guardian poll <=0.5s",
+  "dispatch_attempt_additions": [
+    "pid",
+    "startticks",
+    "pgid",
+    "sid",
+    "verified_launcher_start",
+    "uncertain_launcher_start"
+  ],
+  "dispatch_bindings": [
+    "schema_version",
+    "epoch",
+    "kind",
+    "phase",
+    "plan_sha256",
+    "source_freeze_sha256",
+    "archived_model_seal_sha256",
+    "admission_sha256",
+    "kernel_boot_id",
+    "pid_namespace_inode",
+    "dispatch_monotonic_seconds",
+    "dispatch_unix_seconds",
+    "logical_native_budget_reserved",
+    "allowed_further_dispatches"
+  ],
+  "epoch": 31,
+  "files": {
+    "dispatch_attempt": "DISPATCH_ATTEMPT.json",
+    "dispatch_reservation": "DISPATCH_RESERVATION.json",
+    "execution": "runs/dev/execution.json",
+    "independent_observed_closure": "SUPERVISOR_OBSERVED_CLOSURE.json",
+    "partial_raw": "runs/dev/raw.partial.json",
+    "pending_raw": "runs/dev/raw.partial.pending.json",
+    "raw": "runs/dev/raw.json",
+    "source_admission": "SOURCE_ADMISSION.json",
+    "supervisor_completion": "SUPERVISOR_COMPLETION.json",
+    "worker_reservation": "DEV_ATTEMPT_RESERVATION.json"
+  },
+  "kind": "REAL_NATIVE_ARCHIVED_LEGAL_ADAPTATION_DIAGNOSTIC",
+  "limits": {
+    "CONF_worker_attempts": 0,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "CPU_threads": 2,
+    "DEV_worker_attempts": 1,
+    "GPU_calls": 0,
+    "TRAIN_worker_attempts": 0,
+    "native_corpus_batches": 1,
+    "owned_workers": 1,
+    "paid_calls": 0,
+    "per_phase_owned_workers": 1,
+    "seconds_per_batch": 600
+  },
+  "logical_budget": "max(dispatch reservation,DEV reservation)=1, never sum; dispatch alone forbids NOT_STARTED or inferred zero model starts",
+  "phases": [
+    "dev"
+  ],
+  "physical_closure": "ABOUT_TO_EXIT is intended only. Independent observer must prove exact supervisor absent or closed Z/X with no FD/liveMM and owned worker groups empty. Missing identity remains UNKNOWN and blocks FINAL/gold. Root has no waited detached supervisor exit code.",
+  "physical_identity_forms": {
+    "supervisor": "{pid,startticks,pgid,sid}",
+    "worker_preexec_native": "{pid,state,ppid,pgid,sid,ticks}"
+  },
+  "schema_version": 1,
+  "scope_limits": "Detached stdio-file supervisor survives tool pipe loss; container/cgroup restart survival unproven. API network guard is not kernel network isolation. No daemon/global host changes.",
+  "source_admission_required": {
+    "archived_model_seal": "canonical exact ref3",
+    "epoch": 31,
+    "kernel_boot_id": "4632fb06-b0ef-4df5-b72b-0e875bbad810",
+    "kind": "REAL_NATIVE_ARCHIVED_LEGAL_ADAPTATION_DIAGNOSTIC",
+    "owner_generation": 1,
+    "owner_lock_device": 33,
+    "owner_lock_fd": 3,
+    "owner_lock_inode": 13626,
+    "owner_pid": 87763,
+    "owner_startticks": 19114443,
+    "parameter_artifact": "canonical exact original E30 ref3",
+    "phase": "dev",
+    "pid_namespace_inode": 4026532200,
+    "plan_sha256": "actual frozen plan64hex",
+    "published_source_commit": "actual current40hex SOURCE commit",
+    "scope": "benchmarks/ruvector-sota-2026-10-22/",
+    "source_freeze_sha256": "actual frozen source-freeze64hex",
+    "verified_actual_remote_readback": true
+  },
+  "study": "experiments/sota-2026-10-22/epoch31",
+  "unknown_Popen": "failed+uncertain+verifiedstarts0; no identity proof => null exit/worker_identity/recovered identity/group/closed; worker_identity_source UNKNOWN; owned_process_closure_observation UNKNOWN_UNRETURNED_POPEN_WITHOUT_IDENTITY_PROOF; no retry or MODEL/TRAIN stage"
+}

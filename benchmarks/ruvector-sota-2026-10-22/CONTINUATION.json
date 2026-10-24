@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "b27d0c39ed3102cd16ba616b1225b7684b76851b",
-  "checkpoint_manifest_sha256": "9aa57320792550e9ee3255342dbc20254ba8057dc081cbf61d472c27b4551b88",
+  "prior_published_base_commit": "cc184ca6ac7e865b582bffe9288b4ab21be893f0",
+  "checkpoint_manifest_sha256": "ce712ee7bc25ec7b1bd4fedb0c81587d5cdb2678157089fe3772903f5d71c520",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -995,10 +995,10 @@
     "schema_version": 1,
     "epoch": 31,
     "run_id": "epoch31-de468eba3faa",
-    "state": "EPOCH31_PLANNING_LEASE",
+    "state": "EPOCH31_SOURCE_FROZEN_DEV_PENDING_ADMISSION",
     "work_active": true,
     "experiments_active": false,
-    "checkpoint_parent": "b27d0c39ed3102cd16ba616b1225b7684b76851b",
+    "checkpoint_parent": "cc184ca6ac7e865b582bffe9288b4ab21be893f0",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
       "run_id": "epoch31-de468eba3faa",
@@ -1022,10 +1022,11 @@
     "OS_lock_held": true,
     "OS_lock_release_pending": true,
     "native_allowed": 0,
-    "conditional_dev_allowed": 0,
+    "conditional_dev_allowed": 1,
     "confirmation_allowed": 0,
     "conditional_confirmation_allowed": 0,
-    "instruction": "Metadata-only planning/data reservation. No current TRAIN, MODEL phase, CONF, native/model call or source input projection before independent planning readback. One fresh DEV diagnostic only after all immutable SOURCE gates and actual readback. All E30 slots stay closed.",
+    "instruction": "Only current DEV after independent actual SOURCE readback and archived artifact/source admission. One nonretryable CPU2/600s phase total; zero current fits/TRAIN. No CONF/full104/benchmark acceptance/promotion/submission. FINAL closes every slot.",
+    "conditional_train_allowed": 0,
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -1156,6 +1157,42 @@
         "nda-3"
       ],
       "all16_document_ids_permanently_retired": true,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 31,
+      "kind": "FROZEN_ARCHIVED_ADAPTATION_DEV_ROLES",
+      "document_ids": [
+        145,
+        597,
+        191,
+        620,
+        254,
+        160,
+        384,
+        571
+      ],
+      "data_roles": {
+        "train": [],
+        "dev": [
+          145,
+          597,
+          191,
+          620,
+          254,
+          160,
+          384,
+          571
+        ],
+        "calibration": [],
+        "confirmation": []
+      },
+      "hypotheses": [
+        "nda-17",
+        "nda-7",
+        "nda-3"
+      ],
+      "all8_document_ids_permanently_retired": true,
       "confirmation_consumed": false
     }
   ],
@@ -4815,5 +4852,73 @@
     },
     "preparation_publication_pending": true,
     "publication_scope": "Inline fixed metadata identities/hashes only. Current CP intentionally remains baseline4176. Full canonical new-source references become checkpoint-covered only in SOURCE, before any model/native measurement; this planning state authorizes no source input projection before its independent actual readback."
+  },
+  "epoch31_frozen_study": {
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch31/plan.json",
+      "bytes": 39968,
+      "sha256": "b1f63e8f0df4558c2eb91c856f7d98451f76f738ab375a6158e95b4f973b7196"
+    },
+    "source_freeze": {
+      "path": "experiments/sota-2026-10-22/epoch31/source-freeze.json",
+      "bytes": 22890,
+      "sha256": "9970ec1e03bbd4fa4a67add78a1b18d1857d12903d3981081a9ae44ee1531b57"
+    }
+  },
+  "epoch31_data_roles": {
+    "train": [],
+    "dev": [
+      145,
+      597,
+      191,
+      620,
+      254,
+      160,
+      384,
+      571
+    ],
+    "calibration": [],
+    "confirmation": [],
+    "hypotheses": [
+      "nda-17",
+      "nda-7",
+      "nda-3"
+    ],
+    "used_confirmation_identities": [],
+    "historical_training": {
+      "epoch": 30,
+      "document_ids": [
+        237,
+        120,
+        187,
+        422,
+        464,
+        207,
+        294,
+        250
+      ]
+    },
+    "retired_document_ids": [
+      145,
+      597,
+      191,
+      620,
+      254,
+      160,
+      384,
+      571
+    ],
+    "partition_after_projection": {
+      "exposed": 301,
+      "unreserved": 98,
+      "reserved_confirmation": 24,
+      "total": 423
+    },
+    "all8_current_DEV_document_ids_permanently_exposed": true
+  },
+  "epoch31_archived_model_seal": {
+    "path": "experiments/sota-2026-10-22/epoch31/ARCHIVED_MODEL_SEAL.json",
+    "bytes": 1882,
+    "sha256": "843335b798cde107e074606187205ee3b072c27609c3b2dbf7bce52284eaeccf"
   }
 }

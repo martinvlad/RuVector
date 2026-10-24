@@ -1,0 +1,13 @@
+# ContractNLI Epoch31 diagnostic source inputs
+
+These inputs will contain exactly eight original TRAIN-source documents from ContractNLI, paired with hypotheses `nda-17`, `nda-7`, and `nda-3`. The fixed document order is 145, 597, 191, 620, 254, 160, 384, 571. Current TRAIN, calibration, and confirmation roles are empty.
+
+Yuta Koreeda and Christopher D. Manning (2021), *ContractNLI: A Dataset for Document-level Natural Language Inference for Contracts*. Official source: https://github.com/stanfordnlp/contract-nli/tree/eced6528dd3c1d14d73f9a87df8f7bdbc03126f9. The original `train.json` is 7,608,211 bytes, SHA256 `dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5`. The corpus is licensed under CC BY 4.0; the complete license is included in `LICENSE-CC-BY-4.0.txt`.
+
+Transformations: select the fixed eight original documents and three fixed hypotheses, preserve their text exactly, add identifiers and canonical hashes, and omit annotation choices and evidence. No synthetic or rewritten legal examples are introduced. The source-input builder parses the complete annotated public JSON in memory and traverses document IDs, selected document text, and hypothesis descriptors only. Field isolation is logical; it is not operating-system-enforced label secrecy.
+
+The allocation uses only historical role registries and canonical full-document hashes, with no length, label, class-count, or evidence filtering. It excludes all 293 previously exposed/retired original TRAIN identities, the 24 reserved identities, and 184 official cross-split document hashes. All eight fixed identities become permanently exposed upon any projection attempt, including a failed attempt; no replacement is allowed. The resulting source partition is 301 exposed, 98 unused and 24 reserved, totaling 423.
+
+This epoch measures the first DEV outputs of one exact archived Epoch30 legal adaptation, SHA256 `46bcb1c9bcf7a6bd9f7491f1233f38b65b1c3672de5370f4d1e1b5db24ae796f`. Historical Epoch30 TRAIN documents were 237, 120, 187, 422, 464, 207, 294, 250. Epoch31 performs no training or candidate selection. The original 2020 BART-MNLI backbone is unchanged; this is not discovery of a new pretrained model. Retain the existing fairseq/BART MIT license and the historical adaptation attribution/change notice alongside the archived model evidence.
+
+This is a project DEV diagnostic, not an official benchmark holdout or fresh confirmation. Foundation-text/fuzzy overlap and later publisher reselection remain unknown. No confirmation allocation, full104 comparator retry, champion promotion, new submission, or official rank claim is authorized. Native104/RRF10 remains the champion regardless of this diagnostic's outcome.

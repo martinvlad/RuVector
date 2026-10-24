@@ -1,0 +1,225 @@
+{
+  "allocation": {
+    "bytes": 9081,
+    "path": "/tmp/ruvector-e31-independent-audit/selection.json",
+    "sha256": "836667dbb19ef55e02a5b0d80be11fded83f00afc3da70546ec451849bb7f66d"
+  },
+  "archived_model": {
+    "LoRA": "Last2decoder cross-attention q/v, rank4 alpha8 scale2 plus original pretrained dense/out classifier",
+    "TRAIN_integrity": "Existing independent24-step/frozen511/B-gradient/BA evidence must be retained and byte-bound",
+    "current_TRAIN_choices_or_updates": 0,
+    "historical_training_steps": 24,
+    "original_MODEL_phase_was_published": false,
+    "parameter_artifact": {
+      "bytes": 5950520,
+      "path": "experiments/sota-2026-10-22/epoch30/runs/train/trained-parameters.public.json",
+      "sha256": "46bcb1c9bcf7a6bd9f7491f1233f38b65b1c3672de5370f4d1e1b5db24ae796f"
+    },
+    "reuse_rule": "Exact archived epoch30 codec and bytes; do not relabel tensors, refit, calibrate, repair or choose among artifacts.",
+    "source_TRAIN_execution": {
+      "bytes": 5297,
+      "path": "experiments/sota-2026-10-22/epoch30/runs/train/execution.json",
+      "sha256": "7a4b9cf062de1b56ef45d88717570b41e29c29418626a081f86a0e1ff6d44ec3"
+    },
+    "source_TRAIN_integrity_report": {
+      "bytes": 18329,
+      "path": "experiments/sota-2026-10-22/audit/epoch30/train-integrity.json",
+      "sha256": "9bdf887f6672bd8f427572a6c28252ba0bfd9925fcc50dc65b9ab5cba344e4f1"
+    },
+    "source_TRAIN_raw": {
+      "bytes": 1937474,
+      "path": "experiments/sota-2026-10-22/epoch30/runs/train/raw.json",
+      "sha256": "2dbe91214848dc84d48f2160bf0631cf7aa20090146f4a597a5142be37242923"
+    },
+    "source_epoch": 30,
+    "source_final_result": {
+      "bytes": 9609,
+      "path": "experiments/sota-2026-10-22/epoch30/RESULTS.json",
+      "sha256": "6073965a60aebc8913590ee8ecded7db919256a5decf69d879e6a2670829f4f8"
+    },
+    "source_freeze": {
+      "bytes": 19979,
+      "path": "experiments/sota-2026-10-22/epoch30/source-freeze.json",
+      "sha256": "179a0463338808f2d39925fe480a02c4eb144ee634044594a8c68ca51a35e14a"
+    },
+    "source_interruption_incident": {
+      "bytes": 3671,
+      "path": "experiments/sota-2026-10-22/epoch30/recovery/INCIDENT.json",
+      "sha256": "06eaecbafc101bdfb2ca09c6dd728aada1729db0457e8f686631c7640267337e"
+    },
+    "source_plan": {
+      "bytes": 37823,
+      "path": "experiments/sota-2026-10-22/epoch30/plan.json",
+      "sha256": "d6c46944bbac2cb8ef65a51e68d927e10b869123004f941d56292cef1e0bd94b"
+    },
+    "trainable_parameters": 1085443,
+    "trained_tensors": 12
+  },
+  "base_model": {
+    "attention": "sdpa",
+    "canonical_E_C_N_permutation": [
+      2,
+      0,
+      1
+    ],
+    "device": "CPU",
+    "load": "Stock safe original weights_only load; original classifier, no reinitialization",
+    "new_pretrained_backbone": false,
+    "original_bin_bytes": 1629486723,
+    "original_bin_sha256": "ce253627f98f9db22af6a86efee6e905f001f7d8dc02dd14a8b4b4710c302b17",
+    "precision": "FP32",
+    "raw_C_N_E_labels": [
+      "contradiction",
+      "not_mentioned",
+      "entailment"
+    ],
+    "repository": "facebook/bart-large-mnli",
+    "revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+    "temperature": 1
+  },
+  "budgets": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "DEV_forwards": 96,
+    "GPU_calls": 0,
+    "TRAIN_calls": 0,
+    "confirmation_calls": 0,
+    "failure": "Retain complete/partial/UNKNOWN evidence, no retry/gold join on incomplete outputs",
+    "full104_calls": 0,
+    "native_corpus_batches": 1,
+    "native_document_indices": 8,
+    "native_queries": 24,
+    "owned_workers": 1,
+    "paid_calls": 0,
+    "retries": 0,
+    "seconds_including_init_BGE_native_artifact_IO_and_cleanup": 600
+  },
+  "development": {
+    "adapted_forwards": 72,
+    "context": "Unchanged E30 source splitter/ANNdepth40/neighbor packing and true BARTpair<=512; no hidden truncation",
+    "document_ids": [
+      145,
+      597,
+      191,
+      620,
+      254,
+      160,
+      384,
+      571
+    ],
+    "evidence_list_reads": 0,
+    "forwards": 96,
+    "gold_join": "One frozen scorer join of24DEV choices only after all96finite outputs sealed and ownedworker/nativechild closed",
+    "model_initializations": 1,
+    "order": [
+      "Publish current SOURCE and archived-model lineage seal; actual Gitreadback admission before DEV input read",
+      "Build labelblind native/lexical/positional contexts",
+      "24 fresh original2020BART native-context forwards with original classifier, no LoRA learned state loaded",
+      "Decode/apply exact archived46bcb parameter bytes without optimization",
+      "72 adapted forwards:24native,24lexical,24positional"
+    ],
+    "original_baseline": "Disabling LoRA with trained classifier is insufficient; fresh original classifier mandatory",
+    "original_forwards": 24,
+    "same_artifact_hash_all_adapted_views": true,
+    "same_native_premise_and_tokenpair_original_adapted": true,
+    "training_optimizer_calibration_or_fit_calls": 0
+  },
+  "diagnostic_gates": {
+    "C_ceiling": "Retain strict gate even if original C already perfect",
+    "adaptation": "AdaptedANN correct>=originalANN+2; Ccorrect>=originalANN Ccorrect+1; threewayNLL/Brier nonincrease",
+    "adapted_ANN_at_least_one_correct_each_class": true,
+    "all_required": true,
+    "all_three_gold_classes_present": true,
+    "does_not_open_confirmation_or_promotion": true,
+    "missing_class": "NOT_EVALUABLE, no redraw",
+    "nonincrease_tolerance": 1e-12,
+    "retrieval": "AdaptedANN correct>=adaptedlexical+2 and>=adaptedpositional+2; threewayNLL/Brier nonincrease vsboth"
+  },
+  "epoch": 31,
+  "freeze_order": [
+    "Fix single archived artifact,8DEVmetadata,source/scorer/protocol before raw projection",
+    "Root durable data reservation; exact input-only projection; alias failure HOLD/retire8, no redraw",
+    "Freeze whole source/runtime/scorer and archived-model seal; actual published source readback admission",
+    "One96forward DEVworker, immutable raw then physicalclosure and independent structure audit",
+    "One frozen24choice join, canonicalRESULTS/bind/FINAL; close allslots"
+  ],
+  "historical_E30_TRAIN_document_ids": [
+    237,
+    120,
+    187,
+    422,
+    464,
+    207,
+    294,
+    250
+  ],
+  "hypotheses": [
+    "nda-17",
+    "nda-7",
+    "nda-3"
+  ],
+  "hypothesis": "First DEV measurement of the one fixed archived E30 legal LoRA+existing-classifier state versus original2020 BART on identical native context, with adapted native versus lexical/positional controls; no retraining or model reselection.",
+  "integrity_gates": [
+    "Current source/pins/archived lineage and actual admission exact before inputs/model activity",
+    "24cases each originalANN plus adaptedANN/lexical/positional; same ANN premise and tokenpair original/adapted",
+    "All96genuine finite CNE logits, unit-temperature full3softmax, pair<=512, exact artifact identity, no fits",
+    "Exact source spans, compact source-vector evidence, CPU2<=600, persistent forbidden-network0 and process closure",
+    "Only after full96closed, join DEV24choices once, TRAIN/CONF/otherchoices/evidence0"
+  ],
+  "kind": "REAL_NATIVE_ARCHIVED_LEGAL_ADAPTATION_DIAGNOSTIC",
+  "lineage": {
+    "base_chronology": "Exact2020bin precedes ContractNLI2021 superviseddataset; foundation/fuzzy overlap and laterpublisherreselection unknown",
+    "base_license": "Pinned fairseq/BART MIT pretrained-model grant; retain copyright and full corpus attribution/change notice",
+    "isolation": "Full annotated source JSON parsed in RAM by later authorized projection/scorer; logical field isolation, never OS-enforced label secrecy",
+    "own_supervision": "Only archived E30TRAIN8×3 choices; new8DEV/protected24 hashes disjoint all historical293exposed groups",
+    "source": "Koreeda and Manning(2021) ContractNLI CC-BY-4.0 revisioneced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "source_bytes": 7608211,
+    "source_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+    "uncertainty": [
+      "Actual MNLI run row hashes/calibration/selection logs unpublished",
+      "Foundation contract-text/fuzzy overlap unknown",
+      "Excerpt NotMentioned does not prove fullcontract legalabsence",
+      "Net LoRA+classifier effect, not exclusive LoRA attribution"
+    ]
+  },
+  "metrics": {
+    "binary_decision_check_only": "Yes=pE>0.5; exacthalfNo; No=pC+pN; no threshold fit",
+    "resources": "CPUaffinity0,1; wholeworker wall/RSS and childHWM scopes; opaque native internals UNKNOWN",
+    "sampling": "8documentgroups×3correlatedhypotheses; diagnostic only, no24-independent-sample or population superiority claim",
+    "softmax_replay_tolerance": 1e-06,
+    "threeway_proper": "Mean sum(p-y)^2 and mean-ln(max(pgold,1e-12)); clippingcount/unclipped-finiteness disclosed, no renormalization",
+    "timing": "Pairtokenizer/tensorprep/model/softmax p50/p95; initialization/artifactverification/retrieval/wholephase separate",
+    "typed_prediction": "First maximum nativeC,N,E order; canonicalE,C,N probabilities p2,p0,p1"
+  },
+  "reporting": {
+    "benchmark_accepted": false,
+    "calibration": [],
+    "champion": "Native104/RRF10 unchanged",
+    "champion_promoted": false,
+    "confirmation": [],
+    "full104": "Not rerun; no repetition of known16KiB/blocker, no champion-improvement claim",
+    "new_submission": false,
+    "official_SOTA_verified": false,
+    "official_rank": null,
+    "prior_outcomes": "E29 LoRA allocation HOLD unchanged; E30TRAINpassed/DEVneverstarted and all16old IDs remain retired; E31 is a new authorized first evaluation on new cases"
+  },
+  "roles": {
+    "calibration": [],
+    "confirmation": [],
+    "dev": [
+      145,
+      597,
+      191,
+      620,
+      254,
+      160,
+      384,
+      571
+    ],
+    "train": []
+  },
+  "schema_version": 1,
+  "status": "FIXED_PROSPECTIVE_PROTOCOL_BEFORE_NEW_INPUTS_OR_MEASUREMENT"
+}

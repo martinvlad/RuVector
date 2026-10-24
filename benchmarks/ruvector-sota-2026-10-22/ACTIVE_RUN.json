@@ -2,10 +2,10 @@
   "schema_version": 1,
   "epoch": 31,
   "run_id": "epoch31-de468eba3faa",
-  "state": "EPOCH31_PLANNING_LEASE",
+  "state": "EPOCH31_SOURCE_FROZEN_DEV_PENDING_ADMISSION",
   "work_active": true,
   "experiments_active": false,
-  "checkpoint_parent": "b27d0c39ed3102cd16ba616b1225b7684b76851b",
+  "checkpoint_parent": "cc184ca6ac7e865b582bffe9288b4ab21be893f0",
   "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
   "physical_owner": {
     "run_id": "epoch31-de468eba3faa",
@@ -29,8 +29,9 @@
   "OS_lock_held": true,
   "OS_lock_release_pending": true,
   "native_allowed": 0,
-  "conditional_dev_allowed": 0,
+  "conditional_dev_allowed": 1,
   "confirmation_allowed": 0,
   "conditional_confirmation_allowed": 0,
-  "instruction": "Metadata-only planning/data reservation. No current TRAIN, MODEL phase, CONF, native/model call or source input projection before independent planning readback. One fresh DEV diagnostic only after all immutable SOURCE gates and actual readback. All E30 slots stay closed."
+  "instruction": "Only current DEV after independent actual SOURCE readback and archived artifact/source admission. One nonretryable CPU2/600s phase total; zero current fits/TRAIN. No CONF/full104/benchmark acceptance/promotion/submission. FINAL closes every slot.",
+  "conditional_train_allowed": 0
 }

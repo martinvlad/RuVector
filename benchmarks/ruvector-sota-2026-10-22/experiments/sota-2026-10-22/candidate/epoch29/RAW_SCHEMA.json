@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "epoch": 29,
+  "kind": "REAL_NATIVE_DOCUMENT_IDENTITY_QUALIFICATION",
+  "scope": "One finite engineering qualification of a document identity retrieval guard, not a benchmark or general recall claim. The separate LoRA allocation remains HOLD.",
+  "corpus": {
+    "documents": 261,
+    "queries": 262,
+    "matrix_row_order": "sorted old-exposed corpus document IDs then known retired548; reserved24 and remaining122 never encoded",
+    "only_known_positive": "548 has authoritative normalized full-text alias515; denominator1 descriptive only",
+    "roles": {
+      "train": [],
+      "dev": [],
+      "calibration": [],
+      "confirmation": []
+    }
+  },
+  "raw_fields": [
+    "schema_version",
+    "epoch",
+    "kind",
+    "source_checkpoint",
+    "plan_sha256",
+    "status",
+    "counters",
+    "errors",
+    "documents",
+    "vector_bundle",
+    "native_result",
+    "queries",
+    "BGE",
+    "source_bank",
+    "CPU_policy_before_ORT",
+    "worker_cpu_guard_preexec",
+    "worker_cpu_guard_preexec_artifact",
+    "actual_loaded_BGE_runtime_libraries",
+    "Node_guard_events",
+    "native_child_closed",
+    "native_child_exit_code",
+    "resources"
+  ],
+  "status_completed": "COMPLETED_NATIVE_DOCUMENT_IDENTITY_AWAITING_INDEPENDENT_REPLAY",
+  "status_failed": "FAILED_NATIVE_DOCUMENT_IDENTITY_QUALIFICATION",
+  "documents": "262 flat records: document_id, source_document_sha256/source_utf8_bytes, normalized_document_sha256, bge_input_sha256/bge_input_utf8_bytes, vector_row, normalized_text_input_ref. No duplicated corpus text in raw; frozen bank provides exact normalized text.",
+  "tokenizer_flat_fields": [
+    "raw_tokens",
+    "used_tokens",
+    "truncated",
+    "max_tokens",
+    "used_token_ids",
+    "used_attention_mask",
+    "padded_token_ids",
+    "padded_tokens",
+    "truncation_direction",
+    "full_input_bytes_are_hashed_but_tokens_after256_are_not_attended",
+    "BGE_batch_forward_seconds",
+    "BGE_batch_start",
+    "BGE_batch_texts",
+    "actual_vector_norm",
+    "vector_sha256"
+  ],
+  "normalization": {
+    "alias_authority": "Existing historical casefold+split/join-whitespace normalized full text and SHA256 remain unchanged. ANN scores never redefine aliases.",
+    "model_input": "unicodedata.normalize(NFKC, authoritative_normalized_text).casefold(); preserve whitespace separators; no query prefix. Independent BGE text SHA/UTF8 bytes frozen.",
+    "attention": "Original BGE small CLS model,256 token cap. Right truncation retains CLS+first254 content tokens+SEP; record exact actual IDs/padding/masks/full token count. Full-document hashes do not prove full-document attention."
+  },
+  "vector_bundle": {
+    "filename": "native-bundle.json",
+    "schema_version": 3,
+    "keys": [
+      "schema_version",
+      "epoch",
+      "kind",
+      "vector_encoding",
+      "document_ids",
+      "corpus_document_ids",
+      "vectors",
+      "provenance"
+    ],
+    "vector_encoding": "base64_float32le_c_order",
+    "vectors": {
+      "encoding": "base64",
+      "dtype": "float32le",
+      "shape": [
+        262,
+        384
+      ],
+      "bytes": 402432,
+      "sha256": "SHA256 exact decoded bytes",
+      "data_base64": "canonical RFC4648, actual normalized np.float32 little-endian C-order bytes, no quantization"
+    },
+    "retained_once": true,
+    "provenance": [
+      "document_id",
+      "source_document_sha256",
+      "normalized_document_sha256",
+      "bge_input_sha256"
+    ]
+  },
+  "native_result": {
+    "filename": "native-result.json",
+    "schema_version": 1,
+    "compact_schema": "epoch29-native-document-identity-f32le-v1",
+    "top_keys": [
+      "epoch",
+      "kind",
+      "native",
+      "queries",
+      "errors",
+      "package_version",
+      "platform_package_version",
+      "binary_version",
+      "native_binary_sha256",
+      "source_sha256",
+      "bundle_sha256",
+      "helper_pid",
+      "initialized_vectors",
+      "index_initialization_seconds",
+      "helper_resources",
+      "native_* counters"
+    ],
+    "versions": {
+      "wrapper": "0.1.33",
+      "platform": "0.1.31",
+      "actual_core": "2.3.0",
+      "binary_sha256": "ff559e9fac2e3d29a8b32e890fdb047bcd4bd28f389b4731ad72148b221d5a2e"
+    },
+    "query_fields": [
+      "document_id",
+      "exclude_document_id",
+      "raw_ids",
+      "raw_hits",
+      "requested_k",
+      "filtered_top16_ids",
+      "excluded_self_hit_ids",
+      "query_seconds",
+      "native_order_used_without_replacement"
+    ],
+    "IDs": "Original hit.id is a canonical decimal string; raw_ids and filtered IDs are integers. One genuine search per input vector. Self queries request17, remove exact selfID, take first16;548 requests16. Preserve native order/score without reinterpretation.",
+    "hit": "Every original nonvector field and raw_keys retained. Validate returned vector keys0..383, finite exact float32 and byte equality to indexed source row before stripping ONLY numeric vector values.",
+    "vector_receipt": {
+      "source_vector_row": "integer in full matrix row order",
+      "dimensions": 384,
+      "dtype": "float32le",
+      "sha256": "SHA256 exact1536 observed bytes",
+      "source_sha256": "SHA256 exact indexed source row bytes",
+      "source_equal_before_stripping": true
+    },
+    "metadata_receipt": {
+      "present": false,
+      "canonical_json": "{\"present\":false}",
+      "sha256": "SHA256 UTF8 canonical_json no newline",
+      "source_equal_before_stripping": true
+    },
+    "failure": "Active actual unvalidated query/hits retained on failure, with diagnostic nonfinite markers if needed. No failures or counters omitted."
+  },
+  "queries": {
+    "native": "Full JSON-value-identical native_result.queries[j] copy.",
+    "dense": {
+      "top16": "ordered [{document_id,cosine}]",
+      "candidate_count": "260 for each corpus query,261 for548",
+      "elapsed_seconds": "actual complete exhaustive nonself cosine/ranking work",
+      "method": "math.fsum float64 cosine of exactfloat32 bits, exclude self BEFORE dots, numericID tie break; no dense row reuse"
+    },
+    "other_fields": [
+      "query_id",
+      "document_id",
+      "exclude_document_id",
+      "normalized_document_sha256",
+      "authoritative_alias_document_ids",
+      "native_confirmed_alias_ids",
+      "dense_confirmed_alias_ids",
+      "native_status",
+      "dense_status",
+      "near_pairs"
+    ],
+    "identity_status": "CONFIRMED_NORMALIZED_ALIAS only when a retained candidate has equal authoritative full normalized SHA; otherwise UNRESOLVED. Never CLEAN.",
+    "near_pairs": "[]; optional character-Jaccard disabled, no semantic duplicate proof"
+  },
+  "counter_scope": {
+    "BGE": "1 session,1 tokenizer,33 forward batches,262 authorized texts; full and capped tokenizer each33 encoding batches/262texts; dynamic truncated count disclosed",
+    "native": "1 helper/binary load/index,261 insertions,2 genuine len checks,1 core.version metadata call,262 genuine search calls,4453 returned hit validations,4192 retained hits",
+    "dense": "262 queries;261*260+261=68121 actual nonself cosine computations,4192 retained hits; no self dots/cache reuse",
+    "forbidden": "TRAIN/DEV/CONF reads, choices,fits,NLI,Torch,generation,paidGPU,external network/HTTP allzero"
+  },
+  "CPU": "Entire Python worker pinned0,1 beforeexec, no_new_privs + inherited seccomp denies203/native+x32 sched_setaffinity. Node inherits, no affinity reset. Read-only observed task snapshots; total OS threads need notbe2.",
+  "failure_publication": "Atomic raw.partial.json checkpoint, pendingraw.partial.pending.json retained ifany. Final/partial/UNKNOWN provenance comes from execution; partial counter completeness false, execution since checkpoint UNKNOWN. Exact raw files never copied/relabelled as final.",
+  "metrics": {
+    "benchmark_accuracy": null,
+    "benchmark_NLL": null,
+    "benchmark_Brier": null,
+    "proper_metric_computations": 0,
+    "benchmark_generalization_claim": false
+  }
+}

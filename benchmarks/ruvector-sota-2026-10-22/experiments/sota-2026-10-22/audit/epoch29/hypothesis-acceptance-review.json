@@ -1,0 +1,365 @@
+{
+  "at": "2026-10-24T13:26:36.452460+00:00",
+  "auditor_activity": {
+    "CONF_accesses": 0,
+    "Git_or_project_mutations": 0,
+    "ML_model_tokenizer_native_imports": 0,
+    "inference_calls": 0,
+    "model_or_native_initializations": 0,
+    "network_or_paid_or_GPU_calls": 0,
+    "source_annotation_choices_or_evidence_reads": 0,
+    "source_text_length_reads": 0,
+    "training_steps": 0
+  },
+  "benchmark_promotion_admissible_this_epoch": false,
+  "budget_evidence": {
+    "DEV_planning_heuristics": {
+      "144_times_largest_arm_p95_seconds": 408.8062152514234,
+      "conclusion": "Plausibly bounded under600s, with substantial but finite margin; neither heuristic is a measured upper bound or latency confidence guarantee. No preparatory model probe allowed.",
+      "includes_full104_extra_work": "NO: add original-comparator init/24requests/full-source transport; old engineering1.595s is source-small evidence only and not a bound for full legal docs",
+      "twice_prior_whole_process_seconds": 408.0796600820031
+    },
+    "TRAIN_planning": {
+      "48_times_largest_prior_inference_p95_seconds": 136.26873841714112,
+      "backward_and_optimizer_seconds": "UNKNOWN: no measured CPU backward timing exists",
+      "conclusion": "Only4cross-attention projections and existing head are trainable; frozen prefix can avoid gradient graph. This supports plausibility, not guaranteed completion. All preprocessing,48forward/backwardupdates,init,asset validation and cleanup must fit the single600s attempt. Timeout/nonfinite/missingsteps seals failure and closesDEV."
+    },
+    "no_hidden_benchmark_or_repeated_training_budget": true,
+    "prior_epoch27": {
+      "BGE_forward_seconds": 12.8351513731468,
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "NLI_forward_pairs": 72,
+      "largest_child_peak_RSS_bytes": 2391855104,
+      "latency_scope_correction": "Recorded reader latency includes pair tokenization/tensor preparation, model forward and softmax; frozen scorer wording forward-only was too narrow. No recorded values, code or gates changed. Native query, context, init and whole-process times are separately retained.",
+      "reader_p50_seconds": {
+        "actual_native": 2.4931634230015334,
+        "lexical": 2.5470699169964064,
+        "positional": 2.564603012506268
+      },
+      "reader_p95_seconds": {
+        "actual_native": 2.8389320503571067,
+        "lexical": 2.6387538897892227,
+        "positional": 2.7738543472733
+      },
+      "whole_process_seconds": 204.03983004100155
+    }
+  },
+  "checks_passed": true,
+  "data_roles": {
+    "calibration": [],
+    "confirmation": [],
+    "dev": [
+      548,
+      203,
+      492,
+      252,
+      162,
+      200,
+      529,
+      589
+    ],
+    "train": [
+      309,
+      369,
+      386,
+      593,
+      579,
+      505,
+      536,
+      383
+    ]
+  },
+  "epoch": 29,
+  "evidence": {
+    "CP_verified_sources": [
+      {
+        "bytes": 69724,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/epoch28/REJECTION_LEDGER.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/epoch28/REJECTION_LEDGER.json",
+        "sha256": "93efc4ef76e60741cf3ed88747f10489ad1f117f3cc6e5931deac5accfbffc2d"
+      },
+      {
+        "bytes": 11910,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/epoch28/RESULTS.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/epoch28/RESULTS.json",
+        "sha256": "a418fe678118cb3242d65f6f56f7ef2699467e29a2c86af790bb0a8bdd52f62b"
+      },
+      {
+        "bytes": 6199,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/audit/epoch28/posthoc-refusal-checker-diagnostic.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/audit/epoch28/posthoc-refusal-checker-diagnostic.json",
+        "sha256": "84d5b026fb61164ad1878937637dd23ff2da228940ca930c4844c0da47f5c864"
+      },
+      {
+        "bytes": 14691,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/candidate/epoch8/head.py",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch8/head.py",
+        "sha256": "fbf5ab93cc4c07261c6e29dab2465642fbce437504a47680e7c0b5fe7b4e1cdc"
+      },
+      {
+        "bytes": 3460,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/candidate/epoch8/models.py",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch8/models.py",
+        "sha256": "fe2e128a6401b4b9cf94dea6fd28d0c2177009ddddb657406c49fe80eac09b4f"
+      },
+      {
+        "bytes": 4673,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/candidate/epoch8/config.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch8/config.json",
+        "sha256": "36e4569d88e96c67a282fea112c7e6b84b9bca51325b7b7e222b9bdd602633a2"
+      },
+      {
+        "bytes": 2223,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/epoch8/STUDY_CONTRACT.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/epoch8/STUDY_CONTRACT.json",
+        "sha256": "1c0881003a91776f2a3ed9862328a5133929e11841eaa184e55bafdc9db251dc"
+      },
+      {
+        "bytes": 20558,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/candidate/epoch10/head.py",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch10/head.py",
+        "sha256": "0b7f5575dc275e26d75694bc602774cafa0a4c4db757ebf9fdcfec54c3bf9b51"
+      },
+      {
+        "bytes": 3775,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/candidate/epoch10/models.py",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch10/models.py",
+        "sha256": "3dae559f60d873b17945215b8af1ff6bdf0b28e0e77da08efaaee4062b13005f"
+      },
+      {
+        "bytes": 6412,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/candidate/epoch10/config.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch10/config.json",
+        "sha256": "0bc127ff92ffd9a3362517010c86e9d4d5113950d17e31a24af79090a165d9c5"
+      },
+      {
+        "bytes": 2534,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/epoch10/STUDY_CONTRACT.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/epoch10/STUDY_CONTRACT.json",
+        "sha256": "0d9dd8674d11195313c169706068e6545de5578708441899beeaa24741d959cc"
+      },
+      {
+        "bytes": 26731,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/candidate/epoch27/reader/reader-admission.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch27/reader/reader-admission.json",
+        "sha256": "321cbf14907769f78574e360d5e5e86283403e55c35886c25232408eabdcaafe"
+      },
+      {
+        "bytes": 15133,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/candidate/epoch27/reader/bart_reader.py",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch27/reader/bart_reader.py",
+        "sha256": "4101d071c04aced320a902d7b84cb1fd1c30d474683201637150e486ede8b1d9"
+      },
+      {
+        "bytes": 1154,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/candidate/epoch27/reader/pinned-config.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch27/reader/pinned-config.json",
+        "sha256": "a0f9bcb245b680a96ccae0ad8d155f267ec3e3c971ef4a4937e52ea9ba368a86"
+      },
+      {
+        "bytes": 3793,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/candidate/epoch27/reader/pinned-card.md",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch27/reader/pinned-card.md",
+        "sha256": "d022b7cb54ca2f65fac41cf6c9601b4491b4ac22a301227288a38beef2a18aeb"
+      },
+      {
+        "bytes": 1086,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/candidate/epoch27/reader/LICENSE.fairseq",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch27/reader/LICENSE.fairseq",
+        "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+      },
+      {
+        "bytes": 6401,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/candidate/epoch27/MODEL_ASSETS.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch27/MODEL_ASSETS.json",
+        "sha256": "29eaa17d71b1b2bf2929eb0d22c370307ae2b1d47a97aa6b385e8abc363661b1"
+      },
+      {
+        "bytes": 410033,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/audit/epoch27/exposure-metadata.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/audit/epoch27/exposure-metadata.json",
+        "sha256": "b19bdef9da89b8196afd39f0e2b0bd4983b6d747f2b11932df44a38d5f483bf4"
+      },
+      {
+        "bytes": 4679,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/audit/epoch27/selection.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/audit/epoch27/selection.json",
+        "sha256": "6d97e6e68266f44b0055953ed4a0a8d2546443f89c49043bdf14c29a38828955"
+      },
+      {
+        "bytes": 11844,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/epoch27/data/input-identities.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/epoch27/data/input-identities.json",
+        "sha256": "3ae648ac3e39fd496402793664628716292be3b5ce9c81e24ecb4d0ea2b7939b"
+      },
+      {
+        "bytes": 3107,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/epoch27/data/README.md",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/epoch27/data/README.md",
+        "sha256": "19264a098f0f83f3efbe1b4c834e4656d96bdfbecea38168c557709763a6cbf2"
+      },
+      {
+        "bytes": 18656,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/epoch27/data/LICENSE-CC-BY-4.0.txt",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/epoch27/data/LICENSE-CC-BY-4.0.txt",
+        "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+      },
+      {
+        "bytes": 54461,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/epoch27/RESULTS.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/epoch27/RESULTS.json",
+        "sha256": "9c8e849e2fc1e4a854486fd2cae45de116f12108d303ffdb4677707cf13d3845"
+      },
+      {
+        "bytes": 14074,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/audit/epoch27/score_dev.py",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/audit/epoch27/score_dev.py",
+        "sha256": "97aa584104fd83772f742a70af181c2bdfd0afeb4a7586c7c91a986918bd28c3"
+      },
+      {
+        "bytes": 6813,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+        "sha256": "a429bc7faa5658be89dca31c3bd8122e0d4c96758321e39f2105c24bbd21f127"
+      },
+      {
+        "bytes": 21103,
+        "checkpoint_match": true,
+        "checkpoint_path": "experiments/sota-2026-10-22/audit/epoch28/full104-closure-audit.json",
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/audit/epoch28/full104-closure-audit.json",
+        "sha256": "2069213fac27e5bb8a5a83785e1617b0240a9e139317b4508fbd77507e9a398d"
+      }
+    ],
+    "control_CONTINUATION_unmutated": {
+      "bytes": 150796,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/controls-final/CONTINUATION.json",
+      "sha256": "d666b9a32c3cb9b7979fe5e1660e7e1ae91f9dbec41cb468f0a177261a7a5098"
+    },
+    "runtime_BART_source_read_as_text_only": {
+      "bytes": 104461,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch27-0471ff09d550/project/retrieval/.venv/lib/python3.12/site-packages/transformers/models/bart/modeling_bart.py",
+      "sha256": "f312a017c53ceef9c0cb44812904b8db02c20bb31e0ceefa507b0cfdbb25f757"
+    }
+  },
+  "fixed_proposal": {
+    "CONF_corpus_batches": 0,
+    "acceptance_contract": {
+      "bytes": 11031,
+      "path": "/tmp/ruvector-e29-independent-audit/prospective-acceptance-contract.json",
+      "sha256": "45b9fb260a263ddee134593bed729176a6e0379d368acc64a01a647d792e893d"
+    },
+    "allocation": {
+      "bytes": 8650,
+      "path": "/tmp/ruvector-e29-independent-audit/prospective-allocation.json",
+      "sha256": "17f842af6a39517f1cdad51eccba951d3a4df95217c33c5532818b32151616cb"
+    },
+    "conditional_DEV_corpus_batches": 1,
+    "trainable_parameter_count": 1085443,
+    "training_corpus_batches": 1
+  },
+  "hypothesis_admitted_in_principle": true,
+  "license_and_supervised_lineage": {
+    "base_exact_identity": {
+      "pytorch_model_bin_bytes": 1629486723,
+      "revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+      "sha256": "ce253627f98f9db22af6a86efee6e905f001f7d8dc02dd14a8b4b4710c302b17"
+    },
+    "base_limits": [
+      "No proof of absence of later publisher evaluation/reselection of unchanged old weights",
+      "Foundation pretraining contract-text/fuzzy overlap unknown",
+      "MNLI source-text mixed OANC/CC BY3.0/CC BY-SA3.0/public-domain terms; no blanket MIT grant assigned to corpus text; no MNLI rows need redistribution"
+    ],
+    "base_model": "Explicit MIT grant for pinned BART/fairseq pretrained model in official card/readme/license; code licenses distinct from training text. Retain exact upstream licence/copyright.",
+    "base_training": "Official checkpoint declares MultiNLI. Official2020 recipe supports train and matched-dev checkpoint-selection defaults; actual run row hashes, selection logs and calibration records are unpublished.",
+    "future_confirmation": "[] now, no this-epoch eligibility or execution authority. A later distinct protocol must independently revalidate unused reservations, source aliases, known supervised exclusion, complete full104 comparability and available budget. Passing this DEV does not lift HOLD.",
+    "legal_training_source": {
+      "citation": "Koreeda and Manning(2021), ContractNLI",
+      "license": "CC BY4.0; retain citation, source link, licence and exact transformation notice",
+      "official_revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+      "train_json_bytes": 7608211,
+      "train_json_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5"
+    },
+    "model_delta_redistribution": "Publish exact factor/head derivative identity with upstream model MIT attribution and legal-data source CC BY4.0 attribution/change notice; do not invent a licence for all training text from model licence.",
+    "positive_base_supervised_exclusion": "These exact original.bin bytes match official2020-02-12 publication at18895f39d658e2562b0939790c9823b65c075df8, before ContractNLI2021 release. This positively bounds original head training and original release checkpoint choice before that later labeled dataset. Actual cached bytes must match the digest before use.",
+    "positive_new_training_exclusion": "Own adaptation may consume exactly selectedTRAIN8×3 original choices only. With exact ID/source/normalized-alias disjointness and complete trainer read/step receipts, selected freshDEV and reservedCONF identities are positively excluded from this new supervised fit, optimizer, class weights, calibration and checkpoint selection. No DEV early stopping or best-checkpoint selection."
+  },
+  "novelty": {
+    "finding": "Materially distinct from E8/E10. Those fitted legal feature/logit residual heads over frozen pretrained backbones. This proposal changes final2decoder cross-attention q/v mappings plus the existing pretrained classification-head tensors using TRAIN supervision. It is a new parameter-efficient transformer adaptation, not a new pretrained backbone or all-weight fine-tune.",
+    "historical_E10": "Broader fixed NLI logits + source-role features +3document-OOF annotation proxy/allTRAINaux and residual head; original backbone unchanged;DEV failed",
+    "historical_E27": "Same2020 BART unadapted actual native15/24,lexical12,positional14,C0/4; failed DEV diagnostic. Its8docs remain exposed, never recycled here.",
+    "historical_E8": "DeBERTa-base logits + explicit legal/deontic features;400-step AdamFloat64 linear residual three-way head; original backbone unchanged; CONF failed",
+    "mechanistic_risk": "1,052,675 classifier parameters dominate32,768 LoRA factors. Must verify nonzero intended attention-factor changes and actual application; do not credit a deep-attention mechanism merely because head-only fitting changes predictions. Separate paired base/adapted outputs test net adaptation, not attribution of improvement exclusively to LoRA.",
+    "search_scope": "Read-only latest rejection ledger and candidate Python/config/contract source search for LoRA/low-rank/q_proj/v_proj/decoder-layer/requires_grad/fine-tune; no earlier matching trained transformer adaptation found in that inspected source scope. Not an exhaustive claim about all unpublished history."
+  },
+  "open_prelaunch_requirements": [
+    "Root fresh exact-source restoration/lease/readback and all model/runtime hashes",
+    "Concrete trainer/adapter init/source order/artifact schema; exact module names and untouched original tensor proof; paired original-head restoration review",
+    "Frozen new source builder/scorer/raw auditor/runtime CPU/network policy and fixed allocation BEFORE any source projection or label choice join",
+    "Full source and normalized alias audits, including E27 bank and all reserved metadata; collisionHOLD no redraw",
+    "Frozen complete full104 CHOICE request/prompt/criterion/tie/map semantics, actual error preservation, binary proper-subset policy and native opaque-counter scope",
+    "No this-epoch CONF or promotion even if all descriptive gates pass"
+  ],
+  "risks_retained": [
+    "Only8TRAINdocs and24choices may contain few/no C examples and can overfit; no class-count-driven redraw, weights or tuning",
+    "Three hypotheses/doc are correlated; only8DEVdocument groups, not24 independent samples",
+    "LoRA plus classification-head adaptation cannot by itself repair missing distributed evidence; fixed context retrieval/packing unchanged",
+    "Full104 original16KiB state limit may refuse real docs; retain full inputs/errors and report coverage instead of silently clipping",
+    "BGE full state transport does not prove semantic attention beyond its original256-token cap",
+    "Original model/dataset licensing and foundation overlap uncertainties must stay explicit"
+  ],
+  "runtime_launch_authorized_by_this_report": false,
+  "schema_version": 1,
+  "source_boundary": {
+    "actual_head_supplied_by_root": "07a2cbe78fdee78a8c9bca2aeb64bc9746481ba0",
+    "checkpoint": {
+      "bytes": 844374,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/controls-final/CHECKPOINT_MANIFEST.json",
+      "sha256": "0c64af5035f1b9d533d6437fe7859bf125641c816729a4385f849621b0214495"
+    },
+    "checkpoint_rows": 3884,
+    "metadata_sources_independently_verified_against_checkpoint": 26,
+    "root_fresh_current_source_restoration_and_Git_proof_required_before_runtime": true
+  },
+  "source_isolation": "No original train.json read by this auditor. Future source projection parses complete annotatedJSON in RAM: field-level logical isolation only, not OS-enforced secrecy; disclose that fact. Source bytes can be hash-checked without joining annotations.",
+  "status": "CONDITIONALLY_ADMISSIBLE_NEW_TRAIN_ONLY_TRANSFORMER_ADAPTATION_AND_FRESH_DEV_DIAGNOSTIC_PENDING_CONCRETE_SOURCE_FREEZE",
+  "strict_preservation": {
+    "benchmark_accepted": false,
+    "champion": "Native104/RRF10 preserved",
+    "champion_promoted": false,
+    "confirmation": [],
+    "epoch28_status": "REJECTED_ENGINEERING_QUALIFICATION",
+    "frozen_E28_scorer_unchanged": true,
+    "new_prospective_saved_trace_unit_correction_only_permitted_separately": true,
+    "new_submission": false,
+    "no_E28_fixture_rerun": true,
+    "official_rank": null
+  }
+}

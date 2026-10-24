@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "epoch": 29,
+  "status": "SEALED_ROOT_PREPARATION_FINAL_FAILURE_EDGE_ALIGNED",
+  "scope": "/tmp/ruvector-sota-2026-10-22/epoch29-734329c6e9e6",
+  "files": [
+    {
+      "path": "/tmp/ruvector-e29-publication-impl/build-plan.py",
+      "bytes": 9221,
+      "sha256": "929f5e53c67218f2a0768c5563b17c38ac282243fce83fc70be1e8641118d2f8",
+      "public_copy_destination": "experiments/sota-2026-10-22/epoch29/preparation/reviewed_build_plan.py"
+    },
+    {
+      "path": "/tmp/ruvector-e29-publication-impl/publish-phase.js",
+      "bytes": 9600,
+      "sha256": "c94eea68b4a60a8bd0b196496dafaaa723c4fb18b3d0417e93154c57b7472cf9",
+      "public_copy_destination": "experiments/sota-2026-10-22/epoch29/preparation/reviewed_publish-phase.js"
+    },
+    {
+      "path": "/tmp/ruvector-e29-publication-impl/build-results.py",
+      "bytes": 11768,
+      "sha256": "280f1df512ab31030781da8375b19d2402f4b4c8128e3ceae661d007355f3a4d",
+      "public_copy_destination": "experiments/sota-2026-10-22/epoch29/preparation/reviewed_build_results.py"
+    }
+  ],
+  "source_parent": "b216e8fff685d253f418b98c2eee617d5b5adcb3",
+  "source_priorcontrols": "/tmp/ruvector-sota-2026-10-22/epoch29-734329c6e9e6/controls-datahold",
+  "source_root": "f29eefdd915ca2ea3a9a5ff2502bf67f53697b2c",
+  "source_bench": "54c165435a2ad4945269b0c1444e784d1c768a73",
+  "source_scope": "d4ce7c699993682f11e85bbfb69511c4d9dd2cf9",
+  "validation": {
+    "Python_AST": "PASS",
+    "publisher_Node_syntax": "PASS",
+    "actual_worker_POSITIVE_metadata_AST": "PASS; no worker imported or called",
+    "native_queries_frozen": 262,
+    "native_insertions_frozen": 261,
+    "models_labels_native_Git_remote_mutations": 0,
+    "master_plan_or_source_freeze_created": false,
+    "focused_malformed_full_UNKNOWN": "PASS; original full identity kept; counts UNKNOWN; completed/source/digest/qualified waivers reject"
+  },
+  "copy_rule": "Root reviews and copies all three exact sources into public prep BEFORE master freeze; also copy publish-phase.js exactbytes to S29/publish-phase.js for use after existingcontroller. All mutations/outputs remain root-owned.",
+  "CLI": {
+    "check_plan": "/tmp/ruvector-sota-2026-10-22/epoch29-734329c6e9e6/project/retrieval/.venv/bin/python -B /tmp/ruvector-sota-2026-10-22/epoch29-734329c6e9e6/project/experiments/sota-2026-10-22/epoch29/preparation/reviewed_build_plan.py --scope /tmp/ruvector-sota-2026-10-22/epoch29-734329c6e9e6 --check-only",
+    "freeze_plan": "Same command without --check-only; creates plan.json/source-freeze.json exclusively, zero inference/labels",
+    "publish": "Evaluate unchanged S29/controller.js then exact S29/publish-phase.js in functions.exec; explicitly await publishPhase(\"source\"|\"final\", INDEPENDENT_STAGE_PROOF). Template definitions alone perform no tool calls. Unique phase ids, per-mutation fresh physical/WAL guard, full staged expected map 5tuple checks, root/bench/main invariance and expected_sha nonforce CAS.",
+    "results": "<project venv python> -B <public prep>/reviewed_build_results.py results --scope /tmp/ruvector-sota-2026-10-22/epoch29-734329c6e9e6 [--replay <public identity>/qualification-replay.json]",
+    "final": "After frozen scorer bind and copied public acceptance: same helper final --scope /tmp/ruvector-sota-2026-10-22/epoch29-734329c6e9e6 [--acceptance <public identity>/independent-acceptance.json]"
+  },
+  "result_binding": "Copies independent scorer replay wholesale with exact frozen derive_actual; final ScorerV2 SHA27d009fa857fa7f0d1f6ff74d5427c9f89aa6aecb96592f02dd65da1d60415dc. All metrics/gates/resource_scope/benchmark_metrics/held_parameter_adaptation/failures unchanged. Known malformed final reference remains, parsedrawNone only failed+unqualified+UNKNOWN with exact captured current full seal.",
+  "original_HOLD": "Exact sourceCONT epoch29_data_admission copied into currentledger. Immutableinline dataholdcheckpoint never changed. All16 fixed IDs retired, no redraw/LoRA/DEV/CONF; engineering qualification separate.",
+  "storage": "Source/ref metadata only; no model/source archive copies. Staged expected-leaves fullmap is authoritative; publisher never reconstructs scientific expected tuples by overlapping phase changes.",
+  "revision": 2,
+  "prior_handoff_sha256": "d9ce23184bf624097c1ecb60d690d334704fd271840842e96e4a140b5150b533"
+}

@@ -1,0 +1,197 @@
+{
+  "ML_native_training_labels_Git_or_source_mutations_by_auditor": 0,
+  "SOURCE_parent_sole_parent": "8747b6d0aebba8971df69ada6dafa11a94038b75",
+  "SOURCE_parent_trees": {
+    "bench": "54c165435a2ad4945269b0c1444e784d1c768a73",
+    "root": "f29eefdd915ca2ea3a9a5ff2502bf67f53697b2c",
+    "scope": "d4ce7c699993682f11e85bbfb69511c4d9dd2cf9"
+  },
+  "actual_DATAHOLD_receipt": {
+    "bytes": 6372,
+    "path": "/tmp/ruvector-e29-publication-audit/datahold-actual-readback-independent-v1.json",
+    "sha256": "ef34a37475bf1a5e29a77ebe38788700cb2f4ed2d677fcc7b59007cb9b4569cd"
+  },
+  "checked_at": "2026-10-24T13:55:12.087561+00:00",
+  "checks_passed": true,
+  "epoch": 29,
+  "exact_SOURCE_parent": "b216e8fff685d253f418b98c2eee617d5b5adcb3",
+  "files": [
+    {
+      "bytes": 739,
+      "path": "experiments/sota-2026-10-22/epoch29/publication/baseline-validation.v1.json",
+      "sha256": "a9f572da67c7ddf758480c1f2d080bdfbd969778b0135a140267575dbcdb57bc"
+    },
+    {
+      "bytes": 8101,
+      "path": "experiments/sota-2026-10-22/epoch29/publication/build_controls_v1.py",
+      "sha256": "0e8e3102eddfc21b25e71058a789f667b7a65ef8b3cba6e8081fe8d1b875fe4e"
+    },
+    {
+      "bytes": 605,
+      "path": "experiments/sota-2026-10-22/epoch29/publication/guard-tests.v1.json",
+      "sha256": "a058c14a1f287e88aceee2525570629f839cdf11289c0cbe9808d151dd103920"
+    },
+    {
+      "bytes": 16928,
+      "path": "experiments/sota-2026-10-22/epoch29/publication/publication_common_v1.py",
+      "sha256": "b44424f843588abc73b71fe639867c2ad4cab09ccae705ef918dc6a75269c1d2"
+    },
+    {
+      "bytes": 42668,
+      "path": "experiments/sota-2026-10-22/epoch29/publication/stage_publication_v1.py",
+      "sha256": "808026af97018b4b77c18ed15da91c8b713b667d9ea3ff38cf1cc44154b760ff"
+    },
+    {
+      "bytes": 28164,
+      "path": "experiments/sota-2026-10-22/epoch29/publication/test_publication_guards_v1.py",
+      "sha256": "121c494b715a9a01346780e56b313d6a6de85eb943b796735dfb19db46fb6de2"
+    },
+    {
+      "bytes": 3626,
+      "path": "experiments/sota-2026-10-22/epoch29/publication/transport_v1.py",
+      "sha256": "d7792a59997e6b567d9f1338b98708b93874e8fcc0b9ebcc73fd2f129c737354"
+    }
+  ],
+  "handoff": {
+    "bytes": 7816,
+    "path": "/tmp/ruvector-e29-publication-impl/HANDOFF.v1.json",
+    "sha256": "a312610aa1d0320748d967b8026364d55659e9c82602cf12c8cd868a9ccb6cdb"
+  },
+  "independent_current_DATAHOLD_tamper_cases": [
+    {
+      "case": "erase_inline_hold",
+      "phase": "source",
+      "reason": "Historical continuation metadata removed/new key outside E29",
+      "rejected": true
+    },
+    {
+      "case": "flip_inline_hold_execution_permission",
+      "phase": "source",
+      "reason": "Historical continuation field changed: epoch29_data_hold_checkpoint",
+      "rejected": true
+    },
+    {
+      "case": "alter_inline_collision",
+      "phase": "source",
+      "reason": "Historical continuation field changed: epoch29_data_hold_checkpoint",
+      "rejected": true
+    },
+    {
+      "case": "relabel_inline_retired_ids",
+      "phase": "source",
+      "reason": "Historical continuation field changed: epoch29_data_hold_checkpoint",
+      "rejected": true
+    },
+    {
+      "case": "erase_inline_hold",
+      "phase": "final",
+      "reason": "Historical continuation metadata removed/new key outside E29",
+      "rejected": true
+    },
+    {
+      "case": "flip_inline_hold_execution_permission",
+      "phase": "final",
+      "reason": "Historical continuation field changed: epoch29_data_hold_checkpoint",
+      "rejected": true
+    },
+    {
+      "case": "alter_inline_collision",
+      "phase": "final",
+      "reason": "Historical continuation field changed: epoch29_data_hold_checkpoint",
+      "rejected": true
+    },
+    {
+      "case": "relabel_inline_retired_ids",
+      "phase": "final",
+      "reason": "Historical continuation field changed: epoch29_data_hold_checkpoint",
+      "rejected": true
+    },
+    {
+      "case": "actual_datahold_receipt_tamper_commit",
+      "reason": "Actual independently verified parent readback required",
+      "rejected": true
+    },
+    {
+      "case": "actual_datahold_receipt_tamper_root",
+      "reason": "Parent tree guard differs: root",
+      "rejected": true
+    },
+    {
+      "case": "actual_datahold_receipt_tamper_bench",
+      "reason": "Parent tree guard differs: bench",
+      "rejected": true
+    },
+    {
+      "case": "actual_datahold_receipt_tamper_scope",
+      "reason": "Parent tree guard differs: scope",
+      "rejected": true
+    },
+    {
+      "case": "actual_datahold_receipt_tamper_sole_parent",
+      "reason": "Parent/sole_parent absent or conflicting",
+      "rejected": true
+    }
+  ],
+  "kind": "REAL_NATIVE_DOCUMENT_IDENTITY_QUALIFICATION",
+  "main": "46d816ddc4c2a8a06cd3613534a79b1d557d858b",
+  "original_CP_rows": 3884,
+  "original_CP_sha256": "0c64af5035f1b9d533d6437fe7859bf125641c816729a4385f849621b0214495",
+  "original_Git_leaves": 3958,
+  "original_scope": "81b91392c8894f41eef45bd2e5cb68ac9aa03d2a",
+  "original_source_commit": "07a2cbe78fdee78a8c9bca2aeb64bc9746481ba0",
+  "public_pycache_created": false,
+  "remaining_gates": [
+    "Root/scientific/runtime/data independent reviews must bind actual finalized core ff55 native/BGE runtime assets, corpus261/query262, protected hash-only metadata, exact-positive548\u2192515/no-generalization and no-protected-alias policy before source freeze.",
+    "Concrete frozen source-stage payload/CP/pins review and actual connected source readback remain mandatory before root creates one local execution admission."
+  ],
+  "reported_worker_suite_count_not_rerun": 57,
+  "review_scope": "Focused E29 publication helper delta from frozen E28v7; no runtime execution admission, scoring replay, model/native imports, Git mutation or public-source edits.",
+  "reviewed_guards": [
+    "Exact immutable original HOLD7079B/SHA2a2d with fixed TRAIN8/DEV8 remains separate from identity engineering; no redraw or parameter-adaptation permit.",
+    "SOURCE appends exact16-ID retirement once to old exposure history; FINAL requires byte-equivalent published retirement/data-admission records.",
+    "Prior inline epoch29_data_hold_checkpoint is immutable in source and final history validation, including its alias collision and execution prohibition.",
+    "Identity source uses empty train/dev/calibration/confirmation roles and exact one CPU2/600s engineering worker limit; known trained-model/permit artifacts refused.",
+    "Current-source plan/freeze all refs and old CP metadata/rows are preserved, with exhaustive review of four new public roots.",
+    "Actual captured worker reservations/starts/resources/errors/raw operation counters determine final accounting; full/partial/UNKNOWN discriminator and sealed-checkpoint precedence remain unchanged from E28v7.",
+    "Canonical current raw/partial/execution/results/independent evidence paths; unknown execution remains unknown, failed partial cannot qualify or masquerade as complete.",
+    "Exactly one final qualification record or one appended rejection; old rejection/history/champion/CONF preservation and all remaining current allowances zero.",
+    "Engineering-qualified status retains DATA_ADMISSION_HOLD and false benchmark/promotion/submission/SOTA flags, official rank null.",
+    "Original3958 Git tuples/3884 CP and three inherited archive contracts remain fixed; strict public path/text/privacy and exclusive blob/tree payload caps unchanged.",
+    "SOURCE requires exact actual DATAHOLD parent b216/soleparent8747/rootf29/bench54/scope d4 and unchanged main46d; helpers publish nothing or grant immediate native execution."
+  ],
+  "runtime_interface_confirmation": "Core/scorer agents confirm epoch29/kind/current full and partial raw paths/current execution path/allowed_further_epoch29_workers0/lowercase evidence refs; core sources are still finalizing and are not execution-approved by this helper review.",
+  "source_bytes_unchanged_before_after_tests": true,
+  "source_review_approved": true,
+  "targeted_pure_stdlib_tests": {
+    "count": 20,
+    "full_unchanged_suite_rerun": false,
+    "log": {
+      "bytes": 2879,
+      "path": "/tmp/ruvector-e29-publication-audit/publication-source-review-focused-tests-v1.txt",
+      "sha256": "ebb13b80c57f6808792ac43ee83f0e22b16feee80aa9f2c42751c644c2e81b01"
+    },
+    "names": [
+      "test_original_allocation_hold_cannot_be_removed",
+      "test_original_alias_evidence_cannot_be_rewritten",
+      "test_no_trained_model_in_identity_epoch",
+      "test_exact_retired_roles_and_partition",
+      "test_benchmark_dev_forbidden",
+      "test_second_worker_forbidden",
+      "test_confirmation_allowance_forbidden",
+      "test_wrong_source_checkpoint",
+      "test_wrong_parent_readback",
+      "test_sole_parent_receipt",
+      "test_engineering_success_cannot_clear_data_hold",
+      "test_partial_failure_retains_known_counters_and_unknown_tail",
+      "test_malformed_final_uses_sealed_partial_but_valid_final_takes_precedence",
+      "test_selected_partial_with_malformed_final_cannot_claim_complete_after_rebinding",
+      "test_known_partial_counters_cannot_hide_behind_malformed_final_unknown",
+      "test_receipt_erasure_with_all_claim_refs_rebound",
+      "test_historical_raw_evidence_rejected",
+      "test_continuation_budget_used_erasure_rejected",
+      "test_last_epoch_benchmark_claim_rejected",
+      "test_strict_transport_caps"
+    ],
+    "passed": 20
+  }
+}

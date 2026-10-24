@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "epoch": 29,
+  "status": "SOURCE_SEALED_ONE_LEGACY_STRING_GUARD_FIX_READY_FOR_REVIEW",
+  "kind": "REAL_NATIVE_DOCUMENT_IDENTITY_QUALIFICATION",
+  "files": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch29/publication/baseline-validation.v1.json",
+      "bytes": 739,
+      "sha256": "a9f572da67c7ddf758480c1f2d080bdfbd969778b0135a140267575dbcdb57bc"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch29/publication/build_controls_v1.py",
+      "bytes": 8124,
+      "sha256": "a1152a308fb411852e3e1a17fd84502d726e89a00221ff703b2fb6948b46b8e9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch29/publication/guard-tests.v1.json",
+      "bytes": 605,
+      "sha256": "a058c14a1f287e88aceee2525570629f839cdf11289c0cbe9808d151dd103920"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch29/publication/publication_common_v1.py",
+      "bytes": 16928,
+      "sha256": "b44424f843588abc73b71fe639867c2ad4cab09ccae705ef918dc6a75269c1d2"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch29/publication/stage_publication_v1.py",
+      "bytes": 42668,
+      "sha256": "808026af97018b4b77c18ed15da91c8b713b667d9ea3ff38cf1cc44154b760ff"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch29/publication/test_publication_guards_v1.py",
+      "bytes": 28164,
+      "sha256": "121c494b715a9a01346780e56b313d6a6de85eb943b796735dfb19db46fb6de2"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch29/publication/transport_v1.py",
+      "bytes": 3626,
+      "sha256": "d7792a59997e6b567d9f1338b98708b93874e8fcc0b9ebcc73fd2f129c737354"
+    }
+  ],
+  "tests": 57,
+  "scope": "SOURCE\u2192FINAL for one native document-identity engineering worker. Original parameter adaptation remains on normalized-alias HOLD; no TRAIN/DEV/model phase. No benchmark score/rank/champion/submission permissions.",
+  "baseline": {
+    "source_checkpoint": "07a2cbe78fdee78a8c9bca2aeb64bc9746481ba0",
+    "Git_leaves": 3958,
+    "scope_sha1": "81b91392c8894f41eef45bd2e5cb68ac9aa03d2a",
+    "CP_rows": 3884,
+    "CP_sha256": "0c64af5035f1b9d533d6437fe7859bf125641c816729a4385f849621b0214495"
+  },
+  "source_parent": {
+    "commit": "b216e8fff685d253f418b98c2eee617d5b5adcb3",
+    "sole_parent": "8747b6d0aebba8971df69ada6dafa11a94038b75",
+    "root": "f29eefdd915ca2ea3a9a5ff2502bf67f53697b2c",
+    "bench": "54c165435a2ad4945269b0c1444e784d1c768a73",
+    "scope": "d4ce7c699993682f11e85bbfb69511c4d9dd2cf9"
+  },
+  "interfaces": {
+    "build_controls": "python3 -B build_controls_v1.py --phase source|final --project R --kit K --priorcontrols PRIOR --parent SHA --out NEW_CONTROLS [--continuation-updates JSON] [--reviewed-files NEW_REVIEW_JSON]",
+    "stage": "python3 -B stage_publication_v1.py --phase source|final --project R --kit K --controls CONTROLS --priorcontrols PRIOR --source-filemap actual-git-map.json --reviewed-files REVIEW --parent-readback RECEIPT --parent SHA --expected-main MAIN --expected-root ROOT --expected-bench BENCH --expected-scope SCOPE --out NEW_STAGE [--prior-expected SOURCE_EXPECTED_LEAVES]"
+  },
+  "source_plan_contract": {
+    "epoch": 29,
+    "kind": "REAL_NATIVE_DOCUMENT_IDENTITY_QUALIFICATION",
+    "source_checkpoint": "07a2cbe78fdee78a8c9bca2aeb64bc9746481ba0",
+    "data_roles": {
+      "train": [],
+      "dev": [],
+      "calibration": [],
+      "confirmation": []
+    },
+    "held_parameter_adaptation": {
+      "path": "experiments/sota-2026-10-22/audit/epoch29/data-projection-hold.json",
+      "bytes": 7079,
+      "sha256": "2a2dd48bf50e07a3ef77db5a29ffc6cc0d69472c59fc6799b2ecce4780851f20"
+    },
+    "engineering_ids": "nonempty unique query ID strings; exact frozen input/protocol refs pinned",
+    "limits": {
+      "owned_workers": 1,
+      "CPU_threads": 2,
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "seconds_per_batch": 600,
+      "native_corpus_batches": 0,
+      "engineering_batches": 1,
+      "paid_calls": 0,
+      "GPU_calls": 0
+    },
+    "source_freeze": "canonical ref3; entries cover all new four-root files except plan.json/source-freeze.json; all entries pinned by plan",
+    "pins": "canonical ref3 list; current scientific and prior dependency metadata; no model/private binaries"
+  },
+  "HOLD": {
+    "status": "HOLD_FIXED_DATA_NORMALIZED_ALIAS_NO_REDRAW_NO_MODEL_ATTEMPT",
+    "report": {
+      "path": "experiments/sota-2026-10-22/audit/epoch29/data-projection-hold.json",
+      "bytes": 7079,
+      "sha256": "2a2dd48bf50e07a3ef77db5a29ffc6cc0d69472c59fc6799b2ecce4780851f20"
+    },
+    "fixed_data_roles": {
+      "train": [
+        309,
+        369,
+        386,
+        593,
+        579,
+        505,
+        536,
+        383
+      ],
+      "dev": [
+        548,
+        203,
+        492,
+        252,
+        162,
+        200,
+        529,
+        589
+      ],
+      "calibration": [],
+      "confirmation": []
+    },
+    "all16_fixed_ids_retired": true,
+    "retired_document_ids": [
+      309,
+      369,
+      386,
+      593,
+      579,
+      505,
+      536,
+      383,
+      548,
+      203,
+      492,
+      252,
+      162,
+      200,
+      529,
+      589
+    ],
+    "partition_after_retirement": {
+      "exposed": 277,
+      "unreserved": 122,
+      "reserved_confirmation": 24,
+      "total": 423
+    },
+    "parameter_adaptation_executed": false,
+    "TRAIN_DEV_confirmation_label_reads": 0,
+    "new_engineering_data_roles": {
+      "train": [],
+      "dev": [],
+      "calibration": [],
+      "confirmation": []
+    }
+  },
+  "retirement_record": {
+    "epoch": 29,
+    "kind": "RETIRED_FIXED_ALLOCATION_AFTER_NORMALIZED_ALIAS_HOLD",
+    "document_ids": [
+      309,
+      369,
+      386,
+      593,
+      579,
+      505,
+      536,
+      383,
+      548,
+      203,
+      492,
+      252,
+      162,
+      200,
+      529,
+      589
+    ],
+    "original_data_roles": {
+      "train": [
+        309,
+        369,
+        386,
+        593,
+        579,
+        505,
+        536,
+        383
+      ],
+      "dev": [
+        548,
+        203,
+        492,
+        252,
+        162,
+        200,
+        529,
+        589
+      ],
+      "calibration": [],
+      "confirmation": []
+    },
+    "source_admission": {
+      "path": "experiments/sota-2026-10-22/audit/epoch29/data-projection-hold.json",
+      "bytes": 7079,
+      "sha256": "2a2dd48bf50e07a3ef77db5a29ffc6cc0d69472c59fc6799b2ecce4780851f20"
+    },
+    "all16_fixed_ids_permanently_retired": true,
+    "confirmation_consumed": false
+  },
+  "derived_actual": "stage_publication_v1.py::derive_actual(raw,execution), pure stdlib same exact E28v7 receipt projection and known-partial precedence; epoch/kind/owner/current paths reboundE29",
+  "final_contract": {
+    "status": [
+      "DATA_ADMISSION_HOLD_WITH_ENGINEERING_QUALIFIED",
+      "REJECTED_ENGINEERING_QUALIFICATION"
+    ],
+    "manifest": "epoch/kind/status/engineering_qualified bool/false benchmark flags/official_rank null/confirmation[]/all_slots_closed true/held_parameter_adaptation ref3/plan+source_freeze+results+independent_report refs3/actual_execution/files[]",
+    "report": "epoch29/kind/checks_passed integrity true/engineering_qualified bool/lowercase evidence.raw/execution/results refs; original partial/null known/unknown semantics preserved",
+    "ledger": "old fields/rejections preserved; epoch29_data_admission exact sourceCONT object; epoch29_actual_execution canonical helper; 5-field used/closedbudget; decision status/results+falseflags; qualified record OR exactly1rejection withreason/results",
+    "budget": {
+      "worker_attempts_used": "actual.worker_attempts",
+      "workers_remaining": 0,
+      "native_corpus_batches_remaining": 0,
+      "confirmation_remaining": 0,
+      "all_unspent_slots_permanently_closed": true
+    }
+  },
+  "native_or_model_Git_network_label_operations": 0,
+  "controls_or_stages_built": false,
+  "revision": 2,
+  "single_concrete_amendment": {
+    "source": "build_controls_v1.py",
+    "change": "any(isinstance(x,dict) and x.get('epoch')==29 for x in exposures)",
+    "actual_legacy_CONT": "23string entries no longer raise; original prefix retained; appended epoch29 dictionary is detected",
+    "old_builder_archive": "/tmp/ruvector-e29-publication-impl/build_controls.before-legacy-string-guard.py",
+    "review": "/tmp/ruvector-e29-publication-impl/legacy-exposure-guard-focused-review.json",
+    "stager_runtime_science_changes": false,
+    "source_native_model_Git_label_calls": 0,
+    "master_draft_supersession": "Coordinator preserves exact unpublished/unmeasured prior plan/freezes and originalbuilder before explicitly generating new master; this helper does not overwrite them"
+  },
+  "prior_handoff_sha256": "a312610aa1d0320748d967b8026364d55659e9c82602cf12c8cd868a9ccb6cdb"
+}

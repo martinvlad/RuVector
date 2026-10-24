@@ -1,0 +1,168 @@
+{
+  "allocation": {
+    "bytes": 8650,
+    "path": "/tmp/ruvector-e29-independent-audit/prospective-allocation.json",
+    "sha256": "17f842af6a39517f1cdad51eccba951d3a4df95217c33c5532818b32151616cb"
+  },
+  "diagnostic_gates": {
+    "adaptation": "Adapted native correct >= unadapted native correct+2; adapted native C-correct >= unadapted native C-correct+1; adapted native has >=1 correct for each present gold class; adapted native three-way NLL and Brier nonincrease vs unadapted native",
+    "all_required_for_descriptive_diagnostic_qualified": true,
+    "gold_class_presence": "Every E,C,N class occurs among the fixed24 DEV choices; otherwise not evaluable for intended three-class diagnostic, never redraw",
+    "metric_nonincrease_tolerance": 1e-12,
+    "no_population_inference": "Only8document groups and3correlated hypotheses each; paired counts and document-level descriptive contrasts are not an official benchmark or population superiority proof",
+    "retrieval": "Adapted native correct >= adapted lexical correct+2 AND >= adapted positional correct+2; three-way NLL and Brier nonincrease vs each adapted control",
+    "runtime": "Both phase total wall times<=600,CPU2,all output integrity and physical closure checks pass"
+  },
+  "epoch": 29,
+  "freeze_order": [
+    "Fix source, optimizer, seed, module names, roles, hypotheses, label mapping, scoring, runtime policies, acceptance and no-retry budget before any projection/model call",
+    "Freshly restore/hash source and assets; freeze builder/input auditor/scorer plus metadata allocation; then project exact TRAIN/DEV input fields and perform alias checks without choice access",
+    "After all fixed source/input identities freeze, join exactly24 TRAIN choices; do not access DEV or reserved choices/evidence",
+    "Run one bounded TRAIN attempt; seal complete48-step receipt, factor/head artifact hashes and unchanged frozen-parameter checks; ensure physical process closure",
+    "Publish/read back source+artifact identity to Git and obtain fresh physical/source admission BEFORE any DEV input-file read by DEV worker",
+    "Run one bounded DEV attempt with144 NLI forwards and24 full104 outcomes; seal raw literals/artifacts and actual counters; physically close all owned workers",
+    "Only after all144 valid finite NLI outputs and all24 comparator outcomes are complete, error/result frames retained, no unexpected worker/NLI errors, and independent raw audit/closure: join DEV24 gold choices once",
+    "Score one frozen contract; no corrected rescore or further inference; all unused slots closed"
+  ],
+  "integrity_gates": [
+    "Exact source/plan/runtime asset pins; original safe stock weights-only load, no missing/mismatched/unexpected used tensors or head reinitialization",
+    "TRAIN identities disjoint DEV/prior261/reserved24 at ID, exact source and normalized alias levels; no collision redraw",
+    "Exactly48 successful finite CE training steps and optimizer updates; verify intended LoRA and pretrained-head state changes plus all other pretrained parameters bit-unchanged",
+    "No DEV inputs during TRAIN; no DEV choices until sealed complete outputs; no CONF choices/evidence/text accesses through intentional field traversal",
+    "Complete model artifact deterministic identity, CPU[0,1] kernel affinity guard and observed task snapshots, network API policy receipts, complete source seal and physical cleanup",
+    "DEV has exactly24 case identities,72 byte-identical paired contexts,144 finite genuine NLI forwards,24 literal full104 input/output-or-original-error outcomes; capture attempts before operations and retain all failures",
+    "Source, model delta, scorer, thresholds and gates unchanged after outcomes; zero additional fit/calibration/generation/paid/GPU/probe/retry"
+  ],
+  "metrics": {
+    "NLI_probability_validation": "Stable T1 softmax replay against all3 raw logits, no neutral removal or renormalization; reuse1e-6 numerical replay tolerance prospectively",
+    "NLI_threeway": [
+      "24-case accuracy",
+      "E/C/N confusion and per-class correct/n",
+      "mean sum of three squared probability errors",
+      "mean -ln(max(p_gold,1e-12)); disclose clip count and unclipped-finiteness"
+    ],
+    "full104": "Exact unchanged CompositeEngine original full-source state and same hypothesis binary CHOICE; preserve returned choice, named Yes/No normalized forecast map, calibrated:false and original errors. No excerpt substitutions, truncation, doc drops or redraw",
+    "full104_binary_proper": "Permissible separately for valid named normalized Yes/No CHOICE forecasts, labeled uncalibrated forecasts; no calibration prerequisite for proper scoring. Never reinterpret NOUL similarity as probability. No three-way forecast exists. NLI binary mapping fixed separately",
+    "full104_qualification": "E28 rejection remains immutable. This new real DEV invocation can establish its own prospective full-input coverage/semantic comparability evidence but does not retroactively qualify E28",
+    "full104_refusals": "Denominator24 coverage and original error count mandatory. Full104 comparator readiness requires24 successful valid same-question outputs. If original16KiB errors occur, keep them; no defaultNo prediction. Report all24 correct-with-refusals-counted-as-unanswered separately from any success-conditional accuracy/proper metrics, whose subset denominator is explicit. Missing forecasts give no full24 proper score",
+    "resources": "Largest-child high-water RSS and sampled task threads/affinities with explicit observation scope; no invented opaque native internal forward/thread counts",
+    "timings": "Report complete TRAIN/DEV process time including initialization, model-call scope including tokenization/tensor prep/softmax, BGE/native retrieval separately, p50/p95 linear interpolation; no isolated-kernel claim"
+  },
+  "model": {
+    "architecture": "BartForSequenceClassification",
+    "binary_NLI_forecast": "Yes=P(E),No=P(C)+P(N);Yes only when P(E)>0.5, exact-half No",
+    "model_attention": "SDPA; stock CPU FP32; exact512 true native pair tokens; no hidden truncation or generation",
+    "original_bin_sha256": "ce253627f98f9db22af6a86efee6e905f001f7d8dc02dd14a8b4b4710c302b17",
+    "probability_order_E_C_N_from_native": [
+      2,
+      0,
+      1
+    ],
+    "raw_logit_order": [
+      "contradiction",
+      "not_mentioned",
+      "entailment"
+    ],
+    "repository": "facebook/bart-large-mnli",
+    "revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+    "temperature": 1,
+    "threeway_tie_rule": "First maximum in native C,N,E index order; preserve E27 convention"
+  },
+  "paired_design": {
+    "adapted_state": "Same base+sealed LoRA factors+sealed trained classification head; same delta hash across all72 adapted passes",
+    "context_selection_depends_on_adapted_or_base_outputs": false,
+    "each_context_shared_byte_exact_by_two_model_states": true,
+    "order": "Fixed source order before outputs; no winner selection or response-triggered reorder",
+    "same_partition_retrieval_depth_packing_paircap_as_frozen_E27": true,
+    "selectors": [
+      "native_ANN",
+      "lexical_Jaccard",
+      "positional"
+    ],
+    "state_switch_receipt": "Before each state use hash/check original/adapted head and LoRA enable/scale; no optimizer in DEV; base snapshot immutable",
+    "unadapted_state": "Exact2020 BART with LoRA disabled AND original classification-head tensors restored; disabling LoRA alone is insufficient"
+  },
+  "phase_budget": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "GPU_calls": 0,
+    "confirmation_batches": 0,
+    "corpus_batches_cap": 2,
+    "no_unaccounted_model_probe": true,
+    "paid_calls": 0,
+    "phase1": "Exactly one TRAIN24/48-step fit attempt including BGE/native/model/tokenizer initialization and all preprocessing",
+    "phase1_failure": "No partial-model DEV, no retry; permanently close phase2",
+    "phase2": "Only after successful phase1 closure plus delta/receipt/source Git seal: one DEV corpus,24cases×3identical contexts×2paired model states=144 NLI forwards plus24 original full-input104 requests",
+    "seconds_per_batch_including_init_cleanup": 600
+  },
+  "reporting_invariants": {
+    "benchmark_accepted": false,
+    "calibration": [],
+    "champion_promoted": false,
+    "confirmation": [],
+    "diagnostic_pass_does_not_open_confirmation": true,
+    "new_submission": false,
+    "official_SOTA_verified": false,
+    "official_rank": null,
+    "strict_prior_E28_rejection_retained": true
+  },
+  "schema_version": 1,
+  "scope": "One parameter-efficient legal adaptation hypothesis and one independent fresh project DEV diagnostic; no benchmark acceptance, confirmation, champion replacement or submission",
+  "status": "PROSPECTIVE_ACCEPTANCE_PROPOSAL_REQUIRES_CONCRETE_SOURCE_AND_PLAN_FREEZE_BEFORE_ANY_MODEL_CALL",
+  "training": {
+    "all_other_pretrained_parameters_frozen": true,
+    "analytical_parameter_counts": {
+      "existing_pretrained_classification_head": 1052675,
+      "lora": 32768,
+      "runtime_exact_names_shapes_and_count_required": true,
+      "total_trainable": 1085443
+    },
+    "batch_size": 1,
+    "class_counts": "Unknown until exact TRAIN24 join; disclose all counts, never redraw. Missing C does not become contradiction-specific training evidence.",
+    "context_arm": "Only fixed native ANN source-context for TRAIN; no label-conditioned evidence/span selection",
+    "epoch_case_order": "MUST_BE_FIXED_IN_SOURCE, no loss-based reorder or sampling",
+    "epochs": 2,
+    "lora": {
+      "alpha": 8,
+      "dropout": 0,
+      "module_initialization": "MUST_BE_FIXED_IN_SOURCE_BEFORE_INPUT_OR_CHOICE_PROJECTION; zero initial effective delta; fixed seed; no probe",
+      "rank": 4,
+      "scale": 2
+    },
+    "model_mode": "eval() throughout gradient-enabled optimization; all dropout disabled; not inference_mode during training",
+    "modules_exact": [
+      "model.decoder.layers.10.encoder_attn.q_proj",
+      "model.decoder.layers.10.encoder_attn.v_proj",
+      "model.decoder.layers.11.encoder_attn.q_proj",
+      "model.decoder.layers.11.encoder_attn.v_proj"
+    ],
+    "no_early_stop_calibration_threshold_fit_tuning_fallback_or_retry": true,
+    "objective": "Unweighted three-way cross entropy, equal per-example weight; uniform classes means no class weights, balancing or redraw",
+    "optimizer": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "epsilon": 1e-08,
+      "gradient_clip_global_norm": 1.0,
+      "learning_rate": 0.0001,
+      "name": "AdamW",
+      "trainable_parameters_only": true,
+      "weight_decay": 0.01
+    },
+    "optimizer_steps_exact": 48,
+    "other_role_choices_allowed": 0,
+    "pretrained_parameters_trainable": [
+      "classification_head.dense.weight",
+      "classification_head.dense.bias",
+      "classification_head.out_proj.weight",
+      "classification_head.out_proj.bias"
+    ],
+    "seed": 29029,
+    "train_choices_allowed": 24,
+    "training_forward_calls_exact": 48,
+    "unique_cases": 24
+  }
+}

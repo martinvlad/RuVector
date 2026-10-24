@@ -1,0 +1,136 @@
+{
+  "at": "2026-10-24T11:35:08.054458+00:00",
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "compiled_literal_support": {
+    "first_byte_offset": 848766,
+    "literal_occurrences": 1,
+    "message_literal_found": true,
+    "native_binary": {
+      "bytes": 4635848,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/node_modules/@ruvector/typesafe/native/linux-x64-gnu/typesafe.linux-x64-gnu.node",
+      "sha256": "e4db4b945a91b5cb8937765236e180763e8a3f4866b791e0f71a98d0018c289d"
+    },
+    "scope": "Static byte search in the exact already-recorded e4db native artifact, not execution or proof of full compiled control flow."
+  },
+  "confirmation": [],
+  "epoch": 28,
+  "evidence": {
+    "RESULTS": {
+      "bytes": 11910,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/epoch28/RESULTS.json",
+      "sha256": "a418fe678118cb3242d65f6f56f7ef2699467e29a2c86af790bb0a8bdd52f62b"
+    },
+    "execution": {
+      "bytes": 2589,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/epoch28/execution.json",
+      "sha256": "e36c11e47450795e5fd96068203724564ff2e446cc569e48d136dcd85d557797"
+    },
+    "independent_acceptance": {
+      "bytes": 44732,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/audit/epoch28/independent-acceptance.json",
+      "sha256": "5b0eac660f6ab4141878c63b561e2f8019b414940849ed50b9e5bae854007d25"
+    },
+    "qualification_replay": {
+      "bytes": 43629,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/audit/epoch28/qualification-replay.json",
+      "sha256": "f4746e8d3d5956203519cdce2f34315fe5b247f9a26211ec14e00a10bd533239"
+    },
+    "raw": {
+      "bytes": 223855,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/epoch28/runs/engineering/raw.json",
+      "sha256": "419a5c7ad28332e6bf025c049e40735c9a3169b0d6a29a324e433ac602ab5376"
+    }
+  },
+  "finding": "Likely false negative in the frozen refusal-message checker: the original message explicitly says state exceeds16KiB, but its frozen marker whitelist recognizes none of those terms. This diagnostic does not change the recorded failed gate or qualify the comparator.",
+  "frozen_checker_source": {
+    "context_term_present": true,
+    "context_test_term": "state",
+    "interpretation": "The failed saved boolean follows the exact frozen text predicate. No amended predicate or corrected evaluation is executed.",
+    "line": 327,
+    "marker_literals": [
+      "limit",
+      "large",
+      "long",
+      "max",
+      "16384",
+      "bytes"
+    ],
+    "marker_occurs_in_actual_lowercase_message": {
+      "16384": false,
+      "bytes": false,
+      "large": false,
+      "limit": false,
+      "long": false,
+      "max": false
+    },
+    "omitted_literal_terms_present": [
+      "exceeds",
+      "16 kib"
+    ],
+    "source": {
+      "bytes": 39835,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/audit/epoch28/score_engineering.py",
+      "sha256": "92ac562c0821a42315deb4bac44526c982f13e93dea176305491291f0923d704"
+    }
+  },
+  "frozen_outcome_retained": {
+    "checks_passed": true,
+    "comparator_transport_ready": false,
+    "engineering_qualified": false,
+    "failed_qualification_checks": [
+      "e28-full104-engineering-08:limit_cause_supported_not_invented"
+    ],
+    "status": "REJECTED_ENGINEERING_QUALIFICATION"
+  },
+  "frozen_source_or_scorer_edits": 0,
+  "limits": [
+    "The original message strongly supports the intended size-bound refusal in this posthoc reading; the source-frozen gate remains failed.",
+    "All qualification, transport-readiness, benchmark, promotion and CONF outcomes remain unchanged. No additional request, retry, corrected score or retroactive acceptance.",
+    "An original typed error kind is unavailable and remainsnull. No semantic correctness, NLL/Brier, rank or generalization is inferred."
+  ],
+  "literal_observation": {
+    "captured_original_stdout_literal": "{\"ok\":false,\"error\":\"state exceeds 16 KiB\"}\n",
+    "case": "e28-full104-engineering-08",
+    "kind_scope": "Historical native-worker keeps the error message and discards TypesafeError.kind; no kind is recovered or invented.",
+    "original_error_kind": null,
+    "original_exception_message": "state exceeds 16 KiB"
+  },
+  "message_preservation_source_chain": [
+    {
+      "bytes": 8122,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/node_modules/@ruvector/typesafe/dist/client.js",
+      "sha256": "6527f0d37dd98cb75dad3796c308e71f29845cc2c07d8f33e0f8f06a99668e39"
+    },
+    {
+      "bytes": 1523,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/swarm/jevbench-adapter/native-worker.cjs",
+      "sha256": "333e04b62bb13dfa578a26f86d6d69809485e4278dfca46fbae72aae41fd2d29"
+    },
+    {
+      "bytes": 17775,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/swarm/jevbench-adapter/server.py",
+      "sha256": "aadde0913ee2276bcf188b1b49a2b6239004fa9f45ac9f90909b74e2de33b1ba"
+    }
+  ],
+  "new_native_model_tokenizer_or_request_calls": 0,
+  "new_submission": false,
+  "numeric_boundary": {
+    "exact_input_difference": "Same authored state plus one ASCII A, exactly1additionalUTF8byte; question map unchanged.",
+    "limit_bytes": 16384,
+    "limit_calculation": "16*1024=16384",
+    "over_limit_UTF8_bytes": 16385,
+    "over_limit_original_refusal": true,
+    "same_questions": true,
+    "scope": "Byte lengths and original outcomes only; not semantic accuracy, full-document attention or a new model measurement.",
+    "unit": "KiB =1024bytes",
+    "within_limit_UTF8_bytes": 16384,
+    "within_limit_case": "e28-full104-engineering-07",
+    "within_limit_original_success": true
+  },
+  "proper_metrics_computed": 0,
+  "qualification_re_evaluations": 0,
+  "schema_version": 1,
+  "source_annotation_choices_or_evidence_lists_read": 0,
+  "status": "POSTHOC_SOURCE_STRING_NUMERIC_DIAGNOSTIC_NO_QUALIFICATION_CHANGE"
+}

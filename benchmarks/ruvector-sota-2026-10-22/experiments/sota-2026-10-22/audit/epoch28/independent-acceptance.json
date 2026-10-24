@@ -1,0 +1,1442 @@
+{
+  "CPU_enforcement_observations": {
+    "actual_affinity_syscall_attempt_count": null,
+    "native_NoNewPrivs": "1",
+    "native_Seccomp": "2",
+    "native_Seccomp_filters": "1",
+    "observed_task_snapshots": 232,
+    "preexec_filter_receipt": {
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "actual_proc_status": {
+        "Cpus_allowed_list": "0-1",
+        "NoNewPrivs": "1",
+        "Seccomp": "2",
+        "Seccomp_filters": "1"
+      },
+      "denial_errno": 1,
+      "denied_syscalls": [
+        203,
+        1073742027
+      ],
+      "global_kernel_configuration_changed": false,
+      "inherited_by_all_future_threads_and_exec": true,
+      "platform": "linux-x86_64",
+      "status": "CPU_GUARD_INSTALLED_BEFORE_EXEC"
+    },
+    "scope": "Process-local preexec affinity/seccomp source policy plus actual status and observed task snapshots; no continuous observation of every short-lived task and no OS network-isolation claim."
+  },
+  "actual_API_counters": {
+    "CONF_reads": 0,
+    "DEV_reads": 0,
+    "GPU_calls": 0,
+    "HTTP_requests": 0,
+    "Node_network_operations_attempted": 0,
+    "Python_network_operations_attempted": 0,
+    "benchmark_label_reads": 0,
+    "calibration_calls": 0,
+    "composite_initializations_attempted": 1,
+    "composite_initializations_completed": 1,
+    "composite_predict_attempted": 8,
+    "composite_predict_completed": 7,
+    "fits": 0,
+    "generation_calls": 0,
+    "native_binary_loads_attempted": 1,
+    "native_binary_loads_completed": 1,
+    "native_process_starts_attempted": 1,
+    "native_process_starts_completed": 1,
+    "native_questions_written": 8,
+    "native_ready_receipts": 1,
+    "native_refusal_responses": 1,
+    "native_request_reply_pairs_closed": 8,
+    "native_response_lines": 8,
+    "native_stdin_write_calls_attempted": 8,
+    "native_stdout_lines_read": 9,
+    "native_stdout_read_calls_attempted": 9,
+    "native_successful_responses": 7,
+    "native_systemOne_requests": 8,
+    "paid_calls": 0,
+    "training_steps": 0
+  },
+  "at": "2026-10-24T11:31:07.834574+00:00",
+  "benchmark_accepted": false,
+  "benchmark_annotation_choices_accessed": 0,
+  "binding_at": "2026-10-24T11:33:01.912175+00:00",
+  "canonical_RESULTS_binding_passed": true,
+  "champion_promoted": false,
+  "checks_passed": true,
+  "checks_passed_scope": "Publication artifact provenance/RESULTS consistency only. The unchanged evaluation replay and evaluated_integrity_checks_passed retain every original functional/integrity failure; publication binding never qualifies a failed execution.",
+  "comparator_transport_ready": false,
+  "confirmation": [],
+  "counter_scope": "One bounded native engineering batch, zero benchmark corpora;8actual original API requests if complete. OS thread samples and internal unknowns remain distinct from CPU affinity/computational budget.",
+  "data_roles": {
+    "calibration": [],
+    "confirmation": [],
+    "dev": [],
+    "train": []
+  },
+  "engineering_qualified": false,
+  "epoch": 28,
+  "errors_preserved": {
+    "cleanup_errors": [],
+    "launcher_error": null,
+    "raw_errors": [],
+    "request_errors": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "cause": "UNKNOWN_UNLESS_SUPPORTED_BY_ORIGINAL_ERROR_MESSAGE",
+        "message": "state exceeds 16 KiB",
+        "original_error_kind": null,
+        "traceback": "Traceback (most recent call last):\n  File \"/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch28/worker.py\", line 325, in run\n    response = engine.predict(state, questions)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/submission-2026-10-22/jevbench/engine.py\", line 50, in predict\n    response=self.native.predict(state,questions);response['model']=self.name;response['attribution']=self.attribution;count=0\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/swarm/jevbench-adapter/server.py\", line 240, in predict\n    raise RuntimeError(result.get(\"error\",\"Native decision failed\"))\nRuntimeError: state exceeds 16 KiB\n",
+        "type": "RuntimeError"
+      }
+    ]
+  },
+  "evaluated_integrity_checks_passed": true,
+  "evidence": {
+    "CPU_guard_preexec": {
+      "bytes": 362,
+      "path": "experiments/sota-2026-10-22/epoch28/runs/engineering/native-preexec.json",
+      "sha256": "43b6c1286ef99fc9793724b1a6da5354a7da2d2a43ca172fc6fda3530cbb7d9e"
+    },
+    "bank": {
+      "bytes": 43086,
+      "path": "experiments/sota-2026-10-22/audit/epoch28/engineering-inputs.json",
+      "sha256": "c3a83ae2a834ecfe534ec421eea21e7414586cc9858e400d105ce5657ad1cc45"
+    },
+    "derive_actual_helper": {
+      "bytes": 39255,
+      "path": "experiments/sota-2026-10-22/epoch28/publication/stage_publication_v1.py",
+      "sha256": "5b7d569902b5df3aeb4b4af45104c90807f97203a4ed78356bd4ab3bcb99511c"
+    },
+    "execution": {
+      "bytes": 2589,
+      "path": "experiments/sota-2026-10-22/epoch28/execution.json",
+      "sha256": "e36c11e47450795e5fd96068203724564ff2e446cc569e48d136dcd85d557797"
+    },
+    "oracle": {
+      "bytes": 4848,
+      "path": "experiments/sota-2026-10-22/audit/epoch28/engineering-identities.json",
+      "sha256": "62056f9c8d8ebf7d2c91f57c6896de86cc4c860d81b34d58d85362c5454b29d3"
+    },
+    "plan": {
+      "bytes": 23107,
+      "path": "experiments/sota-2026-10-22/epoch28/plan.json",
+      "sha256": "7ca438bcc6f13c177fa932317be42cd6c310854c3479461a0ba81303ca015ef0"
+    },
+    "progress": {
+      "bytes": 101858,
+      "path": "experiments/sota-2026-10-22/epoch28/runs/engineering/progress.jsonl",
+      "sha256": "bdc168a9eb3d16b5094a1fafb9a9693e42a0cdd0733484839ee05b28759c92c9"
+    },
+    "protocol": {
+      "bytes": 10096,
+      "path": "experiments/sota-2026-10-22/audit/epoch28/protocol.json",
+      "sha256": "10e33b6a673e640142f63316d8fff923c8558852e65d132e450a4b8272182408"
+    },
+    "qualification_replay": {
+      "bytes": 43629,
+      "path": "experiments/sota-2026-10-22/audit/epoch28/qualification-replay.json",
+      "sha256": "f4746e8d3d5956203519cdce2f34315fe5b247f9a26211ec14e00a10bd533239"
+    },
+    "raw": {
+      "bytes": 223855,
+      "path": "experiments/sota-2026-10-22/epoch28/runs/engineering/raw.json",
+      "sha256": "419a5c7ad28332e6bf025c049e40735c9a3169b0d6a29a324e433ac602ab5376"
+    },
+    "results": {
+      "bytes": 11910,
+      "path": "experiments/sota-2026-10-22/epoch28/RESULTS.json",
+      "sha256": "a418fe678118cb3242d65f6f56f7ef2699467e29a2c86af790bb0a8bdd52f62b"
+    },
+    "scorer_source": {
+      "bytes": 39835,
+      "path": "experiments/sota-2026-10-22/audit/epoch28/score_engineering.py",
+      "sha256": "92ac562c0821a42315deb4bac44526c982f13e93dea176305491291f0923d704"
+    }
+  },
+  "failed_integrity_checks": [],
+  "failed_qualification_checks": [
+    "e28-full104-engineering-08:limit_cause_supported_not_invented"
+  ],
+  "integrity_checks": [
+    {
+      "name": "fixed_oracle:protocol.json",
+      "passed": true
+    },
+    {
+      "name": "fixed_oracle:engineering-inputs.json",
+      "passed": true
+    },
+    {
+      "name": "fixed_oracle:engineering-identities.json",
+      "passed": true
+    },
+    {
+      "name": "fixed_oracle:full104-closure-audit.json",
+      "passed": true
+    },
+    {
+      "name": "fixed_oracle:cpu-affinity-policy-v1.json",
+      "passed": true
+    },
+    {
+      "name": "fixed_eight_oracle_rows",
+      "passed": true
+    },
+    {
+      "name": "oracle_metadata_matches_fixed_bank",
+      "passed": true
+    },
+    {
+      "name": "engineering_only_roles",
+      "passed": true
+    },
+    {
+      "name": "no_raw_benchmark_or_promotion_claim",
+      "passed": true
+    },
+    {
+      "name": "fixed_bounded_plan",
+      "passed": true
+    },
+    {
+      "name": "exact_raw_plan_binding",
+      "passed": true
+    },
+    {
+      "name": "exact_raw_source_freeze_binding",
+      "passed": true
+    },
+    {
+      "name": "exact_outer_raw_identity",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/compounding/jevbench/cycle2/frozen-baseline/rules.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/compounding/jevbench/cycle2/round2/rules.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/compounding/jevbench/cycle2/round2/typed_numeric.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/compounding/jevbench/cycle3/round2/probability.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/compounding/jevbench/cycle3/round2/rules.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/optimization/baseline-server.cjs",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch27/full104-source-map.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/contract-source-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/cpu-affinity-policy-v1.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/engineering-identities.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/engineering-inputs.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/full104-closure-audit.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/hardlink-restoration-proposal-independent-v1.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/implementation-source-review.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/lease-remote-independent-v1.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/preflight_score_engineering.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/preflight_score_engineering_v2.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/preflight_score_engineering_v3.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/protocol.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/publication-source-review-v3.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/publication-source-review-v4.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/publication-source-review.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/restoration-independent-v1.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/score_engineering.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/score_engineering_v1.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/score_engineering_v2.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/score_engineering_v3.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/scorer-preflight-v2.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/scorer-preflight-v3.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/scorer-preflight-v4.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/scorer-source-freeze-v2.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/scorer-source-freeze-v3.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/scorer-source-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/audit/epoch28/scorer-source-review.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/RAW_SCHEMA.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/README.md",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/RUNTIME_ASSETS.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/SOURCE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/SOURCE_READY.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/common.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/cpu_guard.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/launch_engineering.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/network_guard.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/node_guard.cjs",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/preflight.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/synthetic-cpu-preexec.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/candidate/epoch28/worker.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/archive22-proof.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/archive26-proof.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/bootstrap-proof-summary.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/platform-versions.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/pre-restore-proof.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/reconstruction.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/restore-proof.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/restore-verify-proof.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/reviewed_build_plan.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/reviewed_build_results.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/reviewed_controller.js",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/reviewed_mutation_guard.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/reviewed_publish-phase.js",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/preparation/runtime104-materialization.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/publication/baseline-validation.v1.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/publication/build_controls_v1.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/publication/guard-tests.v1.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/publication/publication_common_v1.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/publication/stage_publication_v1.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/publication/test_publication_guards_v1.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/source-freeze.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch28/used-confirmation-identities.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/epoch5/typesafe-runtime-closure.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/legal-transfer/epoch28/benchmark-refresh.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/legal-transfer/epoch28/official-public-source-receipts.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/legal-transfer/epoch28/reader-admission/HANDOFF.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/legal-transfer/epoch28/reader-admission/PUBLICATION_SCOPE.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/legal-transfer/epoch28/reader-admission/SOURCE_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/sota-2026-10-22/legal-transfer/epoch28/reader-admission/reader-admission.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/submission-2026-10-22/jevbench/engine.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/submission-2026-10-22/jevbench/round2-v2/plan.json",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/submission-2026-10-22/jevbench/round2-v2/rules.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/submission-2026-10-22/jevbench/round2-v2/typed_relations.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/swarm/jevbench-adapter/native-worker.cjs",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:experiments/swarm/jevbench-adapter/server.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_source:models/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "published_scorer_source_pinned",
+      "passed": true
+    },
+    {
+      "name": "exact17_runtime_metadata",
+      "passed": true
+    },
+    {
+      "name": "CPU_guard_original_artifact_bound",
+      "passed": true
+    },
+    {
+      "name": "opaque_internals_remain_unknown",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-01:oracle_metadata",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-01:literal_full_input",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-01:normalization_preserves_full_state_order",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-01:actual_pipe_frames_hash_and_full_outer_body",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-01:finite_request_interval",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-01:question_identity",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-01:actual_native_original_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-02:oracle_metadata",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-02:literal_full_input",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-02:normalization_preserves_full_state_order",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-02:actual_pipe_frames_hash_and_full_outer_body",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-02:finite_request_interval",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-02:question_identity",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-02:actual_native_original_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-03:oracle_metadata",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-03:literal_full_input",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-03:normalization_preserves_full_state_order",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-03:actual_pipe_frames_hash_and_full_outer_body",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-03:finite_request_interval",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-03:question_identity",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-03:actual_native_original_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-04:oracle_metadata",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-04:literal_full_input",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-04:normalization_preserves_full_state_order",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-04:actual_pipe_frames_hash_and_full_outer_body",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-04:finite_request_interval",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-04:question_identity",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-04:actual_native_original_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-05:oracle_metadata",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-05:literal_full_input",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-05:normalization_preserves_full_state_order",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-05:actual_pipe_frames_hash_and_full_outer_body",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-05:finite_request_interval",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-05:question_identity",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-05:actual_native_original_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-06:oracle_metadata",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-06:literal_full_input",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-06:normalization_preserves_full_state_order",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-06:actual_pipe_frames_hash_and_full_outer_body",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-06:finite_request_interval",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-06:question_identity",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-06:actual_native_original_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-07:oracle_metadata",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-07:literal_full_input",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-07:normalization_preserves_full_state_order",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-07:actual_pipe_frames_hash_and_full_outer_body",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-07:finite_request_interval",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-07:question_identity",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-07:actual_native_original_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-08:oracle_metadata",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-08:literal_full_input",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-08:normalization_preserves_full_state_order",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-08:actual_pipe_frames_hash_and_full_outer_body",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-08:finite_request_interval",
+      "passed": true
+    },
+    {
+      "name": "complete_pipe_artifact:stdin",
+      "passed": true
+    },
+    {
+      "name": "stdin_is_exact_all_captured_requests",
+      "passed": true
+    },
+    {
+      "name": "complete_pipe_artifact:stdout",
+      "passed": true
+    },
+    {
+      "name": "stdout_has_one_ready_plus_eight_original_responses",
+      "passed": true
+    },
+    {
+      "name": "actual_ready_frame_matches_original_receipt",
+      "passed": true
+    },
+    {
+      "name": "complete_stderr_retained",
+      "passed": true
+    },
+    {
+      "name": "exact_outer_counter_copy",
+      "passed": true
+    },
+    {
+      "name": "saved_progress_trace_available",
+      "passed": true
+    }
+  ],
+  "kind": "REAL_ENGINEERING_FULL104_QUALIFICATION",
+  "metrics": {
+    "Brier": null,
+    "NLL": null,
+    "benchmark_accuracy": null,
+    "proper_score_metric_computations": 0,
+    "reason": "Authored engineering transport/source/proof checks only. No benchmark labels or semantic accuracy gate. Original zero-label noul is an uncalibrated similarity score; no invented probability model."
+  },
+  "model_tokenizer_native_calls_by_auditor": 0,
+  "new_submission": false,
+  "official_SOTA_established": false,
+  "opaque_internal_observations": {
+    "ANN_query_count": null,
+    "BGE_forward_count": null,
+    "NLI_call_count": null,
+    "native_process_status": {
+      "Cpus_allowed_list": "0-1",
+      "NoNewPrivs": "1",
+      "Seccomp": "2",
+      "Seccomp_filters": "1",
+      "Threads": "9",
+      "VmHWM_bytes": 540643328,
+      "VmRSS_bytes": 408010752,
+      "observability_scope": "Read-only current task snapshots; unobserved thread lifetimes remain unknown.",
+      "observed_thread_affinities": [
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79489
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79490
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79491
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79492
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79493
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79494
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79495
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79497
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79498
+        }
+      ],
+      "thread_status_disappearance_races": []
+    },
+    "reason": "Observed API constructor/request/addon-load counters are not opaque compiled internal forward/thread counts."
+  },
+  "outer_execution": {
+    "CONF_calls": 0,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "DEV_calls": 0,
+    "GPU_calls": 0,
+    "allowed_further_epoch28_workers": 0,
+    "backend_execution_since_checkpoint": "NOT_APPLICABLE_FINAL_RAW",
+    "benchmark_generalization_claim": false,
+    "children_system_seconds": 0.310739,
+    "children_user_seconds": 1.107408,
+    "cleanup_errors": [],
+    "cleanup_signals": [],
+    "epoch": 28,
+    "exit_code": 0,
+    "kind": "REAL_ENGINEERING_FULL104_QUALIFICATION",
+    "largest_child_peak_RSS_bytes": 540643328,
+    "launcher_error": null,
+    "leftover_checkpoint_tmp_bytes": null,
+    "leftover_checkpoint_tmp_sha256": null,
+    "operation_counts_complete": true,
+    "owned_live_group_members": [],
+    "owned_live_processes_closed": true,
+    "paid_calls": 0,
+    "partial_raw_bytes": 223855,
+    "partial_raw_sha256": "419a5c7ad28332e6bf025c049e40735c9a3169b0d6a29a324e433ac602ab5376",
+    "raw_bytes": 223855,
+    "raw_closure_invariants": {
+      "Python_network_violations_empty": true,
+      "all8requests_closed": true,
+      "exact_operation_counts": true,
+      "forbidden_operation_counts_zero": true,
+      "original_native_child_closed": true,
+      "raw_completed": true,
+      "seven_composite_outputs_one_preserved_refusal": true,
+      "worker_errors_empty": true
+    },
+    "raw_operation_counters": {
+      "CONF_reads": 0,
+      "DEV_reads": 0,
+      "GPU_calls": 0,
+      "HTTP_requests": 0,
+      "Node_network_operations_attempted": 0,
+      "Python_network_operations_attempted": 0,
+      "benchmark_label_reads": 0,
+      "calibration_calls": 0,
+      "composite_initializations_attempted": 1,
+      "composite_initializations_completed": 1,
+      "composite_predict_attempted": 8,
+      "composite_predict_completed": 7,
+      "fits": 0,
+      "generation_calls": 0,
+      "native_binary_loads_attempted": 1,
+      "native_binary_loads_completed": 1,
+      "native_process_starts_attempted": 1,
+      "native_process_starts_completed": 1,
+      "native_questions_written": 8,
+      "native_ready_receipts": 1,
+      "native_refusal_responses": 1,
+      "native_request_reply_pairs_closed": 8,
+      "native_response_lines": 8,
+      "native_stdin_write_calls_attempted": 8,
+      "native_stdout_lines_read": 9,
+      "native_stdout_read_calls_attempted": 9,
+      "native_successful_responses": 7,
+      "native_systemOne_requests": 8,
+      "paid_calls": 0,
+      "training_steps": 0
+    },
+    "raw_operation_counters_source": "raw.json",
+    "raw_sha256": "419a5c7ad28332e6bf025c049e40735c9a3169b0d6a29a324e433ac602ab5376",
+    "schema_version": 1,
+    "source_plan_unchanged": true,
+    "status": "WORKER_COMPLETED",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_stderr_capture_completed": true,
+    "uncertain_start": false,
+    "verified_worker_starts": 1,
+    "wall_seconds_including_init_cleanup": 1.594919105002191,
+    "worker_attempts_reserved": 1,
+    "worker_identity": {
+      "pgid": 79488,
+      "pid": 79488,
+      "ppid": 79487,
+      "sid": 79488,
+      "state": "R",
+      "ticks": 16514845
+    }
+  },
+  "parsed_raw_available": true,
+  "publication_binding_checks_passed": true,
+  "qualification_checks": [
+    {
+      "name": "original_native_receipt",
+      "passed": true
+    },
+    {
+      "name": "one_actual_isolated_native_addon_load",
+      "passed": true
+    },
+    {
+      "name": "actual_mapped_addon_and_ORT:initial",
+      "passed": true
+    },
+    {
+      "name": "actual_mapped_addon_and_ORT:after_requests",
+      "passed": true
+    },
+    {
+      "name": "CPU_guard_installed_before_exec_without_model_options",
+      "passed": true
+    },
+    {
+      "name": "CPU_guard_independently_seen_before_native_import",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_process_starts_attempted",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_process_starts_completed",
+      "passed": true
+    },
+    {
+      "name": "API_counter:composite_initializations_attempted",
+      "passed": true
+    },
+    {
+      "name": "API_counter:composite_initializations_completed",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_ready_receipts",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_binary_loads_attempted",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_binary_loads_completed",
+      "passed": true
+    },
+    {
+      "name": "API_counter:composite_predict_attempted",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_systemOne_requests",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_questions_written",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_response_lines",
+      "passed": true
+    },
+    {
+      "name": "API_counter:composite_predict_completed",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_successful_responses",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_refusal_responses",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_stdin_write_calls_attempted",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_request_reply_pairs_closed",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_stdout_read_calls_attempted",
+      "passed": true
+    },
+    {
+      "name": "API_counter:native_stdout_lines_read",
+      "passed": true
+    },
+    {
+      "name": "forbidden_zero:Python_network_operations_attempted",
+      "passed": true
+    },
+    {
+      "name": "forbidden_zero:Node_network_operations_attempted",
+      "passed": true
+    },
+    {
+      "name": "forbidden_zero:DEV_reads",
+      "passed": true
+    },
+    {
+      "name": "forbidden_zero:CONF_reads",
+      "passed": true
+    },
+    {
+      "name": "forbidden_zero:benchmark_label_reads",
+      "passed": true
+    },
+    {
+      "name": "forbidden_zero:fits",
+      "passed": true
+    },
+    {
+      "name": "forbidden_zero:calibration_calls",
+      "passed": true
+    },
+    {
+      "name": "forbidden_zero:training_steps",
+      "passed": true
+    },
+    {
+      "name": "forbidden_zero:generation_calls",
+      "passed": true
+    },
+    {
+      "name": "forbidden_zero:paid_calls",
+      "passed": true
+    },
+    {
+      "name": "forbidden_zero:GPU_calls",
+      "passed": true
+    },
+    {
+      "name": "forbidden_zero:HTTP_requests",
+      "passed": true
+    },
+    {
+      "name": "network_violation_lists_empty",
+      "passed": true
+    },
+    {
+      "name": "fixed_ordered_requests",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-01:observed_write_read_completion",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-01:original_success_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-01:all_original_answer_versions_valid",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-01:original_fallback_route",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-01:no_new_fallback_override",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-02:observed_write_read_completion",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-02:original_success_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-02:all_original_answer_versions_valid",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-02:original_fallback_route",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-02:no_new_fallback_override",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-03:observed_write_read_completion",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-03:original_success_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-03:all_original_answer_versions_valid",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-03:original_fallback_route",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-03:no_new_fallback_override",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-03:uncalibrated_noul_stays_score",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-04:observed_write_read_completion",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-04:original_success_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-04:all_original_answer_versions_valid",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-04:original_fallback_route",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-04:no_new_fallback_override",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-05:observed_write_read_completion",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-05:original_success_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-05:all_original_answer_versions_valid",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-05:original_fallback_route",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-05:exact_original_word_count_function",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-06:observed_write_read_completion",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-06:original_success_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-06:all_original_answer_versions_valid",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-06:original_fallback_route",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-06:exact_original_word_count_function",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-07:observed_write_read_completion",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-07:original_success_preserved",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-07:all_original_answer_versions_valid",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-07:original_fallback_route",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-07:no_new_fallback_override",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-08:observed_write_read_completion",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-08:original_oversize_refusal_retained",
+      "passed": true
+    },
+    {
+      "name": "e28-full104-engineering-08:limit_cause_supported_not_invented",
+      "passed": false
+    },
+    {
+      "name": "final_raw_counters_not_checkpoint_counts",
+      "passed": true
+    },
+    {
+      "name": "successful_closed_single_CPU2_execution",
+      "passed": true
+    },
+    {
+      "name": "worker_helper_physically_absent",
+      "passed": true
+    },
+    {
+      "name": "raw_completed_no_unexpected_errors",
+      "passed": true
+    },
+    {
+      "name": "all_future_slots_closed",
+      "passed": true
+    },
+    {
+      "name": "CPU_affinity_observation",
+      "passed": true
+    },
+    {
+      "name": "native_child_kernel_CPU_filter_observed",
+      "passed": true
+    },
+    {
+      "name": "all_observed_thread_affinities_within_CPU0_1",
+      "passed": true
+    }
+  ],
+  "refusals": [
+    {
+      "cause_when_unsupported": "UNKNOWN",
+      "id": "e28-full104-engineering-08",
+      "original_error_kind": null,
+      "original_error_message": "state exceeds 16 KiB",
+      "original_message_supports_predetermined_limit": false,
+      "state_utf8_bytes": 16385
+    }
+  ],
+  "request_timing": {
+    "all_attempts_including_refusal": {
+      "n": 8,
+      "p50_seconds": 0.04015450349834282,
+      "p95_seconds": 0.09014252178603784
+    },
+    "successful_requests": {
+      "n": 7,
+      "p50_seconds": 0.04484865898848511,
+      "p95_seconds": 0.0903395993867889
+    }
+  },
+  "resources": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "child_system_seconds": 0.245003,
+    "child_user_seconds": 0.7354269999999999,
+    "largest_child_peak_RSS_bytes": 540643328,
+    "memory_scope": "Separate high-water values, not aggregate simultaneous RSS.",
+    "worker": {
+      "Cpus_allowed_list": "0-1",
+      "NoNewPrivs": "0",
+      "Seccomp": "0",
+      "Seccomp_filters": "0",
+      "Threads": "1",
+      "VmHWM_bytes": 22806528,
+      "VmRSS_bytes": 21458944,
+      "observability_scope": "Read-only current task snapshots; unobserved thread lifetimes remain unknown.",
+      "observed_thread_affinities": [
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79488
+        }
+      ],
+      "thread_status_disappearance_races": []
+    },
+    "worker_peak_RSS_bytes": 22806528,
+    "worker_system_seconds": 0.061584,
+    "worker_user_seconds": 0.359614
+  },
+  "schema_version": 1,
+  "scope": "Authored CC0 source/proof/transport engineering only. Readiness is not semantic generalization, future CONF admission, benchmark improvement or promotion.",
+  "source_inferred_internal_mappings": [
+    {
+      "id": "e28-full104-engineering-01",
+      "inferred_request_utf8_sha256": "6d97d0c47beaaf8b5fdf01b7ad55f211a442088a214cbeedf09fcbbe35eb39f6",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-02",
+      "inferred_request_utf8_sha256": "6f37573414f4c6635fe65158cd6d750dbba7f42648454b830b54be950f726e97",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-03",
+      "inferred_request_utf8_sha256": "45923f1d017080edb2f25a7f47559aac2da48c896f70cc4d92443f679362bb37",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-04",
+      "inferred_request_utf8_sha256": "b011666b4712b5874153e433194f5df184f1c4eb7b67306ed81b167d22dba8e9",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-05",
+      "inferred_request_utf8_sha256": "91c1369a37b99853108ceaedeb00abb41640fa13548c63ed6e0e8222e5154e63",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-06",
+      "inferred_request_utf8_sha256": "f31e6f50a9a2eb6f3b04b436fdf86506b628edc5a61072e7b80a9d72977caa3d",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-07",
+      "inferred_request_utf8_sha256": "973c50d0fd03922c91e8689b81c14afc41e0a38307f6fa5d008d14ac35518f4c",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-08",
+      "inferred_request_utf8_sha256": "bc82ae3e94ee51ab410f85b2830cc9d20319efa08e221bdfb55f4274d401c6ea",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    }
+  ],
+  "status": "REJECTED_ENGINEERING_QUALIFICATION",
+  "timing_scope": "Harness interval around original CompositeEngine.predict plus response retention/JSON and structural validation; includes private pipe/native work and proof routing. Not isolated ONNX/ANN/kernel. Initialization and full outer wall retained separately."
+}

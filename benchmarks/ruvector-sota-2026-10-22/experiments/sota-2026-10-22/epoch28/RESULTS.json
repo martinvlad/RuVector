@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "epoch": 28,
+  "kind": "REAL_ENGINEERING_FULL104_QUALIFICATION",
+  "status": "REJECTED_ENGINEERING_QUALIFICATION",
+  "engineering_qualified": false,
+  "comparator_transport_ready": false,
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "new_submission": false,
+  "official_rank": null,
+  "official_SOTA_verified": false,
+  "source_checkpoint": "585c476cec6011b1db9c79147e3b0ff80124a6a3",
+  "published_frozen_source_commit": "62fbde6019e43b994ad2994483eecdf796b609eb",
+  "confirmation": [],
+  "used_confirmation_identities": [],
+  "data_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "reason": "Frozen engineering qualification failed. Exact raw outputs, captured launcher and independent replay failures are retained unchanged; no retry, promotion or confirmation.",
+  "actual_execution": {
+    "Python_network_operations_attempted": 0,
+    "Node_network_operations_attempted": 0,
+    "DEV_reads": 0,
+    "CONF_reads": 0,
+    "benchmark_label_reads": 0,
+    "fits": 0,
+    "calibration_calls": 0,
+    "training_steps": 0,
+    "generation_calls": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "HTTP_requests": 0,
+    "native_process_starts_attempted": 1,
+    "native_process_starts_completed": 1,
+    "composite_initializations_attempted": 1,
+    "composite_initializations_completed": 1,
+    "native_ready_receipts": 1,
+    "native_binary_loads_attempted": 1,
+    "native_binary_loads_completed": 1,
+    "native_stdin_write_calls_attempted": 8,
+    "native_request_reply_pairs_closed": 8,
+    "native_stdout_read_calls_attempted": 9,
+    "native_stdout_lines_read": 9,
+    "composite_predict_attempted": 8,
+    "composite_predict_completed": 7,
+    "native_systemOne_requests": 8,
+    "native_questions_written": 8,
+    "native_response_lines": 8,
+    "native_successful_responses": 7,
+    "native_refusal_responses": 1,
+    "worker_attempts": 1,
+    "verified_worker_starts": 1,
+    "uncertain_start": false,
+    "wall_seconds_including_init_cleanup": 1.594919105002191,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "owned_live_processes_closed": true,
+    "peak_RSS_bytes": 540643328,
+    "user_seconds": 1.107408,
+    "system_seconds": 0.310739,
+    "errors": 0,
+    "raw_operation_counters_source": "raw.json",
+    "operation_counts_complete": true,
+    "backend_execution_since_checkpoint": "NOT_APPLICABLE_FINAL_RAW"
+  },
+  "metrics": {
+    "Brier": null,
+    "NLL": null,
+    "benchmark_accuracy": null,
+    "proper_score_metric_computations": 0,
+    "reason": "Authored engineering transport/source/proof checks only. No benchmark labels or semantic accuracy gate. Original zero-label noul is an uncalibrated similarity score; no invented probability model."
+  },
+  "request_timing": {
+    "all_attempts_including_refusal": {
+      "n": 8,
+      "p50_seconds": 0.04015450349834282,
+      "p95_seconds": 0.09014252178603784
+    },
+    "successful_requests": {
+      "n": 7,
+      "p50_seconds": 0.04484865898848511,
+      "p95_seconds": 0.0903395993867889
+    }
+  },
+  "timing_scope": "Harness interval around original CompositeEngine.predict plus response retention/JSON and structural validation; includes private pipe/native work and proof routing. Not isolated ONNX/ANN/kernel. Initialization and full outer wall retained separately.",
+  "resources": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "child_system_seconds": 0.245003,
+    "child_user_seconds": 0.7354269999999999,
+    "largest_child_peak_RSS_bytes": 540643328,
+    "memory_scope": "Separate high-water values, not aggregate simultaneous RSS.",
+    "worker": {
+      "Cpus_allowed_list": "0-1",
+      "NoNewPrivs": "0",
+      "Seccomp": "0",
+      "Seccomp_filters": "0",
+      "Threads": "1",
+      "VmHWM_bytes": 22806528,
+      "VmRSS_bytes": 21458944,
+      "observability_scope": "Read-only current task snapshots; unobserved thread lifetimes remain unknown.",
+      "observed_thread_affinities": [
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79488
+        }
+      ],
+      "thread_status_disappearance_races": []
+    },
+    "worker_peak_RSS_bytes": 22806528,
+    "worker_system_seconds": 0.061584,
+    "worker_user_seconds": 0.359614
+  },
+  "qualification_replay": {
+    "path": "experiments/sota-2026-10-22/audit/epoch28/qualification-replay.json",
+    "bytes": 43629,
+    "sha256": "f4746e8d3d5956203519cdce2f34315fe5b247f9a26211ec14e00a10bd533239"
+  },
+  "failed_integrity_checks": [],
+  "failed_qualification_checks": [
+    "e28-full104-engineering-08:limit_cause_supported_not_invented"
+  ],
+  "independent_functional_evaluation_integrity": true,
+  "evaluation_audit_error_preserved": null,
+  "opaque_internal_observations": {
+    "ANN_query_count": null,
+    "BGE_forward_count": null,
+    "NLI_call_count": null,
+    "native_process_status": {
+      "Cpus_allowed_list": "0-1",
+      "NoNewPrivs": "1",
+      "Seccomp": "2",
+      "Seccomp_filters": "1",
+      "Threads": "9",
+      "VmHWM_bytes": 540643328,
+      "VmRSS_bytes": 408010752,
+      "observability_scope": "Read-only current task snapshots; unobserved thread lifetimes remain unknown.",
+      "observed_thread_affinities": [
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79489
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79490
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79491
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79492
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79493
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79494
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79495
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79497
+        },
+        {
+          "Cpus_allowed_list": "0-1",
+          "observed_affinity_within_CPU0_1": true,
+          "tid": 79498
+        }
+      ],
+      "thread_status_disappearance_races": []
+    },
+    "reason": "Observed API constructor/request/addon-load counters are not opaque compiled internal forward/thread counts."
+  },
+  "refusals": [
+    {
+      "cause_when_unsupported": "UNKNOWN",
+      "id": "e28-full104-engineering-08",
+      "original_error_kind": null,
+      "original_error_message": "state exceeds 16 KiB",
+      "original_message_supports_predetermined_limit": false,
+      "state_utf8_bytes": 16385
+    }
+  ],
+  "source_inferred_internal_mappings": [
+    {
+      "id": "e28-full104-engineering-01",
+      "inferred_request_utf8_sha256": "6d97d0c47beaaf8b5fdf01b7ad55f211a442088a214cbeedf09fcbbe35eb39f6",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-02",
+      "inferred_request_utf8_sha256": "6f37573414f4c6635fe65158cd6d750dbba7f42648454b830b54be950f726e97",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-03",
+      "inferred_request_utf8_sha256": "45923f1d017080edb2f25a7f47559aac2da48c896f70cc4d92443f679362bb37",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-04",
+      "inferred_request_utf8_sha256": "b011666b4712b5874153e433194f5df184f1c4eb7b67306ed81b167d22dba8e9",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-05",
+      "inferred_request_utf8_sha256": "91c1369a37b99853108ceaedeb00abb41640fa13548c63ed6e0e8222e5154e63",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-06",
+      "inferred_request_utf8_sha256": "f31e6f50a9a2eb6f3b04b436fdf86506b628edc5a61072e7b80a9d72977caa3d",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-07",
+      "inferred_request_utf8_sha256": "973c50d0fd03922c91e8689b81c14afc41e0a38307f6fa5d008d14ac35518f4c",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    },
+    {
+      "id": "e28-full104-engineering-08",
+      "inferred_request_utf8_sha256": "bc82ae3e94ee51ab410f85b2830cc9d20319efa08e221bdfb55f4274d401c6ea",
+      "internal_FFI_request_observed": false,
+      "mapping_basis": "Inferred from pinned original client.js jevToWireQuestion; not separately observed FFI traffic"
+    }
+  ],
+  "errors_preserved": {
+    "cleanup_errors": [],
+    "launcher_error": null,
+    "raw_errors": [],
+    "request_errors": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "cause": "UNKNOWN_UNLESS_SUPPORTED_BY_ORIGINAL_ERROR_MESSAGE",
+        "message": "state exceeds 16 KiB",
+        "original_error_kind": null,
+        "traceback": "Traceback (most recent call last):\n  File \"/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/sota-2026-10-22/candidate/epoch28/worker.py\", line 325, in run\n    response = engine.predict(state, questions)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/submission-2026-10-22/jevbench/engine.py\", line 50, in predict\n    response=self.native.predict(state,questions);response['model']=self.name;response['attribution']=self.attribution;count=0\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ruvector-sota-2026-10-22/epoch28-aa09a8d75110/project/experiments/swarm/jevbench-adapter/server.py\", line 240, in predict\n    raise RuntimeError(result.get(\"error\",\"Native decision failed\"))\nRuntimeError: state exceeds 16 KiB\n",
+        "type": "RuntimeError"
+      }
+    ]
+  },
+  "scope": "Authored CC0 engineering qualification of the unchanged submitted champion; no new candidate/benchmark score, accuracy, NLL/Brier, rank or generalization claim. The actual complete original source is delivered to the API; native256token and16KiB limits remain.",
+  "future_confirmation": "HOLD pending positively licensed/proven eligible stronger legal typed reader, frozen real DEV + genuinely unused CONF, exact full champion comparison and publisher protocol/eligibility. No data/labels from those roles consumed.",
+  "new_reader_blocker": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch28/reader-admission/reader-admission.json",
+    "bytes": 19673,
+    "sha256": "52957a47c6d7cddd78f25574d8d72c2d0c209f5b0673e1ce6410d51ceaf7d0d5"
+  },
+  "official_refresh": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch28/benchmark-refresh.json",
+    "bytes": 9310,
+    "sha256": "e3e30d188a5abe1783146620a34a8c31ae2d3aa604d35b01430d58506bca3db6"
+  },
+  "all_slots_closed": true
+}

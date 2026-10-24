@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "634e09a1ee7c114da7661d94aeb495145ac71eb8",
-  "checkpoint_manifest_sha256": "7f8bf605ded7b84de9d3ac396f54f73897d5c41f1276a2d69d291b328030eb80",
+  "prior_published_base_commit": "62fbde6019e43b994ad2994483eecdf796b609eb",
+  "checkpoint_manifest_sha256": "0c64af5035f1b9d533d6437fe7859bf125641c816729a4385f849621b0214495",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -15,7 +15,7 @@
     "actual_HTTP_training_feature_requests": 144,
     "actual_HTTP_training_sanity_diagnostic_requests": 6,
     "counting_note": "Cumulative counts include historicaladaptivepublic/evaluationdiagnostics; notallfreshheldout. The144trainingfeature and6epoch12TRAINsanity diagnosticHTTP are preserved separately; epoch13 has no TRAIN/fitting/calibration. DEV/CONF evaluationdiagnostics are not officialbenchmarkgeneralization; scheduledwork notcalledexecuted.",
-    "cumulative_bounded_native_process_attempts_including_qualification": 28,
+    "cumulative_bounded_native_process_attempts_including_qualification": 29,
     "engineering_NLI_pair_forwards": 15,
     "engineering_native_searches": 29,
     "epoch20_bounded_worker_attempts": 1,
@@ -36,7 +36,7 @@
     "native_corpus_attempts_including_failed_request": 22,
     "native_corpus_batches": 20,
     "native_corpus_batches_completed": 20,
-    "native_qualification_attempts": 4,
+    "native_qualification_attempts": 5,
     "new_GPU_rentals": 0,
     "paid_inference_calls": 0,
     "epoch24_actual_execution": {
@@ -269,7 +269,55 @@
     },
     "epoch27_cumulative_corpus_attempts": 24,
     "epoch27_cumulative_completed_corpus_batches": 22,
-    "epoch27_counting_scope": "Prior 23 corpus attempts/21 completed plus this completed batch gives 24/22; prior 27 bounded native process attempts plus one gives28. Four engineering qualifications remain unchanged. Raw DEV_corpora8 counts document inputs, not batches; 72 reader pairs are24 cases x3 arms. Earlier missing-admission launcher preflight stopped before reservation/Popen and consumed zero workers. Prior885 benchmark HTTP successes/2 failures remain unchanged. Free immutable model acquisition is separate. No confirmation, paid/GPU, fitting or generation calls."
+    "epoch27_counting_scope": "Prior 23 corpus attempts/21 completed plus this completed batch gives 24/22; prior 27 bounded native process attempts plus one gives28. Four engineering qualifications remain unchanged. Raw DEV_corpora8 counts document inputs, not batches; 72 reader pairs are24 cases x3 arms. Earlier missing-admission launcher preflight stopped before reservation/Popen and consumed zero workers. Prior885 benchmark HTTP successes/2 failures remain unchanged. Free immutable model acquisition is separate. No confirmation, paid/GPU, fitting or generation calls.",
+    "epoch28_actual_execution": {
+      "Python_network_operations_attempted": 0,
+      "Node_network_operations_attempted": 0,
+      "DEV_reads": 0,
+      "CONF_reads": 0,
+      "benchmark_label_reads": 0,
+      "fits": 0,
+      "calibration_calls": 0,
+      "training_steps": 0,
+      "generation_calls": 0,
+      "paid_calls": 0,
+      "GPU_calls": 0,
+      "HTTP_requests": 0,
+      "native_process_starts_attempted": 1,
+      "native_process_starts_completed": 1,
+      "composite_initializations_attempted": 1,
+      "composite_initializations_completed": 1,
+      "native_ready_receipts": 1,
+      "native_binary_loads_attempted": 1,
+      "native_binary_loads_completed": 1,
+      "native_stdin_write_calls_attempted": 8,
+      "native_request_reply_pairs_closed": 8,
+      "native_stdout_read_calls_attempted": 9,
+      "native_stdout_lines_read": 9,
+      "composite_predict_attempted": 8,
+      "composite_predict_completed": 7,
+      "native_systemOne_requests": 8,
+      "native_questions_written": 8,
+      "native_response_lines": 8,
+      "native_successful_responses": 7,
+      "native_refusal_responses": 1,
+      "worker_attempts": 1,
+      "verified_worker_starts": 1,
+      "uncertain_start": false,
+      "wall_seconds_including_init_cleanup": 1.594919105002191,
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "owned_live_processes_closed": true,
+      "peak_RSS_bytes": 540643328,
+      "user_seconds": 1.107408,
+      "system_seconds": 0.310739,
+      "errors": 0,
+      "raw_operation_counters_source": "raw.json",
+      "operation_counts_complete": true,
+      "backend_execution_since_checkpoint": "NOT_APPLICABLE_FINAL_RAW"
+    }
   },
   "epochs": [
     {
@@ -530,6 +578,27 @@
       "native_worker_attempts": 1,
       "kind": "REAL_DEV_ONLY_TYPED_NLI_DIAGNOSTIC",
       "confirmation_consumed": false
+    },
+    {
+      "benchmark_accepted": false,
+      "champion_promoted": false,
+      "new_submission": false,
+      "official_SOTA_verified": false,
+      "epoch": 28,
+      "kind": "REAL_ENGINEERING_FULL104_QUALIFICATION",
+      "status": "REJECTED_ENGINEERING_QUALIFICATION",
+      "manifest": {
+        "path": "experiments/sota-2026-10-22/epoch28/EPOCH_MANIFEST.json",
+        "bytes": 23873,
+        "sha256": "0bb98c78dc57a94e39c5612d023064af6b6d55f29ef75c7ff59a6e94b4dfcef4"
+      },
+      "results": {
+        "path": "experiments/sota-2026-10-22/epoch28/RESULTS.json",
+        "bytes": 11910,
+        "sha256": "a418fe678118cb3242d65f6f56f7ef2699467e29a2c86af790bb0a8bdd52f62b"
+      },
+      "engineering_qualified": false,
+      "official_rank": null
     }
   ],
   "used_confirmation_sets": [
@@ -543,7 +612,7 @@
     "Legal96zero-shotfourtaskadaptation,notfull162taskofficialLegalBench",
     "NoClaimBenchRuVectorscore; fullquestions/scorer/license/submissionnotverified"
   ],
-  "next_research_priority": "Preserve submitted full-input Native104/RRF10. Original 2020 BART MNLI scored 15/24 with native ANN evidence, versus 12/24 lexical and 14/24 positional, with better NLL/Brier on this fixed new DEV bank. It failed both frozen gates: contradiction 0/4 and only one extra correct answer versus positional (two required). All arms predicted zero contradictions. These are different documents from earlier epochs, so do not claim paired historical model improvement or an official score/rank. Posthoc saved-trace analysis found two contradiction failures despite full retention of their annotated spans in every arm, and two cases with partial packed evidence; native top40 covered all annotated spans for three of four. Annotation coverage does not establish semantic sufficiency or prove a sole classifier cause. Prioritize a legally trained contradiction-aware decision model with verifiable licensed supervision, plus context packing for exceptions and distributed evidence. Require an actually matched full-input104 comparator and genuinely unused confirmation before promotion. Do not repeat generic head, threshold or retrieval grids on exposed questions. Original weight identity matches the February 2020 release, but publisher row/calibration logs, later unchanged-weight reselection and foundation-text overlap remain unresolved. Lossless float32 base64 inputs and compact native receipts keep all actual input bits and validated returned IDs/scores/digests; every new trace fits the API cap. One CPU2 worker completed in 204.0398 seconds with 72 NLI pairs and 24 native queries; all forbidden network/paid/GPU/fit/generation/CONF counters are zero, with one prospectively allowed literal loopback bind. JevBench latest checked open-weights Capability leader is Chon-1.0-12B at 85.336. Submission7FEA2738 has only its original acknowledgement; 115 was queue position, never rank, and result/eligibility remain unverified. ClaimBench full cases/scorer/licence/access remain unverified with no RuVector score or pilot. Future epochs remain capped at two CPU2 batches of 600 seconds, zero paid/GPU calls unless an actual remaining authorized cap and a new price/time/cleanup plan exist. No duplicate submissions/messages or production changes.",
+  "next_research_priority": "Preserve Native104, all historical rejections and exposed DEV roles, and untouched confirmation reservations. E28 ran actual original full-input TypeSafe native2.4.0 once on eight authored CC0 engineering requests under enforcedCPU0,1:7successful responses and one preserved16385-byte refusal,1.594919105s total,540643328B largest-child RSS. Frozen engineering qualification remains REJECTED: its sole failed gate is a refusal-text whitelist that omits the actual original message state exceeds 16 KiB; all other frozen checks passed. Separate posthoc source/string/numeric evidence identifies a likely checker false negative; do not amend the frozen scorer, reinterpret the rejection as qualification, or rerun the eight exposed engineering inputs merely to repair this matcher. A future prospective unit-contract correction can use the saved trace without new native calls or benchmark claims. Full API state delivery and observed boundary do not establish semantic coverage beyond original BGE max256tokens; no source clipping or length-based redraw. Prioritize verifiable licensed legal contradiction-aware pretrained decision/NLI model with distributed evidence/context/numeric handling and matched same-model retrieval ablation. Newly held imanxch/distilbert-contractnli@124bdcede741d1a3fd999512a7813269e9c0c29a lacks immutable original-document supervision/selection/calibration identities for current banks; Syamchand/contract-nli-bert@24d5c101b11c9b59dcf47b710516388290f661c0 lacks licence/semantic-label mapping/lineage. Do not repeat unchanged holds or generic exposed-question grids. Require positively eligible frozen real DEV and genuinely unused CONF with exact full104 comparison before promotion; E28 consumed none. Jev lastchecked leader Chon-1.0-12B85.336Capability;7FEA2738 only original acknowledgement,115originalqueue neverrank/currentqueue, no official RuVector score or eligibility verified. ClaimBench d1-ultra100percent, Decider99.694percent and four LMs100percent are publisher aggregates only; full cases/scorer/licence/submission access still unverified, no RuVector score or pilot. All E28 slots closed and zero paid/GPU cap persists; no duplicate submissions/messages/production changes.",
   "benchmark_targets": {
     "JevBench": {
       "leader_observed": "Chon-1.0-12B",
@@ -681,10 +750,10 @@
     "schema_version": 1,
     "run_id": "epoch28-aa09a8d75110",
     "epoch": 28,
-    "state": "EPOCH28_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
-    "work_active": true,
+    "state": "EPOCH28_CLOSED",
+    "work_active": false,
     "experiments_active": false,
-    "checkpoint_parent": "634e09a1ee7c114da7661d94aeb495145ac71eb8",
+    "checkpoint_parent": "62fbde6019e43b994ad2994483eecdf796b609eb",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
       "run_id": "epoch28-aa09a8d75110",
@@ -708,8 +777,10 @@
     "native_allowed": 0,
     "conditional_confirmation_allowed": 0,
     "confirmation_allowed": 0,
-    "instruction": "One nonretryable actual full-input Native104 engineering qualification after exact independent actual remote source readback and local admission. CPU2 <=600 seconds including initialization and cleanup; no benchmark DEV/CONF/train/calibration/paid/GPU or promotion/submission. Authored cases are engineering evidence only.",
-    "native_allowed_after_exact_remote_readback": 1,
+    "instruction": "Closed E28 engineering qualification. All slots permanently closed. Preserve Native104 and exact acceptance/rejection; release physical lock only after independent final actual remote readback.",
+    "native_allowed_after_exact_remote_readback": 0,
+    "all_unspent_epoch28_slots_permanently_closed": true,
+    "owned_native_groups_closed": true,
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -793,9 +864,9 @@
     }
   ],
   "rejection_ledger": {
-    "path": "experiments/sota-2026-10-22/epoch27/REJECTION_LEDGER.json",
-    "bytes": 66409,
-    "sha256": "b892b427cfe8b9bc9a1d8312f47bbdd5f045df8162ffc781a88abdafadd7755e"
+    "path": "experiments/sota-2026-10-22/epoch28/REJECTION_LEDGER.json",
+    "bytes": 69724,
+    "sha256": "93efc4ef76e60741cf3ed88747f10489ad1f117f3cc6e5931deac5accfbffc2d"
   },
   "benchmark_refresh": {
     "path": "experiments/sota-2026-10-22/legal-transfer/epoch28/benchmark-refresh.json",
@@ -1528,6 +1599,13 @@
         "native_index_initializations": 8,
         "native_searches_completed": 24
       }
+    },
+    "epoch28_budget": {
+      "worker_attempts_used": 1,
+      "workers_remaining": 0,
+      "native_corpus_batches_remaining": 0,
+      "confirmation_remaining": 0,
+      "all_unspent_slots_permanently_closed": true
     }
   },
   "publisher_status": {
@@ -3552,5 +3630,55 @@
     "path": "experiments/sota-2026-10-22/legal-transfer/epoch28/benchmark-refresh.json",
     "bytes": 9310,
     "sha256": "e3e30d188a5abe1783146620a34a8c31ae2d3aa604d35b01430d58506bca3db6"
+  },
+  "epoch28_final": {
+    "benchmark_accepted": false,
+    "champion_promoted": false,
+    "new_submission": false,
+    "official_SOTA_verified": false,
+    "manifest": {
+      "path": "experiments/sota-2026-10-22/epoch28/EPOCH_MANIFEST.json",
+      "bytes": 23873,
+      "sha256": "0bb98c78dc57a94e39c5612d023064af6b6d55f29ef75c7ff59a6e94b4dfcef4"
+    },
+    "results": {
+      "path": "experiments/sota-2026-10-22/epoch28/RESULTS.json",
+      "bytes": 11910,
+      "sha256": "a418fe678118cb3242d65f6f56f7ef2699467e29a2c86af790bb0a8bdd52f62b"
+    },
+    "status": "REJECTED_ENGINEERING_QUALIFICATION",
+    "engineering_qualified": false,
+    "official_rank": null,
+    "goal_met": false,
+    "fresh_confirmation_consumed": false,
+    "all_unspent_slots_closed": true
+  },
+  "epoch28_data_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": [],
+    "used_confirmation_identities": [],
+    "authored_engineering_ids": [
+      "e28-full104-engineering-01",
+      "e28-full104-engineering-02",
+      "e28-full104-engineering-03",
+      "e28-full104-engineering-04",
+      "e28-full104-engineering-05",
+      "e28-full104-engineering-06",
+      "e28-full104-engineering-07",
+      "e28-full104-engineering-08"
+    ],
+    "benchmark_generalization": false
+  },
+  "epoch28_posthoc_diagnostic": {
+    "path": "experiments/sota-2026-10-22/audit/epoch28/posthoc-refusal-checker-diagnostic.json",
+    "bytes": 6199,
+    "sha256": "84d5b026fb61164ad1878937637dd23ff2da228940ca930c4844c0da47f5c864"
+  },
+  "epoch28_independent_actual_audit": {
+    "path": "experiments/sota-2026-10-22/audit/epoch28/actual-execution-results-independent.json",
+    "bytes": 36335,
+    "sha256": "60e32770feedcbdc33bf016b9156f879f371d1ae6176afdfdfa5a8d4118e51b3"
   }
 }

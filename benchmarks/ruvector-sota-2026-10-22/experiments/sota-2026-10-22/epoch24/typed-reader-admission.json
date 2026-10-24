@@ -1,0 +1,111 @@
+{
+  "schema": "ruvector.reader-admission.v1",
+  "epoch": 24,
+  "status": "no_reader_admitted_strict_provenance_gate",
+  "candidate_limit": 2,
+  "candidate_limit_exhausted": true,
+  "activity": {
+    "public_metadata_and_source_reads_only": true,
+    "test_labels_or_per_example_test_outputs_read": false,
+    "weights_downloaded": false,
+    "inference_run": false,
+    "repository_writes": false,
+    "paid_calls_gpu_or_secrets": false
+  },
+  "candidates": [
+    {
+      "id": "solvi-ai/solvi-large-long",
+      "revision": "1455180de8a31c17f0e3d414be9a4111baa2d2ae",
+      "declared_weight_license": "Apache-2.0",
+      "architecture": "ModernBERT-large encoder, 395839494 parameters, custom six-column token head",
+      "verdict": "hold_not_admitted",
+      "positive_evidence": [
+        "Author metadata names ContractNLI train-only windows and whole-contract fine-tuning.",
+        "Checkpoint selection is declared ContractNLI dev plus the base development metric, never tests.",
+        "Shipped temperatures and act calibrator are declared fitted on development data, not tests.",
+        "The initial-weight SHA256 exactly matches the pinned solvi-large LFS SHA256.",
+        "Author-supported CPU mode uses max_len=2048 and long=retrieve."
+      ],
+      "unresolved": [
+        "No source dataset revision or document ID lists for training, checkpoint selection, or calibration.",
+        "Referenced exps_v2 training and l19_decontam.py scripts are absent from both inspected public source branches; the GitHub path-specific commit lookup also returned no entries.",
+        "LICENSES.json policy retains a ContractNLI evaluation-only statement that conflicts with its ContractNLI train entry.",
+        "Author release checks use ContractNLI test metrics. Separate escalation experiments fit calibrators on halves of test documents. Shipped calibration is asserted development-only, but strict selection and calibration separation cannot be independently established.",
+        "No 2 CPU / 600 second measurement has been performed; CPU feasibility is not established."
+      ],
+      "base": {
+        "id": "solvi-ai/solvi-large",
+        "revision": "cd992673d838761c669611e2f59ba9661d7b1a15",
+        "sha256": "811736789cf01fcf8eca3891f95dab693a840246f1b2406d79845cd983332e8b",
+        "declared_weight_license": "Apache-2.0",
+        "author_reports": "ContractNLI train-only windows; 216 train windows near test contracts removed; development checkpoint selection and calibration; test evaluation only."
+      },
+      "license_retention": [
+        "Preserve the author manifest and attributions, including SQuAD 2.0 CC-BY-SA-4.0, BoolQ CC-BY-SA-3.0, and VitaminC CC-BY-SA-3.0.",
+        "ContractNLI is declared CC-BY-4.0 by this author manifest.",
+        "No conclusion about downstream relicensing obligations is inferred from the Apache-2.0 weight declaration."
+      ],
+      "overlap_status": {
+        "base_pretraining_text_overlap": "unknown",
+        "teacher_training_overlap": "unknown",
+        "direct_test_finetuning": "not_established; author declares absent"
+      },
+      "weight_metadata_only": {
+        "model.safetensors": {
+          "bytes": 791697076,
+          "sha256": "e761008273972961251bf578952a5659a297e5cf58a5f638c43de8347aec91dc"
+        },
+        "onnx/model_fp16.onnx": {
+          "bytes": 792597888,
+          "sha256": "7504cb656ef16163d86815413a1d28a33b09b19015bb2881ad6fa0c01aeadc80"
+        },
+        "onnx/model_block_fp16.onnx": {"bytes": 792619706, "needed": false}
+      }
+    },
+    {
+      "id": "stanfordnlp/contract-nli-bert",
+      "revision": "058c56fd62d56897bb4fcfbf1be71b17aee3a79c",
+      "source_license": "Apache-2.0",
+      "verdict": "not_admitted_no_released_checkpoint_located",
+      "evidence": [
+        "Official author baseline source and configuration are public.",
+        "conf_base.yml names data/train.json and data/dev.json.",
+        "README gives training and validation selection procedures, but no released checkpoint link was located; GitHub releases API returned an empty list.",
+        "This source alone establishes neither a materially stronger available reader nor a 600-second CPU evaluation path."
+      ]
+    }
+  ],
+  "inference_receipt_if_provenance_later_clears": {
+    "not_authorization_to_download_or_run": true,
+    "source_revision": "96c689f5255d42201f2c6b7fe3bcdf948e105860",
+    "solvi_version": "1.3.0",
+    "python": ">=3.11",
+    "checkpoint_format": "solvi_decide v2 / l14g typed v2",
+    "head_columns": {"single_score_noul_rank_number": 0, "multi": 1, "act": 2, "not_stated": 3, "span_start": 4, "span_end": 5},
+    "cnli_mode": "Native bool with not_stated=True; public yes/no options are true/false on the wire. Joint softmax maps yes to Entailment, no to Contradiction, Unknown to NotMentioned.",
+    "noul_temperature": 1.190084462426962,
+    "frozen_settings": {"max_len": 2048, "long": "retrieve", "top_k": null, "rerank": false, "use_act": false, "multi_question": false, "bs": 1, "evidence": false},
+    "notes": [
+      "The 2048-token budget includes question tokens; retrieval selects about 12 BM25 sections and one forward pass per question.",
+      "DecideModel.load has no revision argument; a separately pinned local snapshot would be required.",
+      "AutoModelForSequenceClassification does not implement the official custom head.",
+      "TorchScorer converts weights to float32. OnnxScorer does not expose SessionOptions thread limits."
+    ],
+    "author_uv_lock_versions_not_locally_tested": {"torch": "2.14.0", "transformers": "5.17.0", "onnxruntime": "1.30.0", "tokenizers": "0.23.2", "huggingface-hub": "1.33.0", "safetensors": "0.8.0", "numpy": "2.5.3", "scipy": "1.18.1", "pydantic": "2.13.5"}
+  },
+  "sources": [
+    {"kind": "candidate_card", "url": "https://huggingface.co/solvi-ai/solvi-large-long/blob/1455180de8a31c17f0e3d414be9a4111baa2d2ae/README.md"},
+    {"kind": "candidate_training_metadata", "url": "https://huggingface.co/solvi-ai/solvi-large-long/blob/1455180de8a31c17f0e3d414be9a4111baa2d2ae/solvi_decide.json"},
+    {"kind": "candidate_license_manifest", "url": "https://huggingface.co/solvi-ai/solvi-large-long/blob/1455180de8a31c17f0e3d414be9a4111baa2d2ae/LICENSES.json"},
+    {"kind": "candidate_weight_metadata", "url": "https://huggingface.co/api/models/solvi-ai/solvi-large-long/tree/1455180de8a31c17f0e3d414be9a4111baa2d2ae?recursive=false&expand=false"},
+    {"kind": "base_card", "url": "https://huggingface.co/solvi-ai/solvi-large/blob/cd992673d838761c669611e2f59ba9661d7b1a15/README.md"},
+    {"kind": "base_weight_metadata", "url": "https://huggingface.co/api/models/solvi-ai/solvi-large/tree/cd992673d838761c669611e2f59ba9661d7b1a15?recursive=false&expand=false"},
+    {"kind": "official_inference_source_and_license", "url": "https://github.com/solvi-ai/solvi/tree/96c689f5255d42201f2c6b7fe3bcdf948e105860"},
+    {"kind": "official_dependency_lock", "url": "https://github.com/solvi-ai/solvi/blob/96c689f5255d42201f2c6b7fe3bcdf948e105860/uv.lock"},
+    {"kind": "second_public_branch", "url": "https://github.com/solvi-ai/solvi/tree/de62494e3762ea4a8851a3602c98ebe0eba89da1"},
+    {"kind": "stanford_source", "url": "https://github.com/stanfordnlp/contract-nli-bert/tree/058c56fd62d56897bb4fcfbf1be71b17aee3a79c"},
+    {"kind": "stanford_configuration", "url": "https://github.com/stanfordnlp/contract-nli-bert/blob/058c56fd62d56897bb4fcfbf1be71b17aee3a79c/data/conf_base.yml"},
+    {"kind": "stanford_source_license", "url": "https://github.com/stanfordnlp/contract-nli-bert/blob/058c56fd62d56897bb4fcfbf1be71b17aee3a79c/LICENSE"}
+  ],
+  "next_engineering_direction": "Automatic raw-text structural dependency extraction with source offsets and explicit unresolved states, independently audited on newly authored CC0 fixtures. No semantic benchmark or generalization claim."
+}

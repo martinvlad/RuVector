@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "epoch": 24,
+  "kind": "RAW_SOURCE_STRUCTURE_ENGINEERING_NOT_BENCHMARK_GENERALIZATION",
+  "source_checkpoint": "cbebac41850908bcb69bb7a1a7d18aa67312e8f8",
+  "hypothesis": "Automatic deterministic parsing of a narrow explicit clause/reference grammar can recover source dependencies and inherit written scope from raw text, enabling source-preserving dependency closure on actual native RuVector retrieval without supplied graphs.",
+  "motivation": "Epoch23 only closed supplied annotations. A new typed reader Solvi-large-long was investigated, but exact split/selection/calibration separation remains unresolved; no weights or inference. Advance automatic raw extraction independently, retaining all failures.",
+  "new_data": "24 independently authored CC0 raw-text engineering fixtures; auditor holds manual structural oracle unseen by implementer until code/source freeze. Never benchmark generalization.",
+  "contract_path": "experiments/sota-2026-10-22/epoch24/ENGINEERING_CONTRACT.json",
+  "benchmark_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "engineering_roles": {
+    "implementation_smoke": "authored by implementer only, before freeze",
+    "independent_holdout": "new raw fixtures authored by independent auditor, identities and input hashes sealed before measurement; oracle held outside worker input"
+  },
+  "typed_reader_admission": "HOLD: no pretrained typed reader admitted. NLI/classification accuracy, proper scores and model-resource comparisons are null/inapplicable.",
+  "retrieval": "Exact pinned BGE + real native RuVector; matched lexical and positional arms; baseline and closure share the same observed effective seeds within each arm. No ANN superiority inferred from closure.",
+  "acceptance_scope": "Structural engineering only; no champion promotion, benchmark score, SOTA claim or publisher submission can follow any outcome.",
+  "frozen_required_checks": [
+    "Raw-text parser accepts no supplied graph/clauses/dependencies/span annotations/gold outputs",
+    "All emitted spans reproduce exact source text and derived UTF8 offsets without normalization",
+    "Supported unique explicit dependencies and inherited scope match the independent manual oracle",
+    "Malformed/ambiguous/missing/unsupported/budget cases report structural unknown; never map miss to legal insufficient evidence",
+    "Actual BGE/native retrieval measured; all arms use the same parser/closure policy and exact baseline/closure effective seed identity within each arm",
+    "At least one actual-native retained seed gains an originally missing automatically extracted dependency; passing cannot use only empty outputs",
+    "Independent frozen acceptance checks pass with full raw traces and failures retained",
+    "One nonretryable process, CPU0/1 two threads, <=600 seconds including initialization and cleanup; no live owned descendants",
+    "No NLI, benchmark labels/questions/corpus measurement, fitting, paid/GPU/network execution, submission or outgoing messages"
+  ],
+  "limits": {
+    "worker_attempts": 1,
+    "native_corpus_batches": 1,
+    "user_max_native_corpus_batches": 2,
+    "cpu_threads": 2,
+    "seconds_per_batch": 600,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "all_unspent_slots_close_without_retry": true
+  },
+  "failure_policy": "Keep original frozen source/result/oracle verdict. No postmeasurement parser fixes, threshold tuning, fixture selection or retries in epoch24.",
+  "limitations": [
+    "Narrow structural grammar is not a semantic legal reader. Authored holdout is not a benchmark confirmation set.",
+    "No verified eligible ClaimBench full data/scoring/license/access; no pilot. Jev sealed publisher result remains required.",
+    "Old easy48, Legal96, CNLIDEV and all previous exposed identities remain DEV forever. Existing unused confirmation is untouched.",
+    "Source span/UTF8 capacity is not an NLI context-token admission check.",
+    "A retrieval miss or parser structural unknown cannot prove legal insufficient evidence."
+  ],
+  "next_semantic_priority": "Admit a materially stronger licensed typed/legal reader only after exact split/selection/calibration provenance and bounded CPU runtime are established.",
+  "contract_sha256": "52eff0668eaca8d6928c196d7cf941a2dbcb6817b071a41a074bb45fece557bd"
+}

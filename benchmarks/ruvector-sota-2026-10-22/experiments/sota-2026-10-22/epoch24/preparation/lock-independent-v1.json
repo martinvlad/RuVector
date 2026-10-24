@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "audit_role": "independent_read_only_physical_lock",
+  "observed_at": "2026-10-24T02:38:44.479474+00:00",
+  "scope": "/tmp/ruvector-sota-2026-10-22/epoch24-8be8f0fec36e",
+  "owner": {
+    "run_id": "epoch24-8be8f0fec36e",
+    "pid": 68322,
+    "startticks": 13304876,
+    "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
+    "lock_inode": 13626,
+    "started_unix": 1792809346.850011,
+    "expires_unix": 1792820146.850011,
+    "started_at": "2026-10-24T02:35:46.850011+00:00",
+    "expires_at": "2026-10-24T05:35:46.850011+00:00",
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+    "generation": 1
+  },
+  "owner_sha256": "a3f28c3818dc22bfb840f844a95f15af33a75beaaa96e74c6ecd9053bfb5d35d",
+  "guardian_cmdline": "python3 -B /tmp/ruvector-sota-2026-10-22/epoch24-8be8f0fec36e/lock_supervisor.py",
+  "guardian_startticks_observed": 13304876,
+  "lock_device": 33,
+  "lock_inode": 13626,
+  "guardian_lock_fd": "/proc/68322/fd/3",
+  "kernel_lock_rows": [
+    "1: FLOCK  ADVISORY  WRITE 68322 00:21:13626 0 EOF"
+  ],
+  "CPU_affinity_observed": "0-1",
+  "heartbeat_age_seconds": 0.5468404293060303,
+  "prior_guardian_release": {
+    "pid": 66088,
+    "generation": 2,
+    "released_at": "2026-10-24T02:07:18.402033+00:00"
+  },
+  "prior_guardian_pid_exists": false,
+  "checks": {
+    "guardian_pid_startticks_match": true,
+    "guardian_fd_lock_inode_device_match": true,
+    "owner_inode_match": true,
+    "proc_lock_one_exclusive_write": true,
+    "affinity_0_1": true,
+    "lease_unexpired": true,
+    "heartbeat_recent": true,
+    "prior_guardian_pid_absent": true
+  },
+  "passed": true,
+  "limitations": [
+    "Durable remote lease/CAS not inspected in this physical-only audit.",
+    "No competing flock acquisition attempted; exclusivity is established by current kernel lock row and owning file descriptor.",
+    "No source restore, candidate, model, fixture, gold, corpus or performance execution performed."
+  ],
+  "write_note": "Initial ENOSPC left a0-byte file; this complete report replaces only that owned empty file."
+}

@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "run_id": "epoch24-8be8f0fec36e",
-  "state": "EPOCH24_PLANNING_EXCLUSIVE",
+  "state": "EPOCH24_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
   "work_active": true,
   "experiments_active": false,
   "native_allowed": 0,
-  "native_allowed_after_exact_remote_readback": 0,
-  "checkpoint_parent": "cbebac41850908bcb69bb7a1a7d18aa67312e8f8",
+  "native_allowed_after_exact_remote_readback": 1,
+  "checkpoint_parent": "c3ce15ff1328fe6282cb3d184b8636f712d0701a",
   "owner_pid": 68322,
   "owner_startticks": 13304876,
   "lock_inode": 13626,
@@ -20,5 +20,6 @@
     "paid_API_calls": 0,
     "GPU_calls": 0
   },
-  "instruction": "Exclusive epoch24 planning; stop overlaps; no execution before independently frozen source and actual remote admission. Engineering raw-text structure fallback; champion unchanged."
+  "instruction": "Only one nonretryable engineering worker after independent exact actual remote source readback and local NATIVE_ADMISSION. Benchmark/NLI/paid/GPU/promotion/submission prohibited; preserve Native104.",
+  "conditional_confirmation_after_independent_DEV_runtime_gates": 0
 }

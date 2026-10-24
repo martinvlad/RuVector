@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "3ecca377b498b4b87f3f00a46dacc5769504135c",
-  "checkpoint_manifest_sha256": "a58dd609731df0857c84d42a8dd5eaa329342df302f0d79992bbbbdb4369fa2a",
+  "prior_published_base_commit": "c3ce15ff1328fe6282cb3d184b8636f712d0701a",
+  "checkpoint_manifest_sha256": "977c701d2a40a7f461797848a7dc976cba43a16e3aa26c336b5e2c2770a0d2c2",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -417,12 +417,12 @@
   "active_run": {
     "schema_version": 1,
     "run_id": "epoch24-8be8f0fec36e",
-    "state": "EPOCH24_PLANNING_EXCLUSIVE",
+    "state": "EPOCH24_SOURCE_FROZEN_PENDING_REMOTE_ADMISSION",
     "work_active": true,
     "experiments_active": false,
     "native_allowed": 0,
-    "native_allowed_after_exact_remote_readback": 0,
-    "checkpoint_parent": "cbebac41850908bcb69bb7a1a7d18aa67312e8f8",
+    "native_allowed_after_exact_remote_readback": 1,
+    "checkpoint_parent": "c3ce15ff1328fe6282cb3d184b8636f712d0701a",
     "owner_pid": 68322,
     "owner_startticks": 13304876,
     "lock_inode": 13626,
@@ -436,7 +436,8 @@
       "paid_API_calls": 0,
       "GPU_calls": 0
     },
-    "instruction": "Exclusive epoch24 planning; stop overlaps; no execution before independently frozen source and actual remote admission. Engineering raw-text structure fallback; champion unchanged.",
+    "instruction": "Only one nonretryable engineering worker after independent exact actual remote source readback and local NATIVE_ADMISSION. Benchmark/NLI/paid/GPU/promotion/submission prohibited; preserve Native104.",
+    "conditional_confirmation_after_independent_DEV_runtime_gates": 0,
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -523,9 +524,9 @@
     "sha256": "f9ec15a0b9b1601292f47bfc656ba8d33937da892b5fba0949ec4f0b0c90305d"
   },
   "benchmark_refresh": {
-    "path": "experiments/sota-2026-10-22/legal-transfer/epoch23/benchmark-refresh.json",
-    "bytes": 6101,
-    "sha256": "525d38dfbf156028c0806d010747c6ddc9f921924fa1d10dc70ca22bea0e60cd"
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch24/benchmark-refresh.json",
+    "bytes": 7004,
+    "sha256": "1f96b14f655cf9d782e703939d89276a887d4bc382943308a8c84c2922e9cf0e"
   },
   "restore_epoch3": "First restore_checkpoint.py; optional restore_epoch3_data.py materializes exact pinned original CC-BY data archive/train/dev/license. Existing bootstrap model flags do not acquire new NLI assets; obtain only official revisions in assets.lock.json/model-api, verify SHA. No inference during restore.",
   "restoration_boundary": "Epoch16 freshly verified2293 Gitblob files and2220projectCP+48base using reviewed bootstrap/restore; exact7officialNLI+BGE2/native22 restored separately. No model/native session occurred before reviewed source freeze/publication; actual oneDEV process is in epoch16_final. Never rerun archived controllers.",
@@ -2461,5 +2462,27 @@
     "typed_reader_status": "Solvi provenance/selection separation unresolved; no weights or labels accessed",
     "fallback": "automatic source structure/dependency extraction, engineering only",
     "prior_epoch23_physical_lock_released_and_absent": true
+  },
+  "epoch24_frozen_study": {
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch24/plan.json",
+      "bytes": 10509,
+      "sha256": "a3e14bd7449332d730d8f99de838eec3fbcd3ea71f5f2db90cf5f68a34469749"
+    },
+    "source_freeze": {
+      "path": "experiments/sota-2026-10-22/epoch24/source-freeze.json",
+      "bytes": 12194,
+      "sha256": "160cf4510c773a1cb1c85088af40388c4822130cef43a85e5405375224bbd4c8"
+    },
+    "PLAN_SPEC": {
+      "path": "experiments/sota-2026-10-22/epoch24/PLAN_SPEC.json",
+      "bytes": 4348,
+      "sha256": "e6bc17b8da6a11a62b3fb554a071c4324e91cb063acc5ef94eba4d3d6fdbd11a"
+    }
+  },
+  "epoch24_official_refresh": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch24/benchmark-refresh.json",
+    "bytes": 7004,
+    "sha256": "1f96b14f655cf9d782e703939d89276a887d4bc382943308a8c84c2922e9cf0e"
   }
 }

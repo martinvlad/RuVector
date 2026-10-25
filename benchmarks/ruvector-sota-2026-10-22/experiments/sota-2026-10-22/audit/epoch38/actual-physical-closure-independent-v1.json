@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "epoch": 38,
+  "checks_passed": true,
+  "physical_closure_passed": true,
+  "observed_at": "2026-10-25T15:40:17.011342+00:00",
+  "scope": "Independent metadata and kernel physical closure inspection only; no raw predictions, scoring, model/native/tokenizer/worker or Git mutation calls.",
+  "kernel_boot_id": "4632fb06-b0ef-4df5-b72b-0e875bbad810",
+  "pid_namespace_inode": 4026532200,
+  "source_commit": "da18a9a445437078f2f20931ad629e6879422fce",
+  "plan": {
+    "path": "experiments/sota-2026-10-22/epoch38/plan.json",
+    "bytes": 57728,
+    "sha256": "aa4f4f26aa3e673b92ec9f6c96927379abe9ec22d9caa7b0b3e83948d5935b1b"
+  },
+  "source_freeze": {
+    "path": "experiments/sota-2026-10-22/epoch38/source-freeze.json",
+    "bytes": 35132,
+    "sha256": "a5f44f55a63924f3a6ba2caf4f9aac4ca1c6ec4b6a87a4c3a5674068b0e9adc4"
+  },
+  "frozen_source_entries_verified": 150,
+  "frozen_source_unchanged": true,
+  "frozen_observer": {
+    "path": "experiments/sota-2026-10-22/epoch38/SUPERVISOR_OBSERVED_CLOSURE.json",
+    "bytes": 1482,
+    "sha256": "328ab8e4220413897153bf917d4ab33af907e155d2cb23bcb9f23dd5639da324"
+  },
+  "execution": {
+    "path": "experiments/sota-2026-10-22/epoch38/runs/engineering/execution.json",
+    "bytes": 8056,
+    "sha256": "8c4d8ffc57f7a7651f139a2936eef2c3f8c97d48b730af425c3e4ea486bb2a65"
+  },
+  "supervisor_completion": {
+    "path": "experiments/sota-2026-10-22/epoch38/SUPERVISOR_COMPLETION.json",
+    "bytes": 555,
+    "sha256": "7d3f71d53047aa8406fa9eeda714359f3c11449f1c533eb509999f4cb5d2480d"
+  },
+  "dispatch_attempt": {
+    "path": "experiments/sota-2026-10-22/epoch38/DISPATCH_ATTEMPT.json",
+    "bytes": 1015,
+    "sha256": "2c553aff01b0d1c530cc4278771132a4b23d908e827a0a5690f1da7e734d6ed9"
+  },
+  "dispatch_reservation": {
+    "path": "experiments/sota-2026-10-22/epoch38/DISPATCH_RESERVATION.json",
+    "bytes": 865,
+    "sha256": "eff3acc16e7862151420d7f313272b5fb5cf659767ac0dab2c599849a5766570"
+  },
+  "supervisor": {
+    "pid": 115510,
+    "state": "Z",
+    "ppid": 1,
+    "pgid": 115510,
+    "sid": 115510,
+    "startticks": 26593510,
+    "kernel_FDSize": 0,
+    "threads": 1,
+    "CPU_affinity": "0-1",
+    "statm": "0 0 0 0 0 0 0",
+    "task_children": {
+      "available": false,
+      "errno": 2,
+      "scope": "Unavailable task children entry does not imply process absence."
+    }
+  },
+  "worker": {
+    "pid": 115511,
+    "state": "ABSENT"
+  },
+  "live_known_owned_pgid_or_sid_members": [],
+  "known_group_scan_inaccessible_stat_entries": [],
+  "captured_execution_status": "WORKER_COMPLETED",
+  "logical_dispatch_reserved": 1,
+  "further_worker_allowance": 0,
+  "current_guardian": {
+    "pid": 113708,
+    "state": "S",
+    "ppid": 1,
+    "pgid": 113708,
+    "sid": 113708,
+    "startticks": 26057675,
+    "kernel_FDSize": 64,
+    "threads": 1,
+    "CPU_affinity": "0-1",
+    "statm": "9024 2262 960 6827 0 1726 0",
+    "task_children": {
+      "available": false,
+      "errno": 2,
+      "scope": "Unavailable task children entry does not imply process absence."
+    }
+  },
+  "guardian_owner": {
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/owner.json",
+    "bytes": 546,
+    "sha256": "a6637b9a10fda9312401161165fe1aa2b2b9b8d6fcaf5b212256640e432d6bd4"
+  },
+  "current_scoped_lock": {
+    "device": 33,
+    "inode": 13626,
+    "kernel_rows": [
+      "1: FLOCK  ADVISORY  WRITE 113708 00:21:13626 0 EOF"
+    ],
+    "independent_NB_contender_denied": true,
+    "release_requested": false
+  },
+  "probe_correction": "The first transient probe wrapped stat/status/statm and task/<pid>/children in one FileNotFound handler, incorrectly reporting PID ABSENT when the children entry was unavailable. Separate stat/status/statm probes corrected this immediately. No publication, process or lock action depended on that incorrect transient report.",
+  "limits": [
+    "Kernel proof covers the exact recorded supervisor and worker identities and their recorded process groups/sessions; it does not globally exclude unrelated detached processes.",
+    "SUPERVISOR_COMPLETION records intent to exit; actual Z/ABSENT kernel evidence and frozen independent observer establish closure.",
+    "No terminal FD directory listing was needed; supervisor Z, FDSize0, single thread and zero statm were verified.",
+    "This report makes no engineering acceptance, benchmark, promotion, calibration, model-lineage or official-rank claim."
+  ]
+}

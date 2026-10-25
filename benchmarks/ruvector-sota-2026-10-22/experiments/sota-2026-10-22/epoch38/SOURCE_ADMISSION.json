@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "epoch": 38,
+  "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+  "phase": "engineering",
+  "scope": "benchmarks/ruvector-sota-2026-10-22/",
+  "verified_actual_remote_readback": true,
+  "published_source_commit": "da18a9a445437078f2f20931ad629e6879422fce",
+  "actual_source_trees": {
+    "root": "b92eaf331e8bc68ece303afd59fc0ac31307796d",
+    "bench": "b4680524cbdd6fcef9ba578bf5f8303ac37e747a",
+    "scope": "0991aac50a14b6bd44db1f188b11c899dc5c99a6"
+  },
+  "plan_sha256": "aa4f4f26aa3e673b92ec9f6c96927379abe9ec22d9caa7b0b3e83948d5935b1b",
+  "source_freeze_sha256": "a5f44f55a63924f3a6ba2caf4f9aac4ca1c6ec4b6a87a4c3a5674068b0e9adc4",
+  "pretrained_model_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/PRETRAINED_MODEL_SOURCE.json",
+    "bytes": 2368,
+    "sha256": "1ee316084894862920997c0134f095afcb36a8e9eea7d6ff6d6ce1dc3a66f25b"
+  },
+  "model_assets_lock_sha256": "652e603534a5c526d1c53e734d040caa791eccaf4fb4397728871342b7906bcb",
+  "model_profiles_sha256": "f6cca3c1e30cc8cb065ab9e09b2375fcdd43abcc39709122a073db333302c2b3",
+  "xxlarge_weight_metadata_sha256": "05e21f2e52be254c09c7cf715cd36afd1bd6f4a58b9a0710c9f1589506a07fc0",
+  "legacy_original_load_plan_sha256": "98daf4e1807375fa785f72b8014cbd067c58bc8d1232c0a1c237c86479113fdd",
+  "model_assets_expected": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.expected.json",
+    "bytes": 2112,
+    "sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806"
+  },
+  "model_assets_validator": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/model_assets_guard.py",
+    "bytes": 7684,
+    "sha256": "fbb13b8fe52e61c5afee6921dc0210ff31368b4d105ca6d94ea44ff824f736f1"
+  },
+  "real_model_assets_guard_receipt": {
+    "path": "experiments/sota-2026-10-22/epoch38/preparation/model-assets-guard-admission.json",
+    "bytes": 9897,
+    "sha256": "b9bea5d3b01304081825c5601c788dd0a3b39a4c25dd59cba5052369f5657f73"
+  },
+  "kernel_boot_id": "4632fb06-b0ef-4df5-b72b-0e875bbad810",
+  "pid_namespace_inode": 4026532200,
+  "owner_pid": 113708,
+  "owner_startticks": 26057675,
+  "owner_lock_fd": 3,
+  "owner_lock_device": 33,
+  "owner_lock_inode": 13626,
+  "owner_generation": 1,
+  "independent_actual_source_readback": {
+    "path": "experiments/sota-2026-10-22/audit/epoch38/preparation/actual-source-readback-independent-v1.json",
+    "bytes": 6669,
+    "sha256": "c82535a12ca06d298070f2564e468cee947657dff802d22512a7a52d3ee3335e"
+  },
+  "limits": {
+    "owned_workers": 1,
+    "per_phase_owned_workers": 1,
+    "CPU_threads": 2,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "seconds_per_batch": 600,
+    "native_corpus_batches": 1,
+    "TRAIN_worker_attempts": 0,
+    "DEV_worker_attempts": 0,
+    "ENGINEERING_worker_attempts": 1,
+    "CONF_worker_attempts": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "data_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "used_confirmation_identities": [],
+  "actual_NLI_forwards_cap": 36,
+  "derived_forecasts_expected": 60,
+  "models": 1,
+  "model_compute_dtype": "F32",
+  "training_lineage_complete": false,
+  "official_eligibility": "HOLD",
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "new_submission": false,
+  "official_SOTA_verified": false,
+  "official_rank": null,
+  "rule": "Conditional one-shot current SOURCE admission only. Root must copy this exact record and the canonical independent readback proof, then pass actual owner/model/runtime/host checks. OneCPU0,1 worker600s total includinginitcleanup, one12query native corpus,36actual readouts/60derived forecasts, zero fits/TRAIN/DEV/calibration/CONF/paid/GPU/retry. This record proves SOURCE identity, not execution."
+}

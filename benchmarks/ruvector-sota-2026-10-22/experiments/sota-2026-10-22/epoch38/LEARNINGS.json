@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "epoch": 38,
+  "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+  "status": "REJECTED_ENGINEERING_ADMISSION",
+  "checks_passed": true,
+  "engineering_passed": false,
+  "evidence": {
+    "results": {
+      "path": "experiments/sota-2026-10-22/epoch38/RESULTS.json",
+      "bytes": 233654,
+      "sha256": "07fce020d231e952008e87927a4dec3e494ba22e5683f686137e5957cac512d4"
+    },
+    "evaluation": {
+      "path": "experiments/sota-2026-10-22/audit/epoch38/EVALUATE.json",
+      "bytes": 230455,
+      "sha256": "3e03c8ee57d75a6177803aa388fa6b3997e8340f6b967994f65949d56b32be4b"
+    },
+    "binding": {
+      "path": "experiments/sota-2026-10-22/audit/epoch38/INDEPENDENT_REPORT.json",
+      "bytes": 230957,
+      "sha256": "6a272144edae7eac61dd222dbe2db7c31f2860d14e881583a4f977275589e71b"
+    },
+    "closure": {
+      "path": "experiments/sota-2026-10-22/epoch38/SUPERVISOR_OBSERVED_CLOSURE.json",
+      "bytes": 1482,
+      "sha256": "328ab8e4220413897153bf917d4ab33af907e155d2cb23bcb9f23dd5639da324"
+    },
+    "source_plan": {
+      "path": "experiments/sota-2026-10-22/epoch38/plan.json",
+      "bytes": 57728,
+      "sha256": "aa4f4f26aa3e673b92ec9f6c96927379abe9ec22d9caa7b0b3e83948d5935b1b"
+    }
+  },
+  "actual_measured_metrics": {
+    "full_raw": {
+      "n": 12,
+      "correct": 4,
+      "accuracy": 0.3333333333333333,
+      "Brier": 0.9251689000444053,
+      "NLL": 1.845735706090352
+    },
+    "full_verified": {
+      "n": 12,
+      "correct": 12,
+      "accuracy": 1.0,
+      "Brier": 0.223149772573476,
+      "NLL": 0.4274965459599307
+    },
+    "lexical_verified": {
+      "n": 12,
+      "correct": 12,
+      "accuracy": 1.0,
+      "Brier": 0.1810772410508322,
+      "NLL": 0.36782481542565565
+    },
+    "native_raw": {
+      "n": 12,
+      "correct": 3,
+      "accuracy": 0.25,
+      "Brier": 1.0365592090478357,
+      "NLL": 2.0177020732079702
+    },
+    "native_verified": {
+      "n": 12,
+      "correct": 12,
+      "accuracy": 1.0,
+      "Brier": 0.19053394974063864,
+      "NLL": 0.37104959945030597
+    }
+  },
+  "failed_frozen_gates": [
+    "lexical_verified:Brier_nonincrease",
+    "lexical_verified:NLL_nonincrease"
+  ],
+  "native_minus_lexical_verified": {
+    "Brier": 0.009456708689806442,
+    "NLL": 0.003224784024650318
+  },
+  "observed_resources": {
+    "outer_phase_including_admission_initialization_cleanup_seconds": 216.8220333349891,
+    "raw_worker_seconds": 211.51826775999507,
+    "largest_child_peak_RSS_bytes": 8014319616,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "compute_thread_cap": 2,
+    "actual_worker_OS_threads_at_final_snapshot": 4,
+    "scope": "Largest-child high water is not simultaneous summed RSS. Noncompute/helper thread count need not equal the compute-thread cap. All observed affinities were0-1.",
+    "native_verified_forward_context_decision_p50_seconds": 4.812506367976312,
+    "native_verified_forward_context_decision_p95_seconds": 5.399694898808956,
+    "latency_scope": "Twelve actual singleton component observations for each arm; paired raw/verified arms reuse one real neural forward. forward_context_decision sums measured forward, source packing and decision only. It excludes model/BGE/index initialization, embedding, tokenizer/reader overhead and cleanup; not end-to-end or publisher timing. Native query is shared descriptive work."
+  },
+  "actual_work": {
+    "corpus_attempted": 1,
+    "corpus_completed": 1,
+    "native_indexes": 12,
+    "native_queries": 12,
+    "native_insertions": 65,
+    "actual_NLI_readouts": 36,
+    "derived_forecasts": 60,
+    "source_analyses": 48,
+    "certificate_decisions": 36,
+    "model_initializations": 1,
+    "model_unloads": 1,
+    "errors": 0,
+    "TRAIN": 0,
+    "DEV": 0,
+    "calibration": 0,
+    "confirmation": 0,
+    "paid_API": 0,
+    "GPU": 0
+  },
+  "what_changed_direction": [
+    "Source-bound exact arithmetic/countermodel decisions achieved12/12 in each of the three verified arms on this newly authored grammar suite. Raw XXL full-source decisions were4/12 and native coverage3/12; this does not show a stronger general NLI model.",
+    "Native_verified failed both prospectively frozen proper-score nonincrease comparisons against lexical_verified. All three verified arms had the same12/12 class decisions. Retain the rejection even though the numerical proper-score differences are small.",
+    "The same-readout correct-certificate mass-transposition property does not guarantee favorable proper scores across distinct retrieval contexts. No native retrieval causal advantage was established.",
+    "The full real model-asset validator passed in E38 and the actual native/model run completed with durable execution capture. The repaired preworker failure branch has source-only fixture coverage; no actual preworker failure occurred in E38. This does not repair E37 unknown captured counts or reader training lineage/official eligibility."
+  ],
+  "next_independent_step": "End this epoch and do not rerun/tune its exposed12 cases. Before another research epoch, verify source-licensed real financial typed-decision data and an exact independent scorer/access route, then prospectively freeze a materially new evidence/context/model hypothesis with matched same-reader native/lexical/full controls. Do not fit a confidence transformation on these exposed labels or call engineering scores benchmark generalization. ClaimBench pilot remains blocked until full data/scorer/license/access are verified.",
+  "limitations": [
+    "Twelve authored CC0 formal financial source/claim cases,4E4C4N, are engineering stress only; no ClaimBench pilot or benchmark estimate.",
+    "All63 historical/current authored engineering entries (51 unique source/hypothesis pairs) are now exposed engineering forever, kept separate from423 benchmark identities.",
+    "Stable unclipped logit-derived NLL was decisive; clipped NLL and underflow diagnostics were retained without clipping or fitted calibration. No posterior calibration claim.",
+    "No TRAIN/DEV/calibration/fresh-confirmation labels consumed; all325 old benchmark DEV documents remain exposed,74 unused and24 protected unchanged.",
+    "Fixed sequential singleton timing and high-water resources have cache/allocator effects; no uncertainty-free population, speed or publisher claim.",
+    "E37 actual cumulative corpus/model tail remains UNKNOWN; total actual corpus counts stay null, while verified lower bounds are34attempts/32complete and outer bounded attempts39/legacy qualification6 separately."
+  ],
+  "submitted_champion": "native104 unchanged",
+  "used_confirmation_identities": [],
+  "benchmark_accuracy": null,
+  "official_rank": null,
+  "official_SOTA_verified": false,
+  "champion_promoted": false,
+  "new_submission": false,
+  "all_remaining_epoch_slots": 0,
+  "future_work_executed": false
+}

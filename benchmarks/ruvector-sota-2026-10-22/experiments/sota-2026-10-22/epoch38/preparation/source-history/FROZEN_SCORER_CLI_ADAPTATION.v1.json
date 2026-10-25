@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "epoch": 38,
+  "status": "UNEXECUTED_OUTSIDE_PROJECT_FROZEN_SCORER_IMPORT_PATH_ADAPTATION",
+  "reason": "Frozen score_engineering imports adjacent data_common and audit modules; isolated -I removes scriptdir. Apply the same exact adjacent-path entrypoint adaptation without source edits.",
+  "adapter_code": "import runpy,sys\nscript=sys.argv[1]\nif script != '/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project/experiments/sota-2026-10-22/audit/epoch38/score_engineering.py': raise ValueError(\"Unreviewed frozen scorer CLI path\")\nsys.path.insert(0,'/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project/experiments/sota-2026-10-22/audit/epoch38')\nsys.argv=sys.argv[1:]\nrunpy.run_path(script,run_name=\"__main__\")\n",
+  "adapter_code_sha256": "a83ec4497e50693a2aed6870f8633d55105f24842c4a4bf0ae7cad871ebc69ff",
+  "allowed_frozen_script": "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project/experiments/sota-2026-10-22/audit/epoch38/score_engineering.py",
+  "argv_prefix": [
+    "/tmp/ruvector-sota-2026-10-22/epoch33-0522a2c521c9/runtime/.venv/bin/python",
+    "-I",
+    "-B",
+    "-c",
+    "import runpy,sys\nscript=sys.argv[1]\nif script != '/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project/experiments/sota-2026-10-22/audit/epoch38/score_engineering.py': raise ValueError(\"Unreviewed frozen scorer CLI path\")\nsys.path.insert(0,'/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project/experiments/sota-2026-10-22/audit/epoch38')\nsys.argv=sys.argv[1:]\nrunpy.run_path(script,run_name=\"__main__\")\n",
+    "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project/experiments/sota-2026-10-22/audit/epoch38/score_engineering.py"
+  ],
+  "argument_policy": "Append only the independently reviewed original scorer mode and options after this prefix; the wrapper forwards them unchanged as sys.argv=[frozen_script,mode,...options]. It does not choose EVALUATE/BIND or authorize invocation.",
+  "authorization_limits": [
+    "EVALUATE only once after actual SOURCE admission, bounded actual worker completion and independent observed physical closure.",
+    "No raw/label/annotated source access before frozen scorer closure guards. No adapter invocation by this agent.",
+    "BIND is separate metadata identity checking after root RESULTS and independent review, without reevaluation.",
+    "Any future execution must preserve actual normal failure/counter/UNKNOWN evidence; no invented scores or weaker closure.",
+    "Keep adaptation outside R after source freeze; no source changes, sys.modules injection, monkeypatch, alternate module or tool mutation."
+  ],
+  "adapter_or_scorer_invocations_by_this_agent": 0,
+  "source_edits": 0,
+  "model_native_tokenizer_case_Git_calls_by_this_agent": 0
+}

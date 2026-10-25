@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "epoch": 41,
+  "recorded_utc": "2026-10-25T22:56:18.320673+00:00",
+  "checks_passed": true,
+  "status": "APPROVED_SOURCE_ONLY_PROSPECTIVE_CONTEXT_CATALOG_PACKING_AND_FIXED_MIXTURE",
+  "source_checkpoint": "7a40daab6ad7caf9310f678813bfef42f907bd17",
+  "source_catalog_approved": true,
+  "context_packing_source_approved": true,
+  "fixed_mixture_source_approved": true,
+  "candidate_execution_authorized_by_this_report": false,
+  "evidence": {
+    "ready": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/context-source-v2/READY.v2.json",
+      "bytes": 1588,
+      "sha256": "5670ba71f6e2f08374e97671556f51b42d82178e5f07a659dabf44e6af6ba050"
+    },
+    "root_contract": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+      "bytes": 6238,
+      "sha256": "fef319ea3f05753a59fffebd9c0ed94692bc1175b105eb99331b3ac515b9b207"
+    },
+    "sources": [
+      {
+        "path": "/workspace/ruvector-e41-acceptance-audit/context-source-v2/context_windows.py",
+        "bytes": 6646,
+        "sha256": "bf21e8896089ff9eca2c5e31d3a9a598b78f165d75fbee2ac128fc6f2d251132"
+      },
+      {
+        "path": "/workspace/ruvector-e41-acceptance-audit/context-source-v2/mixture.py",
+        "bytes": 1335,
+        "sha256": "91eb7f8c1d2c7ce809a53af586f1c596d6166d81b602486b881c28c6df41e25a"
+      },
+      {
+        "path": "/workspace/ruvector-e41-acceptance-audit/context-source-v2/test_context_windows.py",
+        "bytes": 4847,
+        "sha256": "2c1d5df11d3c63a539f84d8d2833a10a1ee8c0cc9db34f926add6e5626512da2"
+      },
+      {
+        "path": "/workspace/ruvector-e41-acceptance-audit/context-source-v2/test_mixture_tolerance.py",
+        "bytes": 984,
+        "sha256": "f9e81f862e38c8caabeba3d8731890af2e6baa8dad42c231494a617db265a49d"
+      },
+      {
+        "path": "/workspace/ruvector-e41-acceptance-audit/context-source-v2/CONTEXT_WINDOW_POLICY.json",
+        "bytes": 2307,
+        "sha256": "78458f77b78303a899f77ac2ab3e4433f8884f4b36134b54ac5c61ccb7b65715"
+      }
+    ],
+    "snapshot_verification": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/context-source-v2/snapshot-verification.json",
+      "bytes": 1458,
+      "sha256": "2327c2088678c47766d9cebb558d710f1bc44639fcc59774c59620cfdd61db3f"
+    },
+    "pure_tests": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/PURE_SOURCE_TEST_EXECUTION.v1.json",
+      "bytes": 2651,
+      "sha256": "86ee56f15be3377e3bf026ba19491873e90b1f76ccb3b58899560722276cc69a"
+    }
+  },
+  "source_identity": {
+    "ready_sha256": "5670ba71f6e2f08374e97671556f51b42d82178e5f07a659dabf44e6af6ba050",
+    "catalog_sha256": "bf21e8896089ff9eca2c5e31d3a9a598b78f165d75fbee2ac128fc6f2d251132",
+    "mixture_sha256": "91eb7f8c1d2c7ce809a53af586f1c596d6166d81b602486b881c28c6df41e25a",
+    "only_existing_V1_to_V2_delta": "Both input/output normalization thresholds1e-10→1e-12; formula unchanged; catalog and existing9fixtures byte-identical. New2 boundary fixtures."
+  },
+  "findings": [
+    {
+      "check": "CATALOG",
+      "passed": true,
+      "detail": "Pure stdlib source partition retaining every original Unicode character with contiguous offsets. Fixed punctuation/decimal/abbreviation heuristic; bounds1024units/1MiBdoc/256KiBunit; no semantic sentence/clause certification."
+    },
+    {
+      "check": "WINDOWS",
+      "passed": true,
+      "detail": "Same rank-permutation packer for all arms: immediate source neighbors, whole groups only, exact caller token count with complete unchanged claim, <=512 joint tokens, source order inside each window. Oversize whole group skipped, no split or truncation. Empty first fails cohort; empty second copies first explicitly."
+    },
+    {
+      "check": "MIXTURE",
+      "passed": true,
+      "detail": "Exactly2 supplied threeway normalized finite log-probability rows; stable perclass logsumexp minus ln2 equals equal arithmetic probability pool. No selection/fitting/temperature/conflict/absence override; canonical first N/E/C argmax; unclipped log tails retained; fixed1e-12 checks."
+    }
+  ],
+  "caller_requirements": [
+    "Use actual same pinned no-truncation tokenizer to supply the token-count callback and independently assert final pair IDs/count/full hypothesis. This review used only synthetic counts.",
+    "Perform TWO actual model forwards for duplicate windows; source module alone cannot establish physical model execution.",
+    "Keep raw catalog sentences/premise/private window objects outside public project; publish only approved IDs/hashes/counts/offset diagnostics.",
+    "Retain per-window receipts, overlap/duplicate counts and true union source coverage. Selected context cannot prove absence or full-document semantic coverage.",
+    "Final worker/scorer/strong physical closure/full600/postfence and source admission remain separately required."
+  ],
+  "fixed_study": {
+    "cases": 12,
+    "documents": 4,
+    "hypotheses_per_document": 3,
+    "arms": 3,
+    "windows_per_case_arm": 2,
+    "actual_readouts_required": 72,
+    "derived_forecasts": 36,
+    "native_indexes": 4,
+    "native_queries": 12,
+    "proper_absolute_tolerance": 1e-12,
+    "accuracy_gain_vs_both_controls_integer": 2,
+    "author_EC_F1_undefined": "DESCRIPTIVE_NULL_ONLY_NO_CLASS_BASED_RESAMPLING"
+  },
+  "uncertainty": [
+    "Four document clusters;12pairs/72forwards are not12/72 independent observations.",
+    "Data-derived source omissions and heuristic grouping may miss relevant clauses; no numerical or logical proof claim.",
+    "DEV-only prospective changed method/gate does not retroactively pass E40 or establish benchmark strength.",
+    "Training overlap/submission eligibility HOLD; native104 unchanged; no CONF/promotion/rank claim."
+  ],
+  "actual_case_archive_keyset_gold_model_tokenizer_native_scorer_network_or_Git_calls": 0
+}

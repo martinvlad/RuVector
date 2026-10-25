@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "epoch": 41,
+  "recorded_utc": "2026-10-25T22:56:18.320673+00:00",
+  "checks_passed": true,
+  "scope": "OWNED_EXACT_SOURCE_SNAPSHOTS_AND_UNRELATED_SYNTHETIC_FIXTURES_ONLY",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/workspace/ruvector-e41-acceptance-audit/context-source-v2",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests": 11,
+      "test_runner_seconds": 0.003,
+      "status": "PASS"
+    },
+    {
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/e41_materialize.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "status": "PASS_IMPORT_AND_HELP_ONLY"
+    },
+    {
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/workspace/ruvector-e41-acceptance-audit/predata-source-v1",
+        "-p",
+        "test_e41_materialize.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests": 7,
+      "test_runner_seconds": 0.355,
+      "status": "PASS"
+    }
+  ],
+  "context_cases": [
+    "exact Unicode source partition/decimal/abbreviation/closing quotes",
+    "whole neighbor grouping/source order/exact synthetic token count/complement",
+    "duplicate requires two mixture outputs",
+    "no group fits or full hypothesis overflow stops",
+    "bad offsets/rank bool/duplicate and oversize unit refusal",
+    "lexical source-order ties",
+    "linear probability pool conflict not forced N",
+    "stable unclipped underflow/canonical-first ties",
+    "nonfinite/unnormalized refusal",
+    "new reject2e-11 input normalization drift",
+    "new accept2e-14 roundoff/retain -1400 tail logp"
+  ],
+  "materializer_cases": [
+    "12 opaque raw choices and no unselected/gold value JSON decode",
+    "global17keyset mismatch before any selected text decode",
+    "document/hypothesis hash order no replacements",
+    "exposed DEV substring and caps stop whole cohort",
+    "choice string structural type only",
+    "linked four-document/twelve-pair feature hash integrity",
+    "old96 exposed input-only read/gold skip/safe error hash"
+  ],
+  "external_source_import_note": "Unchanged materializer test imports source-owner context V1 catalog by explicit file path; its exact bf21 bytes were independently checked equal to admitted V2/snapshot catalog before run. No actual dataset inputs used.",
+  "actual_archive_case_keyset_gold_model_tokenizer_native_network_Git_mutation_calls": 0
+}

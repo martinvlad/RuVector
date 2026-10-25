@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "epoch": 41,
+  "source_commit": "7a40daab6ad7caf9310f678813bfef42f907bd17",
+  "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+  "work_directory": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7",
+  "isolated_project": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/project",
+  "guardian_lease_seconds": 10800,
+  "CPU_affinity": [
+    0,
+    1
+  ],
+  "native_model_label_payload_calls_allowed": 0,
+  "Git_mutations_allowed": 0,
+  "precondition": {
+    "path": "/workspace/ruvector-e41-independent-audit/initial-closed-checkpoint-independent-v1.json",
+    "bytes": 5300,
+    "sha256": "0fbdd45f535d4fc5c809faa22c1f2c4c74298b8e2105fe3a1ea13bec7b3553c0"
+  },
+  "actual_Git_map": {
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/actual-git-map.json",
+    "bytes": 1591790,
+    "sha256": "6ec49836c3a8e41a47418d17bb8970282b83714f2b9df06fa3353f77b9a56e0c"
+  },
+  "checkpoint": {
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/remote-current/CHECKPOINT_MANIFEST.json",
+    "bytes": 1481303,
+    "sha256": "173ccfa53a52d72c1a7be838007bdd87170c7cf8fb0a65de7fa24e47f2b114de"
+  },
+  "code_files": [
+    {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/lock_supervisor.py",
+      "bytes": 1572,
+      "sha256": "dc4d18168e3292818832f69d5b56605becbc6fd2b01022e581c97e97fc58ac61"
+    },
+    {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/reconstruct_current.py",
+      "bytes": 4519,
+      "sha256": "79822c25a8b8b521dab3d068ebbef1fc8152cf931c031b36d09b7d706286f977"
+    },
+    {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/run_reviewed_restoration.py",
+      "bytes": 2026,
+      "sha256": "3d8259af5f099d8c755b79006b2bc6fffff06a6bf1973c10ec3115977b1843f6"
+    },
+    {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/launch_guardian_once_v2.py",
+      "bytes": 3508,
+      "sha256": "3ef70e7f49935ead10b4577f1ae60cd98f78f2f4d677e7addb8da195cd39e41d"
+    }
+  ],
+  "actual_Git_source_originals": {
+    "lock_supervisor.py": {
+      "path": "/workspace/ruvector-e41-independent-audit/sealed-preparation-source-v1/source-originals/lock_supervisor.py",
+      "bytes": 1572,
+      "sha256": "dc4d18168e3292818832f69d5b56605becbc6fd2b01022e581c97e97fc58ac61",
+      "actual_Git_path": "experiments/sota-2026-10-22/epoch40/preparation/source-history/lock_supervisor.py",
+      "actual_Git_blob_sha1": "df3460ae3e85360e62ec17aca57f48e992f7f7ef"
+    },
+    "reconstruct_current.py": {
+      "path": "/workspace/ruvector-e41-independent-audit/sealed-preparation-source-v1/source-originals/reconstruct_current.py",
+      "bytes": 4519,
+      "sha256": "65e27d0fc4bce00b1034c8a37e4dfcaa5e434f36a2f2ea5ecf23ba52c16d3778",
+      "actual_Git_path": "experiments/sota-2026-10-22/epoch40/preparation/source-history/reconstruct_current.py",
+      "actual_Git_blob_sha1": "a597e418cb9c86fc6a061ff4085adde140a7dddd"
+    },
+    "run_reviewed_restoration.py": {
+      "path": "/workspace/ruvector-e41-independent-audit/sealed-preparation-source-v1/source-originals/run_reviewed_restoration.py",
+      "bytes": 2026,
+      "sha256": "264d71fc9ccb6e7514e853f3c9c1746fa96f4e816483ee8c0bf37068d61f8a56",
+      "actual_Git_path": "experiments/sota-2026-10-22/epoch40/preparation/source-history/run_reviewed_restoration.py",
+      "actual_Git_blob_sha1": "a39262299790b5398dc83a3ef2d66a88b4b66963"
+    }
+  },
+  "expected_counts": {
+    "actual_Git_leaves": 6875,
+    "CP_rows": 6801,
+    "projected_union": 6880,
+    "KIT": 61,
+    "BASE": 48,
+    "CP_only_archived_variants": 3
+  },
+  "driver_changes": "Only W40\u2192W41 scoped paths, donorW39\u2192W40 paths, current actualGit/CP/union counts, actualhead/CP SHA constants. Guardian byte-identical currentGit. No source/model/native/scorer/case/gold parsing.",
+  "commands_after_independent_source_approval": [
+    [
+      "python3",
+      "-I",
+      "-B",
+      "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/launch_guardian_once_v2.py",
+      "<absolute-independent-review>",
+      "<reviewSHA256>"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0,1",
+      "python3",
+      "-I",
+      "-B",
+      "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/reconstruct_current.py"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0,1",
+      "python3",
+      "-I",
+      "-B",
+      "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/run_reviewed_restoration.py"
+    ]
+  ],
+  "no_retry_rule": "Every driver once; fresh directories required; any partial failure STOP. A missing donor must be fetched at exact connected actualGit identity, never trusted or substituted.",
+  "source_capture_amendment": "V1 retained unexecuted. V2 waits up to5s for parseable matching owner.json and emitted guardian.stdout owner after durable guardian owner+directory fsync; metadata polling only, same single Popen, no retry/relaunch."
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "epoch": 41,
+  "recorded_utc": "2026-10-25T23:02:29.230155+00:00",
+  "checks_passed": true,
+  "scope": "AUTHOR_SOURCE_AND_RETAINED_PUBLIC_METADATA_ONLY",
+  "status": "KEY_CATALOG_PROVENANCE_LIMIT_CONFIRMED",
+  "failure_report": {
+    "path": "/workspace/ruvector-e41-acceptance-audit/ACTUAL_PREDATA_FAILURE_INDEPENDENT.v1.json",
+    "bytes": 8423,
+    "sha256": "e632d7b16526e4ec2889091456a07e30a19043e90517f43671ac932135d6020b"
+  },
+  "source_refs": [
+    {
+      "path": "/workspace/ruvector-e41-data-scorer/verified-prior/contract_nli__dataset__loader.py",
+      "bytes": 5754,
+      "sha256": "9c63102a01576c230da94695f593fd7bd4fe2d0b20672b74e8a7f62aba426fc4"
+    },
+    {
+      "path": "/workspace/ruvector-e41-data-scorer/verified-prior/exposure-metadata.json",
+      "bytes": 538158,
+      "sha256": "77302349f7259e6dba215fcd5645bfdb7f674bab45144a6149f693e8e5ec0f9a"
+    },
+    {
+      "path": "/workspace/ruvector-e41-data-scorer/build_identity_proposal.py",
+      "bytes": 12758,
+      "sha256": "134ec9574a8a6c583642cf63150263cfe02317834fa3b6b63e93a574ac215623"
+    }
+  ],
+  "findings": {
+    "author_loader_lines124_126": "Dynamically constructs label_id\u2192hypothesis from input_data.labels.items(); no complete fixed17-key name list or catalog hash in this code.",
+    "prior1254_observed_identity_records_identifier_union": [
+      "nda-17",
+      "nda-3",
+      "nda-7"
+    ],
+    "observed_union_is_complete_catalog_proof": false,
+    "E41_expected_key_generation": "build_identity_proposal.py generates nda-1 through nda-17 with range(1,18), then selects3 by salted hash. This is a prospective generated expectation, not a catalog independently established from author code or the three-key observed historical union.",
+    "actual_global_catalog_keys_and_count": "UNAVAILABLE_IN_FAILURE_RECEIPT_NOT_INFERRED",
+    "clarification_to_failure_report": "The phrase inferred from prior structural identities describes the proposal rationale only. Exact source evidence is generated range1..17; retained old records directly establish only nda3/nda7/nda17 observations."
+  },
+  "allowed_future_step_source_proposal": "A separately frozen and reviewed METADATA_KEY_CATALOG_ONLY root protocol may retain only exact actual global key names/cardinality/hash, with all hypothesis/document/choice values undecoded, for a future prospective policy. Root must separately authorize the bounded call. It cannot admit/retry E41 or change its fixed hypothesis selection.",
+  "calls": {
+    "actual_archive_member_case_vault_or_feature_reads": 0,
+    "keycatalog_probe_calls": 0,
+    "materializer_retries": 0,
+    "actual_model_tokenizer_native_scorer_Git_or_R_writes": 0
+  },
+  "history_preserved": true
+}

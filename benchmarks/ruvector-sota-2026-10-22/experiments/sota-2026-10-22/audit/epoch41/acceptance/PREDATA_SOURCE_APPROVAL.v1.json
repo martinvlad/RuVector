@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "epoch": 41,
+  "recorded_utc": "2026-10-25T22:56:18.320673+00:00",
+  "checks_passed": true,
+  "status": "APPROVED_SOURCE_ONLY_ONE_SEPARATELY_ROOT_AUTHORIZED_LABEL_BLIND_MATERIALIZATION",
+  "source_checkpoint": "7a40daab6ad7caf9310f678813bfef42f907bd17",
+  "identity_policy_approved": true,
+  "materialization_source_approved": true,
+  "source_catalog_approved": true,
+  "root_one_custodian_source_execution_allowed": true,
+  "root_one_custodian_authorization_issued_by_this_report": false,
+  "scientific_execution_authorized": false,
+  "policy_sha256": "d1b1b244c6806625f98ff65e62cbc9b30657215c9fe5a4636b220ced2cf4efe5",
+  "predataseal_sha256": "1e9e8f772bcc90262865708541c6eaa80edc13f4dab92da162465fea837a9f48",
+  "ready_sha256": "a5a13c5ca5a09e3e444ae4f97c8b6e9e8057f323a90974de1ddfe6114f51266f",
+  "evidence": {
+    "ready": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/READY.v1.json",
+      "bytes": 2584,
+      "sha256": "a5a13c5ca5a09e3e444ae4f97c8b6e9e8057f323a90974de1ddfe6114f51266f"
+    },
+    "policy": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/MATERIALIZATION_POLICY.v1.json",
+      "bytes": 11396,
+      "sha256": "d1b1b244c6806625f98ff65e62cbc9b30657215c9fe5a4636b220ced2cf4efe5"
+    },
+    "seal": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/PREDATA_ACCESS_SEAL.v1.json",
+      "bytes": 2486,
+      "sha256": "1e9e8f772bcc90262865708541c6eaa80edc13f4dab92da162465fea837a9f48"
+    },
+    "source_refs": [
+      {
+        "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/e41_features.py",
+        "bytes": 5495,
+        "sha256": "85de7558cf375d9a8dbbbd9ea77c806191848e5d22d1d0cd59ec39a245f6f59c"
+      },
+      {
+        "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/e41_materialize.py",
+        "bytes": 16714,
+        "sha256": "7569ec09b29907b7a449924ea783d60d52be879d0819359f5edf9519b0d26740"
+      },
+      {
+        "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/test_e41_materialize.py",
+        "bytes": 6591,
+        "sha256": "0fa31ec06ddc7428eb94edc6ebb486fa9efd7d0bba806251f4b8de64721c60c7"
+      },
+      {
+        "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/IDENTITY_POLICY.v1.json",
+        "bytes": 8956,
+        "sha256": "72900eeda602bb0bc5f8401ba9df36a2359b097559f3ea411b3acff4ff2d98b9"
+      },
+      {
+        "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+        "bytes": 6238,
+        "sha256": "fef319ea3f05753a59fffebd9c0ed94692bc1175b105eb99331b3ac515b9b207"
+      },
+      {
+        "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/context_windows.py",
+        "bytes": 6646,
+        "sha256": "bf21e8896089ff9eca2c5e31d3a9a598b78f165d75fbee2ac128fc6f2d251132"
+      },
+      {
+        "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/MATERIALIZATION_POLICY.v1.json",
+        "bytes": 11396,
+        "sha256": "d1b1b244c6806625f98ff65e62cbc9b30657215c9fe5a4636b220ced2cf4efe5"
+      },
+      {
+        "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/PURE_FIXTURES.v1.json",
+        "bytes": 381,
+        "sha256": "40dfdc6bf24f2e2f9451a98c9ba6fe4a8c474ff5df09487f12691789119fef59"
+      }
+    ],
+    "context_approval": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/CONTEXT_SOURCE_APPROVAL.v2.json",
+      "bytes": 5863,
+      "sha256": "26c26bdd3089b4dab0304a1d1d2470f4ae5b8deedfd4b42d5d6b01101e5ba898"
+    },
+    "selection_verification": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/PREDATA_METADATA_SELECTION_VERIFICATION.v1.json",
+      "bytes": 3952,
+      "sha256": "bb3666811f49a0e01ea7effd647d0c09e209144fa09c2f42aace72a3f06b2181"
+    },
+    "pure_tests": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/PURE_SOURCE_TEST_EXECUTION.v1.json",
+      "bytes": 2651,
+      "sha256": "86ee56f15be3377e3bf026ba19491873e90b1f76ccb3b58899560722276cc69a"
+    },
+    "snapshot_verification": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/snapshot-verification.json",
+      "bytes": 1954,
+      "sha256": "1a87b90b26065c874ef668abf44ed14182d4fb960df22560dbe18cf682840d90"
+    }
+  },
+  "source_findings": [
+    {
+      "check": "FROZEN_IDENTITY_AND_DEPENDENCIES",
+      "passed": true,
+      "detail": "All8 source refs+seal+READY rehashed to immutable handoff; explicit filehash helper/catalog import works under actual-I/-B help. Identity72900, rootfef319, catalogbf21, policy d1b1 and seal1e9e match. No inference/scorer/model dependencies."
+    },
+    {
+      "check": "LABEL_BLIND_FIXED_SELECTION",
+      "passed": true,
+      "detail": "Exact15 TEST metadata pool and first4 salted document hashes independently reconstructed; first3 expected17 structural key hashes are nda9/2/7. Runtime checks actual17 global keynames before any3 selected hypothesis/4 document string decodes. Fixed all12 IDs; mismatch STOP/no replacements or class-based selection."
+    },
+    {
+      "check": "OPAQUE_LABELS",
+      "passed": true,
+      "detail": "Span scanner recursively validates JSON structure/field names without decoding unselected string values or selected annotation.choice. Selected choices only retained as byte spans;12 raw string slices enter opaque outside-project vault after all selected input checks. No allowed semantic choice decoder is present; tests intercept json.loads and reject gold/unselected sentinels."
+    },
+    {
+      "check": "ADMISSION_AND_EXCLUSIONS",
+      "passed": true,
+      "detail": "Exact archive SHA/Git/size and bounded exact test-member hash; all123 IDs; filename and normalized fulltext source identities; all12 E40 ID/hash exclusions; previously exposed Legal96-only normalized substring guard; caps and exact contiguous source partition. Global alias resolution remains constrained by retained metadata and actual runtime substring guard."
+    },
+    {
+      "check": "FAILURE_CUSTODY_PRIVACY",
+      "passed": true,
+      "detail": "New absolute external-scope output only, never project subtree; O_EXCL+fsync outputs and attempt record; safe enum/error-message SHA only; partial parse decoder counters retained on failure. No automatic retry or replacement. Root must reserve real function once and retain uncertain/partial failures."
+    }
+  ],
+  "selection": {
+    "documents": [
+      293,
+      225,
+      361,
+      18
+    ],
+    "hypotheses": [
+      "nda-9",
+      "nda-2",
+      "nda-7"
+    ],
+    "pairs": 12,
+    "unique_document_text_decodes_if_successful": 4,
+    "unique_hypothesis_text_decodes_if_successful": 3,
+    "selected_raw_choice_tokens_copied_if_successful": 12,
+    "semantic_gold_decodes_at_materialization": 0,
+    "all12_DEV_forever_on_access": true,
+    "train": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "mandatory_execution_fences": [
+    "Root first verifies actual planning Git/readback and exact current guardian owner/proc/FD/flock/lease; this source review is not a substitute.",
+    "Root emits a separate exact policy/seal/source-checkpoint root_one_custodian_authorized approval and fsynced once-reservation before the sole materializer call. Rehash all seal/policy/approval refs immediately before invocation.",
+    "No actual case access was performed by this reviewer. Actual global17keyset/archive/member/content/alias/cap checks remain pending and may reject the fixed cohort without redraw.",
+    "First failed/uncertain attempt consumes allowance. Retain private partial outputs outsideR; never publish archive/features/vault/selected raw text/claims/token strings.",
+    "Keep opaque choices closed until independently SOURCE-authenticated completed72NNI/36forecasts, disposed lifecycle, actual stableZ kernelwait0 and full post-all-fences<=600 qualification; semantic12latejoin separately reserved once.",
+    "No model/tokenizer/native/scorer/Gold/benchmark/CONF execution authorized by this source-only report."
+  ],
+  "scope_limits": [
+    "423TRAIN exclusion is inherited from exact prior source-audited metadata, not re-parsed originalTRAIN;216 observed historical IDs were independently distinguished from full423. Metadata flags/known hash aliases were recomputed, no protected inputs read.",
+    "No assertion of actual label compatibility from prediction strings. Exact official raw label enum was inspected by AST only; actual choices remain opaque.",
+    "Four shared source documents/three fixed templates/unknown foundation training overlap: DEV pilot, no official benchmark rank, generalization or champion promotion."
+  ],
+  "calls_by_reviewer": {
+    "actual_archive_reads": 0,
+    "actual_member_or_keyset_scans": 0,
+    "new_document_or_hypothesis_decodes": 0,
+    "raw_choice_copies": 0,
+    "semantic_gold_decodes": 0,
+    "oldLegal96_text_or_gold_reads": 0,
+    "model_tokenizer_native_scorer_calls": 0,
+    "network_Git_or_R_writes": 0
+  }
+}

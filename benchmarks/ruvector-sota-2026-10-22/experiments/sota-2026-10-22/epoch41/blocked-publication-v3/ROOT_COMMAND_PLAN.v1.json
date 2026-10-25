@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "epoch": 41,
+  "status": "UNEXECUTED_COMMAND_PLAN",
+  "root_alone_invokes": true,
+  "scope": "METADATA_ONLY_BLOCKED_FINAL_NO_SCORER_OR_SCIENCE",
+  "project_source_prefix": "experiments/sota-2026-10-22/epoch41/blocked-publication-v3/",
+  "source_directory": "/workspace/ruvector-e41-publication-impl/blocked-predata-v3",
+  "project": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/project",
+  "kit": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/kit",
+  "input_schema_template": "BLOCKED_INPUTS.template.json",
+  "input_copy_rule": "Parent chooses canonical relative public evidence paths, preserving exact pinned bytes/hashes. Populate source_only_reviews with independently approved source-only reports and key_catalog_review only with its independent actual metadata proof. Then publish BLOCKED_INPUTS.json before first results call. No archive/features/vault/body reads.",
+  "operations_in_order": [
+    {
+      "step": "results_first_write",
+      "argv": [
+        "python",
+        "-I",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/project/experiments/sota-2026-10-22/epoch41/blocked-publication-v3/build_blocked_checkpoint_v1.py",
+        "results",
+        "--project",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/project",
+        "--kit",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/kit"
+      ],
+      "creates": [
+        "RESULTS.json",
+        "REJECTION_LEDGER.json",
+        "LEARNINGS.json",
+        "USED_CONFIRMATION_IDENTITIES.json"
+      ],
+      "not_scorer_EVALUATE_or_BIND": true
+    },
+    {
+      "step": "independent_blocked_metadata_privacy_review",
+      "by": "acceptance_audit",
+      "before_manifest": true,
+      "required_fields": {
+        "checks_passed": true,
+        "blocked_checkpoint_publication_allowed": true,
+        "data_admission_passed": false,
+        "experiment_executed": false,
+        "evaluation_executed": false,
+        "no_raw_third_party_text_or_private_gold_in_public_files": true,
+        "results": "EXACT_PUBLIC_REF",
+        "blocked_inputs": "EXACT_PUBLIC_REF",
+        "physical_closure": "EXACT_PUBLIC_REF_61d507"
+      }
+    },
+    {
+      "step": "immutable_manifest",
+      "argv": [
+        "python",
+        "-I",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/project/experiments/sota-2026-10-22/epoch41/blocked-publication-v3/build_blocked_checkpoint_v1.py",
+        "manifest",
+        "--project",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/project",
+        "--kit",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/kit",
+        "--independent-report",
+        "CANONICAL_RELATIVE_ACCEPTANCE_REPORT_PATH"
+      ],
+      "rule": "No further project writes/additions after successful invocation; all evidence/source/reports copied first."
+    },
+    {
+      "step": "outside_controls",
+      "argv": [
+        "python",
+        "-I",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/project/experiments/sota-2026-10-22/epoch41/blocked-publication-v3/build_blocked_checkpoint_v1.py",
+        "controls",
+        "--project",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/project",
+        "--kit",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/kit",
+        "--priorcontrols",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/controls-lease",
+        "--out",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/controls-final"
+      ]
+    },
+    {
+      "step": "independent_exhaustive_final_file_review",
+      "format": {
+        "files": "EVERY_CURRENT_THREE_ROOT_PUBLIC_PATH_BYTES_SHA256_EXACT_NO_EXTRAS"
+      },
+      "output": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/reviewed-final.json"
+    },
+    {
+      "step": "outside_stage",
+      "argv": [
+        "python",
+        "-I",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/project/experiments/sota-2026-10-22/epoch41/blocked-publication-v3/stage_blocked_final_v1.py",
+        "--project",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/project",
+        "--kit",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/kit",
+        "--controls",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/controls-final",
+        "--priorcontrols",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/controls-lease",
+        "--source-filemap",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/actual-git-map.json",
+        "--reviewed-files",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/reviewed-final.json",
+        "--parent-readback",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/project/experiments/sota-2026-10-22/audit/epoch41/preparation/planning-actual-readback-independent-v1.json",
+        "--out",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/stage-final",
+        "--parent",
+        "fa7fb072d4461b4b91f65dc6ed5622090d3fc933",
+        "--expected-main",
+        "c44d7337c0c5ad2ecd2294178475387facb96516",
+        "--expected-root",
+        "3de0ebe9a41a46f46e474d9c6a4fb789a118b81d",
+        "--expected-bench",
+        "70a813bde01550d53817e282c1bf537812b2eea5",
+        "--expected-scope",
+        "e6645cef260e6fddac7ac2cc82ca9c432a9f60f5"
+      ]
+    },
+    {
+      "step": "independent_stage_review_outside_project",
+      "output": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/stage-final-independent.json",
+      "required_fields": {
+        "checks_passed": true,
+        "stage": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/stage-final",
+        "manifest_sha256": "ACTUAL_STAGE_metadata.json_SHA256",
+        "manifest_bytes": "ACTUAL_STAGE_metadata.json_BYTES"
+      }
+    },
+    {
+      "step": "root_connected_GitHub_once",
+      "load_exact": [
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/controller.js",
+        "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/project/experiments/sota-2026-10-22/epoch41/blocked-publication-v3/publish_blocked_final_v1.js"
+      ],
+      "invoke": "publishBlockedFinal(\"/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/stage-final-independent.json\")",
+      "durable_result": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/publication-final.json",
+      "mutation_ids_prefix": "e41-blocked-blocked-final-",
+      "force": false,
+      "expected_parent": "fa7fb072d4461b4b91f65dc6ed5622090d3fc933",
+      "stop_on_uncertain_mutation": true
+    },
+    {
+      "step": "independent_actual_remote_readback_then_root_release",
+      "requirements": [
+        "actual matching branch/commit/soleparent/fullscopeleafmap/rootbench_siblings",
+        "main readonly observation",
+        "newclosedCONT/ACTIVE/CP exact",
+        "fsynced successful mutation pairs,zero uncertain",
+        "release owned guardian only after actualreadback"
+      ]
+    }
+  ],
+  "no_production_modes_called_by_author": true
+}

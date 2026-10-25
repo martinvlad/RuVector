@@ -1,0 +1,52 @@
+{
+  "actual_function_status": "NOT_YET_STARTED_AT_RESERVATION",
+  "argv": [
+    "/usr/bin/taskset",
+    "-c",
+    "0,1",
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-I",
+    "-B",
+    "/workspace/ruvector-e41-data-scorer/sealed-predata-v1/e41_materialize.py",
+    "--archive",
+    "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/data-source/opaque/contract-nli-eced6528.zip",
+    "--out",
+    "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/data-source/materialized-dev-once",
+    "--policy",
+    "/workspace/ruvector-e41-data-scorer/sealed-predata-v1/MATERIALIZATION_POLICY.v1.json",
+    "--expected-policy-sha256",
+    "d1b1b244c6806625f98ff65e62cbc9b30657215c9fe5a4636b220ced2cf4efe5",
+    "--seal",
+    "/workspace/ruvector-e41-data-scorer/sealed-predata-v1/PREDATA_ACCESS_SEAL.v1.json",
+    "--expected-seal-sha256",
+    "1e9e8f772bcc90262865708541c6eaa80edc13f4dab92da162465fea837a9f48",
+    "--approval",
+    "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/ROOT_PREDATA_AUTHORIZATION.v1.json",
+    "--expected-approval-sha256",
+    "54105a47d97bb798335a1fd8d3bf5efae424d2395be2fe76b62a2253574f9c8b"
+  ],
+  "epoch": 41,
+  "one_call": true,
+  "owner": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "PID_namespace": "pid:[4026532200]",
+    "expires_at": "2026-10-26T01:46:35.910732+00:00",
+    "expires_unix": 1792979195.910732,
+    "generation": 1,
+    "kernel_boot_id": "4632fb06-b0ef-4df5-b72b-0e875bbad810",
+    "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
+    "lock_device": 33,
+    "lock_inode": 13626,
+    "pid": 124007,
+    "run_id": "epoch41-7a40daab6ad7",
+    "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+    "started_at": "2026-10-25T22:46:35.910732+00:00",
+    "started_unix": 1792968395.910732,
+    "startticks": 29209782
+  },
+  "retry": 0,
+  "seconds_total": 60
+}

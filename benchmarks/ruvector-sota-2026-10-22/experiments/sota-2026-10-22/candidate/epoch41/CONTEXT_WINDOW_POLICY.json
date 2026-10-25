@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "epoch": 41,
+  "kind": "REAL_CONTRACTNLI_MULTI_HYPOTHESIS_CONTEXT_DEV_PILOT",
+  "root_contract": {
+    "path": "experiments/sota-2026-10-22/epoch41/preparation/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+    "sha256": "fef319ea3f05753a59fffebd9c0ed94692bc1175b105eb99331b3ac515b9b207"
+  },
+  "catalog": "Exact Unicode-character-offset contiguous source partition at heuristic sentence punctuation .!? with decimal, fixed abbreviation/initial and closing-quote guards. Every original character retained; no semantic sentence/clause completeness assertion.",
+  "caps": {
+    "source_units_per_document": 1024,
+    "document_UTF8_bytes": 1048576,
+    "unit_UTF8_bytes": 262144,
+    "claim_UTF8_bytes": 65536,
+    "joint_window_tokens": 512
+  },
+  "packing": "All arms exactsame: ranked anchor plus immediate preceding/following catalogspan; greedily union whole groups if exact full-claim joint no-truncation tokenizer count<=512. Original sourceorder and blanklinejoin insidepacket. Scan allanchors; no model/gold-assisted choice.",
+  "oversize": "No split or truncation. Skip whole group with receipt of full proposed token count/anchor/group IDs. If firstwindow no fittinggroup, fail wholepilot/no replacement/no gold.",
+  "second_window": "Only anchors not represented in firstwindow may proposegroups; neighboring overlap allowed. If none fits, duplicate exact firstpremise with explicit receipt, still TWO real NLI calls.",
+  "aggregation": "Exactly two actual window outputs per arm; arithmetic probability mixture via stablelogsumexp(logp1,logp2)-log2, canonicalN/E/C firstmax, T1. No fitting, maxevidence threshold, conflict override or retrievalmiss\u21d2NEI.",
+  "arms": [
+    "tasksource_native_two_windows",
+    "tasksource_lexical_two_windows",
+    "tasksource_source_order_two_windows"
+  ],
+  "counts": {
+    "documents": 4,
+    "hypotheses_per_document": 3,
+    "cases": 12,
+    "native_indexes": 4,
+    "native_queries": 12,
+    "actual_window_NLI_forwards": 72,
+    "derived_arm_forecasts": 36,
+    "gold_pairs": 12,
+    "document_clusters": 4
+  },
+  "scope": "DEV ONLY. Coverage/literals/dates audit only. No proof/certified numerical correctness or benchmark generalization;12pairs are clustered within4documents.",
+  "actual_model_tokenizer_native_calls_by_author": 0
+}

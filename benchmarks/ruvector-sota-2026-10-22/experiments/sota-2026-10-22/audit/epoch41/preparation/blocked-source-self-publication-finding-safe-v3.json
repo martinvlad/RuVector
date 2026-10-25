@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "epoch": 41,
+  "checks_passed": true,
+  "status": "SOURCE_INTEGRATION_REJECTED_BEFORE_PRODUCTION_SELF_PUBLICATION_RAW_HTML_FIXTURE",
+  "package_READY_sha256": "4475b5623b44d9c32040dc87d58d7d679d11398df768d17019872ddb8fcab73e",
+  "source": {
+    "path": "/workspace/ruvector-e41-publication-impl/blocked-predata-v2/test_blocked_metadata_v1.py",
+    "bytes": 5525,
+    "sha256": "934281da55bd2db9ce35571a23d9dbcffd04676a45d4abfdc5d0ac44f5185821"
+  },
+  "source_line": 73,
+  "same_privacy_rule_in": "blocked_common_v1.py public_text PRIVATE_PATTERNS rawHTML regex",
+  "deterministic_effect": "The whitelisted SOURCE test file itself is rejected by manifest.walk_current; no actual raw page is present. Results mode does not walk_current, so this was identified before any production invocation to avoid partial metadata workflow.",
+  "minimal_fix": "Construct identical invented negative-test bytes from split source literals so SOURCEcontainsno contiguous rawHTML token; do not weaken the privacy rule. One targeted package-source self-publication check and this single test suffice.",
+  "actual_builder_manifest_stage_Git_or_data_model_calls": 0,
+  "source_versions_preserved": "V1/V2 unexecuted",
+  "recorded_at_unix": 1792970248.190353,
+  "matched_source_token_UTF8_hex": "3c68746d6c3e",
+  "prior_private_diagnostic_ref": {
+    "path": "/workspace/ruvector-e41-independent-audit/blocked-source-self-publication-finding-v2.json",
+    "bytes": 1302,
+    "sha256": "e7a6a42f995de00d9d96a67215e520c94cf982d8e704b15450d84f70c2caae5a"
+  },
+  "publication_projection": "The diagnostic token is hex encoded to avoid repeating the same self-publication false positive in the report. Original remains outside publicproject; this source-only failure report contains no page/body data."
+}

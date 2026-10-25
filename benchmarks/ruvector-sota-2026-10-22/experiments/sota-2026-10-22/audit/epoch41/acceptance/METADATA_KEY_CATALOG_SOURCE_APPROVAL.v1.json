@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "epoch": 41,
+  "recorded_utc": "2026-10-25T23:08:17.642567+00:00",
+  "checks_passed": true,
+  "metadata_key_catalog_source_review_passed": true,
+  "metadata_only_inventory_source_execution_allowed": true,
+  "root_metadata_key_catalog_once_authorization_issued_by_this_report": false,
+  "status": "APPROVED_SOURCE_ONLY_SEPARATE_FUTURE_POLICY_METADATA_INVENTORY",
+  "kind": "METADATA_KEY_CATALOG_ONLY",
+  "purpose": "FUTURE_SOURCE_POLICY_ONLY_NO_E41_REOPEN",
+  "source_checkpoint": "7a40daab6ad7caf9310f678813bfef42f907bd17",
+  "policy_sha256": "85abc24fc39ebdc27962b8ad948fcb316a670709ed82def80f6faee65518af13",
+  "source_seal_sha256": "af2556bf027da20d252e1cc4788cab7621ad510a509c08aca30583246dae1cc5",
+  "script_source_sha256": "8d1b47f55f6e5ea5e5b882affd38aa31335fac4528bbda54ba1fb9a6bd37e313",
+  "evidence": {
+    "ready": {
+      "path": "/workspace/ruvector-e41-data-scorer/metadata-key-catalog-v1/READY.json",
+      "bytes": 2286,
+      "sha256": "b67c943f5790454a50abe0431ae5e73d52099a3a5b6b730361c445d14a363760"
+    },
+    "policy": {
+      "path": "/workspace/ruvector-e41-data-scorer/metadata-key-catalog-v1/POLICY.json",
+      "bytes": 1737,
+      "sha256": "85abc24fc39ebdc27962b8ad948fcb316a670709ed82def80f6faee65518af13"
+    },
+    "seal": {
+      "path": "/workspace/ruvector-e41-data-scorer/metadata-key-catalog-v1/SOURCE_SEAL.json",
+      "bytes": 1784,
+      "sha256": "af2556bf027da20d252e1cc4788cab7621ad510a509c08aca30583246dae1cc5"
+    },
+    "source_files": [
+      {
+        "path": "/workspace/ruvector-e41-data-scorer/metadata-key-catalog-v1/metadata_key_catalog.py",
+        "bytes": 7246,
+        "sha256": "8d1b47f55f6e5ea5e5b882affd38aa31335fac4528bbda54ba1fb9a6bd37e313"
+      },
+      {
+        "path": "/workspace/ruvector-e41-data-scorer/metadata-key-catalog-v1/SPANJSON_SOURCE.py",
+        "bytes": 4512,
+        "sha256": "991bf60acd8eb56c758f65d3e059777f943fa346cbb1d7d5b38e06b632ce24e9"
+      },
+      {
+        "path": "/workspace/ruvector-e41-data-scorer/metadata-key-catalog-v1/test_metadata_key_catalog.py",
+        "bytes": 1752,
+        "sha256": "f5aaa4406f76756b377e11189fb89bd0f431d1387639578757934c18e16752bb"
+      },
+      {
+        "path": "/workspace/ruvector-e41-data-scorer/metadata-key-catalog-v1/POLICY.json",
+        "bytes": 1737,
+        "sha256": "85abc24fc39ebdc27962b8ad948fcb316a670709ed82def80f6faee65518af13"
+      },
+      {
+        "path": "/workspace/ruvector-e41-data-scorer/metadata-key-catalog-v1/PURE_FIXTURES.json",
+        "bytes": 392,
+        "sha256": "db186a3d05005807a3c71829802faf21a56ba5fb5be8cfb9723cb525e9d074f4"
+      }
+    ],
+    "scanner_actual_source_binding": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/metadata-key-catalog-source-v1/scanner-actual-source-reference.json",
+      "bytes": 388,
+      "sha256": "d806825f1b89aba17c88529da800b6676b77db55209090f9405302d77af69c68"
+    },
+    "independent_call_scope_fixture": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/metadata-key-catalog-source-v1/independent-call-scope-fixture.json",
+      "bytes": 365,
+      "sha256": "95f5e204028541b36722b242878665e3529763c07ecf7e21801789ffee0c6e9e"
+    },
+    "prior_failure": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/ACTUAL_PREDATA_FAILURE_INDEPENDENT.v1.json",
+      "bytes": 8423,
+      "sha256": "e632d7b16526e4ec2889091456a07e30a19043e90517f43671ac932135d6020b"
+    },
+    "key_catalog_provenance": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/KEY_CATALOG_SOURCE_PROVENANCE_ADDENDUM.v1.json",
+      "bytes": 2736,
+      "sha256": "d93be60832e1a3374f2622a9cc1b7136a73bebbd6ad969461bb5a5d90814694e"
+    }
+  },
+  "static_findings": [
+    "All5 sealed body references+seal/READY exactly hashed into owned snapshot; pure scanner991bf has exact4512B CP and actualGit body match. Script imports only this inert pure scanner, never current materializer/prepare_member.",
+    "Exact archive SHA/Git/size and bounded single exact member path/SHA/size checked before catalog use. This review did not access either payload.",
+    "catalog_only uses generic structural byte walk, then object members on root and global labels only. Only field-name decoder is used. No hypothesis/document/choice values, oldLegal96 states, per-document members/arrays or semantic label decoder.",
+    "Returns exact decoded key names in source order and sorted order, count and SHA256 of sorted compact UTF8 key list; no hypothesis/case selection. count17 is a diagnostic only; actualnames/cardinality are not assumed or changed.",
+    "Keys limited1..128, safeASCIIword/hyphen1..64chars, duplicates/non-objectcatalog/error refuse; safeenum+messagehash prevents private error value echo.",
+    "Source/policy/seal/auth selfbindings checked, actual process affinity0,1 required. New outsideproject namespace, exclusive+fsync attempt/report; no retry, no pipeline/scorer/model capability. Inner9s alarm cannot replace independently enforced whole10s owned child bound."
+  ],
+  "tests": {
+    "all_commands_owned_snapshots_only": true,
+    "unrelated_author_fixture_command": [
+      "python3",
+      "-I",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "/workspace/ruvector-e41-acceptance-audit/metadata-key-catalog-source-v1",
+      "-p",
+      "test_metadata_key_catalog.py",
+      "-v"
+    ],
+    "unrelated_author_fixture_tests": 3,
+    "exit_code": 0,
+    "test_runner_seconds": 0.001,
+    "isolated_help_command": [
+      "python3",
+      "-I",
+      "-B",
+      "/workspace/ruvector-e41-acceptance-audit/metadata-key-catalog-source-v1/metadata_key_catalog.py",
+      "--help"
+    ],
+    "isolated_help_exit_code": 0,
+    "independent_call_scope_fixture": "Synthetic input, patch scanner to prohibit any items/root_records/string_nonempty call and any value decoder; only2 members calls and4fieldkeys occur, canonicalhash independently exact. Passed."
+  },
+  "required_root_execution_fences": [
+    "Separate actual held owner/lease/FD/flock and current actual planning controls/readback must be verified; source review does not assert current ownership.",
+    "Root rehashes exact seal/policy/script/dependencies and creates separate root_metadata_key_catalog_once_authorized/no_E41_materializer_or_model_retry authorization.",
+    "Root fsyncs a fresh exclusive invocation marker BEFORE exactlyone taskset0,1 -I -B process using exact source/policy/seal/auth/output args; output must be policy.out_path metadata-key-catalog-once, never existing failed materializer namespace.",
+    "Enforce10s whole parent child Popen→wait/postcleanup bound including finalreport fsync; inner9s only workscope. If timeout/uncertainty, close only exact owned child session with identity-bound cleanup and retain failure; no retry.",
+    "Publish only reviewed metadata report/keys/sourcehashes/counters. No archive/member bodies, stringvalues, features/vault, oldLegal96 data or selected source text.",
+    "Successful catalog inventory informs only future prospective policy. It cannot admit E41, change its fixed hypothesis selection, reopen consumed custodian/case/model/scorer/Gold slots or create quality metrics."
+  ],
+  "reviewer_calls": {
+    "actual_archive_or_member_reads": 0,
+    "actual_catalog_inventory_calls": 0,
+    "current_materializer_calls_or_retries": 0,
+    "selected_document_or_hypothesis_or_choice_decodes": 0,
+    "semantic_gold_model_tokenizer_native_scorer_network_Git_or_R_mutations": 0
+  },
+  "E41_scientific_status": "BLOCKED_AFTER_FAILED_PREDATA_NO_ACTUAL_NNI",
+  "publication_scope": "This report and referenced source/policy/test metadata only; actual inventory report requires later metadata-only audit.",
+  "official_rank": null,
+  "confirmed_champion_promotion": false
+}

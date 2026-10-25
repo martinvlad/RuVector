@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "epoch": 41,
+  "recorded_utc": "2026-10-25T23:01:16.634763+00:00",
+  "checks_passed": true,
+  "status": "REJECTED_DATA_ADMISSION_EXPECTED_KEYSET_MISMATCH_BEFORE_SELECTED_INPUTS",
+  "source_checkpoint": "7a40daab6ad7caf9310f678813bfef42f907bd17",
+  "data_admission_passed": false,
+  "dev_passed": false,
+  "candidate_execution_qualified": false,
+  "metrics": null,
+  "official_goal_verified": false,
+  "evidence": {
+    "actual_report": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/data-source/materialized-dev-once/materialization_report.json",
+      "bytes": 2152,
+      "sha256": "2c7d5cc3ff2102b76ba1ab043d503176e1b1054f5ee9667d8a993a8145474c98"
+    },
+    "actual_attempt": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/data-source/materialized-dev-once/MATERIALIZER_ATTEMPT.json",
+      "bytes": 630,
+      "sha256": "09f83dbdae143db1baa53c77b17c97f0fbc02c3c2b3454ceea6e3e608069f13d"
+    },
+    "root_once_invocation": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/MATERIALIZATION_ROOT_ONCE_INVOCATION.v1.json",
+      "bytes": 1877,
+      "sha256": "6b58b64f8473637da3aa0517600c78edf068f8c14070a0e0423caa87f844d860"
+    },
+    "root_child": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/MATERIALIZATION_ROOT_CHILD.v1.json",
+      "bytes": 81,
+      "sha256": "addac14f16c0faa458554829ea293c5cb0eafadce9e281b1656a51048a4fb0d9"
+    },
+    "root_once_result": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/MATERIALIZATION_ROOT_ONCE_RESULT.v1.json",
+      "bytes": 361,
+      "sha256": "0971730fee9b9f85744c839635cf2a1f16d2785dc2d55e8c656ce4e8ba47326e"
+    },
+    "root_authorization": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch41-7a40daab6ad7/ROOT_PREDATA_AUTHORIZATION.v1.json",
+      "bytes": 1424,
+      "sha256": "54105a47d97bb798335a1fd8d3bf5efae424d2395be2fe76b62a2253574f9c8b"
+    },
+    "source_approval": {
+      "path": "/workspace/ruvector-e41-acceptance-audit/PREDATA_SOURCE_APPROVAL.v1.json",
+      "bytes": 9000,
+      "sha256": "1da42222ab566aa50fc49f7eb3475ad2895b947ca2c705b13878bb39090d53c5"
+    },
+    "source": {
+      "path": "/workspace/ruvector-e41-data-scorer/sealed-predata-v1/e41_materialize.py",
+      "bytes": 16714,
+      "sha256": "7569ec09b29907b7a449924ea783d60d52be879d0819359f5edf9519b0d26740"
+    },
+    "policy": {
+      "path": "/workspace/ruvector-e41-data-scorer/sealed-predata-v1/MATERIALIZATION_POLICY.v1.json",
+      "bytes": 11396,
+      "sha256": "d1b1b244c6806625f98ff65e62cbc9b30657215c9fe5a4636b220ced2cf4efe5"
+    },
+    "seal": {
+      "path": "/workspace/ruvector-e41-data-scorer/sealed-predata-v1/PREDATA_ACCESS_SEAL.v1.json",
+      "bytes": 2486,
+      "sha256": "1e9e8f772bcc90262865708541c6eaa80edc13f4dab92da162465fea837a9f48"
+    },
+    "stdout_metadata_bytes_sha256": {
+      "bytes": 768,
+      "sha256": "ce5aba85d5051d9a82f2ba8a11c720399afbec692cb078447679629a8cd3aa8e"
+    },
+    "stderr_bytes_sha256": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "actual_counts": {
+    "root_custodian_calls": 1,
+    "materialization_attempt_allowance_consumed": true,
+    "root_opaque_archive_and_test_member_identity_read": true,
+    "test_member_structure_and_key_name_scan": true,
+    "archive_member_bytes": 2260203,
+    "already_exposed_Legal96_input_state_decodes": 96,
+    "oldLegal96_gold_decodes": 0,
+    "test_scanner_field_name_decodes": 19,
+    "test_scanner_document_IDs_seen": 0,
+    "new_selected_document_decodes": 0,
+    "new_selected_hypothesis_decodes": 0,
+    "new_selected_filename_metadata_decodes": 0,
+    "selected_raw_choice_tokens_copied": 0,
+    "semantic_gold_values_decoded": 0,
+    "model_tokenizer_native_calls": 0,
+    "actual_NLI_readouts": 0,
+    "derived_forecasts": 0,
+    "semantic_gold_join_calls": 0,
+    "scorer_EVALUATE_calls": 0,
+    "scorer_BIND_calls": 0,
+    "feature_or_vault_or_selected_identity_outputs": 0
+  },
+  "source_order_proof": {
+    "guard_file_line": 126,
+    "guard": "set(labels)==set(policy.expected_structural_hypothesis_catalog_keys) AND len(labels)==17",
+    "failure_before_hypothesis_decode_line": 127,
+    "failure_before_document_loop_line": 128,
+    "failure_before_selected_choice_span_access_line": 134,
+    "failure_before_vault_raw_slice_construction_line": 140,
+    "failure_before_feature_vault_identity_write_line": 159,
+    "partial_decoder_counts_exact": {
+      "field_name": 19,
+      "legacy_dev_text": 0,
+      "metadata": 0,
+      "selected_document": 0,
+      "selected_hypothesis": 0
+    },
+    "global_hypothesis_keyset_validated": false,
+    "source_hashes_all_seal_refs_unchanged": true,
+    "CLI_exit0_meaning": "Handled DATA_ADMISSION_FAILED report was durably written; not successful data admission.",
+    "partial_counters_scope": "legacy_dev_text0 belongs to new test-member scanner, not the separate96 already-exposed Legal96 state decodes."
+  },
+  "closure": {
+    "child_pid": 124474,
+    "recorded_startticks": 29280439,
+    "PGID": 124474,
+    "SID": 124474,
+    "actual_root_reaped": true,
+    "exit_code": 0,
+    "signals": [],
+    "whole_parent_child_seconds": 0.6887229919666424,
+    "independent_proc_PID_absent": true,
+    "known_PGID_or_SID_members": [],
+    "proc_rows_disappeared_or_unreadable": 0,
+    "scope_limit": "Metadata process scan only; arbitrary unrelated sessions are outside closure claim. Materializer source contains no subprocess/native/model invocation. Scoped guardian is intentionally held, not released by this report."
+  },
+  "assumption_failure": {
+    "expected_keys_source": "Frozen proposal inferred literal17-key catalog nda-1 through nda-17 from prior structural identities, with actual keyset validation explicitly pending.",
+    "observed_claim": "Only the conjunctive expected-set-and-count predicate failed. Actual key names and actual key count were not retained in failure metadata.",
+    "not_inferred": [
+      "which expected key is absent",
+      "which unexpected key is present",
+      "actual catalog cardinality",
+      "actual selected-hypothesis text",
+      "label distribution or value compatibility"
+    ],
+    "guard_assessment": "Guard correctly failed closed. Earlier source approval admitted the checker/policy conditionally; it did not validate actual archive schema or guarantee successful materialization.",
+    "fixture_limit": "Seven unrelated fixtures used a synthetic expected nda1..nda17 catalog; they establish guard behavior and blind decoding, not compatibility with the official archive."
+  },
+  "admission_direction": [
+    "Preserve sole failed attempt, exact source/policy/seal/approval and all metadata; no retry/replacement or reading remaining archive/case/choice values.",
+    "Do not run E41 native/tokenizer/model/scorer/gold or fabricate partial quality metrics. Keep scientific result NOT_EXECUTED, no accuracy/Brier/NLL rejection or promotion claim.",
+    "Useful next SOURCE-ONLY step: inspect pinned author code/docs or already retained historical structural-ID metadata to determine whether an authoritative complete catalog exists, distinguishing observed identifier union from global-key proof. This cannot authorize another E41 materialization.",
+    "If author sources lack a complete catalog, propose a separately versioned future metadata-only key-catalog protocol that may retain exact key names/cardinality before choosing hypotheses; require independent review and a new prospective root-authorized allowance. Do not execute that probe now.",
+    "Continue pure harness/source integration with unrelated schema variants and preserve failure-learning evidence. Never silently patch expected keys or reset current markers."
+  ],
+  "public_privacy": {
+    "reviewer_read_actual_archive_case_feature_vault_or_oldLegal96_bodies": false,
+    "reviewer_only_source_metadata_proc_read": true,
+    "no_actual_keys_or_private_values_retained_here": true,
+    "actual_output_directory_entries": [
+      "MATERIALIZER_ATTEMPT.json",
+      "materialization_report.json"
+    ],
+    "no_raw_third_party_text_in_review_report": true
+  },
+  "history": {
+    "earlier_source_reports_immutable": true,
+    "E37_unknown_tail_preserved": true,
+    "E40_rejection_unchanged": true,
+    "native104_champion_unchanged": true,
+    "confirmation_ids": [],
+    "official_rank": null
+  }
+}

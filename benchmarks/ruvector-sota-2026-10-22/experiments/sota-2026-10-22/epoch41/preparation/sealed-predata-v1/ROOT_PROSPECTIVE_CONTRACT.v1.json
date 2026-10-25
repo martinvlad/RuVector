@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "epoch": 41,
+  "kind": "REAL_CONTRACTNLI_MULTI_HYPOTHESIS_CONTEXT_DEV_PILOT",
+  "status": "PROSPECTIVE_SOURCE_ONLY_NOT_EXECUTED",
+  "base_commit": "7a40daab6ad7caf9310f678813bfef42f907bd17",
+  "objective": "Test whether two source-coherent bounded evidence windows improve a fixed pretrained typed NLI reader over the same-model lexical and source-order controls after E40's truncation failure.",
+  "prior_actual_outcome": {
+    "epoch": 40,
+    "native_correct": 4,
+    "lexical_correct": 6,
+    "source_correct": 4,
+    "denominator": 12,
+    "premise_truncated": 48,
+    "actual_NLI_readouts": 48,
+    "status": "REJECTED_DEV_PILOT",
+    "source": "experiments/sota-2026-10-22/epoch40/RESULTS.json",
+    "source_sha256": "7d7e1973a26688f184845c92ed5f8099842aca2ee4fd39c753eea2f8a86a6bcd"
+  },
+  "data": {
+    "source": "stanfordnlp/contract-nli",
+    "revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "license": "CC-BY-4.0",
+    "official_split": "test",
+    "project_role": "DEV_FOREVER_NOT_CONFIRMATION",
+    "policy_salt": "ruvector-contractnli-e41-v1",
+    "provisional_selected_document_ids": [
+      293,
+      225,
+      361,
+      18
+    ],
+    "provisional_selected_hypothesis_ids": [
+      "nda-9",
+      "nda-2",
+      "nda-7"
+    ],
+    "policy_admission": "Exact metadata-only keyset/hash/exclusions must be independently verified and identities frozen before any new document or gold choice read.",
+    "case_count": 12,
+    "train": [],
+    "calibration": [],
+    "confirmation": [],
+    "used_confirmation_identities": [],
+    "exclusions": "All original423 TRAIN docs,96LegalDEV filename/content aliases,E40all12 TEST docs,all prior used identities; do not inspect old74unused/24protected labels or E39 rejected codec vault.",
+    "no_label_stratification": true,
+    "model_training_overlap_and_submission_eligibility": "HOLD_UNVERIFIED"
+  },
+  "model": {
+    "repository": "sileod/deberta-v3-large-tasksource-nli",
+    "revision": "212de447184bda8fb9415a2e5697846864ddf304",
+    "source_license": "Apache-2.0",
+    "precision": "F32_stock_threeway",
+    "canonical_order": [
+      "NotMentioned",
+      "Entailment",
+      "Contradiction"
+    ],
+    "raw_to_canonical_indices": [
+      1,
+      0,
+      2
+    ],
+    "temperature": 1,
+    "training_or_calibration_fits": 0,
+    "source_and_full_payload_hash_admission_required": true
+  },
+  "scorer": {
+    "author_repository": "stanfordnlp/contract-nli-bert",
+    "revision": "058c56fd62d56897bb4fcfbf1be71b17aee3a79c",
+    "license": "Apache-2.0",
+    "raw_label_codec": {
+      "NotMentioned": 0,
+      "Entailment": 1,
+      "Contradiction": 2
+    },
+    "scope": "Declared all12 unfiltered threeway helper adaptation; not paper/evaluate_all/fullbenchmark score.",
+    "proper_scores": [
+      "multiclass Brier sum over3 squared probability errors",
+      "stable unclipped natural-log NLL"
+    ],
+    "author_EC_F1": "Report exact author helper formulas; undefined remains NULL+UNDEFINED_AUTHOR_NAN; descriptive only, no class-based resampling or dropping."
+  },
+  "candidate": {
+    "arms": [
+      "tasksource_native_two_windows",
+      "tasksource_lexical_two_windows",
+      "tasksource_source_order_two_windows"
+    ],
+    "same_model_and_budget": true,
+    "windows_per_case_arm": 2,
+    "max_joint_tokens_per_window": 512,
+    "full_hypothesis_required": true,
+    "context": "Greedy ranked anchor plus immediate source-neighbor groups; second window complements represented anchors; source order within each window. Fixed exact oversized-span/skipped-group policy and receipts must be frozen in source before measurement. Heuristic context construction, no semantic completeness claim.",
+    "aggregation": "Fixed arithmetic probability mixture of2 actual NLI readouts, calculated by logsumexp(logp_window1,logp_window2)-log(2) perclass. Canonical-first argmax. No threshold/selection/calibration.",
+    "no_numerical_override": true,
+    "numerical_checks": "Exact retained/omitted literal and date/source-span coverage diagnostics only. No arithmetic reasoning/certification or label/confidence override claim.",
+    "retrieval_scope": "Supplied selected contract only. A retrieval miss cannot prove NotMentioned.",
+    "no_selection_on_exposed_E40_questions": true
+  },
+  "prospective_gates": {
+    "integrity": "All12pairs,3arms,2actualwindows each=72NNI; raw finite logits/normalized probabilities/full hypotheses/recorded complete accounting/no errors.",
+    "accuracy": "Primary native at least2more correct than BOTH matched lexical and source-order controls outof12.",
+    "proper_scores": "Native mean Brier and stable NLL no worse than BOTH controls, fixed source arithmetic/tolerance before measurement.",
+    "runtime": "One known completed stableZ kernelwait0 worker, configured2CPUcompute threads and affinity0,1; full external dispatch through cleanup/post-all-fence <=600seconds.",
+    "no_promotion": "A DEV pass alone never promotes native104 or authorizes publisher submission; clean unused confirmation and modeltraining-overlap/protocol/eligibility gates still required."
+  },
+  "limits": {
+    "native_corpus_batches": 1,
+    "user_ceiling": 2,
+    "native_indexes": 4,
+    "native_queries": 12,
+    "actual_NLI_readouts": 72,
+    "CPU_threads": 2,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "seconds_total_initialization_cleanup": 600,
+    "train": 0,
+    "calibration": 0,
+    "confirmation": 0,
+    "fits": 0,
+    "new_paid_API_calls": 0,
+    "GPU_calls": 0,
+    "retries": 0
+  },
+  "custody": "Freeze exact identities/candidate/scorer source before measurements. Selected gold remains opaque and outside public project until all actual forecasts sealed and externally known stableZwait0/post-all-fence≤600. Reserve each real function/mutation once with fsynced exclusive markers. Retain failures/no retry of uncertain mutation.",
+  "publication": "Only reviewed public source/benchmark artifacts on isolated branch. Root-only expected-parent CASforcefalse; main,merge,release,package updates and unrelated messages prohibited.",
+  "scientific_authorization_now": 0,
+  "native104_preserved": true,
+  "official_goal_verified": false,
+  "new_publisher_submissions_or_contacts": 0
+}

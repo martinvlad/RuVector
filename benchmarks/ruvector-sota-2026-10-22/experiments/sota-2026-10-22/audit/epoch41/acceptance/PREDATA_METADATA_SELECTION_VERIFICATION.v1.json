@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "epoch": 41,
+  "checks_passed": true,
+  "scope": "SOURCE_AND_RETAINED_METADATA_ONLY_NO_ACTUAL_CASE_ACCESS",
+  "source_checkpoint": "7a40daab6ad7caf9310f678813bfef42f907bd17",
+  "verified_prior_refs": [
+    {
+      "actual_git_blob_sha1": "b1b0d15a9d332c640ddb8bca5a3246b92a4cf503",
+      "bytes": 8863,
+      "local_verified_copy": "/workspace/ruvector-e41-data-scorer/verified-prior/SELECTED_IDENTITIES.json",
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/SELECTED_IDENTITIES.json",
+      "sha256": "615aaa2d85dc7b063306112335426a64c6e860bd1d583ce0b609c9b1effbc69e"
+    },
+    {
+      "actual_git_blob_sha1": "169b24b8d8e725b1b8687da747ea571114e0ba88",
+      "bytes": 100412,
+      "local_verified_copy": "/workspace/ruvector-e41-data-scorer/verified-prior/PRIOR_LEGAL96_AND_SPLIT_IDENTITY_AUDIT.v1.json",
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/PRIOR_LEGAL96_AND_SPLIT_IDENTITY_AUDIT.v1.json",
+      "sha256": "be2e735adec8063c1be30f36038f9ac3052c37d5d492cf00bf82ada5c1aaa2dd"
+    },
+    {
+      "actual_git_blob_sha1": "708c4d3ab6b936233fb8f4b16d7dc27e742f87a4",
+      "bytes": 5754,
+      "local_verified_copy": "/workspace/ruvector-e41-data-scorer/verified-prior/contract_nli__dataset__loader.py",
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_nli__dataset__loader.py",
+      "sha256": "9c63102a01576c230da94695f593fd7bd4fe2d0b20672b74e8a7f62aba426fc4"
+    },
+    {
+      "actual_git_blob_sha1": "1b28508de4336e47792ab547595b467cf44d0d0c",
+      "bytes": 538158,
+      "local_verified_copy": "/workspace/ruvector-e41-data-scorer/verified-prior/exposure-metadata.json",
+      "path": "experiments/sota-2026-10-22/audit/epoch34/exposure-metadata.json",
+      "sha256": "77302349f7259e6dba215fcd5645bfdb7f674bab45144a6149f693e8e5ec0f9a"
+    }
+  ],
+  "policy": {
+    "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/MATERIALIZATION_POLICY.v1.json",
+    "bytes": 11396,
+    "sha256": "d1b1b244c6806625f98ff65e62cbc9b30657215c9fe5a4636b220ced2cf4efe5"
+  },
+  "identity": {
+    "path": "/workspace/ruvector-e41-acceptance-audit/predata-source-v1/IDENTITY_POLICY.v1.json",
+    "bytes": 8956,
+    "sha256": "72900eeda602bb0bc5f8401ba9df36a2359b097559f3ea411b3acff4ff2d98b9"
+  },
+  "checks": {
+    "prior_refs_exact_actualGit_and_CP": true,
+    "423_train_ID_exclusion_inherited_from_exact_prior_audit_not_redecoded": true,
+    "known_exposed_original_train_ID_subset": 216,
+    "184_prior_metadata_flags_recomputed_from_retained_hashes": true,
+    "96_Legal96_filename_keys": 96,
+    "15_exact_remaining_TEST_metadata_pool": true,
+    "E40_12_document_ID_and_normalizedhash_exclusions_exact": true,
+    "first4_document_hash_rank_exact": [
+      293,
+      225,
+      361,
+      18
+    ],
+    "first3_of_expected17_key_hash_rank_exact": [
+      "nda-9",
+      "nda-2",
+      "nda-7"
+    ],
+    "fixed12_case_IDs_exact": true,
+    "123_expected_test_IDs_exact": true,
+    "official_source_enum_and_exact_from_str_AST_only": {
+      "NotMentioned": 0,
+      "Entailment": 1,
+      "Contradiction": 2
+    }
+  },
+  "pending_actual_guards": [
+    "actual17globalkeyset",
+    "exact_archive_and_member_identity",
+    "selected4_document_filename_and_normalizedhash_identity",
+    "already_exposed_Legal96_substring_alias_guard",
+    "all_caps_and_source_partition"
+  ],
+  "actual_archive_case_gold_keyset_tokenizer_native_model_scorer_or_Git_mutation_calls": 0,
+  "audit_execution_notes": [
+    "Scratch metadata assertion expected423 IDs in a216-ID historical observed subset; stopped before report/no case access. Final check distinguishes inherited423 exclusion from observed subset.",
+    "Scratch source spelling check expected enum case names identical to literals; fixed audit to inspect actual NLILabel constants and from_str AST, without executing loader. No author source changes."
+  ]
+}

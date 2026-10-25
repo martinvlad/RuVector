@@ -1,0 +1,496 @@
+{
+  "schema_version": 1,
+  "epoch": 39,
+  "kind": "REAL_FINFACT_DEV_TRANSFER_PILOT",
+  "phase": "dev",
+  "source_checkpoint": "74dbbcb10508ced7e0edf53a0c736f14c19a19a1",
+  "source_commit": "e06515a7dc493bfa9869d9e7a4b27c348bb32603",
+  "source_plan_sha256": "d7942147b0b15d47ee220d19fb05f3a5c55b977f6140e8b1acba96dbe8ee8bcc",
+  "status": "REJECTED_DEV_INTEGRITY",
+  "checks_passed": false,
+  "dev_passed": false,
+  "evaluation_executed": false,
+  "frozen_scorer_EVALUATE_invocations": 0,
+  "frozen_full_input_quality_audit_executed": false,
+  "failure_only_postmeasurement_metadata": true,
+  "not_frozen_candidate_or_scoring_source": true,
+  "evaluation_not_executed_reason": "Once-only gold custodian stopped after its second semantic decode on unsupported frozen literal; no joined-label artifact exists in its report. Frozen scorer pins missing joined artifact before its try block. EVALUATE was not invoked; no retries/remapping/remaining label decodes authorized.",
+  "benchmark_accuracy": null,
+  "official_eligibility": "HOLD",
+  "model_selection_lineage": "HOLD",
+  "used_confirmation_identities": [],
+  "data_roles": {
+    "train": [],
+    "dev": [
+      "finfact:b3038781:ordinal:103",
+      "finfact:b3038781:ordinal:1469",
+      "finfact:b3038781:ordinal:1693",
+      "finfact:b3038781:ordinal:1478",
+      "finfact:b3038781:ordinal:3018",
+      "finfact:b3038781:ordinal:365",
+      "finfact:b3038781:ordinal:3067",
+      "finfact:b3038781:ordinal:2450",
+      "finfact:b3038781:ordinal:2903",
+      "finfact:b3038781:ordinal:3032",
+      "finfact:b3038781:ordinal:1807",
+      "finfact:b3038781:ordinal:2018"
+    ],
+    "calibration": [],
+    "confirmation": []
+  },
+  "actual_NLI_forwards": 48,
+  "all_cases_retained_denominator": 12,
+  "metrics": null,
+  "quality_metrics": {
+    "b354_source_order": {
+      "accuracy": null,
+      "correct": null,
+      "macro_F1": null,
+      "Brier": null,
+      "NLL": null
+    },
+    "b354_native": {
+      "accuracy": null,
+      "correct": null,
+      "macro_F1": null,
+      "Brier": null,
+      "NLL": null
+    },
+    "b354_lexical": {
+      "accuracy": null,
+      "correct": null,
+      "macro_F1": null,
+      "Brier": null,
+      "NLL": null
+    },
+    "xxlarge_source_order": {
+      "accuracy": null,
+      "correct": null,
+      "macro_F1": null,
+      "Brier": null,
+      "NLL": null
+    }
+  },
+  "gate_checks": {
+    "integrity_complete_no_errors": "NOT_EVALUATED",
+    "all_four_full_N12": "NOT_EVALUATED",
+    "primary_gain_at_least_two_correct_vs_XXL": "NOT_EVALUATED",
+    "b354_source_order:accuracy_nondecrease": "NOT_EVALUATED",
+    "b354_source_order:official_macroF1_nondecrease": "NOT_EVALUATED",
+    "b354_source_order:Brier_nonincrease": "NOT_EVALUATED",
+    "b354_source_order:stable_unclipped_NLL_nonincrease": "NOT_EVALUATED",
+    "b354_lexical:accuracy_nondecrease": "NOT_EVALUATED",
+    "b354_lexical:official_macroF1_nondecrease": "NOT_EVALUATED",
+    "b354_lexical:Brier_nonincrease": "NOT_EVALUATED",
+    "b354_lexical:stable_unclipped_NLL_nonincrease": "NOT_EVALUATED",
+    "xxlarge_source_order:accuracy_nondecrease": "NOT_EVALUATED",
+    "xxlarge_source_order:official_macroF1_nondecrease": "NOT_EVALUATED",
+    "xxlarge_source_order:Brier_nonincrease": "NOT_EVALUATED",
+    "xxlarge_source_order:stable_unclipped_NLL_nonincrease": "NOT_EVALUATED"
+  },
+  "scoring_gates_evaluated": false,
+  "paired_control_comparisons": null,
+  "source_representation_contract": "Author anli.py retains raw gold unchanged; a canonical source-gold codec was not established before this run. No unsupported literal is inspected, exposed or remapped here.",
+  "actual_execution": {
+    "owned_live_processes_closed": true,
+    "worker_attempts": 1,
+    "known_corpus_batches_attempted_at_last_capture": 1,
+    "known_corpus_batches_completed_at_last_capture": 1,
+    "actual_NLI_forwards": 48,
+    "native_queries": 12,
+    "operation_counts_complete": true,
+    "raw_operation_counters": {
+      "BGE_initializations_attempted": 1,
+      "BGE_initializations_completed": 1,
+      "BGE_texts_attempted": 65,
+      "BGE_texts_completed": 65,
+      "CONF_input_reads": 0,
+      "GPU_calls": 0,
+      "HTTP_requests": 0,
+      "NLI_capped_pair_tokenizer_calls_attempted": 48,
+      "NLI_capped_pair_tokenizer_calls_completed": 48,
+      "NLI_claim_fit_tokenizer_calls_attempted": 48,
+      "NLI_claim_fit_tokenizer_calls_completed": 48,
+      "NLI_forward_calls_attempted": 48,
+      "NLI_forward_calls_completed": 48,
+      "NLI_full_pair_tokenizer_calls_attempted": 48,
+      "NLI_full_pair_tokenizer_calls_completed": 48,
+      "NLI_readouts_completed": 48,
+      "Node_network_operations_attempted": 0,
+      "ORT_sessions_attempted": 1,
+      "ORT_sessions_completed": 1,
+      "Python_network_operations_attempted": 0,
+      "TRAIN_input_reads": 0,
+      "argmax_diagnostic_decisions_completed": 48,
+      "b354_forward_calls_attempted": 36,
+      "b354_forward_calls_completed": 36,
+      "backward_calls": 0,
+      "calibration_calls": 0,
+      "corpus_batches_attempted": 1,
+      "corpus_batches_completed": 1,
+      "dev_features_bank_reads": 1,
+      "fits": 0,
+      "full104_requests": 0,
+      "generation_calls": 0,
+      "gold_reader_calls": 0,
+      "model_initializations_attempted": 2,
+      "model_initializations_completed": 2,
+      "model_unloads_attempted": 2,
+      "model_unloads_completed": 2,
+      "native_binary_loads_attempted": 1,
+      "native_binary_loads_completed": 1,
+      "native_helper_starts_attempted": 1,
+      "native_helper_starts_completed": 1,
+      "native_hit_source_validations": 53,
+      "native_index_initializations_attempted": 12,
+      "native_index_initializations_completed": 12,
+      "native_insertions_attempted": 53,
+      "native_insertions_completed": 53,
+      "native_len_calls_attempted": 24,
+      "native_len_calls_completed": 24,
+      "native_queries_attempted": 12,
+      "native_queries_completed": 12,
+      "native_version_calls_attempted": 1,
+      "native_version_calls_completed": 1,
+      "old_benchmark_DEV_reads": 0,
+      "optimizer_initializations": 0,
+      "optimizer_steps": 0,
+      "packed_input_guard_checks": 48,
+      "paid_calls": 0,
+      "pair_tokenizations_attempted": 48,
+      "pair_tokenizations_completed": 48,
+      "primary_decisions_completed": 48,
+      "reader_lifecycles_completed": 2,
+      "selected_cases_validated": 12,
+      "semantic_gold_labels_decoded": 0,
+      "tokenizer_initializations_attempted": 2,
+      "tokenizer_initializations_completed": 2,
+      "training_steps": 0,
+      "xxlarge_forward_calls_attempted": 12,
+      "xxlarge_forward_calls_completed": 12,
+      "BGE_forward_calls_attempted": 26,
+      "BGE_forward_calls_completed": 26,
+      "Python_literal_loopback_capability_binds_allowed": 1
+    },
+    "uncertain_start": false,
+    "worker_exit_code": 0,
+    "supervisor_exit_wait_status": 0,
+    "wall_seconds_including_init_cleanup": 153.48910607403377,
+    "largest_child_peak_RSS_bytes": 8037437440
+  },
+  "timing_metadata": {
+    "per_arm": {
+      "b354_source_order": {
+        "pair_tokenization_seconds": {
+          "N": 12,
+          "p50": 0.0038152275083120912,
+          "p95": 0.006964987111859954
+        },
+        "NNI_forward_seconds": {
+          "N": 12,
+          "p50": 1.6192329339974094,
+          "p95": 1.8539175156824057
+        },
+        "reader_total_seconds": {
+          "N": 12,
+          "p50": 1.6291011975263245,
+          "p95": 1.865185518268845
+        },
+        "context_order_seconds": {
+          "N": 12,
+          "p50": 0.0006563834904227406,
+          "p95": 0.0014984818844823167
+        },
+        "native_query_seconds": {
+          "N": 12,
+          "p50": 0.0001018529999999913,
+          "p95": 0.0002475821500000023
+        },
+        "retained_recorded_scope": [
+          "Reader actualtokenization+NNI+privateauditwrite;ordering/query terms separate;sharedBGE/index/init excluded,notpublisherendtoend."
+        ]
+      },
+      "b354_native": {
+        "pair_tokenization_seconds": {
+          "N": 12,
+          "p50": 0.0025325210008304566,
+          "p95": 0.005160111360601149
+        },
+        "NNI_forward_seconds": {
+          "N": 12,
+          "p50": 1.6546661454776768,
+          "p95": 1.8178317000129027
+        },
+        "reader_total_seconds": {
+          "N": 12,
+          "p50": 1.6622422565123998,
+          "p95": 1.826936004520394
+        },
+        "context_order_seconds": {
+          "N": 12,
+          "p50": 0.0006563834904227406,
+          "p95": 0.0014984818844823167
+        },
+        "native_query_seconds": {
+          "N": 12,
+          "p50": 0.0001018529999999913,
+          "p95": 0.0002475821500000023
+        },
+        "retained_recorded_scope": [
+          "Reader actualtokenization+NNI+privateauditwrite;ordering/query terms separate;sharedBGE/index/init excluded,notpublisherendtoend."
+        ]
+      },
+      "b354_lexical": {
+        "pair_tokenization_seconds": {
+          "N": 12,
+          "p50": 0.0019693370268214494,
+          "p95": 0.00416880511038471
+        },
+        "NNI_forward_seconds": {
+          "N": 12,
+          "p50": 1.664192575000925,
+          "p95": 1.7798870314465602
+        },
+        "reader_total_seconds": {
+          "N": 12,
+          "p50": 1.6714561409899034,
+          "p95": 1.7886248730152148
+        },
+        "context_order_seconds": {
+          "N": 12,
+          "p50": 0.0006563834904227406,
+          "p95": 0.0014984818844823167
+        },
+        "native_query_seconds": {
+          "N": 12,
+          "p50": 0.0001018529999999913,
+          "p95": 0.0002475821500000023
+        },
+        "retained_recorded_scope": [
+          "Reader actualtokenization+NNI+privateauditwrite;ordering/query terms separate;sharedBGE/index/init excluded,notpublisherendtoend."
+        ]
+      },
+      "xxlarge_source_order": {
+        "pair_tokenization_seconds": {
+          "N": 12,
+          "p50": 0.002718018484301865,
+          "p95": 0.0055009039235301305
+        },
+        "NNI_forward_seconds": {
+          "N": 12,
+          "p50": 6.5578129004570656,
+          "p95": 7.284558290895074
+        },
+        "reader_total_seconds": {
+          "N": 12,
+          "p50": 6.564154790976318,
+          "p95": 7.292027477105147
+        },
+        "context_order_seconds": {
+          "N": 12,
+          "p50": 0.0006563834904227406,
+          "p95": 0.0014984818844823167
+        },
+        "native_query_seconds": {
+          "N": 12,
+          "p50": 0.0001018529999999913,
+          "p95": 0.0002475821500000023
+        },
+        "retained_recorded_scope": [
+          "Reader actualtokenization+NNI+privateauditwrite;ordering/query terms separate;sharedBGE/index/init excluded,notpublisherendtoend."
+        ]
+      }
+    },
+    "quantile_method": "linear interpolation at (N-1)*q",
+    "scope": "Descriptive timing metadata from public raw48 only; per-readout components exclude some initialization/cleanup and are not independent whole-batch replicates. Reused context/query components are not summed.",
+    "worker_wall_seconds": 147.52116756199393
+  },
+  "resource_metadata": {
+    "raw_worker": {
+      "cpu_affinity": [
+        0,
+        1
+      ],
+      "torch_num_threads": 2,
+      "torch_num_interop_threads": 1,
+      "user_seconds": 268.258508,
+      "system_seconds": 7.95445,
+      "max_rss_kib": 7849060,
+      "child_user_seconds": 0.121962,
+      "child_system_seconds": 0.048132999999999995,
+      "largest_child_max_rss_kib": 423980,
+      "process": {
+        "Threads": "4",
+        "NoNewPrivs": "1",
+        "Seccomp": "2",
+        "cpu_affinity": [
+          0,
+          1
+        ]
+      },
+      "memory_scope": "Separatehighwater observations;not summedsimultaneousRSS.",
+      "cgroup_memory_current": "10906243072",
+      "cgroup_memory_max": "17179869184",
+      "cgroup_memory_stat": {
+        "anon": 1741762560,
+        "file": 8466059264,
+        "kernel": 697257984,
+        "kernel_stack": 638976,
+        "pagetables": 5943296,
+        "sec_pagetables": 0,
+        "percpu": 14364,
+        "sock": 0,
+        "vmalloc": 4096,
+        "shmem": 4442918912,
+        "file_mapped": 112672768,
+        "file_dirty": 0,
+        "file_writeback": 0,
+        "swapcached": 0,
+        "anon_thp": 0,
+        "file_thp": 148897792,
+        "shmem_thp": 0,
+        "inactive_anon": 2121498624,
+        "active_anon": 4063174656,
+        "inactive_file": 173019136,
+        "active_file": 3850125312,
+        "unevictable": 0,
+        "slab_reclaimable": 625469296,
+        "slab_unreclaimable": 65155448,
+        "slab": 690624744,
+        "workingset_refault_anon": 0,
+        "workingset_refault_file": 3892794,
+        "workingset_activate_anon": 0,
+        "workingset_activate_file": 498685,
+        "workingset_restore_anon": 0,
+        "workingset_restore_file": 120971,
+        "workingset_nodereclaim": 0,
+        "pgdemote_kswapd": 0,
+        "pgdemote_direct": 0,
+        "pgdemote_khugepaged": 0,
+        "pgdemote_proactive": 0,
+        "pgscan": 8583138,
+        "pgsteal": 8576647,
+        "pswpin": 0,
+        "pswpout": 0,
+        "pgscan_kswapd": 1526,
+        "pgscan_direct": 8581612,
+        "pgscan_khugepaged": 0,
+        "pgscan_proactive": 0,
+        "pgsteal_kswapd": 1526,
+        "pgsteal_direct": 8575121,
+        "pgsteal_khugepaged": 0,
+        "pgsteal_proactive": 0,
+        "pgfault": 755901408,
+        "pgmajfault": 87,
+        "pgrefill": 6645596,
+        "pgactivate": 15199825,
+        "pgdeactivate": 6640988,
+        "pglazyfree": 2,
+        "pglazyfreed": 0,
+        "swpin_zero": 0,
+        "swpout_zero": 0,
+        "thp_fault_alloc": 0,
+        "thp_collapse_alloc": 0,
+        "thp_swpout": 0,
+        "thp_swpout_fallback": 0
+      }
+    },
+    "supervisor_children_user_seconds": 269.097763,
+    "supervisor_children_system_seconds": 8.047285,
+    "memory_scope": "Separate recorded high-water observations; never sum as simultaneous RSS."
+  },
+  "label_custody": {
+    "semantic_label_decodes": 2,
+    "remaining_selected_tokens_opaque": 10,
+    "semantic_decode_count_uncertain": false,
+    "join_reader_calls": 1,
+    "scorer_original_oracle_reads": 0,
+    "scorer_retained_join_reads": 0,
+    "additional_decode_retry_or_remap_authorized": false
+  },
+  "errors": [
+    "ValueError:UNSUPPORTED_OFFICIAL_LABEL_NO_REMAP"
+  ],
+  "evidence": {
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch39/plan.json",
+      "bytes": 113628,
+      "sha256": "d7942147b0b15d47ee220d19fb05f3a5c55b977f6140e8b1acba96dbe8ee8bcc"
+    },
+    "source_admission": {
+      "path": "experiments/sota-2026-10-22/epoch39/SOURCE_ADMISSION.json",
+      "bytes": 1642,
+      "sha256": "d3a47d2771d1736f63d1b195bc606ce38ee8c5e97ef669fb28868033c9c61180"
+    },
+    "raw": {
+      "path": "experiments/sota-2026-10-22/epoch39/runs/dev/raw.json",
+      "bytes": 138014,
+      "sha256": "003e16d8ca94a24e64bbc33cec1f028903fde78293c05c07ce31f5b2ba8f39e3"
+    },
+    "execution": {
+      "path": "experiments/sota-2026-10-22/epoch39/runs/dev/execution.json",
+      "bytes": 6677,
+      "sha256": "ebae56b982ae840fdf86fe479099f946b3f2e62bf4022bbbf5ce627ccb7eafdb"
+    },
+    "observer": {
+      "path": "experiments/sota-2026-10-22/epoch39/SUPERVISOR_OBSERVED_CLOSURE.json",
+      "bytes": 2727,
+      "sha256": "27f920d9249a9ad2b079eff7e0106f7fdf451990053086fa988949f21ec56ea3"
+    },
+    "physical_closure": {
+      "path": "experiments/sota-2026-10-22/audit/epoch39/actual-physical-closure-independent-v1.json",
+      "bytes": 7452,
+      "sha256": "c76f31e30635a551d1e6e6255cb51ffb4fc465dfd4398dd0f2c68834ee2ef172"
+    },
+    "gold_admission": {
+      "path": "experiments/sota-2026-10-22/epoch39/GOLD_READ_ADMISSION.json",
+      "bytes": 2271,
+      "sha256": "1756fdc9933cf37584163cd76057b381a1c20c68a0df040998049b89e13b4fb5"
+    },
+    "gold_join_report": {
+      "path": "experiments/sota-2026-10-22/epoch39/runs/dev/GOLD_JOIN_REPORT.json",
+      "bytes": 2471,
+      "sha256": "fe0204b3c7a47539efa08024a1447fc415a6d60e113d0710db29c50b68f8323e"
+    },
+    "independent_custody_failure": {
+      "path": "experiments/sota-2026-10-22/audit/epoch39/actual-custody-failure-independent-v1.json",
+      "bytes": 4559,
+      "sha256": "9ed572abe9170192fc44f59fbc45408638c9a8c52bf337d583f52a9050836e68"
+    },
+    "source_representation_finding": {
+      "path": "experiments/sota-2026-10-22/audit/epoch39/LABEL_REPRESENTATION_SOURCE_FINDING.v2.json",
+      "bytes": 8121,
+      "sha256": "d75ff158de16d6dbac496b4e849b43387729de862df27bf5e70c00efb50a0d7c"
+    },
+    "progress_00_before": {
+      "path": "experiments/sota-2026-10-22/epoch39/runs/dev/progress-00-before.json",
+      "bytes": 323,
+      "sha256": "83bb557269f8ab92def3eb3bd9f2b0b09d7e6d5e757da00bd09454f46814fcdb"
+    },
+    "progress_00_after": {
+      "path": "experiments/sota-2026-10-22/epoch39/runs/dev/progress-00-after.json",
+      "bytes": 240,
+      "sha256": "a24235cf6ca182cda8d7eab423375b50d44db9944de3c7a9b5fb432cd66fe353"
+    },
+    "progress_01_before": {
+      "path": "experiments/sota-2026-10-22/epoch39/runs/dev/progress-01-before.json",
+      "bytes": 324,
+      "sha256": "742cca5b86676f9cf24c91851fbb1f78b2827790460d4fb1754ed2981671c701"
+    },
+    "progress_01_after": {
+      "path": "experiments/sota-2026-10-22/epoch39/runs/dev/progress-01-after.json",
+      "bytes": 242,
+      "sha256": "20f1f04771aa0952649564589720777cb390a4c5250a6b2066a3b8775d785a4a"
+    }
+  },
+  "limitations": [
+    "No quality score or acceptance gate was evaluated. All twelve selected cases remain DEV forever; no fresh confirmation or promotion.",
+    "Accuracy/Brier/NLL and full-benchmark/generalization claims remain unavailable. Existing E37 cumulative model/corpus unknowns are not repaired."
+  ],
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "new_submission": false,
+  "official_SOTA_verified": false,
+  "official_rank": null,
+  "benchmark_generalization_claim": false
+}

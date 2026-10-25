@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "epoch": 40,
+  "kind": "REAL_CONTRACTNLI_HELDOUT_DEV_TRANSFER_PILOT",
+  "phase": "dev",
+  "checks_passed": true,
+  "physical_closure_passed": true,
+  "qualified_supervisor_passed": true,
+  "status": "PASS_ACTUAL48_NATIVE_DEV_CLOSED_WITH_NO_GOLD",
+  "source_plan_sha256": "3083581ef07d43a4e64d635de87f9dc78cfcd444746b15215b2791340301ba31",
+  "source_freeze_sha256": "a673c6fb6c68b386298e6588d358bcd768d011b773526fa89a9f38838a3f9e3e",
+  "actual_source_commit": "57138c4423ce8c83d7965a5b00ea5338d24b002d",
+  "evidence": {
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch40/plan.json",
+      "bytes": 85075,
+      "sha256": "3083581ef07d43a4e64d635de87f9dc78cfcd444746b15215b2791340301ba31"
+    },
+    "raw": {
+      "path": "experiments/sota-2026-10-22/epoch40/runs/dev/raw.json",
+      "bytes": 423897,
+      "sha256": "f74ae28579c55d125f6cdf36f07886a33265a37ca009860dfbb5d363ed871c39"
+    },
+    "execution": {
+      "path": "experiments/sota-2026-10-22/epoch40/runs/dev/execution.json",
+      "bytes": 6706,
+      "sha256": "05fd1626f08c282a7974ac2b59038fd78b86e69aee7a0512cde1960d19b41420"
+    },
+    "dispatch": {
+      "path": "experiments/sota-2026-10-22/epoch40/DISPATCH_ATTEMPT.json",
+      "bytes": 803,
+      "sha256": "8c8e39c897789c042967542c8c222904f00c89cbd35d4d7e73e81383801f11b2"
+    },
+    "observer": {
+      "path": "experiments/sota-2026-10-22/audit/epoch40/observe_supervisor_closure.py",
+      "bytes": 15643,
+      "sha256": "23ef353b60f4d3d6e60b0bc7cce6ff93559d765af6966cc4bd069f0131f0e0cc"
+    },
+    "physical_closure": {
+      "path": "experiments/sota-2026-10-22/epoch40/SUPERVISOR_OBSERVED_CLOSURE.json",
+      "bytes": 2739,
+      "sha256": "2957cb1a83117414d0ec7425cbc7003b2ab08faaf6bfdb1d267a6b1e471aee7f"
+    },
+    "source_admission": {
+      "path": "experiments/sota-2026-10-22/epoch40/SOURCE_ADMISSION.json",
+      "bytes": 2544,
+      "sha256": "49508c80bd7f797ea9b23dd555ab1547e7cc93826eee86e776fadf2789171faf"
+    }
+  },
+  "additional_evidence": {
+    "completion": {
+      "path": "experiments/sota-2026-10-22/epoch40/SUPERVISOR_COMPLETION.json",
+      "bytes": 626,
+      "sha256": "e0717f950d9c2bf5a5dc68b65a6bc1863cdec09e983f29bf2b54117df96d2956"
+    },
+    "reservation": {
+      "path": "experiments/sota-2026-10-22/epoch40/DISPATCH_RESERVATION.json",
+      "bytes": 653,
+      "sha256": "98c432f2f8a75243390dd96b142690a5c150b100a24714b13717f6369a4bef75"
+    },
+    "CPU_preexec": {
+      "path": "experiments/sota-2026-10-22/epoch40/runs/dev/worker-cpu-preexec.json",
+      "bytes": 479,
+      "sha256": "2945d9d64c3ee507ff7e3063cb0ae70b75c3b30a73c98cc3a22985e3293bd326"
+    }
+  },
+  "actual_readouts_replayed_independently": 48,
+  "actual_model_forwards": {
+    "b354": 12,
+    "tasksource": 36,
+    "total": 48
+  },
+  "actual_native": {
+    "corpus_attempted": 1,
+    "corpus_completed": 1,
+    "queries": 12,
+    "insertions": 1126,
+    "indexes": 12,
+    "BGE_forwards": 158,
+    "BGE_texts": 1138,
+    "native_child_closed": true
+  },
+  "actual_all68_fixed_counters_and3_variable_keys_verified": true,
+  "raw_completion_invariants": {
+    "raw_forecasts_complete_without_gold": true,
+    "exact_frozen_operation_counts": true,
+    "forbidden_operation_counts_zero": true,
+    "worker_errors_empty": true,
+    "offline_policy_closed": true,
+    "all48_unique_forecasts": true,
+    "all48_required": true,
+    "native_child_closed": true,
+    "both_readers_disposed_in_order": true,
+    "all_forecasts_closed_before_gold": true,
+    "gold_not_decoded": true,
+    "whole_worker_CPU_guard_before_exec": true
+  },
+  "actual_gold_labels_decoded": 0,
+  "train_calibration_CONF_paid_GPU_retry_calls": 0,
+  "actual_logits_probability_canonical_first_argmax_replay": "All48 actualsourceFP32 logits -> shift-first stable logsoftmax -> canonicalNEC [1,0,2], no gold/quality metrics evaluated.",
+  "actual_sequential_lifecycle": "10observedevents b35412 then fullyweakref-disposed -> tasksource36 then fullyweakref-disposed, unchanged classifier manifests, nativecapturedclosed.",
+  "actual_resource_observations": {
+    "source_worker_wall_seconds": 188.62191211502068,
+    "supervisor_wall_seconds_including_init_cleanup": 193.5854040730046,
+    "external_post_all_fences_supervisor_bound_seconds": 193.7402241289965,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "torch_num_threads": 2,
+    "torch_num_interop_threads": 1,
+    "worker_peak_RSS_bytes": 3382599680,
+    "separate_largest_child_peak_RSS_bytes": 434442240,
+    "user_seconds": 350.020657,
+    "system_seconds": 10.344127,
+    "memory_scope": "Separate observed highwater marks, not summed concurrentRSS. Cgroup snapshot includes pagecache/tmpfs and otherowned artifacts; no total inference memory claim."
+  },
+  "actual_latency_components_by_arm": {
+    "tasksource_source_order": {
+      "pair_tokenization_seconds": {
+        "N": 12,
+        "p50": 0.010115542478160933,
+        "p95": 0.02236462480796035,
+        "sum": 0.14050675387261435
+      },
+      "NNI_forward_seconds": {
+        "N": 12,
+        "p50": 3.0392583354841918,
+        "p95": 3.313955890739453,
+        "sum": 36.65496179513866
+      },
+      "reader_total_seconds": {
+        "N": 12,
+        "p50": 3.0644964469829574,
+        "p95": 3.3393818324897437,
+        "sum": 37.0140295799938
+      }
+    },
+    "tasksource_native": {
+      "pair_tokenization_seconds": {
+        "N": 12,
+        "p50": 0.007894116512034088,
+        "p95": 0.01838466154003981,
+        "sum": 0.1124593410640955
+      },
+      "NNI_forward_seconds": {
+        "N": 12,
+        "p50": 2.9833873015013523,
+        "p95": 3.15373436534428,
+        "sum": 36.00930370402057
+      },
+      "reader_total_seconds": {
+        "N": 12,
+        "p50": 3.0095160095079336,
+        "p95": 3.18750003738387,
+        "sum": 36.3523242441006
+      }
+    },
+    "tasksource_lexical": {
+      "pair_tokenization_seconds": {
+        "N": 12,
+        "p50": 0.007711841491982341,
+        "p95": 0.017606986558530477,
+        "sum": 0.11017535004066303
+      },
+      "NNI_forward_seconds": {
+        "N": 12,
+        "p50": 3.0436637254897505,
+        "p95": 3.148695277623483,
+        "sum": 36.560166365874466
+      },
+      "reader_total_seconds": {
+        "N": 12,
+        "p50": 3.067825272009941,
+        "p95": 3.170153475002735,
+        "sum": 36.88402154290816
+      }
+    },
+    "b354_source_order": {
+      "pair_tokenization_seconds": {
+        "N": 12,
+        "p50": 0.009205744514474645,
+        "p95": 0.020526221461477687,
+        "sum": 0.1309253060608171
+      },
+      "NNI_forward_seconds": {
+        "N": 12,
+        "p50": 3.399138099513948,
+        "p95": 3.60255788625509,
+        "sum": 40.950884239864536
+      },
+      "reader_total_seconds": {
+        "N": 12,
+        "p50": 3.4345857379666995,
+        "p95": 3.6250080359401182,
+        "sum": 41.27294798090588
+      }
+    }
+  },
+  "latency_scope": "Per actual measured tokenization/forward/reader components only; initialization/sharedBGE/native waits/wholebatch separatelyretained. Not publisher or isolated request latency.",
+  "current_kernel_observation": {
+    "supervisor_before": {
+      "pid": 122786,
+      "state": "Z",
+      "ppid": 1,
+      "pgid": 122786,
+      "sid": 122786,
+      "ticks": 28642231,
+      "wait_status": 0,
+      "stat_sha256": "a013179556f734f0b131f92f843bcc43ae0076c7749b331db3763222976abad4"
+    },
+    "supervisor_after": {
+      "pid": 122786,
+      "state": "Z",
+      "ppid": 1,
+      "pgid": 122786,
+      "sid": 122786,
+      "ticks": 28642231,
+      "wait_status": 0,
+      "stat_sha256": "a013179556f734f0b131f92f843bcc43ae0076c7749b331db3763222976abad4"
+    },
+    "statm": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "kernel_FDSize": 0,
+    "kernel_Threads": 1,
+    "terminal_fd_directory_probe": "NOT_PERFORMED_NO_POST_Z_FD_DEREFERENCE",
+    "worker": null,
+    "native_helper": null,
+    "live_owned_PGID_SID_members": [],
+    "proc_scan_errors": [],
+    "kernel_boot_id": "4632fb06-b0ef-4df5-b72b-0e875bbad810",
+    "pid_namespace_inode": 4026532200
+  },
+  "guardian_current": {
+    "pid": 120232,
+    "startticks": 27979422,
+    "state": "S",
+    "FD3_device": 33,
+    "FD3_inode": 13626,
+    "NB_contender": "DENIED"
+  },
+  "all221_frozen_source_pins_unchanged": true,
+  "private_input_scope": "No archive/featurebank/vault/privateaudit/nativeoutput/stream was opened or decoded. Public source-bound raw logits, safe hash/identity/resource/lifecycle receipts only. Full actualinput/token/sourceaudit remains frozen scorer work after qualifiedoncegoldjoin.",
+  "actual_new_model_tokenizer_native_guard_or_observer_calls_by_reviewer": 0,
+  "gold_authorization_scope": "Source/physical qualification is nowverified; root alone may issue exactlyone already-frozen late gold custodian admission and call. No currentgoldcall executed, no retry/remap/replacement; raw2Dbenchmark/CONF/officialeligibility or qualityacceptance not established.",
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "official_SOTA_verified": false,
+  "used_confirmation_identities": [],
+  "reviewed_at_unix": 1792963193.50638
+}

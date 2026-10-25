@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "3490cc61c470d95309b7fd0a68ee1c17950e332d",
-  "checkpoint_manifest_sha256": "12b3905ca0c09431e00ff4a701269075a00e0d9d145be1a9263bc753931ca7fa",
+  "prior_published_base_commit": "57138c4423ce8c83d7965a5b00ea5338d24b002d",
+  "checkpoint_manifest_sha256": "173ccfa53a52d72c1a7be838007bdd87170c7cf8fb0a65de7fa24e47f2b114de",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -1805,6 +1805,332 @@
       "benchmark_HTTP_failures": 2,
       "current_official_HTTP_successes": 3,
       "current_official_HTTP_failures": 0
+    },
+    "epoch40_actual_execution": {
+      "actual_counters": {
+        "BGE_forward_calls_attempted": 158,
+        "BGE_forward_calls_completed": 158,
+        "BGE_initializations_attempted": 1,
+        "BGE_initializations_completed": 1,
+        "BGE_texts_attempted": 1138,
+        "BGE_texts_completed": 1138,
+        "CONF_input_reads": 0,
+        "GPU_calls": 0,
+        "HTTP_requests": 0,
+        "NLI_capped_pair_tokenizer_calls_attempted": 48,
+        "NLI_capped_pair_tokenizer_calls_completed": 48,
+        "NLI_claim_fit_tokenizer_calls_attempted": 48,
+        "NLI_claim_fit_tokenizer_calls_completed": 48,
+        "NLI_forward_calls_attempted": 48,
+        "NLI_forward_calls_completed": 48,
+        "NLI_full_pair_tokenizer_calls_attempted": 48,
+        "NLI_full_pair_tokenizer_calls_completed": 48,
+        "NLI_readouts_completed": 48,
+        "Node_network_operations_attempted": 0,
+        "ORT_sessions_attempted": 1,
+        "ORT_sessions_completed": 1,
+        "Python_literal_loopback_capability_binds_allowed": 1,
+        "Python_network_operations_attempted": 0,
+        "TRAIN_input_reads": 0,
+        "b354_forward_calls_attempted": 12,
+        "b354_forward_calls_completed": 12,
+        "backward_calls": 0,
+        "calibration_calls": 0,
+        "canonical_argmax_decisions_completed": 48,
+        "corpus_batches_attempted": 1,
+        "corpus_batches_completed": 1,
+        "dev_features_bank_reads": 1,
+        "fits": 0,
+        "full104_requests": 0,
+        "generation_calls": 0,
+        "gold_reader_calls": 0,
+        "model_initializations_attempted": 2,
+        "model_initializations_completed": 2,
+        "model_unloads_attempted": 2,
+        "model_unloads_completed": 2,
+        "native_binary_loads_attempted": 1,
+        "native_binary_loads_completed": 1,
+        "native_helper_starts_attempted": 1,
+        "native_helper_starts_completed": 1,
+        "native_hit_source_validations": 1126,
+        "native_index_initializations_attempted": 12,
+        "native_index_initializations_completed": 12,
+        "native_insertions_attempted": 1126,
+        "native_insertions_completed": 1126,
+        "native_len_calls_attempted": 24,
+        "native_len_calls_completed": 24,
+        "native_queries_attempted": 12,
+        "native_queries_completed": 12,
+        "native_version_calls_attempted": 1,
+        "native_version_calls_completed": 1,
+        "old_benchmark_DEV_reads": 0,
+        "optimizer_initializations": 0,
+        "optimizer_steps": 0,
+        "packed_input_guard_checks": 48,
+        "paid_calls": 0,
+        "pair_tokenizations_attempted": 48,
+        "pair_tokenizations_completed": 48,
+        "primary_decisions_completed": 48,
+        "reader_lifecycles_completed": 2,
+        "selected_cases_validated": 12,
+        "semantic_gold_labels_decoded": 0,
+        "tasksource_forward_calls_attempted": 36,
+        "tasksource_forward_calls_completed": 36,
+        "tokenizer_initializations_attempted": 2,
+        "tokenizer_initializations_completed": 2,
+        "training_steps": 0
+      },
+      "actual_resources": {
+        "cgroup_memory_current": "13421137920",
+        "cgroup_memory_max": "17179869184",
+        "cgroup_memory_stat": {
+          "active_anon": 6476115968,
+          "active_file": 3871408128,
+          "anon": 1773113344,
+          "anon_thp": 0,
+          "file": 10928283648,
+          "file_dirty": 0,
+          "file_mapped": 107950080,
+          "file_thp": 163577856,
+          "file_writeback": 0,
+          "inactive_anon": 2166599680,
+          "inactive_file": 187256832,
+          "kernel": 719118336,
+          "kernel_stack": 622592,
+          "pagetables": 5853184,
+          "percpu": 14252,
+          "pgactivate": 15769012,
+          "pgdeactivate": 6640988,
+          "pgdemote_direct": 0,
+          "pgdemote_khugepaged": 0,
+          "pgdemote_kswapd": 0,
+          "pgdemote_proactive": 0,
+          "pgfault": 775872022,
+          "pglazyfree": 2,
+          "pglazyfreed": 0,
+          "pgmajfault": 87,
+          "pgrefill": 6645596,
+          "pgscan": 8583138,
+          "pgscan_direct": 8581612,
+          "pgscan_khugepaged": 0,
+          "pgscan_kswapd": 1526,
+          "pgscan_proactive": 0,
+          "pgsteal": 8576647,
+          "pgsteal_direct": 8575121,
+          "pgsteal_khugepaged": 0,
+          "pgsteal_kswapd": 1526,
+          "pgsteal_proactive": 0,
+          "pswpin": 0,
+          "pswpout": 0,
+          "sec_pagetables": 0,
+          "shmem": 6869622784,
+          "shmem_thp": 0,
+          "slab": 712579584,
+          "slab_reclaimable": 641027480,
+          "slab_unreclaimable": 71552104,
+          "sock": 0,
+          "swapcached": 0,
+          "swpin_zero": 0,
+          "swpout_zero": 0,
+          "thp_collapse_alloc": 0,
+          "thp_fault_alloc": 0,
+          "thp_swpout": 0,
+          "thp_swpout_fallback": 0,
+          "unevictable": 0,
+          "vmalloc": 4096,
+          "workingset_activate_anon": 0,
+          "workingset_activate_file": 498980,
+          "workingset_nodereclaim": 0,
+          "workingset_refault_anon": 0,
+          "workingset_refault_file": 3893110,
+          "workingset_restore_anon": 0,
+          "workingset_restore_file": 120971
+        },
+        "child_system_seconds": 0.099231,
+        "child_user_seconds": 0.359958,
+        "cpu_affinity": [
+          0,
+          1
+        ],
+        "largest_child_max_rss_kib": 424260,
+        "max_rss_kib": 3303320,
+        "memory_scope": "Separatehighwater observations;not summedsimultaneousRSS.",
+        "process": {
+          "NoNewPrivs": "1",
+          "Seccomp": "2",
+          "Threads": "4",
+          "cpu_affinity": [
+            0,
+            1
+          ]
+        },
+        "system_seconds": 10.344127,
+        "torch_num_interop_threads": 1,
+        "torch_num_threads": 2,
+        "user_seconds": 350.020657
+      },
+      "batch_case_pipeline_latency": {
+        "N": 12,
+        "batch_case_span_seconds": {
+          "p50": 125.26531868550228,
+          "p95": 162.5584232878813
+        },
+        "evidence_preparation_component_sum_seconds": {
+          "p50": 1.3938493219678196,
+          "p95": 4.466268288469432
+        },
+        "scope": "Actual percase BGE start to final fourth readout; includes othercase queue/shared modelinit/nativebatch waits; excludes initialsharedBGEinit. Not isolated case or publisher latency. Components remain distinct and no concurrent peakRSS is inferred."
+      },
+      "checks_passed": true,
+      "fixed_counters_checked": 68,
+      "known_corpus_batches_attempted_at_last_capture": 1,
+      "known_corpus_batches_completed_at_last_capture": 1,
+      "latency_by_arm": {
+        "b354_source_order": {
+          "NNI_forward_seconds": {
+            "N": 12,
+            "p50": 3.399138099513948,
+            "p95": 3.60255788625509,
+            "scope": "Per actual measured readout component. Shared BGE/native/model initialization and whole batch are separate; not publisher end-to-end latency.",
+            "sum": 40.950884239864536
+          },
+          "pair_tokenization_seconds": {
+            "N": 12,
+            "p50": 0.009205744514474645,
+            "p95": 0.020526221461477687,
+            "scope": "Per actual measured readout component. Shared BGE/native/model initialization and whole batch are separate; not publisher end-to-end latency.",
+            "sum": 0.1309253060608171
+          },
+          "reader_total_seconds": {
+            "N": 12,
+            "p50": 3.4345857379666995,
+            "p95": 3.6250080359401182,
+            "scope": "Per actual measured readout component. Shared BGE/native/model initialization and whole batch are separate; not publisher end-to-end latency.",
+            "sum": 41.27294798090588
+          }
+        },
+        "tasksource_lexical": {
+          "NNI_forward_seconds": {
+            "N": 12,
+            "p50": 3.0436637254897505,
+            "p95": 3.148695277623483,
+            "scope": "Per actual measured readout component. Shared BGE/native/model initialization and whole batch are separate; not publisher end-to-end latency.",
+            "sum": 36.560166365874466
+          },
+          "pair_tokenization_seconds": {
+            "N": 12,
+            "p50": 0.007711841491982341,
+            "p95": 0.017606986558530477,
+            "scope": "Per actual measured readout component. Shared BGE/native/model initialization and whole batch are separate; not publisher end-to-end latency.",
+            "sum": 0.11017535004066303
+          },
+          "reader_total_seconds": {
+            "N": 12,
+            "p50": 3.067825272009941,
+            "p95": 3.170153475002735,
+            "scope": "Per actual measured readout component. Shared BGE/native/model initialization and whole batch are separate; not publisher end-to-end latency.",
+            "sum": 36.88402154290816
+          }
+        },
+        "tasksource_native": {
+          "NNI_forward_seconds": {
+            "N": 12,
+            "p50": 2.9833873015013523,
+            "p95": 3.15373436534428,
+            "scope": "Per actual measured readout component. Shared BGE/native/model initialization and whole batch are separate; not publisher end-to-end latency.",
+            "sum": 36.00930370402057
+          },
+          "pair_tokenization_seconds": {
+            "N": 12,
+            "p50": 0.007894116512034088,
+            "p95": 0.01838466154003981,
+            "scope": "Per actual measured readout component. Shared BGE/native/model initialization and whole batch are separate; not publisher end-to-end latency.",
+            "sum": 0.1124593410640955
+          },
+          "reader_total_seconds": {
+            "N": 12,
+            "p50": 3.0095160095079336,
+            "p95": 3.18750003738387,
+            "scope": "Per actual measured readout component. Shared BGE/native/model initialization and whole batch are separate; not publisher end-to-end latency.",
+            "sum": 36.3523242441006
+          }
+        },
+        "tasksource_source_order": {
+          "NNI_forward_seconds": {
+            "N": 12,
+            "p50": 3.0392583354841918,
+            "p95": 3.313955890739453,
+            "scope": "Per actual measured readout component. Shared BGE/native/model initialization and whole batch are separate; not publisher end-to-end latency.",
+            "sum": 36.65496179513866
+          },
+          "pair_tokenization_seconds": {
+            "N": 12,
+            "p50": 0.010115542478160933,
+            "p95": 0.02236462480796035,
+            "scope": "Per actual measured readout component. Shared BGE/native/model initialization and whole batch are separate; not publisher end-to-end latency.",
+            "sum": 0.14050675387261435
+          },
+          "reader_total_seconds": {
+            "N": 12,
+            "p50": 3.0644964469829574,
+            "p95": 3.3393818324897437,
+            "scope": "Per actual measured readout component. Shared BGE/native/model initialization and whole batch are separate; not publisher end-to-end latency.",
+            "sum": 37.0140295799938
+          }
+        }
+      },
+      "model_runtime_audit": {
+        "actual_model_profiles": [
+          "b354",
+          "tasksource"
+        ],
+        "checks_passed": true,
+        "lineage_and_eligibility": "HOLD",
+        "new_model_strength_claim": false
+      },
+      "no_total_or_parallel_memory_inferred_from_summed_RSS": true,
+      "owned_live_processes_closed": true,
+      "reader_lifecycle_audit": {
+        "checks_passed": true,
+        "events_observed": 10,
+        "model_profiles_disposed": [
+          "b354",
+          "tasksource"
+        ],
+        "no_model_coexistence_in_observed_lifecycle": true
+      },
+      "supervisor_execution_qualification": {
+        "all12_raw_completion_invariants_true": true,
+        "checks_passed": true,
+        "execution_status": "WORKER_COMPLETED",
+        "observed_full_supervisor_bound_seconds": 193.7402241289965,
+        "observed_supervisor_exit_wait_status": 0,
+        "observed_supervisor_state": "Z",
+        "observed_worker_exit_code": 0,
+        "physical_supervisor_absent": false,
+        "physical_supervisor_closed": true,
+        "recorded_wall_scope": "Launcher sample after owned cleanup; external stable-zombie exit-status observation and post-fence monotonic timestamp additionally include final metadata fsync and full supervisor closure.",
+        "recorded_wall_seconds_including_init_cleanup": 193.5854040730046,
+        "supervisor_exit_code_observed_by_root": false,
+        "supervisor_exit_status_independently_observed_from_proc_stat": true,
+        "supervisor_exit_status_source": "PROC_STAT_FIELD52_EXACT_STABLE_ZOMBIE",
+        "supervisor_intended_exit_code": 0
+      },
+      "wall_seconds_including_initialization_and_cleanup": 188.62191211502068,
+      "worker_attempts": 1
+    },
+    "epoch40_cumulative_execution": {
+      "corpus_attempts": null,
+      "completed_corpus_batches": null,
+      "verified_corpus_attempts_lower_bound": 36,
+      "verified_completed_corpus_batches_lower_bound": 34,
+      "bounded_native_process_attempts": 41,
+      "legacy_native_qualification_process_attempts": 6,
+      "historical_E37_model_corpus_tail": "UNKNOWN_PERMANENTLY",
+      "benchmark_HTTP_successes": 903,
+      "benchmark_HTTP_failures": 2,
+      "current_official_HTTP_successes": 3,
+      "current_official_HTTP_failures": 0
     }
   },
   "epochs": [
@@ -2336,6 +2662,31 @@
       "official_SOTA_verified": false,
       "official_rank": null,
       "benchmark_generalization_claim": false
+    },
+    {
+      "epoch": 40,
+      "kind": "REAL_CONTRACTNLI_HELDOUT_DEV_TRANSFER_PILOT",
+      "phase": "dev",
+      "status": "REJECTED_DEV_PILOT",
+      "dev_passed": false,
+      "manifest": {
+        "path": "experiments/sota-2026-10-22/epoch40/EPOCH_MANIFEST.json",
+        "bytes": 78789,
+        "sha256": "c13594199f87152a1ffcce3da9e5b759fb5bf3e0bbf548dfcc84f73d4980ac2c"
+      },
+      "results": {
+        "path": "experiments/sota-2026-10-22/epoch40/RESULTS.json",
+        "bytes": 187302,
+        "sha256": "7d7e1973a26688f184845c92ed5f8099842aca2ee4fd39c753eea2f8a86a6bcd"
+      },
+      "all_slots_closed": true,
+      "goal_met": false,
+      "benchmark_accepted": false,
+      "champion_promoted": false,
+      "new_submission": false,
+      "official_SOTA_verified": false,
+      "official_rank": null,
+      "benchmark_generalization_claim": false
     }
   ],
   "used_confirmation_sets": [
@@ -2350,12 +2701,10 @@
     "NoClaimBenchRuVectorscore; fullquestions/scorer/license/submissionnotverified"
   ],
   "next_research_priority": {
-    "status": "PROPOSED_NOT_EXECUTED",
-    "priority": "Verify official raw gold literal schema/normalization and custodian/scorer agreement before another real-data measurement. Use author machine-readable schema/protocol or separately frozen TRAIN-only codec audit; do not scan unselected/CONF vocabulary. Do not retry/remap E39 or select on its unsupported literal. E39 complete48forecasts remain DEV-only and cannot establish model quality. Stronger pretrained typed-decision/NLI remains preferred only after source/scorer/data access is genuinely admitted and zero-paid resource plan fits.",
-    "preserve_native104": true,
-    "paid_GPU_remaining_authorization": 0,
-    "new_publisher_submission_allowed": false,
-    "confirmation_oracle_reads_authorized": 0
+    "budget_and_protocol": "Zero new paidAPI/GPU under current authorization. A new epoch needs a new frozen bounded CPU/time plan and scoped lock/CAS. No new publisher submission/contact until meaningful independent acceptance plus confirmed protocol/eligibility; native104 stays submitted champion. ClaimBench remains aggregate/examples-only until full data/scorer/license/access verified.",
+    "data_retirement": "All12 E40 identities remain DEV forever. All Easy48, Legal96, E39 FinFact12, prior authored ENG and original423 role constraints remain binding; old74unused/24protected untouched. No class-based confirmation selection or score-driven resampling.",
+    "direction": "Do not repeat the E40 pretrained-head/ranking grid on its now-exposed12 NDA-7 questions. First diagnose retained DEV-only evidence/512-token coverage and native-vs-lexical disagreement without new model or corpus calls. Before another measured epoch, freeze a materially changed context-handling/typed-decision hypothesis, matched same-model retrieval controls, exact source/model/scorer revisions, and a licensed document-disjoint multi-hypothesis DEV policy that preserves undefined author metrics. Fresh confirmation still requires genuinely unused identities plus reviewed training-overlap and eligibility; do not treat project novelty as model-unseen data.",
+    "status": "PROPOSED_NOT_EXECUTED"
   },
   "benchmark_targets": {
     "JevBench": {
@@ -2494,10 +2843,10 @@
     "schema_version": 1,
     "epoch": 40,
     "run_id": "epoch40-2cf5aba60a05",
-    "state": "EPOCH40_SOURCE_FROZEN_DEV_PENDING_ADMISSION",
-    "work_active": true,
+    "state": "EPOCH40_CLOSED",
+    "work_active": false,
     "experiments_active": false,
-    "checkpoint_parent": "3490cc61c470d95309b7fd0a68ee1c17950e332d",
+    "checkpoint_parent": "57138c4423ce8c83d7965a5b00ea5338d24b002d",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
       "run_id": "epoch40-2cf5aba60a05",
@@ -2525,12 +2874,13 @@
     "OS_lock_release_pending": true,
     "native_allowed": 0,
     "conditional_train_allowed": 0,
-    "conditional_dev_allowed": 1,
+    "conditional_dev_allowed": 0,
     "conditional_calibration_allowed": 0,
     "conditional_engineering_allowed": 0,
     "confirmation_allowed": 0,
     "conditional_confirmation_allowed": 0,
     "instruction": "DEV-only real ContractNLI pilot. SOURCE conditional work only after actual independent readback/admission. One48readout/12query corpus CPU2/600total, no TRAIN/calibCONF/paidGPU/retry. FINAL closes every slot; no fullbenchmark placement/promotion.",
+    "all_unspent_epoch40_slots_permanently_closed": true,
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -2864,9 +3214,9 @@
     }
   ],
   "rejection_ledger": {
-    "path": "experiments/sota-2026-10-22/epoch39/REJECTION_LEDGER.json",
-    "bytes": 165162,
-    "sha256": "bd23baa59267168471373a019b83dd26a843ca7bc606251b52768ef5ad6e0204"
+    "path": "experiments/sota-2026-10-22/epoch40/REJECTION_LEDGER.json",
+    "bytes": 180282,
+    "sha256": "a9b62b9be45c68572df6f0a1dee05f1b46b0adc29940f876b4c9a94e6e79e78c"
   },
   "benchmark_refresh": {
     "path": "experiments/sota-2026-10-22/epoch38/official-refresh/benchmark-refresh.safe.json",
@@ -3694,6 +4044,20 @@
         "retries": 0
       },
       "all_unspent_slots_permanently_closed": true
+    },
+    "epoch40_budget": {
+      "worker_attempts_used": 1,
+      "remaining_slots": {
+        "train": 0,
+        "dev": 0,
+        "calibration": 0,
+        "confirmation": 0,
+        "native_corpus_batches": 0,
+        "paid_calls": 0,
+        "GPU_calls": 0,
+        "retries": 0
+      },
+      "all_unspent_slots_permanently_closed": true
     }
   },
   "publisher_status": {
@@ -3719,26 +4083,26 @@
     "output_rule": "Choose actually unused path; no overwrite."
   },
   "latest_learning": {
-    "epoch": 39,
-    "status": "REJECTED_DEV_INTEGRITY",
-    "reason": "Frozen raw gold representation contract failed on second decoded token; exactly2semanticdecodes,10unattempted, no joined labels, frozen EVALUATE not invoked, all quality metrics unavailable. This is no evidence of model regression.",
-    "results": {
-      "path": "experiments/sota-2026-10-22/epoch39/RESULTS.json",
-      "bytes": 20521,
-      "sha256": "428f82713bc56d4cab6cd0a5f0e27cdcc38287f10667007bed8ee39dce88ef7e"
+    "actual_accuracy_correct_of12": {
+      "b354_source_order": 4,
+      "tasksource_lexical": 6,
+      "tasksource_native": 4,
+      "tasksource_source_order": 4
     },
-    "source_contract_finding": {
-      "path": "experiments/sota-2026-10-22/audit/epoch39/LABEL_REPRESENTATION_SOURCE_FINDING.v2.json",
-      "bytes": 8121,
-      "sha256": "d75ff158de16d6dbac496b4e849b43387729de862df27bf5e70c00efb50a0d7c"
+    "actual_execution": "One real native corpus;1126 inserts,12 queries,48 NLI forwards(B35412,Tasksource36),CPU affinity0/1,Torch2threads,known stableZexit0,externalpostfence193.7402241289965seconds; no inference retry/paidGPU/modeltraining/confirmation.",
+    "champion_native104_unchanged": true,
+    "decision": "Native proper scores improved all controls, but required+2correct gain failed and lexical accuracy was higher. All author EC-F1 mean/hmean remain NULL+UNDEFINED_AUTHOR_NAN because selected gold has9E/3N/0C; frozen defined-F1 gates fail, no zero imputation, dropped cases, hypothesis changes or resampling.",
+    "epoch": 40,
+    "native_proper_scores": {
+      "Brier": 0.6068674498317449,
+      "stable_unclipped_NLL": 0.8531952124195837
     },
-    "actual_NLI_forwards": 48,
-    "actual_native_corpus_batches_completed": 1,
-    "actual_native_queries": 12,
-    "full_supervisor_external_bound_seconds": 153.88064372102963,
-    "all12_FinFact_identities_exposed_DEV_forever": true,
-    "champion_promoted": false,
-    "official_SOTA_verified": false
+    "new_submissions_or_contacts": 0,
+    "official_goal_verified": false,
+    "operational_history": "One direct isolated goldCLI failed before function definition/reader/labels(known0). A separately approved hash-bound import adapter made the FIRST unchanged custodian call(12decodes once) and first EVALUATE/BIND calls; all221 SOURCE pins unchanged. One original publication-results setup failed before outputs on correct private external refs; separately reviewed metadata helper preserved every evaluated field/type and kept custody bodies outside public project.",
+    "scope_and_uncertainty": "Twelve official ContractNLI TEST documents designated project DEV, one fixed NDA-7 hypothesis; author helper adaptation, not full evaluate_all/paper/fullbenchmark score. Small shared-template pilot and unverified modeltraining overlap prevent generalization/confirmation/officialplacement claims. All48 premises were budget-truncated while full hypotheses were retained; coverage/numerical diagnostics are not causal reasoning evidence.",
+    "status": "REJECTED_DEV_PILOT",
+    "used_confirmation_identities": []
   },
   "source_closure_correction": {
     "path": "experiments/sota-2026-10-22/epoch13/SOURCE_CLOSURE_CORRECTION.v1.json",
@@ -8355,5 +8719,30 @@
       "confirmation": []
     },
     "scope": "Twelve real ContractNLI identities exposed DEV forever, separate from old423/325DEV/74unused/24protected and all prior authored engineering cases. No CONF."
+  },
+  "epoch40_final": {
+    "epoch": 40,
+    "kind": "REAL_CONTRACTNLI_HELDOUT_DEV_TRANSFER_PILOT",
+    "phase": "dev",
+    "status": "REJECTED_DEV_PILOT",
+    "dev_passed": false,
+    "manifest": {
+      "path": "experiments/sota-2026-10-22/epoch40/EPOCH_MANIFEST.json",
+      "bytes": 78789,
+      "sha256": "c13594199f87152a1ffcce3da9e5b759fb5bf3e0bbf548dfcc84f73d4980ac2c"
+    },
+    "results": {
+      "path": "experiments/sota-2026-10-22/epoch40/RESULTS.json",
+      "bytes": 187302,
+      "sha256": "7d7e1973a26688f184845c92ed5f8099842aca2ee4fd39c753eea2f8a86a6bcd"
+    },
+    "all_slots_closed": true,
+    "goal_met": false,
+    "benchmark_accepted": false,
+    "champion_promoted": false,
+    "new_submission": false,
+    "official_SOTA_verified": false,
+    "official_rank": null,
+    "benchmark_generalization_claim": false
   }
 }

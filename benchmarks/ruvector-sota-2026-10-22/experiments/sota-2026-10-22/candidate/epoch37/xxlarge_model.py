@@ -1,0 +1,221 @@
+"""Exact original DeBERTa-v2-xxlarge MNLI; restricted legacy/meta F16→F32 CPU load.
+
+This file imports only the standard library before the source-admitted batch.
+Legacy metadata comes from separately reviewed inert pickletools inspection; no format fallback.
+"""
+import gc
+import hashlib
+import json
+import math
+from pathlib import Path
+import time
+
+LABELS=('Contradiction','NotMentioned','Entailment')
+WEIGHT_SHA='5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db'
+CONFIG_SHA='2c2de12b575824b4caec3ae5cc03c3f80837b1b3617541b8a5333cdc3db9b57c'
+POSITION='deberta.embeddings.position_ids'
+FORMAT='PYTORCH_LEGACY_CONCATENATED_PICKLE_RAW_STORAGES'
+STATUS='ORIGINAL_TORCH_LEGACY_PICKLETOOLS_METADATA_VERIFIED_NO_UNPICKLE'
+METADATA_SHA='05e21f2e52be254c09c7cf715cd36afd1bd6f4a58b9a0710c9f1589506a07fc0'
+LOAD_PLAN_SHA='98daf4e1807375fa785f72b8014cbd067c58bc8d1232c0a1c237c86479113fdd'
+
+
+def file_sha(path):
+    h=hashlib.sha256()
+    with Path(path).open('rb')as stream:
+        for part in iter(lambda:stream.read(1048576),b''):h.update(part)
+    return h.hexdigest()
+
+
+def canonical_sha(value):
+    return hashlib.sha256(json.dumps(value,ensure_ascii=False,separators=(',',':'),allow_nan=False).encode()).hexdigest()
+
+
+def decisions(logits):
+    if not isinstance(logits,(list,tuple))or len(logits)!=3 or any(type(x)not in(int,float)or not math.isfinite(x)for x in logits):
+        raise ValueError('Exactly three finite original C,N,E logits required')
+    peak=max(logits);mass=[math.exp(x-peak)for x in logits];total=math.fsum(mass);p=[x/total for x in mass]
+    if any(not math.isfinite(x)or not 0<=x<=1 for x in p)or abs(math.fsum(p)-1)>1e-12:raise ValueError('Invalid rawT1 probabilities')
+    winner=max(range(3),key=lambda i:logits[i])
+    return {'raw_logits':list(logits),'raw_logits_C_N_E':list(logits),
+        'native_label_order':list(LABELS),'canonical_E_C_N_from_raw':[2,0,1],
+        'probabilities_native_order':p,'probabilities_C_N_E':list(p),'probabilities_E_C_N':[p[2],p[0],p[1]],
+        'native_label_index':winner,'native_typed_argmax':LABELS[winner],
+        'native_binary_probabilities_Yes_No':{'Yes':p[2],'No':p[0]+p[1]},'native_binary_decision':'Yes'if p[2]>.5 else'No',
+        'temperature':1.0,'calibrated':False,'semantic_decision_override':False,
+        'tie_policy':'Native raw C,N,E first maximum; binary exact0.5 No.'}
+
+
+def _object(pairs):
+    value={}
+    for key,item in pairs:
+        if key in value:raise ValueError('Duplicate static archive metadata key')
+        value[key]=item
+    return value
+
+
+def _float(value):
+    result=float(value)
+    if not math.isfinite(result):raise ValueError('Nonfinite static archive number')
+    return result
+
+
+def archive_header(path,expected_sha):
+    if file_sha(path)!=expected_sha:raise ValueError('Unpinned original legacy metadata')
+    meta=json.loads(Path(path).read_text(),object_pairs_hook=_object,parse_float=_float,
+        parse_constant=lambda _:(_ for _ in()).throw(ValueError('Nonfinite archive metadata')))
+    if (meta.get('schema_version')!=3 or meta.get('status')!=STATUS
+            or meta.get('weights')!={'bytes':3133958098,'sha256':WEIGHT_SHA}
+            or meta.get('format')!=FORMAT or meta.get('metadata_pickle_count')!=5
+            or meta.get('storage_data_ends_at_filelength')is not True or meta.get('storage_payloads_decoded')!=0
+            or meta.get('source_parameter_dtype')!='F16' or meta.get('protocol_version')!=1001
+            or meta.get('sys_info',{}).get('little_endian')is not True
+            or any(meta.get(k)!=0 for k in('unsafe_unpickling_calls','checkpoint_functions_invoked','ML_imports','model_tokenizer_native_calls'))):
+        raise ValueError('Unsafe or wrong explicit original legacy metadata; no ZIP/unrestricted fallback')
+    rows=meta['tensors'];header={r['name']:r for r in rows}
+    if len(header)!=len(rows)or len(rows)!=meta['state_tensor_count']or not rows:raise ValueError('Duplicate/missing original source tensors')
+    for name,row in header.items():
+        if (not isinstance(name,str)or row['dtype']!='F16'or not isinstance(row['shape'],list)
+                or any(type(v)is not int or v<0 for v in row['shape'])or row['numel']!=math.prod(row['shape'])):
+            raise ValueError('Unexpected original tensor contract')
+        if name==POSITION:raise ValueError('Actual approved source has no position_ids or I64 buffer')
+    return meta,header
+
+
+class FrozenMicrosoftXXLargeReader:
+    def __init__(self,directory,counters,progress,metadata_path,metadata_sha,legacy_plan_path,legacy_plan_sha):
+        self.counters,self.progress=counters,progress;directory=Path(directory);weight=directory/'pytorch_model.bin'
+        if weight.stat().st_size!=3133958098 or file_sha(weight)!=WEIGHT_SHA:raise ValueError('Exact original legacy weights changed')
+        if file_sha(directory/'config.json')!=CONFIG_SHA:raise ValueError('Original xxlarge config changed')
+        if metadata_sha!=METADATA_SHA or legacy_plan_sha!=LOAD_PLAN_SHA or file_sha(legacy_plan_path)!=LOAD_PLAN_SHA:
+            raise ValueError('Exact independently approved legacy metadata/load plan required')
+        metadata,header=archive_header(metadata_path,metadata_sha)
+        if metadata['state_tensor_count']!=782 or sum(r['numel']for r in header.values())!=1566915075:
+            raise ValueError('Approved original state catalogue differs; class parameter count remains independently checked below')
+        counters['model_initializations_attempted']+=1;progress({'event':'NLI_MODEL_INITIALIZATION_BEFORE','model_tag':'xxlarge'})
+        started=time.perf_counter()
+        import torch
+        import transformers
+        from transformers import DebertaV2Config,DebertaV2ForSequenceClassification,AutoTokenizer
+        if torch.__version__!='2.7.1+cpu'or transformers.__version__!='4.52.4':raise ValueError('Exact original CPU runtime required')
+        torch.set_num_threads(2)
+        if torch.get_num_interop_threads()!=1:torch.set_num_interop_threads(1)
+        self.torch=torch;config=DebertaV2Config.from_json_file(str(directory/'config.json'))
+        if ({int(k):v.lower()for k,v in config.id2label.items()}!={0:'contradiction',1:'neutral',2:'entailment'}
+                or config.num_labels!=3 or config.architectures!=['DebertaV2ForSequenceClassification']
+                or config.hidden_size!=1536 or config.num_hidden_layers!=48 or config.intermediate_size!=6144
+                or config.num_attention_heads!=24 or config.vocab_size!=128100 or config.max_position_embeddings!=512
+                or config.relative_attention is not True or config.share_att_key is not True
+                or config.conv_kernel_size!=3 or config.position_buckets!=256):raise ValueError('Wrong original xxlarge architecture/head')
+        config._attn_implementation='eager'
+        with torch.device('meta'):model=DebertaV2ForSequenceClassification(config)
+        expected=model.state_dict();parameters=dict(model.named_parameters());buffers=dict(model.named_buffers())
+        if set(buffers)!={POSITION}or list(buffers[POSITION].shape)!=[1,512]or buffers[POSITION].dtype!=torch.int64:
+            raise ValueError('Unexpected meta-class nonpersistent buffer contract')
+        if set(expected)!=set(parameters)or any(not p.is_meta for p in parameters.values()):raise ValueError('Unexpected meta learned state contract')
+        extra=set(header)-set(expected)
+        if set(expected)-set(header)or extra:raise ValueError('Missing/unexpected original learned keys')
+        for name,tensor in expected.items():
+            if header[name]['shape']!=list(tensor.shape)or header[name]['dtype']!='F16':raise ValueError('Original learned state shape/dtype differs: '+name)
+        if (header.get('classifier.weight',{}).get('shape')!=[3,1536]or header.get('classifier.bias',{}).get('shape')!=[3]
+                or header.get('pooler.dense.weight',{}).get('shape')!=[1536,1536]
+                or header.get('pooler.dense.bias',{}).get('shape')!=[1536]):raise ValueError('Original pooler/classifier changed')
+        learned_count=sum(p.numel()for p in parameters.values())
+        if sum(r['numel']for r in header.values()if r['dtype']=='F16')!=learned_count:raise ValueError('Actual meta parameter/source count differs')
+        # No unrestricted unpickling; source hash/static header already admitted.
+        state=torch.load(str(weight),weights_only=True,mmap=False,map_location='cpu')
+        if not isinstance(state,dict)or set(state)!=set(header):raise ValueError('Restricted legacy state/source key mismatch')
+        for name,tensor in state.items():
+            row=header[name];dtype=torch.float16 if row['dtype']=='F16'else torch.int64
+            if (type(tensor)is not torch.Tensor or tensor.is_meta or tensor.device.type!='cpu'or tensor.dtype!=dtype
+                    or list(tensor.shape)!=row['shape']or tensor.numel()!=row['numel']
+                    or list(tensor.stride())!=row['stride']or tensor.storage_offset()!=row['storage_offset']):
+                raise ValueError('Loaded original tensor differs from static source metadata: '+name)
+        model.deberta.embeddings.position_ids=torch.arange(512,dtype=torch.long,device='cpu').unsqueeze(0)
+        buffer_source='Only deterministic config-derived stock arange512 nonpersistent buffer; no learned fallback'
+        loaded=model.load_state_dict(state,strict=True,assign=True)
+        if loaded.missing_keys or loaded.unexpected_keys:raise ValueError('Incomplete original state assignment')
+        del state,tensor,expected,parameters,buffers
+        preconversion_gc=gc.collect()
+        # One conversion after source mappings have been detached from local state.
+        model.to(device='cpu',dtype=torch.float32)
+        for name,tensor in list(model.named_parameters())+list(model.named_buffers()):
+            if tensor.is_meta or tensor.device.type!='cpu'or tensor.dtype!=(torch.int64 if name==POSITION else torch.float32):
+                raise ValueError('Unmaterialized/non-CPU/wrong final tensor dtype: '+name)
+        if set(dict(model.named_buffers()))!={POSITION}or sum(p.numel()for p in model.parameters())!=learned_count:
+            raise ValueError('Actual assigned parameter/buffer graph differs')
+        for parameter in model.parameters():parameter.requires_grad_(False)
+        model.eval();self.model=model
+        counters['tokenizer_initializations_attempted']+=1
+        tokenizer=AutoTokenizer.from_pretrained(str(directory),local_files_only=True,trust_remote_code=False,use_fast=True)
+        if type(tokenizer).__name__!='DebertaV2TokenizerFast'or not tokenizer.is_fast:raise ValueError('Exact stock fast tokenizer required')
+        original_backend=tokenizer.backend_tokenizer.to_str();tokenizer.backend_tokenizer.no_truncation();tokenizer.backend_tokenizer.no_padding()
+        if tokenizer.backend_tokenizer.truncation is not None or tokenizer.backend_tokenizer.padding is not None:raise ValueError('Hidden tokenizer clipping/padding')
+        if tokenizer.num_special_tokens_to_add(pair=True)!=3:raise ValueError('True pair formatting changed')
+        if [tokenizer.pad_token_id,tokenizer.cls_token_id,tokenizer.sep_token_id,tokenizer.unk_token_id,tokenizer.mask_token_id]!=[0,1,2,3,128000]:
+            raise ValueError('Original special token IDs changed')
+        self.tokenizer=tokenizer;counters['tokenizer_initializations_completed']+=1
+        self._parameter_versions={name:(p.data_ptr(),p._version)for name,p in model.named_parameters()};self._head_manifest=self.head_manifest()
+        self.runtime_checks={'model_class':type(model).__name__,'learned_parameters':learned_count,
+            'original_archive_metadata':{'path':'experiments/sota-2026-10-22/candidate/epoch37/research/XXL_ORIGINAL_WEIGHT_METADATA.json','bytes':Path(metadata_path).stat().st_size,'sha256':metadata_sha},
+            'legacy_original_load_plan':{'path':'experiments/sota-2026-10-22/candidate/epoch37/research/LEGACY_ORIGINAL_LOAD_PLAN.v3.json','bytes':Path(legacy_plan_path).stat().st_size,'sha256':legacy_plan_sha},
+            'source_storage_location_tags':sorted({r['location_tag']for r in metadata['storages'].values()}),
+            'map_location':'cpu','source_storage_offsets_verified_before_F32':True,
+            'source_state_tensor_count':metadata['state_tensor_count'],'source_learned_tensor_count':sum(r['dtype']=='F16'for r in header.values()),
+            'loading_missing_keys':[],'loading_unexpected_keys':[],'CPU_FP32':True,'meta_tensors_remaining':0,
+            'safe_weights_only_legacy_meta_assign':True,'weights_only':True,'mmap':False,'strict_assign':True,
+            'original_serialization_format':FORMAT,'unrestricted_pickle_allowed':False,'extra_pickle_safe_globals_added':0,
+            'source_state_references_disposed_before_F32':True,'preconversion_gc_collected_objects':preconversion_gc,
+            'source_parameter_dtype':'F16','compute_dtype':'F32','all_source_values_losslessly_converted_F16_to_F32':True,
+            'config_declared_torch_dtype':str(config.torch_dtype),'position_ids_buffer_source':buffer_source,'nonpersistent_buffers':[POSITION],
+            'tokenizer_class':type(tokenizer).__name__,'backend_before_sha256':hashlib.sha256(original_backend.encode()).hexdigest(),
+            'backend_after_sha256':hashlib.sha256(tokenizer.backend_tokenizer.to_str().encode()).hexdigest(),
+            'pair_special_tokens':3,'attention':'eager','no_training_or_classifier_reinitialization':True,
+            'native_label_order':list(LABELS),'canonical_E_C_N_from_raw':[2,0,1],
+            'initialization_seconds':time.perf_counter()-started,'actual_model_warmup_forwards':0,'weights_sha256':WEIGHT_SHA,'classifier_manifest':self._head_manifest}
+        counters['model_initializations_completed']+=1;progress({'event':'NLI_MODEL_INITIALIZATION_AFTER','model_tag':'xxlarge','runtime_checks':self.runtime_checks})
+
+    def head_manifest(self):
+        return {name:{'shape':list(t.shape),'dtype':'float32','sha256':hashlib.sha256(t.detach().numpy().tobytes(order='C')).hexdigest()}
+            for name,t in self.model.named_parameters()if name in('classifier.weight','classifier.bias','pooler.dense.weight','pooler.dense.bias')}
+
+    def unchanged(self):
+        good=(all(not p.requires_grad for p in self.model.parameters())and not self.model.training
+            and {name:(p.data_ptr(),p._version)for name,p in self.model.named_parameters()}==self._parameter_versions
+            and self.head_manifest()==self._head_manifest)
+        if not good:raise ValueError('Frozen original xxlarge model/head changed')
+        return {'unchanged':True,'classifier_manifest':self._head_manifest,'scope':'Parameter storage/version counters plus exact head bytes; source weight SHA reverified outside reader. No complete tensor clone.'}
+
+    def score(self,premise,hypothesis,receipt,role):
+        self.unchanged()
+        started=time.perf_counter();self.counters['pair_tokenizations_attempted']+=1
+        self.counters['NLI_full_pair_tokenizer_calls_attempted']+=1
+        full=self.tokenizer(premise,text_pair=hypothesis,add_special_tokens=True,truncation=False,padding=False,return_token_type_ids=False)
+        self.counters['NLI_full_pair_tokenizer_calls_completed']+=1
+        self.counters['NLI_capped_pair_tokenizer_calls_attempted']+=1
+        features=self.tokenizer(premise,text_pair=hypothesis,add_special_tokens=True,truncation='only_first',max_length=512,padding=False,return_token_type_ids=False)
+        self.counters['NLI_capped_pair_tokenizer_calls_completed']+=1
+        ids=full['input_ids']
+        if not 0<len(ids)<=512 or features['input_ids']!=ids or features['attention_mask']!=full['attention_mask']:
+            raise ValueError('Hidden truncation or wrong complete true-pair budget')
+        self.counters['pair_tokenizations_completed']+=1
+        feed={key:self.torch.tensor([features[key]],dtype=self.torch.long,device='cpu') for key in ('input_ids','attention_mask')}
+        self.counters['NLI_forward_calls_attempted']+=1;self.counters[role.upper()+'_forward_calls_attempted']+=1
+        self.progress({'event':'NLI_FORWARD_BEFORE','role':role})
+        forward=time.perf_counter()
+        with self.torch.inference_mode():returned=self.model(**feed,return_dict=True)
+        self.counters['NLI_forward_calls_completed']+=1;self.counters[role.upper()+'_forward_calls_completed']+=1
+        output=returned.logits
+        forward_seconds=time.perf_counter()-forward
+        receipt.update(actual_logits_shape=list(output.shape),actual_logits_dtype=str(output.dtype),actual_logits_device=str(output.device),forward_seconds=forward_seconds)
+        if list(output.shape)!=[1,3] or output.dtype!=self.torch.float32 or output.device.type!='cpu' or not bool(self.torch.isfinite(output).all()):
+            if output.device.type=='cpu':
+                values=output.detach().reshape(-1)[:64].tolist()
+                receipt['invalid_logits_diagnostic']={'numel':output.numel(),'first64_values':[float(x) if math.isfinite(float(x)) else {'nonfinite_number':repr(float(x))} for x in values]}
+            raise ValueError('Invalid original FP32 C,N,E logits')
+        logits=[float(value) for value in output[0].tolist()]
+        receipt.update(decisions(logits));receipt.update(actual_logits_shape=[1,3],full_pair_tokens=len(ids),max_pair_tokens=512,model_weights_sha256=WEIGHT_SHA,pair_tokens=len(ids),native_pair_input_ids_sha256=canonical_sha(ids),
+            premise_sha256=hashlib.sha256(premise.encode()).hexdigest(),hypothesis_sha256=hashlib.sha256(hypothesis.encode()).hexdigest(),
+            forward_seconds=forward_seconds,reader_seconds=time.perf_counter()-started,role=role,hidden_truncation=False)
+        self.counters['NLI_readouts_completed']+=1
+        self.progress({'event':'NLI_FORWARD_AFTER','role':role})

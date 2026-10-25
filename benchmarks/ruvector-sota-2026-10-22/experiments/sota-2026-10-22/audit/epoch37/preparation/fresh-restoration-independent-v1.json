@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "epoch": 37,
+  "status": "PASS_FRESH_ISOLATED_RESTORATION_ACTUAL_HASHES_AND_REVIEWED_COMMAND_RECEIPTS",
+  "checks_passed": true,
+  "actual_source_commit": "b4e9e4f7a8a40b95b87ed8e418435b2d5757bb0e",
+  "actual_Git_leaves_verified_in_new_kit": 5732,
+  "actual_CP_rows_verified": 5658,
+  "fresh_R_union_rows_verified": 5737,
+  "KIT_rows": 61,
+  "BASE_rows": 48,
+  "new_R_bytes_match_every_expected_union_hash": true,
+  "fresh_R_inherited_inode_alias_checks_against_old_donors": 11165,
+  "old_donor_aliases_found": 0,
+  "within_new_scope_K_or_B_inode_aliases_observed": 5737,
+  "only_regular_nonsymlink_sources": true,
+  "actual_reviewed_commands": [
+    {
+      "path": "archive22-proof.json",
+      "sha256": "74a9f19c77807680bfbf99b16deba2dd841bb64d6d8428499e664860ae350826",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch37-b4e9e4f7a8a4/kit/experiments/sota-2026-10-22/epoch22/publication/restore_archived_artifact_v1.py",
+        "--kit-root",
+        "/tmp/ruvector-sota-2026-10-22/epoch37-b4e9e4f7a8a4/kit",
+        "--archive",
+        "experiments/sota-2026-10-22/epoch22/publication/actualarchive.dev.raw.v1.json",
+        "--expected-archive-sha256",
+        "8ab3d8ec7856b423e6ff295f8e5ef74fc81dcaa3d3382fa2757e21563e0a99c6",
+        "--verify-only"
+      ]
+    },
+    {
+      "path": "archive26-proof.json",
+      "sha256": "620e9338eb095387617ada96576c4df44e3c7f22d8eea994385e440fd1681c00",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch37-b4e9e4f7a8a4/kit/experiments/sota-2026-10-22/epoch26/publication/restore_epoch26_archives_v1.py",
+        "--kit-root",
+        "/tmp/ruvector-sota-2026-10-22/epoch37-b4e9e4f7a8a4/kit",
+        "--manifest",
+        "experiments/sota-2026-10-22/epoch26/publication/archive-transport.v1.json",
+        "--expected-manifest-sha256",
+        "9b79fc0119e1e5d15470201b7180f4b39e55b687a207dac1ff9f333d91a8ef24",
+        "--verify-only"
+      ]
+    },
+    {
+      "path": "bootstrap-proof.json",
+      "sha256": "b5cdda96dde72e266a3bd75e39b69ce8072da49da1a052a7e364406648194c68",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch37-b4e9e4f7a8a4/kit/bootstrap.py",
+        "--dest",
+        "/tmp/ruvector-sota-2026-10-22/epoch37-b4e9e4f7a8a4/project",
+        "--base-local-directory",
+        "/tmp/ruvector-sota-2026-10-22/epoch37-b4e9e4f7a8a4/base-cache"
+      ]
+    },
+    {
+      "path": "restore-proof.json",
+      "sha256": "761b3254e3436e8aee72a697d3ddafebbd2918aabb67be78b2fe67d1c35aa8d7",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch37-b4e9e4f7a8a4/kit/restore_checkpoint.py",
+        "--dest",
+        "/tmp/ruvector-sota-2026-10-22/epoch37-b4e9e4f7a8a4/project",
+        "--base-local-directory",
+        "/tmp/ruvector-sota-2026-10-22/epoch37-b4e9e4f7a8a4/base-cache"
+      ]
+    },
+    {
+      "path": "restore-verify-proof.json",
+      "sha256": "47a8632c478376c1c86aea60baa26f27030d8a38bacbf5b11ac144d553460d78",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch37-b4e9e4f7a8a4/kit/restore_checkpoint.py",
+        "--dest",
+        "/tmp/ruvector-sota-2026-10-22/epoch37-b4e9e4f7a8a4/project",
+        "--base-local-directory",
+        "/tmp/ruvector-sota-2026-10-22/epoch37-b4e9e4f7a8a4/base-cache",
+        "--verify-only"
+      ]
+    }
+  ],
+  "scope": "Receipt and all-hash verification only. Auditor did not rerun any bootstrap/archive/restore/model/tokenizer/native/scorer code or parse unused benchmark annotations.",
+  "auditor_model_tokenizer_native_scorer_unused_annotation_calls": 0,
+  "auditor_external_mutations_or_deletions": 0,
+  "wall_seconds": 2.298461929021869,
+  "checked_at_unix": 1792926860.3494604
+}

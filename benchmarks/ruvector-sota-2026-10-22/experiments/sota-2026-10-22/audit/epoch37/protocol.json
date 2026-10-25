@@ -1,0 +1,153 @@
+{
+  "actual_NLI_forwards": 36,
+  "all12_retained": true,
+  "arm_to_measured_context": {
+    "full_raw": "full_source",
+    "full_verified": "full_source",
+    "lexical_verified": "lexical_coverage",
+    "native_raw": "native_coverage",
+    "native_verified": "native_coverage"
+  },
+  "benchmark_accuracy": null,
+  "candidate_protocol": {
+    "bytes": 8573,
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/ENGINEERING_PROTOCOL.json",
+    "sha256": "ca504f05933e2605e6e93ec81e37c9b86aef76d9b08837b04759f68e38c69dcc"
+  },
+  "case_proposal": {
+    "bytes": 12490,
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/CASE_PROPOSAL.v2.json",
+    "sha256": "a173d25d64f0d5fc12941c7a70a7eb0fe5e790da9064a036430c112964a36fb2"
+  },
+  "confirmation_eligibility": "HOLD",
+  "core_source_manifest": {
+    "bytes": 8924,
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/SOURCE_MANIFEST.json",
+    "sha256": "bace1908932c2b899a4b632fe97cce04c4468cb00557f887abaf15efdacdccee"
+  },
+  "core_source_ready": {
+    "bytes": 1272,
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/SOURCE_READY.json",
+    "sha256": "01d345064f1672598e2874cffa7d061709c067b154aa39594d90e3c231d29a6b"
+  },
+  "data_roles": {
+    "calibration": [],
+    "confirmation": [],
+    "dev": [],
+    "train": []
+  },
+  "engineering_case_ids": [
+    "epoch37:cc0:typed-source:01",
+    "epoch37:cc0:typed-source:02",
+    "epoch37:cc0:typed-source:03",
+    "epoch37:cc0:typed-source:04",
+    "epoch37:cc0:typed-source:05",
+    "epoch37:cc0:typed-source:06",
+    "epoch37:cc0:typed-source:07",
+    "epoch37:cc0:typed-source:08",
+    "epoch37:cc0:typed-source:09",
+    "epoch37:cc0:typed-source:10",
+    "epoch37:cc0:typed-source:11",
+    "epoch37:cc0:typed-source:12"
+  ],
+  "engineering_gate": {
+    "accuracy_gain_at_least2_vs": "full_raw",
+    "each_class_required_correct": 4,
+    "no_native_causal_gain_claim_if_null": true,
+    "primary_required_correct": 12,
+    "proper_nonincrease_against": [
+      "full_raw",
+      "native_raw",
+      "lexical_verified",
+      "full_verified"
+    ],
+    "proper_scores": [
+      "Brier",
+      "NLL"
+    ],
+    "prospective_ceiling_rejection_if_full_raw_correct_exceeds": 10
+  },
+  "engineering_only": true,
+  "epoch": 37,
+  "final_derived_forecasts": 60,
+  "inputs": {
+    "bytes": 9081,
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/engineering.inputs.json",
+    "sha256": "4395ad32e507daaf5f383fe02f25102458121ab9a6c6b24427a2b9a82bbbc7bb"
+  },
+  "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+  "label_access": "One worker oracle join12 after36actual readouts/60derivedforecasts and disposal; independent scorer uses retained joined labels only after actual physical closure and all source/readout/proof audits.",
+  "license": {
+    "bytes": 447,
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/engineering.LICENSE.txt",
+    "sha256": "b9f027624e24eadbe4724de37f38d2dd6d394766a54b4ea010edeff1377271ac"
+  },
+  "metric_arms": [
+    "full_raw",
+    "native_raw",
+    "native_verified",
+    "lexical_verified",
+    "full_verified"
+  ],
+  "metrics_policy": {
+    "bytes": 1778,
+    "path": "experiments/sota-2026-10-22/audit/epoch37/METRICS_POLICY.json",
+    "sha256": "6aae60048a6b67d03baeb098bce7259d3b85acbbc846fec0552b442b02df9774"
+  },
+  "no_benchmark_generalization_claim": true,
+  "novelty_license": {
+    "bytes": 4430,
+    "path": "experiments/sota-2026-10-22/audit/epoch37/AUTHOR_NOVELTY_LICENSE.v1.json",
+    "sha256": "30f3291234efcbaa031b4d3e09a61f30136a6b994b2434fa06add35ac8ca68c3"
+  },
+  "numeric_oracle_public_copy": {
+    "bytes": 676,
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/NUMERIC_ORACLE.json",
+    "sha256": "cb22b2d02c068506962f64c979c67f884954318045e85ef436edf49f6b5f830d"
+  },
+  "official_eligibility": "HOLD",
+  "oracle": {
+    "bytes": 676,
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/engineering.oracle.json",
+    "sha256": "cb22b2d02c068506962f64c979c67f884954318045e85ef436edf49f6b5f830d"
+  },
+  "phase": "engineering",
+  "primary": "native_verified",
+  "probability_policy": {
+    "action": "Swap canonical raw winner probability and independently certified class probability; other components unchanged; raw unchanged on abstention or agreement",
+    "calibrated_posterior_claim": false,
+    "derived_tie_rule": "Valid certificate class first among equal final maxima; otherwise original source C,N,E first raw-logit maximum",
+    "fitting_or_confidence_parameter": null,
+    "name": "SOURCE_CERTIFIED_RAW_MAX_MASS_TRANSPOSITION",
+    "proper_guarantee": "Only conditional on a correct certificate against SAME raw readout. No cross-context guarantee; wrongcert can be harmful or invariant and remains a soundness failure.",
+    "raw_winner": "PROVIDED_ORIGINAL_SOURCE_ORDER_RAW_LOGIT_ARGMAX; never rederived probability tie winner",
+    "retain_original_logits_and_raw_T1_probabilities": true
+  },
+  "promotion_allowed": false,
+  "raw_contexts": [
+    "full_source",
+    "native_coverage",
+    "lexical_coverage"
+  ],
+  "root_contract": {
+    "bytes": 5055,
+    "path": "experiments/sota-2026-10-22/epoch37/preparation/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+    "sha256": "13ffef77c48bcca8ea5c1c72826269b88b6ac3386358b03588819d414e7c920e"
+  },
+  "schema_version": 1,
+  "scorer_source_ready_v1": {
+    "bytes": 4870,
+    "path": "experiments/sota-2026-10-22/audit/epoch37/SOURCE_READY_v1.json",
+    "sha256": "0bf7b0995c1ddadc404e333c289d9f3ef1579e0972cce01b9090c01b46694e31"
+  },
+  "source_checkpoint": "b4e9e4f7a8a40b95b87ed8e418435b2d5757bb0e",
+  "source_semantics": {
+    "grammar": "typed-financial-affine-cardinality-v1",
+    "named_set_universe": "The two named sets in an entity/period frame are subsets of that same explicitly stated universe. Their full four-cell table is the complete family interpretation.",
+    "neutral": "Actual satisfying and falsifying complete worlds must satisfy every supplied source constraint, including irrelevant entity/period distractors; full source quotes must be in measured context. Retrieval omission never proves insufficiency.",
+    "scope": "Every nonblank supplied source line must parse. Exact rational affine quantities and a separately bounded integral two-set family only. No accounting identity or outside real10-K fact is inferred.",
+    "unsupported": "Unsupported, ambiguous, inconsistent or uncertifiable supplied source abstains and preserves measured raw T1."
+  },
+  "training_lineage_complete": false,
+  "used_confirmation_identities": []
+}

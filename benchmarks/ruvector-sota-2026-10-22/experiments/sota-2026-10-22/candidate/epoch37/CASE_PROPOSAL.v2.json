@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "epoch": 37,
+  "status": "PROPOSED_INDEPENDENT_AUTHORED_TEXT_AND_ORACLES_BEFORE_ANY_CANDIDATE_MEASUREMENT",
+  "license": "CC0-1.0",
+  "authorship": "New fictional source texts/claims and independent mathematical reasoning authored by the platform data/scorer agent; no existing company report or benchmark example copied.",
+  "scope": "Restricted formal-language engineering only, not ClaimBench, JevBench, a fresh benchmark confirmation set, representative accuracy, or real 10-K generalization.",
+  "cases": [
+    {
+      "id": "epoch37:cc0:typed-source:01",
+      "document_id": -37001,
+      "expected_label": "Entailment",
+      "mechanism": "stock_flow_bridge_with_mixed_reporting_scales",
+      "independent_source_reason": "The explicitly defined two-step bridge is 18,000,000 + 6,500,000 - 2,250,000 = 22,250,000 USD. The FY2057 value belongs to another period.",
+      "exact_arithmetic_or_compatible_worlds": {
+        "arithmetic": [
+          "18000000+6500000=24500000",
+          "24500000-2250000=22250000"
+        ],
+        "unique_target_value": "22250000",
+        "base_unit": "USD"
+      },
+      "input_sha256": "cb7147a811d39c57a7dc4553e8b34dbae82fffbbe779592403cec5d3a8b69665"
+    },
+    {
+      "id": "epoch37:cc0:typed-source:02",
+      "document_id": -37002,
+      "expected_label": "Entailment",
+      "mechanism": "successive_contra_account_netting",
+      "independent_source_reason": "The source defines net carrying equipment as (47.8 - 12.6) - 1.7 = 33.5 million USD. This uses the stated equations, not an assumed accounting convention.",
+      "exact_arithmetic_or_compatible_worlds": {
+        "arithmetic": [
+          "47800000-12600000=35200000",
+          "35200000-1700000=33500000"
+        ],
+        "unique_target_value": "33500000",
+        "base_unit": "USD"
+      },
+      "input_sha256": "ed0a32cc4b34acc6756696fb242bbff37ee3ec97a60635eba0dbf79bd8c77e5c"
+    },
+    {
+      "id": "epoch37:cc0:typed-source:03",
+      "document_id": -37003,
+      "expected_label": "Entailment",
+      "mechanism": "annualization_then_expense_bridge_at_inclusive_bound",
+      "independent_source_reason": "The declared annualization gives 12 * 125,000 - 300,000 = 1,200,000 USD. Equality satisfies at least. The similarly named services entity is distinct.",
+      "exact_arithmetic_or_compatible_worlds": {
+        "arithmetic": [
+          "12*125000=1500000",
+          "1500000-300000=1200000"
+        ],
+        "unique_target_value": "1200000",
+        "base_unit": "USD",
+        "comparison": "1200000>=1200000"
+      },
+      "input_sha256": "ba172f0525eca034e0af18b9a97e2130d72af952ff57176d2414c6e631bc0f44"
+    },
+    {
+      "id": "epoch37:cc0:typed-source:04",
+      "document_id": -37004,
+      "expected_label": "Entailment",
+      "mechanism": "cardinality_exact_union_strict_boundary",
+      "independent_source_reason": "The exact union is 26 + 17 - 11 = 32, which is strictly greater than 31. The 2x2 cells (both=11, first-only=15, second-only=6, neither=8) are nonnegative and total 40.",
+      "exact_arithmetic_or_compatible_worlds": {
+        "universe": 40,
+        "first_set": 26,
+        "second_set": 17,
+        "both": 11,
+        "first_only": 15,
+        "second_only": 6,
+        "neither": 8,
+        "union": 32,
+        "comparison": "32>31"
+      },
+      "input_sha256": "38d85904ca68155ac7ff55088536e8fe21bdcb9c45e934fcfb2e36d15bed17f2"
+    },
+    {
+      "id": "epoch37:cc0:typed-source:05",
+      "document_id": -37005,
+      "expected_label": "Contradiction",
+      "mechanism": "netting_two_positive_amounts_to_negative_result",
+      "independent_source_reason": "The current-period defined inflow is 3,200,000 - 4,100,000 = -900,000 USD, so it is below zero. The positive prior-period figure cannot replace it.",
+      "exact_arithmetic_or_compatible_worlds": {
+        "arithmetic": [
+          "3200000-4100000=-900000"
+        ],
+        "unique_target_value": "-900000",
+        "base_unit": "USD",
+        "comparison": "-900000<0"
+      },
+      "input_sha256": "1bb497067b9b17fa8decc386edc818fc87f162cd9dbe76501d5b61d86882fead"
+    },
+    {
+      "id": "epoch37:cc0:typed-source:06",
+      "document_id": -37006,
+      "expected_label": "Contradiction",
+      "mechanism": "constant_period_allocation_and_decimal_place_error",
+      "independent_source_reason": "The declared monthly allocation is 1,440,000 / 12 = 120,000 USD, whereas the claim is 144,000 USD. The separate reserve has no role in the definition.",
+      "exact_arithmetic_or_compatible_worlds": {
+        "arithmetic": [
+          "1440000/12=120000"
+        ],
+        "unique_target_value": "120000",
+        "claimed_value": "144000",
+        "base_unit": "USD"
+      },
+      "input_sha256": "3d29ecf7fda4cba5c38c91ae694b4884c7dafe065d73e2ca954a4b9204fe9ee0"
+    },
+    {
+      "id": "epoch37:cc0:typed-source:07",
+      "document_id": -37007,
+      "expected_label": "Contradiction",
+      "mechanism": "two_interval_contra_account_impossible_threshold",
+      "independent_source_reason": "Every permitted net value is at most 10,200,000 - 400,000 = 9,800,000 USD, strictly below 10,000,000. The minimum is 9,600,000 - 700,000 = 8,900,000.",
+      "exact_arithmetic_or_compatible_worlds": {
+        "target_interval": [
+          "8900000",
+          "9800000"
+        ],
+        "base_unit": "USD",
+        "comparison": "all values <=9800000<10000000",
+        "lower_world": {
+          "gross receivable": "9600000",
+          "credit reserve": "700000",
+          "net receivable": "8900000"
+        },
+        "upper_world": {
+          "gross receivable": "10200000",
+          "credit reserve": "400000",
+          "net receivable": "9800000"
+        }
+      },
+      "input_sha256": "ae3c5e660a95ead5e4eecdf09f4fe076df307f2a5d4bbcdb7cf131ac7678c6a9"
+    },
+    {
+      "id": "epoch37:cc0:typed-source:08",
+      "document_id": -37008,
+      "expected_label": "Contradiction",
+      "mechanism": "cardinality_pigeonhole_lower_bound_impossible_claim",
+      "independent_source_reason": "The overlap must be at least 22 + 18 - 30 = 10. Values through 18 are feasible; no source-compatible table has overlap at most 9.",
+      "exact_arithmetic_or_compatible_worlds": {
+        "universe": 30,
+        "first_set": 22,
+        "second_set": 18,
+        "overlap_integer_interval": [
+          10,
+          18
+        ],
+        "lower_witness": {
+          "both": 10,
+          "first_only": 12,
+          "second_only": 8,
+          "neither": 0
+        },
+        "upper_witness": {
+          "both": 18,
+          "first_only": 4,
+          "second_only": 0,
+          "neither": 8
+        }
+      },
+      "input_sha256": "2538051373c5ae1ba9443beb2f92376b37be3889450ccfa881486a942c5cd3ad"
+    },
+    {
+      "id": "epoch37:cc0:typed-source:09",
+      "document_id": -37009,
+      "expected_label": "NotMentioned",
+      "mechanism": "range_of_net_proceeds_allows_but_does_not_fix_equality",
+      "independent_source_reason": "A current fee of 600,000 yields the claimed 29,400,000; a current fee of 300,000 yields 29,700,000. Both satisfy all current and prior-period facts. Thus neither the equality nor its negation follows.",
+      "exact_arithmetic_or_compatible_worlds": {
+        "target_interval": [
+          "29100000",
+          "29700000"
+        ],
+        "base_unit": "USD",
+        "true_world": {
+          "FY2066": {
+            "principal proceeds": "30000000",
+            "transaction fee": "600000",
+            "net proceeds": "29400000"
+          },
+          "FY2065": {
+            "transaction fee": "600000"
+          }
+        },
+        "false_world": {
+          "FY2066": {
+            "principal proceeds": "30000000",
+            "transaction fee": "300000",
+            "net proceeds": "29700000"
+          },
+          "FY2065": {
+            "transaction fee": "600000"
+          }
+        }
+      },
+      "input_sha256": "427946e5b3739e144ea93010d43ef642adb7fde28bd1ae337abcf2dbfd758f24"
+    },
+    {
+      "id": "epoch37:cc0:typed-source:10",
+      "document_id": -37010,
+      "expected_label": "NotMentioned",
+      "mechanism": "independent_bounded_components_straddle_strict_threshold",
+      "independent_source_reason": "The permitted net range is 14,000 through 20,000 USD. The world (22,000,2,000,20,000) makes the strict claim true, while (18,000,4,000,14,000) makes it false; both meet every stated bound.",
+      "exact_arithmetic_or_compatible_worlds": {
+        "target_interval": [
+          "14000",
+          "20000"
+        ],
+        "base_unit": "USD",
+        "true_world": {
+          "gross service charge": "22000",
+          "contract discount": "2000",
+          "net service charge": "20000"
+        },
+        "false_world": {
+          "gross service charge": "18000",
+          "contract discount": "4000",
+          "net service charge": "14000"
+        }
+      },
+      "input_sha256": "102a03d5e2c4cd07f1dfe24c2c757fe21cb0eec3bf1fae5d5b91fac07d444dbc"
+    },
+    {
+      "id": "epoch37:cc0:typed-source:11",
+      "document_id": -37011,
+      "expected_label": "NotMentioned",
+      "mechanism": "scalar_exposure_range_crosses_inclusive_threshold",
+      "independent_source_reason": "Advances of 2,000,000 give exposure 1,000,000 and satisfy the claim; advances of 6,000,000 give exposure 3,000,000 and falsify it. The lending entity has its own exact fact and imposes no escrow constraint.",
+      "exact_arithmetic_or_compatible_worlds": {
+        "target_interval": [
+          "1000000",
+          "3000000"
+        ],
+        "base_unit": "USD",
+        "true_world": {
+          "Umbral Escrow": {
+            "customer advances": "2000000",
+            "refund exposure": "1000000"
+          },
+          "Umbral Lending": {
+            "refund exposure": "2000000"
+          }
+        },
+        "false_world": {
+          "Umbral Escrow": {
+            "customer advances": "6000000",
+            "refund exposure": "3000000"
+          },
+          "Umbral Lending": {
+            "refund exposure": "2000000"
+          }
+        }
+      },
+      "input_sha256": "ec73399f273a94ec19d5735faee4848113b1738de0bc7e5f13058fc222711eb0"
+    },
+    {
+      "id": "epoch37:cc0:typed-source:12",
+      "document_id": -37012,
+      "expected_label": "NotMentioned",
+      "mechanism": "cardinality_union_with_two_feasible_full_population_tables",
+      "independent_source_reason": "The overlap can be any integer from 5 through 24, so union size ranges from 31 through 50. A full population table with overlap 10 gives union 45; overlap 5 gives union 50. Both preserve the same universe and margins.",
+      "exact_arithmetic_or_compatible_worlds": {
+        "universe": 50,
+        "first_set": 24,
+        "second_set": 31,
+        "union_integer_interval": [
+          31,
+          50
+        ],
+        "true_world": {
+          "both": 10,
+          "first_only": 14,
+          "second_only": 21,
+          "neither": 5,
+          "union": 45
+        },
+        "false_world": {
+          "both": 5,
+          "first_only": 19,
+          "second_only": 26,
+          "neither": 0,
+          "union": 50
+        }
+      },
+      "input_sha256": "154317e04fd785ed59b7effaa16dbc6f3332399c284445743512c211afff6960"
+    }
+  ],
+  "input_identities": [
+    {
+      "path": "engineering.inputs.json",
+      "bytes": 9081,
+      "sha256": "4395ad32e507daaf5f383fe02f25102458121ab9a6c6b24427a2b9a82bbbc7bb"
+    }
+  ],
+  "authored_label_map_sha256": "ab9dfb6493806c877a6d3132db76f3fc53fe33e1ee338ab7323b5469a4a6ffbd",
+  "all_cases_retained_before_measurement": true,
+  "data_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "used_confirmation_identities": [],
+  "actual_model_tokenizer_native_or_candidate_certifier_calls": 0,
+  "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+  "root_contract": {
+    "path": "experiments/sota-2026-10-22/epoch37/preparation/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+    "bytes": 5055,
+    "sha256": "13ffef77c48bcca8ea5c1c72826269b88b6ac3386358b03588819d414e7c920e"
+  },
+  "source_revision": 2,
+  "prior_proposal": {
+    "path": "CASE_PROPOSAL.json",
+    "bytes": 11839,
+    "sha256": "97f7d3c138afdd48601a939b0c051d4bf23e76506fc71be28d66edc1ca567abc"
+  },
+  "revision_scope": "Adds exact shared kind/contract metadata only; all12 source texts, claims, IDs, oracle labels and independent semantic reasoning remain byte-equivalent values."
+}

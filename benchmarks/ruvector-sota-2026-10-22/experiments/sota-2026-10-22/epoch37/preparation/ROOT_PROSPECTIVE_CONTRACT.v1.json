@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "epoch": 37,
+  "status": "ROOT_PROSPECTIVE_CONTRACT_BEFORE_ANY_MEASUREMENT",
+  "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+  "engineering_role": "NEW_AUTHORED_CC0_TYPED_SOURCE_ENGINEERING_ONLY",
+  "raw_contexts": [
+    "full_source",
+    "native_coverage",
+    "lexical_coverage"
+  ],
+  "arms": [
+    "full_raw",
+    "native_raw",
+    "native_verified",
+    "lexical_verified",
+    "full_verified"
+  ],
+  "primary": "native_verified",
+  "arm_to_measured_context": {
+    "full_raw": "full_source",
+    "full_verified": "full_source",
+    "native_raw": "native_coverage",
+    "native_verified": "native_coverage",
+    "lexical_verified": "lexical_coverage"
+  },
+  "cases": 12,
+  "class_counts": {
+    "Entailment": 4,
+    "Contradiction": 4,
+    "NotMentioned": 4
+  },
+  "actual_NLI_forwards": 36,
+  "final_derived_forecasts": 60,
+  "explicit_readout_reuse": true,
+  "models": {
+    "repository": "microsoft/deberta-v2-xxlarge-mnli",
+    "revision": "8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06",
+    "weights_sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+    "reader_initializations": 1,
+    "compute_dtype": "F32",
+    "source_dtype": "F16",
+    "original_native_order": [
+      "Contradiction",
+      "NotMentioned",
+      "Entailment"
+    ],
+    "canonical_E_C_N_from_raw": [
+      2,
+      0,
+      1
+    ],
+    "lineage_and_eligibility": "HOLD"
+  },
+  "certificate_scope": "Generic exact-rational unit/entity/period-bound affine financial constraints and bounded integral two-set cardinalities; exact sourcequotes/dependencies. Every supplied clause parsed; unsupported, ambiguous, conflicting or cyclic source abstains. Neutral certificate requires all source constraints and actual true/false witnesses, never missingretrieval as proof.",
+  "probability_policy": {
+    "name": "SOURCE_CERTIFIED_RAW_MAX_MASS_TRANSPOSITION",
+    "retain_original_logits_and_raw_T1_probabilities": true,
+    "raw_winner": "PROVIDED_ORIGINAL_SOURCE_ORDER_RAW_LOGIT_ARGMAX; never rederived probability tie winner",
+    "action": "Swap canonical raw winner probability and independently certified class probability; other components unchanged; raw unchanged on abstention or agreement",
+    "derived_tie_rule": "Valid certificate class first among equal final maxima; otherwise original source C,N,E first raw-logit maximum",
+    "fitting_or_confidence_parameter": null,
+    "calibrated_posterior_claim": false,
+    "proper_guarantee": "Only conditional on a correct certificate against SAME raw readout. No cross-context guarantee; wrongcert can be harmful or invariant and remains a soundness failure."
+  },
+  "gate": {
+    "primary_required_correct": 12,
+    "each_class_required_correct": 4,
+    "accuracy_gain_at_least2_vs": "full_raw",
+    "proper_nonincrease_against": [
+      "full_raw",
+      "native_raw",
+      "lexical_verified",
+      "full_verified"
+    ],
+    "proper_scores": [
+      "Brier",
+      "NLL"
+    ],
+    "prospective_ceiling_rejection_if_full_raw_correct_exceeds": 10,
+    "no_native_causal_gain_claim_if_null": true
+  },
+  "limits": {
+    "owned_workers": 1,
+    "CPU_threads": 2,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "seconds_total_including_init_cleanup": 600,
+    "native_corpus_batches": 1,
+    "native_queries": 12,
+    "native_indexes": 12,
+    "native_binary_loads": 1,
+    "actual_NLI_forwards": 36,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "fits": 0,
+    "TRAIN": 0,
+    "DEV": 0,
+    "calibration": 0,
+    "CONF": 0,
+    "retries": 0
+  },
+  "resource_proposal": {
+    "legacy_source_heap_plus_F32_conservative_bytes": 9401874294,
+    "runtime_reserve_bytes": 2147483648,
+    "required_reclaim_adjusted_headroom_bytes": 11549357942,
+    "basis": "E36 observed8,255,184,896B largest-child peak; one original reader now instead of two, conservative source+target bound retained, independent exact source/runtime/host admission still mandatory"
+  },
+  "oracle_access": "Exactly12labels joined once only AFTER all36realNLIreadouts and all60derivedforecasts; scorer uses retainedjoinedrecords, no originaloracle reread. No candidate/parser/classification on actual12 before SOURCE, even if stdlib; only independent source semantic review and disjoint purefixtures.",
+  "data_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "used_confirmation_identities": [],
+  "benchmark_partition_unchanged": {
+    "exposed": 325,
+    "unused": 74,
+    "protected": 24,
+    "total": 423
+  },
+  "benchmark_accuracy": null,
+  "benchmark_generalization_claim": false,
+  "champion_native104_unchanged": true,
+  "new_submission": false,
+  "official_SOTA_verified": false,
+  "prototype_history": [
+    {
+      "policy": ".95/.025/.025 certificate distribution",
+      "status": "UNEXECUTED_PROPOSAL_SUPERSEDED_BEFORE_CASE_OR_SOURCE_FREEZE_AND_BEFORE_ALL_MEASUREMENTS"
+    },
+    {
+      "policy": "MAX-MASS TRANSPOSITION",
+      "status": "CHOSEN_PROSPECTIVELY_FROM_MATHEMATICAL_POLICY_REVIEW_NO_MEASURED_GRID"
+    }
+  ]
+}

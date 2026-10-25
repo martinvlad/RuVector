@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "epoch": 37,
+  "status": "PASS_PURE_STABLE_UNCLIPPED_LOG_MASS_TRANSPOSITION_EXTREMES",
+  "formula": "shift_i=logit_i-max(logits); logp_i=shift_i-log(fsum(exp(shift_j))). Canonicalize source C,N,E to E,C,N and apply exactly the same class permutation to probability and log-probability vectors.",
+  "pure_vectors": [
+    {
+      "native_C_N_E_logits": [
+        -1000.0,
+        0.0,
+        -1.0
+      ],
+      "canonical_E_C_N_probabilities": [
+        0.2689414213699951,
+        0.0,
+        0.7310585786300049
+      ],
+      "canonical_stable_unclipped_log_probabilities": [
+        -1.3132616875182228,
+        -1000.3132616875182,
+        -0.31326168751822286
+      ],
+      "probability_underflow_count": 1,
+      "source_winner_canonical_index": 2
+    },
+    {
+      "native_C_N_E_logits": [
+        0.0,
+        -1000.0,
+        -1001.0
+      ],
+      "canonical_E_C_N_probabilities": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "canonical_stable_unclipped_log_probabilities": [
+        -1001.0,
+        0.0,
+        -1000.0
+      ],
+      "probability_underflow_count": 2,
+      "source_winner_canonical_index": 1
+    },
+    {
+      "native_C_N_E_logits": [
+        1e+20,
+        1e+20,
+        1e+20
+      ],
+      "canonical_E_C_N_probabilities": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "canonical_stable_unclipped_log_probabilities": [
+        -1.0986122886681098,
+        -1.0986122886681098,
+        -1.0986122886681098
+      ],
+      "probability_underflow_count": 0,
+      "source_winner_canonical_index": 1
+    },
+    {
+      "native_C_N_E_logits": [
+        1e+38,
+        -1e+38,
+        0.0
+      ],
+      "canonical_E_C_N_probabilities": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "canonical_stable_unclipped_log_probabilities": [
+        -1e+38,
+        0.0,
+        -2e+38
+      ],
+      "probability_underflow_count": 2,
+      "source_winner_canonical_index": 1
+    },
+    {
+      "native_C_N_E_logits": [
+        -1e+38,
+        -1e+38,
+        -1e+38
+      ],
+      "canonical_E_C_N_probabilities": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "canonical_stable_unclipped_log_probabilities": [
+        -1.0986122886681098,
+        -1.0986122886681098,
+        -1.0986122886681098
+      ],
+      "probability_underflow_count": 0,
+      "source_winner_canonical_index": 1
+    },
+    {
+      "native_C_N_E_logits": [
+        10000.0,
+        9999.0,
+        -10000.0
+      ],
+      "canonical_E_C_N_probabilities": [
+        0.0,
+        0.7310585786300049,
+        0.2689414213699951
+      ],
+      "canonical_stable_unclipped_log_probabilities": [
+        -20000.31326168752,
+        -0.31326168751822286,
+        -1.3132616875182228
+      ],
+      "probability_underflow_count": 1,
+      "source_winner_canonical_index": 1
+    },
+    {
+      "native_C_N_E_logits": [
+        1.0,
+        1.0,
+        0.0
+      ],
+      "canonical_E_C_N_probabilities": [
+        0.1553624034969636,
+        0.4223187982515182,
+        0.4223187982515182
+      ],
+      "canonical_stable_unclipped_log_probabilities": [
+        -1.8619948040582512,
+        -0.8619948040582511,
+        -0.8619948040582511
+      ],
+      "probability_underflow_count": 0,
+      "source_winner_canonical_index": 1
+    }
+  ],
+  "winner_target_truth_checks": 63,
+  "findings": [
+    "Probability underflow to0 does not make true log probability absent: retain finite source-logit logp and gate true unclippedNLL.",
+    "Common1e20offset yields -log(3) for exact ties; avoid subtracting nearly equal huge logsumexp and logit values.",
+    "Source-logp permutation proves correct-cert NLL nonincrease against identical raw readout even when probabilities underflow.",
+    "Clipped NLL and actual p_gold/underflow counts are explicit diagnostics only, never acceptance gates.",
+    "Max source F32-scale logits remain safe in Pythonfloat shifted form; nonfinite stable outputs must reject rather than use clipping."
+  ],
+  "auditor_model_tokenizer_native_candidate_scorer_imports_or_calls": 0,
+  "scope": "Abstract pure stdlib math, no authored cases, labels, source checker, candidate imports, fitted parameter, or model execution. Prospective scorer clarification before all measurements.",
+  "checked_at_unix": 1792927435.4217236
+}

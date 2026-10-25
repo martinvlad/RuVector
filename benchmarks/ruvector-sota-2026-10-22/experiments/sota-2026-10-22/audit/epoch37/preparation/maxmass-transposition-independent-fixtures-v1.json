@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "epoch": 37,
+  "status": "PASS_PURE_MATHEMATICAL_FIXTURES_NOT_SCIENTIFIC_MEASUREMENT",
+  "source_sha256": "42cf762301c5508ad700c2432e2f3dc303d0ad7ee06684a02ecdcc9ee9dee1ab",
+  "counts": {
+    "simplex_vectors": 91,
+    "winner_certificate_truth_cases": 891,
+    "correct_certificate_proper_checks": 297,
+    "strict_mass_steal_penalties": 180,
+    "non_swapped_truth_invariance": 396,
+    "abstention_and_agreement": 198,
+    "metadata_winner_ties_exercised": 15
+  },
+  "correct_certificate_Brier_delta": "-2*(p_raw_winner-p_certificate_class)",
+  "logloss_theorem": "Correct certificate never lowers its same-readout true-class mass; clipped/unclipped finite NLL cannot increase.",
+  "limitations": [
+    "Conditional on actual certificate correctness; not a source/parser soundness proof.",
+    "Different-context raw distributions have no transposition nonregression guarantee.",
+    "False certificate can leave proper scores unchanged when truth is outside exchanged pair; hard accuracy gates remain necessary.",
+    "Exact mass ties can alter derived hard decisions without changing probabilities; preserve the supplied original raw-logit winner on abstention/agreement.",
+    "Derived hybrid vectors are mass permutations, not unchanged rawT1 forecasts or statistically calibrated posterior probabilities."
+  ],
+  "candidate_model_native_tokenizer_scorer_case_or_oracle_calls": 0,
+  "network_calls": 0,
+  "created_unix": 1792926324.759245
+}

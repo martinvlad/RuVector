@@ -1,0 +1,44 @@
+{
+  "Brier": "Sum over all three canonical classes of (displayed probability - indicator)^2; arithmetic mean over all 12 retained cases.",
+  "NLL": "UNCLIPPED_STABLE_SOURCE_LOGIT_LOGSOFTMAX_WITH_SAME_CANONICAL_CLASS_PERMUTATION",
+  "NLL_aggregate": "Arithmetic mean of negative stable final log probability at retained joined gold class; no clipping.",
+  "NLL_clipping_floor_diagnostic_only": 1e-12,
+  "acceptance_roundoff_tolerance": 1e-12,
+  "argmax_policy": "Use provided original C,N,E raw-logit first maximum; certificate class first among tied final maxima only for a valid certificate.",
+  "canonical_from_source": [
+    2,
+    0,
+    1
+  ],
+  "canonical_label_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "derived_log_probability": "Apply exactly the same provided-source-raw-logit-winner to certified-class canonical permutation as for displayed T1 probabilities.",
+  "diagnostics": [
+    "p_gold",
+    "NLL_clipped_1e-12",
+    "NLL_clip_count",
+    "display_probability_underflow_count",
+    "unclipped_NLL_finite"
+  ],
+  "epoch": 37,
+  "gate_metric_binding": {
+    "Brier": "Brier",
+    "NLL": "NLL"
+  },
+  "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+  "no_calibrated_posterior_claim": true,
+  "no_confidence_fitting": true,
+  "probability_policy": "SOURCE_CERTIFIED_RAW_MAX_MASS_TRANSPOSITION",
+  "schema_version": 1,
+  "source_label_order": [
+    "Contradiction",
+    "NotMentioned",
+    "Entailment"
+  ],
+  "stable_source_log_probability": "(logit_i - max_logit) - log(fsum(exp(logit_j - max_logit)))",
+  "temperature": 1,
+  "uncertainty": "Authored formal engineering only; conditional correct-certificate proper-score guarantee applies to the SAME readout, not cross-context performance or benchmark generalization."
+}

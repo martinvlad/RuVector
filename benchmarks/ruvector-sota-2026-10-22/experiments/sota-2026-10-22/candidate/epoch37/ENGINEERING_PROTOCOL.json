@@ -1,0 +1,203 @@
+{
+  "actual_NLI_forwards": 36,
+  "arm_to_measured_context": {
+    "full_raw": "full_source",
+    "full_verified": "full_source",
+    "lexical_verified": "lexical_coverage",
+    "native_raw": "native_coverage",
+    "native_verified": "native_coverage"
+  },
+  "benchmark_accuracy": null,
+  "case_ids": [
+    "epoch37:cc0:typed-source:01",
+    "epoch37:cc0:typed-source:02",
+    "epoch37:cc0:typed-source:03",
+    "epoch37:cc0:typed-source:04",
+    "epoch37:cc0:typed-source:05",
+    "epoch37:cc0:typed-source:06",
+    "epoch37:cc0:typed-source:07",
+    "epoch37:cc0:typed-source:08",
+    "epoch37:cc0:typed-source:09",
+    "epoch37:cc0:typed-source:10",
+    "epoch37:cc0:typed-source:11",
+    "epoch37:cc0:typed-source:12"
+  ],
+  "case_proposal": {
+    "bytes": 12490,
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/CASE_PROPOSAL.v2.json",
+    "sha256": "a173d25d64f0d5fc12941c7a70a7eb0fe5e790da9064a036430c112964a36fb2"
+  },
+  "class_counts": {
+    "Contradiction": 4,
+    "Entailment": 4,
+    "NotMentioned": 4
+  },
+  "data_roles": {
+    "calibration": [],
+    "confirmation": [],
+    "dev": [],
+    "train": []
+  },
+  "engineering_gate": {
+    "accuracy_gain_at_least2_vs": "full_raw",
+    "each_class_required_correct": 4,
+    "no_native_causal_gain_claim_if_null": true,
+    "primary_required_correct": 12,
+    "proper_nonincrease_against": [
+      "full_raw",
+      "native_raw",
+      "lexical_verified",
+      "full_verified"
+    ],
+    "proper_scores": [
+      "Brier",
+      "NLL"
+    ],
+    "prospective_ceiling_rejection_if_full_raw_correct_exceeds": 10
+  },
+  "engineering_only": true,
+  "engineering_role": "NEW_AUTHORED_CC0_TYPED_SOURCE_ENGINEERING_ONLY",
+  "epoch": 37,
+  "final_derived_forecasts": 60,
+  "inputs": {
+    "bytes": 9081,
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/engineering.inputs.json",
+    "sha256": "4395ad32e507daaf5f383fe02f25102458121ab9a6c6b24427a2b9a82bbbc7bb"
+  },
+  "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+  "license": {
+    "bytes": 447,
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/engineering.LICENSE.txt",
+    "sha256": "b9f027624e24eadbe4724de37f38d2dd6d394766a54b4ea010edeff1377271ac"
+  },
+  "limits": {
+    "CONF": 0,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "CPU_threads": 2,
+    "DEV": 0,
+    "GPU_calls": 0,
+    "TRAIN": 0,
+    "actual_NLI_forwards": 36,
+    "calibration": 0,
+    "fits": 0,
+    "native_binary_loads": 1,
+    "native_corpus_batches": 1,
+    "native_indexes": 12,
+    "native_queries": 12,
+    "owned_workers": 1,
+    "paid_API_calls": 0,
+    "retries": 0,
+    "seconds_total_including_init_cleanup": 600
+  },
+  "metric_arms": [
+    "full_raw",
+    "native_raw",
+    "native_verified",
+    "lexical_verified",
+    "full_verified"
+  ],
+  "metrics_policy": {
+    "bytes": 1778,
+    "path": "experiments/sota-2026-10-22/audit/epoch37/METRICS_POLICY.json",
+    "sha256": "6aae60048a6b67d03baeb098bce7259d3b85acbbc846fec0552b442b02df9774"
+  },
+  "numeric_oracle_copy_is_not_an_additional_runtime_bank": true,
+  "numeric_oracle_public_copy": {
+    "bytes": 676,
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/NUMERIC_ORACLE.json",
+    "sha256": "cb22b2d02c068506962f64c979c67f884954318045e85ef436edf49f6b5f830d"
+  },
+  "official_eligibility": "HOLD",
+  "oracle": {
+    "bytes": 676,
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/engineering.oracle.json",
+    "sha256": "cb22b2d02c068506962f64c979c67f884954318045e85ef436edf49f6b5f830d"
+  },
+  "oracle_access": "Exactly12labels joined once only AFTER all36realNLIreadouts and all60derivedforecasts; scorer uses retainedjoinedrecords, no originaloracle reread. No candidate/parser/classification on actual12 before SOURCE, even if stdlib; only independent source semantic review and disjoint purefixtures.",
+  "phase": "engineering",
+  "primary": "native_verified",
+  "probability_policy": {
+    "action": "Swap canonical raw winner probability and independently certified class probability; other components unchanged; raw unchanged on abstention or agreement",
+    "calibrated_posterior_claim": false,
+    "derived_tie_rule": "Valid certificate class first among equal final maxima; otherwise original source C,N,E first raw-logit maximum",
+    "fitting_or_confidence_parameter": null,
+    "name": "SOURCE_CERTIFIED_RAW_MAX_MASS_TRANSPOSITION",
+    "proper_guarantee": "Only conditional on a correct certificate against SAME raw readout. No cross-context guarantee; wrongcert can be harmful or invariant and remains a soundness failure.",
+    "raw_winner": "PROVIDED_ORIGINAL_SOURCE_ORDER_RAW_LOGIT_ARGMAX; never rederived probability tie winner",
+    "retain_original_logits_and_raw_T1_probabilities": true
+  },
+  "promotion_allowed": false,
+  "protocol_history": "Unexecuted .95 confidence proposal superseded by max-mass transposition before any candidate measurement. Original author v1 texts/IDs/labels and v2 metadata retained unchanged.",
+  "raw_contexts": [
+    "full_source",
+    "native_coverage",
+    "lexical_coverage"
+  ],
+  "root_contract": {
+    "bytes": 5055,
+    "path": "experiments/sota-2026-10-22/epoch37/preparation/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+    "sha256": "13ffef77c48bcca8ea5c1c72826269b88b6ac3386358b03588819d414e7c920e"
+  },
+  "schema_version": 1,
+  "scope": "New fictional CC0 formal financial-source engineering only. Not ClaimBench pilot, official benchmark score, confirmation, representative generalization, promotion or submission. All12 retained with independent semantics.",
+  "source_checkpoint": "b4e9e4f7a8a40b95b87ed8e418435b2d5757bb0e",
+  "source_semantics": {
+    "grammar": "typed-financial-affine-cardinality-v1",
+    "named_set_universe": "The two named sets in an entity/period frame are subsets of that same explicitly stated universe. Their full four-cell table is the complete family interpretation.",
+    "neutral": "Actual satisfying and falsifying complete worlds must satisfy every supplied source constraint, including irrelevant entity/period distractors; full source quotes must be in measured context. Retrieval omission never proves insufficiency.",
+    "scope": "Every nonblank supplied source line must parse. Exact rational affine quantities and a separately bounded integral two-set family only. No accounting identity or outside real10-K fact is inferred.",
+    "unsupported": "Unsupported, ambiguous, inconsistent or uncertifiable supplied source abstains and preserves measured raw T1."
+  },
+  "sources": {
+    "CONTEXT_POLICY.json": {
+      "bytes": 1082,
+      "path": "experiments/sota-2026-10-22/candidate/epoch37/CONTEXT_POLICY.json",
+      "sha256": "ea03c3bdab99b74a5c3f76bb1b13ab5ea4b9af1c2ee92d9c9394e01d5e3c8f3d"
+    },
+    "EXPECTED_COUNTERS.json": {
+      "bytes": 4205,
+      "path": "experiments/sota-2026-10-22/candidate/epoch37/EXPECTED_COUNTERS.json",
+      "sha256": "78fb5bce4c10af9c57973decbddc2882b3a3d63d10c25d982d1078f6f6a2a2a2"
+    },
+    "GRAMMAR_POLICY.json": {
+      "bytes": 1648,
+      "path": "experiments/sota-2026-10-22/candidate/epoch37/GRAMMAR_POLICY.json",
+      "sha256": "88f627d2cce453a6cf9208fc9a335997ceb8feb0c4801b03ac82558f0d01ead9"
+    },
+    "MODEL_ASSETS.json": {
+      "bytes": 2138,
+      "path": "experiments/sota-2026-10-22/candidate/epoch37/MODEL_ASSETS.json",
+      "sha256": "93c5827edd2b66e3da823bd90ac024c6dff0afd26b3ff99afcfc40161cc06326"
+    },
+    "MODEL_PROFILES.json": {
+      "bytes": 1561,
+      "path": "experiments/sota-2026-10-22/candidate/epoch37/MODEL_PROFILES.json",
+      "sha256": "752450eeaf730a21bf6a7a6b186d3214662b29ccb0e0ee7e2d0371a0063c2bac"
+    },
+    "PRETRAINED_MODEL_SOURCE.json": {
+      "bytes": 2368,
+      "path": "experiments/sota-2026-10-22/candidate/epoch37/PRETRAINED_MODEL_SOURCE.json",
+      "sha256": "54a7fa436b20066845c4530d58c9b2ecb2d2d1e6b5c7e70734279d4f6e80a783"
+    },
+    "PROOF_POLICY.json": {
+      "bytes": 1656,
+      "path": "experiments/sota-2026-10-22/candidate/epoch37/PROOF_POLICY.json",
+      "sha256": "681f5f24712c64e08a6fbefc237291331c8d099515417f6233d30896883ff5e8"
+    },
+    "QUERY_POLICY.json": {
+      "bytes": 309,
+      "path": "experiments/sota-2026-10-22/candidate/epoch37/QUERY_POLICY.json",
+      "sha256": "ecd553c9cae9033b3bc06ac7629a4f7d31506c797b868831cf29eca89b8d4bf2"
+    },
+    "RAW_SCHEMA.json": {
+      "bytes": 2317,
+      "path": "experiments/sota-2026-10-22/candidate/epoch37/RAW_SCHEMA.json",
+      "sha256": "906dbd3b58d992737231088df19b35f9a937d5c58b8150a5a8d2c3db365b1b4a"
+    }
+  },
+  "training_lineage_complete": false,
+  "used_confirmation_identities": []
+}

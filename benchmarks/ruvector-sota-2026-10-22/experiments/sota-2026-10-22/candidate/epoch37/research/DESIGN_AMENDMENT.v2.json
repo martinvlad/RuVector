@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "epoch": 37,
+  "supersedes_unexecuted_proposal": "DESIGN_PROPOSAL.v1.json",
+  "before_actual_source_checker_model_tokenizer_native_calls": true,
+  "root_contract": {
+    "path": "experiments/sota-2026-10-22/epoch37/preparation/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+    "bytes": 5055,
+    "sha256": "13ffef77c48bcca8ea5c1c72826269b88b6ac3386358b03588819d414e7c920e"
+  },
+  "unexecuted_initial_probability_policy": ".95/.025/.025",
+  "chosen_probability_policy": {
+    "name": "SOURCE_CERTIFIED_RAW_MAX_MASS_TRANSPOSITION",
+    "retain_original_logits_and_raw_T1_probabilities": true,
+    "raw_winner": "PROVIDED_ORIGINAL_SOURCE_ORDER_RAW_LOGIT_ARGMAX; never rederived probability tie winner",
+    "action": "Swap canonical raw winner probability and independently certified class probability; other components unchanged; raw unchanged on abstention or agreement",
+    "derived_tie_rule": "Valid certificate class first among equal final maxima; otherwise original source C,N,E first raw-logit maximum",
+    "fitting_or_confidence_parameter": null,
+    "calibrated_posterior_claim": false,
+    "proper_guarantee": "Only conditional on a correct certificate against SAME raw readout. No cross-context guarantee; wrongcert can be harmful or invariant and remains a soundness failure."
+  },
+  "canonical_naming": {
+    "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+    "raw_contexts": [
+      "full_source",
+      "native_coverage",
+      "lexical_coverage"
+    ],
+    "arms": [
+      "full_raw",
+      "native_raw",
+      "native_verified",
+      "lexical_verified",
+      "full_verified"
+    ]
+  },
+  "selection_on_actual_oracle": false
+}

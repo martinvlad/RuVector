@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "74dbbcb10508ced7e0edf53a0c736f14c19a19a1",
-  "checkpoint_manifest_sha256": "107740ec216a945d8d239d8331a4e0da24099b8f9c6ec65dd943fa59d46a13dc",
+  "prior_published_base_commit": "63f5516d0b7e000a79f31a0de9cfb2814ba12d65",
+  "checkpoint_manifest_sha256": "ffef83eb27c4b3840ed11f5b0006f9ac4944f429f89f419c6c1dbeee6e9f6de8",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -2362,10 +2362,10 @@
     "schema_version": 1,
     "epoch": 39,
     "run_id": "epoch39-74dbbcb10508",
-    "state": "EPOCH39_PLANNING_LEASE",
+    "state": "EPOCH39_SOURCE_FROZEN_DEV_PENDING_ADMISSION",
     "work_active": true,
     "experiments_active": false,
-    "checkpoint_parent": "74dbbcb10508ced7e0edf53a0c736f14c19a19a1",
+    "checkpoint_parent": "63f5516d0b7e000a79f31a0de9cfb2814ba12d65",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
       "run_id": "epoch39-74dbbcb10508",
@@ -2393,11 +2393,12 @@
     "OS_lock_release_pending": true,
     "native_allowed": 0,
     "conditional_train_allowed": 0,
-    "conditional_dev_allowed": 0,
+    "conditional_dev_allowed": 1,
     "conditional_engineering_allowed": 0,
     "confirmation_allowed": 0,
     "conditional_confirmation_allowed": 0,
-    "instruction": "SOURCE_REVIEW_ONLY. Verify real financial dataset/code/scorer/license/access and pretrained typed-decision model, then freeze exact DEV/calibration/fresh-CONF identity and complete source before any measurements. No candidate/model/tokenizer/native/scorer/confirmation call is admitted by this planning lease.",
+    "instruction": "DEV-only real FinFact pilot. SOURCE conditional work only after actual independent readback/admission. One48readout/12query corpus CPU2/600total, no TRAIN/calibCONF/paidGPU/retry. FINAL closes every slot; no fullbenchmark placement/promotion.",
+    "conditional_calibration_allowed": 0,
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -8088,5 +8089,39 @@
     "prior_E38_all_slots_closed": true,
     "submitted_native104_preserved": true,
     "no_new_publisher_submission_or_contact": true
+  },
+  "epoch39_frozen_study": {
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch39/plan.json",
+      "bytes": 113628,
+      "sha256": "d7942147b0b15d47ee220d19fb05f3a5c55b977f6140e8b1acba96dbe8ee8bcc"
+    },
+    "source_freeze": {
+      "path": "experiments/sota-2026-10-22/epoch39/source-freeze.json",
+      "bytes": 83592,
+      "sha256": "0e90d9c059e59b7a450b116c48e8e7ac9a91b6f54e55e5cfca435d47322c94fa"
+    }
+  },
+  "epoch39_data_roles": {
+    "roles": {
+      "train": [],
+      "dev": [
+        "finfact:b3038781:ordinal:103",
+        "finfact:b3038781:ordinal:1469",
+        "finfact:b3038781:ordinal:1693",
+        "finfact:b3038781:ordinal:1478",
+        "finfact:b3038781:ordinal:3018",
+        "finfact:b3038781:ordinal:365",
+        "finfact:b3038781:ordinal:3067",
+        "finfact:b3038781:ordinal:2450",
+        "finfact:b3038781:ordinal:2903",
+        "finfact:b3038781:ordinal:3032",
+        "finfact:b3038781:ordinal:1807",
+        "finfact:b3038781:ordinal:2018"
+      ],
+      "calibration": [],
+      "confirmation": []
+    },
+    "scope": "Twelve real FinFact identities exposed DEV forever, separate from old423/325DEV/74unused/24protected and all prior authored engineering cases. No CONF."
   }
 }

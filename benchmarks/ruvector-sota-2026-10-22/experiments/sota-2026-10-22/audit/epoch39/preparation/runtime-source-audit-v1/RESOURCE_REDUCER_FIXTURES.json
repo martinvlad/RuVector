@@ -1,0 +1,158 @@
+{
+  "actual_payload_case_model_tokenizer_native_driver_guard_calls": 0,
+  "cases": [
+    {
+      "actual": "PASS",
+      "detail": {
+        "cache_dropping_or_cgroup_limit_changes": false,
+        "cgroup_anon_bytes": 0,
+        "cgroup_file_bytes": 0,
+        "cgroup_kernel_bytes": 0,
+        "cgroup_memory_current_bytes": 5630511242,
+        "cgroup_memory_max_bytes": 17179869184,
+        "cgroup_memory_stat_bytes": {
+          "active_file": 0,
+          "anon": 0,
+          "file": 0,
+          "file_dirty": 0,
+          "file_writeback": 0,
+          "inactive_file": 0,
+          "kernel": 0,
+          "shmem": 0
+        },
+        "cgroup_shmem_bytes_excluded_from_reclaimable": 0,
+        "conservative_reclaimable_filecache_estimate_bytes": 0,
+        "effective_capacity_bytes": 17179869184,
+        "effective_reclaim_adjusted_headroom_bytes": 11549357942,
+        "estimated_cgroup_nonreclaimable_current_bytes": 5630511242,
+        "frozen_policy": {
+          "additional_runtime_activation_reserve_bytes": 2147483648,
+          "cgroup_hard_limit_bytes": 17179869184,
+          "conservative_simultaneous_source_heap_plus_F32_payload_bytes": 9401874294,
+          "exact_source_plus_target_payload_bytes": 9401490450,
+          "minimum_reclaim_adjusted_headroom_bytes": 11549357942,
+          "minimum_workspace_free_bytes": 16777216,
+          "observed_E36_largest_child_peak_RSS_bytes": 8255184896,
+          "one_reader_only": true,
+          "reclaimable_filecache_policy": "max(0,min(max(0,file-shmem),active_file+inactive_file)-file_dirty-file_writeback)",
+          "source_F16_payload_bytes": 3133830150,
+          "target_F32_payload_bytes": 6267660300
+        },
+        "mem_available_bytes": 17179869184,
+        "mem_total_bytes": 17179869184,
+        "memory_scope": "Conservative read-only planning estimate. Nine packed F16 root storages may remain resident during F32 view conversion; reserve2GiB, exclude shmem/tmpfs and dirty/writeback. This is not an actual peak/time guarantee.",
+        "minimum_required_reclaim_adjusted_headroom_bytes": 11549357942,
+        "passed": true,
+        "raw_cgroup_unallocated_bytes": 11549357942,
+        "workspace_free_bytes": 16777216
+      },
+      "expected": "PASS",
+      "name": "exact_headroom_floor_passes"
+    },
+    {
+      "actual": "REJECT",
+      "detail": {
+        "message": "Insufficient reclaim-adjusted legacy F16+F32+2GiB headroom; shmem excluded, no dispatch",
+        "type": "RuntimeError"
+      },
+      "expected": "REJECT",
+      "name": "one_byte_below_headroom_rejects"
+    },
+    {
+      "actual": "REJECT",
+      "detail": {
+        "message": "Insufficient reclaim-adjusted legacy F16+F32+2GiB headroom; shmem excluded, no dispatch",
+        "type": "RuntimeError"
+      },
+      "expected": "REJECT",
+      "name": "all_file_is_shmem_cannot_make_floor"
+    },
+    {
+      "actual": "REJECT",
+      "detail": {
+        "message": "Insufficient reclaim-adjusted legacy F16+F32+2GiB headroom; shmem excluded, no dispatch",
+        "type": "RuntimeError"
+      },
+      "expected": "REJECT",
+      "name": "dirty_filecache_cannot_make_floor"
+    },
+    {
+      "actual": "PASS",
+      "detail": {
+        "cache_dropping_or_cgroup_limit_changes": false,
+        "cgroup_anon_bytes": 0,
+        "cgroup_file_bytes": 100,
+        "cgroup_kernel_bytes": 0,
+        "cgroup_memory_current_bytes": 5630511292,
+        "cgroup_memory_max_bytes": 17179869184,
+        "cgroup_memory_stat_bytes": {
+          "active_file": 100,
+          "anon": 0,
+          "file": 100,
+          "file_dirty": 0,
+          "file_writeback": 0,
+          "inactive_file": 0,
+          "kernel": 0,
+          "shmem": 0
+        },
+        "cgroup_shmem_bytes_excluded_from_reclaimable": 0,
+        "conservative_reclaimable_filecache_estimate_bytes": 100,
+        "effective_capacity_bytes": 17179869184,
+        "effective_reclaim_adjusted_headroom_bytes": 11549357992,
+        "estimated_cgroup_nonreclaimable_current_bytes": 5630511192,
+        "frozen_policy": {
+          "additional_runtime_activation_reserve_bytes": 2147483648,
+          "cgroup_hard_limit_bytes": 17179869184,
+          "conservative_simultaneous_source_heap_plus_F32_payload_bytes": 9401874294,
+          "exact_source_plus_target_payload_bytes": 9401490450,
+          "minimum_reclaim_adjusted_headroom_bytes": 11549357942,
+          "minimum_workspace_free_bytes": 16777216,
+          "observed_E36_largest_child_peak_RSS_bytes": 8255184896,
+          "one_reader_only": true,
+          "reclaimable_filecache_policy": "max(0,min(max(0,file-shmem),active_file+inactive_file)-file_dirty-file_writeback)",
+          "source_F16_payload_bytes": 3133830150,
+          "target_F32_payload_bytes": 6267660300
+        },
+        "mem_available_bytes": 17179869184,
+        "mem_total_bytes": 17179869184,
+        "memory_scope": "Conservative read-only planning estimate. Nine packed F16 root storages may remain resident during F32 view conversion; reserve2GiB, exclude shmem/tmpfs and dirty/writeback. This is not an actual peak/time guarantee.",
+        "minimum_required_reclaim_adjusted_headroom_bytes": 11549357942,
+        "passed": true,
+        "raw_cgroup_unallocated_bytes": 11549357892,
+        "workspace_free_bytes": 16777216
+      },
+      "expected": "PASS",
+      "name": "clean_filecache_can_conservatively_make_floor"
+    },
+    {
+      "actual": "REJECT",
+      "detail": {
+        "message": "Missing/wrong actual cgroup memory accounting or hard limit",
+        "type": "ValueError"
+      },
+      "expected": "REJECT",
+      "name": "wrong_cgroup_limit_rejects"
+    },
+    {
+      "actual": "REJECT",
+      "detail": {
+        "message": "Insufficient current workspace free space; no dispatch",
+        "type": "RuntimeError"
+      },
+      "expected": "REJECT",
+      "name": "workspace_below_floor_rejects"
+    },
+    {
+      "actual": "REJECT",
+      "detail": {
+        "message": "Exact reviewed legacy shared-storage resource policy required",
+        "type": "ValueError"
+      },
+      "expected": "REJECT",
+      "name": "policy_type_tampering_rejects"
+    }
+  ],
+  "method": "AST-extracted pure evaluate_host_memory only; no driver import, host observations or dispatch",
+  "passed": 8,
+  "source_sha256": "5a22b93bcad608a90c27e3c7adf2edc1e553a0d3869eda2a42c03970116da908"
+}

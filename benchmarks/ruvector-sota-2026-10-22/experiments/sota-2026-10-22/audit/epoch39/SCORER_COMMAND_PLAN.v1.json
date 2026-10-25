@@ -1,0 +1,66 @@
+{
+  "BIND": {
+    "args": [
+      "--mode",
+      "BIND",
+      "--project",
+      "<R39>",
+      "--evaluation",
+      "experiments/sota-2026-10-22/audit/epoch39/qualification-replay.json",
+      "--expected-evaluation-sha256",
+      "<actual SHA>",
+      "--results",
+      "experiments/sota-2026-10-22/epoch39/RESULTS.json",
+      "--expected-results-sha256",
+      "<actual SHA>",
+      "--out",
+      "experiments/sota-2026-10-22/audit/epoch39/publication-binding.json"
+    ],
+    "source": "experiments/sota-2026-10-22/audit/epoch39/finfact_scorer.py"
+  },
+  "EVALUATE": {
+    "args": [
+      "--mode",
+      "EVALUATE",
+      "--project",
+      "<R39>",
+      "--admission",
+      "experiments/sota-2026-10-22/epoch39/GOLD_READ_ADMISSION.json",
+      "--expected-admission-sha256",
+      "<actual SHA>",
+      "--joined",
+      "experiments/sota-2026-10-22/epoch39/runs/dev/joined_labels.json",
+      "--expected-joined-sha256",
+      "<actual SHA>",
+      "--protocol",
+      "experiments/sota-2026-10-22/audit/epoch39/protocol.json",
+      "--expected-protocol-sha256",
+      "<frozen SHA>",
+      "--out",
+      "experiments/sota-2026-10-22/audit/epoch39/qualification-replay.json"
+    ],
+    "source": "experiments/sota-2026-10-22/audit/epoch39/finfact_scorer.py"
+  },
+  "epoch": 39,
+  "gold_reader_invoker": "separate root custodian after full physical closure",
+  "kind": "REAL_FINFACT_DEV_TRANSFER_PILOT",
+  "late_gold": {
+    "args": [
+      "--project",
+      "<R39>",
+      "--admission",
+      "experiments/sota-2026-10-22/epoch39/GOLD_READ_ADMISSION.json",
+      "--expected-admission-sha256",
+      "<actual root admission SHA>",
+      "--out",
+      "<W39>/run-external/gold-join"
+    ],
+    "source": "experiments/sota-2026-10-22/audit/epoch39/finfact_gold_join.py",
+    "then_root_metadata_copy": "Copy joined_labels.json and GOLD_JOIN_REPORT.json only, as exact safe metadata, to experiments/sota-2026-10-22/epoch39/runs/dev/; never copy features/vault/tokens/text."
+  },
+  "no_actual_calls_by_metadata_builder": true,
+  "phase": "dev",
+  "schema_version": 1,
+  "unexecuted": true,
+  "worker_gold_reader_invocations": 0
+}

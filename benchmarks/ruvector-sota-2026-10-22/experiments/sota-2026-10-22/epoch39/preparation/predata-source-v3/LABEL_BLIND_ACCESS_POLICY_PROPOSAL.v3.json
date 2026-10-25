@@ -1,0 +1,142 @@
+{
+  "CPU_threads": 2,
+  "DEV_cases": 12,
+  "actual_case_gold_accesses": 0,
+  "actual_dataset_parser_calls": 0,
+  "actual_model_readouts_planned": 48,
+  "actual_model_tokenizer_native_scorer_calls": 0,
+  "data_license": "Pinned author README explicitly dataset MIT release; retain MIT notice. HF Apache2 version remains separate. No bulk thirdparty source corpus redistribution; source/identity/code/prediction metadata only.",
+  "dataset": {
+    "Git_blob_SHA1": "f5f5c4ddcda311707a8b4cded158aa78343e9d9a",
+    "body_path": "/workspace/ruvector-e39-data-research/opaque/finfact-b3038781.json.raw",
+    "bytes": 29972446,
+    "requested_url": "https://raw.githubusercontent.com/IIT-DM/Fin-Fact/b30387813734d4b461e6fcdd576feb819cc0bcbd/finfact.json",
+    "sha256": "5e36d32a0e0149f5d86b1f81ab6fd85144136cb7975374364060f8fcf43629fd"
+  },
+  "epoch": 39,
+  "frozen_DEV_gates": {
+    "Brier_and_stable_unclipped_logsoftmax_NLL_nonincrease_against": [
+      "b354_source_order",
+      "b354_lexical",
+      "xxlarge_source_order"
+    ],
+    "accuracy_and_official_macroF1_nondecrease_against": [
+      "b354_source_order",
+      "b354_lexical",
+      "xxlarge_source_order"
+    ],
+    "class_balancing": false,
+    "full_N": 12,
+    "integrity_no_errors": true,
+    "invalid_predictions": "Retain denominator12 and failintegrity; neverdrop.",
+    "primary_correct_gain_over_xxlarge_source_order_at_least": 2,
+    "required_actual_readouts": 48,
+    "roundoff_tolerance": 1e-12
+  },
+  "input_caps_post_selection": {
+    "case_features_UTF8_bytes": 1048576,
+    "claim_UTF8_bytes": 65536,
+    "provided_evidence_units": 256,
+    "unit_UTF8_bytes": 262144
+  },
+  "kind": "REAL_FINFACT_DEV_TRANSFER_PILOT",
+  "labels_and_scoring": {
+    "additional_metrics": [
+      "Brier",
+      "stableunclippedlogit NLL",
+      "p50/p95",
+      "errors",
+      "actualresources"
+    ],
+    "decision_rule": "OFFICIALstrict ordered: if canonicalpE>0.5 true; else ifpN>0.5 neutral; elsefalse. Source-model native logits mapped by exact admitted config to E,C,N. Argmax readouts are diagnostic only, reuse same48, no selection.",
+    "denominator": "All frozen12 retained. Invalid/missing predictions count incorrect and are never dropped. Invalid distributions make Brier/NLL undefined and acceptancefail, not fabricated replacement probabilities. Report any exactofficialmacro extension for invalidsentinel explicitly.",
+    "labels_access": "Exactly selected12 author label values only once after all48realreadouts and physical lifecycle closure; no original unused-source label scan, no confirmation labels, no class stratification.",
+    "mapping": "Author-provided financial fact-check labels, not a syntheticQA\u2192NLI conversion. Do not remap mostlytrue/mixture or call neutral logicallyproved insufficient evidence.",
+    "official_metrics": "accuracy_score and f1_score(average=macro), precision_score(average=macro), recall_score(average=macro) as source. Source defaultlabels=None uses observedunion labels; report exact behavior, with fixed3class macro only as distinct additional diagnostic if desired.",
+    "scope": "Reproducible12case realDEV pilot only. No full3562-claim author score, official rank/SOTA, freshconfirmation/promotion or generalization estimate.",
+    "strict_source_taxonomy": [
+      "true",
+      "false",
+      "neutral"
+    ]
+  },
+  "lineage_and_eligibility": "HOLD; same known b354/XXL foundation and underlyingFinFact overlap unresolved.",
+  "max_joint_tokens": 248,
+  "model_task_contract": "Same already-known b354 diverseFEVER/ANLI NLI source versus XXL full-context reference; material new real-task/context transfer, no new-weight or model-superiority claim.",
+  "native_corpora": 1,
+  "native_queries": 12,
+  "numeric_policy": "Literal source/numeric coverage audit only; no numeric certificates, label overrides or retrieval-miss NEI proof.",
+  "official_repository_commit": "b30387813734d4b461e6fcdd576feb819cc0bcbd",
+  "outgoing_contacts": 0,
+  "paid_API_GPU_calls": 0,
+  "permitted_input_fields": {
+    "forbidden": [
+      "claim copied as premise",
+      "missing-evidence fallback to claim",
+      "justification",
+      "sci_digest",
+      "claim label/rating/verdict field",
+      "source-page fetch",
+      "images or captions"
+    ],
+    "hypothesis": "Original claim only.",
+    "premise_material": "Only official evidence[*].sentence strings in original order.",
+    "self_claim_or_direct_verdict_quality": {
+      "application": "Check all supplied evidence and each actual packed premise beforeNNI. AnyhitSTOP captured/no replacement, no rating-stripping/sentence deletion. Preserve all12 selected IDs.",
+      "guard_version": "finfact-e39-selfclaim-direct-verdict-stop-v1",
+      "limits": "Conservative fixed surface guard, not proof no semantic leakage exists.",
+      "matching_normalization": "UnicodeNFKC,casefold,whitespacecollapse ONLY for matching; all actual model/source text preserved.",
+      "self_claim": "STOP if packedpremise equals fullclaim after normalization or every nonempty supplied unit equals claim.",
+      "verdict_regexes": [
+        "\\b(?:our (?:ruling|verdict)|(?:fact[- ]check|truth[- ]o[- ]meter) (?:rating|verdict))\\b",
+        "\\bwe (?:rate|rated|have rated|classify|classified) (?:this|the) (?:claim|statement|assertion)\\b",
+        "\\b(?:this|the) (?:claim|statement|assertion) (?:(?:is|was|has been) )?(?:rated|labelled|labeled|classified)\\b",
+        "\\b(?:this|the) (?:claim|statement|assertion) (?:is|was) (?:completely |mostly |partly |entirely )?(?:true|false|neutral|misleading|unproven|a mixture)\\b",
+        "\\b(?:rating|verdict|ruling)\\s*:\\s*(?:mostly (?:true|false)|true|false|neutral|mixture|unproven|misleading|pants[- ]on[- ]fire)\\b",
+        "\\bpants[- ]on[- ]fire\\b"
+      ]
+    }
+  },
+  "phase": "dev",
+  "primary": "b354_native",
+  "readouts_per_case": [
+    "b354_source_order",
+    "b354_native",
+    "b354_lexical",
+    "xxlarge_source_order"
+  ],
+  "reference": "xxlarge_source_order",
+  "roles": {
+    "calibration": [],
+    "confirmation": [],
+    "train": []
+  },
+  "schema_version": 3,
+  "seconds_total_worker": 600,
+  "source_and_identity_freeze_before_access": {
+    "case_id": "finfact:b3038781:ordinal:<zero-based-original-JSON-array-index>",
+    "eligibility": "Valid nonempty URL/claim/evidence structure only: original URL HTTP(S), nonempty claim string, evidence array of sentence-string objects and at least one non-whitespace sentence. No input caps, labels, targets, length stratification or content filtering in selection. Caps/STOP checks run after selected12 fixed and cannot replace a case.",
+    "exposure": "These twelve become DEV forever as soon as materialized/exposed, even if execution fails. All63 old authored entries/51unique pairs and325oldbenchmarkDEV stayexposed; old74unused24protected untouched.",
+    "grouping": "Use normalized official URL only. Strip outer whitespace, parse HTTP(S), lowercase scheme+hostname, remove fragment, preserve path/query. Group IDs=SHA256(UTF8(\"FinFact-url|\"+canonicalURL)). No gold, claim semantic, model output or length stratification.",
+    "input_sha256": "SHA256 canonicalUTF8 JSON {\"claim\":originalclaim,\"evidence_sentences\":[all original evidence[*].sentence strings in original order]}. Compute after identity access authorization without viewing gold.",
+    "metadata_only_first_pass": "Lexically scan original rootJSONarray. Decode field names and URL identity strings only; claim/evidence only structural string/nonempty flags, no text display. Skip all forbidden field values without decoding. Selected12 whitelisted claim/evidence decoded only inside custodian after fixed identity selection and local seal; labels remain raw serialized tokens.",
+    "opaque_gold_vault": "Custodian copies exactly12 selected raw JSON label-token byte slices into private framed binary vault WITHOUT decoding values; record physical tokenscopied12 vs semanticlabeldecodes0. Candidate gets features only. Separate reader decodes those12 onlyafter48forecasts and bothmodels/nativeclosure.",
+    "opaque_source_download": "Already hash-only29972446B5e36...; no row/gold/text parse occurred.",
+    "representative": "For each eligible URLgroup, smallest original archive ordinal satisfying the frozen evidence structure/nonemptiness rule. All original sentence strings preserved; no choosing longest/best outcome/context.",
+    "required": "Before custodian parse, ROOT reviews and fsyncs immutable local PREDATA_ACCESS_SEAL over materializer/policy/guard/reader source. Only that custodian may prepare label-blind IDs/features/opaque vault. Candidate/scorer/pub authors cannot inspect selected text/vault or run cases. Final oneSOURCE commit/readback pins all source, derived12IDs/externalhash descriptors before ANYtokenizer/native/NNI measurement; no extraGitpredata mutation.",
+    "selection": "Sort URLgroups by SHA256(UTF8(\"ruvector-finfact-e39-v1|\"+exact_dataset_SHA256+\"|\"+groupID)); first12groups only. Never substitute by model result, label availability, text reasoning difficulty or evidence content."
+  },
+  "status": "AUTHORITATIVE_ROOT_POLICY_PENDING_EXACT_LOCAL_PREDATA_SOURCE_SEAL_AND_REVIEW",
+  "supersedes": {
+    "bytes": 6750,
+    "path": "/workspace/ruvector-e39-data-research/LABEL_BLIND_ACCESS_POLICY_PROPOSAL.v2.json",
+    "sha256": "a6ca6b013ee168a1c505d1dc4ccb7623b20e0e5ec677c708076083ff2dfd4c36"
+  },
+  "truncation": {
+    "claim_alone_over_joint_limit": "STOP_CAPTURED_NO_REPLACEMENT",
+    "claim_truncated": false,
+    "official_deviation": "Author uses longest-first truncation=True. Claim-preserving only_first is a prospective pilot deviation; source_order arms are not untruncated full-context.",
+    "premise": "ONLY_FIRST"
+  },
+  "unused_source_remainder_role": "UNUSED_NOT_CONFIRMATION"
+}

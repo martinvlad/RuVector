@@ -1,0 +1,78 @@
+{
+  "SOURCE_ADMISSION_fields": [
+    "schema_version",
+    "epoch",
+    "kind",
+    "phase",
+    "checks_passed",
+    "verified_actual_remote_readback",
+    "actual_source_commit",
+    "published_source_commit",
+    "source_plan_sha256",
+    "plan_sha256",
+    "source_freeze_sha256",
+    "tree_sha",
+    "independent_actual_source_readback"
+  ],
+  "admission_fields": [
+    "schema_version",
+    "epoch",
+    "kind",
+    "phase",
+    "source_plan_sha256",
+    "source_checkpoint",
+    "approved_late_gold_read",
+    "root_custodian_authorized",
+    "evidence",
+    "source_commit"
+  ],
+  "after_join": "Root may copy only safe joined labels/custody metadata into E39/runs/dev. Scorer reads retained join once after input/source/closure audits, never original archive or vault; BIND only report metadata.",
+  "before_any_gold_decode": [
+    "Exact root command-supplied admission SHA",
+    "Seven exact refs: plan/raw/execution/dispatch/observer/physical_closure/source_admission",
+    "SOURCE_ADMISSION and independent actual remote readback exact commit/plan/tree/freeze match",
+    "All48unique source-logit readouts replayed,68fixed counters/resources and10sequential model lifecycle events",
+    "Known physical worker/native/supervisor closure bound to exact dispatch_attempt/reservation/execution/completion refs and current kernel boot+PIDnamespace",
+    "Qualified WORKER_COMPLETED execution, observed workerexit0, recordedwall<=600, cleanerrors,12true completion invariants and matching actual CPU-preexec receipt",
+    "External observed_closed_by_monotonic_seconds after coherent source/physical fences minus dispatch monotonic<=600, including final metadata fsync; actual stable-Z /proc/stat field52 waitstatus0 required, ABSENT or unknownexit never imply0",
+    "Once-only O_EXCL marker for selected opaque vault"
+  ],
+  "epoch": 39,
+  "failure_policy": "One immutable per-token before and after marker. Retain exact completed semantic-decode count; unmatched before marker means uncertainty. Any failure is final, no retry. No assume12 after partial failure.",
+  "independent_actual_source_readback_fields": [
+    "schema_version",
+    "epoch",
+    "kind",
+    "phase",
+    "checks_passed",
+    "verified_actual_remote_readback",
+    "commit",
+    "source_plan_sha256",
+    "source_freeze_sha256",
+    "tree_sha"
+  ],
+  "kind": "REAL_FINFACT_DEV_TRANSFER_PILOT",
+  "late_reader_source": {
+    "bytes": 5012,
+    "path": "experiments/sota-2026-10-22/audit/epoch39/finfact_gold_join.py",
+    "sha256": "d9ab5aa892ca8cf4d6021a7e5bfc7661f5e5cd777a39e269bcd0e8ed77f44365"
+  },
+  "no_original_archive_gold_reread": true,
+  "no_raw_text_or_token_ids_in_public": true,
+  "opaque_vault_source": {
+    "bytes": 781,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/data-source/dev12/dev_oracle.bin",
+    "role": "dev_oracle",
+    "sha256": "2a2930e201e10ae9e29eb703767ae5430c31a60dd1d40f9195689c55ee6c85e3"
+  },
+  "phase": "dev",
+  "root_exact_alias_equalities": [
+    "actual_source_commit==published_source_commit==admission.source_commit",
+    "source_plan_sha256==plan_sha256==SHA256(exactplan)",
+    "independent.commit==actual_source_commit",
+    "independent.source_freeze_sha256==source_freeze_sha256",
+    "independent.tree_sha==tree_sha"
+  ],
+  "schema_version": 1,
+  "used_confirmation_identities": []
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "epoch": 39,
+  "checks_passed": true,
+  "status": "PASS_PINNED_OFFICIAL_REAL_FINANCIAL_DATA_SOURCE_LICENSE_AND_STATIC_SCORER_SCOPE",
+  "repository": "IIT-DM/Fin-Fact",
+  "source_commit": "b30387813734d4b461e6fcdd576feb819cc0bcbd",
+  "actual_connected_tree": "864f021b943bc32a0cfef7aa99d859a2ac468f06",
+  "actual_connected_tree_entries": 26,
+  "metadata_sources": [
+    {
+      "path": "README.md",
+      "local": "/workspace/ruvector-e39-data-research/source_metadata/finfact_README.md",
+      "bytes": 5244,
+      "sha256": "78c5e016169ada0c5c47d67d7585379ad6653f4435e3f15b2a18b89c56aa0ead",
+      "git_blob_sha1": "303e6559f138cd8ddc3a0d079cd47424e4c6b9ea"
+    },
+    {
+      "path": "LICENSE",
+      "local": "/workspace/ruvector-e39-data-research/source_metadata/finfact_LICENSE.txt",
+      "bytes": 1086,
+      "sha256": "c90c4f771cd4c55e8effca92e10ea40fa87faad32a072784bdced704b322837e",
+      "git_blob_sha1": "c85aa6c3ddec4398f8f463a0e50c1a5643c3d1bc"
+    },
+    {
+      "path": "scripts/models/anli.py",
+      "local": "/workspace/ruvector-e39-data-research/source_metadata/finfact_anli_scorer.py",
+      "bytes": 4748,
+      "sha256": "17f9d4a5f460adefaaa61ac91822ad5d2e8b493d6dbb835f2e0287294b8497aa",
+      "git_blob_sha1": "7fbed89d733c962a107e568eb4e89e624f9394b1"
+    }
+  ],
+  "opaque_dataset": {
+    "path": "finfact.json",
+    "local": "/workspace/ruvector-e39-data-research/opaque/finfact-b3038781.json.raw",
+    "bytes": 29972446,
+    "sha256": "5e36d32a0e0149f5d86b1f81ab6fd85144136cb7975374364060f8fcf43629fd",
+    "git_blob_sha1": "f5f5c4ddcda311707a8b4cded158aa78343e9d9a",
+    "dataset_JSON_case_or_gold_parses": 0
+  },
+  "license_scope": {
+    "dataset_specific_author_statement": "Fin-Fact is released under the MIT License; README explicitly instructs reviewing the license before using the dataset.",
+    "repository_license": "MIT",
+    "copyright_holder": "2023 Illinois Tech Data Mining Lab",
+    "grant_basis": "Dataset-specific README statement plus pinned root LICENSE, beyond a license on scorer code alone.",
+    "conditions": "Retain copyright and permission notice in copies or substantial portions.",
+    "local_reproducible_evidence_only_pilot_source_licensed": true,
+    "independent_original_third_party_rights_audit_complete": false,
+    "full_raw_dataset_redistribution_approved_by_this_review": false,
+    "HF_author_card_or_other_revision_merged": false
+  },
+  "official_scorer_static_semantics": {
+    "source": "scripts/models/anli.py",
+    "input_filter": "Every entry with an evidence key; this code alone does not require nonempty evidence, unique IDs, valid classes or a split. Any stricter pilot admission/filter must be explicit and frozen.",
+    "premise": "Source-order space-join of evidence[*].sentence; no external evidence fetch.",
+    "hypothesis": "claim",
+    "gold": "entry.label, original true/false/neutral fact-check labels; no synthetic NLI relabeling by this review.",
+    "maximum_pair_length": 248,
+    "truncation": true,
+    "model_index_assumption": {
+      "entailment": 0,
+      "neutral": 1,
+      "contradiction": 2
+    },
+    "threshold": 0.5,
+    "decision_rule": "Strict E>0.5 -> true; otherwise strict N>0.5 -> neutral; otherwise false. This is not multiclass argmax.",
+    "metrics": "Accuracy, macro precision/recall/F1, confusion matrix and classification report. Proper scores are a new explicit pilot addition.",
+    "official_split_or_model_revision_pin_in_this_script": false
+  },
+  "required_pilot_declarations": [
+    "Map the actual reader model output labels to canonical E/N/C before applying the official decision rule; microsoft XXL C0/N1/E2 differs from the official ynie example E0/N1/C2.",
+    "Freeze exact source/candidate/scorer revisions, label-blind sample identities and role allocation before measurements; no confirmation selection/training.",
+    "Declare any context/token limits, empty/malformed evidence handling, argmax, numerical checks and proper-score additions as pilot deviations; do not call them exact original published model/scorer reproduction.",
+    "Retrieve only within supplied evidence; a retrieval miss cannot prove neutral or insufficient evidence.",
+    "Preserve all sampled failures/truncations and matched same-model retrieval controls, with accuracy/proper scores, timing and resource scope."
+  ],
+  "scientific_authorization": 0,
+  "dataset_records_inspected": 0,
+  "model_tokenizer_native_scorer_or_candidate_calls": 0,
+  "full_benchmark_or_ClaimBench_placement_claim": false,
+  "official_eligibility": "HOLD",
+  "champion_promoted": false,
+  "reviewed_at_unix": 1792945467.6349814
+}

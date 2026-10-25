@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "epoch": 39,
+  "status": "PROSPECTIVE_DEV_ONLY_TRANSFER_PILOT_PENDING_ROOT_CONTRACT_NO_CASE_MATERIALIZATION_BY_IMPLEMENTER",
+  "kind": "REAL_FINFACT_DEV_TRANSFER_PILOT",
+  "source_checkpoint": "74dbbcb10508ced7e0edf53a0c736f14c19a19a1",
+  "data_source": {
+    "official_repository": "IIT-DM/Fin-Fact",
+    "revision": "b30387813734d4b461e6fcdd576feb819cc0bcbd",
+    "license_and_schema": "Data custodian independently verifies officialREADME dataMIT and genuine true/false/neutral labels; no datasetcontents read byimplementationagent",
+    "premise": "Source-order join of evidence[*].sentence only",
+    "hypothesis": "Original claim only",
+    "forbidden_inputs": [
+      "justification",
+      "sci_digest",
+      "gold rationale",
+      "label-derived evidence choice"
+    ],
+    "invalid_records": "No invalid/overlong/failed selectedrecord silently dropped orreplaced; keepdenominator12,recorderrors and refusecompleteacceptance ifanyrequiredreadout missing."
+  },
+  "roles": {
+    "train": [],
+    "dev": "Exactly12cases via rootfrozenlabelblind URL-group/hash policy beforematerialization; no labelstratification ormodelselection",
+    "calibration": [],
+    "confirmation": [],
+    "old_unused74_protected24": "unchanged"
+  },
+  "models": {
+    "candidate": "Knownb354 exactrevision/safetensors above; not new",
+    "reference": "Original microsoft/deberta-v2-xxlarge-mnli8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06;5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+    "b354canonical_E_C_N": [
+      0,
+      2,
+      1
+    ],
+    "XXLcanonical_E_C_N": [
+      2,
+      0,
+      1
+    ],
+    "compute": "CPU2F32,originalsources,noquantization/no fit"
+  },
+  "proposed_arms": [
+    "b354_full_source",
+    "b354_native",
+    "b354_lexical",
+    "xxlarge_full_source"
+  ],
+  "actual_readouts": {
+    "b354": 36,
+    "xxlarge": 12,
+    "total": 48,
+    "actual_forward_calls_per_selected_case": 4,
+    "no_certificate_forecast_layer": true
+  },
+  "retrieval": "One12documentnativecorpus,12indexes,12originalclaimqueries,onebinary; sameb354sourcepartition andcontextbudget for native/lexical,fullsourceoriginalorder. BGE/native source/runtime identities reusedonlyfreshhashverified.",
+  "real_prose_policy": "Do notimport/applyauthoredclosedgrammarcertificates orforce labels. Numeric literal/source-span retention audit only; omissions are diagnostics,never proof ofinsufficient evidence. Allactualrawlogits/T1probabilities retained.",
+  "official_protocol_warning": {
+    "official_script": "anli.py at frozenFinFactrevision",
+    "source_policy": "max_length248,truncationTrue,orderedstrictE>0.5true elseN>0.5neutral elsefalse",
+    "pilot_decision_policy": "ROOT_MUST_FREEZE_PRIMARY_BEFORE_CASES; retaincanonicalargmax andofficialorderedthreshold asprospective deriveddiagnostics onlyifauthorized; no postresultpolicychoice",
+    "pilot_context_cap": "ROOT_MUST_FREEZE;512wholecontext/prefix orargmax areexplicitpilotdeviations,notexactofficialpublishedreproduction",
+    "full_benchmark_or_publisher_placement_claim": false
+  },
+  "metrics": {
+    "accuracy": "All12selectedidentities,perclasssupport/errors andpairedcontrols; no claim of representative fullbenchmarkscore",
+    "proper_scores": "RawT1multiclassBrier +stable shiftedsource-logit logsoftmaxNLL,unclipped; clip/underflow diagnostics separate",
+    "latency": "Retain actual perarmcontext/retrieval/tokenization/forward/audit terms. Label p50/p95 component sums precisely; sharedBGE/nativeindex/modelinitialization/assetchecks and overallbatchwall/initcleanup separately. Do not call component timings endtoend/publisherlatency.",
+    "resource": "Actual CPUaffinity/threadguards,peakRSS/user/system/wall,error/partialcounts; no scheduled-workclaims"
+  },
+  "prospective_screening_proposal": "No promotion regardlessoutcome. Before SOURCE rootmayfixcandidate-native accuracygain>=2vsXXLfull andBrier/NLLnonincreasevssame-model full/lex andXXL, with all48finiteactualreadouts/sourceaudits complete; otherwise reject direction. Retainexactpaireduncertainty/confidenceintervals anderrors even ifscreenpasses. This is aDEVtransferfinding,notfreshconfirmation/generalization/officialSOTA.",
+  "budget": {
+    "native_corpus_batches": 1,
+    "native_queries": 12,
+    "native_indexes": 12,
+    "native_binary_loads": 1,
+    "actual_NLI_forwards": 48,
+    "models_sequential": 2,
+    "CPU_threads": 2,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "total_seconds": 600,
+    "work_seconds": 585,
+    "cleanup_seconds": 15,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "training_fitting_calibration_confirmation_calls": 0,
+    "retries": 0
+  },
+  "history": [
+    {
+      "proposal": "Initial2batchDEV/fresh-confirmationidea",
+      "status": "UNEXECUTED_SUPERSEDED_BEFORE_DATA_MATERIALIZATION_BY_ROOT_LINEAGE_HOLD_DEV_ONLY_DECISION"
+    }
+  ],
+  "actual_case_model_tokenizer_native_acquisition_calls_by_implementation_agent": 0
+}

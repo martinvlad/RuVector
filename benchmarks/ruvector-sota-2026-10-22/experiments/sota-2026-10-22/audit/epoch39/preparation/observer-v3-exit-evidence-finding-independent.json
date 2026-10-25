@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "epoch": 39,
+  "checks_passed": false,
+  "status": "REJECTED_SOURCE_INTEGRATION_V3_EXIT_EVIDENCE_UNCONDITIONALLY_DISCARDED",
+  "source": {
+    "path": "experiments/sota-2026-10-22/audit/epoch39/observe_supervisor_closure.py",
+    "bytes": 15635,
+    "sha256": "936fbcaa01b7e1457832daac5e5713d19ddb693c69124a5fd273501659c4f7a4"
+  },
+  "ready": {
+    "bytes": 14921,
+    "sha256": "b325cba3634b2e52a7f3045f0d4873792c2bca75f95d29fe14b2be45cb697cd4"
+  },
+  "finding": {
+    "function": "evaluate",
+    "line": 190,
+    "assignment": "exit_evidence=None",
+    "scope": "Unconditional direct function-body assignment after valid supervisor snapshot capture and identity check",
+    "consequence": "Every emitted observed_supervisor_exit_wait_status is None and source UNKNOWN even when a coherent exact zombie waitstatus0 was observed. The frozen late-gold qualifier correctly rejects that UNKNOWN, so a successful worker cannot advance."
+  },
+  "required_prospective_fix": "Preserve immutable v3; restrict clearing evidence to the identity-mismatch branch, add a positive evaluate regression asserting actual stable-Z0 fields survive, and issue new immutable core/interface/plan reference versions before SOURCE. No qualification should be weakened.",
+  "actual_modes_proc_data_cases_gold_models_tokenizers_native_or_Git_calls": 0,
+  "reviewed_at_unix": 1792951772.0448215
+}

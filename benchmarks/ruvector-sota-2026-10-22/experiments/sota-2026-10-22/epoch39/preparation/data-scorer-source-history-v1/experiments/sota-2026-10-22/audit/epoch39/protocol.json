@@ -1,0 +1,199 @@
+{
+  "DEV_gates": {
+    "Brier_and_stable_unclipped_logsoftmax_NLL_nonincrease_against": [
+      "b354_source_order",
+      "b354_lexical",
+      "xxlarge_source_order"
+    ],
+    "accuracy_and_official_macroF1_nondecrease_against": [
+      "b354_source_order",
+      "b354_lexical",
+      "xxlarge_source_order"
+    ],
+    "class_balancing": false,
+    "full_N": 12,
+    "integrity_no_errors": true,
+    "invalid_predictions": "Retain denominator12 and failintegrity; neverdrop.",
+    "primary_correct_gain_over_xxlarge_source_order_at_least": 2,
+    "required_actual_readouts": 48,
+    "roundoff_tolerance": 1e-12
+  },
+  "TRAIN": [],
+  "actual_NLI_forwards_expected": 48,
+  "argmax_diagnostics_same_readouts_expected": 48,
+  "arms": [
+    "b354_source_order",
+    "b354_native",
+    "b354_lexical",
+    "xxlarge_source_order"
+  ],
+  "benchmark_accepted": false,
+  "benchmark_accuracy": null,
+  "benchmark_generalization_claim": false,
+  "blind_id_policy": {
+    "bytes": 9807,
+    "path": "experiments/sota-2026-10-22/epoch39/preparation/LABEL_BLIND_ACCESS_POLICY.v3.json",
+    "sha256": "966d1228019e33fae99dfacede6d4caac5c8bd529e7ced7df012e0178b25d1ea"
+  },
+  "calibration": [],
+  "candidate_model": {
+    "already_known_pretrained_weight_not_new_model_strength_evidence": true,
+    "repository": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "weights_sha256": "c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b"
+  },
+  "canonical_label_order": [
+    "true",
+    "false",
+    "neutral"
+  ],
+  "champion_promoted": false,
+  "confirmation": [],
+  "context": {
+    "BGE_embedding_max_tokens": 256,
+    "caps_policy": "Post-fixed12-selection STOP without replacement; neverdropunits or pick anothercase.",
+    "joint_token_limit": 248,
+    "leak_guard": {
+      "application": "Check all supplied evidence and each actual packed premise beforeNNI. AnyhitSTOP captured/no replacement, no rating-stripping/sentence deletion. Preserve all12 selected IDs.",
+      "guard_version": "finfact-e39-selfclaim-direct-verdict-stop-v1",
+      "limits": "Conservative fixed surface guard, not proof no semantic leakage exists.",
+      "matching_normalization": "UnicodeNFKC,casefold,whitespacecollapse ONLY for matching; all actual model/source text preserved.",
+      "self_claim": "STOP if packedpremise equals fullclaim after normalization or every nonempty supplied unit equals claim.",
+      "verdict_regexes": [
+        "\\b(?:our (?:ruling|verdict)|(?:fact[- ]check|truth[- ]o[- ]meter) (?:rating|verdict))\\b",
+        "\\bwe (?:rate|rated|have rated|classify|classified) (?:this|the) (?:claim|statement|assertion)\\b",
+        "\\b(?:this|the) (?:claim|statement|assertion) (?:(?:is|was|has been) )?(?:rated|labelled|labeled|classified)\\b",
+        "\\b(?:this|the) (?:claim|statement|assertion) (?:is|was) (?:completely |mostly |partly |entirely )?(?:true|false|neutral|misleading|unproven|a mixture)\\b",
+        "\\b(?:rating|verdict|ruling)\\s*:\\s*(?:mostly (?:true|false)|true|false|neutral|mixture|unproven|misleading|pants[- ]on[- ]fire)\\b",
+        "\\bpants[- ]on[- ]fire\\b"
+      ]
+    },
+    "lexical": "Same supplied unit set ranked by fixed lower-case word-overlap query score with original source-index tie break.",
+    "max_claim_UTF8_bytes": 65536,
+    "max_evidence_units": 256,
+    "max_feature_UTF8_bytes": 1048576,
+    "max_unit_UTF8_bytes": 262144,
+    "native": "One actual native RuVector query per case over all source-provided evidence units; return/validate allN hits and reorder by native rank. This is evidence ordering before token budget, not a claim of absent evidence.",
+    "numeric_checks": "Audit literal quantity/date coverage and truncation without label overrides or formal numeric certificates. Missing retrieval never proves neutral/insufficient evidence.",
+    "source_fields": "Original claim as hypothesis, only supplied official evidence[*].sentence as premise material. Forbidden labels/rationale/justification/sci_digest/images/captions/sourcepage fetches never inputs.",
+    "source_order": "Same complete supplied sentence list in original order before tokenizer budget.",
+    "truncation": "ONLY_FIRST premise truncation preserves the full original hypothesis; STOP if fullhypothesis cannotfit. Explicit deviation from author longest-first truncation, and source_order is budgeted not untruncated full context."
+  },
+  "data_access": {
+    "bytes": 2762,
+    "path": "experiments/sota-2026-10-22/audit/epoch39/DATA_ACCESS.v1.json",
+    "sha256": "52e180a0e04b66572188eff75fb9d90baba2ecde8ea9c7670e0ce2bf98d0e988"
+  },
+  "data_roles": {
+    "calibration": [],
+    "confirmation": [],
+    "dev": [
+      "finfact:b3038781:ordinal:103",
+      "finfact:b3038781:ordinal:1469",
+      "finfact:b3038781:ordinal:1693",
+      "finfact:b3038781:ordinal:1478",
+      "finfact:b3038781:ordinal:3018",
+      "finfact:b3038781:ordinal:365",
+      "finfact:b3038781:ordinal:3067",
+      "finfact:b3038781:ordinal:2450",
+      "finfact:b3038781:ordinal:2903",
+      "finfact:b3038781:ordinal:3032",
+      "finfact:b3038781:ordinal:1807",
+      "finfact:b3038781:ordinal:2018"
+    ],
+    "train": []
+  },
+  "epoch": 39,
+  "expected_counters_source": {
+    "bytes": 2655,
+    "path": "experiments/sota-2026-10-22/candidate/epoch39/EXPECTED_COUNTERS.json",
+    "sha256": "837a3ac8cfde2eddefb968ab46d09e4847887b1a1e84facc5dd6c46b2f5f195b"
+  },
+  "external_data_manifest": {
+    "bytes": 7596,
+    "path": "experiments/sota-2026-10-22/audit/epoch39/PUBLIC_DATA_DESCRIPTOR.v1.json",
+    "sha256": "a25a0784a3490adb75d48e23876ec9d49c4b6687d2c12468eebad274c5bb35fb"
+  },
+  "fixed_counter_count": 68,
+  "gold_custodian": {
+    "bytes": 5012,
+    "path": "experiments/sota-2026-10-22/audit/epoch39/finfact_gold_join.py",
+    "sha256": "d9ab5aa892ca8cf4d6021a7e5bfc7661f5e5cd777a39e269bcd0e8ed77f44365"
+  },
+  "gold_custody_interface": {
+    "bytes": 2922,
+    "path": "experiments/sota-2026-10-22/audit/epoch39/GOLD_CUSTODY_INTERFACE.v1.json",
+    "sha256": "ba2836ddeb521381404fbc441212a90e157775f34518d1ce9a9fd4bf40de95a9"
+  },
+  "kind": "REAL_FINFACT_DEV_TRANSFER_PILOT",
+  "limits": {
+    "CONF": 0,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "CPU_threads": 2,
+    "GPU": 0,
+    "TRAIN": 0,
+    "calibration": 0,
+    "cleanup_seconds": 15,
+    "execution_seconds": 585,
+    "fits": 0,
+    "full104": 0,
+    "native_corpus_batches": 1,
+    "native_queries": 12,
+    "paid_API": 0,
+    "retry": 0,
+    "seconds_total_including_initialization_cleanup": 600,
+    "workers": 1
+  },
+  "metrics_policy": {
+    "bytes": 2997,
+    "path": "experiments/sota-2026-10-22/audit/epoch39/METRICS_POLICY.v1.json",
+    "sha256": "45a21d85db97cf5ef5cd5e1ee39b1120716638c403730609538cf8c4d24343fa"
+  },
+  "model_lineage_and_official_eligibility": "HOLD",
+  "model_order": [
+    "xxlarge",
+    "b354"
+  ],
+  "model_runtime_and_asset_sources": "Final SOURCE plan independently pins both model source/profile/actual assetguard refs and frozen CPUruntime; worker and independent evaluator replay exact parametercounts/weights/CPUF32/safe-loading/native-label mapping.",
+  "new_submission": false,
+  "official_SOTA_verified": false,
+  "official_rank": null,
+  "phase": "dev",
+  "prediction_policy": "Canonical rawT1 E,C,N probabilities from original FP32 logits: E>0.5 ->true; elseN>0.5 ->neutral; elsefalse. Argmaxdiagnostic same48readouts neverprimaryselected. No fitting/calibration/temperature change.",
+  "primary": "b354_native",
+  "primary_decisions_expected": 48,
+  "real_readouts": 48,
+  "reference": "xxlarge_source_order",
+  "reference_model": {
+    "repository": "microsoft/deberta-v2-xxlarge-mnli",
+    "revision": "8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06",
+    "weights_sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db"
+  },
+  "root_contract": {
+    "bytes": 8717,
+    "path": "experiments/sota-2026-10-22/epoch39/preparation/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+    "sha256": "53739509c0c324d9e10560f1e2d8edd3d1dc6f3ca619dbb5a604a4a0cc31bbda"
+  },
+  "schema_version": 1,
+  "scorer": {
+    "bytes": 13121,
+    "path": "experiments/sota-2026-10-22/audit/epoch39/finfact_scorer.py",
+    "sha256": "a41a12726d510e82b55d1956586c2007cfa6b4c6e1fb090e158fc1330e920b0c"
+  },
+  "scorer_source_ready_v1": {
+    "bytes": 4269,
+    "path": "experiments/sota-2026-10-22/audit/epoch39/SOURCE_READY_v1.json",
+    "sha256": "5d063909e743dd207074808bb92bfc190c45404b15fa14bb3559f615f1a71909"
+  },
+  "source_checkpoint": "74dbbcb10508ced7e0edf53a0c736f14c19a19a1",
+  "source_only_no_actual_measurements_by_author": true,
+  "source_provenance": {
+    "bytes": 3248,
+    "path": "experiments/sota-2026-10-22/audit/epoch39/PUBLIC_SOURCE_PROVENANCE.v1.json",
+    "sha256": "bff1f6dcaf3b5421cd5dca00abb4d82a7b32cf4789223c9cb02776dd222e2ec5"
+  },
+  "used_confirmation_identities": []
+}

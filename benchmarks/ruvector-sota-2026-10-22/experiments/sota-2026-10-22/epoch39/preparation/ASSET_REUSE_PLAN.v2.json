@@ -1,0 +1,109 @@
+{
+  "schema_version": 2,
+  "epoch": 39,
+  "status": "FROZEN_NEW_READ_ONLY_WEIGHT_SNAPSHOT_STEP_AFTER_CLOSED_V1_MODE_FAILURE",
+  "source_checkpoint": "74dbbcb10508ced7e0edf53a0c736f14c19a19a1",
+  "planning_commit": "63f5516d0b7e000a79f31a0de9cfb2814ba12d65",
+  "owner": {
+    "pid": 116430,
+    "startticks": 26811853,
+    "owner_raw_sha256": "9520972db7b60ec65a92e00b7c5dd13e9630b2b0291275e11b61570f72865251"
+  },
+  "paid_API_cap_USD": 0,
+  "paid_API_calls": 0,
+  "GPU_calls": 0,
+  "network_requests_allowed": 0,
+  "weights_downloads_allowed": 0,
+  "maximum_wall_seconds_including_hashes_and_cleanup": 180,
+  "CPU_threads": 2,
+  "CPU_affinity": [
+    0,
+    1
+  ],
+  "materialization_attempts": 1,
+  "allowed_retries": 0,
+  "source_profiles": {
+    "b354": {
+      "cache_directory": "/workspace/ruvector-e36-reader-assets/moritz-b3546ea6",
+      "expected_catalog": {
+        "path": "/workspace/ruvector-e39-engineering-impl/model-feasibility-review-v1/model-research/HISTORIC_E36_BASELINE_MODEL_ASSETS.expected.json",
+        "bytes": 3916,
+        "sha256": "30657c23de7feae478af2b951c814ff5e4be3c69c7a90c08d0f268a2172eea11"
+      },
+      "expected_payload_files": 9,
+      "expected_payload_total_bytes": 881306543,
+      "weight_bytes": 870182606,
+      "weight_sha256": "c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b",
+      "target_directory": "/workspace/ruvector-e39-reader-assets/moritz-b3546ea6",
+      "role": "KNOWN_E34_DEV_HOLD_LEAD_E36_BASELINE_NOT_NEW_WEIGHT_OR_PROVEN_STRONGER"
+    },
+    "xxlarge": {
+      "cache_directory": "/workspace/ruvector-e38-reader-assets/ms-xxlarge-8f8b43dd",
+      "expected_catalog": {
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/project/experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.expected.json",
+        "bytes": 2112,
+        "sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806"
+      },
+      "expected_payload_files": 5,
+      "expected_payload_total_bytes": 3136407548,
+      "weight_bytes": 3133958098,
+      "weight_sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+      "target_directory": "/workspace/ruvector-e39-reader-assets/ms-xxlarge-8f8b43dd",
+      "role": "UNCHANGED_ORIGINAL_REFERENCE"
+    }
+  },
+  "minimum_workspace_free_bytes": 16777216,
+  "policy": [
+    "Separate immutable expected catalog authority from observed direct/public materialization locks.",
+    "No symlinks; actual full file size+SHA256 plus ordinary Git body identities or canonical Git-LFS pointeroid/size/typedGitSHA1 as declared in original source catalog. Never compare an expanded payload GitSHA1 to LFS pointer GitSHA1.",
+    "Fresh E39 target dirs only. Copies for writable metadata no larger than16MiB, chmod ONLY new copies0444; hardlink only already read-only fully verified originals. The sole exact b354/model.safetensors declaration is force-copied to a new readonly physical snapshot under large_readonly_copy_allowance. Any other larger writable payload stops; no blindcopy/redownload fallback.",
+    "Preserve source bytes/mode/mtime; disclose only necessary hardlink nlink/ctime changes. Direct observed lock0400/0444 and directory0555 after materialization, target filesread-only.",
+    "Verify all runtime17,498 members against inherited manifest/31CPUwheels and all10 native/BGE closure hashes; fresh receipt is not a relabelled E38proof.",
+    "One actual complete shared stdlib validator on all14 actual assets before finalSOURCE freeze, same code used by dispatcher/worker; no stubs/monkeypatch, no ML/tokenizer/native imports/calls or case/oracle access.",
+    "No model initialization, tensor decode, inference, nativeindex/corpus, tokenizer initialization, candidatecase parse, scorer or training permitted by this plan.",
+    "On missing cache/identity failure retain exact partial attempt/receipt outside public project and STOP; do not repeat or mutate originals. Successful caches retained read-only outside source publication. No weights/runtime/secrets copied into R or Git.",
+    "Before any target writes, require actual targetfilesystem freebytes >= total plannedcopybytes +67108864B stagingmargin +16777216B workspacefloor. Metadata-copy cap16MiB is separate from the one870182606B declared weight snapshot.",
+    "New v2 attempt/result/exact-error and outer invocation markers are distinct; existing v1 artifacts are immutable and never reset/replayed.",
+    "Original typed source catalog and same complete14targetvalidator6e882 remain unchanged. Validate original full SHA before copy and new readonly target full SHA after copy; no model/tensor/tokenizer/native initialization.",
+    "Use reviewed175s owned child+5s identity-bound cleanup outer wrapper to measure complete child fsync/capture. Inner elapsed is labelled pre-final-capture only."
+  ],
+  "complete_validator_source_review_required_before_invocation": true,
+  "model_or_data_measurement_authorization": 0,
+  "future_acquisition_if_missing": "Requires a separately frozen free source/price/time/disk/cleanup plan; no authorized paid cap exists.",
+  "created_unix": 1792949380.4214027,
+  "source_step": "READONLY_PHYSICAL_COPY_OF_EXACT_KNOWN_WRITABLE_B354_WEIGHT",
+  "closed_prior_attempt": {
+    "plan_sha256": "fc4329d780b8d681fef6abf251154dadb6265756f78687e793ac6134ea724b9f",
+    "status": "ASSET_PREPARATION_FAILED_STOP_NO_RETRY",
+    "failure": "WRITABLE_LARGE_SOURCE_STOP_NO_COPY_OR_DOWNLOAD",
+    "outer_elapsed_seconds": 0.060904957994353026,
+    "model_native_tokenizer_case_calls": 0,
+    "target_directory_created": false,
+    "retries_remaining": 0,
+    "receipt": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/ASSET_PREPARATION_RESULT.json",
+      "bytes": 675,
+      "sha256": "4e3980d2218ee08f18186145fd3de406d75c5bb446e89ba61fbe472494cfc920"
+    }
+  },
+  "new_marker_namespace": "ASSET_SNAPSHOT_V2",
+  "new_materializer_source_required": "candidate/epoch39/runtime/materialize_assets_v2.py",
+  "large_readonly_copy_allowance": {
+    "profile": "b354",
+    "path": "model.safetensors",
+    "source_path": "/workspace/ruvector-e36-reader-assets/moritz-b3546ea6/model.safetensors",
+    "target_path": "/workspace/ruvector-e39-reader-assets/moritz-b3546ea6/model.safetensors",
+    "bytes": 870182606,
+    "sha256": "c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b",
+    "force_new_physical_copy": true,
+    "maximum_stream_chunk_bytes": 1048576,
+    "target_mode": "0444",
+    "source_mode_mtime_bytes_unchanged": true,
+    "source_link_count_unchanged_for_copy": true,
+    "all_other_writable_files_above_16MiB": "STOP_NO_FALLBACK"
+  },
+  "minimum_copy_staging_margin_bytes": 67108864,
+  "asset_step_attempts_v2": 1,
+  "closed_v1_replayed": false,
+  "scientific_native_batch_budget_consumed": 0
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "epoch": 39,
+  "kind": "REAL_FINFACT_DEV_TRANSFER_PILOT",
+  "root_contract_sha256": "53739509c0c324d9e10560f1e2d8edd3d1dc6f3ca619dbb5a604a4a0cc31bbda",
+  "supplied_evidence_only": true,
+  "premise_join": "single ASCIIspace between whole provided evidence sentences in selected order",
+  "original_query_unchanged": true,
+  "native_ranking": "one query percase, all N unit IDs returned exactlyonce, no outside corpus",
+  "lexical_ranking": "Jaccard of lowercase Unicode regex \\w+ sets, descending score then original unit index",
+  "source_order": "provided evidence list order",
+  "NLI_joint_max_tokens": 248,
+  "NLI_truncation": "only_first",
+  "claim_complete_required": true,
+  "BGE_embedding_max_tokens": 256,
+  "numerical_literal_checks": "AUDIT_ONLY_no forecast modification; regex may retain suffixes inside adjacent currency notation; not semantic numeric correctness",
+  "unsupported_checks": "fail admission whole batch; no replacements",
+  "no_missing_retrieval_absence_inference": true,
+  "primary": "strict E>0.5 then N>0.5 else false",
+  "argmax": "diagnostic only, native logit first maximum",
+  "temperature": 1,
+  "all_prior_benchmark_and_authored_data_exposed_DEV": true
+}

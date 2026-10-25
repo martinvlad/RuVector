@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "epoch": 39,
+  "status": "PASS_FRESH_ISOLATED_RESTORATION_ACTUAL_HASHES_AND_REVIEWED_RECEIPTS",
+  "checks_passed": true,
+  "actual_source_commit": "74dbbcb10508ced7e0edf53a0c736f14c19a19a1",
+  "actual_Git_leaves_verified_in_new_kit": 6178,
+  "actual_CP_rows_verified": 6104,
+  "fresh_R_union_rows_verified": 6183,
+  "KIT_rows": 61,
+  "BASE_rows": 48,
+  "new_R_bytes_match_every_expected_union_hash": true,
+  "fresh_source_inode_comparisons_against_old_E38_donors": 24334,
+  "old_donor_aliases_found": 0,
+  "within_new_scope_K_or_B_inode_aliases_observed": 6183,
+  "only_regular_nonsymlink_sources": true,
+  "actual_reviewed_commands": [
+    {
+      "path": "archive22-proof.json",
+      "bytes": 1732,
+      "sha256": "0d22bd66cb058a4a22515a2cdbba99e45b9d3f5645d820da6acfc442f9818c90",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/kit/experiments/sota-2026-10-22/epoch22/publication/restore_archived_artifact_v1.py",
+        "--kit-root",
+        "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/kit",
+        "--archive",
+        "experiments/sota-2026-10-22/epoch22/publication/actualarchive.dev.raw.v1.json",
+        "--expected-archive-sha256",
+        "8ab3d8ec7856b423e6ff295f8e5ef74fc81dcaa3d3382fa2757e21563e0a99c6",
+        "--verify-only"
+      ]
+    },
+    {
+      "path": "archive26-proof.json",
+      "bytes": 1892,
+      "sha256": "3b862d6f15be4be5cdc7cb9999593729cdb28ac24ee4bceb094e36793806afd4",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/kit/experiments/sota-2026-10-22/epoch26/publication/restore_epoch26_archives_v1.py",
+        "--kit-root",
+        "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/kit",
+        "--manifest",
+        "experiments/sota-2026-10-22/epoch26/publication/archive-transport.v1.json",
+        "--expected-manifest-sha256",
+        "9b79fc0119e1e5d15470201b7180f4b39e55b687a207dac1ff9f333d91a8ef24",
+        "--verify-only"
+      ]
+    },
+    {
+      "path": "bootstrap-proof.json",
+      "bytes": 8467,
+      "sha256": "a4955438b4e0f16ceb4232036ff6fc47b720542e74f46d64c3dd6526058ee944",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/kit/bootstrap.py",
+        "--dest",
+        "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/project",
+        "--base-local-directory",
+        "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/base-cache"
+      ]
+    },
+    {
+      "path": "restore-proof.json",
+      "bytes": 840,
+      "sha256": "986566e561f5a72c531d4c240eee34ffe83a61d1ef5a3859490433038166f4cc",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/kit/restore_checkpoint.py",
+        "--dest",
+        "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/project",
+        "--base-local-directory",
+        "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/base-cache"
+      ]
+    },
+    {
+      "path": "restore-verify-proof.json",
+      "bytes": 861,
+      "sha256": "13914b8eb75c418358ae6245de156f132c7b400aa9b921d8d284adf8dbb09684",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/kit/restore_checkpoint.py",
+        "--dest",
+        "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/project",
+        "--base-local-directory",
+        "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/base-cache",
+        "--verify-only"
+      ]
+    }
+  ],
+  "three_CP_only_historical_archives": [
+    "experiments/sota-2026-10-22/epoch22/runs/dev/raw.json",
+    "experiments/sota-2026-10-22/epoch26/runs/dev/native-result.json",
+    "experiments/sota-2026-10-22/epoch26/runs/dev/raw.json"
+  ],
+  "scope": "All-hash and actual receipt verification only. Auditor did not rerun bootstrap/archive/restore/model/tokenizer/native/scorer code or parse unused benchmark annotations. Old filesystems supplied hash-verified bytes only; fresh K/B physical copies and isolated R links checked.",
+  "full_real_asset_guard_verified": false,
+  "auditor_actual_case_model_tokenizer_native_scorer_worker_or_external_mutation_calls": 0,
+  "wall_seconds": 2.5386514739948325,
+  "checked_at_unix": 1792944712.4240322
+}

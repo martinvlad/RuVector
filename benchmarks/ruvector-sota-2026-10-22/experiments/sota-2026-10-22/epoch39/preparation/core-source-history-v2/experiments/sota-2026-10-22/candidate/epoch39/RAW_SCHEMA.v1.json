@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "epoch": 39,
+  "kind": "REAL_FINFACT_DEV_TRANSFER_PILOT",
+  "phase": "dev",
+  "arms": [
+    "b354_source_order",
+    "b354_native",
+    "b354_lexical",
+    "xxlarge_source_order"
+  ],
+  "model_order": [
+    "xxlarge",
+    "b354"
+  ],
+  "primary_arm": "b354_native",
+  "actual_readouts": 48,
+  "readout_id": "caseid+::+arm",
+  "case_public_keys": [
+    "id",
+    "record_ordinal",
+    "document_id",
+    "hypothesis_id",
+    "input_sha256",
+    "url_group_sha256",
+    "claim_sha256",
+    "evidence_list_sha256",
+    "source_unit_ids",
+    "native_order_ids",
+    "lexical_order_ids",
+    "readouts"
+  ],
+  "readouts": "case.readouts[arm] => one measured real model forward, never a fabricated certificate/extraforecast layer",
+  "readout_public_keys": [
+    "readout_id",
+    "model_tag",
+    "raw_native_logits",
+    "raw_native_probabilities",
+    "probabilities_E_C_N",
+    "log_probabilities_E_C_N",
+    "primary_label",
+    "argmax_label",
+    "native_argmax_index",
+    "input_audit",
+    "timing"
+  ],
+  "label_values": [
+    "true",
+    "false",
+    "neutral"
+  ],
+  "primary_rule": "canonicalpE>0.5 =>true; elsecanonicalpN>0.5=>neutral; elsefalse. canonical vector orderE,C,N.",
+  "argmax_rule": "Diagnostic only; first ORIGINAL native-logit maximum mapped totrue/neutral/false.",
+  "model_canonical_maps": {
+    "b354": [
+      0,
+      2,
+      1
+    ],
+    "xxlarge": [
+      2,
+      0,
+      1
+    ]
+  },
+  "input_audit_public_keys": [
+    "full_premise_sha256",
+    "claim_sha256",
+    "ordered_unit_ids",
+    "full_joint_tokens",
+    "joint_tokens",
+    "full_premise_tokens",
+    "consumed_premise_tokens",
+    "full_claim_tokens",
+    "consumed_claim_tokens",
+    "claim_complete",
+    "premise_truncated",
+    "full_input_features_sha256",
+    "consumed_input_features_sha256",
+    "consumed_premise_tokens_sha256",
+    "consumed_claim_tokens_sha256",
+    "full_numeric_literal_count",
+    "retained_numeric_literal_count",
+    "omitted_numeric_literal_count",
+    "numeric_literal_coverage"
+  ],
+  "NLI_policy": "jointmax248, only_first truncation, fullclaim mandatory; explicitpilotdeviationfromofficiallongest_first. temperature1/no fit; numericalcoverage auditonly/no certs.",
+  "privacy": "No rawclaim/evidence/premise/sourcequantity strings, tokenIDs,offsetarrays,vectors,features,fullrawlogs inR/publicraw. Everyfullcase/feature/vectorbundle/errorlog staysW39/run-external. Publicids/hashes/logits/probs/counts/timings only.",
+  "status_complete": "DEV_FORECASTS_COMPLETE_NO_GOLD",
+  "closure": {
+    "physical_readouts_completed": 48,
+    "required_readout_ids": "All12caseIDs\u00d74arms",
+    "completed_readout_ids": "Exact same48IDs",
+    "model_profiles_disposed": [
+      "xxlarge",
+      "b354"
+    ],
+    "native_child_closed": true,
+    "all_forecasts_closed_before_gold": true,
+    "source_plan_sha256": "frozen masterplan SHA",
+    "physical_closure_evidence": "Separate externally checked exactsession worker+supervisor no-livegroups proof beforegoldreader; workernevercalls goldreader."
+  },
+  "gold_reads_in_worker": 0,
+  "latency_scope": "Perreadout explicitpairtokenization/context/forward/auditcomponents; sharedBGE/nativepreparation/indexing/modelinit/runtimeguard andoverallbatchwall separate; no component as publisherendtoend claim.",
+  "counter_groups": "Global attempted/completed model/tokenizer init/disposal2, XXLNLI12,b354NLI36,totalNLI48,publicforecasts48, nativecorpus1/helper1/binary1/index12/query12; BGEactualtext/unit countsvariable; sourceguard48packedchecks beforeanyNNI. Allforbiddenlabel/gold/fit/calib/CONF/paidGPU counterszero, actualfailed/UNKNOWNpreserved.",
+  "top_level_keys": [
+    "schema_version",
+    "epoch",
+    "kind",
+    "phase",
+    "source_checkpoint",
+    "plan_sha256",
+    "status",
+    "cases",
+    "counters",
+    "model_runtime_receipts",
+    "reader_lifecycle",
+    "resources",
+    "wall_seconds",
+    "errors",
+    "required_readout_ids",
+    "completed_readout_ids",
+    "closure_facts",
+    "external_evidence",
+    "native_state",
+    "offline_policy",
+    "BGE_runtime_receipt"
+  ],
+  "private_input_audit_envelope": {
+    "schema_version": 1,
+    "epoch": 39,
+    "kind": "REAL_FINFACT_DEV_TRANSFER_PILOT",
+    "phase": "dev",
+    "source_plan_sha256": "exactplanSHA",
+    "readouts": "all actual private nli.score saved inputs;48only when complete"
+  },
+  "extra_safe_case_keys": [
+    "embedding_audit",
+    "context_order_seconds",
+    "native_query_seconds",
+    "native_index_initialization_seconds"
+  ],
+  "resources_keys": [
+    "cpu_affinity",
+    "torch_num_threads",
+    "torch_num_interop_threads",
+    "user_seconds",
+    "system_seconds",
+    "max_rss_kib"
+  ],
+  "lifecycle_events_per_model": [
+    "MODEL_PHASE_START",
+    "MODEL_INITIALIZATION_COMPLETED",
+    "MODEL_READOUTS_COMPLETED",
+    "MODEL_UNLOAD_BEFORE",
+    "MODEL_UNLOAD_AFTER_GC"
+  ],
+  "post_gc_boolean_keys": [
+    "reader_weakref_dead",
+    "model_weakref_dead",
+    "tokenizer_weakref_dead"
+  ],
+  "external_evidence_keys": [
+    "nli_input_audits",
+    "native_output",
+    "native_bundle",
+    "exact_worker_error"
+  ],
+  "execution_raw": "exact projectref3 or null; missing final raw preserves UNKNOWN/null counters",
+  "observer_source": "experiments/sota-2026-10-22/audit/epoch39/observe_supervisor_closure.py",
+  "observer_helper_source": "experiments/sota-2026-10-22/audit/epoch39/closure_metadata.py",
+  "observer_evidence_keys": {
+    "reservation": "DISPATCH_RESERVATION.json",
+    "completion": "SUPERVISOR_COMPLETION.json",
+    "dispatch_attempt": "DISPATCH_ATTEMPT.json",
+    "execution": "runs/dev/execution.json"
+  }
+}

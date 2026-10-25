@@ -1,0 +1,56 @@
+{
+  "Brier": "Mean over12 of sum over3 canonicalclasses (p-y_onehot)^2; no divide by3.",
+  "NLL": "UNCLIPPED_STABLE_SOURCE_LOGIT_LOGSOFTMAX; -canonical_logp[gold] in Python double. No display-probability log and no clipping in gate.",
+  "NLL_clipped_1e_12": "DIAGNOSTIC_ONLY: -log(max(p_gold,1e-12)); retain actualp_gold, displayunderflow and clipping counts.",
+  "actual_NLI_readouts": 48,
+  "argmax_diagnostic": "First ORIGINAL raw-logit maximum mapped via profile native-label order; same48physicalreadouts only, no selection or extraNLI.",
+  "benchmark_accuracy": null,
+  "benchmark_generalization_claim": false,
+  "canonical_label_order": [
+    "true",
+    "false",
+    "neutral"
+  ],
+  "epoch": 39,
+  "invalid_or_missing": "No denominator reduction/replacement/remapping. Any missing/invalid readout, unknown gold literal, source/provenance/lifecycle failure rejects integrity; retainN12 identities and errors.",
+  "kind": "REAL_FINFACT_DEV_TRANSFER_PILOT",
+  "latency": "Actual pair-tokenization, neural-forward and readout-total components eachp50/p95 over12arm observations; shared BGE/native/modelinit and wholebatch wall remain separate. Not publisherend-to-end latency.",
+  "lineage_and_eligibility": "HOLD",
+  "metric_denominator": 12,
+  "model_call_reuse": "Four distinct measured arms12each, no certificate/derived extra forecast layer.",
+  "numeric_scope": "Source literal regex and retained token offsets audit counts only; regex may count currency-adjacent suffix fragments, does not exhaustively extract quantities or prove numerical correctness, and never overrides labels.",
+  "official_macro": "Accuracy/macro precision/macro recall/macroF1 use all12 fixed identities. Macro labels=None is observed gold union predicted labels, undefined per-class zero divisions contribute0, matching pinned anli.py calls. Fixed-three class result is distinct diagnostic.",
+  "phase": "dev",
+  "primary_decision": "STRICT_ORDERED_THRESHOLD: p(true)>0.5 ->true; elsep(neutral)>0.5 ->neutral; elsefalse. This preserves official anli.py ordering and strictness. Equal0.5 never passes.",
+  "raw_logit_policy": "Exactly3 finite original FP32-range logits per actual neural readout; no probability fitting, temperature1. Shift in Python double before logsumexp: lp_native[i]=(z_i-max(z))-log(fsum(exp(z_j-max(z)))). p_native[i]=exp(lp_native[i]). Canonicalize using exact profile map.",
+  "resources": "Actual raw CPUaffinity/torchthreads/user/system/maxRSS and wholeworkerwall. Never sum sequential modelRSS as concurrent peak.",
+  "schema_version": 1,
+  "source_label_maps": {
+    "b354": {
+      "canonical_from_native": [
+        0,
+        2,
+        1
+      ],
+      "raw_order": [
+        "true",
+        "neutral",
+        "false"
+      ]
+    },
+    "xxlarge": {
+      "canonical_from_native": [
+        2,
+        0,
+        1
+      ],
+      "raw_order": [
+        "false",
+        "neutral",
+        "true"
+      ]
+    }
+  },
+  "tolerance": 1e-12,
+  "used_confirmation_identities": []
+}

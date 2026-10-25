@@ -1,0 +1,60 @@
+{
+  "actual_execution_authorized": false,
+  "actual_gold_read_authorized": false,
+  "blocking_finding": {
+    "effect": "ScorerV2 correctly refuses actual gold qualification because no observer output can provide its required actual stable-Z waitstatus0/source. This is fail-closed and must be fixed before any real scientific attempt, avoiding a wasted irreversible epoch.",
+    "evidence": "evaluate initializes exit_evidence at170, reads the actual observation.exit_status_evidence at177, then has a second top-level exit_evidence=None assignment at190 outside the identity-mismatch branch. AST confirms both unconditional assignments are function-body statements. The returned wait status/source at207-209 therefore always use None/UNKNOWN even for exact stable-Z0.",
+    "id": "V3_EXIT_EVIDENCE_DROPPED",
+    "required_resolution": "New immutable V4 source: preserve validated evidence for exact matching identity and clear it only when the identity is invalid; add a narrow positive evaluate fixture asserting emitted waitstatus0 and literal source from actual mocked stable-Z evidence. Retain V3 rejection unchanged.",
+    "source": "experiments/sota-2026-10-22/audit/epoch39/observe_supervisor_closure.py",
+    "source_sha256": "936fbcaa01b7e1457832daac5e5713d19ddb693c69124a5fd273501659c4f7a4"
+  },
+  "champion_promoted": false,
+  "core_READY": {
+    "bytes": 14921,
+    "sha256": "b325cba3634b2e52a7f3045f0d4873792c2bca75f95d29fe14b2be45cb697cd4"
+  },
+  "created_at": "2026-10-25T18:10:14.697529+00:00",
+  "epoch": 39,
+  "final_ready": false,
+  "integrated_source_approved": false,
+  "kind": "FINAL_CORE_V3_SCORER_V2_INTERFACE_REVIEW",
+  "official_SOTA_verified": false,
+  "other_interface_findings": {
+    "completion_plan_sha256_field_present": true,
+    "observer_output_required_field_names_present": true,
+    "post_second_fence_monotonic_stamp_source_present": "Static field presence only; no runtime observation or bound proof performed."
+  },
+  "schema_version": 1,
+  "scorer_logic_approval": {
+    "path": "/workspace/ruvector-e39-runtime-source-audit/scorer-source-review-v2/SCORER_DELTA_APPROVAL.v2.json",
+    "scope": "Both scorer B1/B2 fixes remain accepted, final interface was an explicit hold.",
+    "sha256": "a71e1b20c0534f6d2ff19b022fc5b461d69b95362016ef64d2b1763c3fdd9b2e"
+  },
+  "selected_source_files_verified": [
+    {
+      "bytes": 22576,
+      "path": "experiments/sota-2026-10-22/audit/epoch39/closure_metadata.py",
+      "sha256": "d8a17a7380de6b7366bd0113eaa056aecccd23ea239fcc0dc523bdb8e0dc02ac"
+    },
+    {
+      "bytes": 15635,
+      "path": "experiments/sota-2026-10-22/audit/epoch39/observe_supervisor_closure.py",
+      "sha256": "936fbcaa01b7e1457832daac5e5713d19ddb693c69124a5fd273501659c4f7a4"
+    },
+    {
+      "bytes": 25028,
+      "path": "experiments/sota-2026-10-22/candidate/epoch39/runtime/launch.py",
+      "sha256": "e9b3646fddcd13f952bb2566824b1f639ebeb8d335a7d8152ba89172498147ea"
+    }
+  ],
+  "status": "REJECTED_INTEGRATION_EXIT_EVIDENCE_RESET",
+  "verification": {
+    "AST_source_checks_only": true,
+    "Git_network_refresh_calls": 0,
+    "actual_data_features_vault_raw_outputs_payload_model_tokenizer_native_scorer_driver_guard_observer_modes": 0,
+    "new_fixture_executions_this_supplement": 0,
+    "old22_or15_suite_reruns": 0,
+    "project_source_edits": 0
+  }
+}

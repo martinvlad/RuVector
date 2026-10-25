@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "epoch": 39,
+  "status": "FROZEN_ZERO_NETWORK_READ_ONLY_CACHE_MATERIALIZATION_AND_REAL_ASSET_VALIDATION_PLAN_NO_ML",
+  "source_checkpoint": "74dbbcb10508ced7e0edf53a0c736f14c19a19a1",
+  "planning_commit": "63f5516d0b7e000a79f31a0de9cfb2814ba12d65",
+  "owner": {
+    "pid": 116430,
+    "startticks": 26811853,
+    "owner_raw_sha256": "9520972db7b60ec65a92e00b7c5dd13e9630b2b0291275e11b61570f72865251"
+  },
+  "paid_API_cap_USD": 0,
+  "paid_API_calls": 0,
+  "GPU_calls": 0,
+  "network_requests_allowed": 0,
+  "weights_downloads_allowed": 0,
+  "maximum_wall_seconds_including_hashes_and_cleanup": 180,
+  "CPU_threads": 2,
+  "CPU_affinity": [
+    0,
+    1
+  ],
+  "materialization_attempts": 1,
+  "allowed_retries": 0,
+  "source_profiles": {
+    "b354": {
+      "cache_directory": "/workspace/ruvector-e36-reader-assets/moritz-b3546ea6",
+      "expected_catalog": {
+        "path": "/workspace/ruvector-e39-engineering-impl/model-feasibility-review-v1/model-research/HISTORIC_E36_BASELINE_MODEL_ASSETS.expected.json",
+        "bytes": 3916,
+        "sha256": "30657c23de7feae478af2b951c814ff5e4be3c69c7a90c08d0f268a2172eea11"
+      },
+      "expected_payload_files": 9,
+      "expected_payload_total_bytes": 881306543,
+      "weight_bytes": 870182606,
+      "weight_sha256": "c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b",
+      "target_directory": "/workspace/ruvector-e39-reader-assets/moritz-b3546ea6",
+      "role": "KNOWN_E34_DEV_HOLD_LEAD_E36_BASELINE_NOT_NEW_WEIGHT_OR_PROVEN_STRONGER"
+    },
+    "xxlarge": {
+      "cache_directory": "/workspace/ruvector-e38-reader-assets/ms-xxlarge-8f8b43dd",
+      "expected_catalog": {
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch39-74dbbcb10508/project/experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.expected.json",
+        "bytes": 2112,
+        "sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806"
+      },
+      "expected_payload_files": 5,
+      "expected_payload_total_bytes": 3136407548,
+      "weight_bytes": 3133958098,
+      "weight_sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+      "target_directory": "/workspace/ruvector-e39-reader-assets/ms-xxlarge-8f8b43dd",
+      "role": "UNCHANGED_ORIGINAL_REFERENCE"
+    }
+  },
+  "minimum_workspace_free_bytes": 16777216,
+  "policy": [
+    "Separate immutable expected catalog authority from observed direct/public materialization locks.",
+    "No symlinks; actual full file size+SHA256 plus ordinary Git body identities or canonical Git-LFS pointeroid/size/typedGitSHA1 as declared in original source catalog. Never compare an expanded payload GitSHA1 to LFS pointer GitSHA1.",
+    "Fresh E39 target dirs only. Copies for writable metadata no larger than16MiB, chmod ONLY new copies0444; hardlink only already read-only fully verified originals. Any larger writable payload stops; no blindcopy/redownload fallback.",
+    "Preserve source bytes/mode/mtime; disclose only necessary hardlink nlink/ctime changes. Direct observed lock0400/0444 and directory0555 after materialization, target filesread-only.",
+    "Verify all runtime17,498 members against inherited manifest/31CPUwheels and all10 native/BGE closure hashes; fresh receipt is not a relabelled E38proof.",
+    "One actual complete shared stdlib validator on all14 actual assets before finalSOURCE freeze, same code used by dispatcher/worker; no stubs/monkeypatch, no ML/tokenizer/native imports/calls or case/oracle access.",
+    "No model initialization, tensor decode, inference, nativeindex/corpus, tokenizer initialization, candidatecase parse, scorer or training permitted by this plan.",
+    "On missing cache/identity failure retain exact partial attempt/receipt outside public project and STOP; do not repeat or mutate originals. Successful caches retained read-only outside source publication. No weights/runtime/secrets copied into R or Git."
+  ],
+  "complete_validator_source_review_required_before_invocation": true,
+  "model_or_data_measurement_authorization": 0,
+  "future_acquisition_if_missing": "Requires a separately frozen free source/price/time/disk/cleanup plan; no authorized paid cap exists.",
+  "created_unix": 1792946442.8496683
+}

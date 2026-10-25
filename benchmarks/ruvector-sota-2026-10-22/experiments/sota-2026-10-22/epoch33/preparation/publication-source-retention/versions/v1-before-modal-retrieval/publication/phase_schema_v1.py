@@ -1,0 +1,35 @@
+"""Frozen E33 proof-carrying NLI SOURCE/FINAL publication schema."""
+P='experiments/sota-2026-10-22/'
+E=P+'epoch33/'
+KIND='REAL_NATIVE_PROOF_CARRYING_NLI_DIAGNOSTIC'
+ROLES={'train':[],'dev':[91,427,299,439,513,268,583,402],'calibration':[],'confirmation':[]}
+HYPOTHESES=['nda-17','nda-7','nda-3']
+FLAGS={'benchmark_accepted':False,'champion_promoted':False,'new_submission':False,'official_SOTA_verified':False,'official_rank':None}
+PLAN_PATH=E+'plan.json'
+FREEZE_PATH=E+'source-freeze.json'
+MODEL_SOURCE_PATH=P+'candidate/epoch33/PRETRAINED_MODEL_SOURCE.json'
+MODEL_REPOSITORY='MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli'
+MODEL_REVISION='b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7'
+MODEL_DIRECTORY='/workspace/ruvector-e33-reader-assets/moritz-b3546ea6'
+SOURCE_PARAMETER_DTYPE='F16'
+COMPUTE_DTYPE='F32'
+TRAINING_LINEAGE_COMPLETE=False
+DIAGNOSTIC_ONLY=True
+ENGINEERING_ROLE='EXPOSED_DEV_REGRESSION'
+ENGINEERING_CASES=6
+ENGINEERING_NLI_FORWARD_CALLS=18
+DEV_CASES=24
+DEV_NLI_FORWARD_CALLS=72
+TOTAL_MAX_NLI_FORWARD_CALLS=90
+ENGINEERING_NATIVE_REQUIRED_CORRECT=6
+PROBABILITY_POLICY={'raw_temperature':1.0,'raw_order_to_canonical_E_C_N':[0,2,1],'certified_final':'ONE_HOT_ONLY_FOR_VALID_FROZEN_WHOLE_INPUT_CERTIFICATE','uncertified_final':'UNCHANGED_RAW_T1','all_raw_and_final_outputs_retained':True,'calibration_allowed':False}
+METRICS_POLICY={'Brier':'mean_sum_squared_multiclass_error','NLL_clip_floor':1e-12,'NLL_clip_count_retained':True,'unclipped_NLL_finiteness_retained':True,'exact_zero_certificate_probabilities_retained':True}
+MODEL_WEIGHTS={'file':'model.safetensors','bytes':870182606,'sha256':'c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b'}
+PHASE_RESERVATIONS={'dev':E+'DEV_ATTEMPT_RESERVATION.json'}
+FINAL_STATUSES={'DEV_DIAGNOSTIC_QUALIFIED','REJECTED_DEV_DIAGNOSTIC','ENGINEERING_REJECTED_DEV_NOT_STARTED'}
+DISPATCH_PATHS={key:E+name for key,name in {'reservation':'DISPATCH_RESERVATION.json','attempt':'DISPATCH_ATTEMPT.json','completion':'SUPERVISOR_COMPLETION.json','closure':'SUPERVISOR_OBSERVED_CLOSURE.json'}.items()}
+BOOT_ID='4632fb06-b0ef-4df5-b72b-0e875bbad810'
+PID_NAMESPACE=4026532200
+CLOSURE_KEYS={'schema_version','epoch','kind','phase','source_plan_sha256','kernel_boot_id','pid_namespace_inode','dispatch_reservation','dispatch_attempt','supervisor_completion','execution','supervisor_identity','physical_supervisor_absent','observed_supervisor_state','physical_supervisor_closed','owned_worker_group_members','unknown_physical_ownership','physical_closure_passed'}
+
+CORPUS_RESERVATION_PATHS={role:E+'runs/dev/'+name for role,name in {'engineering':'ENGINEERING_CORPUS_ATTEMPT_RESERVATION.json','dev':'DEV_CORPUS_ATTEMPT_RESERVATION.json'}.items()}

@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "epoch": 33,
+  "checks_passed": true,
+  "status": "REVIEWED_PLANNING_CONTROLS_AND_SCOPED_PUBLISHER",
+  "checked_at_unix": 1792891819.455591,
+  "stage": "/workspace/ruvector-epoch33-0522a2c521c9/controls-lease",
+  "planning_control_identities_sha256": "92a4228d5f2aa6465a32341240eaf5da057afd4712ed87a7736abd4acd4afc76",
+  "planning_control_identities_bytes": 1004,
+  "parent": "0522a2c521c92c55d843d21c71495a44b43977e5",
+  "root_tree": "1bffc0fea39c8dca8d898db095ff86009d07cdaf",
+  "bench_tree": "fdd85942b2179d7a725a2c53c3fa51dfc0e071f4",
+  "scope_tree": "ec91a12ea01f5055ee8a306da7d2b6de987bcfe7",
+  "expected_Git_leaves": 4616,
+  "existing_Git_paths_changed_only": [
+    "ACTIVE_RUN.json",
+    "CONTINUATION.json"
+  ],
+  "CP_unchanged": true,
+  "CP_rows": 4542,
+  "controls": [
+    {
+      "path": "/workspace/ruvector-epoch33-0522a2c521c9/controls-lease/ACTIVE_RUN.json",
+      "bytes": 1623,
+      "sha256": "9b41a8a63e2954f105c0e7e090791f4759e732d989c0d80855ef33e05d41eb90"
+    },
+    {
+      "path": "/workspace/ruvector-epoch33-0522a2c521c9/controls-lease/CONTINUATION.json",
+      "bytes": 208846,
+      "sha256": "98fbf43b37f05cf30dba17c7189350e50839812d4d96cbc00181b59f8ef976f4"
+    },
+    {
+      "path": "/workspace/ruvector-epoch33-0522a2c521c9/controls-lease/CHECKPOINT_MANIFEST.json",
+      "bytes": 982347,
+      "sha256": "028946668a771ea4f9d69121b46f9e111b4213c3aded6d50c4351823744b9029"
+    }
+  ],
+  "expected_leaves": {
+    "path": "/workspace/ruvector-epoch33-0522a2c521c9/lease-expected-leaves.json",
+    "bytes": 1057498,
+    "sha256": "8433cb11693234e94f4e58b4e677d664e52af234d923989d773c54797885f368"
+  },
+  "mutation_guard_source": {
+    "path": "/workspace/ruvector-epoch33-0522a2c521c9/mutation_guard.py",
+    "bytes": 3541,
+    "sha256": "0f943786075faed3673f323d1fa5ab6ed427be3a0912111c5b946aacea4b26af"
+  },
+  "controller_source": {
+    "path": "/workspace/ruvector-epoch33-0522a2c521c9/controller.js",
+    "bytes": 3571,
+    "sha256": "5bd124a25203fda33a5d547849fb63190736455329bfed910b6d39e1c05d21f0"
+  },
+  "planning_publisher_source": {
+    "path": "/workspace/ruvector-epoch33-0522a2c521c9/lease-publisher.js",
+    "bytes": 5421,
+    "sha256": "042d7d4d78005500c7ee3742995b3840cbea1dc4e4a7d74b86849f3ab8d141e2"
+  },
+  "restoration_independent": {
+    "path": "/workspace/ruvector-e33-independent-audit/restoration-independent-v1.json",
+    "bytes": 4470,
+    "sha256": "58de4e1c3d3ca14c8ef347b9ae184f74ff5985c1c50ca700344bf1815192a390"
+  },
+  "allocation_independent": {
+    "path": "/workspace/ruvector-e33-independent-audit/metadata-allocation-independent-v1.json",
+    "bytes": 3736,
+    "sha256": "bcf0729f79195bf42324d6ba5006647a716a4d5730957d761dc30411e6d7f302"
+  },
+  "reserved_DEV_document_ids": [
+    91,
+    427,
+    299,
+    439,
+    513,
+    268,
+    583,
+    402
+  ],
+  "allocation_sha256": "665530fe525403721afc7c67b39cb040df00ceb0d8e97457e66f8b262d5b66fc",
+  "old_history_champion_rejection_exposed_and_confirmation_records_preserved": true,
+  "unpublished_WAL_rows_before_review": 0,
+  "guard_execution": {
+    "held": true,
+    "pid": 96223,
+    "ticks": 21488832
+  },
+  "reviewed_publication_guards": [
+    "Exact dedicated branch and current BASE parent",
+    "Four unique e33-lease mutation IDs; fsynced request/intent/response WAL",
+    "Stop on previous uncertain mutation or duplicate request ID",
+    "Full4616 tuple and44/13 sibling preservation before commit",
+    "Single actual commit parent and compare-and-set force:false",
+    "Main fetched read-only and observational; no main equality/CAS condition"
+  ],
+  "authorization_limit": "Only exact reviewed planning publication. This report does not authorize model/native/tokenizer, input projection, or training. Actual independent remote planning readback with the exact reserved IDs and allocation hash is required before projection."
+}

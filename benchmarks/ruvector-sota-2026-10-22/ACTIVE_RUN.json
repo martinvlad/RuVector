@@ -2,10 +2,10 @@
   "schema_version": 1,
   "epoch": 33,
   "run_id": "epoch33-0522a2c521c9",
-  "state": "EPOCH33_PLANNING_LEASE",
+  "state": "EPOCH33_SOURCE_FROZEN_DEV_PENDING_ADMISSION",
   "work_active": true,
   "experiments_active": false,
-  "checkpoint_parent": "0522a2c521c92c55d843d21c71495a44b43977e5",
+  "checkpoint_parent": "1eb9a0faf94c87faf7c02ce835e6ba966ffcf10b",
   "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
   "physical_owner": {
     "run_id": "epoch33-0522a2c521c9",
@@ -33,8 +33,8 @@
   "OS_lock_release_pending": true,
   "native_allowed": 0,
   "conditional_train_allowed": 0,
-  "conditional_dev_allowed": 0,
+  "conditional_dev_allowed": 1,
   "confirmation_allowed": 0,
   "conditional_confirmation_allowed": 0,
-  "instruction": "Planning and metadata reservation only. No model/native/tokenizer/training/development/confirmation execution until exact independently reviewed frozen SOURCE and actual remote readback admission; no paid/GPU calls. Preserve submitted Native104, do not change main or submit."
+  "instruction": "Only current DEV after independent actual SOURCE readback and pretrained model/source admission. One nonretryable CPU2/600s phase total; zero current fits/TRAIN. No CONF/full104/benchmark acceptance/promotion/submission. FINAL closes every slot."
 }

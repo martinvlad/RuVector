@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "epoch": 33,
+  "kind": "REAL_NATIVE_TYPED_MODAL_RETRIEVAL_NLI_DIAGNOSTIC",
+  "status": "PREMEASUREMENT_RUNTIME_CORRECTNESS_CORRECTION",
+  "prior_SOURCE_READY_sha256": "1687a36b4c5f07648d52683ee68f04489f7ceabe7e678abee9cb8955600d9ee4",
+  "prior_SOURCE_MANIFEST_sha256": "296b167b33ad66ba5b7e0f871d14cf84a452ea4f4edb12c24d1e299d75ddff03",
+  "finding": "If native helper Popen returns no handle, or a known helper exits without a validated final counter receipt, a final raw.json would incorrectly classify last-checkpoint counters as complete.",
+  "correction": "Require every attempted native helper to be physically closed and its final complete result/counter receipt validated before writing raw.json. Otherwise preserve raw.partial.json and explicit UNKNOWN backend scope with captured counter values; no retry. Valid captured native helpers followed by a later model API error retain existing logical model attempted/completed accounting.",
+  "scientific_query_model_data_gates_budgets_unchanged": true,
+  "actual_model_native_tokenizer_gold_or_dispatch_calls_before_correction": 0,
+  "prior_sealed_sources_retained": "Whole exact project outside in versions/sealed-v1; changed original files also under research/prior-sealed-v1.",
+  "confirmation": []
+}

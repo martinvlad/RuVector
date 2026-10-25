@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "epoch": 33,
+  "kind": "REAL_NATIVE_TYPED_MODAL_RETRIEVAL_NLI_DIAGNOSTIC",
+  "phase": "dev",
+  "raw_arm_names": [
+    "actual_native",
+    "native_original",
+    "lexical",
+    "positional"
+  ],
+  "metric_arm_names": [
+    "native",
+    "native_original",
+    "lexical",
+    "positional"
+  ],
+  "raw_to_metric_arm": {
+    "actual_native": "native",
+    "native_original": "native_original",
+    "lexical": "lexical",
+    "positional": "positional"
+  },
+  "case_fields": [
+    "id",
+    "document_id",
+    "hypothesis_id",
+    "input_sha256",
+    "document",
+    "document_sha256",
+    "hypothesis",
+    "hypothesis_sha256",
+    "native",
+    "native_original",
+    "retrieval_query",
+    "lexical_jaccard_scores",
+    "document_preparation_ref",
+    "arms"
+  ],
+  "arm_fields": [
+    "observed_ranking",
+    "premise",
+    "context",
+    "joint_pair_tokens",
+    "context_seconds",
+    "native_query_seconds",
+    "reader",
+    "decision",
+    "decision_seconds",
+    "semantic_decision_override"
+  ],
+  "decision_fields": [
+    "schema_version",
+    "epoch",
+    "raw_probabilities_E_C_N",
+    "raw_typed_argmax",
+    "final_probabilities_E_C_N",
+    "final_typed_argmax",
+    "policy",
+    "certificate",
+    "fallback_reason",
+    "semantic_decision_override"
+  ],
+  "query_receipt_fields": [
+    "schema_version",
+    "epoch",
+    "policy",
+    "query_source_sha256",
+    "query_policy_sha256",
+    "original_hypothesis_sha256",
+    "original_query",
+    "expanded_query",
+    "original_query_sha256",
+    "expanded_query_sha256",
+    "recognized_predicate",
+    "appended_terms",
+    "expansion_applied",
+    "fallback_reason"
+  ],
+  "native_receipts": "case.native is expanded query; case.native_original is original query. Both result rows come from the same initialized document index. Raw variant query IDs retain original logical caseID plus::retrieval:original or::retrieval:expanded.",
+  "native_compact_schema": "epoch33-native-context-f32le-v1",
+  "role_cases": {
+    "engineering": 6,
+    "conditional_dev": 24
+  },
+  "role_neural_calls": {
+    "engineering": 24,
+    "conditional_dev": 96,
+    "maximum": 120
+  },
+  "role_native_queries": {
+    "engineering": 12,
+    "conditional_dev": 48,
+    "maximum": 60
+  },
+  "probabilities": {
+    "raw_native_order": [
+      "Entailment",
+      "NotMentioned",
+      "Contradiction"
+    ],
+    "canonical_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "permutation": [
+      0,
+      2,
+      1
+    ],
+    "temperature": 1.0,
+    "calibration": false,
+    "proof": "Engineering only onehot certificate, raw unchanged if abstention. DEValwaysrawidentity."
+  },
+  "engineering_gate": "Exposed regression: final native6/6,2of2eachclass,all24 raw forwards/finite source-pair integrity before oracle. Controls descriptive. Not benchmark generalization.",
+  "model_source": {
+    "repository": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "weights_bytes": 870182606,
+    "weights_sha256": "c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b",
+    "source_parameter_dtype": "F16",
+    "compute_dtype": "F32",
+    "parameter_elements": 435064835,
+    "serialized_tensors": 395,
+    "learned_tensors": 394,
+    "legacy_buffer": {
+      "name": "deberta.embeddings.position_ids",
+      "dtype": "I64",
+      "shape": [
+        1,
+        512
+      ],
+      "value": "arange512 checked before anyforward"
+    }
+  },
+  "runtime_refs": "Full plan source/runtime/model/proof/query pins, actual published SOURCE readback and scoped guardian proof precede dispatch. Flat and dict wheel-member aliases must agree exactly.",
+  "timings": "reader.reader_seconds rawNLI; arm.decision_seconds policy-local; sum is composite-local. Query/context/embedding/index and wholeworker resources retained separately, not falsely reported as amortized total serving latency.",
+  "partial_counts": "Missing/partial/invalid native result capture remains UNKNOWN even with observed physical closure. Source-valued checkpoint counters are not complete backend totals. Later model API errors after valid native capture keep existing logical attempted/completed accounting and failed status.",
+  "limits": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "total_outer_seconds": 600,
+    "native_corpus_batches": 2,
+    "outer_workers": 1,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "confirmation": [],
+  "official_eligibility": "HOLD",
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "new_submission": false,
+  "official_rank": null,
+  "native_backend_capture": "Complete final raw only if every attempted helper has returned handle, known zero-exit closure, validated HELPER_COMPLETED source-bound final operation counters, and validated Node guard binary-load counters with exact receipt references. Otherwise raw.partial.json only, explicit UNKNOWN backend scope, retained checkpoint observations, no retry."
+}

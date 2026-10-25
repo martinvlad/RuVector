@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "epoch": 33,
+  "policy": "proof-carrying-closed-legal-atoms-v1",
+  "semantic_scope": "Controlled positive ground-fact language only, after exact full supplied-document equality with this retrieval arm premise. Any unparsed syntax, conflicting exact scalar source, exception, conditional or omitted context abstains. This is not a general free-form legal parser.",
+  "case_or_document_identity_used_by_policy": false,
+  "maximum_document_characters": 8192,
+  "maximum_clauses": 16,
+  "clause_segmentation": {
+    "regex": "[^.!?]+[.!?]",
+    "gaps": "Whitespace only before, between and after all matched clauses; every clause must parse; at least1 and at most16. Internal whitespace is exact grammar syntax. Final period is mandatory.",
+    "source_offset_scope": "Original Unicode character offsets; exact text and SHA256 retained for each parsed clause."
+  },
+  "regex_flags": [
+    "IGNORECASE",
+    "ASCII"
+  ],
+  "forbidden_regex": "\\b(?:if|unless|except|provided|however|subject|notwithstanding|may|might|either|neither|not|no|or|and|but|whether|approximately|when|whenever|where|while|until|because|since|despite|although)\\b",
+  "grammar_patterns": {
+    "termination_exact": "(?P<subject>(?:This|The) (?:Agreement|Contract)) (?P<event>terminates|expires) exactly (?P<value>[1-9][0-9]{0,8}) (?P<unit>days?|months?|years?) after (?P<reference>the (?:Effective|Execution|Start) Date)\\.",
+    "confidentiality_end_link": "The confidentiality obligations also end on that date\\.",
+    "return_obligation": "The (?P<party>Receiving|Disclosing) Party shall return all written Confidential Information within (?P<delay>[1-9][0-9]{0,8}|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve) business days after a written request from the (?P<requester>Receiving|Disclosing) Party\\.",
+    "governing_law": "Disputes under (?P<subject>this (?:Agreement|Contract)) are governed by the laws of (?P<jurisdiction>[A-Za-z][A-Za-z -]{0,63})\\."
+  },
+  "normalization": {
+    "symbolic_identifiers": "lowercase and collapse spaces after regex fullmatch only; never change NLI input or source slices",
+    "exact_positive_scalar": "integer1..999999999; no negative, zero, fractions, decimals, inequalities or unit conversions",
+    "unit": "day/month/year singular or plural normalize by stripping final s only",
+    "word_delays": {
+      "one": 1,
+      "two": 2,
+      "three": 3,
+      "four": 4,
+      "five": 5,
+      "six": 6,
+      "seven": 7,
+      "eight": 8,
+      "nine": 9,
+      "ten": 10,
+      "eleven": 11,
+      "twelve": 12
+    },
+    "jurisdiction": "uninterpreted normalized identifier; no named-place branches",
+    "accepted_character_set": "ASCII only for all parsed source clauses and claim; any non-ASCII source/claim abstains. No Unicode case aliases.",
+    "date_reference": "Only the Effective, Execution or Start Date, with identical subject/event/reference between source and claim. Bare after disclosure has no admitted unique event anchor."
+  },
+  "source_atoms": {
+    "agreement_termination": [
+      "predicate",
+      "subject",
+      "event",
+      "reference",
+      "qualifier",
+      "unit",
+      "value"
+    ],
+    "return_obligation": [
+      "predicate",
+      "party",
+      "modality",
+      "object",
+      "delay_business_days",
+      "trigger",
+      "requester"
+    ],
+    "governing_law": [
+      "predicate",
+      "subject",
+      "event",
+      "jurisdiction"
+    ],
+    "confidentiality_end_same_date": [
+      "predicate",
+      "subject",
+      "parent_event",
+      "reference",
+      "unit",
+      "value"
+    ]
+  },
+  "logical_model": {
+    "primitive_predicates_independent": true,
+    "source_statements": "Positive ground atoms, all conjunctively true. No implicit closed-world negation.",
+    "exact_termination_functional_key": [
+      "subject",
+      "event",
+      "reference",
+      "qualifier",
+      "unit"
+    ],
+    "exact_termination_values": "Positive integers; for the SAME full key, two distinct exact values cannot both hold.",
+    "source_consistency": "If agreement_termination atoms have same subject/event/reference/qualifier but different (unit,value), abstain entirely. No equivalence or conversion guessed.",
+    "end_link": "Only a source clause immediately following an agreement_termination atom; copies its date anchor into confidentiality_end_same_date. Query link without an independent anchor is unsupported and abstains.",
+    "neutral_witness": "Only when claim predicate does not appear in ANY parsed source atom; both claim-true and claim-false extensions then satisfy all source atoms because no declared cross-predicate axioms exist. Different values within an existing predicate do not get a neutral certificate."
+  },
+  "rules_order": [
+    "EXACT_GROUND_FACT",
+    "DISTINCT_EXACT_SAME_EVENT_VALUE",
+    "OPEN_WORLD_UNRELATED_PREDICATE",
+    "ABSTAIN"
+  ],
+  "numeric_identity_fields": [
+    "predicate",
+    "subject",
+    "event",
+    "reference",
+    "qualifier",
+    "unit"
+  ],
+  "coverage": {
+    "premise_equals_full_document": true,
+    "selected_source_spans": "Exactly[[0,len(document)]]; literal document/premise equality, no whitespace or other normalization allowed for coverage.",
+    "retrieval_miss_implies_not_mentioned": false
+  },
+  "probabilities": {
+    "raw": "Original native E,N,C logits and T1 softmax always computed and retained before proof policy. Canonical order E,C,N via[0,2,1].",
+    "certificate": "Exactly onehot on certified conclusion; no fit or calibration. Finite-clippedNLL and Brier must be reported even if this certainty is wrong.",
+    "abstention": "Copy raw T1 E,C,N distribution and raw argmax without any change.",
+    "raw_same_model_ablation": "Score the preserved raw T1 outputs independently with no extra model calls and no postmeasurement best-arm selection."
+  },
+  "engineering_scope": "The six epoch32 CC0 cases are EXPOSED_DEV_REGRESSION; retained original IDs, not fresh confirmation or benchmark generalization.",
+  "confirmation": [],
+  "training_lineage_complete": false,
+  "official_eligibility": "HOLD"
+}

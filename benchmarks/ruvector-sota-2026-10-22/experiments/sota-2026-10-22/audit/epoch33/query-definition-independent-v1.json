@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "epoch": 33,
+  "checks_passed": true,
+  "status": "QUERY_DEFINITION_PROSPECTIVE_SOURCE_ONLY_REVIEW",
+  "checked_at_unix": 1792892690.3906891,
+  "kind": "REAL_NATIVE_TYPED_MODAL_RETRIEVAL_NLI_DIAGNOSTIC",
+  "query_source": {
+    "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/query.py",
+    "bytes": 3192,
+    "sha256": "a3c8ecf9a80dcd0daed2bd62c70a90d66a9273e187734963902a7d52e7820e3f"
+  },
+  "query_policy": {
+    "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/QUERY_POLICY.json",
+    "bytes": 4361,
+    "sha256": "2943d43eb2fc3733daf6eaa31b70cf28420ee6152baf9eaccb13b589e995e167"
+  },
+  "policy_inputs": "Original hypothesis string only plus fixed own-source/policy hashes; no document, ID, label, model output or corpus lookup",
+  "exposed_public_hypothesis_receipts": [
+    {
+      "original_hypothesis_sha256": "b506537a56d1835511cdb83dafd7a8dc8d35ab64ce6cec8d6732bbf820c2ace8",
+      "recognized_predicate": "copy_permission",
+      "original_query_sha256": "b506537a56d1835511cdb83dafd7a8dc8d35ab64ce6cec8d6732bbf820c2ace8",
+      "expanded_query_sha256": "57e35a7a6245641639c5ed7c4c42fc2f8c6c8e1617fdc74e8fad8ca5c8643f12",
+      "added_characters": 84
+    },
+    {
+      "original_hypothesis_sha256": "b6c2c2a4c4f4e07076aea4500a13771c412c98483cbc88a2e4069a5bf7828055",
+      "recognized_predicate": "disclosure_permission",
+      "original_query_sha256": "b6c2c2a4c4f4e07076aea4500a13771c412c98483cbc88a2e4069a5bf7828055",
+      "expanded_query_sha256": "563033f3d4a577876fbb546afb0d25be2019424edca41178fe61a057bbc52834",
+      "added_characters": 116
+    },
+    {
+      "original_hypothesis_sha256": "018cb98fb513532a1527eb90c47462942aeda4992ed47bea5e0fb7b0b8ce95c4",
+      "recognized_predicate": "oral_information_scope",
+      "original_query_sha256": "018cb98fb513532a1527eb90c47462942aeda4992ed47bea5e0fb7b0b8ce95c4",
+      "expanded_query_sha256": "4a06b27f48da5343f99b53d4c16a8d04b3cb3afde26ba733f5ff2b199d28e1bc",
+      "added_characters": 85
+    }
+  ],
+  "generic_synthetic_negation_condition_doublemodal_Unicode_fallback_fixtures": 4,
+  "unchanged_NLI_hypothesis_required": true,
+  "causal_control_required": "Original and expanded native queries use the same document index, search configuration, reader and packing; lexical uses exactly the same expanded query. Actual runtime provenance still requires separate source/trace audit.",
+  "proof_scope": "Exposed engineering only; explicitly disabled for DEV. No proof benchmark-transfer claim.",
+  "premeasurement_redesign": "The first proof-primary proposal had guaranteed zero coverage of all3 modal NDA hypotheses. Root prospectively added the single query treatment and native_original causal control before any new input projection, model/native or labels. No scored variant selection occurred.",
+  "auditor_new_DEV_text_or_gold_reads": 0,
+  "auditor_model_native_tokenizer_calls": 0,
+  "authorization_limit": "Approves the exact query function/policy definition only; not yet the candidate integration, raw-output integrity, scorer or model execution."
+}

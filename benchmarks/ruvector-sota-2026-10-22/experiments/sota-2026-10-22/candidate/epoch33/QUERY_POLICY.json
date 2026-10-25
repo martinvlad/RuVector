@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "epoch": 33,
+  "kind": "REAL_NATIVE_TYPED_MODAL_RETRIEVAL_NLI_DIAGNOSTIC",
+  "policy": "typed-modal-query-expansion-v1",
+  "primary_treatment": "One deterministic augmentation of retrieval queries from positive MAY claim action types. NLI premise packing settings and the original source hypothesis remain unchanged.",
+  "inputs": [
+    "hypothesis only"
+  ],
+  "prohibited_inputs": [
+    "case ID",
+    "document ID",
+    "document text",
+    "labels",
+    "model outputs",
+    "confirmation data"
+  ],
+  "tokenization": {
+    "accepted_for_recognition": "ASCII only, case-insensitive; re.findall([a-z]+) over lowercase source hypothesis",
+    "unicode_fallback": "Keep original hypothesis exactly; no expansion",
+    "modal": "Exactly one token may; parse action only immediately following it",
+    "negation_or_condition_tokens": [
+      "except",
+      "if",
+      "neither",
+      "never",
+      "no",
+      "nor",
+      "not",
+      "provided",
+      "unless",
+      "without"
+    ]
+  },
+  "recognizers": {
+    "copy_permission": {
+      "prefixes": [
+        [
+          "copy"
+        ],
+        [
+          "duplicate"
+        ],
+        [
+          "reproduce"
+        ],
+        [
+          "create",
+          "a",
+          "copy",
+          "of"
+        ]
+      ]
+    },
+    "disclosure_permission": {
+      "prefixes": [
+        [
+          "share"
+        ],
+        [
+          "disclose"
+        ],
+        [
+          "communicate"
+        ],
+        [
+          "provide"
+        ]
+      ],
+      "required_any_tail_token": [
+        "with",
+        "to"
+      ]
+    },
+    "oral_information_scope": {
+      "prefixes": [
+        [
+          "include"
+        ],
+        [
+          "cover"
+        ],
+        [
+          "encompass"
+        ],
+        [
+          "contain"
+        ]
+      ],
+      "required_any_tail_token": [
+        "oral",
+        "orally",
+        "verbal",
+        "verbally",
+        "spoken"
+      ]
+    }
+  },
+  "recognizer_rule": "Exactly one matching action predicate, otherwise retain original query. No model or label selection.",
+  "terms": {
+    "copy_permission": [
+      "copy",
+      "copies",
+      "duplicate",
+      "duplication",
+      "reproduce",
+      "reproduction",
+      "retention"
+    ],
+    "disclosure_permission": [
+      "disclose",
+      "disclosure",
+      "share",
+      "third",
+      "party",
+      "consultant",
+      "agent",
+      "advisor",
+      "adviser",
+      "professional",
+      "representative"
+    ],
+    "oral_information_scope": [
+      "oral",
+      "orally",
+      "verbal",
+      "verbally",
+      "spoken",
+      "unwritten",
+      "information",
+      "disclosure"
+    ]
+  },
+  "formula": "original hypothesis + newline + Retrieval terms: + space-joined fixed predicate terms, iff recognized; otherwise identical original string",
+  "max_added_characters": 256,
+  "BGE_query_prefix": "Represent this sentence for searching relevant passages: ",
+  "BGE_query_token_cap": 256,
+  "truncation": "Forbidden; any over-cap original or expanded whole query is an execution error, never clipped or switched to another policy.",
+  "native_query_order": "Per case original then expanded, sharing the exact same document vector index and k/config.",
+  "query_id_suffixes": {
+    "original": "::retrieval:original",
+    "expanded": "::retrieval:expanded"
+  },
+  "four_arm_contract": {
+    "actual_native": "Expanded-query native hits",
+    "native_original": "Original-query native hits; causal query control on same index/model/doc",
+    "lexical": "Jaccard ranking using exactly the same expanded query string",
+    "positional": "First source units, no query ranking"
+  },
+  "model_hypothesis": "Original unmodified source hypothesis in all four arms.",
+  "raw_NLI_calls": {
+    "engineering": 24,
+    "conditional_DEV": 96,
+    "maximum_total": 120
+  },
+  "native_queries": {
+    "engineering": 12,
+    "conditional_DEV": 48,
+    "maximum_total": 60
+  },
+  "hypothesis_frozen_before_measurements": true,
+  "grid_or_postmeasurement_best_selection": false,
+  "proof_scope": "Exposed engineering regression only. DEV proof disabled; DEV final probabilities exactly raw T1 in every arm. No proof efficacy claim.",
+  "confirmation": [],
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "new_submission": false,
+  "official_rank": null
+}

@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "epoch": 33,
+  "kind": "REAL_NATIVE_TYPED_MODAL_RETRIEVAL_NLI_DIAGNOSTIC",
+  "status": "CANDIDATE_SOURCE_READY_FOR_EXACT_REVIEW_BEFORE_MEASUREMENT",
+  "source_checkpoint": "0522a2c521c92c55d843d21c71495a44b43977e5",
+  "manifest": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/SOURCE_MANIFEST.json",
+    "bytes": 9315,
+    "sha256": "296b167b33ad66ba5b7e0f871d14cf84a452ea4f4edb12c24d1e299d75ddff03"
+  },
+  "files": 43,
+  "worker": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/worker.py",
+    "bytes": 27100,
+    "sha256": "7b80f31e92bdc0bcd3c10486846648f6e802bafd963eebc4eeb27359503d914d"
+  },
+  "model": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/model.py",
+    "bytes": 15003,
+    "sha256": "8bb27dc7d79f2b0a3d27b2d7d82333b1cb442abe3eb3adfeedf4dc37f3a42f52"
+  },
+  "runtime_common": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/runtime/common.py",
+    "bytes": 22869,
+    "sha256": "08075dac21e62e130ea7bee9ad027317e29981386559b0a4366013cce1423b79"
+  },
+  "launch": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/runtime/launch.py",
+    "bytes": 25392,
+    "sha256": "ffb29f92b94dbaed0c52cacc06b96b6d600351af5f50a370a215fbba33f5d3b8"
+  },
+  "query_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/query.py",
+    "bytes": 3192,
+    "sha256": "a3c8ecf9a80dcd0daed2bd62c70a90d66a9273e187734963902a7d52e7820e3f"
+  },
+  "query_policy": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/QUERY_POLICY.json",
+    "bytes": 4361,
+    "sha256": "2943d43eb2fc3733daf6eaa31b70cf28420ee6152baf9eaccb13b589e995e167"
+  },
+  "proof_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/proof.py",
+    "bytes": 9077,
+    "sha256": "ee4f3330194a6a2b5778040e1603e6f3c87281962b28efab6521cb5247d20cbd"
+  },
+  "proof_policy": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/PROOF_POLICY.json",
+    "bytes": 6501,
+    "sha256": "afe5390b5ac876ce32c03c6a6e0a55e02c35ffbf11bdbac57cd6788673df4bc0"
+  },
+  "model_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/PRETRAINED_MODEL_SOURCE.json",
+    "bytes": 1214,
+    "sha256": "7550a10a417423363aa1a6a5db101cbc903f02b7302b7a766b2be9d987ef7944"
+  },
+  "model_assets": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/MODEL_ASSETS.json",
+    "bytes": 3885,
+    "sha256": "b7c0983492c922bd39b6fcc24c9c82b122c01c11cec1539b1671c3236836c181"
+  },
+  "counter_table": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/EXPECTED_COUNTERS.json",
+    "bytes": 9198,
+    "sha256": "afd7020c9590490d30d200000ca0d82f369d950e65eddd7dc584265673fab9bd"
+  },
+  "raw_schema": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/RAW_SCHEMA.json",
+    "bytes": 4495,
+    "sha256": "46c50903944898deab6eea929353ea807902dc4ad075c4ce496b8af835ed2b0a"
+  },
+  "raw_arm_names": [
+    "actual_native",
+    "native_original",
+    "lexical",
+    "positional"
+  ],
+  "source_precision": "Original F16 parameters +I64positionbuffer; losslessCPUF32compute, noquantization",
+  "budgets": {
+    "outer_workers": 1,
+    "total_seconds_including_checks_init_cleanup": 600,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "native_corpus_batches": 2,
+    "native_queries_maximum": 60,
+    "raw_NLI_maximum": 120,
+    "engineering_raw_NLI": 24,
+    "conditional_DEV_raw_NLI": 96,
+    "model_initializations": 1,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "source_only_validation": {
+    "query_fixture_groups": 7,
+    "proof_fixture_groups": 19,
+    "runtime_guard_checks": 20,
+    "observer_fixture_groups": 15,
+    "startup_fault_modes": 4,
+    "actual_model_native_tokenizer_or_gold_calls": 0,
+    "actual_observer_proc_invocations": 0,
+    "actual_dispatches": 0
+  },
+  "pure_fixtures": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/research/final-pure-fixtures.json",
+    "bytes": 7540,
+    "sha256": "eb5fec7f2bf6ea1951084a53b0e37139c8ba93fb63002ff70fcaa6f5922a9503"
+  },
+  "runtime_preflight": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/research/runtime-preflight-final.json",
+    "bytes": 4149,
+    "sha256": "40bf8e07708fed607cd503db26fc673302d3bc1d20bb215038d9918059ac069e"
+  },
+  "engineering_scope": "Six exact exposed epoch32 CC0 DEV regressions, old logical IDs retained; no fresh confirmation/generalization claim.",
+  "DEV_scope": "One fixed new8document24decisionbank with four same-model retrieval arms; proofexplicitlydisabled so final==rawT1, query treatment primary.",
+  "confirmation": [],
+  "training_lineage_complete": false,
+  "official_eligibility": "HOLD",
+  "promotion_allowed": false,
+  "next_required": "Independent exactsource acceptance, root freshactualruntime/sourcevalidation, masterfreeze and connectedGitpublication/readback+newrootadmission, then the one nonretryable actualworker. This source record authorizes no runtime."
+}

@@ -1,0 +1,221 @@
+{
+  "schema_version": 2,
+  "epoch": 33,
+  "audit_kind": "INDEPENDENT_STATIC_CANDIDATE_RUNTIME_REVIEW",
+  "created_at_utc": "2026-10-25T02:11:05.705851+00:00",
+  "status": "PASS_STATIC_CANDIDATE_RUNTIME_REVIEW_NO_OPEN_MATERIAL_FINDINGS",
+  "source_base": "0522a2c521c92c55d843d21c71495a44b43977e5",
+  "candidate_source_root": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33",
+  "baseline_report": {
+    "path": "/workspace/ruvector-e33-independent-audit/candidate-runtime-review/candidate-runtime-review-v1.json",
+    "bytes": 19051,
+    "sha256": "4c5f57119ca7b6c4219b49e88e82c5985938d31318fecacd5b9ba6c98415d07f"
+  },
+  "scope": "This v2 reviews the preserved premeasurement E33-RUNTIME-001 correction. The v1 positive static checks remain applicable to the unchanged bodies and exact source refs there; line offsets inside worker.py changed. Final source/plan seal, model/runtime materialization, real measurement/closure and independent gold scoring are outside this subreview.",
+  "resolved_findings": [
+    {
+      "id": "E33-RUNTIME-001",
+      "previous_severity": "medium",
+      "status": "RESOLVED_BEFORE_MEASUREMENT",
+      "worker_sha256": "e789bc1bc149675d126f14b39c9d0b1415582d22e0a84ad80cce763e4086750b",
+      "correction": [
+        "run_native records the Popen boundary and whether the actual Popen API returned a handle; it does not infer this from later recovered PID metadata.",
+        "native_counter_capture_complete stays false until successful child closure, HELPER_COMPLETED source-bound final result, exact document/query identity and counts, insertion/hit counts, and exact final native operation counters are validated.",
+        "The Node guard log must be present, all rows bind the returned helper PID, and its final NATIVE_BINARY_LOAD_AFTER row must bind dev/role with exact integer network0/native binary attempt1/completed1 counters. Its exact byte reference is retained.",
+        "native_capture_observation requires each attempted helper to have returned a handle, known zero-exit closure, complete validated counter capture, and exact native-result plus Node-guard byte references; the number of observed boundaries must equal the attempt counter.",
+        "write_raw_capture writes final raw.json only when that observation is complete. Any uncertainty preserves raw.partial.json and backend_execution_since_checkpoint UNKNOWN, so unchanged launcher selects partial counters and operation_counts_complete=false.",
+        "A later model API error after genuinely complete native capture may retain final raw with failed status/errors; existing acceptance gates still reject the run. This preserves the prior logical API-count scope and does not claim the failed run completed."
+      ],
+      "source_refs": {
+        "native_capture_observation_line": 74,
+        "write_raw_capture_line": 109,
+        "run_native_line": 165,
+        "main_line": 345,
+        "RAW_SCHEMA_partial_counts_line": 139,
+        "RAW_SCHEMA_native_backend_capture_line": 157
+      },
+      "validation": {
+        "owner_AST_isolated_fixture_tests": 6,
+        "independent_AST_isolated_in_memory_checks": 18,
+        "status": "PASS",
+        "fixtures": [
+          {
+            "path": "/workspace/ruvector-e33-independent-audit/candidate-runtime-review/owner-pure-native-capture-v2.txt",
+            "bytes": 1042,
+            "sha256": "4bc4cfe5f87884e5d85191398a6284537484784685004b5109c7b81092adc7b2"
+          },
+          {
+            "path": "/workspace/ruvector-e33-independent-audit/candidate-runtime-review/independent-pure-native-capture-v2.json",
+            "bytes": 1387,
+            "sha256": "ae78d3a25e833285b179f07380af2ec511f11bf4fb20cdbbadd80725097a81c6"
+          }
+        ]
+      },
+      "fixture_scope": "Owner fixtures execute only AST-extracted pure source with fake Popen objects and authored transport metadata. Temporary fixture directories were scoped under this audit directory and automatically removed. Independent fixtures use in-memory paths and captured writes. No actual process, model, tokenizer, native addon, labels, weights or original dataset were accessed."
+    }
+  ],
+  "open_findings": [],
+  "clarifications": [
+    "Opaque engineering oracle SHA/file-size verification before execution is permitted source integrity; semantic expected-label decode/counters remain after all24 engineering finite readouts and helper closure. No oracle labels were read by this reviewer.",
+    "BGE fixed representation instruction prefix is expected encoder formatting; both native variants receive it. Lexical receives the same expanded semantic query without the embedding-only instruction. No treatment-content mismatch is claimed.",
+    "Historical pinned binary2.3.0 transport evidence resolves incomplete SearchResult typings; no addon probe was run.",
+    "Publication/scorer top-level actual corpus totals and lower-bound display under missing execution are parent/data/publication review responsibilities; this subreview confirms worker/launcher raw-vs-partial propagation."
+  ],
+  "methods_and_limits": [
+    "Read source with line numbers",
+    "Parse inspected Python files with stdlib ast only",
+    "Compare current native transport callsites against E32 source and historical transport-only output",
+    "Hash source/report metadata only; no model assets or oracle files hashed by this reviewer",
+    "Run inspected AST-isolated owner native-capture fixtures only, with no actual subprocess execution",
+    "Run18 independent pure in-memory completion/write-boundary checks",
+    "No whole preflight, startup fault probe, ML import, inference, tokenizer use, source gold read, native addon call, scanner/network call or Git mutation"
+  ],
+  "changed_inspected_sources": [
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/worker.py",
+      "before_sha256": "7b80f31e92bdc0bcd3c10486846648f6e802bafd963eebc4eeb27359503d914d",
+      "after_sha256": "e789bc1bc149675d126f14b39c9d0b1415582d22e0a84ad80cce763e4086750b"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/RAW_SCHEMA.json",
+      "before_sha256": "46c50903944898deab6eea929353ea807902dc4ad075c4ce496b8af835ed2b0a",
+      "after_sha256": "d77cbc976b8799deeec52db3a3dc1e1028d916d99dc4a7d5392422d030d1f10c"
+    }
+  ],
+  "source_refs": [
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/model.py",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/model.py",
+      "bytes": 15003,
+      "sha256": "8bb27dc7d79f2b0a3d27b2d7d82333b1cb442abe3eb3adfeedf4dc37f3a42f52"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/algorithm.py",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/algorithm.py",
+      "bytes": 1001,
+      "sha256": "e44d5d9afcef3b94ddcd6709ad2af1cbcbc3d437c6e42d82e1e69ff193aeba69"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/context_engine.py",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/context_engine.py",
+      "bytes": 9837,
+      "sha256": "59bc7dcb9e7ab9c84f8e547e5bc583f4adb21099cceb2ae0f959370187ce6138"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/evidence.py",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/evidence.py",
+      "bytes": 5983,
+      "sha256": "8119445081c7147fedc148365a966836376ab9fcd0c7e8aac496f5d042d399eb"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/worker.py",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/worker.py",
+      "bytes": 33337,
+      "sha256": "e789bc1bc149675d126f14b39c9d0b1415582d22e0a84ad80cce763e4086750b"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/proof.py",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/proof.py",
+      "bytes": 9077,
+      "sha256": "ee4f3330194a6a2b5778040e1603e6f3c87281962b28efab6521cb5247d20cbd"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/vector_codec.py",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/vector_codec.py",
+      "bytes": 1657,
+      "sha256": "b2bfbb9fae8aacc3127a2516d387e3a8e99eb0db15d6cdfea0cf137fa19a3906"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/native_helper.cjs",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/native_helper.cjs",
+      "bytes": 11341,
+      "sha256": "d8c0d38d329da1fa70562e01dff99c6fcb074174990ebd69e829e992189e73af"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/RAW_SCHEMA.json",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/RAW_SCHEMA.json",
+      "bytes": 5015,
+      "sha256": "d77cbc976b8799deeec52db3a3dc1e1028d916d99dc4a7d5392422d030d1f10c"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/EXPECTED_COUNTERS.json",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/EXPECTED_COUNTERS.json",
+      "bytes": 9198,
+      "sha256": "afd7020c9590490d30d200000ca0d82f369d950e65eddd7dc584265673fab9bd"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/PROOF_POLICY.json",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/PROOF_POLICY.json",
+      "bytes": 6501,
+      "sha256": "afe5390b5ac876ce32c03c6a6e0a55e02c35ffbf11bdbac57cd6788673df4bc0"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/runtime/common.py",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/runtime/common.py",
+      "bytes": 22869,
+      "sha256": "08075dac21e62e130ea7bee9ad027317e29981386559b0a4366013cce1423b79"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/runtime/launch.py",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/runtime/launch.py",
+      "bytes": 25392,
+      "sha256": "ffb29f92b94dbaed0c52cacc06b96b6d600351af5f50a370a215fbba33f5d3b8"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/runtime/cpu_guard.py",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/runtime/cpu_guard.py",
+      "bytes": 5191,
+      "sha256": "b774b3276c46b1c356435477f9b0385b19160ad9cd1932ec56071733420b5202"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/runtime/network_guard.py",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/runtime/network_guard.py",
+      "bytes": 6893,
+      "sha256": "6330b1cf2a46a838839f89cb9dfb1ee0145f470f018a89ed39f30c6c1c3bfeef"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/runtime/node_guard.cjs",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/runtime/node_guard.cjs",
+      "bytes": 13524,
+      "sha256": "7abf68581371f9d9bda16a26df28ba67f5fceeddb30f4951a856833e3f8c8857"
+    },
+    {
+      "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/test_native_capture.py",
+      "relative_path": "experiments/sota-2026-10-22/candidate/epoch33/test_native_capture.py",
+      "bytes": 11723,
+      "sha256": "903f9ca96888f4525fc8d8317e55b08908260cc44c32180fb50339146fe6d103"
+    }
+  ],
+  "dependency_source_refs": [
+    {
+      "path": "/workspace/ruvector-epoch33-0522a2c521c9/project/experiments/sota-2026-10-22/candidate/epoch3/models.py",
+      "bytes": 4708,
+      "sha256": "c5cf3500a89837e71adc754f0dc96d090e172068031545fc55ee349e80210716"
+    },
+    {
+      "path": "/workspace/ruvector-epoch33-0522a2c521c9/project/experiments/sota-2026-10-22/candidate/epoch22/context.py",
+      "bytes": 12602,
+      "sha256": "9ca2968ed800443bc75fac452daf2cbf17bf27cf1b3b75cbfb220bfa23a9e727"
+    },
+    {
+      "path": "/workspace/ruvector-epoch33-0522a2c521c9/project/experiments/sota-2026-10-22/candidate/epoch6/context.py",
+      "bytes": 9205,
+      "sha256": "28bceb95282ec3e3e938f3211ccad04d2369fa29e1f191f187566339ae3b44d2"
+    },
+    {
+      "path": "/workspace/ruvector-epoch33-0522a2c521c9/project/experiments/sota-2026-10-22/candidate/epoch15/context.py",
+      "bytes": 11070,
+      "sha256": "9bf168e90511708c2aa5e6248d1806c57e5fc48ffa1c97ceab218c757e5f76fb"
+    },
+    {
+      "path": "/workspace/ruvector-epoch33-0522a2c521c9/project/retrieval/node_modules/@ruvector/core/index.js",
+      "bytes": 1357,
+      "sha256": "eeba197be4085adb3492b8bc53cd61870f57d6bc18a9a5f1cd2ebec4b1908bee"
+    },
+    {
+      "path": "/workspace/ruvector-epoch33-0522a2c521c9/project/retrieval/node_modules/@ruvector/core/index.d.ts",
+      "bytes": 768,
+      "sha256": "36411710e6879c76dca228c4cff97993c4e95cee70388c2f936c79b01536ac54"
+    }
+  ]
+}

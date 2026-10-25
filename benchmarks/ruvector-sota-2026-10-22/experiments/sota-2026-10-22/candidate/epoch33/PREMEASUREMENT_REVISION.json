@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "epoch": 33,
+  "status": "PROSPECTIVE_DESIGN_REVISION_BEFORE_MEASUREMENT",
+  "source_checkpoint": "0522a2c521c92c55d843d21c71495a44b43977e5",
+  "finding": "All three fixed known public NDA hypotheses contain may and are outside the closed proof grammar. Complete-contract parsing would also usually abstain. The proof-only treatment therefore has zero possible fixed-DEV coverage and cannot test benchmark improvement.",
+  "prior_policy": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/research/premeasurement-v1/PROOF_POLICY.json",
+    "bytes": 6101,
+    "sha256": "deb04ef7109820f9882a12db945d53acf75617607cf8fd47e00012f7fd8f9229"
+  },
+  "new_primary_treatment": "One deterministic generic typed-modal query expansion, compared with original native queries and same-expanded lexical/positional retrieval using the same frozen pretrained reader and input hypotheses.",
+  "four_arms": [
+    "actual_native",
+    "native_original",
+    "lexical",
+    "positional"
+  ],
+  "engineering_raw_NLI_calls": 24,
+  "conditional_DEV_raw_NLI_calls": 96,
+  "maximum_raw_NLI_calls": 120,
+  "maximum_native_queries": 60,
+  "maximum_native_corpus_batches": 2,
+  "maximum_outer_workers": 1,
+  "maximum_seconds_total": 600,
+  "CPU_affinity": [
+    0,
+    1
+  ],
+  "proof_scope": "Exposed engineering regression only. Proof disabled for DEV; every DEV final probability equals raw T1 output. No proof efficacy or generalization claim.",
+  "actual_model_native_tokenizer_gold_calls_before_revision": 0,
+  "new_DEV_document_text_or_length_reads_by_candidate": 0,
+  "confirmation": [],
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "new_submission": false,
+  "official_rank": null
+}

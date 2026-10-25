@@ -1,0 +1,107 @@
+{
+  "schema_version": 2,
+  "epoch": 33,
+  "checks_passed": true,
+  "status": "EXACT_CANDIDATE_V2_OBSERVER_DISPATCH_SOURCE_ACCEPTED_FOR_COPY_ONLY",
+  "checked_at_unix": 1792894746.9323347,
+  "kind": "REAL_NATIVE_TYPED_MODAL_RETRIEVAL_NLI_DIAGNOSTIC",
+  "candidate_READY": {
+    "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/SOURCE_READY.json",
+    "bytes": 6097,
+    "sha256": "ec8f6be43a2f7ab2903f8319cebf96d47c59ebad5f95ed07240dfb03bbf70a6a"
+  },
+  "candidate_manifest": {
+    "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/candidate/epoch33/SOURCE_MANIFEST.json",
+    "bytes": 11634,
+    "sha256": "476805aba76f2a417c824629530de39b0984930a3f26c992167b01f4d26ba71d"
+  },
+  "candidate_source_files_verified": 51,
+  "candidate_full_source_review": {
+    "path": "/workspace/ruvector-e33-independent-audit/candidate-runtime-review/candidate-runtime-review-v2.json",
+    "bytes": 13574,
+    "sha256": "25f465a6aa217929d22c1b926b2fd5bdc33dbac6ea9899521fa6e12ebc29a791"
+  },
+  "observer_READY": {
+    "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/audit/epoch33/OBSERVER_SOURCE_READY.json",
+    "bytes": 2097,
+    "sha256": "4f3ce462301b1f5a91c1d4474179b6cb571bdac3202809b5dbe02e7cf004aeb3"
+  },
+  "dispatch_READY": {
+    "path": "/workspace/ruvector-e33-candidate-impl/project/experiments/sota-2026-10-22/epoch33/preparation/DISPATCH_SOURCE_READY.json",
+    "bytes": 1018,
+    "sha256": "de66ce403b9809fa455a6840e73a2242e6e82ffd63d2d11194ecc14d81c9332e"
+  },
+  "observer_source": {
+    "path": "experiments/sota-2026-10-22/audit/epoch33/observe_supervisor_closure.py",
+    "bytes": 35453,
+    "sha256": "3e45a8e08d2eae41514bd02398ccf26a8bade79516bf5f0019d0a1f513c95371"
+  },
+  "dispatch_source": {
+    "path": "experiments/sota-2026-10-22/epoch33/preparation/dispatch_once.py",
+    "bytes": 8988,
+    "sha256": "0e49fdedd3049f11e0c4d869fd0ed0822bc84887f17fe9f4f9d1d57824bac1bd"
+  },
+  "scientific_bodies_unchanged_from_preserved_prior_seal": [
+    "model",
+    "runtime_common",
+    "launch",
+    "query_source",
+    "query_policy",
+    "proof_source",
+    "proof_policy",
+    "model_source",
+    "model_assets",
+    "counter_table"
+  ],
+  "query_definition_prior_review": {
+    "path": "/workspace/ruvector-e33-independent-audit/query-definition-independent-v1.json",
+    "bytes": 3167,
+    "sha256": "950acc8f20f7e54e7cf197280d0c3384c12524c62c4a38fa74fb87aae3f1eec7"
+  },
+  "runtime_model_assets_prior_review": {
+    "path": "/workspace/ruvector-e33-independent-audit/runtime-model-assets-independent-v1.json",
+    "bytes": 4302,
+    "sha256": "ebc82df6e4b6bc8cc2ed599dbe170ae388d54fa183951e6eb3b5f504fe75a226"
+  },
+  "data_input_prior_review": {
+    "path": "/workspace/ruvector-e33-independent-audit/projected-inputs-independent-v1.json",
+    "bytes": 4135,
+    "sha256": "c2a2832de3e807cf3007e9a6f619a9e5ea0d0d5bfff92eeab5a661fdf1b9684c"
+  },
+  "counters": {
+    "schema_keys": 81,
+    "full_raw_NLI": 120,
+    "engineering_raw_NLI": 24,
+    "conditional_DEV_raw_NLI": 96,
+    "full_native_queries": 60,
+    "refusal_native_queries": 12,
+    "full_native_corpora": 2,
+    "refusal_native_corpora": 1,
+    "outer_workers": 1,
+    "total_seconds": 600,
+    "CPU_affinity": [
+      0,
+      1
+    ]
+  },
+  "reviewed_semantics": [
+    "One hypothesis-only generic query expansion; same-index original-query native causal control, expanded lexical control, positional control; original NLI hypothesis unchanged.",
+    "Proof only on exposed engineering regressions with exact full-source coverage; all DEV final predictions/probabilities exactly raw T1 and explicit proof_disabled_for_DEV.",
+    "F16 source values losslessly materialize as stock CPU F32 DeBERTa; strict keys/shapes/parameter count/buffer semantics, no quantization/training/warmup.",
+    "All24 engineering raw NLI readouts and closed native helper precede semantic engineering oracle comparison; DEV only if native engineering final6/6.",
+    "Resolved E33-RUNTIME-001: uncertain native Popen, closure or final native/Node counter capture forbids raw.json; partial-only UNKNOWN and no retry. Later physical closure cannot upgrade counts.",
+    "Observer hashes opaque plan pins only, decodes execution/process metadata only; exact known identity, two coherent snapshots, bound dispatch/execution/completion and terminal zero-capacity criterion. Closed Z remains present; detached exit status unobserved.",
+    "Dispatch exact canonical path/interpreter/current lock/admission/plan/pins/resources and >=615second lease; fsynced exclusive reservation before exactly one Popen, no retry on uncertainty; taskset0,1/start_new_session/close_fds.",
+    "Quality ablations share model/index/packing; fixed query/arm order can affect observed latency, so no causal speedup claim."
+  ],
+  "independent_current_observer_fixture_run": {
+    "command": "python -B -m unittest -v test_observe_supervisor_closure",
+    "fixture_groups": 15,
+    "exit_code": 0,
+    "actual_live_observer_invocations": 0,
+    "scope": "In-memory/mocked proc and temporary fixture metadata only; TMPDIR under audit directory."
+  },
+  "auditor_model_native_tokenizer_original_annotated_source_gold_Git_mutations": 0,
+  "copy_to_project_authorized": true,
+  "authorization_limit": "Exact51manifest files, candidate manifest/READY, observer source/tests/READY/priorREADY, dispatch source/READY may be byte-copied after root destination checks. This is source acceptance only. Final scorer seal, master plan/freeze, controls/stage, actual connected SOURCE publication/readback and new admission remain required before any single worker/observer/dispatch execution."
+}

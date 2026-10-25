@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "0522a2c521c92c55d843d21c71495a44b43977e5",
-  "checkpoint_manifest_sha256": "028946668a771ea4f9d69121b46f9e111b4213c3aded6d50c4351823744b9029",
+  "prior_published_base_commit": "1eb9a0faf94c87faf7c02ce835e6ba966ffcf10b",
+  "checkpoint_manifest_sha256": "f5a1f2757c011096c64bbd320093ad3790f18e45fb819402804ac3f521a8473e",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -1316,10 +1316,10 @@
     "schema_version": 1,
     "epoch": 33,
     "run_id": "epoch33-0522a2c521c9",
-    "state": "EPOCH33_PLANNING_LEASE",
+    "state": "EPOCH33_SOURCE_FROZEN_DEV_PENDING_ADMISSION",
     "work_active": true,
     "experiments_active": false,
-    "checkpoint_parent": "0522a2c521c92c55d843d21c71495a44b43977e5",
+    "checkpoint_parent": "1eb9a0faf94c87faf7c02ce835e6ba966ffcf10b",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
       "run_id": "epoch33-0522a2c521c9",
@@ -1347,10 +1347,10 @@
     "OS_lock_release_pending": true,
     "native_allowed": 0,
     "conditional_train_allowed": 0,
-    "conditional_dev_allowed": 0,
+    "conditional_dev_allowed": 1,
     "confirmation_allowed": 0,
     "conditional_confirmation_allowed": 0,
-    "instruction": "Planning and metadata reservation only. No model/native/tokenizer/training/development/confirmation execution until exact independently reviewed frozen SOURCE and actual remote readback admission; no paid/GPU calls. Preserve submitted Native104, do not change main or submit.",
+    "instruction": "Only current DEV after independent actual SOURCE readback and pretrained model/source admission. One nonretryable CPU2/600s phase total; zero current fits/TRAIN. No CONF/full104/benchmark acceptance/promotion/submission. FINAL closes every slot.",
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -1543,6 +1543,42 @@
           246,
           242,
           448
+        ],
+        "calibration": [],
+        "confirmation": []
+      },
+      "hypotheses": [
+        "nda-17",
+        "nda-7",
+        "nda-3"
+      ],
+      "all8_document_ids_permanently_retired": true,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 33,
+      "kind": "FROZEN_TYPED_MODAL_RETRIEVAL_DEV_ROLES",
+      "document_ids": [
+        91,
+        427,
+        299,
+        439,
+        513,
+        268,
+        583,
+        402
+      ],
+      "data_roles": {
+        "train": [],
+        "dev": [
+          91,
+          427,
+          299,
+          439,
+          513,
+          268,
+          583,
+          402
         ],
         "calibration": [],
         "confirmation": []
@@ -5546,5 +5582,123 @@
     "input_projections_at_reservation": 0,
     "model_native_tokenizer_calls": 0,
     "rule": "Fixed once from metadata; no redraw/length or label filtering. All prior exposed sets remain DEV forever; no fresh confirmation or promotion authorized."
+  },
+  "epoch33_frozen_study": {
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch33/plan.json",
+      "bytes": 71524,
+      "sha256": "45bac35e46d9b038a4b37e4f330d9d6c33aa102abec5f92a3f18dc7c50779abd"
+    },
+    "source_freeze": {
+      "path": "experiments/sota-2026-10-22/epoch33/source-freeze.json",
+      "bytes": 53316,
+      "sha256": "f33984120c33cf18eeeb92905b6e2407e5ce4894601cc6e2daf71366571b6f70"
+    }
+  },
+  "epoch33_data_roles": {
+    "train": [],
+    "dev": [
+      91,
+      427,
+      299,
+      439,
+      513,
+      268,
+      583,
+      402
+    ],
+    "calibration": [],
+    "confirmation": [],
+    "hypotheses": [
+      "nda-17",
+      "nda-7",
+      "nda-3"
+    ],
+    "used_confirmation_identities": [],
+    "retired_document_ids": [
+      91,
+      427,
+      299,
+      439,
+      513,
+      268,
+      583,
+      402
+    ],
+    "partition_after_projection": {
+      "exposed": 317,
+      "unreserved": 82,
+      "reserved_confirmation": 24,
+      "total": 423
+    },
+    "all8_current_DEV_document_ids_permanently_exposed": true
+  },
+  "epoch33_pretrained_model_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch33/PRETRAINED_MODEL_SOURCE.json",
+    "bytes": 1214,
+    "sha256": "7550a10a417423363aa1a6a5db101cbc903f02b7302b7a766b2be9d987ef7944"
+  },
+  "epoch33_preregistration_revision": {
+    "status": "PROSPECTIVE_SUPERSESSION_BEFORE_MEASUREMENTS",
+    "prior_planning_kind": "REAL_NATIVE_PROOF_CARRYING_NLI_DIAGNOSTIC",
+    "final_kind": "REAL_NATIVE_TYPED_MODAL_RETRIEVAL_NLI_DIAGNOSTIC",
+    "reason": "Static independent audit showed first proof-only grammar cannot affect any fixed benchmark hypothesis; primary study replaced before any model/native measurement by deterministic typed-modal query expansion with original-query native causal control.",
+    "record": {
+      "path": "experiments/sota-2026-10-22/epoch33/preparation/premeasurement-design-revision-v2.json",
+      "bytes": 1263,
+      "sha256": "9b3a6cf80aa9a59d5198e78c7f36abe77519f57ebebd5364ee40e79ce89cf424"
+    },
+    "four_arms": [
+      "native",
+      "native_original",
+      "lexical",
+      "positional"
+    ],
+    "proof_on_DEV": "DISABLED; final probabilities equal raw T1; no proof efficacy claim",
+    "fixed_reader_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "fixed_DEV_documents": [
+      91,
+      427,
+      299,
+      439,
+      513,
+      268,
+      583,
+      402
+    ],
+    "DEV_redraws": 0,
+    "model_native_measurements_before_change": 0,
+    "maximum_raw_NLI_forwards": 120,
+    "maximum_native_queries": 60,
+    "maximum_native_corpus_batches": 2,
+    "maximum_outer_worker_seconds": 600,
+    "CPU_threads": 2,
+    "paid_GPU_calls": 0,
+    "confirmation_identities": [],
+    "official_eligibility": "HOLD",
+    "raw_arm_names": [
+      "actual_native",
+      "native_original",
+      "lexical",
+      "positional"
+    ],
+    "metric_arm_names": [
+      "native",
+      "native_original",
+      "lexical",
+      "positional"
+    ],
+    "raw_to_metric_arm_mapping": {
+      "actual_native": "native",
+      "native_original": "native_original",
+      "lexical": "lexical",
+      "positional": "positional"
+    },
+    "four_arms_scope": "Metric names; raw actual_native is metric native"
+  },
+  "epoch33_official_refresh": {
+    "path": "experiments/sota-2026-10-22/legal-transfer/epoch33/benchmark-refresh.json",
+    "bytes": 10881,
+    "sha256": "3037ce215104e55d38a74fc93e43057a4405a44318f1eb4257aada86b94814a8"
   }
 }

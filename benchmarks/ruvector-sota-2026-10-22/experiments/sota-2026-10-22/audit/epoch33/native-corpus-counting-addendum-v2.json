@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "epoch": 33,
+  "kind": "REAL_NATIVE_TYPED_MODAL_RETRIEVAL_NLI_DIAGNOSTIC",
+  "counting_rule": "One outer logical worker slot is max(dispatch reservation, phase reservation), never their sum. Up to2 sequential native corpus helpers each hold one index/document and original+expanded query percase. Six exposed regression docs/12nativequeries thenconditional8DEVdocs/48queries.24+96rawNNI. A regression certificate never skips/adds a raw NLI call; proof disabledonDEV.",
+  "maximum_outer_workers": 1,
+  "maximum_native_corpus_batches": 2,
+  "whole_worker_seconds_including_checks_init_cleanup": 600,
+  "raw_regression_forwards": 24,
+  "conditional_raw_DEV_forwards": 96,
+  "maximum_raw_NLI_forwards": 120,
+  "expected_policy_decisions_equal_completed_raw_readouts": true,
+  "unknown_counts": "Missing or partial capture leaves actual totals UNKNOWN with observed lower bounds and burned reservation. Do not infer0backend execution from absentoutput.",
+  "CPU_affinity": [
+    0,
+    1
+  ],
+  "paid_calls": 0,
+  "GPU_calls": 0,
+  "retries": 0,
+  "confirmation": [],
+  "maximum_native_queries": 60,
+  "engineering_native_queries": 12,
+  "conditional_DEV_native_queries": 48
+}

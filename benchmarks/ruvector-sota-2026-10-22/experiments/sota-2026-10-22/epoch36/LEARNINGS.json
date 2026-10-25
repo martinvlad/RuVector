@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "epoch": 36,
+  "kind": "ENGINEERING_PAIRED_READER_SOURCE_COVERAGE",
+  "status": "REJECTED_ENGINEERING_ADMISSION_INTEGRITY_PASSED",
+  "recorded_at": "2026-10-25T09:58:16.902219+00:00",
+  "results": {
+    "path": "experiments/sota-2026-10-22/epoch36/RESULTS.json",
+    "bytes": 237828,
+    "sha256": "90c7575b49d14cdd6a116543a9c1eead4161faa6c6913778dc1e68097bee8716"
+  },
+  "source_plan": {
+    "path": "experiments/sota-2026-10-22/epoch36/plan.json",
+    "bytes": 85698,
+    "sha256": "9185bffb166e5250db31d50bc0417a91b6421475026cfa242db5e680fca0574c"
+  },
+  "source_commit": "9bbc3df9bb6fec2e245b2090ad9ee5671c7cd7af",
+  "engineering_passed": false,
+  "failed_frozen_gates": [
+    "primary_all9_correct",
+    "primary_all3_per_class_correct",
+    "full_source_model_accuracy_gain_at_least2"
+  ],
+  "metrics": {
+    "b354_full_source": {
+      "n": 9,
+      "correct": 5,
+      "accuracy": 0.5555555555555556,
+      "Brier": 0.7142541057348134,
+      "NLL_clipped_1e-12": 1.546116141252812,
+      "NLL_clip_count": 0,
+      "by_class": {
+        "contradiction": {
+          "correct": 2,
+          "n": 3
+        },
+        "entailment": {
+          "correct": 2,
+          "n": 3
+        },
+        "not_mentioned": {
+          "correct": 1,
+          "n": 3
+        }
+      }
+    },
+    "b354_native_two": {
+      "n": 9,
+      "correct": 3,
+      "accuracy": 0.3333333333333333,
+      "Brier": 1.1715958697171471,
+      "NLL_clipped_1e-12": 3.193755156846318,
+      "NLL_clip_count": 0,
+      "by_class": {
+        "contradiction": {
+          "correct": 1,
+          "n": 3
+        },
+        "entailment": {
+          "correct": 2,
+          "n": 3
+        },
+        "not_mentioned": {
+          "correct": 0,
+          "n": 3
+        }
+      }
+    },
+    "xxlarge_full_source": {
+      "n": 9,
+      "correct": 5,
+      "accuracy": 0.5555555555555556,
+      "Brier": 0.5901205516046854,
+      "NLL_clipped_1e-12": 1.0458148443441768,
+      "NLL_clip_count": 0,
+      "by_class": {
+        "contradiction": {
+          "correct": 2,
+          "n": 3
+        },
+        "entailment": {
+          "correct": 1,
+          "n": 3
+        },
+        "not_mentioned": {
+          "correct": 2,
+          "n": 3
+        }
+      }
+    },
+    "xxlarge_lexical_two": {
+      "n": 9,
+      "correct": 4,
+      "accuracy": 0.4444444444444444,
+      "Brier": 0.7294006998302542,
+      "NLL_clipped_1e-12": 1.4735258161629536,
+      "NLL_clip_count": 0,
+      "by_class": {
+        "contradiction": {
+          "correct": 0,
+          "n": 3
+        },
+        "entailment": {
+          "correct": 3,
+          "n": 3
+        },
+        "not_mentioned": {
+          "correct": 1,
+          "n": 3
+        }
+      }
+    },
+    "xxlarge_native_two": {
+      "n": 9,
+      "correct": 2,
+      "accuracy": 0.2222222222222222,
+      "Brier": 0.8612727642160917,
+      "NLL_clipped_1e-12": 1.6468445793482338,
+      "NLL_clip_count": 0,
+      "by_class": {
+        "contradiction": {
+          "correct": 0,
+          "n": 3
+        },
+        "entailment": {
+          "correct": 2,
+          "n": 3
+        },
+        "not_mentioned": {
+          "correct": 0,
+          "n": 3
+        }
+      }
+    },
+    "xxlarge_positional_two": {
+      "n": 9,
+      "correct": 4,
+      "accuracy": 0.4444444444444444,
+      "Brier": 0.7799142745513294,
+      "NLL_clipped_1e-12": 1.7214177515140898,
+      "NLL_clip_count": 0,
+      "by_class": {
+        "contradiction": {
+          "correct": 1,
+          "n": 3
+        },
+        "entailment": {
+          "correct": 2,
+          "n": 3
+        },
+        "not_mentioned": {
+          "correct": 1,
+          "n": 3
+        }
+      }
+    }
+  },
+  "primary_errors": [
+    {
+      "id": "epoch36:cc0:paired-reader:01",
+      "gold": "entailment",
+      "prediction": "not_mentioned",
+      "mechanism": "percentage_points_versus_relative_percent"
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:02",
+      "gold": "entailment",
+      "prediction": "not_mentioned",
+      "mechanism": "count_weighted_mean_across_two_categories"
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:06",
+      "gold": "contradiction",
+      "prediction": "entailment",
+      "mechanism": "known_overlap_requires_inclusion_exclusion_for_unique_people"
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:07",
+      "gold": "not_mentioned",
+      "prediction": "contradiction",
+      "mechanism": "known_marginal_counts_leave_joint_membership_unidentified"
+    }
+  ],
+  "actual_execution": {
+    "native_corpus_batches_attempted": 1,
+    "native_corpus_batches_completed": 1,
+    "native_indexes": 9,
+    "native_queries": 9,
+    "native_insertions": 39,
+    "native_binary_loads": 1,
+    "neural_forwards": 54,
+    "readers": 2,
+    "reader_order": [
+      "b354",
+      "xxlarge"
+    ],
+    "serial_reader_disposals": 2,
+    "worker_seconds_including_init_cleanup": 209.10072667099303,
+    "largest_child_peak_RSS_bytes": 8255184896,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "runtime_errors": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "train_dev_calibration_confirmation_calls": 0
+  },
+  "primary_reader_p50_p95_seconds": [
+    3.9679109409917146,
+    4.571564886206761
+  ],
+  "baseline_reader_p50_p95_seconds": [
+    0.9117680430063047,
+    1.024657710583415
+  ],
+  "conclusions": [
+    "The original1.5669B-parameter XXL reader successfully ran through restricted legacy weights-only CPU/meta loading and lossless F16-to-F32 conversion within the frozen CPU2/600s whole-worker budget. This establishes observed engineering feasibility, not lineage or eligibility.",
+    "Larger raw NLI plus exact complete supplied source produced5/9, equal to the unchanged435M-parameter baseline5/9. Better Brier/NLL did not satisfy the prespecified all9/class3 and two-correct improvement gates. No general stronger-model claim is supported.",
+    "XXL full-source5/9 versus same-XXL native-two2/9, lexical-two4/9 and positional-two4/9 is a descriptive context comparison on nine authored stress cases. Native returned all39 unique source units and admitted complete source coverage; full-source success is not proof of a causal native-ranking gain.",
+    "Percentage-point/relative-percent, weighted-mean, inclusion-exclusion and marginal-versus-joint membership errors persist even with100percent literal/numeric source retention. Evidence selection alone and another size-only reader swap are insufficient explanations for these retained failures.",
+    "Full-source XXL singleton reader latency p50/p95 is3.96791/4.57156s versus baseline0.91177/1.02466s. Fixed serial order, cold/cache/allocator effects and n9 limit latency comparisons; whole-worker wall209.10073s includes init/cleanup.",
+    "The new/tmp RAM blocker was resolved once by exact independently reviewed obsolete-public-cache unlinks, with current CP/runtime/models/champion/protected banks unchanged. The unchanged prospective13,696,841,590-byte gate passed before the one worker; observed peak RSS is not simultaneous aggregate host memory."
+  ],
+  "direction_change": "Stop treating increased NLI parameter count or retrieval-only packing as sufficient. Before any benchmark confirmation, freeze a source-complete typed-decision candidate with explicit numeric/set-consistency checks and coverage-preserving evidence selection, matched same-model retrieval/full-source controls, licensed genuinely unused evaluation identities and verified production/selection/calibration/foundation exclusion. Do not tune or rerun these nine exposed authored cases or the325 exposed benchmark documents as fresh confirmation. Retain E34 only as the earlier DEV-qualified/HOLD lead and native104 as submitted champion.",
+  "official_status": {
+    "JevBench_open_weights_Capability_leader": {
+      "name": "H2OLightning31Bv1.0.7",
+      "Capability": 84.339
+    },
+    "submission": "7FEA2738",
+    "original115_means": "EVALUATION_QUEUE_POSITION_ONLY_NEVER_RANK",
+    "publisher_result_score_rank_eligibility": "UNKNOWN_NOT_VERIFIED",
+    "ClaimBench_decision_leader": "decision/d1-ultra100percent",
+    "ClaimBench_observed_runner_up": "decider-v1.2 99.694percent",
+    "ClaimBench_language_models_at100percent": 4,
+    "ClaimBench_full_dataset_scorer_license_submission_access": "NOT_VERIFIED",
+    "RuVector_ClaimBench_score_or_pilot": null,
+    "official_refresh": {
+      "path": "experiments/sota-2026-10-22/epoch36/official-refresh/benchmark-refresh.safe.json",
+      "bytes": 13126,
+      "sha256": "ec111b05c4bd75a4ab8c3c737333b9d6078122bbf6950f5751a573668f19cdb8"
+    },
+    "publisher_status": {
+      "path": "experiments/sota-2026-10-22/epoch36/official-refresh/publisher-status.safe.json",
+      "bytes": 985,
+      "sha256": "0bbae218552f011f42a93a0b7ec566897bc5bd0b33debfd787e930fa8c03b9f9"
+    }
+  },
+  "used_confirmation_identities": [],
+  "benchmark_accuracy": null,
+  "benchmark_generalization_claim": false,
+  "champion_promoted": false,
+  "new_submission": false,
+  "official_SOTA_verified": false,
+  "automation_goal_verified": false,
+  "automation_modified": false,
+  "all_epoch36_worker_corpus_slots_closed": true,
+  "future_work_status": "PROPOSED_ONLY_NOT_EXECUTED"
+}

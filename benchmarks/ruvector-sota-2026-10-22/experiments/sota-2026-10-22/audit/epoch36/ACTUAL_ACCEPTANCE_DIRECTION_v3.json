@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "epoch": 36,
+  "status": "INDEPENDENT_ACCEPTANCE_REJECTED_ENGINEERING_GATE",
+  "verified_at": "2026-10-25T10:02:05.019236+00:00",
+  "integrity_replay_passed": true,
+  "engineering_gate_passed": false,
+  "prospective_gate_changed": false,
+  "results": {
+    "path": "/workspace/ruvector-epoch36-d73fcce4c45f/project/experiments/sota-2026-10-22/epoch36/RESULTS.json",
+    "bytes": 237828,
+    "sha256": "90c7575b49d14cdd6a116543a9c1eead4161faa6c6913778dc1e68097bee8716"
+  },
+  "prior_qualification_replay": {
+    "path": "/workspace/ruvector-epoch36-d73fcce4c45f/project/experiments/sota-2026-10-22/audit/epoch36/qualification-replay.json",
+    "bytes": 234994,
+    "sha256": "437b6328f1e0e103de94a12303330602b460ba391744258ac1bebf282636c4b1"
+  },
+  "prior_independent_BIND_report": {
+    "path": "/workspace/ruvector-epoch36-d73fcce4c45f/project/experiments/sota-2026-10-22/audit/epoch36/independent-acceptance-report.json",
+    "bytes": 235508,
+    "sha256": "917ff65a3acc378f91d510db53c0789fa1da59fb0b792eec605cbd005a08e6be"
+  },
+  "supervisor_closure": {
+    "path": "/workspace/ruvector-epoch36-d73fcce4c45f/project/experiments/sota-2026-10-22/epoch36/SUPERVISOR_OBSERVED_CLOSURE.json",
+    "bytes": 1478,
+    "sha256": "f354b16618bbaa4c9f92ee6806714de4a22513e90b103ad7869e3258e1501f8a"
+  },
+  "source_plan": {
+    "bytes": 85698,
+    "path": "experiments/sota-2026-10-22/epoch36/plan.json",
+    "sha256": "9185bffb166e5250db31d50bc0417a91b6421475026cfa242db5e680fca0574c"
+  },
+  "retained_raw": {
+    "bytes": 521115,
+    "path": "experiments/sota-2026-10-22/epoch36/runs/engineering/raw.json",
+    "sha256": "2f448eb8f23abb217d51f94902f74eef62008f9a17dd0e9c7e9105e3d5f27bc1"
+  },
+  "source_input_for_interpretation": {
+    "path": "/workspace/ruvector-epoch36-d73fcce4c45f/project/experiments/sota-2026-10-22/candidate/epoch36/engineering.inputs.json",
+    "bytes": 6388,
+    "sha256": "10ea6398afe8e2e134de279061414dc346f4ef77155f58fa21e8f5f09c601e93"
+  },
+  "frozen_source_commit": "9bbc3df9bb6fec2e245b2090ad9ee5671c7cd7af",
+  "physical_closure": {
+    "passed": true,
+    "observed_supervisor_state": "Z",
+    "physical_supervisor_closed": true,
+    "physical_supervisor_absent": false,
+    "supervisor_exit_code_directly_observed": null,
+    "owned_live_groups_closed": true,
+    "scope": "Rehashed frozen independent physical observation, not a new host probe or reaping claim."
+  },
+  "operation_summary": {
+    "NLI_forward_calls_attempted": 54,
+    "NLI_forward_calls_completed": 54,
+    "ENGINEERING_forward_calls_attempted": 54,
+    "ENGINEERING_forward_calls_completed": 54,
+    "NLI_readouts_completed": 54,
+    "b354_readouts_completed": 18,
+    "xxlarge_readouts_completed": 36,
+    "native_queries_attempted": 9,
+    "native_queries_completed": 9,
+    "native_index_initializations_attempted": 9,
+    "native_index_initializations_completed": 9,
+    "native_insertions_attempted": 39,
+    "native_insertions_completed": 39,
+    "native_binary_loads_attempted": 1,
+    "native_binary_loads_completed": 1,
+    "corpus_batches_attempted": 1,
+    "corpus_batches_completed": 1,
+    "model_initializations_attempted": 2,
+    "model_initializations_completed": 2,
+    "model_unloads_attempted": 2,
+    "model_unloads_completed": 2,
+    "sequential_model_lifecycles_completed": 2,
+    "engineering_oracle_reads": 1,
+    "engineering_oracle_expected_labels_accessed": 9,
+    "engineering_native_predictions_compared": 9
+  },
+  "forbidden_role_operation_counters_all_zero": true,
+  "runtime_errors": 0,
+  "models_sequentially_unloaded_before_single_retained9label_join": true,
+  "all54_source_order_CPUFP32_rawT1_forecasts_independently_replayed": true,
+  "finite_FP32_logits_replayed": 162,
+  "original_oracle_file_reads_by_this_review": 0,
+  "retained_gold_records_reused": 9,
+  "maximum_observed_pair_tokens": 111,
+  "all_six_arm_metrics": {
+    "xxlarge_full_source": {
+      "n": 9,
+      "correct": 5,
+      "Brier": 0.5901205516046854,
+      "NLL_clipped_1e-12": 1.0458148443441768,
+      "by_class": {
+        "entailment": {
+          "n": 3,
+          "correct": 1
+        },
+        "contradiction": {
+          "n": 3,
+          "correct": 2
+        },
+        "not_mentioned": {
+          "n": 3,
+          "correct": 2
+        }
+      },
+      "reader_p50_seconds": 3.9679109409917146,
+      "reader_p95_seconds": 4.571564886206761
+    },
+    "xxlarge_native_two": {
+      "n": 9,
+      "correct": 2,
+      "Brier": 0.8612727642160917,
+      "NLL_clipped_1e-12": 1.6468445793482338,
+      "by_class": {
+        "entailment": {
+          "n": 3,
+          "correct": 2
+        },
+        "contradiction": {
+          "n": 3,
+          "correct": 0
+        },
+        "not_mentioned": {
+          "n": 3,
+          "correct": 0
+        }
+      },
+      "reader_p50_seconds": 3.2611778040009085,
+      "reader_p95_seconds": 4.114935527404304
+    },
+    "xxlarge_lexical_two": {
+      "n": 9,
+      "correct": 4,
+      "Brier": 0.7294006998302542,
+      "NLL_clipped_1e-12": 1.4735258161629536,
+      "by_class": {
+        "entailment": {
+          "n": 3,
+          "correct": 3
+        },
+        "contradiction": {
+          "n": 3,
+          "correct": 0
+        },
+        "not_mentioned": {
+          "n": 3,
+          "correct": 1
+        }
+      },
+      "reader_p50_seconds": 3.069532661989797,
+      "reader_p95_seconds": 3.7518952178012115
+    },
+    "xxlarge_positional_two": {
+      "n": 9,
+      "correct": 4,
+      "Brier": 0.7799142745513294,
+      "NLL_clipped_1e-12": 1.7214177515140898,
+      "by_class": {
+        "entailment": {
+          "n": 3,
+          "correct": 2
+        },
+        "contradiction": {
+          "n": 3,
+          "correct": 1
+        },
+        "not_mentioned": {
+          "n": 3,
+          "correct": 1
+        }
+      },
+      "reader_p50_seconds": 3.0486600729927886,
+      "reader_p95_seconds": 3.499609285988845
+    },
+    "b354_full_source": {
+      "n": 9,
+      "correct": 5,
+      "Brier": 0.7142541057348134,
+      "NLL_clipped_1e-12": 1.546116141252812,
+      "by_class": {
+        "entailment": {
+          "n": 3,
+          "correct": 2
+        },
+        "contradiction": {
+          "n": 3,
+          "correct": 2
+        },
+        "not_mentioned": {
+          "n": 3,
+          "correct": 1
+        }
+      },
+      "reader_p50_seconds": 0.9117680430063047,
+      "reader_p95_seconds": 1.024657710583415
+    },
+    "b354_native_two": {
+      "n": 9,
+      "correct": 3,
+      "Brier": 1.1715958697171471,
+      "NLL_clipped_1e-12": 3.193755156846318,
+      "by_class": {
+        "entailment": {
+          "n": 3,
+          "correct": 2
+        },
+        "contradiction": {
+          "n": 3,
+          "correct": 1
+        },
+        "not_mentioned": {
+          "n": 3,
+          "correct": 0
+        }
+      },
+      "reader_p50_seconds": 0.7646087289904244,
+      "reader_p95_seconds": 0.874894997413503
+    }
+  },
+  "primary_paired_comparisons": {
+    "xxlarge_native_two": {
+      "gained_correct": 4,
+      "regressed_correct": 1,
+      "net_correct": 3,
+      "delta_Brier": -0.2711522126114063,
+      "delta_NLL": -0.601029735004057
+    },
+    "xxlarge_lexical_two": {
+      "gained_correct": 3,
+      "regressed_correct": 2,
+      "net_correct": 1,
+      "delta_Brier": -0.1392801482255689,
+      "delta_NLL": -0.4277109718187768
+    },
+    "xxlarge_positional_two": {
+      "gained_correct": 3,
+      "regressed_correct": 2,
+      "net_correct": 1,
+      "delta_Brier": -0.1897937229466441,
+      "delta_NLL": -0.675602907169913
+    },
+    "b354_full_source": {
+      "gained_correct": 1,
+      "regressed_correct": 1,
+      "net_correct": 0,
+      "delta_Brier": -0.12413355413012805,
+      "delta_NLL": -0.5003012969086351
+    },
+    "b354_native_two": {
+      "gained_correct": 3,
+      "regressed_correct": 1,
+      "net_correct": 2,
+      "delta_Brier": -0.5814753181124618,
+      "delta_NLL": -2.1479403125021412
+    }
+  },
+  "engineering_checks": {
+    "primary_all9_correct": false,
+    "primary_all3_per_class_correct": false,
+    "full_source_model_accuracy_gain_at_least2": false,
+    "authored_class_balance3each": true,
+    "b354_full_source:Brier_nonincrease": true,
+    "b354_full_source:NLL_nonincrease": true,
+    "xxlarge_native_two:Brier_nonincrease": true,
+    "xxlarge_native_two:NLL_nonincrease": true,
+    "xxlarge_lexical_two:Brier_nonincrease": true,
+    "xxlarge_lexical_two:NLL_nonincrease": true,
+    "xxlarge_positional_two:Brier_nonincrease": true,
+    "xxlarge_positional_two:NLL_nonincrease": true
+  },
+  "failed_engineering_checks": [
+    "primary_all9_correct",
+    "primary_all3_per_class_correct",
+    "full_source_model_accuracy_gain_at_least2"
+  ],
+  "primary_full_source_accuracy_gain_over_b354_full": 0,
+  "observed_resources": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "whole_worker_including_initialization_cleanup_seconds": 209.10072667099303,
+    "outer_largest_child_peak_RSS_bytes": 8255184896,
+    "raw_worker_peak_RSS_bytes": 8255184896,
+    "raw_worker_own_child_peak_RSS_bytes": 3442626560,
+    "scope": "Separate high-water observations, not simultaneous summedRSS. Reader singleton quantiles preserve fixed b354-then-xxlarge order, context/cache/allocator effects; no randomized latency superiority claim."
+  },
+  "error_interpretation": [
+    {
+      "case": "01",
+      "retained_gold": "entailment",
+      "retained_prediction": "not_mentioned",
+      "operation": "percentage-point subtraction",
+      "source_calculation": "25%-20%=5percentage points; supplied definition distinguishes relative growth",
+      "implication": "Full source and larger reader did not establish this exact arithmetic entailment."
+    },
+    {
+      "case": "02",
+      "retained_gold": "entailment",
+      "retained_prediction": "not_mentioned",
+      "operation": "weighted average with counts",
+      "source_calculation": "(30\u00d74+10\u00d78)/(30+10)=200/40=5kg",
+      "implication": "All source facts present; aggregation rather than missing retrieval evidence is implicated."
+    },
+    {
+      "case": "06",
+      "retained_gold": "contradiction",
+      "retained_prediction": "entailment",
+      "operation": "inclusion-exclusion",
+      "source_calculation": "7+9-3=13distinct people, not16",
+      "implication": "Overlapping groups cannot be summed as disjoint."
+    },
+    {
+      "case": "07",
+      "retained_gold": "not_mentioned",
+      "retained_prediction": "contradiction",
+      "operation": "compatible-world overlap bounds",
+      "source_calculation": "With universe14, group sizes12and8, intersection can be any integer6..8. Exactly8 is possible, while6or7 is also possible.",
+      "implication": "An underspecified exact intersection is not entailed and is not contradicted; do not turn uncertainty into a false statement."
+    }
+  ],
+  "direction": {
+    "accepted_finding": "On these exposed nine engineering cases, larger raw NLI plus full supplied context improved proper scores against all four required controls but tied b354 full-source accuracy5/9 and did not resolve every numeric/open-world error.",
+    "next_candidate_hypothesis": "If pursued in a separate prospective study: general source-grounded typed arithmetic/set constraints and compatible-world entailment/contradiction checks with explicit provenance and unsupported-case abstention; retain NLI as a separately identified component.",
+    "required_controls": [
+      "Freeze whole-pipeline policy, operation grammar, budgets and gate before a newly authored independently held-out suite",
+      "Use unseen names, numbers, units, statement order, overlap counts and counterfactuals; check all three E/C/N outcomes",
+      "Retain raw NLI versus any future verified-component outputs and all failures; attribute improvements to whole pipeline, not vector ranking",
+      "Keep all nine E36 cases exposed engineering only; no new grid, threshold fitting, retry or fresh-confirmation claim on this suite",
+      "Preserve model training/selection/calibration/foundation and publisher eligibility HOLD; no benchmark/promotion/general-strength/SOTA inference"
+    ],
+    "new_experiment_authorized_or_started": false
+  },
+  "claim_boundaries": {
+    "engineering_only": true,
+    "benchmark_accuracy": null,
+    "model_training_selection_calibration_foundation_lineage_complete": false,
+    "official_eligibility": "HOLD",
+    "confirmation_consumed": false,
+    "native104_changed": false,
+    "benchmark_or_general_model_strength_claim": false,
+    "native_ranking_causal_gain_claim": false,
+    "champion_promoted": false,
+    "official_rank": null,
+    "goal_met": false
+  },
+  "reviewer_new_model_tokenizer_native_inference_calls": 0,
+  "reviewer_scorer_EVALUATE_or_BIND_calls": 0,
+  "reviewer_host_or_Git_calls": 0,
+  "reviewer_project_mutations": 0,
+  "review_source": {
+    "path": "/workspace/ruvector-e36-acceptance-audit/audit_actual_e36_v3.py",
+    "bytes": 22002,
+    "sha256": "1d63733015888be10fb3edd108f41fd96cc9fb4ad4d8f5044b45155345659f8e"
+  }
+}

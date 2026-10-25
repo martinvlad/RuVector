@@ -1,0 +1,156 @@
+{
+  "CPU_affinity": [
+    0,
+    1
+  ],
+  "accuracy_gain_over_b354_full": 0,
+  "actual_finite_readouts": 54,
+  "actual_frozen_SOURCE_commit": "9bbc3df9bb6fec2e245b2090ad9ee5671c7cd7af",
+  "actual_metrics_from_identical_worker_and_once_frozen_independent_replay": {
+    "b354_full_source": {
+      "Brier": 0.7142541057348134,
+      "NLL_clipped_1e-12": 1.546116141252812,
+      "accuracy": 0.5555555555555556,
+      "correct": 5,
+      "n": 9
+    },
+    "b354_native_two": {
+      "Brier": 1.1715958697171471,
+      "NLL_clipped_1e-12": 3.193755156846318,
+      "accuracy": 0.3333333333333333,
+      "correct": 3,
+      "n": 9
+    },
+    "xxlarge_full_source": {
+      "Brier": 0.5901205516046854,
+      "NLL_clipped_1e-12": 1.0458148443441768,
+      "accuracy": 0.5555555555555556,
+      "correct": 5,
+      "n": 9
+    },
+    "xxlarge_lexical_two": {
+      "Brier": 0.7294006998302542,
+      "NLL_clipped_1e-12": 1.4735258161629536,
+      "accuracy": 0.4444444444444444,
+      "correct": 4,
+      "n": 9
+    },
+    "xxlarge_native_two": {
+      "Brier": 0.8612727642160917,
+      "NLL_clipped_1e-12": 1.6468445793482338,
+      "accuracy": 0.2222222222222222,
+      "correct": 2,
+      "n": 9
+    },
+    "xxlarge_positional_two": {
+      "Brier": 0.7799142745513294,
+      "NLL_clipped_1e-12": 1.7214177515140898,
+      "accuracy": 0.4444444444444444,
+      "correct": 4,
+      "n": 9
+    }
+  },
+  "actual_operation_contract": {
+    "NLI_forward_calls_attempted": 54,
+    "NLI_forward_calls_completed": 54,
+    "NLI_readouts_completed": 54,
+    "b354_forward_calls_completed": 18,
+    "corpus_batches_completed": 1,
+    "engineering_oracle_expected_labels_accessed": 9,
+    "engineering_oracle_reads": 1,
+    "model_initializations_completed": 2,
+    "model_unloads_completed": 2,
+    "native_binary_loads_completed": 1,
+    "native_index_initializations_completed": 9,
+    "native_insertions_completed": 39,
+    "native_queries_completed": 9,
+    "sequential_model_lifecycles_completed": 2,
+    "tokenizer_initializations_completed": 2,
+    "xxlarge_forward_calls_completed": 36
+  },
+  "all_observed_threads_within_two_CPU_affinity": true,
+  "auditor_model_tokenizer_native_scorer_or_original_oracle_calls": 0,
+  "auditor_project_or_Git_mutations": 0,
+  "champion_promotion_or_submission": false,
+  "checks_passed": true,
+  "engineering_passed": false,
+  "epoch": 36,
+  "evidence": {
+    "closure": {
+      "bytes": 1478,
+      "path": "experiments/sota-2026-10-22/epoch36/SUPERVISOR_OBSERVED_CLOSURE.json",
+      "sha256": "f354b16618bbaa4c9f92ee6806714de4a22513e90b103ad7869e3258e1501f8a"
+    },
+    "execution": {
+      "bytes": 8158,
+      "path": "experiments/sota-2026-10-22/epoch36/runs/engineering/execution.json",
+      "sha256": "fa8c1773044f697eebd21c26e1015adad6d5eab73a928323a86d078a2d65066a"
+    },
+    "independent_acceptance": {
+      "bytes": 235508,
+      "path": "experiments/sota-2026-10-22/audit/epoch36/independent-acceptance-report.json",
+      "sha256": "917ff65a3acc378f91d510db53c0789fa1da59fb0b792eec605cbd005a08e6be"
+    },
+    "qualification_replay": {
+      "bytes": 234994,
+      "path": "experiments/sota-2026-10-22/audit/epoch36/qualification-replay.json",
+      "sha256": "437b6328f1e0e103de94a12303330602b460ba391744258ac1bebf282636c4b1"
+    },
+    "raw": {
+      "bytes": 521115,
+      "path": "experiments/sota-2026-10-22/epoch36/runs/engineering/raw.json",
+      "sha256": "2f448eb8f23abb217d51f94902f74eef62008f9a17dd0e9c7e9105e3d5f27bc1"
+    },
+    "results": {
+      "bytes": 237828,
+      "path": "experiments/sota-2026-10-22/epoch36/RESULTS.json",
+      "sha256": "90c7575b49d14cdd6a116543a9c1eead4161faa6c6913778dc1e68097bee8716"
+    }
+  },
+  "frozen_gate_failed": [
+    "primary_all9_correct",
+    "primary_all3_per_class_correct",
+    "full_source_model_accuracy_gain_at_least2"
+  ],
+  "guardian_still_owned_for_final_publication": true,
+  "known_worker_group_remaining": [],
+  "largest_child_peak_RSS_bytes": 8255184896,
+  "model_parameter_counts_from_actual_strict_class": {
+    "b354": 435064835,
+    "xxlarge": 1566915075
+  },
+  "new_confirmation_identities": [],
+  "observed_final_kernel_threads": 4,
+  "official_SOTA_verified": false,
+  "physical_supervisor_current_state": "Z",
+  "quality_verdict": "REJECTED_ENGINEERING_ADMISSION",
+  "resource_scope": "Two CPU affinity/compute budget; runtime helper thread count may exceed2. Largest-child RSS high-water is not a simultaneous parent+child sum.",
+  "schema_version": 1,
+  "scope": "Independent evidence/source/counter/resource/physical closure and exact result-binding audit only. No repeat scorer, oracle traversal, inference, fit, source edit or external mutation. All numerical metrics here are the identical already computed worker/once frozen replay values, not another scoring run.",
+  "single_nine_label_join_after_all54_and_both_unloads": true,
+  "source_pins_rehashed": 269,
+  "status": "PASS_ACTUAL_EXECUTION_PROVENANCE_AND_BINDING_ENGINEERING_REJECTED",
+  "wall_seconds_including_initialization_cleanup": 209.10072667099303,
+  "zero_operation_counters_verified": [
+    "GPU_calls",
+    "paid_calls",
+    "HTTP_requests",
+    "full104_requests",
+    "TRAIN_input_bank_reads",
+    "TRAIN_annotation_choices_accessed",
+    "TRAIN_forward_calls_completed",
+    "DEV_input_bank_reads",
+    "DEV_annotation_choices_accessed",
+    "DEV_forward_calls_completed",
+    "CONF_input_bank_reads",
+    "CONF_annotation_choices_accessed",
+    "calibration_calls",
+    "fits",
+    "training_steps",
+    "optimizer_steps_completed",
+    "backward_calls_completed",
+    "source_evidence_lists_accessed",
+    "Node_network_operations_attempted",
+    "Python_network_operations_attempted"
+  ]
+}

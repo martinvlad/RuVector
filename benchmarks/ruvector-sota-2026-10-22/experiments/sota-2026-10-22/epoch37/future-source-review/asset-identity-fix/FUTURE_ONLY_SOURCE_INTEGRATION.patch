@@ -1,0 +1,55 @@
+--- candidate/FUTURE_EPOCH/runtime/common.py.before
++++ candidate/FUTURE_EPOCH/runtime/common.py.after
+@@ -326,7 +326,7 @@
+     for row in pins:verify_ref(row)
+     for name in('runtime/common.py','runtime/launch.py','runtime/network_guard.py','runtime/node_guard.cjs','runtime/cpu_guard.py',
+             'worker.py','xxlarge_model.py','algorithm.py','evidence.py','context_engine.py','source_context.py','vector_codec.py',
+-            'native_helper.cjs','proof.py','query.py','MODEL_ASSETS.json','quantitative.py','CONTEXT_POLICY.json'):
++            'native_helper.cjs','proof.py','query.py','MODEL_ASSETS.json','MODEL_ASSETS.expected.json','asset_identity.py','quantitative.py','CONTEXT_POLICY.json'):
+         if str((CANDIDATE/name).relative_to(ROOT))not in by:raise ValueError('Unpinned paired source: '+name)
+     for key in('source_freeze','runtime_assets_lock','model_assets_lock','pretrained_model_source',
+             'model_profiles','xxlarge_weight_metadata','legacy_original_load_plan','engineering_inputs','engineering_oracle',
+@@ -359,7 +359,11 @@
+ 
+ def verify_model_assets(plan):
+     pins={r['path']:r for r in plan['pins']};results={}
+-    specs=[('xxlarge','model_assets_lock',MODEL,'MODEL_ASSETS.json','microsoft/deberta-v2-xxlarge-mnli','8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06',5)]
++    identity_source=CANDIDATE/'asset_identity.py'
++    identity_ref=pins.get(str(identity_source.relative_to(ROOT)))
++    if identity_ref is None or verify_ref(identity_ref)!=identity_source:raise ValueError('Missing frozen typed source identity helper')
++    identities=load_module('future_reviewed_model_asset_identity',identity_source)
++    specs=[('xxlarge','model_assets_lock',MODEL,'MODEL_ASSETS.expected.json','microsoft/deberta-v2-xxlarge-mnli','8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06',5)]
+     for tag,key,directory,expected_name,repository,revision,count in specs:
+         lockfile=checked(plan[key+'_path']);lock=read(lockfile)
+         if (lock.get('epoch')!=37 or lock.get('kind')!=KIND or lock.get('repository')!=repository
+@@ -373,19 +377,20 @@
+         if len(rows)!=count or len(wanted)!=count or {r['path']for r in rows}!=set(wanted)or {p.name for p in directory.iterdir()}!=set(wanted)|{'asset-lock.json'}:
+             raise ValueError('Extra/missing model assets or receipt files: '+tag)
+         if tag=='xxlarge'and set(wanted)!={'config.json','tokenizer_config.json','LICENSE','spm.model','pytorch_model.bin'}:raise ValueError('Exact five xxlarge payloads required')
++        # Distinct immutable reviewed source declaration and observed materialization receipt.
++        identities.bind_catalog(expected,rows)
+         for row in rows:
+-            original=wanted[row['path']];file=directory/row['path'];no_symlink(file)
+-            if (not file.is_file()or file.stat().st_size!=row['bytes']or row['bytes']!=original['bytes']
+-                    or row.get('source_url')!=original['source_url']or not re.fullmatch('[0-9a-f]{64}',row.get('sha256',''))or sha(file)!=row['sha256']):
+-                raise ValueError('Changed original model file: '+tag+'/'+row['path'])
+-            if original.get('upstream_git_blob_sha1')and row.get('upstream_git_blob_sha1')!=original['upstream_git_blob_sha1']:raise ValueError('Upstream Git source differs')
+-            expected_sha=original.get('upstream_sha256')or original.get('metadata_body_sha256')or original.get('sha256')
+-            if expected_sha and row['sha256']!=expected_sha:raise ValueError('Exact upstream payload or metadata SHA differs')
+-            if not original.get('upstream_sha256')and original.get('upstream_git_blob_sha1'):
+-                blob=hashlib.sha1(b'blob '+str(row['bytes']).encode()+b'\0')
++            original=wanted[row['path']];identity=identities.bind_observed_lock(original,row)
++            file=directory/row['path'];no_symlink(file)
++            if not file.is_file():raise ValueError('Missing exact original model payload')
++            observed_bytes=file.stat().st_size;observed_sha256=sha(file)
++            observed_payload_git_sha1=None
++            if identity['raw_payload_git_blob_sha1_required']:
++                blob=hashlib.sha1(b'blob '+str(observed_bytes).encode()+b'\0')
+                 with file.open('rb')as stream:
+                     for data in iter(lambda:stream.read(1048576),b''):blob.update(data)
+-                if blob.hexdigest()!=original['upstream_git_blob_sha1']:raise ValueError('Original upstream Git blob differs')
++                observed_payload_git_sha1=blob.hexdigest()
++            identities.verify_payload_observation(original,observed_bytes,observed_sha256,observed_payload_git_sha1)
+         results[tag]=lock
+     return results
+ 

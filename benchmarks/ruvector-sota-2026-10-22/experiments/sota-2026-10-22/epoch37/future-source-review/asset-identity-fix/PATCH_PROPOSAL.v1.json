@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "status": "FUTURE_EPOCH_UNIT_ONLY_PROPOSAL_NOT_DEPLOYED_NOT_RETRIED",
+  "failed_epoch": 37,
+  "frozen_source_commit": "a93a1d6922c8a14f356461fb383846157816c70b",
+  "cause": "My E37 adaptation selected observed MODEL_ASSETS.json as expected source declaration, losing upstream_sha256 LFS discriminator; common then compared spm fullpayload GitSHA1 with upstream pointer GitSHA1.",
+  "failure_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/runtime/common.py",
+    "bytes": 32254,
+    "sha256": "aff01f6075f63fde5dff2f816620382c4f6e7c1bda0d59df75924f4a0f04bbd6"
+  },
+  "historical_source_declaration": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/MODEL_ASSETS.expected.json",
+    "bytes": 2112,
+    "sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806",
+    "ancestor_actual_git_blob_sha1": "3a3b2b85eefefe39c2a56b2c0447f2d0496bfae6",
+    "ancestor_checkpoint_sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806"
+  },
+  "chosen_fix": "Separate frozen MODEL_ASSETS.expected.json source declaration restored; explicit upstream_sha256 vs metadata_body_sha256 representation admission; observed sha256 never aliases source declarations. Validate LFS pointer oid/size GitSHA1 independently, allactualpayloadSHA256, and actualGitSHA1 only for ordinaryrawGit bodies. No fallback or asset substitution.",
+  "integration": "Patch is future-epoch template only. Parent must choose a new epoch, preserve E37failure, review/freeze/sourcepublish/readback exact new dependency and sourcecatalog/loader/resource gates. DispatchercommonSHA and any source wrappers/readiness/hashes must be regenerated before anyauthorizedfuturelaunch. This proposal cannot authorize retry/currentfrozen mutation.",
+  "known_static_fixture_gap": "Prior E37metadatafixture intercepted terminal model_assetguard; it genuinely checked wheel/native/BGE hashes but did not exercise full source-declaration/payloadrepresentation semantics. New complete pure fixture will cover terminalpolicy withactualmetadata and smallpayloads, no actualweights/currentguardexecution.",
+  "calls": {
+    "current_guard_calls": 0,
+    "actual_model_weight_reads": 0,
+    "model_tokenizer_native_scoring_calls": 0,
+    "actual12_case_parser_calls": 0,
+    "new_dispatches": 0,
+    "external_mutations": 0
+  }
+}

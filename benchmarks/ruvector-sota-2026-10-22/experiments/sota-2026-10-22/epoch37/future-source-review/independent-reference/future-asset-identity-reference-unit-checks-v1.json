@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "epoch": 37,
+  "status": "PASS_FUTURE_ONLY_PURE_ASSET_REPRESENTATION_REFERENCE",
+  "source": {
+    "path": "/workspace/ruvector-e37-independent-audit/future_asset_identity_reference_v1.py",
+    "bytes": 2840,
+    "sha256": "fd9b10dcc669af2f8f1e779b50a9627544d378fcc50a576949f16252cf60718b"
+  },
+  "tests": {
+    "path": "/workspace/ruvector-e37-independent-audit/test_future_asset_identity_reference_v1.py",
+    "bytes": 4139,
+    "sha256": "3fbff6682e5e6638266a530847f227c13015b9a1084f302021b7d50619cd8dfe"
+  },
+  "tiny_positive_payload_cases": 2,
+  "negative_mutation_cases": [
+    {
+      "name": "changed_LFS_payload",
+      "rejected": true,
+      "reason": "Payload size differs"
+    },
+    {
+      "name": "changed_raw_payload",
+      "rejected": true,
+      "reason": "Payload size differs"
+    },
+    {
+      "name": "raw_wrong_size",
+      "rejected": true,
+      "reason": "Payload size differs"
+    },
+    {
+      "name": "raw_wrong_upstream_representation",
+      "rejected": true,
+      "reason": "Original rawGit payload differs"
+    },
+    {
+      "name": "raw_wrong_payload_oid",
+      "rejected": true,
+      "reason": "Resolved payload SHA256 differs"
+    },
+    {
+      "name": "raw_bool_size",
+      "rejected": true,
+      "reason": "Original payload size required"
+    },
+    {
+      "name": "LFS_wrong_size",
+      "rejected": true,
+      "reason": "Pinned upstream GitLFS pointer differs from declared oid/size"
+    },
+    {
+      "name": "LFS_wrong_upstream_representation",
+      "rejected": true,
+      "reason": "Pinned upstream GitLFS pointer differs from declared oid/size"
+    },
+    {
+      "name": "LFS_wrong_payload_oid",
+      "rejected": true,
+      "reason": "Pinned upstream GitLFS pointer differs from declared oid/size"
+    },
+    {
+      "name": "LFS_bool_size",
+      "rejected": true,
+      "reason": "Original payload size required"
+    },
+    {
+      "name": "materialized_lock_cannot_self_declare_original_LFS_identity",
+      "rejected": true,
+      "reason": "Exactly one explicit rawGit or LFS payload source declaration required; observed-lock sha256 alone is insufficient"
+    },
+    {
+      "name": "ambiguous_raw_plus_LFS_declaration",
+      "rejected": true,
+      "reason": "Exactly one explicit rawGit or LFS payload source declaration required; observed-lock sha256 alone is insufficient"
+    },
+    {
+      "name": "LFS_pointer_must_not_be_payload_GitSHA1",
+      "rejected": true,
+      "reason": "Pinned upstream GitLFS pointer differs from declared oid/size"
+    },
+    {
+      "name": "raw_payload_must_not_be_LFS_pointer_GitSHA1",
+      "rejected": true,
+      "reason": "Original rawGit payload differs"
+    }
+  ],
+  "exact_original_LFS_pointer_metadata_checks": 2,
+  "deployment_status": "UNDEPLOYED_REFERENCE_ONLY; frozenE37guard/plan/a93source unchanged, no dispatch or runtime verification on actual assets.",
+  "scientific_scope": "Representation unit checks only; no benchmark question, actual12case classifier, model/tokenizer/native call or generalization score.",
+  "required_future_change": "Use a separately pinned original-source expected catalog retaining explicit rawGit metadata_body_sha256 versus LFS upstream_sha256 identities. Always verify resolved payload SHA256+size, compare rawGit SHA1 only for rawGit, validate LFS pointer SHA1 from its declared oid+size. Never make the observed materialization lock its own expected authority.",
+  "original_large_weight_payload_reads": 0,
+  "actual_model_tokenizer_native_or_EVALUATE_BIND_calls": 0,
+  "external_mutations": 0,
+  "checked_at_unix": 1792930158.8403943
+}

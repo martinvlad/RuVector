@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "epoch": 37,
+  "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+  "phase": "engineering",
+  "scope": "benchmarks/ruvector-sota-2026-10-22/",
+  "verified_actual_remote_readback": true,
+  "published_source_commit": "a93a1d6922c8a14f356461fb383846157816c70b",
+  "actual_source_trees": {
+    "root": "fe62b7d381fc04f6f05957101011c120801c5d10",
+    "bench": "632da9246ed32e46164c7e3cd46607e3f27f93b9",
+    "scope": "dae1d90376557c0a6a1bb71fb912ada288a5e230"
+  },
+  "plan_sha256": "d9066f1c310514203af07f0eaa588a65ce4a72e8b621b657fa97645ab3338741",
+  "source_freeze_sha256": "97dc7bc84afab4821de6daa1894b4bc3ce7a6bd9aaaeb802184ad7f1d46b6964",
+  "pretrained_model_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch37/PRETRAINED_MODEL_SOURCE.json",
+    "bytes": 2368,
+    "sha256": "54a7fa436b20066845c4530d58c9b2ecb2d2d1e6b5c7e70734279d4f6e80a783"
+  },
+  "model_assets_lock_sha256": "93c5827edd2b66e3da823bd90ac024c6dff0afd26b3ff99afcfc40161cc06326",
+  "model_profiles_sha256": "752450eeaf730a21bf6a7a6b186d3214662b29ccb0e0ee7e2d0371a0063c2bac",
+  "xxlarge_weight_metadata_sha256": "05e21f2e52be254c09c7cf715cd36afd1bd6f4a58b9a0710c9f1589506a07fc0",
+  "legacy_original_load_plan_sha256": "98daf4e1807375fa785f72b8014cbd067c58bc8d1232c0a1c237c86479113fdd",
+  "kernel_boot_id": "4632fb06-b0ef-4df5-b72b-0e875bbad810",
+  "pid_namespace_inode": 4026532200,
+  "owner_pid": 110592,
+  "owner_startticks": 24921126,
+  "owner_lock_fd": 3,
+  "owner_lock_device": 33,
+  "owner_lock_inode": 13626,
+  "owner_generation": 1,
+  "independent_actual_source_readback": {
+    "path": "experiments/sota-2026-10-22/audit/epoch37/preparation/actual-source-readback-independent-v1.json",
+    "bytes": 5762,
+    "sha256": "5598ef844db27a04e2801501a118f7bfe68060488edd1cd65952ff04240566ce"
+  },
+  "limits": {
+    "owned_workers": 1,
+    "per_phase_owned_workers": 1,
+    "CPU_threads": 2,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "seconds_per_batch": 600,
+    "native_corpus_batches": 1,
+    "TRAIN_worker_attempts": 0,
+    "DEV_worker_attempts": 0,
+    "ENGINEERING_worker_attempts": 1,
+    "CONF_worker_attempts": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "data_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "used_confirmation_identities": [],
+  "actual_NLI_forwards_cap": 36,
+  "derived_forecasts_expected": 60,
+  "models": 1,
+  "model_compute_dtype": "F32",
+  "training_lineage_complete": false,
+  "official_eligibility": "HOLD",
+  "benchmark_accepted": false,
+  "champion_promoted": false,
+  "new_submission": false,
+  "official_SOTA_verified": false,
+  "official_rank": null,
+  "rule": "Conditional one-shot current SOURCE admission only. Root must copy this exact record to epoch37/SOURCE_ADMISSION.json and the exact canonical readback evidence, then actual owner/model/runtime/host checks; oneCPU0,1 worker600s total includinginitcleanup, one12query nativecorpus, zero fits/TRAIN/DEV/calibration/CONF/paid/GPU/retry. This record is not proof of execution."
+}

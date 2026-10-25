@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "status": "PASS_REAL_PINNED_METADATA_TERMINAL_POLICY_FIXTURE_NO_PAYLOAD_OR_GUARD_EXECUTION",
+  "source_catalog": {
+    "path": "MODEL_ASSETS.expected.json",
+    "bytes": 2112,
+    "sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806"
+  },
+  "E37_observed_materialization_receipt": {
+    "path": "E37_OBSERVED_MODEL_ASSETS.json",
+    "bytes": 2138,
+    "sha256": "93c5827edd2b66e3da823bd90ac024c6dff0afd26b3ff99afcfc40161cc06326"
+  },
+  "independent_actual_SPM_hash_observation": {
+    "path": "actual-LFS-identity-failure-independent-v1.json",
+    "bytes": 3575,
+    "sha256": "d7e2277a0ff851118d7ad96491194918df3b7b78efcee34586e6d50b249e9f5a"
+  },
+  "SPM_actual_payload_Git_SHA1_from_independent_observation": "1f77a5ca5173931f43d45117ed425a317e6cf553",
+  "SPM_upstream_pointer_Git_SHA1": "c146a1df1f80d26596bbb4d0fadc43bca9a8145c",
+  "SPM_payload_vs_pointer_Git_SHA1_are_different": true,
+  "all_five_typed_metadata_identities": [
+    {
+      "path": "config.json",
+      "bytes": 952,
+      "source_url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/config.json",
+      "payload_sha256": "2c2de12b575824b4caec3ae5cc03c3f80837b1b3617541b8a5333cdc3db9b57c",
+      "upstream_git_object_sha1": "f18b80c18e1b552d3da1af51f99b1d572bb78280",
+      "representation": "RAW_GIT_BLOB_PAYLOAD",
+      "raw_payload_git_blob_sha1_required": true
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 52,
+      "source_url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/tokenizer_config.json",
+      "payload_sha256": "3f3978e0c036f2c2588cac34a6047cbb0af0b0dc1814254e291028529805496d",
+      "upstream_git_object_sha1": "acfd94e399c5659e4bed75f91b4ee24b111fc7a6",
+      "representation": "RAW_GIT_BLOB_PAYLOAD",
+      "raw_payload_git_blob_sha1_required": true
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1141,
+      "source_url": "https://raw.githubusercontent.com/microsoft/DeBERTa/4d7fe0bd4fb3c7d4f4005a7cafabde9800372098/LICENSE",
+      "payload_sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+      "upstream_git_object_sha1": "9e841e7a26e4eb057b24511e7b92d42b257a80e5",
+      "representation": "RAW_GIT_BLOB_PAYLOAD",
+      "raw_payload_git_blob_sha1_required": true
+    },
+    {
+      "path": "spm.model",
+      "bytes": 2447305,
+      "source_url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/spm.model",
+      "payload_sha256": "5598d5e96f339a8d980c15f9afd405a2e5e1be7db41de3ed13b0f03fac1e8c17",
+      "upstream_git_object_sha1": "c146a1df1f80d26596bbb4d0fadc43bca9a8145c",
+      "representation": "CANONICAL_GIT_LFS_POINTER_WITH_SEPARATE_SHA256_PAYLOAD",
+      "raw_payload_git_blob_sha1_required": false,
+      "upstream_lfs_pointer_bytes": 132,
+      "upstream_lfs_pointer_sha256": "12bcdca8da6a63f878fe148cbbd5e5c170c13324c9002486cd791cd4f3ae97f4",
+      "upstream_lfs_pointer_git_sha1": "c146a1df1f80d26596bbb4d0fadc43bca9a8145c"
+    },
+    {
+      "path": "pytorch_model.bin",
+      "bytes": 3133958098,
+      "source_url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/pytorch_model.bin",
+      "payload_sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+      "upstream_git_object_sha1": "aba315cb1d255ada5671f0de52bcbc5148771376",
+      "representation": "CANONICAL_GIT_LFS_POINTER_WITH_SEPARATE_SHA256_PAYLOAD",
+      "raw_payload_git_blob_sha1_required": false,
+      "upstream_lfs_pointer_bytes": 135,
+      "upstream_lfs_pointer_sha256": "8509682ed3fe4fadb5f691d7f63710a3af30a3f4278b138ab4d7ef103b4a3a71",
+      "upstream_lfs_pointer_git_sha1": "aba315cb1d255ada5671f0de52bcbc5148771376"
+    }
+  ],
+  "complete_terminal_pure_policy_exercised": true,
+  "previous_E37_failure_selector": "Observedlock has sha256butnoupstream_sha256, so previousguard incorrectlyrequestedpayloadGitSHA1comparisonforbothLFSfiles.",
+  "fixed_selector": "Only explicitlytyped sourcecatalog selects representation. Observedlock cannotalias declaration. LFS upstreamGit isverifiedagainstcanonicalpointeroid/size; separatepayloadsize/SHA256aremandatory. RawGit payload requires both SHA256andupstreamGitSHA1.",
+  "prior_real_payload_SHA256_evidence": "Originalfive actualpayloadSHA256 were verifiedbefore E37 byroot; this fixture binds exactrecordedmetadata and doesNOT reread any modelpayload or claim a newfileverification.",
+  "actual_model_weight_file_reads": 0,
+  "actual_tokenizer_payload_file_reads": 0,
+  "current_guard_invocations": 0,
+  "actual_model_tokenizer_native_inference_calls": 0,
+  "actual12_case_parser_calls": 0,
+  "network_calls": 0,
+  "new_dispatches": 0,
+  "E37_retry_authorized": false,
+  "frozen_E37_source_changed": false
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "epoch": 37,
+  "status": "CONFIRMED_LFS_POINTER_AND_PAYLOAD_IDENTITIES_DIFFER",
+  "frozen_source_commit": "a93a1d6922c8a14f356461fb383846157816c70b",
+  "frozen_plan_sha256": "d9066f1c310514203af07f0eaa588a65ce4a72e8b621b657fa97645ab3338741",
+  "exact_predecessor_expected_catalog": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/MODEL_ASSETS.expected.json",
+    "bytes": 2112,
+    "sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806"
+  },
+  "first_failing_actual_payload": {
+    "path": "spm.model",
+    "bytes": 2447305,
+    "payload_SHA256": "5598d5e96f339a8d980c15f9afd405a2e5e1be7db41de3ed13b0f03fac1e8c17",
+    "payload_Git_SHA1": "1f77a5ca5173931f43d45117ed425a317e6cf553",
+    "upstream_pointer_Git_SHA1": "c146a1df1f80d26596bbb4d0fadc43bca9a8145c",
+    "payload_SHA256_matches_original": true,
+    "payload_Git_SHA1_equals_upstream_pointer_Git_SHA1": false
+  },
+  "two_exact_original_LFS_pointers_reconstructed_without_network": [
+    {
+      "path": "spm.model",
+      "declared_payload_bytes": 2447305,
+      "declared_payload_SHA256": "5598d5e96f339a8d980c15f9afd405a2e5e1be7db41de3ed13b0f03fac1e8c17",
+      "canonical_LFS_pointer_bytes": 132,
+      "canonical_LFS_pointer_text": "version https://git-lfs.github.com/spec/v1\noid sha256:5598d5e96f339a8d980c15f9afd405a2e5e1be7db41de3ed13b0f03fac1e8c17\nsize 2447305\n",
+      "canonical_LFS_pointer_Git_SHA1": "c146a1df1f80d26596bbb4d0fadc43bca9a8145c",
+      "matches_pinned_upstream_Git_blob": true
+    },
+    {
+      "path": "pytorch_model.bin",
+      "declared_payload_bytes": 3133958098,
+      "declared_payload_SHA256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+      "canonical_LFS_pointer_bytes": 135,
+      "canonical_LFS_pointer_text": "version https://git-lfs.github.com/spec/v1\noid sha256:5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db\nsize 3133958098\n",
+      "canonical_LFS_pointer_Git_SHA1": "aba315cb1d255ada5671f0de52bcbc5148771376",
+      "matches_pinned_upstream_Git_blob": true
+    }
+  ],
+  "root_cause": "E37 simplified materialized MODEL_ASSETS was also used as expected-source catalog. It retained upstream_git_blob_sha1 but removed predecessor upstream_sha256 LFS discriminator. Frozen guard therefore hashes full resolved SPM payload as a Git blob and compares with GitLFS pointer identity. Three preceding rawGit files match.",
+  "prior_audit_gap": "Independent source review verified payload SHA256s and reviewed the metadata guard, but missed that expected-file alias/schema substitution removed the LFS discriminator. Terminal asset guard was stubbed in source-only integration fixture. That explicit limitation was insufficient to catch this real preworker failure. Historical reviews remain retained; this finding corrects their integration conclusion.",
+  "scientific_outcome": "Preworker source guard failed. No accuracy/proper-score/native experiment result exists. Logical dispatchslot consumed, no retry. Missing execution/raw/internal counters remain UNKNOWN; no assertion that absence alone is a complete runtime receipt.",
+  "future_repair_only": "Separate explicit rawGit versus resolvedGitLFS expected-source identities; preserve exact sourcecatalog oid/size/pointer SHA1 and verify payload SHA256 always. Never compare resolvedLFS payloadGitSHA1 with pointerGitSHA1. Unit-only examples will not modify/invoke current guard.",
+  "new_HTTP_model_native_tokenizer_actual12_calls": 0,
+  "large_weight_payload_rereads": 0,
+  "checked_at_unix": 1792929813.5592275
+}

@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "7c50ba99848f6a13707eeec6c4947291a8478e5c",
-  "checkpoint_manifest_sha256": "c44f3d83ccc36288c1e144d06a1b10ca68c94ae952241cb44bfe402b7f15184a",
+  "prior_published_base_commit": "95831963ee844f0744da91e530f87d0b6ecf8960",
+  "checkpoint_manifest_sha256": "49f59f13c6bfd99c14fc22c01629203bf52012786e174d39930d84aaa6f627f5",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -2163,10 +2163,10 @@
     "schema_version": 1,
     "epoch": 38,
     "run_id": "epoch38-7c50ba99848f",
-    "state": "EPOCH38_PLANNING_LEASE",
+    "state": "EPOCH38_SOURCE_FROZEN_ENGINEERING_PENDING_ADMISSION",
     "work_active": true,
     "experiments_active": false,
-    "checkpoint_parent": "7c50ba99848f6a13707eeec6c4947291a8478e5c",
+    "checkpoint_parent": "95831963ee844f0744da91e530f87d0b6ecf8960",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
       "run_id": "epoch38-7c50ba99848f",
@@ -2195,10 +2195,10 @@
     "native_allowed": 0,
     "conditional_train_allowed": 0,
     "conditional_dev_allowed": 0,
-    "conditional_engineering_allowed": 0,
+    "conditional_engineering_allowed": 1,
     "confirmation_allowed": 0,
     "conditional_confirmation_allowed": 0,
-    "instruction": "Source preparation and cryptographic real-asset admission only. No model/tokenizer/native/candidate-case/scorer measurements before a reviewed frozen SOURCE commit and independent actual readback. New epoch38 only; never retry burned epoch37. No paid/GPU/TRAIN/DEV/calibration/CONF/promotion/new submission.",
+    "instruction": "Only new authored CC0 engineering after independent actual SOURCE readback and source/runtime admission. One nonretryable CPU2/600s total phase, one corpus; zero fits/TRAIN/DEV/calibration/CONF. No benchmark acceptance/promotion/submission. FINAL closes every slot.",
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -7712,5 +7712,79 @@
     "new_submission": false,
     "official_SOTA_verified": false,
     "preserve_E37_unknown_tail_and_frozen_false_rejection": true
+  },
+  "epoch38_frozen_study": {
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch38/plan.json",
+      "bytes": 57728,
+      "sha256": "aa4f4f26aa3e673b92ec9f6c96927379abe9ec22d9caa7b0b3e83948d5935b1b"
+    },
+    "source_freeze": {
+      "path": "experiments/sota-2026-10-22/epoch38/source-freeze.json",
+      "bytes": 35132,
+      "sha256": "a5f44f55a63924f3a6ba2caf4f9aac4ca1c6ec4b6a87a4c3a5674068b0e9adc4"
+    }
+  },
+  "epoch38_data_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": [],
+    "hypotheses": [
+      "e38-h01",
+      "e38-h02",
+      "e38-h03",
+      "e38-h04",
+      "e38-h05",
+      "e38-h06",
+      "e38-h07",
+      "e38-h08",
+      "e38-h09",
+      "e38-h10",
+      "e38-h11",
+      "e38-h12"
+    ],
+    "used_confirmation_identities": [],
+    "engineering_ids": [
+      "epoch38:cc0:typed-source:01",
+      "epoch38:cc0:typed-source:02",
+      "epoch38:cc0:typed-source:03",
+      "epoch38:cc0:typed-source:04",
+      "epoch38:cc0:typed-source:05",
+      "epoch38:cc0:typed-source:06",
+      "epoch38:cc0:typed-source:07",
+      "epoch38:cc0:typed-source:08",
+      "epoch38:cc0:typed-source:09",
+      "epoch38:cc0:typed-source:10",
+      "epoch38:cc0:typed-source:11",
+      "epoch38:cc0:typed-source:12"
+    ],
+    "engineering_document_ids": [
+      -38001,
+      -38002,
+      -38003,
+      -38004,
+      -38005,
+      -38006,
+      -38007,
+      -38008,
+      -38009,
+      -38010,
+      -38011,
+      -38012
+    ],
+    "engineering_role": "NEW_AUTHORED_CC0_TYPED_SOURCE_ENGINEERING_ONLY",
+    "new_benchmark_questions_exposed": 0,
+    "benchmark_partition_unchanged": {
+      "exposed": 325,
+      "unreserved": 74,
+      "reserved_confirmation": 24,
+      "total": 423
+    }
+  },
+  "epoch38_pretrained_model_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/PRETRAINED_MODEL_SOURCE.json",
+    "bytes": 2368,
+    "sha256": "1ee316084894862920997c0134f095afcb36a8e9eea7d6ff6d6ce1dc3a66f25b"
   }
 }

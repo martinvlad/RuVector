@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "epoch": 38,
+  "status": "PASS_SOURCE_BOUND_PREWORKER_FAILURE_CAPTURE_AND_DISJOINT_FIXTURES",
+  "checks_passed": true,
+  "handoff": {
+    "path": "/workspace/ruvector-e38-engineering-impl/capture-source-review-v1/CAPTURE_SOURCE_READY.v1.json",
+    "bytes": 2156,
+    "sha256": "b14d5f0f91deb43b1a7a864646a2d8b8819ff422c69661397681238dea5c13e4"
+  },
+  "capture_source_refs": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/launch.py",
+      "bytes": 25931,
+      "sha256": "02463e4a1852ddd541a6062feb486c20170b94d87e55d3d4ef8b836566a2c751"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/preflight.py",
+      "bytes": 2294,
+      "sha256": "5756f15588cac0e784c85b37817d4fe77cec80331d7a1e3dec47cb1451e18979"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/test_runtime_guards.py",
+      "bytes": 7539,
+      "sha256": "b995ad67aa317683d0b6fcbb195ae06eb4c1e23d596ac1c6b4dc4202078f88a8"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch38/observe_supervisor_closure.py",
+      "bytes": 36315,
+      "sha256": "794ad3ad0a73f35106e8583592dd9085acc2e6de00ce6ad5fb7f5803e1e78200"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch38/test_observe_supervisor_closure.py",
+      "bytes": 21390,
+      "sha256": "087c9c828b64290eac2409e7654ca32a3dedbe4698a18a91c761943b53069140"
+    }
+  ],
+  "unchanged_guard_source_refs": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/asset_identity.py",
+      "bytes": 5638,
+      "sha256": "f271c0077be23c34fbb29cfb5728d671371a4646ac9030072ec7b538eb819499"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.expected.json",
+      "bytes": 2112,
+      "sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/model_assets_guard.py",
+      "bytes": 7684,
+      "sha256": "fbb13b8fe52e61c5afee6921dc0210ff31368b4d105ca6d94ea44ff824f736f1"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/common.py",
+      "bytes": 35762,
+      "sha256": "e1cb257111a4008f9c044b8c8053b7bd709b99ca3e334cb91d1ef1952c3c2076"
+    }
+  ],
+  "independent_fixture_report": {
+    "path": "/workspace/ruvector-e38-independent-audit/capture-disjoint-fixtures-independent-v1.json",
+    "bytes": 1245,
+    "sha256": "2638b7793e275d973c1bc448078077583fded6e90deaf1391f548331b7e014d3"
+  },
+  "independent_pure_methods_passed": 6,
+  "findings": [
+    "Exact source/owner/dispatch authentication remains before phase reservation. The genuine phase reservation now precedes the durable try/finally covering admission, verify_plan, the complete actual runtime/model guard, worker path/interpreter/deadline checks and the sole Popen boundary.",
+    "One actual Popen is still the only irreversible worker-start boundary, marked attempted/uncertain before invocation; failure before that call retains captured worker_popen_attempts0, no identity and a source-bound known-before-Popen boundary rather than pretending an unreturned child was closed.",
+    "Final execution/raw-seal/supervisor-completion capture preserves the failed error, physical closure observation and UNKNOWN/null raw/backend operation counts when no raw exists. CONF/paid/GPU counters are now null without final raw rather than fabricated zeros. A captured completion is still only an exit intention pending external physical observer.",
+    "Observer is the unchanged strict physical-identity logic with exact new02463 launcher SHA and E38 boot/namespace/owner/source refs. Its source-bound pre-Popen route requires actual captured execution; it cannot retrofit E37 missing execution or upgrade E37 frozenfalse/UNKNOWN.",
+    "Six independent owned tiny-file/mock-guard fixtures pass: all-five tiny payload scans and raw/LFS types, corrupt/direct-lock/observed-authority/extra/symlink refusals, and real launcher controlflow with invented guard failure. Mock Popen was never called; durable reservation/execution/completion and source-bound observer proof checked. No actual A38 model payload or actual source case was used."
+  ],
+  "no_actual_root_dispatch_or_worker_started": true,
+  "no_actual_public_model_asset_guard_invoked": true,
+  "actual_candidate_case_model_tokenizer_native_scorer_or_Git_mutation_calls": 0,
+  "full_real_model_assets_guard_verified": false,
+  "master_or_native_admission_granted": false,
+  "source_revisions_must_remain_exact": true,
+  "reviewed_at_unix": 1792938374.0090902
+}

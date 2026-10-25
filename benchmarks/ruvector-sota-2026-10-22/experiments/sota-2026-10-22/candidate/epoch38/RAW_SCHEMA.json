@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "epoch": 38,
+  "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+  "physical_contexts": [
+    "full_source",
+    "native_coverage",
+    "lexical_coverage"
+  ],
+  "physical_readouts_per_case": 3,
+  "actual_NLI_readouts": 36,
+  "derived_forecasts": 60,
+  "readouts": "case.readouts[context]:readout_id,measured_context,model_tag,premise exact sourcequotes,context exact span+coverage/provenance,joint_pair_tokens,context_seconds,native_query_seconds,immutable reader object",
+  "arms": "case.arms[arm]:model_tag,measured_context,neural_readout_ref,reader contentidenticalphysical,premise/context,joint_pair_tokens,context_seconds,native_query_seconds,decision,decision_seconds,extra_neural_readouts0,readout_reuse_receipt",
+  "decision": "raw_probabilities_E_C_N,raw_typed_argmax,final_probabilities_E_C_N,final_typed_argmax,permutation,certificate,certificate_applied,fallback_reason,semantic_decision_override,probabilities_changed,extra_NLI_calls0,source_analysis,raw_log_probabilities_E_C_N,final_log_probabilities_E_C_N,NLL_policy",
+  "raw_reader": "Original raw_logits_C_N_E/raw_logits,probabilities_C_N_E/probabilities_native_order,probabilities_E_C_N,native_typed_argmax from PROVIDED raw C/N/E logitfirstwinner; all retainedunaltered byderivedforecast. Stable canonical logp are decisionfields computedworker afterrealreadout, not new calls.",
+  "certificate": "full_source_analysis contains entire closedparsedsourcecatalog,exactquoteoffsets,exactrational claim/derivation/extrema/dependencies,and concrete feasible fullsource worlds. AllclaimtrueforE/allfalseforC; bothtruefalseforN withallcatalogcoverage. Signeditemsintegerbalances and2setcommonuniverse formalgrammar scope.",
+  "NLL": "Stable shifted raw source-logit logsoftmax then canonical[2,0,1],samefinalpermutation; all finiteunclippedNLLgate; p_gold/clipped1e-12/exp-underflow diagnosticsonly.",
+  "timing_scope": "p50/p95 are explicitly limited forward+packing+decision component sums; BGE/sourceprep/nativequery/index/modelinitialization and completeworkerinitcleanupwall/resource measurements retainedseparately. No end-to-end/publisher-latency claim.",
+  "oracle_fence": "All36 realreadouts and60derivedforecasts beforeweakrefmodel/tokenizerdisposal,then once12labeljoin; no benchmarkroles/CONF/promotion."
+}

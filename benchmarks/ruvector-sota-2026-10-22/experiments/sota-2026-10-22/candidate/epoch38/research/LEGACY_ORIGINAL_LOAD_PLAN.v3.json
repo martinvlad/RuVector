@@ -1,0 +1,188 @@
+{
+  "schema_version": 3,
+  "epoch": 36,
+  "status": "PROPOSED_EXPLICIT_PREFREEZE_LEGACY_AMENDMENT_REQUIRES_ROOT_REVIEW_NOT_EXECUTED",
+  "reason": "Actual exact original once-acquired payload was refused as nonZIP by v2inspector before output/model initialization. Its root-recorded prefix matches known PyTorchlegacy magic/protocol. This is new concrete source-format evidence, not retry of the ZIP inspector or acquisition and not unsafe fallback.",
+  "prior_original_plan": {
+    "path": "ORIGINAL_ASSET_ACQUISITION_PLAN.json",
+    "bytes": 8297,
+    "sha256": "3439e99b39d03e812779d415a6552ae19d032913367a674f0472723fbf69862a"
+  },
+  "prior_public_manifest": {
+    "path": "PUBLIC_ARTIFACTS.v2.json",
+    "bytes": 3607,
+    "sha256": "3cfe59768b46ce75901a8d90d3cc2e881b17c8cf5540c384fe4d711a0751404c"
+  },
+  "preserved_actual_refusal": {
+    "path": "ROOT_STATIC_ZIP_FORMAT_REFUSAL.v1.json",
+    "bytes": 1685,
+    "sha256": "244051e2a7f42f2527ea729043d333fc4e8954a0f40e9c29862413eb9aca8a53"
+  },
+  "weight_identity": {
+    "path": "/workspace/ruvector-e36-reader-assets/ms-xxlarge-8f8b43dd/pytorch_model.bin",
+    "bytes": 3133958098,
+    "sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+    "verification_scope": "Root already acquired once and hash-verified; this child did not open or inspect that live weight file."
+  },
+  "legacy_inspector": {
+    "path": "inspect_original_legacy_metadata_v3.py",
+    "bytes": 7574,
+    "sha256": "5c409441947cf66e98e91f0e1d1ba65b5cf27c3728d2883ca54cf5c611c1edad"
+  },
+  "inert_decoder": {
+    "path": "legacy_symbolic_metadata_v3.py",
+    "bytes": 6940,
+    "sha256": "86ef2af6b6af127c4f38e4edc946ff8733df103611a9a23ac7fc84990e271291"
+  },
+  "pure_fixture_source": {
+    "path": "test_legacy_metadata_v3.py",
+    "bytes": 7379,
+    "sha256": "b019e390f670725ee6a6c70c9070a0cd377a939e67ecc490a24ad1f2bd88958b"
+  },
+  "source_only_preflight": {
+    "path": "LEGACY_INSPECTION_PREFLIGHT.v3.1.json",
+    "bytes": 2680,
+    "sha256": "102f6f4049beb90d5aa3bc99aacd8087b3378fa95aba60d1aebf4b1b333e93fc"
+  },
+  "Torch_restricted_source": {
+    "path": "TORCH_RESTRICTED_LEGACY_SOURCE_EVIDENCE.v3.json",
+    "bytes": 2135,
+    "sha256": "4282123ce11a5bea61e40a3b24c78925401a758b03e19417267841b9f795a87f"
+  },
+  "expected_output": {
+    "path": "/workspace/ruvector-epoch36-d73fcce4c45f/XXL_ORIGINAL_WEIGHT_METADATA.json",
+    "must_be_absent_before_root_approval": true,
+    "expected_status": "ORIGINAL_TORCH_LEGACY_PICKLETOOLS_METADATA_VERIFIED_NO_UNPICKLE",
+    "expected_format": "PYTORCH_LEGACY_CONCATENATED_PICKLE_RAW_STORAGES",
+    "schema_version": 3,
+    "source_dtype": "NOT_ADMITTED_UNTIL_ACTUAL_INDEPENDENT_HEADER_REPORT",
+    "shape_dtype_count_fields": [
+      "weights",
+      "metadata_objects",
+      "combined_metadata_bytes",
+      "source_parameter_dtype",
+      "state_tensor_count",
+      "dtype_summaries",
+      "floating_state_tensor_elements",
+      "unique_floating_storage_elements",
+      "unique_storage_count",
+      "unique_storage_bytes",
+      "storage_header_bytes",
+      "serialized_storage_keys_in_physical_order",
+      "storage_data_ends_at_filelength",
+      "tensors",
+      "storages",
+      "shared_storage_keys"
+    ],
+    "tensors_fields": [
+      "name",
+      "dtype",
+      "shape",
+      "stride",
+      "numel",
+      "storage_key",
+      "storage_offset",
+      "root_storage_offset",
+      "legacy_view_key",
+      "legacy_view_offset",
+      "legacy_view_elements",
+      "requires_grad_tag"
+    ],
+    "storage_fields": [
+      "dtype",
+      "elements",
+      "bytes",
+      "location_tag",
+      "header_offset",
+      "header_bytes",
+      "header_hex",
+      "header_element_count",
+      "data_offset",
+      "data_bytes",
+      "data_end_offset",
+      "raw_payload_decoded"
+    ]
+  },
+  "metadata_limits": {
+    "combined_metadata_bytes_max": 8388608,
+    "metadata_pickle_objects": 5,
+    "symbolic_opcodes_per_object_max": 2000000,
+    "state_tensors_max": 10000,
+    "root_storages_max": 10000,
+    "tensor_rank_max": 8,
+    "tensor_elements_max": 2000000000,
+    "legacy_storage_header_bytes": 8,
+    "legacy_protocol": 1001,
+    "source_little_endian_required": true,
+    "raw_tensor_payload_decoding_allowed": false,
+    "unsafe_unpickling_calls_allowed": 0,
+    "checkpoint_GLOBAL_resolution_or_invocation_allowed": false,
+    "Tensor_or_model_import_allowed": false
+  },
+  "inspection_algorithm": [
+    "Hash exact whole-filebytes/length without deserialization. Refuse ZIP or a different original identity; no acquisition or ZIP inspector iscalled.",
+    "Use a bounded stream reader and pickletools to parse exactly five individual metadata objects:magic,protocol,sys_info,state_dict,serialized root storagekeys. Consume no raw tensor bytes in this stage.",
+    "Convert only explicitly allowed inert symbols/primitives/storage/tensor descriptors; never import or call a checkpoint global. Validate every tensor shape/stride/view against its rootstorage bounds.",
+    "For each physically ordered rootstorage, read only its8-byte little-endian elementcount header, require exact metadata agreement, record header/data offsets andbytewidth, then seek over the rawpayload.",
+    "Require the full catalogue to account for exact EOF. Report each dtype/tensor/storage count, alias/view, expected sourcefilehash and all offsets. State-dict element sums are not silently relabeled trainable parameter counts.",
+    "Write a new exclusive immutable metadata report outsideproject only after every check succeeds. The output contract is still proposed until root executes this new inspector once following independent source review."
+  ],
+  "future_frozen_loader_policy": {
+    "serialization_format": "PYTORCH_LEGACY_CONCATENATED_PICKLE_RAW_STORAGES",
+    "weights_only": true,
+    "mmap": false,
+    "map_location": "cpu",
+    "trust_remote_code": false,
+    "unrestricted_pickle_allowed": false,
+    "extra_pickle_safe_globals_added": 0,
+    "ZIP_fallback_allowed": false,
+    "legacy_tar_fallback_in_statics": false,
+    "alternate_checkpoint_allowed": false,
+    "dynamic_quantization_allowed": false,
+    "source_parameter_dtype": "MUST_MATCH_ROOT_APPROVED_ACTUAL_METADATA",
+    "compute_dtype": "F32",
+    "raw_id2label": {
+      "0": "Contradiction",
+      "1": "NotMentioned",
+      "2": "Entailment"
+    },
+    "canonical_E_C_N_indices": [
+      2,
+      0,
+      1
+    ],
+    "execution_phase": "ONLY_INSIDE_FUTURE_SOURCE_FROZEN_ONE_ENGINEERING_WORKER",
+    "before_source_freeze_actual_torch_loads_allowed": 0,
+    "model_initializations_in_acquisition_or_static_inspection": 0,
+    "model_class": "transformers.DebertaV2ForSequenceClassification"
+  },
+  "future_frozen_load_sequence": [
+    "Before actual Torchload, recheck immutable originalhash/bytes and actual legacy metadata reportref; inspect code pins, resource/owner/source admission and current600sphase budget.",
+    "Inside the single future worker only: calltorch.load(original,weights_only=True,mmap=False,map_location=cpu). Do not call pickle.load/loads, torch.load(weights_only=False), addunknown globals or choosean alternate archive format at runtime.",
+    "Build the exact configured model on torch.device(meta), verify all source tensor keys/shapes/dtypes/count/head descriptors against root-approvedactual metadata, then model.load_state_dict(strict=True,assign=True).",
+    "Keep source-audit descriptors as primitives only. Delete the loaded state dictionary and every temporary sourceTensor/state_dict reference, perform gc.collect, then cast the sole assigned model toF32 once. This avoidsintentional duplication; actual residentheap/time stillmustbemeasured.",
+    "Require exact learned parameter/buffer counts, no meta tensors, all computeCPU/F32, eval/frozen gradients and the approved3wayhead before first forward. No warmup, fitting, calibration or extra forward.",
+    "Initialize and clean up the xxlarge and b354 sequentially as in the newly frozen54-readout protocol. Close native/model processes physically; never rerun a failed/uncertain worker."
+  ],
+  "memory_plan": {
+    "cgroup_hard_limit_bytes": 17179869184,
+    "root_observed_anon_order_bytes": 76000000,
+    "root_observed_file_cache_order_bytes": 13850000000,
+    "source_note": "Root reports cgroup usage is dominated by reclaimable filecache. No drop_caches, unrelated process kill or cgroup-limit change is proposed.",
+    "if_source_F16_float_and_I64_buffers_confirmed": {
+      "conservative_simultaneous_source_heap_plus_F32_payload_upper_bound_bytes": 9401874294,
+      "additional_runtime_activation_reserve_bytes": 4294967296,
+      "total_payload_plus_reserve_estimate_bytes": 13696841590,
+      "remaining_below_hard_limit_before_other_host_usage_bytes": 3483027594
+    },
+    "estimate_scope": "Pure conservative parameter-payload arithmetic and a4GiBplanning reserve, not an actualRSS/time guarantee. Actual source dtype/count, current effective otheranon/kernel/headroom, initialization and inference peaks must be admitted and measured. Filecache is not additional permission to allocate beyond16GiB."
+  },
+  "study_scope": "Root-proposed9new authored CC0cases3/class,6arms54forwards, one native corpus9indexes/queries, CPU0,1/600secondsTOTAL including both sequential model inits andcleanup. This amendment changes onlyoriginal source format/loader admission beforefreeze, notlabels/gates/data roles. AllTRAIN/DEV/calibration/CONF empty; strongerquality andpublishereligibility remainunproven/HOLD.",
+  "additional_network_GETs": 0,
+  "additional_payload_acquisitions": 0,
+  "old_ZIP_inspector_reruns": 0,
+  "actual_live_legacy_inspections_by_this_agent": 0,
+  "actual_torch_model_tokenizer_native_or_unsafe_unpickle_calls": 0,
+  "promotion_or_confirmation_allowed": false,
+  "future_actions": "PROPOSED_ONLY_NOT_EXECUTED"
+}

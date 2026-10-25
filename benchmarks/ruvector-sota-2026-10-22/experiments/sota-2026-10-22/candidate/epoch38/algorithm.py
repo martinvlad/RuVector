@@ -1,0 +1,25 @@
+"""Frozen E38 single-reader source/context/forecast identities; stdlib only."""
+KIND='ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES'
+SOURCE='7c50ba99848f6a13707eeec6c4947291a8478e5c'
+ENGINEERING_ROLE='NEW_AUTHORED_CC0_TYPED_SOURCE_ENGINEERING_ONLY'
+DEV_DOCUMENT_IDS=()
+DEV_CASE_IDS=()
+HYPOTHESIS_IDS=tuple(f'e38-h{i:02}' for i in range(1,13))
+ENG_DOCUMENT_IDS=tuple(range(-38001,-38013,-1))
+ENG_CASE_IDS=tuple(f'epoch38:cc0:typed-source:{i:02}' for i in range(1,13))
+LABELS_CANONICAL=('Entailment','Contradiction','NotMentioned')
+ARMS=('full_raw', 'native_raw', 'native_verified', 'lexical_verified', 'full_verified')
+RAW_CONTEXTS=('full_source', 'native_coverage', 'lexical_coverage')
+READOUT_REUSE_MAP={'full_raw': 'full_source', 'full_verified': 'full_source', 'native_raw': 'native_coverage', 'native_verified': 'native_coverage', 'lexical_verified': 'lexical_coverage'}
+PRIMARY='native_verified'
+ENGINEERING_GATE={'primary_required_correct': 12, 'each_class_required_correct': 4, 'accuracy_gain_at_least2_vs': 'full_raw', 'proper_nonincrease_against': ['full_raw', 'native_raw', 'lexical_verified', 'full_verified'], 'proper_scores': ['Brier', 'NLL'], 'prospective_ceiling_rejection_if_full_raw_correct_exceeds': 10, 'no_native_causal_gain_claim_if_null': True}
+PROBABILITY_POLICY={'name': 'SOURCE_CERTIFIED_RAW_MAX_MASS_TRANSPOSITION', 'retain_original_logits_and_raw_T1_probabilities': True, 'raw_winner': 'PROVIDED_ORIGINAL_SOURCE_ORDER_RAW_LOGIT_ARGMAX; never rederived probability tie winner', 'action': 'Swap canonical raw winner probability and independently certified class probability; other components unchanged; raw unchanged on abstention or agreement', 'derived_tie_rule': 'Valid certificate class first among equal final maxima; otherwise original source C,N,E first raw-logit maximum', 'fitting_or_confidence_parameter': None, 'calibrated_posterior_claim': False, 'proper_guarantee': 'Only conditional on a correct certificate against SAME raw readout. No cross-context guarantee; wrongcert can be harmful or invariant and remains a soundness failure.'}
+MODEL_ORDER=('xxlarge',)
+NATIVE_LABELS={'xxlarge':('Contradiction','NotMentioned','Entailment')}
+CANONICAL_FROM_RAW={'xxlarge':[2,0,1]}
+MODEL_REPOSITORIES={'xxlarge':'microsoft/deberta-v2-xxlarge-mnli'}
+MODEL_REVISIONS={'xxlarge':'8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06'}
+MODEL_WEIGHT_SHA={'xxlarge':'5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db'}
+MODEL_WEIGHT_BYTES={'xxlarge':3133958098}
+MODEL_DIRECTORIES={'xxlarge':'/workspace/ruvector-e38-reader-assets/ms-xxlarge-8f8b43dd'}
+ROOT_CONTRACT_SHA256='226cd756b41c881e5131a175a470ac06c96ed158ffd9c5bc216d42b3cac41a67'

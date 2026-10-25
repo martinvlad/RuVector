@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "epoch": 38,
+  "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+  "policy": "rank-prefix-until-source-constraint-coverage-v1",
+  "raw_contexts": [
+    "full_source",
+    "native_coverage",
+    "lexical_coverage"
+  ],
+  "arms": [
+    "full_raw",
+    "native_raw",
+    "native_verified",
+    "lexical_verified",
+    "full_verified"
+  ],
+  "readout_reuse_map": {
+    "full_raw": "full_source",
+    "full_verified": "full_source",
+    "native_raw": "native_coverage",
+    "native_verified": "native_coverage",
+    "lexical_verified": "lexical_coverage"
+  },
+  "selection": "Complete unique native or lexical rank prefix of whole exact source-line groups until all prospectively source-derived required clause spans covered; no skipping; original source order; true pair <=512; N/all unsupported require entire source catalog. No clipping/fallback.",
+  "partition_model": "xxlarge",
+  "BGE_source": "experiments/sota-2026-10-22/candidate/epoch3/models.py",
+  "root_contract_sha256": "226cd756b41c881e5131a175a470ac06c96ed158ffd9c5bc216d42b3cac41a67"
+}

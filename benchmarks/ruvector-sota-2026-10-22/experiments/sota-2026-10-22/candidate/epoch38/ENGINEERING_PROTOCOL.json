@@ -1,0 +1,243 @@
+{
+  "actual_NLI_forwards": 36,
+  "arm_to_measured_context": {
+    "full_raw": "full_source",
+    "full_verified": "full_source",
+    "lexical_verified": "lexical_coverage",
+    "native_raw": "native_coverage",
+    "native_verified": "native_coverage"
+  },
+  "benchmark_accuracy": null,
+  "case_ids": [
+    "epoch38:cc0:typed-source:01",
+    "epoch38:cc0:typed-source:02",
+    "epoch38:cc0:typed-source:03",
+    "epoch38:cc0:typed-source:04",
+    "epoch38:cc0:typed-source:05",
+    "epoch38:cc0:typed-source:06",
+    "epoch38:cc0:typed-source:07",
+    "epoch38:cc0:typed-source:08",
+    "epoch38:cc0:typed-source:09",
+    "epoch38:cc0:typed-source:10",
+    "epoch38:cc0:typed-source:11",
+    "epoch38:cc0:typed-source:12"
+  ],
+  "case_proposal": {
+    "bytes": 17602,
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/CASE_PROPOSAL.v2.json",
+    "sha256": "e0151860475129c1fda03255017f2165233003e0d973350d54c3735feb437491"
+  },
+  "class_counts": {
+    "Contradiction": 4,
+    "Entailment": 4,
+    "NotMentioned": 4
+  },
+  "data_roles": {
+    "calibration": [],
+    "confirmation": [],
+    "dev": [],
+    "train": []
+  },
+  "engineering_gate": {
+    "accuracy_gain_at_least2_vs": "full_raw",
+    "each_class_required_correct": 4,
+    "no_native_causal_gain_claim_if_null": true,
+    "primary_required_correct": 12,
+    "proper_nonincrease_against": [
+      "full_raw",
+      "native_raw",
+      "lexical_verified",
+      "full_verified"
+    ],
+    "proper_scores": [
+      "Brier",
+      "NLL"
+    ],
+    "prospective_ceiling_rejection_if_full_raw_correct_exceeds": 10
+  },
+  "engineering_only": true,
+  "engineering_role": "NEW_AUTHORED_CC0_TYPED_SOURCE_ENGINEERING_ONLY",
+  "epoch": 38,
+  "final_derived_forecasts": 60,
+  "historical_uncertainty_policy": "E37 captured model/corpus tail remains UNKNOWN. Prior verified33attempts/31complete are historical lower bounds, bounded outer attempts38/legacyqualification6 before E38. Any new actual corpus may increment lower bounds but cannot make cumulative unknown totals known.",
+  "human_semantic_review": {
+    "bytes": 7680,
+    "path": "experiments/sota-2026-10-22/audit/epoch38/data-human-semantics-independent-v1.json",
+    "sha256": "a180b1febf7efd68fa9166cfc48563b7ad6e211396136f4ff63709fe4dce1b74"
+  },
+  "inputs": {
+    "bytes": 10517,
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/engineering.inputs.json",
+    "sha256": "bdb14d0d2b734b26a00996d285e78b19268badafb73355293d26cb6481762cac"
+  },
+  "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+  "license": {
+    "bytes": 439,
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/engineering.LICENSE.txt",
+    "sha256": "62023e1f8922c4e2b45575d119d7427b6c2b2d49bced5a8a6bfb087f5050b728"
+  },
+  "limits": {
+    "CONF": 0,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "CPU_threads": 2,
+    "DEV": 0,
+    "GPU_calls": 0,
+    "TRAIN": 0,
+    "actual_NLI_forwards": 36,
+    "calibration": 0,
+    "fits": 0,
+    "native_binary_loads": 1,
+    "native_corpus_batches": 1,
+    "native_indexes": 12,
+    "native_queries": 12,
+    "owned_workers": 1,
+    "paid_API_calls": 0,
+    "retries": 0,
+    "seconds_total_including_init_cleanup": 600
+  },
+  "metric_arms": [
+    "full_raw",
+    "native_raw",
+    "native_verified",
+    "lexical_verified",
+    "full_verified"
+  ],
+  "metrics_policy": {
+    "bytes": 1778,
+    "path": "experiments/sota-2026-10-22/audit/epoch38/METRICS_POLICY.json",
+    "sha256": "eab8912e65aee141ee913374fde751be4d451864de1e7e62ada74c7986f4d0ac"
+  },
+  "model_assets_expected": {
+    "bytes": 2112,
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.expected.json",
+    "sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806"
+  },
+  "model_assets_expected_path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.expected.json",
+  "model_assets_expected_sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806",
+  "model_assets_validator": {
+    "bytes": 7684,
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/model_assets_guard.py",
+    "sha256": "fbb13b8fe52e61c5afee6921dc0210ff31368b4d105ca6d94ea44ff824f736f1"
+  },
+  "model_assets_validator_path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/model_assets_guard.py",
+  "model_assets_validator_sha256": "fbb13b8fe52e61c5afee6921dc0210ff31368b4d105ca6d94ea44ff824f736f1",
+  "numeric_oracle_copy_is_not_an_additional_runtime_bank": true,
+  "numeric_oracle_public_copy": {
+    "bytes": 676,
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/NUMERIC_ORACLE.json",
+    "sha256": "4644535338b9e8641151f18606fa7a766841cf72b43ae7c253d7c913fe82e341"
+  },
+  "official_eligibility": "HOLD",
+  "oracle": {
+    "bytes": 676,
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/engineering.oracle.json",
+    "sha256": "4644535338b9e8641151f18606fa7a766841cf72b43ae7c253d7c913fe82e341"
+  },
+  "oracle_access": "Exactly12labels joined once only AFTER all36realNLIreadouts and all60derivedforecasts; scorer uses retainedjoinedrecords, no originaloracle reread. No candidate/parser/classification on actual12 before SOURCE, even if stdlib; only independent source semantic review and disjoint purefixtures.",
+  "phase": "engineering",
+  "premeasurement_asset_guard_policy": {
+    "all_five_real_payload_size_SHA256_and_typed_upstream_identity_checks": true,
+    "full_guard_invocations_before_master": 1,
+    "guard_failure_consumes_no_scientific_worker_but_must_stop_unchanged_blocker": true,
+    "no_candidate_cases_or_models_tokenizers_native_oracles_called": true,
+    "receipt_required_before_master": "experiments/sota-2026-10-22/epoch38/preparation/model-assets-guard-admission.json",
+    "same_complete_validator_as_runtime_required": true,
+    "separate_expected_catalog": {
+      "bytes": 2112,
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.expected.json",
+      "sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806"
+    },
+    "stubs_mocks_monkeypatches_allowed": false
+  },
+  "primary": "native_verified",
+  "probability_policy": {
+    "action": "Swap canonical raw winner probability and independently certified class probability; other components unchanged; raw unchanged on abstention or agreement",
+    "calibrated_posterior_claim": false,
+    "derived_tie_rule": "Valid certificate class first among equal final maxima; otherwise original source C,N,E first raw-logit maximum",
+    "fitting_or_confidence_parameter": null,
+    "name": "SOURCE_CERTIFIED_RAW_MAX_MASS_TRANSPOSITION",
+    "proper_guarantee": "Only conditional on a correct certificate against SAME raw readout. No cross-context guarantee; wrongcert can be harmful or invariant and remains a soundness failure.",
+    "raw_winner": "PROVIDED_ORIGINAL_SOURCE_ORDER_RAW_LOGIT_ARGMAX; never rederived probability tie winner",
+    "retain_original_logits_and_raw_T1_probabilities": true
+  },
+  "promotion_allowed": false,
+  "raw_contexts": [
+    "full_source",
+    "native_coverage",
+    "lexical_coverage"
+  ],
+  "real_model_assets_guard_receipt": {
+    "bytes": 9897,
+    "path": "experiments/sota-2026-10-22/epoch38/preparation/model-assets-guard-admission.json",
+    "sha256": "b9bea5d3b01304081825c5601c788dd0a3b39a4c25dd59cba5052369f5657f73"
+  },
+  "real_model_assets_guard_receipt_path": "experiments/sota-2026-10-22/epoch38/preparation/model-assets-guard-admission.json",
+  "real_model_assets_guard_receipt_sha256": "b9bea5d3b01304081825c5601c788dd0a3b39a4c25dd59cba5052369f5657f73",
+  "root_contract": {
+    "bytes": 6846,
+    "path": "experiments/sota-2026-10-22/epoch38/preparation/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+    "sha256": "226cd756b41c881e5131a175a470ac06c96ed158ffd9c5bc216d42b3cac41a67"
+  },
+  "schema_version": 1,
+  "scope": "Twelve new CC0 fictional financial typed compositions with independent manual oracles; first actual attempted test of the previously unmeasured generic mechanism. E37source12 and all prior51entries remain exposed engineering. Not a ClaimBench pilot, benchmark generalization, confirmation, promotion or publisher submission.",
+  "source_checkpoint": "7c50ba99848f6a13707eeec6c4947291a8478e5c",
+  "source_semantics": {
+    "grammar": "typed-financial-affine-cardinality-v1",
+    "named_set_universe": "The two named subsets in each entity/period frame belong to that same explicit universe; each full four-cell table must satisfy all stated cardinalities.",
+    "neutral": "Two concrete complete source worlds must respectively satisfy and falsify the claim while satisfying every supplied constraint, including consistent irrelevant entity/period facts. Full source quotes required; a retrieval miss is never insufficiency.",
+    "scope": "Every nonblank supplied source clause must parse. Generic source-complete rational affine quantities and a separately bounded integral two-set family only; no outside10-K or accounting identity inferred.",
+    "unsupported": "Unsupported, ambiguous, inconsistent or uncertifiable source preserves the real raw forecast by abstention."
+  },
+  "sources": {
+    "CONTEXT_POLICY.json": {
+      "bytes": 1082,
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/CONTEXT_POLICY.json",
+      "sha256": "86df71ebca2a985ecfaa130d7c4b3ae3dd81e72ee4d6cf5c8ddab0b5431680af"
+    },
+    "EXPECTED_COUNTERS.json": {
+      "bytes": 4205,
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/EXPECTED_COUNTERS.json",
+      "sha256": "55ad957ab4830a1bddd920abfe5e5a2760e297a78ce7697a25240f115235762d"
+    },
+    "GRAMMAR_POLICY.json": {
+      "bytes": 1648,
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/GRAMMAR_POLICY.json",
+      "sha256": "8730448c9da002bc4dc45d64f811e093194d6774867561d7ff45a62b33f73542"
+    },
+    "MODEL_ASSETS.json": {
+      "bytes": 2138,
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.json",
+      "sha256": "652e603534a5c526d1c53e734d040caa791eccaf4fb4397728871342b7906bcb"
+    },
+    "MODEL_PROFILES.json": {
+      "bytes": 1561,
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_PROFILES.json",
+      "sha256": "f6cca3c1e30cc8cb065ab9e09b2375fcdd43abcc39709122a073db333302c2b3"
+    },
+    "PRETRAINED_MODEL_SOURCE.json": {
+      "bytes": 2368,
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/PRETRAINED_MODEL_SOURCE.json",
+      "sha256": "1ee316084894862920997c0134f095afcb36a8e9eea7d6ff6d6ce1dc3a66f25b"
+    },
+    "PROOF_POLICY.json": {
+      "bytes": 1656,
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/PROOF_POLICY.json",
+      "sha256": "3a039106c3de7d31a8625dc201c13b7583ddc11811ed79ff2c1dd265809a3c2b"
+    },
+    "QUERY_POLICY.json": {
+      "bytes": 309,
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/QUERY_POLICY.json",
+      "sha256": "0fae3fddaf696ccffbad82e2a8d2ec45a5b356948f5489e42fba65e976fd1d64"
+    },
+    "RAW_SCHEMA.json": {
+      "bytes": 2317,
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/RAW_SCHEMA.json",
+      "sha256": "fdfbb4e519a95986e3388f01254fcbd3a9f0c4ea96ae59e7c0c196949a36bf6a"
+    }
+  },
+  "training_lineage_complete": false,
+  "used_confirmation_identities": []
+}

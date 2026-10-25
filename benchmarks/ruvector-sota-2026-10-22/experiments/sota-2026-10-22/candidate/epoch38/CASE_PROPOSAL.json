@@ -1,0 +1,198 @@
+{
+  "actual_case_parser_tokenizer_model_native_calls": 0,
+  "case_count": 12,
+  "cases": [
+    {
+      "document": "For \"Qevris Retail\" in \"FY2071\", \"supplement\" is exactly 4 million USD.\n\nFor \"Qevris Leasing\" in \"FY2071\", \"committed tranche\" is between 7 and 12 million USD inclusive.\n\nFor \"Qevris Leasing\" in \"FY2071\", \"supplement\" is exactly 1.75 million USD.\n\nFor \"Qevris Leasing\" in \"FY2071\", \"combined facility\" equals \"committed tranche\" plus \"supplement\".\n\nFor \"Qevris Leasing\" in \"FY2070\", \"supplement\" is exactly 2.25 million USD.\n\nFor \"Qevris Leasing\" in \"FY2071\", \"incremental facility\" equals \"combined facility\" minus \"committed tranche\".",
+      "document_id": -38001,
+      "hypothesis": "For \"Qevris Leasing\" in \"FY2071\", \"incremental facility\" is exactly 1.75 million USD.",
+      "hypothesis_id": "e38-h01",
+      "id": "epoch38:cc0:typed-source:01",
+      "independent_reasoning": "For every committed tranche x in[7,12]million, (x+1.75)-x=1.75million. The other entity and prior period are distinct bindings.",
+      "label": "Entailment",
+      "manual_complete_worlds": {
+        "lower_and_upper": "x=7 gives combined8.75 and incremental1.75; x=12 gives combined13.75 and incremental1.75. Otherentity supplement4 and FY2070supplement2.25 remain fixed."
+      },
+      "mechanism": "SHARED_PRIMITIVE_CANCELLATION"
+    },
+    {
+      "document": "For \"Torvane Systems\" in \"FY2071\", \"quarter service expense\" is exactly 900 thousand USD.\n\nFor \"Torvane Systems\" in \"FY2072\", \"quarter service expense\" is exactly 660 thousand USD.\n\nFor \"Torvane Systems\" in \"FY2072\", \"annual service expense\" equals 4 times \"quarter service expense\".\n\nFor \"Torvane Systems\" in \"FY2072\", \"annual rebate\" is exactly 0.48 million USD.\n\nFor \"Torvane Systems\" in \"FY2072\", \"annual net expense\" equals \"annual service expense\" minus \"annual rebate\".\n\nFor \"Torvane Labs\" in \"FY2072\", \"annual rebate\" is exactly 1 million USD.\n\nFor \"Torvane Systems\" in \"FY2072\", \"monthly net expense\" equals \"annual net expense\" divided by 12.",
+      "document_id": -38002,
+      "hypothesis": "For \"Torvane Systems\" in \"FY2072\", \"monthly net expense\" is exactly 180 thousand USD.",
+      "hypothesis_id": "e38-h02",
+      "id": "epoch38:cc0:typed-source:02",
+      "independent_reasoning": "660000*4=2640000; subtract480000 gives2160000; divide12 gives180000USD. No unstated annualization identity is used; every equation is supplied.",
+      "label": "Entailment",
+      "manual_complete_worlds": {
+        "only": "quarter660000, annual2640000, rebate480000, annualnet2160000, monthly180000USD. Priorquarter900000 and otherentity rebate1000000 are unchanged."
+      },
+      "mechanism": "SCALE_MINUS_CONSTANT_THEN_DIVIDE"
+    },
+    {
+      "document": "For \"Selkith Holdings\" in \"FY2073\", \"cash support\" is exactly 5 million USD.\n\nFor \"Selkith Holdings\" in \"FY2073\", \"receivable window\" is between 14 and 18 million USD inclusive.\n\nFor \"Selkith Holdings\" in \"FY2073\", \"valuation offset\" equals -0.25 times \"receivable window\".\n\nFor \"Selkith Holdings\" in \"FY2072\", \"cash support\" is exactly 0.1 million USD.\n\nFor \"Selkith Holdings\" in \"FY2073\", \"net backing\" equals \"cash support\" plus \"valuation offset\".",
+      "document_id": -38003,
+      "hypothesis": "For \"Selkith Holdings\" in \"FY2073\", \"net backing\" is at least 500 thousand USD.",
+      "hypothesis_id": "e38-h03",
+      "id": "epoch38:cc0:typed-source:03",
+      "independent_reasoning": "-0.25*[14,18]=[-4.5,-3.5]million; adding5 gives[0.5,1.5]million. The inclusive lower bound is500000USD.",
+      "label": "Entailment",
+      "manual_complete_worlds": {
+        "lower": "receivable18, offset-4.5, backing0.5million; prior support0.1 fixed.",
+        "upper": "receivable14, offset-3.5, backing1.5million; prior support0.1 fixed."
+      },
+      "mechanism": "NEGATIVE_SCALE_INTERVAL_BOUND_REVERSAL"
+    },
+    {
+      "document": "For \"Wendora Clearing\" in \"FY2073\", the universe has exactly 30 items.\n\nFor \"Wendora Clearing\" in \"FY2073\", \"direct accounts\" contains exactly 17 items.\n\nFor \"Wendora Clearing\" in \"FY2073\", \"custody accounts\" contains exactly 10 items.\n\nFor \"Wendora Clearing\" in \"FY2074\", the universe has exactly 84 items.\n\nFor \"Wendora Clearing\" in \"FY2074\", \"direct accounts\" contains exactly 61 items.\n\nFor \"Wendora Clearing\" in \"FY2074\", \"custody accounts\" contains exactly 44 items.",
+      "document_id": -38004,
+      "hypothesis": "For \"Wendora Clearing\" in \"FY2074\", the union of \"direct accounts\" and \"custody accounts\" contains at least 61 items.",
+      "hypothesis_id": "e38-h04",
+      "id": "epoch38:cc0:typed-source:04",
+      "independent_reasoning": "In FY2074 overlap ranges21..44; union105-overlap ranges61..84, hence at least61. FY2073 has a distinct feasible2x2family.",
+      "label": "Entailment",
+      "manual_complete_worlds": {
+        "lower": "FY2074 table in sorted order[custody,direct]: both44, custodyonly0, directonly17, neither23; union61. FY2073 choose both0,custodyonly10,directonly17,neither3.",
+        "upper": "FY2074 both21,custodyonly23,directonly40,neither0; union84. FY2073 same feasible table."
+      },
+      "mechanism": "TWO_SET_UNION_LOWER_BOUND_WITH_OTHER_PERIOD_FAMILY"
+    },
+    {
+      "document": "For \"Yulmar Services\" in \"FY2075\", \"delivery allowance\" is between 1.2 and 2.4 million USD inclusive.\n\nFor \"Yulmar Services\" in \"FY2075\", \"gross credit\" equals 3 times \"delivery allowance\".\n\nFor \"Yulmar Parts\" in \"FY2075\", \"delivery allowance\" is exactly 10 million USD.\n\nFor \"Yulmar Services\" in \"FY2075\", \"paired debit\" equals \"delivery allowance\" plus \"delivery allowance\".\n\nFor \"Yulmar Services\" in \"FY2075\", \"net credit\" equals \"gross credit\" minus \"paired debit\".\n\nFor \"Yulmar Services\" in \"FY2074\", \"delivery allowance\" is exactly 3 million USD.",
+      "document_id": -38005,
+      "hypothesis": "For \"Yulmar Services\" in \"FY2075\", \"net credit\" is more than 2.4 million USD.",
+      "hypothesis_id": "e38-h05",
+      "id": "epoch38:cc0:typed-source:05",
+      "independent_reasoning": "With a in[1.2,2.4], gross3a and debit2a share exactly the same primitive; net=a. More than2.4million is false for every allowed value, including the inclusive upper endpoint.",
+      "label": "Contradiction",
+      "manual_complete_worlds": {
+        "lower": "a1.2,gross3.6,debit2.4,net1.2million. Otherentity10 and prior3 fixed.",
+        "upper": "a2.4,gross7.2,debit4.8,net2.4million. Otherentity10 and prior3 fixed."
+      },
+      "mechanism": "CORRELATED_THREE_MINUS_DOUBLE_SHARED_ROOT"
+    },
+    {
+      "document": "For \"Hadris Treasury\" in \"FY2076\", \"capital baseline\" is exactly 6.2 million USD.\n\nFor \"Hadris Treasury\" in \"FY2076\", \"cash surplus\" is exactly -0.8 million USD.\n\nFor \"Hadris Treasury\" in \"FY2076\", \"gross capacity\" equals \"capital baseline\" plus \"cash surplus\".\n\nFor \"Hadris Treasury\" in \"FY2075\", \"cash surplus\" is exactly 0.8 million USD.\n\nFor \"Hadris Treasury\" in \"FY2076\", \"third allocation\" equals \"gross capacity\" divided by 3.\n\nFor \"Hadris Treasury\" in \"FY2076\", \"carried allocation\" equals 2 times \"third allocation\".",
+      "document_id": -38006,
+      "hypothesis": "For \"Hadris Treasury\" in \"FY2076\", \"carried allocation\" is exactly 3.8 million USD.",
+      "hypothesis_id": "e38-h06",
+      "id": "epoch38:cc0:typed-source:06",
+      "independent_reasoning": "6.2+(-0.8)=5.4million; /3=1.8million; *2=3.6million. The claimed3.8million conflicts with the explicit equations.",
+      "label": "Contradiction",
+      "manual_complete_worlds": {
+        "only": "baseline6.2,surplus-0.8,gross5.4,third1.8,carried3.6million; prior surplus0.8 fixed."
+      },
+      "mechanism": "NEGATIVE_ADDEND_DIVIDE_AND_RESCALE"
+    },
+    {
+      "document": "For \"Pexorin Retail\" in \"FY2077\", \"baseline margin\" is exactly 18 percent.\n\nFor \"Pexorin Retail\" in \"FY2077\", \"policy cut\" is exactly 2.5 percent.\n\nFor \"Pexorin Supply\" in \"FY2077\", \"policy cut\" is exactly 1 percent.\n\nFor \"Pexorin Retail\" in \"FY2077\", \"postcut margin\" equals \"baseline margin\" minus \"policy cut\".\n\nFor \"Pexorin Retail\" in \"FY2077\", \"discounted margin\" equals 0.8 times \"postcut margin\".",
+      "document_id": -38007,
+      "hypothesis": "For \"Pexorin Retail\" in \"FY2077\", \"discounted margin\" is at least 13 percent.",
+      "hypothesis_id": "e38-h07",
+      "id": "epoch38:cc0:typed-source:07",
+      "independent_reasoning": "The explicit equation gives18%-2.5%=15.5%, then0.8*15.5%=12.4%. As rational dimensionless values: (18/100-2.5/100)*0.8=0.124<0.13.",
+      "label": "Contradiction",
+      "manual_complete_worlds": {
+        "only": "baseline0.18,cut0.025,postcut0.155,discounted0.124; otherentity cut0.01 fixed."
+      },
+      "mechanism": "PERCENT_DIMENSION_SUBTRACTION_AND_SCALE"
+    },
+    {
+      "document": "For \"Belveth Custody\" in \"FY2078\", the universe has exactly 37 items.\n\nFor \"Belveth Custody\" in \"FY2078\", \"funded ledgers\" contains exactly 29 items.\n\nFor \"Belveth Custody\" in \"FY2078\", \"secured ledgers\" contains exactly 18 items.\n\nFor \"Belveth Custody\" in \"FY2077\", \"overlap indicator\" is exactly 19 items.",
+      "document_id": -38008,
+      "hypothesis": "For \"Belveth Custody\" in \"FY2078\", the overlap of \"funded ledgers\" and \"secured ledgers\" contains more than 18 items.",
+      "hypothesis_id": "e38-h08",
+      "id": "epoch38:cc0:typed-source:08",
+      "independent_reasoning": "Overlap ranges max(0,29+18-37)=10 through min(29,18)=18. More than18 is impossible; the separate prior-period metric has no binding to the named subsets.",
+      "label": "Contradiction",
+      "manual_complete_worlds": {
+        "lower": "FY2078 both10,fundedonly19,securedonly8,neither0; prior indicator19 fixed.",
+        "upper": "FY2078 both18,fundedonly11,securedonly0,neither8; prior indicator19 fixed."
+      },
+      "mechanism": "TWO_SET_OVERLAP_UPPER_BOUND_AND_PERIOD_DECOY"
+    },
+    {
+      "document": "For \"Kelmor Notes\" in \"FY2079\", \"opening liability\" is between 9 and 13 million USD inclusive.\n\nFor \"Kelmor Notes\" in \"FY2079\", \"settlement share\" equals 0.25 times \"opening liability\".\n\nFor \"Kelmor Notes\" in \"FY2078\", \"opening liability\" is exactly 11 million USD.\n\nFor \"Kelmor Notes\" in \"FY2079\", \"remaining liability\" equals \"opening liability\" minus \"settlement share\".",
+      "document_id": -38009,
+      "hypothesis": "For \"Kelmor Notes\" in \"FY2079\", \"remaining liability\" is exactly 8.25 million USD.",
+      "hypothesis_id": "e38-h09",
+      "id": "epoch38:cc0:typed-source:09",
+      "independent_reasoning": "Remaining0.75*x spans[6.75,9.75]million. The supplied constraints permit both equality and inequality to8.25; prior-period11 does not fix the current primitive.",
+      "label": "NotMentioned",
+      "manual_complete_worlds": {
+        "false": "current opening9,settlement2.25,remaining6.75million; prior opening11 fixed.",
+        "true": "current opening11,settlement2.75,remaining8.25million; prior opening11 fixed."
+      },
+      "mechanism": "CORRELATED_REMAINING_AMOUNT_INTERIOR_EQUALITY"
+    },
+    {
+      "document": "For \"Zorlan Media\" in \"FY2080\", \"base fee\" is exactly 0.8 million USD.\n\nFor \"Zorlan Advisory\" in \"FY2080\", \"base fee\" is between 0.4 and 0.8 million USD inclusive.\n\nFor \"Zorlan Advisory\" in \"FY2080\", \"support fee\" is between 0.6 and 1.0 million USD inclusive.\n\nFor \"Zorlan Advisory\" in \"FY2080\", \"double base fee\" equals 2 times \"base fee\".\n\nFor \"Zorlan Advisory\" in \"FY2080\", \"weighted allowance\" equals \"double base fee\" plus \"support fee\".\n\nFor \"Zorlan Advisory\" in \"FY2080\", \"half allowance\" equals \"weighted allowance\" divided by 2.",
+      "document_id": -38010,
+      "hypothesis": "For \"Zorlan Advisory\" in \"FY2080\", \"half allowance\" is at least 1.1 million USD.",
+      "hypothesis_id": "e38-h10",
+      "id": "epoch38:cc0:typed-source:10",
+      "independent_reasoning": "(2b+s)/2 ranges[0.7,1.3]million. A feasible boundary world yields1.1 and a second yields0.9; no label is inferred from omitted retrieval.",
+      "label": "NotMentioned",
+      "manual_complete_worlds": {
+        "false": "b0.4,s1.0,double0.8,weighted1.8,half0.9million; otherentity b0.8 fixed.",
+        "true": "b0.8,s0.6,double1.6,weighted2.2,half1.1million; otherentity b0.8 fixed."
+      },
+      "mechanism": "WEIGHTED_TWO_ROOT_SUM_DIVIDED_THRESHOLD"
+    },
+    {
+      "document": "For \"Nuvrek Insurance\" in \"FY2081\", \"indicative reserve\" is between 4 and 8 percent inclusive.\n\nFor \"Nuvrek Insurance\" in \"FY2081\", \"contingency uplift\" is between 1 and 3 percent inclusive.\n\nFor \"Nuvrek Insurance\" in \"FY2081\", \"base reserve\" equals \"indicative reserve\" minus \"contingency uplift\".\n\nFor \"Nuvrek Insurance\" in \"FY2080\", \"indicative reserve\" is exactly 7 percent.\n\nFor \"Nuvrek Insurance\" in \"FY2081\", \"scaled reserve\" equals 0.5 times \"base reserve\".",
+      "document_id": -38011,
+      "hypothesis": "For \"Nuvrek Insurance\" in \"FY2081\", \"scaled reserve\" is more than 2 percent.",
+      "hypothesis_id": "e38-h11",
+      "id": "epoch38:cc0:typed-source:11",
+      "independent_reasoning": "0.5*(r-u) spans[0.5,3.5]percent. r8,u1 gives3.5% true; r5,u1 gives exactly2% and falsifies the strict claim. Prior-year7% remains independent.",
+      "label": "NotMentioned",
+      "manual_complete_worlds": {
+        "false": "r0.05,u0.01,base0.04,scaled0.02; priorr0.07 fixed.",
+        "true": "r0.08,u0.01,base0.07,scaled0.035; priorr0.07 fixed."
+      },
+      "mechanism": "PERCENT_TWO_DOMAIN_DIFFERENCE_AND_STRICT_SCALED_BOUNDARY"
+    },
+    {
+      "document": "For \"Dareth Vouchers\" in \"FY2082\", \"received vouchers\" is between 5 and 11 items inclusive.\n\nFor \"Dareth Vouchers\" in \"FY2082\", \"double receipts\" equals 2 times \"received vouchers\".\n\nFor \"Dareth Vouchers\" in \"FY2082\", \"offset vouchers\" is exactly 3 items.\n\nFor \"Dareth Freight\" in \"FY2082\", \"received vouchers\" is exactly 8 items.\n\nFor \"Dareth Vouchers\" in \"FY2082\", \"reconciled vouchers\" equals \"double receipts\" minus \"offset vouchers\".",
+      "document_id": -38012,
+      "hypothesis": "For \"Dareth Vouchers\" in \"FY2082\", \"reconciled vouchers\" is exactly 13 items.",
+      "hypothesis_id": "e38-h12",
+      "id": "epoch38:cc0:typed-source:12",
+      "independent_reasoning": "For integral x in[5,11],2x-3 is one of7,9,11,13,15,17,19. x8 makes13 and x5 makes7; all supplied and derived item quantities stay integral.",
+      "label": "NotMentioned",
+      "manual_complete_worlds": {
+        "false": "x5,double10,offset3,reconciled7items; otherentity x8 fixed.",
+        "true": "x8,double16,offset3,reconciled13items; otherentity x8 fixed."
+      },
+      "mechanism": "INTEGRAL_AFFINE_INTERIOR_EQUALITY"
+    }
+  ],
+  "class_counts": {
+    "Contradiction": 4,
+    "Entailment": 4,
+    "NotMentioned": 4
+  },
+  "data_roles": {
+    "calibration": [],
+    "confirmation": [],
+    "dev": [],
+    "train": []
+  },
+  "engineering_role": "NEW_AUTHORED_CC0_TYPED_SOURCE_ENGINEERING_ONLY",
+  "epoch": 38,
+  "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+  "license": "CC0-1.0",
+  "manual_source_budget": {
+    "actual_tokens": null,
+    "budget_scope": "Manual short-text conservative design only; actual512 pair admission occurs after freeze, never guessed as measured tokens.",
+    "max_hypothesis_characters": 117,
+    "max_source_characters": 652
+  },
+  "novelty_scope": "Exact E32-E37 input/ID novelty checked separately. Broad arithmetic/unit/set motifs overlap prior engineering. New dependency compositions and all fictional inputs are engineering only, not benchmark confirmation or generalization. E37 twelve remain exposed even though their worker failed before measurement.",
+  "prospective_human_static_grammar_amendment": "Before any candidate/parser/tokenizer/model/native calls or independent proposal review, case02 decimal spelling .48 changed to canonical0.48 required by unchanged grammar; amount/truth/manual oracle unchanged. Original authored v1 retained outside public whitelist.",
+  "schema_version": 1,
+  "source_checkpoint": "7c50ba99848f6a13707eeec6c4947291a8478e5c",
+  "source_semantics": "The two named subsets of a given entity/period are subsets of that same explicit universe. All typed amount definitions are explicit and scoped; no outside10-K/accounting identity is inferred. Unknown requires two complete feasible worlds; no retrieval-miss inference.",
+  "status": "PROSPECTIVE_MANUAL_SEMANTICS_BEFORE_ANY_CANDIDATE_MEASUREMENTS",
+  "used_confirmation_identities": []
+}

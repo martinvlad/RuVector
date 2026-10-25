@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "epoch": 38,
+  "source_checkpoint": "7c50ba99848f6a13707eeec6c4947291a8478e5c",
+  "status": "PASS_UNSTUBBED_FULL_REAL_ASSET_GUARD_BEFORE_SOURCE_FREEZE",
+  "function": "C.verify_model_assets",
+  "function_calls": 1,
+  "common_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/common.py",
+    "bytes": 35762,
+    "sha256": "e1cb257111a4008f9c044b8c8053b7bd709b99ca3e334cb91d1ef1952c3c2076"
+  },
+  "validator_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/model_assets_guard.py",
+    "bytes": 7684,
+    "sha256": "fbb13b8fe52e61c5afee6921dc0210ff31368b4d105ca6d94ea44ff824f736f1"
+  },
+  "identity_helper_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/asset_identity.py",
+    "bytes": 5638,
+    "sha256": "f271c0077be23c34fbb29cfb5728d671371a4646ac9030072ec7b538eb819499"
+  },
+  "expected_catalog": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.expected.json",
+    "bytes": 2112,
+    "sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806"
+  },
+  "public_model_assets_lock": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.json",
+    "bytes": 2138,
+    "sha256": "652e603534a5c526d1c53e734d040caa791eccaf4fb4397728871342b7906bcb"
+  },
+  "stubs_used": false,
+  "monkeypatches": [],
+  "model_native_tokenizer_initializations_or_calls": 0,
+  "case_oracle_reads": 0,
+  "result": {
+    "xxlarge": {
+      "schema_version": 1,
+      "epoch": 38,
+      "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+      "source_checkpoint": "7c50ba99848f6a13707eeec6c4947291a8478e5c",
+      "status": "ALL_FIVE_REAL_MODEL_ASSETS_VERIFIED_WITH_TYPED_SOURCE_IDENTITIES",
+      "validator_function": "model_assets_guard.validate_model_assets",
+      "validator_source": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/model_assets_guard.py",
+        "bytes": 7684,
+        "sha256": "fbb13b8fe52e61c5afee6921dc0210ff31368b4d105ca6d94ea44ff824f736f1"
+      },
+      "identity_helper_source": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch38/asset_identity.py",
+        "bytes": 5638,
+        "sha256": "f271c0077be23c34fbb29cfb5728d671371a4646ac9030072ec7b538eb819499"
+      },
+      "expected_catalog": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.expected.json",
+        "bytes": 2112,
+        "sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806"
+      },
+      "public_model_assets_lock": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.json",
+        "bytes": 2138,
+        "sha256": "652e603534a5c526d1c53e734d040caa791eccaf4fb4397728871342b7906bcb"
+      },
+      "external_direct_lock": {
+        "path": "/workspace/ruvector-e38-reader-assets/ms-xxlarge-8f8b43dd/asset-lock.json",
+        "bytes": 2138,
+        "sha256": "652e603534a5c526d1c53e734d040caa791eccaf4fb4397728871342b7906bcb",
+        "byte_identical_to_public": true
+      },
+      "repository": "microsoft/deberta-v2-xxlarge-mnli",
+      "revision": "8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06",
+      "model_directory": "/workspace/ruvector-e38-reader-assets/ms-xxlarge-8f8b43dd",
+      "directory_inventory": [
+        "LICENSE",
+        "asset-lock.json",
+        "config.json",
+        "pytorch_model.bin",
+        "spm.model",
+        "tokenizer_config.json"
+      ],
+      "actual_payload_files_verified": 5,
+      "actual_payload_bytes_hashed": 3136407548,
+      "ordinary_Git_payloads_verified": 3,
+      "canonical_LFS_pointers_verified": 2,
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 952,
+          "source_url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/config.json",
+          "payload_sha256": "2c2de12b575824b4caec3ae5cc03c3f80837b1b3617541b8a5333cdc3db9b57c",
+          "upstream_git_object_sha1": "f18b80c18e1b552d3da1af51f99b1d572bb78280",
+          "representation": "RAW_GIT_BLOB_PAYLOAD",
+          "raw_payload_git_blob_sha1_required": true,
+          "payload_size_and_SHA256_verified": true,
+          "raw_payload_git_sha1_verified": true,
+          "LFS_pointer_SHA1_compared_to_payload_SHA1": false,
+          "actual_payload_bytes_hashed": 952,
+          "actual_payload_sha256": "2c2de12b575824b4caec3ae5cc03c3f80837b1b3617541b8a5333cdc3db9b57c",
+          "actual_ordinary_payload_git_blob_sha1": "f18b80c18e1b552d3da1af51f99b1d572bb78280",
+          "actual_full_payload_scan": true,
+          "payload_git_SHA1_computed": true,
+          "LFS_payload_git_SHA1_not_required": false
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 52,
+          "source_url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/tokenizer_config.json",
+          "payload_sha256": "3f3978e0c036f2c2588cac34a6047cbb0af0b0dc1814254e291028529805496d",
+          "upstream_git_object_sha1": "acfd94e399c5659e4bed75f91b4ee24b111fc7a6",
+          "representation": "RAW_GIT_BLOB_PAYLOAD",
+          "raw_payload_git_blob_sha1_required": true,
+          "payload_size_and_SHA256_verified": true,
+          "raw_payload_git_sha1_verified": true,
+          "LFS_pointer_SHA1_compared_to_payload_SHA1": false,
+          "actual_payload_bytes_hashed": 52,
+          "actual_payload_sha256": "3f3978e0c036f2c2588cac34a6047cbb0af0b0dc1814254e291028529805496d",
+          "actual_ordinary_payload_git_blob_sha1": "acfd94e399c5659e4bed75f91b4ee24b111fc7a6",
+          "actual_full_payload_scan": true,
+          "payload_git_SHA1_computed": true,
+          "LFS_payload_git_SHA1_not_required": false
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 1141,
+          "source_url": "https://raw.githubusercontent.com/microsoft/DeBERTa/4d7fe0bd4fb3c7d4f4005a7cafabde9800372098/LICENSE",
+          "payload_sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+          "upstream_git_object_sha1": "9e841e7a26e4eb057b24511e7b92d42b257a80e5",
+          "representation": "RAW_GIT_BLOB_PAYLOAD",
+          "raw_payload_git_blob_sha1_required": true,
+          "payload_size_and_SHA256_verified": true,
+          "raw_payload_git_sha1_verified": true,
+          "LFS_pointer_SHA1_compared_to_payload_SHA1": false,
+          "actual_payload_bytes_hashed": 1141,
+          "actual_payload_sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+          "actual_ordinary_payload_git_blob_sha1": "9e841e7a26e4eb057b24511e7b92d42b257a80e5",
+          "actual_full_payload_scan": true,
+          "payload_git_SHA1_computed": true,
+          "LFS_payload_git_SHA1_not_required": false
+        },
+        {
+          "path": "spm.model",
+          "bytes": 2447305,
+          "source_url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/spm.model",
+          "payload_sha256": "5598d5e96f339a8d980c15f9afd405a2e5e1be7db41de3ed13b0f03fac1e8c17",
+          "upstream_git_object_sha1": "c146a1df1f80d26596bbb4d0fadc43bca9a8145c",
+          "representation": "CANONICAL_GIT_LFS_POINTER_WITH_SEPARATE_SHA256_PAYLOAD",
+          "raw_payload_git_blob_sha1_required": false,
+          "upstream_lfs_pointer_bytes": 132,
+          "upstream_lfs_pointer_sha256": "12bcdca8da6a63f878fe148cbbd5e5c170c13324c9002486cd791cd4f3ae97f4",
+          "upstream_lfs_pointer_git_sha1": "c146a1df1f80d26596bbb4d0fadc43bca9a8145c",
+          "payload_size_and_SHA256_verified": true,
+          "raw_payload_git_sha1_verified": false,
+          "LFS_pointer_SHA1_compared_to_payload_SHA1": false,
+          "actual_payload_bytes_hashed": 2447305,
+          "actual_payload_sha256": "5598d5e96f339a8d980c15f9afd405a2e5e1be7db41de3ed13b0f03fac1e8c17",
+          "actual_ordinary_payload_git_blob_sha1": null,
+          "actual_full_payload_scan": true,
+          "payload_git_SHA1_computed": false,
+          "LFS_payload_git_SHA1_not_required": true
+        },
+        {
+          "path": "pytorch_model.bin",
+          "bytes": 3133958098,
+          "source_url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/resolve/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/pytorch_model.bin",
+          "payload_sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+          "upstream_git_object_sha1": "aba315cb1d255ada5671f0de52bcbc5148771376",
+          "representation": "CANONICAL_GIT_LFS_POINTER_WITH_SEPARATE_SHA256_PAYLOAD",
+          "raw_payload_git_blob_sha1_required": false,
+          "upstream_lfs_pointer_bytes": 135,
+          "upstream_lfs_pointer_sha256": "8509682ed3fe4fadb5f691d7f63710a3af30a3f4278b138ab4d7ef103b4a3a71",
+          "upstream_lfs_pointer_git_sha1": "aba315cb1d255ada5671f0de52bcbc5148771376",
+          "payload_size_and_SHA256_verified": true,
+          "raw_payload_git_sha1_verified": false,
+          "LFS_pointer_SHA1_compared_to_payload_SHA1": false,
+          "actual_payload_bytes_hashed": 3133958098,
+          "actual_payload_sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+          "actual_ordinary_payload_git_blob_sha1": null,
+          "actual_full_payload_scan": true,
+          "payload_git_SHA1_computed": false,
+          "LFS_payload_git_SHA1_not_required": true
+        }
+      ],
+      "stubs_used": false,
+      "monkeypatches": [],
+      "model_native_tokenizer_initializations_or_calls": 0,
+      "case_oracle_reads": 0,
+      "network_calls": 0,
+      "wall_seconds_hash_validation_only": 2.0835174290114082,
+      "common_source": {
+        "path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/common.py",
+        "bytes": 35762,
+        "sha256": "e1cb257111a4008f9c044b8c8053b7bd709b99ca3e334cb91d1ef1952c3c2076"
+      }
+    }
+  }
+}

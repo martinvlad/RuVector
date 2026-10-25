@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "epoch": 38,
+  "status": "PASS_FRESH_ISOLATED_RESTORATION_ACTUAL_HASHES_AND_REVIEWED_RECEIPTS",
+  "checks_passed": true,
+  "actual_source_commit": "7c50ba99848f6a13707eeec6c4947291a8478e5c",
+  "actual_Git_leaves_verified_in_new_kit": 5959,
+  "actual_CP_rows_verified": 5885,
+  "fresh_R_union_rows_verified": 5964,
+  "KIT_rows": 61,
+  "BASE_rows": 48,
+  "new_R_bytes_match_every_expected_union_hash": true,
+  "fresh_source_inode_comparisons_against_old_E37_donors": 23442,
+  "old_donor_aliases_found": 0,
+  "within_new_scope_K_or_B_inode_aliases_observed": 5964,
+  "only_regular_nonsymlink_sources": true,
+  "actual_reviewed_commands": [
+    {
+      "path": "archive22-proof.json",
+      "bytes": 1732,
+      "sha256": "1122dc690640eb4345ae51599808c4e9c58c024a3300f987a4da5c9cc6295842",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/kit/experiments/sota-2026-10-22/epoch22/publication/restore_archived_artifact_v1.py",
+        "--kit-root",
+        "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/kit",
+        "--archive",
+        "experiments/sota-2026-10-22/epoch22/publication/actualarchive.dev.raw.v1.json",
+        "--expected-archive-sha256",
+        "8ab3d8ec7856b423e6ff295f8e5ef74fc81dcaa3d3382fa2757e21563e0a99c6",
+        "--verify-only"
+      ]
+    },
+    {
+      "path": "archive26-proof.json",
+      "bytes": 1892,
+      "sha256": "630d0de35544e25e78c7d3becf6daaa8c70a989a1e6599936b46491b36f972dc",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/kit/experiments/sota-2026-10-22/epoch26/publication/restore_epoch26_archives_v1.py",
+        "--kit-root",
+        "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/kit",
+        "--manifest",
+        "experiments/sota-2026-10-22/epoch26/publication/archive-transport.v1.json",
+        "--expected-manifest-sha256",
+        "9b79fc0119e1e5d15470201b7180f4b39e55b687a207dac1ff9f333d91a8ef24",
+        "--verify-only"
+      ]
+    },
+    {
+      "path": "bootstrap-proof.json",
+      "bytes": 8467,
+      "sha256": "d2f7e51657a4a2ff9230619c159da9b8580e7cebd45c67715c8fc1eff9a2a987",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/kit/bootstrap.py",
+        "--dest",
+        "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project",
+        "--base-local-directory",
+        "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/base-cache"
+      ]
+    },
+    {
+      "path": "restore-proof.json",
+      "bytes": 840,
+      "sha256": "0d5637a805ed96e3a1a0035e545d8a2796e442cb10e59fcc65af0773637438d6",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/kit/restore_checkpoint.py",
+        "--dest",
+        "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project",
+        "--base-local-directory",
+        "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/base-cache"
+      ]
+    },
+    {
+      "path": "restore-verify-proof.json",
+      "bytes": 861,
+      "sha256": "58ca007cbec88f1044657b612ec9b9f420eeca8ee017a825acb442803456d86d",
+      "exit_code": 0,
+      "argv": [
+        "python",
+        "-B",
+        "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/kit/restore_checkpoint.py",
+        "--dest",
+        "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project",
+        "--base-local-directory",
+        "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/base-cache",
+        "--verify-only"
+      ]
+    }
+  ],
+  "scope": "All-hash and actual receipt verification only. Auditor did not rerun bootstrap/archive/restore/model/tokenizer/native/scorer code or parse benchmark annotations. Old filesystems supplied hash-verified bytes only; fresh K/B physical copies and isolated R links checked.",
+  "full_real_asset_guard_verified": false,
+  "auditor_actual_case_model_tokenizer_native_scorer_worker_or_external_mutation_calls": 0,
+  "wall_seconds": 2.6062397329951636,
+  "checked_at_unix": 1792937591.2343714
+}

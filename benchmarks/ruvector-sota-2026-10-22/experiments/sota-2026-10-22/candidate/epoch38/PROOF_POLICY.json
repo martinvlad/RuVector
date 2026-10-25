@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "epoch": 38,
+  "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+  "policy": "SOURCE_CERTIFIED_RAW_MAX_MASS_TRANSPOSITION",
+  "grammar": "typed-financial-affine-cardinality-v1",
+  "proof_enabled_roles": [
+    "engineering"
+  ],
+  "engineering_role": "NEW_AUTHORED_CC0_TYPED_SOURCE_ENGINEERING_ONLY",
+  "full_source_closed_parse_required": true,
+  "global_source_consistency_required": true,
+  "neutral_concrete_true_false_worlds_required": true,
+  "neutral_entire_source_catalog_coverage_required": true,
+  "exact_quote_offsets_required": true,
+  "retrieval_miss_is_not_insufficiency": true,
+  "probability_policy": {
+    "name": "SOURCE_CERTIFIED_RAW_MAX_MASS_TRANSPOSITION",
+    "retain_original_logits_and_raw_T1_probabilities": true,
+    "raw_winner": "PROVIDED_ORIGINAL_SOURCE_ORDER_RAW_LOGIT_ARGMAX; never rederived probability tie winner",
+    "action": "Swap canonical raw winner probability and independently certified class probability; other components unchanged; raw unchanged on abstention or agreement",
+    "derived_tie_rule": "Valid certificate class first among equal final maxima; otherwise original source C,N,E first raw-logit maximum",
+    "fitting_or_confidence_parameter": null,
+    "calibrated_posterior_claim": false,
+    "proper_guarantee": "Only conditional on a correct certificate against SAME raw readout. No cross-context guarantee; wrongcert can be harmful or invariant and remains a soundness failure."
+  },
+  "confirmation": [],
+  "official_eligibility": "HOLD",
+  "promotion_allowed": false,
+  "root_contract_sha256": "226cd756b41c881e5131a175a470ac06c96ed158ffd9c5bc216d42b3cac41a67"
+}

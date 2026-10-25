@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "epoch": 38,
+  "status": "SOURCE_ONLY_GUARD_REVIEW_HANDOFF_NOT_ACTUAL_ASSET_ADMISSION_OR_MASTER_FREEZE",
+  "snapshot_project": "/workspace/ruvector-e38-engineering-impl/guard-source-review-v1/project",
+  "entries": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/asset_identity.py",
+      "bytes": 5638,
+      "sha256": "f271c0077be23c34fbb29cfb5728d671371a4646ac9030072ec7b538eb819499"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.expected.json",
+      "bytes": 2112,
+      "sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/model_assets_guard.py",
+      "bytes": 7684,
+      "sha256": "fbb13b8fe52e61c5afee6921dc0210ff31368b4d105ca6d94ea44ff824f736f1"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/common.py",
+      "bytes": 35762,
+      "sha256": "e1cb257111a4008f9c044b8c8053b7bd709b99ca3e334cb91d1ef1952c3c2076"
+    }
+  ],
+  "root_prefreeze_function": "C.verify_model_assets(minimal_plan)",
+  "minimal_plan_prototype": {
+    "epoch": 38,
+    "kind": "ENGINEERING_SOURCE_BOUND_NUMERIC_CERTIFICATES",
+    "source_checkpoint": "7c50ba99848f6a13707eeec6c4947291a8478e5c",
+    "model_directory": "/workspace/ruvector-e38-reader-assets/ms-xxlarge-8f8b43dd",
+    "pins": "Exact canonical refs for these four files plus ROOT current MODEL_ASSETS.json; publiclock actual size/SHA fromroot",
+    "model_assets_lock_path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.json",
+    "model_assets_lock_sha256": "ROOT_ACTUAL_NEW_PUBLIC_LOCK_SHA256",
+    "model_assets_expected": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.expected.json",
+      "bytes": 2112,
+      "sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806"
+    },
+    "model_assets_expected_path": "experiments/sota-2026-10-22/candidate/epoch38/MODEL_ASSETS.expected.json",
+    "model_assets_expected_sha256": "a65cda75fc67d2c935eac4b998fa5d3a6e375bbfbd7212dd19d998d15b016806",
+    "model_assets_validator": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/model_assets_guard.py",
+      "bytes": 7684,
+      "sha256": "fbb13b8fe52e61c5afee6921dc0210ff31368b4d105ca6d94ea44ff824f736f1"
+    },
+    "model_assets_validator_path": "experiments/sota-2026-10-22/candidate/epoch38/runtime/model_assets_guard.py",
+    "model_assets_validator_sha256": "fbb13b8fe52e61c5afee6921dc0210ff31368b4d105ca6d94ea44ff824f736f1"
+  },
+  "actual_asset_guard_calls_by_implementation_agent": 0,
+  "actual_model_native_tokenizer_case_calls": 0,
+  "source_contract_sha256": "226cd756b41c881e5131a175a470ac06c96ed158ffd9c5bc216d42b3cac41a67",
+  "root_must_run_full_unstubbed_guard_after_source_audit": true,
+  "source_files_stable": "No mutations to these snapshotbytes; revision requires new handoff."
+}

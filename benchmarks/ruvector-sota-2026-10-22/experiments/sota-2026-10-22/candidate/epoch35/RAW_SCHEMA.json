@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "epoch": 35,
+  "kind": "ENGINEERING_QUANTITATIVE_SOURCE_SCOPE_STRESS",
+  "phase": "engineering",
+  "corpora": [
+    "engineering"
+  ],
+  "expected_cases": 12,
+  "raw_arms": [
+    "actual_native",
+    "native_original",
+    "lexical",
+    "positional"
+  ],
+  "metric_arms": [
+    "native",
+    "native_original",
+    "lexical",
+    "positional"
+  ],
+  "engineering_only": true,
+  "benchmark_accuracy": null,
+  "data_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "used_confirmation_identities": [],
+  "semantic_statuses": [
+    "ENGINEERING_ADMISSION_PASSED",
+    "ENGINEERING_ADMISSION_FAILED"
+  ],
+  "runtime_failure_status": "FAILED_ENGINEERING",
+  "neural_probabilities": "Original uncalibrated rawT1 E,C,N; original native E,N,C first-argmax mapped without semantic override.",
+  "oracle_join": "Worker exactly1 read/12expectedlabels after48rawreadouts; gate.expected_labels retained. Independent scorer recomputes from this joined metadata without traversing oracle.",
+  "proper_scores": "Mean three-class sum-square Brier; mean NLL=-log(max(pgold,1e-12)); disclose NLLclipcount and unclippedfinite. Gates allow1e-12 numerical comparison tolerance.",
+  "source_scope": "Every label applies to complete supplied excerpt. Exact selected-source/numeric retention audit identifies omissions, never infers absence.",
+  "budget": "One worker/one native corpus/12indexes/12queries/1binaryload/48realNLI, CPU0,1,600total seconds includinginitcleanup, no paid/GPU/training/DEV/calibration/CONF.",
+  "uncertainty": "A missing/unreturned native child or final counter/guard receipt yields raw.partial only and UNKNOWN native internal totals; physicalclosure later cannot recover unobservedoperations."
+}

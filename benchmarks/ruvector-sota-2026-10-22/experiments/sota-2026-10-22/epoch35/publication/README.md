@@ -1,0 +1,15 @@
+# E35 publication helper contract
+
+These source-only helpers freeze and publish one numerical/source-scope engineering admission epoch. They perform no inference, native work, label join, contact, submission, or direct Git mutation when imported. The reviewed JavaScript defines a publisher function; the coordinator must explicitly invoke it through the scoped controller's fsynced mutation WAL.
+
+The immutable source checkpoint is `4d51073072c428b58685e5498337bfdece6aac9b` (5,182 scoped Git leaves; 5,108 checkpoint rows). The source commit extends the independently read-back planning lease. Main is observed read-only and may advance independently; only the dedicated benchmark branch receives compare-and-set updates.
+
+The source master freezes twelve newly authored CC0 engineering inputs/oracles, the unchanged E34 selector/packer/readout, four matched arms, exact model/runtime identities, independent scorer, all execution guards and publication helpers. The limit is one worker, one native corpus, twelve indexes and queries, forty-eight real NLI readouts, two CPU threads, and 600 seconds including initialization/cleanup. TRAIN, DEV, calibration and confirmation identities remain empty. No benchmark partition is retired or relabeled.
+
+The `source` control/stage transition preserves `next_research_priority` exactly; new proposed work lives under `epoch35_planning`. A SOURCE tree contains all and only the frozen current source entries plus master plan/freeze. Place any later master-build/admission/stage/dispatch receipts outside the project until SOURCE is published and independently read back.
+
+The `final` transition requires exact captured operation/resource receipts and independent physical supervisor/worker closure. ABOUT_TO_EXIT is not closure. Missing/partial operation capture retains unknown tail work and known lower bounds; a burned slot is never retried. A completed execution alone never implies admission. Independent admission requires primary 12/12, each class 4/4, and nonincreasing Brier/NLL against each matched control. Every result remains engineering-only: benchmark accuracy and official rank are null; diagnostic qualification, benchmark acceptance, champion promotion and new submission remain false.
+
+`reviewed_build_results.py` copies the scorer replay without overwriting any evaluated field, adds public source/counting context, and extends the rejection ledger (or a distinct engineering qualification entry). The scorer BIND step then validates the actual RESULTS bytes. Both SOURCE_MANIFEST and EPOCH_MANIFEST are immutable, nonrecursive artifacts; the final checkpoint includes both.
+
+Before any Git object write the JavaScript publisher reads and validates both root/bench sibling baseline files. It then verifies staged request identities, actual dedicated-branch parent and sibling preservation, scopes all leaves under the benchmark prefix, and uses the controller WAL for create-blob/tree/commit and branch CAS. An uncertain action is never automatically repeated.

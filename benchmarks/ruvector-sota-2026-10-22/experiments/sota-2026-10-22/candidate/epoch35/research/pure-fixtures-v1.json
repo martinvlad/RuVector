@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "epoch": 35,
+  "kind": "ENGINEERING_QUANTITATIVE_SOURCE_SCOPE_STRESS",
+  "passed": true,
+  "candidate_pure_test_count": 27,
+  "observer_mocked_test_count": 15,
+  "native_ABI_export_only_checks": 7,
+  "runtime_source_admission_fixture_groups": 4,
+  "checks": [
+    {
+      "name": "candidate_pure_fixtures",
+      "expected_test_count": 27,
+      "passed": true,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/workspace/ruvector-e35-engineering-impl/project/experiments/sota-2026-10-22/candidate/epoch35",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "stdout": "",
+      "stderr": "test_exact_numeric_and_deontic_full_source_conclusions (test_case_oracles.AuthoredOracleFixtures.test_exact_numeric_and_deontic_full_source_conclusions) ... ok\ntest_exact_proposal_to_separate_label_free_inputs_and_oracle (test_case_oracles.AuthoredOracleFixtures.test_exact_proposal_to_separate_label_free_inputs_and_oracle) ... ok\ntest_open_world_two_compatible_assignments_have_opposite_claim_truth (test_case_oracles.AuthoredOracleFixtures.test_open_world_two_compatible_assignments_have_opposite_claim_truth) ... ok\ntest_missing_forward_refuses_before_any_oracle_read (test_engineering_join.EngineeringJoinFixtures.test_missing_forward_refuses_before_any_oracle_read) ... ok\ntest_one12label_join_occurs_only_after_all48_fake_readouts (test_engineering_join.EngineeringJoinFixtures.test_one12label_join_occurs_only_after_all48_fake_readouts) ... ok\ntest_twelve_identity_bundle_lossless_float32_and_rejected_wrong_role (test_native_abi.NativeABIFixtures.test_twelve_identity_bundle_lossless_float32_and_rejected_wrong_role) ... ok\ntest_closed_validated_helper_and_guard_receipts_allow_complete_capture (test_native_capture.NativeCapture.test_closed_validated_helper_and_guard_receipts_allow_complete_capture) ... ok\ntest_known_closed_helper_missing_result_is_still_UNKNOWN (test_native_capture.NativeCapture.test_known_closed_helper_missing_result_is_still_UNKNOWN) ... ok\ntest_known_closed_helper_truncated_result_is_still_UNKNOWN (test_native_capture.NativeCapture.test_known_closed_helper_truncated_result_is_still_UNKNOWN) ... ok\ntest_known_valid_native_capture_does_not_broaden_model_error_scope (test_native_capture.NativeCapture.test_known_valid_native_capture_does_not_broaden_model_error_scope) ... ok\ntest_lost_native_Popen_return_preserves_UNKNOWN_partial (test_native_capture.NativeCapture.test_lost_native_Popen_return_preserves_UNKNOWN_partial) ... ok\ntest_valid_helper_result_without_guard_counter_capture_is_UNKNOWN (test_native_capture.NativeCapture.test_valid_helper_result_without_guard_counter_capture_is_UNKNOWN) ... ok\ntest_all_native_guard_identity_checks_bind_current_Python_owner (test_policy.PolicyFixtures.test_all_native_guard_identity_checks_bind_current_Python_owner) ... ok\ntest_disabled_proof_preserves_native_tie_label_and_exact_probabilities (test_policy.PolicyFixtures.test_disabled_proof_preserves_native_tie_label_and_exact_probabilities) ... ok\ntest_fixed_operation_counts_and_no_ML_imports (test_policy.PolicyFixtures.test_fixed_operation_counts_and_no_ML_imports) ... ok\ntest_hybrid_first_native_complement_is_distinct_group_and_keeps_order (test_policy.PolicyFixtures.test_hybrid_first_native_complement_is_distinct_group_and_keeps_order) ... ok\ntest_hybrid_lexical_anchor_outside_actual_top40_is_kept (test_policy.PolicyFixtures.test_hybrid_lexical_anchor_outside_actual_top40_is_kept) ... ok\ntest_malformed_rankings_fail_closed (test_policy.PolicyFixtures.test_malformed_rankings_fail_closed) ... ok\ntest_optional_definition_may_be_omitted_but_mandatory_groups_never_dropped (test_policy.PolicyFixtures.test_optional_definition_may_be_omitted_but_mandatory_groups_never_dropped) ... ok\ntest_original_hypothesis_unchanged_including_unicode_whitespace_negation (test_policy.PolicyFixtures.test_original_hypothesis_unchanged_including_unicode_whitespace_negation) ... ok\ntest_oversize_mandatory_groups_fail_without_silent_clipping_or_fallback (test_policy.PolicyFixtures.test_oversize_mandatory_groups_fail_without_silent_clipping_or_fallback) ... ok\ntest_packer_keeps_two_groups_then_optional_definition_only (test_policy.PolicyFixtures.test_packer_keeps_two_groups_then_optional_definition_only) ... ok\ntest_qualifiers_stay_whole_even_when_spanning_multiple_units (test_policy.PolicyFixtures.test_qualifiers_stay_whole_even_when_spanning_multiple_units) ... ok\ntest_single_group_is_disclosed_not_a_fallback_for_multi_group_source (test_policy.PolicyFixtures.test_single_group_is_disclosed_not_a_fallback_for_multi_group_source) ... ok\ntest_single_source_group_packer_discloses_degenerate (test_policy.PolicyFixtures.test_single_source_group_packer_discloses_degenerate) ... ok\ntest_all_owner_layers_bind_one_current_scope_and_no_stale_identity (test_runtime_identity.RuntimeIdentityFixtures.test_all_owner_layers_bind_one_current_scope_and_no_stale_identity) ... ok\ntest_role_boundaries_have_no_conditional_benchmark_native_branch (test_runtime_identity.RuntimeIdentityFixtures.test_role_boundaries_have_no_conditional_benchmark_native_branch) ... ok\n\n----------------------------------------------------------------------\nRan 27 tests in 0.139s\n\nOK\n",
+      "actual_model_native_tokenizer_or_benchmark_calls": 0,
+      "live_observer_invocations": 0,
+      "real_dispatches": 0
+    },
+    {
+      "name": "observer_mocked_physical_closure",
+      "expected_test_count": 15,
+      "passed": true,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/workspace/ruvector-e35-engineering-impl/project/experiments/sota-2026-10-22/audit/epoch35",
+        "-p",
+        "test_observe_supervisor_closure.py",
+        "-v"
+      ],
+      "stdout": "",
+      "stderr": "test_before_popen_requires_explicit_frozen_provenance (test_observe_supervisor_closure.ClosureFixtures.test_before_popen_requires_explicit_frozen_provenance) ... ok\ntest_dispatch_execution_completion_exact_chain (test_observe_supervisor_closure.ClosureFixtures.test_dispatch_execution_completion_exact_chain) ... ok\ntest_duplicate_json_and_symlink_and_ref_tampering_rejected (test_observe_supervisor_closure.ClosureFixtures.test_duplicate_json_and_symlink_and_ref_tampering_rejected) ... ok\ntest_known_absent_is_closed_exact_wire (test_observe_supervisor_closure.ClosureFixtures.test_known_absent_is_closed_exact_wire) ... ok\ntest_live_group_or_session_member_blocks (test_observe_supervisor_closure.ClosureFixtures.test_live_group_or_session_member_blocks) ... ok\ntest_missing_execution_never_infers_zero_start (test_observe_supervisor_closure.ClosureFixtures.test_missing_execution_never_infers_zero_start) ... ok\ntest_mocked_terminal_EACCES_status_and_unknown_without_live_proc (test_observe_supervisor_closure.ClosureFixtures.test_mocked_terminal_EACCES_status_and_unknown_without_live_proc) ... ok\ntest_one_engineering_native_role_is_closed_and_injected_DEV_role_is_refused (test_observe_supervisor_closure.ClosureFixtures.test_one_engineering_native_role_is_closed_and_injected_DEV_role_is_refused) ... ok\ntest_output_is_exclusive_outside_and_fsynced (test_observe_supervisor_closure.ClosureFixtures.test_output_is_exclusive_outside_and_fsynced) ... ok\ntest_prospective_terminal_capacity_exact_predicate_and_races (test_observe_supervisor_closure.ClosureFixtures.test_prospective_terminal_capacity_exact_predicate_and_races) ... ok\ntest_recovered_closed_preserves_uncertain_failed_nonqualification (test_observe_supervisor_closure.ClosureFixtures.test_recovered_closed_preserves_uncertain_failed_nonqualification) ... ok\ntest_source_has_only_stdlib_and_no_process_or_model_imports (test_observe_supervisor_closure.ClosureFixtures.test_source_has_only_stdlib_and_no_process_or_model_imports) ... ok\ntest_terminal_z_closed_not_absent (test_observe_supervisor_closure.ClosureFixtures.test_terminal_z_closed_not_absent) ... ok\ntest_unknown_or_reused_identity_blocks (test_observe_supervisor_closure.ClosureFixtures.test_unknown_or_reused_identity_blocks) ... ok\ntest_unreturned_popen_without_identity_remains_unknown (test_observe_supervisor_closure.ClosureFixtures.test_unreturned_popen_without_identity_remains_unknown) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.020s\n\nOK\n",
+      "actual_model_native_tokenizer_or_benchmark_calls": 0,
+      "live_observer_invocations": 0,
+      "real_dispatches": 0
+    },
+    {
+      "name": "runtime_admission_four_sourceonly_groups",
+      "passed": true,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/ruvector-e35-engineering-impl/project/experiments/sota-2026-10-22/candidate/epoch35/runtime/preflight.py",
+        "--output",
+        "/workspace/ruvector-e35-engineering-impl/project/experiments/sota-2026-10-22/candidate/epoch35/research/runtime-preflight-v2.json"
+      ],
+      "stdout": "{\"schema_version\": 1, \"epoch\": 35, \"passed\": true, \"checks\": [\"Python_AST_and_Node_syntax_all_current_candidate_sources\", \"source_plan_exact_empty_benchmark_roles_CPU2_singlecorpus_context_query_proof_hash_binding\", \"SOURCE_actual_readback_plan_model_binding_false_or_changed_refusal\", \"one_shot_dispatch_exact_PID_ticks_PGID_SID_uncertainty_and_missing_receipt_refusal\"], \"actual_model_native_tokenizer_or_benchmark_gold_calls\": 0, \"real_observer_invocations\": 0, \"real_dispatches\": 0, \"scope\": \"Authored metadata and exact public source only; mocked source/admission/PID receipts. No actual corpus/model/runtime execution.\"}\n",
+      "stderr": ""
+    }
+  ],
+  "actual_model_native_tokenizer_or_benchmark_gold_calls": 0,
+  "actual_live_observer_invocations": 0,
+  "actual_dispatches": 0,
+  "fixture_predictions_are_scientific_results": false,
+  "scope": "Pure authored metadata, exact source, fake word/offset tokenizer and mocked processes only. Native ABI fixture imports exported pure JS helpers with require.main false; no addon loaded. No source oracle affects any neural output.",
+  "preseal_implementation_corrections": [
+    {
+      "issue": "Initial derivation omitted native_helper.cjs from copied source list; caught as missing file by source adaptation and Node syntax before any execution.",
+      "resolution": "Added actual-Git SHA1+size verified native helper then derived only metadata and engineering-only identities."
+    },
+    {
+      "issue": "Historical E34 fixture assertions retained30/6queries and twoDEV-role metadata; source-only tests failed.",
+      "resolution": "Updated frozen onecorpus12/48 counts and added injected-DEV-role refusal; rerun passes. No model/native/tokenizer/liveobserver/dispatch occurred."
+    }
+  ]
+}

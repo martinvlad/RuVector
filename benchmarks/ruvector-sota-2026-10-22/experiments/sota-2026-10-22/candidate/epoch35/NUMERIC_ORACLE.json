@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "epoch": 35,
+  "scope": "Full supplied authored source only; engineering oracle, never a runtime prediction override. Exact Decimal/Fraction arithmetic or two compatible-world witnesses, not model outputs.",
+  "license": "CC0-1.0",
+  "oracles": [
+    {
+      "id": "epoch35:cc0:numeric-scope:01",
+      "input_sha256": "4347370f207037558b9d8d8ef01798e1d7287ebab46c59f0287110a483e488d9",
+      "expected_label": "Entailment",
+      "arithmetic": "Decimal('2.75') >= Decimal('2.50')",
+      "result": true,
+      "reason": "FY2031 unrestricted cash alone exceeds the FY2031 inclusive minimum; restricted cash and FY2030 are irrelevant."
+    },
+    {
+      "id": "epoch35:cc0:numeric-scope:02",
+      "input_sha256": "f0388eefd1d3f3c77e6cce30b8a9efb4af4d512050ed2dc9e6bf857a6710d1c3",
+      "expected_label": "Entailment",
+      "arithmetic": "Fraction(18,72) == Fraction(1,4)",
+      "result": true,
+      "reason": "The supplied numerator and denominator yield exactly 1/4; financing costs are excluded by definition."
+    },
+    {
+      "id": "epoch35:cc0:numeric-scope:03",
+      "input_sha256": "5cfd0cded6d7a15f2d27c5f2bcaf19084487a63d4bba6ad1460d7f0b2e0cc680",
+      "expected_label": "Entailment",
+      "arithmetic": "Decimal('0.075') * Decimal('1000') <= Decimal('75')",
+      "result": true,
+      "reason": "The catalyst mass is exactly75kg, so the inclusive exemption applies; excluded packaging does not change it."
+    },
+    {
+      "id": "epoch35:cc0:numeric-scope:04",
+      "input_sha256": "0cb8330e8b2d112ae02eef343ab159a8750f666e3a15cfae894ee21626ac0a17",
+      "expected_label": "Entailment",
+      "arithmetic": "10 <= 11 <= 11 and 2 <= 2",
+      "result": true,
+      "reason": "The named recipient, inclusive dates and maximum duration satisfy the explicit permission exception."
+    },
+    {
+      "id": "epoch35:cc0:numeric-scope:05",
+      "input_sha256": "5e07f1e6c5063aa1368db9a73f03c6b36467d0d6fc23b4e604f5ad5942c24020",
+      "expected_label": "Contradiction",
+      "arithmetic": "Decimal('1.80') == Decimal('2.00')",
+      "result": false,
+      "reason": "The exclusive named FY2035 line item is1.80, not combined2.00 or prior-year2.00."
+    },
+    {
+      "id": "epoch35:cc0:numeric-scope:06",
+      "input_sha256": "12d5474c06ecca39f60b53cb154969c77ad40a89d9b93e51e20808511510ce91",
+      "expected_label": "Contradiction",
+      "arithmetic": "Fraction(210,1) + Fraction(-335,1) == Fraction(-125,1); Fraction(-125,1) != Fraction(125,1)",
+      "result": false,
+      "reason": "Both the explicit net-change sign and exact210-335=-125 contradict a positive125 increase."
+    },
+    {
+      "id": "epoch35:cc0:numeric-scope:07",
+      "input_sha256": "90b0daff0400654ed1a1b0aeb53156e4b78d7fe6b55930f4199befc0e92df393",
+      "expected_label": "Contradiction",
+      "arithmetic": "Fraction(30,50) < Fraction(3,5)",
+      "result": false,
+      "reason": "30/50 equals0.60 exactly; the strict threshold and explicit equality-breach rule establish noncompliance."
+    },
+    {
+      "id": "epoch35:cc0:numeric-scope:08",
+      "input_sha256": "0658c191325ce446f6bf79d52b964ab738b6058f4877569cd985d6d7c219a440",
+      "expected_label": "Contradiction",
+      "arithmetic": "2 >= 3",
+      "result": false,
+      "reason": "The explicit prohibition remains in force because exactly2 is below the required3; prior-year permission does not transfer."
+    },
+    {
+      "id": "epoch35:cc0:numeric-scope:09",
+      "input_sha256": "d829d8ab5c4b183f3a93e4a770f6f1900500fb7235d09bd63fcf1be98c82c21e",
+      "expected_label": "NotMentioned",
+      "arithmetic": "FY2040_revenue is unspecified; both Decimal('11.3') > Decimal('11.2') and not(Decimal('11.1') > Decimal('11.2')) are consistent",
+      "result": null,
+      "reason": "The approval year is not the revenue period. No FY2040 revenue amount, bound or negation is supplied; two compatible assignments give opposite truth values."
+    },
+    {
+      "id": "epoch35:cc0:numeric-scope:10",
+      "input_sha256": "05b1ba345817ad73914e142321efa30b5665efe130c608351e4bf07ec937eded",
+      "expected_label": "NotMentioned",
+      "arithmetic": "Fraction(8,400)==Fraction(2,100); Fraction(8,800)!=Fraction(2,100); April_units unspecified and >=8",
+      "result": null,
+      "reason": "April's denominator is absent.400 April units would make2% true;800 would make it false. Neither conflicts with supplied facts; March's denominator cannot be imported."
+    },
+    {
+      "id": "epoch35:cc0:numeric-scope:11",
+      "input_sha256": "b5ba9947e83d85b748f0f4507b101016caa90300a5a30ff8e9dbf52980c488e9",
+      "expected_label": "NotMentioned",
+      "arithmetic": "allowed_count=2 and approval=true; actual_hired_count unspecified; assignments0 and2 both satisfy the permission",
+      "result": null,
+      "reason": "An available permission and fulfilled prerequisite establish may, not an actual hiring event; both exercising and not exercising it are consistent."
+    },
+    {
+      "id": "epoch35:cc0:numeric-scope:12",
+      "input_sha256": "84081f1998ac4610bb637651ff853e8873a3fce32bb084f253eed83a353ee57d",
+      "expected_label": "NotMentioned",
+      "arithmetic": "East=240; parent_and_other_count unspecified nonnegative; totals240 and300 both consistent",
+      "result": null,
+      "reason": "A source-qualified subsidiary count cannot be promoted to a consolidated count. Unspecified other workforce can be0 or60 without contradicting the excerpt."
+    }
+  ]
+}

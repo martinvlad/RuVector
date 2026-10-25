@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "4d51073072c428b58685e5498337bfdece6aac9b",
-  "checkpoint_manifest_sha256": "5a45a364e8fee1b8d10eb06f602e29d46965022041b37d94013e49cb5a9f764f",
+  "prior_published_base_commit": "1aeba1e081cbb35202b175ffc9e21c735cbfa393",
+  "checkpoint_manifest_sha256": "85381781e18ed1bb7b9c7e52f13c7d12135a1a889195233cbc0cc38a469d5cce",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -1676,10 +1676,10 @@
     "schema_version": 1,
     "epoch": 35,
     "run_id": "epoch35-4d51073072c4",
-    "state": "EPOCH35_PLANNING_LEASE",
+    "state": "EPOCH35_SOURCE_FROZEN_ENGINEERING_PENDING_ADMISSION",
     "work_active": true,
     "experiments_active": false,
-    "checkpoint_parent": "4d51073072c428b58685e5498337bfdece6aac9b",
+    "checkpoint_parent": "1aeba1e081cbb35202b175ffc9e21c735cbfa393",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
       "run_id": "epoch35-4d51073072c4",
@@ -1710,7 +1710,8 @@
     "conditional_dev_allowed": 0,
     "confirmation_allowed": 0,
     "conditional_confirmation_allowed": 0,
-    "instruction": "Planning/source preparation only. No model/tokenizer/native/scoring until exact frozen source, input/oracle, scorer, assets and independent actual SOURCE readback. Proposed one authored CC0 engineering-only native batch; CPU2/600s total, zero TRAIN/DEV/calibration/CONF/paid/GPU. No promotion/submission.",
+    "instruction": "Only new authored CC0 engineering after independent actual SOURCE readback and source/runtime admission. One nonretryable CPU2/600s total phase, one corpus; zero fits/TRAIN/DEV/calibration/CONF. No benchmark acceptance/promotion/submission. FINAL closes every slot.",
+    "conditional_engineering_allowed": 1,
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -6495,5 +6496,79 @@
     "benchmark_accuracy": null,
     "no_RuVector_ClaimBench_score": true,
     "future_actions": "PROPOSED_ONLY_NOT_EXECUTED"
+  },
+  "epoch35_frozen_study": {
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch35/plan.json",
+      "bytes": 61438,
+      "sha256": "9069838cfc7d84c2186b56909306aa1f483679abb894c2cd09195e193579c65d"
+    },
+    "source_freeze": {
+      "path": "experiments/sota-2026-10-22/epoch35/source-freeze.json",
+      "bytes": 42713,
+      "sha256": "2e45edfbe7fb7d5f813fadf9bcce4b634d59f0dba5f6c22d533fc29b597ee7a8"
+    }
+  },
+  "epoch35_data_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": [],
+    "hypotheses": [
+      "e35-h01",
+      "e35-h02",
+      "e35-h03",
+      "e35-h04",
+      "e35-h05",
+      "e35-h06",
+      "e35-h07",
+      "e35-h08",
+      "e35-h09",
+      "e35-h10",
+      "e35-h11",
+      "e35-h12"
+    ],
+    "used_confirmation_identities": [],
+    "engineering_ids": [
+      "epoch35:cc0:numeric-scope:01",
+      "epoch35:cc0:numeric-scope:02",
+      "epoch35:cc0:numeric-scope:03",
+      "epoch35:cc0:numeric-scope:04",
+      "epoch35:cc0:numeric-scope:05",
+      "epoch35:cc0:numeric-scope:06",
+      "epoch35:cc0:numeric-scope:07",
+      "epoch35:cc0:numeric-scope:08",
+      "epoch35:cc0:numeric-scope:09",
+      "epoch35:cc0:numeric-scope:10",
+      "epoch35:cc0:numeric-scope:11",
+      "epoch35:cc0:numeric-scope:12"
+    ],
+    "engineering_document_ids": [
+      -35001,
+      -35002,
+      -35003,
+      -35004,
+      -35005,
+      -35006,
+      -35007,
+      -35008,
+      -35009,
+      -35010,
+      -35011,
+      -35012
+    ],
+    "engineering_role": "NEW_AUTHORED_CC0_ENGINEERING_ONLY",
+    "new_benchmark_questions_exposed": 0,
+    "benchmark_partition_unchanged": {
+      "exposed": 325,
+      "unreserved": 74,
+      "reserved_confirmation": 24,
+      "total": 423
+    }
+  },
+  "epoch35_pretrained_model_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch35/PRETRAINED_MODEL_SOURCE.json",
+    "bytes": 1423,
+    "sha256": "369513f402e336c448773b3a33ac187b7b8061a6eaa842105c8fc04a9e7fb1de"
   }
 }

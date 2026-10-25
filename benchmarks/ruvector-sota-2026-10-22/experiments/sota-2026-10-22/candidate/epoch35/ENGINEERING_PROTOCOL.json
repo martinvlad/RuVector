@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "epoch": 35,
+  "kind": "ENGINEERING_QUANTITATIVE_SOURCE_SCOPE_STRESS",
+  "phase": "engineering",
+  "status": "FROZEN_BEFORE_ANY_REAL_MODEL_TOKENIZER_NATIVE",
+  "engineering_only": true,
+  "benchmark_accuracy": null,
+  "benchmark_generalization_claim": false,
+  "promotion_allowed": false,
+  "training_lineage_complete": false,
+  "official_eligibility": "HOLD",
+  "data_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "training_ids": [],
+  "calibration_ids": [],
+  "confirmation_ids": [],
+  "used_confirmation_identities": [],
+  "engineering_case_ids": [
+    "epoch35:cc0:numeric-scope:01",
+    "epoch35:cc0:numeric-scope:02",
+    "epoch35:cc0:numeric-scope:03",
+    "epoch35:cc0:numeric-scope:04",
+    "epoch35:cc0:numeric-scope:05",
+    "epoch35:cc0:numeric-scope:06",
+    "epoch35:cc0:numeric-scope:07",
+    "epoch35:cc0:numeric-scope:08",
+    "epoch35:cc0:numeric-scope:09",
+    "epoch35:cc0:numeric-scope:10",
+    "epoch35:cc0:numeric-scope:11",
+    "epoch35:cc0:numeric-scope:12"
+  ],
+  "model_repository": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+  "model_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+  "roles": {
+    "TRAIN": [],
+    "DEV": [],
+    "calibration": [],
+    "CONF": [],
+    "used_confirmation_identities": []
+  },
+  "raw_corpus_role": "engineering",
+  "raw_arms": [
+    "actual_native",
+    "native_original",
+    "lexical",
+    "positional"
+  ],
+  "metric_arms": [
+    "native",
+    "native_original",
+    "lexical",
+    "positional"
+  ],
+  "selector": "Unchanged E34: lexical-top1 whole source group plus first distinct actual-native whole source group; same-model native-original, lexical and positional controls; shared minimum2 whole groups and optional whole definitions within512; no clipping/fallback.",
+  "readout": "Unchanged b354 original hypothesis and rawT1; proof disabled; no fitting, calibration, training or learned numerical override.",
+  "oracle_access": "Worker reads exactly12 expected labels once after all48 real neural readouts, retaining expected_labels and oracle ref in engineering_gate; independent scorer only uses this joined record, never traverses oracle labels again.",
+  "gates": "Engineering admission only: primary12/12 and4/4 per class, Brier/NLL nonincrease against each of the3 matched same-model controls; retain all failures. Benchmarkaccuracy null; no DEV/CONF authorization from an engineering pass.",
+  "runtime": {
+    "worker_attempts": 1,
+    "corpus_batches": 1,
+    "native_queries": 12,
+    "native_indexes": 12,
+    "native_binary_loads": 1,
+    "real_NLI_forwards": 48,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "total_seconds_including_init_cleanup": 600,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "measurement_policy": "Freeze all texts, labels, rational/Decimal oracle and candidate source before any real tokenizer/native/model measurement; no empirical case selection or retry. Full source facts define labels; retrieval omissions are reported and cannot establish absence."
+}

@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "epoch": 35,
+  "kind": "TARGETED_ORIGINAL_NLI_SOURCE_ADMISSION_RESEARCH_NO_MODEL_EXECUTION",
+  "created_at_utc": "2026-10-25T06:09:27.352941+00:00",
+  "checkpoint": {
+    "repository": "ruvnet/RuVector",
+    "branch": "benchmarks/ruvector-sota-2026-10-22",
+    "source_commit": "4d51073072c428b58685e5498337bfdece6aac9b",
+    "actual_git_map_scope_tree_sha": "e8fcf069cd79db1b55c83ba144bfa73cb769dc62",
+    "donor_project": "/workspace/ruvector-epoch34-047dbc740dc2/project",
+    "donor_files_reverified_against_actual_git_map": true
+  },
+  "decision": "HOLD_INCOMPLETE_ORIGINAL_TRAIN_SELECTION_CALIBRATION_AND_FOUNDATION_LINEAGE_NO_CONF_NO_PROMOTION",
+  "summary": "An official author source repository with both LingNLI and WANLI training references was discovered at an exact Git commit. Its code contents and its linkage to the original b354 checkpoint remain unverified under this eight-attempt budget. The cited older paper repository documents downstream replication, not a complete original model-production manifest. Unknown overlap is not evidence of contamination. Publisher eligibility remains unverified.",
+  "current_Git_bound_inputs": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch34/MODEL_ASSETS.json",
+      "git_blob_sha1": "5399c336b709e73ff11da449d333d7e3d17ddb56",
+      "bytes": 3896,
+      "sha256": "5a5486d1d5448a8d512f63d66b21a3fa49f6e6bf4db2e9ebbe83dfe4a2855c7d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch34/research/reader-review/READER_RESEARCH_PROPOSAL.json",
+      "git_blob_sha1": "eb2f695d75b09d02857880aa9a7dcaed01681b04",
+      "bytes": 16512,
+      "sha256": "1520056657ef16a9d0d636f0822e10f27c4e0bb9bf42a840aab405f9adadcbdd"
+    }
+  ],
+  "original_model_card": {
+    "repository": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "path": "README.md",
+    "bytes": 7580,
+    "sha256": "216c3ac9ea77beec4e35a347c8b4edc47fbb3465e7c2a00dc923ae7b975cf346",
+    "git_blob_sha1": "0747410db50f1345f9e409cbe010c457535ba761",
+    "reused_local_bytes_verified_against_current_Git_bound_MODEL_ASSETS": true,
+    "declared_license": "MIT",
+    "declared_finetuning_datasets": [
+      "MultiNLI",
+      "FEVER-NLI",
+      "ANLI",
+      "LingNLI",
+      "WANLI"
+    ],
+    "declared_pairs": 885242,
+    "declared_SNLI_exclusion": true,
+    "declared_foundation_model": "microsoft/deberta-v3-large",
+    "declared_training_args": {
+      "num_train_epochs": 4,
+      "learning_rate": 5e-06,
+      "per_device_train_batch_size": 16,
+      "gradient_accumulation_steps": 2,
+      "per_device_eval_batch_size": 64,
+      "warmup_ratio": 0.06,
+      "weight_decay": 0.01,
+      "fp16": true
+    },
+    "evidence_level": "author model-card declaration; not exact record-level closure, independently reconstructed producing-run linkage, or publisher eligibility"
+  },
+  "official_paper_repository": {
+    "repository": "MoritzLaurer/less-annotating-with-bert-nli",
+    "branch": "master",
+    "resolved_commit": "f31c640902202490256d3ca95c454c39bd3c7551",
+    "recursive_tree_truncated": false,
+    "README_path": "README.md",
+    "README_git_blob_sha1": "db82074cb357affb095e2355f33b7d2655bfb057",
+    "README_sha256": "ffdba6cee3bc51ebc32d778cdff03decf7b0a5967f1b6f907eeffac1667b5198",
+    "README_bytes": 11322,
+    "declared_code_license": "MIT explicitly in README; GitHub repository API license field is null",
+    "README_scope": "replication of downstream paper experiments over eight political classification datasets; raw outputs and hyperparameter studies are provided for those experiments",
+    "relevance_limit": "Does not establish that its downstream source records, random seeds or Optuna selections are the original b354 production data, selection or calibration lineage. No original b354 training script fetched from this repository."
+  },
+  "new_exact_source_leads": [
+    {
+      "repository": "MoritzLaurer/zeroshot-classifier",
+      "commit": "e680edcb6d92d8ca09f3d39b70358ccac8ccbd2f",
+      "path": "v1_human_data/4_train_eval.py",
+      "GitHub_search_reported_blob_sha1": "3eb811d3dfd80658ee58ec52bfb2dd5a9e4ee093",
+      "url": "https://github.com/MoritzLaurer/zeroshot-classifier/blob/e680edcb6d92d8ca09f3d39b70358ccac8ccbd2f/v1_human_data/4_train_eval.py",
+      "discovery": "official author code search for lingnli+wanli",
+      "contents_fetched": false,
+      "license_verified": false,
+      "b354_producing_run_linkage_verified": false
+    },
+    {
+      "repository": "MoritzLaurer/zeroshot-classifier",
+      "commit": "e680edcb6d92d8ca09f3d39b70358ccac8ccbd2f",
+      "path": "v1_human_data/datasets_overview.csv",
+      "GitHub_search_reported_blob_sha1": "95e10d92bddf16dbcad12e0388e0507180ae7b9f",
+      "url": "https://github.com/MoritzLaurer/zeroshot-classifier/blob/e680edcb6d92d8ca09f3d39b70358ccac8ccbd2f/v1_human_data/datasets_overview.csv",
+      "contents_fetched": false,
+      "license_verified": false,
+      "b354_producing_run_linkage_verified": false
+    }
+  ],
+  "search_limits": {
+    "exact_original_model_name_author_code_search_results": 3,
+    "exact_original_model_name_author_code_search_result_scope": "three downstream consumer files in language-model-bias-validity and language-barrier-multilingual-transfer; no producing code verified",
+    "lingnli_wanli_author_code_search_results": 4,
+    "negative_search_not_proof_of_absence": true,
+    "OSF_files_endpoint": "https://api.osf.io/v2/nodes/74b8k/files/",
+    "OSF_single_attempt_result": "HTTP404; no claim that OSF project or all artifacts are absent",
+    "budget_exhausted": true,
+    "no_further_GETs": true
+  },
+  "precise_remaining_admission_evidence": [
+    "Exact original b354 producing code/config/run checkpoint linkage, not merely a later same-author training pipeline.",
+    "Exact revisions and example-level identifiers/content hashes for every original fine-tuning record, dataset conversion, filtering, deduplication and split construction.",
+    "Exact records used for model/hyperparameter/epoch selection, validation, temperature/probability calibration and any auxiliary supervised adaptation; no such exact original manifest verified here.",
+    "Complete foundation pretraining and any intermediate supervised/adaptation/selection lineage required to substantiate exclusion; foundation cleanliness cannot be inferred from the five declared NLI datasets or model age.",
+    "An independently reviewed overlap audit against prospective confirmation identities, with exact source lineage and scorer revisions frozen before measurement.",
+    "Matching publisher protocol and eligibility confirmation; public license and upstream benchmark claims do not prove JevBench/ClaimBench admission."
+  ],
+  "unchanged_blockers_and_prior_rejections_not_retested": {
+    "microsoft_deberta_v2_xlarge_mnli": {
+      "revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+      "status": "same E18/E19 900M reader; no retry",
+      "E19_FP32_semantic_correct": "2/3",
+      "E19_INT8_semantic_correct": "1/3",
+      "E19_max_probability_drift": 0.758825985740294
+    },
+    "ynie_roberta_large": {
+      "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+      "status": "E34 metadata only; neither materially stronger nor lineage eligible verified"
+    },
+    "disk": "Parent reports approximately466MB free; no new acquisition or runtime failure inferred",
+    "paid_API_GPU_budget": 0
+  },
+  "allowed_independent_next_step": {
+    "kind": "NEW_AUTHORED_CC0_NUMERIC_AND_OPEN_WORLD_SOURCE_SCOPE_ENGINEERING_STRESS",
+    "candidate": "unchanged E34 hybrid and matched same-model retrieval controls",
+    "purpose": "Discover numerical, units/period or source-scope errors on deliberately authored examples without consuming any original unusedDEV or CONF. Can reject engineering readiness but cannot accept benchmark generalization or promotion.",
+    "constraints": [
+      "Freeze authored identities, text hashes, expected labels, scorer and unchanged candidate source before execution.",
+      "Use only supplied source excerpts and verify original evidence literal/UTF8 mapping.",
+      "A retrieval miss cannot establish insufficient evidence; insufficient-evidence decisions require full supplied-excerpt/coverage and open-world checks.",
+      "Retain per-class accuracy, Brier/NLL, p50/p95, real native evidence, resource limits, raw failures and matched controls.",
+      "Treat hand-authored expected labels as engineering assertions, never as independent fresh benchmark confirmation.",
+      "Preserve lineage HOLD, emptyCONF and native104 champion even if engineering gates pass."
+    ]
+  },
+  "calls": {
+    "official_source_GET_attempts": 8,
+    "weights_downloaded": 0,
+    "models_loaded_or_executed": 0,
+    "tokenizers_loaded_or_executed": 0,
+    "native_batches": 0,
+    "training_or_calibration": 0,
+    "unused_DEV_documents_or_labels_read": 0,
+    "confirmation_documents_or_labels_read": 0,
+    "publisher_submissions": 0,
+    "author_contacts": 0,
+    "paid_API_or_GPU_calls": 0,
+    "external_mutations": 0
+  },
+  "publication_review": {
+    "safe_public_artifacts": [
+      "LINEAGE_RESEARCH_REPORT.json",
+      "LINEAGE_RESEARCH_REPORT.md",
+      "SOURCE_RECEIPTS.json",
+      "upstream-less-annotating-README.md",
+      "PUBLIC_ARTIFACTS.json"
+    ],
+    "raw_response_workfile_excluded": "source-inputs-unpublished.json",
+    "credentials_private_data_or_author_emails_in_public_artifacts": false,
+    "no_claim_of_official_score_rank_or_promotion": true
+  }
+}

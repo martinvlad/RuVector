@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "epoch": 35,
+  "kind": "IMMUTABLE_TWO_READ_SOURCE_ADMISSION_ADDENDUM",
+  "created_at_utc": "2026-10-25T06:12:54.683280+00:00",
+  "original_eight_attempt_report_preserved": true,
+  "original_report_sha256": "52336e1a548ad8f32643b958b90de3aff2440ea997c296cce20c3d65c64b8555",
+  "original_manifest_sha256": "a44cf16293d4f818cc5392718e9f72ded946e8c1b7507fd25bb003abe785d3d7",
+  "decision": "KEEP_LINEAGE_HOLD_NO_ORIGINAL_b354_PRODUCTION_OR_CONSUMPTION_LINKAGE_VERIFIED",
+  "target": {
+    "repository": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7"
+  },
+  "inspected_source": {
+    "repository": "MoritzLaurer/zeroshot-classifier",
+    "commit_reported_by_prior_official_code_search": "e680edcb6d92d8ca09f3d39b70358ccac8ccbd2f",
+    "path": "v1_human_data/4_train_eval.py",
+    "git_blob_sha1": "3eb811d3dfd80658ee58ec52bfb2dd5a9e4ee093",
+    "bytes": 24698,
+    "sha256": "c80379b26da73fc7fdb86fd1dcd20e2bd7a9efba53ede2f39d8e35865d0b29bd",
+    "byte_verified_against_requested_blob": true,
+    "executed": false,
+    "source_license_verified": false,
+    "raw_full_code_excluded_from_public_whitelist": true
+  },
+  "produces_or_consumes_target": "Neither is established by this pinned script. It defines a later binary zero-shot-v1.1 training pipeline from a foundation checkpoint by default, and its evaluation branch consumes a different base-size binary NLI checkpoint. The original large three-class target name and b354 revision do not occur. An optional commented large foundation model is not evidence of target production.",
+  "source_facts": [
+    {
+      "lines": [
+        132,
+        134
+      ],
+      "fact": "Loads prepared MoritzLaurer/dataset_train_nli, dataset_test_concat_nli and dataset_test_disaggregated_nli. None of these load_dataset calls pins revision or exact record identities."
+    },
+    {
+      "lines": [
+        153,
+        166
+      ],
+      "fact": "Allows held-out task filtering. The all_except_nli list is mnli, anli, fevernli, wanli, lingnli; a separate branch adds mixtral_small_zeroshot. Shared dataset names do not establish original target lineage."
+    },
+    {
+      "lines": [
+        180,
+        200
+      ],
+      "fact": "Training branch defaults to microsoft/deberta-v3-base and declares two labels: entailment and not_entailment. A comment offers other foundation choices, including large. This is not the original target large three-class producing-run manifest."
+    },
+    {
+      "lines": [
+        182,
+        209
+      ],
+      "fact": "Evaluation branch loads MoritzLaurer/deberta-v3-base-mnli-fever-anli-ling-wanli-binary without revision. This is a different checkpoint from original large b354."
+    },
+    {
+      "lines": [
+        249,
+        255
+      ],
+      "fact": "Prepared concatenated test data are used during the loop and disaggregated tests are separately evaluated. Exact test/selection/calibration records are not identified by this script."
+    },
+    {
+      "lines": [
+        383,
+        428
+      ],
+      "fact": "Output repository template is MoritzLaurer/<model-base>-zeroshot-v1.1-<heldout>. Training uses3epochs, per-epoch evaluation, seed42, save_strategy=no. load_best_model_at_end and metric_for_best_model are commented out. The runtime producing invocation and resulting exact checkpoint are not supplied here."
+    },
+    {
+      "lines": [
+        497,
+        525
+      ],
+      "fact": "Optional final upload targets the zero-shot-v1.1 repository template. A block for saving a best model is inside a triple-quoted inactive string. No original b354 upload or producing checkpoint is identified."
+    }
+  ],
+  "complete_original_closure": {
+    "original_b354_producing_run": false,
+    "exact_original_train_record_manifest": false,
+    "exact_original_selection_calibration_record_manifest": false,
+    "complete_foundation_intermediate_lineage": false,
+    "independent_overlap_audit": false,
+    "publisher_eligibility": false
+  },
+  "overview_blob_limitation": {
+    "attempt": 10,
+    "url": "https://api.github.com/repos/MoritzLaurer/zeroshot-classifier/git/blobs/95e10d92bddf16dbcad12e0388e0507180ae7b9f",
+    "result": "issued once and promise settled before response parser exception; status/content not retained or inspected",
+    "response_digest": null,
+    "limitation": "Script assumed the first decoded text source was JSON and raised before storing the second result. No further fetch or uncertain success claim."
+  },
+  "no_negative_contamination_claim": "This investigation does not establish contamination or absence of a producing artifact elsewhere; it establishes that the inspected source does not close the original checkpoint lineage.",
+  "remaining_action": "Do not rerun source/runtime blockers unchanged or consume unusedDEV/CONF. Preserve native104 and lineage HOLD. New authored CC0 numerical/source-scope engineering stress remains independent and does not establish benchmark generalization.",
+  "calls_in_addendum": {
+    "connected_GitHub_GET_attempts": 2,
+    "other_network_attempts": 0,
+    "source_code_executed": 0,
+    "datasets_or_labels_fetched": 0,
+    "weights_downloaded": 0,
+    "models_or_tokenizers_loaded_or_executed": 0,
+    "native_batches": 0,
+    "unused_DEV_or_CONF_read": 0,
+    "author_contacts": 0,
+    "paid_calls": 0,
+    "external_mutations": 0
+  }
+}

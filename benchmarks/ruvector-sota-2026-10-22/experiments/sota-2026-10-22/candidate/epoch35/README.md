@@ -1,0 +1,11 @@
+# Epoch35 authored numeric and source-scope engineering stress
+
+This isolated epoch keeps the accepted E34 hybrid selector, shared source-group packer and original b354 rawT1 model unchanged. It tests a different readiness question: whether exact quantities, signs, units, thresholds, periods, conditional permissions and entity scopes survive native evidence selection and typed decision readout. Twelve new CC0 supplied excerpts and distinct hypotheses are frozen before any real tokenizer, native or neural execution. The oracle uses exact Decimal/Fraction comparisons or two compatible-world witnesses over the complete supplied excerpt.
+
+The primary lexical anchor plus first distinct actual-native group is compared with native-original, lexical and positional rankings using the same model and complete-group packer. The actual inherited sentence/semicolon grouping defines source groups; authored paragraphs do not redefine that grouping. Every selected source span, literal number/year and omission is retained. A retrieval omission cannot establish absence, insufficiency or a global NotMentioned label.
+
+Only the engineering role exists. TRAIN, DEV, calibration, confirmation and used-confirmation identities are empty. One exclusive, source-published worker may execute at most one native corpus, twelve indexes and queries, one binary load and48 neural forwards, CPU0,1 and600seconds including initialization/cleanup. No paid/GPU calls, tuning, proof override, retry or follow-on DEV are allowed. The worker joins exactly twelve oracle labels once, after all48 readouts; the independent scorer uses the retained joined labels.
+
+Engineering admission requires primary12/12, four per class and no worse mean3-way Brier or NLL (floor1e-12) against each matched control. Both a semantic pass and semantic rejection are complete runtime outcomes; neither authorizes DEV, confirmation, promotion or submission. The original model lineage remains incomplete and publisher eligibility remains HOLD. Benchmarkaccuracy is null. This is not a ClaimBench pilot, benchmark generalization estimate or official result. No experiment has executed in this source preparation.
+
+The originally submitted native104 champion remains unchanged. Exact real results and failure/resource/uncertainty capture belong in the later immutable epoch results.

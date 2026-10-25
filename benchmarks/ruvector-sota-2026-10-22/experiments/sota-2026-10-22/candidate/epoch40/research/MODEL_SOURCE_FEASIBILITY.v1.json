@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "epoch": 40,
+  "source_checkpoint": "2cf5aba60a050079506a5e9aa5463f44c1efcd5a",
+  "status": "EXACT_THREE_WAY_CLASSIC_SOURCE_FEASIBLE_FOR_PROSPECTIVE_DEV_HOLD_ONLY_NOT_AUTHORIZED_ACQUISITION",
+  "root_preferred_candidate": {
+    "repository": "sileod/deberta-v3-large-tasksource-nli",
+    "revision": "212de447184bda8fb9415a2e5697846864ddf304",
+    "architecture": [
+      "DebertaV2ForSequenceClassification"
+    ],
+    "native_id2label": {
+      "0": "entailment",
+      "1": "neutral",
+      "2": "contradiction"
+    },
+    "canonical_E_C_N_from_raw": [
+      0,
+      2,
+      1
+    ],
+    "parameters_reported_by_HF": {
+      "I64": 512,
+      "F32": 435064835
+    },
+    "compute_dtype_proposed": "F32",
+    "source_parameter_dtype": "F32",
+    "context_config_limit": 512,
+    "model_payload_bytes": 1740312738,
+    "selected_complete_payload_bytes": 1751462486,
+    "exported_head_documentation_quote": "This is the shared model with the MNLI classifier on top.",
+    "pretraining_documentation": {
+      "shared_encoder_supervised_tasks": 600,
+      "steps": 80000,
+      "batch_size": 384,
+      "per_task_example_cap": 64000,
+      "training_code_revision": "NOT_DISCLOSED",
+      "training_dataset_revisions_splits": "NOT_SUFFICIENTLY_DISCLOSED",
+      "task_specific_CLS": "Card says task-specific CLS dropped10% to support use without it."
+    }
+  },
+  "meaningful_new_hypothesis": "Same435M parameter architecture as knownb354, different encoder/typed MNLIhead trained across600tasks including logical/numerical/NLI tasks. Test task-transfer with matched same-model native/lexical/source-order controls; no parameter-size rationale.",
+  "strength_evidence_limit": "No verified comparable exported-head ANLI/ContractNLI gain over knownb354. WNLI77% and linear-probeMNLI90% are model-card claims with different evaluation scopes, not proof stronger/SOTA or a RuVector result.",
+  "lineage": {
+    "supervised_SciFact_declared": true,
+    "ContractNLI_task_name_declared": false,
+    "ContractNLI_exclusion_proven": false,
+    "foundation_name": "microsoft/deberta-v3-large",
+    "foundation_documentation_revision": "64a8c8eab3e352a784c658aef62be1662607476f",
+    "actual_used_foundation_revision": "NOT_DISCLOSED",
+    "foundation_declared_license": "MIT",
+    "fine_tuned_declared_license": "Apache-2.0",
+    "model_repo_LICENSE_file_present": false,
+    "license_evidence": "Pinned model-card SPDX declarations; auxiliary files governed by repo declaration, not separately proven license records.",
+    "foundation_pretraining_data": "Foundation card says160GB; exact records/benchmark overlap not excluded.",
+    "official_eligibility": "HOLD",
+    "fresh_confirmation_allowed": false,
+    "champion_promotion_allowed": false
+  },
+  "data_coordination": {
+    "official_ContractNLI_codec_received_from_data_agent": "NotMentioned0/Entailment1/Contradiction2; dataCCBY4/codeApache2.0, exact official source revisions independently verified by dataowner.",
+    "old423_partition": "ContractNLItrain;325exposed/74unused/24protected untouched.",
+    "pilot_requirement": "Only blind role-frozen officialdev/test document identities proven disjointall423train andoldLegal96; no labels/cases opened here. Any pilot DEV-HOLD only, not clean benchmark confirmation.",
+    "E39_quality": "48forecasts existed but gold codec failed after2tokens; no quality result used as model-selection evidence and no E39 labels/cases/vault/archive accessed."
+  },
+  "runtime": {
+    "supported_source": "Stock DebertaV2ForSequenceClassification and DebertaV2TokenizerFast exist in exact Transformers4.52.4 official-wheel sources verified against currentGit+CP member authority; no actual imports/init/NNI performed.",
+    "required_versions": {
+      "torch": "2.7.1+cpu",
+      "transformers": "4.52.4",
+      "safetensors": "0.5.3"
+    },
+    "proposed_load": "Exact F32 safetensors CPU/meta strictassign with no half cast, no reinitialized learnedhead, original I64positionbuffer accounted. Actual header/graph/value checks required after separately authorized acquisition, before any NNI.",
+    "inference": "CPU0,1;torch2 compute threads/interop1,eager attention,T1/no calibration, model.eval/inference_mode.",
+    "time_limit": "No actual throughput proof; whole scientific batch600s including init/cleanup; prospective context/sample/readout cap must be frozen independently.",
+    "source_imports_or_model_tokenizer_native_calls": 0
+  },
+  "modernbert_alternative": {
+    "repository": "tasksource/ModernBERT-large-nli",
+    "revision": "ca476cb923a8637073d4ceb0f19f7fc236e260d4",
+    "genuine_native_id2label": {
+      "0": "entailment",
+      "1": "neutral",
+      "2": "contradiction"
+    },
+    "F32_parameters": 395834371,
+    "weight_bytes": 1583355740,
+    "actual_export_config_context_limit": 2048,
+    "direct_supervised_ContractNLI_and_SciFact_tasks": true,
+    "card_test_head_scope": "Scores explicitly refer to different taskheads. No exportedhead superiority established; reportedANLIr3 .55 cannot be relabelled stronger thanb354.",
+    "runtime_static_support": "ModernBertForSequenceClassification/eager branch present; reference_compileFalse avoids invoking compiledforward branches; module still defines torch.compile decorators. ActualCPUinit/forward unverified.",
+    "why_not_preferred": "Root prefers lower architecture/compile risk classicMNLIhead and no explicitContractNLI task declaration."
+  },
+  "actual_operations": {
+    "public_metadata_GETs": 17,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "model_or_tokenizer_payload_downloads": 0,
+    "payload_scans": 0,
+    "ML_dependency_imports": 0,
+    "model_tokenizer_native_initializations_or_calls": 0,
+    "actual_case_oracle_reads": 0,
+    "historical_mode_changes": 0,
+    "R_or_Git_writes": 0
+  }
+}

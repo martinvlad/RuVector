@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "epoch": 40,
+  "checks_passed": true,
+  "status": "PASS_AUTHOR_RAW_CODEC_LICENSE_AND_STATIC_HELPER_SCORING_SOURCE_CASE_ADMISSION_PENDING",
+  "kind": "REAL_CONTRACTNLI_HELDOUT_DEV_TRANSFER_PILOT",
+  "source_report": {
+    "path": "/workspace/ruvector-e40-data-source/CONTRACTNLI_SOURCE_ELIGIBILITY_REPORT.v1.json",
+    "bytes": 10020,
+    "sha256": "526986cee541c3378a4947582d8ee226edf05938f7afa55c11b2fb98bbb25060"
+  },
+  "dataset_revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+  "code_revision": "058c56fd62d56897bb4fcfbf1be71b17aee3a79c",
+  "source_bodies_verified": [
+    {
+      "upstream_path": "contract_nli/dataset/loader.py",
+      "bytes": 5754,
+      "sha256": "9c63102a01576c230da94695f593fd7bd4fe2d0b20672b74e8a7f62aba426fc4",
+      "git_blob_sha1": "708c4d3ab6b936233fb8f4b16d7dc27e742f87a4",
+      "repository": "stanfordnlp/contract-nli-bert"
+    },
+    {
+      "upstream_path": "contract_nli/evaluation.py",
+      "bytes": 15025,
+      "sha256": "f5acd4497e002652b2f29a6827fecd355b96ec041c4c174b1938eea2f8c42cf4",
+      "git_blob_sha1": "9b374a778038a2943dbaacd59cdf382f1a96292c",
+      "repository": "stanfordnlp/contract-nli-bert"
+    },
+    {
+      "upstream_path": "LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "repository": "stanfordnlp/contract-nli-bert"
+    },
+    {
+      "upstream_path": "LICENSE",
+      "bytes": 18656,
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+      "git_blob_sha1": "4ea99c213c5c0c005ae4e80df8e52169d06896ec",
+      "repository": "stanfordnlp/contract-nli"
+    }
+  ],
+  "independently_fetched_pinned_raw_codec_and_schema_match": true,
+  "raw_choice_contract": {
+    "NotMentioned": 0,
+    "Entailment": 1,
+    "Contradiction": 2
+  },
+  "source_authority": "Version-bound dataset website explicitly defines annotation_sets[0].annotations[hypothesis_id].choice literals; independently fetched author loader passes that exact choice to NLILabel.from_str. This proves the declared raw codec, rather than inferring it from predicted/report names. No archive gold representation was inspected here.",
+  "positive_source_enum_roundtrips": 3,
+  "invalid_unrelated_schema_fixtures_rejected": 8,
+  "dataset_case_gold_values_decoded": 0,
+  "license_scope": "Dataset author explicitCCBY4.0 statement plus exact licence body; code Apache2.0 notices. Preserve attribution/copyright/permission and clearly declare adaptations. No permission for publication of selected raw case/excerpts/token arrays is granted by this audit; keep current pilot inputs private as planned.",
+  "scoring_policy": "Author evaluate_class takes probability columns[NotMentioned,Entailment,Contradiction], argmax first maximum; accuracy retains all3 classes. Precision/recall/F1 forE/C only; E/C means/hmeans undefined when authorNaN propagates. Preserve undefined asnull with status/reason, never0 or drop/resample. Proper Brier and stable unclipped NLL are additional declared metrics.",
+  "scope_correction": "An all12 denominator classification helper pilot is not exact full evaluate_all(task=classification) or paper/full17task reproduction: that entrypoint has filteredbinary aggregation and combined identification_classification has unfilteredclass outputs. No evidence-span/paper/fullbenchmark score is established.",
+  "case_admission_still_pending": "Provisional27TEST is metadata screening only. Freeze12IDs/onehypothesis key/policy before archive case parse; verify archive/member/version/filename/fullnormalizeddocument correspondence and oldexposed aliases under label-blind custodian. Anyuncertainalias/guardfailure stopswhole12 withoutreplacement. No old74unused/24protected input or label reads; no global/unselected/CONF vocabulary scan. No corpus/model/tokenizer/scorer measurement until finalSOURCE actual readback.",
+  "lineage_and_confirmation": "All17fixed templates are public/shared, not new benchmark questions. tasksource600card/514config and declaredSciFact do not establish ContractNLI exclusion. Treat12new verified document/input identities asDEV only; no freshCONF, publishereligibility, promotion or officialplacement; native104 preserved.",
+  "source_privacy_whitelist": "This report and allowlisted non-case schema/licence extracts/author codec/scorer/licence sources only. Raw fullindex.md/capturedconnector wrappers and their example/citation fences stay outside publication.",
+  "independent_upstream_metadata_GET_operations": 4,
+  "network_note": "Two initial read-only contents GETs returned normalized plaintext; a local JSON-metadata assumption failed. Two corrected read-only GETs were then captured. No acquisition/scientific call or external mutation occurred; these are separate from officialbenchmarkHTTP accounting.",
+  "actual_archive_case_feature_vault_label_model_tokenizer_native_guard_scorer_or_Git_mutation_calls": 0,
+  "scientific_authorization": 0,
+  "acquisition_authorization": 0,
+  "reviewed_at_unix": 1792958571.754578
+}

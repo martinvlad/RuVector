@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "epoch": 40,
+  "kind": "REAL_CONTRACTNLI_HELDOUT_DEV_TRANSFER_PILOT",
+  "source_checkpoint": "2cf5aba60a050079506a5e9aa5463f44c1efcd5a",
+  "attempts": 1,
+  "allowed_retries": 0,
+  "CPU_affinity": [
+    0,
+    1
+  ],
+  "child_work_seconds": 175,
+  "owned_cleanup_seconds": 5,
+  "full_child_seconds": 180,
+  "paid_API_calls": 0,
+  "GPU_calls": 0,
+  "model_tokenizer_native_calls": 0,
+  "semantic_gold_decodes_authorized": 0,
+  "policy": {
+    "path": "/workspace/ruvector-e40-data-source/sealed-predata-v2/CUSTODIAN_POLICY_PROPOSAL.v1.json",
+    "bytes": 9527,
+    "sha256": "8b8570ca3d4033c1a631601313dbf10561e5589316798ff7b3312e4a5f601c82"
+  },
+  "seal": {
+    "path": "/workspace/ruvector-e40-data-source/sealed-predata-v2/PREDATA_ACCESS_SEAL.v2.json",
+    "bytes": 3365,
+    "sha256": "6f370531cb7f50708db3f3da4874af6954aa10ba56457a64b6123b2788d91dab"
+  },
+  "root_contract": {
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+    "bytes": 8910,
+    "sha256": "d0d66dc8a71bf68204463aa8b85f01bcc00217fc5c74854fe3749088e6d5a68a"
+  },
+  "source_modules": [
+    {
+      "bytes": 19751,
+      "path": "/workspace/ruvector-e40-data-source/sealed-predata-v2/contractnli_data.py",
+      "sha256": "96743d7bd65fb5bf8e67175ca2670c518c57c03cb0b4535fa38b5522927e06b5"
+    },
+    {
+      "bytes": 2568,
+      "path": "/workspace/ruvector-e40-data-source/sealed-predata-v2/contractnli_guard.py",
+      "sha256": "aea83148c0aa3813bcd5569cff50f0e52e20a09d9c595a1730e77a3a5e360c15"
+    },
+    {
+      "bytes": 4512,
+      "path": "/workspace/ruvector-e40-data-source/sealed-predata-v2/contractnli_json_spans.py",
+      "sha256": "991bf60acd8eb56c758f65d3e059777f943fa346cbb1d7d5b38e06b632ce24e9"
+    }
+  ],
+  "materializer": {
+    "bytes": 19751,
+    "path": "/workspace/ruvector-e40-data-source/sealed-predata-v2/contractnli_data.py",
+    "sha256": "96743d7bd65fb5bf8e67175ca2670c518c57c03cb0b4535fa38b5522927e06b5"
+  },
+  "archive": {
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/data-source/opaque/contract-nli-eced6528.zip",
+    "bytes": 65362913,
+    "sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+    "git_blob_sha1": "757fd1dafd29a997fba00c60c6d40b2930a36159"
+  },
+  "output": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/data-source/materialized-dev-once",
+  "approval_required": {
+    "approved": true,
+    "only_label_blind_custodian_parser_authorized": true,
+    "epoch": 40,
+    "source_checkpoint": "2cf5aba60a050079506a5e9aa5463f44c1efcd5a",
+    "predataseal_sha256": "6f370531cb7f50708db3f3da4874af6954aa10ba56457a64b6123b2788d91dab",
+    "policy_sha256": "8b8570ca3d4033c1a631601313dbf10561e5589316798ff7b3312e4a5f601c82"
+  },
+  "rule": "Same independent approval path/hash passed outer-to-child-to-materialize. Review separately binds wrapper/child/plan hashes; plan has no review hash or wrapper/child hashes, avoiding a cycle. Root alone may authorize the one parser call. Failed/uncertain attempt remains consumed; no replacements/retry/ML/gold decode."
+}

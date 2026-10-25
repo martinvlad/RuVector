@@ -1,0 +1,561 @@
+{
+  "schema_version": 1,
+  "epoch": 40,
+  "status": "FINAL_CORE_INTERFACE_ALL_ACTUAL_MODEL_DATA_RUNTIME_ADMISSIONS_BOUND_SOURCE_ONLY",
+  "plan_fields": {
+    "phase": "dev",
+    "arms": [
+      "tasksource_source_order",
+      "tasksource_native",
+      "tasksource_lexical",
+      "b354_source_order"
+    ],
+    "data_roles": {
+      "train": [],
+      "dev": [
+        "contractnli:eced6528:test:25:nda-7",
+        "contractnli:eced6528:test:596:nda-7",
+        "contractnli:eced6528:test:8:nda-7",
+        "contractnli:eced6528:test:26:nda-7",
+        "contractnli:eced6528:test:5:nda-7",
+        "contractnli:eced6528:test:165:nda-7",
+        "contractnli:eced6528:test:432:nda-7",
+        "contractnli:eced6528:test:55:nda-7",
+        "contractnli:eced6528:test:354:nda-7",
+        "contractnli:eced6528:test:42:nda-7",
+        "contractnli:eced6528:test:47:nda-7",
+        "contractnli:eced6528:test:30:nda-7"
+      ],
+      "calibration": [],
+      "confirmation": []
+    },
+    "model_order": [
+      "b354",
+      "tasksource"
+    ],
+    "actual_NLI_forwards": 48,
+    "DEV_cases": 12,
+    "dev_document_ids": [
+      25,
+      596,
+      8,
+      26,
+      5,
+      165,
+      432,
+      55,
+      354,
+      42,
+      47,
+      30
+    ],
+    "source_units_total": 1126,
+    "source_units_per_case": {
+      "contractnli:eced6528:test:25:nda-7": 62,
+      "contractnli:eced6528:test:596:nda-7": 122,
+      "contractnli:eced6528:test:8:nda-7": 61,
+      "contractnli:eced6528:test:26:nda-7": 82,
+      "contractnli:eced6528:test:5:nda-7": 53,
+      "contractnli:eced6528:test:165:nda-7": 72,
+      "contractnli:eced6528:test:432:nda-7": 133,
+      "contractnli:eced6528:test:55:nda-7": 78,
+      "contractnli:eced6528:test:354:nda-7": 91,
+      "contractnli:eced6528:test:42:nda-7": 99,
+      "contractnli:eced6528:test:47:nda-7": 32,
+      "contractnli:eced6528:test:30:nda-7": 241
+    },
+    "expected_BGE_forward_calls": 158,
+    "primary": "tasksource_native",
+    "reference": "b354_source_order",
+    "used_confirmation_identities": [],
+    "champion_promoted": false,
+    "inference_python": "/tmp/ruvector-sota-2026-10-22/epoch33-0522a2c521c9/runtime/.venv/bin/python",
+    "external_run_directory": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/run-external",
+    "external_data_assets": [
+      {
+        "bytes": 273587,
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/data-source/materialized-dev-once/dev_features.json",
+        "role": "dev_features",
+        "sha256": "d83a907eeb23fb65781d245c57f73732617b693feabe9cd407678fa2bff18ad0"
+      },
+      {
+        "bytes": 1040,
+        "path": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/data-source/materialized-dev-once/dev_oracle.bin",
+        "role": "dev_oracle",
+        "sha256": "d5ce7b90288cce71edd6a2cad950f2e49a7412025d5bf01b3edf1f991189a843"
+      }
+    ],
+    "expected_operation_counters": {
+      "dev": {
+        "BGE_initializations_attempted": 1,
+        "BGE_initializations_completed": 1,
+        "BGE_texts_attempted": 1138,
+        "BGE_texts_completed": 1138,
+        "CONF_input_reads": 0,
+        "GPU_calls": 0,
+        "HTTP_requests": 0,
+        "NLI_capped_pair_tokenizer_calls_attempted": 48,
+        "NLI_capped_pair_tokenizer_calls_completed": 48,
+        "NLI_claim_fit_tokenizer_calls_attempted": 48,
+        "NLI_claim_fit_tokenizer_calls_completed": 48,
+        "NLI_forward_calls_attempted": 48,
+        "NLI_forward_calls_completed": 48,
+        "NLI_full_pair_tokenizer_calls_attempted": 48,
+        "NLI_full_pair_tokenizer_calls_completed": 48,
+        "NLI_readouts_completed": 48,
+        "Node_network_operations_attempted": 0,
+        "ORT_sessions_attempted": 1,
+        "ORT_sessions_completed": 1,
+        "Python_network_operations_attempted": 0,
+        "TRAIN_input_reads": 0,
+        "b354_forward_calls_attempted": 12,
+        "b354_forward_calls_completed": 12,
+        "backward_calls": 0,
+        "calibration_calls": 0,
+        "canonical_argmax_decisions_completed": 48,
+        "corpus_batches_attempted": 1,
+        "corpus_batches_completed": 1,
+        "dev_features_bank_reads": 1,
+        "fits": 0,
+        "full104_requests": 0,
+        "generation_calls": 0,
+        "gold_reader_calls": 0,
+        "model_initializations_attempted": 2,
+        "model_initializations_completed": 2,
+        "model_unloads_attempted": 2,
+        "model_unloads_completed": 2,
+        "native_binary_loads_attempted": 1,
+        "native_binary_loads_completed": 1,
+        "native_helper_starts_attempted": 1,
+        "native_helper_starts_completed": 1,
+        "native_hit_source_validations": 1126,
+        "native_index_initializations_attempted": 12,
+        "native_index_initializations_completed": 12,
+        "native_insertions_attempted": 1126,
+        "native_insertions_completed": 1126,
+        "native_len_calls_attempted": 24,
+        "native_len_calls_completed": 24,
+        "native_queries_attempted": 12,
+        "native_queries_completed": 12,
+        "native_version_calls_attempted": 1,
+        "native_version_calls_completed": 1,
+        "old_benchmark_DEV_reads": 0,
+        "optimizer_initializations": 0,
+        "optimizer_steps": 0,
+        "packed_input_guard_checks": 48,
+        "paid_calls": 0,
+        "pair_tokenizations_attempted": 48,
+        "pair_tokenizations_completed": 48,
+        "primary_decisions_completed": 48,
+        "reader_lifecycles_completed": 2,
+        "selected_cases_validated": 12,
+        "semantic_gold_labels_decoded": 0,
+        "tasksource_forward_calls_attempted": 36,
+        "tasksource_forward_calls_completed": 36,
+        "tokenizer_initializations_attempted": 2,
+        "tokenizer_initializations_completed": 2,
+        "training_steps": 0
+      }
+    },
+    "DEV_gates": {
+      "all_must_pass": true,
+      "fresh_confirmation_passed": false,
+      "primary_accuracy_vs_each_other_arm": "nondecrease",
+      "primary_correct_at_least_reference_plus": 2,
+      "primary_defined_finite_author_EC_F1_mean_vs_each_other_arm": "nondecrease",
+      "primary_mean_NLL_vs_each_other_arm": "nonincrease tolerance1e-12",
+      "primary_mean_multiclass_Brier_vs_each_other_arm": "nonincrease tolerance1e-12",
+      "promotion_authorized": false,
+      "resources_and_physical_closure": "all SOURCE-frozen limits, exact readouts and independent owned-process closure pass"
+    },
+    "prediction_policy": {
+      "canonical_labels": [
+        "NotMentioned",
+        "Entailment",
+        "Contradiction"
+      ],
+      "model_E_N_C_to_canonical_N_E_C_indices": [
+        1,
+        0,
+        2
+      ],
+      "normalization_or_label_remap": false,
+      "prediction": "Canonical-first argmax of reordered raw FP32 logits; exact ties favor N then E then C.",
+      "probabilities": "Stable log-softmax from actual FP32 logits; no clipping, temperature fit, calibration or outcome-dependent transformations.",
+      "raw_source_codec": {
+        "Contradiction": 2,
+        "Entailment": 1,
+        "NotMentioned": 0
+      }
+    },
+    "context": {
+      "assembly": "All arms same blank-line separator and source units; only order changes. Native validates every returned unit identity; lexical fixed overlap and source-index ties.",
+      "context": "Only complete supplied contract partition from sorted unique non-oracle source span ends plus tail, preserving every original character/gap. No gold evidence spans.",
+      "max_case_feature_UTF8_bytes": 2097152,
+      "max_document_UTF8_bytes": 1048576,
+      "max_hypothesis_UTF8_bytes": 65536,
+      "max_source_units": 1024,
+      "max_unit_UTF8_bytes": 262144,
+      "native_embeddings": "Pinned BGE256, exact native RuVector artifact/runtime guards",
+      "numerical_checks": "Quantity/date coverage audit only; never changes label/confidence or asserts insufficient evidence from retrieval miss.",
+      "token_budget": 512,
+      "truncation": "ONLY_FIRST; preserve entire original hypothesis or STOP"
+    },
+    "canonical_label_order": [
+      "NotMentioned",
+      "Entailment",
+      "Contradiction"
+    ],
+    "native_to_canonical_indices": {
+      "b354": [
+        1,
+        0,
+        2
+      ],
+      "tasksource": [
+        1,
+        0,
+        2
+      ]
+    },
+    "lineage_status": "HOLD",
+    "fresh_confirmation_allowed": false,
+    "official_eligibility": "HOLD",
+    "no_new_submission": true,
+    "root_contract": {
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+      "bytes": 8910,
+      "sha256": "d0d66dc8a71bf68204463aa8b85f01bcc00217fc5c74854fe3749088e6d5a68a"
+    },
+    "worker": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/worker.py",
+      "bytes": 12335,
+      "sha256": "e9b8b764e0f01ae775eab1ee02f56a7cdacff2991c57e7dc6a01981e1a5492e4"
+    },
+    "worker_path": "experiments/sota-2026-10-22/candidate/epoch40/worker.py",
+    "worker_sha256": "e9b8b764e0f01ae775eab1ee02f56a7cdacff2991c57e7dc6a01981e1a5492e4",
+    "native_worker": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/native_helper.cjs",
+      "bytes": 11168,
+      "sha256": "b1ac1a1846403895f6bd95050cc4f82fa991b7ca943688aae59892918ff99b96"
+    },
+    "native_worker_path": "experiments/sota-2026-10-22/candidate/epoch40/native_helper.cjs",
+    "native_worker_sha256": "b1ac1a1846403895f6bd95050cc4f82fa991b7ca943688aae59892918ff99b96",
+    "model_assets_validator": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/runtime/model_assets_guard.py",
+      "bytes": 13916,
+      "sha256": "040daf8aab26be76c8e86469ac747e559bd9277a6476127da8d8c1133609512f"
+    },
+    "model_assets_validator_path": "experiments/sota-2026-10-22/candidate/epoch40/runtime/model_assets_guard.py",
+    "model_assets_validator_sha256": "040daf8aab26be76c8e86469ac747e559bd9277a6476127da8d8c1133609512f",
+    "expected_counters_source": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/EXPECTED_COUNTERS.json",
+      "bytes": 2682,
+      "sha256": "a4b1cbf22160f8b9b447a3836bfbd85fd68412ccb183f18c594c58526f601e99"
+    },
+    "expected_counters_source_path": "experiments/sota-2026-10-22/candidate/epoch40/EXPECTED_COUNTERS.json",
+    "expected_counters_source_sha256": "a4b1cbf22160f8b9b447a3836bfbd85fd68412ccb183f18c594c58526f601e99",
+    "observer_source": {
+      "path": "experiments/sota-2026-10-22/audit/epoch40/observe_supervisor_closure.py",
+      "bytes": 15643,
+      "sha256": "23ef353b60f4d3d6e60b0bc7cce6ff93559d765af6966cc4bd069f0131f0e0cc"
+    },
+    "observer_source_path": "experiments/sota-2026-10-22/audit/epoch40/observe_supervisor_closure.py",
+    "observer_source_sha256": "23ef353b60f4d3d6e60b0bc7cce6ff93559d765af6966cc4bd069f0131f0e0cc",
+    "observer_helper_source": {
+      "path": "experiments/sota-2026-10-22/audit/epoch40/closure_metadata.py",
+      "bytes": 22591,
+      "sha256": "549b3e764e6b306334631db82e7f13e0eac91a0dd177fd91f96a5b97734c2577"
+    },
+    "observer_helper_source_path": "experiments/sota-2026-10-22/audit/epoch40/closure_metadata.py",
+    "observer_helper_source_sha256": "549b3e764e6b306334631db82e7f13e0eac91a0dd177fd91f96a5b97734c2577",
+    "context_policy": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/CONTEXT_POLICY.json",
+      "bytes": 1600,
+      "sha256": "3d46ebbc56aa9fc0f0b7a0da2636c984f91e3948c7ec37b1ebda5b1279a910fa"
+    },
+    "context_policy_path": "experiments/sota-2026-10-22/candidate/epoch40/CONTEXT_POLICY.json",
+    "context_policy_sha256": "3d46ebbc56aa9fc0f0b7a0da2636c984f91e3948c7ec37b1ebda5b1279a910fa",
+    "raw_schema": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/RAW_SCHEMA.v1.json",
+      "bytes": 3523,
+      "sha256": "9f093f7ed91b51c052000cb5b4b377221ab74fde1a7faebfa9e00576f45a5d3d"
+    },
+    "raw_schema_path": "experiments/sota-2026-10-22/candidate/epoch40/RAW_SCHEMA.v1.json",
+    "raw_schema_sha256": "9f093f7ed91b51c052000cb5b4b377221ab74fde1a7faebfa9e00576f45a5d3d",
+    "B354_model_source": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_B354_SOURCE.json",
+      "bytes": 1350,
+      "sha256": "bde24ca325d3c96d272180b0ad42cf301088ea19fc731a5a4d30228a64bd0ae5"
+    },
+    "B354_model_source_path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_B354_SOURCE.json",
+    "B354_model_source_sha256": "bde24ca325d3c96d272180b0ad42cf301088ea19fc731a5a4d30228a64bd0ae5",
+    "TASKSOURCE_model_source": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_TASKSOURCE_SOURCE.json",
+      "bytes": 1556,
+      "sha256": "7c906929de103699a62bfb4fcdf1b45dedf9b263d87fc08b5913131065c2256f"
+    },
+    "TASKSOURCE_model_source_path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_TASKSOURCE_SOURCE.json",
+    "TASKSOURCE_model_source_sha256": "7c906929de103699a62bfb4fcdf1b45dedf9b263d87fc08b5913131065c2256f",
+    "B354_expected_catalog": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_B354_ASSETS.expected.json",
+      "bytes": 3916,
+      "sha256": "30657c23de7feae478af2b951c814ff5e4be3c69c7a90c08d0f268a2172eea11"
+    },
+    "B354_expected_catalog_path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_B354_ASSETS.expected.json",
+    "B354_expected_catalog_sha256": "30657c23de7feae478af2b951c814ff5e4be3c69c7a90c08d0f268a2172eea11",
+    "tasksource_preacquisition_catalog": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/CLASSIC_PREACQUISITION_CATALOG.json",
+      "bytes": 5960,
+      "sha256": "6023ccec0a48a5cb4f018e8be94a236d0479454ccb92deabd7c25fadf67724d3"
+    },
+    "tasksource_preacquisition_catalog_path": "experiments/sota-2026-10-22/candidate/epoch40/research/CLASSIC_PREACQUISITION_CATALOG.json",
+    "tasksource_preacquisition_catalog_sha256": "6023ccec0a48a5cb4f018e8be94a236d0479454ccb92deabd7c25fadf67724d3",
+    "host_admission_policy": {
+      "cgroup_hard_limit_bytes": 17179869184,
+      "baseline_learned_F16_payload_bytes": 870129670,
+      "baseline_target_F32_payload_bytes": 1740259340,
+      "baseline_source_plus_target_payload_bytes": 2610389010,
+      "primary_F32_mmap_payload_bytes": 1740259340,
+      "one_reader_only": true,
+      "minimum_workspace_free_bytes": 67108864,
+      "additional_runtime_activation_reserve_bytes": 2147483648,
+      "minimum_reclaim_adjusted_headroom_bytes": 6442450944,
+      "reclaimable_filecache_policy": "max(0,min(max(0,file-shmem),active_file+inactive_file)-file_dirty-file_writeback)"
+    },
+    "model_profiles": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_PROFILES.json",
+      "bytes": 4086,
+      "sha256": "70f03c03ef7f4353d3c300653ad66f10fb917366d106bac9a806fdb220d7a162"
+    },
+    "model_profiles_path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_PROFILES.json",
+    "model_profiles_sha256": "70f03c03ef7f4353d3c300653ad66f10fb917366d106bac9a806fdb220d7a162",
+    "TASKSOURCE_expected_catalog": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_TASKSOURCE_ASSETS.expected.json",
+      "bytes": 4084,
+      "sha256": "71e871cd9b0618bef08721bacb4d832aa15d798c521d2347208ac5e2475abd17"
+    },
+    "TASKSOURCE_expected_catalog_path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_TASKSOURCE_ASSETS.expected.json",
+    "TASKSOURCE_expected_catalog_sha256": "71e871cd9b0618bef08721bacb4d832aa15d798c521d2347208ac5e2475abd17",
+    "runtime_assets_lock": {
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/runtime-assets.lock.json",
+      "bytes": 4040,
+      "sha256": "ed10d16ba60f1d0e4da37e8bb81f87e053e7df7c30f95d3e73a124d6d37ac198"
+    },
+    "runtime_assets_lock_path": "experiments/sota-2026-10-22/epoch40/preparation/runtime-assets.lock.json",
+    "runtime_assets_lock_sha256": "ed10d16ba60f1d0e4da37e8bb81f87e053e7df7c30f95d3e73a124d6d37ac198",
+    "real_model_assets_guard_receipt": {
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/ASSET_ACQUISITION_RESULT.json",
+      "bytes": 38205,
+      "sha256": "e51d6dd7f2e127e331defcf89d5ad08d1d06bd8734eb36cb4814fb5279ca6e8b"
+    },
+    "real_model_assets_guard_receipt_path": "experiments/sota-2026-10-22/epoch40/preparation/ASSET_ACQUISITION_RESULT.json",
+    "real_model_assets_guard_receipt_sha256": "e51d6dd7f2e127e331defcf89d5ad08d1d06bd8734eb36cb4814fb5279ca6e8b",
+    "model_assets_admission": {
+      "path": "experiments/sota-2026-10-22/audit/epoch40/preparation/actual-model-assets-admission-independent-v1.json",
+      "bytes": 10475,
+      "sha256": "bcaaee05267af2829611d2225153c519ad9a86e4aee1127bafece1745ac3fc97"
+    },
+    "model_assets_admission_path": "experiments/sota-2026-10-22/audit/epoch40/preparation/actual-model-assets-admission-independent-v1.json",
+    "model_assets_admission_sha256": "bcaaee05267af2829611d2225153c519ad9a86e4aee1127bafece1745ac3fc97",
+    "data_schema_admission": {
+      "path": "experiments/sota-2026-10-22/audit/epoch40/DATA_SCHEMA_ADMISSION.json",
+      "bytes": 6587,
+      "sha256": "e483451034e9fbb901a0b7e9ccda4e1389aa174cea5987b2d368dadeef9d33e6"
+    },
+    "data_schema_admission_path": "experiments/sota-2026-10-22/audit/epoch40/DATA_SCHEMA_ADMISSION.json",
+    "data_schema_admission_sha256": "e483451034e9fbb901a0b7e9ccda4e1389aa174cea5987b2d368dadeef9d33e6",
+    "failure_protocol": {
+      "path": "experiments/sota-2026-10-22/audit/epoch40/FAILURE_PROTOCOL.json",
+      "bytes": 2551,
+      "sha256": "edd0587d4e87aeb15ad5d6bdb279584ade0102cd295fb0785a6f3881d210094e"
+    },
+    "failure_protocol_path": "experiments/sota-2026-10-22/audit/epoch40/FAILURE_PROTOCOL.json",
+    "failure_protocol_sha256": "edd0587d4e87aeb15ad5d6bdb279584ade0102cd295fb0785a6f3881d210094e",
+    "model_api_public_projection": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/HF_MODEL_API.public-provenance.v1.json",
+      "bytes": 18268,
+      "sha256": "b6b33f136d8e2d2d51953a66657dfe0c4182acbd6b8988f17e2783a6c8fce437"
+    },
+    "model_api_public_projection_path": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/HF_MODEL_API.public-provenance.v1.json",
+    "model_api_public_projection_sha256": "b6b33f136d8e2d2d51953a66657dfe0c4182acbd6b8988f17e2783a6c8fce437",
+    "B354_model_assets_lock": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_B354_ASSETS.json",
+      "bytes": 3880,
+      "sha256": "c3f72eae1ac9430357ab2cfd0a8e70163485b1352554219cfddbd6dc8f3a3ec0"
+    },
+    "B354_model_assets_lock_path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_B354_ASSETS.json",
+    "B354_model_assets_lock_sha256": "c3f72eae1ac9430357ab2cfd0a8e70163485b1352554219cfddbd6dc8f3a3ec0",
+    "TASKSOURCE_model_assets_lock": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_TASKSOURCE_ASSETS.json",
+      "bytes": 3738,
+      "sha256": "f2f9cb1a6871efe82d207469b6571b8bb0ff0e7439ecf3997768fe72716f4f0b"
+    },
+    "TASKSOURCE_model_assets_lock_path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_TASKSOURCE_ASSETS.json",
+    "TASKSOURCE_model_assets_lock_sha256": "f2f9cb1a6871efe82d207469b6571b8bb0ff0e7439ecf3997768fe72716f4f0b",
+    "native_asset_root": "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project",
+    "source_dependencies": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/SOURCE_DEPENDENCIES.json",
+      "bytes": 1515,
+      "sha256": "280dd8a6cf5cb497e6b2cb567913f508394ede656e65fe6d9cdd356fd22ff0bd"
+    },
+    "source_dependencies_path": "experiments/sota-2026-10-22/candidate/epoch40/research/SOURCE_DEPENDENCIES.json",
+    "source_dependencies_sha256": "280dd8a6cf5cb497e6b2cb567913f508394ede656e65fe6d9cdd356fd22ff0bd"
+  },
+  "required_refs": {
+    "worker": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/worker.py",
+      "bytes": 12335,
+      "sha256": "e9b8b764e0f01ae775eab1ee02f56a7cdacff2991c57e7dc6a01981e1a5492e4"
+    },
+    "native_worker": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/native_helper.cjs",
+      "bytes": 11168,
+      "sha256": "b1ac1a1846403895f6bd95050cc4f82fa991b7ca943688aae59892918ff99b96"
+    },
+    "model_assets_validator": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/runtime/model_assets_guard.py",
+      "bytes": 13916,
+      "sha256": "040daf8aab26be76c8e86469ac747e559bd9277a6476127da8d8c1133609512f"
+    },
+    "expected_counters_source": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/EXPECTED_COUNTERS.json",
+      "bytes": 2682,
+      "sha256": "a4b1cbf22160f8b9b447a3836bfbd85fd68412ccb183f18c594c58526f601e99"
+    },
+    "observer_source": {
+      "path": "experiments/sota-2026-10-22/audit/epoch40/observe_supervisor_closure.py",
+      "bytes": 15643,
+      "sha256": "23ef353b60f4d3d6e60b0bc7cce6ff93559d765af6966cc4bd069f0131f0e0cc"
+    },
+    "observer_helper_source": {
+      "path": "experiments/sota-2026-10-22/audit/epoch40/closure_metadata.py",
+      "bytes": 22591,
+      "sha256": "549b3e764e6b306334631db82e7f13e0eac91a0dd177fd91f96a5b97734c2577"
+    },
+    "context_policy": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/CONTEXT_POLICY.json",
+      "bytes": 1600,
+      "sha256": "3d46ebbc56aa9fc0f0b7a0da2636c984f91e3948c7ec37b1ebda5b1279a910fa"
+    },
+    "raw_schema": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/RAW_SCHEMA.v1.json",
+      "bytes": 3523,
+      "sha256": "9f093f7ed91b51c052000cb5b4b377221ab74fde1a7faebfa9e00576f45a5d3d"
+    },
+    "B354_model_source": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_B354_SOURCE.json",
+      "bytes": 1350,
+      "sha256": "bde24ca325d3c96d272180b0ad42cf301088ea19fc731a5a4d30228a64bd0ae5"
+    },
+    "TASKSOURCE_model_source": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_TASKSOURCE_SOURCE.json",
+      "bytes": 1556,
+      "sha256": "7c906929de103699a62bfb4fcdf1b45dedf9b263d87fc08b5913131065c2256f"
+    },
+    "B354_expected_catalog": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_B354_ASSETS.expected.json",
+      "bytes": 3916,
+      "sha256": "30657c23de7feae478af2b951c814ff5e4be3c69c7a90c08d0f268a2172eea11"
+    },
+    "tasksource_preacquisition_catalog": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/CLASSIC_PREACQUISITION_CATALOG.json",
+      "bytes": 5960,
+      "sha256": "6023ccec0a48a5cb4f018e8be94a236d0479454ccb92deabd7c25fadf67724d3"
+    },
+    "model_profiles": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_PROFILES.json",
+      "bytes": 4086,
+      "sha256": "70f03c03ef7f4353d3c300653ad66f10fb917366d106bac9a806fdb220d7a162"
+    },
+    "TASKSOURCE_expected_catalog": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_TASKSOURCE_ASSETS.expected.json",
+      "bytes": 4084,
+      "sha256": "71e871cd9b0618bef08721bacb4d832aa15d798c521d2347208ac5e2475abd17"
+    },
+    "runtime_assets_lock": {
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/runtime-assets.lock.json",
+      "bytes": 4040,
+      "sha256": "ed10d16ba60f1d0e4da37e8bb81f87e053e7df7c30f95d3e73a124d6d37ac198"
+    },
+    "real_model_assets_guard_receipt": {
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/ASSET_ACQUISITION_RESULT.json",
+      "bytes": 38205,
+      "sha256": "e51d6dd7f2e127e331defcf89d5ad08d1d06bd8734eb36cb4814fb5279ca6e8b"
+    },
+    "model_assets_admission": {
+      "path": "experiments/sota-2026-10-22/audit/epoch40/preparation/actual-model-assets-admission-independent-v1.json",
+      "bytes": 10475,
+      "sha256": "bcaaee05267af2829611d2225153c519ad9a86e4aee1127bafece1745ac3fc97"
+    },
+    "data_schema_admission": {
+      "path": "experiments/sota-2026-10-22/audit/epoch40/DATA_SCHEMA_ADMISSION.json",
+      "bytes": 6587,
+      "sha256": "e483451034e9fbb901a0b7e9ccda4e1389aa174cea5987b2d368dadeef9d33e6"
+    },
+    "failure_protocol": {
+      "path": "experiments/sota-2026-10-22/audit/epoch40/FAILURE_PROTOCOL.json",
+      "bytes": 2551,
+      "sha256": "edd0587d4e87aeb15ad5d6bdb279584ade0102cd295fb0785a6f3881d210094e"
+    },
+    "model_api_public_projection": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/HF_MODEL_API.public-provenance.v1.json",
+      "bytes": 18268,
+      "sha256": "b6b33f136d8e2d2d51953a66657dfe0c4182acbd6b8988f17e2783a6c8fce437"
+    },
+    "B354_model_assets_lock": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_B354_ASSETS.json",
+      "bytes": 3880,
+      "sha256": "c3f72eae1ac9430357ab2cfd0a8e70163485b1352554219cfddbd6dc8f3a3ec0"
+    },
+    "TASKSOURCE_model_assets_lock": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_TASKSOURCE_ASSETS.json",
+      "bytes": 3738,
+      "sha256": "f2f9cb1a6871efe82d207469b6571b8bb0ff0e7439ecf3997768fe72716f4f0b"
+    },
+    "runtime_assets": {
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/runtime-assets.lock.json",
+      "bytes": 4040,
+      "sha256": "ed10d16ba60f1d0e4da37e8bb81f87e053e7df7c30f95d3e73a124d6d37ac198"
+    },
+    "source_dependencies": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/SOURCE_DEPENDENCIES.json",
+      "bytes": 1515,
+      "sha256": "280dd8a6cf5cb497e6b2cb567913f508394ede656e65fe6d9cdd356fd22ff0bd"
+    }
+  },
+  "inherited_source_refs": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/models.py",
+      "bytes": 4708,
+      "sha256": "c5cf3500a89837e71adc754f0dc96d090e172068031545fc55ee349e80210716"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch30/runtime-policy-addendum-v1.json",
+      "bytes": 4445,
+      "sha256": "c4b3c3243ac089d5966e394f3ead60f57a15f59cc24b496960334124c14dbacd"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch26/preparation/runtime-members/python-wheel-members.json",
+      "bytes": 4640799,
+      "sha256": "87254bbf6ec2aba6d08a4b55ff189faf29f78e1b1dd278fe8ffef9a8cc5523b9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch17/preparation/python-wheel-identities.json",
+      "bytes": 6063,
+      "sha256": "6689210699a4171b54a38f8d14edba78c4b4b6390c76b6b05293a32f1ea2b8de"
+    }
+  ],
+  "pending_fields": [],
+  "model_tokenizer_native_actual_calls_by_author": 0,
+  "actual_acquisition_completed_by_root": true,
+  "raw_HF_API_publication_exclusion": {
+    "excluded": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/HF_MODEL_API.json",
+    "replacement": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/HF_MODEL_API.public-provenance.v1.json",
+      "bytes": 18268,
+      "sha256": "b6b33f136d8e2d2d51953a66657dfe0c4182acbd6b8988f17e2783a6c8fce437"
+    },
+    "reason": "Unlicensedwidget text removed byroot; oldprep/raw source remainsoutsideR. No sourceprogram/candidate/plan/gate changes."
+  }
+}

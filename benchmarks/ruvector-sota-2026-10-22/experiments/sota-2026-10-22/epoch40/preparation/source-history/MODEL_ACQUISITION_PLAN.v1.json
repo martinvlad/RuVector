@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "epoch": 40,
+  "source_checkpoint": "2cf5aba60a050079506a5e9aa5463f44c1efcd5a",
+  "status": "PROSPECTIVE_ROOT_MODEL_PREPARATION_PLAN_PENDING_EXACT_OUTER_INDEPENDENT_REVIEW_NOT_EXECUTED",
+  "candidate": {
+    "repository": "sileod/deberta-v3-large-tasksource-nli",
+    "revision": "212de447184bda8fb9415a2e5697846864ddf304",
+    "catalog": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/CLASSIC_PREACQUISITION_CATALOG.json",
+      "bytes": 5960,
+      "sha256": "6023ccec0a48a5cb4f018e8be94a236d0479454ccb92deabd7c25fadf67724d3"
+    },
+    "target_directory": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/reader-assets/tasksource-212de447184b",
+    "selected_files": 9,
+    "payload_total_bytes": 1751462486,
+    "alternate_pytorch_bin_allowed": false
+  },
+  "baseline": {
+    "repository": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "source_directory": "/workspace/ruvector-e39-reader-assets/moritz-b3546ea6",
+    "target_directory": "/workspace/ruvector-e40-reader-assets/moritz-b3546ea6",
+    "source_catalog": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_B354_ASSETS.expected.json",
+      "bytes": 3916,
+      "sha256": "30657c23de7feae478af2b951c814ff5e4be3c69c7a90c08d0f268a2172eea11"
+    },
+    "source_authority": {
+      "source_path": "experiments/sota-2026-10-22/candidate/epoch39/MODEL_B354_ASSETS.expected.json",
+      "bytes": 3916,
+      "sha256": "30657c23de7feae478af2b951c814ff5e4be3c69c7a90c08d0f268a2172eea11",
+      "actual_git_blob_sha1": "74fd021d902782f59638a8adf786ba589f24e4b7",
+      "source_checkpoint": "2cf5aba60a050079506a5e9aa5463f44c1efcd5a"
+    },
+    "strategy": "Fulltypedsourcehash then readonlyhardlinks only on samefilesystem; allsourcebytes/mode/mtime unchanged, nlink/ctimechanges disclosed. Missing/writable/EXDEV target STOP. No chmod/copy fallback or historicaldeletion."
+  },
+  "guardian": {
+    "pid": 120232,
+    "startticks": 27979422,
+    "owner_ref": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/owner.json",
+      "bytes": 544,
+      "sha256": "f18924b1456dcf51c461181c233ff4511cd3e479982f48b109a0e4126b5c3af0"
+    },
+    "require_exact_current_FD_kernel_flock": true
+  },
+  "caps": {
+    "paid_API_cap_USD": 0,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "CPU_threads": 2,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "wall_seconds_including_download_hashes_capture_cleanup": 360,
+    "attempts": 1,
+    "retries": 0,
+    "maximum_payload_network_bytes": 1751462486,
+    "maximum_GETs_including_redirects": 24,
+    "maximum_redirects_per_file": 3,
+    "stream_chunk_bytes": 1048576,
+    "model_tokenizer_native_initializations_or_calls": 0,
+    "case_oracle_reads": 0
+  },
+  "storage": {
+    "candidate_on_tmp_outside_public_project": true,
+    "baseline_hardlinks_on_workspace_same_sourcefilesystem": true,
+    "require_tmp_free_bytes_at_least": 2825204310,
+    "workspace_free_floor_bytes": 67108864,
+    "no_large_overlay_copy": true,
+    "minimum_preacquisition_reclaim_adjusted_headroom_bytes": 8589934592,
+    "minimum_postacquisition_science_admission_headroom_bytes_proposed": 6442450944,
+    "cgroup_limit_bytes": 17179869184,
+    "reclaimable_cache_excludes": [
+      "shmem",
+      "dirty",
+      "writeback"
+    ],
+    "models_sequential_never_intentionally_coexist": true,
+    "resource_scope": "Conservative proposed admission, not runtime measurement. CandidateF32asset~1.74GBtmpfs is nonreclaimable. Worstbaselinephase includes retainedcandidateasset+0.87GB baselineF16mappedsource+1.74GB F32target+2GiBactivation reserve; actualhost/cgroup and disk admission required."
+  },
+  "integrity_protocol": [
+    "Write a durable O_EXCL acquisitionWAL before firstpayloadGET; never reset/retry uncertain request or mutation.",
+    "Use immutable source revision URLs, TLS verification and no HF/ruOS/user credentials. Only reviewed HF/CDN redirecthosts; never log signedquery strings or cookies, retain redactedroute/status/count/error hashes.",
+    "Stream each file to a new partialpath with1MiB buffer; verify exact size and LFS payloadSHA or ordinaryGitbodySHA before atomic finalname. Never deserialize model tensors or initialize tokenizer as acquisition.",
+    "Seven ordinary files: six smallmetadata bodies already have Git+SHA256 source identity; tokenizer.json has exact publisherGitSHA1/bytes only. After actual authorized tokenizerbody acquisition and exactGitmatch, independently deriveSHA256 and seal finalexpectedcatalog beforeSOURCE/measurement. Do not selfalias observedlock as expectedauthority.",
+    "Safetensorsmodel andSPM expected LFS SHA256 plus canonicalpointer GitSHA1 must match separately; never compare expandedpayloadGitSHA to pointerGitSHA.",
+    "Parse safetensors header only under admitted fixedsize/format caps afterdownload/fullSHA; retain dtype/shape/count/classifier mapping evidence, no ML imports.",
+    "Create separate readonlydirect/public observedlocks and independently verified expectedcatalog, all complete payloads actually rehashed by same eventual validator at prefreeze/runtime.",
+    "On failure record known partial bytes/status and preserve uncertain own partial path plus WAL/completed cache; no unverified deletion, retries, historical changes, alternative model/mirror/precision fallback. Exact outer355+5 captures physical closure or explicitly unproved ownership."
+  ],
+  "not_authorized_by_this_proposal": [
+    "Any actual download or payloadscan by sourceauthor",
+    "Model/tokenizer/native initialization",
+    "Case/gold parsing",
+    "Training/calibration",
+    "NNI/scientificbatch",
+    "Publisher submission/champion change"
+  ],
+  "kind": "REAL_CONTRACTNLI_HELDOUT_DEV_TRANSFER_PILOT",
+  "sources": {
+    "acquisition_source": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/runtime/acquire_assets.py",
+      "bytes": 17027,
+      "sha256": "45570f28ea4ebbfcd3ead1dc6d4672484af951d4724bceaa0b3760e29995b6b6"
+    },
+    "network_source": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/runtime/acquisition_network.py",
+      "bytes": 2362,
+      "sha256": "77fd716be0c1197de896cb99cc41caca596dd59c73257edf5dcc0ee68bf9a68b"
+    },
+    "validator_source": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/runtime/model_assets_guard.py",
+      "bytes": 13916,
+      "sha256": "040daf8aab26be76c8e86469ac747e559bd9277a6476127da8d8c1133609512f"
+    },
+    "identity_helper_source": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/asset_identity.py",
+      "bytes": 5638,
+      "sha256": "f271c0077be23c34fbb29cfb5728d671371a4646ac9030072ec7b538eb819499"
+    },
+    "preacquisition_catalog": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/CLASSIC_PREACQUISITION_CATALOG.json",
+      "bytes": 5960,
+      "sha256": "6023ccec0a48a5cb4f018e8be94a236d0479454ccb92deabd7c25fadf67724d3"
+    },
+    "baseline_catalog": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_B354_ASSETS.expected.json",
+      "bytes": 3916,
+      "sha256": "30657c23de7feae478af2b951c814ff5e4be3c69c7a90c08d0f268a2172eea11"
+    }
+  },
+  "source_package_files": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/runtime/acquire_assets.py",
+      "bytes": 17027,
+      "sha256": "45570f28ea4ebbfcd3ead1dc6d4672484af951d4724bceaa0b3760e29995b6b6"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/runtime/acquisition_network.py",
+      "bytes": 2362,
+      "sha256": "77fd716be0c1197de896cb99cc41caca596dd59c73257edf5dcc0ee68bf9a68b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/runtime/model_assets_guard.py",
+      "bytes": 13916,
+      "sha256": "040daf8aab26be76c8e86469ac747e559bd9277a6476127da8d8c1133609512f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/asset_identity.py",
+      "bytes": 5638,
+      "sha256": "f271c0077be23c34fbb29cfb5728d671371a4646ac9030072ec7b538eb819499"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/MODEL_B354_ASSETS.expected.json",
+      "bytes": 3916,
+      "sha256": "30657c23de7feae478af2b951c814ff5e4be3c69c7a90c08d0f268a2172eea11"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/test_acquisition.py",
+      "bytes": 8434,
+      "sha256": "25809d2069451bcc6fd05a248fb1c54a336e8297cf7b3bcd6593a5a2a05abf2b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/CLASSIC_PREACQUISITION_CATALOG.json",
+      "bytes": 5960,
+      "sha256": "6023ccec0a48a5cb4f018e8be94a236d0479454ccb92deabd7c25fadf67724d3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/FOUNDATION_HF_API.json",
+      "bytes": 5341,
+      "sha256": "8dc01f316cdc47ede03a57100e39b92d81639e10995bfa4ab9a9820570897c0b"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/FOUNDATION_README.md",
+      "bytes": 3266,
+      "sha256": "f6a88d8dba8986495c8274f7bc142c72919307982bb6b200a81fcf2acd509d17"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/HF_MODEL_API.json",
+      "bytes": 14400,
+      "sha256": "ffe93c9bc8a03042de37254b7bb3291c1114ca0d400ef5f055035ada8cc2ad0a"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/README.md",
+      "bytes": 6421,
+      "sha256": "59f515ea92312efcf7c413e33d2a5d6e836079fcc7a6e115cc4d54923decb987"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/added_tokens.json",
+      "bytes": 23,
+      "sha256": "dc046d04c9b0ada7ae6f1dc89c465801799acdf0c9a6aab8c15a1b2d5ca4e91f"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/config.json",
+      "bytes": 18798,
+      "sha256": "ab08ecb517cb2c27f415d2fa9a42cf6b695870edf53d2fb73905dbe39fcecb75"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/gitattributes.txt",
+      "bytes": 1477,
+      "sha256": "db7c0371f46f0840b8f25794c1e3321c9b5820a8cb6ba9694a46fc64b8fae5a6"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/special_tokens_map.json",
+      "bytes": 286,
+      "sha256": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch40/research/tasksource-metadata/tokenizer_config.json",
+      "bytes": 1284,
+      "sha256": "557b3d33d3f41b81ad769244e506549e98a1857d41dd58160aacd4d98d710b5a"
+    }
+  ],
+  "source_package_ready": {
+    "path": "/workspace/ruvector-e40-engineering-impl/acquisition-source-v3/READY.v3.json",
+    "bytes": 4774,
+    "sha256": "c28dee234d32c78c7be04a0b1daf45a0773a3ef11d26917b2c93e7eb07b53c54"
+  },
+  "source_API_prototype": {
+    "path": "/workspace/ruvector-e40-engineering-impl/acquisition-source-v3/API_PROTOTYPE.json",
+    "bytes": 3895,
+    "sha256": "026cc91d51d498d5840ab34558efa4c2038c465552fe2674355af90b8490450f"
+  },
+  "original_source_proposal": {
+    "path": "/workspace/ruvector-e40-model-source/sealed-feasibility-v1/FREE_ASSET_ACQUISITION_PROPOSAL.v1.json",
+    "bytes": 5663,
+    "sha256": "595bec4653b774545debba7c229b5030da3be6df063d48648bbd077ddf32ba7e"
+  },
+  "source_package_approval": {
+    "path": "/workspace/ruvector-e40-model-source-audit/acquisition-source-review/v3-delta/ACQUISITION_SOURCE_APPROVAL.v3.json",
+    "bytes": 6256,
+    "sha256": "e7aa94a5a1b95a140788ac69f18f2fc6c0fa6624b5adeecb06e59345c6f3f1e0"
+  },
+  "runtime_request": {
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/MODEL_ACQUISITION_RUNTIME_REQUEST.v1.json",
+    "bytes": 2491,
+    "sha256": "e8c191e911be00a736eef7598b79d790323eb43c92d97874162214e414482bcd"
+  },
+  "runtime_authority_refs": {
+    "runtime_assets_lock": {
+      "path": "experiments/sota-2026-10-22/epoch39/preparation/runtime-assets.lock.json",
+      "bytes": 4004,
+      "sha256": "41ae092448289149c64b15e3e2bc9e5cb66ed3d0eb65114edee645c7e6c1d9a6"
+    },
+    "python_member_manifest": {
+      "bytes": 4640799,
+      "path": "experiments/sota-2026-10-22/epoch26/preparation/runtime-members/python-wheel-members.json",
+      "sha256": "87254bbf6ec2aba6d08a4b55ff189faf29f78e1b1dd278fe8ffef9a8cc5523b9"
+    },
+    "python_wheel_lock": {
+      "bytes": 6063,
+      "path": "experiments/sota-2026-10-22/epoch17/preparation/python-wheel-identities.json",
+      "sha256": "6689210699a4171b54a38f8d14edba78c4b4b6390c76b6b05293a32f1ea2b8de"
+    }
+  },
+  "inner_work_seconds": 350,
+  "outer_child_work_capture_seconds": 355,
+  "outer_owned_cleanup_seconds": 5,
+  "maximum_child_seconds_including_capture_and_cleanup": 360,
+  "one_shot_namespace": "ASSET_ACQUISITION_E40",
+  "root_invocation_paths": {
+    "plan": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/MODEL_ACQUISITION_PLAN.v1.json",
+    "runtime_request": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/MODEL_ACQUISITION_RUNTIME_REQUEST.v1.json",
+    "child": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/model_acquisition_child_once.py",
+    "outer": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/model_acquisition_outer_once.py"
+  },
+  "current_scope_scientific_slots_consumed": 0,
+  "actual_model_preparation_calls": 0,
+  "actual_network_payload_or_guard_calls_by_source_author": 0,
+  "outer_bookkeeping_scope": "Child bound includes Popen, all source/asset/runtime hashes, header metadata, child resultfsync and wait/pipes. Subsequent outer stdout/result bookkeeping is separately scoped; no claim to time the parent after its own lastwrite."
+}

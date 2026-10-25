@@ -1,0 +1,75 @@
+{
+  "author_scoring": {
+    "EC_F1": "Report author Entailment/Contradiction precision/recall/F1 and arithmetic/harmonic means. No goldsupport gives author NaN recall/F1; encode null+UNDEFINED_AUTHOR_NAN, required undefined mean gate NOT_PASS.",
+    "denominator": "All12 three-class rows, one fixed hypothesis. No binary filtering.",
+    "helper": "evaluate_class",
+    "no_zero_imputation_drop_resampling": true,
+    "revision": "058c56fd62d56897bb4fcfbf1be71b17aee3a79c",
+    "scope": "Helper adaptation; not complete evaluate_all classification binary-filtered or paper/full17 task.",
+    "source": {
+      "bytes": 15025,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_nli__evaluation.py",
+      "sha256": "f5acd4497e002652b2f29a6827fecd355b96ec041c4c174b1938eea2f8c42cf4"
+    }
+  },
+  "canonical_labels": [
+    "NotMentioned",
+    "Entailment",
+    "Contradiction"
+  ],
+  "confidence": "Raw T1, no calibration or fitted posterior.",
+  "decision": {
+    "canonical_labels": [
+      "NotMentioned",
+      "Entailment",
+      "Contradiction"
+    ],
+    "model_E_N_C_to_canonical_N_E_C_indices": [
+      1,
+      0,
+      2
+    ],
+    "normalization_or_label_remap": false,
+    "prediction": "Canonical-first argmax of reordered raw FP32 logits; exact ties favor N then E then C.",
+    "probabilities": "Stable log-softmax from actual FP32 logits; no clipping, temperature fit, calibration or outcome-dependent transformations.",
+    "raw_source_codec": {
+      "Contradiction": 2,
+      "Entailment": 1,
+      "NotMentioned": 0
+    }
+  },
+  "epoch": 40,
+  "frozen_dev_gates": {
+    "all_must_pass": true,
+    "fresh_confirmation_passed": false,
+    "primary_accuracy_vs_each_other_arm": "nondecrease",
+    "primary_correct_at_least_reference_plus": 2,
+    "primary_defined_finite_author_EC_F1_mean_vs_each_other_arm": "nondecrease",
+    "primary_mean_NLL_vs_each_other_arm": "nonincrease tolerance1e-12",
+    "primary_mean_multiclass_Brier_vs_each_other_arm": "nonincrease tolerance1e-12",
+    "promotion_authorized": false,
+    "resources_and_physical_closure": "all SOURCE-frozen limits, exact readouts and independent owned-process closure pass"
+  },
+  "kind": "REAL_CONTRACTNLI_HELDOUT_DEV_TRANSFER_PILOT",
+  "latency": "Actual perarm tokenization/forward/readertotal p50/p95; separate batchcase span includes queue and modelinit, excludes sharedinitialBGEinit; no publisher/isolated latency claim.",
+  "native_E_N_C_to_canonical_N_E_C": [
+    1,
+    0,
+    2
+  ],
+  "numeric_coverage": "Fixed literal substring/offset diagnostic only, not exhaustive extraction/correctness or class override.",
+  "phase": "dev",
+  "proper_scores": {
+    "Brier": "Mean over fixed12 of sum3 squared probability errors.",
+    "NLL": "Unclipped shift-first stable source FP32-logit logsoftmax, reordered with identical canonical mapping.",
+    "NLL_clipped_1e_12": "Diagnostic only. p_gold/underflow/clip counts retained; never the gate NLL.",
+    "tolerance": 1e-12
+  },
+  "root_contract": {
+    "bytes": 8910,
+    "path": "experiments/sota-2026-10-22/epoch40/preparation/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+    "sha256": "d0d66dc8a71bf68204463aa8b85f01bcc00217fc5c74854fe3749088e6d5a68a"
+  },
+  "schema_version": 1,
+  "source_checkpoint": "2cf5aba60a050079506a5e9aa5463f44c1efcd5a"
+}

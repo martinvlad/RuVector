@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "epoch": 40,
+  "source_checkpoint": "2cf5aba60a050079506a5e9aa5463f44c1efcd5a",
+  "status": "PROPOSED_FREE_ACQUISITION_REQUIRES_ROOT_FROZEN_REVIEW_AND_SEPARATE_SOURCE_CODE_APPROVAL_NOT_EXECUTED",
+  "candidate": {
+    "repository": "sileod/deberta-v3-large-tasksource-nli",
+    "revision": "212de447184bda8fb9415a2e5697846864ddf304",
+    "catalog": {
+      "path": "CLASSIC_PREACQUISITION_CATALOG.json",
+      "bytes": 5960,
+      "sha256": "6023ccec0a48a5cb4f018e8be94a236d0479454ccb92deabd7c25fadf67724d3"
+    },
+    "target_directory": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/reader-assets/tasksource-212de447184b",
+    "selected_files": 9,
+    "payload_total_bytes": 1751462486,
+    "alternate_pytorch_bin_allowed": false
+  },
+  "baseline": {
+    "repository": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "source_directory": "/workspace/ruvector-e39-reader-assets/moritz-b3546ea6",
+    "target_directory": "/workspace/ruvector-e40-reader-assets/moritz-b3546ea6",
+    "source_catalog": {
+      "path": "baseline/MODEL_B354_ASSETS.expected.json",
+      "bytes": 3916,
+      "sha256": "30657c23de7feae478af2b951c814ff5e4be3c69c7a90c08d0f268a2172eea11"
+    },
+    "source_authority": {
+      "source_path": "experiments/sota-2026-10-22/candidate/epoch39/MODEL_B354_ASSETS.expected.json",
+      "bytes": 3916,
+      "sha256": "30657c23de7feae478af2b951c814ff5e4be3c69c7a90c08d0f268a2172eea11",
+      "actual_git_blob_sha1": "74fd021d902782f59638a8adf786ba589f24e4b7",
+      "source_checkpoint": "2cf5aba60a050079506a5e9aa5463f44c1efcd5a"
+    },
+    "strategy": "Fulltypedsourcehash then readonlyhardlinks only on samefilesystem; allsourcebytes/mode/mtime unchanged, nlink/ctimechanges disclosed. Missing/writable/EXDEV target STOP. No chmod/copy fallback or historicaldeletion."
+  },
+  "guardian": {
+    "pid": 120232,
+    "startticks": 27979422,
+    "owner_ref": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch40-2cf5aba60a05/owner.json",
+      "bytes": 544,
+      "sha256": "f18924b1456dcf51c461181c233ff4511cd3e479982f48b109a0e4126b5c3af0"
+    },
+    "require_exact_current_FD_kernel_flock": true
+  },
+  "caps": {
+    "paid_API_cap_USD": 0,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "CPU_threads": 2,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "wall_seconds_including_download_hashes_capture_cleanup": 180,
+    "attempts": 1,
+    "retries": 0,
+    "maximum_payload_network_bytes": 1751462486,
+    "maximum_GETs_including_redirects": 24,
+    "maximum_redirects_per_file": 3,
+    "stream_chunk_bytes": 1048576,
+    "model_tokenizer_native_initializations_or_calls": 0,
+    "case_oracle_reads": 0
+  },
+  "storage": {
+    "candidate_on_tmp_outside_public_project": true,
+    "baseline_hardlinks_on_workspace_same_sourcefilesystem": true,
+    "require_tmp_free_bytes_at_least": 2825204310,
+    "workspace_free_floor_bytes": 67108864,
+    "no_large_overlay_copy": true,
+    "minimum_preacquisition_reclaim_adjusted_headroom_bytes": 8589934592,
+    "minimum_postacquisition_science_admission_headroom_bytes_proposed": 6442450944,
+    "cgroup_limit_bytes": 17179869184,
+    "reclaimable_cache_excludes": [
+      "shmem",
+      "dirty",
+      "writeback"
+    ],
+    "models_sequential_never_intentionally_coexist": true,
+    "resource_scope": "Conservative proposed admission, not runtime measurement. CandidateF32asset~1.74GBtmpfs is nonreclaimable. Worstbaselinephase includes retainedcandidateasset+0.87GB baselineF16mappedsource+1.74GB F32target+2GiBactivation reserve; actualhost/cgroup and disk admission required."
+  },
+  "integrity_protocol": [
+    "Write a durable O_EXCL acquisitionWAL before firstpayloadGET; never reset/retry uncertain request or mutation.",
+    "Use immutable source revision URLs, TLS verification and no HF/ruOS/user credentials. Only reviewed HF/CDN redirecthosts; never log signedquery strings or cookies, retain redactedroute/status/count/error hashes.",
+    "Stream each file to a new partialpath with1MiB buffer; verify exact size and LFS payloadSHA or ordinaryGitbodySHA before atomic finalname. Never deserialize model tensors or initialize tokenizer as acquisition.",
+    "Seven ordinary files: six smallmetadata bodies already have Git+SHA256 source identity; tokenizer.json has exact publisherGitSHA1/bytes only. After actual authorized tokenizerbody acquisition and exactGitmatch, independently deriveSHA256 and seal finalexpectedcatalog beforeSOURCE/measurement. Do not selfalias observedlock as expectedauthority.",
+    "Safetensorsmodel andSPM expected LFS SHA256 plus canonicalpointer GitSHA1 must match separately; never compare expandedpayloadGitSHA to pointerGitSHA.",
+    "Parse safetensors header only under admitted fixedsize/format caps afterdownload/fullSHA; retain dtype/shape/count/classifier mapping evidence, no ML imports.",
+    "Create separate readonlydirect/public observedlocks and independently verified expectedcatalog, all complete payloads actually rehashed by same eventual validator at prefreeze/runtime.",
+    "On failure record partial bytes/hash/status and actual cleanup; delete only thisnewattempt own .partial files if identityproven and timepermits. Preserve WAL/history/completedverifiedcache; no historical deletion/mode changes or alternative mirror/precision/model fallback."
+  ],
+  "not_authorized_by_this_proposal": [
+    "Any actual download or payloadscan by sourceauthor",
+    "Model/tokenizer/native initialization",
+    "Case/gold parsing",
+    "Training/calibration",
+    "NNI/scientificbatch",
+    "Publisher submission/champion change"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "case_example_fence_and_citation_example_omitted": true,
+  "epoch": 40,
+  "non_case_schema_license_extracts": [
+    {
+      "line": 15,
+      "text": "* **Natural language inference (NLI)**: Document-level three-class classification (one of `Entailment`, `Contradiction` or `NotMentioned`)."
+    },
+    {
+      "line": 16,
+      "text": "* **Evidence identification**: Multi-label binary classification over _span_s, where a _span_ is a sentence or a list item within a sentence. This is only defined when NLI label is either `Entailment` or `Contradiction`. Evidence spans need not be contiguous but need to be comprehensively identified where they are redundant."
+    },
+    {
+      "line": 18,
+      "text": "We have 17 hypotheses annotated on 607 non-disclosure agreements (NDAs)."
+    },
+    {
+      "line": 19,
+      "text": "The hypotheses are fixed throughout all the contracts including the test dataset."
+    },
+    {
+      "line": 72,
+      "text": "* `annotation_sets`: It is provided as a list to accommodate multiple annotations per document. Since we only have a single annotation for each document, you may safely access the appropriate annotation by `document['annotation_sets'][0]['annotations']`."
+    },
+    {
+      "line": 73,
+      "text": "* `annotations`: Each key represents a hypothesis key. `choice` is either `Entailment`, `Contradiction` or `NotMentioned`. `spans` is given as indices of `spans` above. `spans` is empty when `choice` is `NotMentioned`."
+    },
+    {
+      "line": 74,
+      "text": "* `labels`: Each key represents a hypothesis key. `hypothesis` is the hypothesis text that should be used in NLI."
+    },
+    {
+      "line": 89,
+      "text": "You can find the implementation of Span NLI BERT in [another repository](https://github.com/stanfordnlp/contract-nli-bert)."
+    },
+    {
+      "line": 93,
+      "text": "Our dataset is released under CC BY 4.0."
+    },
+    {
+      "line": 94,
+      "text": "Please refer attached \"[LICENSE](./LICENSE)\" or https://creativecommons.org/licenses/by/4.0/ for the exact terms."
+    },
+    {
+      "line": 151,
+      "text": "**[DOWNLOAD](resources/contract-nli.zip)**"
+    },
+    {
+      "line": 155,
+      "text": "* 10/5/2021: Initial release"
+    },
+    {
+      "line": 156,
+      "text": "* 12/13/2021: Added URL to ACL Anthology"
+    }
+  ],
+  "schema_version": 1,
+  "source_full_bytes": 10914,
+  "source_full_sha256": "e3aeaeb25e0c81baf0b280cb297ea7701647676f4f3a7b83002364a315a399ee",
+  "source_git_blob_sha1": "f7e9d48f33822f348db70c5c274255095630df98",
+  "source_url": "https://raw.githubusercontent.com/stanfordnlp/contract-nli/eced6528dd3c1d14d73f9a87df8f7bdbc03126f9/index.md"
+}

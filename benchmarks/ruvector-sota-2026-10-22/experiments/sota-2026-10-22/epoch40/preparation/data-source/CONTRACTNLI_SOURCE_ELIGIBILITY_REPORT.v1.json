@@ -1,0 +1,165 @@
+{
+  "E39_blocker": "Previously recorded once: raw FinFact goldcodec unverified; no E39archive/features/vault/labels reopened, no retry/remap.",
+  "codec_admission": {
+    "mapping": {
+      "Contradiction": 2,
+      "Entailment": 1,
+      "NotMentioned": 0
+    },
+    "selected_gold_values_decoded": 0,
+    "source_only_checks": {
+      "bytes": 1125,
+      "path": "/workspace/ruvector-e40-data-source/OFFICIAL_CODEC_SOURCE_CHECKS.v1.json",
+      "sha256": "293779610a05a0788f149995b8e29f690bea32d900b1e52f8025860b29462d73"
+    },
+    "unsupported_policy": "Exact case-sensitive strings only; no trim/lowercase/coercion/repair/remap. Rejectunsupported.",
+    "verified_by": "Author machine-readable NLILabel.from_str and matching version-bound website choice enum, not prediction strings."
+  },
+  "created_utc": "2026-10-25T19:44:16.849913+00:00",
+  "dataset": {
+    "explicit_author_grant": {
+      "bytes": 2682,
+      "path": "/workspace/ruvector-e40-data-source/PUBLIC_WEBSITE_SCHEMA_LICENSE_EXTRACTS.v1.json",
+      "sha256": "ac427fe1987538a021c2f3677f60845ac8ebd685a7ac8bd8f1d8282391cd4c74"
+    },
+    "hypotheses": "17fixed hypotheses shared across all607contracts. Do not call known template text new benchmark confirmation.",
+    "license": "CC BY4.0",
+    "license_body": {
+      "bytes": 18656,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_LICENSE.txt",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+    },
+    "official_schema": "documents[*].annotation_sets[0].annotations[hypothesis_id].choice",
+    "raw_enum": {
+      "Contradiction": 2,
+      "Entailment": 1,
+      "NotMentioned": 0
+    },
+    "repository": "stanfordnlp/contract-nli",
+    "revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9"
+  },
+  "epoch": 40,
+  "future_work_executed": false,
+  "kind": "REAL_CONTRACTNLI_HELDOUT_DEV_TRANSFER_PILOT",
+  "model_revision_scope": {
+    "ModernBERT_warning": "tasksource/ModernBERT-large-nli@ca476cb923a8637073d4ceb0f19f7fc236e260d4 explicitly lists ContractNLI andSciFact training; no confirmation eligibility.",
+    "candidate_lineage_eligibility": "HOLD; missingtaskname in alternativecard is not proof of exclusion. No verified material performance superiority.",
+    "official_baseline_config": "bert-large-uncased-whole-word-masking without immutableHF revision in authorconfig; official paper checkpoint payload/complete head lineage not independently admitted here.",
+    "proposed_candidate_source_from_model_agent": "sileod/deberta-v3-large-tasksource-nli@212de447184bda8fb9415a2e5697846864ddf304; exactassets/head/source admitted separately beforemeasurement."
+  },
+  "not_a_new_dataset_claim": true,
+  "official_code": {
+    "baseline_config": {
+      "bytes": 2376,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/conf_large.yml",
+      "sha256": "03ab83a49e2678938098d01057c437ff4d860e966d5fd33971329f7b179c2151"
+    },
+    "entrypoint": {
+      "bytes": 1665,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/evaluate.py",
+      "sha256": "60d1c61d1865f308cfd51b2141ee59cff90b568442511495641e14b0343a610d"
+    },
+    "license": "Apache2.0",
+    "license_body": {
+      "bytes": 11357,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/code_LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "postprocess": {
+      "bytes": 6901,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_nli__postprocess.py",
+      "sha256": "8a9563afb90c1bf069005a43f63207927436419ea9a30a706337cf5dfaa99114"
+    },
+    "raw_codec_source": {
+      "bytes": 5754,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_nli__dataset__loader.py",
+      "sha256": "9c63102a01576c230da94695f593fd7bd4fe2d0b20672b74e8a7f62aba426fc4"
+    },
+    "repository": "stanfordnlp/contract-nli-bert",
+    "requirements": {
+      "bytes": 149,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/requirements.txt",
+      "sha256": "d21a06d772cffb6a46b71b44c2fa0984599dce4f4942c212a3aa25ebf17ae33c"
+    },
+    "revision": "058c56fd62d56897bb4fcfbf1be71b17aee3a79c",
+    "scorer": {
+      "bytes": 15025,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_nli__evaluation.py",
+      "sha256": "f5acd4497e002652b2f29a6827fecd355b96ec041c4c174b1938eea2f8c42cf4"
+    }
+  },
+  "official_scoring": {
+    "NaN": "When no goldsupport for E orC, its recall/F1 are authorNaN; anyE/C mean+hmean depending onNaN staysundefined. Preserve asnull plus UNDEFINED_AUTHOR_NAN/reason in strictJSON, never0 or silentlydrop.",
+    "accuracy": "All3classes, allprovided cases.",
+    "class_probability_order": [
+      "NotMentioned",
+      "Entailment",
+      "Contradiction"
+    ],
+    "decision": "np.argmax first maximum in official[N,E,C] order, including ties.",
+    "full_task_evidence_metrics": "Author scorer has spanmetrics, several document/hypothesis macro/micro aggregations and binaryE/C filtered diagnostics. A12case classification pilot cannotclaim fullbenchmark/paper reproduction.",
+    "postprocess": "Author code can average/window-weight span/class probabilities and fit class coefficients. Proposed rawT1 pilot excludes allgoldfit/calibration and declares its512ONLY_FIRST retrievalwindow policy as adaptation.",
+    "precision_recall_F1": "PerEntailment andContradiction one-vs-rest; arithmeticmean and harmonicmean across E/C only. Not3class macroF1.",
+    "task_scopes": "Classification-only subset must use same fixedhypothesis keys for allselecteddocs; complete document IDs/predictions retained. Evidenceidentification/full17task and paper scores are distinct."
+  },
+  "opaque_plan": {
+    "bytes": 2015,
+    "path": "/workspace/ruvector-e40-data-source/ARCHIVE_OPAQUE_ACQUISITION_PLAN.v1.json",
+    "sha256": "8b8c6765d8b97ee4ea75dd7baf541906ae29c57f9c2edc7898265a2b9dfcaa5c"
+  },
+  "phase": "source_eligibility",
+  "prior_exposure": {
+    "exclude_all423_officialTRAIN_ids": true,
+    "historical_crosssplit_counts": {
+      "dev": 61,
+      "test": 123
+    },
+    "never_read_old74unused_or24protected_inputs_or_labels": true,
+    "old_Legal96_DOC_aliases": 96,
+    "old_exposed_Legal96_IDhash_fields_only_decoded": true,
+    "provisional_metadata_only_unblocked": {
+      "dev": 61,
+      "test": 27
+    },
+    "source_version_correspondence_and_case_text_dedup_pending": true,
+    "verified_metadata_audit": {
+      "bytes": 100412,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/PRIOR_LEGAL96_AND_SPLIT_IDENTITY_AUDIT.v1.json",
+      "sha256": "be2e735adec8063c1be30f36038f9ac3052c37d5d492cf00bf82ada5c1aaa2dd"
+    }
+  },
+  "proposed_blind_DEV12_policy": {
+    "context": "Allarms512ONLY_FIRST preserveentirehypothesis. Source-order is budgeted, not full-untruncatedcontract. No retrievalmiss proves NotMentioned; numeric/coverage diagnostics never overrideclasses.",
+    "documents": "Before anynewcaseparse/model: rankcandidateIDs by SHA256(UTF8(seed+|test|+decimalID+|+knownnormalizedDocumentSHA)); first12fixed. No length/class/outcome stratification or replacements.",
+    "duplicates": "After freeze, verify all12 chosen ID/name/hash correspondences, raw/normalized input hashes and oldexposedLegal96clause substring aliases using alreadyexposedDEV text only; uncertainalias/guardfailure STOPall12 withoutreplacement. Neveropenprotectedinputs/labels to dedup.",
+    "hypothesis": "Onefixed hypothesisID across all12docs, chosen by smallest SHA256(UTF8(seed+|hypothesis|+officialkey)) from17structural keys beforedecodingselectedhypothesis text.",
+    "input_boundary": "Only original supplied contracttext + selected fixedhypothesis + labelblind providedspan boundaries. Annotation.choice/evidence-span gold forbidden inputs. Neverfetch source URLs.",
+    "measurement": "Oneactualnativecorpus/12queries, tasksource same-model source/native/lexical matched arms plusb354source-order ref;48actualNNI,2CPU/600sec,0paid/GPU/train/calib/CONF/fits; finalpolicy/rootSOURCE required first.",
+    "promotion": "DEVtransferonly, no freshCONF/generalization/paper/fullrank/officialeligibility claim; native104 preserved.",
+    "seed": "ruvector-contractnli-e40-v1",
+    "source_pool": "Provisional27 after all423TRAIN and96Legal96aliases excluded. Must verify sourcearchivebytes/IDs/filename/full normalizeddoc hashes under frozen custodian policy.",
+    "source_split": "officialTEST only"
+  },
+  "research_budget": {
+    "contacts_or_submissions": 0,
+    "failures": 0,
+    "model_tokenizer_native_scorer_mode_calls": 0,
+    "newcase_archive_or_gold_payload_traversals": 0,
+    "paid_API_GPU_calls": 0,
+    "protected_unused_case_gold_traversals": 0,
+    "remaining_of20": 2,
+    "successes": 18,
+    "top_level_connected_public_metadata_source_GET_operations": 18,
+    "underlying_connector_HTTP_count": "NOT_OBSERVABLE; not claimed equal to toolcalls"
+  },
+  "retrieval_generalization_limits": [
+    "ContractNLI is extensively used earlier in thisproject; only verified new heldout document/input identities may be tested.",
+    "The website citation/intro incidentally exposed one illustrative fixedhypothesis sentence; no contractdocument or gold value was seen. The17tasktemplates are alreadypublic/shared, not freshtestidentities.",
+    "Historical exacthash/filename screening does not prove absenceof fuzzy/semantic aliasing or model-pretraining overlap.",
+    "The archive is publiclyaddressable in an authenticated officialGit tree; actualdownload/hash and exactJSONmember validation are notyetperformed."
+  ],
+  "schema_version": 1,
+  "source_checkpoint": "2cf5aba60a050079506a5e9aa5463f44c1efcd5a",
+  "status": "AUTHORITATIVE_CODEC_LICENSE_SCORER_VERIFIED_CASE_ADMISSION_PENDING",
+  "used_confirmation_identities": []
+}

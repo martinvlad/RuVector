@@ -1,0 +1,87 @@
+{
+  "HF_declared_parameter_counts": {
+    "F32": 435064835,
+    "I64": 512
+  },
+  "MNLI_first_task_classifier_size": 3,
+  "actual_header_or_payload_reads": 0,
+  "actual_package_imports_or_model_tokenizer_native_calls": 0,
+  "epoch": 40,
+  "existing_baseline_loader": {
+    "cannot_reuse_unchanged": true,
+    "current_Git_CP_hash_verified": true,
+    "reasons": [
+      "Weight SHA and870182606-byte size hard-code known b354.",
+      "Safe header and expected learned tensors require F16; source tensor reads require torch.float16.",
+      "Candidate API/config declare original F32 weight1740312738bytes. A new independently reviewed exact F32/meta/strictassign loader must preserve original F32 and account for source I64position buffer without a half cast or fallback."
+    ],
+    "sha256": "8bb27dc7d79f2b0a3d27b2d7d82333b1cb442abe3eb3adfeedf4dc37f3a42f52",
+    "source_path": "experiments/sota-2026-10-22/candidate/epoch39/reader_b354.py"
+  },
+  "metadata_config": {
+    "architectures": [
+      "DebertaV2ForSequenceClassification"
+    ],
+    "auto_map": null,
+    "conv_kernel_size": null,
+    "hidden_size": 1024,
+    "id2label": {
+      "0": "entailment",
+      "1": "neutral",
+      "2": "contradiction"
+    },
+    "intermediate_size": 4096,
+    "label2id": {
+      "contradiction": 2,
+      "entailment": 0,
+      "neutral": 1
+    },
+    "max_position_embeddings": 512,
+    "model_type": "deberta-v2",
+    "num_attention_heads": 16,
+    "num_hidden_layers": 24,
+    "position_buckets": 256,
+    "relative_attention": true,
+    "share_att_key": true,
+    "torch_dtype": "float32",
+    "type_vocab_size": 0,
+    "vocab_size": 128100
+  },
+  "num_labels_from_exact_id2label": 3,
+  "official_wheel_member_authority": {
+    "Git_blob_SHA1": "2a1f92ed6fa6b79cb7f965f069d015127c07ec4e",
+    "bytes": 4640799,
+    "current_Git_and_CP_verified": true,
+    "sha256": "87254bbf6ec2aba6d08a4b55ff189faf29f78e1b1dd278fe8ffef9a8cc5523b9"
+  },
+  "runtime_versions_proposed": {
+    "safetensors": "0.5.3",
+    "torch": "2.7.1+cpu",
+    "transformers": "4.52.4"
+  },
+  "schema_version": 1,
+  "source_members_verified": [
+    {
+      "bytes": 8937,
+      "member_manifest_bound": true,
+      "path": "runtime/configuration_deberta_v2.py",
+      "sha256": "b76c7211acde392802ff7c33bf53c77ae9a9316ad7f5bc7aa73c9039d15d5507"
+    },
+    {
+      "bytes": 57184,
+      "member_manifest_bound": true,
+      "path": "runtime/modeling_deberta_v2.py",
+      "sha256": "fe5915e35c6f26b895b9285ad31d81fcdfc261f83b90d33df6d8542173283856"
+    },
+    {
+      "bytes": 9797,
+      "member_manifest_bound": true,
+      "path": "runtime/tokenization_deberta_v2_fast.py",
+      "sha256": "7cab8e8c4d92c454af5f035ed66f682cefc16e5337bf8737af883321bcb0b5e5"
+    }
+  ],
+  "stock_architecture": "DebertaV2ForSequenceClassification",
+  "stock_fast_tokenizer_source": "DebertaV2TokenizerFast",
+  "stock_source_compatibility": "Metadata/config support the stock three-way architecture without remote custom code. This does not establish actual safe-header keys, classifier bytes, tensor assignment or a successful tokenizer/model load.",
+  "tokenizer_metadata": "Stock special PAD0/CLS1/SEP2/UNK3/MASK128000 declarations are consistent; model_max_length is an unbounded sentinel, so the actual paired-token context limit must be explicitly frozen, not inferred from the sentinel. Tokenizer payload was not read or initialized."
+}

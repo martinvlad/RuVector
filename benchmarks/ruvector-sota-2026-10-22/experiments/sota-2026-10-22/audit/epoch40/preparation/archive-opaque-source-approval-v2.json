@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "epoch": 40,
+  "kind": "REAL_CONTRACTNLI_HELDOUT_DEV_TRANSFER_PILOT",
+  "scope": "SOURCE_ONLY_ONE_OPAQUE_ARCHIVE_ACQUISITION",
+  "checks_passed": true,
+  "status": "APPROVED_EXACT_V2_SOURCE_FOR_ONE_OPAQUE_SOURCE_GET_ONLY",
+  "wrapper_source_sha256": "145edae64222b941eacd2b7dd65d9da171911f03d564eb63e4810772a89bc2ed",
+  "child_source_sha256": "d66c61b33f8b4cc46c8f946a28dfec3c4251ad28dd6dbbc92c65dee7d3ab8b21",
+  "plan_sha256": "553b0eec1cdecdfe227aa1cddfbf696fccc767cceb55616333b69d28de9bb6ed",
+  "files": {
+    "ARCHIVE_OPAQUE_PLAN.v1.json": {
+      "path": "/workspace/ruvector-e40-preparation-audit/archive-source-snapshot-v2/ARCHIVE_OPAQUE_PLAN.v1.json",
+      "bytes": 1923,
+      "sha256": "553b0eec1cdecdfe227aa1cddfbf696fccc767cceb55616333b69d28de9bb6ed"
+    },
+    "archive_opaque_outer_once.py": {
+      "path": "/workspace/ruvector-e40-preparation-audit/archive-source-snapshot-v2/archive_opaque_outer_once.py",
+      "bytes": 6437,
+      "sha256": "145edae64222b941eacd2b7dd65d9da171911f03d564eb63e4810772a89bc2ed"
+    },
+    "archive_opaque_child_once.py": {
+      "path": "/workspace/ruvector-e40-preparation-audit/archive-source-snapshot-v2/archive_opaque_child_once.py",
+      "bytes": 5796,
+      "sha256": "d66c61b33f8b4cc46c8f946a28dfec3c4251ad28dd6dbbc92c65dee7d3ab8b21"
+    },
+    "archive_opaque_child.unexecuted.v1.py": {
+      "path": "/workspace/ruvector-e40-preparation-audit/archive-source-snapshot-v2/archive_opaque_child.unexecuted.v1.py",
+      "bytes": 4959,
+      "sha256": "4633c109efd47576b193be5c8b3a7b5b5aa3c24052ca3a02c99d37b6a02036d2"
+    }
+  },
+  "source_eligibility_report": {
+    "path": "/workspace/ruvector-e40-data-source/CONTRACTNLI_SOURCE_ELIGIBILITY_REPORT.v1.json",
+    "bytes": 10020,
+    "sha256": "526986cee541c3378a4947582d8ee226edf05938f7afa55c11b2fb98bbb25060"
+  },
+  "prior_findings": {
+    "path": "/workspace/ruvector-e40-preparation-audit/ARCHIVE_SOURCE_FINDINGS_v1.json",
+    "bytes": 3418,
+    "sha256": "1ad7bdf9902d5c8b3b475f44a07d1ef0c8a2313da4f59c4f52cfb5e2a7491247"
+  },
+  "resolved_findings": {
+    "SHA256_authority_and_actual_hash_computation_after_first_size_and_typed_Git_pass": true,
+    "second_opaque_read_rechecks_full_Git_size_and_FD_device_inode_size_mtime": true,
+    "NoRedirect_returns_None_no_follow_up_on_3xx": true,
+    "exact_original_65_362_913_byte_regular_Gitblob_identity_pinned": true,
+    "no_corpus_decoder_or_ML_module_imports_or_calls": true,
+    "public_metadata_JSON_only": true,
+    "exclusive_new_outer_invocation_before_Popen_child_attempt_before_network": true,
+    "target_and_partial_exclusive_create_outside_R_no_model_or_case_reads": true,
+    "owner_lock_birth_boot_namespace_affinity_expiry_checks": true,
+    "max_one_MiB_chunks_and_oversize_one_byte_detection": true,
+    "one_175_second_child_capture_plus_at_most5_owned_cleanup": true,
+    "signals_only_exact_owned_birth_PGID_SID_known_uncertainty_rejected": true,
+    "raw_error_and_stdout_stderr_retained_outside_R_public_error_values_hashed": true,
+    "old_unexecuted_source_preserved_and_no_markers_reset": true
+  },
+  "bounds": {
+    "wire_target_GET_attempts_maximum": 1,
+    "automatic_redirects_allowed": false,
+    "socket_timeout_seconds": 45,
+    "inner_alarm_seconds": 170,
+    "outer_child_work_capture_seconds": 175,
+    "owned_cleanup_seconds": 5,
+    "maximum_child_seconds": 180,
+    "outer_bookkeeping_scope": "Separately measured metadata capture after child bound, not represented as child payload duration.",
+    "minimum_free_bytes_before_start": 199580641,
+    "maximum_read_chunk_bytes": 1048576,
+    "payload_bytes": 65362913,
+    "opaque_payload_passes": 2,
+    "archive_listing_case_gold_model_tokenizer_native_scoring_calls": 0,
+    "paid_GPU_calls": 0,
+    "retries": 0
+  },
+  "review_validation": {
+    "exact_hashes_and_sizes_rechecked": true,
+    "static_full_source_v1_review_then_narrow_v2_diff_review": true,
+    "AST_compile_only_no_module_execution": true,
+    "prohibited_decoder_ML_import_absence": true,
+    "no_redirect_class_structure_checked": true,
+    "new_network_or_payload_tests_executed": 0
+  },
+  "snapshot_chronology_correction": "The initial findings were correctly observed in source4633c109 (4959B), as the tool read records show. While the findings report was being saved, root had already replaced the live child; consequently that report snapshot captured5796B d66c61b3 and its recorded file reference is the replacement, not the source to which its observations apply. The prior findings report remains unchanged. This approval independently rehashes root-retained exact4633 source, explicitly diffs it against exactd66 replacement and binds the corrected current triple; no earlier source bytes/timestamps are fabricated.",
+  "approval_scope": "Root may invoke the exact reviewed wrapper once with this exact review hash, under unchanged pinned plan and current guardian. This approves an opaque official archive acquisition and byte identity receipt only; it does not approve ZIP listing/extraction, dataset JSON/case/gold parsing, model acquisition/execution, scorer use, sampling or scientific measurement. Those later steps require their own frozen source/plan admission. A failed or uncertain attempt remains consumed with no automatic retry or fallback.",
+  "actual_archive_network_payload_owner_probe_case_gold_model_tokenizer_native_scorer_guard_Git_R_write_calls_by_auditor": 0,
+  "observed_at": "2026-10-25T19:57:12.266627+00:00"
+}

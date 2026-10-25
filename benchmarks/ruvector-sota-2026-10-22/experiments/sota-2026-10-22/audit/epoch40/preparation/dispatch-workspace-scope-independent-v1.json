@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "epoch": 40,
+  "checks_passed": true,
+  "source_delta_approved": true,
+  "status": "PASS_NARROW_DISPATCH_WORKSPACE_FILESYSTEM_SCOPE_CORRECTION",
+  "source_ready": {
+    "path": "/workspace/ruvector-e40-engineering-impl/core-source-v3/READY.v3.json",
+    "bytes": 13889,
+    "sha256": "66d5e53b27f419532a1c0190f9e54afac5f0c2943de02fd5882ca5553297b78f"
+  },
+  "runtime_interface": {
+    "path": "/workspace/ruvector-e40-engineering-impl/RUNTIME_PLAN_INTERFACE.v3.json",
+    "bytes": 27637,
+    "sha256": "61dd9ea24dda397abeab1ccb149e6c7852195587a3a0569cb45dfc98a31ab19e"
+  },
+  "previous_source_ready": {
+    "path": "/workspace/ruvector-e40-engineering-impl/core-source-v2/READY.v2.json",
+    "bytes": 12568,
+    "sha256": "a5b8b69e43ddc9852523a22240baa3089d7f009c85310b68fe5e0a1a896f4b4f"
+  },
+  "current_dispatch_source": {
+    "path": "experiments/sota-2026-10-22/epoch40/preparation/dispatch_once.py",
+    "bytes": 11638,
+    "sha256": "0c085020fd356847bd08b153c824f51f9b8ae1d0eb32a0ed9590b838bd10f57e"
+  },
+  "new_fixture": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch40/test_dispatch_workspace_scope.py",
+    "bytes": 2059,
+    "sha256": "999f287524d0a097bdd7267b4419ca8fbf26b640c916d52eb40b95d80f03f456"
+  },
+  "all_other49_prior_source_files_byte_identical": true,
+  "exact_program_change": "Only host_admission now supplies /workspace free bytes to workspace_free_bytes/minimum_workspace_free_bytes and emits workspace_filesystem_path='/workspace'. Previously /tmp isolated W free bytes were mislabeled. All numerical resource thresholds, model/NNI/native/observer/scorer/codec/data/metric/roles/price/time policy remain unchanged.",
+  "fixture_review": "New stdlib/mocked test supplies /workspace32MiB and otherfilesystem8GiB, requires rejection; then/workspace128MiB requires acceptance and exact queried filesystem/report field. No actual host/resource/model/data call is needed. Core acceptance auditor owns independent execution of this one new fixture; this reviewer did not duplicate suites.",
+  "source_only_model_actual_admission_retained": {
+    "path": "experiments/sota-2026-10-22/audit/epoch40/preparation/actual-model-assets-admission-independent-v1.json",
+    "bytes": 10475,
+    "sha256": "bcaaee05267af2829611d2225153c519ad9a86e4aee1127bafece1745ac3fc97"
+  },
+  "author_recorded_new_fixture_passed": 1,
+  "independent_fixture_reexecution_by_this_reviewer": 0,
+  "actual_model_tokenizer_native_case_gold_scorer_Git_R_or_host_admission_calls": 0,
+  "scientific_authorization": 0,
+  "authorized_next_step": "Root may copy exactly approvedV3 source/interface/metadata and refreshed PLAN_INPUTS before a new final canonical copy barrier. Exhaustive integrated source report still pending final inventory and delegated core delta evidence. No scientific worker/source publication/gold authorization by this report.",
+  "reviewed_at_unix": 1792961838.9484503
+}

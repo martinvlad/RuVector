@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "2cf5aba60a050079506a5e9aa5463f44c1efcd5a",
-  "checkpoint_manifest_sha256": "3a27486e3d6b96a5703c8b3f3a193e10e26aa657b5158e9c07ceccce272b6c14",
+  "prior_published_base_commit": "3490cc61c470d95309b7fd0a68ee1c17950e332d",
+  "checkpoint_manifest_sha256": "12b3905ca0c09431e00ff4a701269075a00e0d9d145be1a9263bc753931ca7fa",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -2494,10 +2494,10 @@
     "schema_version": 1,
     "epoch": 40,
     "run_id": "epoch40-2cf5aba60a05",
-    "state": "EPOCH40_PLANNING_LEASE",
+    "state": "EPOCH40_SOURCE_FROZEN_DEV_PENDING_ADMISSION",
     "work_active": true,
     "experiments_active": false,
-    "checkpoint_parent": "2cf5aba60a050079506a5e9aa5463f44c1efcd5a",
+    "checkpoint_parent": "3490cc61c470d95309b7fd0a68ee1c17950e332d",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
       "run_id": "epoch40-2cf5aba60a05",
@@ -2525,12 +2525,12 @@
     "OS_lock_release_pending": true,
     "native_allowed": 0,
     "conditional_train_allowed": 0,
-    "conditional_dev_allowed": 0,
+    "conditional_dev_allowed": 1,
     "conditional_calibration_allowed": 0,
     "conditional_engineering_allowed": 0,
     "confirmation_allowed": 0,
     "conditional_confirmation_allowed": 0,
-    "instruction": "Source-only E40 planning lease; all scientific allowances zero. Free blind data materialization and model/runtime hash preparation require separately frozen independent source/codec/identity/price/time/resource approval. No tokenizer, model, native corpus, scorer measurement or label evaluation until final reviewed source/data/model/runtime gates and independent actual SOURCE readback. Preserve native104 and old protected/unused partitions; never retry/remap E39 and keep all12 E39 permanentDEV. Zero paid API/GPU.",
+    "instruction": "DEV-only real ContractNLI pilot. SOURCE conditional work only after actual independent readback/admission. One48readout/12query corpus CPU2/600total, no TRAIN/calibCONF/paidGPU/retry. FINAL closes every slot; no fullbenchmark placement/promotion.",
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -8321,5 +8321,39 @@
     "native104_preserved": true,
     "future_work_executed": false,
     "source_checkpoint": "2cf5aba60a050079506a5e9aa5463f44c1efcd5a"
+  },
+  "epoch40_frozen_study": {
+    "plan": {
+      "path": "experiments/sota-2026-10-22/epoch40/plan.json",
+      "bytes": 85075,
+      "sha256": "3083581ef07d43a4e64d635de87f9dc78cfcd444746b15215b2791340301ba31"
+    },
+    "source_freeze": {
+      "path": "experiments/sota-2026-10-22/epoch40/source-freeze.json",
+      "bytes": 56344,
+      "sha256": "a673c6fb6c68b386298e6588d358bcd768d011b773526fa89a9f38838a3f9e3e"
+    }
+  },
+  "epoch40_data_roles": {
+    "roles": {
+      "train": [],
+      "dev": [
+        "contractnli:eced6528:test:25:nda-7",
+        "contractnli:eced6528:test:596:nda-7",
+        "contractnli:eced6528:test:8:nda-7",
+        "contractnli:eced6528:test:26:nda-7",
+        "contractnli:eced6528:test:5:nda-7",
+        "contractnli:eced6528:test:165:nda-7",
+        "contractnli:eced6528:test:432:nda-7",
+        "contractnli:eced6528:test:55:nda-7",
+        "contractnli:eced6528:test:354:nda-7",
+        "contractnli:eced6528:test:42:nda-7",
+        "contractnli:eced6528:test:47:nda-7",
+        "contractnli:eced6528:test:30:nda-7"
+      ],
+      "calibration": [],
+      "confirmation": []
+    },
+    "scope": "Twelve real ContractNLI identities exposed DEV forever, separate from old423/325DEV/74unused/24protected and all prior authored engineering cases. No CONF."
   }
 }

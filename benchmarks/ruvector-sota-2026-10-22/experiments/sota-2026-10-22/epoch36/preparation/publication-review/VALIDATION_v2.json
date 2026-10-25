@@ -1,0 +1,61 @@
+{
+  "schema_version": 2,
+  "epoch": 36,
+  "status": "PASS_PREFREEZE_RESOURCE_PROTOCOL_INTEGRATION_AMENDMENT",
+  "pure_python_guard_tests_passed": 63,
+  "mocked_publisher_preflight_scenarios_passed": 2,
+  "AST_python_sources_passed": 8,
+  "JavaScript_syntax": "PASS",
+  "public_source_scan_files_passed": 11,
+  "resource_policy_source": {
+    "path": "experiments/sota-2026-10-22/epoch36/preparation/dispatch_once.py",
+    "bytes": 11672,
+    "sha256": "24403a33ca2f127c04f1f05c5245ac0ad86bbcd4c60b407abfe8bf93654af22d"
+  },
+  "resource_policy_extraction": "AST_LITERAL_ONLY_NO_DISPATCH_IMPORT_OR_EXECUTION",
+  "minimum_reclaim_adjusted_headroom_bytes": 13696841590,
+  "minimum_workspace_free_bytes": 16777216,
+  "resource_fixtures": [
+    "exact literal/source binding",
+    "appended module tripwire never executed",
+    "source drift and duplicate policy assignment refused",
+    "high shmem fixture refused",
+    "healthy conservative-headroom fixture accepted",
+    "dirty file cache fixture refused",
+    "obsolete3GiB threshold refused"
+  ],
+  "independent_audit_protocol": {
+    "path": "experiments/sota-2026-10-22/audit/epoch36/protocol.json",
+    "bytes": 9785,
+    "sha256": "d4b51ac936b4b856f324fad4727e3f3995dd56e1ec02bf0bb140adfe49273e25"
+  },
+  "protocol_fixtures": [
+    "exact independent source binding",
+    "gate,role,promotion,and model-forward drift refused"
+  ],
+  "actual_host_probes": 0,
+  "actual_master_check_or_write_calls": 0,
+  "actual_scientific_EVALUATE_or_BIND_calls": 0,
+  "actual_model_tokenizer_native_calls": 0,
+  "actual_benchmark_records_or_labels_accessed": 0,
+  "actual_external_calls_or_Git_mutations": 0,
+  "scientific_criteria_changed": false,
+  "source_history": {
+    "READY_v1_preserved": {
+      "path": "snapshots/ready_v1/READY.json",
+      "bytes": 3488,
+      "sha256": "869edc243c15c7d8b6e827dc86dbc0a45a70a45db0243cc24c4897272b4221e6"
+    },
+    "ZIP_draft_preserved": {
+      "path": "snapshots/draft_zip_v1/DRAFT_REVIEW_READY.json",
+      "bytes": 3962,
+      "sha256": "20d6969458b7934105b0229482705e30d4dec1340f6974e7441e58bdcaf3d818"
+    },
+    "prior_validation": {
+      "path": "VALIDATION.json",
+      "bytes": 1951,
+      "sha256": "2692cce405d5d5d8e279ff48862b4e42c1e3a081af04e57df2fa40e2a263dbdb"
+    }
+  },
+  "scope": "The prefreeze generic memory-policy integration refusal and missing independent protocol are corrected in source only. Pure reducer fixtures use invented memory values and compile only the sealed pure function definition; no actual host admission, worker reservation, source freeze, scoring or publication."
+}

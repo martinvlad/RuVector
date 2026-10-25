@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "epoch": 36,
+  "status": "SOURCE_STATIC_ZIP_FORMAT_REFUSAL_BEFORE_OUTPUT",
+  "inspector": {
+    "path": "/workspace/ruvector-e36-model-admission/inspect_original_zip_pickle_metadata.py",
+    "sha256": "71e08039a77ae31a37fd7ed045be7ce31357d1c53550a8bf237ca066a9f7855e"
+  },
+  "argv": [
+    "/usr/bin/taskset",
+    "-c",
+    "0,1",
+    "python3",
+    "-B",
+    "/workspace/ruvector-e36-model-admission/inspect_original_zip_pickle_metadata.py",
+    "--file",
+    "/workspace/ruvector-e36-reader-assets/ms-xxlarge-8f8b43dd/pytorch_model.bin",
+    "--output",
+    "/workspace/ruvector-epoch36-d73fcce4c45f/XXL_ORIGINAL_WEIGHT_METADATA.json"
+  ],
+  "actual_exit_code": 1,
+  "error": "ValueError: Unsupported non-ZIP serialization; no unsafe fallback",
+  "original_payload_bytes": 3133958098,
+  "original_payload_sha256_verified_before_format_check": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+  "output_created": false,
+  "bounded_prefix_bytes": 64,
+  "bounded_prefix_hex": "80028a0a6cfc9c46f9206aa850192e80024de9032e80027d710028581000000070726f746f636f6c5f76657273696f6e71014de903580d0000006c6974746c65",
+  "pickle_or_checkpoint_globals_invoked": 0,
+  "model_native_tokenizer_scoring_calls": 0,
+  "paid_GPU_calls": 0,
+  "repeated_payload_acquisitions": 0,
+  "old_ZIP_inspector_retries": 0,
+  "scope": "Known original-source serialization incompatibility discovered before candidate SOURCE freeze or any ML initialization. Preserve refusal. Any legacy support must be a new independently reviewed bounded inert metadata parser and restricted future frozen loader; no unsafe fallback or label-based change.",
+  "time": 1792917767.2614172
+}

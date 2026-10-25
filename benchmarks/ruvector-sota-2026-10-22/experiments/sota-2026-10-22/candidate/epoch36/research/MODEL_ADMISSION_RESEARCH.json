@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "epoch": 36,
+  "status": "METADATA_BOUND_NEW_HIGHER_CAPACITY_MODEL_NOT_QUALITY_RUNTIME_OR_BENCHMARK_ADMITTED",
+  "source_commit": "d73fcce4c45f7d8f6f1c5bfbf3599ceddf560be3",
+  "investigated_model": "microsoft/deberta-v2-xxlarge-mnli",
+  "revision": "8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06",
+  "distinct_from_rejected_prior_model": {
+    "repository": "microsoft/deberta-v2-xlarge-mnli",
+    "revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+    "prior_epochs": [
+      18,
+      19
+    ],
+    "difference": "48layers xxlarge≈1.5B versus24layers xlarge≈900M; no retry of the old checkpoint"
+  },
+  "expected_metadata": {
+    "path": "ORIGINAL_MODEL_EXPECTED_METADATA.json",
+    "bytes": 3801,
+    "sha256": "d0767120159f423637270bf35b080a3288c23a77de84b51e53174284f3f757bd"
+  },
+  "source_receipts": {
+    "path": "SOURCE_RECEIPTS.json",
+    "bytes": 3719,
+    "sha256": "dbc8e387c5e17c22cd2fc9d3da7347664fc537072dcef4200c903e23c5d72c65"
+  },
+  "original_weights": {
+    "remote_path": "pytorch_model.bin",
+    "bytes": 3133958098,
+    "expected_sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+    "actual_payload_downloaded_or_verified": false
+  },
+  "source_implementation": {
+    "repository": "microsoft/DeBERTa",
+    "observed_current_revision": "4d7fe0bd4fb3c7d4f4005a7cafabde9800372098",
+    "README_sha256": "b6ecfe8197a4423087e0b1f2fe059dbc428e02c284075f7504a061aaad6d0f04",
+    "LICENSE_sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+    "license": "MIT software and associated documentation",
+    "exact_production_commit_linkage_to_2021_HF_checkpoint": "UNVERIFIED"
+  },
+  "material_strength": {
+    "architecture_materially_larger": true,
+    "materially_stronger_than_b354_on_matching_publisher_or_task": "NOT_VERIFIED",
+    "XXLarge_card_MNLI_dev_percent": [
+      91.7,
+      91.9
+    ],
+    "official_same_table_V3_Large_dev_percent": [
+      91.8,
+      91.9
+    ],
+    "existing_b354_card_MNLI_test_percent": [
+      91.2,
+      90.8
+    ],
+    "split_and_model_selection_protocols_matched": false,
+    "interpretation": "Do not compare XXLarge dev numbers directly with b354 test numbers. The same official source shows V3-Large equal or higher on these dev columns. No actual evidence establishes that XXLarge is a materially stronger typed/numerical/source-scope decision model than the existing b354. Larger architecture permits a new quality hypothesis, not an admitted improvement."
+  },
+  "source_license_scope": {
+    "model_declared": "MIT",
+    "official_code": "MIT",
+    "training_data_terms_records_selection_calibration_and_foundation": "UNVERIFIED; model or code license does not license every training source or establish source-record exclusion."
+  },
+  "training_lineage_complete": false,
+  "ContractNLI_supervised_record_exclusion_proven": false,
+  "benchmark_eligibility": "HOLD",
+  "promotion_allowed": false,
+  "confirmation_allowed": false,
+  "used_confirmation_identities": [],
+  "runtime": {
+    "absolute_original_weight_bytes": 3133958098,
+    "minimum_additional_SPM_bytes": 2447305,
+    "disk_free_at_parent_start_bytes": 391651328,
+    "requires_reviewed_public_cache_eviction_and_observed_free_space": true,
+    "minimum_download_space_proposal_bytes": 4200000000,
+    "compute_F32_parameter_memory_order_bytes": 6268000000,
+    "parameter_memory_estimate_scope": "Approximate based on rounded1.5B/source-file-size hypothesis, NOT actual tensor metadata. Archive may beF16 but config does not declare it.",
+    "CPU_threads_allowed": 2,
+    "seconds_total_including_init_cleanup_allowed": 600,
+    "measured_initialization_or_forward_seconds": null,
+    "CPU_admission": "UNVERIFIED; no assumed linear scaling or reuse of old900M pass/failure.",
+    "existing_static_API_report": "STATIC_RUNTIME_ADMISSION.json",
+    "weight_load_safety": "Only weights_only=True; mmap only if ZIP archive; meta construction+strict tensor assignment may avoid duplicate full model allocation. No unsafe pickle, remote code, quantized conversion or alternate-weight fallback. Exact dtypes/keys/shapes/tensor count must be verified if root later authorizes download."
+  },
+  "novelty_and_predecessor_findings": [
+    {
+      "epoch": 19,
+      "finding": "Different900M xlarge original FP32 engineering2/3; dynamicINT8 counterpart1/3 with large probability divergence. Retain rejection, do not repeat or assume quantization fidelity for xxlarge."
+    },
+    {
+      "epoch": 25,
+      "finding": "Authored source-scope/numerical/provenance/proof engineering already existed and was rejected; changing numbers or names alone is not a new independent direction."
+    },
+    {
+      "epoch": 28,
+      "finding": "Exact submitted full104 reconstruction/qualification was already attempted and rejected; this source inspection grants no champion change or repeat."
+    },
+    {
+      "epoch": 35,
+      "finding": "All59native indexed units were returned. Missing governing facts arose in later two-group selection, while numerical/open-world errors also occurred with enough selected facts. A larger head alone cannot recover facts omitted from its premise."
+    }
+  ],
+  "recommendation": {
+    "current_admission": "SOURCE_METADATA_ONLY; no weights or measurement approval granted by this report",
+    "if_parent_pursues_higher_capacity_hypothesis": "Freeze a new explicitly higher-capacity-untested original-model hypothesis, exact memory/storage/load/source plan and independent no-benchmark engineering gates first. Do not call the model materially stronger before matching evidence. Fresh post-2026-authored engineering identities may test it without being benchmark generalization; no old E35 suite retest or protected bank use.",
+    "matched_same_model_retrieval": "Hold model, numerical policy and packing fixed across native/lexical/positional arms. If all contexts become full-source and identical, report ablation degeneracy; do not claim native efficacy.",
+    "independent_useful_next_step": "Source dependency coverage for complete governing numerical/temporal/entity facts is independently motivated by actual E35 failures. Preserve original source bounds and distinguish selected-context omission from full-excerpt insufficient evidence.",
+    "benchmark_gate": "No new benchmark/CONF or submission while exact model lineage, legitimate data/scorer/access and publisher eligibility remain unresolved."
+  },
+  "limits_and_counts": {
+    "public_metadata_source_GET_attempts": 6,
+    "actual_GET_successes": 6,
+    "actual_GET_failures": 0,
+    "weights_downloads": 0,
+    "model_tokenizer_native_calls": 0,
+    "ML_imports": 0,
+    "annotation_benchmark_record_reads": 0,
+    "protected_confirmation_reads": 0,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "outgoing_messages_submissions_or_author_contacts": 0,
+    "Git_or_production_mutations": 0
+  },
+  "uncertainty": [
+    "Exact source dtype/archive format/state-dict tensor keys and parameter count require weight bytes; none were fetched.",
+    "Published dev/test tables do not supply a matched b354-vs-xxlarge quality comparison or numerical/open-world competency estimate.",
+    "Current official repository source revision is not verified as the production revision that created the fixed2021checkpoint.",
+    "CPU2/600s and16GiB feasibility remain unmeasured; disk currently insufficient for the3.13GB original payload plus reconstruction.",
+    "No new source-licensed full ClaimBench/JevBench data/scorer access or publisher protocol was investigated by this agent; parent owns that separate refresh."
+  ],
+  "future_actions": "PROPOSED_ONLY_NOT_EXECUTED"
+}

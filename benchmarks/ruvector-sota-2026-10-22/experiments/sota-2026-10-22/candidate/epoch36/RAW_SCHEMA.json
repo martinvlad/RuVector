@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "epoch": 36,
+  "kind": "ENGINEERING_PAIRED_READER_SOURCE_COVERAGE",
+  "engineering_only": true,
+  "benchmark_accuracy": null,
+  "data_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "corpora": {
+    "engineering": {
+      "ordered_case_count": 9,
+      "case_ids": [
+        "epoch36:cc0:paired-reader:01",
+        "epoch36:cc0:paired-reader:02",
+        "epoch36:cc0:paired-reader:03",
+        "epoch36:cc0:paired-reader:04",
+        "epoch36:cc0:paired-reader:05",
+        "epoch36:cc0:paired-reader:06",
+        "epoch36:cc0:paired-reader:07",
+        "epoch36:cc0:paired-reader:08",
+        "epoch36:cc0:paired-reader:09"
+      ],
+      "shared_partition_model": "b354",
+      "arms": [
+        "xxlarge_full_source",
+        "xxlarge_native_two",
+        "xxlarge_lexical_two",
+        "xxlarge_positional_two",
+        "b354_full_source",
+        "b354_native_two"
+      ],
+      "case_native_receipt": "One actual native query/result per case, shared across models/arms; actual complete unique unitset required for full-source readout",
+      "document_fields": [
+        "partition_model_tag",
+        "units",
+        "prelude",
+        "preludes_by_model"
+      ],
+      "cross_model_required_matches": [
+        "full_source premise bytes and spans",
+        "native_two premise bytes and spans"
+      ],
+      "arm_fields": [
+        "model_tag",
+        "observed_ranking",
+        "premise",
+        "context",
+        "joint_pair_tokens",
+        "context_seconds",
+        "native_query_seconds",
+        "reader",
+        "decision",
+        "decision_seconds",
+        "semantic_decision_override"
+      ]
+    }
+  },
+  "reader_generic_fields": [
+    "model_tag",
+    "raw_logits",
+    "native_label_order",
+    "canonical_E_C_N_from_raw",
+    "probabilities_native_order",
+    "probabilities_E_C_N",
+    "native_typed_argmax",
+    "temperature",
+    "calibrated",
+    "semantic_decision_override",
+    "model_weights_sha256",
+    "premise_sha256",
+    "hypothesis_sha256",
+    "native_pair_input_ids_sha256",
+    "pair_tokens",
+    "full_pair_tokens",
+    "max_pair_tokens",
+    "hidden_truncation",
+    "forward_seconds",
+    "reader_seconds"
+  ],
+  "source_order_aliases": {
+    "b354": [
+      "raw_logits_E_N_C",
+      "probabilities_E_N_C"
+    ],
+    "xxlarge": [
+      "raw_logits_C_N_E",
+      "probabilities_C_N_E"
+    ]
+  },
+  "raw_root_fields": [
+    "model_initializations",
+    "model_states_unchanged",
+    "reader_lifecycle",
+    "models_sequentially_unloaded",
+    "counters",
+    "engineering_gate",
+    "errors",
+    "resources",
+    "native_backend_capture"
+  ],
+  "lifecycle": "b354 init→18 readouts→reader/model/tokenizer weakref-dead GC proof, then xxlarge init→36 readouts→same disposal proof; RSS observed without allocator/cache-release claim; both closed before oracle",
+  "oracle": "Exactly one nine-label join after all54 finite source/pair-integrity readouts; retained expected_labels mapping is scorer source, never reopened for selection",
+  "fixed_completed_counts_ref": "EXPECTED_COUNTERS.json",
+  "partial_failure_policy": "Known actual counters retained. Missing/unreturned/uncertain starts or incomplete final native counters/closure preserve UNKNOWN or lower bounds, never invent zero or consume a second attempt. Final raw seal requires complete native capture; overall qualification additionally requires full reader/gate/physical closure.",
+  "classification_scope": "Authored engineering only. No benchmark score, pilot, fresh confirmation, model promotion or publisher eligibility."
+}

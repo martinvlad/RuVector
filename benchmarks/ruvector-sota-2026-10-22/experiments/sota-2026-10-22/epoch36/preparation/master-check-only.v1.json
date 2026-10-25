@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "/tmp/ruvector-sota-2026-10-22/epoch33-0522a2c521c9/runtime/.venv/bin/python",
+    "-B",
+    "/workspace/ruvector-epoch36-d73fcce4c45f/project/experiments/sota-2026-10-22/epoch36/preparation/reviewed_build_plan.py",
+    "--scope",
+    "/workspace/ruvector-epoch36-d73fcce4c45f",
+    "--scorer",
+    "experiments/sota-2026-10-22/audit/epoch36/score_engineering.py",
+    "--source-parent",
+    "a519259aa11cb425ef1ff10f74080b4af8c1da6a",
+    "--source-root",
+    "5338b9eedaf70820baffa7bbe8202a739e8a3354",
+    "--source-bench",
+    "daf4d344e4bf69175b541734fad791b03087f671",
+    "--source-scope",
+    "f2b1e2e41dd0bab8b80904754d98972df380f82c",
+    "--source-stage",
+    "/workspace/ruvector-epoch36-d73fcce4c45f/stage-source",
+    "--final-stage",
+    "/workspace/ruvector-epoch36-d73fcce4c45f/stage-final",
+    "--check-only"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/ruvector-epoch36-d73fcce4c45f/project/experiments/sota-2026-10-22/epoch36/preparation/reviewed_build_plan.py\", line 154, in <module>\n    print(json.dumps(build(cli.parse_args()),sort_keys=True))\n                     ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/ruvector-epoch36-d73fcce4c45f/project/experiments/sota-2026-10-22/epoch36/preparation/reviewed_build_plan.py\", line 102, in build\n    publication.audit_protocol_ready(root)\n  File \"/workspace/ruvector-epoch36-d73fcce4c45f/project/experiments/sota-2026-10-22/epoch36/publication/stage_publication_v1.py\", line 31, in audit_protocol_ready\n    for key in ('candidate_protocol','core_source_manifest','core_source_ready','scorer_source_ready_v1'):checked_ref(root,protocol.get(key),rows)\n                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/ruvector-epoch36-d73fcce4c45f/project/experiments/sota-2026-10-22/epoch36/publication/phase_receipts_v1.py\", line 78, in checked_ref\n    require(ref(root,row['path'])==row,'Actual phase reference mismatch')\n            ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/ruvector-epoch36-d73fcce4c45f/project/experiments/sota-2026-10-22/epoch36/publication/publication_common_v1.py\", line 179, in ref\n    path = relative(path); data = content(project / path)\n                                  ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/ruvector-epoch36-d73fcce4c45f/project/experiments/sota-2026-10-22/epoch36/publication/publication_common_v1.py\", line 122, in content\n    require(stat.S_ISREG(path.lstat().st_mode), 'Nonregular source: ' + str(path))\n                         ^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 847, in lstat\n    return self.stat(follow_symlinks=False)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 840, in stat\n    return os.stat(self, follow_symlinks=follow_symlinks)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/workspace/ruvector-epoch36-d73fcce4c45f/project/experiments/sota-2026-10-22/audit/epoch36/SOURCE_READY_v1.json'\n",
+  "wall_seconds": 0.0827661799849011,
+  "no_freeze_or_inference": true
+}

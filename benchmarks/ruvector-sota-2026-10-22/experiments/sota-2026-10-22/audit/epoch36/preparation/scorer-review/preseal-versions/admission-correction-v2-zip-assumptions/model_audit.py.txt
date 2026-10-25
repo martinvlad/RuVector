@@ -1,0 +1,131 @@
+"""Independent metadata binding of the stock frozen pretrained reader; no weight I/O."""
+import re
+from data_common import require,finite
+
+WEIGHT_SHA='c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b'
+WEIGHT_BYTES=870182606
+HEAD_SHAPES={'classifier.weight':[3,1024],'classifier.bias':[3],
+             'pooler.dense.weight':[1024,1024],'pooler.dense.bias':[1024]}
+STORED='Exact mmap source int64 arange512 checked against stock nonpersistent buffer'
+DERIVED='Only deterministic nonpersistent stock position_ids constructed from source/config; no learned fallback'
+XXL_STORED='Exact original source I64 arange512 validated, sole permitted legacy nonpersistent buffer'
+XXL_DERIVED='Only deterministic config-derived stock arange512 nonpersistent buffer; no learned fallback'
+
+def sha(value):
+    return type(value)is str and re.fullmatch('[0-9a-f]{64}',value)is not None
+
+def state_check(value,head):
+    require(type(value)is dict and value['unchanged']is True and value['classifier_manifest']==head,
+            'Frozen pretrained model/head state changed or missing')
+    require(type(value['scope'])is str and bool(value['scope']),'Missing state-proof scope')
+    return {'unchanged':True,'scope':value['scope']}
+
+def audit_b354_metadata(raw):
+    r=raw['model_initialization']
+    require(r['model_class']=='DebertaV2ForSequenceClassification' and r['learned_parameters']==435064835
+            and r['loading_missing_keys']==[] and r['loading_unexpected_keys']==[]
+            and r['CPU_FP32']is True and r['meta_tensors_remaining']==0
+            and r['safe_mmap_meta_assign']is True,'Original exact stock FP32 learned state not established')
+    require(r['weights_sha256']==WEIGHT_SHA and r['no_training_or_classifier_reinitialization']is True
+            and r['actual_model_warmup_forwards']==0 and r['attention']=='eager','Wrong checkpoint/head/attention or unbudgeted warmup')
+    require(r['source_parameter_dtype']=='F16'and r['compute_dtype']=='F32'
+            and r['source_learned_tensor_count']==394
+            and r['all_source_values_losslessly_converted_F16_to_F32']is True,
+            'Exact source F16 to compute F32 conversion not established')
+    require(r['tokenizer_class']=='DebertaV2TokenizerFast' and r['pair_special_tokens']==3
+            and sha(r['backend_before_sha256'])and sha(r['backend_after_sha256']),
+            'Original fast tokenizer/pair formatting proof missing')
+    require(r['nonpersistent_buffers']==['deberta.embeddings.position_ids'] and r['position_ids_buffer_source']==STORED,
+            'Unexplained or unmaterialized model buffer')
+    learned_bytes=435064835*2
+    require(r['data_bytes']==learned_bytes+4096
+            and r['header_bytes']==48832
+            and r['data_bytes']+r['header_bytes']+8==WEIGHT_BYTES
+            and r['header_sha256']=='54177dcf30939971325ccfdda856523560a0457fa66e701d6206d27f96a7d9b4'
+            and r['tensor_count']==395,'Original F16 safetensors header/data/count closure failed')
+    require(finite(r['initialization_seconds'])and r['initialization_seconds']>=0,'Invalid initialization timing')
+    head=r['classifier_manifest'];require(set(head)==set(HEAD_SHAPES),'Original classifier/pooler manifest incomplete')
+    for name,shape in HEAD_SHAPES.items():
+        require(head[name]['shape']==shape and head[name]['dtype']=='float32' and sha(head[name]['sha256']),
+                'Wrong stock pretrained classifier/pooler tensor proof: '+name)
+    final=state_check(raw['model_state_unchanged'],head)
+    roles={}
+    for name,receipt in raw['corpora'].items():
+        if receipt is not None:roles[name]=state_check(receipt['model_state_unchanged'],head)
+    return {'status':'PASS_ORIGINAL_FROZEN_STOCK_MORITZ_F16_SOURCE_FP32_COMPUTE_METADATA','weights_sha256':WEIGHT_SHA,
+            'learned_parameters':435064835,'buffer_source':r['position_ids_buffer_source'],
+            'classifier_manifest':head,'role_state_checks':roles,'final_state_check':final,
+            'scope':'Byte-pinned original source plus actual strict loading metadata and storage/version/head-byte invariance. No independent full learned tensor decode, clone or hidden-forward claim.'}
+
+def audit_models(root,raw,plan):
+    from phase_audit import read,checked
+    from nli_metrics import PROFILES
+    require(set(raw['model_initializations'])==set(raw['model_states_unchanged'])=={'b354','xxlarge'},'Both exact model initialization/state profiles required')
+    corpus=raw['corpora']['engineering'];require(corpus['model_states_unchanged']==raw['model_states_unchanged'],'Corpus/final model state aliases differ')
+    profiles=read(root/plan['model_profiles_path'],plan['model_profiles_sha256'])
+    require(profiles['epoch']==36 and set(profiles['profiles'])=={'b354','xxlarge'},'Wrong frozen two-reader profile map')
+    pins={p['path']:p for p in plan['pins']};sources={}
+    for tag,key in [('xxlarge','pretrained_model_source'),('b354','baseline_model_source')]:
+        pin=plan[key];require(pins.get(pin['path'])==pin,'Unpinned exact model source');source=read(checked(root,pin));sources[tag]=source
+        wanted=PROFILES[tag]
+        require(source['epoch']==36 and source['kind']=='ENGINEERING_PAIRED_READER_SOURCE_COVERAGE'
+            and source['weights_sha256']==wanted['sha']and source['weights_bytes']==wanted['bytes']
+            and source['source_parameter_dtype']=='F16'and source['compute_dtype']=='F32'
+            and source['training_lineage_complete']is False and source['promotion_allowed']is False
+            and source['official_eligibility']=='HOLD'and source['confirmation']==[],'Wrong model source/weights/dtype or overstated eligibility')
+        native={str(i):name.lower().replace('notmentioned','neutral')for i,name in enumerate(wanted['order'])}
+        require({str(k):v.lower().replace('notmentioned','neutral')for k,v in source['native_id2label'].items()}==native,'Source label-index map changed')
+        entry=profiles['profiles'][tag];assetkey='model_assets_lock'if tag=='xxlarge'else'baseline_model_assets_lock'
+        assetref=next((p for p in plan['pins']if p['path']==plan[assetkey+'_path']),None)
+        require(entry['model_source']==pin and entry['model_assets_lock']==assetref and entry['native_label_order']==wanted['order']
+            and entry['canonical_E_C_N_from_raw']==wanted['canonical'],'Model profile source/asset/order binding differs')
+        require(entry['model_directory']==plan['model_directory'if tag=='xxlarge'else'baseline_model_directory'],'Model directory scope differs')
+    require(sources['b354']['repository']=='MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli'
+        and sources['b354']['revision']=='b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7'
+        and sources['xxlarge']['repository']=='microsoft/deberta-v2-xxlarge-mnli'
+        and sources['xxlarge']['revision']=='8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06','Pretrained model identity differs')
+    b354=audit_b354_metadata({'model_initialization':raw['model_initializations']['b354'],
+        'model_state_unchanged':raw['model_states_unchanged']['b354'],
+        'corpora':{'engineering':{'model_state_unchanged':corpus['model_states_unchanged']['b354']}}})
+    source=sources['xxlarge'];entry=profiles['profiles']['xxlarge'];meta_ref=source['original_archive_metadata']
+    require(entry['original_archive_metadata']==meta_ref and pins.get(meta_ref['path'])==meta_ref
+        and meta_ref['path']==plan['xxlarge_weight_metadata_path']and meta_ref['sha256']==plan['xxlarge_weight_metadata_sha256'],
+        'Original symbolic archive metadata must match exact explicit frozen plan')
+    meta=read(checked(root,meta_ref));spec=PROFILES['xxlarge']
+    require(meta['epoch']==36 and meta['weights']=={'bytes':spec['bytes'],'sha256':spec['sha']}
+        and meta['status']=='ORIGINAL_ZIP_PICKLETOOLS_SYMBOLIC_METADATA_VERIFIED_NO_UNPICKLE'
+        and meta['archive']['kind']=='ZIP_STORED'and meta['unsafe_unpickling_calls']==meta['checkpoint_functions_invoked']==meta['ML_imports']==meta['model_tokenizer_native_calls']==0,
+        'Exact original ZIP/symbolic metadata binding failed')
+    tensors=meta['tensors'];require(type(tensors)is list and len(tensors)==meta['state_tensor_count']and len({t['name']for t in tensors})==len(tensors),'Invalid original state tensor catalogue')
+    floating=[t for t in tensors if t['dtype']in('F16','F32','F64','BF16')];other=[t for t in tensors if t not in floating]
+    require(floating and all(t['dtype']=='F16'for t in floating),'Only source-proven F16 learned state admitted')
+    require(all(t['name']=='deberta.embeddings.position_ids'and t['dtype']=='I64'and t['shape']==[1,512]and t['numel']==512 for t in other)
+        and len(other)<=1,'Unknown original nonlearned tensor/buffer')
+    require(all(type(t['numel'])is int and t['numel']>0 and type(t['shape'])is list and t['numel']==__import__('math').prod(t['shape'])for t in tensors),'State shape/numel closure failed')
+    parameters=sum(t['numel']for t in floating);r=raw['model_initializations']['xxlarge']
+    require(r['model_class']=='DebertaV2ForSequenceClassification'and r['learned_parameters']==parameters
+        and r['source_state_tensor_count']==len(tensors)and r['source_learned_tensor_count']==len(floating)and r['source_parameter_dtype']=='F16'and r['compute_dtype']=='F32'
+        and r['loading_missing_keys']==[]and r['loading_unexpected_keys']==[]and r['CPU_FP32']is True
+        and r['meta_tensors_remaining']==0 and r['safe_weights_only_mmap_meta_assign']is True
+        and r['weights_only']is True and r['mmap']is True and r['strict_assign']is True,
+        'Exact original xxlarge strict loaded FP32 state not established')
+    require(r['original_archive_metadata']==meta_ref and r['weights_sha256']==spec['sha']
+        and r['no_training_or_classifier_reinitialization']is True and r['actual_model_warmup_forwards']==0
+        and r['attention']=='eager'and r['all_source_values_losslessly_converted_F16_to_F32']is True,'Wrong xxlarge source, warmup, head, attention or cast')
+    require(r['tokenizer_class']=='DebertaV2TokenizerFast'and r['pair_special_tokens']==3
+        and sha(r['backend_before_sha256'])and sha(r['backend_after_sha256']),'Source-pinned xxlarge fast tokenizer formatting missing')
+    expected_buffer=XXL_STORED if other else XXL_DERIVED
+    require(r['nonpersistent_buffers']==['deberta.embeddings.position_ids']and r['position_ids_buffer_source']==expected_buffer,'Unexplained xxlarge nonpersistent buffer')
+    require(finite(r['initialization_seconds'])and r['initialization_seconds']>=0,'Invalid xxlarge initialization timing')
+    shapes={'classifier.weight':[3,1536],'classifier.bias':[3],'pooler.dense.weight':[1536,1536],'pooler.dense.bias':[1536]}
+    by={t['name']:t for t in tensors};head=r['classifier_manifest'];require(set(head)==set(shapes),'Incomplete original xxlarge head/pooler proof')
+    for name,shape in shapes.items():
+        require(name in by and by[name]['shape']==shape and head[name]['shape']==shape and head[name]['dtype']=='float32'and sha(head[name]['sha256']),'Wrong original xxlarge classifier/pooler state: '+name)
+    final=state_check(raw['model_states_unchanged']['xxlarge'],head)
+    return {'status':'PASS_TWO_ORIGINAL_PRETRAINED_STOCK_READERS','b354':b354,
+        'xxlarge':{'status':'PASS_ORIGINAL_XXL_F16_SOURCE_F32_CPU_METADATA','weights_sha256':spec['sha'],'original_archive_metadata':meta_ref,
+          'learned_parameters':parameters,'source_learned_tensors':len(floating),'classifier_manifest':head,'final_state_check':final,
+          'buffer_source':r['position_ids_buffer_source']},
+        'model_profiles':{'path':plan['model_profiles_path'],'sha256':plan['model_profiles_sha256']},
+        'training_lineage_complete':False,'official_eligibility':'HOLD',
+        'scope':'Frozen exact original asset/source metadata plus actual strict loading, dtype, no-warmup and state/head invariance receipts. Independent scorer does not decode any full learned tensor or execute either model. Source-frozen symbolic tensor metadata is not alone a proof of named-parameter identity; strict model-class loading/state checks supply that additional boundary.'}

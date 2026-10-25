@@ -1,0 +1,193 @@
+'use strict';
+// Preload only: source-admitted candidate ANN helper and unchanged core package.
+// Public API interposition is not an operating-system syscall sandbox.
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const Module=require('node:module');
+const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const events=[];
+let fd=null,attempts=0,nativeAttempted=0,nativeCompleted=0;
+function record(event,extra={}){
+  const row={event,at_unix:Date.now()/1000,pid:process.pid,
+    Node_network_operations_attempted:attempts,native_binary_loads_attempted:nativeAttempted,
+    native_binary_loads_completed:nativeCompleted,...extra};
+  events.push(row);
+  if(fd!==null){fs.writeSync(fd,JSON.stringify(row)+'\n');fs.fsyncSync(fd);}
+}
+function refuse(event,args){
+  attempts++;record('OFFLINE_FATAL_VIOLATION',{operation:event,address:String(args&&args[0]),stack:new Error().stack});
+  process.exitCode=70;throw new Error('Persistent offline native policy violation: '+event);
+}
+for(const [name,methods] of Object.entries({'node:net':['connect','createConnection'],
+  'node:http':['request','get'],'node:https':['request','get'],'node:dgram':['createSocket']})){
+  const mod=require(name);for(const method of methods)mod[method]=(...args)=>refuse(name+'.'+method,args);
+}
+const dgram=require('node:dgram'),originalDgramSocket=dgram.Socket;
+for(const method of Object.getOwnPropertyNames(originalDgramSocket.prototype))
+  if(!['constructor','close','ref','unref'].includes(method)
+      &&typeof Object.getOwnPropertyDescriptor(originalDgramSocket.prototype,method).value==='function')
+    originalDgramSocket.prototype[method]=function(...args){return refuse('dgram.Socket.'+method,args);};
+function deniedDgramSocket(...args){return refuse('dgram.Socket',args);}
+deniedDgramSocket.prototype=originalDgramSocket.prototype;
+originalDgramSocket.prototype.constructor=deniedDgramSocket;dgram.Socket=deniedDgramSocket;
+for(const type of [require('node:net').Socket,require('node:net').Server])
+  for(const method of ['connect','listen'])if(type.prototype[method])
+    type.prototype[method]=function(...args){return refuse(type.name+'.'+method,args);};
+function patchDns(target,label,walk=false){
+  for(let current=target;current&&current!==Object.prototype;current=walk?Object.getPrototypeOf(current):null)
+    for(const method of Object.getOwnPropertyNames(current))
+      if((/^(lookup|resolve)/.test(method)||method==='reverse')&&typeof current[method]==='function')
+        current[method]=(...args)=>refuse(label+'.'+method,args);
+}
+const dns=require('node:dns');patchDns(dns,'dns');patchDns(dns.promises,'dns.promises');
+patchDns(dns.Resolver.prototype,'dns.Resolver',true);patchDns(dns.promises.Resolver.prototype,'dns.promises.Resolver',true);
+// Exact stdin/stdout/stderr pipes are the required transport. Other Socket
+// read/write paths have no legitimate role in this qualification.
+for(const method of ['write','end','read','send','sendto','sendmsg','recv','recvfrom','recvmsg','accept']){
+  const prototype=require('node:net').Socket.prototype,original=prototype[method];
+  if(typeof original==='function')prototype[method]=function(...args){
+    if(this===process.stdin||this===process.stdout||this===process.stderr)return original.apply(this,args);
+    return refuse('Socket.'+method,args);
+  };
+}
+globalThis.fetch=(...args)=>refuse('fetch',args);
+function noSymlink(file){
+  if(!path.isAbsolute(file)||path.normalize(file)!==file)throw new Error('Noncanonical absolute path');
+  let at=path.parse(file).root;
+  for(const part of file.slice(at.length).split(path.sep)){
+    at=path.join(at,part);
+    if(fs.existsSync(at)&&fs.lstatSync(at).isSymbolicLink())throw new Error('Symlink component refused');
+  }
+}
+function checked(root,relative){
+  if(typeof relative!=='string'||!relative||path.isAbsolute(relative)||relative.includes('\\')
+      ||relative.split('/').some(x=>!x||x==='.'||x==='..'))throw new Error('Unsafe relative path');
+  const file=path.join(root,relative);noSymlink(file);
+  if(!fs.statSync(file).isFile())throw new Error('Nonregular source');return file;
+}
+function sameRef(a,b){return a&&b&&Object.keys(a).sort().join(',')==='bytes,path,sha256'
+  &&Object.keys(b).sort().join(',')==='bytes,path,sha256'&&a.path===b.path&&a.bytes===b.bytes&&a.sha256===b.sha256;}
+function verifyRef(root,row,defer=false){
+  if(!row||!Number.isSafeInteger(row.bytes)||row.bytes<0||!/^[0-9a-f]{64}$/.test(row.sha256||''))throw new Error('Invalid byte reference');
+  const file=checked(root,row.path);
+  if(fs.statSync(file).size!==row.bytes||(!defer&&sha(file)!==row.sha256))throw new Error('Changed frozen bytes: '+row.path);
+  return file;
+}
+function admit(){
+  const root=process.env.E36_PROJECT,out=process.env.E36_OUT,planPath=process.env.E36_PLAN;
+  const expected=process.env.E36_PLAN_SHA,admissionPath=process.env.E36_ADMISSION,role=process.env.E36_ROLE;
+  const study='experiments/sota-2026-10-22/epoch36',kind='ENGINEERING_PAIRED_READER_SOURCE_COVERAGE';
+  const scope='/tmp/ruvector-sota-2026-10-22/epoch36-d73fcce4c45f';
+  if(!root||!out||!planPath||!admissionPath||!['engineering'].includes(role))throw new Error('Exact phase/source environment missing');
+  for(const file of [root,out,planPath,admissionPath])noSymlink(file);
+  if(fs.realpathSync(root)!==root||planPath!==path.join(root,study,'plan.json')||!/^[0-9a-f]{64}$/.test(expected||'')
+      ||sha(planPath)!==expected||out!==path.join(root,study,'runs/engineering')||admissionPath!==path.join(root,study,'SOURCE_ADMISSION.json'))throw new Error('Exact outside source admission required');
+  const plan=JSON.parse(fs.readFileSync(planPath)),value=JSON.parse(fs.readFileSync(admissionPath));
+  if(value.epoch!==36||value.kind!==kind||value.phase!=='engineering'||value.scope!=='benchmarks/ruvector-sota-2026-10-22/'
+      ||value.verified_actual_remote_readback!==true||value.plan_sha256!==expected||value.source_freeze_sha256!==plan.source_freeze_sha256
+      ||!/^[0-9a-f]{40}$/.test(value.published_source_commit||'')||value.owner_pid!==106933||value.owner_startticks!==23768446
+      ||value.kernel_boot_id!=='4632fb06-b0ef-4df5-b72b-0e875bbad810'||value.pid_namespace_inode!==4026532200
+      ||value.owner_lock_fd!==3||value.owner_lock_device!==33||value.owner_lock_inode!==13626||value.owner_generation!==1
+      ||!sameRef(value.pretrained_model_source,plan.pretrained_model_source)||value.model_assets_lock_sha256!==plan.model_assets_lock_sha256
+      ||!sameRef(value.baseline_model_source,plan.baseline_model_source)||value.baseline_model_assets_lock_sha256!==plan.baseline_model_assets_lock_sha256
+      ||value.model_profiles_sha256!==plan.model_profiles_sha256||value.xxlarge_weight_metadata_sha256!==plan.xxlarge_weight_metadata_sha256
+      ||value.legacy_original_load_plan_sha256!==plan.legacy_original_load_plan_sha256)throw new Error('Actual SOURCE/head/asset admission missing');
+  const sourceFile=verifyRef(root,plan.pretrained_model_source),source=JSON.parse(fs.readFileSync(sourceFile));
+  if(source.epoch!==36||source.kind!==kind||source.repository!=='microsoft/deberta-v2-xxlarge-mnli'
+      ||source.revision!=='8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06'||source.weights_file!=='pytorch_model.bin'
+      ||source.weights_bytes!==3133958098||source.weights_sha256!=='5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db'
+      ||source.source_parameter_dtype!=='F16'||source.source_serialization_format!=='PYTORCH_LEGACY_CONCATENATED_PICKLE_RAW_STORAGES'
+      ||source.compute_dtype!=='F32'||source.training_lineage_complete!==false||source.official_eligibility!=='HOLD')throw new Error('Different original primary source or eligibility');
+  const baseline=JSON.parse(fs.readFileSync(verifyRef(root,plan.baseline_model_source)));
+  if(baseline.epoch!==36||baseline.kind!==kind||baseline.repository!=='MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli'
+      ||baseline.revision!=='b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7'||baseline.weights_file!=='model.safetensors'
+      ||baseline.weights_bytes!==870182606||baseline.weights_sha256!=='c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b'
+      ||baseline.source_parameter_dtype!=='F16'||baseline.compute_dtype!=='F32'||baseline.training_lineage_complete!==false||baseline.official_eligibility!=='HOLD')throw new Error('Different original baseline source or eligibility');
+  const profilesFile=checked(root,plan.model_profiles_path);
+  if(sha(profilesFile)!==plan.model_profiles_sha256)throw new Error('Paired profile source changed');
+  const profiles=JSON.parse(fs.readFileSync(profilesFile));
+  if(profiles.epoch!==36||profiles.kind!==kind||profiles.shared_partition_model!=='b354'
+      ||!profiles.profiles||Object.keys(profiles.profiles).sort().join(',')!=='b354,xxlarge')throw new Error('Different paired profiles');
+  for(const [tag,sourceKey,directory,order]of [['b354','baseline_model_source','/workspace/ruvector-e36-reader-assets/moritz-b3546ea6',[0,2,1]],
+      ['xxlarge','pretrained_model_source','/workspace/ruvector-e36-reader-assets/ms-xxlarge-8f8b43dd',[2,0,1]]]){
+    const profile=profiles.profiles[tag];
+    if(!sameRef(profile.model_source,plan[sourceKey])||profile.model_directory!==directory
+        ||JSON.stringify(profile.canonical_E_C_N_from_raw)!==JSON.stringify(order)||profile.compute_dtype!=='F32')throw new Error('Paired profile source/native mapping changed');
+  }
+  const headerFile=checked(root,plan.xxlarge_weight_metadata_path);
+  if(sha(headerFile)!==plan.xxlarge_weight_metadata_sha256)throw new Error('Original archive metadata changed');
+  const header=JSON.parse(fs.readFileSync(headerFile));
+  if(header.schema_version!==3||header.status!=='ORIGINAL_TORCH_LEGACY_PICKLETOOLS_METADATA_VERIFIED_NO_UNPICKLE'
+      ||header.weights.bytes!==3133958098||header.weights.sha256!==source.weights_sha256
+      ||header.format!=='PYTORCH_LEGACY_CONCATENATED_PICKLE_RAW_STORAGES'||header.metadata_pickle_count!==5
+      ||header.storage_data_ends_at_filelength!==true||header.storage_payloads_decoded!==0||header.source_parameter_dtype!=='F16'
+      ||header.unsafe_unpickling_calls!==0||header.checkpoint_functions_invoked!==0||header.ML_imports!==0||header.model_tokenizer_native_calls!==0
+      ||!sameRef(source.original_archive_metadata,profiles.profiles.xxlarge.original_archive_metadata)
+      ||!sameRef(source.original_archive_metadata,{path:plan.xxlarge_weight_metadata_path,bytes:fs.statSync(headerFile).size,sha256:plan.xxlarge_weight_metadata_sha256}))throw new Error('Unsafe/unbound original archive source');
+  const loadFile=checked(root,plan.legacy_original_load_plan_path);
+  if(sha(loadFile)!==plan.legacy_original_load_plan_sha256)throw new Error('Legacy plan source changed');
+  const loadRef={path:plan.legacy_original_load_plan_path,bytes:fs.statSync(loadFile).size,sha256:plan.legacy_original_load_plan_sha256};
+  if(!sameRef(source.legacy_original_load_plan,loadRef)||!sameRef(profiles.profiles.xxlarge.legacy_original_load_plan,loadRef))throw new Error('Unbound explicit legacy load policy');
+  const loadPolicy=JSON.parse(fs.readFileSync(loadFile)).future_frozen_loader_policy;
+  if(loadPolicy.serialization_format!=='PYTORCH_LEGACY_CONCATENATED_PICKLE_RAW_STORAGES'||loadPolicy.weights_only!==true||loadPolicy.mmap!==false
+      ||loadPolicy.map_location!=='cpu'||loadPolicy.trust_remote_code!==false||loadPolicy.unrestricted_pickle_allowed!==false
+      ||loadPolicy.extra_pickle_safe_globals_added!==0||loadPolicy.ZIP_fallback_allowed!==false||loadPolicy.legacy_tar_fallback_in_statics!==false
+      ||loadPolicy.alternate_checkpoint_allowed!==false||loadPolicy.dynamic_quantization_allowed!==false||loadPolicy.compute_dtype!=='F32')throw new Error('Unsafe or changed reviewed legacy policy');
+  const roles=plan.data_roles;
+  if(plan.epoch!==36||plan.kind!==kind||plan.source_checkpoint!=='d73fcce4c45f7d8f6f1c5bfbf3599ceddf560be3'
+      ||plan.actual_project!==root||plan.guardian_scope!==scope||plan.model_directory!=='/workspace/ruvector-e36-reader-assets/ms-xxlarge-8f8b43dd'
+      ||plan.baseline_model_directory!=='/workspace/ruvector-e36-reader-assets/moritz-b3546ea6'
+      ||!roles||Object.keys(roles).sort().join(',')!=='calibration,confirmation,dev,train'
+      ||JSON.stringify(roles.train)!=='[]'||JSON.stringify(roles.dev)!=='[]'
+      ||JSON.stringify(roles.calibration)!=='[]'||JSON.stringify(roles.confirmation)!=='[]')throw new Error('Different frozen source/current roles');
+  if(plan.engineering_only!==true||plan.benchmark_accuracy!==null||plan.promotion_allowed!==false||JSON.stringify(plan.used_confirmation_identities)!=='[]'
+      ||!plan.limits||plan.limits.native_corpus_batches!==1||plan.limits.ENGINEERING_worker_attempts!==1||plan.limits.DEV_worker_attempts!==0
+      ||plan.limits.CPU_threads!==2||JSON.stringify(plan.limits.CPU_affinity)!=='[0,1]'||plan.limits.seconds_per_batch!==600)throw new Error('Different engineering-only frozen budget/scope');
+  const owner=JSON.parse(fs.readFileSync(path.join(scope,'owner.json'))),boot=fs.readFileSync('/proc/sys/kernel/random/boot_id','utf8').trim();
+  const lockFD='/proc/106933/fd/3',lockInfo=fs.statSync(lockFD),lock='/tmp/ruvector-sota-2026-10-22/exclusive.work.lock';
+  const proc=fs.readFileSync('/proc/106933/stat','utf8').split(')').slice(1).join(')').trim().split(/\s+/);
+  const held=fs.readFileSync('/proc/locks','utf8').split('\n').some(line=>{
+    const w=line.trim().split(/\s+/);if(w.slice(1,5).join(',')!=='FLOCK,ADVISORY,WRITE,106933')return false;
+    const a=(w[5]||'').split(':');return parseInt(a[0],16)===0&&parseInt(a[1],16)===33&&Number(a[2])===13626;});
+  if(boot!=='4632fb06-b0ef-4df5-b72b-0e875bbad810'||fs.statSync('/proc/self/ns/pid').ino!==4026532200
+      ||fs.statSync('/proc/106933/ns/pid').ino!==4026532200||lockInfo.dev!==33||lockInfo.ino!==13626||fs.readlinkSync(lockFD)!==lock||!held
+      ||owner.pid!==106933||owner.startticks!==23768446||owner.lock_inode!==13626||owner.generation!==1||owner.kernel_boot_id!==boot
+      ||owner.PID_namespace!=='pid:[4026532200]'||owner.expires_unix!==1792924782.5591424||Date.now()/1000>=owner.expires_unix
+      ||fs.existsSync(path.join(scope,'release.request'))||['Z','X'].includes(proc[0])||Number(proc[19])!==23768446)throw new Error('Actual guardian/boot/FD/FLOCK authority changed');
+  const status=Object.fromEntries(fs.readFileSync('/proc/self/status','utf8').split('\n').filter(l=>/^(NoNewPrivs|Seccomp|Seccomp_filters|Cpus_allowed_list):/.test(l)).map(l=>[l.split(':')[0],l.slice(l.indexOf(':')+1).trim()]));
+  if(process.platform!=='linux'||process.arch!=='x64'||status.NoNewPrivs!=='1'||status.Seccomp!=='2'||!['0-1','0,1'].includes(status.Cpus_allowed_list))throw new Error('Inherited whole-worker CPU guard required');
+  const seen=new Set();for(const pin of plan.pins){if(seen.has(pin.path))throw new Error('Duplicate source pin');seen.add(pin.path);verifyRef(root,pin);}
+  const runtimeFile=checked(root,plan.runtime_assets_lock_path);
+  if(!seen.has(plan.runtime_assets_lock_path)||sha(runtimeFile)!==plan.runtime_assets_lock_sha256)throw new Error('Missing runtime lock');
+  const runtime=JSON.parse(fs.readFileSync(runtimeFile));if(!Array.isArray(runtime.assets)||runtime.assets.length!==10)throw new Error('Exact10 native/BGE assets required');
+  for(const row of runtime.assets)verifyRef(root,row);
+  const worker=checked(root,plan.native_worker_path);
+  if(plan.native_worker_path!=='experiments/sota-2026-10-22/candidate/epoch36/native_helper.cjs'||!seen.has(plan.native_worker_path)
+      ||process.argv.length!==4||process.argv[1]!==worker||process.argv[2]!==path.join(out,role+'-native-bundle.json')||process.argv[3]!==path.join(out,role+'-native-result.json'))throw new Error('Exact role helper arguments required');
+  noSymlink(process.argv[2]);noSymlink(process.argv[3]);if(!fs.statSync(process.argv[2]).isFile()||fs.existsSync(process.argv[3]))throw new Error('Reused/missing native bundle or result');
+  const parent=fs.readFileSync('/proc/'+process.ppid+'/stat','utf8').split(')').slice(1).join(')').trim().split(/\s+/);
+  const attempt=JSON.parse(fs.readFileSync(path.join(out,'attempt.json')));
+  if(attempt.pid!==process.ppid||attempt.startticks!==Number(parent[19])||attempt.pgid!==process.ppid||attempt.sid!==process.ppid)throw new Error('Native parent worker identity mismatch');
+  fd=fs.openSync(path.join(out,role+'-node-progress.jsonl'),'wx',0o600);
+  record('NODE_SOURCE_RUNTIME_ADMISSION_BEFORE_NATIVE_IMPORT',{phase:'engineering',role,node_version:process.version,kernel_boot_id:boot,pid_namespace_inode:4026532200,guardian_lock_fd:3,
+    CPU_guard_actual_proc_status:status,worker_path:worker,worker_sha256:sha(worker),
+    full_vector_bundle:{path:path.relative(root,process.argv[2]),bytes:fs.statSync(process.argv[2]).size,sha256:sha(process.argv[2])}});
+  const binary=path.join(root,'retrieval/node_modules/ruvector-core-linux-x64-gnu/ruvector.node'),original=Module._load;
+  Module._load=function(request,parent,isMain){
+    const resolved=Module._resolveFilename(request,parent,isMain);
+    if(typeof resolved==='string'&&resolved.endsWith('.node')){
+      if(resolved!==binary||sha(resolved)!=='ff559e9fac2e3d29a8b32e890fdb047bcd4bd28f389b4731ad72148b221d5a2e'||nativeAttempted!==0)throw new Error('Unexpected/repeated native addon');
+      nativeAttempted++;record('NATIVE_BINARY_LOAD_BEFORE',{phase:'engineering',role,path:resolved,sha256:sha(resolved)});
+      const result=original.apply(this,arguments);nativeCompleted++;record('NATIVE_BINARY_LOAD_AFTER',{phase:'engineering',role,path:resolved});return result;
+    }return original.apply(this,arguments);
+  };
+}
+module.exports={diagnostics:()=>({attempts,nativeAttempted,nativeCompleted,events:events.slice()})};
+if(process.env.E36_GUARD_SYNTHETIC==='1'){
+  if(process.argv[1]!==__filename)throw new Error('Synthetic guard only allowed in isolated -e preflight');
+  const original=Module._load;
+  Module._load=function(request,parent,isMain){
+    const resolved=Module._resolveFilename(request,parent,isMain);
+    if(typeof resolved==='string'&&resolved.endsWith('.node'))throw new Error('Synthetic mode forbids all native addon loads');
+    return original.apply(this,arguments);
+  };
+}else admit();

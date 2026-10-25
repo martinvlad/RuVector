@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "epoch": 36,
+  "license": "CC0-1.0",
+  "scope": "Source-complete Decimal/Fraction or compatible-world engineering oracle; not used by prediction.",
+  "cases": [
+    {
+      "id": "epoch36:cc0:paired-reader:01",
+      "mechanism": "percentage_points_versus_relative_percent",
+      "expected_label": "Entailment",
+      "oracle": {
+        "expression": "Decimal('25') - Decimal('20') == Decimal('5')",
+        "result": true,
+        "reason": "The stated percentage-point definition and both exact margins give25-20=5. Relative growth of25percent is a different unit and is not the hypothesis."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:02",
+      "mechanism": "count_weighted_mean_across_two_categories",
+      "expected_label": "Entailment",
+      "oracle": {
+        "expression": "Fraction(30*4+10*8,30+10) == Fraction(5,1)",
+        "result": true,
+        "reason": "Total mass is200kg across40packages, so the count-weighted mean is5kg. Averaging the two category masses without their counts would be incorrect."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:03",
+      "mechanism": "explicit_priority_override_changes_prohibition_into_duty",
+      "expected_label": "Entailment",
+      "oracle": {
+        "expression": "priority(emergency_order,normal_restriction) and emergency_order_demands_release_today and review_incomplete implies required_release_today",
+        "result": true,
+        "reason": "The explicit priority rule waives the ordinary review restriction for the stated order and creates a same-day duty; this is not merely a permission exception."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:04",
+      "mechanism": "successive_relative_changes_compound_on_different_bases",
+      "expected_label": "Contradiction",
+      "oracle": {
+        "expression": "Decimal('100') * Decimal('1.10') * Decimal('0.90') == Decimal('100')",
+        "result": false,
+        "reason": "The exact final value is99points, so equal-magnitude relative changes on successive bases do not restore the original100."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:05",
+      "mechanism": "aggregate_mean_does_not_make_a_universal_bound_true",
+      "expected_label": "Contradiction",
+      "oracle": {
+        "expression": "all(v >= Fraction(80,1) for v in [Fraction(70,1),Fraction(90,1)])",
+        "result": false,
+        "reason": "Lot A's exact70percent violates the universal80percent bound even though the two-lot mean is80percent."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:06",
+      "mechanism": "known_overlap_requires_inclusion_exclusion_for_unique_people",
+      "expected_label": "Contradiction",
+      "oracle": {
+        "expression": "7 + 9 - 3 == 16",
+        "result": false,
+        "reason": "The union has13distinct people, because the3overlapping people must not be counted twice. Both groups and the exact overlap are supplied."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:07",
+      "mechanism": "known_marginal_counts_leave_joint_membership_unidentified",
+      "expected_label": "NotMentioned",
+      "oracle": {
+        "compatible_worlds": [
+          {
+            "licensed_and_trained": 8,
+            "licensed_only": 4,
+            "trained_only": 0,
+            "neither": 2,
+            "hypothesis_true": true
+          },
+          {
+            "licensed_and_trained": 6,
+            "licensed_only": 6,
+            "trained_only": 2,
+            "neither": 0,
+            "hypothesis_true": false
+          }
+        ],
+        "result": null,
+        "reason": "Both worlds have14employees,12licensed and8trained. Marginal counts constrain the intersection to6through8 but do not identify it as8."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:08",
+      "mechanism": "known_two_period_mean_does_not_identify_one_period",
+      "expected_label": "NotMentioned",
+      "oracle": {
+        "compatible_worlds": [
+          {
+            "quarter1_tonnes": 20,
+            "quarter2_tonnes": 10,
+            "mean_tonnes": 15,
+            "hypothesis_true": true
+          },
+          {
+            "quarter1_tonnes": 10,
+            "quarter2_tonnes": 20,
+            "mean_tonnes": 15,
+            "hypothesis_true": false
+          }
+        ],
+        "result": null,
+        "reason": "Both exact nonnegative allocations yield the reported mean15; the mean alone does not identify whether quarter1 exceeded15."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:09",
+      "mechanism": "observational_change_does_not_identify_causation",
+      "expected_label": "NotMentioned",
+      "oracle": {
+        "compatible_worlds": [
+          {
+            "scheduling_manual_then_automatic": true,
+            "observed_rates_percent": [
+              4,
+              2
+            ],
+            "causal_rule": "defect_rate = 4 - 2 * automated_scheduling",
+            "hypothesis_true": true
+          },
+          {
+            "scheduling_manual_then_automatic": true,
+            "observed_rates_percent": [
+              4,
+              2
+            ],
+            "causal_rule": "defect_rate = 4 - 2 * independent_training_change; scheduling has no causal effect",
+            "independent_training_change_first_then_second": [
+              0,
+              1
+            ],
+            "hypothesis_true": false
+          }
+        ],
+        "result": null,
+        "reason": "A scheduling-effect world and an independent-training-effect world generate the same supplied observations. The report does not identify the counterfactual cause."
+      }
+    }
+  ]
+}

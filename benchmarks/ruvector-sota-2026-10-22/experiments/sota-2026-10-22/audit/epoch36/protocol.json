@@ -1,0 +1,266 @@
+{
+  "authored_label_mapping_sha256": "285e0a995bf0243247739aee128d28c20df706420ddcfc888942ea21dde4aa49",
+  "benchmark_accuracy": null,
+  "benchmark_generalization_claim": false,
+  "calibration_ids": [],
+  "candidate_protocol": {
+    "bytes": 3294,
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/ENGINEERING_PROTOCOL.json",
+    "sha256": "2633d8f9dedff0cce685e84524997d477da1c0c5236f6866ea5a1af26f049ef5"
+  },
+  "confirmation_ids": [],
+  "core_source_manifest": {
+    "bytes": 14226,
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/SOURCE_MANIFEST.json",
+    "sha256": "abe32dc9c616da4952fffc8adeb723f616e2eb891d551e90723d33f2d2415e4c"
+  },
+  "core_source_ready": {
+    "bytes": 12557,
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/SOURCE_READY.json",
+    "sha256": "7a9396888849ebff92bbc452249762e938cf35f1762e9b62208458c6201a2066"
+  },
+  "data_roles": {
+    "calibration": [],
+    "confirmation": [],
+    "dev": [],
+    "train": []
+  },
+  "development_ids": [],
+  "engineering_case_ids": [
+    "epoch36:cc0:paired-reader:01",
+    "epoch36:cc0:paired-reader:02",
+    "epoch36:cc0:paired-reader:03",
+    "epoch36:cc0:paired-reader:04",
+    "epoch36:cc0:paired-reader:05",
+    "epoch36:cc0:paired-reader:06",
+    "epoch36:cc0:paired-reader:07",
+    "epoch36:cc0:paired-reader:08",
+    "epoch36:cc0:paired-reader:09"
+  ],
+  "engineering_gate": {
+    "baseline": "b354_full_source",
+    "benchmark_admission": false,
+    "controls": [
+      "b354_full_source",
+      "xxlarge_native_two",
+      "xxlarge_lexical_two",
+      "xxlarge_positional_two"
+    ],
+    "each_class_required_correct": 3,
+    "full_source_model_accuracy_gain_at_least": 2,
+    "primary": "xxlarge_full_source",
+    "primary_required_correct": 9,
+    "proper_score_rule": "NONINCREASE_VS_EACH_CONTROL",
+    "proper_scores": [
+      "Brier",
+      "NLL"
+    ]
+  },
+  "engineering_only": true,
+  "epoch": 36,
+  "independent_scorer_operations": {
+    "BIND_requires": "RESULTS_AND_EXACT_PRIOR_REPLAY",
+    "actual_EVALUATE_requires": "SEPARATE_PARENT_AUTHORIZATION_AFTER_PHYSICAL_WORKER_SUPERVISOR_CLOSURE",
+    "allowed": "STANDARD_LIBRARY_HASH_JSON_SOURCE_CONTEXT_FLOAT32_RECEIPT_REPLAY_ONLY",
+    "model_tokenizer_native_execution_calls": 0,
+    "original_weight_or_benchmark_payload_reads": 0
+  },
+  "kind": "ENGINEERING_PAIRED_READER_SOURCE_COVERAGE",
+  "lifecycle_policy": {
+    "RSS_and_affinity_observed": true,
+    "allocator_or_page_cache_release_claim": false,
+    "events_per_profile": [
+      "MODEL_PHASE_START",
+      "MODEL_INITIALIZATION_COMPLETED",
+      "MODEL_READOUTS_COMPLETED",
+      "MODEL_UNLOAD_BEFORE",
+      "MODEL_UNLOAD_AFTER_GC"
+    ],
+    "profile_order": [
+      "b354",
+      "xxlarge"
+    ],
+    "reader_model_tokenizer_weakrefs_dead_before_next_profile": true,
+    "source_state_refs_disposed_before_F32": true,
+    "state_unchanged_proven_before_disposal": true
+  },
+  "metric_arms": [
+    "xxlarge_full_source",
+    "xxlarge_native_two",
+    "xxlarge_lexical_two",
+    "xxlarge_positional_two",
+    "b354_full_source",
+    "b354_native_two"
+  ],
+  "metrics_policy": {
+    "Brier": "MEAN_MULTICLASS_SUM_SQUARED_ERROR",
+    "NLL_clip_count_and_unclipped_finiteness_retained": true,
+    "NLL_clip_floor": 1e-12,
+    "accuracy_and_per_class_errors": "RETAIN_ALL_SIX_ARMS",
+    "source_coverage": "EXACT_SOURCE_UTF8_AND_NUMERIC_LITERAL_PROVENANCE_NOT_ARITHMETIC_COMPETENCE",
+    "timing_order_limit": "FIXED_SEQUENTIAL_PROFILE_ORDER_NOT_RANDOMIZED_SPEED_SUPERIORITY",
+    "timings": "ACTUAL_SINGLETON_READER_FORWARD_CONTEXT_NATIVE_QUERY_P50_P95_PLUS_WHOLE_WORKER_INIT_CLEANUP_RESOURCES"
+  },
+  "model_execution_order": [
+    "b354",
+    "xxlarge"
+  ],
+  "model_forward_counts": {
+    "b354": 18,
+    "xxlarge": 36
+  },
+  "model_profiles": {
+    "b354": {
+      "canonical_E_C_N_from_raw": [
+        0,
+        2,
+        1
+      ],
+      "native_label_order": [
+        "Entailment",
+        "NotMentioned",
+        "Contradiction"
+      ],
+      "original_weights_bytes": 870182606,
+      "original_weights_sha256": "c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b",
+      "repository": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+      "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7"
+    },
+    "xxlarge": {
+      "canonical_E_C_N_from_raw": [
+        2,
+        0,
+        1
+      ],
+      "native_label_order": [
+        "Contradiction",
+        "NotMentioned",
+        "Entailment"
+      ],
+      "original_weights_bytes": 3133958098,
+      "original_weights_sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+      "repository": "microsoft/deberta-v2-xxlarge-mnli",
+      "revision": "8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06"
+    }
+  },
+  "official_eligibility": "HOLD",
+  "oracle_policy": {
+    "all_finite_actual_readouts_required_before_join": 54,
+    "both_readers_unloaded_and_native_child_closed_before_join": true,
+    "readout_source_numeric_pair_integrity_required": true,
+    "scorer_label_source": "RETAINED_ONCE_JOINED_EXPECTED_LABELS_AUTHENTICATED_BY_FROZEN_MAPPING_HASH",
+    "scorer_oracle_traversals": 0,
+    "training_or_selection_on_confirmation_labels_allowed": false,
+    "worker_label_join_reads": 1,
+    "worker_labels_joined": 9
+  },
+  "partial_or_failure_policy": {
+    "canonical_actual_projection_before_strict_complete54_metric_gate": true,
+    "no_fabricated_partial_accuracy": true,
+    "physical_closure_before_scorer_parses_retained_raw": true,
+    "retained_errors_and_partial_lower_bounds": true,
+    "unobserved_backend_tails": "UNKNOWN"
+  },
+  "phase": "engineering",
+  "primary": "xxlarge_full_source",
+  "probability_policy": {
+    "calibration_allowed": false,
+    "certificate": null,
+    "final_forecast": "UNCHANGED_RAW_T1",
+    "fitting_allowed": false,
+    "proof_enabled_roles": [],
+    "raw_temperature": 1.0,
+    "semantic_decision_override": false,
+    "source_native_argmax_ties_preserved": true
+  },
+  "promotion_allowed": false,
+  "raw_arms": [
+    "xxlarge_full_source",
+    "xxlarge_native_two",
+    "xxlarge_lexical_two",
+    "xxlarge_positional_two",
+    "b354_full_source",
+    "b354_native_two"
+  ],
+  "raw_corpus_role": "engineering",
+  "raw_to_metric_arm": {
+    "b354_full_source": "b354_full_source",
+    "b354_native_two": "b354_native_two",
+    "xxlarge_full_source": "xxlarge_full_source",
+    "xxlarge_lexical_two": "xxlarge_lexical_two",
+    "xxlarge_native_two": "xxlarge_native_two",
+    "xxlarge_positional_two": "xxlarge_positional_two"
+  },
+  "runtime": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "CPU_threads": 2,
+    "GPU_calls": 0,
+    "NLI_forwards": 54,
+    "NLI_initializations": 2,
+    "additional_worker_or_retry_allowed": false,
+    "b354_forwards": 18,
+    "native_binary_loads": 1,
+    "native_corpus_batches": 1,
+    "native_indexes": 9,
+    "native_queries": 9,
+    "paid_calls": 0,
+    "total_seconds_including_both_initializations_and_cleanup": 600,
+    "worker_attempts": 1,
+    "xxlarge_forwards": 36
+  },
+  "schema_version": 1,
+  "scope": "Nine authored CC0 engineering cases with empty TRAIN/DEV/calibration/CONF. Larger architecture is not admitted as broadly stronger. No benchmark generalization, champion replacement, new submission or official SOTA/rank claim follows from engineering admission. Preserve submitted native104 champion.",
+  "scorer_source_ready_v1": {
+    "bytes": 15997,
+    "path": "experiments/sota-2026-10-22/audit/epoch36/SOURCE_READY_v1.json",
+    "sha256": "64770696e3cc3d3f82f2416f188f4959dd2ad563242e2e65837d2230a7a7ddf8"
+  },
+  "source_checkpoint": "d73fcce4c45f7d8f6f1c5bfbf3599ceddf560be3",
+  "source_policy": {
+    "clipping_or_fallback_allowed": false,
+    "complete_actual_native_unique_unitset_required": true,
+    "full_source_causal_scope": "NATIVE_COVERAGE_ADMISSION_ONLY_NOT_CAUSAL_RANKING_SELECTION_GAIN",
+    "full_source_character_and_numeric_coverage": 1.0,
+    "full_source_cross_model_bytes_identical": true,
+    "full_source_policy": "native-complete-source-when-pair-fits512-v1",
+    "full_source_premise": "EXACT_ORIGINAL_SUPPLIED_DOCUMENT",
+    "full_source_span": "ONE_COMPLETE_ORIGINAL_UTF8_SPAN",
+    "joint_pair_cap_each_reader": 512,
+    "native_queries_per_case": 1,
+    "native_two_cross_model_bytes_and_spans_identical": true,
+    "query": "UNCHANGED_ORIGINAL_HYPOTHESIS",
+    "retrieval_miss_can_prove_source_absence_or_insufficient_evidence": false,
+    "shared_source_partition_profile": "b354",
+    "two_group_controls": "UNCHANGED_E34_MANDATORY_TWO_COMPLETE_SOURCE_GROUPS_THEN_OPTIONAL_WHOLE_DEFINITIONS"
+  },
+  "status": "PROSPECTIVE_FIXED_FOR_SOURCE_FREEZE_BEFORE_REAL_MODEL_TOKENIZER_NATIVE",
+  "training_ids": [],
+  "training_lineage_complete": false,
+  "used_confirmation_identities": [],
+  "xxlarge_original_source": {
+    "actual_loader_map_location": "cpu",
+    "actual_named_parameter_identity_and_count": "REQUIRES_ACTUAL_STRICT_FROZEN_MODEL_CLASS_LOADING",
+    "legacy_original_load_plan_sha256": "98daf4e1807375fa785f72b8014cbd067c58bc8d1232c0a1c237c86479113fdd",
+    "mmap": false,
+    "original_metadata_bytes": 408186,
+    "original_metadata_sha256": "05e21f2e52be254c09c7cf715cd36afd1bd6f4a58b9a0710c9f1589506a07fc0",
+    "runtime_serialization_fallback_allowed": false,
+    "serialization_format": "PYTORCH_LEGACY_CONCATENATED_PICKLE_RAW_STORAGES",
+    "shared_root_storages": 9,
+    "sole_nonpersistent_buffer": "DETERMINISTIC_CONFIG_DERIVED_STOCK_POSITION_IDS",
+    "source_I64_tensors": 0,
+    "source_location_tags": [
+      "cuda:0"
+    ],
+    "source_parameter_dtype": "F16",
+    "source_position_ids_present": false,
+    "source_state_elements": 1566915075,
+    "source_state_tensor_count": 782,
+    "strict_assign": true,
+    "unsafe_unpickling_allowed": false,
+    "weights_only": true
+  }
+}

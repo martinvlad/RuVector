@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "epoch": 36,
+  "source_revision": 1,
+  "kind": "ENGINEERING_PAIRED_READER_SOURCE_COVERAGE",
+  "status": "CANDIDATE_SOURCE_READY_FOR_EXACT_REVIEW_BEFORE_MEASUREMENT",
+  "source_checkpoint": "d73fcce4c45f7d8f6f1c5bfbf3599ceddf560be3",
+  "manifest": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/SOURCE_MANIFEST.json",
+    "bytes": 14226,
+    "sha256": "abe32dc9c616da4952fffc8adeb723f616e2eb891d551e90723d33f2d2415e4c"
+  },
+  "files": 58,
+  "data_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "engineering_only": true,
+  "benchmark_accuracy": null,
+  "used_confirmation_identities": [],
+  "engineering_case_ids": [
+    "epoch36:cc0:paired-reader:01",
+    "epoch36:cc0:paired-reader:02",
+    "epoch36:cc0:paired-reader:03",
+    "epoch36:cc0:paired-reader:04",
+    "epoch36:cc0:paired-reader:05",
+    "epoch36:cc0:paired-reader:06",
+    "epoch36:cc0:paired-reader:07",
+    "epoch36:cc0:paired-reader:08",
+    "epoch36:cc0:paired-reader:09"
+  ],
+  "raw_arm_names": [
+    "xxlarge_full_source",
+    "xxlarge_native_two",
+    "xxlarge_lexical_two",
+    "xxlarge_positional_two",
+    "b354_full_source",
+    "b354_native_two"
+  ],
+  "metric_arm_names": [
+    "xxlarge_full_source",
+    "xxlarge_native_two",
+    "xxlarge_lexical_two",
+    "xxlarge_positional_two",
+    "b354_full_source",
+    "b354_native_two"
+  ],
+  "primary_arm": "xxlarge_full_source",
+  "model_order": [
+    "b354",
+    "xxlarge"
+  ],
+  "shared_partition_model": "b354",
+  "budgets": {
+    "outer_workers": 1,
+    "total_seconds_including_checks_both_inits_cleanup": 600,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "native_corpus_batches": 1,
+    "native_queries_maximum": 9,
+    "native_indexes_maximum": 9,
+    "native_binary_loads_maximum": 1,
+    "raw_NLI_maximum": 54,
+    "engineering_raw_NLI": 54,
+    "b354_raw_NLI": 18,
+    "xxlarge_raw_NLI": 36,
+    "DEV_raw_NLI": 0,
+    "model_initializations": 2,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "source_only_validation": {
+    "candidate_tests": 11,
+    "observer_fixture_tests": 15,
+    "total_pure_fixtures": 26,
+    "Node_source_syntax_checks": 2,
+    "actual_model_native_tokenizer_newDEV_or_gold_calls": 0,
+    "actual_live_observer_invocations": 0,
+    "actual_host_admission_invocations_by_source_author": 0,
+    "actual_dispatches": 0
+  },
+  "engineering_scope": "Nine newly authored and independently reviewed fictional CC0 cases, three per class, with frozen source-complete Decimal/Fraction or compatible-world oracles. This qualifies source/model/context behavior only, never a benchmark score, ClaimBench pilot, fresh confirmation, generalization, stronger-model proof or promotion.",
+  "acceptance": "Primary9/9 and3/class, at least2more correct than b354 full-source and Brier/NLL nonincrease against b354 full-source and allthree matched xxlarge two-group controls. Prospective strict ceiling, no redraw/tuning/retry.",
+  "context_policy": "mandatory-two-groups-before-optional-definitions-v1",
+  "full_source_policy": "native-complete-source-when-pair-fits512-v1",
+  "cross_model_full_source_bytes_and_native_two_bytes_spans_required_identical": true,
+  "probability_policy": "UNCHANGED_RAW_T1_PROOF_DISABLED_ALL_ROLES",
+  "proof_enabled_roles": [],
+  "native_result_shared_between_primary_and_original_control": true,
+  "native_result_shared_between_all_readers_and_arms": true,
+  "current_model_reuse": "Exact new direct/public locks cover fresh b3549 and original xxlarge5 payloads. Source format is explicitly independently reviewed legacy; safe weights-only CPU load has not yet run. G33 external venv17498 members and10native/BGE assets are separately hash-verified by root; old files untouched.",
+  "source_serialization_format": "PYTORCH_LEGACY_CONCATENATED_PICKLE_RAW_STORAGES",
+  "source_parameter_dtype": "F16",
+  "source_state_tensor_count": 782,
+  "source_floating_state_tensor_elements": 1566915075,
+  "actual_model_parameter_count": "DEFERRED_TO_SOURCE_FROZEN_STRICT_META_CLASS_AND_ACTUAL_LOAD",
+  "resource_admission": {
+    "cgroup_hard_limit_bytes": 17179869184,
+    "exact_source_plus_target_payload_bytes": 9401490450,
+    "conservative_payload_upper_bound_plus_4GiB_reserve_bytes": 13696841590,
+    "reclaimable_filecache_policy": "max(0,min(max(0,file-shmem),active_file+inactive_file)-file_dirty-file_writeback)",
+    "shmem_is_reclaimable": false,
+    "actual_host_headroom_must_pass_before_dispatch": true,
+    "cache_drop_or_limit_change_permitted": false
+  },
+  "training_lineage_complete": false,
+  "official_eligibility": "HOLD",
+  "promotion_allowed": false,
+  "confirmation": [],
+  "failure_scope": "Uncertain native start/closure/final-counter/Node-guard capture forbids final raw seal; partial UNKNOWN and actual lower bounds persist without retry. Missing complete source unitset, oversized full pair, cross-model context drift, live reader weakrefs, resource admission failure or any unsafe/alternate format path fails closed. Both readers must unload and all54 finite outputs must exist before the single nine-label join.",
+  "next_required": "Independent exact sealed source review; root masterfreeze plus connected Git SOURCE publication and actual readback; current SOURCE admission and genuine resource headroom; root one-shot dispatch only thereafter.",
+  "worker": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/worker.py",
+    "bytes": 39857,
+    "sha256": "423bc1cbbd142278a2c120046e154bd21510e29ae10146eda816adc7cd29a19d"
+  },
+  "model": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/xxlarge_model.py",
+    "bytes": 17856,
+    "sha256": "82c8b34e432f4a2098853a3f6bbbc5561339b6936ec81e1f09d9ebd2d098d53b"
+  },
+  "baseline_model": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/model.py",
+    "bytes": 15003,
+    "sha256": "8bb27dc7d79f2b0a3d27b2d7d82333b1cb442abe3eb3adfeedf4dc37f3a42f52"
+  },
+  "runtime_common": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/runtime/common.py",
+    "bytes": 32847,
+    "sha256": "60f88e7607adbc20df3505931e0c3bf96e7227350d60965d2a21c04ff7cf6e63"
+  },
+  "launch": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/runtime/launch.py",
+    "bytes": 25526,
+    "sha256": "337fff3cd15eb8eb09bbdd81e4831fee3e7a453a667437fdbecd303c82425cfc"
+  },
+  "node_guard": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/runtime/node_guard.cjs",
+    "bytes": 18285,
+    "sha256": "61581358ba7a51fe5a935a8b50642dcfa991efd877d458463d18410ad743bfdf"
+  },
+  "query_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/query.py",
+    "bytes": 931,
+    "sha256": "386d4352450c99f2a3d2b63ef09a1b8db65e5ab0f9070affa0a82532efd31285"
+  },
+  "query_policy": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/QUERY_POLICY.json",
+    "bytes": 1117,
+    "sha256": "8f2770528c37ca40a9ba433207a2be377c04b7d3af8d78fed04383acd3dc2da2"
+  },
+  "source_context": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/source_context.py",
+    "bytes": 13263,
+    "sha256": "e847c2d3819a3b469bb6a601a9633f4c8a1279d2b3a2a3e2c2d02cd82eb5c517"
+  },
+  "context_engine": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/context_engine.py",
+    "bytes": 13750,
+    "sha256": "5209a7529ce043e366b5a481f8868375242e51f7ae8c2f6b3d3586f0df1103eb"
+  },
+  "proof_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/proof.py",
+    "bytes": 1173,
+    "sha256": "20e24ed647822bda5d841fc318a14b795f27ff5d75c7b51982712e5a09c28fa0"
+  },
+  "proof_policy": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/PROOF_POLICY.json",
+    "bytes": 491,
+    "sha256": "c3c06ebfdb764d428c004740de0b1b6a63e933736e0f7a0a0a2717a433c50dd8"
+  },
+  "model_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/PRETRAINED_MODEL_SOURCE.json",
+    "bytes": 2424,
+    "sha256": "da2209195a2ea9497fa052be543868533cde5400a11f83c65f8ef9a967abb21a"
+  },
+  "baseline_model_source": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/BASELINE_MODEL_SOURCE.json",
+    "bytes": 1366,
+    "sha256": "b975c7d7e19c6e78cda70ce746d0853b0ab03c041bca9e437eda9f3f2f24075a"
+  },
+  "model_assets": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/MODEL_ASSETS.json",
+    "bytes": 2134,
+    "sha256": "288c41c5bd1ebf822f19c38ea17fbcf33d4e288402807c185462490c501bec41"
+  },
+  "baseline_model_assets": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/BASELINE_MODEL_ASSETS.json",
+    "bytes": 3878,
+    "sha256": "52fe8199386e484391f0364b1ffb1c2ee3b0b71e476c5732ab998310f6eca959"
+  },
+  "model_profiles": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/MODEL_PROFILES.json",
+    "bytes": 2502,
+    "sha256": "400bb8e14e8611009b7cc36e767c4fd1d0e685c34959f5c7790f1edc6ebd588c"
+  },
+  "counter_table": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/EXPECTED_COUNTERS.json",
+    "bytes": 8703,
+    "sha256": "c64580a9e6cf0bce5c8066da808abf17e2c844e878cdc2a06e619474cf007123"
+  },
+  "raw_schema": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/RAW_SCHEMA.json",
+    "bytes": 3626,
+    "sha256": "07f3f161c6db294d0106dc4131665fff585a48d03919badbd422d6c11b22f3bf"
+  },
+  "audit_protocol": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/ENGINEERING_PROTOCOL.json",
+    "bytes": 3294,
+    "sha256": "2633d8f9dedff0cce685e84524997d477da1c0c5236f6866ea5a1af26f049ef5"
+  },
+  "numeric_oracle": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/NUMERIC_ORACLE.json",
+    "bytes": 5663,
+    "sha256": "d9748a37d2f4dc938a93daa26a0ebf93aea803a299981146dd2fb72ed6f7600d"
+  },
+  "engineering_inputs": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/engineering.inputs.json",
+    "bytes": 6388,
+    "sha256": "10ea6398afe8e2e134de279061414dc346f4ef77155f58fa21e8f5f09c601e93"
+  },
+  "engineering_oracle": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/engineering.oracle.json",
+    "bytes": 558,
+    "sha256": "a9d84f05e43af961934c3cd12f43e5cbf65b01a528824ab802c578062f74e782"
+  },
+  "case_proposal": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/CASE_PROPOSAL.json",
+    "bytes": 12976,
+    "sha256": "ee7d9915f8848afa747435212cbfc5e64b0ff5d5c60242dea7980cd305f826a2"
+  },
+  "independent_case_review": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/research/CASE_SEMANTIC_REVIEW.json",
+    "bytes": 11479,
+    "sha256": "77ebb8f58ece72aec5aad01c44597856cdb7b43eb256e3dca6eb8f2d792bcf9e"
+  },
+  "pure_fixtures": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/research/SOURCE_ONLY_PREFLIGHT.json",
+    "bytes": 6300,
+    "sha256": "424b2749b6193bf7441834cfaa9c733eb56000bbb4e9745930f501f276ebe192"
+  },
+  "runtime_preflight": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/research/SOURCE_ONLY_PREFLIGHT.json",
+    "bytes": 6300,
+    "sha256": "424b2749b6193bf7441834cfaa9c733eb56000bbb4e9745930f501f276ebe192"
+  },
+  "preseal_correction": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/research/PRESEAL_VALIDATION_HISTORY.json",
+    "bytes": 2551,
+    "sha256": "730363e500888a08d399f2c6e7cf892bee966a08c1344a42903b888dadbd220d"
+  },
+  "observer": {
+    "path": "experiments/sota-2026-10-22/audit/epoch36/observe_supervisor_closure.py",
+    "bytes": 36993,
+    "sha256": "0188a161c616a04a6aff51c6c0ae64e3b6cacd08ebb26a5f83c745bb0f263685"
+  },
+  "observer_fixtures": {
+    "path": "experiments/sota-2026-10-22/audit/epoch36/test_observe_supervisor_closure.py",
+    "bytes": 21390,
+    "sha256": "d33e8f7bdbb91acb8209c996c01fae989b3e8ee5cabd6b7cae311faddf7736cf"
+  },
+  "root_dispatcher": {
+    "path": "experiments/sota-2026-10-22/epoch36/preparation/dispatch_once.py",
+    "bytes": 11672,
+    "sha256": "24403a33ca2f127c04f1f05c5245ac0ad86bbcd4c60b407abfe8bf93654af22d"
+  },
+  "legacy_original_load_plan": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/research/LEGACY_ORIGINAL_LOAD_PLAN.v3.json",
+    "bytes": 9830,
+    "sha256": "98daf4e1807375fa785f72b8014cbd067c58bc8d1232c0a1c237c86479113fdd"
+  },
+  "original_archive_metadata": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/research/XXL_ORIGINAL_WEIGHT_METADATA.json",
+    "bytes": 408186,
+    "sha256": "05e21f2e52be254c09c7cf715cd36afd1bd6f4a58b9a0710c9f1589506a07fc0"
+  },
+  "source_dependencies": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch36/research/SOURCE_DEPENDENCIES.json",
+    "bytes": 1809,
+    "sha256": "93436a8a006e496566aefc6fccc58263652a8aebc5eaedd1f9434e5655192da1"
+  }
+}

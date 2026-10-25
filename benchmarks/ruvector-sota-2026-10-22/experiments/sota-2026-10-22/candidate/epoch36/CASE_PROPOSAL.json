@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "epoch": 36,
+  "status": "PROPOSED_NOT_FROZEN_NOT_EXECUTED",
+  "license": "CC0-1.0",
+  "authorship": "Original fictional supplied-source cases authored for epoch36. No benchmark examples, prior authored source strings or prior hypotheses are copied.",
+  "scope": "Nine new engineering cases only, with direct full-source reader comparison and matched retrieval/context controls. Not a benchmark, ClaimBench pilot, fresh confirmation or generalization estimate.",
+  "cases": [
+    {
+      "id": "epoch36:cc0:paired-reader:01",
+      "hypothesis_id": "e36-h01",
+      "document_id": -36001,
+      "mechanism": "percentage_points_versus_relative_percent",
+      "paragraphs": [
+        "Meral Components reported an operating margin of exactly 20 percent for FY2046.",
+        "For FY2047, Meral Components reported an operating margin of exactly 25 percent.",
+        "A change in percentage points is calculated by subtracting the earlier displayed percentage from the later displayed percentage. It is different from the relative percent growth rate."
+      ],
+      "hypothesis": "Meral Components' operating margin increased by exactly 5 percentage points from FY2046 to FY2047.",
+      "expected_label": "Entailment",
+      "oracle": {
+        "expression": "Decimal('25') - Decimal('20') == Decimal('5')",
+        "result": true,
+        "reason": "The stated percentage-point definition and both exact margins give25-20=5. Relative growth of25percent is a different unit and is not the hypothesis."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:02",
+      "hypothesis_id": "e36-h02",
+      "document_id": -36002,
+      "mechanism": "count_weighted_mean_across_two_categories",
+      "paragraphs": [
+        "The Avenor consignment contains exactly 30 small packages, each with a mass of 4 kilograms.",
+        "It also contains exactly 10 large packages, each with a mass of 8 kilograms. These are all the packages in the consignment.",
+        "The average package mass means total package mass divided by the number of packages, counting each individual package once."
+      ],
+      "hypothesis": "The average mass of a package in the Avenor consignment is exactly 5 kilograms.",
+      "expected_label": "Entailment",
+      "oracle": {
+        "expression": "Fraction(30*4+10*8,30+10) == Fraction(5,1)",
+        "result": true,
+        "reason": "Total mass is200kg across40packages, so the count-weighted mean is5kg. Averaging the two category masses without their counts would be incorrect."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:03",
+      "hypothesis_id": "e36-h03",
+      "document_id": -36003,
+      "mechanism": "explicit_priority_override_changes_prohibition_into_duty",
+      "paragraphs": [
+        "Normally, Talven must not release a safety bulletin until its board has completed a review.",
+        "The policy expressly gives an emergency regulator order priority over that restriction. If such an order demands release that day, Talven must release the named bulletin that day even when board review is incomplete.",
+        "On 18 July 2048, Talven received an emergency regulator order demanding release of Bulletin R that day. Board review of Bulletin R was incomplete."
+      ],
+      "hypothesis": "Talven was required to release Bulletin R on 18 July 2048 despite the incomplete board review.",
+      "expected_label": "Entailment",
+      "oracle": {
+        "expression": "priority(emergency_order,normal_restriction) and emergency_order_demands_release_today and review_incomplete implies required_release_today",
+        "result": true,
+        "reason": "The explicit priority rule waives the ordinary review restriction for the stated order and creates a same-day duty; this is not merely a permission exception."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:04",
+      "hypothesis_id": "e36-h04",
+      "document_id": -36004,
+      "mechanism": "successive_relative_changes_compound_on_different_bases",
+      "paragraphs": [
+        "The Rydell price index began September 2049 at exactly 100 points.",
+        "It first increased by exactly 10 percent. It then decreased by exactly 10 percent, with the decrease calculated from the already increased index rather than from the original index.",
+        "No other index adjustment occurred during September."
+      ],
+      "hypothesis": "The Rydell price index ended September 2049 at the same value at which it began the month.",
+      "expected_label": "Contradiction",
+      "oracle": {
+        "expression": "Decimal('100') * Decimal('1.10') * Decimal('0.90') == Decimal('100')",
+        "result": false,
+        "reason": "The exact final value is99points, so equal-magnitude relative changes on successive bases do not restore the original100."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:05",
+      "hypothesis_id": "e36-h05",
+      "document_id": -36005,
+      "mechanism": "aggregate_mean_does_not_make_a_universal_bound_true",
+      "paragraphs": [
+        "In the 2050 inspection, Korven measured a yield of exactly 70 percent for Lot A and exactly 90 percent for Lot B.",
+        "Those were the only two inspected lots. Their unweighted mean yield was exactly 80 percent.",
+        "Each lot's individual yield remains the value measured for that lot; the reported mean does not replace either individual result."
+      ],
+      "hypothesis": "Every lot inspected by Korven in 2050 had a yield of at least 80 percent.",
+      "expected_label": "Contradiction",
+      "oracle": {
+        "expression": "all(v >= Fraction(80,1) for v in [Fraction(70,1),Fraction(90,1)])",
+        "result": false,
+        "reason": "Lot A's exact70percent violates the universal80percent bound even though the two-lot mean is80percent."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:06",
+      "hypothesis_id": "e36-h06",
+      "document_id": -36006,
+      "mechanism": "known_overlap_requires_inclusion_exclusion_for_unique_people",
+      "paragraphs": [
+        "Selnor's 2051 project roster lists exactly 7 people with engineering duties and exactly 9 people with sales duties.",
+        "Exactly 3 people appear in both duty groups. Everyone on the project has engineering duties, sales duties, or both; no one outside these groups is on the project.",
+        "A person with both duties is counted once when reporting the number of distinct people on the project."
+      ],
+      "hypothesis": "Selnor's project roster contains exactly 16 distinct people in 2051.",
+      "expected_label": "Contradiction",
+      "oracle": {
+        "expression": "7 + 9 - 3 == 16",
+        "result": false,
+        "reason": "The union has13distinct people, because the3overlapping people must not be counted twice. Both groups and the exact overlap are supplied."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:07",
+      "hypothesis_id": "e36-h07",
+      "document_id": -36007,
+      "mechanism": "known_marginal_counts_leave_joint_membership_unidentified",
+      "paragraphs": [
+        "Darelin's entire 2052 workforce consists of exactly 14 employees.",
+        "Exactly 12 employees hold an operator licence, and exactly 8 employees completed first-aid training.",
+        "The workforce summary gives these two totals but does not identify which employees belong to both groups."
+      ],
+      "hypothesis": "Exactly 8 Darelin employees both hold an operator licence and completed first-aid training in 2052.",
+      "expected_label": "NotMentioned",
+      "oracle": {
+        "compatible_worlds": [
+          {"licensed_and_trained": 8,"licensed_only": 4,"trained_only": 0,"neither": 2,"hypothesis_true": true},
+          {"licensed_and_trained": 6,"licensed_only": 6,"trained_only": 2,"neither": 0,"hypothesis_true": false}
+        ],
+        "result": null,
+        "reason": "Both worlds have14employees,12licensed and8trained. Marginal counts constrain the intersection to6through8 but do not identify it as8."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:08",
+      "hypothesis_id": "e36-h08",
+      "document_id": -36008,
+      "mechanism": "known_two_period_mean_does_not_identify_one_period",
+      "paragraphs": [
+        "For the first and second quarters of 2053, Mevran's output averaged exactly 15 tonnes per quarter.",
+        "The average is the total output of those two quarters divided by two. Each quarter's output was nonnegative.",
+        "The summary does not give separate output figures for the two quarters."
+      ],
+      "hypothesis": "Mevran produced more than 15 tonnes in the first quarter of 2053.",
+      "expected_label": "NotMentioned",
+      "oracle": {
+        "compatible_worlds": [
+          {"quarter1_tonnes": 20,"quarter2_tonnes": 10,"mean_tonnes": 15,"hypothesis_true": true},
+          {"quarter1_tonnes": 10,"quarter2_tonnes": 20,"mean_tonnes": 15,"hypothesis_true": false}
+        ],
+        "result": null,
+        "reason": "Both exact nonnegative allocations yield the reported mean15; the mean alone does not identify whether quarter1 exceeded15."
+      }
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:09",
+      "hypothesis_id": "e36-h09",
+      "document_id": -36009,
+      "mechanism": "observational_change_does_not_identify_causation",
+      "paragraphs": [
+        "Vesmar used manual scheduling in the first quarter of 2054, when exactly 4 percent of its produced units were defective.",
+        "It used automated scheduling in the second quarter, when exactly 2 percent of produced units were defective. Each quarter had exactly 10000 produced units.",
+        "The operations summary reports the scheduling method and observed defect totals for these quarters. It does not report a causal experiment or attribute the decline to a particular cause."
+      ],
+      "hypothesis": "Vesmar's switch to automated scheduling caused its defect rate to decline from the first to the second quarter of 2054.",
+      "expected_label": "NotMentioned",
+      "oracle": {
+        "compatible_worlds": [
+          {"scheduling_manual_then_automatic": true,"observed_rates_percent": [4,2],"causal_rule": "defect_rate = 4 - 2 * automated_scheduling","hypothesis_true": true},
+          {"scheduling_manual_then_automatic": true,"observed_rates_percent": [4,2],"causal_rule": "defect_rate = 4 - 2 * independent_training_change; scheduling has no causal effect","independent_training_change_first_then_second": [0,1],"hypothesis_true": false}
+        ],
+        "result": null,
+        "reason": "A scheduling-effect world and an independent-training-effect world generate the same supplied observations. The report does not identify the counterfactual cause."
+      }
+    }
+  ],
+  "protocol": {
+    "roles": {"TRAIN": [],"DEV": [],"calibration": [],"CONF": [],"used_confirmation_identities": []},
+    "raw_corpus_role": "engineering",
+    "raw_arms": ["xxlarge_full_source","xxlarge_native_two","xxlarge_lexical_two","xxlarge_positional_two","b354_full_source","b354_native_two"],
+    "primary": "xxlarge_full_source",
+    "source_policy": "Original full supplied document on both full-source arms, with actual complete native unique-unit coverage verified; fulljointpair must fit512 separately under both pinned tokenizers. No clipping, fallback, source rewrite or inference from a retrieval omission.",
+    "two_group_controls": "Unchanged E34 complete-source-group packer with original native, lexical and positional rankings; rawT1 and proof disabled on every arm. Each case uses one native query shared across all relevant arms and both readers.",
+    "oracle_access": "Worker joins9expected labels exactly once only after all54 measured finite neural forecasts; scorer uses retained joined records rather than reparsing oracle labels.",
+    "gates": "Engineering only: primary9/9, each class3/3, at least2more correct than b354_full_source, Brier/NLL nonincrease versus b354_full_source and the three matched xxlarge two-group controls. The strict two-correct ceiling is prospectively accepted even if it rejects a perfect primary when baseline exceeds7/9.",
+    "runtime": {"worker_attempts": 1,"native_corpus_batches": 1,"native_queries": 9,"native_indexes": 9,"native_binary_loads": 1,"NLI_initializations": 2,"NLI_forwards": 54,"xxlarge_forwards": 36,"b354_forwards": 18,"CPU_affinity": [0,1],"total_seconds_including_both_initializations_and_cleanup": 600,"paid_calls": 0,"GPU_calls": 0},
+    "model_claims": "The xxlarge candidate is materially larger but is not admitted as materially stronger before measurement. Any accepted engineering comparison remains limited to this authored corpus; training lineage and publisher eligibility HOLD remain.",
+    "measurement_policy": "Freeze every input, source-complete oracle, reader/asset/scorer revision, role and gate before real tokenizer/native/model measurement. No empirical case selection, tuning or retry. Retain failures and uncertainty."
+  }
+}

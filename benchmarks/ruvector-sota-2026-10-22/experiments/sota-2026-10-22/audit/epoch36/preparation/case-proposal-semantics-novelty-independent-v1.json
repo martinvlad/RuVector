@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "epoch": 36,
+  "status": "NEW_AUTHORED_CASE_SEMANTICS_AND_NOVELTY_APPROVED_ENGINEERING_ONLY_PREMEASUREMENT",
+  "checks_passed": true,
+  "source_proposal": {
+    "path": "/workspace/ruvector-e36-engineering-impl/project/experiments/sota-2026-10-22/candidate/epoch36/CASE_PROPOSAL.json",
+    "bytes": 12976,
+    "sha256": "ee7d9915f8848afa747435212cbfc5e64b0ff5d5c60242dea7980cd305f826a2"
+  },
+  "expected_label_mapping": {
+    "epoch36:cc0:paired-reader:01": "Entailment",
+    "epoch36:cc0:paired-reader:02": "Entailment",
+    "epoch36:cc0:paired-reader:03": "Entailment",
+    "epoch36:cc0:paired-reader:04": "Contradiction",
+    "epoch36:cc0:paired-reader:05": "Contradiction",
+    "epoch36:cc0:paired-reader:06": "Contradiction",
+    "epoch36:cc0:paired-reader:07": "NotMentioned",
+    "epoch36:cc0:paired-reader:08": "NotMentioned",
+    "epoch36:cc0:paired-reader:09": "NotMentioned"
+  },
+  "expected_label_mapping_canonical_SHA256": "285e0a995bf0243247739aee128d28c20df706420ddcfc888942ea21dde4aa49",
+  "case_checks": [
+    {
+      "id": "epoch36:cc0:paired-reader:01",
+      "independent_label": "Entailment",
+      "author_label": "Entailment",
+      "agrees": true,
+      "exact_reasoning": {
+        "percentage_point_delta": "5",
+        "relative_growth_fraction": "1/4",
+        "distinct_units": true
+      },
+      "material_new_mechanism": "Difference of displayed rates in percentage points, distinct from relative growth; old E35 fixed quotient did not test the distinction.",
+      "known_old_motif_overlap": "Generic entailment/contradiction/unknown classification only; no prior source/hypothesis copied."
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:02",
+      "independent_label": "Entailment",
+      "author_label": "Entailment",
+      "agrees": true,
+      "exact_reasoning": {
+        "total_mass_kg": "200",
+        "package_count": 40,
+        "count_weighted_mean_kg": "5"
+      },
+      "material_new_mechanism": "Unequal counts weight two categories in a mean; requires multiply/add/divide and whole-population closure, unlike one ratio or unit conversion.",
+      "known_old_motif_overlap": "Generic entailment/contradiction/unknown classification only; no prior source/hypothesis copied."
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:03",
+      "independent_label": "Entailment",
+      "author_label": "Entailment",
+      "agrees": true,
+      "exact_reasoning": {
+        "normal_review_restriction": true,
+        "board_review_incomplete": true,
+        "emergency_order_demands_same_day": true,
+        "explicit_emergency_priority": true,
+        "effective_same_day_release_duty": true
+      },
+      "material_new_mechanism": "Explicit priority resolves a normal prohibition into a same-day positive duty after a named emergency order.",
+      "known_old_motif_overlap": "E25/E32/E35 already tested permissions, prohibitions and exceptions. This repeats a broad deontic motif, but adds explicit precedence and an obligation rather than merely a permitted exception; disclose that overlap."
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:04",
+      "independent_label": "Contradiction",
+      "author_label": "Contradiction",
+      "agrees": true,
+      "exact_reasoning": {
+        "exact_final_points": "99.0000",
+        "initial_points": "100",
+        "equal_and_opposite_relative_rates_do_not_cancel": true
+      },
+      "material_new_mechanism": "Compounding sequential relative changes on updated bases; distinct from E35 direct signed cash-flow addition.",
+      "known_old_motif_overlap": "Generic entailment/contradiction/unknown classification only; no prior source/hypothesis copied."
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:05",
+      "independent_label": "Contradiction",
+      "author_label": "Contradiction",
+      "agrees": true,
+      "exact_reasoning": {
+        "lot_yields_percent": [
+          70,
+          90
+        ],
+        "unweighted_mean_percent": 80,
+        "counterexample": "Lot A =70 <80",
+        "universal_claim_false": true
+      },
+      "material_new_mechanism": "Universal individual bound contradicted by a named observation despite an aggregate mean.",
+      "known_old_motif_overlap": "Old E35 used scalar thresholds; this shares comparison vocabulary but adds a universal quantifier/aggregate-to-individual scope distinction."
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:06",
+      "independent_label": "Contradiction",
+      "author_label": "Contradiction",
+      "agrees": true,
+      "exact_reasoning": {
+        "engineering": 7,
+        "sales": 9,
+        "intersection": 3,
+        "union": 13,
+        "closed_roster": true,
+        "hypothesized_unique_people": 16
+      },
+      "material_new_mechanism": "Finite set inclusion/exclusion with an exact overlap and explicit whole-roster closure, not a simple disjoint sum.",
+      "known_old_motif_overlap": "Generic entailment/contradiction/unknown classification only; no prior source/hypothesis copied."
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:07",
+      "independent_label": "NotMentioned",
+      "author_label": "NotMentioned",
+      "agrees": true,
+      "exact_reasoning": {
+        "intersection_range": [
+          6,
+          8
+        ],
+        "consistent_truth_opposite_worlds": [
+          {
+            "licensed_and_trained": 8,
+            "licensed_only": 4,
+            "trained_only": 0,
+            "neither": 2,
+            "hypothesis_true": true
+          },
+          {
+            "licensed_and_trained": 6,
+            "licensed_only": 6,
+            "trained_only": 2,
+            "neither": 0,
+            "hypothesis_true": false
+          }
+        ]
+      },
+      "material_new_mechanism": "Marginal counts and population constrain but do not identify an intersection.",
+      "known_old_motif_overlap": "Shares the open-world principle with E35 missing-denominator/scope cases, but uses two known marginals plus an exact total and a nontrivial feasible interval."
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:08",
+      "independent_label": "NotMentioned",
+      "author_label": "NotMentioned",
+      "agrees": true,
+      "exact_reasoning": {
+        "consistent_truth_opposite_worlds": [
+          {
+            "quarter1_tonnes": 20,
+            "quarter2_tonnes": 10,
+            "mean_tonnes": 15,
+            "hypothesis_true": true
+          },
+          {
+            "quarter1_tonnes": 10,
+            "quarter2_tonnes": 20,
+            "mean_tonnes": 15,
+            "hypothesis_true": false
+          }
+        ]
+      },
+      "material_new_mechanism": "An exact aggregate mean leaves one nonnegative component unidentified.",
+      "known_old_motif_overlap": "Shares unknown-period/scope reasoning broadly with E35, but both periods are constrained by a supplied exact mean instead of an entirely absent future-year amount."
+    },
+    {
+      "id": "epoch36:cc0:paired-reader:09",
+      "independent_label": "NotMentioned",
+      "author_label": "NotMentioned",
+      "agrees": true,
+      "exact_reasoning": {
+        "observed_rates_percent": [
+          4,
+          2
+        ],
+        "produced_units_each": 10000,
+        "observed_defective_counts": [
+          400,
+          200
+        ],
+        "scheduling_effect_world_percentage_points": 2,
+        "independent_training_effect_world_scheduling_effect": 0,
+        "both_satisfy_supplied_observations": true
+      },
+      "material_new_mechanism": "Distinct observational-versus-causal inference with explicit observational equivalence and different counterfactual effects; not previously present in authored cases.",
+      "known_old_motif_overlap": "Generic entailment/contradiction/unknown classification only; no prior source/hypothesis copied."
+    }
+  ],
+  "class_balance": {
+    "Entailment": 3,
+    "Contradiction": 3,
+    "NotMentioned": 3
+  },
+  "new_documents_and_hypotheses_distinct": true,
+  "source_word_counts": [
+    51,
+    56,
+    73,
+    47,
+    57,
+    64,
+    40,
+    46,
+    73
+  ],
+  "old_authored_only_sources_verified": [
+    {
+      "path": "experiments/sota-2026-10-22/legal-transfer/epoch25/engineering-inputs.json",
+      "bytes": 3453,
+      "sha256": "fd9654515677e013f01230c1ceaabc66f9d1375414abe58d3430a544276bb6cf",
+      "actual_Git_blob": "28cdfd24b903ec68879627545b67e10eb374a115"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/audit/epoch28/engineering-inputs.json",
+      "bytes": 43086,
+      "sha256": "c3a83ae2a834ecfe534ec421eea21e7414586cc9858e400d105ce5657ad1cc45",
+      "actual_Git_blob": "1a25702d0361c21314642bcf64662f7bd1bad9fc"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch32/engineering.inputs.json",
+      "bytes": 2983,
+      "sha256": "67ed866caebde5e7e7a43cfdf8413c18947f2d643eb660ebb2ea016a80a087f6",
+      "actual_Git_blob": "311c487ae4350a22909a24a0181ec5dd0409447d"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch35/engineering.inputs.json",
+      "bytes": 8611,
+      "sha256": "07d4c053a383eac53380409b10d38435aabe8ee383b8bae8015976dff59e8229",
+      "actual_Git_blob": "f6dfc16ba967101588597b7f1f3df7ef93527603"
+    }
+  ],
+  "old_authored_records_compared": 32,
+  "original_benchmark_annotations_read": 0,
+  "current_model_tokenizer_native_scoring_or_oracle_runtime_traversals": 0,
+  "source_fixture_author_oracle_semantics_reviewed": 9,
+  "external_mutations": 0,
+  "scientific_design_notes": [
+    "A new original xxlarge reader plus a direct same-premise b354 comparison is materially different from another E35 rank/query grid; no pretrained strength or official eligibility is established by this proposal.",
+    "The full-source primary uses native output as a source-coverage admission check; semantic native ranking affects the two-group controls. Do not claim causal native retrieval selection gain for the full-source primary.",
+    "The9/9,eachclass3/3,+2correct over b354full and all frozen proper-score conditions must all pass. A perfect primary may still fail the+2 gate if b354full is8or9; this prospective ceiling must not cause redraw or tuning.",
+    "Exact full-source premise equality across reader arms is required, with separate source-frozen tokenizers and fail-closed512 joint token limits. Word count is not tokenizer or runtime measurement.",
+    "Use original unchanged hypotheses; exact raw label mapping comes from the pinned source, never from observed case labels.",
+    "Full-source truth defines labels; retrieval omissions cannot prove absence. One oracle label join after54forecasts; scorer uses existing joined records.",
+    "One shared native corpus9queries/indexes and two sequential model lifecycles; no overlap, training, calibration, DEV,CONF,proof/numerical solver override, paid calls,GPU or retry. All initialization/cleanup remains within600s total."
+  ],
+  "preconditions": [
+    "Freeze exact separate label-free input and oracle bytes and bind this label-map digest before any real tokenizer/native/model measurements",
+    "Verify actual two-group rankings and source-group byte provenance; full-source arm must equal unmodified supplied document",
+    "Separate source/runtime/model/scorer/label-index admission and actual SOURCE publication/readback are still required",
+    "Engineering pass never authorizes benchmark confirmation, promotion, new submission or SOTA claim"
+  ],
+  "created_before_measurement": true,
+  "checked_at_unix": 1792915332.4266813
+}

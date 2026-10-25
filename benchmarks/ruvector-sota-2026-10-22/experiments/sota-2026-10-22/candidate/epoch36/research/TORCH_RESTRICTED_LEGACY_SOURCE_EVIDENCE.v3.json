@@ -1,0 +1,53 @@
+{
+  "schema_version": 3,
+  "epoch": 36,
+  "status": "PINNED_TORCH_SOURCE_STATIC_RESTRICTED_LEGACY_PATH_VERIFIED_NO_TORCH_IMPORT",
+  "member_manifest_sha256": "87254bbf6ec2aba6d08a4b55ff189faf29f78e1b1dd278fe8ffef9a8cc5523b9",
+  "serialization_member": {
+    "path": "lib/python3.12/site-packages/torch/serialization.py",
+    "bytes": 84598,
+    "sha256": "8263ad671446bb287b1d343309dfa7dcd4aa12ec37e89498b2522bf840e905e0",
+    "wheel": "torch-2.7.1+cpu-cp312-cp312-manylinux_2_28_x86_64.whl"
+  },
+  "source_findings": [
+    {
+      "lines": [
+        64,
+        65
+      ],
+      "finding": "Legacy MAGIC_NUMBER0x1950A86A20F9469CFC6C and PROTOCOL_VERSION1001 declared."
+    },
+    {
+      "lines": [
+        1095,
+        1108
+      ],
+      "finding": "Legacy persistent storage ID has sixfields including optional view_metadata."
+    },
+    {
+      "lines": [
+        1110,
+        1139
+      ],
+      "finding": "Legacy save emits magic, protocol,sys_info,obj,serialized_storage_keys, then _write_file(save_size=True,element_size) rawstorages."
+    },
+    {
+      "lines": [
+        1541,
+        1547
+      ],
+      "finding": "When weights_only istrue, nonZIP load routes explicitly to _legacy_load(opened_file,map_location,_weights_only_unpickler,...). No unrestricted pickle module is passed on thisbranch."
+    },
+    {
+      "lines": [
+        1799,
+        1825
+      ],
+      "finding": "Restricted legacy loader parses the first five metadata objects then _set_from_file per listed storage using elementsize; mmap is a ZIP-only capability and mustbeFalse for thispayload."
+    }
+  ],
+  "scope": "Static AST/text inspection of independently hash-pinned installed Torch2.7.1CPU source. It establishes availability of the restricted legacy path; actual model loading, time, memory and quality remain untested.",
+  "actual_Torch_imports_or_calls": 0,
+  "actual_unpickling_calls": 0,
+  "metadata_pickletools_transitive_import_note": "Stdlib pickletools may import the stdlib pickle module for opcode definitions. Neither inspector nor decoder calls pickle.load/loads/Unpickler, resolves a checkpoint GLOBAL or importsTorch."
+}

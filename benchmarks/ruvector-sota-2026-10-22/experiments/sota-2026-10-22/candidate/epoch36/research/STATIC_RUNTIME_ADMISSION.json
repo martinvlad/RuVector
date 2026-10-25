@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "epoch": 36,
+  "model": "microsoft/deberta-v2-xxlarge-mnli",
+  "scope": "Static source/AST inspection only, no ML imports or execution. APIs establish possible bounded original-weight load design, not this checkpoint format/dtype/runtime success.",
+  "member_manifest": {
+    "path": "experiments/sota-2026-10-22/epoch26/preparation/runtime-members/python-wheel-members.json",
+    "bytes": 4640799,
+    "sha256": "87254bbf6ec2aba6d08a4b55ff189faf29f78e1b1dd278fe8ffef9a8cc5523b9"
+  },
+  "verified_members": [
+    {
+      "path": "lib/python3.12/site-packages/torch/serialization.py",
+      "bytes": 84598,
+      "sha256": "8263ad671446bb287b1d343309dfa7dcd4aa12ec37e89498b2522bf840e905e0"
+    },
+    {
+      "path": "lib/python3.12/site-packages/torch/nn/modules/module.py",
+      "bytes": 125884,
+      "sha256": "93ea15db35d0d605228826b9c110e450399015f7a74adbdb32a194599d0dda0e"
+    },
+    {
+      "path": "lib/python3.12/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py",
+      "bytes": 57184,
+      "sha256": "fe5915e35c6f26b895b9285ad31d81fcdfc261f83b90d33df6d8542173283856"
+    },
+    {
+      "path": "lib/python3.12/site-packages/transformers/modeling_utils.py",
+      "bytes": 305342,
+      "sha256": "3fb801fc5b5a14a2396bebb9d503dee6a88213e2a2ce56ac9041c488e7f8566a"
+    }
+  ],
+  "torch_load_weights_only_available": true,
+  "torch_load_mmap_available": true,
+  "torch_load_mmap_requires_new_zip_serialization": true,
+  "Module_load_state_dict_assign_available": true,
+  "meta_construction_required_to_avoid_full_random_F32_plus_state_duplicate": true,
+  "no_safetensors_asset_listed": true,
+  "weights_archive_format_and_source_dtype": "UNVERIFIED_WITHOUT_WEIGHT_BYTES; no bytes fetched",
+  "expected_raw_to_E_C_N": [
+    2,
+    0,
+    1
+  ],
+  "existing_b354_raw_to_E_C_N": [
+    0,
+    2,
+    1
+  ],
+  "actual_parameter_count": "NOT_VERIFIED; official model card states1.5B total; API offers original3133958098B PyTorch file",
+  "F32_parameter_payload_if_exactly_1_5B": 6000000000,
+  "CPU2_600_seconds_feasibility": "UNVERIFIED; no measured xxlarge initialization/forward/tokenizer/working-set data; no linear speedup or generic architecture-quality assumption",
+  "safe_load_proposal": [
+    "Download only after root freezes exact original commit/LFS size+SHA and a reviewed disk/memory/time/cleanup plan, and enough free space is actually observed.",
+    "Inspect local archive framing without unpickling; use torch.load(weights_only=True,map_location=cpu,mmap=True) only if zip format permits; no unsafe-pickle/remote-code fallback.",
+    "Construct exact config under torch.device(meta), require strict key/shape/head checks, assign original tensors, release state references and convert admitted model to F32 once. Verify exact named dtype/count/header; reject unexpected keys, unsupported archive or budget before inference.",
+    "Original labels C/N/E need canonical E/C/N reorder2/0/1; never reuse b3540/2/1.",
+    "Freeze candidate/scorer/input identities and all empty benchmark roles before any tokenizer/model/native measurement. At most one engineering worker/corpus and600seconds including load/cleanup; timeout retains failures, no retry.",
+    "Do not claim benchmark eligibility, pretraining exclusion or material strength from model size, card metrics on different splits, or successful source-only loading API inspection."
+  ],
+  "actual_weights_downloads": 0,
+  "actual_model_tokenizer_native_calls": 0,
+  "actual_unsafe_deserializations": 0
+}

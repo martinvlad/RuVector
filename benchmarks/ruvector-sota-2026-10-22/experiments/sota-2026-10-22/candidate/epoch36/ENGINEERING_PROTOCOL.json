@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "epoch": 36,
+  "kind": "ENGINEERING_PAIRED_READER_SOURCE_COVERAGE",
+  "status": "PROSPECTIVE_FIXED_BEFORE_MEASUREMENT",
+  "engineering_only": true,
+  "benchmark_accuracy": null,
+  "benchmark_generalization_claim": false,
+  "promotion_allowed": false,
+  "training_lineage_complete": false,
+  "official_eligibility": "HOLD",
+  "data_roles": {
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": []
+  },
+  "engineering_case_ids": [
+    "epoch36:cc0:paired-reader:01",
+    "epoch36:cc0:paired-reader:02",
+    "epoch36:cc0:paired-reader:03",
+    "epoch36:cc0:paired-reader:04",
+    "epoch36:cc0:paired-reader:05",
+    "epoch36:cc0:paired-reader:06",
+    "epoch36:cc0:paired-reader:07",
+    "epoch36:cc0:paired-reader:08",
+    "epoch36:cc0:paired-reader:09"
+  ],
+  "model_order": [
+    "b354",
+    "xxlarge"
+  ],
+  "shared_partition_model": "b354",
+  "cross_model_native_two_premise_and_spans_must_match": true,
+  "roles": {
+    "TRAIN": [],
+    "DEV": [],
+    "calibration": [],
+    "CONF": [],
+    "used_confirmation_identities": []
+  },
+  "raw_corpus_role": "engineering",
+  "raw_arms": [
+    "xxlarge_full_source",
+    "xxlarge_native_two",
+    "xxlarge_lexical_two",
+    "xxlarge_positional_two",
+    "b354_full_source",
+    "b354_native_two"
+  ],
+  "primary": "xxlarge_full_source",
+  "source_policy": "Original full supplied document on both full-source arms, with actual complete native unique-unit coverage verified; fulljointpair must fit512 separately under both pinned tokenizers. No clipping, fallback, source rewrite or inference from a retrieval omission.",
+  "two_group_controls": "Unchanged E34 complete-source-group packer with original native, lexical and positional rankings; rawT1 and proof disabled on every arm. Each case uses one native query shared across all relevant arms and both readers.",
+  "oracle_access": "Worker joins9expected labels exactly once only after all54 measured finite neural forecasts; scorer uses retained joined records rather than reparsing oracle labels.",
+  "gates": "Engineering only: primary9/9, each class3/3, at least2more correct than b354_full_source, Brier/NLL nonincrease versus b354_full_source and the three matched xxlarge two-group controls. The strict two-correct ceiling is prospectively accepted even if it rejects a perfect primary when baseline exceeds7/9.",
+  "runtime": {
+    "worker_attempts": 1,
+    "native_corpus_batches": 1,
+    "native_queries": 9,
+    "native_indexes": 9,
+    "native_binary_loads": 1,
+    "NLI_initializations": 2,
+    "NLI_forwards": 54,
+    "xxlarge_forwards": 36,
+    "b354_forwards": 18,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "total_seconds_including_both_initializations_and_cleanup": 600,
+    "paid_calls": 0,
+    "GPU_calls": 0
+  },
+  "model_claims": "The xxlarge candidate is materially larger but is not admitted as materially stronger before measurement. Any accepted engineering comparison remains limited to this authored corpus; training lineage and publisher eligibility HOLD remain.",
+  "measurement_policy": "Freeze every input, source-complete oracle, reader/asset/scorer revision, role and gate before real tokenizer/native/model measurement. No empirical case selection, tuning or retry. Retain failures and uncertainty."
+}

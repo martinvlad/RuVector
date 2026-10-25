@@ -1,0 +1,116 @@
+"""Pure authored probabilities/lifecycle/source fixtures; no scientific evaluation."""
+import base64,copy,hashlib,json,math,struct,sys
+from pathlib import Path
+from data_common import require,canonical,digest,expected,AUTHORED_LABEL_MAP_SHA256,CLASSES
+from nli_metrics import ARMS,PRIMARY,PROFILES,reader_check,metrics,engineering_gates,paired_differences
+from decision_proof_audit import decision_check
+from evidence_audit import block_digests
+from source_coverage_audit import full_context_check,NUMBER
+from group_audit import source_groups
+from lifecycle_audit import audit_lifecycle
+CHECKS=[]
+def yes(name,call):
+    call();CHECKS.append({'name':name,'passed':True})
+def no(name,call):
+    try:call()
+    except (ValueError,KeyError,TypeError,IndexError):CHECKS.append({'name':name,'passed':True});return
+    raise AssertionError('Expected refusal: '+name)
+def fixture_reader(tag,logits):
+    spec=PROFILES[tag];shift=[math.exp(v-max(logits))for v in logits];total=math.fsum(shift);raw=[v/total for v in shift];p=[raw[i]for i in spec['canonical']];winner=max(range(3),key=lambda i:logits[i]);source='A source with Δ.';hyp='A hypothesis.'
+    r=dict(model_tag=tag,raw_logits=logits,native_label_order=spec['order'],canonical_E_C_N_from_raw=spec['canonical'],probabilities_E_C_N=p,probabilities_native_order=raw,actual_logits_shape=[1,3],temperature=1.0,calibrated=False,semantic_decision_override=False,model_weights_sha256=spec['sha'],native_label_index=winner,native_typed_argmax=spec['order'][winner],native_binary_probabilities_Yes_No={'Yes':p[0],'No':p[1]+p[2]},native_binary_decision='Yes'if p[0]>.5 else'No',pair_tokens=20,full_pair_tokens=20,max_pair_tokens=512,hidden_truncation=False,premise_sha256=digest(source.encode()),hypothesis_sha256=digest(hyp.encode()),native_pair_input_ids_sha256='a'*64,reader_seconds=.3,forward_seconds=.2)
+    r[spec['logit_alias']]=logits;r[spec['probability_alias']]=raw
+    r.update(actual_logits_dtype='torch.float32',actual_logits_device='cpu',model_repository=spec['repository'],model_revision=spec['revision'])
+    return r,source,hyp
+def rc(r,s,h):return reader_check(r,s,h,20,r['model_tag'])
+for tag in PROFILES:
+    for winner in range(3):
+        logits=[-2.,-2.,-2.];logits[winner]=3.;r,s,h=fixture_reader(tag,logits)
+        yes(tag+'_source_order_'+str(winner),lambda r=r,s=s,h=h:require(rc(r,s,h)['prediction']=={'Entailment':'entailment','Contradiction':'contradiction','NotMentioned':'not_mentioned'}[r['native_typed_argmax']],'Wrong source order'))
+    r,s,h=fixture_reader(tag,[0.,0.,0.]);yes(tag+'_source_specific_tie',lambda r=r,s=s,h=h:require(rc(r,s,h)['prediction']==('entailment'if tag=='b354'else'contradiction'),'Wrong tie'))
+    r,s,h=fixture_reader(tag,[10000.,9998.,9999.]);yes(tag+'_stable_large_logits',lambda r=r,s=s,h=h:rc(r,s,h))
+    for key,bad in [('canonical_E_C_N_from_raw',[0,1,2]),('native_label_order',['Entailment','Contradiction','NotMentioned']),('model_weights_sha256','0'*64),('model_revision','0'*40),('temperature',2.),('hidden_truncation',True),('native_label_index',2),('full_pair_tokens',21),('semantic_decision_override',True),('reader_seconds',float('nan')),('actual_logits_dtype','torch.float16'),('actual_logits_device','cuda:0')]:
+        rr=copy.deepcopy(r);rr[key]=bad
+        no(tag+'_reject_'+key,lambda r=rr,s=s,h=h:rc(r,s,h))
+    r,s,h=fixture_reader(tag,[0.,0.,0.]);raw_readout=rc(r,s,h)
+    decision={'schema_version':1,'epoch':36,'raw_probabilities_E_C_N':list(r['probabilities_E_C_N']),
+        'raw_typed_argmax':r['native_typed_argmax'],'final_probabilities_E_C_N':list(r['probabilities_E_C_N']),
+        'final_typed_argmax':r['native_typed_argmax'],'policy':'proof-disabled-all-roles-v1',
+        'certificate':None,'fallback_reason':'proof_disabled_for_ALL_ROLES','semantic_decision_override':False}
+    yes(tag+'_disabled_proof_preserves_source_specific_tie',lambda d=decision,r=r,x=raw_readout,s=s,h=h:decision_check(d,r,x,s,s,h,[[0,len(s)]],False,'engineering'))
+    bad=copy.deepcopy(decision);bad['final_probabilities_E_C_N']=[.8,.1,.1]
+    no(tag+'_same_label_probability_override_refused',lambda d=bad,r=r,x=raw_readout,s=s,h=h:decision_check(d,r,x,s,s,h,[[0,len(s)]],False,'engineering'))
+# One exactly normalized f32 vector; changed bits and nonfinite payloads refuse.
+def vector_block(values):
+    payload=struct.pack('<384f',*values)
+    return {'encoding':'base64','dtype':'float32le','shape':[1,384],'data_base64':base64.b64encode(payload).decode(),'bytes':len(payload),'sha256':digest(payload)}
+v=vector_block([1.]+[0.]*383)
+yes('native_source_float32_bits_preserved',lambda:require(block_digests(v)==[v['sha256']],'Source f32 bits changed'))
+bad=copy.deepcopy(v);bad['sha256']='0'*64
+no('native_source_float32_hash_mismatch_refused',lambda:block_digests(bad))
+no('native_source_nonfinite_float32_refused',lambda:block_digests(vector_block([float('nan')]+[0.]*383)))
+labels={f'epoch36:cc0:paired-reader:{i:02}':('Entailment'if i<=3 else'Contradiction'if i<=6 else'NotMentioned')for i in range(1,10)}
+yes('premeasurement_exact_authored_label_digest',lambda:require(digest(canonical(labels).encode())==AUTHORED_LABEL_MAP_SHA256,'Wrong frozen label identity'))
+permuted=copy.deepcopy(labels);permuted[next(iter(permuted))],permuted['epoch36:cc0:paired-reader:04']=permuted['epoch36:cc0:paired-reader:04'],permuted[next(iter(permuted))]
+yes('balanced_label_permutation_digest_rejected',lambda:require(digest(canonical(permuted).encode())!=AUTHORED_LABEL_MAP_SHA256,'Balanced labels not authenticated'))
+CAN={'Entailment':'entailment','Contradiction':'contradiction','NotMentioned':'not_mentioned'}
+def scoring_rows(correct_by_arm):
+    rows=[]
+    for at,(case,did,hid)in enumerate(expected('engineering')):
+        gold=CAN[labels[case]];readers={}
+        for arm in ARMS:
+            pred=gold if at<correct_by_arm[arm]else CLASSES[(CLASSES.index(gold)+1)%3]
+            p={c:.05 for c in CLASSES};p[pred]=.90
+            readers[arm]={'prediction':pred,'probabilities':p}
+        rows.append({'id':case,'document_id':did,'gold':gold,'readers':readers})
+    return rows
+def scored(counts):
+    rows=scoring_rows(counts);return{a:metrics(rows,a)for a in ARMS}
+base=dict.fromkeys(ARMS,6);base[PRIMARY]=9;base['b354_full_source']=7
+ss=scored(base);yes('strict_9perfect_gain2_proper_gate_pass',lambda:require(all(engineering_gates(ss).values()),'Frozen gate should pass fixture'))
+ceiling=copy.deepcopy(base);ceiling['b354_full_source']=8
+yes('perfect_primary_baseline8_ceiling_rejected',lambda:require(not engineering_gates(scored(ceiling))['full_source_model_accuracy_gain_at_least2'],'Ceiling must remain frozen'))
+less=copy.deepcopy(base);less[PRIMARY]=8
+yes('primary8of9_readiness_rejected',lambda:require(not engineering_gates(scored(less))['primary_all9_correct'],'Readiness gate relaxed'))
+for key in ['Brier','NLL_clipped_1e-12']:
+    corrupt=copy.deepcopy(ss);corrupt[PRIMARY][key]=100.
+    yes('perfect_accuracy_worse_'+key+'_rejected',lambda x=corrupt:require(not all(engineering_gates(x).values()),'Proper score gate overridden'))
+rr=scoring_rows(base);rr[0]['readers'][PRIMARY]['probabilities']={'entailment':0.,'contradiction':1.,'not_mentioned':0.};z=metrics(rr,PRIMARY)
+yes('zero_gold_probability_clipping_and_finiteness_retained',lambda:require(z['NLL_clip_count']==1 and z['unclipped_NLL_finite']is False,'NLL zero handling lost'))
+yes('nine_distinct_paired_source_clusters',lambda:require(all(v['authored_source_clusters']==9 for v in paired_differences(ss).values()),'Wrong matched pairs'))
+no('benchmark_role_forbidden',lambda:expected('dev'))
+# Pure exact-source fixture with a multibyte character and two native units.
+s='Δ has 2 units.\n\nThe remaining unit count is 1.';cut=s.index('The');units=[{'id':0,'start':0,'end':cut,'sentence_id':0,'sentence_span':[0,cut],'paragraph_id':0,'group_id':0,'qualifier_attached':False,'token_fallback':False},{'id':1,'start':cut,'end':len(s),'sentence_id':1,'sentence_span':[cut,len(s)],'paragraph_id':1,'group_id':1,'qualifier_attached':False,'token_fallback':False}];cat=source_groups(s,units);h='All supplied facts.'
+lits=[]
+for m in NUMBER.finditer(s):
+    a,b=m.span();lits.append({'source_char_start':a,'source_char_end':b,'source_byte_start':len(s[:a].encode()),'source_byte_end':len(s[:b].encode()),'text':s[a:b],'text_sha256':digest(s[a:b].encode()),'retained':True,'lexical_year_candidate':False})
+c={'policy':'native-complete-source-when-pair-fits512-v1','selected_source_spans':[[0,len(s)]],'selected_chunk_ids_source_order':[0,1],'selected_chunk_ids_rank_order':[1,0],'source_sentence_groups':cat,'omitted_chunk_ids':[],'omitted_source_spans':[],'document_characters':len(s),'retained_source_characters':len(s),'document_character_coverage':1.,'total_document_chunks':2,'premise_sha256':digest(s.encode()),'hypothesis_sha256':digest(h.encode()),'joint_pair_tokens':20,'joint_pair_token_cap':512,'selected_evidence_truncated':False,'claim_truncated':False,'source_provenance':{'selected_source_provenance':[{'source_char_start':0,'source_char_end':len(s),'source_byte_start':0,'source_byte_end':len(s.encode()),'text':s,'text_sha256':digest(s.encode())}],'numeric_literals':lits,'numeric_literal_pattern':NUMBER.pattern,'numeric_literals_retained':2,'numeric_literals_omitted':0,'source_text_normalized':False,'semantic_decision_override':False}}
+c.update(full_supplied_source_in_original_order=True,native_complete_unique_unitset_verified=True,
+    all_selected_groups_complete=True,selected_group_ids_admission_order=[g['group_id']for g in cat])
+arm={'context':c,'premise':s,'joint_pair_tokens':20,'semantic_decision_override':False};native={'ids':[1,0]}
+yes('full_source_exact_multibyte_and_numeric_coverage',lambda:full_context_check(s,h,units,cat,native,arm))
+no('retrieval_miss_cannot_admit_full_source',lambda:full_context_check(s,h,units,cat,{'ids':[0]},arm))
+no('boolean_native_unit_ids_cannot_admit_full_source',lambda:full_context_check(s,h,units,cat,{'ids':[True,False]},arm))
+for key,bad in [('document_character_coverage',.99),('omitted_chunk_ids',[1]),('selected_source_spans',[[0,len(s)-1]]),('joint_pair_tokens',513),('full_supplied_source_in_original_order',False),('all_selected_groups_complete',False),('selected_group_ids_admission_order',[])]:
+    altered=copy.deepcopy(arm);altered['context'][key]=bad
+    no('reject_full_source_'+key,lambda a=altered:full_context_check(s,h,units,cat,native,a))
+# Lifecycle fixture intentionally keeps RSS flat: no allocator-release inference.
+state={'b354':{'unchanged':True},'xxlarge':{'unchanged':True}};life=[];clock=1.;done=0
+for tag,n in [('b354',18),('xxlarge',36)]:
+    for at,event in enumerate(['MODEL_PHASE_START','MODEL_INITIALIZATION_COMPLETED','MODEL_READOUTS_COMPLETED','MODEL_UNLOAD_BEFORE','MODEL_UNLOAD_AFTER_GC']):
+        r={'event':event,'model_tag':tag,'monotonic_seconds':clock,'global_readouts_completed':done+(n if at>=2 else 0),'profile_readouts_completed':n if at>=2 else 0,'process_status':{'Cpus_allowed_list':'0-1','VmRSS_bytes':1000}};clock+=1
+        if at==2:r.update(expected_readouts=n,model_state_unchanged=state[tag])
+        if at==4:r.update(reader_weakref_dead=True,model_weakref_dead=True,tokenizer_weakref_dead=True,gc_collected_objects=0)
+        life.append(r)
+    done+=n
+for event in ['ALL_MODEL_PHASES_CLOSED_BEFORE_ORACLE','ENGINEERING_ORACLE_JOIN_BEFORE','ENGINEERING_ORACLE_JOIN_AFTER']:
+    r={'event':event,'model_tag':None,'monotonic_seconds':clock,'global_readouts_completed':54};clock+=1
+    if event.endswith('BEFORE'):r['unloaded_profiles']=['b354','xxlarge']
+    if event.endswith('AFTER'):r['joined_labels']=9
+    life.append(r)
+raw={'reader_lifecycle':life,'model_states_unchanged':state}
+yes('sequential_two_models_flat_RSS_valid',lambda:audit_lifecycle(raw))
+for name,mut in [('baseline_weakref_alive',lambda r:r['reader_lifecycle'][4].__setitem__('model_weakref_dead',False)),('oracle_before_last_unload',lambda r:r['reader_lifecycle'][11].__setitem__('monotonic_seconds',0.)),('model_order_reversed',lambda r:r['reader_lifecycle'][5].__setitem__('model_tag','b354')),('wrong_profile_count',lambda r:r['reader_lifecycle'][7].__setitem__('profile_readouts_completed',35)),('thread_affinity_escape',lambda r:r['reader_lifecycle'][0]['process_status'].__setitem__('Cpus_allowed_list','0-2'))]:
+    bad=copy.deepcopy(raw);mut(bad);no(name,lambda r=bad:audit_lifecycle(r))
+require(not any(n.split('.')[0]in('torch','transformers','numpy','onnxruntime','tokenizers','safetensors')for n in sys.modules),'ML import in pure fixtures')
+result={'schema_version':1,'epoch':36,'checks_passed':True,'checks':CHECKS,'counts':{'tests':len(CHECKS),'actual_scientific_evaluate_or_bind':0,'authored_oracle_file_traversals':0,'benchmark_records_or_labels_read':0,'model_native_tokenizer_imports_or_calls':0},'scope':'Pure authored probabilities, exact source/UTF8/native-coverage and sequential-lifecycle observations. No actual54 readouts, scoring invocation or model execution.'}
+if __name__=='__main__':print(json.dumps(result,indent=2))

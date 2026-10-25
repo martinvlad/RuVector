@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "epoch": 36,
+  "status": "PROPOSED_REQUIRES_INDEPENDENT_ROOT_RESOURCE_AND_SOURCE_REVIEW_NOT_EXECUTED",
+  "repository": "microsoft/deberta-v2-xxlarge-mnli",
+  "revision": "8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06",
+  "asset_root": "/workspace/ruvector-e36-reader-assets/ms-xxlarge-8f8b43dd",
+  "baseline_asset_root": "/workspace/ruvector-e36-reader-assets/moritz-b3546ea6",
+  "assets": [
+    {
+      "path": "pytorch_model.bin",
+      "bytes": 3133958098,
+      "sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db"
+    },
+    {
+      "path": "spm.model",
+      "bytes": 2447305,
+      "sha256": "5598d5e96f339a8d980c15f9afd405a2e5e1be7db41de3ed13b0f03fac1e8c17"
+    }
+  ],
+  "total_original_payload_bytes": 3136405403,
+  "maximum_seconds_including_cleanup": 600,
+  "maximum_CPU_affinity": [
+    0,
+    1
+  ],
+  "minimum_free_bytes_after_fresh_restore": 3673276315,
+  "workspace_reserve_bytes": 536870912,
+  "duplicate_serialized_weight_copies_allowed": 0,
+  "metadata_GETs_by_acquisition_helper": 0,
+  "maximum_initial_payload_GETs": 2,
+  "maximum_redirects_per_initial_GET": 2,
+  "maximum_actual_payload_GETs_including_redirects": 6,
+  "attempts_per_asset": 1,
+  "retry_or_resume_allowed": false,
+  "paid_API_calls": 0,
+  "GPU_calls": 0,
+  "model_tokenizer_native_calls": 0,
+  "source_training_or_calibration_calls": 0,
+  "acquisition_helper": {
+    "path": "acquire_original_assets_once.py",
+    "bytes": 8434,
+    "sha256": "aec029fc058becf65cc93f279f19c72cf395491bf96940db60c0edd1dcdaff71"
+  },
+  "static_inspection_helper": {
+    "path": "inspect_original_zip_pickle_metadata.py",
+    "bytes": 11017,
+    "sha256": "71e08039a77ae31a37fd7ed045be7ce31357d1c53550a8bf237ca066a9f7855e"
+  },
+  "source_only_validation": {
+    "path": "ACQUISITION_INSPECTION_PREFLIGHT_v2.json",
+    "bytes": 2422,
+    "sha256": "45814cac0659210defd7520ce9c5301d52809e397b58956b8292130d59b90078"
+  },
+  "required_root_admission": {
+    "path": "/workspace/ruvector-epoch36-d73fcce4c45f/ASSET_ACQUISITION_ADMISSION.json",
+    "fields": {
+      "checks_passed": true,
+      "plan_sha256": "EXACT_SHA256_OF_THIS_PLAN",
+      "helper_sha256": "aec029fc058becf65cc93f279f19c72cf395491bf96940db60c0edd1dcdaff71",
+      "asset_root": "/workspace/ruvector-e36-reader-assets/ms-xxlarge-8f8b43dd",
+      "additional_metadata_GETs_authorized": 0,
+      "paid_calls": 0,
+      "GPU_calls": 0
+    },
+    "additional_required_review": "Root must independently verify current scoped exclusive owner, storage-eviction evidence and actual free bytes after fresh restoration before creating this admission; this agent has performed no deletion or acquisition."
+  },
+  "owner": {
+    "pid": 106933,
+    "startticks": 23768446,
+    "expires_unix": 1792924782.5591424,
+    "device": 33,
+    "inode": 13626,
+    "FD": 3,
+    "generation": 1,
+    "kernel_boot_id": "4632fb06-b0ef-4df5-b72b-0e875bbad810",
+    "PID_namespace_inode": 4026532200,
+    "owner_sha256": "9267c9ff873f510ba4ca8e2992d6f0634189023787bd551bf70c4fc32eb084f6"
+  },
+  "steps": [
+    "No execution by default. The helper requires --execute plus exact root-created admission binding this plan and helper source hashes.",
+    "Precheck exact active guardian/boot/namespace/FD/device/inode/kernel FLOCK and denied competing probe. Refuse if any native dispatch/run directory already exists. Restrict this acquisition process toCPU0,1.",
+    "Require a fresh nonsymlink asset directory and at least3,673,276,315free bytes after restoration; this amount includes original payload3,136,405,403bytes and512MiBreserved workspace. It supersedes the earlier source report’s provisional4.2GB suggestion with a concrete no-duplicate streaming plan.",
+    "Persist once-reservation and per-asset intent before any GET. Preserve inherited proxy/CA/TLS. Only pinned original public HuggingFace paths, with at most2TLS allowlisted CDN redirects; never persist signed redirect query strings/headers or full exception text.",
+    "Stream at most1MiBchunks into one exclusive same-directory .partial file, enforce exact maximumlength and SHA256, fsync, make payload readonly, then same-inode atomic rename once. No full-size duplicate temporary copy and no model import.",
+    "On any failure, retain exact observed partial/final presence, bytecount and sanitized failure receipt; stop. Never retry, resume, redownload, unsafe-unpickle or substitute weights. Parent must resolve exact state before any next action.",
+    "Copy existing content-verified952Bconfig and1,141BMIT license from metadata-dir. No extra metadata GET is performed. Root must separately authorize/fetch the52B tokenizer_config or supply an exact Gitblob-verified copy before model admission.",
+    "After successful acquisition, run the pure stdlib ZIP/pickletools inspector against exact original size/SHA; it hashes bytes, reads only bounded data.pkl metadata and archive directory, and never unpickles or invokes a checkpoint global.",
+    "Require source-only independent header review: all tensor keys/shapes/dtypes/storage sizes and full head/state contract; archive/type mismatch fails closed. Exact trainable parameter count still requires later strict meta-model-class checking in the frozen worker, not an assumption from tensor sums.",
+    "Freeze the new paired nine-case/six-arm qualification and exact code/model/scorer/input/oracle identities only after expected tensor metadata is bound. No tokenizer/model/native or label measurement during acquisition/inspection."
+  ],
+  "tokenizer_metadata": {
+    "path": "tokenizer_config.json",
+    "bytes": 52,
+    "upstream_git_blob_sha1": "acfd94e399c5659e4bed75f91b4ee24b111fc7a6",
+    "body_fetched_by_this_agent": false,
+    "extra_GET_currently_authorized": false,
+    "source_url": "https://huggingface.co/microsoft/deberta-v2-xxlarge-mnli/raw/8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06/tokenizer_config.json",
+    "root_action": "Separate explicit root authority for this new52Bmetadata GET or exact verified preexisting body; oldxlarge70Bconfig is different and must not be silently reused."
+  },
+  "safe_inspection": {
+    "weights_only_loads": 0,
+    "unsafe_unpickling_calls": 0,
+    "torch_imports": 0,
+    "maximum_data_pickle_bytes": 8388608,
+    "maximum_ZIP_entries": 10000,
+    "maximum_symbolic_opcodes": 2000000,
+    "allowed_checkpoint_globals": "Inert symbols only: collections.OrderedDict; torch._utils tensor rebuild metadata; named torch storage dtypes. None resolved/imported/called.",
+    "weights_payload_decoding": false,
+    "actual_archive_format": "UNVERIFIED_UNTIL_ROOT_AUTHORIZED_DOWNLOAD",
+    "exact_original_source_dtype_and_tensor_count": "UNVERIFIED_UNTIL_STATIC_METADATA_INSPECTION"
+  },
+  "cleanup": {
+    "on_success": "Preserve one exact readonly original payload set plus hash receipts for root-reviewed qualification. No automatic post-study cache eviction.",
+    "on_failure": "Retain partial/final observed bytes and immutable failure receipts; no automatic deletion/retry. Root may later review removal of only these exact owned public cache files after physical process closure. Never modify old baseline/champion/checkpoint/runtime/private files.",
+    "after_final": "Only root may decide cleanup after independent actual FINAL readback and physical closure; leave enough free space for real results/publication throughout."
+  },
+  "new_paired_study_scope": "Root-proposed9new authored CC0 cases3/class and6arms54realNLIforwards. New xxlarge full-source must fit512; compare exact b354 same-full-source and same-model xxlarge native/lexical/positional two-group controls plus b354 native control, one shared9index/query native corpus. Gate9/9+3/class, >=2correct over b354 full-source and nonincreasing Brier/NLL versus baseline-full and all three same-model controls. OneCPU2/600sTOTAL worker with2sequential model initializations. This acquisition plan neither executes nor admits that study; all train/DEV/calibration/CONF/paid/GPU remain empty/zero.",
+  "strength_and_eligibility": "Higher-capacity quality hypothesis only; no materially-stronger admission before matching actual engineering evidence. Original training/selection/calibration/foundation closure and publisher eligibility remain HOLD.",
+  "future_actions": "PROPOSED_ONLY_NOT_EXECUTED"
+}

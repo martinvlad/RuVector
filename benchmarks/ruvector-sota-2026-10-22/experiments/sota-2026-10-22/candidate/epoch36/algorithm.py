@@ -1,0 +1,21 @@
+"""Frozen E36 source/reader/arm identities; standard library only."""
+KIND='ENGINEERING_PAIRED_READER_SOURCE_COVERAGE'
+SOURCE='d73fcce4c45f7d8f6f1c5bfbf3599ceddf560be3'
+DEV_DOCUMENT_IDS=()
+HYPOTHESIS_IDS=tuple(f'e36-h{i:02}' for i in range(1,10))
+ENG_DOCUMENT_IDS=tuple(range(-36001,-36010,-1))
+ENG_CASE_IDS=tuple(f'epoch36:cc0:paired-reader:{i:02}' for i in range(1,10))
+DEV_CASE_IDS=()
+LABELS_CANONICAL=('Entailment','Contradiction','NotMentioned')
+ARMS=('xxlarge_full_source','xxlarge_native_two','xxlarge_lexical_two','xxlarge_positional_two','b354_full_source','b354_native_two')
+PRIMARY='xxlarge_full_source'
+MODEL_ORDER=('b354','xxlarge')
+MODEL_ARMS={'b354':('b354_full_source','b354_native_two'),'xxlarge':ARMS[:4]}
+NATIVE_LABELS={'b354':('Entailment','NotMentioned','Contradiction'),'xxlarge':('Contradiction','NotMentioned','Entailment')}
+CANONICAL_FROM_RAW={'b354':[0,2,1],'xxlarge':[2,0,1]}
+MODEL_REPOSITORIES={'b354':'MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli','xxlarge':'microsoft/deberta-v2-xxlarge-mnli'}
+MODEL_REVISIONS={'b354':'b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7','xxlarge':'8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06'}
+MODEL_WEIGHT_SHA={'b354':'c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b','xxlarge':'5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db'}
+MODEL_WEIGHT_BYTES={'b354':870182606,'xxlarge':3133958098}
+MODEL_DIRECTORIES={'b354':'/workspace/ruvector-e36-reader-assets/moritz-b3546ea6','xxlarge':'/workspace/ruvector-e36-reader-assets/ms-xxlarge-8f8b43dd'}
+FULL_SOURCE_POLICY='native-complete-source-when-pair-fits512-v1'

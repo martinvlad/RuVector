@@ -1,0 +1,182 @@
+"""Pure fixtures only: no neural/tokenizer/native initialization or live observer."""
+import ast
+import copy
+from decimal import Decimal
+from fractions import Fraction
+import hashlib
+import importlib.util
+import json
+import math
+from pathlib import Path
+import sys
+import tempfile
+import unittest
+from unittest.mock import patch
+
+HERE=Path(__file__).resolve().parent
+
+def load(name,file):
+    spec=importlib.util.spec_from_file_location(name,HERE/file);module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+
+A=load('e36_fixture_algorithm','algorithm.py');W=load('e36_fixture_worker','worker.py')
+E=load('e36_fixture_evidence','evidence.py');M=load('e36_fixture_primary','xxlarge_model.py')
+B=load('e36_fixture_baseline','model.py');P=load('e36_fixture_proof','proof.py')
+X=load('e36_fixture_context_engine','context_engine.py');S=load('e36_fixture_source_context','source_context.py')
+
+class StubTokenizer:
+    """Fixture word counter only; never represents a real model tokenization."""
+    def __init__(self,force_count=None):self.force_count=force_count
+    def encode(self,text,pair=None,add_special_tokens=True):
+        class Encoded:pass
+        r=Encoded();r.ids=list(range(self.force_count if self.force_count is not None else len(text.split())+len((pair or'').split())+3));r.offsets=[];return r
+
+
+def fixture_units(document):
+    return [dict(a,id=i,token_fallback=False,nli_tokens=5,bge_tokens=5,sentence_span=[a['start'],a['end']])for i,a in enumerate(S.atoms(document))]
+
+
+def raw_fixture(baseline_correct=7):
+    records=json.loads((HERE/'engineering.inputs.json').read_text())['records']
+    labels=json.loads((HERE/'engineering.oracle.json').read_text())['expected_labels'];counters=W.expected_counters()
+    rows=[]
+    for i,row in enumerate(records):
+        record=copy.deepcopy(row);record['arms']={}
+        gold=A.LABELS_CANONICAL.index(labels[row['id']])
+        for name in A.ARMS:
+            tag='b354'if name.startswith('b354')else'xxlarge';winner=gold if tag=='xxlarge'or i<baseline_correct else(gold+1)%3
+            p=[.01]*3;p[winner]=.98
+            native=[p[A.LABELS_CANONICAL.index(label)]for label in A.NATIVE_LABELS[tag]]
+            logits=[math.log(x)for x in native];reader=(B.decisions(logits)if tag=='b354'else M.decisions(logits))
+            reader.update(model_tag=tag,native_label_order=list(A.NATIVE_LABELS[tag]),canonical_E_C_N_from_raw=A.CANONICAL_FROM_RAW[tag],actual_logits_shape=[1,3],pair_tokens=10,full_pair_tokens=10,max_pair_tokens=512,hidden_truncation=False)
+            decision=P.decide(row['document'],row['document'],row['hypothesis'],[[0,len(row['document'])]],reader)
+            record['arms'][name]={'model_tag':tag,'reader':reader,'decision':decision,'joint_pair_tokens':10,
+                'context':{'source_provenance':{'selected_source_provenance':[{'fixture':True}],'semantic_decision_override':False}},'semantic_decision_override':False}
+        rows.append(record)
+    return {'counters':counters,'corpora':{'engineering':{'cases':rows,'native_child_closed':True}},
+        'model_states_unchanged':{'b354':{'unchanged':True},'xxlarge':{'unchanged':True}},'models_sequentially_unloaded':True},labels
+
+
+class SourceFixtures(unittest.TestCase):
+    def test_imports_remain_non_ML(self):
+        self.assertFalse(any(k in sys.modules for k in('torch','transformers','onnxruntime','tokenizers','safetensors','numpy')))
+
+    def test_source_specific_label_orders_and_ties(self):
+        for index,label in enumerate(A.NATIVE_LABELS['xxlarge']):
+            logits=[-3.,-3.,-3.];logits[index]=2.;v=M.decisions(logits)
+            self.assertEqual(v['native_typed_argmax'],label)
+            self.assertEqual(v['probabilities_E_C_N'],[v['probabilities_native_order'][j]for j in[2,0,1]])
+        self.assertEqual(M.decisions([0.,0.,0.])['native_typed_argmax'],'Contradiction')
+        self.assertEqual(B.decisions([0.,0.,0.])['native_typed_argmax'],'Entailment')
+        for invalid in([0.,float('nan'),1.],[1.,2.],[True,0.,1.]):
+            with self.assertRaises(ValueError):M.decisions(invalid)
+
+    def test_new_exact_inputs_oracles_and_original_mechanisms(self):
+        bundle=json.loads((HERE/'engineering.inputs.json').read_text());records=E.validate_inputs(bundle,'engineering')
+        labels=json.loads((HERE/'engineering.oracle.json').read_text())['expected_labels']
+        self.assertEqual(tuple(r['id']for r in records),A.ENG_CASE_IDS)
+        self.assertEqual({label:list(labels.values()).count(label)for label in A.LABELS_CANONICAL},{label:3 for label in A.LABELS_CANONICAL})
+        self.assertEqual(Decimal('25')-Decimal('20'),Decimal('5'))
+        self.assertEqual(Fraction(30*4+10*8,40),5)
+        self.assertEqual(Decimal('100')*Decimal('1.10')*Decimal('.90'),Decimal('99.00'))
+        self.assertEqual(Fraction(70+90,2),80);self.assertLess(70,80);self.assertEqual(7+9-3,13)
+        self.assertEqual(len(set(range(12))&set(range(8))),8)
+        self.assertEqual(len(set(range(12))&set(range(6,14))),6)
+        self.assertEqual(Fraction(20+10,2),Fraction(10+20,2))
+        with self.assertRaises(ValueError):E.validate_inputs(bundle,'confirmation')
+        tampered=copy.deepcopy(bundle);tampered['records'][0]['expected_label']='Entailment'
+        with self.assertRaises(ValueError):E.validate_inputs(tampered,'engineering')
+
+    def test_native_complete_unitset_before_whole_source_and_pair_cap(self):
+        record=json.loads((HERE/'engineering.inputs.json').read_text())['records'][0];units=fixture_units(record['document']);n=len(units)
+        doc={'units':units};native={'ids':list(reversed(range(n)))}
+        premise,audit=X.pack_full(record,doc,native,S,E,StubTokenizer())
+        self.assertEqual(premise,record['document']);self.assertEqual(audit['selected_source_spans'],[[0,len(premise)]])
+        self.assertEqual(audit['document_character_coverage'],1.0)
+        self.assertEqual(audit['source_provenance']['numeric_literals_omitted'],0)
+        for ids in(native['ids'][:-1],[0]*n):
+            with self.assertRaises(ValueError):X.pack_full(record,doc,{'ids':ids},S,E,StubTokenizer())
+        with self.assertRaises(ValueError):X.pack_full(record,doc,native,S,E,StubTokenizer(513))
+        self.assertEqual(len(X.pack_full(record,doc,native,S,E,StubTokenizer(512))[0]),len(premise))
+
+    def test_exact_paired_contexts_and_drift_refusal(self):
+        bundle=json.loads((HERE/'engineering.inputs.json').read_text());records=E.validate_inputs(bundle,'engineering')
+        docs={};native={'documents':[]};tokenizer=StubTokenizer()
+        for source in records:
+            did=str(source['document_id']);units=fixture_units(source['document']);n=len(units)
+            query={'query':source['hypothesis']};prelude=S.select_prelude(source['document'],units,tokenizer)
+            docs[did]={'units':units,'retrieval_queries':{source['id']:query},'prelude':prelude,'preludes_by_model':{'b354':prelude}}
+            native['documents'].append({'document_id':did,'initialization_ms':1.,'initialized_vectors':n,
+                'queries':[{'case_id':source['id']+'::retrieval:original','ids':list(reversed(range(n))),'requested_k':n,'query_ms':1.}]})
+        counters={k:0 for k in W.expected_counters()};cases=X.initialize_cases(records,docs,native,E,counters)
+        for tag in A.MODEL_ORDER:X.pack_for_model(cases,records,docs,'engineering',S,E,tokenizer,counters,lambda _:None,tag)
+        self.assertEqual(counters['full_source_contexts_completed'],18);self.assertEqual(counters['two_group_contexts_completed'],36)
+        for row in cases:
+            for suffix in('full_source','native_two'):
+                self.assertEqual(row['arms']['b354_'+suffix]['premise'],row['arms']['xxlarge_'+suffix]['premise'])
+                self.assertEqual(row['arms']['b354_'+suffix]['context']['selected_source_spans'],row['arms']['xxlarge_'+suffix]['context']['selected_source_spans'])
+        corrupted=copy.deepcopy(cases);corrupted[0]['arms']['b354_full_source']['premise']+=' altered'
+        for row in corrupted:
+            for name in A.MODEL_ARMS['xxlarge']:row['arms'][name]=None
+        with self.assertRaises(ValueError):X.pack_for_model(corrupted,records,docs,'engineering',S,E,tokenizer,counters,lambda _:None,'xxlarge')
+
+    def run_gate(self,raw):
+        path=HERE/'engineering.oracle.json';plan={'engineering_oracle_path':str(path.relative_to(W.C.ROOT)),'engineering_oracle_sha256':W.C.sha(path)}
+        events=[];seen=[]
+        original=W.C.read
+        def capture(file):seen.append(str(file));return original(file)
+        with patch.object(W.C,'read',side_effect=capture):
+            passed=W.engineering_gate(raw,plan,lambda _:None,lambda tag,event,**kw:events.append((tag,event,kw)))
+        return passed,seen,events
+
+    def test_frozen_gate_accepts_qualified_fixture_and_rejects_ceiling(self):
+        # These are invented interface fixtures, never empirical model predictions.
+        raw,_=raw_fixture(7);passed,reads,events=self.run_gate(raw);self.assertTrue(passed);self.assertEqual(len(reads),1)
+        self.assertEqual(events[-1][1],'ENGINEERING_ORACLE_JOIN_AFTER');self.assertEqual(raw['engineering_gate']['oracle_label_join_count'],9)
+        raw,_=raw_fixture(8);self.assertFalse(self.run_gate(raw)[0]);self.assertEqual(raw['engineering_gate']['accuracy_gain_over_b354_full'],1)
+        raw,_=raw_fixture(9);self.assertFalse(self.run_gate(raw)[0])
+
+    def test_oracle_forbidden_on_incomplete_models_or_readouts(self):
+        for key,value in [('NLI_readouts_completed',53),('sequential_model_lifecycles_completed',1)]:
+            raw,_=raw_fixture();raw['counters'][key]=value
+            with patch.object(W.C,'read',side_effect=AssertionError('Oracle access forbidden')):
+                with self.assertRaises(ValueError):W.engineering_gate(raw,{},lambda _:None,lambda *a,**k:None)
+        raw,_=raw_fixture();raw['models_sequentially_unloaded']=False
+        with patch.object(W.C,'read',side_effect=AssertionError('Oracle access forbidden')):
+            with self.assertRaises(ValueError):W.engineering_gate(raw,{},lambda _:None,lambda *a,**k:None)
+
+    def test_static_archive_contract_refuses_unsafe_or_unexplained_state(self):
+        # Tiny invented metadata, never a model archive or source-weight read.
+        base={'status':'ORIGINAL_ZIP_PICKLETOOLS_SYMBOLIC_METADATA_VERIFIED_NO_UNPICKLE',
+            'weights':{'bytes':3133958098,'sha256':M.WEIGHT_SHA},'archive':{'kind':'ZIP_STORED'},
+            'unsafe_unpickling_calls':0,'checkpoint_functions_invoked':0,'ML_imports':0,'model_tokenizer_native_calls':0,
+            'state_tensor_count':1,'tensors':[{'name':'classifier.bias','dtype':'F16','shape':[3],'numel':3}]}
+        with tempfile.TemporaryDirectory()as name:
+            path=Path(name)/'fixture.json'
+            def attempt(value):
+                path.write_text(json.dumps(value));return M.archive_header(path,M.file_sha(path))
+            self.assertEqual(len(attempt(base)[1]),1)
+            for mutate in('unsafe','duplicate','integer','wrong_size'):
+                value=copy.deepcopy(base)
+                if mutate=='unsafe':value['unsafe_unpickling_calls']=1
+                if mutate=='duplicate':value['tensors']*=2;value['state_tensor_count']=2
+                if mutate=='integer':value['tensors'][0]['dtype']='I64'
+                if mutate=='wrong_size':value['tensors'][0]['numel']=4
+                with self.assertRaises(ValueError):attempt(value)
+            path.write_text(json.dumps(base))
+            with self.assertRaises(ValueError):M.archive_header(path,'0'*64)
+        source=(HERE/'xxlarge_model.py').read_text()
+        self.assertIn("weights_only=True,mmap=True,map_location='cpu'",source)
+        self.assertIn('model.load_state_dict(state,strict=True,assign=True)',source)
+        self.assertLess(source.index('del state,tensor,expected,parameters,buffers'),source.index("model.to(device='cpu',dtype=torch.float32)"))
+
+    def test_lifecycle_architecture_and_exact_source_dependency(self):
+        tree=ast.parse((HERE/'worker.py').read_text());main=next(n for n in tree.body if isinstance(n,ast.FunctionDef)and n.name=='main')
+        source=ast.get_source_segment((HERE/'worker.py').read_text(),main)
+        for literal in('weakref.ref(reader)','weakref.ref(reader.model)','weakref.ref(reader.tokenizer)','del reader;del module;collected=gc.collect()',"if not all(dead.values())"):
+            self.assertIn(literal,source)
+        self.assertLess(source.index('del reader'),source.index('engineering_gate(raw'))
+        self.assertEqual(hashlib.sha256((HERE/'source_context.py').read_bytes()).hexdigest(),'e847c2d3819a3b469bb6a601a9633f4c8a1279d2b3a2a3e2c2d02cd82eb5c517')
+        self.assertEqual(W.C.MODEL.name,'ms-xxlarge-8f8b43dd');self.assertEqual(W.C.BASELINE_MODEL.name,'moritz-b3546ea6')
+        self.assertEqual(W.expected_counters(),W.expected_counters(False))
+
+if __name__=='__main__':unittest.main()

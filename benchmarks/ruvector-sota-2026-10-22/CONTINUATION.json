@@ -4,7 +4,7 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "d3fc2d602e5ce51039224e57034693fc8bf71da3",
+  "prior_published_base_commit": "d73fcce4c45f7d8f6f1c5bfbf3599ceddf560be3",
   "checkpoint_manifest_sha256": "86c4ea1e130e849715710b65559ebe83966f247b9c044411f7a6e19b04adf311",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
@@ -1850,24 +1850,24 @@
   },
   "active_run": {
     "schema_version": 1,
-    "epoch": 35,
-    "run_id": "epoch35-4d51073072c4",
-    "state": "EPOCH35_CLOSED",
-    "work_active": false,
+    "epoch": 36,
+    "run_id": "epoch36-d73fcce4c45f",
+    "state": "EPOCH36_PLANNING_LEASE",
+    "work_active": true,
     "experiments_active": false,
-    "checkpoint_parent": "d3fc2d602e5ce51039224e57034693fc8bf71da3",
+    "checkpoint_parent": "d73fcce4c45f7d8f6f1c5bfbf3599ceddf560be3",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
-      "run_id": "epoch35-4d51073072c4",
-      "pid": 104231,
-      "startticks": 23176792,
+      "run_id": "epoch36-d73fcce4c45f",
+      "pid": 106933,
+      "startticks": 23768446,
       "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
       "lock_inode": 13626,
       "lock_device": 33,
-      "started_unix": 1792908066.0067315,
-      "expires_unix": 1792918866.0067315,
-      "started_at": "2026-10-25T06:01:06.006732+00:00",
-      "expires_at": "2026-10-25T09:01:06.006732+00:00",
+      "started_unix": 1792913982.5591424,
+      "expires_unix": 1792924782.5591424,
+      "started_at": "2026-10-25T07:39:42.559142+00:00",
+      "expires_at": "2026-10-25T10:39:42.559142+00:00",
       "CPU_affinity": [
         0,
         1
@@ -1877,19 +1877,17 @@
       "kernel_boot_id": "4632fb06-b0ef-4df5-b72b-0e875bbad810",
       "PID_namespace": "pid:[4026532200]"
     },
-    "physical_guardian_directory": "/tmp/ruvector-sota-2026-10-22/epoch35-4d51073072c4",
-    "isolated_project": "/workspace/ruvector-epoch35-4d51073072c4/project",
+    "physical_guardian_directory": "/tmp/ruvector-sota-2026-10-22/epoch36-d73fcce4c45f",
+    "isolated_project": "/workspace/ruvector-epoch36-d73fcce4c45f/project",
     "OS_lock_held": true,
     "OS_lock_release_pending": true,
     "native_allowed": 0,
     "conditional_train_allowed": 0,
     "conditional_dev_allowed": 0,
+    "conditional_engineering_allowed": 0,
     "confirmation_allowed": 0,
     "conditional_confirmation_allowed": 0,
-    "instruction": "Only new authored CC0 engineering after independent actual SOURCE readback and source/runtime admission. One nonretryable CPU2/600s total phase, one corpus; zero fits/TRAIN/DEV/calibration/CONF. No benchmark acceptance/promotion/submission. FINAL closes every slot.",
-    "conditional_engineering_allowed": 0,
-    "all_unspent_epoch35_slots_permanently_closed": true,
-    "owned_native_groups_closed": true,
+    "instruction": "Planning and reviewed public asset/source preparation only. No model/tokenizer/native/scoring until all source/input/oracle/model/scorer identities are frozen and the actual SOURCE commit independently read back. Proposed one nonretryable paired-reader engineering corpus; CPU2/600sTOTAL,54forwards/9queries/two sequential reader initializations; all TRAIN/DEV/calibration/CONF/paid/GPU0. No promotion/submission.",
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -6802,5 +6800,83 @@
     "path": "experiments/sota-2026-10-22/epoch35/research/lineage/LINEAGE_RESEARCH_ADDENDUM.v2.json",
     "bytes": 5410,
     "sha256": "984bd7e374f1476025c4817b56221fe7ce0f6e50608b29ac98ec56d9255f37be"
+  },
+  "epoch36_planning": {
+    "epoch": 36,
+    "kind": "ENGINEERING_PAIRED_READER_SOURCE_COVERAGE",
+    "state": "PROPOSED_BEFORE_SOURCE_AND_MEASUREMENT",
+    "hypothesis": "A newly tested larger original three-way NLI reader combined with full supplied-source coverage may improve exact quantitative/deontic/open-world engineering decisions. Compare both readers on identical full-source premises and original hypotheses, plus matched same-xxlarge native/lexical/positional two-group context controls and a b354 native-two control. Native provides real source-unit coverage admission; no causal ranking gain is claimed for the full-source primary.",
+    "quality_admission": "UNPROVEN. Microsoft published matched-family metrics do not establish xxlarge superiority to b354; architecture size alone is not acceptance.",
+    "proposal": {
+      "path": "experiments/sota-2026-10-22/candidate/epoch36/CASE_PROPOSAL.json",
+      "bytes": 12976,
+      "sha256": "ee7d9915f8848afa747435212cbfc5e64b0ff5d5c60242dea7980cd305f826a2"
+    },
+    "train": [],
+    "dev": [],
+    "calibration": [],
+    "confirmation": [],
+    "used_confirmation_identities": [],
+    "authored_engineering_cases": 9,
+    "classes": {
+      "Entailment": 3,
+      "Contradiction": 3,
+      "NotMentioned": 3
+    },
+    "arms": [
+      "xxlarge_full_source",
+      "xxlarge_native_two",
+      "xxlarge_lexical_two",
+      "xxlarge_positional_two",
+      "b354_full_source",
+      "b354_native_two"
+    ],
+    "models": {
+      "candidate": "microsoft/deberta-v2-xxlarge-mnli@8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06",
+      "baseline": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli@b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7"
+    },
+    "eligibility": "Training/selection/calibration/foundation closure and publisher eligibility remain HOLD. Original source dtype/state/tensor-count/ZIP format must be statically verified before SOURCE freeze. No benchmark measurement or confirmation/promotion.",
+    "frozen_proposed_gate": {
+      "primary_correct": 9,
+      "each_class_correct": 3,
+      "correct_gain_vs_b354_full_at_least": 2,
+      "Brier_NLL_nonincrease_against": [
+        "b354_full_source",
+        "xxlarge_native_two",
+        "xxlarge_lexical_two",
+        "xxlarge_positional_two"
+      ],
+      "ceiling_rejection_if_perfect_baseline": true
+    },
+    "limits": {
+      "CPU_threads": 2,
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "native_corpus_batches": 1,
+      "seconds_total_including_both_initializations_cleanup": 600,
+      "worker_dispatches": 1,
+      "native_queries": 9,
+      "native_indexes": 9,
+      "native_binary_loads": 1,
+      "NLI_forwards": 54,
+      "reader_initializations": 2,
+      "paid_API_calls": 0,
+      "GPU_calls": 0,
+      "fits": 0
+    },
+    "oracle_access": "Exactly nine authored labels joined once only after all54forecasts; scorer uses retained joined records and exact premeasurement mapping hash. No benchmark source labels accessed.",
+    "measurement_authorization": "NONE at planning. Requires exact original payload acquisition/static inspection, frozen source and independent actual SOURCE readback before one nonretryable engineering dispatch.",
+    "benchmark_partition_unchanged": {
+      "exposed": 325,
+      "unreserved": 74,
+      "reserved_confirmation": 24,
+      "total": 423
+    },
+    "engineering_only": true,
+    "benchmark_accuracy": null,
+    "prior_failures": "E1 learnedhead106/183 failed39vs41/48; E2 held57/96 but proper scores worsened. E35 primary6/12, native6,lexical6 withbetterproper,positional5; old E35cases and all prior Easy48/Legal96/ContractNLI exposed records remain exposed forever. No nearby rank/query grid or case reuse.",
+    "future_actions": "PROPOSED_ONLY_NOT_EXECUTED"
   }
 }

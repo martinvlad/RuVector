@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "epoch": 34,
+  "status": "TAIL_ONLY_SOURCE_PUBLICATION_READY_FOR_INDEPENDENT_APPROVAL",
+  "helper": {
+    "path": "/workspace/ruvector-e34-publication-impl/resume-source-publication-tail-v1.js",
+    "bytes": 14912,
+    "sha256": "a6272dce93e083ed35cb218c7651da183bfa6dac574206d6b70ffa0df08aace4"
+  },
+  "local_validator": {
+    "path": "/workspace/ruvector-e34-publication-impl/verify-source-publication-tail-inputs-v1.py",
+    "bytes": 16529,
+    "sha256": "465e23f7770bbc805d588500b5dc6b5e2594ae2d332bb39a8955f30507ce166c"
+  },
+  "local_fixtures": {
+    "path": "/workspace/ruvector-e34-publication-impl/test_source_publication_tail_inputs_v1.py",
+    "bytes": 4139,
+    "sha256": "7dc4a7a5488664a3f574ada455de67aa27eb4ff5c96c8a3e6ea1920a8a677b98"
+  },
+  "mocked_JS_fixtures": {
+    "path": "/workspace/ruvector-e34-publication-impl/test-source-publication-tail-v1.cjs",
+    "bytes": 9329,
+    "sha256": "fa5a3ea3e2d61c357a5b94fa323f321736fe7ed19013be534d8f046b627e276d"
+  },
+  "validation": {
+    "path": "/workspace/ruvector-e34-publication-impl/source-publication-tail-validation-v1.json",
+    "bytes": 2480,
+    "sha256": "41cbb1810c7cd7da69fe2cb80ff7b1f665eebf699f0505614e12dd1dbd865b71"
+  },
+  "execution_approval_required": {
+    "path": "/workspace/ruvector-e34-independent-audit/source-publication-tail-independent-v1.json",
+    "checks_passed": true,
+    "helper": {
+      "path": "/workspace/ruvector-e34-publication-impl/resume-source-publication-tail-v1.js",
+      "bytes": 14912,
+      "sha256": "a6272dce93e083ed35cb218c7651da183bfa6dac574206d6b70ffa0df08aace4"
+    },
+    "local_validator": {
+      "path": "/workspace/ruvector-e34-publication-impl/verify-source-publication-tail-inputs-v1.py",
+      "bytes": 16529,
+      "sha256": "465e23f7770bbc805d588500b5dc6b5e2594ae2d332bb39a8955f30507ce166c"
+    }
+  },
+  "exact_parent": "eafd332309fef5873086cf66c911b1787c320820",
+  "known_existing_objects": {
+    "root": "e8093d1ac7cf51182f7e74cd15bca110b2cd65a1",
+    "bench": "bc3e85292fb9397791f3185ee532002bbea37efc",
+    "scope": "ef33a23a99eafea16a3526ab6de2065db398b4f6"
+  },
+  "existing_pairs": {
+    "lease": 4,
+    "SOURCE_blobs": 6,
+    "SOURCE_trees": 10,
+    "total": 20,
+    "WAL_rows": 40,
+    "uncertain": 0
+  },
+  "permitted_unused_mutations_only": [
+    "e34-source-commit",
+    "e34-source-ref"
+  ],
+  "never_invoke": [
+    "publishPhase",
+    "github_create_blob",
+    "github_create_tree"
+  ],
+  "invocation": "Root loads exactcontroller.js + frozenreviewed_publish_phase.js + thishelper, then explicitly awaits resumeSourcePublicationTail() once after independentapproval.",
+  "receipt_ownership": "Tail itself exclusively fsyncs W/publication-source.json and W/source-publication-tail-execution-v1.json; caller must not rewrite either. An exclusive W/source-publication-tail-intent-v1.json precedes both API calls.",
+  "immutable_R_stage_plan_controls": true,
+  "source_and_model_execution": false,
+  "no_actual_tail_or_Git_call_has_executed": true,
+  "publication_only_not_scientific_retry": true,
+  "independent_object_certainty": {
+    "path": "/workspace/ruvector-e34-independent-audit/source-created-objects-independent-v1.json",
+    "bytes": 5459,
+    "sha256": "d4e4174c4c01283f39949f8ec98a1bd6bf5fa0cb30524b8240e7164db4d79c27"
+  }
+}

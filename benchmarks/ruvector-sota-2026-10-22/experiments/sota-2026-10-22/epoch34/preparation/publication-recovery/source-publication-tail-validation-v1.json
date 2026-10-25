@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "epoch": 34,
+  "phase": "source",
+  "tail_only": true,
+  "checks_passed": true,
+  "helper": {
+    "path": "/workspace/ruvector-e34-publication-impl/resume-source-publication-tail-v1.js",
+    "bytes": 14912,
+    "sha256": "a6272dce93e083ed35cb218c7651da183bfa6dac574206d6b70ffa0df08aace4"
+  },
+  "local_validator": {
+    "path": "/workspace/ruvector-e34-publication-impl/verify-source-publication-tail-inputs-v1.py",
+    "bytes": 16529,
+    "sha256": "465e23f7770bbc805d588500b5dc6b5e2594ae2d332bb39a8955f30507ce166c"
+  },
+  "local_fixtures": {
+    "path": "/workspace/ruvector-e34-publication-impl/test_source_publication_tail_inputs_v1.py",
+    "bytes": 4139,
+    "sha256": "7dc4a7a5488664a3f574ada455de67aa27eb4ff5c96c8a3e6ea1920a8a677b98"
+  },
+  "mocked_JS_fixtures": {
+    "path": "/workspace/ruvector-e34-publication-impl/test-source-publication-tail-v1.cjs",
+    "bytes": 9329,
+    "sha256": "fa5a3ea3e2d61c357a5b94fa323f321736fe7ed19013be534d8f046b627e276d"
+  },
+  "local_metadata_fixtures": 15,
+  "mocked_tail_checks": 19,
+  "runs": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/workspace/ruvector-e34-publication-impl/test_source_publication_tail_inputs_v1.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.225s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "node",
+        "/workspace/ruvector-e34-publication-impl/test-source-publication-tail-v1.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"mocked_tail_checks_passed\":19,\"success_mutations_exactly\":[\"e34-source-commit\",\"e34-source-ref\"],\"blob_tree_full_publisher_replays\":0,\"actual_Git_shell_model_native_calls\":0}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "node",
+        "--check",
+        "/workspace/ruvector-e34-publication-impl/resume-source-publication-tail-v1.js"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "first_mock_fixture_correction": "Missing dummy approval metadata in in-memory mocked filesystem was corrected; only mocked calls occurred. No implementation/source/stage/external mutation occurred.",
+  "current_WAL_rows": 40,
+  "current_resolved_pairs": 20,
+  "unused_commit_ref_request_files_absent": true,
+  "all195_frozen_pins_rehashed_unchanged": true,
+  "actual_tail_calls": 0,
+  "actual_Git_or_stage_or_model_or_native_or_gold_calls": 0
+}

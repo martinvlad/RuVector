@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "epoch": 34,
+  "status": "PUBLICATION_ONLY_SOURCE_TRANSITION_ADAPTER_READY_FOR_INDEPENDENT_APPROVAL",
+  "adapter": {
+    "path": "/workspace/ruvector-e34-publication-impl/source-stage-transition-adapter-v1.py",
+    "bytes": 15597,
+    "sha256": "5a2a2c2795cfc08341eb083e7ce4e09a595849f4e2e7c70d7d5b31e308121e77"
+  },
+  "tests": {
+    "path": "/workspace/ruvector-e34-publication-impl/test_source_stage_transition_adapter_v1.py",
+    "bytes": 6980,
+    "sha256": "d3cc9eb6ec27f39f8358bf93a6b05494356e91cf02aad9d68c50cac6793e7c35"
+  },
+  "validation": {
+    "path": "/workspace/ruvector-e34-publication-impl/source-stage-transition-adapter-validation-v1.json",
+    "bytes": 1997,
+    "sha256": "b44b674ca294bb2e53b68b51bf91d927f5ad679735895122f04b58745ba1f248"
+  },
+  "original_failure": {
+    "path": "/workspace/ruvector-epoch34-047dbc740dc2/source-stage-prewrite-failure-v1.json",
+    "bytes": 2592,
+    "sha256": "373c904ad82b33ef66194259ba652602ccd9aa97f489745e262c478ce5f9ef77"
+  },
+  "execution_approval_required": {
+    "path": "/workspace/ruvector-e34-independent-audit/source-stage-transition-adapter-independent-v1.json",
+    "checks_passed": true,
+    "adapter": {
+      "path": "/workspace/ruvector-e34-publication-impl/source-stage-transition-adapter-v1.py",
+      "bytes": 15597,
+      "sha256": "5a2a2c2795cfc08341eb083e7ce4e09a595849f4e2e7c70d7d5b31e308121e77"
+    }
+  },
+  "fixed_SOURCE_parent": "eafd332309fef5873086cf66c911b1787c320820",
+  "fixed_stage_output": "/workspace/ruvector-epoch34-047dbc740dc2/stage-source",
+  "future_invocation": [
+    "python3",
+    "-B",
+    "/workspace/ruvector-e34-publication-impl/source-stage-transition-adapter-v1.py",
+    "--expected-main",
+    "ACTUAL_READ_ONLY_MAIN_SHA"
+  ],
+  "scientific_changes": false,
+  "frozen_source_plan_controls_and_stager_changes": false,
+  "base_exception_count_required": 1,
+  "unchanged_normal_parent_comparison_required": 1,
+  "global_MUTABLE_modified": false,
+  "all_other_original_guards_retained": true,
+  "intent_path": "/workspace/ruvector-e34-publication-impl/source-stage-transition-adapter-intent-v1.json",
+  "execution_path": "/workspace/ruvector-e34-publication-impl/source-stage-transition-adapter-execution-v1.json",
+  "source_freeze_inventory_remains188": true,
+  "publication_policy": "Outside project only until SOURCE is published; root may preserve adapter/failure/approval/intent/execution in FINAL. No automatic execution, publication mutation, model/native call or scientific retry."
+}

@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "epoch": 35,
+  "kind": "ENGINEERING_QUANTITATIVE_SOURCE_SCOPE_STRESS",
+  "status": "REJECTED_ENGINEERING_ADMISSION",
+  "checks_passed": true,
+  "engineering_passed": false,
+  "readiness_qualified": false,
+  "diagnostic_qualified": false,
+  "benchmark_accuracy": null,
+  "champion_promoted": false,
+  "official_SOTA_verified": false,
+  "new_submission": false,
+  "official_rank": null,
+  "source_checkpoint": "4d51073072c428b58685e5498337bfdece6aac9b",
+  "published_source_commit": "d3fc2d602e5ce51039224e57034693fc8bf71da3",
+  "results": {
+    "path": "experiments/sota-2026-10-22/epoch35/RESULTS.json",
+    "bytes": 179381,
+    "sha256": "fbcc17736ae3a2178bd67a713b2183e5d9cd4b360de32c22992861c0312b5e45"
+  },
+  "independent_binding": {
+    "path": "experiments/sota-2026-10-22/audit/epoch35/independent-acceptance.json",
+    "bytes": 177700,
+    "sha256": "5414edac322ca71f5ac7fd567e246411f4df208d274340a5f55a8b779578327e"
+  },
+  "used_confirmation": {
+    "path": "experiments/sota-2026-10-22/epoch35/USED_CONFIRMATION_IDENTITIES.json",
+    "bytes": 1213,
+    "sha256": "e54ab7f8d11c5ae930ad84eebf3ff65ec7477c94e95e27fbb5deac0333fb3d55"
+  },
+  "model": {
+    "path": "experiments/sota-2026-10-22/candidate/epoch35/PRETRAINED_MODEL_SOURCE.json",
+    "bytes": 1423,
+    "sha256": "369513f402e336c448773b3a33ac187b7b8061a6eaa842105c8fc04a9e7fb1de"
+  },
+  "scorer": {
+    "path": "experiments/sota-2026-10-22/audit/epoch35/score_engineering.py",
+    "bytes": 18684,
+    "sha256": "85bfdd37c5f8455820c3d69b6bc600f4fa13ecc559c119abc38d30c8718dcbcd"
+  },
+  "frozen_gates": {
+    "primary_required_correct": 12,
+    "each_class_required_correct": 4,
+    "proper_score_nonincrease_vs_each_control": true
+  },
+  "metrics": {
+    "lexical": {
+      "n": 12,
+      "correct": 6,
+      "accuracy": 0.5,
+      "Brier": 0.8069673374832583,
+      "NLL_clipped_1e-12": 2.348308583362341,
+      "by_class": {
+        "contradiction": {
+          "correct": 2,
+          "n": 4
+        },
+        "entailment": {
+          "correct": 2,
+          "n": 4
+        },
+        "not_mentioned": {
+          "correct": 2,
+          "n": 4
+        }
+      },
+      "NLL_clip_count": 0
+    },
+    "native": {
+      "n": 12,
+      "correct": 6,
+      "accuracy": 0.5,
+      "Brier": 0.9255082527123307,
+      "NLL_clipped_1e-12": 2.525578505970831,
+      "by_class": {
+        "contradiction": {
+          "correct": 2,
+          "n": 4
+        },
+        "entailment": {
+          "correct": 2,
+          "n": 4
+        },
+        "not_mentioned": {
+          "correct": 2,
+          "n": 4
+        }
+      },
+      "NLL_clip_count": 0
+    },
+    "native_original": {
+      "n": 12,
+      "correct": 6,
+      "accuracy": 0.5,
+      "Brier": 0.9255082527123307,
+      "NLL_clipped_1e-12": 2.525578505970831,
+      "by_class": {
+        "contradiction": {
+          "correct": 2,
+          "n": 4
+        },
+        "entailment": {
+          "correct": 2,
+          "n": 4
+        },
+        "not_mentioned": {
+          "correct": 2,
+          "n": 4
+        }
+      },
+      "NLL_clip_count": 0
+    },
+    "positional": {
+      "n": 12,
+      "correct": 5,
+      "accuracy": 0.4166666666666667,
+      "Brier": 1.1150316518405496,
+      "NLL_clipped_1e-12": 3.0715560113123552,
+      "by_class": {
+        "contradiction": {
+          "correct": 2,
+          "n": 4
+        },
+        "entailment": {
+          "correct": 1,
+          "n": 4
+        },
+        "not_mentioned": {
+          "correct": 2,
+          "n": 4
+        }
+      },
+      "NLL_clip_count": 0
+    }
+  },
+  "failed_gates": [
+    "native_all12_correct",
+    "native_all4_per_class_correct",
+    "lexical:Brier_nonincrease",
+    "lexical:NLL_nonincrease"
+  ],
+  "all_error_records_retained": true,
+  "matched_ablation": {
+    "arms": [
+      "native",
+      "native_original",
+      "lexical",
+      "positional"
+    ],
+    "primary_native_original_equal_premises": 12,
+    "primary_native_original_equal_raw_logits": 12,
+    "primary_lexical_equal_premises": 8,
+    "n": 12,
+    "scope": "All four arms use the exact same b354 model/rawT1 and E34 complete-source-group packer; each primary/native control pair shares one actual native query. Native-original denotes native ranking with the shared E34 packer, not legacy contexts. Equality here is observed on this small authored corpus and establishes no general benchmark result."
+  },
+  "source_coverage": {
+    "contexts": 12,
+    "coverage_max": 0.7485029940119761,
+    "coverage_min": 0.3264705882352941,
+    "coverage_p50": 0.42288557213930345,
+    "full_supplied_input_contexts": 0,
+    "lexical_year_candidates": 18,
+    "lexical_year_candidates_retained": 12,
+    "numeric_occurrences": 63,
+    "numeric_omitted": 26,
+    "numeric_retained": 37,
+    "observed_pair_tokens_max": 82,
+    "observed_pair_tokens_min": 40
+  },
+  "latency": {
+    "reader_p50_seconds": 0.7192037280037766,
+    "reader_p95_seconds": 0.7980290650448296,
+    "native_search_p50_seconds": 0.000176896499999998,
+    "native_search_p95_seconds": 0.0005054167000000177,
+    "whole_worker_including_init_cleanup_seconds": 59.42169852901134,
+    "scope": "Actual singleton observations. Reader includes pair preparation/model/readout; composite_local adds measured disabled-decision interval. Context/native search separate; embedding/index/init/cleanup excluded here and reported in whole-worker wall/resources. Forward is not an isolated CPU kernel."
+  },
+  "resources": {
+    "largest_child_peak_RSS_bytes": 3440566272,
+    "outer_children_user_seconds": 84.441372,
+    "outer_children_system_seconds": 7.878919,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "compute_threads_requested": 2,
+    "observed_worker_OS_threads": 5,
+    "all_observed_thread_affinities_within_CPU0_1": true,
+    "scope": "Largest-child high-water RSS is not simultaneous aggregate RSS. Five observed OS threads do not imply five CPU cores; compute setting2 and every observed affinity were confined toCPU0,1."
+  },
+  "actual_counts": {
+    "worker_dispatches": 1,
+    "corpus_batches_attempted": 1,
+    "corpus_batches_completed": 1,
+    "native_binary_loads": 1,
+    "native_indexes": 12,
+    "native_queries": 12,
+    "native_insertions": 59,
+    "NLI_forwards": 48,
+    "BGE_forwards": 24,
+    "BGE_texts": 71,
+    "authored_oracle_reads": 1,
+    "authored_labels_joined_after_all48_readouts": 12,
+    "scorer_EVALUATE_calls": 1,
+    "scorer_BIND_calls": 1,
+    "scorer_oracle_traversals": 0,
+    "TRAIN": 0,
+    "DEV": 0,
+    "calibration": 0,
+    "CONF": 0,
+    "fits": 0,
+    "paid_calls": 0,
+    "GPU_calls": 0,
+    "runtime_errors": 0,
+    "closure_observer_readonly_invocations": 2,
+    "closure_observer_prewrite_cli_refusals": 1,
+    "native_worker_retries": 0
+  },
+  "error_analysis": [
+    {
+      "case": "epoch35:cc0:numeric-scope:02",
+      "observation": "Premise retains exact18cost/72revenue plus operating-ratio definition; reader predictsContradiction to one-quarter Entailment.",
+      "attribution_limit": "Observed numeric inference error with needed amounts retained; no counterfactual model run or generalization claim."
+    },
+    {
+      "case": "epoch35:cc0:numeric-scope:07",
+      "observation": "Premise retains strict less-than.60 rule and30debt/50equity; reader predictsNotMentioned to noncompliance Contradiction.",
+      "attribution_limit": "Observed strict-boundary arithmetic/deontic inference failure; no isolated causal mechanism established."
+    },
+    {
+      "case": "epoch35:cc0:numeric-scope:10",
+      "observation": "Premise explicitly says April units sold are not stated, alongside8claims; reader predictsEntailment to exactly2percent although full-source label isNotMentioned.",
+      "attribution_limit": "Observed unsupported denominator inference, not proof from a retrieval miss."
+    },
+    {
+      "case": "epoch35:cc0:numeric-scope:03",
+      "observation": "Selected premise omits actual delivery mass and unit conversion; source-complete Entailment becomesNotMentioned.",
+      "attribution_limit": "Context selection omitted required facts; do not attribute this solely to reader arithmetic or treat retrieval omission as source absence."
+    },
+    {
+      "case": "epoch35:cc0:numeric-scope:08",
+      "observation": "Selected premise includes current2signatures and prior4signatures but omits current prohibition/three-signature threshold.",
+      "attribution_limit": "Context selection omitted governing rule. Full supplied source, not selected evidence absence, defines theContradiction label."
+    },
+    {
+      "case": "epoch35:cc0:numeric-scope:12",
+      "observation": "Selected subsidiary240 count is classified as contradicting consolidated240, although unspecified other workforce leaves both total240 and300 consistent.",
+      "attribution_limit": "Source-scope/open-world error; missing contextual qualifiers and model interpretation remain jointly involved."
+    }
+  ],
+  "direction": "Reject engineering readiness. Preserve the E34 DEV-only lead and submitted native104. Stop nearby ranking/query variants and do not tune or rerun this exposed authored suite. Future work requires a newly frozen, source-admitted stronger pretrained typed-decision/NLI/context/numerical design, with exact model production/selection/calibration provenance or a separately qualified eligible model, and new legitimate data/scoring/access before benchmark confirmation. Future work is proposed, not executed or newly funded.",
+  "lineage": "Exact original b354 supervised/selection/calibration/foundation lineage remains INCOMPLETE_HOLD. Ten targeted author-source attempts found later/downstream pipelines but no exact original production closure; no weights acquired/new model trained.",
+  "official_refresh": {
+    "path": "experiments/sota-2026-10-22/epoch35/research/official/benchmark-refresh.safe.json",
+    "bytes": 12283,
+    "sha256": "46895702cd6d00c0684d690e78d7dbc83f362b1f1ea477aae71d0a9f61dde992"
+  },
+  "publisher_status": {
+    "path": "experiments/sota-2026-10-22/epoch35/research/official/publisher-status.safe.json",
+    "bytes": 979,
+    "sha256": "e0a72c2dec42be864192a01febef1bbce381fdc3cbf84ceea8632a1dbe293c96"
+  },
+  "claimbench": "No RuVector score/pilot. Full dataset/scorer/license/submission access unverified; future retrieval must stay within supplied10Kexcerpt and retrieval omission cannot establish insufficient evidence.",
+  "uncertainty": [
+    "Twelve newly authored intentionally balanced CC0 cases are engineering stress, not a benchmark sample, ClaimBench pilot, public JevBench score or eligible placement.",
+    "No newly stronger model was admitted, no fitting/calibration/solver override and no full-context counterfactual was run.",
+    "All12 primary contexts are partial; counted numeric occurrences are regex-based source provenance, not arithmetic competence or unique numeric facts.",
+    "One worker and12per-arm singleton timings do not establish official latency; native search excludes embeddings/indexing and reader timings exclude global initialization/cleanup.",
+    "All74unusedDEV and24protected confirmation identities remain untouched. E35 cases are exposed engineering forever."
+  ],
+  "goal_verified": false
+}

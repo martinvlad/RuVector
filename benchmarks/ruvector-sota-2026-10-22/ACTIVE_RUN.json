@@ -2,10 +2,10 @@
   "schema_version": 1,
   "epoch": 34,
   "run_id": "epoch34-047dbc740dc2",
-  "state": "EPOCH34_PLANNING_LEASE",
+  "state": "EPOCH34_SOURCE_FROZEN_DEV_PENDING_ADMISSION",
   "work_active": true,
   "experiments_active": false,
-  "checkpoint_parent": "047dbc740dc2d4fdbdbad90ac167ebc64b31a49c",
+  "checkpoint_parent": "eafd332309fef5873086cf66c911b1787c320820",
   "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
   "physical_owner": {
     "run_id": "epoch34-047dbc740dc2",
@@ -30,11 +30,11 @@
   "physical_guardian_directory": "/tmp/ruvector-sota-2026-10-22/epoch34-047dbc740dc2",
   "isolated_project": "/workspace/ruvector-epoch34-047dbc740dc2/project",
   "OS_lock_held": true,
-  "OS_lock_release_pending": false,
+  "OS_lock_release_pending": true,
   "native_allowed": 0,
   "conditional_train_allowed": 0,
-  "conditional_dev_allowed": 0,
+  "conditional_dev_allowed": 1,
   "confirmation_allowed": 0,
   "conditional_confirmation_allowed": 0,
-  "instruction": "Planning only. Fixed8 IDs conservatively retired without redraw; no model/native call until frozen SOURCE independently read back. No train/calibration/CONF/promotion/submission."
+  "instruction": "Only current DEV after independent actual SOURCE readback and pretrained model/source admission. One nonretryable CPU2/600s phase total; zero current fits/TRAIN. No CONF/full104/benchmark acceptance/promotion/submission. FINAL closes every slot."
 }

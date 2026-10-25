@@ -1,0 +1,22 @@
+"""Disabled proof boundary: every role returns exactly the raw neural T1 readout."""
+import math
+
+POLICY = 'proof-disabled-all-roles-v1'
+LABELS = ('Entailment', 'Contradiction', 'NotMentioned')
+
+
+def decide(document, premise, hypothesis, selected_source_spans, reader, *, enabled=False):
+    if enabled is not False:
+        raise ValueError('Proof is disabled for every E34 role')
+    raw, label = reader['probabilities_E_C_N'], reader['native_typed_argmax']
+    if (not isinstance(raw, list) or len(raw) != 3 or label not in LABELS
+            or any(type(x) not in (int, float) or not math.isfinite(x) or not 0 <= x <= 1 for x in raw)
+            or abs(math.fsum(raw) - 1) > 1e-12
+            or raw[LABELS.index(label)] != max(raw)):
+        raise ValueError('Original finite T1 distribution and native argmax required')
+    return {'schema_version': 1, 'epoch': 34,
+        'raw_probabilities_E_C_N': list(raw), 'raw_typed_argmax': label,
+        'final_probabilities_E_C_N': list(raw), 'final_typed_argmax': label,
+        'policy': POLICY, 'certificate': None,
+        'fallback_reason': 'proof_disabled_for_ALL_ROLES',
+        'semantic_decision_override': False}

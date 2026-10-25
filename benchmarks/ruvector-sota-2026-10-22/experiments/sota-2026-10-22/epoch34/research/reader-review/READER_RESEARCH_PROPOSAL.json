@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "epoch": 34,
+  "kind": "PREMEASUREMENT_READER_SOURCE_AND_HYBRID_HYPOTHESIS_REVIEW",
+  "source_checkpoint": "047dbc740dc2d4fdbdbad90ac167ebc64b31a49c",
+  "created_at": "2026-10-25T03:37:38.435777+00:00",
+  "status": "NO_NEW_ELIGIBLE_MATERIALLY_STRONGER_READER_VERIFIED; SINGLE_HYBRID_HYPOTHESIS_PROPOSED",
+  "prior_current_Git_bound_sources": [
+    {
+      "path": "experiments/sota-2026-10-22/epoch33/REJECTION_LEDGER.json",
+      "bytes": 110252,
+      "sha256": "26859189de3c5a40287366f7028f53d3d0707fc296470d715581f28fba0d5ba1",
+      "verified_current_Git_blob": "b782ae1f3f90c5b22b4ea67003c037e2991e9e23"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch33/LEARNINGS.json",
+      "bytes": 14043,
+      "sha256": "3a9ab4720f1cd31ce39c4a6e14d5f7b8eab17827728b316daf6f7acbb48e5d35",
+      "verified_current_Git_blob": "d8587aa5da355efe042c480d96ad0e68cfc19fbd"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch23/research/model-admission.json",
+      "bytes": 11279,
+      "sha256": "865ed204bd186395d6f4a5abccbb77a9dac95f2e90affddada3abd508f3db1bd",
+      "verified_current_Git_blob": "35b64073ed52a7857ad017e75f44508b1fa89918"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch33/research/MODEL_SOURCE_ADMISSION.json",
+      "bytes": 3980,
+      "sha256": "f91cdaf0fd0c6af7c5ccab3b62c43bbcc90ea8bc7180cb4b343da01bb2b567d7",
+      "verified_current_Git_blob": "beab77344c072062ab1f6602a76188613b57ccc3"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/epoch18/plan.json",
+      "bytes": 81706,
+      "sha256": "f2eb56b436bc499f4a63d724dc6055a5e1e69e82892cb41d1db4e023af49e7eb",
+      "verified_current_Git_blob": "3ca77bd062508c9264a16337e23e3bf46175e074"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch33/context_engine.py",
+      "bytes": 9837,
+      "sha256": "59bc7dcb9e7ab9c84f8e547e5bc583f4adb21099cceb2ae0f959370187ce6138",
+      "verified_current_Git_blob": "c62032fcd2315cc2000b5b375cd711e06f278b9e"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch33/evidence.py",
+      "bytes": 5983,
+      "sha256": "8119445081c7147fedc148365a966836376ab9fcd0c7e8aac496f5d042d399eb",
+      "verified_current_Git_blob": "902a333308a812494078ef63382a8fa5fb54c527"
+    }
+  ],
+  "prior_epoch15_to33_outcomes_reviewed": [
+    {
+      "epoch": 15,
+      "status": "REJECTED_DEV_GATE",
+      "kind": null,
+      "reason": "Accuracy gain vs positional is1, below frozen2; Brier/NLL worse than evidence-conditioned104. All paired document accuracy intervals cross0. Runtime confirmation forecast657.8187s also exceeds600s.",
+      "candidate": "native RuVector + official DeBERTa-v3-large QUINT8 + shared source-definition priority",
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 16,
+      "status": "REJECTED_DEV_GATE_WITH_ADDITIONAL_FROZEN_AUDITOR_PROBABILITY_MASS_FAILURE",
+      "kind": null,
+      "reason": null,
+      "candidate": "Fixed whole-proposition NOT mirrored mean, same official DeBERTa-v3-large, actual native RuVector evidence",
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 17,
+      "status": "BLOCKED_PRE_NATIVE_FROZEN_PLAN_INHERITED_DECISION_TIMEOUT_CONFLICT",
+      "kind": null,
+      "reason": null,
+      "candidate": null,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 18,
+      "status": "INDEPENDENT_REJECTED_DEV_GATE_CONF_UNTOUCHED",
+      "kind": null,
+      "reason": null,
+      "candidate": null,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 19,
+      "status": "REJECTED_ENGINEERING_QUALIFICATION",
+      "kind": "ENGINEERING_QUALIFICATION_ONLY",
+      "reason": "Both semantic readiness gates fail and dynamic-int8 fidelity fails; no benchmark/confirmation measurement or promotion.",
+      "candidate": null,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 20,
+      "status": "REJECTED_DEV_GATE",
+      "kind": "ORIGINAL_FP32_TYPED_READER_NATIVE_MATCHED_EVIDENCE_DEV",
+      "reason": "Frozen all-class gate: primary Contradiction correct0/4. Every accuracy-gain/proper-score comparison and the runtime gate passed; acceptance still fails.",
+      "candidate": null,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 21,
+      "status": "REJECTED_DEV_GATE",
+      "kind": "ORIGINAL_FP16_TO_FP32_TYPED_DEBERTA_NATIVE_MATCHED_EVIDENCE_DEV",
+      "reason": "Frozen all-class gate fails: native Contradiction0/4. Each of four typed/binary matched-control accuracy gains is1, below required2. All proper-score and runtime gates pass but cannot override rejection.",
+      "candidate": null,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 22,
+      "status": "REJECTED_DEV_GATE",
+      "kind": "FP32_TYPED_READER_NATIVE_SENTENCE_GROUPS_MATCHED_RETRIEVAL",
+      "reason": "Frozen development checks failed: binary:same_nli_positional_first2:NLL_nonincrease, binary:same_nli_positional_first2:accuracy_gain_at_least_two_correct",
+      "candidate": null,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 23,
+      "status": "ENGINEERING_QUALIFIED_SEMANTIC_READER_ADMISSION_BLOCKED",
+      "kind": "SOURCE_SCOPE_ENGINEERING",
+      "reason": null,
+      "candidate": null,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 24,
+      "status": "ENGINEERING_QUALIFIED_SEMANTIC_READER_ADMISSION_BLOCKED",
+      "kind": null,
+      "reason": null,
+      "candidate": null,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 25,
+      "status": "REJECTED_AUTHORED_ENGINEERING_QUALIFICATION",
+      "kind": "AUTHOR_ONLY_TYPED_READER_ENGINEERING",
+      "reason": [
+        "worker completion and no errors",
+        "manual full source literal/UTF8 provenance:e25-q03",
+        "native six of six typed correctness",
+        "native every class two of two",
+        "native proper-score nonincrease:positional:NLL",
+        "forbidden zero:Python_network_operations_attempted",
+        "one owned completed worker"
+      ],
+      "candidate": "Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca fixed A/B/C conditional token scores",
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 26,
+      "status": "REJECTED_DEV_DIAGNOSTIC",
+      "kind": "REAL_DEV_ONLY_TYPED_NLI_DIAGNOSTIC",
+      "reason": [
+        "native_at_least_one_correct_per_class failed: contradiction0/7",
+        "Unknown supervised/selection/calibration model lineage; CONF remains empty and promotion ineligible"
+      ],
+      "candidate": "mrm8488/ModernBERT-large-ft-all-nli@afa5e4b89a8a23d3b19da2ed0fa7daf2496c7c47",
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 27,
+      "status": "REJECTED_DEV_DIAGNOSTIC",
+      "kind": "REAL_DEV_ONLY_TYPED_NLI_DIAGNOSTIC",
+      "reason": null,
+      "candidate": "facebook/bart-large-mnli@d7645e127eaf1aefc7862fd59a17a5aa8558b8ce original2020.bin",
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 28,
+      "status": "REJECTED_ENGINEERING_QUALIFICATION",
+      "kind": null,
+      "reason": "Frozen engineering qualification failed. Exact raw outputs, captured launcher and independent replay failures are retained unchanged; no retry, promotion or confirmation.",
+      "candidate": null,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 29,
+      "status": "DATA_ADMISSION_HOLD_WITH_ENGINEERING_QUALIFIED",
+      "kind": null,
+      "reason": "Actual native RuVector document identity qualification passed its frozen source-hash/ANN/brute/coverage gates. It prevents invalid freshness claims; it establishes no semantic benchmark or trained-model improvement. Original LoRA allocation remains on HOLD with all16 IDs retired.",
+      "candidate": null,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 30,
+      "status": "TRAINING_NOT_ACCEPTED_DEV_NOT_STARTED",
+      "kind": null,
+      "reason": "Frozen TRAIN/MODEL/DEV diagnostic acceptance did not pass; retain all original failures, unstarted phases and incomplete/unknown captured counters. No retry or confirmation is authorized.",
+      "candidate": null,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 31,
+      "status": "REJECTED_DEV_DIAGNOSTIC",
+      "kind": null,
+      "reason": "Frozen current DEV archived-adaptation diagnostic acceptance did not pass; retain all original failures, unstarted phases and incomplete/unknown captured counters. No retry or confirmation is authorized.",
+      "candidate": null,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 32,
+      "status": "ENGINEERING_REJECTED_DEV_NOT_STARTED",
+      "kind": null,
+      "reason": "Frozen current DEV pretrained NLI diagnostic acceptance did not pass; retain all original failures, unstarted phases and incomplete/unknown captured counters. No retry or confirmation is authorized.",
+      "candidate": null,
+      "confirmation_consumed": false
+    },
+    {
+      "epoch": 33,
+      "status": "REJECTED_DEV_DIAGNOSTIC",
+      "kind": null,
+      "reason": "Frozen current DEV pretrained NLI diagnostic acceptance did not pass; retain all original failures, unstarted phases and incomplete/unknown captured counters. No retry or confirmation is authorized.",
+      "candidate": null,
+      "confirmation_consumed": false
+    }
+  ],
+  "candidate_source_reviews": [
+    {
+      "repository": "microsoft/deberta-v2-xlarge-mnli",
+      "revision": "2b65bccdedcead4bc685988bcc30153d4922a789",
+      "declared_license": "mit",
+      "card": {
+        "path": "model1.README.md",
+        "bytes": 3956,
+        "sha256": "e9cab79bfb344526b1955b00bf646d2e6f179a4df616a4c31afd2563a72e8385"
+      },
+      "official_API": {
+        "path": "model1.api.json",
+        "bytes": 2225,
+        "sha256": "146a563712ef842cb51bab7a7b2289478ab8486fada8f32bff06429ae107bb23"
+      },
+      "weight_metadata": [
+        {
+          "rfilename": "pytorch_model.bin",
+          "blobId": "79b30a94773da8251e36293f3c094d95a8bb0500",
+          "size": 1773982007,
+          "lfs": {
+            "sha256": "cc41eeb065c6ab3f7e88f8dab756334abb1f77a1136fec8cf02442143934c253",
+            "size": 1773982007,
+            "pointerSize": 135
+          }
+        }
+      ],
+      "training_record_selection_calibration_manifest_verified": false,
+      "new_runtime_or_quality_measurements": false,
+      "qualification": "PRIOR_REJECTED_READER_NO_RETRY",
+      "limitations": [
+        "Microsoft900M is exactly the E18/E19 reader, not a novel candidate. E19 FP32 semantic gate2/3;INT8 1/3; max probability drift0.758825985740294. Do not repeat unchanged qualification.",
+        "Available weight requires more disk than the approximately500MB post-restoration estimate; no eviction/download authorized or performed. This is acquisition non-admission, not a measured runtime failure.",
+        "No CPU2/600s inference estimate or publisher eligibility established. No confirmation permitted."
+      ]
+    },
+    {
+      "repository": "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+      "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+      "declared_license": "mit",
+      "card": {
+        "path": "model2.README.md",
+        "bytes": 3406,
+        "sha256": "bb8affaa741b518e536d09ac6ff8f85d7ea3aee215c56e111379c78eaed8a17c"
+      },
+      "official_API": {
+        "path": "model2.api.json",
+        "bytes": 2575,
+        "sha256": "a9ec8b5f7a1580d79eb659a2c48453031edb83826010231698ddbf59a364c61e"
+      },
+      "weight_metadata": [
+        {
+          "rfilename": "pytorch_model.bin",
+          "blobId": "b1612fdfa92fc593b05966567804c230c970395f",
+          "size": 1425814813,
+          "lfs": {
+            "sha256": "a51c55cb7dc41c4c862f06a3d9c413a8aa0619222bc56f06cb6f2f5b2d3ee14a",
+            "size": 1425814813,
+            "pointerSize": 135
+          }
+        }
+      ],
+      "training_record_selection_calibration_manifest_verified": false,
+      "new_runtime_or_quality_measurements": false,
+      "qualification": "METADATA_ONLY_NOT_ADMITTED_AS_STRONGER_OR_ELIGIBLE",
+      "limitations": [
+        "Author declares SNLI/MNLI/FEVER/ANLI; current metadata lastModified2021-05-20 alone is not an exact per-record selection/calibration or original-weight history proof. No matched evidence this is stronger than b354.",
+        "Available weight requires more disk than the approximately500MB post-restoration estimate; no eviction/download authorized or performed. This is acquisition non-admission, not a measured runtime failure.",
+        "No CPU2/600s inference estimate or publisher eligibility established. No confirmation permitted."
+      ]
+    }
+  ],
+  "official_GETs": 4,
+  "model_native_tokenizer_gold_weight_download_or_paid_GPU_calls": 0,
+  "records_of_unused_DEV_or_confirmation_read": 0,
+  "source_licensed_data_needed_for_future_diagnostic": "Original ContractNLI CC-BY4 source-pinned current checkpoint, inputs-only projection before inference; exact IDs frozen by independent data owner before measurements. This report chooses no IDs and accesses no new source annotations.",
+  "model_lineage_HOLD_preserved": true,
+  "proposed_single_treatment": {
+    "name": "LEXICAL_ANCHORED_NATIVE_INTERLEAVE",
+    "status": "PROPOSED_ONLY_NOT_IMPLEMENTED_EXECUTED_OR_SCHEDULED",
+    "motivation": "E33 lexical13/24 versus original-native10/24 and expanded-native9/24, while E21/E22 native beat lexical on different banks. This supports testing complementary retrieval, not asserting lexical universally better. Query expansion is rejected and will not be varied.",
+    "reader": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli@b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7, original weights/F32 CPU, same model/tokenizer/readout across arms",
+    "query": "Original unchanged hypothesis for both native and lexical retrieval; no expansion, whole-proposition negation, model decision override, training, calibration or adaptive terms.",
+    "ordering": "Compute original native ranking and lexical Jaccard ranking over the exact same source units. Emit the first unseen lexical item, then first unseen native item, repeatedly alternating until at most40 unique items or exhaustion. Starting lexical is fixed by hypothesis, not selected from measurements. This produces a full fixed-depth hybrid ranking; it does not restrict context to only2 units. Native-ranking exhaustion is explicit; remaining lexical candidates fill deterministically.",
+    "matched_controls": [
+      "Original native ranking",
+      "Original lexical Jaccard ranking",
+      "Original positional source-first ranking"
+    ],
+    "context": "Use identical unchanged source-partition/prelude/greedy source-whole-group packer and512 true-pair-token budget across all arms. Ranking affects priority only. Preserve exact source offsets/numeric literals; never equate retrieval omission with global absence.",
+    "main_frozen_gate_suggestion": "Before any measurement freeze +2 correct and Brier/NLL nonincrease versus each same-model control, at least1correct each observed class, complete finite outputs and source provenance, <=600seconds whole worker including init/cleanup. Independent scorer. Failure closes all slots. No posthoc best-arm selection.",
+    "freshness": "All easy48/Legal96/current and historical DEV remain exposed forever. Any fresh diagnostic bank must be newly frozen and permanently retired; no confirmation bank may be used under present reader lineage HOLD.",
+    "resource": "Four arms ×24DEV=96 NLI forwards, plus fourarms ×6exposed engineering=24;120 total. One original native query percase=30 total acrossENG+DEV, at most2 nativecorpus batches. Same435,064,835-parameter reader priorE33worker427.75s at120forwards is feasibility evidence only, not current execution or guaranteed walltime.",
+    "novelty_scope": "Prior rejection ledger and32 hash-verified selected candidate algorithm/context/evidence/model Python source files show separate native/lexical/positional arms; no lexical-anchored alternating interleave found. This limited search is not proof of global algorithm novelty; submitted native104/RRF10 remains untouched.",
+    "no_acceptance_or_SOTA_claim": true
+  },
+  "unchanged_constraints_action": "Do not reacquire/retest Microsoft900M or known ContractNLI-supervised readers. Root may advance one independent fixed hybrid-context diagnostic with actual native evidence and same-model ablation, retaining lineage HOLD and all failures. Do not run a nearby query-term grid."
+}

@@ -1,0 +1,284 @@
+{
+  "budgets": {
+    "BGE_ORT_sessions": 1,
+    "BGE_initializations": 1,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "GPU_calls": 0,
+    "NLI_model_initializations": 1,
+    "conditional_DEV_NLI_forwards": 96,
+    "conditional_DEV_native_queries": 24,
+    "confirmation_calls": 0,
+    "corpus_sequence": "Six exposed E32 CC0 regression documents first with one original native query each, then conditional eight new DEV documents with three original queries each. The one native result per case is shared by hybrid/native-only control,14indexes total,2helpers,one model/BGE/ORT initialization and one600second outer worker.",
+    "counting_amendment": "native-corpus-counting-addendum-v1.json",
+    "counting_note": "All4arms execute raw T1 NLI:24 exposed regression + conditional96 DEV forwards =120maximum. Hybrid/control reuse the same one native query, not a second query or new corpus. Proof is disabled on ALLroles.",
+    "current_TRAIN_calls": 0,
+    "engineering_NLI_forwards": 24,
+    "engineering_native_queries": 6,
+    "failure": "Retain complete/partial/UNKNOWN receipts and consumed logical attempt; never infer absent backend work or retry uncertain start. No engineering semantic pass can extend600s or add predictions.",
+    "full104_calls": 0,
+    "maximum_NLI_forwards": 120,
+    "maximum_native_queries": 30,
+    "native_corpus_batches": 2,
+    "native_helper_process_starts_maximum": 2,
+    "owned_workers": 1,
+    "paid_calls": 0,
+    "retries": 0,
+    "seconds_including_initialization_engineering_DEV_retrieval_IO_and_cleanup": 600
+  },
+  "development": {
+    "NLI_forwards": 96,
+    "all_three_gold_classes_required": true,
+    "calibration_or_fit_calls": 0,
+    "cases": 24,
+    "context": "Same original hypothesis and source groups for every arm. Hybrid lexical-top1 group plus first distinct native group; native_original top2 native groups, lexical top2 lexical groups, positional first2 source groups. All use identical E34 mandatory-first2-distinct-complete-group packing with optional shared definition groups only when exact512jointpairtoken budget permits; no filler, group clipping, query expansion or length-based redraw. native_original is an original native ranking control under the NEW shared E34 packer, not the old E33 packer. Mandatory group count is min(2,available source groups); a one-group source is explicitly disclosed as degenerate. If a multigroup document has no distinct native complement within actual top40, refuse the corpus; no lexical-only fallback or replacement.",
+    "document_ids": [
+      434,
+      367,
+      247,
+      377,
+      220,
+      457,
+      169,
+      449
+    ],
+    "evidence_list_reads": 0,
+    "gold_timing": "Exactly one24-choice source join only after native exposed-regression6/6, all120 genuine raw outputs captured immutable, independent original-query/native-vector/group-context/numerical/raw-equality and physical-closure replay. No choices on partial/failed/incomplete output.",
+    "hypotheses": [
+      "nda-17",
+      "nda-7",
+      "nda-3"
+    ],
+    "nonDEV_source_choice_reads": 0,
+    "retrieval_arms": [
+      "actual_native",
+      "native_original",
+      "lexical",
+      "positional"
+    ]
+  },
+  "diagnostic_gates": {
+    "DEV_final_equals_raw_is_mandatory_integrity": true,
+    "all_required": true,
+    "all_three_gold_classes_present": true,
+    "does_not_open_confirmation_or_promotion": true,
+    "engineering_semantics_or_scientific_gate_changes_after_measurement": false,
+    "final_native_Brier_nonincrease_vs_raw_native": true,
+    "final_native_NLL_nonincrease_vs_raw_native": true,
+    "final_native_comparison_controls": [
+      "native_original",
+      "lexical",
+      "positional"
+    ],
+    "final_native_correct_nondecrease_vs_raw_native": true,
+    "minimum_real_DEV_certificate_coverage_required": false,
+    "missing_class": "NOT_EVALUABLE and diagnostic rejection, no redraw or fabricated zero-denominator score",
+    "native_at_least_one_correct_per_gold_class": true,
+    "native_correct_gain_vs_lexical": 2,
+    "native_correct_gain_vs_native_original": 2,
+    "native_correct_gain_vs_positional": 2,
+    "threeway_Brier_nonincrease_vs_all_controls": true,
+    "threeway_NLL_nonincrease_vs_all_controls": true,
+    "zero_real_DEV_certificate_coverage": "Mandatory: proof disabled on ALLroles, every final distribution/argmax must equal raw T1. This tests hybrid evidence selection only."
+  },
+  "engineering": {
+    "NLI_forwards": 24,
+    "case_ids": [
+      "epoch32:cc0:engineering:1",
+      "epoch32:cc0:engineering:2",
+      "epoch32:cc0:engineering:3",
+      "epoch32:cc0:engineering:4",
+      "epoch32:cc0:engineering:5",
+      "epoch32:cc0:engineering:6"
+    ],
+    "cases": 6,
+    "document_ids": [
+      -32001,
+      -32002,
+      -32003,
+      -32004,
+      -32005,
+      -32006
+    ],
+    "failure": "Preserve all authored predictions/errors; stop before any current DEV bank read or model inference; DEV metrics null, DEV choices0, all8 allocated source identities remain retired. No retry or engineering fixture changes.",
+    "fresh_confirmation": false,
+    "hypothesis_ids": [
+      "eng-1",
+      "eng-2",
+      "eng-3",
+      "eng-4",
+      "eng-5",
+      "eng-6"
+    ],
+    "integrity_gate": "All24 genuine finite raw three-way outputs, exact source-native-vector/group-context/pair and numerical provenance, final==rawT1; no proof/certificate/override allowed.",
+    "order": "All24 genuine raw NLI outputs before exposed-oracle comparison; every arm uses original query and identical E34 group packing, proof disabled ALLroles. DEV bank remains unopened until fixed regression gate passes.",
+    "prior_authored_epoch": 32,
+    "prior_source_commit": "0522a2c521c92c55d843d21c71495a44b43977e5",
+    "retrieval_arms": [
+      "actual_native",
+      "native_original",
+      "lexical",
+      "positional"
+    ],
+    "role": "EXPOSED_DEV_REGRESSION: the same six E32 authored CC0 cases, two expected labels each E/C/N. Their original logical IDs and input hashes are preserved; this is a physical E34 run, never fresh confirmation.",
+    "scope": "Previously exposed engineering regression correctness only; neither fresh authored confirmation nor benchmark generalization. The E32 failures informed the fixed method before this run. The original public annotation source is not used for regression construction.",
+    "semantic_gate": "All6 actual_native raw T1 decisions must match exposed CC0 oracle. Other arms descriptive. Integrity failures cannot be waived by semantic success."
+  },
+  "epoch": 34,
+  "freeze_order": [
+    "Fix single hybrid rule/shared group packer/exact source model/all8metadata roles/protocol before source projection",
+    "Publish exact8 reservation and independent actual planning readback before input-only projection once with no choices/evidence",
+    "Freeze complete candidate/model/runtime/scorer/exposed-regression oracle and SOURCE admission",
+    "One nonretryableCPU2/600sworker:24 exposed regression then conditional96DEVforwards,atmost2nativecorpora/30nativequeries",
+    "Independent immutable120output/query/vector/source/numerical/closure checks before any originalDEVchoice",
+    "Exactlyone24choicejoin if admissible; fixedhybrid-vs-nativeonly/lexical/positionalgates; canonicalRESULTS/bind; closeallslots"
+  ],
+  "hypotheses": [
+    "nda-17",
+    "nda-7",
+    "nda-3"
+  ],
+  "hypothesis": "One fixed lexical-anchor/native-complement evidence ranking may improve typed NLI decisions over native-only, lexical-only and positional evidence under one identical new mandatory-group context packer. All arms retain the unchanged original hypothesis and the same stock b354 NLI reader. Hybrid: lexical top-ranked complete source group plus the first native-ranked different source group, with no query expansion, fitted component or adaptive fallback.",
+  "kind": "REAL_NATIVE_LEXICAL_ANCHOR_NATIVE_COMPLEMENT_NLI_DIAGNOSTIC",
+  "lineage_and_admission_limits": [
+    "MIT original model declaration/source notices retained; original ContractNLI data is CC-BY4.0.",
+    "Model card declares generic NLI training families MNLI/FEVER/ANLI/LingNLI/WANLI, but exact data revisions/splits/head-selection/calibration records and foundation overlap are incomplete. Declared generic families are not a proof of ContractNLI exclusion.",
+    "Supervised/selection/foundation/fuzzy/semantic record overlap remains UNKNOWN; diagnostic only, CONF and official eligibility HOLD.",
+    "All prior317exposed and24protected identities/crosssplit184 metadata rows remain excluded from82eligiblegroups; no input-length/class filter, replacement or redraw."
+  ],
+  "model": {
+    "architecture": "DebertaV2ForSequenceClassification",
+    "attention": "eager",
+    "canonical_E_C_N_permutation": [
+      0,
+      2,
+      1
+    ],
+    "device": "CPU",
+    "fit_calibration_training_generation_calls": 0,
+    "load": "Exact original394 learned F16 tensors and source I64position buffer; learned values converted deterministically to FP32 CPU. No random/reinitialized learned parameters, fitting, learned conversion, pickle or generic fallback.",
+    "mode": "eval/inference_mode, every learned parameter requires_grad false",
+    "model_and_head_selection_configurations": 1,
+    "native_labels": [
+      "entailment",
+      "neutral",
+      "contradiction"
+    ],
+    "precision": "F16 source / FP32 CPU compute",
+    "repository": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "temperature": 1,
+    "weight_bytes": 870182606,
+    "weight_format": "Original F16 safetensors; exact deterministic conversion to FP32 CPU compute",
+    "weight_sha256": "c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b"
+  },
+  "proof_method": {
+    "application_scope": "DISABLED_ALL_ROLES",
+    "certificate": null,
+    "final_equals_raw_T1": true,
+    "independent_auditor": "decision_proof_audit.py exact disabled-policy/raw equality checks; never imports candidate proof",
+    "policy": "proof-disabled-all-roles-v1",
+    "policy_path": "experiments/sota-2026-10-22/candidate/epoch34/PROOF_POLICY.json",
+    "retrieval_miss_implies_not_mentioned": false,
+    "semantic_decision_override": false,
+    "source_path": "experiments/sota-2026-10-22/candidate/epoch34/proof.py"
+  },
+  "protocol_revision": 1,
+  "query_treatment": {
+    "NLI_claim": "Exact original whole hypothesis everyarm",
+    "causal_control": "native_original native-only ranking under identical new E34 packer/model/unchangedquery",
+    "hybrid_distinctness": "Anchor is lexicaltop1 unit sourcegroup; complement is first actualnative top40 unit in DIFFERENTsourcegroup. None allowed ONLYwhen the complete supplied source catalogue has exactlyonegroup, disclosedsingle_group_degenerate:true. Ifmultiple sourcegroups but no actualtop40 complement, failclosed without fallback/redraw.",
+    "lexical_control": "Same original hypothesis fixed Jaccard lexical ranking under identical E34 packer",
+    "native_bundle": "One ordered original query vector/receipt per case, reused forhybrid/nativecontrol",
+    "policy_path": "experiments/sota-2026-10-22/candidate/epoch34/QUERY_POLICY.json",
+    "primary_arm": "actual_native lexical top1 complete group plus first native different group",
+    "source_blind": "Original unchanged hypothesis only; no query term expansion, label/source/ID-dependent rewrite or grid.",
+    "source_path": "experiments/sota-2026-10-22/candidate/epoch34/query.py",
+    "validation": "Independent identityquery/source/vector/group/context replay before24DEVchoicejoin"
+  },
+  "raw_derived_ablation": {
+    "arms": [
+      "native",
+      "native_original",
+      "lexical",
+      "positional"
+    ],
+    "candidate_selection_after_measurement": false,
+    "certificate_coverage_per_arm": true,
+    "extra_model_native_calls": 0,
+    "metrics": [
+      "accuracy",
+      "Brier",
+      "NLL",
+      "per-class denominators",
+      "paired final-minus-raw deltas"
+    ],
+    "predeclared": true,
+    "same_predictions_reused": true,
+    "zero_real_DEV_certificate_coverage": "Mandatory zero certificates ALLroles; final is rawT1, no proof efficacy claim."
+  },
+  "readout": {
+    "binary_derived_view": "Yes=pE>0.5, exacthalfNo; No=pC+pN. Derived consistency only, not a replacement typed decision or headline3-way accuracy.",
+    "nonincrease_tolerance": 1e-12,
+    "numeric_replay_tolerance": 1e-06,
+    "policy": "proof-disabled-all-roles-v1",
+    "proper_scores": "Fixed raw T1 threeway stable-softmax scores: mean sum(p-y)^2 Brier and mean -ln(max(pgold,1e-12)) NLL; report clipping counts/unclipped finiteness. No fitted temperature or probability selection.",
+    "typed_prediction": "Every raw E,N,C first-maximum/T1 distribution is retained unchanged for every arm/role; certificate:null, semantic_decision_override:false, final==rawT1 always. No rule, onehot forecast or postmeasurement arm selection."
+  },
+  "reporting": {
+    "benchmark_accepted": false,
+    "calibration": [],
+    "champion": "Native104/RRF10 unchanged",
+    "champion_promoted": false,
+    "confirmation": [],
+    "full104": "Not attempted; known full-input16KiB blocker is not repeated or converted into an excerpt104 claim.",
+    "new_submission": false,
+    "official_SOTA_verified": false,
+    "official_rank": null
+  },
+  "roles": {
+    "calibration": [],
+    "confirmation": [],
+    "dev": [
+      434,
+      367,
+      247,
+      377,
+      220,
+      457,
+      169,
+      449
+    ],
+    "train": []
+  },
+  "sampling_and_uncertainty": "Six exposed authored regression cases are separate from eight newly reserved document clusters \u00d7three correlated legal hypotheses. Report class denominators, per-document deltas, raw/final/certificate coverage and uncertainty. Do not treat24cases as independent or compare different banks as a causal old/new model benchmark.",
+  "schema_version": 1,
+  "selection_sha256": "b9c1d243476f0ef35678dff9f3bfcfcc6688d02e09c5fdfab2c3226aa50e0323",
+  "source_checkpoint": "047dbc740dc2d4fdbdbad90ac167ebc64b31a49c",
+  "source_data": {
+    "attribution": "Koreeda and Manning (2021), ContractNLI",
+    "isolation": "Later authorized projection/scorer parses the complete publicly annotated JSON in RAM. Field access is logical and audited, not OS-enforced label secrecy. Current projection traverses only selected text/hypothesis fields and source IDs; future scorer exactly24 selected DEV choices; no evidence lists.",
+    "license": "CC-BY-4.0",
+    "normalization": "Authoritative canonical text hash = SHA256 UTF8(' '.join(text.casefold().split())). Normalization does not establish semantic or foundation decontamination.",
+    "revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "role_partition_after_any_fixed8_projection_or_failure": {
+      "exposed": 325,
+      "reserved_confirmation": 24,
+      "total": 423,
+      "unreserved": 74
+    },
+    "role_partition_before": {
+      "exposed": 317,
+      "reserved_confirmation": 24,
+      "total": 423,
+      "unreserved": 82
+    },
+    "source_bytes": 7608211,
+    "source_sha256": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+    "transformations": "Select fixed8 original TRAIN documents \u00d7three fixed hypotheses; preserve text/hypotheses and add role/identity metadata. DEV-only diagnostic, not official held-out benchmark."
+  },
+  "status": "FIXED_PROSPECTIVE_PROTOCOL_BEFORE_NEW_INPUTS_OR_MEASUREMENT",
+  "timing_and_resources": "Report four-arm reader/forward p50/p95, shared actual native search interval and context packing separately, total model/native initialization+cleanup+wholeworker wall/RSS. Hybrid and native-only attribution share one query, never sum them as two native operations. CPU0,1 only."
+}

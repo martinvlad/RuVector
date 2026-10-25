@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "epoch": 34,
+  "source_version": 3,
+  "checks_passed": true,
+  "pure_guard_tests": 47,
+  "mocked_main_advance_CAS_checks_passed": true,
+  "fixture_runs": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/workspace/ruvector-e34-publication-impl/publication/test_publication_guards_v1.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "...............................................\n----------------------------------------------------------------------\nRan 47 tests in 0.194s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "node",
+        "/workspace/ruvector-e34-publication-impl/test-publisher.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"mocked_main_advance_publication_passed\":true,\"main_mutation_rejected\":true,\"force_update_rejected\":true,\"actual_Git_or_network_calls\":0}\n",
+      "stderr": ""
+    }
+  ],
+  "actual_transitive_context_refs_verified_without_importing_them": [
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch6/context.py",
+      "bytes": 9205,
+      "sha256": "28bceb95282ec3e3e938f3211ccad04d2369fa29e1f191f187566339ae3b44d2"
+    },
+    {
+      "path": "experiments/sota-2026-10-22/candidate/epoch15/context.py",
+      "bytes": 11070,
+      "sha256": "9bf168e90511708c2aa5e6248d1806c57e5fc48ffa1c97ceab218c757e5f76fb"
+    }
+  ],
+  "revision": "Prefreeze transitive context closure only: master plan pins and source-freeze inherited_context_dependencies now include unchanged E6 and E15 exact references. Existing BGE/E22/current source dependencies retained. No changes to model, IDs, budgets, gates or scientific treatment.",
+  "prior_source_retained": {
+    "path": "versions/v2-before-transitive-context-pin-closure/HANDOFF.v2.json",
+    "bytes": 10974,
+    "sha256": "50e5966985119140aa7d20fe1b8fa5888d7652aebef700191d28cd4a1db1c74a"
+  },
+  "SOURCE_FINAL_controls_stage_master_ML_native_tokenizer_gold_Git_calls": 0
+}

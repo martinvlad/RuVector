@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "epoch": 34,
+  "kind": "REAL_NATIVE_LEXICAL_ANCHOR_NATIVE_COMPLEMENT_NLI_DIAGNOSTIC",
+  "policy": "lexical-anchor-native-complement-v1",
+  "query": "Exact original hypothesis bytes; unchanged for BGE/native, lexical Jaccard and NLI; no expansion, rewriting or truncation",
+  "lexical": "Set-word Jaccard via Unicode \\w+ after casefold, descending score then ascending source-unitID",
+  "primary": "Lexical top1 unit/group, then first actual native top40 unit from a DIFFERENT whole source group, followed by remaining native units only for exact ranking validation; shared packer admits first2 distinctgroups only",
+  "native_complement_missing": "Ifdocumenthasonewholegroup: explicitnullcomplement+single_group_degenerate. Ifdocumenthasatleast2groupsbutactualtop40hasnodistinctnativegroup: failclosed,nofallback/absenceclaim",
+  "native_original": "Original native top40 ranking under SAME E34 shared packer, not legacy E33 contexts",
+  "arms": [
+    "actual_native",
+    "native_original",
+    "lexical",
+    "positional"
+  ],
+  "shared_context": {
+    "policy": "mandatory-two-groups-before-optional-definitions-v1",
+    "joint_pair_token_cap": 512,
+    "mandatory_ranked_distinct_complete_groups": 2,
+    "single_group_source": "min(2,available_complete_SOURCEgroups), recorddegenerate",
+    "optional_definition_preselection_cap": 160,
+    "optional_definition_admission": "Only after mandatory complete groups; include whole candidate groups only when exact joint pair remains<=512",
+    "additional_ranked_groups_or_neighbors": false,
+    "oversized_mandatory_groups": "Fail explicitly; never clip/drop/fallback",
+    "source_order": "Final premise exact ordered source slices separated by two newlinecharacters",
+    "hypothesis": "Whole unchanged exactoriginalhypothesis"
+  },
+  "selection_labels_or_evidence_annotations": false,
+  "train": [],
+  "calibration": [],
+  "confirmation": [],
+  "fitting_or_calibration": false,
+  "new_term_grid": false,
+  "official_eligibility": "HOLD",
+  "promotion_allowed": false,
+  "native_queries_per_case": 1,
+  "shared_native_query_receipt_between_primary_and_control": true
+}

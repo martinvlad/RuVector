@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "epoch": 34,
+  "checks_passed": true,
+  "pure_guard_tests": 45,
+  "mocked_main_advance_CAS_checks_passed": true,
+  "actual_SOURCE_FINAL_controls_or_stage_executions": 0,
+  "model_native_tokenizer_gold_Git_calls": 0,
+  "fixture_runs": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/workspace/ruvector-e34-publication-impl/publication/test_publication_guards_v1.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ".............................................\n----------------------------------------------------------------------\nRan 45 tests in 0.160s\n\nOK\n",
+      "model_native_tokenizer_gold_Git_calls": 0
+    },
+    {
+      "argv": [
+        "node",
+        "/workspace/ruvector-e34-publication-impl/test-publisher.cjs"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"mocked_main_advance_publication_passed\":true,\"main_mutation_rejected\":true,\"force_update_rejected\":true,\"actual_Git_or_network_calls\":0}\n",
+      "stderr": "",
+      "model_native_tokenizer_gold_Git_calls": 0
+    }
+  ],
+  "retained_preseal_fixture_corrections": [
+    {
+      "kind": "initial_nonshipping_scratch_fixture_hash_mismatch",
+      "result": "Refused scratch copy before any mock/stage action; used exact actual public historical fixture with Git SHA1/size verification instead."
+    },
+    {
+      "kind": "first_adapted_mock_stale_kind",
+      "result": "Wrong frozen plan refusal before mocked mutation; corrected fixed E34 KIND; final mock passed."
+    }
+  ]
+}

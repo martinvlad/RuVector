@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "epoch": 34,
+  "checks_passed": true,
+  "status": "EXACT_PLANNING_CONTROLS_REVIEWED_BEFORE_CAS",
+  "checked_at_unix": 1792899768.283283,
+  "parent": "047dbc740dc2d4fdbdbad90ac167ebc64b31a49c",
+  "changed_controls": [
+    {
+      "path": "/workspace/ruvector-epoch34-047dbc740dc2/controls-lease/CONTINUATION.json",
+      "bytes": 228405,
+      "sha256": "f95a80cdd6e45bf1635185c35d77550ee24a9e6c824ea6b78d491141393fb6de"
+    },
+    {
+      "path": "/workspace/ruvector-epoch34-047dbc740dc2/controls-lease/ACTIVE_RUN.json",
+      "bytes": 1530,
+      "sha256": "68e7e1b6734634e27f959fb0741684d27a3467fc5f771b0127cb7e623f83114c"
+    }
+  ],
+  "unchanged_checkpoint_body": {
+    "path": "/workspace/ruvector-epoch34-047dbc740dc2/kit/CHECKPOINT_MANIFEST.json",
+    "bytes": 1045614,
+    "sha256": "2f8babb3303401fc904d51e8806c87d9c9254fe8c2dfc19e22d6f3e58a5abe03"
+  },
+  "CP_rows": 4834,
+  "CP_unchanged": true,
+  "all_prior_body_values_preserved_except": [
+    "active_run",
+    "next_research_priority"
+  ],
+  "added_inline_fields": [
+    "epoch34_planning",
+    "epoch34_data_reservation_checkpoint"
+  ],
+  "fixed_DEV_document_ids": [
+    434,
+    367,
+    247,
+    377,
+    220,
+    457,
+    169,
+    449
+  ],
+  "allocation_sha256": "b9c1d243476f0ef35678dff9f3bfcfcc6688d02e09c5fdfab2c3226aa50e0323",
+  "all8_permanently_retired_by_durable_reservation": true,
+  "new_partition": {
+    "exposed": 325,
+    "unused": 74,
+    "protected": 24,
+    "total": 423
+  },
+  "train": [],
+  "calibration": [],
+  "confirmation": [],
+  "new_native_or_model_or_input_projection_authorized": false,
+  "limits": {
+    "CPU_threads": 2,
+    "native_corpus_batches": 2,
+    "seconds_total_including_init_cleanup": 600,
+    "worker_dispatches": 1,
+    "native_queries_full_conditional": 30,
+    "NLI_forwards_full_conditional": 120,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "fits": 0
+  },
+  "lineage_and_official_eligibility": "HOLD",
+  "guardian": {
+    "held": true,
+    "pid": 100799,
+    "ticks": 22293151
+  },
+  "unresolved_current_external_mutations": 0,
+  "auditor_model_native_tokenizer_gold_Git_mutations": 0,
+  "auditor_schema_correction": "Initial checker incorrectly expected an unchanged CP physical copy inside controls-lease; stage correctly contains only two changed bodies. Current original CP verified in fresh kit and must remain exact in actual remote readback. No source or planning control was changed for the checker.",
+  "authorization_limit": "Only these exact planning control bodies are reviewed. Root must use scoped CAS against exact actual BASE and independently verify resulting actual commit/tree/full4908tuples and control bytes before input-only projection. This report does not review an as-yet absent planning publisher/expected-leaves file and never authorizes model/native/tokenizer/projection or labels."
+}

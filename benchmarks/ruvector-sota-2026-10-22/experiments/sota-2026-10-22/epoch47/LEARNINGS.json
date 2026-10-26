@@ -1,0 +1,186 @@
+{
+  "CAPTURE_FAILURE_function_calls": 0,
+  "EVALUATE_function_calls": 1,
+  "actual_Qwen_forecasts_and_completions": 36,
+  "actual_early_Gold_decodes_before_forecasts_and_physical_closure": 0,
+  "actual_late_Gold": {
+    "decode_attempted_tokens": 12,
+    "semantic_decode_count_uncertain": false,
+    "semantic_label_decodes": 12
+  },
+  "actual_native_corpus_batches": 1,
+  "actual_native_indexes": 4,
+  "actual_native_insertions": 176,
+  "actual_native_queries": 12,
+  "actual_resources": {
+    "HTTP_threads": 1,
+    "cgroup_memory_current": 15079440384,
+    "cgroup_memory_peak": 17180618752,
+    "children_max_rss_kib": 4517268,
+    "cpu_affinity": [
+      0,
+      1
+    ],
+    "max_rss_kib": 419372,
+    "reader_batch_threads": 2,
+    "reader_threads": 2,
+    "system_seconds": 1.215698,
+    "user_seconds": 23.889925
+  },
+  "admission_audit_history": {
+    "DATA_calls": 1,
+    "actual_corrected_read_only_audit": {
+      "bytes": 17706,
+      "path": "experiments/sota-2026-10-22/audit/epoch47/ACTUAL_DATA_ADMISSION_INDEPENDENT.v2.json",
+      "sha256": "05a714540ec649987b619914b55e5b3e65acd6f639758fe735c7c73f5b99edec"
+    },
+    "corrected_checker_source_review": {
+      "bytes": 2243,
+      "path": "experiments/sota-2026-10-22/audit/epoch47/admission-review-history/EXTERNAL_POSTDATA_CHECKER_V2_SOURCE_APPROVAL.v1.json",
+      "sha256": "3a70570b3af2c94f8e41d8844dc3cfae0ddc8e818f43a82e9df8573377923143"
+    },
+    "read_only_checker_v1_failed_before_DATA_or_private_access": {
+      "bytes": 1688,
+      "path": "experiments/sota-2026-10-22/audit/epoch47/admission-review-history/ACTUAL_POSTDATA_AUDIT_FAILURE.v1.json",
+      "sha256": "e1d64bed928c425799d194f6cbda176dca68d2722ad1bc8ca08451e559efc905"
+    },
+    "scientific_reruns": 0,
+    "scientific_worker_invocations": 1
+  },
+  "decision": "REJECTED_DEV_DIAGNOSTIC",
+  "epoch": 47,
+  "error_and_uncertainty": "All percase predictions, probabilities, proper-score errors, paired disagreements, class results, numerical/date coverage and source selection are retained. This single experiment cannot separate evidence coverage loss from model reasoning failure; retrieval miss is never proof of full-source NotMentioned/insufficient evidence. Generic fixed-token causal adapter is not a learned three-way NLI head; training/quantizer overlap and publisher eligibility remain unknown.",
+  "frozen_hypothesis": "Same licensed Qwen3-4B Q4_K_M reader, fullprompt320/context512, two disjoint whole-source-unit anchors selected by fixed native/lexical/source-order ranks, no rewriting/truncation/neighbor expansion/duplicate fallback. Derived from E46 timing only before E47 measurements; no label-selected grid.",
+  "gate_checks": {
+    "all_three_full_N12": true,
+    "all_three_gold_classes_represented": true,
+    "integrity_complete_no_errors": true,
+    "native_at_least_one_correct_per_gold_class": false,
+    "qwen_lexical_joint_context:Brier_nonincrease": false,
+    "qwen_lexical_joint_context:observed_probability_NLL_nonincrease": false,
+    "qwen_lexical_joint_context:primary_gain_at_least_two_correct": false,
+    "qwen_source_order_joint_context:Brier_nonincrease": false,
+    "qwen_source_order_joint_context:observed_probability_NLL_nonincrease": false,
+    "qwen_source_order_joint_context:primary_gain_at_least_two_correct": false
+  },
+  "independent_acceptance_rejection": {
+    "bytes": 15808,
+    "path": "experiments/sota-2026-10-22/audit/epoch47/ACCEPTANCE_REJECTION_REPORT.v1.json",
+    "sha256": "729f941f19a29f1911a14083cabda9c7fec65f161260aa8530f9f47467628a2f"
+  },
+  "independent_runtime_qualification": {
+    "bytes": 29678,
+    "path": "experiments/sota-2026-10-22/audit/epoch47/ACTUAL_RUNTIME_QUALIFICATION_INDEPENDENT.v1.json",
+    "sha256": "db03b394b9e73b9966893c180e7a3a0daaef3e9b8ea728d9b16eadf3dfd95e24"
+  },
+  "interpretation": "Runtime qualification passed, but native4/12 loses to6/12 for each matched control and has0/2 contradiction correct. Native Brier and observed-F32 NLL are worse than both controls. All seven scientific point gates fail. Four-document descriptive bootstrap and exposed DEV cannot establish benchmark generalization.",
+  "kind": "REAL_CONTRACTNLI_QWEN_COMPACT_EVIDENCE_DEV_PILOT",
+  "metrics": {
+    "qwen_lexical_joint_context": {
+      "Brier": 1.0548078399411533,
+      "N": 12,
+      "NLL": 6.590301020604778,
+      "accuracy": 0.5,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 2
+        },
+        "Entailment": {
+          "correct": 2,
+          "support": 5
+        },
+        "NotMentioned": {
+          "correct": 4,
+          "support": 5
+        }
+      },
+      "correct": 6
+    },
+    "qwen_native_joint_context": {
+      "Brier": 1.1375775839004734,
+      "N": 12,
+      "NLL": 7.999127772335334,
+      "accuracy": 0.3333333333333333,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 2
+        },
+        "Entailment": {
+          "correct": 1,
+          "support": 5
+        },
+        "NotMentioned": {
+          "correct": 3,
+          "support": 5
+        }
+      },
+      "correct": 4
+    },
+    "qwen_source_order_joint_context": {
+      "Brier": 0.9964821649125115,
+      "N": 12,
+      "NLL": 5.8053402499174815,
+      "accuracy": 0.5,
+      "class_results": {
+        "Contradiction": {
+          "correct": 2,
+          "support": 2
+        },
+        "Entailment": {
+          "correct": 0,
+          "support": 5
+        },
+        "NotMentioned": {
+          "correct": 4,
+          "support": 5
+        }
+      },
+      "correct": 6
+    }
+  },
+  "native104_champion_preserved": true,
+  "next_research_priority": "Reject unchanged compact two-anchor Qwen4B and further context-length grids on these exposed12. Prioritize a materially new, source-licensed CPU-efficient typed-decision/NLI reader with credible non-ContractNLI supervised lineage or evidence-complete reasoning architecture, exact revisions and matched native retrieval ablation. Review all historical rejected/held models before selecting; freeze new train/dev/calibration/unused-confirmation roles before measurements. Do not promote without actual fresh confirmation and publisher protocol/eligibility. No new run or spend is executed or authorized by this future-direction record.",
+  "official_goal_verified": false,
+  "official_refresh": {
+    "bytes": 17390,
+    "path": "experiments/sota-2026-10-22/epoch47/official-refresh/benchmark-refresh.safe.json",
+    "sha256": "710d7ce1ce48a6b1e609c68976baf24ceef795f9dcc788848dfd4d7454d0cc99"
+  },
+  "phase": "dev",
+  "published_SOURCE_commit": "74f6fd7eeeba3a9b558cea2c02433d1dc25523e7",
+  "resource_scope": "Worker RUSAGE_SELF CPU/RSS excludes reader/native child CPU; children_max_rss is largest-child high-water, not sum. Cgroup values are shared and peak may predate this candidate. Configured readercompute2/HTTP1, allowedcores0,1; OS support threads are not represented as extra compute capacity.",
+  "schema_version": 1,
+  "scientific_acceptance": false,
+  "source_checkpoint": "143d1a78ea730e030ff5255a20b047d856f6305f",
+  "timing": {
+    "outer_wall_including_capture_seconds": 306.6333611459704,
+    "per_arm_request_latency_seconds": {
+      "qwen_lexical_joint_context": {
+        "N": 12,
+        "p50": 7.454025086015463,
+        "p95": 8.54124725468282,
+        "scope": "Actual captured perrequest elapsedtime; includesIPC/server prefill+oneanswer token, excludes sharedembedding/index/init/otherarmqueue/cleanup. Not publisher latency.",
+        "sum": 87.25899918400683
+      },
+      "qwen_native_joint_context": {
+        "N": 12,
+        "p50": 8.16328304001945,
+        "p95": 11.131426677142734,
+        "scope": "Actual captured perrequest elapsedtime; includesIPC/server prefill+oneanswer token, excludes sharedembedding/index/init/otherarmqueue/cleanup. Not publisher latency.",
+        "sum": 101.87681807397166
+      },
+      "qwen_source_order_joint_context": {
+        "N": 12,
+        "p50": 7.457938825013116,
+        "p95": 10.600602240828447,
+        "scope": "Actual captured perrequest elapsedtime; includesIPC/server prefill+oneanswer token, excludes sharedembedding/index/init/otherarmqueue/cleanup. Not publisher latency.",
+        "sum": 96.51883553894004
+      }
+    },
+    "scope": "N12 matched requests perarm from this small public DEV study; not publisher timing. E46 partial19 versus E47 complete36 is an operational comparison, not a matched quality or context-size causal estimate.",
+    "worker_wall_including_cleanup_seconds": 305.2696249790024
+  },
+  "used_confirmation_identities": []
+}

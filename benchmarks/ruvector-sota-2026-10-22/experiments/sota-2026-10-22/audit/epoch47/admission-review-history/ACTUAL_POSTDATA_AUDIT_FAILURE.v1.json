@@ -1,0 +1,38 @@
+{
+  "actual_checker_invocations": 1,
+  "attempt_marker": {
+    "bytes": 337,
+    "path": "/workspace/ruvector-e47-reader/postdata-review-v1/ACTUAL_POSTDATA_AUDIT_ATTEMPT.v1.json",
+    "sha256": "a3a2783b476ee305257686be40fb531b73386764db29decf02297a8c9cfd5220"
+  },
+  "automatic_retry": false,
+  "candidate_execution_authorized_by_this_report": false,
+  "checker": {
+    "bytes": 29774,
+    "path": "/workspace/ruvector-e47-reader/postdata-review-v1/check_actual_postdata.v1.py",
+    "sha256": "12179b1d918c7eb442d6ce874725eb408aef7b9f720f42b9cbc520e23702ae66"
+  },
+  "checks_passed": false,
+  "data_admission_JSON_parses": 0,
+  "epoch": 47,
+  "exception": "KeyError: owner_ref",
+  "exception_location": "check_actual_postdata.v1.py:98 in frozen; operational binding metadata predicate",
+  "exit_code": 1,
+  "input": {
+    "bytes": 628,
+    "path": "/workspace/ruvector-e47-reader/postdata-review-v1/ACTUAL_POSTDATA_INPUT.v1.json",
+    "sha256": "1323112fd426532afc6efdf2dd86e93d6cc72839111e18e4610fd75bbbafa480"
+  },
+  "kind": "REAL_CONTRACTNLI_QWEN_COMPACT_EVIDENCE_DEV_PILOT",
+  "model_tokenizer_native_Node_calls": 0,
+  "private_JSON_parses": 0,
+  "private_files_hashed": 0,
+  "protected_unused_body_or_choice_decodes": 0,
+  "reason": "Prepared auditor expected an owner_ref field in public OPERATIONAL_BINDING.v1.json. Frozen schema did not have this key. The failure precedes actual DATA report and private file validation. No acceptance conclusion is supported.",
+  "root_writes": 0,
+  "schema_version": 1,
+  "semantic_gold_decodes": 0,
+  "source_files_changed": false,
+  "status": "AUDITOR_PUBLIC_METADATA_SCHEMA_FAILURE_BEFORE_PRIVATE_READS",
+  "success_report_created": false
+}

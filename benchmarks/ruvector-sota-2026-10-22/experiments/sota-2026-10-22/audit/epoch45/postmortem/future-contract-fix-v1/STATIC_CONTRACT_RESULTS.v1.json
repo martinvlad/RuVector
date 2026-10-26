@@ -1,0 +1,189 @@
+{
+  "API_calls": 0,
+  "Node_native_model_tokenizer_version_or_Gold_calls": 0,
+  "R_writes": 0,
+  "all_native_helper_plan_dot_consumers_checked": true,
+  "benchmark_or_candidate_quality_evidence": false,
+  "checks_passed": true,
+  "current_frozen_plan": {
+    "bytes": 23409,
+    "path": "experiments/sota-2026-10-22/epoch45/plan.json",
+    "sha256": "577b93192b06bc3123926bc80a832b9f9eefa3991bdffdd155d6c40c5b4fb176"
+  },
+  "current_frozen_plan_validation": {
+    "checks_passed": false,
+    "error_code": "MISSING_FROZEN_CASE_IDS_BY_DOCUMENT"
+  },
+  "epoch": 45,
+  "frozen_plan_bytes_unchanged": true,
+  "kind": "REAL_CONTRACTNLI_QWEN_JOINT_CONTEXT_DEV_PILOT",
+  "native_helper_bytes_unchanged": true,
+  "negative_fixture_count": 20,
+  "negative_fixtures": [
+    {
+      "checks_passed": false,
+      "error_code": "MISSING_FROZEN_CASE_IDS_BY_DOCUMENT",
+      "expected_rejection_observed": true,
+      "name": "missing_map"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "FOUR_UNIQUE_POSITIVE_SAFE_INTEGER_DOCUMENT_IDS",
+      "expected_rejection_observed": true,
+      "name": "boolean_document_id"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "FOUR_UNIQUE_POSITIVE_SAFE_INTEGER_DOCUMENT_IDS",
+      "expected_rejection_observed": true,
+      "name": "float_document_id"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "FOUR_UNIQUE_POSITIVE_SAFE_INTEGER_DOCUMENT_IDS",
+      "expected_rejection_observed": true,
+      "name": "negative_document_id"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "FOUR_UNIQUE_POSITIVE_SAFE_INTEGER_DOCUMENT_IDS",
+      "expected_rejection_observed": true,
+      "name": "unsafe_JS_document_id"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "FOUR_UNIQUE_POSITIVE_SAFE_INTEGER_DOCUMENT_IDS",
+      "expected_rejection_observed": true,
+      "name": "duplicate_document_id"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "FROZEN_DOCUMENT_ORDER_MISMATCH",
+      "expected_rejection_observed": true,
+      "name": "reordered_document_ids"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "FROZEN_HYPOTHESIS_ORDER_MISMATCH",
+      "expected_rejection_observed": true,
+      "name": "reordered_hypotheses"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "THREE_ORDERED_HYPOTHESIS_CASES_PER_DOCUMENT_REQUIRED",
+      "expected_rejection_observed": true,
+      "name": "reordered_DEV_cases"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "TWELVE_UNIQUE_ORDERED_CASE_STRINGS_REQUIRED",
+      "expected_rejection_observed": true,
+      "name": "duplicate_DEV_case"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "CASE_ID_OUTSIDE_FIXED_COHORT",
+      "expected_rejection_observed": true,
+      "name": "foreign_case_identity"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "CANONICAL_CASE_ID_REQUIRED",
+      "expected_rejection_observed": true,
+      "name": "noncanonical_decimal_case"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "TWELVE_UNIQUE_ORDERED_CASE_STRINGS_REQUIRED",
+      "expected_rejection_observed": true,
+      "name": "nonstring_case"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "EXACT_FOUR_CANONICAL_DOCUMENT_MAP_KEYS_REQUIRED",
+      "expected_rejection_observed": true,
+      "name": "map_has_extra_document"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "EXACT_FOUR_CANONICAL_DOCUMENT_MAP_KEYS_REQUIRED",
+      "expected_rejection_observed": true,
+      "name": "map_missing_document"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "EXACT_FOUR_CANONICAL_DOCUMENT_MAP_KEYS_REQUIRED",
+      "expected_rejection_observed": true,
+      "name": "map_nonstring_key"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "EXACT_ORDERED_DOCUMENT_CASE_MAP_REQUIRED",
+      "expected_rejection_observed": true,
+      "name": "map_reordered_queries"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "EXACT_ORDERED_DOCUMENT_CASE_MAP_REQUIRED",
+      "expected_rejection_observed": true,
+      "name": "map_wrong_document_query"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "EXACT_ORDERED_DOCUMENT_CASE_MAP_REQUIRED",
+      "expected_rejection_observed": true,
+      "name": "map_drops_one_query"
+    },
+    {
+      "checks_passed": false,
+      "error_code": "ONLY_EXPOSED_DEV_ROLE_ALLOWED",
+      "expected_rejection_observed": true,
+      "name": "protected_confirmation_role"
+    }
+  ],
+  "no_current_epoch_rerun_or_source_edit_authorized": true,
+  "only_added_field": "case_ids_by_document",
+  "other_literal_runtime_plan_fields_checked": true,
+  "other_unresolved_required_plan_fields": [],
+  "private_asset_reads_or_parses": 0,
+  "proposed_fragment": {
+    "bytes": 655,
+    "path": "/workspace/ruvector-e45-core-review/future-contract-fix-v1/FUTURE_PLAN_FIELDS.fragment.v1.json",
+    "sha256": "b5edaf41d26c7457ba3f44b7acb570558590caca88ce6d05eeed13f1f5ce8068"
+  },
+  "proposed_in_memory_validation": {
+    "checks_passed": true,
+    "result": {
+      "case_ids_by_document": {
+        "212": [
+          "contractnli:eced6528:test:212:nda-1",
+          "contractnli:eced6528:test:212:nda-10",
+          "contractnli:eced6528:test:212:nda-16"
+        ],
+        "227": [
+          "contractnli:eced6528:test:227:nda-1",
+          "contractnli:eced6528:test:227:nda-10",
+          "contractnli:eced6528:test:227:nda-16"
+        ],
+        "357": [
+          "contractnli:eced6528:test:357:nda-1",
+          "contractnli:eced6528:test:357:nda-10",
+          "contractnli:eced6528:test:357:nda-16"
+        ],
+        "46": [
+          "contractnli:eced6528:test:46:nda-1",
+          "contractnli:eced6528:test:46:nda-10",
+          "contractnli:eced6528:test:46:nda-16"
+        ]
+      },
+      "cases": 12,
+      "checks_passed": true,
+      "documents": 4,
+      "execution_authorized": false,
+      "target_calls": 0
+    }
+  },
+  "schema_version": 1,
+  "source_only": true,
+  "target_source_imports_or_calls": 0
+}

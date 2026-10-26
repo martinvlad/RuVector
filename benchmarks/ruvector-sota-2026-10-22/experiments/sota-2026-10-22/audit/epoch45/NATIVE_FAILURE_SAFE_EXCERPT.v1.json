@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "epoch": 45,
+  "kind": "REAL_CONTRACTNLI_QWEN_JOINT_CONTEXT_DEV_PILOT",
+  "phase": "dev",
+  "status": "REJECTED_DEV_INTEGRITY",
+  "source_plan_sha256": "577b93192b06bc3123926bc80a832b9f9eefa3991bdffdd155d6c40c5b4fb176",
+  "private_log_identity": {
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch45-c5608a638ecd/private/run/native.stderr",
+    "bytes": 1200,
+    "sha256": "412a2b86b3e4af40709d8abf71625d2502ad7dd94b5755146d056eb943453c42"
+  },
+  "public_safe_excerpt_allowlist": [
+    "Error: Exact four unique source document identities required",
+    "native_helper.cjs:73 configureIdentities",
+    "native_helper.cjs:101 initial configuration call"
+  ],
+  "diagnosis": "Frozen native helper rejected missing predeclared case_ids_by_document identity metadata before reading its bundle or loading the RuVector binary. The frozen plan has four dev_document_ids but lacks this required per-document case map.",
+  "source_contract_failure_before_native_binary_load": true,
+  "Node_absolute_executable_resolution_succeeded": true,
+  "Node_native_ABI_compatibility_established": false,
+  "Qwen_inference_established": false,
+  "selected_document_or_vault_JSON_reads_by_auditor": 0,
+  "current_epoch_fix_or_rerun_permitted": false
+}

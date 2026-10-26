@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "epoch": 45,
+  "kind": "REAL_CONTRACTNLI_QWEN_JOINT_CONTEXT_DEV_PILOT",
+  "phase": "dev",
+  "at": "2026-10-26T16:10:47.038589+00:00",
+  "checks_passed": true,
+  "decision": "ACCEPT_HONEST_REJECTED_DEV_INTEGRITY_CAPTURE_ONLY",
+  "replay": {
+    "path": "experiments/sota-2026-10-22/audit/epoch45/qualification-replay.json",
+    "bytes": 7522,
+    "sha256": "6eb2474c9ce3b91b2bbf27296d736d2e52e38fdcab8d816c2946b20970a8bc9c"
+  },
+  "status": "REJECTED_DEV_INTEGRITY",
+  "runtime_acceptance_passed": false,
+  "dev_passed": false,
+  "evaluation_executed": false,
+  "metrics": null,
+  "descriptive": null,
+  "source_plan_sha256": "577b93192b06bc3123926bc80a832b9f9eefa3991bdffdd155d6c40c5b4fb176",
+  "all_actual_replay_fields_and_types_must_be_preserved": true,
+  "publication_RESULT_addition_allowed_only": "publication_checkpoint",
+  "captured_operation_counters_exactly_match_raw_and_supervisor": true,
+  "source_frozen101_rows_still_exact": true,
+  "actual_attempts": {
+    "outer_worker_attempts": 1,
+    "corpus_attempts": 1,
+    "completed_corpora": 0,
+    "BGE_forwards_completed": 36,
+    "BGE_texts_completed": 188,
+    "Node_helper_starts_completed": 1,
+    "native_binary_loads_completed": 0,
+    "native_indexes": 0,
+    "native_queries": 0,
+    "Qwen_reader_starts": 0,
+    "Qwen_forecasts": 0,
+    "Gold_functions": 0,
+    "EVALUATE_functions": 0,
+    "CAPTURE_FAILURE_functions": 1
+  },
+  "integration_failure": {
+    "stage": "native helper initial configureIdentities",
+    "error": "Exact four unique source document identities required",
+    "missing_frozen_plan_key": "case_ids_by_document",
+    "dev_document_ids_present": [
+      357,
+      227,
+      46,
+      212
+    ],
+    "before_bundle_or_RuVector_binary_or_Qwen_load": true,
+    "Node_absolute_path_resolution_succeeded": true,
+    "native_ABI_compatibility_or_Qwen_quality_established": false
+  },
+  "physical_failure_closure": {
+    "bytes": 6157,
+    "path": "experiments/sota-2026-10-22/audit/epoch45/FAILURE_PHYSICAL_CLOSURE_INDEPENDENT.v2.json",
+    "sha256": "12e6d0a8194b44bb51062a0f82798b09a218d88428abe249ad403985aad35969"
+  },
+  "safe_failure_diagnosis": {
+    "bytes": 1257,
+    "path": "experiments/sota-2026-10-22/audit/epoch45/NATIVE_FAILURE_SAFE_EXCERPT.v1.json",
+    "sha256": "0e23225e75a1f75c25cb9e6a1667f27f8cdbc0d0c96a2931bb6950117aff9511"
+  },
+  "nonzero_exit_facts": {
+    "supervisor_kernel_wait_status": 256,
+    "supervisor_kernel_exit_code": 1,
+    "worker_exit_code_from_supervisor": 1,
+    "native_exit_code_from_worker": 1,
+    "success_exit_claimed": false
+  },
+  "resource_facts": {
+    "worker_raw_wall_seconds": 18.002385143016,
+    "supervisor_wall_seconds": 18.458340190991294,
+    "raw_resources": {
+      "HTTP_threads": 1,
+      "cgroup_memory_current": 16738697216,
+      "cgroup_memory_peak": 17180618752,
+      "children_max_rss_kib": 422848,
+      "cpu_affinity": [
+        0,
+        1
+      ],
+      "max_rss_kib": 422848,
+      "reader_batch_threads": 2,
+      "reader_threads": 2,
+      "system_seconds": 1.407151,
+      "user_seconds": 27.316962
+    },
+    "scope": "Recorded distinct raw-worker/supervisor intervals and high-water metadata; not per-decision latency, simultaneous RSS sum, Qwen memory or official benchmark latency."
+  },
+  "label_custody_preserved": {
+    "decode_attempted_tokens": null,
+    "semantic_decode_count_uncertain": true,
+    "semantic_label_decodes": null
+  },
+  "uncertainty_scope": "Raw captured semantic_gold_decodes=0 and no Gold/EVALUATE function markers are known. Frozen label_custody remains null/uncertain; no invented Gold report, zeroed unknown field, completed operation total or E37 cumulative total.",
+  "all_gates_NOT_EVALUATED": true,
+  "official_SOTA_verified": false,
+  "benchmark_generalization_claim": false,
+  "champion_promoted": false,
+  "native104_champion_preserved": true,
+  "same12_exposed_DEV_forever_protected3_unopened": true,
+  "all_E45_scientific_slots_closed_no_retry_or_current_fix": true,
+  "future_source_only_patch_must_not_change_this_failed_candidate_or_replay": true,
+  "reviewer_EVAL_Gold_model_native_functions_private_corpus_vault_reads_R_or_Git_writes": 0
+}

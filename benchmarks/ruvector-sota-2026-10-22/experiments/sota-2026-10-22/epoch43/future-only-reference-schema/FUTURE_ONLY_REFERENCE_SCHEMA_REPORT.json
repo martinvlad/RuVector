@@ -1,0 +1,167 @@
+{
+  "E43_frozen_source_modified": false,
+  "E43_materializer_retried": false,
+  "actual_Git_map_metadata_sha256": "19dd6868d9aea43a1cfe3789405c859bdfea79cea2169423e97cd110ee8d82bf",
+  "actual_mode_model_tokenizer_native_case_archive_gold_or_Git_API_calls": 0,
+  "canonical_output_metadata_rows": [
+    {
+      "bytes": 4708,
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/models.py",
+      "sha256": "c5cf3500a89837e71adc754f0dc96d090e172068031545fc55ee349e80210716"
+    },
+    {
+      "bytes": 6063,
+      "path": "experiments/sota-2026-10-22/epoch17/preparation/python-wheel-identities.json",
+      "sha256": "6689210699a4171b54a38f8d14edba78c4b4b6390c76b6b05293a32f1ea2b8de"
+    },
+    {
+      "bytes": 4640799,
+      "path": "experiments/sota-2026-10-22/epoch26/preparation/runtime-members/python-wheel-members.json",
+      "sha256": "87254bbf6ec2aba6d08a4b55ff189faf29f78e1b1dd278fe8ffef9a8cc5523b9"
+    }
+  ],
+  "checks_passed": true,
+  "diff": "--- published-E43-DO-NOT-EDIT/freeze_and_results.py\n+++ FUTURE_ONLY/freeze_and_results.py\n@@ -3,7 +3,7 @@\n sys.dont_write_bytecode=True\n from pathlib import Path\n sys.path.insert(0,str(Path(__file__).resolve().parent))\n-import argparse,copy,json\n+import argparse,copy,json,hashlib\n import publication_common as c\n P='experiments/sota-2026-10-22/epoch43/'\n PROTECTED={'epoch','source_checkpoint','source_freeze','pins','publication_contract','source_bindings_ready','operational_binding'}\n@@ -44,6 +44,29 @@\n    if p.is_file():\n     r=str(p.relative_to(project));b=c.body(p);c.public_text(r,b);rows.append({'path':r,'bytes':len(b),'sha256':c.sha(b)})\n  return rows\n+def canonical_reference(row):\n+ c.require(type(row)is dict and set(row)in({'path','bytes','sha256'},{'path','bytes','sha256','actual_git_blob_sha1'}),'Exact public reference and separate Git provenance')\n+ c.require(type(row['path'])is str and type(row['bytes'])is int and row['bytes']>=0 and type(row['sha256'])is str and len(row['sha256'])==64 and all(x in '0123456789abcdef'for x in row['sha256']),'Typed canonical public reference')\n+ c.relative(row['path']);canonical={k:row[k]for k in('path','bytes','sha256')}\n+ git=row.get('actual_git_blob_sha1')\n+ if 'actual_git_blob_sha1'in row:c.require(type(git)is str and len(git)==40 and all(x in '0123456789abcdef'for x in git),'Typed Git provenance')\n+ return canonical,git\n+\n+def canonical_freeze_references(project,current,inherited):\n+ files={};provenance=[]\n+ for original in current:\n+  row,git=canonical_reference(original);c.require(git is None,'Current source inventory has canonical reference fields only')\n+  c.require(row['path']not in files,'Duplicate current source path');files[row['path']]=row\n+ for original in inherited:\n+  row,git=canonical_reference(original);body=public_ref(project,row)\n+  c.require(row['path']not in files or c.same(files[row['path']],row),'Inherited canonical source collision')\n+  if git is not None:\n+   actual=hashlib.sha1(b'blob '+str(len(body)).encode()+b'\\0'+body).hexdigest()\n+   c.require(actual==git,'Inherited source actual Git blob identity')\n+   provenance.append({'path':row['path'],'actual_git_blob_sha1':git,'payload_git_blob_identity_verified':True})\n+  files[row['path']]=row\n+ return sorted(files.values(),key=lambda row:row['path']),sorted(provenance,key=lambda row:row['path'])\n+\n def freeze_source(project,x):\n  c.require_operational();c.require(x['source_bindings_ready']is True,'Source admission still disabled');root=json.loads(public_ref(project,x['root_contract']));c.require(root['epoch']==43,'E43 ROOT');publication_contract(root,x['publication_contract'])\n  c.require(root['operational_binding']['sha256']==c.OPERATIONAL_SHA and c.sha(public_ref(project,root['operational_binding']))==c.OPERATIONAL_SHA,'Final ROOT exact operational binding');c.require(root['base_commit']==c.BASE and root['workdir']==str(c.W)and root['owner_sha256']==c.OWNER_SHA,'Final ROOT exact base/workdir/owner')\n@@ -58,9 +81,9 @@\n  review=json.loads(public_ref(project,x['independent_source_review']))\n  for k in x['required_review_flags']:c.require(review.get(k)is True,'Source barrier missing '+k)\n  files=all_current_sources(project);expected=review['files'];review_path=x['independent_source_review']['path'];c.require(c.same([r for r in files if r['path']!=review_path],expected),'Exhaustive integrated source inventory differs (review self excluded)')\n- files.extend(r for r in m['inherited_source_refs']if r['path']not in {q['path']for q in files});files=sorted(files,key=lambda r:r['path'])\n+ files,inherited_provenance=canonical_freeze_references(project,files,m['inherited_source_refs'])\n  c.require(not any(r['path']in(P+'plan.json',P+'SOURCE_FREEZE.json')for r in files),'Fresh plan/freeze paths required')\n- freeze={'schema_version':1,'epoch':43,'source_checkpoint':c.BASE,'files':files,'source_admission_is_not_execution':True};raw=c.encoded(freeze);ref={'path':P+'SOURCE_FREEZE.json','bytes':len(raw),'sha256':c.sha(raw)}\n+ freeze={'schema_version':1,'epoch':43,'source_checkpoint':c.BASE,'files':files,'inherited_source_provenance':inherited_provenance,'source_admission_is_not_execution':True};raw=c.encoded(freeze);ref={'path':P+'SOURCE_FREEZE.json','bytes':len(raw),'sha256':c.sha(raw)}\n  plan={**m['plan_fields'],'epoch':43,'source_checkpoint':c.BASE,'root_contract':x['root_contract'],'source_freeze':ref,'required_refs':m['required_refs'],'source_bindings_ready':True,'operational_binding':root['operational_binding'],'publication_contract':copy.deepcopy(x['publication_contract'])}\n  c.require(plan.get('data_roles',{}).get('confirmation')==[],'No CONF bank');c.require(plan.get('used_confirmation_identities',[])==[],'No used CONF')\n  c.write(project/ref['path'],raw);c.write(project/(P+'plan.json'),c.encoded(plan));return {'plan':c.pin(project/(P+'plan.json')),'freeze':ref}\n",
+  "epoch": 43,
+  "exact_invalid_metadata_rows": [
+    {
+      "actual_git_blob_sha1": "ae2fd100f81e9de36f4a52ef4fe8d6565134ab7d",
+      "bytes": 4708,
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/models.py",
+      "sha256": "c5cf3500a89837e71adc754f0dc96d090e172068031545fc55ee349e80210716"
+    },
+    {
+      "actual_git_blob_sha1": "c749544b97d72bf6f005a260d85f6b5cec7fdca2",
+      "bytes": 6063,
+      "path": "experiments/sota-2026-10-22/epoch17/preparation/python-wheel-identities.json",
+      "sha256": "6689210699a4171b54a38f8d14edba78c4b4b6390c76b6b05293a32f1ea2b8de"
+    },
+    {
+      "actual_git_blob_sha1": "2a1f92ed6fa6b79cb7f965f069d015127c07ec4e",
+      "bytes": 4640799,
+      "path": "experiments/sota-2026-10-22/epoch26/preparation/runtime-members/python-wheel-members.json",
+      "sha256": "87254bbf6ec2aba6d08a4b55ff189faf29f78e1b1dd278fe8ffef9a8cc5523b9"
+    }
+  ],
+  "frozen_consumer": {
+    "path": "experiments/sota-2026-10-22/audit/epoch43/e43_features.py",
+    "sha256": "5b67b205bee54e4208ab6326f5b3bc0318bc4a89a4a544131304ad2670d5fe7b"
+  },
+  "future_source_only": true,
+  "input_freezer": {
+    "bytes": 12106,
+    "path": "experiments/sota-2026-10-22/epoch43/publication/freeze_and_results.py",
+    "sha256": "bda3205dc6557c39f031de0ba696aa4a7c454597b9c77d93e65cb0f70ddcfe4e"
+  },
+  "known_Git_metadata_matches": 3,
+  "limitations": [
+    "This proposal was not deployed, run as a publication mode, or used to retry E43.",
+    "Future source review and fresh epoch authorization remain required.",
+    "AST-only frozen-consumer probe evaluates only its exact typed-reference admission expression, with no body reader or filesystem calls."
+  ],
+  "observed_freeze": {
+    "bytes": 34512,
+    "path": "experiments/sota-2026-10-22/epoch43/SOURCE_FREEZE.json",
+    "sha256": "38f4a21653b3e12f4d2fc63f752925531882bad90d82d7baf689176ec7880d52"
+  },
+  "proposal_source": {
+    "bytes": 13791,
+    "path": "future_freeze_and_results.py",
+    "sha256": "f6a2175954392edfc1ca455e382b5970cc2d835163708a4fccbd5af6a2dd80a8"
+  },
+  "pure_checks": [
+    {
+      "name": "original exact E43 row rejected by exact consumer: experiments/sota-2026-10-22/candidate/epoch3/models.py",
+      "passed": true
+    },
+    {
+      "name": "canonical output admitted by same consumer: experiments/sota-2026-10-22/candidate/epoch3/models.py",
+      "passed": true
+    },
+    {
+      "name": "Git provenance retained and equals actual Git metadata: experiments/sota-2026-10-22/candidate/epoch3/models.py",
+      "passed": true
+    },
+    {
+      "name": "original exact E43 row rejected by exact consumer: experiments/sota-2026-10-22/epoch17/preparation/python-wheel-identities.json",
+      "passed": true
+    },
+    {
+      "name": "canonical output admitted by same consumer: experiments/sota-2026-10-22/epoch17/preparation/python-wheel-identities.json",
+      "passed": true
+    },
+    {
+      "name": "Git provenance retained and equals actual Git metadata: experiments/sota-2026-10-22/epoch17/preparation/python-wheel-identities.json",
+      "passed": true
+    },
+    {
+      "name": "original exact E43 row rejected by exact consumer: experiments/sota-2026-10-22/epoch26/preparation/runtime-members/python-wheel-members.json",
+      "passed": true
+    },
+    {
+      "name": "canonical output admitted by same consumer: experiments/sota-2026-10-22/epoch26/preparation/runtime-members/python-wheel-members.json",
+      "passed": true
+    },
+    {
+      "name": "Git provenance retained and equals actual Git metadata: experiments/sota-2026-10-22/epoch26/preparation/runtime-members/python-wheel-members.json",
+      "passed": true
+    },
+    {
+      "name": "all three input metadata rows immutable",
+      "passed": true
+    },
+    {
+      "name": "reject bool bytes",
+      "passed": true
+    },
+    {
+      "name": "reject unknown extra field",
+      "passed": true
+    },
+    {
+      "name": "reject bad SHA256",
+      "passed": true
+    },
+    {
+      "name": "reject bad Git id",
+      "passed": true
+    },
+    {
+      "name": "reject null Git id",
+      "passed": true
+    },
+    {
+      "name": "reject path traversal",
+      "passed": true
+    },
+    {
+      "name": "invented body Git identity verified, canonical files, provenance separate",
+      "passed": true
+    },
+    {
+      "name": "invented wrong Git body identity refused",
+      "passed": true
+    },
+    {
+      "name": "conflicting duplicate source refused",
+      "passed": true
+    }
+  ],
+  "pure_checks_passed": 19,
+  "schema_version": 1,
+  "separate_expected_provenance": [
+    {
+      "actual_git_blob_sha1": "ae2fd100f81e9de36f4a52ef4fe8d6565134ab7d",
+      "path": "experiments/sota-2026-10-22/candidate/epoch3/models.py"
+    },
+    {
+      "actual_git_blob_sha1": "c749544b97d72bf6f005a260d85f6b5cec7fdca2",
+      "path": "experiments/sota-2026-10-22/epoch17/preparation/python-wheel-identities.json"
+    },
+    {
+      "actual_git_blob_sha1": "2a1f92ed6fa6b79cb7f965f069d015127c07ec4e",
+      "path": "experiments/sota-2026-10-22/epoch26/preparation/runtime-members/python-wheel-members.json"
+    }
+  ],
+  "status": "FUTURE_ONLY_REFERENCE_SCHEMA_PROPOSAL_PURE_CHECKS_PASSED"
+}

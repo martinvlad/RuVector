@@ -309,10 +309,24 @@ fn f11_frame_total_wraps_on_32bit() {
     hdr.extend_from_slice(&0u32.to_le_bytes());
     hdr.extend_from_slice(&(big as u32).to_le_bytes());
     let mut sink = |_r: Result<Event<'_>, ErrorCode>| {};
-    let r = fr.feed(&mut v, &hdr, &mut sink);
-    eprintln!("32-bit feed result: {r:?}, state {:?}", v.state());
-    // Fail-closed: total wraps to <17, a runt frame is pushed and the stream
-    // is poisoned. A legitimate 4 GiB segment can therefore never be received
-    // on 32-bit, but no memory or arithmetic hazard results.
-    assert!(matches!(v.state(), StreamState::Poisoned(_)));
+    // Fast path (header in one feed): runt frame pushed, Poisoned.
+    {
+        let mut v2 = v.clone();
+        let mut fr2 = FrameReader::new();
+        let r = fr2.feed(&mut v2, &hdr, &mut sink);
+        eprintln!("whole header: {r:?}, state {:?}", v2.state());
+        assert!(matches!(v2.state(), StreamState::Poisoned(_)));
+    }
+    // Slow path (header split 10 + 7): admit() sets need = Some(1) while 17
+    // bytes are buffered; the next feed computes `1 - 17`.
+    let r = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
+        fr.feed(&mut v, &hdr[..10], &mut |_| {}).unwrap();
+        fr.feed(&mut v, &hdr[10..], &mut |_| {}).unwrap();
+        let r = fr.feed(&mut v, &[0u8; 100], &mut |_| {});
+        (r, fr.buffered(), v.state())
+    }));
+    eprintln!("split header result: {r:?}");
+    // Defect: debug builds panic (subtract with overflow); release wraps and
+    // buffers without bound.
+    assert!(r.is_err() || matches!(&r, Ok((_, b, _)) if *b > 17));
 }

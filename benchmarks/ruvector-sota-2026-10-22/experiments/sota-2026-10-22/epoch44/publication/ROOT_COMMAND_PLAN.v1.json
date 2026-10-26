@@ -1,0 +1,119 @@
+{
+  "artifact_row": {
+    "bytes": "integer exact length",
+    "local_path": "absolute body file outside or in R",
+    "path": "canonical project-relative path",
+    "sha256": "64 lowercase hex"
+  },
+  "controller_invoke": "const result=await publishE44Phase(phase,approvalPath,approvalSHA,operationalPath,operationalSHA); await persistE44Receipt(result);",
+  "epoch": 44,
+  "execution_authorized": false,
+  "final_extra_input": [
+    "actual_SOURCE_receipt exact outside-R ref from successful publisher + fresh GET"
+  ],
+  "fragment_schema": {
+    "inherited_source_refs": "list canonical refs with optional actual_git_blob_sha1 only at INPUT; freezer verifies and separates provenance",
+    "plan_fields": "dict; must include schema_version integer1,kind,phase dev,data roles and same exact SOURCE slot",
+    "required_refs": "dict of canonical public ref descriptors; owner is never a project required_ref"
+  },
+  "freeze_input_required_keys": [
+    "source_bindings_ready",
+    "root_contract",
+    "publication_contract",
+    "required_roles",
+    "required_review_flags",
+    "fragments",
+    "independent_source_review"
+  ],
+  "helper_copy_directory": "/tmp/ruvector-sota-2026-10-22/epoch44-02ed8c956725/publication-helpers",
+  "immutable_artifact_prefix": "experiments/sota-2026-10-22/epoch44/publication/",
+  "journal": "/tmp/ruvector-sota-2026-10-22/epoch44-02ed8c956725/publication/mutation-journal.jsonl",
+  "metadata_preparation_approval": {
+    "phase_input_sha256": "exact input SHA",
+    "phase_preparation_allowed": true
+  },
+  "mode_argv": [
+    "freeze_and_results.py freeze --project R --input FREEZE_INPUT --expected-input-sha SHA --operational-binding OP --expected-operational-binding-sha OPSHA",
+    "freeze_and_results.py preflight --project R --input PREFLIGHT_INPUT --expected-input-sha SHA --operational-binding OP --expected-operational-binding-sha OPSHA",
+    "build_phase_stage.py --input PHASE_INPUT --expected-input-sha SHA --approval PREP_APPROVAL --expected-approval-sha SHA --out W/stage-source-or-final --operational-binding OP --expected-operational-binding-sha OPSHA",
+    "freeze_and_results.py results --project R --input RESULTS_INPUT --expected-input-sha SHA --operational-binding OP --expected-operational-binding-sha OPSHA",
+    "freeze_and_results.py manifest --project R --input MANIFEST_INPUT --expected-input-sha SHA --operational-binding OP --expected-operational-binding-sha OPSHA"
+  ],
+  "mutation_approval_required": {
+    "checks_passed": true,
+    "expected_final_root_sha": "independently computed full root",
+    "forbidden_Git_object_sha1": "486888de9602bbb5d817a55f707b4fcfd11c65e0",
+    "operational_binding_sha256": "0461f5a7a720db77233be6c3ad6524b93f0eb53d9ea2c2df0c2afd861791e7ec",
+    "original_blob5_execution": "UNKNOWN_PERMANENTLY",
+    "phase": "source or final",
+    "publication_phase_allowed": true,
+    "source_and_denylist_review_passed": true,
+    "stage_metadata_sha256": "exact metadata SHA"
+  },
+  "no_actual_modes_by_author": true,
+  "no_retry_policy": "Any uncertain prior intent/error stops all future calls. No repeated old E42/E43 IDs, no live4868 object create/reference; forensic UNKNOWN strings retained. No reserve phase.",
+  "operational_binding": {
+    "bytes": 755,
+    "path": "experiments/sota-2026-10-22/epoch44/OPERATIONAL_BINDING.v1.json",
+    "sha256": "0461f5a7a720db77233be6c3ad6524b93f0eb53d9ea2c2df0c2afd861791e7ec"
+  },
+  "phase_input_required_keys": [
+    "schema_version",
+    "epoch",
+    "phase",
+    "source_checkpoint",
+    "owner_sha256",
+    "parent",
+    "source_map",
+    "root_baseline",
+    "bench_baseline",
+    "current_CP",
+    "current_CONT",
+    "archive_projection",
+    "artifacts",
+    "ACTIVE",
+    "CONT_patch",
+    "CP_phase_record",
+    "commit_message"
+  ],
+  "preflight_input": {
+    "plan": {
+      "bytes": "actual int",
+      "path": "experiments/sota-2026-10-22/epoch44/plan.json",
+      "sha256": "actual SHA"
+    }
+  },
+  "python_execution": "taskset -c 0,1 python -I -B <explicit-script> (script inserts its exact directory before sibling imports)",
+  "receipt_persistence": "Caller explicitly awaits O_EXCL+fsync receipt after successful postCAS fresh GET; publisher never invents identity from bare{success:true}.",
+  "requests": "/tmp/ruvector-sota-2026-10-22/epoch44-02ed8c956725/publication/requests",
+  "schema_version": 1,
+  "source_checkpoint": "02ed8c9567255f862776f7a983b9d3ed9142e56e",
+  "source_extra_input": [
+    "plan exact canonical ref",
+    "source_preflight exact outside-R report ref"
+  ],
+  "source_order": [
+    "Root adopts reviewed source and current OP/nonce/ROOT only after actual metadata admission",
+    "Exhaustive independent source inventory excludes only own report; root copies it",
+    "Root freezes plan/source exactly once",
+    "Root invokes side-effect-free preflight against ACTUAL plan/SOURCE_FREEZE; store exact returned JSON outside R O_EXCL+fsync",
+    "Stage SOURCE with this exact preflight descriptor, all new roots, archive preservation and burned one-slot reservation",
+    "Independent stage+fulltree approval",
+    "Only root invokes publishE44Phase then persistE44Receipt",
+    "Independent actual SOURCE fullreadback and frozen SOURCE_ADMISSION before DATA",
+    "Only frozen materializer once; postDATA admission binds actual features and derived U formulas",
+    "One frozen owner-bound dispatch and physical closure then late Gold once or honest failure route",
+    "Frozen evaluator or CAPTURE_FAILURE once; original metrics/status/counters retained",
+    "Results once, frozen BIND once, independent final review, immutable manifests once",
+    "No project writes after EPOCH manifest; stage FINAL from new postSOURCE files and exactly3 controls",
+    "Independent finalstage approval, publishE44Phase final, explicit durable receipt, actual independent readback and release"
+  ],
+  "source_preflight_is_metadata_only": true,
+  "source_roles_and_flags": "ROOT.source source_admission_contract exact lists; fragments never supply protected fields",
+  "transport_limits": {
+    "blob_json_bytes_less_than": 8384512,
+    "tree_entries_per_request": 32,
+    "tree_json_bytes_less_than": 175904
+  },
+  "workdir": "/tmp/ruvector-sota-2026-10-22/epoch44-02ed8c956725"
+}

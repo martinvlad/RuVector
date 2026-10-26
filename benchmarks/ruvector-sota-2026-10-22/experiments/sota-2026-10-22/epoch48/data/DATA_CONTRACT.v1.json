@@ -1,0 +1,176 @@
+{
+  "CLI": [
+    "taskset -c 0,1 python -I -B e48_custody.py DATA --phase dev --project PROJECT --admission ROOT_DATA_ADMISSION --expected-admission-sha256 SHA --archive EXACT_ARCHIVE_PATH",
+    "taskset -c 0,1 python -I -B e48_custody.py GOLD --phase dev --project PROJECT --admission ROOT_GOLD_ADMISSION --expected-admission-sha256 SHA"
+  ],
+  "DATA_report_fields_for_runtime": [
+    "schema_version",
+    "epoch",
+    "kind",
+    "phase",
+    "status=READY_LABEL_BLIND_FEATURES_AND_OPAQUE_VAULT",
+    "plan_sha256",
+    "source_freeze_sha256",
+    "features exactref (alias private_features)",
+    "private_vault exactref",
+    "selected_ids",
+    "errors=[]"
+  ],
+  "ROOT_DATA_ADMISSION_required": {
+    "allowed_cases": "exact phase case-ID list12",
+    "confirmation_materialization_authorized": "false for DEV; true for conditional CONF with independent_dev_acceptance_ref",
+    "data_policy_ref": "exact frozen policy ref",
+    "epoch": 48,
+    "kind": "REAL_CONTRACTNLI_ROBERTA_NLI_TRANSFER_PILOT",
+    "mode": "DATA",
+    "owner_ref": "exact frozen owner ref",
+    "phase": "dev or confirmation",
+    "plan_ref": "exact ref",
+    "private_output": "/dev/shm/ruvector-sota-2026-10-22/epoch48-37b29244dcf5/private",
+    "schema_version": 1,
+    "source_admission_ref": "exact ref",
+    "source_freeze_ref": "exact ref"
+  },
+  "ROOT_GOLD_ADMISSION_required": {
+    "data_admission_ref": "exact actual DATA report ref",
+    "epoch": 48,
+    "expected_forecasts": 36,
+    "expected_native_corpus_batches": 1,
+    "kind": "REAL_CONTRACTNLI_ROBERTA_NLI_TRANSFER_PILOT",
+    "mode": "GOLD",
+    "owner_ref": "exact frozen owner ref",
+    "phase": "dev or confirmation",
+    "physical_closure_ref": "exact actual physical closure ref",
+    "plan_ref": "exact ref",
+    "qualification_ref": "exact independent runtime qualification ref",
+    "raw_ref": "exact captured RAWv1 ref",
+    "raw_seal_ref": "exact raw seal ref",
+    "schema_version": 1,
+    "source_freeze_ref": "exact ref"
+  },
+  "canonical_typed_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "conditional_CONFIRM_additional_guard": {
+    "independent_dev_acceptance_ref": "exact source-bound independent acceptance report",
+    "required_fields": [
+      "epoch48",
+      "kind",
+      "phase=dev",
+      "checks_passed=true",
+      "dev_passed=true",
+      "confirmation_eligibility_accepted=true",
+      "plan_sha256",
+      "source_freeze_sha256",
+      "used_confirmation_identities=[]"
+    ]
+  },
+  "custody_failure_policy": "One exclusive attempt per phase/mode before payload/vault access; O_EXCL/fsync outputs, no overwrite/retry, only hashed errors. Gold attempted/completed per-token markers retain ambiguity on partial failures. Any selected source access retires DEV identities forever; conditional CONF is consumed conservatively when its DATA attempt starts.",
+  "epoch": 48,
+  "feature_bank_schema": {
+    "cases": "12 records {id,document_id,hypothesis_id,input_sha256,claim}; no annotation values",
+    "documents": "4 original document records: document_id/record_ordinal/source_group_sha256/source_document_sha256/normalized_document_sha256/source_filename_key_sha256/evidence",
+    "epoch": 48,
+    "evidence": "[{unit_id,sentence,start,end}] exact contiguous original-source character partition; inherited label-blind source_catalog, NOT gold evidence spans",
+    "kind": "REAL_CONTRACTNLI_ROBERTA_NLI_TRANSFER_PILOT",
+    "role": "dev or confirmation",
+    "schema_version": 1,
+    "source_archive_sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b"
+  },
+  "feature_hash_semantics": {
+    "input_sha256": "SHA256(json.dumps({claim:originalHypothesis,document:originalDocument},sort_keys=True,separators=(comma,colon),ensure_ascii=False,allow_nan=False).encode())",
+    "normalized_document_sha256": "SHA256(UTF8(whitespace-collapse(original.casefold()))), noNFKC",
+    "source_document_sha256": "SHA256(UTF8(join evidence sentences exactly))",
+    "source_group_sha256": "SHA256(UTF8(ContractNLI|archiveSHA|dev|decimalDocumentID))"
+  },
+  "kind": "REAL_CONTRACTNLI_ROBERTA_NLI_TRANSFER_PILOT",
+  "model_raw_order": [
+    "Entailment",
+    "Neutral",
+    "Contradiction"
+  ],
+  "official_raw_choice_literals": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "output_paths": {
+    "CONF_DATA_report": "experiments/sota-2026-10-22/audit/epoch48/CONFIRMATION_DATA_ADMISSION.json",
+    "CONF_GOLD_report": "experiments/sota-2026-10-22/audit/epoch48/CONFIRMATION_GOLD_JOIN_REPORT.json",
+    "CONF_features": "/dev/shm/ruvector-sota-2026-10-22/epoch48-37b29244dcf5/private/CONF_FEATURES.json",
+    "CONF_gold_joined": "/dev/shm/ruvector-sota-2026-10-22/epoch48-37b29244dcf5/private/CONF_GOLD_JOINED.json",
+    "CONF_vault": "/dev/shm/ruvector-sota-2026-10-22/epoch48-37b29244dcf5/private/CONF_GOLD.vault.json",
+    "DEV_DATA_report": "experiments/sota-2026-10-22/audit/epoch48/DATA_ADMISSION.json",
+    "DEV_GOLD_report": "experiments/sota-2026-10-22/audit/epoch48/GOLD_JOIN_REPORT.json",
+    "DEV_features": "/dev/shm/ruvector-sota-2026-10-22/epoch48-37b29244dcf5/private/DEV_FEATURES.json",
+    "DEV_gold_joined": "/dev/shm/ruvector-sota-2026-10-22/epoch48-37b29244dcf5/private/DEV_GOLD_JOINED.json",
+    "DEV_vault": "/dev/shm/ruvector-sota-2026-10-22/epoch48-37b29244dcf5/private/DEV_GOLD.vault.json"
+  },
+  "physical_closure_required": {
+    "PID_namespace": "same actual owner/current namespace",
+    "checks_passed": true,
+    "epoch": 48,
+    "kernel_boot_id": "same actual owner/current boot",
+    "kind": "REAL_CONTRACTNLI_ROBERTA_NLI_TRANSFER_PILOT",
+    "owned_process_identities": "nonempty distinct list of {pid,startticks,pgid,sid}; Gold independently rechecks absent or same terminal0/FDSize0/statm0 and scans owned PGID/SID for live/failed members",
+    "phase": "same phase",
+    "schema_version": 1
+  },
+  "policy_ref": {
+    "bytes": 17169,
+    "path": "IDENTITY_POLICY.v1.json",
+    "sha256": "4a5a4f0721b34289ba8fbb0f3040594601a6fbb3f7e4e0a0e9fb710361cebabe"
+  },
+  "qualification_required": {
+    "actual_forecasts": 36,
+    "actual_native_corpus_batches": 1,
+    "all_forecasts_complete_before_gold": true,
+    "all_owned_processes_physically_closed": true,
+    "checks_passed": true,
+    "epoch": 48,
+    "kind": "REAL_CONTRACTNLI_ROBERTA_NLI_TRANSFER_PILOT",
+    "phase": "same phase",
+    "plan_sha256": "same plan ref SHA",
+    "raw_sha256": "same raw_ref SHA",
+    "source_freeze_sha256": "same source freeze ref SHA"
+  },
+  "raw_seal_required": {
+    "epoch": 48,
+    "forecast_count": 36,
+    "kind": "REAL_CONTRACTNLI_ROBERTA_NLI_TRANSFER_PILOT",
+    "phase": "same phase",
+    "plan_sha256": "same plan ref SHA",
+    "raw_ref": "same exact raw_ref",
+    "schema_version": 1,
+    "source_freeze_sha256": "same source freeze ref SHA"
+  },
+  "raw_to_typed": [
+    0,
+    2,
+    1
+  ],
+  "reference_schema": {
+    "bytes": "exact integer",
+    "path": "absolute or project-relative canonical nonsymlink file path",
+    "sha256": "exact SHA256"
+  },
+  "schema_version": 1,
+  "scientific_scope": "Project-unused public officialDEV12 transfer pilot only; four document clusters, known17hypotheses. Unknown semantic aliases and pretraining overlap remain; no sealed publisher/fullbenchmark/generalization/SOTA claim. Champion native104 preserved; no training/calibration.",
+  "source_admission_required": {
+    "epoch": 48,
+    "kind": "REAL_CONTRACTNLI_ROBERTA_NLI_TRANSFER_PILOT",
+    "owner_ref": "exact frozen owner ref",
+    "parent": "37b29244dcf51eec23510c111e0ea27c11cc646d",
+    "plan_ref": "exact ref",
+    "schema_version": 1,
+    "scientific_dispatch_authorized": false,
+    "source_commit": "actual E48 SOURCE commit (not base, not either retired UNKNOWN object)",
+    "source_freeze_ref": "exact ref",
+    "source_full_tree_verified": true,
+    "source_publication_independently_verified": true
+  },
+  "source_freeze_contract": "files unique list exact {path,bytes,sha256}; all files hash-verified before DATA/GOLD; policy, executed custody and adjacent exact source_catalog must be present. plan epoch/kind/source_checkpoint/data_roles exactly policy.",
+  "status": "SOURCE_ONLY_NO_REAL_DATA_GOLD_OR_MODEL_EXECUTION"
+}

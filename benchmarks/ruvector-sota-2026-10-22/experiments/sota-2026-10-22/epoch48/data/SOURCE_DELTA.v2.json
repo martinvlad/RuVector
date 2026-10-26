@@ -1,0 +1,20 @@
+{
+  "delta": "--- v1/e48_custody.py\n+++ v2/e48_custody.py\n@@ -4,7 +4,7 @@\n in IDENTITY_POLICY.v1.json before source payload access. Only selected source\n texts decode during DATA; raw JSON choice tokens are copied opaquely.\n \"\"\"\n-import argparse,base64,hashlib,importlib.util,json,os,re,stat,time,unicodedata,zipfile\n+import argparse,base64,hashlib,importlib.util,io,json,os,re,stat,time,unicodedata,zipfile\n from pathlib import Path\n EPOCH=48\n KIND='REAL_CONTRACTNLI_ROBERTA_NLI_TRANSFER_PILOT'\n@@ -275,7 +275,7 @@\n  report={'schema_version':1,'epoch':48,'kind':KIND,'phase':phase,'status':'DATA_FAILED_CLOSED_NO_RETRY','plan_sha256':admission['plan_ref']['sha256'],'source_freeze_sha256':admission['source_freeze_ref']['sha256'],'source_commit':source['source_commit'],'selected_ids':phase_ids(phase),'source_checkpoint':SOURCE,'semantic_gold_values_decoded':0,'selected_raw_choice_tokens_copied':0,'DATA_calls':1,'model_tokenizer_native_calls':0,'confirmation_materialization_authorized':phase=='confirmation','used_confirmation_identities':phase_ids(phase)if phase=='confirmation'else[],'partial_parse_metadata':{},'errors':[],'evidence':{'root_data_admission':admission_ref,'data_policy':admission['data_policy_ref'],'source_admission':admission['source_admission_ref']}}\n  try:\n   owner_guard(admission['owner_ref'],project);archive_ref={'path':str(resolve_path(archive_path,project)),'bytes':ARCHIVE_BYTES,'sha256':ARCHIVE_SHA};b=read_ref(archive_ref,project);require(hashlib.sha1(b'blob '+str(len(b)).encode()+b'\\0'+b).hexdigest()==ARCHIVE_GIT,'EXACT_OFFICIAL_ARCHIVE_GIT_IDENTITY')\n-  with zipfile.ZipFile(archive_ref['path'])as z:\n+  with zipfile.ZipFile(io.BytesIO(b))as z:\n    entries=[x for x in z.infolist()if x.filename=='contract-nli/dev.json'and not x.is_dir()];require(len(entries)==1,'ONE_EXACT_DEV_MEMBER');info=entries[0];require(info.file_size==MEMBER_BYTES,'DEV_MEMBER_SIZE');member=z.read(info);require(len(member)==MEMBER_BYTES and sha(member)==MEMBER_SHA,'DEV_MEMBER_SHA')\n   states=old_legal96_states(project);catalog=source_catalog();bank,vault,records,stats=prepare_member(member,policy,phase,states,audit,all_dev,catalog,report['partial_parse_metadata']);owner_guard(admission['owner_ref'],project)\n   features_ref=put(bank_path,bank);vault_ref=put(vault_path,vault);identity_ref=put(out/(stem+'_SELECTED_IDENTITIES.json'),{'schema_version':1,'epoch':48,'kind':KIND,'phase':phase,'selected_ids':phase_ids(phase),'records':records,'all_selected_DEV_forever_on_access':phase=='dev','used_confirmation_identities':report['used_confirmation_identities']})\n",
+  "epoch": 48,
+  "identity_policy_and_contract_changed": false,
+  "kind": "REAL_CONTRACTNLI_ROBERTA_NLI_TRANSFER_PILOT",
+  "reason": "Use the exact hash-verified immutable archive bytes as ZipFile input; remove reopen-by-path race before any source payload access.",
+  "schema_version": 1,
+  "v1_DATA_Gold_or_target_executions": 0,
+  "v1_source": {
+    "bytes": 35705,
+    "retained_immutable_path": "/dev/shm/ruvector-e48-data/public/e48_custody.py",
+    "sha256": "ceba8c0f037db4311319c8ef7f7dceefec3329ad32e4b1fe6083619c9ed8d2a7"
+  },
+  "v2_DATA_Gold_or_target_executions": 0,
+  "v2_source": {
+    "bytes": 35702,
+    "path": "e48_custody.py",
+    "sha256": "bc1a9337f9997599370d6fb71ab0608b099073276f4e1fa6da07f250bec12497"
+  }
+}

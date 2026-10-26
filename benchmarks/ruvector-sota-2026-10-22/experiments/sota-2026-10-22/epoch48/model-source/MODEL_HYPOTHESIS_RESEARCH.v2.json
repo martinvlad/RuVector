@@ -1,0 +1,100 @@
+{
+  "actual_operations": {
+    "Git_mutations": 0,
+    "automatic_retries": 0,
+    "data_feature_or_gold_or_confirmation_reads": 0,
+    "failed_GETs": 0,
+    "inference_forwards": 0,
+    "model_initializations": 0,
+    "native_calls": 0,
+    "paid_API_GPU_calls": 0,
+    "public_official_metadata_GETs": 6,
+    "weight_downloads": 0
+  },
+  "base_commit": "37b29244dcf51eec23510c111e0ea27c11cc646d",
+  "candidate_plan": {
+    "bytes": 5753,
+    "path": "/dev/shm/ruvector-e48-model/PINNED_MODEL_ACQUISITION_PLAN.v2.json",
+    "sha256": "37735d7a2214e64d0115f3df9a3e597621c32c79b87c544390ec067ce12a0257"
+  },
+  "decision": "RECOMMEND_ONE_MATERIALLY_DISTINCT_PRETRAINED_TYPED_NLI_READER_PENDING_ROOT_FREEZE_AND_ACTUAL_EVALUATION",
+  "eligibility_caveats": [
+    "Official author card explicitly declares six named NLI training datasets and does not name ContractNLI. Same weights verifiably uploaded2020; this is credible supervised lineage evidence, not proof of all generic pretraining text absence.",
+    "Model license MIT comes from official author modelcard; underlying training corpora have their own licenses. No new training or training-data redistribution is proposed.",
+    "No JevBench300/ClaimBench access or publisher eligibility is established by this model research. No placement or official score.",
+    "Original .bin must be read only through pinned reviewed weights_only=True; no unrestricted pickle or custom remote code. If validation fails, preserve failure and stop instead of model fallback/grid."
+  ],
+  "historical_inventory": {
+    "bytes": 27626,
+    "path": "/dev/shm/ruvector-e48-model/HISTORICAL_MODEL_INVENTORY.v2.json",
+    "sha256": "e698d20285c497e37d94f83014160a4e4e4b9fec0b2df060d2c4ac9cdbc7657d"
+  },
+  "historical_prior_outcomes": {
+    "epoch1": "learned public106/183 and failed easy48 confirmation39 vs41; rejected",
+    "epoch2": "Legal96 correct57/96 unchanged and proper scores worsened; rejected",
+    "epoch47": "compact fixed-token Qwen3-4B native4/12, lexical6/12, source-order6/12; native Brier1.1375775839004734 and NLL7.999127772335334; scientific rejection, no confirmation"
+  },
+  "metadata_refs": [
+    {
+      "bytes": 1767,
+      "path": "/dev/shm/ruvector-e48-model/YNIE_API.actual.v1.json",
+      "sha256": "38f5fb73470edfe8bebf3d9e3d1c7f28c9ff333281d670bbabb6e140cb41d476"
+    },
+    {
+      "bytes": 2029,
+      "path": "/dev/shm/ruvector-e48-model/YNIE_API_ORIGINAL_2020.json",
+      "sha256": "0529e6f708628198a8fc75db11e3d46c8e04788ee738038fbdeca170c42f95a6"
+    },
+    {
+      "bytes": 2575,
+      "path": "/dev/shm/ruvector-e48-model/YNIE_API_PINNED.json",
+      "sha256": "8c4465812dfae353dc29543bfe3c1dc0cedaa35c8a2e441fbebcaeaec1409260"
+    },
+    {
+      "bytes": 4388,
+      "path": "/dev/shm/ruvector-e48-model/YNIE_COMMITS.actual.v1.json",
+      "sha256": "5ba63cd3132bd26a72d9dfcb6cedb27118968f814c155a423e4242fab4dd1ce8"
+    },
+    {
+      "bytes": 3406,
+      "path": "/dev/shm/ruvector-e48-model/YNIE_README.md",
+      "sha256": "bb8affaa741b518e536d09ac6ff8f85d7ea3aee215c56e111379c78eaed8a17c"
+    },
+    {
+      "bytes": 703,
+      "path": "/dev/shm/ruvector-e48-model/YNIE_config.json",
+      "sha256": "9d074204b668902ea51bd8ecb323f01cd37040cb54e8601d872c8fdb0687131e"
+    }
+  ],
+  "recommended_study": {
+    "arms": [
+      "actual native RuVector evidence ranking plus same NLI reader",
+      "same-model lexical ranking",
+      "same-model source-order control or evidence-complete control if complete coverage fits frozen budget"
+    ],
+    "calibration": [],
+    "candidate_configs": 1,
+    "confirmation": "Root must freeze genuinely project-unused eligible identities before measurement or record empty/HOLD if eligibility cannot be established. No confirmation labels for training/selection. Unknown generic pretraining overlap retained.",
+    "context": "One deterministic whole-source-unit packing policy shared across arms. Exact premise/hypothesis token pair length <=512 including special tokens. Never silently truncate the claim, reinterpret missing evidence as NotMentioned, or change packing after outcomes.",
+    "dev": "Root must freeze new public label-blind document groups, disjoint all past exposed AND reserved/held confirmation groups; exact identities/source/scorer and role hashes before measurement. Do not reuse old12 as fresh.",
+    "gates": "Freeze accuracy-gain, each-class coverage, Brier/NLL nonincrease, complete arm counts, p50/p95, errors, CPU/memory and600s physical-close gates before execution. No promotion from DEV alone.",
+    "numeric_checks": "Before measurement freeze numerical/date/entity/source-offset checks; diagnostics may flag disagreement but may not invent a confidence override. NLI reading alone is not a numerical proof.",
+    "provisional_size": "N12 DEV and36 same-model decisions plausible under600s based on architecture/prior large-reader runtimes, but NOT measured on this model. Time gate remains mandatory. Do not claim promised runtime or scheduled execution.",
+    "train": []
+  },
+  "recorded_at": "2026-10-26T21:21:15.624811+00:00",
+  "resources_and_limits": {
+    "existing_torch2_7_1_weights_only_path": "Root reported exact local metadata; no installation or conversion required in proposed plan",
+    "max_native_corpus_batches": 2,
+    "max_seconds_each_native_batch": 600,
+    "memory_estimate_not_measurement": "Original weights1.426GB plus state/model copies and runtime/BGE workspace; may require multiple GB. Check actual available/cgroup memory and measured RSS in owned batch.",
+    "original_weights_bytes": 1425814813,
+    "paid_API_GPU_calls": 0,
+    "published_safetensors_present": false,
+    "source_tensor_storage_dtype": "UNINSPECTED; only API LFS metadata was read",
+    "two_CPU_threads": true
+  },
+  "schema_version": 1,
+  "supersedes_v1_scope": "Terminology-only clarification before adoption; no new metadata, weights, data or runtime operations.",
+  "why_materially_distinct": "A learned three-way NLI classifier trained on SNLI/MNLI/FEVER-NLI/ANLI replaces a generic causal model fixed A/B/C token adapter. This is not another packing-only or context-length grid. RoBERTa is a distinct backbone and original public2020 weight lineage, not a repeated previously rejected DeBERTa/ModernBERT/BART/Qwen model. No measured superiority is asserted."
+}

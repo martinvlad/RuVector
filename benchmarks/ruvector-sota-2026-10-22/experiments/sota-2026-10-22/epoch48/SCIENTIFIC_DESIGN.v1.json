@@ -1,0 +1,193 @@
+{
+  "acceptance_policy": "native104 remains preserved. Even a public DEV/confirmation point pass requires separately confirmed matching publisher protocol/eligibility and official result/rank before any SOTA claim or automation stop.",
+  "arms": [
+    "native",
+    "lexical",
+    "source_order"
+  ],
+  "canonical_typed_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "context_policy": {
+    "maximum_full_pair_tokens": 512,
+    "maximum_whole_source_units": 4,
+    "neutral_scope": "Learned neutral prediction only. Retrieval miss never proves full-source insufficient evidence.",
+    "numerical_checks": "Exact selected-source offsets, substring hashes and preservation of numeric/date/currency/negation occurrences; no semantic numerical proof or prediction override.",
+    "selection": "Frozen rank-order greedy whole-unit admission; restore selected units to source order; same packing for every arm. No truncation, rewriting, duplicate/overlapping source units, score-dependent fallback or label selection."
+  },
+  "data_roles": {
+    "calibration": [],
+    "confirmation": [
+      "contractnli:eced6528:dev:72:nda-1",
+      "contractnli:eced6528:dev:72:nda-10",
+      "contractnli:eced6528:dev:72:nda-16",
+      "contractnli:eced6528:dev:44:nda-1",
+      "contractnli:eced6528:dev:44:nda-10",
+      "contractnli:eced6528:dev:44:nda-16",
+      "contractnli:eced6528:dev:486:nda-1",
+      "contractnli:eced6528:dev:486:nda-10",
+      "contractnli:eced6528:dev:486:nda-16",
+      "contractnli:eced6528:dev:3:nda-1",
+      "contractnli:eced6528:dev:3:nda-10",
+      "contractnli:eced6528:dev:3:nda-16"
+    ],
+    "dev": [
+      "contractnli:eced6528:dev:63:nda-1",
+      "contractnli:eced6528:dev:63:nda-10",
+      "contractnli:eced6528:dev:63:nda-16",
+      "contractnli:eced6528:dev:598:nda-1",
+      "contractnli:eced6528:dev:598:nda-10",
+      "contractnli:eced6528:dev:598:nda-16",
+      "contractnli:eced6528:dev:29:nda-1",
+      "contractnli:eced6528:dev:29:nda-10",
+      "contractnli:eced6528:dev:29:nda-16",
+      "contractnli:eced6528:dev:575:nda-1",
+      "contractnli:eced6528:dev:575:nda-10",
+      "contractnli:eced6528:dev:575:nda-16"
+    ],
+    "train": []
+  },
+  "dataset": {
+    "attribution": "Stanford ContractNLI: A Dataset for Document-level Natural Language Inference for Contracts; official repository and immutable revision above.",
+    "license": "CC-BY-4.0",
+    "license_ref": {
+      "bytes": 18656,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_LICENSE.txt",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+    },
+    "member": "contract-nli/dev.json",
+    "member_sha256": "310af7d661d2ab50ee3700169cef524c75f39fb296bbf5a515c229eb0f42e68e",
+    "repository": "stanfordnlp/contract-nli",
+    "revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9"
+  },
+  "epoch": 48,
+  "frozen_at": "2026-10-26T21:47:07.167395+00:00",
+  "gates": {
+    "DEV_point_pass_only_authorizes_independent_confirmation_review": true,
+    "N_per_arm": 12,
+    "all_forecasts_and_runtime_integrity_required": true,
+    "all_three_gold_classes_represented": true,
+    "native_Brier_nonincrease_versus_each_control": true,
+    "native_NLL_nonincrease_versus_each_control": true,
+    "native_accuracy_gain_minimum_correct_versus_each_control": 2,
+    "native_at_least_one_correct_per_class": true,
+    "no_training_calibration_or_parameter_selection_on_confirmation": true,
+    "same_frozen_gates_apply_to_conditional_confirmation": true
+  },
+  "hypothesis": "A different pretrained learned three-class NLI head may improve transfer decisions when native RuVector selects evidence, compared with identical-reader lexical and source-order evidence controls on previously unused source groups. No superiority is claimed before actual measurements.",
+  "identity_policy": {
+    "bytes": 17169,
+    "path": "experiments/sota-2026-10-22/epoch48/data/IDENTITY_POLICY.v1.json",
+    "sha256": "4a5a4f0721b34289ba8fbb0f3040594601a6fbb3f7e4e0a0e9fb710361cebabe"
+  },
+  "kind": "REAL_CONTRACTNLI_ROBERTA_NLI_TRANSFER_PILOT",
+  "limits": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "GPU_calls": 0,
+    "actual_model_forwards_maximum_per_phase": 36,
+    "calibration_calls": 0,
+    "compute_threads": 2,
+    "conditional_confirmation_second_only": true,
+    "native_batches_maximum": 2,
+    "new_paid_API_calls": 0,
+    "one_DEV_batch": true,
+    "outer_terminate_seconds": 580,
+    "retries": 0,
+    "seconds_per_native_batch_including_initialization_and_cleanup": 600,
+    "training_calls": 0,
+    "warmup_or_additional_corpus_probes": 0,
+    "worker_soft_deadline_seconds": 570
+  },
+  "model": {
+    "declared_training": [
+      "SNLI",
+      "MNLI",
+      "FEVER-NLI",
+      "ANLI R1",
+      "ANLI R2",
+      "ANLI R3"
+    ],
+    "model_license": "MIT, official pinned author modelcard",
+    "novelty_scope": "Exact ynie large trained head/weights/lineage not previously studied among99 verified historical metadata sources. RoBERTa backbone existed earlier in project; no globally novel architecture claim.",
+    "original_weight_upload": "2020-10-17T01:56:23.000Z",
+    "repository": "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+    "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+    "unknowns": [
+      "Generic pretraining/source-document overlap",
+      "Publisher eligibility",
+      "Actual CPU latency and study accuracy before this experiment"
+    ],
+    "weight_sha256": "a51c55cb7dc41c4c862f06a3d9c413a8aa0619222bc56f06cb6f2f5b2d3ee14a"
+  },
+  "native104_champion_preserved": true,
+  "no_publisher_submission_or_outgoing_mail_authorized": true,
+  "official_goal_verified": false,
+  "phase_document_ids": {
+    "confirmation": [
+      72,
+      44,
+      486,
+      3
+    ],
+    "dev": [
+      63,
+      598,
+      29,
+      575
+    ]
+  },
+  "phase_slots": {
+    "confirmation": {
+      "condition": "Unchanged reader/plan/source and all DEV gates independently accepted plus project-unused source/lineage eligibility; no early source materialization or labels.",
+      "ordinal": 2,
+      "token": "876efb575bf80c95ccade3d6f12b9f50cb8ab8f2f06bda11b183810e0ea82442"
+    },
+    "dev": {
+      "condition": "Actual SOURCE independently verified + once DATA + frozen source/owner/independent source review; no retry.",
+      "ordinal": 1,
+      "token": "7b6f1380000eb694983345a6d5ffd8c80e739cf5e51f2679ba0e0e62bc14ba66"
+    }
+  },
+  "raw_to_typed_indices": [
+    0,
+    2,
+    1
+  ],
+  "schema_version": 1,
+  "scorer": {
+    "executed_pilot_metrics": {
+      "bytes": 12574,
+      "path": "experiments/sota-2026-10-22/runtime/epoch48/evaluate.py",
+      "sha256": "825ab942ffcc0245fa500d1151ba442425abca5c89fa9c3a448e62fa9c2a38ce"
+    },
+    "official_code_license": "Apache-2.0",
+    "official_code_license_ref": {
+      "bytes": 11357,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/code_LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "official_codec": {
+      "bytes": 5754,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_nli__dataset__loader.py",
+      "sha256": "9c63102a01576c230da94695f593fd7bd4fe2d0b20672b74e8a7f62aba426fc4"
+    },
+    "official_evaluation_source": {
+      "bytes": 15025,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_nli__evaluation.py",
+      "sha256": "f5acd4497e002652b2f29a6827fecd355b96ec041c4c174b1938eea2f8c42cf4"
+    },
+    "official_repository": "stanfordnlp/contract-nli-bert",
+    "official_revision": "058c56fd62d56897bb4fcfbf1be71b17aee3a79c",
+    "scope": "Typed exact-match accuracy plus separately frozen stable Brier/NLL scorer. No full official benchmark score or publisher scorer execution claim."
+  },
+  "slot_scope": "Public one-shot nonces, not credentials. Reserved slots are not executed batches; actual attempts/completions come only from captured runtime receipts. Owner loss/uncertain mutation closes unexecuted currentepoch slots without replay.",
+  "source_checkpoint": "37b29244dcf51eec23510c111e0ea27c11cc646d",
+  "status": "PREREGISTERED_SOURCE_ONLY_NO_DATA_OR_MODEL_MEASUREMENT",
+  "uncertainty": "Only four document clusters per phase and three fixed hypotheses. Public source-group holdout, not sealed publisher evaluation or proof of benchmark generalization; 256 seed48 document bootstrap is descriptive only.",
+  "used_confirmation_identities": []
+}

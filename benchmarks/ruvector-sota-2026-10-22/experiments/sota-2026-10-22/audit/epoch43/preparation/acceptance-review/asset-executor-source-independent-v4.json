@@ -1,0 +1,240 @@
+{
+  "schema_version": 4,
+  "epoch": 43,
+  "checks_passed": true,
+  "source_only": true,
+  "asset_executor_source_approved": true,
+  "gc_stage_source_approved": true,
+  "acquisition_stage_source_approved": true,
+  "status": "APPROVED_EXACT_ASSET_MAINTENANCE_SOURCE_REQUIRES_BOUND_FINITE_ROOT_OUTER",
+  "reviewed_at_utc": "2026-10-26T06:19:20.163177+00:00",
+  "ready": {
+    "path": "/workspace/ruvector-e43-engineering/implementation-v1/asset-executor-v4/ASSET_EXECUTOR_READY.v4.json",
+    "bytes": 2483,
+    "sha256": "a298271338b2dfb88354a35225c7836d56944b76f0144b45a41febf58f16152b"
+  },
+  "plan": {
+    "path": "/workspace/ruvector-e43-engineering/cache-acquisition-plan-v1/FINITE_GC_AND_ACQUISITION_PLAN.PROPOSAL.v1.json",
+    "bytes": 9664,
+    "sha256": "26fc5ae79b790808ffade6d492b7e5954d34fea46613855f8b5122105743b12b"
+  },
+  "plan_sha256": "26fc5ae79b790808ffade6d492b7e5954d34fea46613855f8b5122105743b12b",
+  "source_files": [
+    {
+      "bytes": 5741,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/asset-executor-v4/asset_common.py",
+      "sha256": "ac7fc25eb300da4e1dbcf9d8283905b6b34c6764ef8fbb3791cbefe508ada641"
+    },
+    {
+      "bytes": 6454,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/asset-executor-v4/asset_gc.py",
+      "sha256": "922c0a02acd81ac8643c87b3cb87a31188d88acfe28b6268950490a09acfda66"
+    },
+    {
+      "bytes": 11091,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/asset-executor-v4/asset_acquire.py",
+      "sha256": "f7956b5fbba2ec79e5e008e5892cf3d0ed024e68e6db713e310e5c916ef574ba"
+    },
+    {
+      "bytes": 2594,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/asset-executor-v4/prepare_assets.py",
+      "sha256": "024ce1a546949e0ca98b2734de1e32b5dc6802ef689d338cd348669ef2f208f1"
+    }
+  ],
+  "independent_pure_fixture_verification": {
+    "path": "/workspace/ruvector-e43-acceptance-audit/INDEPENDENT_ASSET_PURE_FIXTURES.v4.json",
+    "bytes": 782,
+    "sha256": "5a3bbc83ad41c246028bc80baea0fa47dbe99cb881861c3694038972c19a2676"
+  },
+  "source_snapshot": "/workspace/ruvector-e43-acceptance-audit/asset-executor-v4-snapshot",
+  "all_five_source_and_fixture_fileSHA_verified": true,
+  "metadata_provenance_verified": [
+    {
+      "reference": {
+        "bytes": 2134,
+        "path": "/workspace/ruvector-e36-reader-assets/ms-xxlarge-8f8b43dd/asset-lock.json",
+        "sha256": "288c41c5bd1ebf822f19c38ea17fbcf33d4e288402807c185462490c501bec41"
+      },
+      "weight_metadata_matches_frozen_original": true
+    },
+    {
+      "reference": {
+        "bytes": 2138,
+        "path": "/workspace/ruvector-e37-reader-assets/ms-xxlarge-8f8b43dd/asset-lock.json",
+        "sha256": "93c5827edd2b66e3da823bd90ac024c6dff0afd26b3ff99afcfc40161cc06326"
+      },
+      "weight_metadata_matches_frozen_original": true
+    },
+    {
+      "reference": {
+        "bytes": 2138,
+        "path": "/workspace/ruvector-e38-reader-assets/ms-xxlarge-8f8b43dd/asset-lock.json",
+        "sha256": "652e603534a5c526d1c53e734d040caa791eccaf4fb4397728871342b7906bcb"
+      },
+      "weight_metadata_matches_frozen_original": true
+    },
+    {
+      "reference": {
+        "bytes": 2124,
+        "path": "/workspace/ruvector-e39-reader-assets/ms-xxlarge-8f8b43dd/asset-lock.json",
+        "sha256": "f9c3346e1c3a0a07a27c11b27c70941a08c8e29f06191ce8b95c9768e1e15974"
+      },
+      "weight_metadata_matches_frozen_original": true
+    }
+  ],
+  "canonical_LFS_pointer_metadata": {
+    "bytes": 135,
+    "Git_blob_sha1": "aba315cb1d255ada5671f0de52bcbc5148771376",
+    "payload_sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+    "payload_bytes": 3133958098,
+    "pointer_and_payload_identities_distinguished": true,
+    "actual_payload_read_by_reviewer": false
+  },
+  "GC_scope": {
+    "exact_paths": [
+      "/workspace/ruvector-e36-reader-assets/ms-xxlarge-8f8b43dd/pytorch_model.bin",
+      "/workspace/ruvector-e37-reader-assets/ms-xxlarge-8f8b43dd/pytorch_model.bin",
+      "/workspace/ruvector-e38-reader-assets/ms-xxlarge-8f8b43dd/pytorch_model.bin",
+      "/workspace/ruvector-e39-reader-assets/ms-xxlarge-8f8b43dd/pytorch_model.bin"
+    ],
+    "expected_device": 27,
+    "expected_inode": 1449440,
+    "expected_mode": "0444",
+    "expected_initial_nlink": 4,
+    "expected_weight_bytes": 3133958098,
+    "expected_weight_sha256": "5b2d8ddf6c80e4e6105b27cdb9fa346a8ba1f0c0dfd410b0007be894567cb4db",
+    "repository": "microsoft/deberta-v2-xxlarge-mnli",
+    "revision": "8f8b43ddfc6f5e93a7abd1d1506d606b080a4c06",
+    "source_license_metadata": "MIT; source-provided public publisher metadata/LFS pointer matched, no weight download or reread by reviewer.",
+    "only_original_public_XXL_cache_aliases_not_B354_Tasksource_native104_R_K_source_WAL_ZIP": true
+  },
+  "GC_verified_guards": {
+    "all_four_regular_nonsymlink_aliases_exact_frozen_device_inode_nlink4_size_mode_before_work": true,
+    "all_four_retained_asset_lock_bytes_SHA256_checked_before_mutation": true,
+    "current_all_process_FD_mapping_inode_visibility_required": true,
+    "live_unknown_unreadable_reader_HOLD": true,
+    "permission_denied_never_means_absent": true,
+    "positive_terminal_exception": "Only stable double-procstat samePID/startticks/PGID/SID/stateZ/kernelwait0 +FDSize0+allstatm0 proves no file or memory capability; no rawcmdlines/environments/maps path columns retained. This doesnot repair historicalE37 execution/count UNKNOWN.",
+    "second_holder_scan_ownFD_exception": "Only exact currentPID, retainedhashFD number, andfrozen device/inode; allother sameinode FDs/mappings HOLD.",
+    "one_full_weight_scan_8MiB_bounded": true,
+    "verified_readonlyFD_remains_open_through_all_four_unlinks": true,
+    "hashedFD_device_inode_bound_to_frozen_target_BEFORE_any_unlink": true,
+    "source_fstat_size_mtime_identity_stable_across_hash": true,
+    "remaining_alias_nlink_size_mode_mtime_checked_before_each_unlink": true,
+    "current_exclusive_owner_fence_before_each_unlink": true,
+    "O_EXCL_fsynced_once_marker_before_fullweight_read_or_delete": true,
+    "per_alias_fsynced_INTENT_then_exact_unlink_then_parent_fsync_then_COMPLETE": true,
+    "final_retainedFD_fstat_nlink0_then_close_then_actual_workspace_free": true,
+    "reclaimed_space_is_observed_delta_not_assumed3GB": true,
+    "failure_or_unknown_partial_WAL_stops_no_marker_reset_or_retry": true
+  },
+  "acquisition_scope": {
+    "artifacts": [
+      {
+        "bytes": 2497281120,
+        "destination": "/workspace/ruvector-e43-reader-assets/qwen3-4b-instruct-2507-q4km/Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+        "license": "Apache-2.0",
+        "role": "model_GGUF",
+        "sha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597",
+        "url": "https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF/resolve/a06e946bb6b655725eafa393f4a9745d460374c9/Qwen3-4B-Instruct-2507-Q4_K_M.gguf"
+      },
+      {
+        "bytes": 17851611,
+        "destination": "/workspace/ruvector-e43-reader-runtime/llama-b11669-bin-ubuntu-x64.tar.gz",
+        "license": "MIT",
+        "role": "CPU_runtime_tar",
+        "sha256": "cf07c1c112d709bd67e522017471de57ed0ec8bea031d732c5422351c07f65ac",
+        "source_commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+        "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-ubuntu-x64.tar.gz"
+      }
+    ],
+    "logical_asset_downloads": 2,
+    "maximum_redirect_hops_per_logical_download": 5,
+    "success_network_GET_scope": "Two logical initial asset GETs plus actual bounded redirects. Do not call this exactly2wireHTTPrequests; derive successful hops from sanitized redirect-host receipts. Failures may have incomplete counters and must remain so.",
+    "HTTP_range_resume_or_application_retry": false,
+    "target_Authorization_or_secret_copy": false,
+    "proxy_CA_environment": "Default configured urllib proxy and TLS CA trust preserved; no credential values copied/logged, no custom insecureTLS.",
+    "redirect_policy": "HTTPS and bounded GitHub/release-assets/HuggingFace/hf.co public hosts only; logs retain hostname, not signedURL/query/header or exceptiondetail.",
+    "fresh_target_and_partial_only_O_EXCL_O_NOFOLLOW": true,
+    "stream_buffer_bytes": 1048576,
+    "hard_size_cap_and_incremental_SHA_before_promotion": true,
+    "independent_full_reverification_8MiB_stream_after_fsync": true,
+    "promotion": "Readonly0444 new exact body via no-overwrite hardlink promotion, directoryfsync, remove ownpartial. Other historical/verified assets never deleted.",
+    "partial_failure_cleanup": "Only new partial with capturedexactdev/inode is eligible; mismatch/uncertainty retained STOP. A rare failure after verifiedtarget promotion can retain that target; no automatic reuse or retry.",
+    "memory_floor": {
+      "required_fields_present_nonnegative": true,
+      "file_greater_equal_shmem": true,
+      "reclaim_credit_excludes_shmem_dirty_writeback": true,
+      "adjusted_headroom_clamped_to_cgroup_limit_and_MemAvailable": true,
+      "minimum_cgroup_limit_bytes": 17179869184,
+      "minimum_adjusted_headroom_bytes": 6442450944
+    },
+    "space_floor": {
+      "workspace_before_bytes": 2917785915,
+      "tmp_before_bytes": 268435456,
+      "workspace_after_bytes": 134217728,
+      "unknown_or_missing_floor_HOLD_no_relaxation": true
+    }
+  },
+  "safe_runtime_extraction": {
+    "source_tar_SHA256": "cf07c1c112d709bd67e522017471de57ed0ec8bea031d732c5422351c07f65ac",
+    "metadata_scan_before_newroot_write": true,
+    "max_members": 512,
+    "max_regular_uncompressed_bytes": 268435456,
+    "paths": "Unique canonical relative names with llama-b11669 topfolder; control/NUL/colon/backslash/absolute/traversal/non-directory ancestors refuse.",
+    "types": "Regularfiles/directories or declared safeinternal symlinks ending acyclically at an includedregularfile. Tarhardlinks/special/devices/SUID/SGID refuse.",
+    "safe_internal_aliases": "Whole link graph prevalidated, then source symlink aliases become exactnewregular hardlinks inside newruntime root; no outside link or symlinkwritten.",
+    "prospective_packaging_source": "Captured pinned release.yml line236 uses tar --transform from build/bin and NO --dereference, so symlinks may exist. Plan26fc already allows safeinternal ones; no postpayload relaxation.",
+    "actual_extracted_bytes_counted_and_equal_declared_before_chmod_or_receipt": true,
+    "all_regular_file_body_SHA256_retained": true,
+    "exact_actual_tar_members_or_ELF_dependencies_admitted_by_this_source_review": false,
+    "layout_note": "Extraction container /workspace/ruvector-e43-reader-runtime/llama-b11669 includes archive topfolderllama-b11669; expected executable path is nested /llama-b11669/llama-b11669/llama-server, to be verified fromactualfile inventory, not guessedflat."
+  },
+  "outer_execution_requirements": {
+    "separately_bound_root_approval": "authorizedtrue, epoch43, exactplan26fc andthese V4four sourcebyte/SHArefs; expires<=currentfrozenowner expiry. Do not use staleV1 sourcehash template unmodified.",
+    "exact_owner_reference": {
+      "bytes": 546,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/owner.json",
+      "sha256": "2092db101d81736be7705ec6626809e51cad4158b5c49a7a2ff550ca4fe4cb84"
+    },
+    "preimport_source_fence": "Outer verifies allfour regular nonsymlink source bodies and approval/plan refs BEFORE Pythonexec/import; source self-check afterasset_common import is not a substitute.",
+    "current_owner": "Exactcurrentguardian130591/startticks31532271/kernelboot/PIDnamespace/FD3dev33inode13626/exclusiveFLOCK/CPU0,1, no release; actualfence is rootactor responsibility, not performed by reviewer.",
+    "maximum_gc_total_seconds": 180,
+    "maximum_acquire_total_seconds": 900,
+    "inner_work_alarm_seconds": {
+      "gc": 165,
+      "acquire": 885
+    },
+    "total_wall_scope": "Outer measures fullchild invocation/interpreter+admission+payloadwork+resultfsync+pipe capture+ownedcleanup and bounds by min(stagecap,owner/approvalexpiry) with15s capture/cleanup margin. Innerwall_before_result_fsync is honestly limited, not fullstagewall.",
+    "after_gc": "Root independently verifies actualGCresult/WAL/holdermetadata/retainedlocks and actualfreefloors before authorizing acquisition. A failedGC is not an implicit permission to skip/retry it.",
+    "on_timeout_or_exception": "Terminate only matched ownedPID/startticks/session, preserve stage result/markers/WAL/partial files; unknown ownership or incomplete counter remainsUNKNOWN and prevents any subsequentactualstep. No blindsignals, no marker reset, no retries."
+  },
+  "NOT_approved_by_this_report": {
+    "actual_weight_GC_or_download_already_done": false,
+    "actual_model_or_tokenizer_initialization": false,
+    "actual_native_RuVector_corpus": false,
+    "actual_ABI_version_or_help_execution": false,
+    "GGUF_or_ELF_runtime_execution_admission": false,
+    "data_or_Gold_or_EVALUATE_BIND": false,
+    "scientific_SOURCE_or_Git_mutation": false
+  },
+  "ABI_and_future_science": "These four modules only acquire/hash/extract. Separate actualfile/ELFinterpreter/DT_NEEDED/RPATH/CPUlibrary admission must precede a bound model-free--version/--help. No install/build/GPUfallback. Only later frozenSOURCE/ROOT/data/scorer/currentnativebinding/worker-slot token andactualCASreadback may authorize one36GGUFreadout nativebatchCPU2/600; CONF/TRAIN/calibration/paid/GPU/retries0.",
+  "resolved_preexecution_findings": [
+    "V1closedhashFD/noendnlink/free observation \u2192 V4retainsFD/nlink0/actualpostclosefree.",
+    "V1retained4metadataSHArefs notenforced \u2192 V4allchecked.",
+    "V1unknownmemorySHMEMdefault0 \u2192 V4strictrequiredkeys/invariants/clamps.",
+    "V1tarbytesdeclaredonly/pathcontrols \u2192 V4actualboundedcountsexactandstrictcontrolpaths.",
+    "V2EACCES onknownzombiesalwaysHOLD \u2192 V4onlypositive doubleZ0/FD0/statm0proofexception; live/unknownstillHOLD.",
+    "V3retainedFDidentitycheckedonlyafterdeletion \u2192 V4explicitidentitybindingBEFOREanyunlink."
+  ],
+  "reviewer_actual_calls": {
+    "real_weight_or_binary_or_archive_payload_scan": 0,
+    "actual_GC_or_download_or_live_proc_holder_scan": 0,
+    "model_tokenizer_native_case_Gold_scorer_Git_network": 0,
+    "source_owner_or_R_or_protected_roots_writes": 0,
+    "public_metadata_lock_body_reads": "Four exactsmall asset-lockJSONs only; no weightcontent.",
+    "pure_invented_tests": "Nine owned-copy fixtures plus static ordering/authority checks."
+  },
+  "public_safe_source_and_metadata_only": true,
+  "old_E42_rejection_original4868UNKNOWN_and_champion_preserved": true
+}

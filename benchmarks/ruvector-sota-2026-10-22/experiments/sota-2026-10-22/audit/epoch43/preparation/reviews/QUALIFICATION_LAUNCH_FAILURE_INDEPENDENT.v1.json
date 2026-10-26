@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-26T07:27:15.820211+00:00",
+  "checks_passed": true,
+  "known_pre_qualifier_exec_failure": true,
+  "qualifier_execution_observed": false,
+  "actual_qualification_calls": 0,
+  "model_tokenizer_native_case_gold_calls": 0,
+  "classification": "KNOWN_LAUNCHER_EXECUTABLE_PATH_FAILURE_NO_QUALIFIER_EXECUTION",
+  "evidence": {
+    "launcher": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/lease-generation5/qualify_once.py",
+      "bytes": 4131,
+      "sha256": "eb5d175518eff47467adce4ef63a4f829329e3da43ae87ccc0555db3db8a050b"
+    },
+    "once_marker": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/lease-generation5/METADATA_QUALIFICATION_INVOCATION.once.json",
+      "bytes": 258,
+      "sha256": "22c0b18d1bfcbade410ae84b734ea6f95f2045bc6e47e598c503cbce756feb83"
+    },
+    "execution": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/lease-generation5/METADATA_QUALIFICATION_ROOT_EXECUTION.json",
+      "bytes": 962,
+      "sha256": "ced8568dd6c9bea8cb2a925881b1db91de3b907fba3d2f21a9d2b5dff344a0a2"
+    },
+    "root_approval": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/lease-generation5/RUNTIME_QUALIFICATION_APPROVAL.root.json",
+      "bytes": 1581,
+      "sha256": "d1bb4200ecff96b4717c2f1de4973d4e672d32ddf3f40f1300d91b6372b0d91c"
+    },
+    "source_approval": {
+      "path": "/workspace/ruvector-e43-acceptance-audit/RUNTIME_METADATA_QUALIFICATION_SOURCE_APPROVAL.v1.json",
+      "bytes": 8214,
+      "sha256": "eb087b6104021baa454c518dd21e7f088196eafebf2e6196222e72dd079d16e3"
+    }
+  },
+  "observations": {
+    "argv_executable": "/usr/bin/python",
+    "executable_path_missing": true,
+    "Popen_returned_handle": false,
+    "p_assignment_remains_None": true,
+    "PID_not_returned": true,
+    "output_directory_absent": true,
+    "result_absent": true,
+    "wall_seconds": 0.00674181804060936,
+    "operation_error_type": "FileNotFoundError"
+  },
+  "boundary": "The Python Popen exec-error handshake reports FileNotFoundError before returning a handle; no qualifier Python image or its main function was entered. A short-lived exec-attempt child may exist internally to Popen and is not falsely described as no process creation. The record contains no launched qualifier PID or descendants.",
+  "distinct_corrected_metadata_launch_permitted": true,
+  "conditions": [
+    "Preserve all first-launch marker, approval, launcher and failure bytes; do not reset or replace them.",
+    "Use a separately named corrected launcher/reservation/receipt/approval and a fresh output namespace; bind the actual verified interpreter, unchanged qualifier and exact four source hashes.",
+    "Continue the same no-model 60-second CPU0,1 source approval and current generation5 owner/expiry fences; no scientific slot consumption.",
+    "Capture exact child birth/PGID/SID and signal only still-matching known-owned groups. The old launcher unconditionally killpg after communicate and must not be interpreted as identity-safe cleanup evidence for a successful future child.",
+    "Exact corrected source review is required before invocation; no additional source/science gate waiver."
+  ],
+  "reviewer_operations": "Read source and small safe JSON receipts; checked executable/output path existence only. No qualifier, payload, binary, model, tokenizer, native, case, Gold, scorer or Git calls."
+}

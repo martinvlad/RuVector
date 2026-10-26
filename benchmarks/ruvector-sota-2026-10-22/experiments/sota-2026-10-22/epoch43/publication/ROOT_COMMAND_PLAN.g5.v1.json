@@ -1,0 +1,135 @@
+{
+  "SOURCE_publisher_code": "controller_source_g5.js",
+  "additional_exact_metadata_copy": {
+    "bytes": 6996,
+    "from": "/workspace/ruvector-e43-independent-audit/actual-reserve-readback-and-reconciliation-independent-v1.json",
+    "sha256": "461a8bc63222f9cc7d2685f3e73e7a77d2829743bb3d5b2524571a5db79ec8de",
+    "to": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/reserve-reconciliation-independent-v1.json"
+  },
+  "allowed_publisher_phases": [
+    "source",
+    "final"
+  ],
+  "approval_before_any_Git_mutation": {
+    "checks_passed": true,
+    "expected_final_root_sha": "INDEPENDENT_EXACT_FULL_GIT_ROOT_SHA1",
+    "forbidden_Git_object_sha1": "486888de9602bbb5d817a55f707b4fcfd11c65e0",
+    "operational_binding_sha256": "cd56039e9d7302e096c3a75ab5dcbfd8b4eaa3eb836e58a370161cdde413128a",
+    "original_blob5_execution": "UNKNOWN_PERMANENTLY",
+    "phase": "reserve|source|final",
+    "publication_phase_allowed": true,
+    "source_and_denylist_review_passed": true,
+    "stage_metadata_sha256": "EXACT_METADATA_SHA256"
+  },
+  "approval_before_builder": {
+    "phase_input_sha256": "EXACT_PHASE_INPUT_SHA256",
+    "phase_preparation_allowed": true
+  },
+  "bindings_ready": false,
+  "epoch": 43,
+  "executed": false,
+  "freeze_argv": [
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "-I",
+    "-B",
+    "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/project/experiments/sota-2026-10-22/epoch43/publication/freeze_and_results.py",
+    "freeze",
+    "--project",
+    "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/project",
+    "--input",
+    "ACTUAL_FREEZE_INPUT.json",
+    "--expected-input-sha",
+    "EXACT_SHA256",
+    "--operational-binding",
+    "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/OPERATIONAL_BINDING.g5.json",
+    "--expected-operational-binding-sha",
+    "cd56039e9d7302e096c3a75ab5dcbfd8b4eaa3eb836e58a370161cdde413128a"
+  ],
+  "helper_copy": [
+    "archive_protocol.py",
+    "publication_common.py",
+    "ack_protocol.py",
+    "reserve_bridge.py",
+    "mutation_guard_source_g5.py",
+    "controller_source_g5.js"
+  ],
+  "helper_copy_target": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/lease-generation5/helpers",
+  "metadata_builder_argv": [
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "-I",
+    "-B",
+    "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/project/experiments/sota-2026-10-22/epoch43/publication/build_phase_stage.py",
+    "--input",
+    "ACTUAL_PHASE_INPUT.json",
+    "--expected-input-sha",
+    "EXACT_SHA256",
+    "--approval",
+    "INDEPENDENT_METADATA_PREPARATION_APPROVAL.json",
+    "--expected-approval-sha",
+    "EXACT_APPROVAL_SHA256",
+    "--out",
+    "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/stage-PHASE",
+    "--operational-binding",
+    "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/OPERATIONAL_BINDING.g5.json",
+    "--expected-operational-binding-sha",
+    "cd56039e9d7302e096c3a75ab5dcbfd8b4eaa3eb836e58a370161cdde413128a"
+  ],
+  "mutation_ID_prefixes": [
+    "e43-source-g5",
+    "e43-final-g5"
+  ],
+  "never_invoke": [
+    "old E42 publisher/controller/suffix",
+    "old uncertain blob creation/reference/query-poll",
+    "science before actual matching SOURCE readback",
+    "private feature/vault/joined/report semantic parser in publication"
+  ],
+  "new_journal": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/lease-generation5/source-final-journal.jsonl",
+  "new_journal_is_not_a_repaired_original": "Original9 rows stay9 and permanently lack durable ref ACK; actual desired branch state is separately independently verified.",
+  "new_request_directory": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/lease-generation5/source-final-requests",
+  "old_journal_preserved_readonly": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/e43-mutation-journal.jsonl",
+  "operational_binding": {
+    "bytes": 1990,
+    "path": "experiments/sota-2026-10-22/epoch43/OPERATIONAL_BINDING.g5.json",
+    "sha256": "cd56039e9d7302e096c3a75ab5dcbfd8b4eaa3eb836e58a370161cdde413128a"
+  },
+  "publisher_function": "publishE43Phase(phase, approvalPath, approvalSHA, operationalBindingPath, operationalBindingSHA)",
+  "receipt_semantics": "persistE43Receipt writes the exact returned object O_EXCL and fsyncs file+directory; no receipt is claimed before that explicit successful call. Never call publishE43Phase again after an uncertain mutation or receipt-persistence failure.",
+  "results_or_manifest_argv": [
+    "taskset",
+    "-c",
+    "0,1",
+    "python",
+    "-I",
+    "-B",
+    "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/project/experiments/sota-2026-10-22/epoch43/publication/freeze_and_results.py",
+    "RESULTS_OR_MANIFEST_MODE",
+    "--project",
+    "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/project",
+    "--input",
+    "EXACT_REVIEWED_MODE_INPUT.json",
+    "--expected-input-sha",
+    "EXACT_SHA256",
+    "--operational-binding",
+    "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/OPERATIONAL_BINDING.g5.json",
+    "--expected-operational-binding-sha",
+    "cd56039e9d7302e096c3a75ab5dcbfd8b4eaa3eb836e58a370161cdde413128a"
+  ],
+  "retired_reserve_IDs_never_repeat": true,
+  "returned_response_capture": "Exact serialized {ok,result/error} bytes passed by caller are O_EXCL/fsynced before ACK validation; this is not a raw transport capture or synthetic WAL ACK.",
+  "root_preparation": {
+    "bytes": 7325,
+    "path": "experiments/sota-2026-10-22/epoch43/ROOT.preparation.v1.json",
+    "sha256": "ef68b1c86b0befdcc4813d0361968ded241ca1d696de523bddb02d1626b740a0"
+  },
+  "schema_version": 1,
+  "source_ready_is_not_science_authorization": true,
+  "source_version": "source-g5-v1",
+  "success_receipt_REQUIRED_CALL": "const result=await publishE43Phase(phase,approvalPath,approvalSHA,operationalPath,operationalSHA);const durableReceipt=await persistE43Receipt(result);text({result,durableReceipt});"
+}

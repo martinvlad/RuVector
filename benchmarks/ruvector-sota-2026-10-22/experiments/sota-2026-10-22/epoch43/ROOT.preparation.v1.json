@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "epoch": 43,
+  "kind": "REAL_CONTRACTNLI_QWEN_JOINT_CONTEXT_DEV_PILOT",
+  "plan_status": "PREPARATION_REVIEW_ONLY_NOT_SOURCE_FROZEN_NOT_DISPATCH_ADMITTED",
+  "base_commit": "cab16abb5795614ff81db675140e15b2ec9b41b9",
+  "workdir": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795",
+  "project": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/project",
+  "owner_sha256": "2092db101d81736be7705ec6626809e51cad4158b5c49a7a2ff550ca4fe4cb84",
+  "source_roots": [
+    "experiments/sota-2026-10-22/epoch43/",
+    "experiments/sota-2026-10-22/audit/epoch43/",
+    "experiments/sota-2026-10-22/runtime/epoch43/"
+  ],
+  "hypothesis": "A substantially larger instruction reader can jointly interpret two selected evidence windows, including cross-window negation, conditions and numeric consistency; native RuVector evidence benefit is tested against the same model with lexical and source-order selection. Superiority is a hypothesis, not an established score.",
+  "model": {
+    "repository": "unsloth/Qwen3-4B-Instruct-2507-GGUF",
+    "revision": "a06e946bb6b655725eafa393f4a9745d460374c9",
+    "base_repository": "Qwen/Qwen3-4B-Instruct-2507",
+    "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "quantization": "Q4_K_M",
+    "bytes": 2497281120,
+    "sha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597",
+    "license": "Apache-2.0",
+    "learned_three_way_head": false,
+    "pretraining_and_quantizer_consumed_run_lineage": "UNKNOWN_HOLD",
+    "actual_payload_verified": false
+  },
+  "reader": {
+    "runtime_repository": "ggml-org/llama.cpp",
+    "revision": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+    "release": "b11669",
+    "CPU_archive_bytes": 17851611,
+    "CPU_archive_sha256": "cf07c1c112d709bd67e522017471de57ed0ec8bea031d732c5422351c07f65ac",
+    "license": "MIT",
+    "actual_payload_or_ABI_admitted": false,
+    "context_size": 1024,
+    "full_prompt_token_cap": 767,
+    "answer_tokens": 1,
+    "joint_evidence_windows": 2,
+    "arm_ids": [
+      "qwen_native_joint_context",
+      "qwen_lexical_joint_context",
+      "qwen_source_order_joint_context"
+    ],
+    "canonical_class_order": [
+      "N",
+      "E",
+      "C"
+    ],
+    "probability_contract": "Stock API full-vocabulary complement mask to minus infinity BEFORE T1 softmax; exactly three positive finite reported label probabilities, fixed canonical argmax, no probability floor/fit or invented raw/stable logits.",
+    "transport": "AF_UNIX_ONLY_OWNED_READER_SOCKET_NO_INET",
+    "cache_prompt": false,
+    "warmup": false
+  },
+  "dataset": {
+    "repository": "stanfordnlp/contract-nli",
+    "revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "license": "CC-BY-4.0",
+    "official_scorer_repository": "stanfordnlp/contract-nli-bert",
+    "official_scorer_revision": "058c56fd62d56897bb4fcfbf1be71b17aee3a79c",
+    "scope": "12 selected DEV decisions, not full ContractNLI, JevBench or ClaimBench placement",
+    "dev_document_ids": [
+      357,
+      227,
+      46,
+      212
+    ],
+    "hypothesis_ids": [
+      "nda-1",
+      "nda-10",
+      "nda-16"
+    ],
+    "dev_case_count": 12,
+    "train": [],
+    "calibration": [],
+    "confirmation": [],
+    "used_confirmation": [],
+    "protected_unused_document_ids": [
+      62,
+      321,
+      2
+    ],
+    "protected_unused_status": "IDENTITY_METADATA_ONLY_HOLD_NO_BODIES_OR_LABELS",
+    "data_materialization_admitted": false,
+    "model_unseen_or_training_exclusion_established": false
+  },
+  "phase_limits": {
+    "native_corpus_batches": 1,
+    "user_maximum_native_corpus_batches": 2,
+    "unused_second_slot_closed": true,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "reader_threads": 2,
+    "reader_batch_threads": 2,
+    "HTTP_threads": 1,
+    "seconds_including_initialization_and_ALL_physical_cleanup": 600,
+    "worker_soft_deadline_seconds": 570,
+    "retries": 0,
+    "train": 0,
+    "calibration": 0,
+    "confirmation": 0,
+    "paid_API_calls": 0,
+    "GPU_calls": 0,
+    "model_load_before_frozen_DEV_dispatch_allowed": false,
+    "metadata_only_asset_ELF_help_admission_allowed": true
+  },
+  "planned_counters": {
+    "completion_readouts": 36,
+    "first_answer_token_draws": 36,
+    "forecasts": 36,
+    "backend_forward_batch_count": null,
+    "native_document_indexes": 4,
+    "native_queries": 12,
+    "actual_counts_known_before_execution": false
+  },
+  "metrics": {
+    "accuracy": true,
+    "multiclass_Brier": true,
+    "NLL": "unclipped -log of positive observed server F32 conditional probability; no rawlogit or unrounded-stable-NLL claim",
+    "p50_p95": true,
+    "errors_resources_and_truncations": true,
+    "numeric_diagnostic_zero_denominator": "null and applicability false, never vacuous 100%",
+    "source_scope": "Only supplied per-document contract text; a retrieval miss is not full-document insufficient-evidence proof"
+  },
+  "development_gates": {
+    "native_accuracy_gain_minimum_correct_versus_each_control": 2,
+    "native_Brier_nonincrease_versus_each_control": true,
+    "native_NLL_nonincrease_versus_each_control": true,
+    "all_three_gold_classes_represented": true,
+    "native_at_least_one_correct_per_gold_class": true,
+    "all_forecasts_and_runtime_integrity_required": true,
+    "four_document_256_resample_intervals": "descriptive only, not extra selection/gates",
+    "point_gate_pass_still_HOLD": true
+  },
+  "champion": "SubmittedNative104/RRF10 unchanged",
+  "no_promotion_reason": "Unknown training/quantizer provenance and no full104 comparator, unused confirmation measurement, or publisher eligibility. No candidate promotion/submission regardless of this DEV pilot.",
+  "publication_contract": {
+    "allowed_statuses": [
+      "DEV_DIAGNOSTIC_PASS_HOLD",
+      "REJECTED_DEV_DIAGNOSTIC",
+      "REJECTED_DEV_INTEGRITY",
+      "BLOCKED_PREPARATION"
+    ],
+    "always_false_flags": [
+      "goal_met",
+      "benchmark_accepted",
+      "champion_promoted",
+      "new_submission",
+      "official_SOTA_verified",
+      "benchmark_generalization_claim"
+    ],
+    "external_custody_evidence_paths": {
+      "joined_gold": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/private/DEV_GOLD_JOINED.json",
+      "private_features": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/private/DEV_FEATURES.json"
+    },
+    "public_absolute_evidence_paths": {
+      "data_admission": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/project/experiments/sota-2026-10-22/audit/epoch43/DATA_ADMISSION.json",
+      "protocol": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/project/experiments/sota-2026-10-22/runtime/epoch43/PROTOCOL.json"
+    },
+    "status_ledger_classification": {
+      "DEV_DIAGNOSTIC_PASS_HOLD": "diagnostic_passes_on_hold",
+      "REJECTED_DEV_DIAGNOSTIC": "rejections",
+      "REJECTED_DEV_INTEGRITY": "rejections",
+      "BLOCKED_PREPARATION": "preparation_blocks"
+    },
+    "original_unknown_blob_sha1_permanently_forbidden_live_object": "486888de9602bbb5d817a55f707b4fcfd11c65e0",
+    "original_unknown_invocation": "UNKNOWN_PERMANENTLY",
+    "inherit_all70_archive_CP_only_transports": true,
+    "official_rank": null
+  },
+  "asset_admission_status": "NOT_YET_EXECUTED",
+  "source_freeze_status": "NOT_YET_EXECUTED",
+  "scientific_dispatch_status": "NOT_YET_EXECUTED",
+  "official_goal_verified": false
+}

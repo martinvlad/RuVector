@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-26T10:05:48.540511+00:00",
+  "checks_passed": true,
+  "metadata_only_review": true,
+  "asset_acquisition_metadata_admission_passed": true,
+  "model_assets_admission_passed": true,
+  "publication_allowed": true,
+  "no_raw_third_party_case_text_or_private_gold_in_public_files": true,
+  "scope": "Exact retained successful acquisition metadata plus its already-reviewed no-model qualification; no repeat download, tensor/binary hash scan, model load or current-owner inference admission.",
+  "actual_asset_result": {
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/GGUF_DIRECT_SHM_ACQUISITION_RESULT.json",
+    "bytes": 15420,
+    "sha256": "13449320563a5a6f8100d2f7c4cea3bd06b72af7e16245d5d9c80aea4843dad8"
+  },
+  "frozen_direct_SHM_plan": {
+    "path": "/workspace/ruvector-e43-engineering/implementation-v1/asset-direct-shm-v1/DIRECT_SHM_ASSET_PLAN.v1.json",
+    "bytes": 5617,
+    "sha256": "af20a88b76d1396f21d319b2d5fdc5afcb7b831d474729d21b7fea8ca5e6bcce"
+  },
+  "direct_source_review": {
+    "path": "/workspace/ruvector-e43-acceptance-audit/DIRECT_SHM_ASSET_SOURCE_APPROVAL.v1.json",
+    "bytes": 7636,
+    "sha256": "9dc924ad52c05c20811b9c70b5e60270d715dae37342156f2daf6ef78916c727"
+  },
+  "actual_metadata_qualification": {
+    "path": "/workspace/ruvector-e43-acceptance-audit/ACTUAL_RUNTIME_METADATA_QUALIFICATION_INDEPENDENT.v1.json",
+    "bytes": 9181,
+    "sha256": "21325f22b501a8bb896e6400b9557b50dcba963c581382f7831095f38ce5083a"
+  },
+  "CPU_manifest": {
+    "path": "/workspace/ruvector-e43-engineering/implementation-v1/project/experiments/sota-2026-10-22/runtime/epoch43/CPU_RUNTIME_MANIFEST.json",
+    "bytes": 11553,
+    "sha256": "f48ad10b3e1e19361bdcb57a930352673c0f6b2c3ff199b86ea7f3abf357f35a"
+  },
+  "verified_receipt_facts": {
+    "status": "GGUF_AND_CPU_RUNTIME_DOWNLOADED_HASHED_NOT_EXECUTED",
+    "errors": [],
+    "artifacts": [
+      {
+        "HTTP_status": 200,
+        "bytes": 2497281120,
+        "cleanup": "NOT_NEEDED",
+        "full_reverification": {
+          "bytes": 2497281120,
+          "device": 26,
+          "inode": 4,
+          "mtime_ns": 1792997736067328074,
+          "sha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597"
+        },
+        "path": "/dev/shm/ruvector-epoch43-cab16abb5795/reader-assets/Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+        "redirect_hosts": [
+          "us.aws.cdn.hf.co"
+        ],
+        "role": "model_GGUF",
+        "sha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597",
+        "wall_seconds": 267.7408302589902
+      },
+      {
+        "HTTP_status": 200,
+        "bytes": 17851611,
+        "cleanup": "NOT_NEEDED",
+        "full_reverification": {
+          "bytes": 17851611,
+          "device": 26,
+          "inode": 6,
+          "mtime_ns": 1792997738971376059,
+          "sha256": "cf07c1c112d709bd67e522017471de57ed0ec8bea031d732c5422351c07f65ac"
+        },
+        "path": "/dev/shm/ruvector-epoch43-cab16abb5795/reader-runtime/llama-b11669-bin-ubuntu-x64.tar.gz",
+        "redirect_hosts": [
+          "release-assets.githubusercontent.com"
+        ],
+        "role": "CPU_runtime_tar",
+        "sha256": "cf07c1c112d709bd67e522017471de57ed0ec8bea031d732c5422351c07f65ac",
+        "wall_seconds": 1.0415557500091381
+      }
+    ],
+    "regular_runtime_files": 50,
+    "safe_internal_links_materialized_as_regular_aliases": 10,
+    "full_manifest_paths": 60,
+    "all_runtime_manifest_file_size_SHA_metadata_matches_actual_receipt": true,
+    "expanded_regular_bytes": 46118030,
+    "resources": {
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "max_rss_kib": 35424,
+      "system_seconds": 3.705367,
+      "user_seconds": 6.8610240000000005
+    },
+    "memory_before": {
+      "clean_file_excluding_shmem": 4199145472,
+      "current": 13813026816,
+      "limit": 17179869184,
+      "reclaim_adjusted_headroom": 7565987840
+    },
+    "memory_after": {
+      "clean_file_excluding_shmem": 4199321600,
+      "current": 16388698112,
+      "limit": 17179869184,
+      "reclaim_adjusted_headroom": 4990492672
+    },
+    "storage_free_bytes": 6879969280,
+    "storage_filesystem": "/dev/shm",
+    "wall_seconds_before_result_fsync": 269.1855958389933,
+    "actual_initializer_or_GC_calls": 0
+  },
+  "provenance_and_limits": [
+    "The actual executor retained two HTTP200 artifact receipts and independent full-stream size/SHA revalidation metadata. This review verifies those records against frozen public identities, not the payload bytes again.",
+    "The acquisition result wall excludes final result fsync by its explicit field name; it is not relabeled as full external wall or actual process closure. No new closure claim is inferred here.",
+    "This origin receipt predates current generation6. It may be reused as immutable asset provenance; current worker-owner authorization, fresh read-only full-asset hashes, resource admission and runtime guards must still pass before the sole scientific call. No budget reset or owner-loss replay is authorized.",
+    "The recorded no-model runtime qualification verifies version/help/ELF and bounded GGUF metadata only; it does not establish model initialization, all optional backend paths, full-corpus inference, token probabilities, timing fit or benchmark strength.",
+    "No model/context/label selection uses this result. Unknown quantizer base lineage/training overlap and eligibility remain HOLD."
+  ],
+  "public_copy_allowlist": [
+    {
+      "source": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/GGUF_DIRECT_SHM_ACQUISITION_RESULT.json",
+      "path": "experiments/sota-2026-10-22/epoch43/preparation/GGUF_ASSET_ACQUISITION_RESULT.json",
+      "bytes": 15420,
+      "sha256": "13449320563a5a6f8100d2f7c4cea3bd06b72af7e16245d5d9c80aea4843dad8"
+    }
+  ],
+  "privacy": "Only public asset names/paths/digests, redirect hostnames, file metadata, counters and resource/timing facts. No full URL/query/signed-location/header/auth/cookie fields and no case/excerpt/prompt/Gold/tensor bodies in this exact record.",
+  "reviewer_calls": {
+    "downloads": 0,
+    "weight_or_binary_rehash": 0,
+    "model": 0,
+    "tokenizer": 0,
+    "native": 0,
+    "case_gold_archive": 0,
+    "scorer": 0,
+    "Git": 0
+  },
+  "science_admission_or_promotion": false
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-26T07:28:25.320998+00:00",
+  "checks_passed": true,
+  "source_only": true,
+  "corrected_metadata_launcher_source_approved": true,
+  "metadata_qualification_launch_execution_allowed": true,
+  "launcher": {
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/lease-generation5/qualify_once_execpath_v2.py",
+    "bytes": 4633,
+    "sha256": "8d68be2ab24d6524bffb974413debc649ea98b965367dd5b3bc0fed12e6add90"
+  },
+  "qualifier_source_approval": {
+    "path": "/workspace/ruvector-e43-acceptance-audit/RUNTIME_METADATA_QUALIFICATION_SOURCE_APPROVAL.v1.json",
+    "bytes": 8214,
+    "sha256": "eb087b6104021baa454c518dd21e7f088196eafebf2e6196222e72dd079d16e3"
+  },
+  "known_zero_first_launch": {
+    "path": "/workspace/ruvector-e43-acceptance-audit/QUALIFICATION_LAUNCH_FAILURE_INDEPENDENT.v1.json",
+    "bytes": 3435,
+    "sha256": "c80132ec99d9bd9effe949ecc65afa48408dadb5ba3053a61165ece0b3ead049"
+  },
+  "review": {
+    "exact_interpreter": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "executable_metadata_present": true,
+    "distinct_approval_marker_output_result_names": true,
+    "old_failure_sources_and_marker_not_rewritten": true,
+    "same_exact_qualifier_and_four_source_hashes": true,
+    "owner_SHA256": "620f1417b818070b91d365e900e1abbcc4309fe040ba42e87a498ae28af36cd5",
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "O_EXCL_reservation_and_approval_before_Popen": true,
+    "child_identity_captures": [
+      "PID",
+      "startticks",
+      "PGID",
+      "SID"
+    ],
+    "signals_only_while_unreaped_and_matching_birth_group_session": true,
+    "after_reap_only_nonmutating_group_absence_probe": true,
+    "work_communicate_budget_seconds_from_outer_start": 53,
+    "owned_kill_wait_seconds": 4,
+    "final_full_elapsed_must_not_exceed_seconds": 60
+  },
+  "conditions": [
+    "ROOT must retain an independent whole-60-second external bound and current owner/kernel/held-lock admission, including capture/fsync and nested descendant cleanup. The script records wall time and timeout but cannot bound blocking setup/fsync by itself.",
+    "On any identity-capture/cleanup exception or missing durable result, preserve the consumed new marker and classify ownership/capture as UNKNOWN until independently resolved; no automatic corrected-launch retry. finally-block identity assertions may themselves fail rather than generate a report.",
+    "This ONE corrected launch follows the documented known pre-exec executable-path failure. It authorizes only the already reviewed metadata qualification; no model initialization, native/data/case/Gold/scorer calls or scientific-slot consumption."
+  ],
+  "reviewer_actual_target_calls": 0,
+  "public_safe": true
+}

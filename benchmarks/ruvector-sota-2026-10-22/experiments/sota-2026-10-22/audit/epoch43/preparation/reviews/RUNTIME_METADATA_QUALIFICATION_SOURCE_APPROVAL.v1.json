@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-26T07:24:41.380819+00:00",
+  "checks_passed": true,
+  "source_only": true,
+  "runtime_qualification_source_approved": true,
+  "metadata_only_qualification_execution_allowed": true,
+  "qualification_source_ready": {
+    "path": "/workspace/ruvector-e43-engineering/implementation-v1/QUALIFICATION_SOURCE_READY.v1.json",
+    "bytes": 1417,
+    "sha256": "3da7ccd6a1e91bf7df58de539aaf2aad4c42b4e4eb79792b5fca170c14d83531"
+  },
+  "source_files_and_template": [
+    {
+      "bytes": 5527,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/qualify_runtime.py",
+      "sha256": "b2d2e2269fd33cdfabf292f226121a92b6b4a9d0ac7b6c1b5882f49f9dc782b4"
+    },
+    {
+      "bytes": 5390,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/project/experiments/sota-2026-10-22/runtime/epoch43/assets_guard.py",
+      "sha256": "6941b2a9bddcdbfa2ea2cc34ae9e490f57e73c3247b961ac60abfb27fda88e71"
+    },
+    {
+      "bytes": 11553,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/project/experiments/sota-2026-10-22/runtime/epoch43/CPU_RUNTIME_MANIFEST.json",
+      "sha256": "f48ad10b3e1e19361bdcb57a930352673c0f6b2c3ff199b86ea7f3abf357f35a"
+    },
+    {
+      "bytes": 1294,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/project/experiments/sota-2026-10-22/runtime/epoch43/MODEL_PROFILE.json",
+      "sha256": "4cb3fc3748df5f1b37987e23afea7fced733bea3f5620e1fb6db351a35475b1e"
+    },
+    {
+      "bytes": 1368,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/RUNTIME_QUALIFICATION_APPROVAL.TEMPLATE.json",
+      "sha256": "c3799857adb55b2d0199eae728604364b8075df37ee030e557bba34ff7945d6c"
+    }
+  ],
+  "scope": "ONE ROOT-authorized, externally bounded 60-second CPU0,1 qualification: already-acquired CPU-file hash validation, ELF header/dependency recording, pinned server --version and --help, and bounded GGUF metadata reading. No model load or scientific inference.",
+  "static_findings": {
+    "exact_refs_full_size_SHA_verified": 5,
+    "Python_ASTs_parse": true,
+    "CPU_manifest_safe_unique_relative_files": 60,
+    "manifest_source_receipt_SHA256": "13449320563a5a6f8100d2f7c4cea3bd06b72af7e16245d5d9c80aea4843dad8",
+    "source_revision": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+    "only_subprocess_argv_shapes": [
+      [
+        "/usr/bin/readelf",
+        "-l",
+        "-d",
+        "PINNED_LLAMA_SERVER"
+      ],
+      [
+        "PINNED_LLAMA_SERVER",
+        "--version"
+      ],
+      [
+        "PINNED_LLAMA_SERVER",
+        "--help"
+      ]
+    ],
+    "each_subprocess_timeout_seconds": 12,
+    "returned_stdout_stderr_cap_bytes_per_command": 1048576,
+    "environment": "Fresh explicit PATH/LANG and two-thread variables; HF/TRANSFORMERS offline. No credentials or inherited model arguments.",
+    "model_argument_or_server_listen_command": false,
+    "server_commit_and_required_help_flags_checked": true,
+    "imported_assets_guard_top_level_inert": true,
+    "only_imported_guard_function_called": "gguf_metadata",
+    "full_guard_verify_and_Python_native_verifier_not_called": true,
+    "GGUF_metadata_byte_cap": 33554432,
+    "GGUF_string_byte_cap": 16777216,
+    "GGUF_array_count_cap": 500000,
+    "GGUF_depth_cap": 2,
+    "GGUF_tensor_count_cap": 5000,
+    "GGUF_metadata_entry_cap": 1000,
+    "GGUF_expected_architecture": {
+      "general.architecture": "qwen3",
+      "qwen3.block_count": 36,
+      "qwen3.embedding_length": 2560,
+      "qwen3.attention.head_count": 32,
+      "qwen3.attention.head_count_kv": 8
+    },
+    "GGUF_vocab_entries_required": 151936,
+    "GGUF_payload_tensor_loading": false,
+    "GGUF_tokenizer_metadata_distinction": "The bounded parser walks encoded metadata, including tokenizer token-array values, to record counts/template SHA. It does not instantiate a tokenizer, emit token strings, read model tensors or initialize a model.",
+    "public_output": "Fresh non-symlink directory below exact R43 only; existing output refuses. RESULT.json O_EXCL and fsync; stdout/stderr of the three public metadata commands have size/hash receipts."
+  },
+  "mandatory_root_fences": [
+    "ROOT must reserve this logical qualification once durably before Popen, with exact approval/source hashes; no retry or quiet output replacement. The qualifier itself has no durable attempt or owner validation.",
+    "ROOT must bind and validate current generation5 owner /tmp/ruvector-sota-2026-10-22/epoch43-cab16abb5795/lease-generation5/owner.json, 551B SHA620f1417b818070b91d365e900e1abbcc4309fe040ba42e87a498ae28af36cd5, its kernel identity, held lock and expiry immediately before invocation. Use CPU0,1 and a new output directory.",
+    "The external supervisor must cap the complete operation at 60 seconds and owner expiry, including pre-import source verification, setup, command capture, RESULT fsync, all nested child termination/wait and final owned-process observation. The child internal 50-second alarm starts after setup and is canceled before RESULT fsync, so it is not a complete total bound.",
+    "Signals must target only exact known-owned process birth/group/session; record unresolved ownership as UNKNOWN and stop. Do not infer descendant closure solely from subprocess.run return.",
+    "ROOT fills the separate exact-hash-bound approval template with authorized=true and expiry no later than the current owner; this source review does not rewrite the template or perform the operation.",
+    "Retain the immutable actual acquisition receipt and prior failed GC transaction. Any current asset hash mismatch or failed metadata command stops admission without fallback, model call or scientific slot consumption."
+  ],
+  "admission_limits": [
+    "readelf output is recorded, not parsed into a complete static dependency-policy proof. Successful --version/--help establish bounded no-model startup and advertised flags only; they do not prove every optional backend, syscall policy, server inference, token IDs, HTTP scoring, numerical correctness or timing fit.",
+    "No model, tokenizer, native corpus or case initialization is authorized. Full SOURCE/data/scorer/native/runtime qualification remains separate.",
+    "The acquired GGUF publisher bytes remain exact expected identity; base-revision linkage/training overlap and benchmark eligibility remain UNKNOWN_HOLD. No pretrained three-way NLI head or calibrated truth posterior is inferred."
+  ],
+  "public_safe_copy_allowlist": [
+    {
+      "bytes": 5527,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/qualify_runtime.py",
+      "sha256": "b2d2e2269fd33cdfabf292f226121a92b6b4a9d0ac7b6c1b5882f49f9dc782b4"
+    },
+    {
+      "bytes": 5390,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/project/experiments/sota-2026-10-22/runtime/epoch43/assets_guard.py",
+      "sha256": "6941b2a9bddcdbfa2ea2cc34ae9e490f57e73c3247b961ac60abfb27fda88e71"
+    },
+    {
+      "bytes": 11553,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/project/experiments/sota-2026-10-22/runtime/epoch43/CPU_RUNTIME_MANIFEST.json",
+      "sha256": "f48ad10b3e1e19361bdcb57a930352673c0f6b2c3ff199b86ea7f3abf357f35a"
+    },
+    {
+      "bytes": 1294,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/project/experiments/sota-2026-10-22/runtime/epoch43/MODEL_PROFILE.json",
+      "sha256": "4cb3fc3748df5f1b37987e23afea7fced733bea3f5620e1fb6db351a35475b1e"
+    },
+    {
+      "bytes": 1368,
+      "path": "/workspace/ruvector-e43-engineering/implementation-v1/RUNTIME_QUALIFICATION_APPROVAL.TEMPLATE.json",
+      "sha256": "c3799857adb55b2d0199eae728604364b8075df37ee030e557bba34ff7945d6c"
+    }
+  ],
+  "source_approval_report_public_safe": true,
+  "reviewer_actual_calls": {
+    "CPU_binary_or_readelf": 0,
+    "GGUF_or_runtime_payload_reads": 0,
+    "downloads": 0,
+    "model": 0,
+    "tokenizer": 0,
+    "native": 0,
+    "cases_or_gold": 0,
+    "scorer": 0,
+    "Git": 0
+  },
+  "fixtures": "Static AST/ref/call-boundary and manifest-path checks only. No author target functions or actual metadata/binary calls executed by reviewer.",
+  "benchmark_rank_or_candidate_promotion_claim": false
+}

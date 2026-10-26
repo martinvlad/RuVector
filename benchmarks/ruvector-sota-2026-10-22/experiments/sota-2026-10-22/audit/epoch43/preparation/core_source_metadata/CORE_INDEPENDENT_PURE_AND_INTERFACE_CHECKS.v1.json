@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "checks_passed": true,
+  "source_snapshot_ready": {
+    "path": "/workspace/ruvector-e43-acceptance-audit/core-v1-snapshot/CORE_READY.v1.json",
+    "bytes": 10567,
+    "sha256": "9b0db5fdeeb3c7db15f1aef9f3bceedaea0e9aca8706caa45aa28de41dee0c76"
+  },
+  "author_fixture_source": {
+    "path": "/workspace/ruvector-e43-acceptance-audit/core-v1-snapshot/test_core_pure.py",
+    "bytes": 6427,
+    "sha256": "762c01820d54f89ab826778df7ad9771105263d2380493307df3aa929bc409ef"
+  },
+  "invented_core_fixtures": {
+    "tests": 7,
+    "passed": 7,
+    "elapsed_seconds": 0.007,
+    "exit_code": 0,
+    "scope": "Fake reader/tokenizer, fake HTTP socket, fake /proc and invented source spans/BPF interpreter only; no target runtime initialization."
+  },
+  "new_postdata_gate": {
+    "exact_source_sha256": "60c11ea3897662a34b8d00779c77b4bfdfb47f9a94f6ca79f248a4ce555f320a",
+    "checker": {
+      "path": "/workspace/ruvector-e43-acceptance-audit/check_postdata_gate_pure.py",
+      "bytes": 3146,
+      "sha256": "f18dbf0c70737375aa8addfdd87e77a5dece4b6a2560c1a2c68ceb40dad0a022"
+    },
+    "positive_synthetic_schema": true,
+    "negative_rejections": [
+      "failed_status",
+      "data_errors",
+      "wrong_ids",
+      "wrong_source",
+      "gold_read",
+      "protected_read",
+      "features_changed",
+      "review_false",
+      "review_wrong_commit",
+      "review_gold_read",
+      "review_protected_read"
+    ],
+    "counts": 11,
+    "scope": "AST-extracted require+verify_post_data executed against invented metadata, no target imports or reads."
+  },
+  "syntax_only_Node_checks": {
+    "native_helper.cjs": 0,
+    "node_guard.cjs": 0
+  },
+  "static_cross_interface": {
+    "protocol_function_and_class_ASTs_exact_V3": true,
+    "Q_and_emitter_exact_twelve_invariants": true,
+    "execution_supervisor_identity_from_same_observation": true,
+    "full_ten_native_BGE_authority_map_matches_lock": true,
+    "source_files_hashed": 30,
+    "target_operations": 0
+  }
+}

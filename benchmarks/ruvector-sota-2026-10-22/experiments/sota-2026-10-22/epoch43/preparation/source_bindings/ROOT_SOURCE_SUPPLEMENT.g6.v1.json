@@ -1,0 +1,70 @@
+{
+  "inherited_source_refs": [],
+  "plan_fields": {
+    "canonical_class_order": [
+      "N",
+      "E",
+      "C"
+    ],
+    "development_gates": {
+      "all_forecasts_and_runtime_integrity_required": true,
+      "all_three_gold_classes_represented": true,
+      "four_document_256_resample_intervals": "descriptive only, not extra selection/gates",
+      "native_Brier_nonincrease_versus_each_control": true,
+      "native_NLL_nonincrease_versus_each_control": true,
+      "native_accuracy_gain_minimum_correct_versus_each_control": 2,
+      "native_at_least_one_correct_per_gold_class": true,
+      "point_gate_pass_still_HOLD": true
+    },
+    "phase_limits": {
+      "CPU_affinity": [
+        0,
+        1
+      ],
+      "GPU_calls": 0,
+      "HTTP_threads": 1,
+      "calibration": 0,
+      "confirmation": 0,
+      "metadata_only_asset_ELF_help_admission_allowed": true,
+      "model_load_before_frozen_DEV_dispatch_allowed": false,
+      "native_corpus_batches": 1,
+      "paid_API_calls": 0,
+      "reader_batch_threads": 2,
+      "reader_threads": 2,
+      "retries": 0,
+      "seconds_including_initialization_and_ALL_physical_cleanup": 600,
+      "train": 0,
+      "unused_second_slot_closed": true,
+      "user_maximum_native_corpus_batches": 2,
+      "worker_soft_deadline_seconds": 570
+    },
+    "schema_version": 1
+  },
+  "required_refs": {
+    "core_source_review": {
+      "bytes": 23232,
+      "path": "experiments/sota-2026-10-22/audit/epoch43/preparation/reviews/CORE_SOURCE_APPROVAL.v1.json",
+      "sha256": "8e07de9f47543e3e59bdd71f0ca4d041e05baefa3f159146d5ea5cf74cc4afb3"
+    },
+    "data_source_review": {
+      "bytes": 10391,
+      "path": "experiments/sota-2026-10-22/audit/epoch43/preparation/reviews/data-source-scorer-independent-v2.json",
+      "sha256": "10d34549e7d52b87c365306ca655c95b494f1a05693615affed46f3907b8b348"
+    },
+    "model_free_metadata_review": {
+      "bytes": 9181,
+      "path": "experiments/sota-2026-10-22/audit/epoch43/preparation/reviews/ACTUAL_RUNTIME_METADATA_QUALIFICATION_INDEPENDENT.v1.json",
+      "sha256": "21325f22b501a8bb896e6400b9557b50dcba963c581382f7831095f38ce5083a"
+    },
+    "phase_budget_recipe": {
+      "bytes": 7325,
+      "path": "experiments/sota-2026-10-22/epoch43/ROOT.preparation.v1.json",
+      "sha256": "ef68b1c86b0befdcc4813d0361968ded241ca1d696de523bddb02d1626b740a0"
+    },
+    "publication_source_review": {
+      "bytes": 10850,
+      "path": "experiments/sota-2026-10-22/audit/epoch43/preparation/reviews/publication-generation6-source-independent-v1.json",
+      "sha256": "496dfe9399cdf3c2e6a0e7dfa249ea37b7e421d5be75af484d48d647cf8ea9c4"
+    }
+  }
+}

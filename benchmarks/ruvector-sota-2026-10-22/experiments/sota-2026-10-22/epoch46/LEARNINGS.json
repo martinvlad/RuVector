@@ -1,0 +1,103 @@
+{
+  "actual_BGE": {
+    "all_features_stage_elapsed_seconds": 9.959844505006913,
+    "forward_calls": 36,
+    "initialization_seconds": 0.42348701297305524,
+    "query_encodings": 12,
+    "texts": 188
+  },
+  "actual_native": {
+    "child_closed": true,
+    "corpus_batches_completed": 1,
+    "exit_code": 0,
+    "hit_source_validations": 528,
+    "indexes": 4,
+    "insertions": 176,
+    "native_helper_wall_seconds": 0.18552636000094935,
+    "queries": 12
+  },
+  "actual_reader": {
+    "backend_forward_batch_count": null,
+    "captured_completed_requests": 19,
+    "completion_requests_attempted": 20,
+    "incomplete_20th_result_uncertain_no_retry": true,
+    "required_forecasts": 36
+  },
+  "champion": "SubmittedNative104 preserved",
+  "decision": "REJECTED_DEV_INTEGRITY",
+  "epoch": 46,
+  "evaluation_executed": false,
+  "frozen_hypothesis": "One Qwen3-4B GGUF typed-token decision reader with two-window joint context and native RuVector evidence selection, compared with same-model lexical and source-order retrieval. E46 fixes prior raw-plan identity contract; no label-dependent source selection.",
+  "independent_rejection_review": {
+    "bytes": 5128,
+    "path": "experiments/sota-2026-10-22/audit/epoch46/ACTUAL_REPLAY_REJECTION_REVIEW.v1.json",
+    "sha256": "7f84d3514d014be898836202a242e9076c0382eb34abba0449fd53a4f011a21f"
+  },
+  "kind": "REAL_CONTRACTNLI_QWEN_JOINT_CONTEXT_DEV_PILOT",
+  "material_runtime_finding": {
+    "all_completion_HTTP_share_of_worker_capture_percent": 95.72319333193364,
+    "all_prompt_tokenize_HTTP_share_of_worker_capture_percent": 0.5614971385257638,
+    "completed_packing_seconds": 3.322696163028013,
+    "completed_readout_seconds": 529.1093592320103,
+    "completed_readout_share_of_packing_plus_readout_percent": 99.37593903887434,
+    "conclusion": "Observed timeout is dominated by reader prompt evaluation, not packing/tokenize HTTP overhead.19 completed readouts consumed529.109s versus3.323s packing; server prompt timings account for512.095s. All20 completion waits consumed546.106s of570.506s worker capture. Native and BGE stages completed. This single partial trace is descriptive, not a causal optimization experiment.",
+    "future_direction_only": "An independently frozen future design must reduce reader prompt-evaluation work or use a faster eligible CPU reader while retaining matched retrieval arms and evidence/decision checks. Packing RPC reduction alone cannot recover the observed time deficit. No configuration change, new run or spend is authorized by this diagnostic.",
+    "server_predicted_ms_is_server_reported_not_independent_compute_measurement": true,
+    "server_reported_prompt_evaluation_seconds_completed19": 512.094865,
+    "server_reported_prompt_share_of_successful_completion_HTTP_percent": 97.0392727524398
+  },
+  "next_research_priority": "Freeze a source-licensed CPU-efficient pretrained typed-decision/NLI reader or materially reduced prompt-evaluation design with native RuVector and matched same-model controls. Avoid another unchanged Qwen4B run or packing-only grid. Verify exact model/license/scorer and unused-confirmation eligibility before future measurements. This is future direction only; no new run or spend executed/authorized by this record.",
+  "observed_wall_seconds": {
+    "independent_later_failure_fence_minus_dispatch": 658.8724979049875,
+    "reader_start_to_ready": 2.545797877945006,
+    "reader_stop_to_reaped": 0.8178449739934877,
+    "root_outer_before_capture": 571.4525523119955,
+    "supervisor_execution_receipt": 571.0433708070195,
+    "worker_capture_including_cleanup": 570.5056390169775
+  },
+  "official_goal_verified": false,
+  "official_refresh": {
+    "bytes": 18046,
+    "path": "experiments/sota-2026-10-22/epoch46/official-refresh/benchmark-refresh.safe.json",
+    "sha256": "424d03c9f9296fd461b823a97dfb7978678d469800b37c6a7655d9b89aed5e47"
+  },
+  "partial_latency_scope": "Only19 completed forecasts from a fixed sequential failed batch. Arms have N7/6/6 and only6 complete matched cases from documents357/227; case46:nda-1 native completed and lexical was censored. These timings cannot establish full-batch arm performance, quality or generalization.",
+  "phase": "dev",
+  "published_SOURCE_commit": "c74ecd93ce3a16d489fe794a91ff8c8d160383dc",
+  "quality_and_label_boundary": {
+    "EVALUATE_function_calls": 0,
+    "Gold_function_calls": 0,
+    "all12_current_pairs_exposed_DEV_forever": true,
+    "frozen_replay_label_custody_preserved_verbatim": {
+      "decode_attempted_tokens": null,
+      "semantic_decode_count_uncertain": true,
+      "semantic_label_decodes": null
+    },
+    "no_scoring_partial_forecasts": true,
+    "protected_documents": [
+      62,
+      321,
+      2
+    ],
+    "protected_status": "UNUSED_HOLD_NO_BODY_OR_CHOICE_ACCESS",
+    "raw_semantic_gold_decodes": 0,
+    "train_calibration_confirmation_roles_empty": true
+  },
+  "quality_metrics": null,
+  "resource_scope": "Two allowed CPU cores with configured reader compute threads2/HTTP1; reader reported7 OS threads including support threads. Per-process and shared-cgroup resource values are separately retained in runtime diagnostics. No GPU or paid API calls.",
+  "retired_uncertainty": "Prior unknown external mutations remain permanently unknown; never polled, replayed or backfilled in E46.",
+  "runtime_diagnostics": {
+    "bytes": 34264,
+    "path": "experiments/sota-2026-10-22/audit/epoch46/runtime-diagnostics/RUNTIME_DIAGNOSTICS.v1.json",
+    "sha256": "a0d8ae3886f1d22055e07991178d776d20778fea10bce1a53c571fd8f49a0611"
+  },
+  "runtime_diagnostics_review": {
+    "bytes": 5599,
+    "path": "experiments/sota-2026-10-22/audit/epoch46/runtime-diagnostics/INDEPENDENT_REVIEW.v1.json",
+    "sha256": "1f91eaaddc853fccfac401e825120c3a58ebdb2814bacf6ca488a749d5cd9e59"
+  },
+  "schema_version": 1,
+  "scientific_acceptance": false,
+  "source_checkpoint": "d3aa1b56984875dd0a5b957df0ebe6a9dc67ab4a",
+  "used_confirmation_identities": []
+}

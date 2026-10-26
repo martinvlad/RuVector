@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "epoch": 42,
+  "recorded_utc": "2026-10-26T00:56:51.711173+00:00",
+  "checks_passed": true,
+  "status": "APPEND_ONLY_CORRECTION_OF_REVIEWER_CPU_AFFINITY_PID",
+  "prior_actual_remote_readback": {
+    "path": "/workspace/ruvector-e42-independent-audit/planning-actual-readback-independent-v1.json",
+    "bytes": 3826,
+    "sha256": "c286f2d9cba5525b895cd90974c8855593cc3a2455d36c3d923d045126949050"
+  },
+  "preserved_original_reviewer": {
+    "path": "/workspace/ruvector-e42-independent-audit/review_actual_planning_readback_v1.py",
+    "bytes": 7386,
+    "sha256": "50c6af456df3ea0f4d78eb46769f255c659235e674d1c6793707cf2f0de9b564"
+  },
+  "corrected_future_reviewer_source": {
+    "path": "/workspace/ruvector-e42-independent-audit/review_actual_planning_readback_affinity_corrected_v2.py",
+    "bytes": 7386,
+    "sha256": "ea880c670cea3a25d8e9dfd52ac320934221d8dc71f67c4476704aa4cf9d13cb"
+  },
+  "source_delta": "Only os.sched_getaffinity argument124007 to125788; corrected source retained but not rerun, no new remote observation claimed.",
+  "meaningful_correction": "Original planning reviewer directly checked new125788 PID/ticks/FD/same-inodeNB denial but its affinity assertion accidentally targeted oldE41 PID124007. This supplement independently rechecks the exact current owner affinity and coherent kernel identity.",
+  "independent_earlier_correct_current_owner_proofs": [
+    {
+      "path": "/workspace/ruvector-e42-independent-audit/new-guardian-physical-independent-v1.json",
+      "bytes": 2868,
+      "sha256": "89526dab02b6a7bbe135d6d689f333be34df513070a347cbd2681e7fd3efb96a"
+    },
+    {
+      "path": "/workspace/ruvector-e42-independent-audit/actual-data-schema-admission-independent-v1.json",
+      "bytes": 10540,
+      "sha256": "5e481fef4039b23a17f871d20d2b7256684e4de85c43b18653c3d09a4d32a0c4"
+    }
+  ],
+  "current_owner": {
+    "owner_json": {
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch42-222874558c0b/owner.json",
+      "bytes": 544,
+      "sha256": "a5723c70ca695c14212083ba4123d1a26ca4835ffe76833e63a9ef2d2bb36e62"
+    },
+    "pid": 125788,
+    "startticks": 29584865,
+    "state": "S",
+    "pgid": 125788,
+    "sid": 125788,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "FD": 3,
+    "device": 33,
+    "inode": 13626,
+    "kernel_boot_id": "4632fb06-b0ef-4df5-b72b-0e875bbad810",
+    "pid_namespace_inode": 4026532200,
+    "kernel_FLOCK_rows": [
+      "8: FLOCK  ADVISORY  WRITE 125788 00:21:13626 0 EOF"
+    ],
+    "unexpired": true,
+    "release_requested": false
+  },
+  "impact": "No lease/scientific/branch permission is expanded. Independent earlier owner/data checks had already verified current125788 affinity. All actual Git tree/control/history/parent/WAL checks in the original readback remain unchanged.",
+  "new_Git_or_data_or_scientific_or_guard_calls": 0,
+  "new_FLOCK_acquisition_attempts": 0,
+  "scientific_authorization": 0
+}

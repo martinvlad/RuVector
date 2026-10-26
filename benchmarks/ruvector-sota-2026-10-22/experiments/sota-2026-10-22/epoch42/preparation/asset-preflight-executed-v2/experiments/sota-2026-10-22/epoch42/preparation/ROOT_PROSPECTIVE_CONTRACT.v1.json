@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "epoch": 42,
+  "kind": "REAL_CONTRACTNLI_MULTI_HYPOTHESIS_CONTEXT_DEV_PILOT",
+  "status": "FROZEN_PROSPECTIVE_DESIGN_NOT_MEASURED",
+  "source_checkpoint": "222874558c0b696f92824e5fce3775494877f821",
+  "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
+  "hypothesis": "Two source-coherent bounded evidence windows plus a fixed equal probability mixture improve a broader pretrained typed-decision NLI reader with actual native RuVector selection over matched same-model lexical and source-order selection.",
+  "prior_evidence": {
+    "epoch40_results_sha256": "7d7e1973a26688f184845c92ed5f8099842aca2ee4fd39c753eea2f8a86a6bcd",
+    "native_correct": 4,
+    "lexical_correct": 6,
+    "source_correct": 4,
+    "n": 12,
+    "all48_premises_truncated": true,
+    "scope": "Retained exposed DEV diagnosis, not a new grid.",
+    "epoch41_status": "BLOCKED_PRE_DATA_ADMISSION_CLOSED_NO_RETRY",
+    "epoch41_actual_native_or_NLI_calls": 0,
+    "epoch41_catalog_only_report_sha256": "2001cb6a8d15990a418724877a00ac9c8f05c6cba4ad7ce6784942123fe32aff",
+    "verified_actual_key_catalog_sha256": "549721f44dfd696ae79c2df9b450417388e2c10bc85e60e912b3abcb94ff4762",
+    "no_E41_revival": true
+  },
+  "data": {
+    "repository": "stanfordnlp/contract-nli",
+    "revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "license": "CC-BY-4.0",
+    "split": "test",
+    "role": "PROJECT_DEV_FOREVER_NOT_CONFIRMATION",
+    "salt": "ruvector-contractnli-e42-v1",
+    "document_selection": "Top4 SHA256(salt+'|test|'+document_id+'|'+normalized_document_sha256), tiesdocument_id, from the preverified11 metadata-eligible TEST documents.",
+    "hypothesis_selection": "Top3 SHA256(salt+'|hypothesis|'+key), tieskey, using ONLY the independently verified actual sparse17-key catalog; no literal numeric-range assumption.",
+    "selected_document_ids": [
+      97,
+      336,
+      99,
+      455
+    ],
+    "selected_hypothesis_ids": [
+      "nda-1",
+      "nda-10",
+      "nda-16"
+    ],
+    "case_ids": [
+      "contractnli:eced6528:test:97:nda-1",
+      "contractnli:eced6528:test:97:nda-10",
+      "contractnli:eced6528:test:97:nda-16",
+      "contractnli:eced6528:test:336:nda-1",
+      "contractnli:eced6528:test:336:nda-10",
+      "contractnli:eced6528:test:336:nda-16",
+      "contractnli:eced6528:test:99:nda-1",
+      "contractnli:eced6528:test:99:nda-10",
+      "contractnli:eced6528:test:99:nda-16",
+      "contractnli:eced6528:test:455:nda-1",
+      "contractnli:eced6528:test:455:nda-10",
+      "contractnli:eced6528:test:455:nda-16"
+    ],
+    "metadata_identity_policy": {
+      "path": "/workspace/ruvector-e42-data-scorer/IDENTITY_POLICY.v1.json",
+      "bytes": 10910,
+      "sha256": "07fb8ebd0ad2d72f736e82c4f52a8795af78b659688a32765fe2c0b000d14869"
+    },
+    "exclude": "All original423 TRAIN documents, all96LegalDEV filename/content/substring aliases, E40all12 TEST docs, and E41retiredunadmitted4document reservations293/225/361/18; all prior used identities. Old74unused/24protected labels untouched.",
+    "source_input_hashes": "Full raw document/hypothesis/pair hashes emitted only by the sole blind custodian; freeze them with final source BEFORE measurements. Never fabricate pre-access hashes.",
+    "train": [],
+    "development": [
+      "contractnli:eced6528:test:97:nda-1",
+      "contractnli:eced6528:test:97:nda-10",
+      "contractnli:eced6528:test:97:nda-16",
+      "contractnli:eced6528:test:336:nda-1",
+      "contractnli:eced6528:test:336:nda-10",
+      "contractnli:eced6528:test:336:nda-16",
+      "contractnli:eced6528:test:99:nda-1",
+      "contractnli:eced6528:test:99:nda-10",
+      "contractnli:eced6528:test:99:nda-16",
+      "contractnli:eced6528:test:455:nda-1",
+      "contractnli:eced6528:test:455:nda-10",
+      "contractnli:eced6528:test:455:nda-16"
+    ],
+    "calibration": [],
+    "confirmation": [],
+    "used_confirmation_identities": [],
+    "no_class_filters_or_resampling": true,
+    "document_clusters": 4,
+    "hypothesis_templates": 3
+  },
+  "model": {
+    "repository": "sileod/deberta-v3-large-tasksource-nli",
+    "revision": "212de447184bda8fb9415a2e5697846864ddf304",
+    "license": "Apache-2.0",
+    "implementation": "Stock DebertaV2ForSequenceClassification,3-way,F32,435064835learnedparameters; rawE/N/C→canonicalN/E/C via[1,0,2].",
+    "temperature": 1,
+    "train_or_calibration_fits": 0,
+    "inherited_asset_lock_origin": "Truthful exactE40 epoch40/source2cf5, not relabeledE42. E42profile separately binds current source and fresh full9-payload/runtime/native asset hash admission.",
+    "model_training_overlap_and_submission_eligibility": "HOLD_UNVERIFIED; no proven superiority/model-unseen/generalization claim."
+  },
+  "context": {
+    "arms": [
+      "tasksource_native_two_windows",
+      "tasksource_lexical_two_windows",
+      "tasksource_source_order_two_windows"
+    ],
+    "same_model_builder_budget_and_aggregation": true,
+    "windows_per_case_arm": 2,
+    "max_joint_tokens": 512,
+    "full_hypothesis_required": true,
+    "catalog": "Exact-character-offset contiguous heuristic sentence spans, fixed decimal/abbreviation/initial/quote guards; no semantic-completeness claim.",
+    "catalog_source_sha256": "bf21e8896089ff9eca2c5e31d3a9a598b78f165d75fbee2ac128fc6f2d251132",
+    "mixture_source_sha256": "91eb7f8c1d2c7ce809a53af586f1c596d6166d81b602486b881c28c6df41e25a",
+    "packing": "Greedy ranked anchor plus immediate preceding/following span; union whole groups only if exact no-truncation full-claim joint tokenizer count<=512. Original source order within window. No splits. Whole overflow groups skipped with receipts. Empty first window fails entire pilot without replacement. Second complements first anchors; allowed neighbor overlap; exact duplicate first if no novel fitting group, explicit receipt and TWO actual NLI readouts.",
+    "aggregation": "CanonicalN/E/C equal arithmetic probability mixture of exactly2actual learned window distributions, stablelogsumexp(logp1,logp2)-ln2 perclass; canonical-first argmax on logp. No thresholds/fits/conflict/neutral/certificate override.",
+    "replay": "Retain actual private packing proposal feature/count/hash records plus72actual NLI features/logits for pure postclosure replay; missing lookup fails integrity. No new tokenizer/model/native work after600.",
+    "retrieval": "Only supplied selected contract;4fresh per-document native indexes reused for3queries each. All12queries independently encoded. Corpusunits once per4documents. Retrieval miss cannot prove NotMentioned.",
+    "numerical_checks": "Retained/omitted numeric/date/source-span coverage diagnostics only, union coverage deduplicated across windows; no arithmetic certificate or confidence/label override."
+  },
+  "scorer": {
+    "repository": "stanfordnlp/contract-nli-bert",
+    "revision": "058c56fd62d56897bb4fcfbf1be71b17aee3a79c",
+    "license": "Apache-2.0",
+    "raw_codec": {
+      "NotMentioned": 0,
+      "Entailment": 1,
+      "Contradiction": 2
+    },
+    "scope": "Declared all12 unfiltered threeway evaluate_class helper adaptation; not author evaluate_all/paper/fullbenchmark score.",
+    "proper_scores": "Multiclass Brier sum3squared errors and stable unclipped natural-log NLL from mixed log probabilities, mean12.",
+    "author_EC_F1": "Exact author helpers, descriptive only. Undefined remainsNULL+UNDEFINED_AUTHOR_NAN; no imputation/drops/resampling.",
+    "statistics": "12paired cases clusteredwithin4documents/3sharedhypotheses; report perdoc/perhyp and pairedgains/losses/ties. No independentN12/generalization/rank claim."
+  },
+  "gates": {
+    "integrity": "All12cases/3arms/2actualwindowoutputs=72actual_NLI_forwards/36derived_forecasts; finitecanonical3way normalized1e-12; exact frozen source, full hypotheses, no errors/missing data.",
+    "accuracy": "Primarynative correct count >= lexical+2 AND source-order+2 of12.",
+    "proper": "Native meanBrier andstableNLL <= each lexical/source control+1e-12.",
+    "runtime": "CPUaffinity0,1/configured2compute threads; one actualcorpus/worker, full external dispatch through initialization+owned cleanup/post-all-fence<=600. Goldrequires known stableZ kernelwait0 and all capture/finalfencesclosed.",
+    "promotion": "DEV-onlypass never promotes submittednative104; genuinelyunused confirmation plus reviewed modeltraining-overlap/publisher protocol/eligibility still mandatory."
+  },
+  "limits": {
+    "native_corpus_batches": 1,
+    "user_epoch_ceiling": 2,
+    "worker_attempts": 1,
+    "native_indexes": 4,
+    "native_queries": 12,
+    "actual_NLI_forwards": 72,
+    "derived_forecasts": 36,
+    "windows_per_case_arm": 2,
+    "CPU_threads": 2,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "seconds_total_initialization_cleanup": 600,
+    "train": 0,
+    "calibration": 0,
+    "confirmation": 0,
+    "fits": 0,
+    "new_paid_API_calls": 0,
+    "GPU_calls": 0,
+    "retries": 0
+  },
+  "custody": {
+    "sole_blind_materializer": true,
+    "newdoc_texts": 4,
+    "newhypothesis_texts": 3,
+    "opaque_choice_tokens": 12,
+    "semantic_gold_before_forecast_seal": 0,
+    "late_gold": "Rootsoleonce12rawenumdecodes only after all actualforecasts sealed and independentknownZ0/externalpost-all-fence<=600; no retry/remap/oracle revisit. PureEVALUATE/BIND on retained joined data only.",
+    "external_custody_evidence_paths": {
+      "joined_labels": "/tmp/ruvector-sota-2026-10-22/epoch42-222874558c0b/gold-custody-once/joined_labels.json",
+      "gold_join_report": "/tmp/ruvector-sota-2026-10-22/epoch42-222874558c0b/gold-custody-once/GOLD_JOIN_REPORT.json"
+    }
+  },
+  "authorization_now": {
+    "new_case_or_gold_source_functions": 0,
+    "model_tokenizer_native_calls": 0,
+    "scientific_measurements": 0,
+    "publication": "Root-only scoped connectedGitHub expected-parentCAS forcefalse; no main/merge/release/packages/outgoingmessages/submission."
+  },
+  "native104_preserved": true,
+  "official_goal_verified": false
+}

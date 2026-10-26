@@ -1,0 +1,127 @@
+{
+  "actual_NLI_forwards": 72,
+  "arms": [
+    "tasksource_native_two_windows",
+    "tasksource_lexical_two_windows",
+    "tasksource_source_order_two_windows"
+  ],
+  "benchmark_accuracy": null,
+  "benchmark_generalization_claim": false,
+  "canonical_labels": [
+    "NotMentioned",
+    "Entailment",
+    "Contradiction"
+  ],
+  "data_roles": {
+    "calibration": [],
+    "confirmation": [],
+    "dev": [
+      "contractnli:eced6528:test:97:nda-1",
+      "contractnli:eced6528:test:97:nda-10",
+      "contractnli:eced6528:test:97:nda-16",
+      "contractnli:eced6528:test:336:nda-1",
+      "contractnli:eced6528:test:336:nda-10",
+      "contractnli:eced6528:test:336:nda-16",
+      "contractnli:eced6528:test:99:nda-1",
+      "contractnli:eced6528:test:99:nda-10",
+      "contractnli:eced6528:test:99:nda-16",
+      "contractnli:eced6528:test:455:nda-1",
+      "contractnli:eced6528:test:455:nda-10",
+      "contractnli:eced6528:test:455:nda-16"
+    ],
+    "train": []
+  },
+  "data_schema_admission": {
+    "bytes": 10540,
+    "path": "experiments/sota-2026-10-22/audit/epoch42/DATA_SCHEMA_ADMISSION.json",
+    "sha256": "5e481fef4039b23a17f871d20d2b7256684e4de85c43b18653c3d09a4d32a0c4"
+  },
+  "derived_forecasts": 36,
+  "dev_document_ids": [
+    97,
+    336,
+    99,
+    455
+  ],
+  "dev_hypothesis_ids": [
+    "nda-1",
+    "nda-10",
+    "nda-16"
+  ],
+  "epoch": 42,
+  "expected_counters_source": {
+    "bytes": 3436,
+    "path": "experiments/sota-2026-10-22/candidate/epoch42/EXPECTED_COUNTERS.json",
+    "sha256": "519fa2681201729c28d58249650e605bbe244077acfe9b1c4dd9693c38aa734d"
+  },
+  "external_custody_evidence_paths": {
+    "gold_join_report": "/tmp/ruvector-sota-2026-10-22/epoch42-222874558c0b/gold-custody-once/GOLD_JOIN_REPORT.json",
+    "joined_labels": "/tmp/ruvector-sota-2026-10-22/epoch42-222874558c0b/gold-custody-once/joined_labels.json"
+  },
+  "external_data_manifest": {
+    "bytes": 4582,
+    "path": "experiments/sota-2026-10-22/epoch42/preparation/data-source/PUBLIC_DATA_DESCRIPTOR.json",
+    "sha256": "bf722030bb303e961b20b8d230fa1b47c6f6e9289fe29840b198dc60e3c8f075"
+  },
+  "failure_protocol": {
+    "bytes": 2106,
+    "path": "experiments/sota-2026-10-22/audit/epoch42/FAILURE_PROTOCOL.json",
+    "sha256": "53eb3d06b999a696cfb3e061cf9011390d54d7db4844b08d191276c0c8f54c3a"
+  },
+  "features_source": {
+    "bytes": 5832,
+    "path": "experiments/sota-2026-10-22/audit/epoch42/e42_features.py",
+    "sha256": "41327b58e30e789a5c03a795e8750d1e2f3b75db986661dc7b192b0fa3b765b3"
+  },
+  "gates": {
+    "accuracy": "Primarynative correct count >= lexical+2 AND source-order+2 of12.",
+    "integrity": "All12cases/3arms/2actualwindowoutputs=72actual_NLI_forwards/36derived_forecasts; finitecanonical3way normalized1e-12; exact frozen source, full hypotheses, no errors/missing data.",
+    "promotion": "DEV-onlypass never promotes submittednative104; genuinelyunused confirmation plus reviewed modeltraining-overlap/publisher protocol/eligibility still mandatory.",
+    "proper": "Native meanBrier andstableNLL <= each lexical/source control+1e-12.",
+    "runtime": "CPUaffinity0,1/configured2compute threads; one actualcorpus/worker, full external dispatch through initialization+owned cleanup/post-all-fence<=600. Goldrequires known stableZ kernelwait0 and all capture/finalfencesclosed."
+  },
+  "gold_custody_interface": {
+    "bytes": 3607,
+    "path": "experiments/sota-2026-10-22/audit/epoch42/GOLD_CUSTODY_INTERFACE.json",
+    "sha256": "3f10757b6592705ba0d1818bb1362de058b598c124bd90c6f4809d0efb751308"
+  },
+  "identity_policy": {
+    "bytes": 10910,
+    "path": "experiments/sota-2026-10-22/epoch42/preparation/data-source/IDENTITY_POLICY.v1.json",
+    "sha256": "07fb8ebd0ad2d72f736e82c4f52a8795af78b659688a32765fe2c0b000d14869"
+  },
+  "kind": "REAL_CONTRACTNLI_MULTI_HYPOTHESIS_CONTEXT_DEV_PILOT",
+  "metrics_policy": {
+    "bytes": 3253,
+    "path": "experiments/sota-2026-10-22/audit/epoch42/METRICS_POLICY.json",
+    "sha256": "c489128502db216dc66be438731741032d7cfee21df6fe1506e8c805873358fb"
+  },
+  "official_eligibility": "HOLD",
+  "phase": "dev",
+  "primary": "tasksource_native_two_windows",
+  "promotion_allowed": false,
+  "raw_codec": {
+    "Contradiction": 2,
+    "Entailment": 1,
+    "NotMentioned": 0
+  },
+  "root_contract": {
+    "bytes": 9965,
+    "path": "experiments/sota-2026-10-22/epoch42/preparation/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+    "sha256": "83e7117e336a12497c994aea25f273e3f80456df6373c5d97510ac2936ffd6e2"
+  },
+  "schema_version": 1,
+  "scorer": {
+    "bytes": 17238,
+    "path": "experiments/sota-2026-10-22/audit/epoch42/e42_evaluate.py",
+    "sha256": "e34043dd11e830651193ef5551d5b35741fe219cf54f6af64888fd1749219999"
+  },
+  "scorer_source_ready": {
+    "bytes": 7346,
+    "path": "experiments/sota-2026-10-22/audit/epoch42/SCORER_SOURCE_READY.v1.json",
+    "sha256": "d1bd42c630c794481235f559b124fd8b1fda1a893d3254a74dbc3988533ffa55"
+  },
+  "source_checkpoint": "222874558c0b696f92824e5fce3775494877f821",
+  "used_confirmation_identities": [],
+  "windows_per_case_arm": 2
+}

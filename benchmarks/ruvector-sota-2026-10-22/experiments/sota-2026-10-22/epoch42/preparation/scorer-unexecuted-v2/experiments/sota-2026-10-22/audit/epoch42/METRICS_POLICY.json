@@ -1,0 +1,51 @@
+{
+  "Brier": "Mean12 ofsum3 squared probabilityerrors.",
+  "NLL": "Mean12 stableUNCLIPPED natural-log NLL from mixedlogp; displayexp underflow/p_gold/clipped1e-12 diagnostic retained separately.",
+  "ROOT_contract": {
+    "bytes": 9965,
+    "path": "experiments/sota-2026-10-22/epoch42/preparation/ROOT_PROSPECTIVE_CONTRACT.v1.json",
+    "sha256": "83e7117e336a12497c994aea25f273e3f80456df6373c5d97510ac2936ffd6e2"
+  },
+  "author_EC_F1": "Exact author evaluate_class formulas, descriptive only. No goldsupport producesnull+UNDEFINED_AUTHOR_NAN; no zeroimputation/drop/classgate.",
+  "author_codec_source": {
+    "bytes": 5754,
+    "path": "experiments/sota-2026-10-22/epoch42/preparation/data-source/official/contract_nli__dataset__loader.py",
+    "sha256": "9c63102a01576c230da94695f593fd7bd4fe2d0b20672b74e8a7f62aba426fc4"
+  },
+  "author_scorer_source": {
+    "bytes": 15025,
+    "path": "experiments/sota-2026-10-22/epoch42/preparation/data-source/official/contract_nli__evaluation.py",
+    "sha256": "f5acd4497e002652b2f29a6827fecd355b96ec041c4c174b1938eea2f8c42cf4"
+  },
+  "canonical_labels": [
+    "NotMentioned",
+    "Entailment",
+    "Contradiction"
+  ],
+  "clusters": "4documents×3sharedhypotheses; perhyp/perdoc/macrodoc/pairedgains losses retained, no12independentsourcedocument orCONF inference.",
+  "derived_forecast_id": "caseid::arm",
+  "epoch": 42,
+  "gates": {
+    "accuracy": "Primarynative correct count >= lexical+2 AND source-order+2 of12.",
+    "integrity": "All12cases/3arms/2actualwindowoutputs=72actual_NLI_forwards/36derived_forecasts; finitecanonical3way normalized1e-12; exact frozen source, full hypotheses, no errors/missing data.",
+    "promotion": "DEV-onlypass never promotes submittednative104; genuinelyunused confirmation plus reviewed modeltraining-overlap/publisher protocol/eligibility still mandatory.",
+    "proper": "Native meanBrier andstableNLL <= each lexical/source control+1e-12.",
+    "runtime": "CPUaffinity0,1/configured2compute threads; one actualcorpus/worker, full external dispatch through initialization+owned cleanup/post-all-fence<=600. Goldrequires known stableZ kernelwait0 and all capture/finalfencesclosed."
+  },
+  "kind": "REAL_CONTRACTNLI_MULTI_HYPOTHESIS_CONTEXT_DEV_PILOT",
+  "latency": "Actual24windowreadercomponent intervals/arm and12two-windowreader sums/arm plus12packing intervals/arm; batchcase spans includequeue/shareddocwork. No publisher/isolated latency claim.",
+  "mixture": "Fixed equal arithmetic probabilitymixture; stable perclass logsumexp(two actualwindowlogp)-log2. Canonical-first max of stablemixedlogp. No temperature/threshold/grid/confidence override.",
+  "native_E_N_C_to_canonical": [
+    1,
+    0,
+    2
+  ],
+  "phase": "dev",
+  "physical_readout_id": "caseid::arm::window:0/1",
+  "postclosure": "Stdlib replay uses retainedactualpackingfeature/count/hash journal and72NLI features/offsets/logits only. Missinglookup→integrityFAIL; no fresh tokenizer/model/native fallback.",
+  "schema_version": 1,
+  "scope": "Declared all12 unfiltered helperadaptation, not evaluate_all binaryfiltered classification/full17/paper/fullbenchmark score.",
+  "source_checkpoint": "222874558c0b696f92824e5fce3775494877f821",
+  "tolerance": 1e-12,
+  "windows_per_case_arm": 2
+}

@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "epoch": 42,
+  "status": "CONCRETE_NEW_ARCHIVE_RECOVERY_PLAN_REVIEW_REQUIRED_NO_EXECUTION",
+  "purpose": "Durable rejected E42 checkpoint through a NEW archive-projected transaction, not original FINAL completion or suffix/retry.",
+  "base": {
+    "branch": "benchmarks/ruvector-sota-2026-10-22",
+    "expected_parent_commit": "4201146a603127e9a536d266e38058deec4c3658",
+    "root": "6df9bc196bfd9d24273e657422c1e4d8adb5be02",
+    "bench": "b12c05ac9dc0144f0b9014ec98301d4c3f12100b",
+    "scope": "de27f1bc72951c0baf28568c223e32b27cb35079",
+    "Git_leaves": 7254,
+    "CP_rows": 7180,
+    "main": "READ_ONLY_OBSERVATION_c44d7337c0c5ad2ecd2294178475387facb96516"
+  },
+  "new_exclusive_owner": {
+    "workdir": "/tmp/ruvector-sota-2026-10-22/epoch42-archive-recovery-20261026T040538",
+    "PID": 129095,
+    "startticks": 31124033,
+    "generation": 3,
+    "FD": 3,
+    "device": 33,
+    "inode": 13626,
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "expiry_UTC": "2026-10-26T05:05:38.422357+00:00",
+    "owner_sha256": "b503f119766f65dd85c6eff140483e2140b1279a9e33b467ccce204f96d0297c",
+    "scope": "PUBLICATION_RECOVERY_ONLY_ZERO_SCIENTIFIC_ALLOWANCE"
+  },
+  "hard_deny": {
+    "forbidden_live_Git_object_sha1": "486888de9602bbb5d817a55f707b4fcfd11c65e0",
+    "never_create_blob_with_this_decoded_Git_sha1": true,
+    "never_tree_reference_this_sha": true,
+    "never_inline_tree_content_with_this_Git_sha1": true,
+    "never_use_in_API_object_reference_fields": [
+      "sha",
+      "base_tree_sha",
+      "tree_sha",
+      "parent_sha",
+      "expected_sha"
+    ],
+    "forensic_hash_string_inside_reviewed_metadata_allowed": true,
+    "do_not_poll_or_retry_original_request": true
+  },
+  "historical_unknown": {
+    "original_id": "e42-final-blob-5",
+    "original_kind": "create_blob",
+    "execution": "UNKNOWN_PERMANENTLY",
+    "original_journal_bytes": 16226,
+    "original_journal_sha256": "9b37c2a5513a89e439e0fee44bc1c4ea142b48ff329c41288a47e554c054501b",
+    "original_ack_0_to_4": "Preserved successful responses, not replayed; this simpler new transaction does not require reusing any.",
+    "original_FINAL_tree_commit_ref_attempts": 0,
+    "original_immutable_create_blob_can_change_a_branch": false,
+    "reason_new_transaction_is_safe": "Only immutable unreferenced blob creation was uncertain. It can never change a ref. New desired tree neither creates nor references its object; later arrival cannot affect the new checkpoint. Original execution attribution remains UNKNOWN."
+  },
+  "archive": {
+    "path": "recoveries/epoch42-publication-20261026/immutable-e42-artifacts.zip",
+    "bytes": 4531795,
+    "sha256": "b1563d4bd7b8ea54e69f6a2d1047130b95a94748d58e83fabcf465431c64cbca",
+    "expected_Git_blob_sha1": "22669777496cdcb3d957bbe237bb8e5b70f5fde5",
+    "API_encoding": "base64",
+    "decoded_binary_sha1_required": true
+  },
+  "exact_prepared_new_artifacts": [
+    {
+      "path": "recoveries/epoch42-publication-20261026/ARCHIVE_PROJECTED_FILES.v1.json",
+      "bytes": 122071,
+      "sha256": "749265d94e7c5389671642bda12e9a2c83d4d618589961ec5303c671c6471823",
+      "expected_Git_blob_sha1": "5caaa217c853c2dffef627889f72517657feb1fb"
+    },
+    {
+      "path": "recoveries/epoch42-publication-20261026/REJECTION_LEDGER.recovery.v1.json",
+      "bytes": 196972,
+      "sha256": "59556eae8a2d5e5431bb2699fe8de43dcf27a9030a719c8f175feb5cf42cc82c",
+      "expected_Git_blob_sha1": "50fcfefcd52ee5d8e45302e809eb6da24a4e1ca5"
+    },
+    {
+      "path": "recoveries/epoch42-publication-20261026/EXISTING_ARTIFACT_REHASH.v1.json",
+      "bytes": 1039,
+      "sha256": "77c3e25cd69491dc0bc7f520c29dfa053f49093d470efd09beac972c6058f417",
+      "expected_Git_blob_sha1": "1d056037b15c6d1bbb1a3565aaf6670c8a22e432"
+    }
+  ],
+  "new_paths_namespace": "recoveries/epoch42-publication-20261026/",
+  "original_E42_three_roots_modified": false,
+  "projection": {
+    "public_members": 287,
+    "SOURCE_present_identical_members": 220,
+    "new_archive_backed_CP_only_members": 67,
+    "legacy_CP_only_members": 3,
+    "expanded_original_CP_rows": 7247,
+    "new_CP_project_rows_formula": "7247 + exact new recovery files (including ZIP), excluding three root control files",
+    "CP_only_formula": "67 additional E42 members + unchanged legacy3; never assume total CP-only ==3",
+    "all287_match_original_desired_CP_and_original_R": true,
+    "old_SOURCE_CP7180_rows_must_be_preserved_exact": true,
+    "original223_pins_rehashed_unchanged": true,
+    "extract_only_prefix": "public-project/",
+    "never_extract": [
+      "unpublished-desired-controls/",
+      "unexecuted stages/",
+      "requests/",
+      "reviewed-public-bootstrap/",
+      "any non-public-project member"
+    ],
+    "required_materialization": "Write or verify exact287 files into NEW KIT, then new projected project (hardlinks only from that new KIT). Original restore_checkpoint always source.read_bytes() from KIT, even when destination already exists; project-only extraction is insufficient.",
+    "no_Git_object_created_by_local_materialization": true
+  },
+  "restore_adapter_contract": {
+    "new_path": "recoveries/epoch42-publication-20261026/restore_epoch42_archive.py",
+    "source_not_implemented_or_executed_yet": true,
+    "accept_only_exact_archive": {
+      "path": "recoveries/epoch42-publication-20261026/immutable-e42-artifacts.zip",
+      "bytes": 4531795,
+      "sha256": "b1563d4bd7b8ea54e69f6a2d1047130b95a94748d58e83fabcf465431c64cbca",
+      "expected_Git_blob_sha1": "22669777496cdcb3d957bbe237bb8e5b70f5fde5",
+      "API_encoding": "base64",
+      "decoded_binary_sha1_required": true
+    },
+    "strict_checks": [
+      "whole ZIP bytes/SHA256 and decoded Git blobSHA",
+      "exact357 unique safe relative names, no traversal/absolute/backslash/encryption/directories/symlink/specialfile",
+      "embedded manifest all356nonself hashes/sizes and exactmember set",
+      "exact287selected members from PROJECTED_FILES, 20,067,025 uncompressed-byte bound",
+      "all selected member hashes before any filewrite",
+      "fresh canonical KIT/R, no symlink ancestors or overlap with immutable originals",
+      "O_EXCL+fsync new file, or verify-identical existing regular file; never overwrite",
+      "hardlink only NEW KIT\u2192NEW R optional; never oldR/oldarchive inode mutation"
+    ],
+    "order": [
+      "fresh Git7254+newrecovery files into newKIT, type-aware exactbinaryZIP decode",
+      "unchanged inherited22 and26 restoration contracts for legacy3",
+      "new archive adapter projects287 into KIT andR",
+      "unchanged reviewed bootstrap.py source-only offline basecache",
+      "unchanged restore_checkpoint.py with NEW CONT/CP",
+      "unchanged verify-only + all newCP/source223/member hashes"
+    ],
+    "original_bootstrap_and_restore_body_change": false,
+    "no_installs_models_native_Gold_EVAL": true
+  },
+  "control_semantics": {
+    "construct_from": "Actual current SOURCE420 controls; use archived unpublished desired controls only as input to exact scientific-facts projection, not as already-published state.",
+    "ACTIVE": "EPOCH42_ARCHIVE_RECOVERY_CLOSED; gen3physical publication owner; work/experiments inactive; every native/model/Gold/EVAL/CONF/paid/GPU/retry allowance0; old study gen1 is historical, alreadycompleted, not active.",
+    "CONT": "Close actual E42spent1corpus/72physical/36derived budgets. Preserve all preexisting fields/history/champion/protected partitions and exact archived actual scientific result. Add archive descriptor/order and new recovery epoch-manifest ref; currentglobal ledger points NEWdistinct recovery ledger, latest learning may point unchanged archive-backed ce011... original. Explicit original_FINAL_published=false/original_invocation_UNKNOWN. No invented recovery commit/rank before actual readback.",
+    "CP": "Preserve all7180 currently published rows unchanged; extend to exact original7247 rows via287ZIP projection, plus exactnewrecoverymetadata/ZIP/source rows. Controls are not recursive project rows. CP archive-only67 explicit memberSHA/size/prefix; legacy3 transport contracts unchanged.",
+    "epochs": "Append exact E42scientific status REJECTED_DEV_PILOT/integritytrue/devfalse with archive-publication mode, no originalFINAL claim.",
+    "ledger": "Use prepared NEWpath/newGit50fcfefc... containing every original35rejection/6preparation field and value unchanged plus explicit new publication-recovery metadata. Frozen ledger e006... remains byteexact ZIPmember, no tree/API Gitobject reference.",
+    "manifests": "Original EPOCH59def/results c642/SOURCE_MANIFESTd1e7/usedCONF7190 remain exact insideZIP. New recoverymanifest outside alloriginal3roots references original member identities+archive+restoration+currentledger. No modification or refreezing of originalE42manifest."
+  },
+  "actual_scientific_facts": {
+    "status": "REJECTED_DEV_PILOT",
+    "evaluated_integrity_checks_passed": true,
+    "dev_passed": false,
+    "native_correct": 7,
+    "lexical_correct": 8,
+    "source_order_correct": 7,
+    "N": 12,
+    "native_corpus_batches": 1,
+    "physical_NLI": 72,
+    "derived_forecasts": 36,
+    "new_experiment_Gold_EVAL_or_paid_calls": 0,
+    "used_confirmation_identities": [],
+    "actual_cumulative_corpus_totals": null,
+    "verified_attempt_lower_bound": 37,
+    "verified_completed_lower_bound": 35,
+    "bounded_native_process_attempts": 42,
+    "legacy_qualifications": 6,
+    "E37_unknown_tail": "UNKNOWN_PERMANENTLY",
+    "official_HTTP_at_original_epoch42": {
+      "success": 909,
+      "failure": 2
+    },
+    "official_goal_verified": false,
+    "native104": "UNCHANGED"
+  },
+  "transaction": {
+    "maximum_new_transactions": 1,
+    "code_and_exact_payloads_require_independent_review_before_mutation": true,
+    "reuse_any_old_FINAL_ID_or_journal": false,
+    "new_unique_ID_prefix": "e42-archive-recovery-g3-v1-",
+    "new_append_only_journal": "new gen3workdir/recovery-mutation-journal.jsonl; original journal preserved and never edited",
+    "fixed_payloads_no_repack_loop": true,
+    "steps": [
+      "preflight fresh current branch420/root/bench/scope/full7254 tuples, read-only main, heldunexpiredgen3 owner",
+      "verify exactarchive/projection/ledger/decoder/newcontrols/newCP hashes and successful newlocalKIT/R reconstruction",
+      "create ONLY reviewed distinctnew blobs; ZIP must use base64 withdecoded4531795/b156/Git226697 identities",
+      "scoped tree groups from sourceRoot6df9; only three root controls+newrecoveries namespace, no originalE42path writes",
+      "actualnewroot/bench sibling tuples and full expectedleafmap check; harddenyold4868references",
+      "fresh branch still420; create exactlyone commit withsoleparent420",
+      "compare-and-set dedicatedbranch expected420 forcefalse exactlyonce",
+      "independent actualcomplete readback/CP/restoration proof; then rootreleasegen3guardian"
+    ],
+    "all_Git_blob_creation_guards": "Compute GitSHA1 from full decoded bytes before every create_blob. For tree inlinecontent compute full UTF8blobGitSHA; for tree sha references validate object identity. Reject forbidden4868 in any liveobjectreference; forensicstrings are not API references.",
+    "any_new_uncertain_mutation": "STOP. No repeat, suffix, repack, alternateencoding or second recovery transaction.",
+    "all_publication_functions_return_objects": "Root O_EXCL+file+directory fsync exactas-returned receipt before claiming publication; no automatic completed-file claim."
+  },
+  "optional_new_official_supplement": "Excluded from minimaltransaction unless separately fixed hashreview approved; no new contacts/calls.",
+  "author_operations": {
+    "rehash_source223_archive357_oldR287_only": true,
+    "old_R_ZIP_WAL_modifications": 0,
+    "Git_or_model_or_case_or_Gold_EVAL_calls": 0,
+    "writes": "owned new /workspace/ruvector-e42-publication-impl/archive-recovery-v1 only"
+  },
+  "next_required_approval": "Independent no-repeat/coherent-source/archive-restoration semantics review of this plan, then parallel decoder/controller/builder source implementation review. No execution from this plan alone."
+}

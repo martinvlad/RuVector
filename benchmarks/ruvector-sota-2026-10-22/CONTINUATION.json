@@ -4,8 +4,8 @@
   "goal_met": false,
   "official_rank": null,
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "prior_published_base_commit": "a73dd5a300d6af2e81249448f7880376c7b4d054",
-  "checkpoint_manifest_sha256": "2612c58bf6040e2a5f5b5726e0038ae637269020ad336b58bc1d6844867ccd87",
+  "prior_published_base_commit": "4201146a603127e9a536d266e38058deec4c3658",
+  "checkpoint_manifest_sha256": "bbbb4e22daef74b2814aaee4a611f98861aa5207388c6919e994782b7ccb84ea",
   "restore": "Download this directory preserving relative paths, then python3 restore_checkpoint.py --dest /isolated/project. Installation/model acquisition are separate opt-in bootstrap flags. Never rerun archived controllers in place.",
   "execution_observed": {
     "actual_HTTP_decisions": 885,
@@ -2194,6 +2194,334 @@
         "current_official_HTTP_successes": 3,
         "current_official_HTTP_failures": 0
       }
+    },
+    "epoch42_actual_execution": {
+      "actual_counters": {
+        "BGE_forward_calls_attempted": 35,
+        "BGE_forward_calls_completed": 35,
+        "BGE_initializations_attempted": 1,
+        "BGE_initializations_completed": 1,
+        "BGE_texts_attempted": 187,
+        "BGE_texts_completed": 187,
+        "CONF_input_reads": 0,
+        "GPU_calls": 0,
+        "HTTP_requests": 0,
+        "NLI_capped_pair_tokenizer_calls_attempted": 72,
+        "NLI_capped_pair_tokenizer_calls_completed": 72,
+        "NLI_claim_fit_tokenizer_calls_attempted": 72,
+        "NLI_claim_fit_tokenizer_calls_completed": 72,
+        "NLI_forward_calls_attempted": 72,
+        "NLI_forward_calls_completed": 72,
+        "NLI_full_pair_tokenizer_calls_attempted": 72,
+        "NLI_full_pair_tokenizer_calls_completed": 72,
+        "NLI_readouts_completed": 72,
+        "Node_network_operations_attempted": 0,
+        "ORT_sessions_attempted": 1,
+        "ORT_sessions_completed": 1,
+        "Python_literal_loopback_capability_binds_allowed": 1,
+        "Python_network_operations_attempted": 0,
+        "TRAIN_input_reads": 0,
+        "backward_calls": 0,
+        "calibration_calls": 0,
+        "canonical_argmax_decisions_completed": 36,
+        "corpus_batches_attempted": 1,
+        "corpus_batches_completed": 1,
+        "derived_forecasts_completed": 36,
+        "dev_features_bank_reads": 1,
+        "fits": 0,
+        "full104_requests": 0,
+        "generation_calls": 0,
+        "gold_reader_calls": 0,
+        "model_initializations_attempted": 1,
+        "model_initializations_completed": 1,
+        "model_unloads_attempted": 1,
+        "model_unloads_completed": 1,
+        "native_binary_loads_attempted": 1,
+        "native_binary_loads_completed": 1,
+        "native_helper_starts_attempted": 1,
+        "native_helper_starts_completed": 1,
+        "native_hit_source_validations": 525,
+        "native_index_initializations_attempted": 4,
+        "native_index_initializations_completed": 4,
+        "native_insertions_attempted": 175,
+        "native_insertions_completed": 175,
+        "native_len_calls_attempted": 8,
+        "native_len_calls_completed": 8,
+        "native_queries_attempted": 12,
+        "native_queries_completed": 12,
+        "native_version_calls_attempted": 1,
+        "native_version_calls_completed": 1,
+        "old_benchmark_DEV_reads": 0,
+        "optimizer_initializations": 0,
+        "optimizer_steps": 0,
+        "packed_input_guard_checks": 72,
+        "packing_pair_tokenizer_calls_attempted": 2643,
+        "packing_pair_tokenizer_calls_completed": 2643,
+        "paid_calls": 0,
+        "pair_tokenizations_attempted": 72,
+        "pair_tokenizations_completed": 72,
+        "primary_decisions_completed": 36,
+        "reader_lifecycles_completed": 1,
+        "selected_cases_validated": 12,
+        "semantic_gold_labels_decoded": 0,
+        "tasksource_forward_calls_attempted": 72,
+        "tasksource_forward_calls_completed": 72,
+        "tokenizer_initializations_attempted": 1,
+        "tokenizer_initializations_completed": 1,
+        "training_steps": 0,
+        "window_decisions_completed": 72
+      },
+      "actual_resources": {
+        "cgroup_memory_current": "13565718528",
+        "cgroup_memory_max": "17179869184",
+        "cgroup_memory_stat": {
+          "active_anon": 7736451072,
+          "active_file": 3940552704,
+          "anon": 554201088,
+          "anon_thp": 0,
+          "file": 12268285952,
+          "file_dirty": 0,
+          "file_mapped": 106598400,
+          "file_thp": 188743680,
+          "file_writeback": 0,
+          "inactive_anon": 953634816,
+          "inactive_file": 191840256,
+          "kernel": 742670336,
+          "kernel_stack": 638976,
+          "pagetables": 3551232,
+          "percpu": 14364,
+          "pgactivate": 16099810,
+          "pgdeactivate": 6640988,
+          "pgdemote_direct": 0,
+          "pgdemote_khugepaged": 0,
+          "pgdemote_kswapd": 0,
+          "pgdemote_proactive": 0,
+          "pgfault": 815929128,
+          "pglazyfree": 2,
+          "pglazyfreed": 0,
+          "pgmajfault": 87,
+          "pgrefill": 6645596,
+          "pgscan": 8583138,
+          "pgscan_direct": 8581612,
+          "pgscan_khugepaged": 0,
+          "pgscan_kswapd": 1526,
+          "pgscan_proactive": 0,
+          "pgsteal": 8576647,
+          "pgsteal_direct": 8575121,
+          "pgsteal_khugepaged": 0,
+          "pgsteal_kswapd": 1526,
+          "pgsteal_proactive": 0,
+          "pswpin": 0,
+          "pswpout": 0,
+          "sec_pagetables": 0,
+          "shmem": 8135897088,
+          "shmem_thp": 0,
+          "slab": 738412456,
+          "slab_reclaimable": 653536280,
+          "slab_unreclaimable": 84876176,
+          "sock": 0,
+          "swapcached": 0,
+          "swpin_zero": 0,
+          "swpout_zero": 0,
+          "thp_collapse_alloc": 0,
+          "thp_fault_alloc": 0,
+          "thp_swpout": 0,
+          "thp_swpout_fallback": 0,
+          "unevictable": 0,
+          "vmalloc": 4096,
+          "workingset_activate_anon": 0,
+          "workingset_activate_file": 499084,
+          "workingset_nodereclaim": 0,
+          "workingset_refault_anon": 0,
+          "workingset_refault_file": 3962675,
+          "workingset_restore_anon": 0,
+          "workingset_restore_file": 121074
+        },
+        "child_system_seconds": 0.047306999999999995,
+        "child_user_seconds": 0.147429,
+        "cpu_affinity": [
+          0,
+          1
+        ],
+        "largest_child_max_rss_kib": 424368,
+        "max_rss_kib": 1966832,
+        "memory_scope": "Separatehighwater observations;not summedsimultaneousRSS.",
+        "process": {
+          "NoNewPrivs": "1",
+          "Seccomp": "2",
+          "Threads": "4",
+          "cpu_affinity": [
+            0,
+            1
+          ]
+        },
+        "system_seconds": 24.072036,
+        "torch_num_interop_threads": 1,
+        "torch_num_threads": 2,
+        "user_seconds": 440.787952
+      },
+      "actual_verified_worker_starts": 1,
+      "batch_case_span": {
+        "N": 12,
+        "p50": 145.09757283548242,
+        "p95": 227.96671703431056,
+        "scope": "Actual shared-document preparation to final sixth case-window completion; includes queue/modelinit/shared work, not independent/publisher latency."
+      },
+      "checks_passed": true,
+      "fixed_counters_checked": 68,
+      "known_corpus_batches_attempted_at_last_capture": 1,
+      "known_corpus_batches_completed_at_last_capture": 1,
+      "latency_by_arm": {
+        "tasksource_lexical_two_windows": {
+          "NNI_forward_seconds": {
+            "N": 24,
+            "p50": 3.155352274508914,
+            "p95": 3.515227261386462,
+            "sum": 70.93857205094537
+          },
+          "packing_seconds": {
+            "N": 12,
+            "p50": 0.07397093100007623,
+            "p95": 0.11563876739819534,
+            "scope": "Separate source-packing component, no model/wholebatch/publisher latency claim."
+          },
+          "pair_tokenization_seconds": {
+            "N": 24,
+            "p50": 0.0027670749987009913,
+            "p95": 0.003459100463078357,
+            "sum": 0.06860500707989559
+          },
+          "reader_total_seconds": {
+            "N": 24,
+            "p50": 3.1958320394915063,
+            "p95": 3.5556805400614393,
+            "sum": 71.93085067701759
+          },
+          "two_window_NNI_forward_seconds": {
+            "N": 12,
+            "p50": 6.511167205986567,
+            "p95": 6.757786575690261,
+            "scope": "Actual sum of two window-reader components per derived forecast; shared embedding/init/index/queue excluded, not publisher latency.",
+            "sum": 70.93857205094537
+          },
+          "two_window_reader_total_seconds": {
+            "N": 12,
+            "p50": 6.5913953865238,
+            "p95": 6.845098529633833,
+            "scope": "Actual sum of two window-reader components per derived forecast; shared embedding/init/index/queue excluded, not publisher latency.",
+            "sum": 71.93085067701759
+          }
+        },
+        "tasksource_native_two_windows": {
+          "NNI_forward_seconds": {
+            "N": 24,
+            "p50": 3.2477939859963953,
+            "p95": 3.6189044677536004,
+            "sum": 73.80823348503327
+          },
+          "packing_seconds": {
+            "N": 12,
+            "p50": 0.08053401601500809,
+            "p95": 0.12956852754286954,
+            "scope": "Separate source-packing component, no model/wholebatch/publisher latency claim."
+          },
+          "pair_tokenization_seconds": {
+            "N": 24,
+            "p50": 0.002676808973774314,
+            "p95": 0.0033233243506401774,
+            "sum": 0.06440189492423087
+          },
+          "reader_total_seconds": {
+            "N": 24,
+            "p50": 3.2874474780110177,
+            "p95": 3.6598221973603358,
+            "sum": 74.77368241507793
+          },
+          "two_window_NNI_forward_seconds": {
+            "N": 12,
+            "p50": 6.460996903973864,
+            "p95": 6.9623128354694925,
+            "scope": "Actual sum of two window-reader components per derived forecast; shared embedding/init/index/queue excluded, not publisher latency.",
+            "sum": 73.80823348503327
+          },
+          "two_window_reader_total_seconds": {
+            "N": 12,
+            "p50": 6.54578293452505,
+            "p95": 7.045543892166461,
+            "scope": "Actual sum of two window-reader components per derived forecast; shared embedding/init/index/queue excluded, not publisher latency.",
+            "sum": 74.77368241507793
+          }
+        },
+        "tasksource_source_order_two_windows": {
+          "NNI_forward_seconds": {
+            "N": 24,
+            "p50": 3.126681331486907,
+            "p95": 3.44122747190122,
+            "sum": 70.6812703658361
+          },
+          "packing_seconds": {
+            "N": 12,
+            "p50": 0.08303997799521312,
+            "p95": 0.13020931495702825,
+            "scope": "Separate source-packing component, no model/wholebatch/publisher latency claim."
+          },
+          "pair_tokenization_seconds": {
+            "N": 24,
+            "p50": 0.002863911009626463,
+            "p95": 0.0031728820671560244,
+            "sum": 0.06466363719664514
+          },
+          "reader_total_seconds": {
+            "N": 24,
+            "p50": 3.167188741994323,
+            "p95": 3.4808637810376237,
+            "sum": 71.65397379407659
+          },
+          "two_window_NNI_forward_seconds": {
+            "N": 12,
+            "p50": 6.297963751479983,
+            "p95": 6.664493212720845,
+            "scope": "Actual sum of two window-reader components per derived forecast; shared embedding/init/index/queue excluded, not publisher latency.",
+            "sum": 70.6812703658361
+          },
+          "two_window_reader_total_seconds": {
+            "N": 12,
+            "p50": 6.378995867999038,
+            "p95": 6.743409301587962,
+            "scope": "Actual sum of two window-reader components per derived forecast; shared embedding/init/index/queue excluded, not publisher latency.",
+            "sum": 71.65397379407659
+          }
+        }
+      },
+      "model_profiles_disposed": [
+        "tasksource"
+      ],
+      "owned_live_processes_closed": true,
+      "raw_worker_wall_seconds": 244.83806004899088,
+      "supervisor_execution_qualification": {
+        "actual_all15_invariants_true": true,
+        "checks_passed": true,
+        "observed_full_supervisor_bound_seconds": 291.89551034301985,
+        "observed_worker_exit_code": 0,
+        "recorded_wall_seconds_including_init_cleanup": 249.49485534097767,
+        "supervisor_exit_source": "PROC_STAT_FIELD52_EXACT_STABLE_ZOMBIE",
+        "supervisor_exit_wait_status": 0
+      },
+      "timing_scope": "24actualwindowreadouts perarm,12separatepacking intervals. Shared4docembedding/index/modelinit andwholecleanup not inferred from these components. RSS is actualreportedhighwater, not summedconcurrentusage.",
+      "worker_attempts": 1
+    },
+    "epoch42_cumulative_execution": {
+      "corpus_attempts": null,
+      "completed_corpus_batches": null,
+      "verified_corpus_attempts_lower_bound": 37,
+      "verified_completed_corpus_batches_lower_bound": 35,
+      "bounded_native_process_attempts": 42,
+      "legacy_native_qualification_process_attempts": 6,
+      "historical_E37_model_corpus_tail": "UNKNOWN_PERMANENTLY",
+      "benchmark_HTTP_successes": 909,
+      "benchmark_HTTP_failures": 2,
+      "current_official_HTTP_successes": 3,
+      "current_official_HTTP_failures": 0
     }
   },
   "epochs": [
@@ -2760,6 +3088,38 @@
         "sha256": "0b67dbd727595cf9d837734c7fc13be248f998e67e1d2b17f5ddcaccd35a6c23"
       },
       "experiment_executed": false
+    },
+    {
+      "epoch": 42,
+      "kind": "REAL_CONTRACTNLI_MULTI_HYPOTHESIS_CONTEXT_DEV_PILOT",
+      "phase": "dev",
+      "status": "REJECTED_DEV_PILOT",
+      "dev_passed": false,
+      "manifest": {
+        "path": "experiments/sota-2026-10-22/epoch42/EPOCH_MANIFEST.json",
+        "bytes": 80681,
+        "sha256": "59defa2997b255453f8804c35975818c5fd4e221e4ad149a7a85e04c7df9bc4b"
+      },
+      "results": {
+        "path": "experiments/sota-2026-10-22/epoch42/RESULTS.json",
+        "bytes": 336589,
+        "sha256": "c64250395924357c8ba3cee77ebb2c30181342832953593008a7274c5eeafd8b"
+      },
+      "all_slots_closed": true,
+      "goal_met": false,
+      "benchmark_accepted": false,
+      "champion_promoted": false,
+      "new_submission": false,
+      "official_SOTA_verified": false,
+      "official_rank": null,
+      "benchmark_generalization_claim": false,
+      "publication_kind": "NEW_ARCHIVE_PROJECTED_RECOVERY",
+      "original_FINAL_published": false,
+      "recovery_manifest": {
+        "path": "recoveries/epoch42-publication-20261026/RECOVERY_CHECKPOINT_MANIFEST.json",
+        "bytes": 21645,
+        "sha256": "d071437fe28505e83b06ec512703b8b5cc2396b0a09e67f164c574da2871e8b6"
+      }
     }
   ],
   "used_confirmation_sets": [
@@ -2775,9 +3135,9 @@
   ],
   "next_research_priority": {
     "status": "PROPOSED_NOT_EXECUTED",
-    "direction": "Preserve native104. Do not retry or replace E41. Use the separately completed, independently verified official structural hypothesis-key catalog (canonical keys SHA256549721f44dfd696ae79c2df9b450417388e2c10bc85e60e912b3abcb94ff4762) before selecting any future hypothesis IDs; do not repeat the completed inventory or reuse the invalid literal nda-1..nda-17 assumption. The completed metadata-only catalog cannot reopen E41. Any next measured epoch requires a new licensed document-disjoint frozen policy, context/reader/source/scorer gates, real asset admission and scoped CPU2/time allowance. Retained E41 implementation fixtures are source engineering only.",
-    "confirmation": "No confirmation identities used. Preserve old325DEV/74unused/24protected and all previously exposed DEV. E41 provisional reservations were unadmitted and not text/gold exposed.",
-    "budget_and_publisher": "Zero paid API/GPU. No publisher resubmission/contact without meaningful independent accepted improvement plus verified protocol/eligibility. No ClaimBench pilot until full data/scorer/license/access verified."
+    "direction": "E42 actually completed and was REJECTED_DEV_PILOT: native7/12, lexical8/12, source-order7/12; all six frozen accuracy/Brier/stable-unclipped-NLL quality gates failed while execution integrity passed. Preserved whole-claim two-window context eliminated all72 pair truncations but did not establish a native retrieval benefit. Do not repeat the exposed E42 packing/retrieval grid or tune on its labels. Preserve submitted native104. A future distinct hypothesis should prioritize a materially stronger source-licensed pretrained typed-decision/NLI reader with verified training provenance, cross-window contradiction/context and numerical consistency, plus matched same-model native/lexical/source-order evidence selection. Freeze new document-disjoint train/DEV/calibration/genuinely-unused confirmation identities and exact source/model/scorer revisions before measurements; retain unknown training overlap and publisher eligibility as HOLD.",
+    "confirmation": "No E42 confirmation used. All twelve ContractNLI pairs from test documents97,336,99,455 crossed with nda-1,nda-10,nda-16 are permanently exposed DEV; retire these whole documents from future fresh confirmation and disjoint pilot selection. Preserve original325DEV/74unused/24protected, Easy48/Legal96 permanently DEV, all earlier exposed identities and E41 unadmitted reservations. Never relabel these as fresh confirmation or benchmark generalization.",
+    "budget_and_publisher": "Zero remaining authorized paid API/GPU spend; future work needs a new bounded frozen CPU2/600 plan and exclusive scope lock. Any paid work requires an actually authorized remaining cap plus new price/time/cleanup plan. No new publisher submission/contact without meaningful independently accepted improvement, unused confirmation and verified protocol/eligibility. No ClaimBench pilot or RuVector score until full data/scorer/license/access verified; retrieve only supplied10-K excerpts and never treat retrieval miss as insufficient evidence. Before first dispatch verify workspace capacity; canonical observer output basename is SUPERVISOR_OBSERVED_CLOSURE.json. Official SOTA remains unverified; original7FEA2738 queue115 is not rank."
   },
   "benchmark_targets": {
     "JevBench": {
@@ -2915,44 +3275,58 @@
   "active_run": {
     "schema_version": 1,
     "epoch": 42,
-    "run_id": "epoch42-222874558c0b",
-    "state": "EPOCH42_SOURCE_FROZEN_DEV_PENDING_ADMISSION",
-    "work_active": true,
+    "run_id": "epoch42-archive-recovery-20261026T040538",
+    "state": "EPOCH42_ARCHIVE_RECOVERY_CLOSED",
+    "publication_recovery_only": true,
+    "original_scientific_run_id": "epoch42-222874558c0b",
+    "work_active": false,
     "experiments_active": false,
-    "checkpoint_parent": "a73dd5a300d6af2e81249448f7880376c7b4d054",
+    "all_slots_closed": true,
+    "phase_remaining": {
+      "train": 0,
+      "dev": 0,
+      "calibration": 0,
+      "confirmation": 0,
+      "native_corpus_batches": 0,
+      "paid_calls": 0,
+      "GPU_calls": 0,
+      "retries": 0
+    },
+    "checkpoint_parent": "4201146a603127e9a536d266e38058deec4c3658",
     "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
     "physical_owner": {
-      "run_id": "epoch42-222874558c0b",
-      "pid": 125788,
-      "startticks": 29584865,
+      "run_id": "epoch42-archive-recovery-20261026T040538",
+      "pid": 129095,
+      "startticks": 31124033,
       "lock": "/tmp/ruvector-sota-2026-10-22/exclusive.work.lock",
       "lock_inode": 13626,
       "lock_device": 33,
-      "started_unix": 1792972146.734674,
-      "expires_unix": 1792982946.734674,
-      "started_at": "2026-10-25T23:49:06.734674+00:00",
-      "expires_at": "2026-10-26T02:49:06.734674+00:00",
+      "started_unix": 1792987538.4223573,
+      "expires_unix": 1792991138.4223573,
+      "started_at": "2026-10-26T04:05:38.422357+00:00",
+      "expires_at": "2026-10-26T05:05:38.422357+00:00",
       "CPU_affinity": [
         0,
         1
       ],
       "scope": "ruvnet/RuVector:benchmarks/ruvector-sota-2026-10-22",
-      "generation": 1,
+      "generation": 3,
       "kernel_boot_id": "4632fb06-b0ef-4df5-b72b-0e875bbad810",
       "PID_namespace": "pid:[4026532200]"
     },
-    "physical_guardian_directory": "/tmp/ruvector-sota-2026-10-22/epoch42-222874558c0b",
-    "isolated_project": "/tmp/ruvector-sota-2026-10-22/epoch42-222874558c0b/project",
+    "physical_guardian_directory": "/tmp/ruvector-sota-2026-10-22/epoch42-archive-recovery-20261026T040538",
     "OS_lock_held": true,
     "OS_lock_release_pending": true,
+    "OS_lock_observation_scope": "PREPUBLICATION_SNAPSHOT_NOT_CURRENT_REMOTE_LEASE",
     "native_allowed": 0,
     "conditional_train_allowed": 0,
-    "conditional_dev_allowed": 1,
+    "conditional_dev_allowed": 0,
     "conditional_calibration_allowed": 0,
     "conditional_engineering_allowed": 0,
     "confirmation_allowed": 0,
     "conditional_confirmation_allowed": 0,
-    "instruction": "DEV-only real ContractNLI pilot. SOURCE conditional work only after actual independent readback/admission. Frozen design:72physicalwindowreadouts/36fixedmixtures/12queries; actual counts fromcaptured evidence only. Onecorpus CPU2/600total, no TRAIN/calibCONF/paidGPU/retry. FINAL closes every slot; no fullbenchmark placement/promotion.",
+    "paid_calls_allowed": 0,
+    "GPU_calls_allowed": 0,
     "path": "ACTIVE_RUN.json"
   },
   "exposed_development_sets": [
@@ -3286,9 +3660,9 @@
     }
   ],
   "rejection_ledger": {
-    "path": "experiments/sota-2026-10-22/epoch41/REJECTION_LEDGER.json",
-    "bytes": 180807,
-    "sha256": "96e78dc196706401002fba11b049f5cad694d620b5dd7f542ac037c042226b4e"
+    "path": "recoveries/epoch42-publication-20261026/REJECTION_LEDGER.recovery.v1.json",
+    "bytes": 196972,
+    "sha256": "59556eae8a2d5e5431bb2699fe8de43dcf27a9030a719c8f175feb5cf42cc82c"
   },
   "benchmark_refresh": {
     "epoch": 41,
@@ -4138,6 +4512,20 @@
         "retries": 0
       },
       "all_unspent_slots_permanently_closed": true
+    },
+    "epoch42_budget": {
+      "worker_attempts_used": 1,
+      "remaining_slots": {
+        "train": 0,
+        "dev": 0,
+        "calibration": 0,
+        "confirmation": 0,
+        "native_corpus_batches": 0,
+        "paid_calls": 0,
+        "GPU_calls": 0,
+        "retries": 0
+      },
+      "all_unspent_slots_permanently_closed": true
     }
   },
   "publisher_status": {
@@ -4163,9 +4551,9 @@
     "output_rule": "Choose actually unused path; no overwrite."
   },
   "latest_learning": {
-    "path": "experiments/sota-2026-10-22/epoch41/LEARNINGS.json",
-    "bytes": 3818,
-    "sha256": "f8be55ad26daa9c9e894ad710b3ee5dcd77a2ecf6ef48fbee464a48fa3b195cb"
+    "path": "experiments/sota-2026-10-22/epoch42/LEARNINGS.json",
+    "bytes": 1663,
+    "sha256": "ce011106e02ffc9523d8fa87ef27fc98dd4786abf41dbae7c67d6268e72da3f6"
   },
   "source_closure_correction": {
     "path": "experiments/sota-2026-10-22/epoch13/SOURCE_CLOSURE_CORRECTION.v1.json",
@@ -8919,5 +9307,66 @@
       "train": []
     },
     "scope": "Twelve real ContractNLI identities exposed DEV forever, separate from old423/325DEV/74unused/24protected and all prior authored engineering cases. No CONF."
+  },
+  "epoch42_scientific_outcome": {
+    "epoch": 42,
+    "kind": "REAL_CONTRACTNLI_MULTI_HYPOTHESIS_CONTEXT_DEV_PILOT",
+    "phase": "dev",
+    "status": "REJECTED_DEV_PILOT",
+    "dev_passed": false,
+    "manifest": {
+      "path": "experiments/sota-2026-10-22/epoch42/EPOCH_MANIFEST.json",
+      "bytes": 80681,
+      "sha256": "59defa2997b255453f8804c35975818c5fd4e221e4ad149a7a85e04c7df9bc4b"
+    },
+    "results": {
+      "path": "experiments/sota-2026-10-22/epoch42/RESULTS.json",
+      "bytes": 336589,
+      "sha256": "c64250395924357c8ba3cee77ebb2c30181342832953593008a7274c5eeafd8b"
+    },
+    "all_slots_closed": true,
+    "goal_met": false,
+    "benchmark_accepted": false,
+    "champion_promoted": false,
+    "new_submission": false,
+    "official_SOTA_verified": false,
+    "official_rank": null,
+    "benchmark_generalization_claim": false
+  },
+  "epoch42_archive_recovery": {
+    "manifest": {
+      "path": "recoveries/epoch42-publication-20261026/RECOVERY_CHECKPOINT_MANIFEST.json",
+      "bytes": 21645,
+      "sha256": "d071437fe28505e83b06ec512703b8b5cc2396b0a09e67f164c574da2871e8b6"
+    },
+    "status": "SCIENTIFIC_REJECT_CHECKPOINT_ARCHIVE_PROJECTED",
+    "original_FINAL_published": false,
+    "original_blob5_execution": "UNKNOWN_PERMANENTLY",
+    "original_WAL_sha256": "9b37c2a5513a89e439e0fee44bc1c4ea142b48ff329c41288a47e554c054501b",
+    "forbidden_Git_object_sha1_forensic_string": "486888de9602bbb5d817a55f707b4fcfd11c65e0",
+    "never_create_or_tree_reference_forbidden_object": true,
+    "archive_transport": {
+      "archive": {
+        "path": "recoveries/epoch42-publication-20261026/immutable-e42-artifacts.zip",
+        "bytes": 4531795,
+        "sha256": "b1563d4bd7b8ea54e69f6a2d1047130b95a94748d58e83fabcf465431c64cbca"
+      },
+      "projection": {
+        "path": "recoveries/epoch42-publication-20261026/ARCHIVE_PROJECTED_FILES.v1.json",
+        "bytes": 122071,
+        "sha256": "749265d94e7c5389671642bda12e9a2c83d4d618589961ec5303c671c6471823"
+      },
+      "extractor": {
+        "path": "recoveries/epoch42-publication-20261026/restore_epoch42_archive.py",
+        "bytes": 14216,
+        "sha256": "d44b9ee022c2f05d68edf9e3f9217f4b6d603265bcf2bc85a49ce8863d015890"
+      },
+      "required_before_bootstrap": true,
+      "materialize_to_KIT_and_project": true,
+      "archive_backed_project_files": 67,
+      "legacy_CP_only_originals": 3
+    },
+    "all_scientific_slots_closed": true,
+    "publication_only_generation": 3
   }
 }

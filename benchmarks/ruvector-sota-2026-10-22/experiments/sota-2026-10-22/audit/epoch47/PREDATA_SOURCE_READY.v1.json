@@ -1,0 +1,89 @@
+{
+  "archive_argument_or_fallback_exists": false,
+  "epoch": 47,
+  "kind": "REAL_CONTRACTNLI_QWEN_COMPACT_EVIDENCE_DEV_PILOT",
+  "phase": "dev",
+  "policy": {
+    "bytes": 4624,
+    "path": "experiments/sota-2026-10-22/audit/epoch47/MATERIALIZATION_POLICY.v1.json",
+    "sha256": "96e81cf5f00dfaf7a094d8d41b992ab66244fc08e6e0c8c90cfe39e257af0999"
+  },
+  "required_source_review_fields": {
+    "checks_passed": true,
+    "policy_sha256": "96e81cf5f00dfaf7a094d8d41b992ab66244fc08e6e0c8c90cfe39e257af0999",
+    "source_seal_sha256": "508d4245f9b577c3afd81bcd70f3cce0f8c69407aa38bc63e0f6d33a2206e3cf"
+  },
+  "root_materializer_approval_required_fields": [
+    "schema_version",
+    "epoch",
+    "kind",
+    "phase",
+    "source_checkpoint",
+    "root_one_custodian_authorized",
+    "all_candidate_and_custody_source_frozen_before_data_access",
+    "policy_sha256",
+    "predataseal_sha256",
+    "independent_source_review",
+    "node_runtime_admission",
+    "source_plan",
+    "source_admission",
+    "source_commit",
+    "worker_slot_reservation"
+  ],
+  "root_materializer_argv": [
+    "python3",
+    "-I",
+    "-B",
+    "experiments/sota-2026-10-22/audit/epoch47/e47_materialize.py",
+    "--out",
+    "/tmp/ruvector-sota-2026-10-22/epoch47-143d1a78ea73/private",
+    "--policy",
+    "experiments/sota-2026-10-22/audit/epoch47/MATERIALIZATION_POLICY.v1.json",
+    "--expected-policy-sha256",
+    "96e81cf5f00dfaf7a094d8d41b992ab66244fc08e6e0c8c90cfe39e257af0999",
+    "--seal",
+    "experiments/sota-2026-10-22/audit/epoch47/PREDATA_SOURCE_SEAL.v1.json",
+    "--expected-seal-sha256",
+    "508d4245f9b577c3afd81bcd70f3cce0f8c69407aa38bc63e0f6d33a2206e3cf",
+    "--approval",
+    "<actual SOURCE-bound once root approval>",
+    "--expected-approval-sha256",
+    "<exact approval SHA256>"
+  ],
+  "schema_version": 1,
+  "source_admission": "Actual SOURCE/readback/files + independent source review + source-bound full Node hash proof before opaque access.",
+  "source_checkpoint": "143d1a78ea730e030ff5255a20b047d856f6305f",
+  "source_files": [
+    {
+      "bytes": 7398,
+      "path": "experiments/sota-2026-10-22/audit/epoch47/e47_features.py",
+      "sha256": "d47aab7b030bfdd0b0353b22d8a5ef123a063205ea8706943645152aff3e5a8d"
+    },
+    {
+      "bytes": 15664,
+      "path": "experiments/sota-2026-10-22/audit/epoch47/e47_materialize.py",
+      "sha256": "073789681dac6668604014577c991b7a9c9bf2562ed7c2ab9848c06506da3646"
+    },
+    {
+      "bytes": 7620,
+      "path": "experiments/sota-2026-10-22/audit/epoch47/e47_metrics.py",
+      "sha256": "8f5e6683db033e388289dae6407b1822d6f91207068bffe6090441a400537511"
+    },
+    {
+      "bytes": 5503,
+      "path": "experiments/sota-2026-10-22/audit/epoch47/prior_epoch44/DATA_ADMISSION.json",
+      "sha256": "4d9376b809cf37acab7850d0feebdc2dd7f0fe9c5746ee6af475985c7ce7b7f4"
+    },
+    {
+      "bytes": 6674,
+      "path": "experiments/sota-2026-10-22/audit/epoch47/prior_epoch44/ACTUAL_DATA_ADMISSION_INDEPENDENT.v1.json",
+      "sha256": "007e053528ca0dcff3362f2459c811e0f0f973bd194fa781166b069541ed67f0"
+    }
+  ],
+  "source_seal": {
+    "bytes": 1466,
+    "path": "experiments/sota-2026-10-22/audit/epoch47/PREDATA_SOURCE_SEAL.v1.json",
+    "sha256": "508d4245f9b577c3afd81bcd70f3cce0f8c69407aa38bc63e0f6d33a2206e3cf"
+  },
+  "source_slot_chain": "plan/source admission/independent actual readback/root once approval worker_slot_reservation must match type-exact; E47 one permanently burned slot and owner hash/token required."
+}

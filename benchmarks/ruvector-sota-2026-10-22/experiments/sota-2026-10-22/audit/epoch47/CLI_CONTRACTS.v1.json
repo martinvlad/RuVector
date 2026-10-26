@@ -1,0 +1,115 @@
+{
+  "epoch": 47,
+  "evaluator": {
+    "BIND": [
+      "--replay",
+      "--expected-replay-sha256",
+      "--results",
+      "--expected-results-sha256"
+    ],
+    "BIND_equality": "Every replay field type-exact; RESULTS may add only publication_checkpoint.",
+    "CAPTURE_FAILURE": [
+      "--failure-admission",
+      "--expected-failure-admission-sha256"
+    ],
+    "EVALUATE": [
+      "--admission",
+      "--expected-admission-sha256",
+      "--failure-admission",
+      "--expected-failure-admission-sha256"
+    ],
+    "canonical_outputs": {
+      "BIND": "experiments/sota-2026-10-22/audit/epoch47/publication-binding.json",
+      "CAPTURE_FAILURE": "experiments/sota-2026-10-22/audit/epoch47/qualification-replay.json",
+      "EVALUATE": "experiments/sota-2026-10-22/audit/epoch47/qualification-replay.json"
+    },
+    "common_arguments": [
+      "--project",
+      "--out"
+    ],
+    "modes": [
+      "EVALUATE",
+      "CAPTURE_FAILURE",
+      "BIND"
+    ],
+    "runtime_failure": "CAPTURE_FAILURE function only, EVAL0 metrics null; no Gold parse."
+  },
+  "gold": {
+    "argv": [
+      "python3",
+      "-I",
+      "-B",
+      "experiments/sota-2026-10-22/audit/epoch47/e47_gold_join.py",
+      "--project",
+      "/tmp/ruvector-sota-2026-10-22/epoch47-143d1a78ea73/project",
+      "--admission",
+      "<qualified root late-Gold admission>",
+      "--expected-admission-sha256",
+      "<exact SHA256>"
+    ],
+    "requires": "Independent runtime/source/36forecast/physical qualification before any semantic vault parse."
+  },
+  "kind": "REAL_CONTRACTNLI_QWEN_COMPACT_EVIDENCE_DEV_PILOT",
+  "materialize": {
+    "argv": [
+      "python3",
+      "-I",
+      "-B",
+      "experiments/sota-2026-10-22/audit/epoch47/e47_materialize.py",
+      "--out",
+      "/tmp/ruvector-sota-2026-10-22/epoch47-143d1a78ea73/private",
+      "--policy",
+      "experiments/sota-2026-10-22/audit/epoch47/MATERIALIZATION_POLICY.v1.json",
+      "--expected-policy-sha256",
+      "96e81cf5f00dfaf7a094d8d41b992ab66244fc08e6e0c8c90cfe39e257af0999",
+      "--seal",
+      "experiments/sota-2026-10-22/audit/epoch47/PREDATA_SOURCE_SEAL.v1.json",
+      "--expected-seal-sha256",
+      "508d4245f9b577c3afd81bcd70f3cce0f8c69407aa38bc63e0f6d33a2206e3cf",
+      "--approval",
+      "<actual SOURCE-bound once root approval>",
+      "--expected-approval-sha256",
+      "<exact approval SHA256>"
+    ],
+    "functions": {
+      "materialize": 1
+    },
+    "no_archive_fallback": true,
+    "output": "experiments/sota-2026-10-22/audit/epoch47/DATA_ADMISSION.json"
+  },
+  "new_DATA_admission_counts": {
+    "feature_vault_JSON_parses": 0,
+    "feature_vault_origin_epoch": 44,
+    "inherited_opaque_choice_tokens": 12,
+    "original_archive_reads": 0,
+    "selected_raw_choice_tokens_copied": 0,
+    "semantic_gold_values_decoded": 0,
+    "source_body_or_hypothesis_decodes": 0
+  },
+  "new_DATA_admission_status": "READY_REUSED_EXPOSED_DEV_FEATURES_AND_OPAQUE_VAULT",
+  "node_runtime_admission_fields": [
+    "schema_version",
+    "epoch",
+    "kind",
+    "phase",
+    "checks_passed",
+    "source_commit",
+    "source_plan_sha256",
+    "source_freeze_sha256",
+    "node_runtime_receipt"
+  ],
+  "phase": "dev",
+  "private_capture_descriptor_keys": [
+    "reference_root",
+    "path",
+    "bytes",
+    "sha256"
+  ],
+  "schema_version": 1,
+  "source_checkpoint": "143d1a78ea730e030ff5255a20b047d856f6305f",
+  "source_descriptor_keys": [
+    "path",
+    "bytes",
+    "sha256"
+  ]
+}

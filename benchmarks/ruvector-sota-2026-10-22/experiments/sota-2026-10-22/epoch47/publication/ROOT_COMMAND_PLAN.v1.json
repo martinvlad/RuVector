@@ -1,0 +1,107 @@
+{
+  "artifact_row": {
+    "bytes": "integer exact length",
+    "local_path": "absolute regular local body file",
+    "path": "canonical project-relative path",
+    "sha256": "exact SHA256"
+  },
+  "controller_invoke": "const result=await publishE47Phase(phase,approvalPath,approvalSHA,operationalPath,operationalSHA); const receiptPath=await persistE47Receipt(result);",
+  "epoch": 47,
+  "final_extra_input": [
+    "actual_SOURCE_receipt exact outside-R ref returned after successful full-tree readback+CAS+freshGET",
+    "epoch_manifest canonical3ref for immutable E47 EPOCH_MANIFEST.json"
+  ],
+  "fragment_schema": {
+    "inherited_source_refs": "list canonical3 references; optional input-only actual_git_blob_sha1 separated from consumer reference",
+    "plan_fields": "typed dict, no protected root/operational/freeze fields",
+    "required_refs": "role to canonical3 reference dict"
+  },
+  "freeze_input_required_keys": [
+    "source_bindings_ready",
+    "root_contract",
+    "publication_contract",
+    "required_roles",
+    "required_review_flags",
+    "fragments",
+    "independent_source_review"
+  ],
+  "helper_copy_directory": "/tmp/ruvector-sota-2026-10-22/epoch47-143d1a78ea73/publication-helpers",
+  "journal": "/tmp/ruvector-sota-2026-10-22/epoch47-143d1a78ea73/publication/mutation-journal.jsonl",
+  "manifest_input_required_keys": [
+    "plan",
+    "replay",
+    "results",
+    "binding",
+    "independent_final_review"
+  ],
+  "mode_argv": [
+    "freeze_and_results.py freeze --project R --input FREEZE_INPUT --expected-input-sha SHA --operational-binding OP12 --expected-operational-binding-sha OPSHA",
+    "freeze_and_results.py preflight --project R --input PREFLIGHT_INPUT --expected-input-sha SHA --operational-binding OP12 --expected-operational-binding-sha OPSHA",
+    "build_phase_stage.py --input PHASE_INPUT --expected-input-sha SHA --approval PREP_APPROVAL --expected-approval-sha SHA --out W/stage-source-or-final --operational-binding OP12 --expected-operational-binding-sha OPSHA",
+    "freeze_and_results.py results --project R --input RESULTS_INPUT --expected-input-sha SHA --operational-binding OP12 --expected-operational-binding-sha OPSHA",
+    "freeze_and_results.py manifest --project R --input MANIFEST_INPUT --expected-input-sha SHA --operational-binding OP12 --expected-operational-binding-sha OPSHA"
+  ],
+  "no_actual_modes_by_author": true,
+  "phase_input_required_keys": [
+    "schema_version",
+    "epoch",
+    "phase",
+    "source_checkpoint",
+    "owner_sha256",
+    "parent",
+    "source_map",
+    "root_baseline",
+    "bench_baseline",
+    "current_CP",
+    "current_CONT",
+    "archive_projection",
+    "artifacts",
+    "ACTIVE",
+    "CONT_patch",
+    "CP_phase_record",
+    "commit_message"
+  ],
+  "preflight_input": {
+    "admission_requirement": "Successful actual_raw_native_plan_contract_verified true from exact source-frozen pure metadata validator before SOURCE stage",
+    "plan": "canonical3ref for ACTUAL frozen plan"
+  },
+  "python_execution": "taskset -c 0,1 python -I -B <explicit-script>; helpers add exact own directory before sibling imports",
+  "receipt_paths": {
+    "final": "/tmp/ruvector-sota-2026-10-22/epoch47-143d1a78ea73/publication/publication-final-result.json",
+    "source": "/tmp/ruvector-sota-2026-10-22/epoch47-143d1a78ea73/publication/publication-source-result.json"
+  },
+  "requests": "/tmp/ruvector-sota-2026-10-22/epoch47-143d1a78ea73/publication/requests",
+  "results_input_required_keys": [
+    "plan",
+    "replay",
+    "independent_result_review",
+    "publication_checkpoint",
+    "prior_ledger",
+    "learnings",
+    "used_confirmation"
+  ],
+  "root_sequence": [
+    "Adopt source only after independent PUBLICATION_SOURCE_APPROVAL and held12 proof; bind actual OP12, ROOT47 and nonce.",
+    "Exhaustive integrated source review with ROOTS-ordered inventory; freeze exactly once after raw identity-contract validation; strict read-only ACTUAL frozen-output canonical-reference and raw identity-contract preflight.",
+    "Stage SOURCE; independent preparation and full-tree publication approval.",
+    "Only root invokes publishE47Phase source and explicitly persists receipt O_EXCL+fsync.",
+    "Independent actual SOURCE readback and frozen admission before DATA.",
+    "One frozen DATA materialization; postDATA admission before one current-owner CPU worker.",
+    "Physical closure and all36 forecasts before late Gold or honest frozen failure route; no second slot.",
+    "Frozen evaluator/CAPTURE_FAILURE once; RESULTS preserves every replay field/type and adds only publication_checkpoint; typed ledger append1; frozen BIND once.",
+    "Independent final review; immutable SOURCE+EPOCH manifests once; no further project writes.",
+    "Stage FINAL extends actual SOURCE receipt and validates exact manifest inventory; independent final-stage approval.",
+    "Only root invokes publishE47Phase final, persists durable receipt, independent actual readback and release."
+  ],
+  "schema_version": 1,
+  "source_checkpoint": "143d1a78ea730e030ff5255a20b047d856f6305f",
+  "source_extra_input": [
+    "plan canonical3ref",
+    "source_preflight local exact outside-R report ref"
+  ],
+  "stage_paths": {
+    "final": "/tmp/ruvector-sota-2026-10-22/epoch47-143d1a78ea73/stage-final",
+    "source": "/tmp/ruvector-sota-2026-10-22/epoch47-143d1a78ea73/stage-source"
+  },
+  "workdir": "/tmp/ruvector-sota-2026-10-22/epoch47-143d1a78ea73"
+}

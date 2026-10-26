@@ -1,0 +1,147 @@
+{
+  "actual_failure_as_reported_by_Root": {
+    "BGE_forwards": 31,
+    "BGE_texts": 219,
+    "NLI_forecasts_completed": 0,
+    "NLI_forward_progress": 0,
+    "Root_sent_signal": false,
+    "last_reader_stage": "READER_INITIALIZE_BEFORE",
+    "native_corpora_completed": 1,
+    "native_hit_vector_bit_validations": 621,
+    "native_indexes": 4,
+    "native_insertions": 207,
+    "native_queries": 12,
+    "outer_wall_seconds": 23.1486,
+    "scope": "Root actual process capture is the authority; this independent task inspects source/container metadata only.",
+    "worker_exit_code": -9,
+    "worker_exit_signal": "SIGKILL",
+    "worker_max_rss_kib": 2301268,
+    "worker_wall_seconds": 22.999
+  },
+  "actual_operations_in_this_static_task": {
+    "Git_mutations": 0,
+    "cleanup_mutations": 0,
+    "feature_vault_or_confirmation_reads": 0,
+    "model_initializations": 0,
+    "native_BGE_tokenizer_calls": 0,
+    "paid_API_GPU_calls": 0,
+    "tensor_payload_values_decoded": 0,
+    "torch_imports": 0,
+    "torch_load_or_unsafe_pickle_calls": 0
+  },
+  "epoch": 48,
+  "failure_causation": {
+    "dmesg_available": false,
+    "interpretation": "Shared high memory and cumulative oom_kill are consistent with memory pressure, but do not attribute this SIGKILL. No counter delta or kernel victim record exists.",
+    "observed_current_bytes": 14913155072,
+    "observed_oom_counter": 3,
+    "observed_oom_kill_counter": 1,
+    "observed_peak_bytes": 17180618752,
+    "pre_run_counter_baseline_available": false,
+    "shared_cgroup_memory_max_bytes": 17179869184,
+    "status": "UNPROVEN"
+  },
+  "framework_source_evidence": {
+    "bytes": 4255,
+    "path": "/dev/shm/ruvector-e48-model/metadata-postmortem-v1/FRAMEWORK_SOURCE_EVIDENCE.v1.json",
+    "sha256": "2dd8cb92384cc6b209ba58fe5e650549ae94522056af01f9f86e416ff3b0b49a"
+  },
+  "inspection_source": {
+    "bytes": 10268,
+    "path": "/dev/shm/ruvector-e48-model/metadata-postmortem-v1/inspect_checkpoint_metadata.py",
+    "sha256": "b0eaa210412c7967a53ab37019a2c3233bb5d9a5dec835aae4e473de2005e1d4"
+  },
+  "memory_analysis": {
+    "current_reader_allocates_full_FP32_model_before_loading_state": true,
+    "modern_model_storage_estimate_excluding_original_unused_pooler_bytes": 1421451276,
+    "original_checkpoint_storage_bytes": 1425649676,
+    "scope": "Tensor-storage arithmetic only, not measured simultaneous RSS or a causal OOM proof. Runtime, activations, allocators, mapped/shared pages, source-cache duplicates and shared workloads are additional or differently accounted.",
+    "two_full_storage_copies_lower_bound_bytes": 2847100952
+  },
+  "new_verified_findings": {
+    "ZIP_members": 397,
+    "all_declared_tensor_storage_dtype": "float32",
+    "all_four_classifier_tensors_present": true,
+    "all_storage_payload_offsets_64_byte_aligned": true,
+    "classifier_uses_sequence_output_only": true,
+    "modern_constructor_adds_pooler": false,
+    "original_checkpoint_is_ZIP_STORED": true,
+    "original_pooler_tensors_present": [
+      {
+        "dtype_from_declared_storage": "float32",
+        "key": "roberta.pooler.dense.weight",
+        "metadata_key_opcode_byte_position": 57115,
+        "numel": 1048576,
+        "shape": [
+          1024,
+          1024
+        ],
+        "storage_bytes": 4194304,
+        "storage_member": "archive/data/140194960469264",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      {
+        "dtype_from_declared_storage": "float32",
+        "key": "roberta.pooler.dense.bias",
+        "metadata_key_opcode_byte_position": 57246,
+        "numel": 1024,
+        "shape": [
+          1024
+        ],
+        "storage_bytes": 4096,
+        "storage_member": "archive/data/140194960469344",
+        "stride": [
+          1
+        ]
+      }
+    ],
+    "original_storage_bytes": 1425649676,
+    "parameter_numel": 356412419,
+    "pickle_metadata_bytes": 84919,
+    "pickle_opcode_count": 15151,
+    "prospective_strict_key_mismatch": "Original checkpoint has two learned pooler tensors; modern RobertaForSequenceClassification creates RobertaModel(add_pooling_layer=False). Current strict loader would reject these unexpected keys if execution reached that check. This is discovered statically; it was not observed as the cause of the killed run.",
+    "serialized_position_ids_present": false,
+    "serialized_token_type_ids_present": false,
+    "tensor_count": 395,
+    "tensor_storage_members": 395
+  },
+  "prospective_faithful_loader_plan_NOT_EXECUTED": [
+    "Freeze a new source epoch before any actual model/reader attempt; retain this epoch closed with zero forecasts and null quality metrics.",
+    "Use only exact pinned original ZIP asset and reviewed Torch2.7.1 weights_only=True, map_location=cpu and mmap=True; no ordinary pickle fallback and no conversion to new weights.",
+    "Construct architecture on the meta device so constructor initialization does not allocate a second full CPU parameter set. Explicitly retain the original pooler module and both learned pooler tensors; never silently drop them.",
+    "Require all395 original learned keys, shapes, dtypes and source storage identities. Strictly assign original checkpoint state using load_state_dict(assign=True, strict=True), then assert no meta learned parameters remain.",
+    "Materialize only the two known nonpersistent embedding buffers on CPU using exact configured arange and zero token-type IDs. Do not call broad to_empty, float or device conversions that allocate/copy the assigned original parameter storage.",
+    "Current source classifier consumes outputs[0], not pooler output. An explicit original-pooler compatibility adapter can retain all parameters, but exact numerical equivalence and real loading/runtime remain UNQUALIFIED until a separately frozen owned engineering check.",
+    "Keep mapped file immutable and present until worker physical exit. No optimizer, parameter writes, training, calibration, temperature fit or inference is authorized by this plan.",
+    "Before a future attempt, capture memory.current/max/events baselines and review inode/physical-page accounting. If scoped cleanup is proposed, freeze exact unneeded public source/cache paths and preserve hash-verified reconstructability; never delete private custody/forensics or unrelated assets. No cleanup was performed here.",
+    "Actual mapped loading, all-state strict checks, outputs, resource reduction and full600s budget fit must be measured once in that future owned scope; format/source compatibility alone proves none of these."
+  ],
+  "report_builder_source": {
+    "bytes": 12556,
+    "path": "/dev/shm/ruvector-e48-model/metadata-postmortem-v1/build_static_postmortem.py",
+    "sha256": "27bdb2a2a8ba6e093e6d447f0748e8d566276c77773b5452c423b26a5cc538ce"
+  },
+  "schema_version": 1,
+  "scientific_scope": {
+    "Brier": null,
+    "Gold_reads_by_this_task": 0,
+    "NLI_latency": null,
+    "NLL": null,
+    "accuracy": null,
+    "confirmation_used": [],
+    "model_not_rejected_on_quality": true,
+    "model_quality_measured": false,
+    "native104_preserved": true,
+    "native_query_latency_scope": "Component-only; Root may report actual captured native query timings separately.",
+    "official_SOTA_or_rank_claim": false
+  },
+  "status": "STATIC_POSTMORTEM_COMPLETE_NO_RETRY_OR_INFERENCE",
+  "structural_result": {
+    "bytes": 151089,
+    "path": "/dev/shm/ruvector-e48-model/metadata-postmortem-v1/CHECKPOINT_STRUCTURAL_RESULT.v1.json",
+    "sha256": "a4a3824fc300256d0a3cdf615805b846a8e21be5583ad999b14bceabb90abc09"
+  }
+}

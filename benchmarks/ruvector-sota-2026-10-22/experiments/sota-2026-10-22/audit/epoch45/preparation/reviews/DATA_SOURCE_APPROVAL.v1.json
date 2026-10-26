@@ -1,0 +1,474 @@
+{
+  "actual_review_operations": {
+    "API_calls": 0,
+    "Node_executions_or_version_probes": 0,
+    "R_writes": 0,
+    "archive_case_model_tokenizer_native_Gold_calls": 0,
+    "fixture_reruns": 0,
+    "private_asset_stat_hash_or_reads": 0,
+    "target_functions": 0,
+    "target_module_imports": 0
+  },
+  "canonical_source_roles": {
+    "data_access": {
+      "bytes": 4216,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/MATERIALIZATION_POLICY.v1.json",
+      "sha256": "3f15f55209883077dc02a6782ae875e611f4b67b21d0ce65d1b372dc7ef57f80"
+    },
+    "data_cli_contract": {
+      "bytes": 3450,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/CLI_CONTRACTS.v1.json",
+      "sha256": "2d098c8437f26008857ee541073c885e31dc9304d47f0bca9732fa3c614eb9b0"
+    },
+    "data_source_validation": {
+      "bytes": 882,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/SOURCE_VALIDATION.json",
+      "sha256": "fc152cb7402f5b69754be4c9fa5bf324fe492d48d662ccc2be910c850223050a"
+    },
+    "external_data_manifest": {
+      "bytes": 3210,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/EXTERNAL_DATA_MANIFEST.json",
+      "sha256": "2d6974ea4dc08cbc4235872192af2521cc83b761d8972c8615cbc68de0c2c8e1"
+    },
+    "failure_protocol": {
+      "bytes": 3839,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/FAILURE_PROTOCOL.json",
+      "sha256": "4f381111bf8f6ca7d80c312a9e1b8d49420097ffeff57a987b204b7014f49c72"
+    },
+    "metrics_policy": {
+      "bytes": 2302,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/METRICS_POLICY.json",
+      "sha256": "1540124373a1a24abc93bb6b5b21cde7ba10730a84ee87fb0e3a677d28d9ebf4"
+    },
+    "predataseal": {
+      "bytes": 1463,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/PREDATA_SOURCE_SEAL.v1.json",
+      "sha256": "c1664f7b0b0463a673e6caa2d20b5f904f5bfe89b2d2d36938ca116fad12cd66"
+    },
+    "prior_exposed_data_admission": {
+      "bytes": 5503,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DATA_ADMISSION.json",
+      "sha256": "4d9376b809cf37acab7850d0feebdc2dd7f0fe9c5746ee6af475985c7ce7b7f4"
+    },
+    "prior_exposed_independent_data_review": {
+      "bytes": 6674,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_DATA_ADMISSION_INDEPENDENT.v1.json",
+      "sha256": "007e053528ca0dcff3362f2459c811e0f0f973bd194fa781166b069541ed67f0"
+    },
+    "same12_exposed_eligibility": {
+      "bytes": 2734,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/SAME12_ELIGIBILITY.v1.json",
+      "sha256": "1e9b2da22d4a0b4423ef3e600b7a77d6bef39a1713b3fa67e52fdc18bb60b7dc"
+    },
+    "scorer": {
+      "bytes": 12199,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/e45_evaluate.py",
+      "sha256": "0d5d1bccbea145fddfa0a81d21ee6163425c614f6e3f1a825cbbb513e92bb375"
+    },
+    "scorer_source_ready": {
+      "bytes": 5563,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/SOURCE_READY.v1.json",
+      "sha256": "0e82d2d3aa816196584d65ab85180f55debd33450624648db72000d9d62f84e9"
+    }
+  },
+  "checks_passed": true,
+  "epoch": 45,
+  "findings": [],
+  "kind": "REAL_CONTRACTNLI_QWEN_JOINT_CONTEXT_DEV_PILOT",
+  "operational_requirements_retained": [
+    "Final root binds fresh Guardian10 slot and SOURCE, verifies actual readback, runs frozen Node metadata admission before one DATA custodian call, obtains independent DATA admission, then permits one batch.",
+    "This source approval does not claim actual SOURCE publication/readback, DATA admission, native addon ABI, model execution or Gold qualification."
+  ],
+  "phase": "dev",
+  "policy_sha256": "3f15f55209883077dc02a6782ae875e611f4b67b21d0ce65d1b372dc7ef57f80",
+  "public_copy_allowlist": [
+    {
+      "bytes": 3450,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/CLI_CONTRACTS.v1.json",
+      "sha256": "2d098c8437f26008857ee541073c885e31dc9304d47f0bca9732fa3c614eb9b0",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/CLI_CONTRACTS.v1.json"
+    },
+    {
+      "bytes": 3210,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/EXTERNAL_DATA_MANIFEST.json",
+      "sha256": "2d6974ea4dc08cbc4235872192af2521cc83b761d8972c8615cbc68de0c2c8e1",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/EXTERNAL_DATA_MANIFEST.json"
+    },
+    {
+      "bytes": 3839,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/FAILURE_PROTOCOL.json",
+      "sha256": "4f381111bf8f6ca7d80c312a9e1b8d49420097ffeff57a987b204b7014f49c72",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/FAILURE_PROTOCOL.json"
+    },
+    {
+      "bytes": 4216,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/MATERIALIZATION_POLICY.v1.json",
+      "sha256": "3f15f55209883077dc02a6782ae875e611f4b67b21d0ce65d1b372dc7ef57f80",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/MATERIALIZATION_POLICY.v1.json"
+    },
+    {
+      "bytes": 2302,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/METRICS_POLICY.json",
+      "sha256": "1540124373a1a24abc93bb6b5b21cde7ba10730a84ee87fb0e3a677d28d9ebf4",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/METRICS_POLICY.json"
+    },
+    {
+      "bytes": 3477,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/PREDATA_SOURCE_READY.v1.json",
+      "sha256": "f57df6a5113e492584ccf77f5c07412e80895e1e4f28d84cac8ac7788adb1d77",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/PREDATA_SOURCE_READY.v1.json"
+    },
+    {
+      "bytes": 1463,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/PREDATA_SOURCE_SEAL.v1.json",
+      "sha256": "c1664f7b0b0463a673e6caa2d20b5f904f5bfe89b2d2d36938ca116fad12cd66",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/PREDATA_SOURCE_SEAL.v1.json"
+    },
+    {
+      "bytes": 2734,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/SAME12_ELIGIBILITY.v1.json",
+      "sha256": "1e9b2da22d4a0b4423ef3e600b7a77d6bef39a1713b3fa67e52fdc18bb60b7dc",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/SAME12_ELIGIBILITY.v1.json"
+    },
+    {
+      "bytes": 11106,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/SOURCE_DONOR_IDENTITIES.v1.json",
+      "sha256": "993fc60e4529e20ad7ca2d679079c51fcd24bee33051f1b7e8e21ed9ea9d3988",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/SOURCE_DONOR_IDENTITIES.v1.json"
+    },
+    {
+      "bytes": 5563,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/SOURCE_READY.v1.json",
+      "sha256": "0e82d2d3aa816196584d65ab85180f55debd33450624648db72000d9d62f84e9",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/SOURCE_READY.v1.json"
+    },
+    {
+      "bytes": 882,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/SOURCE_VALIDATION.json",
+      "sha256": "fc152cb7402f5b69754be4c9fa5bf324fe492d48d662ccc2be910c850223050a",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/SOURCE_VALIDATION.json"
+    },
+    {
+      "bytes": 12199,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/e45_evaluate.py",
+      "sha256": "0d5d1bccbea145fddfa0a81d21ee6163425c614f6e3f1a825cbbb513e92bb375",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/e45_evaluate.py"
+    },
+    {
+      "bytes": 7328,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/e45_features.py",
+      "sha256": "1fc2fba88219929de48151bcd2a65c4faec386b1d027b92de4242eb955e3c86a",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/e45_features.py"
+    },
+    {
+      "bytes": 6303,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/e45_gold_join.py",
+      "sha256": "f4561a22a3ed9ecce7721050c721fa14b592790058fac4f1e370e25fcf20104e",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/e45_gold_join.py"
+    },
+    {
+      "bytes": 23154,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/e45_input_audit.py",
+      "sha256": "2b6fe9a16b940709e985aa9b786183d841f7077a19adc2b66cce77700572d526",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/e45_input_audit.py"
+    },
+    {
+      "bytes": 15468,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/e45_materialize.py",
+      "sha256": "e9de443a4ebdae705fde4f23e29a8b41ae239bce0e8c8f4e96f70ce3d836db0b",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/e45_materialize.py"
+    },
+    {
+      "bytes": 7620,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/e45_metrics.py",
+      "sha256": "8f5e6683db033e388289dae6407b1822d6f91207068bffe6090441a400537511",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/e45_metrics.py"
+    },
+    {
+      "bytes": 24425,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/e45_qualification.py",
+      "sha256": "d9098fc01bb93ed90c9f2b71d72b8068c70360cf29022ac8a75030dbc3917b94",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/e45_qualification.py"
+    },
+    {
+      "bytes": 4720,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/fixtures/test_opaque_reuse_source.py",
+      "sha256": "f1b97161671dd89e93f112e559584b34302c7021206fbcb66bbfa6b7e7d4e02d",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/fixtures/test_opaque_reuse_source.py"
+    },
+    {
+      "bytes": 6674,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_DATA_ADMISSION_INDEPENDENT.v1.json",
+      "sha256": "007e053528ca0dcff3362f2459c811e0f0f973bd194fa781166b069541ed67f0",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_DATA_ADMISSION_INDEPENDENT.v1.json"
+    },
+    {
+      "bytes": 2457,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_REJECTION_CAPTURE_REVIEW.v1.json",
+      "sha256": "f3c124c89cb4af83308da303bbacc60cc0dd2bc9c1a27601834186b67e858369",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_REJECTION_CAPTURE_REVIEW.v1.json"
+    },
+    {
+      "bytes": 5503,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DATA_ADMISSION.json",
+      "sha256": "4d9376b809cf37acab7850d0feebdc2dd7f0fe9c5746ee6af475985c7ce7b7f4",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DATA_ADMISSION.json"
+    },
+    {
+      "bytes": 4510,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DISPATCH_ADMISSION.json",
+      "sha256": "66361e6a917808ea99b3dabc2cfb086d2f6bfa9c1f7a77cbd39d5ee44b9cc85f",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DISPATCH_ADMISSION.json"
+    },
+    {
+      "bytes": 29761,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/EPOCH_MANIFEST.json",
+      "sha256": "920811bca0024f44a765b8554ca5afb978f673b3eee6cb919d7ae326cb12122d",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/EPOCH_MANIFEST.json"
+    },
+    {
+      "bytes": 8864,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/RESULTS.json",
+      "sha256": "5cf3d3381f0e3a6b2530d55f36825fc6d9148f23e5bff0d8384b559fe42d0dec",
+      "source": "/workspace/ruvector-e45-core-review/data-project/experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/RESULTS.json"
+    }
+  ],
+  "public_copy_allowlist_count": 25,
+  "publication_or_dispatch_authorization_claimed": false,
+  "resolved_findings": [
+    {
+      "id": "E45_DATA_PREDATA_SLOT_CHAIN",
+      "original_issue": "Initial materializer admitted SOURCE/readback hashes without a type-exact reservation chain before DATA.",
+      "resolution": "Final reviewed materializer adds pre-DATA source-plan-slot admission. Exact added code reviewed statically; author fixture evidence retained separately."
+    }
+  ],
+  "review_conclusions": [
+    "New full SOURCE freeze and independent actual readback, type-exact source slot chain, and source-bound metadata-only Node proof precede bounded opaque reuse.",
+    "Exact inherited feature/vault SHA and size pins retain original E44 container origin; new DATA and Gold join report epoch45. Missing, changed or unstable assets stop with no archive fallback or replacement.",
+    "All twelve cases stay exposed DEV forever, with Easy48/Legal96 also permanent DEV. Protected62/321/2 remain unused HOLD and no fresh confirmation claim is made.",
+    "Gold vault epoch44 is accepted only after checked_bundle validates SOURCE, retained probabilities/prompts/native results, all36 forecasts, all12 supervisor invariants, CPU/runtime receipts, stable Z0 and 570/600 bounds.",
+    "Evaluator runs source/runtime qualification before calling EVALUATE. Such failures retain EVAL0, false evaluation_executed, null metrics and NOT_EVALUATED gates through metadata capture.",
+    "Metrics source remains donor-identical: canonical N/E/C, positive observed F32 probabilities without prediction/scoring renormalization or floor, matched full12 denominator, fixed point gates, descriptive cluster intervals only, all pass outcomes remain HOLD.",
+    "Publication BIND compares every replay field by type and value, allows only publication_checkpoint in results, and does not reevaluate science."
+  ],
+  "review_scope": "Independent static source/public metadata review. No target modules, functions, fixture executions or actual private assets accessed.",
+  "reviewed_DATA_PLAN_FIELDS": {
+    "bytes": 8274,
+    "path": "/workspace/ruvector-e45-data/DATA_PLAN_FIELDS.v1.json",
+    "sha256": "feb84ba3a041e078c8abee340b09b92d6600a4b2a3c0755edac67751279f4aa5"
+  },
+  "reviewed_SOURCE_READY": {
+    "bytes": 5563,
+    "path": "experiments/sota-2026-10-22/audit/epoch45/SOURCE_READY.v1.json",
+    "sha256": "0e82d2d3aa816196584d65ab85180f55debd33450624648db72000d9d62f84e9"
+  },
+  "schema_version": 1,
+  "source_checkpoint": "c5608a638ecdc99a846c4901736440d1e4d40db0",
+  "source_review_approved": true,
+  "source_reviewapproved": true,
+  "source_seal_sha256": "c1664f7b0b0463a673e6caa2d20b5f904f5bfe89b2d2d36938ca116fad12cd66",
+  "static_check_count": 199,
+  "static_checks": [
+    "exact_DATA25_allowlist",
+    "no_extra_or_missing_DATA_sources",
+    "all7_modules_plus_fixture_AST_only_parsed",
+    "SOURCE_READY_scope",
+    "final_SOURCE_READY_after_slot_fix_exact_identity",
+    "SOURCE_READY_exact_other24",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/CLI_CONTRACTS.v1.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/EXTERNAL_DATA_MANIFEST.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/FAILURE_PROTOCOL.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/MATERIALIZATION_POLICY.v1.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/METRICS_POLICY.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/PREDATA_SOURCE_READY.v1.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/PREDATA_SOURCE_SEAL.v1.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/SAME12_ELIGIBILITY.v1.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/SOURCE_DONOR_IDENTITIES.v1.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/SOURCE_VALIDATION.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/e45_evaluate.py",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/e45_features.py",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/e45_gold_join.py",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/e45_input_audit.py",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/e45_materialize.py",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/e45_metrics.py",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/e45_qualification.py",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/fixtures/test_opaque_reuse_source.py",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_DATA_ADMISSION_INDEPENDENT.v1.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_REJECTION_CAPTURE_REVIEW.v1.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DATA_ADMISSION.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DISPATCH_ADMISSION.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/EPOCH_MANIFEST.json",
+    "SOURCE_READY_ref_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/RESULTS.json",
+    "canonical_required_refs_data_access",
+    "canonical_required_refs_data_cli_contract",
+    "canonical_required_refs_data_source_validation",
+    "canonical_required_refs_external_data_manifest",
+    "canonical_required_refs_failure_protocol",
+    "canonical_required_refs_metrics_policy",
+    "canonical_required_refs_predataseal",
+    "canonical_required_refs_prior_exposed_data_admission",
+    "canonical_required_refs_prior_exposed_independent_data_review",
+    "canonical_required_refs_same12_exposed_eligibility",
+    "canonical_required_refs_scorer",
+    "canonical_required_refs_scorer_source_ready",
+    "canonical_plan_fields_failure_protocol",
+    "canonical_plan_fields_features_source",
+    "canonical_plan_fields_materialization_policy",
+    "canonical_plan_fields_metrics_policy",
+    "canonical_plan_fields_predataseal",
+    "canonical_plan_fields_scorer_source_ready",
+    "custody_source_ref_PREDATA_SOURCE_SEAL.v1.json_experiments/sota-2026-10-22/audit/epoch45/e45_features.py",
+    "custody_source_ref_PREDATA_SOURCE_SEAL.v1.json_experiments/sota-2026-10-22/audit/epoch45/e45_materialize.py",
+    "custody_source_ref_PREDATA_SOURCE_SEAL.v1.json_experiments/sota-2026-10-22/audit/epoch45/e45_metrics.py",
+    "custody_source_ref_PREDATA_SOURCE_SEAL.v1.json_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DATA_ADMISSION.json",
+    "custody_source_ref_PREDATA_SOURCE_SEAL.v1.json_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_DATA_ADMISSION_INDEPENDENT.v1.json",
+    "custody_source_ref_PREDATA_SOURCE_READY.v1.json_experiments/sota-2026-10-22/audit/epoch45/e45_features.py",
+    "custody_source_ref_PREDATA_SOURCE_READY.v1.json_experiments/sota-2026-10-22/audit/epoch45/e45_materialize.py",
+    "custody_source_ref_PREDATA_SOURCE_READY.v1.json_experiments/sota-2026-10-22/audit/epoch45/e45_metrics.py",
+    "custody_source_ref_PREDATA_SOURCE_READY.v1.json_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DATA_ADMISSION.json",
+    "custody_source_ref_PREDATA_SOURCE_READY.v1.json_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_DATA_ADMISSION_INDEPENDENT.v1.json",
+    "policy_source_seal_binding",
+    "exact_independent_review_required_fields",
+    "DATA_donor_manifest_scope",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/e44_materialize.py",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/e44_materialize.py",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/e44_materialize.py",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/e44_features.py",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/e44_features.py",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/e44_features.py",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/e44_qualification.py",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/e44_qualification.py",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/e44_qualification.py",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/e44_metrics.py",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/e44_metrics.py",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/e44_metrics.py",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/e44_input_audit.py",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/e44_input_audit.py",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/e44_input_audit.py",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/e44_gold_join.py",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/e44_gold_join.py",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/e44_gold_join.py",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/e44_evaluate.py",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/e44_evaluate.py",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/e44_evaluate.py",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/MATERIALIZATION_POLICY.v1.json",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/MATERIALIZATION_POLICY.v1.json",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/MATERIALIZATION_POLICY.v1.json",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/METRICS_POLICY.json",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/METRICS_POLICY.json",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/METRICS_POLICY.json",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/FAILURE_PROTOCOL.json",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/FAILURE_PROTOCOL.json",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/FAILURE_PROTOCOL.json",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/EXTERNAL_DATA_MANIFEST.json",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/EXTERNAL_DATA_MANIFEST.json",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/EXTERNAL_DATA_MANIFEST.json",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/SOURCE_READY.v1.json",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/SOURCE_READY.v1.json",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/SOURCE_READY.v1.json",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/SOURCE_DONOR_IDENTITIES.v1.json",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/SOURCE_DONOR_IDENTITIES.v1.json",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/SOURCE_DONOR_IDENTITIES.v1.json",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/SAME12_ELIGIBILITY.v1.json",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/SAME12_ELIGIBILITY.v1.json",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/SAME12_ELIGIBILITY.v1.json",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/PREDATA_SOURCE_SEAL.v1.json",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/PREDATA_SOURCE_SEAL.v1.json",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/PREDATA_SOURCE_SEAL.v1.json",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/PREDATA_SOURCE_READY.v1.json",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/audit/epoch44/PREDATA_SOURCE_READY.v1.json",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/audit/epoch44/PREDATA_SOURCE_READY.v1.json",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/epoch44/plan.json",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/epoch44/plan.json",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/epoch44/plan.json",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/epoch44/SOURCE_FREEZE.json",
+    "DATA_donor_current_Git_experiments/sota-2026-10-22/epoch44/SOURCE_FREEZE.json",
+    "DATA_donor_current_CP_experiments/sota-2026-10-22/epoch44/SOURCE_FREEZE.json",
+    "DATA_donor_bytes_recoveries/epoch44-publication-20261026-g9/ARCHIVE_OVERLAY.v1.json",
+    "DATA_donor_current_Git_recoveries/epoch44-publication-20261026-g9/ARCHIVE_OVERLAY.v1.json",
+    "DATA_donor_current_CP_recoveries/epoch44-publication-20261026-g9/ARCHIVE_OVERLAY.v1.json",
+    "DATA_donor_bytes_recoveries/epoch44-publication-20261026-g9/PUBLIC_ARTIFACTS.envelope.v1.json",
+    "DATA_donor_current_Git_recoveries/epoch44-publication-20261026-g9/PUBLIC_ARTIFACTS.envelope.v1.json",
+    "DATA_donor_current_CP_recoveries/epoch44-publication-20261026-g9/PUBLIC_ARTIFACTS.envelope.v1.json",
+    "DATA_donor_bytes_recoveries/epoch44-publication-20261026-g9/science-sidecars/EPOCH_MANIFEST.json",
+    "DATA_donor_current_Git_recoveries/epoch44-publication-20261026-g9/science-sidecars/EPOCH_MANIFEST.json",
+    "DATA_donor_current_CP_recoveries/epoch44-publication-20261026-g9/science-sidecars/EPOCH_MANIFEST.json",
+    "DATA_donor_bytes_recoveries/epoch44-publication-20261026-g9/science-sidecars/SOURCE_MANIFEST.json",
+    "DATA_donor_current_Git_recoveries/epoch44-publication-20261026-g9/science-sidecars/SOURCE_MANIFEST.json",
+    "DATA_donor_current_CP_recoveries/epoch44-publication-20261026-g9/science-sidecars/SOURCE_MANIFEST.json",
+    "DATA_donor_bytes_recoveries/epoch44-publication-20261026-g9/science-sidecars/RESULTS.json",
+    "DATA_donor_current_Git_recoveries/epoch44-publication-20261026-g9/science-sidecars/RESULTS.json",
+    "DATA_donor_current_CP_recoveries/epoch44-publication-20261026-g9/science-sidecars/RESULTS.json",
+    "DATA_donor_bytes_recoveries/epoch44-publication-20261026-g9/science-sidecars/ACTUAL_REJECTION_CAPTURE_REVIEW.v1.json",
+    "DATA_donor_current_Git_recoveries/epoch44-publication-20261026-g9/science-sidecars/ACTUAL_REJECTION_CAPTURE_REVIEW.v1.json",
+    "DATA_donor_current_CP_recoveries/epoch44-publication-20261026-g9/science-sidecars/ACTUAL_REJECTION_CAPTURE_REVIEW.v1.json",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/DATA_ADMISSION.json",
+    "DATA_donor_immutable_overlay_experiments/sota-2026-10-22/audit/epoch44/DATA_ADMISSION.json",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/DISPATCH_ADMISSION.json",
+    "DATA_donor_immutable_overlay_experiments/sota-2026-10-22/audit/epoch44/DISPATCH_ADMISSION.json",
+    "DATA_donor_bytes_experiments/sota-2026-10-22/audit/epoch44/preparation/reviews/ACTUAL_DATA_ADMISSION_INDEPENDENT.v1.json",
+    "DATA_donor_immutable_overlay_experiments/sota-2026-10-22/audit/epoch44/preparation/reviews/ACTUAL_DATA_ADMISSION_INDEPENDENT.v1.json",
+    "DATA_overlay_authority_same_CORE_verified_current_Git",
+    "exact_historical_prior_metadata_DATA_ADMISSION.json",
+    "exact_historical_prior_metadata_DISPATCH_ADMISSION.json",
+    "exact_historical_prior_metadata_ACTUAL_DATA_ADMISSION_INDEPENDENT.v1.json",
+    "exact_historical_prior_metadata_RESULTS.json",
+    "exact_historical_prior_metadata_EPOCH_MANIFEST.json",
+    "exact_historical_prior_metadata_ACTUAL_REJECTION_CAPTURE_REVIEW.v1.json",
+    "metric_source_donor_identical",
+    "pinned_dependency_e45_input_audit.py_e45_features.py",
+    "pinned_dependency_e45_input_audit.py_e45_metrics.py",
+    "pinned_dependency_e45_qualification.py_e45_features.py",
+    "pinned_dependency_e45_qualification.py_e45_metrics.py",
+    "pinned_dependency_e45_qualification.py_e45_input_audit.py",
+    "materializer_features_dependency",
+    "qualification_dependency_e45_gold_join.py",
+    "qualification_dependency_e45_evaluate.py",
+    "SOURCE_then_Node_proof_then_first_opaque_copy",
+    "complete_freeze_readback_Node_prior_metadata_fences",
+    "type_exact_four_way_slot_chain_before_DATA",
+    "source_burned_one_slot_owner_nonce_admission",
+    "DATA_report_slot_retained_and_late_qualified",
+    "opaque_materializer_has_no_archive_body_or_label_reader",
+    "exact_opaque_asset_pins",
+    "original44_private_containers_new45_reports",
+    "late_Gold_checked_bundle_before_vault_parse_and_label_decode",
+    "all36_all12_stableZ0_570_600_late_Gold_gates",
+    "late_Gold_rechecks_Node_and_opaque_DATA_contract",
+    "SOURCE_runtime_qualification_before_EVALUATE_function_count",
+    "source_runtime_failure_routes_to_EVAL0_capture",
+    "type_exact_metadata_only_publication_BIND",
+    "retained_wire_replay_preserves_seed43_T1_F32_no_correction",
+    "same_CORE_DATA_twelve_DEV_and_protected3_HOLD",
+    "Easy48_Legal96_and_selected12_permanent_DEV_HOLD",
+    "no_new_archive_selection_body_or_raw_choice_authorized",
+    "author_updated_inert_fixture17_evidence_identity_not_rerun_by_reviewer",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/CLI_CONTRACTS.v1.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/EXTERNAL_DATA_MANIFEST.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/FAILURE_PROTOCOL.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/MATERIALIZATION_POLICY.v1.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/METRICS_POLICY.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/PREDATA_SOURCE_READY.v1.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/PREDATA_SOURCE_SEAL.v1.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/SAME12_ELIGIBILITY.v1.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/SOURCE_DONOR_IDENTITIES.v1.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/SOURCE_READY.v1.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/SOURCE_VALIDATION.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/e45_evaluate.py",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/e45_features.py",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/e45_gold_join.py",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/e45_input_audit.py",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/e45_materialize.py",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/e45_metrics.py",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/e45_qualification.py",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/fixtures/test_opaque_reuse_source.py",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_DATA_ADMISSION_INDEPENDENT.v1.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_REJECTION_CAPTURE_REVIEW.v1.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DATA_ADMISSION.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DISPATCH_ADMISSION.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/EPOCH_MANIFEST.json",
+    "independent_snapshot_stable_experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/RESULTS.json"
+  ],
+  "terminal_checks_passed": true,
+  "terminalchecks_passed": true
+}

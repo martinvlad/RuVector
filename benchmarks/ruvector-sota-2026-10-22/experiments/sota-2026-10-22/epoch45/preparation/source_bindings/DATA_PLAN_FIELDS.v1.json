@@ -1,0 +1,186 @@
+{
+  "author_target_function_calls": 0,
+  "epoch": 45,
+  "exact_public_source_allowlist": [
+    "experiments/sota-2026-10-22/audit/epoch45/CLI_CONTRACTS.v1.json",
+    "experiments/sota-2026-10-22/audit/epoch45/EXTERNAL_DATA_MANIFEST.json",
+    "experiments/sota-2026-10-22/audit/epoch45/FAILURE_PROTOCOL.json",
+    "experiments/sota-2026-10-22/audit/epoch45/MATERIALIZATION_POLICY.v1.json",
+    "experiments/sota-2026-10-22/audit/epoch45/METRICS_POLICY.json",
+    "experiments/sota-2026-10-22/audit/epoch45/PREDATA_SOURCE_READY.v1.json",
+    "experiments/sota-2026-10-22/audit/epoch45/PREDATA_SOURCE_SEAL.v1.json",
+    "experiments/sota-2026-10-22/audit/epoch45/SAME12_ELIGIBILITY.v1.json",
+    "experiments/sota-2026-10-22/audit/epoch45/SOURCE_DONOR_IDENTITIES.v1.json",
+    "experiments/sota-2026-10-22/audit/epoch45/SOURCE_READY.v1.json",
+    "experiments/sota-2026-10-22/audit/epoch45/SOURCE_VALIDATION.json",
+    "experiments/sota-2026-10-22/audit/epoch45/e45_evaluate.py",
+    "experiments/sota-2026-10-22/audit/epoch45/e45_features.py",
+    "experiments/sota-2026-10-22/audit/epoch45/e45_gold_join.py",
+    "experiments/sota-2026-10-22/audit/epoch45/e45_input_audit.py",
+    "experiments/sota-2026-10-22/audit/epoch45/e45_materialize.py",
+    "experiments/sota-2026-10-22/audit/epoch45/e45_metrics.py",
+    "experiments/sota-2026-10-22/audit/epoch45/e45_qualification.py",
+    "experiments/sota-2026-10-22/audit/epoch45/fixtures/test_opaque_reuse_source.py",
+    "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_DATA_ADMISSION_INDEPENDENT.v1.json",
+    "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_REJECTION_CAPTURE_REVIEW.v1.json",
+    "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DATA_ADMISSION.json",
+    "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DISPATCH_ADMISSION.json",
+    "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/EPOCH_MANIFEST.json",
+    "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/RESULTS.json"
+  ],
+  "inherited_source_refs": [],
+  "kind": "REAL_CONTRACTNLI_QWEN_JOINT_CONTEXT_DEV_PILOT",
+  "phase": "dev",
+  "plan_fields": {
+    "canonical_class_order": [
+      "N",
+      "E",
+      "C"
+    ],
+    "data_custody_mode": "REUSE_E44_EXPOSED_DEV_ASSETS",
+    "data_roles": {
+      "calibration": [],
+      "confirmation": [],
+      "dev": [
+        "contractnli:eced6528:test:357:nda-1",
+        "contractnli:eced6528:test:357:nda-10",
+        "contractnli:eced6528:test:357:nda-16",
+        "contractnli:eced6528:test:227:nda-1",
+        "contractnli:eced6528:test:227:nda-10",
+        "contractnli:eced6528:test:227:nda-16",
+        "contractnli:eced6528:test:46:nda-1",
+        "contractnli:eced6528:test:46:nda-10",
+        "contractnli:eced6528:test:46:nda-16",
+        "contractnli:eced6528:test:212:nda-1",
+        "contractnli:eced6528:test:212:nda-10",
+        "contractnli:eced6528:test:212:nda-16"
+      ],
+      "train": []
+    },
+    "dev_document_ids": [
+      357,
+      227,
+      46,
+      212
+    ],
+    "dev_hypothesis_ids": [
+      "nda-1",
+      "nda-10",
+      "nda-16"
+    ],
+    "development_gates": {
+      "all_forecasts_and_runtime_integrity_required": true,
+      "all_three_gold_classes_represented": true,
+      "four_document_256_resample_intervals": "descriptive only, not extra selection/gates",
+      "native_Brier_nonincrease_versus_each_control": true,
+      "native_NLL_nonincrease_versus_each_control": true,
+      "native_accuracy_gain_minimum_correct_versus_each_control": 2,
+      "native_at_least_one_correct_per_gold_class": true,
+      "point_gate_pass_still_HOLD": true
+    },
+    "failure_protocol": {
+      "bytes": 3839,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/FAILURE_PROTOCOL.json",
+      "sha256": "4f381111bf8f6ca7d80c312a9e1b8d49420097ffeff57a987b204b7014f49c72"
+    },
+    "features_source": {
+      "bytes": 7328,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/e45_features.py",
+      "sha256": "1fc2fba88219929de48151bcd2a65c4faec386b1d027b92de4242eb955e3c86a"
+    },
+    "joined_gold_path": "/tmp/ruvector-sota-2026-10-22/epoch45-c5608a638ecd/private/DEV_GOLD_JOINED.json",
+    "materialization_policy": {
+      "bytes": 4216,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/MATERIALIZATION_POLICY.v1.json",
+      "sha256": "3f15f55209883077dc02a6782ae875e611f4b67b21d0ce65d1b372dc7ef57f80"
+    },
+    "metrics_policy": {
+      "bytes": 2302,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/METRICS_POLICY.json",
+      "sha256": "1540124373a1a24abc93bb6b5b21cde7ba10730a84ee87fb0e3a677d28d9ebf4"
+    },
+    "predataseal": {
+      "bytes": 1463,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/PREDATA_SOURCE_SEAL.v1.json",
+      "sha256": "c1664f7b0b0463a673e6caa2d20b5f904f5bfe89b2d2d36938ca116fad12cd66"
+    },
+    "private_features_path": "/tmp/ruvector-sota-2026-10-22/epoch45-c5608a638ecd/private/DEV_FEATURES.json",
+    "private_vault_path": "/tmp/ruvector-sota-2026-10-22/epoch45-c5608a638ecd/private/DEV_GOLD.vault.json",
+    "reserved_confirmation_document_ids": [
+      62,
+      321,
+      2
+    ],
+    "scorer_source_ready": {
+      "bytes": 5563,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/SOURCE_READY.v1.json",
+      "sha256": "0e82d2d3aa816196584d65ab85180f55debd33450624648db72000d9d62f84e9"
+    },
+    "used_confirmation_identities": []
+  },
+  "required_refs": {
+    "data_access": {
+      "bytes": 4216,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/MATERIALIZATION_POLICY.v1.json",
+      "sha256": "3f15f55209883077dc02a6782ae875e611f4b67b21d0ce65d1b372dc7ef57f80"
+    },
+    "data_cli_contract": {
+      "bytes": 3450,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/CLI_CONTRACTS.v1.json",
+      "sha256": "2d098c8437f26008857ee541073c885e31dc9304d47f0bca9732fa3c614eb9b0"
+    },
+    "data_source_validation": {
+      "bytes": 882,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/SOURCE_VALIDATION.json",
+      "sha256": "fc152cb7402f5b69754be4c9fa5bf324fe492d48d662ccc2be910c850223050a"
+    },
+    "external_data_manifest": {
+      "bytes": 3210,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/EXTERNAL_DATA_MANIFEST.json",
+      "sha256": "2d6974ea4dc08cbc4235872192af2521cc83b761d8972c8615cbc68de0c2c8e1"
+    },
+    "failure_protocol": {
+      "bytes": 3839,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/FAILURE_PROTOCOL.json",
+      "sha256": "4f381111bf8f6ca7d80c312a9e1b8d49420097ffeff57a987b204b7014f49c72"
+    },
+    "metrics_policy": {
+      "bytes": 2302,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/METRICS_POLICY.json",
+      "sha256": "1540124373a1a24abc93bb6b5b21cde7ba10730a84ee87fb0e3a677d28d9ebf4"
+    },
+    "predataseal": {
+      "bytes": 1463,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/PREDATA_SOURCE_SEAL.v1.json",
+      "sha256": "c1664f7b0b0463a673e6caa2d20b5f904f5bfe89b2d2d36938ca116fad12cd66"
+    },
+    "prior_exposed_data_admission": {
+      "bytes": 5503,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/DATA_ADMISSION.json",
+      "sha256": "4d9376b809cf37acab7850d0feebdc2dd7f0fe9c5746ee6af475985c7ce7b7f4"
+    },
+    "prior_exposed_independent_data_review": {
+      "bytes": 6674,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/prior_epoch44/ACTUAL_DATA_ADMISSION_INDEPENDENT.v1.json",
+      "sha256": "007e053528ca0dcff3362f2459c811e0f0f973bd194fa781166b069541ed67f0"
+    },
+    "same12_exposed_eligibility": {
+      "bytes": 2734,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/SAME12_ELIGIBILITY.v1.json",
+      "sha256": "1e9b2da22d4a0b4423ef3e600b7a77d6bef39a1713b3fa67e52fdc18bb60b7dc"
+    },
+    "scorer": {
+      "bytes": 12199,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/e45_evaluate.py",
+      "sha256": "0d5d1bccbea145fddfa0a81d21ee6163425c614f6e3f1a825cbbb513e92bb375"
+    },
+    "scorer_source_ready": {
+      "bytes": 5563,
+      "path": "experiments/sota-2026-10-22/audit/epoch45/SOURCE_READY.v1.json",
+      "sha256": "0e82d2d3aa816196584d65ab85180f55debd33450624648db72000d9d62f84e9"
+    }
+  },
+  "schema_version": 1,
+  "source_bindings_from_final_builder_only": true,
+  "source_checkpoint": "c5608a638ecdc99a846c4901736440d1e4d40db0"
+}

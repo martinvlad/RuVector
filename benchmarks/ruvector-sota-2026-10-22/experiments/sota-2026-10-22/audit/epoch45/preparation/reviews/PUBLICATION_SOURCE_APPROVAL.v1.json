@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "epoch": 45,
+  "at": "2026-10-26T15:09:19.980967+00:00",
+  "decision": "APPROVED_PUBLICATION_SOURCE_ONLY_PENDING_ACTUAL_INTEGRATED_ROOT_AND_PHASE_ADMISSIONS",
+  "checks_passed": true,
+  "publication_source_approved": true,
+  "source_and_denylist_review_passed": true,
+  "dual_unknown_denylist_reviewed": true,
+  "source_ready": {
+    "path": "/workspace/ruvector-e45-publication/SOURCE_READY.v1.json",
+    "bytes": 5344,
+    "sha256": "165445416b126ab7b2bde6dd8f8a56ed1f4d8b8ee79332247cadd6569ecd3619"
+  },
+  "reviewed_public_source_allowlist": [
+    {
+      "bytes": 8155,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/DONOR_GROUNDING.v1.json",
+      "sha256": "e619df7015377cfea4e1503e833b512c94830d45a4b5eb12efe58cf3c506129c"
+    },
+    {
+      "bytes": 3262,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/INERT_TEST_REPORT.v1.json",
+      "sha256": "ceab5d78d931668194492453f90908eee8158e6ca8f3bc34c00e5b49b4b004d7"
+    },
+    {
+      "bytes": 3217,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/PUBLICATION_CONTRACT.v1.json",
+      "sha256": "e425893f09d29de0af3f5ef24a2e54132acc5e3c92d5a2cb09de943614d27689"
+    },
+    {
+      "bytes": 5153,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/ROOT_COMMAND_PLAN.v1.json",
+      "sha256": "ef8ad7a25e4b004e4d0822d526735b055737d46f9b42e346afa56104274addd1"
+    },
+    {
+      "bytes": 1817,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/ack_protocol.py",
+      "sha256": "42610bd889936f1527e738611b5b497a28df5e859865d6d2c2561f5788c6e55d"
+    },
+    {
+      "bytes": 4305,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/archive_protocol.py",
+      "sha256": "923a462835f397d8b40ebc5d6a9bd68b0668b543f7685e786d163a54f556dc89"
+    },
+    {
+      "bytes": 13351,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/build_phase_stage.py",
+      "sha256": "87f4d0852e2cdacc51b7ab5ab9774afeed39641c16aab6aafa64dbd8c5e23176"
+    },
+    {
+      "bytes": 10373,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/controller.js",
+      "sha256": "1aabf21345422a995e9e6e987e6361b0d4954e88443713c43da772f2e0b64e55"
+    },
+    {
+      "bytes": 15724,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/freeze_and_results.py",
+      "sha256": "3eff69e44432064f8bbb753a1ba47425fec694aa724262f3ba103dd03bd5e80e"
+    },
+    {
+      "bytes": 1912,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/future_response_protocol.py",
+      "sha256": "340f39d5ec0c35e4d50fa5c09f7370b9cd90e5c10242a3342ae72d6d5ada194a"
+    },
+    {
+      "bytes": 9125,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/mutation_guard.py",
+      "sha256": "edec81159542bfd29079d35cce19aca5e6feac4db98da67901749483b500353e"
+    },
+    {
+      "bytes": 7680,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/publication_common.py",
+      "sha256": "d1423a6c0aeef185c2ebca54d8352a9b00c0b6431060c9027130a0e6b898233a"
+    },
+    {
+      "bytes": 3999,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/test_controller_inert.js",
+      "sha256": "9225bbf77ad650196010ecdb5d3d2388d8f173deabd65064bd4a2818004ecd06"
+    },
+    {
+      "bytes": 6156,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/test_publication_metadata.py",
+      "sha256": "cf46423bd8e37e8f74f030290d593248e5522561b17e57915f56444e67f73bf0"
+    },
+    {
+      "bytes": 7470,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/test_stage_inert.py",
+      "sha256": "764a5ed5cb5770884c203b0f7c8d5a0bfe2b3cd07602ee90357ede3838a3aeca"
+    },
+    {
+      "bytes": 4922,
+      "path": "experiments/sota-2026-10-22/epoch45/publication/test_two_phase_guard.py",
+      "sha256": "e18ca239f5588e0439c5227716f59a7be0c3f160d922769ea0086b46cb8d7c05"
+    }
+  ],
+  "confirmed_findings_resolved": [
+    {
+      "finding": "Stage used e44 mutation ID prefix while E45 controller and guard require e45",
+      "resolution": "Builder now emits e45-{source|final}-g10; actual synthetic SOURCE+FINAL build/guard compatibility regression passes."
+    }
+  ],
+  "manual_review_properties": [
+    "Exact703-byte current10 owner and3030-byte independent held proof pinned; no default operational binding.",
+    "Canonical3key public references preserve separate inherited Git provenance; bool byte lengths rejected.",
+    "Metadata freezer uses immutable xb writes, exhaustive current inventory, exact source role/flag agreement and actual-output read-only preflight.",
+    "Raw complete returned MCP object is O_EXCL+file/directory fsync persisted before un/ACK parsing or owner/guard reentry.",
+    "Response accepts completed preceding mutation prefix plus exactly its own open intent; FINAL requires completed SOURCE journal and actual SOURCE receipt.",
+    "Each accepted Git response is typed; bare ref success requires fresh exact post-CAS reference.",
+    "Exact sole phase parent, force=false dedicated branch CAS, actual full-tree leaves/root and unchanged main checks.",
+    "Both retired unknown objects blocked for blob identity, tree references and polling; original uncertainty retained.",
+    "Current CP and CONT raw bytes now match actual parent source_map Git blob SHA1+size.",
+    "Old7592 CP rows and70 omissions preserved; E44 overlay137/55 separate; append-only exact replay/types/nulls and typed ledger.",
+    "Immutable final source/epoch inventories and current-owner once-only reservation fence."
+  ],
+  "independent_validation": {
+    "command": "taskset -c 0,1 python -I -B [unittest suite test_publication_metadata,test_two_phase_guard,test_stage_inert]",
+    "result": "21 tests passed in0.452seconds",
+    "coverage": "Invented local metadata only; actual Python guard response prefix and actual builder SOURCE+FINAL fixtures; no real owner validation, Git, private/data/model/native/scorer calls.",
+    "JS_controller_fixture": "Reviewed source and peer report3 fake-tool/guard scenarios; not rerun by this auditor.",
+    "AST_exact_public_Python_sources": "Passed",
+    "external_scanners_advisories": "Not run; bounded stdlib metadata source review, no dependency install or advisory assertion."
+  },
+  "threat_model": {
+    "assets": [
+      "current scoped lease",
+      "source and historical ledger identities",
+      "raw transport custody",
+      "dedicated branch/main separation"
+    ],
+    "entrypoints": [
+      "root-only explicit pinned local inputs",
+      "untrusted returned MCP object"
+    ],
+    "trust_boundaries": [
+      "actual fresh Git identity to local metadata",
+      "durable raw return to typed ACK",
+      "SOURCE receipt to FINAL parent"
+    ],
+    "residual_limits": [
+      "Independent actual integrated ROOT/plan/freezer output review remains required.",
+      "Actual SOURCE and FINAL stage inventories/desired trees need separate approvals and fresh remote readback.",
+      "No live API/controller execution or scientific/data/Gold admission granted by this source review.",
+      "Synthetic stage fixture mocks inherited E42 projection check; actual inherited transport proof must be verified separately."
+    ]
+  },
+  "reviewer_R_writes_Git_mutations_real_scientific_calls_private_body_reads": 0
+}

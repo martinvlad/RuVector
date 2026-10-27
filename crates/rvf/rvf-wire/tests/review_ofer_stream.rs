@@ -76,19 +76,11 @@ fn f06_equal_epoch_without_pin_hash_accepts_different_descriptor() {
         .build(&body2)
         .unwrap();
     assert_ne!(a.descriptor_hash, b.descriptor_hash);
-    let pin = |_: &[u8; 16]| {
-        Some(EpochPin {
-            epoch: 5,
-            descriptor_hash: None,
-        })
-    };
     let mut p = policy(&keys);
-    p.epoch_pin = Some(&pin);
-    assert!(decode_descriptor(&b.descriptor, &p).is_ok());
-    let pin2 = |_: &[u8; 16]| {
+    let pin2 = |_: &[u8; 8], _: &[u8; 16]| {
         Some(EpochPin {
             epoch: 5,
-            descriptor_hash: Some(a.descriptor_hash),
+            descriptor_hash: a.descriptor_hash,
         })
     };
     p.epoch_pin = Some(&pin2);

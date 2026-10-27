@@ -1,0 +1,134 @@
+{
+  "TLS_verification_enabled": true,
+  "approval_interface": {
+    "CLI": "--audit-approval PATH --audit-approval-sha256 SHA --root-go PATH --root-go-sha256 SHA",
+    "additional_root_required_fields": {
+      "source_copy_storage_verified": true,
+      "storage_cleanup_verified": true
+    },
+    "audit_and_root_required_fields": {
+      "checks_passed": true,
+      "epoch": 51,
+      "model_acquisition_allowed": true,
+      "plan_sha256": "EXACT_PLAN_SHA",
+      "source_sha256": "EXACT_SCRIPT_SHA"
+    }
+  },
+  "asset_directory": "/dev/shm/ruvector-e51-data/assets/contractnli-bert-nda-standard-ac92b6b512d7",
+  "cleanup_plan": {
+    "models_from_other_epochs_or_protected_datasets_touched": false,
+    "on_failure_or_timeout": "Delete only files created during this attempt under exact new OWN assetdirectory (.part and completed files), remove directory ifempty, preserve ATTEMPT/RESULT sourceprovenance; no retry.",
+    "on_success": "Keep verifiedOWN assets mode0400 for Rootreview/read-only consumption, no copies/modelcalls until authorized; Root may later explicitly retire OWN assetdirectory after copy/hash validation.",
+    "outside_OWN_assets_deletions": 0
+  },
+  "confirmation_lineage_status": "UNQUALIFIED_HOLD",
+  "created_at": "2026-10-27T02:31:22.385507+00:00",
+  "epoch": 51,
+  "files": [
+    {
+      "bytes": 3826,
+      "donor_ref": {
+        "bytes": 3826,
+        "path": "/dev/shm/ruvector-e51-candidate/research/bert-standard-card-pinned.body",
+        "sha256": "50d814736a690894cc46876a99bfd5674685ced5573360098f90761ab2eb3f52"
+      },
+      "git_blob_sha1": "2b3b019b779e12c46a9a26c531eeea01ab0b33e4",
+      "method": "verified_local_copy",
+      "name": "README.md",
+      "sha256": "50d814736a690894cc46876a99bfd5674685ced5573360098f90761ab2eb3f52"
+    },
+    {
+      "bytes": 863,
+      "donor_ref": {
+        "bytes": 863,
+        "path": "/dev/shm/ruvector-e51-candidate/research/bert-standard-config.body",
+        "sha256": "389b48b55be138039705982041265239dcddab44a8d68dd5105b4cfd135717f0"
+      },
+      "git_blob_sha1": "816ed5ed6802f5c745a19fd11c9aa7f8e02f6903",
+      "method": "verified_local_copy",
+      "name": "config.json",
+      "sha256": "389b48b55be138039705982041265239dcddab44a8d68dd5105b4cfd135717f0"
+    },
+    {
+      "bytes": 125,
+      "git_blob_sha1": "a8b3208c2884c4efb86e49300fdd3dc877220cdf",
+      "method": "HTTPS_GET",
+      "name": "special_tokens_map.json"
+    },
+    {
+      "bytes": 711661,
+      "git_blob_sha1": "8f778e7d950e055b18b53222c75d2c54c3732df5",
+      "method": "HTTPS_GET",
+      "name": "tokenizer.json"
+    },
+    {
+      "bytes": 1221,
+      "git_blob_sha1": "dd521218cd6f600b92f46dcff0561782cc34a958",
+      "method": "HTTPS_GET",
+      "name": "tokenizer_config.json"
+    },
+    {
+      "bytes": 231508,
+      "git_blob_sha1": "fb140275c155a9c7c5a3b3e0e77a9e839594a938",
+      "method": "HTTPS_GET",
+      "name": "vocab.txt"
+    },
+    {
+      "bytes": 437961724,
+      "method": "HTTPS_GET",
+      "name": "model.safetensors",
+      "sha256": "cd4f4391ab75c22e986ecea64831af47f6008a37ddce6a56a4cb5496e41ead07"
+    }
+  ],
+  "independent_DEV_only_admission": {
+    "bytes": 5167,
+    "path": "/dev/shm/ruvector-e51-audit/CONTRACT_DOMAIN_HEAD_SOURCE_LICENSE_DEV_ONLY_INDEPENDENT_ADMISSION.v1.json",
+    "sha256": "2726ab90e24416bf347932ccfd2c59b677688a5e65c1633eea4de4d08a36b0ee"
+  },
+  "inherited_proxy_preserved": true,
+  "kind": "SINGLE_ATTEMPT_FREE_PINNED_MODEL_ASSET_ACQUISITION_ONLY",
+  "license": "MIT fine-tune modelcard; baseBERT Apache2 metadata with unspecified base revision",
+  "maximum_GETs": 5,
+  "maximum_model_body_bytes": 437961724,
+  "maximum_safetensors_header_bytes": 2097152,
+  "maximum_total_seconds": 180,
+  "minimum_free_storage_bytes": 1100000000,
+  "model_id": "Agreemind/contractnli-bert-nda-standard",
+  "model_revision": "ac92b6b512d7a4bad7abe356750c3b916fe18649",
+  "model_source_packet": {
+    "bytes": 9400,
+    "path": "/dev/shm/ruvector-e51-candidate/CONTRACT_HEAD_SOURCE_PACKET.v1.json",
+    "sha256": "cbe4b8776ef97aa0fbd7de9e871d23c97f230c0a059a9511261cee20e95fbd52"
+  },
+  "model_tokenizer_imports_or_instantiations": 0,
+  "new_HTTP_calls_or_weight_downloads_so_far": 0,
+  "owner_ref": {
+    "bytes": 699,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch51-0e1f4181df1f/owner.json",
+    "sha256": "b8d2ac6cb7d59abd21f5873626f61f90167701673bd043716892d00eb65c9889"
+  },
+  "paid_API_GPU_training_calibration_or_inference_calls": 0,
+  "pinned_tree_ref": {
+    "bytes": 1015,
+    "path": "/dev/shm/ruvector-e51-candidate/research/bert-standard-tree.body",
+    "sha256": "b446085170007a60152f57be08d662b0fbd614992ef1aa0d7f2868cf0ab6ef6f"
+  },
+  "postdownload_validation": "Incremental full SHA256 matches pinned LFS; exact bytes; tokenizer/config JSON only and pinned nonLFS GitBlob checks; safetensors8byte+boundedJSONheader only, exact201F32tensor names/shapes/offsets/elements109484547 contiguous data, no tensor payload deserialization.",
+  "redirect_policy": "Only HTTPS publisher huggingface.co and subdomain hf.co/xethub.hf.co redirects; never persist signed destination URLs or headers.",
+  "requires_before_execute": [
+    "Independent audit exact source/plan approval boundbyhash",
+    "Root explicit storage-go after sourcecopies verified and approved cleanup complete",
+    "Current original G16 lock/owner unexpired and two-core affinity",
+    "At least1100000000bytesfree OWN filesystem and assetdirectoryabsent"
+  ],
+  "retries_or_resume_or_Range": 0,
+  "schema_version": 1,
+  "scientific_execution_authorized_by_acquisition": false,
+  "source_checkpoint": "0e1f4181df1f738fe104f294dbf5267badfed4a7",
+  "source_helper": {
+    "bytes": 16005,
+    "path": "/dev/shm/ruvector-e51-data/acquire_contract_bert.py",
+    "sha256": "3fa801272e8a335420777fefb88e65a2521c4dd1324a87a3a180491aa9c0312e"
+  },
+  "total_asset_bytes": 438910928
+}

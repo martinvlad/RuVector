@@ -1,0 +1,110 @@
+{
+  "arms": [
+    "native",
+    "lexical",
+    "source_order",
+    "whole_source"
+  ],
+  "counts": {
+    "CF_authority": "UNQUALIFIED_HOLD; no CF materialization/inference/Gold/EVAL absent new independent source proof and separate frozen admission",
+    "CPU_threads": 2,
+    "DEV_authority": "Separately gated oneDEV actual slot; this file grants none",
+    "GPU_or_paid_calls": 0,
+    "cases_per_phase": 12,
+    "documents_per_phase": 4,
+    "final_forecasts": 48,
+    "native_corpus_batches_per_phase": 1,
+    "phase_slots_max": 2,
+    "physical_NLI_forwards_max": 228,
+    "physical_NLI_forwards_min": 48,
+    "seconds_each_including_initialization_cleanup": 600,
+    "warmups_canaries_retries_fits_training": 0
+  },
+  "epoch": 51,
+  "gates": {
+    "DEV_pass_does_not_qualify_CF_lineage": true,
+    "all_three_gold_classes_represented": true,
+    "controls": [
+      "lexical",
+      "source_order",
+      "whole_source"
+    ],
+    "native_Brier_nonincrease_versus_each": true,
+    "native_NLL_nonincrease_versus_each": true,
+    "native_at_least_one_correct_per_class": true,
+    "native_must_beat_each_control_correct_by": 2
+  },
+  "inherited_source_donor_verification": {
+    "bytes": 3915,
+    "path": "/dev/shm/ruvector-e51-candidate/INHERITED_DONOR_VERIFICATION.v1.json",
+    "sha256": "9fba820457e0f62a674dbc17165cf865fb8d9f2acc04490ab2a7dafe3091c1c5"
+  },
+  "interfaces": {
+    "KIND": "REAL_CONTRACTNLI_CONTRACT_BERT_WHOLE_SOURCE_PILOT",
+    "confirmation_lineage_status_current": "UNQUALIFIED_HOLD",
+    "confirmation_runtime_required_status": "INDEPENDENTLY_QUALIFIED_HELDOUT",
+    "gold_expected_fields": [
+      "expected_forecasts=48",
+      "max_model_forward_calls=228"
+    ],
+    "per_final_row": [
+      "model_forward_calls",
+      "window_count"
+    ],
+    "qualification_expected_fields": [
+      "actual_forecasts=48",
+      "actual_model_forward_calls=rawexpected48..228"
+    ],
+    "raw_expected_physical": "raw.expected_physical_forwards; equal48..228 actuals",
+    "raw_final_counter": "raw.counters.forecasts_completed=48",
+    "raw_physical_counters": [
+      "NLI_forwards_attempted",
+      "NLI_forwards_completed"
+    ],
+    "whole_source_row": "window_forecasts list retains each original3way forecast and its exactsource/coverage evidence"
+  },
+  "kind": "REAL_CONTRACTNLI_CONTRACT_BERT_WHOLE_SOURCE_PILOT",
+  "main_three_context": "Unchanged E50 greedy ranked whole-unit admission at most4 complete source units, restore source order, inserted separator newline-newline, complete pair<=512",
+  "model": {
+    "all_learned_elements": 109484547,
+    "all_learned_tensors": 201,
+    "construction": "BertForSequenceClassification on meta, complete safetensors CPU tensor load, strict assign all201, pointer-share check, exact int64 position/token-type nonpersistent512 buffers",
+    "id": "Agreemind/contractnli-bert-nda-standard",
+    "input": "whole hypothesis first, whole premise second; true BERT token_type_ids retained; no truncation",
+    "prediction": "Argmax of original typed FP32-derived Python-float logits; exact logit ties choose earliest canonical class. Never argmax of rounded probabilities.",
+    "probability": "stable FP64 log-softmax of actual3FP32 logits, identity E/C/NotMentioned typed order, no clipping/calibration",
+    "revision": "ac92b6b512d7a4bad7abe356750c3b916fe18649",
+    "source_dtype": "float32",
+    "weight_bytes": 437961724,
+    "weight_sha256": "cd4f4391ab75c22e986ecea64831af47f6008a37ddce6a56a4cb5496e41ead07"
+  },
+  "owner_ref": {
+    "bytes": 699,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch51-0e1f4181df1f/owner.json",
+    "sha256": "b8d2ac6cb7d59abd21f5873626f61f90167701673bd043716892d00eb65c9889"
+  },
+  "research_packet": {
+    "bytes": 9400,
+    "path": "/dev/shm/ruvector-e51-candidate/CONTRACT_HEAD_SOURCE_PACKET.v1.json",
+    "sha256": "cbe4b8776ef97aa0fbd7de9e871d23c97f230c0a059a9511261cee20e95fbd52"
+  },
+  "schema_version": 1,
+  "source_scope": {
+    "CF": "Only project-unused officialTEST groups; publisher-declared Test terminology is not independently verified model heldout, therefore UNQUALIFIED_HOLD",
+    "DEV": "Project-unused officialDEV, acknowledged checkpoint-development/model-selection exposed; no checkpoint-unseen/freshgeneralization claim",
+    "champion": "Preserve SubmittedNative104, no promotion or officialrank claim",
+    "retrieval_miss": "Never proof of insufficient evidence/NotMentioned"
+  },
+  "status": "INERT_SOURCE_READY_NO_ACTUAL_EXECUTION",
+  "whole_source_context": {
+    "aggregation": "Select one complete unchanged3way forecast at max(1-pNotMentioned); exact tie earliest source-order window",
+    "aggregation_is_author_documented": false,
+    "capacity_failure": "Reject entire batch, no partial/neutral forecast and no replacement identities/retry",
+    "max_tokens_per_pair": 512,
+    "max_windows_per_case": 16,
+    "no_single_unit_split_or_truncation": true,
+    "numeric_checks": "Source offsets/substrings/SHA plus exact numeric/date/currency/negation multiset preservation perwindow and acrosswindow partition, no semantic arithmetic/date/absence proof",
+    "preparation": "All source coverage and all mainarm packets validated before first NLI forward",
+    "selection": "Source-order greedy consecutive wholeunit partition; everyunit/character exactlyonce; no inserted source separators withinwindows"
+  }
+}

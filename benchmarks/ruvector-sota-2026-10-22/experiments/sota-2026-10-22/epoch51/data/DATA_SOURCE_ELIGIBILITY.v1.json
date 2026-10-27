@@ -1,0 +1,149 @@
+{
+  "R_or_Git_mutations": 0,
+  "actual_counts": {
+    "dataset_payload_reads": 0,
+    "model_tokenizer_native_measurements": 0,
+    "selected_case_choices_or_Gold_decodes": 0,
+    "source_lengths_used_to_select": 0,
+    "training_calibration_calls": 0
+  },
+  "codec": {
+    "exact_case_sensitive_choice_strings_only": true,
+    "gold_choices_decoded": 0,
+    "raw_source_enum": {
+      "Contradiction": 2,
+      "Entailment": 1,
+      "NotMentioned": 0
+    },
+    "typed_output_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "unsupported_choice_policy": "Fail closed, no remapping/repair/coercion."
+  },
+  "created_at": "2026-10-27T02:25:04.006353+00:00",
+  "custody_requirements": [
+    "No CONF source text, lengths, hypotheses choices or Gold before independent DEV pass and unchanged admitted freeze.",
+    "Fresh exact train/dev/cal/CF identities and case budget before any measurement.",
+    "All previously exposed/protected groups and normalized/filename aliases excluded.",
+    "New DEV input access retires entire document and all17 hypotheses permanently.",
+    "No resampling or replacement after capacity/support/class/outcome failure.",
+    "Exact archive/member/hash checks and same selected inputs across all arms required before any payload admission.",
+    "Root and independent audit determine whether declared checkpoint testholdout evidence satisfies allowed diagnostic scope."
+  ],
+  "dataset": {
+    "attribution": "Stanford ContractNLI: A Dataset for Document-level Natural Language Inference for Contracts; official repository and immutable revision above.",
+    "hypotheses": "17 fixed shared templates; known template text is not new benchmark confirmation.",
+    "license": "CC-BY-4.0",
+    "repository": "stanfordnlp/contract-nli",
+    "revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "source_archive": {
+      "bytes": 65362913,
+      "git_blob_sha1": "757fd1dafd29a997fba00c60c6d40b2930a36159",
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch48-37b29244dcf5/assets/data/contract-nli-eced6528.zip",
+      "sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b"
+    },
+    "source_archive_current_bytes_rehashed_by_this_worker": false,
+    "source_archive_payloads_or_members_parsed_by_this_worker": false,
+    "split_members": [
+      {
+        "archive_member": "contract-nli/dev.json",
+        "documents": 61,
+        "sha256": "310af7d661d2ab50ee3700169cef524c75f39fb296bbf5a515c229eb0f42e68e",
+        "source_split": "dev"
+      },
+      {
+        "archive_member": "contract-nli/test.json",
+        "documents": 123,
+        "sha256": "460267b56052a2dc5aead98eb35eadef9e6734d5723d37b4a9790e410f812387",
+        "source_split": "test"
+      }
+    ]
+  },
+  "epoch": 51,
+  "kind": "CURRENT_CONTROL_BOUND_OFFICIAL_TASK_LICENSE_CODEC_SCORER_AND_MODEL_SCOPE",
+  "metadata_only_no_dataset_payload": true,
+  "model_data_qualification": {
+    "Agreemind_packet_owned_by_candidate_agent": "/dev/shm/ruvector-e51-candidate/CONTRACT_HEAD_SOURCE_PACKET.v1.json",
+    "checkpoint_development_exposed_DEV_allowed_only_if_declared": true,
+    "confirmation_eligibility_decision_must_be_independent_before_freeze": true,
+    "official_dev_checkpoint_unseen_claim": false,
+    "project_unused_CONF_official_test_possible": 4,
+    "project_unused_DEV_possible": 13,
+    "publisher_modelcard_split_declaration_is_not_exact_per_ID_test_nonuse_proof": true,
+    "selected_model_exact_revision_and_training_lineage_approval_pending": true
+  },
+  "official_code": {
+    "executed_pilot_metrics": {
+      "bytes": 16383,
+      "path": "experiments/sota-2026-10-22/runtime/epoch50/evaluate.py",
+      "sha256": "730ecda4f09598dc61b5189d5e7624644b87e11ba3740e99055b88a3a39fed83"
+    },
+    "official_code_license": "Apache-2.0",
+    "official_code_license_ref": {
+      "bytes": 11357,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/code_LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "official_codec": {
+      "bytes": 5754,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_nli__dataset__loader.py",
+      "sha256": "9c63102a01576c230da94695f593fd7bd4fe2d0b20672b74e8a7f62aba426fc4"
+    },
+    "official_evaluation_source": {
+      "bytes": 15025,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_nli__evaluation.py",
+      "sha256": "f5acd4497e002652b2f29a6827fecd355b96ec041c4c174b1938eea2f8c42cf4"
+    },
+    "official_repository": "stanfordnlp/contract-nli-bert",
+    "official_revision": "058c56fd62d56897bb4fcfbf1be71b17aee3a79c",
+    "scope": "Typed exact-match accuracy plus separately frozen stable Brier/NLL scorer. No full official benchmark score or publisher scorer execution claim."
+  },
+  "roles_selected": false,
+  "schema_version": 1,
+  "scientific_or_data_admission": false,
+  "scoring_scope": {
+    "Brier_NLL": "Separately frozen local calibration metrics, not official publisher score.",
+    "accuracy": "Three-class exact-match over every admitted fixed case; all arms same identities.",
+    "author_class_probability_order": [
+      "NotMentioned",
+      "Entailment",
+      "Contradiction"
+    ],
+    "author_tie_break": "np.argmax first maximum in author N,E,C order; any distinct runtime tie order must be explicit.",
+    "full_official_scorer_executed": false,
+    "local_pilot_scores_distinct_from_full_official17hypothesis_and_span_metrics": true,
+    "official_precision_recall_F1": "E/C one-versus-rest and their arithmetic/harmonic means; not three-class macroF1.",
+    "publisher_score_reproduced": false,
+    "undefined_author_support": "Preserve authorNaN as null plus undefined reason; never silently drop or zero."
+  },
+  "source_checkpoint": "0e1f4181df1f738fe104f294dbf5267badfed4a7",
+  "source_files_verified_against_current_CP": [
+    {
+      "bytes": 10020,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/CONTRACTNLI_SOURCE_ELIGIBILITY_REPORT.v1.json",
+      "sha256": "526986cee541c3378a4947582d8ee226edf05938f7afa55c11b2fb98bbb25060"
+    },
+    {
+      "bytes": 18656,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_LICENSE.txt",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+    },
+    {
+      "bytes": 11357,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/code_LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "bytes": 5754,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_nli__dataset__loader.py",
+      "sha256": "9c63102a01576c230da94695f593fd7bd4fe2d0b20672b74e8a7f62aba426fc4"
+    },
+    {
+      "bytes": 15025,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_nli__evaluation.py",
+      "sha256": "f5acd4497e002652b2f29a6827fecd355b96ec041c4c174b1938eea2f8c42cf4"
+    }
+  ]
+}

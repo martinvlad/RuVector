@@ -1,0 +1,113 @@
+{
+  "GPU_calls": 0,
+  "arms": [
+    "native",
+    "lexical",
+    "source_order",
+    "whole_source"
+  ],
+  "calibration_calls": 0,
+  "confirmation_materialization_authorized": false,
+  "context_policy": {
+    "main_three_arms": [
+      "native",
+      "lexical",
+      "source_order"
+    ],
+    "maximum_full_pair_tokens": 512,
+    "maximum_whole_source_units_main_three": 4,
+    "neutral_scope": "Learned typed NotMentioned only. Retrieval miss never proves whole-source insufficient evidence. Even complete source coverage does not establish semantic absence.",
+    "numerical_checks": "Exact source offsets/substrings/SHA plus numeric/date/currency/negation occurrence preservation perwindow and across fullsource partition. No semantic arithmetic/date proof, fitted confidence, or prediction override.",
+    "selection": "Main3: unchanged E50 rank-order greedy whole-unit admission, restore selected units to source order, insert newline-newline separator, no truncation/rewrite/duplicates/overlap.",
+    "whole_source": {
+      "aggregation": "max(1.0-pNotMentioned), exact computed-key tie earliest source-order window; select complete original3way forecast unchanged.",
+      "all_partitions_validated_before_first_physical_forward": true,
+      "author_documented_aggregation": false,
+      "failure": "Singleunit>512 or >16windows rejects entire batch; no partial/neutral fallback, replacement cases or retries.",
+      "maximum_windows": 16,
+      "partition": "Greedy consecutive complete source units in source order, every source unit and character exactlyonce, no inserted separator within windows, no omissions or unit splitting."
+    }
+  },
+  "epoch": 51,
+  "fixed_gates": {
+    "CF_current_authorization": false,
+    "DEV_point_pass_does_not_qualify_CF_lineage": true,
+    "DEV_point_pass_only_authorizes_independent_confirmation_review": false,
+    "N_per_arm": 12,
+    "all_forecasts_and_runtime_integrity_required": true,
+    "all_three_gold_classes_represented": true,
+    "arms_per_case": 4,
+    "conditional_confirmation_requires_new_independent_model_heldout_proof": true,
+    "controls": [
+      "lexical",
+      "source_order",
+      "whole_source"
+    ],
+    "final_forecasts_per_phase": 48,
+    "native_Brier_nonincrease_versus_each_control": true,
+    "native_NLL_nonincrease_versus_each_control": true,
+    "native_accuracy_gain_minimum_correct_versus_each_control": 2,
+    "native_at_least_one_correct_per_class": true,
+    "no_training_calibration_or_parameter_selection_on_confirmation": true,
+    "physical_model_forwards_maximum": 228,
+    "same_frozen_gates_apply_to_conditional_confirmation": true
+  },
+  "hypothesis": "A source-licensed contract-trained typed BERT head combined with native RuVector evidence selection can improve decisions versus matched same-model lexical, source-order and complete-source context coverage controls.",
+  "interpretation": "48 final forecasts from12cases/4document groups; actual physical forwards variable48..228, all captured and replay-scored. Descriptive uncertainty only; no fullbenchmark/officialscore/rank/publishereligibility inference.",
+  "kind": "REAL_CONTRACTNLI_CONTRACT_BERT_WHOLE_SOURCE_PILOT",
+  "lineage_scope": "All selected officialDEV documents were available to publisher checkpoint development/early stopping. This is a development diagnostic, not a fresh model holdout. OfficialTEST identities are frozen metadata only, UNQUALIFIED_HOLD; no test non-use provenance exists.",
+  "native104_champion_preserved": true,
+  "numerical_scope": "Exact supplied-source substring, number/date/currency/negation preservation only. No semantic arithmetic certificate or confidence override; retrieval miss never proves insufficient evidence.",
+  "paid_API_calls": 0,
+  "phase_limits": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "GPU_calls": 0,
+    "actual_final_forecasts_per_phase": 48,
+    "actual_model_forwards_maximum_per_phase": 228,
+    "calibration_calls": 0,
+    "compute_threads": 2,
+    "conditional_confirmation_second_only": true,
+    "confirmation": {
+      "allowed": false,
+      "cases": 12,
+      "documents": 4,
+      "forecasts": 48,
+      "maximum_model_forward_calls": 228,
+      "reason": "UNQUALIFIED_LINEAGE_HOLD"
+    },
+    "confirmation_dispatch_currently_allowed": false,
+    "dev": {
+      "allowed_after_separate_admission": true,
+      "cases": 12,
+      "documents": 4,
+      "forecasts": 48,
+      "maximum_model_forward_calls": 228
+    },
+    "native_batches_maximum": 2,
+    "new_paid_API_calls": 0,
+    "one_DEV_batch": true,
+    "outer_hard_stop_seconds": 600,
+    "outer_kill_seconds": 595,
+    "outer_terminate_seconds": 590,
+    "retries": 0,
+    "seconds_per_native_batch_including_initialization_and_cleanup": 600,
+    "supervisor_terminate_seconds": 580,
+    "training_calls": 0,
+    "warmup_or_additional_corpus_probes": 0,
+    "worker_soft_deadline_seconds": 570
+  },
+  "prior_result": "E50 generic pretrained RoBERTa head completed within budget but native5/12 lost to lexical6/12 and source_order8/12; proper scores worsened. No E50 document group or closed slot is reused.",
+  "promotion_authorized": false,
+  "role_policy": {
+    "bytes": 24075,
+    "path": "experiments/sota-2026-10-22/epoch51/data/IDENTITY_POLICY.v3.json",
+    "sha256": "122fae7af00439a7b23dc17a1d81a7ba3f8a646595a83e05878a803614a7a757"
+  },
+  "schema_version": 1,
+  "source_and_candidate_selection": "Metadata hash-ranked identities and exact candidate source/model/scorer revisions frozen before DATA. No selection on confirmation labels; no further grids, warmups, canaries or retries.",
+  "source_checkpoint": "0e1f4181df1f738fe104f294dbf5267badfed4a7",
+  "training_calls": 0
+}

@@ -1,0 +1,176 @@
+{
+  "created_at": "2026-10-27T02:20:25.040660+00:00",
+  "epoch": 51,
+  "kind": "PRE_MEASUREMENT_CONTRACT_DOMAIN_HEAD_SOURCE_RESEARCH",
+  "lineage_assessment": {
+    "declared_training_only_official_train": "INTERPRETATION of Train/Dev/Test terminology, not verbatim exclusion statement",
+    "document_level_probability_pooling_documented": false,
+    "exact_per_document_split_manifest_provided": false,
+    "exact_training_data_revision_provided": false,
+    "exact_training_script_provided": false,
+    "modelcard_metrics_reproduced": false,
+    "official_dev_status": "Checkpoint-development/model-selection exposed; do not describe as checkpoint-unseen. Root proposes project-unused official dev groups for diagnostic development.",
+    "official_rank_or_fresh_generalization_claim_supported": false,
+    "official_split_match_by_counts": true,
+    "official_test_status": "Publisher calls 123-document portion Test; no explicit sentence confirms no test training or test-driven selection. Treat heldout status as publisher-declared split terminology with uncertainty.",
+    "span_example_construction_documented": false,
+    "test_tuning_or_leakage_excluded_by_independent_evidence": false
+  },
+  "model": {
+    "architecture": "BertForSequenceClassification",
+    "base_model_declared": "bert-base-uncased",
+    "base_model_license_metadata": "apache-2.0",
+    "finetune_license_declared": "mit",
+    "fp32_parameters": 109484547,
+    "gated": false,
+    "id": "Agreemind/contractnli-bert-nda-standard",
+    "input_order": "hypothesis, premise (model-card usage)",
+    "label_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "max_pair_length": 512,
+    "private": false,
+    "revision": "ac92b6b512d7a4bad7abe356750c3b916fe18649",
+    "tokenizer_files": [
+      "special_tokens_map.json",
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "vocab.txt"
+    ],
+    "weight_bytes": 437961724,
+    "weight_downloads": 0,
+    "weight_file": "model.safetensors",
+    "weight_sha256_from_publisher_LFS": "cd4f4391ab75c22e986ecea64831af47f6008a37ddce6a56a4cb5496e41ead07"
+  },
+  "official_checkpoint_search": {
+    "declared_code_license": "apache-2.0",
+    "implementation_repo": "stanfordnlp/contract-nli-bert",
+    "readme_downloadable_checkpoint_links": 0,
+    "releases_count": 0,
+    "revision": "058c56fd62d56897bb4fcfbf1be71b17aee3a79c",
+    "scope": "Current official README/tree/releases checked; not a proof no checkpoints exist anywhere.",
+    "weight_files_in_current_recursive_tree": 0
+  },
+  "operation_counts": {
+    "Gold_calls": 0,
+    "corpus_DATA_calls": 0,
+    "large_weight_downloads": 0,
+    "model_forwards": 0,
+    "model_imports": 0,
+    "native_calls": 0,
+    "paid_GPU_calls": 0
+  },
+  "proposed_scientific_scope": {
+    "champion_preserved": true,
+    "confirmation": "Project-unused groups AND publisher-declared Test, with model lineage uncertainty stated.",
+    "hypothesis": "A contract-domain span-trained typed head plus genuine whole-source-unit context coverage may improve native retrieval evidence decisions versus same-model lexical/source-order controls.",
+    "model_admission_requires": "Independent source/license/lineage and split policy decision before any weights acquired, model imports, forwards or data measurement.",
+    "no_pooling_claim_from_card": "Any three-way probability pooling must be separately frozen by study, because card does not prescribe pooling."
+  },
+  "schema_version": 1,
+  "sources": {
+    "bert-base-api": {
+      "bytes": 4711,
+      "final_url": "https://huggingface.co/api/models/google-bert/bert-base-uncased",
+      "local_path": "/dev/shm/ruvector-e51-candidate/research/bert-base-api.body",
+      "retrieved_at": "2026-10-27T02:19:55.336953+00:00",
+      "sha256": "e037d4519c635446737aa1ef1140ce7038b435fffd4e3890f76e2300dc2a5c64",
+      "status": 200,
+      "url": "https://huggingface.co/api/models/google-bert/bert-base-uncased"
+    },
+    "bert-base-card": {
+      "bytes": 10517,
+      "final_url": "https://huggingface.co/google-bert/bert-base-uncased/raw/main/README.md",
+      "local_path": "/dev/shm/ruvector-e51-candidate/research/bert-base-card.body",
+      "retrieved_at": "2026-10-27T02:19:55.302139+00:00",
+      "sha256": "9187b6018ea0010d884e78e098e328faa1b88b301570d0cce606bb35e4067e17",
+      "status": 200,
+      "url": "https://huggingface.co/google-bert/bert-base-uncased/raw/main/README.md"
+    },
+    "bert-standard-api": {
+      "bytes": 1829,
+      "final_url": "https://huggingface.co/api/models/Agreemind/contractnli-bert-nda-standard",
+      "local_path": "/dev/shm/ruvector-e51-candidate/research/bert-standard-api.body",
+      "retrieved_at": "2026-10-27T02:17:40.034040+00:00",
+      "sha256": "abaef4938a207047d23b86e9bc8d8596f28cab4f38241d56dcc513129889ef1f",
+      "status": 200,
+      "url": "https://huggingface.co/api/models/Agreemind/contractnli-bert-nda-standard"
+    },
+    "bert-standard-card-pinned": {
+      "bytes": 3826,
+      "final_url": "https://huggingface.co/Agreemind/contractnli-bert-nda-standard/raw/ac92b6b512d7a4bad7abe356750c3b916fe18649/README.md",
+      "local_path": "/dev/shm/ruvector-e51-candidate/research/bert-standard-card-pinned.body",
+      "retrieved_at": "2026-10-27T02:19:55.550113+00:00",
+      "sha256": "50d814736a690894cc46876a99bfd5674685ced5573360098f90761ab2eb3f52",
+      "status": 200,
+      "url": "https://huggingface.co/Agreemind/contractnli-bert-nda-standard/raw/ac92b6b512d7a4bad7abe356750c3b916fe18649/README.md"
+    },
+    "bert-standard-config": {
+      "bytes": 863,
+      "final_url": "https://huggingface.co/Agreemind/contractnli-bert-nda-standard/raw/ac92b6b512d7a4bad7abe356750c3b916fe18649/config.json",
+      "local_path": "/dev/shm/ruvector-e51-candidate/research/bert-standard-config.body",
+      "retrieved_at": "2026-10-27T02:18:24.464057+00:00",
+      "sha256": "389b48b55be138039705982041265239dcddab44a8d68dd5105b4cfd135717f0",
+      "status": 200,
+      "url": "https://huggingface.co/Agreemind/contractnli-bert-nda-standard/raw/ac92b6b512d7a4bad7abe356750c3b916fe18649/config.json"
+    },
+    "bert-standard-tree": {
+      "bytes": 1015,
+      "final_url": "https://huggingface.co/api/models/Agreemind/contractnli-bert-nda-standard/tree/ac92b6b512d7a4bad7abe356750c3b916fe18649?recursive=true&expand=false",
+      "local_path": "/dev/shm/ruvector-e51-candidate/research/bert-standard-tree.body",
+      "retrieved_at": "2026-10-27T02:18:24.493836+00:00",
+      "sha256": "b446085170007a60152f57be08d662b0fbd614992ef1aa0d7f2868cf0ab6ef6f",
+      "status": 200,
+      "url": "https://huggingface.co/api/models/Agreemind/contractnli-bert-nda-standard/tree/ac92b6b512d7a4bad7abe356750c3b916fe18649?recursive=true&expand=false"
+    },
+    "official-bert-readme": {
+      "bytes": 3900,
+      "final_url": "https://raw.githubusercontent.com/stanfordnlp/contract-nli-bert/main/README.md",
+      "local_path": "/dev/shm/ruvector-e51-candidate/research/official-bert-readme.body",
+      "retrieved_at": "2026-10-27T02:17:39.717921+00:00",
+      "sha256": "4f018df71be439586d0d9f104b165eba6cd4fd9086d720b9e38309abeff22b34",
+      "status": 200,
+      "url": "https://raw.githubusercontent.com/stanfordnlp/contract-nli-bert/main/README.md"
+    },
+    "official-bert-releases": {
+      "bytes": 2,
+      "final_url": "https://api.github.com/repos/stanfordnlp/contract-nli-bert/releases?per_page=100",
+      "local_path": "/dev/shm/ruvector-e51-candidate/research/official-bert-releases.body",
+      "retrieved_at": "2026-10-27T02:18:24.696968+00:00",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "status": 200,
+      "url": "https://api.github.com/repos/stanfordnlp/contract-nli-bert/releases?per_page=100"
+    },
+    "official-bert-repo": {
+      "bytes": 6890,
+      "final_url": "https://api.github.com/repos/stanfordnlp/contract-nli-bert",
+      "local_path": "/dev/shm/ruvector-e51-candidate/research/official-bert-repo.body",
+      "retrieved_at": "2026-10-27T02:17:39.923697+00:00",
+      "sha256": "c09ed92a225d20710f4ebab626afba92bc7fbde021ff38a64247d0a197a0a873",
+      "status": 200,
+      "url": "https://api.github.com/repos/stanfordnlp/contract-nli-bert"
+    },
+    "official-bert-tree": {
+      "bytes": 10295,
+      "final_url": "https://api.github.com/repos/stanfordnlp/contract-nli-bert/git/trees/main?recursive=1",
+      "local_path": "/dev/shm/ruvector-e51-candidate/research/official-bert-tree.body",
+      "retrieved_at": "2026-10-27T02:18:24.708013+00:00",
+      "sha256": "2eb8b08f51c8dccc3c8f04f0eb16d092ad09619c9ff15c74534564f08395b9cc",
+      "status": 200,
+      "url": "https://api.github.com/repos/stanfordnlp/contract-nli-bert/git/trees/main?recursive=1"
+    }
+  },
+  "status": "CANDIDATE_SOURCE_PACKET_NOT_WEIGHT_ADMISSION",
+  "verbatim_card_evidence": {
+    "base": "- **Base model**: `bert-base-uncased`",
+    "dataset": "- **Dataset**: ContractNLI (607 NDAs, 17 hypotheses)",
+    "license": "## License\n\nMIT",
+    "loss": "- **Loss**: Standard Cross-Entropy",
+    "max_length": "- **Max sequence length**: 512",
+    "selection": "- **Epochs**: 5 with early stopping (patience=3)",
+    "split": "- **Train/Dev/Test**: 423/61/123 documents \u2192 33,974/5,131/9,373 span-level examples",
+    "usage": "inputs = tokenizer(hypothesis, premise, return_tensors=\"pt\", truncation=True, max_length=512)"
+  }
+}

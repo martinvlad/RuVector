@@ -1,0 +1,93 @@
+{
+  "actual_acquisition_result": {
+    "bytes": 6158,
+    "path": "/dev/shm/ruvector-e51-data/MODEL_ACQUISITION_RESULT.v1.json",
+    "sha256": "41638456b60ea4b88558739ad8b746cf33023ac51a103ca473d7115edea374b0"
+  },
+  "actual_tensor_payload_deserializations_framework_model_tokenizer_native_DATA_Gold_calls": 0,
+  "all_201_tensor_names_shapes_offsets_and_contiguous_payload_bounds_verified": true,
+  "confirmation_lineage_status": "UNQUALIFIED_HOLD",
+  "created_at": "2026-10-27T02:51:10.379227+00:00",
+  "elapsed_seconds": 47.968903478991706,
+  "epoch": 51,
+  "expected_architecture": {
+    "class": "BertForSequenceClassification",
+    "classifier_bias": [
+      3
+    ],
+    "classifier_weight": [
+      3,
+      768
+    ],
+    "each_encoder_layer_expected_tensor_count": 16,
+    "hidden_size": 768,
+    "intermediate_size": 3072,
+    "max_pair_tokens": 512,
+    "model_type": "bert",
+    "num_attention_heads": 12,
+    "num_hidden_layers": 12,
+    "pooler_dense_bias": [
+      768
+    ],
+    "pooler_dense_weight": [
+      768,
+      768
+    ],
+    "position_embeddings": [
+      512,
+      768
+    ],
+    "token_type_embeddings": [
+      2,
+      768
+    ],
+    "word_embeddings": [
+      30522,
+      768
+    ]
+  },
+  "header_bytes": 23528,
+  "header_sha256": "0d50d0fb659991b69681f65bb6b2b07a2fc8a1b9adf52c9ec164225620e6d94b",
+  "immutable_validation_source": {
+    "bytes": 16005,
+    "path": "/dev/shm/ruvector-e51-data/acquire_contract_bert.py",
+    "sha256": "3fa801272e8a335420777fefb88e65a2521c4dd1324a87a3a180491aa9c0312e"
+  },
+  "initial_HTTP_asset_GETs_attempted": 5,
+  "initial_HTTP_asset_GETs_completed": 5,
+  "input_pair_order": "hypothesis,premise as modelcard usage; study packing separately frozen",
+  "inspection_scope": "Only streamed whole-file hash plus first8bytes and bounded JSON safetensorsheader; tokenizer/config JSON syntax/schema inspection. No tensor values decoded, model objects constructed, framework imported or tokenizer instantiated.",
+  "kind": "ACTUAL_ACQUIRED_SAFETENSORS_HEADER_AND_TYPED_CONFIG_CONTRACT",
+  "model_file": {
+    "bytes": 437961724,
+    "identity_method": "PublisherLFS_SHA256",
+    "name": "model.safetensors",
+    "path": "/dev/shm/ruvector-e51-data/assets/contractnli-bert-nda-standard-ac92b6b512d7/model.safetensors",
+    "pinned_source_url": "https://huggingface.co/Agreemind/contractnli-bert-nda-standard/resolve/ac92b6b512d7a4bad7abe356750c3b916fe18649/model.safetensors",
+    "read_only_mode": "0400",
+    "revision": "ac92b6b512d7a4bad7abe356750c3b916fe18649",
+    "sha256": "cd4f4391ab75c22e986ecea64831af47f6008a37ddce6a56a4cb5496e41ead07"
+  },
+  "model_id": "Agreemind/contractnli-bert-nda-standard",
+  "model_revision": "ac92b6b512d7a4bad7abe356750c3b916fe18649",
+  "no_scientific_admission_from_this_contract": true,
+  "schema_version": 1,
+  "source_acquisition_plan": {
+    "bytes": 5873,
+    "path": "/dev/shm/ruvector-e51-data/MODEL_ACQUISITION_PLAN.v1.json",
+    "sha256": "a0f53075693cd5701812ad876d02827e6fbc9379af867458a226363b7118c12b"
+  },
+  "status": "HASH_AND_HEADER_JSON_VALIDATED_NO_MODEL_INITIALIZATION",
+  "tensor_count": 201,
+  "tensor_data_bytes": 437938188,
+  "tensor_dtype": "F32",
+  "tokenizer_wordpiece_JSON_identity_and_vocab_count_verified": true,
+  "total_tensor_elements": 109484547,
+  "typed_class_probability_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "typed_config_id2label_label2id_architecture_dimensions_verified": true,
+  "verified_local_source_copies": 2
+}

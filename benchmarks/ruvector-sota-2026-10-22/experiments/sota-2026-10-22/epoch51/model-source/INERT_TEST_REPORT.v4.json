@@ -1,0 +1,70 @@
+{
+  "DATA_GOLD_calls": 0,
+  "GPU_paid_calls": 0,
+  "actual_NLI_forwards": 0,
+  "actual_model_imports_or_initializations": 0,
+  "actual_native_library_loads_or_calls": 0,
+  "actual_tokenizer_initializations": 0,
+  "additional_replay_guards": "Every captured window must have all3probabilities/logprobabilities and finite nonnegative actualforwardtiming; synthetic truncatednonwinner vector rejected.",
+  "all_Python_AST_parse": true,
+  "code_changes_since_v3": [
+    "reader.stable_scores prediction now uses original typed logits",
+    "one new synthetic tiny-logit probability-rounding regression; no other source edits"
+  ],
+  "created_at": "2026-10-27T02:54:15.117498+00:00",
+  "epoch": 51,
+  "final_scope_precision": "Descriptive interval scope now explicitly checkpoint-development/model-selection exposed; this metadata-only wording edit does not change tested computation.",
+  "node_check_native_helper_js_syntax_only": true,
+  "prediction_argmax_regression": "[0.0,1e-20,0.0] yields equal rounded FP64 probabilities but original typed-logit predictionContradiction; reader/scorer agree. Exactall-logit tie yields canonicalEntailment.",
+  "schema_version": 1,
+  "source_files": [
+    {
+      "bytes": 21379,
+      "path": "/dev/shm/ruvector-e51-candidate/source/experiments/sota-2026-10-22/runtime/epoch51/evaluate.py",
+      "sha256": "e7fbc4d56ef89d5a35dbea0a98a1b1ee8ef819178d128f209f5d299771a4685e"
+    },
+    {
+      "bytes": 4994,
+      "path": "/dev/shm/ruvector-e51-candidate/source/experiments/sota-2026-10-22/runtime/epoch51/guards.py",
+      "sha256": "2d3aad4713828a69eba4becbee5fb1c731164638a0000742aaa5bef24376f7dc"
+    },
+    {
+      "bytes": 11380,
+      "path": "/dev/shm/ruvector-e51-candidate/source/experiments/sota-2026-10-22/runtime/epoch51/launch_phase_once.py",
+      "sha256": "a139ee6131b08075fb39c80532ceed7a1b45877333f62a5388d5faf5dd0d4e5e"
+    },
+    {
+      "bytes": 9304,
+      "path": "/dev/shm/ruvector-e51-candidate/source/experiments/sota-2026-10-22/runtime/epoch51/native_helper.cjs",
+      "sha256": "d509187ca3b85e27257b363f8fd19d883d1af2c787567c99c0569245a4aa30a4"
+    },
+    {
+      "bytes": 14552,
+      "path": "/dev/shm/ruvector-e51-candidate/source/experiments/sota-2026-10-22/runtime/epoch51/packing.py",
+      "sha256": "6db9198b136005808225e8d7314338820e76fd77e0852a2ce6a72b3090b67ef7"
+    },
+    {
+      "bytes": 13138,
+      "path": "/dev/shm/ruvector-e51-candidate/source/experiments/sota-2026-10-22/runtime/epoch51/phase_runner.py",
+      "sha256": "79f48466a98bb48511c42ea19d567ecd1199dc7073778cba179c9f3e54afee21"
+    },
+    {
+      "bytes": 14017,
+      "path": "/dev/shm/ruvector-e51-candidate/source/experiments/sota-2026-10-22/runtime/epoch51/reader.py",
+      "sha256": "ec894e7e61ce7ab647fe90cf76c0c93cb246cf243596f82140a9f02849b6f6d4"
+    },
+    {
+      "bytes": 6855,
+      "path": "/dev/shm/ruvector-e51-candidate/source/experiments/sota-2026-10-22/runtime/epoch51/test_inert.py",
+      "sha256": "eb79ed340104cf6a04420ad23ced9693d1578849ef426c3cb90ebceb1112d38a"
+    },
+    {
+      "bytes": 29523,
+      "path": "/dev/shm/ruvector-e51-candidate/source/experiments/sota-2026-10-22/runtime/epoch51/worker.py",
+      "sha256": "1fce9e9ad8ecc13a61fdef1b0853156da92226e81c081786a7b3a6d7606f12d2"
+    }
+  ],
+  "status": "PASSED_INERT_STDLIB_ONLY_SOURCE_TESTS",
+  "test_scope": "Synthetic strings/fake tokenizer and captured-float scorer replay only. Import reader module loads stdlib only; never initializes framework/model/tokenizer/native. No actual corpus DATA/Gold.",
+  "tests": 7
+}

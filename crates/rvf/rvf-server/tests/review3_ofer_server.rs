@@ -204,3 +204,63 @@ fn f4_06_missing_connect_info_fails_closed() {
         "no peer address must mean no stream, not no limit"
     );
 }
+
+/// Round 5: eight distinct /24 prefixes (loopback 127.N.1.1), one stream each,
+/// each read at ~400 KB/s (above the slow-stream threshold of 8 x 32 KB/s).
+/// Per-address/prefix/reserve/slow caps are all satisfied; a ninth prefix is
+/// refused. Residual of any bounded pool; reported as accepted.
+#[test]
+fn f5_06_many_prefixes_still_fill_the_pool() {
+    use tokio::net::TcpSocket;
+    use tokio::io::{AsyncReadExt, AsyncWriteExt};
+    let f = fixture(60000, 32, 16, 5);
+    let mut cfg = rvf_server::stream::StreamServerConfig::new(f.rvf.clone(), f.keyfile.clone());
+    cfg.chunk_log2 = 16;
+    let server = rvf_server::stream::StreamServer::load(cfg).unwrap();
+    let rt = tokio::runtime::Builder::new_multi_thread().worker_threads(4).enable_all().build().unwrap();
+    rt.block_on(async {
+        let l = tokio::net::TcpListener::bind("0.0.0.0:0").await.unwrap();
+        let port = l.local_addr().unwrap().port();
+        let app = rvf_server::stream::router(server.clone());
+        tokio::spawn(async move {
+            axum::serve(l, app.into_make_service_with_connect_info::<std::net::SocketAddr>()).await.unwrap();
+        });
+        let target: std::net::SocketAddr = format!("127.0.0.1:{port}").parse().unwrap();
+        let mut conns = Vec::new();
+        for n in 1..=8u8 {
+            let s = TcpSocket::new_v4().unwrap();
+            s.bind(format!("127.{n}.1.1:0").parse().unwrap()).unwrap();
+            let mut c = s.connect(target).await.unwrap();
+            c.write_all(b"GET /v1/stream/body HTTP/1.1\r\nHost: x\r\nConnection: close\r\n\r\n").await.unwrap();
+            conns.push(c);
+        }
+        let mut buf = vec![0u8; 16384];
+        let t0 = std::time::Instant::now();
+        while t0.elapsed() < std::time::Duration::from_secs(14) {
+            for c in conns.iter_mut() {
+                let _ = tokio::time::timeout(std::time::Duration::from_millis(5), c.read(&mut buf)).await;
+            }
+            tokio::time::sleep(std::time::Duration::from_millis(15)).await;
+        }
+        let s = TcpSocket::new_v4().unwrap();
+        s.bind("127.50.1.1:0".parse().unwrap()).unwrap();
+        let mut c = s.connect(target).await.unwrap();
+        c.write_all(b"GET /v1/stream/body HTTP/1.1\r\nHost: x\r\nRange: bytes=0-9\r\nConnection: close\r\n\r\n").await.unwrap();
+        let mut b = vec![0u8; 64];
+        let n = c.read(&mut b).await.unwrap();
+        let line = String::from_utf8_lossy(&b[..n.min(24)]).to_string();
+        eprintln!("ninth prefix after 14 s: {line:?}");
+        assert!(line.contains("206"), "pool pinned by eight prefixes: {line:?}");
+    });
+}
+
+/// Missing connect-info must be refused (503), spoofed XFF must not matter.
+#[test]
+fn f5_oracle_missing_connect_info_is_503_and_headers_are_ignored() {
+    let f = fixture(2000, 16, 8, 3);
+    let r = start(&f, |_| {});
+    let (st, _, _) = raw_get(r.http, "/v1/stream/body", Some("bytes=0-9"));
+    assert_eq!(st, 503, "router mounted without connect info must fail closed");
+    let r2 = start(&f, |c| c.client_cap = rvf_server::stream::ClientCap::Disabled);
+    assert_eq!(raw_get(r2.http, "/v1/stream/body", Some("bytes=0-9")).0, 206);
+}

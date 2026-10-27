@@ -462,3 +462,155 @@ fn f4_05_late_garbage_duplicate_is_accepted_after_table_freed() {
     let t = table_frame(seg1.seg_id, &vec![[0u8; 32]; n1]);
     assert!(v.push(&t).is_err());
 }
+
+/// Round 5: many segments each CLAIMING 512 MiB, only the first 64 KiB chunk
+/// and the table delivered for each.
+#[test]
+fn f5_01_many_declared_segments_do_not_prepay() {
+    use rvf_types::sha256::Sha256;
+    use rvf_types::stream::*;
+    use rvf_wire::stream::{descriptor_frame, table_frame, chunk_frame};
+    use ed25519_dalek::Signer;
+    let nseg = 40u64;
+    let claimed: u64 = 512 << 20;
+    let chunk: u64 = 1 << 16;
+    let n = claimed / chunk;
+    let dim = 1usize;
+    let rec = 8 + 4 * dim;
+    let payload_len = claimed - 64;
+    let count = ((payload_len - 6) / rec as u64) as u32;
+    let file_id = [9u8; 16];
+    let mut entries = Vec::new();
+    let mut frames = Vec::new();
+    for s in 0..nseg {
+        let seg_id = s + 1;
+        let mut c0 = vec![0u8; 64];
+        c0[..4].copy_from_slice(&rvf_types::SEGMENT_MAGIC.to_le_bytes());
+        c0[4] = rvf_types::SEGMENT_VERSION;
+        c0[5] = 0x01;
+        c0[0x10..0x18].copy_from_slice(&payload_len.to_le_bytes());
+        c0.extend_from_slice(&(dim as u16).to_le_bytes());
+        c0.extend_from_slice(&count.to_le_bytes());
+        let mut idc = s * 1_000_000;
+        while (c0.len() as u64) + rec as u64 <= chunk {
+            c0.extend_from_slice(&idc.to_le_bytes());
+            idc += 1;
+            c0.extend_from_slice(&1.0f32.to_le_bytes());
+        }
+        c0.resize(chunk as usize, 0);
+        let leaf = |idx: u32, bytes: &[u8]| {
+            let mut h = Sha256::new();
+            h.update(&[0x00]); h.update(&file_id); h.update(&seg_id.to_le_bytes());
+            h.update(&idx.to_le_bytes()); h.update(&(bytes.len() as u64).to_le_bytes()); h.update(bytes);
+            h.finalize()
+        };
+        let mut leaves = vec![[0xEE; 32]; n as usize];
+        leaves[0] = leaf(0, &c0);
+        let mut th = Sha256::new();
+        th.update(&[0x01]); th.update(&file_id); th.update(&seg_id.to_le_bytes()); th.update(&(n as u32).to_le_bytes());
+        for l in &leaves { th.update(l); }
+        entries.push(StreamEntry { seg_id, seg_type: 0x01, stage: 0, flags: 0, requires_mask: 0,
+            body_offset: s * claimed, stored_len: claimed, uncompressed_len: 0, chunk_table_hash: th.finalize() });
+        frames.push(table_frame(seg_id, &leaves));
+        frames.push(chunk_frame(seg_id, 0, &c0));
+    }
+    let sk = ed25519_dalek::SigningKey::from_bytes(&[0xA7; 32]);
+    let pk = sk.verifying_key().to_bytes();
+    let h = StreamHeader { flags: STREAM_FLAG_CHUNKED, chunk_log2: 16, file_id, epoch: 1, body_len: nseg * claimed,
+        rvf_identity: [0; 32], policy_hash: [0; 32], seg_count: nseg as u32, table_len: 72 * nseg as u32, expires_ns: 0,
+        signer_key_id: rvf_types::sha256::sha256(&pk)[..8].try_into().unwrap() };
+    let mut d = h.to_bytes().to_vec();
+    for e in &entries { d.extend_from_slice(&e.to_bytes()); }
+    d.extend_from_slice(&64u16.to_le_bytes());
+    let sig = sk.sign(&[STREAM_SIG_DOMAIN, &d[..]].concat()).to_bytes();
+    d.extend_from_slice(&sig);
+    let keys = [pk];
+    let mut ing = StreamIngest::new(StreamPolicy::new(&keys));
+    let (v0, r0) = statm();
+    let mut wire = 0usize;
+    assert!(ing.feed(&descriptor_frame(&d)).refused.is_none());
+    for f in &frames {
+        wire += f.len();
+        let o = ing.feed(f);
+        assert!(o.refused.is_none(), "refused: {:?}", o.refused);
+    }
+    let (v1, r1) = statm();
+    eprintln!("{nseg} segments claiming {} GiB; wire {} KB; virtual +{} MB, resident +{} MB; visible {}",
+        (nseg * claimed) >> 30, wire / 1024, (v1 - v0) / 1024, (r1 - r0) / 1024, ing.vectors().len());
+    assert!((v1 - v0) * 1024 < 16 * wire as u64, "address space grew {} MB for {} KB of chunks", (v1 - v0) / 1024, wire / 1024);
+}
+
+/// Round 5: late garbage chunks of a finished multi-chunk segment are
+/// `Unverified`, counted, cap-poisoning, and a late table is refused.
+#[test]
+fn f5_05_unverified_events_are_inert_and_capped() {
+    use rvf_wire::stream::{chunk_frame, table_frame, Event, StreamState, StreamVerifier};
+    let key = SigningKey::from_bytes(&[0xA7; 32]);
+    let pk = key.verifying_key().to_bytes();
+    let mut body = write_segment_with_algo(0x01, &vec![7u8; 3 * 4096 + 100], SegmentFlags::empty(), 1, 2);
+    body.extend(write_segment_with_algo(0x01, &vec![9u8; 4096 + 50], SegmentFlags::empty(), 2, 2));
+    let b = StreamDescriptorBuilder::new([8; 16], key).chunk_log2(12).build(&body).unwrap();
+    let keys = [pk];
+    let mut v = StreamVerifier::new(StreamPolicy::new(&keys));
+    let fr: Vec<Vec<u8>> = b.frames_file_order(&body).collect();
+    let seg1 = b.entries[0].clone();
+    let n1 = b.header.chunk_count(seg1.stored_len).unwrap() as usize;
+    for f in &fr[..1 + 1 + n1] { v.push(f).unwrap(); }
+    let before = v.verified_bytes();
+    let g = chunk_frame(seg1.seg_id, 1, &vec![0xAB; 4096]);
+    let mut n = 0u32;
+    loop {
+        match v.push(&g) {
+            Ok(Event::Unverified { .. }) => n += 1,
+            Ok(e) => panic!("unexpected {e:?}"),
+            Err(_) => break,
+        }
+        assert!(n < 10_000);
+    }
+    eprintln!("{n} unverified frames accepted before the cap poisoned the stream: {:?}", v.state());
+    assert!(matches!(v.state(), StreamState::Poisoned(_)));
+    assert_eq!(v.verified_bytes(), before, "unverified frames must release/advance nothing");
+    let mut v2 = StreamVerifier::new(StreamPolicy::new(&keys));
+    for f in &fr[..1 + 1 + n1] { v2.push(f).unwrap(); }
+    assert!(v2.push(&table_frame(seg1.seg_id, &vec![[0u8; 32]; n1])).is_err());
+}
+
+mod rollback5 {
+    #![cfg(feature = "ed25519")]
+    use rvf_runtime::{RvfStore, RvfOptions};
+    use rvf_types::security::SecurityPolicy;
+    use super::signed::*;
+
+    fn open(p: &std::path::Path, o: RvfOptions) -> Result<u64, String> {
+        RvfStore::open_with_policy(p, o, SecurityPolicy::Strict)
+            .map(|s| s.status().total_vectors)
+            .map_err(|e| format!("{e:?}").chars().take(90).collect())
+    }
+
+    /// Round 5: variants against the F4-04 fix.
+    #[test]
+    fn f5_04_rollback_variants() {
+        let d = tempfile::tempdir().unwrap();
+        let p = signed_store(d.path());
+        let base = std::fs::read(&p).unwrap();
+        // freshness not stated
+        let mut o = opts(&[public(&SECRET)]);
+        let unset = { let mut o2 = o.clone(); o2.freshness = None; open(&p, o2) };
+        eprintln!("freshness unset: {unset:?}");
+        assert!(unset.is_err());
+        // junk bytes (zero, then a fake non-manifest segment) between manifest and page
+        let (body, page) = rvf_wire::tail_scan::split_root_page(&base);
+        for (name, junk) in [("64 zero bytes", vec![0u8; 64]), ("4096 zero bytes", vec![0u8; 4096]),
+            ("garbage 1 byte", vec![0xAAu8; 1])] {
+            let mut e = body.to_vec();
+            e.extend_from_slice(&junk);
+            e.extend_from_slice(page.unwrap());
+            std::fs::write(&p, &e).unwrap();
+            eprintln!("{name}: default {:?}", open(&p, o.clone()));
+        }
+        // truncation rollback: only possible with Freshness::Unchecked
+        std::fs::write(&p, &base).unwrap();
+        o.freshness = Some(rvf_runtime::options::Freshness::MinEpoch(u32::MAX));
+        assert!(open(&p, o).is_err(), "MinEpoch(MAX) must refuse");
+    }
+}

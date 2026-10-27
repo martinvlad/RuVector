@@ -5,10 +5,10 @@
     "experiments_active": false,
     "kind": "REAL_CONTRACTNLI_CONTRACT_BERT_WHOLE_SOURCE_PILOT",
     "owner_sha256": "b8d2ac6cb7d59abd21f5873626f61f90167701673bd043716892d00eb65c9889",
-    "phase": "source",
+    "phase": "final",
     "publication_is_not_scientific_authorization": true,
     "source_checkpoint": "0e1f4181df1f738fe104f294dbf5267badfed4a7",
-    "work_active": true
+    "work_active": false
   },
   "artifact_transport": {
     "archive": {
@@ -263,6 +263,15 @@
         "sha256": "5b2ba21181235a90da697b7b7936d2053e2376c6d2fa7d36c1b06562068a902c"
       }
     },
+    "epoch51_latest_observation": {
+      "epoch": 51,
+      "scope": "Actual frozen E51 official refresh; no new lookup during failure finalization.",
+      "source": {
+        "bytes": 13612,
+        "path": "experiments/sota-2026-10-22/epoch51/official-refresh/benchmark-refresh.safe.json",
+        "sha256": "9063d86464c82d4ffd90d7873dd66c22d918005f2ee6af820e5040b8ebfa2f6d"
+      }
+    },
     "independent_review": {
       "bytes": 3774,
       "path": "experiments/sota-2026-10-22/audit/epoch41/official-refresh-publication-independent-v1.json",
@@ -392,7 +401,7 @@
     }
   },
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "checkpoint_manifest_sha256": "a6eb1d1732e0a0c6f3c7d53c55e467ce74359caa5444c037e60325cfb1a63450",
+  "checkpoint_manifest_sha256": "2fafd82ea6ff7705d89f6cfeef890d7f6d9548b0becbb4030af01367a97889e5",
   "cumulative_budget_ledger": {
     "allowed_further_attempts_in_closed_study": 0,
     "closed_epoch10_study": {
@@ -1756,6 +1765,67 @@
         "training_calls": 0
       },
       "worker_wall_seconds": 70.76166559499688
+    },
+    "epoch51_actual_execution": {
+      "BGE_forward_calls_attempted": 45,
+      "BGE_forward_calls_completed": 45,
+      "BGE_initializations_attempted": 1,
+      "BGE_initializations_completed": 1,
+      "BGE_texts_attempted": 325,
+      "BGE_texts_completed": 325,
+      "CONF_DATA_calls": 0,
+      "CONF_EVALUATE_calls": 0,
+      "CONF_Gold_calls": 0,
+      "CONF_native_batches": 0,
+      "DEV_DATA_calls": 1,
+      "DEV_EVALUATE_calls": 0,
+      "DEV_Gold_calls": 0,
+      "GPU_calls": 0,
+      "NLI_forwards_attempted": 0,
+      "NLI_forwards_completed": 0,
+      "Node_network_operations_attempted": 0,
+      "Python_network_operations_attempted": 1,
+      "Python_network_operations_blocked": 1,
+      "actual_supervisor_starts": 1,
+      "actual_worker_starts": 1,
+      "allowed_further_epoch51_attempts": 0,
+      "calibration_calls": 0,
+      "errors": [
+        {
+          "code": "TOKENIZER_WHOLE_PAIR_CAPTURE",
+          "type": "ValueError"
+        }
+      ],
+      "feature_cases_admitted": 12,
+      "feature_documents_admitted": 4,
+      "forecasts_completed": 0,
+      "native_binary_loads_attempted": 1,
+      "native_binary_loads_completed": 1,
+      "native_corpus_batches": 1,
+      "native_corpus_batches_attempted": 1,
+      "native_corpus_batches_completed": 1,
+      "native_hit_source_validations": 939,
+      "native_index_initializations_attempted": 4,
+      "native_index_initializations_completed": 4,
+      "native_insertions_attempted": 313,
+      "native_insertions_completed": 313,
+      "native_len_calls_attempted": 8,
+      "native_len_calls_completed": 8,
+      "native_queries_attempted": 12,
+      "native_queries_completed": 12,
+      "native_version_calls_attempted": 1,
+      "native_version_calls_completed": 1,
+      "outer_wall_seconds_including_capture_physical_cleanup": 22.767871944000944,
+      "paid_API_calls": 0,
+      "reader_initializations_attempted": 1,
+      "reader_initializations_completed": 1,
+      "reader_pair_tokenizations": 1,
+      "resource_scope": "SELF excludes child CPU; CHILDREN RSS is largest child high-water, not sum.",
+      "semantic_gold_decodes": 0,
+      "status": "REJECTED_RUNTIME_NOT_SCORED",
+      "training_calls": 0,
+      "unused_second_slot_closed_for_lineage": true,
+      "worker_wall_seconds_including_init_cleanup": 21.594966267002746
     },
     "new_study_attempt_cap": 1,
     "new_study_attempts_remaining": 0,
@@ -9137,6 +9207,148 @@
     "train": [],
     "used_confirmation_identities": []
   },
+  "epoch51_final": {
+    "actual_SOURCE_commit": "378a9833a207f38f3a9dd5c39e6e2adc59c68ed1",
+    "actual_execution": {
+      "BGE_forward_calls_attempted": 45,
+      "BGE_forward_calls_completed": 45,
+      "BGE_initializations_attempted": 1,
+      "BGE_initializations_completed": 1,
+      "BGE_texts_attempted": 325,
+      "BGE_texts_completed": 325,
+      "CONF_DATA_calls": 0,
+      "CONF_EVALUATE_calls": 0,
+      "CONF_Gold_calls": 0,
+      "CONF_native_batches": 0,
+      "DEV_DATA_calls": 1,
+      "DEV_EVALUATE_calls": 0,
+      "DEV_Gold_calls": 0,
+      "GPU_calls": 0,
+      "NLI_forwards_attempted": 0,
+      "NLI_forwards_completed": 0,
+      "Node_network_operations_attempted": 0,
+      "Python_network_operations_attempted": 1,
+      "Python_network_operations_blocked": 1,
+      "actual_supervisor_starts": 1,
+      "actual_worker_starts": 1,
+      "allowed_further_epoch51_attempts": 0,
+      "calibration_calls": 0,
+      "feature_cases_admitted": 12,
+      "feature_documents_admitted": 4,
+      "forecasts_completed": 0,
+      "native_binary_loads_attempted": 1,
+      "native_binary_loads_completed": 1,
+      "native_corpus_batches": 1,
+      "native_corpus_batches_attempted": 1,
+      "native_corpus_batches_completed": 1,
+      "native_hit_source_validations": 939,
+      "native_index_initializations_attempted": 4,
+      "native_index_initializations_completed": 4,
+      "native_insertions_attempted": 313,
+      "native_insertions_completed": 313,
+      "native_len_calls_attempted": 8,
+      "native_len_calls_completed": 8,
+      "native_queries_attempted": 12,
+      "native_queries_completed": 12,
+      "native_version_calls_attempted": 1,
+      "native_version_calls_completed": 1,
+      "outer_wall_seconds_including_capture_physical_cleanup": 22.767871944000944,
+      "paid_API_calls": 0,
+      "reader_initializations_attempted": 1,
+      "reader_initializations_completed": 1,
+      "reader_pair_tokenizations": 1,
+      "semantic_gold_decodes": 0,
+      "training_calls": 0,
+      "unused_second_slot_closed_for_lineage": true,
+      "worker_wall_seconds_including_init_cleanup": 21.594966267002746
+    },
+    "confirmation_lineage_status": "UNQUALIFIED_HOLD",
+    "epoch": 51,
+    "epoch_manifest": {
+      "bytes": 24083,
+      "path": "experiments/sota-2026-10-22/epoch51/EPOCH_MANIFEST.json",
+      "sha256": "faab4191cf0a69b3a4e03eb7b512f3f432f4da2d9b85013edc7e3c1272fc4f45"
+    },
+    "independent_acceptance": {
+      "bytes": 8644,
+      "path": "experiments/sota-2026-10-22/audit/epoch51/independent/DEV_RUNTIME_FAILURE_AND_REJECTION_INDEPENDENT.v1.json",
+      "sha256": "0cbdb0ac7d92b93fe63b1774b0e1958d7a139ad1b8513e5fd31bd617467a1ac9"
+    },
+    "kind": "REAL_CONTRACTNLI_CONTRACT_BERT_WHOLE_SOURCE_PILOT",
+    "learnings": {
+      "bytes": 1499,
+      "path": "experiments/sota-2026-10-22/epoch51/LEARNINGS.json",
+      "sha256": "c2de5d9071feeecf2484ef3695ad5f8c72fcb12d8b42595cbfdfdc00a5569722"
+    },
+    "native104_champion_preserved": true,
+    "next_research_priority": "Preserve SubmittedNative104. E51 closed after one real native corpus (4indexes/313vectors/12queries) and faithful201FP32 contract-BERT initialization, followed by TOKENIZER_WHOLE_PAIR_CAPTURE before any NLI forecast. No quality score, Gold, EVAL or confirmation. Do not rerun this closed epoch or treat its four whole DEV groups as fresh. A future separately frozen study must distinguish capacity-only hypothesis encoding from genuine nonempty BERT source-pair encoding, enforce the pair invariant again at the forward boundary, and use the pinned wrapper/template regression without fabricating segment IDs or dummy context. Fresh confirmation additionally needs independent checkpoint test-nonuse provenance or a qualified new model/data lineage. No paid/GPU cap, publisher submission or promotion is granted.",
+    "official_goal_verified": false,
+    "official_rank": null,
+    "official_refresh": {
+      "bytes": 13612,
+      "path": "experiments/sota-2026-10-22/epoch51/official-refresh/benchmark-refresh.safe.json",
+      "sha256": "9063d86464c82d4ffd90d7873dd66c22d918005f2ee6af820e5040b8ebfa2f6d"
+    },
+    "promotion_authorized": false,
+    "publisher_status_latest_observation": {
+      "body_messageID_match_to_original_receipt_verified": false,
+      "body_thread_attachment_reads": 0,
+      "checked_at": "2026-10-27T02:21:42.219Z",
+      "coverage_other_accounts_verified": false,
+      "current_queue_progress": "UNVERIFIED",
+      "eligibility_confirmed": false,
+      "epoch": 51,
+      "exact_reference_searches": 1,
+      "has_more_results": false,
+      "historical_regular_evaluation_queue_position": 115,
+      "matching_message_dates": [
+        "2026-10-22"
+      ],
+      "matching_messages": 1,
+      "messages_read": 0,
+      "metadata_subject_candidate_result_score_rank_or_eligibility_count": 0,
+      "metadata_subject_receipt_or_submission_classification_count": 1,
+      "new_verified_publisher_result_found": false,
+      "official_rank": null,
+      "official_score": null,
+      "original_acknowledgement_metadata_consistent": true,
+      "original_publisher_account_profile_reads": 1,
+      "outgoing_messages_or_submissions": 0,
+      "private_selector_identifiers_addresses_subject_headers_body_snippet_files_persisted": false,
+      "queue_scope": "Historical acknowledgement evaluation queue position; never rank. Current position/progress unverified.",
+      "read_scope": "Subject-class and date metadata only; selected-account status cannot establish global result absence.",
+      "reference": "7FEA2738",
+      "schema_version": 1,
+      "selected_personal_publisher_account_profile_verified": true,
+      "snippets_inspected": 0,
+      "source_kind": "One exact connected Gmail metadata search on profile-verified selected personal publisher account; no second-account fallback."
+    },
+    "publisher_submission_authorized": false,
+    "rejection_ledger": {
+      "bytes": 218881,
+      "path": "experiments/sota-2026-10-22/epoch51/REJECTION_LEDGER.json",
+      "sha256": "012ea0b51da3642a68bb8aa15ba99b21a2041b5e34e569858b55e22fece52229"
+    },
+    "results": {
+      "bytes": 6778,
+      "path": "experiments/sota-2026-10-22/epoch51/RESULTS.json",
+      "sha256": "52fe293a8eb29405439f6308ed3199101fa2c2555168a317a48d33e633e8ecb8"
+    },
+    "schema_version": 1,
+    "source_checkpoint": "0e1f4181df1f738fe104f294dbf5267badfed4a7",
+    "status": "REJECTED_RUNTIME_NOT_SCORED",
+    "used_confirmation": {
+      "bytes": 30874,
+      "path": "experiments/sota-2026-10-22/epoch51/USED_CONFIRMATION.json",
+      "sha256": "8345679886a6206b4ba83e7fcbb3d7bf5a72788431a5090f5825f6042316454d"
+    },
+    "used_confirmation_identities": [],
+    "used_identities": {
+      "bytes": 36876,
+      "path": "experiments/sota-2026-10-22/epoch51/USED_IDENTITIES.json",
+      "sha256": "d9627d143821ac5c24a7d6f366e10af4afbccf18c5e681e4ae8a3589c7c27a1c"
+    }
+  },
   "epoch51_frozen_study": {
     "confirmation_lineage_status": "UNQUALIFIED_HOLD",
     "confirmation_materialization_authorized": false,
@@ -12735,6 +12947,38 @@
       },
       "source_revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
       "used_confirmation_identities": []
+    },
+    {
+      "all_hypotheses_and_aliases_for_entire_document_groups_permanently_DEV": true,
+      "document_ids": [
+        7,
+        28,
+        406,
+        73
+      ],
+      "epoch": 51,
+      "identities": [
+        "contractnli:eced6528:dev:7:nda-1",
+        "contractnli:eced6528:dev:7:nda-10",
+        "contractnli:eced6528:dev:7:nda-16",
+        "contractnli:eced6528:dev:28:nda-1",
+        "contractnli:eced6528:dev:28:nda-10",
+        "contractnli:eced6528:dev:28:nda-16",
+        "contractnli:eced6528:dev:406:nda-1",
+        "contractnli:eced6528:dev:406:nda-10",
+        "contractnli:eced6528:dev:406:nda-16",
+        "contractnli:eced6528:dev:73:nda-1",
+        "contractnli:eced6528:dev:73:nda-10",
+        "contractnli:eced6528:dev:73:nda-16"
+      ],
+      "role": "DEV_FOREVER",
+      "source_results": {
+        "bytes": 6778,
+        "path": "experiments/sota-2026-10-22/epoch51/RESULTS.json",
+        "sha256": "52fe293a8eb29405439f6308ed3199101fa2c2555168a317a48d33e633e8ecb8"
+      },
+      "source_revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+      "used_confirmation_identities": []
     }
   ],
   "future_epoch_limits": {
@@ -12747,11 +12991,11 @@
   },
   "goal_met": false,
   "latest_learning": {
-    "bytes": 2246,
-    "path": "experiments/sota-2026-10-22/epoch50/LEARNINGS.json",
-    "sha256": "bd1cdc1bfbd015abd86d0a049417e2ecc7f1d01d79c8743702af3c34f2f565f2"
+    "bytes": 1499,
+    "path": "experiments/sota-2026-10-22/epoch51/LEARNINGS.json",
+    "sha256": "c2de5d9071feeecf2484ef3695ad5f8c72fcb12d8b42595cbfdfdc00a5569722"
   },
-  "next_research_priority": "Preserve SubmittedNative104. E50 is closed after a technically valid but scientifically rejected same-model native retrieval pilot: native5/12 versus lexical6/12 and source_order8/12, worse Brier/NLL against both. Do not repeat this exposed pilot or consume its closed conditional slot. A future separately preregistered epoch should investigate whole-contract context coverage and a source-licensed contract-domain typed-decision checkpoint; freeze new development and genuinely unused confirmation identities, source/model/scorer revisions and matched ablations before measurements. No paid/GPU authorization or publisher submission follows.",
+  "next_research_priority": "Preserve SubmittedNative104. E51 closed after one real native corpus (4indexes/313vectors/12queries) and faithful201FP32 contract-BERT initialization, followed by TOKENIZER_WHOLE_PAIR_CAPTURE before any NLI forecast. No quality score, Gold, EVAL or confirmation. Do not rerun this closed epoch or treat its four whole DEV groups as fresh. A future separately frozen study must distinguish capacity-only hypothesis encoding from genuine nonempty BERT source-pair encoding, enforce the pair invariant again at the forward boundary, and use the pinned wrapper/template regression without fabricating segment IDs or dummy context. Fresh confirmation additionally needs independent checkpoint test-nonuse provenance or a qualified new model/data lineage. No paid/GPU cap, publisher submission or promotion is granted.",
   "objective": "Reach independently verified SOTA using actual RuVector; initial target JevBench open-weights Capability under official caps.",
   "official_rank": null,
   "official_result_status": {
@@ -12793,9 +13037,9 @@
   },
   "publisher_status_refresh_scope": "Exact reference search returned the original submission acknowledgment. It confirms regular evaluation queue position115 and contains no evaluation score or rank. No global absence of other publisher results or eligibility determination is inferred.",
   "rejection_ledger": {
-    "bytes": 212840,
-    "path": "experiments/sota-2026-10-22/epoch50/REJECTION_LEDGER.json",
-    "sha256": "325b9dd5a65665c092366e9604f2b1d86b829c30a1692a0167859609170173c9"
+    "bytes": 218881,
+    "path": "experiments/sota-2026-10-22/epoch51/REJECTION_LEDGER.json",
+    "sha256": "012ea0b51da3642a68bb8aa15ba99b21a2041b5e34e569858b55e22fece52229"
   },
   "restoration_boundary": "Epoch16 freshly verified2293 Gitblob files and2220projectCP+48base using reviewed bootstrap/restore; exact7officialNLI+BGE2/native22 restored separately. No model/native session occurred before reviewed source freeze/publication; actual oneDEV process is in epoch16_final. Never rerun archived controllers.",
   "restoration_boundary_prior_epoch13": "All public source/data/results hashrestored; native22filehelper verified. Coldproof explicitly lists deferredmodelassetpins(old/new); weights acquiredseparately via reviewedhelpers/exactofficialrevision+hashes. No inference or archivedcontroller rerun duringrestore.",

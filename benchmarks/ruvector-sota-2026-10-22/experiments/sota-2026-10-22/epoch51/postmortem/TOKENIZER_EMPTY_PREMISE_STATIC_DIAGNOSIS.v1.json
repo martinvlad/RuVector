@@ -1,0 +1,144 @@
+{
+  "CF_lineage_status": "UNQUALIFIED_HOLD",
+  "actual_failure_as_reported_by_Root": {
+    "NLI_forwards": 0,
+    "RAW_ref": {
+      "bytes": 399862,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch51-0e1f4181df1f/runs/dev/raw.json",
+      "sha256": "92201e70b200cc89f8f897b8c3f1d3b2eeca8b9b9967cbe6ec3e98df9aa90521"
+    },
+    "failure_code": "TOKENIZER_WHOLE_PAIR_CAPTURE",
+    "native_corpus_batches_completed": 1,
+    "raw_read_by_this_diagnosis": false,
+    "reader_initializations_completed": 1,
+    "reader_pair_tokenizations": 1,
+    "status": "PARTIAL"
+  },
+  "alternative_explanations": {
+    "missing_token_type_ids_key": "Not supported by inspected path: return_token_type_ids=True propagates through _batch_encode_plus and _convert_encoding lines329-330 appends e.type_ids under token_type_ids. No actual returned keys were captured.",
+    "pinned_JSON_default_padding_or_truncation": "JSON records training defaults512; inspected _batch_encode_plus lines528-536 sets explicit requested strategies before encoding. The type1 guard failure is sufficient regardless of other conjuncts. No runtime output was probed."
+  },
+  "causal_chain": [
+    {
+      "fact": "Main-arm pack starts with baseline tokenize(empty premise, whole claim), before any candidate wholeunit.",
+      "source": "packing.py:103"
+    },
+    {
+      "fact": "Reader calls BertTokenizerFast(whole claim, empty premise, return_token_type_ids=True, truncation=False, padding=False). Hypothesis is first, source premise second.",
+      "source": "reader.py:201-203"
+    },
+    {
+      "fact": "Empty second string is falsy. _encode_plus chooses single-sequence input rather than a paired encoding.",
+      "source": "installed transformers/tokenization_utils_fast.py:614",
+      "verbatim": "batched_input = [(text, text_pair)] if text_pair else [text]"
+    },
+    {
+      "fact": "All single-sequence template elements have type_id0. The pair template has type_id1 on sequenceB and its finalSEP.",
+      "source": "pinned tokenizer.json post_processor.single"
+    },
+    {
+      "fact": "The frozen guard requires type1 even for the capacity-only empty-premise baseline. A source-derived all-zero single-sequence type vector necessarily fails this conjunct.",
+      "source": "reader.py:211",
+      "verbatim": "and 0 in value['token_type_ids'] and 1 in value['token_type_ids']"
+    }
+  ],
+  "certainty_and_limits": {
+    "actual_encoded_token_values_observed": false,
+    "actual_returned_keys_observed": false,
+    "assumptions": [
+      "The admitted run used the verified frozen reader/packing bytes and retained installed PreTrainedTokenizerFast source path.",
+      "BertTokenizerFast uses its inherited _encode_plus path and acquired tokenizer.json postprocessor as source indicates."
+    ],
+    "conclusion": "This source path explains the failure deterministically. The actual composite guard did not capture its per-conjunct values, so no claim of a measured token vector is made.",
+    "only_failing_guard_conjunct_independently_observed": false,
+    "runtime_output_reconstructed_or_claimed": false,
+    "source_level_sufficient_failure_condition": true
+  },
+  "champion_preserved": true,
+  "created_at": "2026-10-27T03:39:07.163017+00:00",
+  "epoch": 51,
+  "evidence_scope": "Frozen public source + acquired public tokenizer JSON metadata + installed Python library source text. No tokenizer instantiation, model/framework import, native call, corpus feature or Gold read, run probe, or retry.",
+  "frozen_R_and_candidate_source_unchanged": true,
+  "future_separately_frozen_fix_recommendation": {
+    "engineering_scope": "Tokenizer API admission/guard correction; no semantic model improvement, quality score or native retrieval superiority is established.",
+    "forbidden_workarounds": [
+      "Do not fabricate type1 IDs, inject dummy source text, alter checkpoint tokenizer postprocessor, or relax genuine-pair checks to hide the failure.",
+      "Do not retry E51, change its frozen source, swap identities or use its unused conditional slot."
+    ],
+    "preserve": [
+      "Complete original hypothesis/source text, source offsets/hashes, no truncation, true returned BERT token_type_ids, exact3way head, original numeric spelling.",
+      "Explicit context coverage/capacity and all-time/resource budgets in a new study only."
+    ],
+    "single_recommended_design": "Separate the hypothesis-capacity-only baseline from genuine source-pair encoding. Capacity-only may use the source-described single sequence with all-zero segment IDs; genuine nonempty hypothesis/source pairs retain strict trueBERT segment0/segment1 checks. Require genuine pair semantics again at model-forward boundary so a capacity baseline can never be scored."
+  },
+  "inert_metadata_regression": {
+    "actual_tokenizer_operations": 0,
+    "passed": true,
+    "source": {
+      "bytes": 3118,
+      "path": "/dev/shm/ruvector-e51-candidate/postmortem/test_empty_premise_metadata_v1.py",
+      "sha256": "ad166d79dc3fac43e175c1cc6ece4d29a3957933e4fa5589fd873ae226122161"
+    },
+    "tests": 4,
+    "tests_exercised": [
+      "AST confirms empty second argument truthiness routing in the installed wrapper.",
+      "Pinned single-template metadata contains no type1; frozen both-segment predicate rejects it.",
+      "Pinned genuine-pair metadata retains true segment1; future separate-purpose predicates distinguish baseline from scoreable pair.",
+      "Explicit return-token-type key creation exists in inspected conversion source."
+    ]
+  },
+  "kind": "POST_FAILURE_READ_ONLY_STATIC_TOKENIZER_BASELINE_DIAGNOSIS",
+  "model_quality_claim": false,
+  "operation_counts_by_this_postmortem": {
+    "NLI_forwards": 0,
+    "R_or_Git_mutations": 0,
+    "corpus_DATA_or_Gold_reads": 0,
+    "framework_model_tokenizer_imports_or_instantiations": 0,
+    "native_calls": 0,
+    "paid_GPU_calls": 0,
+    "retry_or_probe_runs": 0
+  },
+  "schema_version": 1,
+  "source_refs": {
+    "frozen_packing": {
+      "bytes": 14552,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch51-0e1f4181df1f/project/experiments/sota-2026-10-22/runtime/epoch51/packing.py",
+      "sha256": "6db9198b136005808225e8d7314338820e76fd77e0852a2ce6a72b3090b67ef7"
+    },
+    "frozen_reader": {
+      "bytes": 14017,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch51-0e1f4181df1f/project/experiments/sota-2026-10-22/runtime/epoch51/reader.py",
+      "sha256": "ec894e7e61ce7ab647fe90cf76c0c93cb246cf243596f82140a9f02849b6f6d4"
+    },
+    "installed_fast_wrapper": {
+      "bytes": 40880,
+      "path": "/tmp/ruvector-sota-2026-10-22/epoch33-0522a2c521c9/runtime/.venv/lib/python3.12/site-packages/transformers/tokenization_utils_fast.py",
+      "sha256": "4013ed01a4e9ec93f90ef7398d52164b7d498a2ab12e887a4be7f1afbb0d5be6"
+    },
+    "public_special_tokens_map": {
+      "bytes": 125,
+      "path": "/dev/shm/ruvector-e51-data/assets/contractnli-bert-nda-standard-ac92b6b512d7/special_tokens_map.json",
+      "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+    },
+    "public_tokenizer_config": {
+      "bytes": 1221,
+      "path": "/dev/shm/ruvector-e51-data/assets/contractnli-bert-nda-standard-ac92b6b512d7/tokenizer_config.json",
+      "sha256": "1f92c93d2e31974acffab86d48e80a9357acb18c68346c5472ef1d12c72d5d77"
+    },
+    "public_tokenizer_json": {
+      "bytes": 711661,
+      "path": "/dev/shm/ruvector-e51-data/assets/contractnli-bert-nda-standard-ac92b6b512d7/tokenizer.json",
+      "sha256": "cb374d6bc042c22455946f4e09a89d29882a199fdaf8fb25be00dc8b8857a448"
+    },
+    "sealed_candidate_manifest": {
+      "bytes": 5323,
+      "path": "/dev/shm/ruvector-e51-candidate/FINAL_SOURCE_PACKET.v1.json",
+      "sha256": "088d5f596cf249f53b24eddf7d8736d559336880e48ff03c77a3126bee2d419e"
+    }
+  },
+  "status": "CLOSED_RUNTIME_FAILURE_SOURCE_LEVEL_CAUSE_IDENTIFIED_NO_MODEL_QUALITY_RESULT",
+  "why_prior_inert_tests_missed_this": {
+    "fake_tokenizer": "The earlier fake_tokenize helper always fabricated a paired type1 terminalSEP even for empty premise, and the Reader.tokenize spy used only nonempty premise. It did not model the installed fast-wrapper truthiness branch.",
+    "lesson": "Source metadata regression must cover empty and nonempty argument semantics; a fake tokenizer alone cannot qualify actual tokenizer API edge behavior."
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "Brier_by_arm": null,
+  "NLL_by_arm": null,
+  "accuracy_by_arm": null,
+  "arms": [
+    "native",
+    "lexical",
+    "source_order",
+    "whole_source"
+  ],
+  "candidate_promoted": false,
+  "complete_paired_cases": 0,
+  "completed_forecasts_by_arm": {
+    "lexical": 0,
+    "native": 0,
+    "source_order": 0,
+    "whole_source": 0
+  },
+  "confirmation_lineage_status": "UNQUALIFIED_HOLD",
+  "decision_p50_p95_seconds": null,
+  "dev_passed": false,
+  "epoch": 51,
+  "evidence": {
+    "independent_failure_and_rejection": {
+      "bytes": 8644,
+      "path": "experiments/sota-2026-10-22/audit/epoch51/independent/DEV_RUNTIME_FAILURE_AND_REJECTION_INDEPENDENT.v1.json",
+      "sha256": "0cbdb0ac7d92b93fe63b1774b0e1958d7a139ad1b8513e5fd31bd617467a1ac9"
+    },
+    "outer_execution": {
+      "bytes": 2491,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch51-0e1f4181df1f/DEV_OUTER_EXECUTION.actual.v1.json",
+      "sha256": "bd5d1aebebcb96d900310d337a2d7930274e3097c35a24b87bb109ea2f3d5cef"
+    },
+    "physical_closure": {
+      "bytes": 1441,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch51-0e1f4181df1f/DEV_PHYSICAL_CLOSURE.actual.v1.json",
+      "sha256": "323fb182e30adba11523b4deb537fb4d9aa0f4b94a5c17831bc41aa73448e803"
+    },
+    "raw": {
+      "bytes": 399862,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch51-0e1f4181df1f/runs/dev/raw.json",
+      "sha256": "92201e70b200cc89f8f897b8c3f1d3b2eeca8b9b9967cbe6ec3e98df9aa90521"
+    },
+    "worker_execution": {
+      "bytes": 2864,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch51-0e1f4181df1f/runs/dev/execution.json",
+      "sha256": "9595cdfb58aac47ba6676e7f61bd3724474795d9612b2c08d8afe180dcbcdc41"
+    }
+  },
+  "kind": "REAL_CONTRACTNLI_CONTRACT_BERT_WHOLE_SOURCE_PILOT",
+  "paired_comparisons": {
+    "lexical": {
+      "Brier_delta": null,
+      "NLL_delta": null,
+      "accuracy_delta": null,
+      "effect_uncertainty": null,
+      "matched_cases": 0
+    },
+    "source_order": {
+      "Brier_delta": null,
+      "NLL_delta": null,
+      "accuracy_delta": null,
+      "effect_uncertainty": null,
+      "matched_cases": 0
+    },
+    "whole_source": {
+      "Brier_delta": null,
+      "NLL_delta": null,
+      "accuracy_delta": null,
+      "effect_uncertainty": null,
+      "matched_cases": 0
+    }
+  },
+  "phase": "dev",
+  "planned_cases_per_arm": 12,
+  "reason": "Failure before first NLI forward and all48 final forecasts. Native retrieval corpus/index/query execution does not supply NLI decisions or paired quality observations. No Gold/EVAL invoked.",
+  "runtime_qualified": false,
+  "schema_version": 1,
+  "status": "REJECTED_RUNTIME_NOT_SCORED",
+  "used_confirmation_identities": []
+}

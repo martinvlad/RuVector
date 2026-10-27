@@ -1,0 +1,53 @@
+{
+  "accuracy_proper_scores_or_benchmark_generalization_measured": false,
+  "actual_stdlib_unittest_invocations": 1,
+  "actual_tokenizer_model_native_DATA_Gold_HTTP_Git_calls": 0,
+  "command": [
+    "python",
+    "-I",
+    "-B",
+    "/dev/shm/ruvector-e52-candidate/postmortem/test_future_fragmentation_metadata_v2.py"
+  ],
+  "engineering_step_stdlib_invocations_all_versions": 2,
+  "exit_code": 0,
+  "invented_strings_and_oracles_only": true,
+  "new_counterexample_scope": "Invented nonmonotonic oracle demonstrates unchanged greedyplanner canreject despite an alternative fullpartition. This proves only algorithmic incompleteness on that fixture, not actual tokenizer behavior, model quality or benchmarkgeneralization.",
+  "previous_v1_9_test_report": {
+    "bytes": 1837,
+    "path": "experiments/sota-2026-10-22/epoch52/postmortem/INERT_FRAGMENTATION_METADATA_TEST_REPORT.v1.json",
+    "sha256": "4ff9a287d4bb95a402433b0000dfdfe30beccdabf05b85e48aebcb733e696ce7"
+  },
+  "revision": 2,
+  "schema_version": 1,
+  "source_files": [
+    {
+      "bytes": 4601,
+      "path": "experiments/sota-2026-10-22/epoch52/postmortem/future_fragmentation_metadata_v2.py",
+      "sha256": "615e2bf8c5003f1161926dd15604904ce363ff9891dbd2e35d41883a2cf085e0"
+    },
+    {
+      "bytes": 4980,
+      "path": "experiments/sota-2026-10-22/epoch52/postmortem/test_future_fragmentation_metadata_v2.py",
+      "sha256": "b47c9cd04eafa8ac24479dd0c9b5675cdddbdf1353dfa10cb25e7743faf21cab"
+    }
+  ],
+  "status": "PASS_ENGINEERING_INVARIANTS_ONLY_NOT_BENCHMARK",
+  "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.002s\n\nOK\n",
+  "stdout": "",
+  "test_count": 10,
+  "test_names": [
+    "test_long_unit_partitions_exactly_without_text_loss",
+    "test_numbers_dates_currency_negation_stay_whole",
+    "test_impossible_protected_numeric_atom_rejects_entire_partition",
+    "test_no_monotonic_prefix_token_count_assumption",
+    "test_greedy_rejection_is_not_global_partition_impossibility",
+    "test_capacity_count_covers_every_frozen_hypothesis",
+    "test_fragment_and_call_limits_fail_without_partial_result",
+    "test_external_cuts_cannot_split_protected_atom_or_duplicate",
+    "test_no_cut_before_combining_mark_or_next_to_joiner",
+    "test_coverage_never_promises_semantics_or_benchmark_success"
+  ],
+  "unittest_reported_wall_seconds": 0.002,
+  "whole_process_wall_scope": "Not instrumented; no resource/latency benchmark claim.",
+  "whole_process_wall_seconds": null
+}

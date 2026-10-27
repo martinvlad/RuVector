@@ -1,0 +1,60 @@
+{
+  "actual_resources": {
+    "cgroup_scope": "Shared cgroup; not candidate incremental use; peak may predate this run.",
+    "children_max_rss_kib": 1093176,
+    "children_system_seconds": 0.048354999999999995,
+    "children_user_seconds": 0.099719,
+    "compute_threads": 2,
+    "cpu_affinity": [
+      0,
+      1
+    ],
+    "reader_torch_interop_threads": 1,
+    "scope": "SELF excludes child CPU; CHILDREN RSS is largest child high-water, not sum.",
+    "shared_cgroup_memory_current": 13720711168,
+    "shared_cgroup_memory_peak": 17180618752,
+    "worker_max_rss_kib": 1093176,
+    "worker_system_seconds": 1.266067,
+    "worker_user_seconds": 22.021778
+  },
+  "decision_latency_seconds": {
+    "N": 0,
+    "p50": null,
+    "p95": null,
+    "scope": "No NLI forwards or completed forecasts; unavailable, not zero performance."
+  },
+  "epoch": 52,
+  "errors": [
+    {
+      "code": "WHOLE_SOURCE_SINGLE_UNIT_EXCEEDS_PAIR_CAP",
+      "type": "ValueError"
+    }
+  ],
+  "kind": "REAL_CONTRACTNLI_CONTRACT_BERT_WHOLE_SOURCE_PILOT",
+  "native_query_component_latency_seconds": {
+    "N": 12,
+    "p50": 0.0010466550000000014,
+    "p95": 0.0059285633,
+    "quantile_rule": "Linear interpolation at (N-1)*q",
+    "scope": "Actual native query plus returned-hit identity/vector validation and capture; excludes BGE/index/reader/packing/decision and cleanup. Not end-to-end or publisher latency.",
+    "sum": 0.024105683
+  },
+  "paid_API_GPU_calls": 0,
+  "phase": "dev",
+  "quality": {
+    "Brier": null,
+    "NLL": null,
+    "accuracy": null,
+    "reason": "No completed forecasts; Gold/EVAL never invoked."
+  },
+  "raw": {
+    "bytes": 230100,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch52-1cb7b0384f3d/runs/dev/raw.json",
+    "sha256": "f2cd02097598d69e3dbaef1e2a0484a2e22c45d0a428938dcb3aa1cde27915d7"
+  },
+  "schema_version": 1,
+  "scope_revision": "Corrected source-derived timing boundary before publication; numeric values unchanged.",
+  "status": "REJECTED_RUNTIME_NOT_SCORED",
+  "used_confirmation_identities": [],
+  "worker_wall_seconds": 15.990271886985283
+}

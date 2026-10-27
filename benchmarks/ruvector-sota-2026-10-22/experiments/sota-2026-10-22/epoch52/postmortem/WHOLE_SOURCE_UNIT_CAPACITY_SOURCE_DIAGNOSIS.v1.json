@@ -1,0 +1,107 @@
+{
+  "actual_exception": {
+    "code": "WHOLE_SOURCE_SINGLE_UNIT_EXCEEDS_PAIR_CAP",
+    "type": "ValueError"
+  },
+  "actual_model_loading": {
+    "201_original_FP32_tensors_loaded": true,
+    "all109484547_original_elements": true,
+    "initialization_seconds": 7.1528744350071065
+  },
+  "actual_new_framework_tokenizer_model_native_DATA_Gold_calls_by_postmortem": 0,
+  "actual_observed_counts": {
+    "GPU_calls": 0,
+    "NLI_forwards_attempted": 0,
+    "NLI_forwards_completed": 0,
+    "calibration_calls": 0,
+    "forecasts_completed": 0,
+    "native_corpus_batches_attempted": 1,
+    "native_corpus_batches_completed": 1,
+    "native_hit_source_validations": 495,
+    "native_insertions_attempted": 165,
+    "native_insertions_completed": 165,
+    "native_queries_attempted": 12,
+    "native_queries_completed": 12,
+    "paid_API_calls": 0,
+    "reader_capacity_tokenizations": 4,
+    "reader_forward_pair_validations": 0,
+    "reader_initializations_attempted": 1,
+    "reader_initializations_completed": 1,
+    "reader_pair_tokenizations": 122,
+    "semantic_gold_decodes": 0,
+    "training_calls": 0
+  },
+  "actual_public_raw": {
+    "bytes": 230100,
+    "path": "experiments/sota-2026-10-22/epoch52/runs/dev/raw.json",
+    "sha256": "f2cd02097598d69e3dbaef1e2a0484a2e22c45d0a428938dcb3aa1cde27915d7"
+  },
+  "all_current4_document_groups_DEV_forever": [
+    64,
+    456,
+    482,
+    81
+  ],
+  "capacity_fix_observation": "Four successful scalarcapacitycalls and122pairtokenizations are consistent with the E51 empty-capacity guard repair progressing through realpairpreparation. No model forward wasattempted; forwardboundaryvalidationcount0, so its actualexecution/success is NOT established.",
+  "classification": "Expected frozen whole-unit coverage-policy limitation, explicitly covered by the existing overlong-unit rejection inerttest; not a newly established implementation bug.",
+  "epoch": 52,
+  "frozen_order_inference_only": "Capacity4 and the frozen loop ordering support failure whilepreparing the firstcase (document64/nda-1), but no explicit finalrow receipt identifies this; do not treat this as captured offending unit identity.",
+  "frozen_source_pins": [
+    {
+      "bytes": 29761,
+      "path": "experiments/sota-2026-10-22/runtime/epoch52/worker.py",
+      "sha256": "7311be58b054f20fb7d188dc4be68d6470d3504ce7e374e0b4f0840e59d7ff87"
+    },
+    {
+      "bytes": 14720,
+      "path": "experiments/sota-2026-10-22/runtime/epoch52/packing.py",
+      "sha256": "80e51e7246f2a7a7fdeb6e8f93b781350de3e973700c7aa02ebe49b8537bd548"
+    },
+    {
+      "bytes": 16775,
+      "path": "experiments/sota-2026-10-22/runtime/epoch52/reader.py",
+      "sha256": "0dcc216f9938eb448e1af97670219bc64011cf173ce3e80f58689eefe269033f"
+    },
+    {
+      "bytes": 13317,
+      "path": "experiments/sota-2026-10-22/runtime/epoch52/test_inert.py",
+      "sha256": "33b77639e3b6907a435da0ab6058ae317543f7d35f048ed16b848c8a213f3443"
+    }
+  ],
+  "kind": "SOURCE_DERIVED_ACTUAL_FROZEN_CONTEXT_POLICY_FAILURE_POSTMORTEM",
+  "metrics": {
+    "Brier": null,
+    "NLL": null,
+    "accuracy": null,
+    "decision_latency_p50": null,
+    "decision_latency_p95": null
+  },
+  "no_Gold_EVAL_confirmation_retry_or_R52_runtime_patch_by_this_work": true,
+  "private_read_scope": "Only Root-authorized traceback source-frame/error text was read; no private features, rawsource/evidence, identityrecords, vault or joinedGold payloads were opened. No private traceback body is included in this publicartifact.",
+  "sanitized_actual_traceback_frames": [
+    {
+      "function": "main",
+      "line": 377,
+      "path": "experiments/sota-2026-10-22/runtime/epoch52/worker.py"
+    },
+    {
+      "function": "pack_whole_source",
+      "line": 209,
+      "path": "experiments/sota-2026-10-22/runtime/epoch52/packing.py"
+    },
+    {
+      "function": "require",
+      "line": 16,
+      "path": "experiments/sota-2026-10-22/runtime/epoch52/packing.py"
+    }
+  ],
+  "schema_version": 1,
+  "source_derived_failure_mechanism": "Frozenwhole-sourcepacking encountered a later authoritative whole source unit that did notfit its hypothesis pairwithin512tokens evenalone. Sourcepacking209 is the branch that firstflushes an earlier nonempty validwindow, thenchecks the nextsingleunit. Theimmutablepolicy requires rejection of thewholebatch; no splitting/truncation/omission/neutralfallback oridentityreplacement wasauthorized.",
+  "status": "ACTUAL_RUNTIME_REJECTED_UNSCORED_NO_RETRY",
+  "used_confirmation_identities": [],
+  "what_was_not_captured": [
+    "Exact offending source unit ID or source offsets.",
+    "Exact offending token count or returned token values.",
+    "Any final NLI prediction, full pairedquality results orsemanticGold."
+  ]
+}

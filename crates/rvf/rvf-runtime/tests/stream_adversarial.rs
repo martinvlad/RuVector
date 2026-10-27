@@ -293,3 +293,92 @@ fn authentic_duplicates_never_double_apply_and_floods_poison() {
     );
     assert!(c.ingest.vectors().is_empty() && !c.ingest.layers().layer_a);
 }
+
+/// RV2-02: `sealed` is a derived release and re-checks the epoch pin: a session
+/// superseded after completion stops claiming `sealed = true`.
+#[test]
+fn sealed_requires_the_pin_to_still_hold() {
+    use rvf_wire::stream::{MemoryPinStore, PinStore};
+    let f = fixture_with(2600, 16, 8, 11, 1);
+    let keys = [f.public];
+    let store = MemoryPinStore::new();
+    let mut policy = StreamPolicy::new(&keys);
+    policy.pins = Some(&store);
+    let (_end, mut c) = run_mirror(&f, frames(&f).concat(), policy);
+    assert_eq!(c.ingest.state(), StreamState::CompleteUnverified);
+    let body = f.body.clone();
+    c.ingest
+        .finish_identity(|o, b| {
+            b.copy_from_slice(&body[o as usize..o as usize + b.len()]);
+            true
+        })
+        .unwrap();
+    let q = f.ds.vector(0).to_vec();
+    assert!(c.ingest.query(&q, 3, 16).sealed);
+    let d = c.ingest.verifier().descriptor().unwrap().clone();
+    store
+        .advance(
+            &d.header.signer_key_id,
+            &d.header.file_id,
+            None,
+            EpochPin {
+                epoch: d.header.epoch + 1,
+                descriptor_hash: [7; 32],
+            },
+        )
+        .unwrap();
+    assert_eq!(
+        c.ingest.recheck_pin(&store),
+        Err(ErrorCode::StreamStaleEpoch)
+    );
+    assert!(
+        !c.ingest.query(&q, 3, 16).sealed,
+        "superseded session must not be sealed"
+    );
+}
+
+/// F2-01: INDEX/JOURNAL segments are buffered whole; an ingest-level budget
+/// caps that (on top of the signed table's per-segment sizes).
+#[test]
+fn index_buffer_budget_poisons_instead_of_buffering() {
+    use rvf_runtime::progressive_stream::StreamIngest;
+    let f = fixture();
+    let keys = [f.public];
+    let mut ing = StreamIngest::new(StreamPolicy::new(&keys));
+    ing.set_buffer_budget(1000);
+    let mut refused = None;
+    for fr in frames(&f) {
+        let out = ing.feed(&fr);
+        if out.refused.is_some() {
+            refused = out.refused;
+            break;
+        }
+    }
+    let _ = refused;
+    assert!(matches!(
+        ing.state(),
+        StreamState::Poisoned(ErrorCode::StreamLimitExceeded)
+    ));
+    assert!(ing.vectors().is_empty() && !ing.layers().layer_a);
+}
+
+/// F2-03: routine witnesses are capped with a dropped count; terminal ones never.
+#[test]
+fn terminal_witnesses_survive_the_routine_cap() {
+    use rvf_runtime::progressive_stream::StreamIngest;
+    let f = fixture();
+    let keys = [f.public];
+    let mut ing = StreamIngest::new(StreamPolicy::new(&keys));
+    let d_len = 5 + f.bundle.descriptor.len();
+    ing.feed(&frames(&f).concat()[..d_len]);
+    for _ in 0..3000 {
+        ing.end_of_input();
+        ing.resume();
+    }
+    assert!(ing.dropped_witnesses() > 0);
+    ing.feed(&[0xEE]);
+    assert!(matches!(
+        ing.witnesses().last(),
+        Some(StreamWitness::StreamPoisoned { .. })
+    ));
+}

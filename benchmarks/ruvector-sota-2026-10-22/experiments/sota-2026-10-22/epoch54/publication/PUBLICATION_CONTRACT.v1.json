@@ -1,0 +1,136 @@
+{
+  "ACTIVE": {
+    "OS_lock_observation_scope": "PREPUBLICATION_SNAPSHOT_NOT_CURRENT_REMOTE_LEASE",
+    "epoch": 54,
+    "experiments_active": false,
+    "kind": "REAL_NATIVE_SOURCE_FRAGMENT_CAPACITY_QUALIFICATION",
+    "owner_sha256": "328fbd68dee74c862ab07df1f29f1403b605149fca1af22435bf64801cdad3cd",
+    "phase": "source|final",
+    "publication_is_not_scientific_authorization": true,
+    "source_checkpoint": "6187205840a9f77db9ab80e97e30be7b222e461e",
+    "work_active": "true for source; false for final"
+  },
+  "CONT_final_patch_allowed_keys": [
+    "epoch54_final",
+    "rejection_ledger",
+    "latest_learning",
+    "next_research_priority",
+    "cumulative_budget_ledger",
+    "benchmark_refresh",
+    "publisher_status",
+    "exposed_development_sets"
+  ],
+  "CONT_source_patch_allowed_keys": [
+    "epoch54_source",
+    "epoch54_frozen_study",
+    "epoch54_data_roles"
+  ],
+  "CP_phase_record": "New metadata fact record copied only under epoch54_source or epoch54_final; all previous CP fields preserved",
+  "FINAL_manifest": {
+    "epoch": 54,
+    "files": "Exact every E54 public 3ref except manifestself. Guard prohibits any source bytes change/newfile mismatch.",
+    "no_project_additions_after_manifest": true,
+    "source_checkpoint": "6187205840a9f77db9ab80e97e30be7b222e461e"
+  },
+  "FINAL_phase_additional_keys": [
+    "actual_SOURCE_receipt",
+    "independent_SOURCE_readback",
+    "epoch_manifest"
+  ],
+  "SOURCE_FREEZE": {
+    "epoch": 54,
+    "files": "Unique relative 3refs for every current E54 public file except SOURCE_FREEZE self, including plan, guard, stagebuilder, controller, executable candidate/scorer/data/qualification sources before measurements. Any inherited file used may also be pinned; exact baseline Git/CP provenance checked.",
+    "source_checkpoint": "6187205840a9f77db9ab80e97e30be7b222e461e"
+  },
+  "SOURCE_phase_input_required_keys": [
+    "epoch",
+    "kind",
+    "phase",
+    "source_checkpoint",
+    "parent",
+    "owner",
+    "plan",
+    "source_freeze",
+    "transport_sources",
+    "source_map",
+    "root_baseline",
+    "bench_baseline",
+    "current_CP",
+    "current_CONT",
+    "artifacts",
+    "CONT_patch",
+    "ACTIVE",
+    "CP_phase_record",
+    "commit_message"
+  ],
+  "actual_Git_or_SCI_calls": 0,
+  "actual_SOURCE_independent_readback_minimum": [
+    "checks_passed:true",
+    "verified_actual_remote_readback:true",
+    "commit:<actualSOURCEcommit>",
+    "tree_sha:<actualSOURCEroot>",
+    "source_plan_sha256:<exactplanhash>",
+    "source_freeze_sha256:<exactSFhash>"
+  ],
+  "commands": {
+    "controller": "Load exact controller.js definitions in fresh Function perphase; explicitly await publishE54Phase(phase,approvalpath,approvalSHA), then await persistE54Receipt(result). No replay/retry after uncertain external mutation.",
+    "localpreflight": "taskset -c 0,1 python -I -B W54/publication-helpers/guard.py check --phase <source|final> --approval <fullstageapproval> --approval-sha <sha>",
+    "stage": "taskset -c 0,1 python -I -B W54/publication-helpers/stagebuilder.py --input <phaseinput> --input-sha <sha> --approval <prepreview> --approval-sha <sha> --out W54/stage-<source|final>"
+  },
+  "epoch": 54,
+  "forbidden_Git_objects": [
+    "3d5a61f9068acf2dabd2ae5c6bd531d9a9b464c5",
+    "486888de9602bbb5d817a55f707b4fcfd11c65e0",
+    "a68b7ba587332f176f65d0348de3e910aa16e77a"
+  ],
+  "fullstage_approval_minimum": [
+    "checks_passed:true",
+    "publication_phase_allowed:true",
+    "source_and_denylist_review_passed:true",
+    "dual_unknown_denylist_reviewed:true",
+    "epoch:54",
+    "phase:<source|final>",
+    "stage_metadata_sha256:<exactstagehash>",
+    "expected_final_root_sha:<exactdesiredroot>",
+    "source_parent:<actualexactparent>",
+    "owner_sha256:<exactcurrentownerhash>",
+    "source_freeze_sha256:<exactSFhash>",
+    "forbidden_Git_objects:<exactsorted3>",
+    "original_blob5_execution:UNKNOWN_PERMANENTLY"
+  ],
+  "kind": "REAL_NATIVE_SOURCE_FRAGMENT_CAPACITY_QUALIFICATION",
+  "minimum_plan": {
+    "epoch": 54,
+    "kind": "REAL_NATIVE_SOURCE_FRAGMENT_CAPACITY_QUALIFICATION",
+    "source_checkpoint": "6187205840a9f77db9ab80e97e30be7b222e461e",
+    "source_freeze_path": "experiments/sota-2026-10-22/epoch54/SOURCE_FREEZE.json"
+  },
+  "original_blob5_execution": "UNKNOWN_PERMANENTLY",
+  "preparation_approval_minimum": [
+    "checks_passed:true",
+    "phase_preparation_allowed:true",
+    "phase_input_sha256:<exact inputSHA>"
+  ],
+  "preserve": "All old CONT and CP fields and rows unchanged except explicit current patch; champion/goal/rank/unused confirmation exact unchanged; old budgethistory exactprefix with only epoch54_actual_execution new key; old exposure history unchangedprefix",
+  "publication_only": true,
+  "schema_version": 1,
+  "scientific_authorization_granted": false,
+  "source_map": "Absolute3ref JSON complete actualparent Git scope leaves plus commit/root/bench/scope_sha; use compatibility aliases if map root_tree/bench_tree/scope_tree",
+  "transport_sources": [
+    {
+      "bytes": 20229,
+      "path": "/dev/shm/ruvector-e54-audit/helpers/guard.py",
+      "sha256": "83b07e23dfc0abec710593ef70679ee432d18724d98d92595455b202819c711e"
+    },
+    {
+      "bytes": 16285,
+      "path": "/dev/shm/ruvector-e54-audit/helpers/stagebuilder.py",
+      "sha256": "61c2242622adf6441f7409b06713af63d7bea1a81dd2846b92bdbf1920affce5"
+    },
+    {
+      "bytes": 9592,
+      "path": "/dev/shm/ruvector-e54-audit/helpers/controller.js",
+      "sha256": "63cef0c5d7c30610bdddc87e07a4c521289f469f49e2602670e95e2cd74dd711"
+    }
+  ]
+}

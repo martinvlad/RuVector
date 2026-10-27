@@ -1,0 +1,273 @@
+{
+  "GPU_calls_authorized": 0,
+  "KILL_backstop_seconds": 585,
+  "NLI_forwards_authorized": 0,
+  "TERM_backstop_seconds": 580,
+  "arms": [
+    "native",
+    "lexical",
+    "source_order",
+    "whole_source"
+  ],
+  "arms_scope": "Matched same authored catalog/tokenizer, native/BM25/source-order whole-unit top4 packing plus complete source-order partition. Source coverage is not semantic evidence sufficiency.",
+  "automatic_retry_authorized": false,
+  "benchmark_confirmation_identities_used": [],
+  "bge_model": {
+    "bytes": 133093490,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project/models/bge-small-en-v1.5/model.onnx",
+    "sha256": "828e1496d7fabb79cfa4dcd84fa38625c0d3d21da474a00f08db0f559940cf35"
+  },
+  "bge_tokenizer": {
+    "bytes": 711396,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project/models/bge-small-en-v1.5/tokenizer.json",
+    "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+  },
+  "calibration_calls": 0,
+  "champion_preserved": true,
+  "engineering_acceptance_gates": [
+    "complete source character/offset/parent-hash reconstruction",
+    "all three genuine original query/source pairs per fragment <=512 without truncation",
+    "actual oversized groups and all frozen coalescing branch reasons exercised",
+    "all four arms use the same fragment catalog",
+    "all48 engineered contexts retain exact selected-unit protected-substring multisets",
+    "whole-source partitions reconstruct every source character once",
+    "one actual native batch /4indexes /12queries with exact returned-source F32 bits",
+    "all operation caps/CPU2/deadline/network/physical closure qualified",
+    "zero typed model initialization/weights access/NLI/Gold/train/calibration/paid/GPU"
+  ],
+  "engineering_hypothesis": "The exact E53 greedy source-offset fragmenter can preserve every authored source character, parent offset and protected substring while fitting every new authored query under the actual original BERT pair tokenizer, including genuine oversized and coalesced Unicode/numeric/blank source groups before real BGE/native retrieval.",
+  "epoch": 54,
+  "failure_policy": "Retain actual errors, partial counters and uncertainty; reject engineering qualification on any incomplete/integrity/runtime/deadline failure. No rerun, canary, semantic fallback, retuning or second native slot.",
+  "fixture_data_license": "CC0-1.0",
+  "fixtures": {
+    "bytes": 40514,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch54-6187205840a9/project/experiments/sota-2026-10-22/runtime/epoch54/authored_fixtures.json",
+    "sha256": "d5441c90be258ead32a349493dbc93ff7eb45d01f6fe9ed1a65fe7c2f190dfc1"
+  },
+  "inherited_source_files": [
+    {
+      "bytes": 25255,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch54-6187205840a9/project/experiments/sota-2026-10-22/runtime/epoch54/inherited_packing.py",
+      "sha256": "10d2d59e1ba860700e1e22e12010756130b15973bc2c4f25885b1bd654341c5b"
+    },
+    {
+      "bytes": 18049,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch54-6187205840a9/project/experiments/sota-2026-10-22/runtime/epoch54/inherited_reader.py",
+      "sha256": "108a842198a96d0d28af53d92b7f3edcb1fbe0012c422917a6f63667d76b95c1"
+    },
+    {
+      "bytes": 4994,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch54-6187205840a9/project/experiments/sota-2026-10-22/runtime/epoch54/inherited_guards.py",
+      "sha256": "2d3aad4713828a69eba4becbee5fb1c731164638a0000742aaa5bef24376f7dc"
+    }
+  ],
+  "kind": "REAL_NATIVE_SOURCE_FRAGMENT_CAPACITY_QUALIFICATION",
+  "latency_summary": {
+    "context_preparation": {
+      "excluded": "BM25/order preparation, shared catalog/BGE/index/query/model-tokenizer initialization and cleanup; not full retrieval or publisher latency",
+      "field": "context_preparation_seconds",
+      "per_arm_N": 12,
+      "quantile_method": "linear interpolation at (N-1)*q",
+      "quantiles": [
+        0.5,
+        0.95
+      ]
+    },
+    "inclusive_clocks": "Report raw worker wall and supervisor outer wall separately; root also captures actual CLI invocation wall including Python interpreter bootstrap.",
+    "native_query": {
+      "N": 12,
+      "field": "native_query_and_hit_validation_seconds",
+      "quantile_method": "linear interpolation at (N-1)*q",
+      "quantiles": [
+        0.5,
+        0.95
+      ],
+      "scope": "One query per authored case, same value repeated across arms; summarize unique cases once. Includes native returned-hit F32 validation/result capture."
+    }
+  },
+  "launch_environment": {
+    "BLIS_NUM_THREADS": "2",
+    "CUDA_VISIBLE_DEVICES": "",
+    "HF_DATASETS_OFFLINE": "1",
+    "HF_HUB_DISABLE_TELEMETRY": "1",
+    "HF_HUB_OFFLINE": "1",
+    "MKL_DYNAMIC": "FALSE",
+    "MKL_NUM_THREADS": "2",
+    "NUMEXPR_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "2",
+    "OMP_THREAD_LIMIT": "2",
+    "OPENBLAS_NUM_THREADS": "2",
+    "RAYON_NUM_THREADS": "2",
+    "TOKENIZERS_PARALLELISM": "false",
+    "TRANSFORMERS_OFFLINE": "1",
+    "UV_THREADPOOL_SIZE": "2",
+    "VECLIB_MAXIMUM_THREADS": "2"
+  },
+  "maximum_native_batches": 1,
+  "maximum_outer_seconds": 600,
+  "maximum_worker_deadline_seconds_from_outer_start": 570,
+  "native_binary": {
+    "bytes": 5403040,
+    "path": "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project/retrieval/node_modules/ruvector-core-linux-x64-gnu/ruvector.node",
+    "sha256": "ff559e9fac2e3d29a8b32e890fdb047bcd4bd28f389b4731ad72148b221d5a2e"
+  },
+  "native_root": "/tmp/ruvector-sota-2026-10-22/epoch38-7c50ba99848f/project",
+  "node": {
+    "bytes": 125989464,
+    "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "sha256": "bc17c508ffeed0ec622934f9b7fa72f8e78da65350e63c3eceb56fa688aa5e12"
+  },
+  "official_goal_verified": false,
+  "operation_caps": {
+    "BGE_embed_only_truncation_tokens": 256,
+    "BGE_forward_calls": 64,
+    "BGE_initializations": 1,
+    "BGE_texts": 268,
+    "engineering_contexts": 48,
+    "engineering_total_fragment_cap": 256,
+    "fragmentation_pair_tokenizations": 12000,
+    "fragments_per_document": 1024,
+    "fragments_per_phase_inherited": 4096,
+    "global_pair_tokenizations": 36000,
+    "native_indexes": 4,
+    "native_queries": 12,
+    "packing_pair_tokenizations": 24000,
+    "scalar_capacity_tokenizations": 48,
+    "tokenizer_initializations": 1,
+    "whole_source_windows_per_query": 24
+  },
+  "owner_ref": {
+    "bytes": 699,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch54-6187205840a9/owner.json",
+    "sha256": "328fbd68dee74c862ab07df1f29f1403b605149fca1af22435bf64801cdad3cd"
+  },
+  "paid_API_budget_remaining": 0,
+  "phase_roles": {
+    "engineering": {
+      "case_ids": [
+        "authored:e54:oversized-source:query-1",
+        "authored:e54:oversized-source:query-2",
+        "authored:e54:oversized-source:query-3",
+        "authored:e54:numeric-blank:query-1",
+        "authored:e54:numeric-blank:query-2",
+        "authored:e54:numeric-blank:query-3",
+        "authored:e54:combining-mark:query-1",
+        "authored:e54:combining-mark:query-2",
+        "authored:e54:combining-mark:query-3",
+        "authored:e54:zwj-boundary:query-1",
+        "authored:e54:zwj-boundary:query-2",
+        "authored:e54:zwj-boundary:query-3"
+      ],
+      "document_ids": [
+        "authored:e54:oversized-source",
+        "authored:e54:numeric-blank",
+        "authored:e54:combining-mark",
+        "authored:e54:zwj-boundary"
+      ]
+    }
+  },
+  "project_root": "/dev/shm/ruvector-sota-2026-10-22/epoch54-6187205840a9/project",
+  "python_executable": "/tmp/ruvector-sota-2026-10-22/epoch33-0522a2c521c9/runtime/.venv/bin/python",
+  "quality_metrics": {
+    "Brier": null,
+    "NLL": null,
+    "accuracy": null
+  },
+  "required_branch_coverage": {
+    "ZWJ_boundary_crossings_minimum": 1,
+    "blank_boundary_crossings_minimum": 1,
+    "capacity_fitting_groups_preserved_minimum": 1,
+    "coalesced_boundaries_minimum": 4,
+    "combining_boundary_crossings_minimum": 1,
+    "each_document_at_least_one_actual_over_capacity_group": true,
+    "every_over_capacity_group_fragmented_into_at_least_two": true,
+    "protected_numeric_boundary_crossings_minimum": 2
+  },
+  "roles": {
+    "calibration": [],
+    "development": [],
+    "engineering": [
+      "authored:e54:oversized-source:query-1",
+      "authored:e54:oversized-source:query-2",
+      "authored:e54:oversized-source:query-3",
+      "authored:e54:numeric-blank:query-1",
+      "authored:e54:numeric-blank:query-2",
+      "authored:e54:numeric-blank:query-3",
+      "authored:e54:combining-mark:query-1",
+      "authored:e54:combining-mark:query-2",
+      "authored:e54:combining-mark:query-3",
+      "authored:e54:zwj-boundary:query-1",
+      "authored:e54:zwj-boundary:query-2",
+      "authored:e54:zwj-boundary:query-3"
+    ],
+    "fresh_confirmation": [],
+    "train": []
+  },
+  "runtime_versions": {
+    "numpy": "2.2.6",
+    "onnxruntime": "1.22.1",
+    "safetensors": "0.5.3",
+    "tokenizers": "0.21.4",
+    "torch": "2.7.1+cpu",
+    "transformers": "4.52.4"
+  },
+  "schema_version": 1,
+  "scientific_scope": "Engineering source/capacity/integrity qualification only. No typed decision model is constructed or scored. No benchmark accuracy, proper loss, generalization, champion promotion, submission, official rank or eligibility claim.",
+  "semantic_labels_authorized": 0,
+  "source_checkpoint": "6187205840a9f77db9ab80e97e30be7b222e461e",
+  "source_freeze_path": "experiments/sota-2026-10-22/epoch54/SOURCE_FREEZE.json",
+  "supervisor_source": {
+    "bytes": 16945,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch54-6187205840a9/project/experiments/sota-2026-10-22/runtime/epoch54/supervisor.py",
+    "sha256": "5517c0facf44be242192ea413fd92585dc4ab1934115f2427666801dc5d8e667"
+  },
+  "tokenizer_assets": [
+    {
+      "bytes": 3826,
+      "file": "README.md",
+      "path": "/dev/shm/ruvector-e51-data/assets/contractnli-bert-nda-standard-ac92b6b512d7/README.md",
+      "sha256": "50d814736a690894cc46876a99bfd5674685ced5573360098f90761ab2eb3f52"
+    },
+    {
+      "bytes": 863,
+      "file": "config.json",
+      "path": "/dev/shm/ruvector-e51-data/assets/contractnli-bert-nda-standard-ac92b6b512d7/config.json",
+      "sha256": "389b48b55be138039705982041265239dcddab44a8d68dd5105b4cfd135717f0"
+    },
+    {
+      "bytes": 125,
+      "file": "special_tokens_map.json",
+      "path": "/dev/shm/ruvector-e51-data/assets/contractnli-bert-nda-standard-ac92b6b512d7/special_tokens_map.json",
+      "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+    },
+    {
+      "bytes": 711661,
+      "file": "tokenizer.json",
+      "path": "/dev/shm/ruvector-e51-data/assets/contractnli-bert-nda-standard-ac92b6b512d7/tokenizer.json",
+      "sha256": "cb374d6bc042c22455946f4e09a89d29882a199fdaf8fb25be00dc8b8857a448"
+    },
+    {
+      "bytes": 1221,
+      "file": "tokenizer_config.json",
+      "path": "/dev/shm/ruvector-e51-data/assets/contractnli-bert-nda-standard-ac92b6b512d7/tokenizer_config.json",
+      "sha256": "1f92c93d2e31974acffab86d48e80a9357acb18c68346c5472ef1d12c72d5d77"
+    },
+    {
+      "bytes": 231508,
+      "file": "vocab.txt",
+      "path": "/dev/shm/ruvector-e51-data/assets/contractnli-bert-nda-standard-ac92b6b512d7/vocab.txt",
+      "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    }
+  ],
+  "tokenizer_directory": "/dev/shm/ruvector-e51-data/assets/contractnli-bert-nda-standard-ac92b6b512d7",
+  "tokenizer_id": "Agreemind/contractnli-bert-nda-standard",
+  "tokenizer_revision": "ac92b6b512d7a4bad7abe356750c3b916fe18649",
+  "training_calls": 0,
+  "typed_model_initializations_authorized": 0,
+  "work_root": "/dev/shm/ruvector-sota-2026-10-22/epoch54-6187205840a9",
+  "worker_source": {
+    "bytes": 19180,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch54-6187205840a9/project/experiments/sota-2026-10-22/runtime/epoch54/worker.py",
+    "sha256": "54b1652a56bac7817e22d4e5fe1eac9e63f0928b27848c8b068313166dd20235"
+  }
+}

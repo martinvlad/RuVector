@@ -1,0 +1,206 @@
+{
+  "Brier": {
+    "lexical": 1.305720453598142,
+    "native": 1.2560504070371696,
+    "source_order": 0.5650198814775468,
+    "whole_source": 1.3062212779974949
+  },
+  "Gold_EVAL_calls": 2,
+  "NLL": {
+    "lexical": 5.953572386967174,
+    "native": 5.965334684268086,
+    "source_order": 1.314453264707763,
+    "whole_source": 6.113013082231443
+  },
+  "accuracy": {
+    "lexical": 0.3333333333333333,
+    "native": 0.3333333333333333,
+    "source_order": 0.6666666666666666,
+    "whole_source": 0.3333333333333333
+  },
+  "actual_final_forecasts": 48,
+  "actual_model_forward_calls": 108,
+  "actual_native_corpus_batches": 1,
+  "all_owned_processes_physically_closed": true,
+  "candidate_promoted": false,
+  "decision_latency_seconds": {
+    "lexical": {
+      "N": 12,
+      "p50": 0.43454885252867825,
+      "p95": 0.6098984921467491,
+      "scope": "Actual perrequest packing/tokenization and model forward; excludes shared all-hypothesis fragment-catalog preparation, BGE/native/index/reader initialization, queue and cleanup. Shared catalog/batch times are separately retained. Not publisher latency."
+    },
+    "native": {
+      "N": 12,
+      "p50": 0.4162077810324263,
+      "p95": 0.6824292964563937,
+      "scope": "Actual perrequest packing/tokenization and model forward; excludes shared all-hypothesis fragment-catalog preparation, BGE/native/index/reader initialization, queue and cleanup. Shared catalog/batch times are separately retained. Not publisher latency."
+    },
+    "source_order": {
+      "N": 12,
+      "p50": 0.2683112504892051,
+      "p95": 0.5321111136814579,
+      "scope": "Actual perrequest packing/tokenization and model forward; excludes shared all-hypothesis fragment-catalog preparation, BGE/native/index/reader initialization, queue and cleanup. Shared catalog/batch times are separately retained. Not publisher latency."
+    },
+    "whole_source": {
+      "N": 12,
+      "p50": 3.709753413539147,
+      "p95": 5.103418173862155,
+      "scope": "Actual perrequest packing/tokenization and model forward; excludes shared all-hypothesis fragment-catalog preparation, BGE/native/index/reader initialization, queue and cleanup. Shared catalog/batch times are separately retained. Not publisher latency."
+    }
+  },
+  "dev_passed": false,
+  "epoch": 53,
+  "error_codes": [],
+  "evaluation_ref": {
+    "bytes": 189854,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch53-655e7aa57e34/project/experiments/sota-2026-10-22/epoch53/evaluation/DEV_RESULTS.json",
+    "sha256": "4873f60cbe19d3c64ba15a70ee0f935e12268f3c8a30e8cf8c00101c5699dff9"
+  },
+  "execution_ref": {
+    "bytes": 3181,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch53-655e7aa57e34/runs/dev/execution.json",
+    "sha256": "1d8951c3d9529a7a8571181111bd2c5cdf1af96087ad9df3d4ec4a2d9cf4ec13"
+  },
+  "independent_acceptance_ref": {
+    "bytes": 10996,
+    "path": "/dev/shm/ruvector-e53-audit/DEV_ACCEPTANCE_AND_REJECTION_INDEPENDENT.v1.json",
+    "sha256": "1906cf054b3ebedd20f51075e68e08d62e6c70d7c831c8b907f599200f5cd83a"
+  },
+  "kind": "REAL_CONTRACTNLI_CONTRACT_BERT_WHOLE_SOURCE_PILOT",
+  "metrics_scope": "Four public DEV groups, checkpoint-development/model-selection exposed. Source-order8/12 beats native4/12; no fresh model holdout/generalization or official benchmark/rank claim. Raw semanticGold0 at forecast seal;12 late DEV labels decoded only after closure.",
+  "official_goal_verified": false,
+  "outer_execution_ref": {
+    "bytes": 2501,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch53-655e7aa57e34/DEV_OUTER_EXECUTION.actual.v1.json",
+    "sha256": "344c29a1f38211ec5c35712c8273fe1c1d70568b5ee84070a5b9673aaf3fe73d"
+  },
+  "outer_wall_seconds_including_capture_and_physical_cleanup": 78.33164212299744,
+  "paired_effects_or_uncertainty": {
+    "document_clusters": 4,
+    "native_minus_control": {
+      "lexical": {
+        "Brier": {
+          "p025": -0.12415324751375617,
+          "p975": 0.015547327369330713
+        },
+        "NLL": {
+          "p025": -0.17493907833624642,
+          "p975": 0.26820068915844075
+        },
+        "accuracy": {
+          "p025": 0.0,
+          "p975": 0.0
+        }
+      },
+      "source_order": {
+        "Brier": {
+          "p025": 0.3826643912820556,
+          "p975": 1.0203672328018956
+        },
+        "NLL": {
+          "p025": 2.985346730078584,
+          "p975": 5.649394299167651
+        },
+        "accuracy": {
+          "p025": -0.5,
+          "p975": -0.16666666666666666
+        }
+      },
+      "whole_source": {
+        "Brier": {
+          "p025": -0.13388261107294383,
+          "p975": 0.022946191341311636
+        },
+        "NLL": {
+          "p025": -0.24135633531440184,
+          "p975": -0.07056480902643451
+        },
+        "accuracy": {
+          "p025": 0.0,
+          "p975": 0.0
+        }
+      }
+    },
+    "resamples": 256,
+    "scope": "Four public diagnostic development source groups, checkpoint-development/model-selection exposed; descriptive intervals do not establish fresh model holdout generalization, benchmark generalization or official rank.",
+    "seed": 48
+  },
+  "phase": "dev",
+  "physical_closure_ref": {
+    "bytes": 1438,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch53-655e7aa57e34/DEV_PHYSICAL_CLOSURE.actual.v1.json",
+    "sha256": "6da3c719618537252705a1dd0198a75260bcb298e55c5ba1b694a4f1a1e173a9"
+  },
+  "plan_sha256": "86d8962f91ca40334f8539a0392170fc33752e2f3a98fd7cece5e3fcda7e50ca",
+  "qualification_ref": {
+    "bytes": 6802,
+    "path": "/dev/shm/ruvector-e53-audit/DEV_RUNTIME_QUALIFICATION_INDEPENDENT.v1.json",
+    "sha256": "53fdc3db3cc56e3c70c2ae0236e2afd125897f33e88069f321571164e4576b2a"
+  },
+  "raw_ref": {
+    "bytes": 1122428,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch53-655e7aa57e34/runs/dev/raw.json",
+    "sha256": "f6eb5f89824aa0baa6ae162f79b01f3fca542ed67797464b8a4bc10f0dd36acf"
+  },
+  "raw_seal_ref": {
+    "bytes": 651,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch53-655e7aa57e34/runs/dev/raw-seal.json",
+    "sha256": "d65879a0c54c1d519ea9c7131eff0827abe3dc6a42437db1a680388aa60c0fbb"
+  },
+  "runtime_qualified": true,
+  "schema_version": 1,
+  "scientific_execution_counters": {
+    "BGE_forward_calls_attempted": 41,
+    "BGE_forward_calls_completed": 41,
+    "BGE_initializations_attempted": 1,
+    "BGE_initializations_completed": 1,
+    "BGE_texts_attempted": 298,
+    "BGE_texts_completed": 298,
+    "GPU_calls": 0,
+    "NLI_forwards_attempted": 108,
+    "NLI_forwards_completed": 108,
+    "Node_network_operations_attempted": 0,
+    "Python_network_operations_attempted": 1,
+    "Python_network_operations_blocked": 1,
+    "calibration_calls": 0,
+    "feature_cases_admitted": 12,
+    "feature_documents_admitted": 4,
+    "forecasts_completed": 48,
+    "native_binary_loads_attempted": 1,
+    "native_binary_loads_completed": 1,
+    "native_corpus_batches": 1,
+    "native_corpus_batches_attempted": 1,
+    "native_corpus_batches_completed": 1,
+    "native_hit_source_validations": 858,
+    "native_index_initializations_attempted": 4,
+    "native_index_initializations_completed": 4,
+    "native_insertions_attempted": 286,
+    "native_insertions_completed": 286,
+    "native_len_calls_attempted": 8,
+    "native_len_calls_completed": 8,
+    "native_queries_attempted": 12,
+    "native_queries_completed": 12,
+    "native_version_calls_attempted": 1,
+    "native_version_calls_completed": 1,
+    "paid_API_calls": 0,
+    "reader_capacity_tokenizations": 48,
+    "reader_forward_pair_validations": 108,
+    "reader_fragmentation_pair_tokenizations": 858,
+    "reader_fragmentation_pair_tokenizations_completed": 858,
+    "reader_initializations_attempted": 1,
+    "reader_initializations_completed": 1,
+    "reader_packing_pair_tokenizations": 1210,
+    "reader_packing_pair_tokenizations_completed": 1210,
+    "reader_pair_tokenizations": 2068,
+    "reader_pair_tokenizations_completed": 2068,
+    "semantic_gold_decodes": 0,
+    "training_calls": 0
+  },
+  "semantic_gold_decodes": 12,
+  "source_checkpoint": "655e7aa57e34b0d5b0702e3a5957640a932b9d23",
+  "source_commit": "57302c998939a053f68ed29c38be870c277ba54f",
+  "source_freeze_sha256": "98743a92524baf6803fd00a15756d6a5ec88a8e12176ba563ec48c23f52fe0e4",
+  "status": "REJECTED_DEV",
+  "used_confirmation_identities": []
+}

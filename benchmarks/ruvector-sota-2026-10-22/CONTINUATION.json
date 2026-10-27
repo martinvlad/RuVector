@@ -5,10 +5,10 @@
     "experiments_active": false,
     "kind": "REAL_CONTRACTNLI_CONTRACT_BERT_WHOLE_SOURCE_PILOT",
     "owner_sha256": "30ab38d6c1c0f418c0ada89ccb51f9c2ab587bd6f094847026be15e550dcfa36",
-    "phase": "source",
+    "phase": "final",
     "publication_is_not_scientific_authorization": true,
     "source_checkpoint": "655e7aa57e34b0d5b0702e3a5957640a932b9d23",
-    "work_active": true
+    "work_active": false
   },
   "artifact_transport": {
     "archive": {
@@ -277,6 +277,11 @@
       "path": "experiments/sota-2026-10-22/epoch52/official-refresh/benchmark-refresh.safe.json",
       "sha256": "6b980912ef46db26a15c1cafe8662d7ff4eaed3d3d7d5d11fd2804ea64706e62"
     },
+    "epoch53_observation": {
+      "bytes": 10529,
+      "path": "experiments/sota-2026-10-22/epoch53/official-refresh/benchmark-refresh.safe.json",
+      "sha256": "93229f5f906f85ce4fe0772332a08699bcb19b1f158ec7aadae0fb3b9aa75f0c"
+    },
     "independent_review": {
       "bytes": 3774,
       "path": "experiments/sota-2026-10-22/audit/epoch41/official-refresh-publication-independent-v1.json",
@@ -406,7 +411,7 @@
     }
   },
   "champion": "SubmittedNative104/RRF10 unchanged",
-  "checkpoint_manifest_sha256": "9450ef68adfe01c2e5900da73aaf9960c0b1f9ae0a9ef645933dc0e6f2bca8cd",
+  "checkpoint_manifest_sha256": "210bcf3174c450abcc33d5de4f872f874a89e72a21b3f98e79b696a55e4275bc",
   "cumulative_budget_ledger": {
     "allowed_further_attempts_in_closed_study": 0,
     "closed_epoch10_study": {
@@ -1881,6 +1886,65 @@
       "reader_initializations_attempted": 1,
       "reader_initializations_completed": 1,
       "reader_pair_tokenizations": 122,
+      "semantic_gold_decodes": 0,
+      "semantic_gold_decodes_at_forecast_seal": 0,
+      "training_calls": 0,
+      "unused_second_slot_closed_for_lineage": true
+    },
+    "epoch53_actual_execution": {
+      "BGE_forward_calls_attempted": 41,
+      "BGE_forward_calls_completed": 41,
+      "BGE_initializations_attempted": 1,
+      "BGE_initializations_completed": 1,
+      "BGE_texts_attempted": 298,
+      "BGE_texts_completed": 298,
+      "CONF_DATA_calls": 0,
+      "CONF_EVALUATE_calls": 0,
+      "CONF_Gold_calls": 0,
+      "CONF_native_batches": 0,
+      "DEV_DATA_calls": 1,
+      "DEV_EVALUATE_calls": 1,
+      "DEV_Gold_calls": 1,
+      "DEV_semantic_gold_decodes_after_seal": 12,
+      "GPU_calls": 0,
+      "NLI_forwards_attempted": 108,
+      "NLI_forwards_completed": 108,
+      "Node_network_operations_attempted": 0,
+      "Python_network_operations_attempted": 1,
+      "Python_network_operations_blocked": 1,
+      "allowed_further_epoch53_attempts": 0,
+      "calibration_calls": 0,
+      "feature_cases_admitted": 12,
+      "feature_documents_admitted": 4,
+      "forecasts_completed": 48,
+      "native_binary_loads_attempted": 1,
+      "native_binary_loads_completed": 1,
+      "native_corpus_batches": 1,
+      "native_corpus_batches_attempted": 1,
+      "native_corpus_batches_completed": 1,
+      "native_hit_source_validations": 858,
+      "native_index_initializations_attempted": 4,
+      "native_index_initializations_completed": 4,
+      "native_insertions_attempted": 286,
+      "native_insertions_completed": 286,
+      "native_len_calls_attempted": 8,
+      "native_len_calls_completed": 8,
+      "native_queries_attempted": 12,
+      "native_queries_completed": 12,
+      "native_version_calls_attempted": 1,
+      "native_version_calls_completed": 1,
+      "outer_wall_seconds_including_capture_physical_cleanup": 78.33164212299744,
+      "paid_API_calls": 0,
+      "reader_capacity_tokenizations": 48,
+      "reader_forward_pair_validations": 108,
+      "reader_fragmentation_pair_tokenizations": 858,
+      "reader_fragmentation_pair_tokenizations_completed": 858,
+      "reader_initializations_attempted": 1,
+      "reader_initializations_completed": 1,
+      "reader_packing_pair_tokenizations": 1210,
+      "reader_packing_pair_tokenizations_completed": 1210,
+      "reader_pair_tokenizations": 2068,
+      "reader_pair_tokenizations_completed": 2068,
       "semantic_gold_decodes": 0,
       "semantic_gold_decodes_at_forecast_seal": 0,
       "training_calls": 0,
@@ -9712,6 +9776,154 @@
     "train": [],
     "used_confirmation_identities": []
   },
+  "epoch53_final": {
+    "actual_SOURCE_commit": "57302c998939a053f68ed29c38be870c277ba54f",
+    "actual_execution": {
+      "BGE_forward_calls_attempted": 41,
+      "BGE_forward_calls_completed": 41,
+      "BGE_initializations_attempted": 1,
+      "BGE_initializations_completed": 1,
+      "BGE_texts_attempted": 298,
+      "BGE_texts_completed": 298,
+      "CONF_DATA_calls": 0,
+      "CONF_EVALUATE_calls": 0,
+      "CONF_Gold_calls": 0,
+      "CONF_native_batches": 0,
+      "DEV_DATA_calls": 1,
+      "DEV_EVALUATE_calls": 1,
+      "DEV_Gold_calls": 1,
+      "DEV_semantic_gold_decodes_after_seal": 12,
+      "GPU_calls": 0,
+      "NLI_forwards_attempted": 108,
+      "NLI_forwards_completed": 108,
+      "Node_network_operations_attempted": 0,
+      "Python_network_operations_attempted": 1,
+      "Python_network_operations_blocked": 1,
+      "allowed_further_epoch53_attempts": 0,
+      "calibration_calls": 0,
+      "feature_cases_admitted": 12,
+      "feature_documents_admitted": 4,
+      "forecasts_completed": 48,
+      "native_binary_loads_attempted": 1,
+      "native_binary_loads_completed": 1,
+      "native_corpus_batches": 1,
+      "native_corpus_batches_attempted": 1,
+      "native_corpus_batches_completed": 1,
+      "native_hit_source_validations": 858,
+      "native_index_initializations_attempted": 4,
+      "native_index_initializations_completed": 4,
+      "native_insertions_attempted": 286,
+      "native_insertions_completed": 286,
+      "native_len_calls_attempted": 8,
+      "native_len_calls_completed": 8,
+      "native_queries_attempted": 12,
+      "native_queries_completed": 12,
+      "native_version_calls_attempted": 1,
+      "native_version_calls_completed": 1,
+      "outer_wall_seconds_including_capture_physical_cleanup": 78.33164212299744,
+      "paid_API_calls": 0,
+      "reader_capacity_tokenizations": 48,
+      "reader_forward_pair_validations": 108,
+      "reader_fragmentation_pair_tokenizations": 858,
+      "reader_fragmentation_pair_tokenizations_completed": 858,
+      "reader_initializations_attempted": 1,
+      "reader_initializations_completed": 1,
+      "reader_packing_pair_tokenizations": 1210,
+      "reader_packing_pair_tokenizations_completed": 1210,
+      "reader_pair_tokenizations": 2068,
+      "reader_pair_tokenizations_completed": 2068,
+      "semantic_gold_decodes": 0,
+      "semantic_gold_decodes_at_forecast_seal": 0,
+      "training_calls": 0,
+      "unused_second_slot_closed_for_lineage": true
+    },
+    "confirmation_lineage_status": "UNQUALIFIED_HOLD",
+    "epoch": 53,
+    "epoch_manifest": {
+      "bytes": 25645,
+      "path": "experiments/sota-2026-10-22/epoch53/EPOCH_MANIFEST.json",
+      "sha256": "d25d3e758c8e2988518b1162f72ede25693dd44550567ef747035524cbfd33fa"
+    },
+    "independent_acceptance": {
+      "bytes": 10996,
+      "path": "experiments/sota-2026-10-22/audit/epoch53/independent/DEV_ACCEPTANCE_AND_REJECTION_INDEPENDENT.v1.json",
+      "sha256": "1906cf054b3ebedd20f51075e68e08d62e6c70d7c831c8b907f599200f5cd83a"
+    },
+    "kind": "REAL_CONTRACTNLI_CONTRACT_BERT_WHOLE_SOURCE_PILOT",
+    "learnings": {
+      "bytes": 1983,
+      "path": "experiments/sota-2026-10-22/epoch53/LEARNINGS.json",
+      "sha256": "86eddc80f032085443d81d907c1abacb016f05ea1af2e3c0e5f21a08852d1c4e"
+    },
+    "native104_champion_preserved": true,
+    "next_research_priority": "Preserve SubmittedNative104. E53 completed one real native corpus and108 original typed-BERT forwards yielding48forecasts within78.331642123s; independently rejected the frozen DEV gate. Native4/12 tiedlexical4/12 andwhole_source4/12 butlostsource_order8/12; nativeBrier1.2560504070371696/NLL5.965334684268086 were worse than source_order0.5650198814775468/1.314453264707763, and nativeNLL also slightly worse than lexical. Native and lexical predictedE10/C2/NM0; whole_sourceE9/C3/NM0, missing all7goldNotMentioned; causal mechanism is unproven. All286originalunitsfit and remainedintact, so this run does not validate oversized splitting beyond engineeringfixtures. Do not rerun, tune label mapping/calibration on these groups or grid their questions; allfourwholegroups39/205/582/9 andaliases are DEVforever. OnlyDOC17 remains project-unused officialDEV and is checkpoint-development exposed, not fresh confirmation. Further quality work needs independently verified modeltraining/input-protocol alignment or a materially stronger typed-decision/NLI head plus new source-licensed data and qualified test-nonuse provenance. ExistingCF4 remains UNQUALIFIED_HOLD, unused; no promotion, newpublisher submission or paid/GPUcap is granted. Officialsuccess still requires an actual matching publisher result/rank and eligibility.",
+    "official_goal_verified": false,
+    "official_rank": null,
+    "official_refresh": {
+      "bytes": 10529,
+      "path": "experiments/sota-2026-10-22/epoch53/official-refresh/benchmark-refresh.safe.json",
+      "sha256": "93229f5f906f85ce4fe0772332a08699bcb19b1f158ec7aadae0fb3b9aa75f0c"
+    },
+    "promotion_authorized": false,
+    "publisher_status_latest_observation": {
+      "body_messageID_match_to_original_receipt_verified": false,
+      "body_thread_attachment_reads": 0,
+      "checked_at": "2026-10-27T06:19:33.741Z",
+      "coverage_other_accounts_verified": false,
+      "current_queue_progress": "UNVERIFIED",
+      "eligibility_confirmed": false,
+      "epoch": 53,
+      "exact_reference_searches": 1,
+      "has_more_results": false,
+      "historical_regular_evaluation_queue_position": 115,
+      "matching_message_dates": [
+        "2026-10-22"
+      ],
+      "matching_messages": 1,
+      "messages_read": 0,
+      "metadata_subject_candidate_result_score_rank_or_eligibility_count": 0,
+      "metadata_subject_receipt_or_submission_classification_count": 1,
+      "new_verified_publisher_result_found": false,
+      "official_rank": null,
+      "official_score": null,
+      "original_acknowledgement_metadata_consistent": true,
+      "original_publisher_account_profile_reads": 1,
+      "outgoing_messages_or_submissions": 0,
+      "private_selector_identifiers_addresses_subject_headers_body_snippet_files_persisted": false,
+      "queue_scope": "Historical acknowledgement evaluation queue position; never rank. Current position/progress unverified.",
+      "read_scope": "Subject-class and date metadata only; selected-account status cannot establish global result absence.",
+      "reference": "7FEA2738",
+      "schema_version": 1,
+      "selected_personal_publisher_account_profile_verified": true,
+      "snippets_inspected": 0,
+      "source_kind": "One exact connected Gmail metadata search on profile-verified selected personal publisher account; no second-account fallback."
+    },
+    "publisher_submission_authorized": false,
+    "rejection_ledger": {
+      "bytes": 239188,
+      "path": "experiments/sota-2026-10-22/epoch53/REJECTION_LEDGER.json",
+      "sha256": "a03232b089400a908c0146c343c72d70222afa9b80eefdd09a8cfaafd2d1b796"
+    },
+    "results": {
+      "bytes": 55108,
+      "path": "experiments/sota-2026-10-22/epoch53/RESULTS.json",
+      "sha256": "bcee0b775a4a13be84d8371aa17c4f9af99a9db9b0081f1b99da8ffde8bcb2f5"
+    },
+    "schema_version": 1,
+    "source_checkpoint": "655e7aa57e34b0d5b0702e3a5957640a932b9d23",
+    "status": "REJECTED_DEV",
+    "used_confirmation": {
+      "bytes": 38211,
+      "path": "experiments/sota-2026-10-22/epoch53/USED_CONFIRMATION.json",
+      "sha256": "43c9b8f097ee21033452205cf1d13192722001c6a397a4f0a89cbc9b3afe07c3"
+    },
+    "used_confirmation_identities": [],
+    "used_identities": {
+      "bytes": 41814,
+      "path": "experiments/sota-2026-10-22/epoch53/USED_IDENTITIES.json",
+      "sha256": "36a757ed44b8fc8866350c2ea2f1512bbda2737adcaf128b4905e6742a87a8b8"
+    }
+  },
   "epoch53_frozen_study": {
     "confirmation_lineage_status": "UNQUALIFIED_HOLD",
     "confirmation_materialization_authorized": false,
@@ -13365,6 +13577,28 @@
         "path": "experiments/sota-2026-10-22/epoch52/USED_IDENTITIES.json",
         "sha256": "1889236046a231a66a4aade1293f67aa1fe19fa68a21e8b0ed75959300b2a9f3"
       }
+    },
+    {
+      "all_hypotheses_and_aliases_for_entire_document_groups_permanently_DEV": true,
+      "confirmation_consumed": false,
+      "document_ids": [
+        39,
+        205,
+        582,
+        9
+      ],
+      "epoch": 53,
+      "role": "DEV_FOREVER",
+      "used_confirmation": {
+        "bytes": 38211,
+        "path": "experiments/sota-2026-10-22/epoch53/USED_CONFIRMATION.json",
+        "sha256": "43c9b8f097ee21033452205cf1d13192722001c6a397a4f0a89cbc9b3afe07c3"
+      },
+      "used_identities": {
+        "bytes": 41814,
+        "path": "experiments/sota-2026-10-22/epoch53/USED_IDENTITIES.json",
+        "sha256": "36a757ed44b8fc8866350c2ea2f1512bbda2737adcaf128b4905e6742a87a8b8"
+      }
     }
   ],
   "future_epoch_limits": {
@@ -13377,11 +13611,11 @@
   },
   "goal_met": false,
   "latest_learning": {
-    "bytes": 1786,
-    "path": "experiments/sota-2026-10-22/epoch52/LEARNINGS.json",
-    "sha256": "cb11b2afb52a4e1ff64553a2f59c151d7a21845ceece148e9330d160cf8e26e1"
+    "bytes": 1983,
+    "path": "experiments/sota-2026-10-22/epoch53/LEARNINGS.json",
+    "sha256": "86eddc80f032085443d81d907c1abacb016f05ea1af2e3c0e5f21a08852d1c4e"
   },
-  "next_research_priority": "Preserve SubmittedNative104. E52 completed one native corpus (4indexes/165vectors/12queries), faithful201FP32 contract-BERT loading and original genuine-pair tokenization122/capacity4, then failed the frozen whole-source unit512-token capacity guard before any NLI forward or forecast. No accuracy/proper-score evidence, Gold, EVAL or confirmation; no retry or remaining E52 slot. A future separate study needs an explicitly frozen capacity-compatible source-offset fragment catalog shared by all retrieval/context arms, or a licensed stronger typed long-context model. Preserve exact source/numeric boundaries and audit cross-window context limitations; the bounded greedy engineering prototype is not a proof of partition impossibility or model quality. Preserve all four newly exposed whole DEV groups and aliases. Only five project-unused officialDEV groups [9,17,39,205,582] remain, all publisher checkpoint-development exposed. Genuine confirmation still requires independent test-nonuse provenance or qualified new model/data lineage. No new paid/GPU budget, promotion or publisher submission is granted.",
+  "next_research_priority": "Preserve SubmittedNative104. E53 completed one real native corpus and108 original typed-BERT forwards yielding48forecasts within78.331642123s; independently rejected the frozen DEV gate. Native4/12 tiedlexical4/12 andwhole_source4/12 butlostsource_order8/12; nativeBrier1.2560504070371696/NLL5.965334684268086 were worse than source_order0.5650198814775468/1.314453264707763, and nativeNLL also slightly worse than lexical. Native and lexical predictedE10/C2/NM0; whole_sourceE9/C3/NM0, missing all7goldNotMentioned; causal mechanism is unproven. All286originalunitsfit and remainedintact, so this run does not validate oversized splitting beyond engineeringfixtures. Do not rerun, tune label mapping/calibration on these groups or grid their questions; allfourwholegroups39/205/582/9 andaliases are DEVforever. OnlyDOC17 remains project-unused officialDEV and is checkpoint-development exposed, not fresh confirmation. Further quality work needs independently verified modeltraining/input-protocol alignment or a materially stronger typed-decision/NLI head plus new source-licensed data and qualified test-nonuse provenance. ExistingCF4 remains UNQUALIFIED_HOLD, unused; no promotion, newpublisher submission or paid/GPUcap is granted. Officialsuccess still requires an actual matching publisher result/rank and eligibility.",
   "objective": "Reach independently verified SOTA using actual RuVector; initial target JevBench open-weights Capability under official caps.",
   "official_rank": null,
   "official_result_status": {
@@ -13423,9 +13657,9 @@
   },
   "publisher_status_refresh_scope": "Exact reference search returned the original submission acknowledgment. It confirms regular evaluation queue position115 and contains no evaluation score or rank. No global absence of other publisher results or eligibility determination is inferred.",
   "rejection_ledger": {
-    "bytes": 228516,
-    "path": "experiments/sota-2026-10-22/epoch52/REJECTION_LEDGER.json",
-    "sha256": "2847843645a8ce92c9d7978beaa67863d1e5fe6ae74b9f234e72b1ad6df8202b"
+    "bytes": 239188,
+    "path": "experiments/sota-2026-10-22/epoch53/REJECTION_LEDGER.json",
+    "sha256": "a03232b089400a908c0146c343c72d70222afa9b80eefdd09a8cfaafd2d1b796"
   },
   "restoration_boundary": "Epoch16 freshly verified2293 Gitblob files and2220projectCP+48base using reviewed bootstrap/restore; exact7officialNLI+BGE2/native22 restored separately. No model/native session occurred before reviewed source freeze/publication; actual oneDEV process is in epoch16_final. Never rerun archived controllers.",
   "restoration_boundary_prior_epoch13": "All public source/data/results hashrestored; native22filehelper verified. Coldproof explicitly lists deferredmodelassetpins(old/new); weights acquiredseparately via reviewedhelpers/exactofficialrevision+hashes. No inference or archivedcontroller rerun duringrestore.",

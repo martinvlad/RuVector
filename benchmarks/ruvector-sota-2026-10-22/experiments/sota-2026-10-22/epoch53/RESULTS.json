@@ -1,0 +1,1337 @@
+{
+  "DEV_document_groups_forever": [
+    39,
+    205,
+    582,
+    9
+  ],
+  "JevBench_current_leader_verified": true,
+  "actual_SOURCE_commit": "57302c998939a053f68ed29c38be870c277ba54f",
+  "actual_execution": {
+    "BGE_forward_calls_attempted": 41,
+    "BGE_forward_calls_completed": 41,
+    "BGE_initializations_attempted": 1,
+    "BGE_initializations_completed": 1,
+    "BGE_texts_attempted": 298,
+    "BGE_texts_completed": 298,
+    "CONF_DATA_calls": 0,
+    "CONF_EVALUATE_calls": 0,
+    "CONF_Gold_calls": 0,
+    "CONF_native_batches": 0,
+    "DEV_DATA_calls": 1,
+    "DEV_EVALUATE_calls": 1,
+    "DEV_Gold_calls": 1,
+    "DEV_semantic_gold_decodes_after_seal": 12,
+    "GPU_calls": 0,
+    "NLI_forwards_attempted": 108,
+    "NLI_forwards_completed": 108,
+    "Node_network_operations_attempted": 0,
+    "Python_network_operations_attempted": 1,
+    "Python_network_operations_blocked": 1,
+    "allowed_further_epoch53_attempts": 0,
+    "calibration_calls": 0,
+    "feature_cases_admitted": 12,
+    "feature_documents_admitted": 4,
+    "forecasts_completed": 48,
+    "native_binary_loads_attempted": 1,
+    "native_binary_loads_completed": 1,
+    "native_corpus_batches": 1,
+    "native_corpus_batches_attempted": 1,
+    "native_corpus_batches_completed": 1,
+    "native_hit_source_validations": 858,
+    "native_index_initializations_attempted": 4,
+    "native_index_initializations_completed": 4,
+    "native_insertions_attempted": 286,
+    "native_insertions_completed": 286,
+    "native_len_calls_attempted": 8,
+    "native_len_calls_completed": 8,
+    "native_queries_attempted": 12,
+    "native_queries_completed": 12,
+    "native_version_calls_attempted": 1,
+    "native_version_calls_completed": 1,
+    "outer_wall_seconds_including_capture_physical_cleanup": 78.33164212299744,
+    "paid_API_calls": 0,
+    "reader_capacity_tokenizations": 48,
+    "reader_forward_pair_validations": 108,
+    "reader_fragmentation_pair_tokenizations": 858,
+    "reader_fragmentation_pair_tokenizations_completed": 858,
+    "reader_initializations_attempted": 1,
+    "reader_initializations_completed": 1,
+    "reader_packing_pair_tokenizations": 1210,
+    "reader_packing_pair_tokenizations_completed": 1210,
+    "reader_pair_tokenizations": 2068,
+    "reader_pair_tokenizations_completed": 2068,
+    "semantic_gold_decodes": 0,
+    "semantic_gold_decodes_at_forecast_seal": 0,
+    "training_calls": 0,
+    "unused_second_slot_closed_for_lineage": true
+  },
+  "actual_runtime_resources": {
+    "cgroup_scope": "Shared cgroup; not candidate incremental use; peak may predate this run.",
+    "children_max_rss_kib": 1064424,
+    "children_system_seconds": 0.056755,
+    "children_user_seconds": 0.141285,
+    "compute_threads": 2,
+    "cpu_affinity": [
+      0,
+      1
+    ],
+    "reader_torch_interop_threads": 1,
+    "scope": "SELF excludes child CPU; CHILDREN RSS is largest child high-water, not sum.",
+    "shared_cgroup_memory_current": 13823451136,
+    "shared_cgroup_memory_peak": 17180618752,
+    "worker_max_rss_kib": 1064424,
+    "worker_system_seconds": 1.093889,
+    "worker_user_seconds": 137.991625
+  },
+  "actual_runtime_timing": {
+    "completed_monotonic_seconds": 408038.114173744,
+    "started_monotonic_seconds": 407961.149286771,
+    "wall_seconds_including_init_and_cleanup": 76.96488498995313
+  },
+  "all_owned_processes_physically_closed": true,
+  "candidate_promoted": false,
+  "confirmation_lineage_status": "UNQUALIFIED_HOLD",
+  "context_handling": {
+    "frozen_context_policy": {
+      "capacity_precheck": {
+        "all_source_proposals": "Reader.tokenize requires nonempty claim/source; original hypothesisfirst/premisesecond return values retained unmodified. Genuine fullpairs encoded and exact512cap checked independently for everyproposal/window.",
+        "capacity_only": "Reader.hypothesis_pair_capacity returns Pythonint from original hypothesis SINGLE length plus one extraSEP; pinnedBERT single2specials/pair3specials checked at eachcapacitycall. Never an inference packet.",
+        "expected_capacity_tokenizations": 48,
+        "expected_forward_pair_validations": "Exactly raw.expected_physical_forwards; equal actual completedNLIforwards.",
+        "expected_fragmentation_pair_tokenizations": "Positiveactualattempts=completed<=12000; exactly3*sum(publicdoccapacity_measurements); originalgenuinepairsinsideadmittedbatch.",
+        "expected_packing_pair_tokenizations": "Positiveactualattempts=completed<=24000; stage sum=global<=36000. Scalarsinglecapacitycallsremain48.",
+        "forward_boundary": "score revalidates exact3keys/finiteintegerIDs/intattention1/trueBERT0then1segments/originalCLS101,SEP102 boundaries and nonemptysegmentcontent BEFOREtorch.tensor/attemptcounter/model call. Capacityscalar/singlepacket failsclosed.",
+        "model_or_tokenizer_changes": false,
+        "synthetic_field_or_context_injection": false,
+        "whitespace_only_source_proposal": "Sourceblankunits deterministicallycoalescewithadjacentcontent; no standaloneblankfragmentorblanktailpacket. Alloriginalcharsretained, no fabricatedcontext."
+      },
+      "main_three_arms": [
+        "native",
+        "lexical",
+        "source_order"
+      ],
+      "maximum_full_pair_tokens": 512,
+      "maximum_whole_source_units_main_three": 4,
+      "neutral_scope": "Learned typed NotMentioned only. Retrieval miss never proves whole-source insufficient evidence. Even complete source coverage does not establish semantic absence.",
+      "numerical_checks": "Exact source offsets/substrings/SHA plus numeric/date/currency/negation occurrence preservation perwindow and across fullsource partition. No semantic arithmetic/date proof, fitted confidence, or prediction override.",
+      "selection": "All3retrievalarms greedilyadmit atmost4whole sourcefragments fromtheidentical sharedcatalog in rankorder, restoreselectedfragments tosourceorder, insertnewline-newline, retainwholeclaim, actualpair<=512.",
+      "shared_fragment_catalog": {
+        "algorithm": "SOURCE_OFFSET_PARENT_UNIT_FRAGMENT_V1",
+        "claim_capacity_rule": "Actual original genuine hypothesis/source-pair tokenizations for all3frozenclaims; maximumcount decidesfit, originalvalues unchanged, no approximate/additive/monotonic-prefixassumption.",
+        "construction_order": "Originalfeaturevalidation then faithfulReaderinitialization then sharedlabel-blindcatalog; allcatalogfragments/all3claims prevalidated before any BGEinitialization/nativebatch/NLI. All4armpackets/fullcoverageprevalidated beforefirstphysicalforward.",
+        "endpoint_proposal_rule": "Forovercapacitygroupsonly, deterministicatmost16evenlyrank-spaced safeendpointswithin1024originalcodepoints(includeearliest/latest), farthestfirst. IfNONEinsidehorizon, onlynearestsafeendbeyondhorizon. Eachproposalactualoriginal3claimgenuinepaircount<=512 mandatory. HorizonisSEARCHbound,nottokenestimate. NoRNG,label/metricselection,adaptivebenchmarkgridorbacktracking; thinningmayrejectvalidpartitions.",
+        "failure": "Anyprotectedatom/unsafecharunit/unrepresentablegreedypartition/cap/deadline/offset/numericboundaryfailure rejectswholebatch andclosesepochslots; no neutralanswerfromretrievalmiss.",
+        "fragmentation_pair_tokenization_cap": 12000,
+        "global_pair_tokenization_cap": 36000,
+        "limits": "600seconds/CPU2 remainprimaryrealbatchlimits; no extraqualifications/probes/warmups/corpus, zero paid/GPU. Stagepaircaps countattemptsandcompletions;48separatescalarcapacitycalls are alsoinsidebatchclock.",
+        "max_endpoint_proposals_per_fragment": 16,
+        "maximum_fragments_per_document": 1024,
+        "maximum_fragments_per_phase": 4096,
+        "packing_pair_tokenization_cap": 24000,
+        "pair_token_cap": 512,
+        "preserve_fitting_units": "Onlyovercapacity(coalesced)sourcegroupsfragment. Fittingauthoritativeunitsremainexactlyintact except minimal deterministic mergers for whitespace-onlyunits, source-globalprotectedregexcrossings, or combiningmark/ZWJunsafeparentboundaries.",
+        "proposal_search_horizon_codepoints": 1024,
+        "safe_fragment_cuts": "Originalsource whitespace/punctuation boundaries outside source-globaldeclarednumeric/date/currency/negation regex occurrences, no cut beforecombiningmark ornexttoZWJ; whitespace-onlyprefix/tail coalesced/attached, nevermodelpacket.",
+        "selection": "Frozenendpointschedulewith1024codepointSEARCHhorizon/<=16rank-spacedproposals perfragment; choosefarthestactualall3claim-admissiblecandidate. Memoizeactual3claimcountvector foridenticaldocumentspan only. Thinning/greedyfailureisnotglobalpartitionimpossibility; no othercuts/grid/retry/replacementafterfailure.",
+        "semantic_scope": "Declaredregexpreservationandcharactercoverage are not universalnumeric/grapheme/semanticproof. Crosswindowrelations canstillbelost; learnedNotMentioned/retrievalmiss neverproof ofinsufficientevidence.",
+        "shared_all_arms": true,
+        "source_integrity": "Globaloriginalcharacter/codepointoffsets and parentunit intersections retained; everycharacterexactlyonce in sharedcatalog/complete-sourcecontrol, no rewrite/normalization/truncation/dummycontext/fabricatedIDs.",
+        "source_text_published": false
+      },
+      "whole_source": {
+        "aggregation": "max(1.0-pNotMentioned), exact computed-key tie earliest source-order window; select complete original3way forecast unchanged.",
+        "all_partitions_validated_before_first_physical_forward": true,
+        "author_documented_aggregation": false,
+        "failure": "Sharedcatalogprevalidatedfragmentalone<=512forall3claims; anylatercapacity/mismatch/>24windowsrejectsentirebatch, no partial/neutralfallback/replacement/retry.",
+        "maximum_windows": 24,
+        "partition": "Greedyconsecutivecomplete sharedfragments insourceorder; everyoriginalsourcecharacterexactlyonce; no insertedseparatorwithinwindow; validateallwindowsbeforefirstNLI."
+      }
+    },
+    "frozen_evaluator_result": {
+      "bytes": 189854,
+      "path": "experiments/sota-2026-10-22/epoch53/evaluation/DEV_RESULTS.json",
+      "sha256": "4873f60cbe19d3c64ba15a70ee0f935e12268f3c8a30e8cf8c00101c5699dff9"
+    },
+    "frozen_fragmentation_policy": {
+      "algorithm": "SOURCE_OFFSET_PARENT_UNIT_FRAGMENT_V1",
+      "claim_capacity_rule": "Actual original genuine hypothesis/source-pair tokenizations for all3frozenclaims; maximumcount decidesfit, originalvalues unchanged, no approximate/additive/monotonic-prefixassumption.",
+      "construction_order": "Originalfeaturevalidation then faithfulReaderinitialization then sharedlabel-blindcatalog; allcatalogfragments/all3claims prevalidated before any BGEinitialization/nativebatch/NLI. All4armpackets/fullcoverageprevalidated beforefirstphysicalforward.",
+      "endpoint_proposal_rule": "Forovercapacitygroupsonly, deterministicatmost16evenlyrank-spaced safeendpointswithin1024originalcodepoints(includeearliest/latest), farthestfirst. IfNONEinsidehorizon, onlynearestsafeendbeyondhorizon. Eachproposalactualoriginal3claimgenuinepaircount<=512 mandatory. HorizonisSEARCHbound,nottokenestimate. NoRNG,label/metricselection,adaptivebenchmarkgridorbacktracking; thinningmayrejectvalidpartitions.",
+      "failure": "Anyprotectedatom/unsafecharunit/unrepresentablegreedypartition/cap/deadline/offset/numericboundaryfailure rejectswholebatch andclosesepochslots; no neutralanswerfromretrievalmiss.",
+      "fragmentation_pair_tokenization_cap": 12000,
+      "global_pair_tokenization_cap": 36000,
+      "limits": "600seconds/CPU2 remainprimaryrealbatchlimits; no extraqualifications/probes/warmups/corpus, zero paid/GPU. Stagepaircaps countattemptsandcompletions;48separatescalarcapacitycalls are alsoinsidebatchclock.",
+      "max_endpoint_proposals_per_fragment": 16,
+      "maximum_fragments_per_document": 1024,
+      "maximum_fragments_per_phase": 4096,
+      "packing_pair_tokenization_cap": 24000,
+      "pair_token_cap": 512,
+      "preserve_fitting_units": "Onlyovercapacity(coalesced)sourcegroupsfragment. Fittingauthoritativeunitsremainexactlyintact except minimal deterministic mergers for whitespace-onlyunits, source-globalprotectedregexcrossings, or combiningmark/ZWJunsafeparentboundaries.",
+      "proposal_search_horizon_codepoints": 1024,
+      "safe_fragment_cuts": "Originalsource whitespace/punctuation boundaries outside source-globaldeclarednumeric/date/currency/negation regex occurrences, no cut beforecombiningmark ornexttoZWJ; whitespace-onlyprefix/tail coalesced/attached, nevermodelpacket.",
+      "selection": "Frozenendpointschedulewith1024codepointSEARCHhorizon/<=16rank-spacedproposals perfragment; choosefarthestactualall3claim-admissiblecandidate. Memoizeactual3claimcountvector foridenticaldocumentspan only. Thinning/greedyfailureisnotglobalpartitionimpossibility; no othercuts/grid/retry/replacementafterfailure.",
+      "semantic_scope": "Declaredregexpreservationandcharactercoverage are not universalnumeric/grapheme/semanticproof. Crosswindowrelations canstillbelost; learnedNotMentioned/retrievalmiss neverproof ofinsufficientevidence.",
+      "shared_all_arms": true,
+      "source_integrity": "Globaloriginalcharacter/codepointoffsets and parentunit intersections retained; everycharacterexactlyonce in sharedcatalog/complete-sourcecontrol, no rewrite/normalization/truncation/dummycontext/fabricatedIDs.",
+      "source_text_published": false
+    },
+    "frozen_plan": {
+      "bytes": 46510,
+      "path": "experiments/sota-2026-10-22/epoch53/plan.json",
+      "sha256": "86d8962f91ca40334f8539a0392170fc33752e2f3a98fd7cece5e3fcda7e50ca"
+    },
+    "observed_fragmentation_receipt": {
+      "after_catalog_work_counters": {
+        "BGE_forward_calls_attempted": 0,
+        "BGE_initializations_attempted": 0,
+        "NLI_forwards_attempted": 0,
+        "native_corpus_batches_attempted": 0
+      },
+      "all_three_hypotheses_prevalidated": true,
+      "before_catalog_work_counters": {
+        "BGE_forward_calls_attempted": 0,
+        "BGE_initializations_attempted": 0,
+        "NLI_forwards_attempted": 0,
+        "native_corpus_batches_attempted": 0
+      },
+      "catalog_complete_before_BGE_native_and_NLI": true,
+      "completed_monotonic_seconds": 407968.888752691,
+      "elapsed_seconds": 0.1448846340063028,
+      "fragment_pair_tokenizations": 858,
+      "fragment_pair_tokenizations_completed": 858,
+      "original_source_unchanged": true,
+      "same_fragment_catalog_all_four_arms": true,
+      "started_monotonic_seconds": 407968.743868288
+    },
+    "qualified_metadata_summary": {
+      "algorithm": "SOURCE_OFFSET_PARENT_UNIT_FRAGMENT_V1",
+      "all_hypotheses_capacity_checked_before_BGE_native_or_NLI": true,
+      "capacity_measurements": 286,
+      "complete": true,
+      "documents": [
+        {
+          "catalog_sha256": "c133942e70de1bc199cc9d0c5c703984b0cfd6ceacc04e21cd1b847323d31990",
+          "document_id": 39,
+          "fragment_count": 35,
+          "original_source_unit_count": 35,
+          "source_characters": 5837
+        },
+        {
+          "catalog_sha256": "cbbe3c77e747ed404d95c1dd780cc50c977ebc5f51fc6f50faa1440e4ccf98de",
+          "document_id": 205,
+          "fragment_count": 84,
+          "original_source_unit_count": 84,
+          "source_characters": 13609
+        },
+        {
+          "catalog_sha256": "810ee4466f1a0771fbf8348782f6bf8df7733f292c35fd1fa76a51375da2a5db",
+          "document_id": 582,
+          "fragment_count": 48,
+          "original_source_unit_count": 48,
+          "source_characters": 13925
+        },
+        {
+          "catalog_sha256": "3e71c0ad10de496678a07eec13bf74b5ba6a4825261e0c86c3dd19df29689370",
+          "document_id": 9,
+          "fragment_count": 119,
+          "original_source_unit_count": 119,
+          "source_characters": 17304
+        }
+      ],
+      "fragment_pair_tokenizations": 858,
+      "frozen_limits": {
+        "final_forecasts": 48,
+        "fragment_pair_tokenizations": 12000,
+        "fragments_per_document": 1024,
+        "global_pair_tokenizations": 36000,
+        "packing_pair_tokenizations": 24000,
+        "physical_NLI_forwards": 324,
+        "total_fragments": 4096,
+        "whole_windows_per_case": 24
+      },
+      "global_pair_tokenizations": 2068,
+      "interpretation": "Public frozen counter/shape consistency, not an additional quality gate. Full source-offset/capacity replay belongs to the frozen evaluator and independent acceptance. Numeric/negation span preservation is not semantic arithmetic or absence proof; semantic cross-window context is not guaranteed. Greedy partition failure is not global impossibility.",
+      "max_endpoint_proposals_per_fragment": 16,
+      "packing_pair_tokenizations": 1210,
+      "physical_NLI_forwards": 108,
+      "proposal_search_horizon_codepoints": 1024,
+      "same_fragment_catalog_all_four_arms": true,
+      "total_fragments": 286,
+      "whole_source_windows_per_case": [
+        3,
+        3,
+        3,
+        6,
+        6,
+        6,
+        7,
+        7,
+        7,
+        8,
+        8,
+        8
+      ]
+    },
+    "raw_source": {
+      "bytes": 1122428,
+      "path": "experiments/sota-2026-10-22/epoch53/runs/dev/raw.json",
+      "sha256": "f6eb5f89824aa0baa6ae162f79b01f3fca542ed67797464b8a4bc10f0dd36acf"
+    },
+    "scope": "Qualified summary is unavailable on unqualified runtime, even if partial catalog metadata exists. No additional quality selection, model calls or private label access."
+  },
+  "descriptive_uncertainty": {
+    "document_clusters": 4,
+    "native_minus_control": {
+      "lexical": {
+        "Brier": {
+          "p025": -0.12415324751375617,
+          "p975": 0.015547327369330713
+        },
+        "NLL": {
+          "p025": -0.17493907833624642,
+          "p975": 0.26820068915844075
+        },
+        "accuracy": {
+          "p025": 0.0,
+          "p975": 0.0
+        }
+      },
+      "source_order": {
+        "Brier": {
+          "p025": 0.3826643912820556,
+          "p975": 1.0203672328018956
+        },
+        "NLL": {
+          "p025": 2.985346730078584,
+          "p975": 5.649394299167651
+        },
+        "accuracy": {
+          "p025": -0.5,
+          "p975": -0.16666666666666666
+        }
+      },
+      "whole_source": {
+        "Brier": {
+          "p025": -0.13388261107294383,
+          "p975": 0.022946191341311636
+        },
+        "NLL": {
+          "p025": -0.24135633531440184,
+          "p975": -0.07056480902643451
+        },
+        "accuracy": {
+          "p025": 0.0,
+          "p975": 0.0
+        }
+      }
+    },
+    "resamples": 256,
+    "scope": "Four public diagnostic development source groups, checkpoint-development/model-selection exposed; descriptive intervals do not establish fresh model holdout generalization, benchmark generalization or official rank.",
+    "seed": 48
+  },
+  "dev_passed": false,
+  "epoch": 53,
+  "errors": [],
+  "evidence": {
+    "DATA_admission": {
+      "bytes": 3976,
+      "path": "experiments/sota-2026-10-22/audit/epoch53/DATA_ADMISSION.json",
+      "sha256": "1eeac24aee98e1747607e99dfb4f4d2141815ace4c83cda1c3b542940eaeaeab"
+    },
+    "independent_acceptance": {
+      "bytes": 10996,
+      "path": "experiments/sota-2026-10-22/audit/epoch53/independent/DEV_ACCEPTANCE_AND_REJECTION_INDEPENDENT.v1.json",
+      "sha256": "1906cf054b3ebedd20f51075e68e08d62e6c70d7c831c8b907f599200f5cd83a"
+    },
+    "official_refresh": {
+      "bytes": 10529,
+      "path": "experiments/sota-2026-10-22/epoch53/official-refresh/benchmark-refresh.safe.json",
+      "sha256": "93229f5f906f85ce4fe0772332a08699bcb19b1f158ec7aadae0fb3b9aa75f0c"
+    },
+    "outer_execution": {
+      "bytes": 2501,
+      "path": "experiments/sota-2026-10-22/epoch53/operational/DEV_OUTER_EXECUTION.actual.v1.json",
+      "sha256": "344c29a1f38211ec5c35712c8273fe1c1d70568b5ee84070a5b9673aaf3fe73d"
+    },
+    "raw": {
+      "bytes": 1122428,
+      "path": "experiments/sota-2026-10-22/epoch53/runs/dev/raw.json",
+      "sha256": "f6eb5f89824aa0baa6ae162f79b01f3fca542ed67797464b8a4bc10f0dd36acf"
+    },
+    "scored_DEV_result": {
+      "bytes": 189854,
+      "path": "experiments/sota-2026-10-22/epoch53/evaluation/DEV_RESULTS.json",
+      "sha256": "4873f60cbe19d3c64ba15a70ee0f935e12268f3c8a30e8cf8c00101c5699dff9"
+    },
+    "used_confirmation": {
+      "bytes": 38211,
+      "path": "experiments/sota-2026-10-22/epoch53/USED_CONFIRMATION.json",
+      "sha256": "43c9b8f097ee21033452205cf1d13192722001c6a397a4f0a89cbc9b3afe07c3"
+    },
+    "used_identities": {
+      "bytes": 41814,
+      "path": "experiments/sota-2026-10-22/epoch53/USED_IDENTITIES.json",
+      "sha256": "36a757ed44b8fc8866350c2ea2f1512bbda2737adcaf128b4905e6742a87a8b8"
+    }
+  },
+  "gate_checks": {
+    "all_four_full_N12": true,
+    "all_three_gold_classes_represented": true,
+    "lexical:native_Brier_nonincrease": true,
+    "lexical:native_NLL_nonincrease": false,
+    "lexical:native_gain_at_least_two_correct": false,
+    "native_at_least_one_correct_per_gold_class": false,
+    "source_order:native_Brier_nonincrease": false,
+    "source_order:native_NLL_nonincrease": false,
+    "source_order:native_gain_at_least_two_correct": false,
+    "whole_source:native_Brier_nonincrease": true,
+    "whole_source:native_NLL_nonincrease": true,
+    "whole_source:native_gain_at_least_two_correct": false
+  },
+  "kind": "REAL_CONTRACTNLI_CONTRACT_BERT_WHOLE_SOURCE_PILOT",
+  "latency_diagnostics": {
+    "BGE_initialization_seconds": 0.4212923090090044,
+    "native_child_wall_seconds": 0.17506112495902926,
+    "native_query_component": {
+      "N": 12,
+      "captured_query_timing_records": 12,
+      "invalid_or_missing_elapsed_records": 0,
+      "missing_capture_scope": "N0/null percentiles mean no captured valid timing records; they do not assert zero native work. Actual attempted/completed counters remain authoritative and separately retained. No throughput or end-to-end per-query claim.",
+      "p50": 0.003953130499999994,
+      "p95": 0.005923788099999998,
+      "scope": "Captured native search await plus all returned-hit validation and result assembly until elapsed capture. Excludes shared fragment-catalog preparation, BGE, index initialization/insertion, reader initialization, query-before progress logging, queue and cleanup. Not pure search, complete decision or publisher latency.",
+      "unit": "seconds"
+    },
+    "outer_wall_seconds_including_capture_physical_cleanup": 78.33164212299744,
+    "per_arm_packing_plus_NLI_latency": {
+      "lexical": {
+        "N": 12,
+        "p50": 0.43454885252867825,
+        "p95": 0.6098984921467491,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared all-hypothesis fragment-catalog preparation, BGE/native/index/reader initialization, queue and cleanup. Shared catalog/batch times are separately retained. Not publisher latency."
+      },
+      "native": {
+        "N": 12,
+        "p50": 0.4162077810324263,
+        "p95": 0.6824292964563937,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared all-hypothesis fragment-catalog preparation, BGE/native/index/reader initialization, queue and cleanup. Shared catalog/batch times are separately retained. Not publisher latency."
+      },
+      "source_order": {
+        "N": 12,
+        "p50": 0.2683112504892051,
+        "p95": 0.5321111136814579,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared all-hypothesis fragment-catalog preparation, BGE/native/index/reader initialization, queue and cleanup. Shared catalog/batch times are separately retained. Not publisher latency."
+      },
+      "whole_source": {
+        "N": 12,
+        "p50": 3.709753413539147,
+        "p95": 5.103418173862155,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared all-hypothesis fragment-catalog preparation, BGE/native/index/reader initialization, queue and cleanup. Shared catalog/batch times are separately retained. Not publisher latency."
+      }
+    },
+    "scope": "Per-arm latency is copied from the frozen evaluator: packing/tokenization plus all model forwards, excluding shared catalog, BGE/native/index/reader initialization, queue and cleanup. Shared and inclusive batch times remain separate; no end-to-end per-query or throughput claim.",
+    "shared_catalog_observed_receipt": {
+      "after_catalog_work_counters": {
+        "BGE_forward_calls_attempted": 0,
+        "BGE_initializations_attempted": 0,
+        "NLI_forwards_attempted": 0,
+        "native_corpus_batches_attempted": 0
+      },
+      "all_three_hypotheses_prevalidated": true,
+      "before_catalog_work_counters": {
+        "BGE_forward_calls_attempted": 0,
+        "BGE_initializations_attempted": 0,
+        "NLI_forwards_attempted": 0,
+        "native_corpus_batches_attempted": 0
+      },
+      "catalog_complete_before_BGE_native_and_NLI": true,
+      "completed_monotonic_seconds": 407968.888752691,
+      "elapsed_seconds": 0.1448846340063028,
+      "fragment_pair_tokenizations": 858,
+      "fragment_pair_tokenizations_completed": 858,
+      "original_source_unchanged": true,
+      "same_fragment_catalog_all_four_arms": true,
+      "started_monotonic_seconds": 407968.743868288
+    },
+    "worker_wall_seconds_including_init_cleanup": 76.96488498995313
+  },
+  "loading_audit": {
+    "FP32_CPU_eval": true,
+    "all_201_state_tensor_data_pointers_match_mmap_source": true,
+    "all_original_learned_pooler_and_classifier_tensors_retained": true,
+    "assign": true,
+    "bert_token_type_ids_retained": true,
+    "canonical_typed_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "capacity_encoding_is_scalar_only": true,
+    "custom_remote_code": false,
+    "finite_chunk_element_cap": 1000000,
+    "finite_validation_chunks": 272,
+    "fragment_catalog_uses_original_genuine_pairs_all_frozen_claims": true,
+    "fragment_pair_tokenization_cap": 12000,
+    "genuine_nonempty_pair_required_for_every_model_packet": true,
+    "global_pair_tokenization_cap": 36000,
+    "initialization_seconds": 7.572913651994895,
+    "learned_state_keys_exact": true,
+    "learned_state_tensor_count": 201,
+    "memory_snapshots": [
+      {
+        "headroom_bytes": 3740856320,
+        "memory_current_bytes": 13439012864,
+        "memory_events": {
+          "high": 0,
+          "low": 0,
+          "max": 83996,
+          "oom": 3,
+          "oom_group_kill": 0,
+          "oom_kill": 1
+        },
+        "memory_max_bytes": 17179869184,
+        "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+        "stage": "READER_BEFORE_LARGE_ASSET_HASH"
+      },
+      {
+        "headroom_bytes": 3519311872,
+        "memory_current_bytes": 13660557312,
+        "memory_events": {
+          "high": 0,
+          "low": 0,
+          "max": 83996,
+          "oom": 3,
+          "oom_group_kill": 0,
+          "oom_kill": 1
+        },
+        "memory_max_bytes": 17179869184,
+        "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+        "stage": "READER_BEFORE_META_CONSTRUCTOR"
+      },
+      {
+        "headroom_bytes": 3519311872,
+        "memory_current_bytes": 13660557312,
+        "memory_events": {
+          "high": 0,
+          "low": 0,
+          "max": 83996,
+          "oom": 3,
+          "oom_group_kill": 0,
+          "oom_kill": 1
+        },
+        "memory_max_bytes": 17179869184,
+        "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+        "stage": "READER_AFTER_META_CONSTRUCTOR"
+      },
+      {
+        "headroom_bytes": 3519311872,
+        "memory_current_bytes": 13660557312,
+        "memory_events": {
+          "high": 0,
+          "low": 0,
+          "max": 83996,
+          "oom": 3,
+          "oom_group_kill": 0,
+          "oom_kill": 1
+        },
+        "memory_max_bytes": 17179869184,
+        "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+        "stage": "READER_BEFORE_MMAP_LOAD"
+      },
+      {
+        "headroom_bytes": 3519049728,
+        "memory_current_bytes": 13660819456,
+        "memory_events": {
+          "high": 0,
+          "low": 0,
+          "max": 83996,
+          "oom": 3,
+          "oom_group_kill": 0,
+          "oom_kill": 1
+        },
+        "memory_max_bytes": 17179869184,
+        "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+        "stage": "READER_AFTER_MMAP_LOAD"
+      },
+      {
+        "headroom_bytes": 3513032704,
+        "memory_current_bytes": 13666836480,
+        "memory_events": {
+          "high": 0,
+          "low": 0,
+          "max": 83996,
+          "oom": 3,
+          "oom_group_kill": 0,
+          "oom_kill": 1
+        },
+        "memory_max_bytes": 17179869184,
+        "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+        "stage": "READER_AFTER_STRICT_ASSIGN_AND_BUFFERS"
+      }
+    ],
+    "meta_constructor": true,
+    "mismatched_keys": [],
+    "missing_keys": [],
+    "mmap": true,
+    "model_id": "Agreemind/contractnli-bert-nda-standard",
+    "model_revision": "ac92b6b512d7a4bad7abe356750c3b916fe18649",
+    "model_weight_sha256": "cd4f4391ab75c22e986ecea64831af47f6008a37ddce6a56a4cb5496e41ead07",
+    "nonpersistent_buffers": {
+      "position_ids": {
+        "device": "cpu",
+        "dtype": "int64",
+        "persistent": false,
+        "shape": [
+          1,
+          512
+        ],
+        "values": "Exact arange(512), expanded to (1,512)"
+      },
+      "token_type_ids": {
+        "device": "cpu",
+        "dtype": "int64",
+        "persistent": false,
+        "shape": [
+          1,
+          512
+        ],
+        "values": "Exact all zeros"
+      }
+    },
+    "packing_pair_tokenization_cap": 24000,
+    "pair_fields_revalidated_at_every_forward_boundary": true,
+    "pair_order": "hypothesis_then_premise",
+    "raw_head_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "raw_to_typed_indices": [
+      0,
+      1,
+      2
+    ],
+    "removed_learned_or_nonlearned_state_keys": [],
+    "safetensors_cpu_mapped": true,
+    "source_configuration_unchanged": true,
+    "source_revision": "ac92b6b512d7a4bad7abe356750c3b916fe18649",
+    "source_tensor_dtype_counts": {
+      "torch.float32": 201
+    },
+    "source_tensor_elements": 109484547,
+    "torch_interop_threads": 1,
+    "torch_threads": 2,
+    "unexpected_keys": [],
+    "unsafe_load_fallback": false,
+    "weights_format": "safetensors",
+    "weights_only": true
+  },
+  "metrics": {
+    "lexical": {
+      "Brier": 1.305720453598142,
+      "N": 12,
+      "NLL": 5.953572386967174,
+      "accuracy": 0.3333333333333333,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 1
+        },
+        "Entailment": {
+          "correct": 4,
+          "support": 4
+        },
+        "NotMentioned": {
+          "correct": 0,
+          "support": 7
+        }
+      },
+      "correct": 4,
+      "latency_seconds": {
+        "N": 12,
+        "p50": 0.43454885252867825,
+        "p95": 0.6098984921467491,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared all-hypothesis fragment-catalog preparation, BGE/native/index/reader initialization, queue and cleanup. Shared catalog/batch times are separately retained. Not publisher latency."
+      },
+      "rows": [
+        {
+          "Brier": 1.9133752832650703,
+          "NLL": 8.331211048982905,
+          "case_id": "contractnli:eced6528:dev:39:nda-1",
+          "correct": 0,
+          "document_id": 39,
+          "elapsed_seconds": 0.4285261990153231,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.00024088015050377184
+        },
+        {
+          "Brier": 1.9988758859741813,
+          "NLL": 10.072125407376147,
+          "case_id": "contractnli:eced6528:dev:39:nda-10",
+          "correct": 0,
+          "document_id": 39,
+          "elapsed_seconds": 0.48383499501505867,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 4.2240739679147036e-05
+        },
+        {
+          "Brier": 8.286558284914514e-08,
+          "NLL": 0.00023334314368206321,
+          "case_id": "contractnli:eced6528:dev:39:nda-16",
+          "correct": 1,
+          "document_id": 39,
+          "elapsed_seconds": 0.44057150604203343,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9997666840787118
+        },
+        {
+          "Brier": 1.8606768020392999,
+          "NLL": 7.498561549521858,
+          "case_id": "contractnli:eced6528:dev:205:nda-1",
+          "correct": 0,
+          "document_id": 205,
+          "elapsed_seconds": 0.41413430991815403,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.0005538805271034224
+        },
+        {
+          "Brier": 7.083770668491342e-06,
+          "NLL": 0.0019073683239412276,
+          "case_id": "contractnli:eced6528:dev:205:nda-10",
+          "correct": 1,
+          "document_id": 205,
+          "elapsed_seconds": 0.45235383399995044,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9980944495470535
+        },
+        {
+          "Brier": 1.9985918102161682,
+          "NLL": 8.081137342492088,
+          "case_id": "contractnli:eced6528:dev:205:nda-16",
+          "correct": 0,
+          "document_id": 205,
+          "elapsed_seconds": 0.5533095850259997,
+          "gold": "Contradiction",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.00030931903360273123
+        },
+        {
+          "Brier": 1.9597966201844645,
+          "NLL": 8.596856999278593,
+          "case_id": "contractnli:eced6528:dev:582:nda-1",
+          "correct": 0,
+          "document_id": 582,
+          "elapsed_seconds": 0.34640897903591394,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Contradiction",
+          "probability_of_gold": 0.00018468534860359038
+        },
+        {
+          "Brier": 5.010862603363885e-08,
+          "NLL": 0.0001814764205496644,
+          "case_id": "contractnli:eced6528:dev:582:nda-10",
+          "correct": 1,
+          "document_id": 582,
+          "elapsed_seconds": 0.6199545090203173,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9998185400452999
+        },
+        {
+          "Brier": 1.9995034307578576,
+          "NLL": 9.626334635406234,
+          "case_id": "contractnli:eced6528:dev:582:nda-16",
+          "correct": 0,
+          "document_id": 582,
+          "elapsed_seconds": 0.6016708419774659,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 6.596840547972588e-05
+        },
+        {
+          "Brier": 1.9396413702000481,
+          "NLL": 9.123859460926985,
+          "case_id": "contractnli:eced6528:dev:9:nda-1",
+          "correct": 0,
+          "document_id": 9,
+          "elapsed_seconds": 0.30326782405609265,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Contradiction",
+          "probability_of_gold": 0.00010903305542528181
+        },
+        {
+          "Brier": 1.998176948832542,
+          "NLL": 10.110238387341273,
+          "case_id": "contractnli:eced6528:dev:9:nda-10",
+          "correct": 0,
+          "document_id": 9,
+          "elapsed_seconds": 0.2506830610218458,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 4.066111257133234e-05
+        },
+        {
+          "Brier": 7.496319287181788e-08,
+          "NLL": 0.00022162439184114646,
+          "case_id": "contractnli:eced6528:dev:9:nda-16",
+          "correct": 1,
+          "document_id": 9,
+          "elapsed_seconds": 0.3675405079848133,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9997784001650302
+        }
+      ]
+    },
+    "native": {
+      "Brier": 1.2560504070371696,
+      "N": 12,
+      "NLL": 5.965334684268086,
+      "accuracy": 0.3333333333333333,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 1
+        },
+        "Entailment": {
+          "correct": 4,
+          "support": 4
+        },
+        "NotMentioned": {
+          "correct": 0,
+          "support": 7
+        }
+      },
+      "correct": 4,
+      "latency_seconds": {
+        "N": 12,
+        "p50": 0.4162077810324263,
+        "p95": 0.6824292964563937,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared all-hypothesis fragment-catalog preparation, BGE/native/index/reader initialization, queue and cleanup. Shared catalog/batch times are separately retained. Not publisher latency."
+      },
+      "rows": [
+        {
+          "Brier": 1.5127969639536945,
+          "NLL": 8.412128996451338,
+          "case_id": "contractnli:eced6528:dev:39:nda-1",
+          "correct": 0,
+          "document_id": 39,
+          "elapsed_seconds": 0.4532367920037359,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.0002221563829346029
+        },
+        {
+          "Brier": 1.9991969669760388,
+          "NLL": 9.902833925366817,
+          "case_id": "contractnli:eced6528:dev:39:nda-10",
+          "correct": 0,
+          "document_id": 39,
+          "elapsed_seconds": 0.3736702999449335,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 5.0032692041504903e-05
+        },
+        {
+          "Brier": 9.756639014163931e-08,
+          "NLL": 0.00025012201320073757,
+          "case_id": "contractnli:eced6528:dev:39:nda-16",
+          "correct": 1,
+          "document_id": 39,
+          "elapsed_seconds": 0.3618777609663084,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9997499092647022
+        },
+        {
+          "Brier": 1.948609667023179,
+          "NLL": 8.750995910732962,
+          "case_id": "contractnli:eced6528:dev:205:nda-1",
+          "correct": 0,
+          "document_id": 205,
+          "elapsed_seconds": 0.4512199910241179,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Contradiction",
+          "probability_of_gold": 0.00015830359033922476
+        },
+        {
+          "Brier": 5.925825141701065e-06,
+          "NLL": 0.0017453443764665622,
+          "case_id": "contractnli:eced6528:dev:205:nda-10",
+          "correct": 1,
+          "document_id": 205,
+          "elapsed_seconds": 0.38119557104073465,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9982561778512969
+        },
+        {
+          "Brier": 1.9986658148014003,
+          "NLL": 8.108003798528255,
+          "case_id": "contractnli:eced6528:dev:205:nda-16",
+          "correct": 0,
+          "document_id": 205,
+          "elapsed_seconds": 0.6580365599947982,
+          "gold": "Contradiction",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.000301119368563767
+        },
+        {
+          "Brier": 1.9651822357411497,
+          "NLL": 8.34783548577202,
+          "case_id": "contractnli:eced6528:dev:582:nda-1",
+          "correct": 0,
+          "document_id": 582,
+          "elapsed_seconds": 0.6558150729397312,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Contradiction",
+          "probability_of_gold": 0.0002369087562292368
+        },
+        {
+          "Brier": 5.303966887511074e-08,
+          "NLL": 0.0001849118760857138,
+          "case_id": "contractnli:eced6528:dev:582:nda-10",
+          "correct": 1,
+          "document_id": 582,
+          "elapsed_seconds": 0.7122426410205662,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9998151052190616
+        },
+        {
+          "Brier": 1.9993960648625295,
+          "NLL": 9.25634460345917,
+          "case_id": "contractnli:eced6528:dev:582:nda-16",
+          "correct": 0,
+          "document_id": 582,
+          "elapsed_seconds": 0.5883756700204685,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 9.550379209554505e-05
+        },
+        {
+          "Brier": 1.650160041384388,
+          "NLL": 8.701601211281279,
+          "case_id": "contractnli:eced6528:dev:9:nda-1",
+          "correct": 0,
+          "document_id": 9,
+          "elapsed_seconds": 0.17266822297824547,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.0001663192853466555
+        },
+        {
+          "Brier": 1.9985909684422283,
+          "NLL": 10.10186091425377,
+          "case_id": "contractnli:eced6528:dev:9:nda-10",
+          "correct": 0,
+          "document_id": 9,
+          "elapsed_seconds": 0.2034283229149878,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 4.100318078063018e-05
+        },
+        {
+          "Brier": 8.483022607996208e-08,
+          "NLL": 0.00023098710567381886,
+          "case_id": "contractnli:eced6528:dev:9:nda-16",
+          "correct": 1,
+          "document_id": 9,
+          "elapsed_seconds": 0.350526558002457,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9997690395697938
+        }
+      ]
+    },
+    "source_order": {
+      "Brier": 0.5650198814775468,
+      "N": 12,
+      "NLL": 1.314453264707763,
+      "accuracy": 0.6666666666666666,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 1
+        },
+        "Entailment": {
+          "correct": 1,
+          "support": 4
+        },
+        "NotMentioned": {
+          "correct": 7,
+          "support": 7
+        }
+      },
+      "correct": 8,
+      "latency_seconds": {
+        "N": 12,
+        "p50": 0.2683112504892051,
+        "p95": 0.5321111136814579,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared all-hypothesis fragment-catalog preparation, BGE/native/index/reader initialization, queue and cleanup. Shared catalog/batch times are separately retained. Not publisher latency."
+      },
+      "rows": [
+        {
+          "Brier": 0.01477541259658149,
+          "NLL": 0.10437851693098121,
+          "case_id": "contractnli:eced6528:dev:39:nda-1",
+          "correct": 1,
+          "document_id": 39,
+          "elapsed_seconds": 0.27683936001267284,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.9008842329409146
+        },
+        {
+          "Brier": 0.002457344891686394,
+          "NLL": 0.035889143154492764,
+          "case_id": "contractnli:eced6528:dev:39:nda-10",
+          "correct": 1,
+          "document_id": 39,
+          "elapsed_seconds": 0.31215241202153265,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.964747236390675
+        },
+        {
+          "Brier": 1.6533703708060086,
+          "NLL": 2.401679692910469,
+          "case_id": "contractnli:eced6528:dev:39:nda-16",
+          "correct": 0,
+          "document_id": 39,
+          "elapsed_seconds": 0.2677279189811088,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.09056570288917516
+        },
+        {
+          "Brier": 0.23622408233960118,
+          "NLL": 0.48225367794709806,
+          "case_id": "contractnli:eced6528:dev:205:nda-1",
+          "correct": 1,
+          "document_id": 205,
+          "elapsed_seconds": 0.15888145106146112,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.6173904235624839
+        },
+        {
+          "Brier": 1.740116765255028,
+          "NLL": 2.702419989682833,
+          "case_id": "contractnli:eced6528:dev:205:nda-10",
+          "correct": 0,
+          "document_id": 205,
+          "elapsed_seconds": 0.17981533997226506,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.06704307272314766
+        },
+        {
+          "Brier": 1.5163451125646046,
+          "NLL": 7.535125837125188,
+          "case_id": "contractnli:eced6528:dev:205:nda-16",
+          "correct": 0,
+          "document_id": 205,
+          "elapsed_seconds": 0.23851917206775397,
+          "gold": "Contradiction",
+          "hypothesis_id": "nda-16",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.0005339940629563325
+        },
+        {
+          "Brier": 0.007029943632046649,
+          "NLL": 0.06638783938660664,
+          "case_id": "contractnli:eced6528:dev:582:nda-1",
+          "correct": 1,
+          "document_id": 582,
+          "elapsed_seconds": 0.22887923201778904,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.9357678662684439
+        },
+        {
+          "Brier": 0.00027401339809310165,
+          "NLL": 0.011922244883087352,
+          "case_id": "contractnli:eced6528:dev:582:nda-10",
+          "correct": 1,
+          "document_id": 582,
+          "elapsed_seconds": 0.2306912589701824,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9881485434804304
+        },
+        {
+          "Brier": 0.027337281235788657,
+          "NLL": 0.12473080254226865,
+          "case_id": "contractnli:eced6528:dev:582:nda-16",
+          "correct": 1,
+          "document_id": 582,
+          "elapsed_seconds": 0.26889458199730143,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.8827345004861676
+        },
+        {
+          "Brier": 0.018698912264384974,
+          "NLL": 0.11769982786118582,
+          "case_id": "contractnli:eced6528:dev:9:nda-1",
+          "correct": 1,
+          "document_id": 9,
+          "elapsed_seconds": 0.5434702999773435,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.888962854450722
+        },
+        {
+          "Brier": 0.003024257140041258,
+          "NLL": 0.03989453479579552,
+          "case_id": "contractnli:eced6528:dev:9:nda-10",
+          "correct": 1,
+          "document_id": 9,
+          "elapsed_seconds": 0.5159699950600043,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.9608907743502957
+        },
+        {
+          "Brier": 1.560585081606697,
+          "NLL": 2.151057069273149,
+          "case_id": "contractnli:eced6528:dev:9:nda-16",
+          "correct": 0,
+          "document_id": 9,
+          "elapsed_seconds": 0.5228172339848243,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.11636109100601467
+        }
+      ]
+    },
+    "whole_source": {
+      "Brier": 1.3062212779974949,
+      "N": 12,
+      "NLL": 6.113013082231443,
+      "accuracy": 0.3333333333333333,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 1
+        },
+        "Entailment": {
+          "correct": 4,
+          "support": 4
+        },
+        "NotMentioned": {
+          "correct": 0,
+          "support": 7
+        }
+      },
+      "correct": 4,
+      "latency_seconds": {
+        "N": 12,
+        "p50": 3.709753413539147,
+        "p95": 5.103418173862155,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared all-hypothesis fragment-catalog preparation, BGE/native/index/reader initialization, queue and cleanup. Shared catalog/batch times are separately retained. Not publisher latency."
+      },
+      "rows": [
+        {
+          "Brier": 1.947056095844259,
+          "NLL": 8.789809292245657,
+          "case_id": "contractnli:eced6528:dev:39:nda-1",
+          "correct": 0,
+          "document_id": 39,
+          "elapsed_seconds": 1.8104130090214312,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Contradiction",
+          "probability_of_gold": 0.00015227700532208037
+        },
+        {
+          "Brier": 1.9983696715810022,
+          "NLL": 9.870293562868458,
+          "case_id": "contractnli:eced6528:dev:39:nda-10",
+          "correct": 0,
+          "document_id": 39,
+          "elapsed_seconds": 1.8136128240148537,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 5.1687552840773663e-05
+        },
+        {
+          "Brier": 1.2772263845617404e-07,
+          "NLL": 0.0002918303255317056,
+          "case_id": "contractnli:eced6528:dev:39:nda-16",
+          "correct": 1,
+          "document_id": 39,
+          "elapsed_seconds": 1.9206559640006162,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9997082122527957
+        },
+        {
+          "Brier": 1.8254147422198803,
+          "NLL": 9.145286254176675,
+          "case_id": "contractnli:eced6528:dev:205:nda-1",
+          "correct": 0,
+          "document_id": 205,
+          "elapsed_seconds": 3.662788159097545,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Contradiction",
+          "probability_of_gold": 0.00010672167782450591
+        },
+        {
+          "Brier": 1.8430343431101108e-06,
+          "NLL": 0.0009802209525577865,
+          "case_id": "contractnli:eced6528:dev:205:nda-10",
+          "correct": 1,
+          "document_id": 205,
+          "elapsed_seconds": 3.889360152941663,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9990202593070672
+        },
+        {
+          "Brier": 1.9982468666191964,
+          "NLL": 7.792685791058768,
+          "case_id": "contractnli:eced6528:dev:205:nda-16",
+          "correct": 0,
+          "document_id": 205,
+          "elapsed_seconds": 3.745246791979298,
+          "gold": "Contradiction",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.0004127428529263287
+        },
+        {
+          "Brier": 1.9513257934580381,
+          "NLL": 8.634469532910916,
+          "case_id": "contractnli:eced6528:dev:582:nda-1",
+          "correct": 0,
+          "document_id": 582,
+          "elapsed_seconds": 3.597307839023415,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Contradiction",
+          "probability_of_gold": 0.0001778678795649556
+        },
+        {
+          "Brier": 6.905874911951365e-07,
+          "NLL": 0.0006053535575922808,
+          "case_id": "contractnli:eced6528:dev:582:nda-10",
+          "correct": 1,
+          "document_id": 582,
+          "elapsed_seconds": 3.70457812998211,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9993948296319058
+        },
+        {
+          "Brier": 1.99919267732625,
+          "NLL": 9.908646385046268,
+          "case_id": "contractnli:eced6528:dev:582:nda-16",
+          "correct": 0,
+          "document_id": 582,
+          "elapsed_seconds": 3.714928697096184,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 4.974272257066492e-05
+        },
+        {
+          "Brier": 1.9560619465119404,
+          "NLL": 9.307574268019792,
+          "case_id": "contractnli:eced6528:dev:9:nda-1",
+          "correct": 0,
+          "document_id": 9,
+          "elapsed_seconds": 4.911038708931301,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Entailment",
+          "probability_of_gold": 9.073437571971451e-05
+        },
+        {
+          "Brier": 1.9989848005980941,
+          "NLL": 9.905283909414791,
+          "case_id": "contractnli:eced6528:dev:9:nda-10",
+          "correct": 0,
+          "document_id": 9,
+          "elapsed_seconds": 4.785469070018735,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 4.991026278023391e-05
+        },
+        {
+          "Brier": 8.046680473415096e-08,
+          "NLL": 0.00023058620030358412,
+          "case_id": "contractnli:eced6528:dev:9:nda-16",
+          "correct": 1,
+          "document_id": 9,
+          "elapsed_seconds": 5.338548630999867,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.999769440382651
+        }
+      ]
+    }
+  },
+  "native104_champion_preserved": true,
+  "new_submission": false,
+  "official_goal_verified": false,
+  "official_rank": null,
+  "official_source_checked_at": "2026-10-27T06:26:43.673000+00:00",
+  "official_status_scope": "Current official observations use the exact reviewed E53 source and its creation timestamp. Prior observations remain historical; no publisher rank or eligibility is inferred.",
+  "runtime_qualified": true,
+  "schema_version": 1,
+  "scientific_scope": "Public DEV diagnostic, checkpoint-development/model-selection exposed; no fresh model holdout, full benchmark, publisher score/rank or eligibility claim.",
+  "source_checkpoint": "655e7aa57e34b0d5b0702e3a5957640a932b9d23",
+  "status": "REJECTED_DEV",
+  "unscored_metrics_scope": null,
+  "used_confirmation_identities": []
+}

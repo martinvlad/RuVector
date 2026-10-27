@@ -1,0 +1,402 @@
+{
+  "actual_native_batches": 1,
+  "checks": {
+    "all36captured_logits_probabilities_predictions_labels_and_percase_proper_scores_parity": true,
+    "all_accuracy_Brier_NLL_p50_p95_classsupport_pointgate_values_recomputed": true,
+    "all_frozen256_document_cluster_resamples_and_intervals_recomputed": true,
+    "lateGold12_once_and_EVALonce_after_qualified_raw_physicalclosure_metadata": true,
+    "native104_and_all_official_rank_goal_eligibility_limits_preserved": true,
+    "no_CF_materialization_model_native_Gold_eval_and_usedidentities_empty": true
+  },
+  "checks_passed": true,
+  "confirmation_eligibility_accepted": false,
+  "confirmation_materialization_authorized": false,
+  "confusion_matrices_Gold_to_prediction": {
+    "lexical": {
+      "Contradiction": {
+        "Contradiction": 0,
+        "Entailment": 0,
+        "NotMentioned": 1
+      },
+      "Entailment": {
+        "Contradiction": 0,
+        "Entailment": 3,
+        "NotMentioned": 2
+      },
+      "NotMentioned": {
+        "Contradiction": 3,
+        "Entailment": 0,
+        "NotMentioned": 3
+      }
+    },
+    "native": {
+      "Contradiction": {
+        "Contradiction": 0,
+        "Entailment": 0,
+        "NotMentioned": 1
+      },
+      "Entailment": {
+        "Contradiction": 0,
+        "Entailment": 3,
+        "NotMentioned": 2
+      },
+      "NotMentioned": {
+        "Contradiction": 0,
+        "Entailment": 4,
+        "NotMentioned": 2
+      }
+    },
+    "source_order": {
+      "Contradiction": {
+        "Contradiction": 0,
+        "Entailment": 0,
+        "NotMentioned": 1
+      },
+      "Entailment": {
+        "Contradiction": 0,
+        "Entailment": 2,
+        "NotMentioned": 3
+      },
+      "NotMentioned": {
+        "Contradiction": 0,
+        "Entailment": 0,
+        "NotMentioned": 6
+      }
+    }
+  },
+  "created_at": "2026-10-27T01:36:19.134581+00:00",
+  "dev_passed": false,
+  "direction": "Reject this exact native-context plus pretrained-head candidate; do not consume conditional confirmation or replace champion. Preserve all four exposed DEV documents forever. Any further context/model hypothesis needs a new preregistered epoch and genuine unused confirmation; do not rerun this exposed pilot as fresh evidence.",
+  "epoch": 50,
+  "error_cases": {
+    "lexical": [
+      {
+        "case_id": "contractnli:eced6528:dev:381:nda-10",
+        "document_id": 381,
+        "gold": "NotMentioned",
+        "hypothesis_id": "nda-10",
+        "prediction": "Contradiction",
+        "probability_of_gold": 0.42349917613383947
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:70:nda-1",
+        "document_id": 70,
+        "gold": "NotMentioned",
+        "hypothesis_id": "nda-1",
+        "prediction": "Contradiction",
+        "probability_of_gold": 0.0292324962062686
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:563:nda-1",
+        "document_id": 563,
+        "gold": "Contradiction",
+        "hypothesis_id": "nda-1",
+        "prediction": "NotMentioned",
+        "probability_of_gold": 0.031973043862143655
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:75:nda-1",
+        "document_id": 75,
+        "gold": "NotMentioned",
+        "hypothesis_id": "nda-1",
+        "prediction": "Contradiction",
+        "probability_of_gold": 0.03530795604454993
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:75:nda-10",
+        "document_id": 75,
+        "gold": "Entailment",
+        "hypothesis_id": "nda-10",
+        "prediction": "NotMentioned",
+        "probability_of_gold": 0.009912679917407529
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:75:nda-16",
+        "document_id": 75,
+        "gold": "Entailment",
+        "hypothesis_id": "nda-16",
+        "prediction": "NotMentioned",
+        "probability_of_gold": 0.10002995586038178
+      }
+    ],
+    "native": [
+      {
+        "case_id": "contractnli:eced6528:dev:381:nda-10",
+        "document_id": 381,
+        "gold": "NotMentioned",
+        "hypothesis_id": "nda-10",
+        "prediction": "Entailment",
+        "probability_of_gold": 0.0018318239395315732
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:381:nda-16",
+        "document_id": 381,
+        "gold": "NotMentioned",
+        "hypothesis_id": "nda-16",
+        "prediction": "Entailment",
+        "probability_of_gold": 0.0022214369543346628
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:70:nda-1",
+        "document_id": 70,
+        "gold": "NotMentioned",
+        "hypothesis_id": "nda-1",
+        "prediction": "Entailment",
+        "probability_of_gold": 0.0850690358627487
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:563:nda-1",
+        "document_id": 563,
+        "gold": "Contradiction",
+        "hypothesis_id": "nda-1",
+        "prediction": "NotMentioned",
+        "probability_of_gold": 0.039268091987329515
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:563:nda-10",
+        "document_id": 563,
+        "gold": "Entailment",
+        "hypothesis_id": "nda-10",
+        "prediction": "NotMentioned",
+        "probability_of_gold": 0.07524165615701105
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:563:nda-16",
+        "document_id": 563,
+        "gold": "NotMentioned",
+        "hypothesis_id": "nda-16",
+        "prediction": "Entailment",
+        "probability_of_gold": 0.3148785165391494
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:75:nda-10",
+        "document_id": 75,
+        "gold": "Entailment",
+        "hypothesis_id": "nda-10",
+        "prediction": "NotMentioned",
+        "probability_of_gold": 0.06899829603341494
+      }
+    ],
+    "source_order": [
+      {
+        "case_id": "contractnli:eced6528:dev:381:nda-1",
+        "document_id": 381,
+        "gold": "Entailment",
+        "hypothesis_id": "nda-1",
+        "prediction": "NotMentioned",
+        "probability_of_gold": 0.0012780542576627477
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:70:nda-16",
+        "document_id": 70,
+        "gold": "Entailment",
+        "hypothesis_id": "nda-16",
+        "prediction": "NotMentioned",
+        "probability_of_gold": 0.003170428205080937
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:563:nda-1",
+        "document_id": 563,
+        "gold": "Contradiction",
+        "hypothesis_id": "nda-1",
+        "prediction": "NotMentioned",
+        "probability_of_gold": 0.004383970424573204
+      },
+      {
+        "case_id": "contractnli:eced6528:dev:75:nda-16",
+        "document_id": 75,
+        "gold": "Entailment",
+        "hypothesis_id": "nda-16",
+        "prediction": "NotMentioned",
+        "probability_of_gold": 0.11171318445151503
+      }
+    ]
+  },
+  "evidence": {
+    "Gold_join_report": {
+      "bytes": 1466,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/project/experiments/sota-2026-10-22/audit/epoch50/GOLD_JOIN_REPORT.json",
+      "sha256": "1058002881c01ee904158f0387d8e2b3f0ad029a54bed2f98b9327fa6211d1ab"
+    },
+    "evaluation": {
+      "bytes": 104544,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/project/experiments/sota-2026-10-22/epoch50/evaluation/DEV_RESULTS.json",
+      "sha256": "e6b7300101cc94447d237efd4e4576183f6ce123913698fee4d1dde3f7e1b9ff"
+    },
+    "qualification": {
+      "bytes": 5567,
+      "path": "/dev/shm/ruvector-e50-audit/DEV_RUNTIME_AND_ALL_PHYSICAL_CLOSURE_QUALIFICATION.v1.json",
+      "sha256": "1323b346e62b5510e5e8beb8679dd5331127716aefff4591451da727b0776a05"
+    },
+    "root_Gold_admission": {
+      "bytes": 2092,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/project/experiments/sota-2026-10-22/audit/epoch50/ROOT_GOLD_ADMISSION.json",
+      "sha256": "e354da852839d7481b6a2c87284bf157ef7298279917d2e3542559b034a39b3c"
+    },
+    "root_evaluate_admission": {
+      "bytes": 1529,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/project/experiments/sota-2026-10-22/audit/epoch50/ROOT_EVALUATE_ADMISSION.json",
+      "sha256": "c4b164c715341c84d26150412cf8b0ca3b4a0afdda5ccef9abc0a63ac102aa36"
+    },
+    "sealed_raw": {
+      "bytes": 376436,
+      "path": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/runs/dev/raw.json",
+      "sha256": "95ea004fee96c92e30645ae9aa7c3c1325234b5e6cd2336dad1d260339f5d7e5"
+    }
+  },
+  "failed_gates": [
+    "native_at_least_one_correct_per_gold_class",
+    "lexical:native_gain_at_least_two_correct",
+    "lexical:native_Brier_nonincrease",
+    "lexical:native_NLL_nonincrease",
+    "source_order:native_gain_at_least_two_correct",
+    "source_order:native_Brier_nonincrease",
+    "source_order:native_NLL_nonincrease"
+  ],
+  "independently_recomputed_descriptive_uncertainty": {
+    "document_clusters": 4,
+    "native_minus_control": {
+      "lexical": {
+        "Brier": {
+          "p025": -0.8534125941053663,
+          "p975": 0.9260720528104102
+        },
+        "NLL": {
+          "p025": -1.85180219135028,
+          "p975": 2.76934482053727
+        },
+        "accuracy": {
+          "p025": -0.5,
+          "p975": 0.5
+        }
+      },
+      "source_order": {
+        "Brier": {
+          "p025": -0.028735870723253638,
+          "p975": 0.8046233498002664
+        },
+        "NLL": {
+          "p025": -0.702487923865791,
+          "p975": 1.1911502496940412
+        },
+        "accuracy": {
+          "p025": -0.5,
+          "p975": 0.0
+        }
+      }
+    },
+    "resamples": 256,
+    "seed": 48
+  },
+  "interpretation": [
+    "The faithful pretrained reader and real native execution now complete within budget; this is runtime feasibility, not an accepted candidate.",
+    "Native evidence selection scores5/12 versus6/12 lexical and8/12 source order with the same frozen pretrained head. Native Brier and NLL worsen versus both controls, and all three arms miss the sole Contradiction case.",
+    "Six NotMentioned cases yield native2correct versus lexical3 and source_order6. This pattern motivates testing context coverage/contract-specific typed inference in a newly frozen future study; it does not prove an individual retrieval miss establishes insufficient evidence.",
+    "The four public document clusters and one Contradiction case leave substantial uncertainty. No full benchmark, publisher rank, sealed generalization, or official eligibility result is inferred."
+  ],
+  "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+  "native104_champion_preserved": true,
+  "new_model_native_or_Gold_calls_by_auditor": 0,
+  "official_goal_verified": false,
+  "phase": "dev",
+  "plan_sha256": "aaa9800c80901eea4bda3b2d81ecf941476857d17a56e1a3620a9521f16d8483",
+  "private_vault_or_joinedGold_reads_by_auditor": 0,
+  "publisher_submission_authorized": false,
+  "recomputed_gates": {
+    "all_three_full_N12": true,
+    "all_three_gold_classes_represented": true,
+    "lexical:native_Brier_nonincrease": false,
+    "lexical:native_NLL_nonincrease": false,
+    "lexical:native_gain_at_least_two_correct": false,
+    "native_at_least_one_correct_per_gold_class": false,
+    "source_order:native_Brier_nonincrease": false,
+    "source_order:native_NLL_nonincrease": false,
+    "source_order:native_gain_at_least_two_correct": false
+  },
+  "recomputed_metrics": {
+    "lexical": {
+      "Brier": 0.8750895808537106,
+      "N": 12,
+      "NLL": 1.6201192040158403,
+      "accuracy": 0.5,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 1
+        },
+        "Entailment": {
+          "correct": 3,
+          "support": 5
+        },
+        "NotMentioned": {
+          "correct": 3,
+          "support": 6
+        }
+      },
+      "correct": 6,
+      "latency_seconds": {
+        "N": 12,
+        "p50": 1.3682238615001552,
+        "p95": 2.020662295250804
+      }
+    },
+    "native": {
+      "Brier": 1.0330828230293914,
+      "N": 12,
+      "NLL": 2.12669196901695,
+      "accuracy": 0.4166666666666667,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 1
+        },
+        "Entailment": {
+          "correct": 3,
+          "support": 5
+        },
+        "NotMentioned": {
+          "correct": 2,
+          "support": 6
+        }
+      },
+      "correct": 5,
+      "latency_seconds": {
+        "N": 12,
+        "p50": 1.6359443299879786,
+        "p95": 2.166995378609863
+      }
+    },
+    "source_order": {
+      "Brier": 0.6357483178163783,
+      "N": 12,
+      "NLL": 1.749690938210106,
+      "accuracy": 0.6666666666666666,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 1
+        },
+        "Entailment": {
+          "correct": 2,
+          "support": 5
+        },
+        "NotMentioned": {
+          "correct": 6,
+          "support": 6
+        }
+      },
+      "correct": 8,
+      "latency_seconds": {
+        "N": 12,
+        "p50": 1.2504678154946305,
+        "p95": 1.4618117675126996
+      }
+    }
+  },
+  "schema_version": 1,
+  "second_native_batch_started": false,
+  "source_commit": "73e9fc76a7c6ac560c6e17eb0f7f1dc73920bfdf",
+  "source_freeze_sha256": "3a62a4a17b7d2b2108fcf65a17b65aaf5bf354b34cbc9850387c1606e7e39712",
+  "status": "INDEPENDENTLY_REJECTED_DEV",
+  "used_confirmation_identities": []
+}

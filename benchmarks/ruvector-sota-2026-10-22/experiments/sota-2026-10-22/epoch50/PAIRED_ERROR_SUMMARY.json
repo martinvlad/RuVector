@@ -1,0 +1,381 @@
+{
+  "N_cases": 12,
+  "N_document_clusters": 4,
+  "actual_DEV_RESULTS": {
+    "bytes": 104544,
+    "path": "experiments/sota-2026-10-22/epoch50/evaluation/DEV_RESULTS.json",
+    "sha256": "e6b7300101cc94447d237efd4e4576183f6ce123913698fee4d1dde3f7e1b9ff"
+  },
+  "actual_SOURCE_commit": "73e9fc76a7c6ac560c6e17eb0f7f1dc73920bfdf",
+  "all_arms_single_Contradiction_correct": "0/1",
+  "all_inputs_already_exposed_DEV_forever": true,
+  "arms": [
+    "native",
+    "lexical",
+    "source_order"
+  ],
+  "confirmation_eligibility_accepted": false,
+  "confirmation_inputs_or_labels_accessed_for_summary": 0,
+  "confirmation_materialization_authorized": false,
+  "confusion_gold_rows_prediction_columns": {
+    "lexical": {
+      "Contradiction": {
+        "Contradiction": 0,
+        "Entailment": 0,
+        "NotMentioned": 1
+      },
+      "Entailment": {
+        "Contradiction": 0,
+        "Entailment": 3,
+        "NotMentioned": 2
+      },
+      "NotMentioned": {
+        "Contradiction": 3,
+        "Entailment": 0,
+        "NotMentioned": 3
+      }
+    },
+    "native": {
+      "Contradiction": {
+        "Contradiction": 0,
+        "Entailment": 0,
+        "NotMentioned": 1
+      },
+      "Entailment": {
+        "Contradiction": 0,
+        "Entailment": 3,
+        "NotMentioned": 2
+      },
+      "NotMentioned": {
+        "Contradiction": 0,
+        "Entailment": 4,
+        "NotMentioned": 2
+      }
+    },
+    "source_order": {
+      "Contradiction": {
+        "Contradiction": 0,
+        "Entailment": 0,
+        "NotMentioned": 1
+      },
+      "Entailment": {
+        "Contradiction": 0,
+        "Entailment": 2,
+        "NotMentioned": 3
+      },
+      "NotMentioned": {
+        "Contradiction": 0,
+        "Entailment": 0,
+        "NotMentioned": 6
+      }
+    }
+  },
+  "document_cluster_correct_counts": [
+    {
+      "N_per_arm": 3,
+      "correct_by_arm": {
+        "lexical": 2,
+        "native": 1,
+        "source_order": 2
+      },
+      "document_id": 381
+    },
+    {
+      "N_per_arm": 3,
+      "correct_by_arm": {
+        "lexical": 2,
+        "native": 2,
+        "source_order": 2
+      },
+      "document_id": 70
+    },
+    {
+      "N_per_arm": 3,
+      "correct_by_arm": {
+        "lexical": 2,
+        "native": 0,
+        "source_order": 2
+      },
+      "document_id": 563
+    },
+    {
+      "N_per_arm": 3,
+      "correct_by_arm": {
+        "lexical": 0,
+        "native": 2,
+        "source_order": 2
+      },
+      "document_id": 75
+    }
+  ],
+  "epoch": 50,
+  "gold_class_counts": {
+    "Contradiction": 1,
+    "Entailment": 5,
+    "NotMentioned": 6
+  },
+  "independent_acceptance_rejection_report": {
+    "bytes": 13241,
+    "path": "experiments/sota-2026-10-22/audit/epoch50/independent/DEV_SCIENTIFIC_REJECTION_INDEPENDENT.v1.json",
+    "sha256": "16e3df56f7509b1249c57181633d7c08fafca1d384262ca9ce4a909f84f90d47"
+  },
+  "independent_acceptance_rejection_report_status": "INDEPENDENTLY_REJECTED_DEV",
+  "independent_confusion_matrix_match": true,
+  "independent_rejection_checks_passed": true,
+  "interpretation": "Observed native retrieval is worse than both matched same-model controls on these12DEVcases. The one Contradiction example is missed by every arm; this does not isolate learned-reader error from shared context limits or source coverage. Do not infer sealed/fullbenchmark performance from four public document clusters.",
+  "kind": "DESCRIPTIVE_PUBLIC_PAIRED_ERROR_SUMMARY_NO_NEW_MEASUREMENTS",
+  "new_measurements_inference_resamples_thresholds_or_selection": 0,
+  "new_model_native_Gold_EVAL_calls": 0,
+  "paired_native_versus_controls": {
+    "lexical": {
+      "N": 12,
+      "both_correct": 3,
+      "both_wrong": 4,
+      "cases": [
+        {
+          "case_id": "contractnli:eced6528:dev:381:nda-1",
+          "control_prediction": "Entailment",
+          "document_id": 381,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-1",
+          "native_prediction": "Entailment",
+          "paired_correctness": "both_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:381:nda-10",
+          "control_prediction": "Contradiction",
+          "document_id": 381,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "native_prediction": "Entailment",
+          "paired_correctness": "both_wrong"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:381:nda-16",
+          "control_prediction": "NotMentioned",
+          "document_id": 381,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "native_prediction": "Entailment",
+          "paired_correctness": "control_only_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:70:nda-1",
+          "control_prediction": "Contradiction",
+          "document_id": 70,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "native_prediction": "Entailment",
+          "paired_correctness": "both_wrong"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:70:nda-10",
+          "control_prediction": "NotMentioned",
+          "document_id": 70,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "native_prediction": "NotMentioned",
+          "paired_correctness": "both_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:70:nda-16",
+          "control_prediction": "Entailment",
+          "document_id": 70,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "native_prediction": "Entailment",
+          "paired_correctness": "both_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:563:nda-1",
+          "control_prediction": "NotMentioned",
+          "document_id": 563,
+          "gold": "Contradiction",
+          "hypothesis_id": "nda-1",
+          "native_prediction": "NotMentioned",
+          "paired_correctness": "both_wrong"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:563:nda-10",
+          "control_prediction": "Entailment",
+          "document_id": 563,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "native_prediction": "NotMentioned",
+          "paired_correctness": "control_only_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:563:nda-16",
+          "control_prediction": "NotMentioned",
+          "document_id": 563,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "native_prediction": "Entailment",
+          "paired_correctness": "control_only_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:75:nda-1",
+          "control_prediction": "Contradiction",
+          "document_id": 75,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "native_prediction": "NotMentioned",
+          "paired_correctness": "native_only_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:75:nda-10",
+          "control_prediction": "NotMentioned",
+          "document_id": 75,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "native_prediction": "NotMentioned",
+          "paired_correctness": "both_wrong"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:75:nda-16",
+          "control_prediction": "NotMentioned",
+          "document_id": 75,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "native_prediction": "Entailment",
+          "paired_correctness": "native_only_correct"
+        }
+      ],
+      "control_only_correct": 3,
+      "native_minus_control_Brier": 0.157993242175681,
+      "native_minus_control_NLL": 0.5065727650011096,
+      "native_minus_control_accuracy": -0.08333333333333331,
+      "native_minus_control_correct": -1,
+      "native_only_correct": 2,
+      "same_prediction_count": 5
+    },
+    "source_order": {
+      "N": 12,
+      "both_correct": 2,
+      "both_wrong": 1,
+      "cases": [
+        {
+          "case_id": "contractnli:eced6528:dev:381:nda-1",
+          "control_prediction": "NotMentioned",
+          "document_id": 381,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-1",
+          "native_prediction": "Entailment",
+          "paired_correctness": "native_only_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:381:nda-10",
+          "control_prediction": "NotMentioned",
+          "document_id": 381,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "native_prediction": "Entailment",
+          "paired_correctness": "control_only_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:381:nda-16",
+          "control_prediction": "NotMentioned",
+          "document_id": 381,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "native_prediction": "Entailment",
+          "paired_correctness": "control_only_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:70:nda-1",
+          "control_prediction": "NotMentioned",
+          "document_id": 70,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "native_prediction": "Entailment",
+          "paired_correctness": "control_only_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:70:nda-10",
+          "control_prediction": "NotMentioned",
+          "document_id": 70,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "native_prediction": "NotMentioned",
+          "paired_correctness": "both_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:70:nda-16",
+          "control_prediction": "NotMentioned",
+          "document_id": 70,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "native_prediction": "Entailment",
+          "paired_correctness": "native_only_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:563:nda-1",
+          "control_prediction": "NotMentioned",
+          "document_id": 563,
+          "gold": "Contradiction",
+          "hypothesis_id": "nda-1",
+          "native_prediction": "NotMentioned",
+          "paired_correctness": "both_wrong"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:563:nda-10",
+          "control_prediction": "Entailment",
+          "document_id": 563,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "native_prediction": "NotMentioned",
+          "paired_correctness": "control_only_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:563:nda-16",
+          "control_prediction": "NotMentioned",
+          "document_id": 563,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "native_prediction": "Entailment",
+          "paired_correctness": "control_only_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:75:nda-1",
+          "control_prediction": "NotMentioned",
+          "document_id": 75,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "native_prediction": "NotMentioned",
+          "paired_correctness": "both_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:75:nda-10",
+          "control_prediction": "Entailment",
+          "document_id": 75,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "native_prediction": "NotMentioned",
+          "paired_correctness": "control_only_correct"
+        },
+        {
+          "case_id": "contractnli:eced6528:dev:75:nda-16",
+          "control_prediction": "NotMentioned",
+          "document_id": 75,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "native_prediction": "Entailment",
+          "paired_correctness": "native_only_correct"
+        }
+      ],
+      "control_only_correct": 6,
+      "native_minus_control_Brier": 0.3973345052130133,
+      "native_minus_control_NLL": 0.3770010308068439,
+      "native_minus_control_accuracy": -0.24999999999999994,
+      "native_minus_control_correct": -3,
+      "native_only_correct": 3,
+      "same_prediction_count": 3
+    }
+  },
+  "plan_sha256": "aaa9800c80901eea4bda3b2d81ecf941476857d17a56e1a3620a9521f16d8483",
+  "schema_version": 1,
+  "scope_of_arithmetic": "Descriptive paired counts/differences derived solely from existing public scored rows; no new inference, resampling, labels, thresholds or candidate selection.",
+  "source_checkpoint": "f65c8a3e2ad835577e912d60c817e86ba73e29cb",
+  "source_freeze_sha256": "3a62a4a17b7d2b2108fcf65a17b65aaf5bf354b34cbc9850387c1606e7e39712",
+  "updated_at": "2026-10-27T01:39:32.600242+00:00"
+}

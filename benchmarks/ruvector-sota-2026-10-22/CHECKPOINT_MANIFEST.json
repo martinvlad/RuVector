@@ -1276,6 +1276,355 @@
     "native_package_closure": "official-package-closure.json",
     "native_package_helper": "restore_native_closure.py"
   },
+  "epoch50_final": {
+    "DEV_document_groups_forever": [
+      381,
+      70,
+      563,
+      75
+    ],
+    "E49_recovery_and_overlay76_preserved": true,
+    "actual_SOURCE_commit": "73e9fc76a7c6ac560c6e17eb0f7f1dc73920bfdf",
+    "actual_execution": {
+      "CONF_EVAL_calls": 0,
+      "CONF_Gold_decodes": 0,
+      "CONF_materializations": 0,
+      "CONF_native_corpus_batches_attempted": 0,
+      "DEV_EVAL_calls": 1,
+      "DEV_forecasts": 36,
+      "DEV_late_Gold_cases": 12,
+      "DEV_late_Gold_join_calls": 1,
+      "DEV_native_corpus_batches_attempted": 1,
+      "DEV_native_corpus_batches_completed": 1,
+      "GPU_calls": 0,
+      "NLI_forwards": 36,
+      "calibration_calls": 0,
+      "compute_threads": 2,
+      "independent_rejection": {
+        "bytes": 13241,
+        "path": "experiments/sota-2026-10-22/audit/epoch50/independent/DEV_SCIENTIFIC_REJECTION_INDEPENDENT.v1.json",
+        "sha256": "16e3df56f7509b1249c57181633d7c08fafca1d384262ca9ce4a909f84f90d47"
+      },
+      "outer_wall_seconds": 72.14082366297953,
+      "paid_API_calls": 0,
+      "resources": {
+        "cgroup_scope": "Shared cgroup; not candidate incremental use; peak may predate this run.",
+        "children_max_rss_kib": 2055260,
+        "children_system_seconds": 0.041852,
+        "children_user_seconds": 0.11912199999999999,
+        "compute_threads": 2,
+        "cpu_affinity": [
+          0,
+          1
+        ],
+        "reader_torch_interop_threads": 1,
+        "scope": "SELF excludes child CPU; CHILDREN RSS is largest child high-water, not sum.",
+        "shared_cgroup_memory_current": 12956360704,
+        "shared_cgroup_memory_peak": 17180618752,
+        "worker_max_rss_kib": 2055260,
+        "worker_system_seconds": 1.509699,
+        "worker_user_seconds": 125.999547
+      },
+      "runtime_qualification": {
+        "bytes": 5567,
+        "path": "experiments/sota-2026-10-22/audit/epoch50/independent/DEV_RUNTIME_AND_ALL_PHYSICAL_CLOSURE_QUALIFICATION.v1.json",
+        "sha256": "1323b346e62b5510e5e8beb8679dd5331127716aefff4591451da727b0776a05"
+      },
+      "scope": "Worker semantic_gold_decodes remains its actual zero; the separately counted one late-Gold join decoded12 after qualified forecasts. Shared cgroup values are not candidate incremental use.",
+      "scored_DEV": {
+        "bytes": 104544,
+        "path": "experiments/sota-2026-10-22/epoch50/evaluation/DEV_RESULTS.json",
+        "sha256": "e6b7300101cc94447d237efd4e4576183f6ce123913698fee4d1dde3f7e1b9ff"
+      },
+      "source_commit": "73e9fc76a7c6ac560c6e17eb0f7f1dc73920bfdf",
+      "status": "REJECTED_DEV",
+      "study_checkpoint": "f65c8a3e2ad835577e912d60c817e86ba73e29cb",
+      "train_calls": 0,
+      "used_confirmation_identities": [],
+      "worker_counters": {
+        "BGE_forward_calls_attempted": 28,
+        "BGE_forward_calls_completed": 28,
+        "BGE_initializations_attempted": 1,
+        "BGE_initializations_completed": 1,
+        "BGE_texts_attempted": 201,
+        "BGE_texts_completed": 201,
+        "GPU_calls": 0,
+        "NLI_forwards_attempted": 36,
+        "NLI_forwards_completed": 36,
+        "Node_network_operations_attempted": 0,
+        "Python_network_operations_attempted": 1,
+        "Python_network_operations_blocked": 1,
+        "calibration_calls": 0,
+        "feature_cases_admitted": 12,
+        "feature_documents_admitted": 4,
+        "forecasts_completed": 36,
+        "native_binary_loads_attempted": 1,
+        "native_binary_loads_completed": 1,
+        "native_corpus_batches": 1,
+        "native_corpus_batches_attempted": 1,
+        "native_corpus_batches_completed": 1,
+        "native_hit_source_validations": 567,
+        "native_index_initializations_attempted": 4,
+        "native_index_initializations_completed": 4,
+        "native_insertions_attempted": 189,
+        "native_insertions_completed": 189,
+        "native_len_calls_attempted": 8,
+        "native_len_calls_completed": 8,
+        "native_queries_attempted": 12,
+        "native_queries_completed": 12,
+        "native_version_calls_attempted": 1,
+        "native_version_calls_completed": 1,
+        "paid_API_calls": 0,
+        "reader_initializations_attempted": 1,
+        "reader_initializations_completed": 1,
+        "reader_pair_tokenizations": 216,
+        "semantic_gold_decodes": 0,
+        "training_calls": 0
+      },
+      "worker_wall_seconds": 70.76166559499688
+    },
+    "all_three_prior_UNKNOWN_objects_preserved_metadata_only": [
+      "486888de9602bbb5d817a55f707b4fcfd11c65e0",
+      "3d5a61f9068acf2dabd2ae5c6bd531d9a9b464c5",
+      "a68b7ba587332f176f65d0348de3e910aa16e77a"
+    ],
+    "confirmation_attempted": false,
+    "descriptive_uncertainty": {
+      "document_clusters": 4,
+      "native_minus_control": {
+        "lexical": {
+          "Brier": {
+            "p025": -0.8534125941053662,
+            "p975": 0.9260720528104099
+          },
+          "NLL": {
+            "p025": -1.85180219135028,
+            "p975": 2.76934482053727
+          },
+          "accuracy": {
+            "p025": -0.5,
+            "p975": 0.5
+          }
+        },
+        "source_order": {
+          "Brier": {
+            "p025": -0.028735870723253537,
+            "p975": 0.8046233498002664
+          },
+          "NLL": {
+            "p025": -0.7024879238657911,
+            "p975": 1.1911502496940412
+          },
+          "accuracy": {
+            "p025": -0.5,
+            "p975": 0.0
+          }
+        }
+      },
+      "resamples": 256,
+      "scope": "Small public source-group holdout only; descriptive intervals do not establish benchmark generalization or official rank.",
+      "seed": 48
+    },
+    "epoch": 50,
+    "epoch_manifest": {
+      "bytes": 21959,
+      "path": "experiments/sota-2026-10-22/epoch50/EPOCH_MANIFEST.json",
+      "sha256": "e8515e9c2475812574ac4ba954c625c63923d2bf2596ddb235c4d3346bfcd56e"
+    },
+    "gate_checks": {
+      "all_three_full_N12": true,
+      "all_three_gold_classes_represented": true,
+      "lexical:native_Brier_nonincrease": false,
+      "lexical:native_NLL_nonincrease": false,
+      "lexical:native_gain_at_least_two_correct": false,
+      "native_at_least_one_correct_per_gold_class": false,
+      "source_order:native_Brier_nonincrease": false,
+      "source_order:native_NLL_nonincrease": false,
+      "source_order:native_gain_at_least_two_correct": false
+    },
+    "independent_acceptance": {
+      "bytes": 13241,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/independent/DEV_SCIENTIFIC_REJECTION_INDEPENDENT.v1.json",
+      "sha256": "16e3df56f7509b1249c57181633d7c08fafca1d384262ca9ce4a909f84f90d47"
+    },
+    "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+    "learnings": {
+      "bytes": 2246,
+      "path": "experiments/sota-2026-10-22/epoch50/LEARNINGS.json",
+      "sha256": "bd1cdc1bfbd015abd86d0a049417e2ecc7f1d01d79c8743702af3c34f2f565f2"
+    },
+    "metrics": {
+      "lexical": {
+        "Brier": 0.8750895808537106,
+        "N": 12,
+        "NLL": 1.6201192040158403,
+        "accuracy": 0.5,
+        "class_results": {
+          "Contradiction": {
+            "correct": 0,
+            "support": 1
+          },
+          "Entailment": {
+            "correct": 3,
+            "support": 5
+          },
+          "NotMentioned": {
+            "correct": 3,
+            "support": 6
+          }
+        },
+        "correct": 6,
+        "latency_seconds": {
+          "N": 12,
+          "p50": 1.3682238615001552,
+          "p95": 2.020662295250804,
+          "scope": "Actual perrequest packing/tokenization and model forward; excludes shared BGE/native/index/reader initialization, queue and cleanup. Not publisher latency."
+        }
+      },
+      "native": {
+        "Brier": 1.0330828230293916,
+        "N": 12,
+        "NLL": 2.12669196901695,
+        "accuracy": 0.4166666666666667,
+        "class_results": {
+          "Contradiction": {
+            "correct": 0,
+            "support": 1
+          },
+          "Entailment": {
+            "correct": 3,
+            "support": 5
+          },
+          "NotMentioned": {
+            "correct": 2,
+            "support": 6
+          }
+        },
+        "correct": 5,
+        "latency_seconds": {
+          "N": 12,
+          "p50": 1.6359443299879786,
+          "p95": 2.166995378609863,
+          "scope": "Actual perrequest packing/tokenization and model forward; excludes shared BGE/native/index/reader initialization, queue and cleanup. Not publisher latency."
+        }
+      },
+      "source_order": {
+        "Brier": 0.6357483178163783,
+        "N": 12,
+        "NLL": 1.749690938210106,
+        "accuracy": 0.6666666666666666,
+        "class_results": {
+          "Contradiction": {
+            "correct": 0,
+            "support": 1
+          },
+          "Entailment": {
+            "correct": 2,
+            "support": 5
+          },
+          "NotMentioned": {
+            "correct": 6,
+            "support": 6
+          }
+        },
+        "correct": 8,
+        "latency_seconds": {
+          "N": 12,
+          "p50": 1.2504678154946305,
+          "p95": 1.4618117675126996,
+          "scope": "Actual perrequest packing/tokenization and model forward; excludes shared BGE/native/index/reader initialization, queue and cleanup. Not publisher latency."
+        }
+      }
+    },
+    "native104_champion_preserved": true,
+    "next_research_priority": "Preserve SubmittedNative104. E50 is closed after a technically valid but scientifically rejected same-model native retrieval pilot: native5/12 versus lexical6/12 and source_order8/12, worse Brier/NLL against both. Do not repeat this exposed pilot or consume its closed conditional slot. A future separately preregistered epoch should investigate whole-contract context coverage and a source-licensed contract-domain typed-decision checkpoint; freeze new development and genuinely unused confirmation identities, source/model/scorer revisions and matched ablations before measurements. No paid/GPU authorization or publisher submission follows.",
+    "official_goal_verified": false,
+    "official_rank": null,
+    "official_refresh": {
+      "bytes": 18112,
+      "path": "experiments/sota-2026-10-22/epoch50/official-refresh/benchmark-refresh.safe.json",
+      "sha256": "5b2ba21181235a90da697b7b7936d2053e2376c6d2fa7d36c1b06562068a902c"
+    },
+    "old_top_level_publisher_status_reference_preserved": {
+      "bytes": 18097,
+      "path": "experiments/sota-2026-10-22/epoch48/official-refresh/benchmark-refresh.safe.json",
+      "sha256": "23f0f4dce2fb1ef3a7385839e303ee7a36b6545b07d10f485fb279d93f8d854f"
+    },
+    "promotion_authorized": false,
+    "publisher_status_latest_observation": {
+      "acknowledgement_comparison_scope": "Current subject-class/date metadata consistent with historical acknowledgement; no private identifier or original message body comparison.",
+      "body_thread_attachment_reads": 0,
+      "checked_at": "2026-10-27T00:36:33.376Z",
+      "current_message_date_extracted": true,
+      "current_queue_progress": "UNVERIFIED",
+      "eligibility_confirmed": false,
+      "epoch": 50,
+      "exact_reference_searches": 1,
+      "has_more_results": false,
+      "matching_message_dates": [
+        "2026-10-22"
+      ],
+      "matching_messages": 1,
+      "matching_original_acknowledgement_date": "2026-10-22",
+      "messages_read": 0,
+      "metadata_subject_candidate_result_score_rank_or_eligibility_count": 0,
+      "metadata_subject_receipt_or_submission_classification_count": 1,
+      "new_official_result_found": false,
+      "official_rank": null,
+      "official_result_candidate_metadata_found": false,
+      "official_result_rank_and_eligibility": "UNVERIFIED_METADATA_ONLY",
+      "official_score": null,
+      "original_acknowledgement_only": true,
+      "original_publisher_account_profile_reads": 1,
+      "original_publisher_account_profile_verified": true,
+      "original_regular_queue_position": 115,
+      "outgoing_messages_or_submissions": 0,
+      "position_scope": "Historical original acknowledgement evaluation queue position, never rank. Current queue position and progress are unverified.",
+      "private_message_identifiers_addresses_headers_body_or_snippet_files_persisted": false,
+      "queue_position_evidence": "Historical durable checkpoint. Original message body not read again.",
+      "read_scope": "Subject-class and email_ts date metadata only; no raw subject published and no snippet/message/thread/attachment inspection.",
+      "reference": "7FEA2738",
+      "schema_version": 1,
+      "search_started_at": "2026-10-27T00:36:22.296072+00:00",
+      "snippets_inspected": 0,
+      "source_kind": "One exact connected Gmail metadata search on the profile-verified original publisher account; no second-account fallback."
+    },
+    "publisher_submission_authorized": false,
+    "rejection_ledger": {
+      "bytes": 212840,
+      "path": "experiments/sota-2026-10-22/epoch50/REJECTION_LEDGER.json",
+      "sha256": "325b9dd5a65665c092366e9604f2b1d86b829c30a1692a0167859609170173c9"
+    },
+    "results": {
+      "bytes": 9732,
+      "path": "experiments/sota-2026-10-22/epoch50/RESULTS.json",
+      "sha256": "1d8049b3964441b073e54f767d2106a5b6a6c970a763840b77a87d7c46e70f64"
+    },
+    "runtime_qualification": {
+      "bytes": 5567,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/independent/DEV_RUNTIME_AND_ALL_PHYSICAL_CLOSURE_QUALIFICATION.v1.json",
+      "sha256": "1323b346e62b5510e5e8beb8679dd5331127716aefff4591451da727b0776a05"
+    },
+    "schema_version": 1,
+    "scored_DEV": {
+      "bytes": 104544,
+      "path": "experiments/sota-2026-10-22/epoch50/evaluation/DEV_RESULTS.json",
+      "sha256": "e6b7300101cc94447d237efd4e4576183f6ce123913698fee4d1dde3f7e1b9ff"
+    },
+    "source_checkpoint": "f65c8a3e2ad835577e912d60c817e86ba73e29cb",
+    "status": "REJECTED_DEV",
+    "used_confirmation": {
+      "bytes": 10370,
+      "path": "experiments/sota-2026-10-22/epoch50/USED_CONFIRMATION.json",
+      "sha256": "9bab43d4742009198d0c93fb5bac8af3f198b2b98fb74ae43fabf333af56aef1"
+    },
+    "used_confirmation_identities": [],
+    "used_identities": {
+      "bytes": 8764,
+      "path": "experiments/sota-2026-10-22/epoch50/USED_IDENTITIES.json",
+      "sha256": "54536f3849cbebe317ad87bb5ba7453e69aabc5f3278cc9f12926086feb4c9ce"
+    }
+  },
   "epoch50_source": {
     "data_policy": {
       "bytes": 20214,
@@ -10974,6 +11323,91 @@
       "bytes": 5961,
       "path": "experiments/sota-2026-10-22/audit/epoch5/science-closure-v1.json",
       "sha256": "ae437c81d5818c56acaf4bec0a3babdc71f69fa7a1c1c54ebed37e6dfb3ce4c1"
+    },
+    {
+      "bytes": 3983,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/DATA_ADMISSION.json",
+      "sha256": "4c93d9f70221accc8fe7963f65f9e9ecf75c80bb0313a5ae094d5e47158d0b6d"
+    },
+    {
+      "bytes": 1466,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/GOLD_JOIN_REPORT.json",
+      "sha256": "1058002881c01ee904158f0387d8e2b3f0ad029a54bed2f98b9327fa6211d1ab"
+    },
+    {
+      "bytes": 2249,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/ROOT_DATA_ADMISSION.json",
+      "sha256": "dc6e8dc58896dc53e744886942aea6b64765a74a273284954c5c6d7dcacba160"
+    },
+    {
+      "bytes": 1529,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/ROOT_EVALUATE_ADMISSION.json",
+      "sha256": "c4b164c715341c84d26150412cf8b0ca3b4a0afdda5ccef9abc0a63ac102aa36"
+    },
+    {
+      "bytes": 2092,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/ROOT_GOLD_ADMISSION.json",
+      "sha256": "e354da852839d7481b6a2c87284bf157ef7298279917d2e3542559b034a39b3c"
+    },
+    {
+      "bytes": 23330,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/ROOT_SCI_ADMISSION.json",
+      "sha256": "81b99842a6219eb33257de4de4a400a7938dfcfb3dfd4be22e08eea5e617b1ef"
+    },
+    {
+      "bytes": 22986,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/independent/ACTUAL_FINAL_ARTIFACTS_FACTUAL_PRIVACY_INDEPENDENT_APPROVAL.v1.json",
+      "sha256": "360d703645c98769a484cd9404bf5e218a058c8139769ef4ecc9890e707c0e9b"
+    },
+    {
+      "bytes": 5567,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/independent/DEV_RUNTIME_AND_ALL_PHYSICAL_CLOSURE_QUALIFICATION.v1.json",
+      "sha256": "1323b346e62b5510e5e8beb8679dd5331127716aefff4591451da727b0776a05"
+    },
+    {
+      "bytes": 3245,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/independent/DEV_RUNTIME_LOADING_TECHNICAL_CORROBORATION.v1.json",
+      "sha256": "8c2e198f61ba2cc42236920bf5fc0afc8dcff5a489c75b79e44828c631cc7401"
+    },
+    {
+      "bytes": 13241,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/independent/DEV_SCIENTIFIC_REJECTION_INDEPENDENT.v1.json",
+      "sha256": "16e3df56f7509b1249c57181633d7c08fafca1d384262ca9ce4a909f84f90d47"
+    },
+    {
+      "bytes": 2276,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/independent/E50_SOURCE_FULL_STAGE_PUBLICATION_INDEPENDENT_APPROVAL.v1.json",
+      "sha256": "1d7960ece64ce4a3969cad1e083ebcd857c2b8914cf08da09278aebb5654c1c4"
+    },
+    {
+      "bytes": 2331,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/independent/E50_SOURCE_PHASE_PREPARATION_INDEPENDENT_APPROVAL.v1.json",
+      "sha256": "ce604678403ef6ef7e10fbc7ed6e494daae3d102394dada02645311da73e349e"
+    },
+    {
+      "bytes": 4495,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/independent/FINAL_E50_SOURCES_DATA_STANDARD_AND_SCIENCE_PLAN_INDEPENDENT_APPROVAL.v1.json",
+      "sha256": "f94d36dc86f8f465069a67a9805660d61c7bf008e5608c1ae37f386c79f420a1"
+    },
+    {
+      "bytes": 5939,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/independent/POST_DATA_AND_DEV_LAUNCH_INDEPENDENT.v1.json",
+      "sha256": "8d12cce40ead07640876cba96302289a24791459242beb5d505782ac66c26d46"
+    },
+    {
+      "bytes": 11245,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/independent/PUBLIC_ARTIFACTS_INDEPENDENT_REVIEW.v1.json",
+      "sha256": "bd408134278a13d18cf1a031c74d192c78e9bac5450ae76de9d10405f0a17ee4"
+    },
+    {
+      "bytes": 2857,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/independent/ROOT_CLI_PREVALIDATION_CORRECTION_INDEPENDENT_ADDENDUM.v1.json",
+      "sha256": "24059ae1816a737121c0dfd2cac037c721114910373cb17205ddc639f9d83fea"
+    },
+    {
+      "bytes": 5301,
+      "path": "experiments/sota-2026-10-22/audit/epoch50/independent/SOURCE_ACTUAL_REMOTE_READBACK_INDEPENDENT.v1.json",
+      "sha256": "68195614082f88e6135f6916c7083a48cc7fb3f863a19cd9b225b047a613e304"
     },
     {
       "bytes": 3143,
@@ -35921,14 +36355,59 @@
       "sha256": "363bb39e63fd6fb212a0aed25974443f5a286ca5eaff867314f3daad5fbe0718"
     },
     {
+      "bytes": 21959,
+      "path": "experiments/sota-2026-10-22/epoch50/EPOCH_MANIFEST.json",
+      "sha256": "e8515e9c2475812574ac4ba954c625c63923d2bf2596ddb235c4d3346bfcd56e"
+    },
+    {
+      "bytes": 2246,
+      "path": "experiments/sota-2026-10-22/epoch50/LEARNINGS.json",
+      "sha256": "bd1cdc1bfbd015abd86d0a049417e2ecc7f1d01d79c8743702af3c34f2f565f2"
+    },
+    {
+      "bytes": 3326,
+      "path": "experiments/sota-2026-10-22/epoch50/OFFICIAL_REFRESH_SUMMARY.json",
+      "sha256": "aec4fe1f7ab281fbc54363444cc700145d5b5e6258cb7c057b8f39ddf3b1f268"
+    },
+    {
+      "bytes": 12736,
+      "path": "experiments/sota-2026-10-22/epoch50/PAIRED_ERROR_SUMMARY.json",
+      "sha256": "9cb0493acfdc61cd57db570d0ff27b8fe3ff9d05d1925c89e2af05a725796aff"
+    },
+    {
+      "bytes": 212840,
+      "path": "experiments/sota-2026-10-22/epoch50/REJECTION_LEDGER.json",
+      "sha256": "325b9dd5a65665c092366e9604f2b1d86b829c30a1692a0167859609170173c9"
+    },
+    {
+      "bytes": 9732,
+      "path": "experiments/sota-2026-10-22/epoch50/RESULTS.json",
+      "sha256": "1d8049b3964441b073e54f767d2106a5b6a6c970a763840b77a87d7c46e70f64"
+    },
+    {
       "bytes": 14838,
       "path": "experiments/sota-2026-10-22/epoch50/SCIENTIFIC_DESIGN.v1.json",
       "sha256": "e491188240b8237aff235edccd99d8e0bf1d8be3147ae21f4bc1f4bb6358b513"
     },
     {
+      "bytes": 1607,
+      "path": "experiments/sota-2026-10-22/epoch50/SOURCE_ADMISSION.json",
+      "sha256": "5bb5a9f1536867cd27c30e25681ac54b1af24e3b17fdc43f26b80a0c7dba4ac0"
+    },
+    {
       "bytes": 15932,
       "path": "experiments/sota-2026-10-22/epoch50/SOURCE_FREEZE.json",
       "sha256": "3a62a4a17b7d2b2108fcf65a17b65aaf5bf354b34cbc9850387c1606e7e39712"
+    },
+    {
+      "bytes": 10370,
+      "path": "experiments/sota-2026-10-22/epoch50/USED_CONFIRMATION.json",
+      "sha256": "9bab43d4742009198d0c93fb5bac8af3f198b2b98fb74ae43fabf333af56aef1"
+    },
+    {
+      "bytes": 8764,
+      "path": "experiments/sota-2026-10-22/epoch50/USED_IDENTITIES.json",
+      "sha256": "54536f3849cbebe317ad87bb5ba7453e69aabc5f3278cc9f12926086feb4c9ce"
     },
     {
       "bytes": 13030,
@@ -36001,6 +36480,11 @@
       "sha256": "831ca645d70dcece8fa60740cd28fec39e4166c8640c967900524f3a3d85829d"
     },
     {
+      "bytes": 104544,
+      "path": "experiments/sota-2026-10-22/epoch50/evaluation/DEV_RESULTS.json",
+      "sha256": "e6b7300101cc94447d237efd4e4576183f6ce123913698fee4d1dde3f7e1b9ff"
+    },
+    {
       "bytes": 6633,
       "path": "experiments/sota-2026-10-22/epoch50/model-source/DONOR_COPY.v1.json",
       "sha256": "530aa8095e414a2266e08432f40d3715fcd26ece40c2429a45bca106bfc0ab83"
@@ -36044,6 +36528,51 @@
       "bytes": 10002,
       "path": "experiments/sota-2026-10-22/epoch50/official-refresh/refresh_public.py",
       "sha256": "92346e4bf003defa4c55c60308cf5f52c6faadba9685e08f16bfe6f0846e3193"
+    },
+    {
+      "bytes": 573,
+      "path": "experiments/sota-2026-10-22/epoch50/operational/DATA_CLI_EXECUTION.actual.v1.json",
+      "sha256": "2e4c1c1133afe4ef72437de953613b2f735d04160c3d4e2e3ece30528b6ca636"
+    },
+    {
+      "bytes": 3467,
+      "path": "experiments/sota-2026-10-22/epoch50/operational/DEV_LAUNCH_INTENT.v1.json",
+      "sha256": "debb837c4b1dca79b81e799493c647785fa9d35c537781dd3f88ca5b1b666ac8"
+    },
+    {
+      "bytes": 2484,
+      "path": "experiments/sota-2026-10-22/epoch50/operational/DEV_OUTER_EXECUTION.actual.v1.json",
+      "sha256": "7a995b7c9cd33ea6019e51813b58e4aa88c8bcb4bf7d4adc9c8f31073bcc5fb4"
+    },
+    {
+      "bytes": 1150,
+      "path": "experiments/sota-2026-10-22/epoch50/operational/DEV_OUTER_LAUNCH_ATTEMPT.v1.json",
+      "sha256": "2657ca191a294b3d446683ce49433ab4fc553140d71257641cda23e642e1e318"
+    },
+    {
+      "bytes": 1442,
+      "path": "experiments/sota-2026-10-22/epoch50/operational/DEV_PHYSICAL_CLOSURE.actual.v1.json",
+      "sha256": "af9535ff6f22cc05d6560436397e06643761aa8a1b826c833d8aacfd8285f59a"
+    },
+    {
+      "bytes": 1186,
+      "path": "experiments/sota-2026-10-22/epoch50/operational/DEV_SUPERVISOR_STARTED.actual.v1.json",
+      "sha256": "a858e54c12d0db8ed2e23fea06cbf0fa0690106803ef60cedf09c98832102d82"
+    },
+    {
+      "bytes": 1091,
+      "path": "experiments/sota-2026-10-22/epoch50/operational/RECOVERY_PUBLICATION_RECEIPT.actual.v1.json",
+      "sha256": "a3a7563d3883cea5fbecfa816ae4a5579d11aad716d88879a49f536786bf986d"
+    },
+    {
+      "bytes": 726,
+      "path": "experiments/sota-2026-10-22/epoch50/operational/ROOT_OUTER_CLI_PREVALIDATION_ERROR.actual.v1.json",
+      "sha256": "29fc734aec934e541b40cb8247ea3e9993d1c1b8d34e1608fb4cbc40e37cf394"
+    },
+    {
+      "bytes": 1076,
+      "path": "experiments/sota-2026-10-22/epoch50/operational/SOURCE_PUBLICATION_RECEIPT.actual.v1.json",
+      "sha256": "f1a158df1b40f2768cb2e67eec226bbaa0b81c316a56f7cffc572a8a894f9136"
     },
     {
       "bytes": 31704,
@@ -36134,6 +36663,21 @@
       "bytes": 16285,
       "path": "experiments/sota-2026-10-22/epoch50/publication/stagebuilder.py",
       "sha256": "305597241d789861793c5f0ff2a9aa9a0ba151e88c954c5d885d9509dbd24f27"
+    },
+    {
+      "bytes": 3185,
+      "path": "experiments/sota-2026-10-22/epoch50/runs/dev/execution.json",
+      "sha256": "61a79d1d74bcc26d0be61345bcfe9aa22a376ac26de603b19db81ae11d70cd34"
+    },
+    {
+      "bytes": 654,
+      "path": "experiments/sota-2026-10-22/epoch50/runs/dev/raw-seal.json",
+      "sha256": "ef92e58bca2072333550fbbec76eb62c46f6d1ee5ec5c0613059a057ffc48381"
+    },
+    {
+      "bytes": 376436,
+      "path": "experiments/sota-2026-10-22/epoch50/runs/dev/raw.json",
+      "sha256": "95ea004fee96c92e30645ae9aa7c3c1325234b5e6cd2336dad1d260339f5d7e5"
     },
     {
       "bytes": 9798,

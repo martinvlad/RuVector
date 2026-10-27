@@ -1,0 +1,3583 @@
+{
+  "EVALUATE_calls": 1,
+  "actual_counters": {
+    "BGE_forward_calls_attempted": 28,
+    "BGE_forward_calls_completed": 28,
+    "BGE_initializations_attempted": 1,
+    "BGE_initializations_completed": 1,
+    "BGE_texts_attempted": 201,
+    "BGE_texts_completed": 201,
+    "GPU_calls": 0,
+    "NLI_forwards_attempted": 36,
+    "NLI_forwards_completed": 36,
+    "Node_network_operations_attempted": 0,
+    "Python_network_operations_attempted": 1,
+    "Python_network_operations_blocked": 1,
+    "calibration_calls": 0,
+    "feature_cases_admitted": 12,
+    "feature_documents_admitted": 4,
+    "forecasts_completed": 36,
+    "native_binary_loads_attempted": 1,
+    "native_binary_loads_completed": 1,
+    "native_corpus_batches": 1,
+    "native_corpus_batches_attempted": 1,
+    "native_corpus_batches_completed": 1,
+    "native_hit_source_validations": 567,
+    "native_index_initializations_attempted": 4,
+    "native_index_initializations_completed": 4,
+    "native_insertions_attempted": 189,
+    "native_insertions_completed": 189,
+    "native_len_calls_attempted": 8,
+    "native_len_calls_completed": 8,
+    "native_queries_attempted": 12,
+    "native_queries_completed": 12,
+    "native_version_calls_attempted": 1,
+    "native_version_calls_completed": 1,
+    "paid_API_calls": 0,
+    "reader_initializations_attempted": 1,
+    "reader_initializations_completed": 1,
+    "reader_pair_tokenizations": 216,
+    "semantic_gold_decodes": 0,
+    "training_calls": 0
+  },
+  "actual_runtime_resources": {
+    "cgroup_scope": "Shared cgroup; not candidate incremental use; peak may predate this run.",
+    "children_max_rss_kib": 2055260,
+    "children_system_seconds": 0.041852,
+    "children_user_seconds": 0.11912199999999999,
+    "compute_threads": 2,
+    "cpu_affinity": [
+      0,
+      1
+    ],
+    "reader_torch_interop_threads": 1,
+    "scope": "SELF excludes child CPU; CHILDREN RSS is largest child high-water, not sum.",
+    "shared_cgroup_memory_current": 12956360704,
+    "shared_cgroup_memory_peak": 17180618752,
+    "worker_max_rss_kib": 2055260,
+    "worker_system_seconds": 1.509699,
+    "worker_user_seconds": 125.999547
+  },
+  "actual_runtime_timing": {
+    "completed_monotonic_seconds": 388367.637780778,
+    "started_monotonic_seconds": 388296.87611336,
+    "wall_seconds_including_init_and_cleanup": 70.76166559499688
+  },
+  "checks_passed": true,
+  "confirmation_passed": null,
+  "descriptive_uncertainty": {
+    "document_clusters": 4,
+    "native_minus_control": {
+      "lexical": {
+        "Brier": {
+          "p025": -0.8534125941053662,
+          "p975": 0.9260720528104099
+        },
+        "NLL": {
+          "p025": -1.85180219135028,
+          "p975": 2.76934482053727
+        },
+        "accuracy": {
+          "p025": -0.5,
+          "p975": 0.5
+        }
+      },
+      "source_order": {
+        "Brier": {
+          "p025": -0.028735870723253537,
+          "p975": 0.8046233498002664
+        },
+        "NLL": {
+          "p025": -0.7024879238657911,
+          "p975": 1.1911502496940412
+        },
+        "accuracy": {
+          "p025": -0.5,
+          "p975": 0.0
+        }
+      }
+    },
+    "resamples": 256,
+    "scope": "Small public source-group holdout only; descriptive intervals do not establish benchmark generalization or official rank.",
+    "seed": 48
+  },
+  "dev_passed": false,
+  "epoch": 50,
+  "gate_checks": {
+    "all_three_full_N12": true,
+    "all_three_gold_classes_represented": true,
+    "lexical:native_Brier_nonincrease": false,
+    "lexical:native_NLL_nonincrease": false,
+    "lexical:native_gain_at_least_two_correct": false,
+    "native_at_least_one_correct_per_gold_class": false,
+    "source_order:native_Brier_nonincrease": false,
+    "source_order:native_NLL_nonincrease": false,
+    "source_order:native_gain_at_least_two_correct": false
+  },
+  "joined_gold_ref": {
+    "bytes": 3158,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/private/DEV_GOLD_JOINED.json",
+    "sha256": "de811089e2645059f2bb61cc28489ff0d9776ad94ce206f69a90069832548185"
+  },
+  "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+  "loading_audit": {
+    "FP32_CPU_eval": true,
+    "all_395_state_tensor_data_pointers_match_mmap_source": true,
+    "all_original_learned_pooler_and_classifier_tensors_retained": true,
+    "assign": true,
+    "canonical_typed_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "custom_remote_code": false,
+    "finite_chunk_element_cap": 1000000,
+    "finite_validation_chunks": 736,
+    "initialization_seconds": 9.5812040969613,
+    "learned_state_keys_exact": true,
+    "learned_state_tensor_count": 395,
+    "memory_snapshots": [
+      {
+        "headroom_bytes": 4581720064,
+        "memory_current_bytes": 12598149120,
+        "memory_events": {
+          "high": 0,
+          "low": 0,
+          "max": 83996,
+          "oom": 3,
+          "oom_group_kill": 0,
+          "oom_kill": 1
+        },
+        "memory_max_bytes": 17179869184,
+        "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+        "stage": "READER_BEFORE_LARGE_ASSET_HASH"
+      },
+      {
+        "headroom_bytes": 4360097792,
+        "memory_current_bytes": 12819771392,
+        "memory_events": {
+          "high": 0,
+          "low": 0,
+          "max": 83996,
+          "oom": 3,
+          "oom_group_kill": 0,
+          "oom_kill": 1
+        },
+        "memory_max_bytes": 17179869184,
+        "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+        "stage": "READER_BEFORE_META_CONSTRUCTOR"
+      },
+      {
+        "headroom_bytes": 4359573504,
+        "memory_current_bytes": 12820295680,
+        "memory_events": {
+          "high": 0,
+          "low": 0,
+          "max": 83996,
+          "oom": 3,
+          "oom_group_kill": 0,
+          "oom_kill": 1
+        },
+        "memory_max_bytes": 17179869184,
+        "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+        "stage": "READER_AFTER_META_CONSTRUCTOR"
+      },
+      {
+        "headroom_bytes": 4359573504,
+        "memory_current_bytes": 12820295680,
+        "memory_events": {
+          "high": 0,
+          "low": 0,
+          "max": 83996,
+          "oom": 3,
+          "oom_group_kill": 0,
+          "oom_kill": 1
+        },
+        "memory_max_bytes": 17179869184,
+        "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+        "stage": "READER_BEFORE_MMAP_LOAD"
+      },
+      {
+        "headroom_bytes": 4359311360,
+        "memory_current_bytes": 12820557824,
+        "memory_events": {
+          "high": 0,
+          "low": 0,
+          "max": 83996,
+          "oom": 3,
+          "oom_group_kill": 0,
+          "oom_kill": 1
+        },
+        "memory_max_bytes": 17179869184,
+        "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+        "stage": "READER_AFTER_MMAP_LOAD"
+      },
+      {
+        "headroom_bytes": 4351262720,
+        "memory_current_bytes": 12828606464,
+        "memory_events": {
+          "high": 0,
+          "low": 0,
+          "max": 83996,
+          "oom": 3,
+          "oom_group_kill": 0,
+          "oom_kill": 1
+        },
+        "memory_max_bytes": 17179869184,
+        "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+        "stage": "READER_AFTER_STRICT_ASSIGN_AND_BUFFERS"
+      }
+    ],
+    "meta_constructor": true,
+    "mismatched_keys": [],
+    "missing_keys": [],
+    "mmap": true,
+    "model_id": "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+    "model_revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+    "model_weight_sha256": "a51c55cb7dc41c4c862f06a3d9c413a8aa0619222bc56f06cb6f2f5b2d3ee14a",
+    "nonpersistent_buffers": {
+      "position_ids": {
+        "device": "cpu",
+        "dtype": "int64",
+        "persistent": false,
+        "shape": [
+          1,
+          514
+        ],
+        "values": "Exact arange(514), expanded to (1,514)"
+      },
+      "token_type_ids": {
+        "device": "cpu",
+        "dtype": "int64",
+        "persistent": false,
+        "shape": [
+          1,
+          514
+        ],
+        "values": "Exact all zeros"
+      }
+    },
+    "raw_head_order": [
+      "Entailment",
+      "Neutral",
+      "Contradiction"
+    ],
+    "raw_to_typed_indices": [
+      0,
+      2,
+      1
+    ],
+    "removed_learned_or_nonlearned_state_keys": [],
+    "source_configuration_unchanged": true,
+    "source_revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+    "source_tensor_dtype_counts": {
+      "torch.float32": 395
+    },
+    "source_tensor_elements": 356412419,
+    "torch_interop_threads": 1,
+    "torch_threads": 2,
+    "unexpected_keys": [],
+    "unsafe_load_fallback": false,
+    "weights_only": true
+  },
+  "memory_snapshots": [
+    {
+      "headroom_bytes": 4581720064,
+      "memory_current_bytes": 12598149120,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "WORKER_BEFORE_ADMISSION"
+    },
+    {
+      "headroom_bytes": 4581720064,
+      "memory_current_bytes": 12598149120,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "READER_BEFORE_LARGE_ASSET_HASH"
+    },
+    {
+      "headroom_bytes": 4580827136,
+      "memory_current_bytes": 12599042048,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "READER_IMPORT_BEFORE"
+    },
+    {
+      "headroom_bytes": 4360097792,
+      "memory_current_bytes": 12819771392,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "READER_INITIALIZE_BEFORE"
+    },
+    {
+      "headroom_bytes": 4360097792,
+      "memory_current_bytes": 12819771392,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "READER_BEFORE_META_CONSTRUCTOR"
+    },
+    {
+      "headroom_bytes": 4359573504,
+      "memory_current_bytes": 12820295680,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "READER_AFTER_META_CONSTRUCTOR"
+    },
+    {
+      "headroom_bytes": 4359573504,
+      "memory_current_bytes": 12820295680,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "READER_BEFORE_MMAP_LOAD"
+    },
+    {
+      "headroom_bytes": 4359311360,
+      "memory_current_bytes": 12820557824,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "READER_AFTER_MMAP_LOAD"
+    },
+    {
+      "headroom_bytes": 4350996480,
+      "memory_current_bytes": 12828872704,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "READER_ALL_395_FINITE_VALIDATED"
+    },
+    {
+      "headroom_bytes": 4351262720,
+      "memory_current_bytes": 12828606464,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "READER_AFTER_STRICT_ASSIGN_AND_BUFFERS"
+    },
+    {
+      "headroom_bytes": 4333621248,
+      "memory_current_bytes": 12846247936,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "READER_INITIALIZE_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4333621248,
+      "memory_current_bytes": 12846247936,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_STAGE_BEFORE"
+    },
+    {
+      "headroom_bytes": 4333096960,
+      "memory_current_bytes": 12846772224,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_INITIALIZE_BEFORE"
+    },
+    {
+      "headroom_bytes": 4095295488,
+      "memory_current_bytes": 13084573696,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4077629440,
+      "memory_current_bytes": 13102239744,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4077629440,
+      "memory_current_bytes": 13102239744,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4068192256,
+      "memory_current_bytes": 13111676928,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4068192256,
+      "memory_current_bytes": 13111676928,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4068196352,
+      "memory_current_bytes": 13111672832,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4068196352,
+      "memory_current_bytes": 13111672832,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4068196352,
+      "memory_current_bytes": 13111672832,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4068196352,
+      "memory_current_bytes": 13111672832,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4066545664,
+      "memory_current_bytes": 13113323520,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4066545664,
+      "memory_current_bytes": 13113323520,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4066545664,
+      "memory_current_bytes": 13113323520,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4066545664,
+      "memory_current_bytes": 13113323520,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042956800,
+      "memory_current_bytes": 13136912384,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042956800,
+      "memory_current_bytes": 13136912384,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042956800,
+      "memory_current_bytes": 13136912384,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042956800,
+      "memory_current_bytes": 13136912384,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042723328,
+      "memory_current_bytes": 13137145856,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042723328,
+      "memory_current_bytes": 13137145856,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042723328,
+      "memory_current_bytes": 13137145856,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042723328,
+      "memory_current_bytes": 13137145856,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042723328,
+      "memory_current_bytes": 13137145856,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042723328,
+      "memory_current_bytes": 13137145856,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042727424,
+      "memory_current_bytes": 13137141760,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042727424,
+      "memory_current_bytes": 13137141760,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042727424,
+      "memory_current_bytes": 13137141760,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042727424,
+      "memory_current_bytes": 13137141760,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042727424,
+      "memory_current_bytes": 13137141760,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042727424,
+      "memory_current_bytes": 13137141760,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042727424,
+      "memory_current_bytes": 13137141760,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042727424,
+      "memory_current_bytes": 13137141760,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042731520,
+      "memory_current_bytes": 13137137664,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042731520,
+      "memory_current_bytes": 13137137664,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042731520,
+      "memory_current_bytes": 13137137664,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042731520,
+      "memory_current_bytes": 13137137664,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042731520,
+      "memory_current_bytes": 13137137664,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042731520,
+      "memory_current_bytes": 13137137664,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042731520,
+      "memory_current_bytes": 13137137664,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042731520,
+      "memory_current_bytes": 13137137664,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042735616,
+      "memory_current_bytes": 13137133568,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042735616,
+      "memory_current_bytes": 13137133568,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042735616,
+      "memory_current_bytes": 13137133568,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042735616,
+      "memory_current_bytes": 13137133568,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042735616,
+      "memory_current_bytes": 13137133568,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042735616,
+      "memory_current_bytes": 13137133568,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042735616,
+      "memory_current_bytes": 13137133568,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042735616,
+      "memory_current_bytes": 13137133568,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042735616,
+      "memory_current_bytes": 13137133568,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042735616,
+      "memory_current_bytes": 13137133568,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042735616,
+      "memory_current_bytes": 13137133568,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042735616,
+      "memory_current_bytes": 13137133568,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4042567680,
+      "memory_current_bytes": 13137301504,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4042567680,
+      "memory_current_bytes": 13137301504,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4026916864,
+      "memory_current_bytes": 13152952320,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4026916864,
+      "memory_current_bytes": 13152952320,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4026916864,
+      "memory_current_bytes": 13152952320,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4244193280,
+      "memory_current_bytes": 12935675904,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "BGE_STAGE_AFTER"
+    },
+    {
+      "headroom_bytes": 4244013056,
+      "memory_current_bytes": 12935856128,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NATIVE_HELPER_START_BEFORE"
+    },
+    {
+      "headroom_bytes": 4235501568,
+      "memory_current_bytes": 12944367616,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NATIVE_HELPER_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4234977280,
+      "memory_current_bytes": 12944891904,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4231884800,
+      "memory_current_bytes": 12947984384,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4231884800,
+      "memory_current_bytes": 12947984384,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4231622656,
+      "memory_current_bytes": 12948246528,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4228485120,
+      "memory_current_bytes": 12951384064,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4228485120,
+      "memory_current_bytes": 12951384064,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4228218880,
+      "memory_current_bytes": 12951650304,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4228116480,
+      "memory_current_bytes": 12951752704,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4228116480,
+      "memory_current_bytes": 12951752704,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4228116480,
+      "memory_current_bytes": 12951752704,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4224978944,
+      "memory_current_bytes": 12954890240,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4224978944,
+      "memory_current_bytes": 12954890240,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4224983040,
+      "memory_current_bytes": 12954886144,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4224614400,
+      "memory_current_bytes": 12955254784,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4224614400,
+      "memory_current_bytes": 12955254784,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4224622592,
+      "memory_current_bytes": 12955246592,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4224679936,
+      "memory_current_bytes": 12955189248,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4224679936,
+      "memory_current_bytes": 12955189248,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4224688128,
+      "memory_current_bytes": 12955181056,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4221448192,
+      "memory_current_bytes": 12958420992,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221448192,
+      "memory_current_bytes": 12958420992,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221202432,
+      "memory_current_bytes": 12958666752,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4221214720,
+      "memory_current_bytes": 12958654464,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221214720,
+      "memory_current_bytes": 12958654464,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221231104,
+      "memory_current_bytes": 12958638080,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4221239296,
+      "memory_current_bytes": 12958629888,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221239296,
+      "memory_current_bytes": 12958629888,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221259776,
+      "memory_current_bytes": 12958609408,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220989440,
+      "memory_current_bytes": 12958879744,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220989440,
+      "memory_current_bytes": 12958879744,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221014016,
+      "memory_current_bytes": 12958855168,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4221018112,
+      "memory_current_bytes": 12958851072,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221018112,
+      "memory_current_bytes": 12958851072,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221046784,
+      "memory_current_bytes": 12958822400,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4221050880,
+      "memory_current_bytes": 12958818304,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221050880,
+      "memory_current_bytes": 12958818304,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220817408,
+      "memory_current_bytes": 12959051776,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220821504,
+      "memory_current_bytes": 12959047680,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220821504,
+      "memory_current_bytes": 12959047680,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220854272,
+      "memory_current_bytes": 12959014912,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220858368,
+      "memory_current_bytes": 12959010816,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220858368,
+      "memory_current_bytes": 12959010816,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220895232,
+      "memory_current_bytes": 12958973952,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220903424,
+      "memory_current_bytes": 12958965760,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220903424,
+      "memory_current_bytes": 12958965760,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220944384,
+      "memory_current_bytes": 12958924800,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220948480,
+      "memory_current_bytes": 12958920704,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220948480,
+      "memory_current_bytes": 12958920704,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220993536,
+      "memory_current_bytes": 12958875648,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4221300736,
+      "memory_current_bytes": 12958568448,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221300736,
+      "memory_current_bytes": 12958568448,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221083648,
+      "memory_current_bytes": 12958785536,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4221087744,
+      "memory_current_bytes": 12958781440,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221087744,
+      "memory_current_bytes": 12958781440,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221136896,
+      "memory_current_bytes": 12958732288,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4221145088,
+      "memory_current_bytes": 12958724096,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221145088,
+      "memory_current_bytes": 12958724096,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221198336,
+      "memory_current_bytes": 12958670848,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4221206528,
+      "memory_current_bytes": 12958662656,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221206528,
+      "memory_current_bytes": 12958662656,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221005824,
+      "memory_current_bytes": 12958863360,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4221014016,
+      "memory_current_bytes": 12958855168,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221014016,
+      "memory_current_bytes": 12958855168,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221075456,
+      "memory_current_bytes": 12958793728,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4221083648,
+      "memory_current_bytes": 12958785536,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221083648,
+      "memory_current_bytes": 12958785536,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4221149184,
+      "memory_current_bytes": 12958720000,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220895232,
+      "memory_current_bytes": 12958973952,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220895232,
+      "memory_current_bytes": 12958973952,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220960768,
+      "memory_current_bytes": 12958908416,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220878848,
+      "memory_current_bytes": 12958990336,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220878848,
+      "memory_current_bytes": 12958990336,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220686336,
+      "memory_current_bytes": 12959182848,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220694528,
+      "memory_current_bytes": 12959174656,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220694528,
+      "memory_current_bytes": 12959174656,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220768256,
+      "memory_current_bytes": 12959100928,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220772352,
+      "memory_current_bytes": 12959096832,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220772352,
+      "memory_current_bytes": 12959096832,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220850176,
+      "memory_current_bytes": 12959019008,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220858368,
+      "memory_current_bytes": 12959010816,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220858368,
+      "memory_current_bytes": 12959010816,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220678144,
+      "memory_current_bytes": 12959191040,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220682240,
+      "memory_current_bytes": 12959186944,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220682240,
+      "memory_current_bytes": 12959186944,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220764160,
+      "memory_current_bytes": 12959105024,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220768256,
+      "memory_current_bytes": 12959100928,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220768256,
+      "memory_current_bytes": 12959100928,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220592128,
+      "memory_current_bytes": 12959277056,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220600320,
+      "memory_current_bytes": 12959268864,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220600320,
+      "memory_current_bytes": 12959268864,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220690432,
+      "memory_current_bytes": 12959178752,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220432384,
+      "memory_current_bytes": 12959436800,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220432384,
+      "memory_current_bytes": 12959436800,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220526592,
+      "memory_current_bytes": 12959342592,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220821504,
+      "memory_current_bytes": 12959047680,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220821504,
+      "memory_current_bytes": 12959047680,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220657664,
+      "memory_current_bytes": 12959211520,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220661760,
+      "memory_current_bytes": 12959207424,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220661760,
+      "memory_current_bytes": 12959207424,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220764160,
+      "memory_current_bytes": 12959105024,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220772352,
+      "memory_current_bytes": 12959096832,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220772352,
+      "memory_current_bytes": 12959096832,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220612608,
+      "memory_current_bytes": 12959256576,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220616704,
+      "memory_current_bytes": 12959252480,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220616704,
+      "memory_current_bytes": 12959252480,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220723200,
+      "memory_current_bytes": 12959145984,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_BEFORE"
+    },
+    {
+      "headroom_bytes": 4220727296,
+      "memory_current_bytes": 12959141888,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "NLI_FORWARD_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4220727296,
+      "memory_current_bytes": 12959141888,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "FORECAST_COMPLETE"
+    },
+    {
+      "headroom_bytes": 4223508480,
+      "memory_current_bytes": 12956360704,
+      "memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 83996,
+        "oom": 3,
+        "oom_group_kill": 0,
+        "oom_kill": 1
+      },
+      "memory_max_bytes": 17179869184,
+      "scope": "Shared cgroup snapshot; not candidate incremental use or cause proof.",
+      "stage": "WORKER_CLOSED"
+    }
+  ],
+  "metrics": {
+    "lexical": {
+      "Brier": 0.8750895808537106,
+      "N": 12,
+      "NLL": 1.6201192040158403,
+      "accuracy": 0.5,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 1
+        },
+        "Entailment": {
+          "correct": 3,
+          "support": 5
+        },
+        "NotMentioned": {
+          "correct": 3,
+          "support": 6
+        }
+      },
+      "correct": 6,
+      "latency_seconds": {
+        "N": 12,
+        "p50": 1.3682238615001552,
+        "p95": 2.020662295250804,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared BGE/native/index/reader initialization, queue and cleanup. Not publisher latency."
+      },
+      "rows": [
+        {
+          "Brier": 7.110230722021688e-06,
+          "NLL": 0.002084048647993164,
+          "case_id": "contractnli:eced6528:dev:381:nda-1",
+          "correct": 1,
+          "document_id": 381,
+          "elapsed_seconds": 2.0484465379850008,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-1",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9979181214735824
+        },
+        {
+          "Brier": 0.6384043876345221,
+          "NLL": 0.8592037102665615,
+          "case_id": "contractnli:eced6528:dev:381:nda-10",
+          "correct": 0,
+          "document_id": 381,
+          "elapsed_seconds": 1.5046168280532584,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "Contradiction",
+          "probability_of_gold": 0.4234991761338394
+        },
+        {
+          "Brier": 0.0003125977674769793,
+          "NLL": 0.01331200116144382,
+          "case_id": "contractnli:eced6528:dev:381:nda-16",
+          "correct": 1,
+          "document_id": 381,
+          "elapsed_seconds": 1.9979297330137342,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.986776211662439
+        },
+        {
+          "Brier": 1.8565188585254229,
+          "NLL": 3.5324743047276725,
+          "case_id": "contractnli:eced6528:dev:70:nda-1",
+          "correct": 0,
+          "document_id": 70,
+          "elapsed_seconds": 1.0021229399717413,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Contradiction",
+          "probability_of_gold": 0.029232496206268603
+        },
+        {
+          "Brier": 0.0018765409100544182,
+          "NLL": 0.034027606834577284,
+          "case_id": "contractnli:eced6528:dev:70:nda-10",
+          "correct": 1,
+          "document_id": 70,
+          "elapsed_seconds": 1.0851260449853726,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.9665448210261978
+        },
+        {
+          "Brier": 0.3563801364940649,
+          "NLL": 0.6306412716267276,
+          "case_id": "contractnli:eced6528:dev:70:nda-16",
+          "correct": 1,
+          "document_id": 70,
+          "elapsed_seconds": 1.000070608977694,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.5322503744815558
+        },
+        {
+          "Brier": 1.8441539443912924,
+          "NLL": 3.442862110491248,
+          "case_id": "contractnli:eced6528:dev:563:nda-1",
+          "correct": 0,
+          "document_id": 563,
+          "elapsed_seconds": 1.3181112579768524,
+          "gold": "Contradiction",
+          "hypothesis_id": "nda-1",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.03197304386214366
+        },
+        {
+          "Brier": 0.3520402166819862,
+          "NLL": 0.5541958744127431,
+          "case_id": "contractnli:eced6528:dev:563:nda-10",
+          "correct": 1,
+          "document_id": 563,
+          "elapsed_seconds": 1.418336465023458,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.574534073043075
+        },
+        {
+          "Brier": 0.019781206788236128,
+          "NLL": 0.11275644240473603,
+          "case_id": "contractnli:eced6528:dev:563:nda-16",
+          "correct": 1,
+          "document_id": 563,
+          "elapsed_seconds": 1.718172652006615,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.8933682202361362
+        },
+        {
+          "Brier": 1.8592853280269659,
+          "NLL": 3.343646956739678,
+          "case_id": "contractnli:eced6528:dev:75:nda-1",
+          "correct": 0,
+          "document_id": 75,
+          "elapsed_seconds": 1.0012810250045732,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Contradiction",
+          "probability_of_gold": 0.03530795604454993
+        },
+        {
+          "Brier": 1.9579679808062658,
+          "NLL": 4.613940541627754,
+          "case_id": "contractnli:eced6528:dev:75:nda-10",
+          "correct": 0,
+          "document_id": 75,
+          "elapsed_seconds": 1.4544280369882472,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.009912679917407527
+        },
+        {
+          "Brier": 1.614346661987518,
+          "NLL": 2.302285579248948,
+          "case_id": "contractnli:eced6528:dev:75:nda-16",
+          "correct": 0,
+          "document_id": 75,
+          "elapsed_seconds": 1.1301835039630532,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.10002995586038181
+        }
+      ]
+    },
+    "native": {
+      "Brier": 1.0330828230293916,
+      "N": 12,
+      "NLL": 2.12669196901695,
+      "accuracy": 0.4166666666666667,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 1
+        },
+        "Entailment": {
+          "correct": 3,
+          "support": 5
+        },
+        "NotMentioned": {
+          "correct": 2,
+          "support": 6
+        }
+      },
+      "correct": 5,
+      "latency_seconds": {
+        "N": 12,
+        "p50": 1.6359443299879786,
+        "p95": 2.166995378609863,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared BGE/native/index/reader initialization, queue and cleanup. Not publisher latency."
+      },
+      "rows": [
+        {
+          "Brier": 3.085896410905652e-06,
+          "NLL": 0.0013794537246427652,
+          "case_id": "contractnli:eced6528:dev:381:nda-1",
+          "correct": 1,
+          "document_id": 381,
+          "elapsed_seconds": 1.8610933310119435,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-1",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9986214972843053
+        },
+        {
+          "Brier": 1.9916698453580457,
+          "NLL": 6.302443120224154,
+          "case_id": "contractnli:eced6528:dev:381:nda-10",
+          "correct": 0,
+          "document_id": 381,
+          "elapsed_seconds": 2.142414223984815,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.0018318239395315734
+        },
+        {
+          "Brier": 1.9879852464693046,
+          "NLL": 6.109601015763852,
+          "case_id": "contractnli:eced6528:dev:381:nda-16",
+          "correct": 0,
+          "document_id": 381,
+          "elapsed_seconds": 2.1970390120404772,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.002221436954334663
+        },
+        {
+          "Brier": 1.6729420363371361,
+          "NLL": 2.464292165516324,
+          "case_id": "contractnli:eced6528:dev:70:nda-1",
+          "correct": 0,
+          "document_id": 70,
+          "elapsed_seconds": 1.1528196859871969,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.08506903586274871
+        },
+        {
+          "Brier": 0.17153802377330066,
+          "NLL": 0.3477682843190495,
+          "case_id": "contractnli:eced6528:dev:70:nda-10",
+          "correct": 1,
+          "document_id": 70,
+          "elapsed_seconds": 1.1114643039763905,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.7062625093537548
+        },
+        {
+          "Brier": 9.243198680654636e-07,
+          "NLL": 0.0007490908908831528,
+          "case_id": "contractnli:eced6528:dev:70:nda-16",
+          "correct": 1,
+          "document_id": 70,
+          "elapsed_seconds": 1.1900355399702676,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9992511896076542
+        },
+        {
+          "Brier": 1.7959015725847298,
+          "NLL": 3.2373429986026676,
+          "case_id": "contractnli:eced6528:dev:563:nda-1",
+          "correct": 0,
+          "document_id": 563,
+          "elapsed_seconds": 1.8350330980028957,
+          "gold": "Contradiction",
+          "hypothesis_id": "nda-1",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.03926809198732951
+        },
+        {
+          "Brier": 1.702844501699749,
+          "NLL": 2.5870502631353793,
+          "case_id": "contractnli:eced6528:dev:563:nda-10",
+          "correct": 0,
+          "document_id": 563,
+          "elapsed_seconds": 1.85349504603073,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.07524165615701106
+        },
+        {
+          "Brier": 0.9327275283484561,
+          "NLL": 1.1555683763236124,
+          "case_id": "contractnli:eced6528:dev:563:nda-16",
+          "correct": 0,
+          "document_id": 563,
+          "elapsed_seconds": 1.4368555619730614,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.31487851653914944
+        },
+        {
+          "Brier": 0.4112884567547699,
+          "NLL": 0.6130599889340766,
+          "case_id": "contractnli:eced6528:dev:75:nda-1",
+          "correct": 1,
+          "document_id": 75,
+          "elapsed_seconds": 1.3853751649730839,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.5416907626767855
+        },
+        {
+          "Brier": 1.7286608990940964,
+          "NLL": 2.673673469857708,
+          "case_id": "contractnli:eced6528:dev:75:nda-10",
+          "correct": 0,
+          "document_id": 75,
+          "elapsed_seconds": 1.2303325689863414,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.06899829603341494
+        },
+        {
+          "Brier": 0.0014317557168310113,
+          "NLL": 0.02737540091104762,
+          "case_id": "contractnli:eced6528:dev:75:nda-16",
+          "correct": 1,
+          "document_id": 75,
+          "elapsed_seconds": 2.125685031991452,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9729959094047858
+        }
+      ]
+    },
+    "source_order": {
+      "Brier": 0.6357483178163783,
+      "N": 12,
+      "NLL": 1.749690938210106,
+      "accuracy": 0.6666666666666666,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 1
+        },
+        "Entailment": {
+          "correct": 2,
+          "support": 5
+        },
+        "NotMentioned": {
+          "correct": 6,
+          "support": 6
+        }
+      },
+      "correct": 8,
+      "latency_seconds": {
+        "N": 12,
+        "p50": 1.2504678154946305,
+        "p95": 1.4618117675126996,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared BGE/native/index/reader initialization, queue and cleanup. Not publisher latency."
+      },
+      "rows": [
+        {
+          "Brier": 1.9933601002387376,
+          "NLL": 6.662416468792817,
+          "case_id": "contractnli:eced6528:dev:381:nda-1",
+          "correct": 0,
+          "document_id": 381,
+          "elapsed_seconds": 1.4685162119567394,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-1",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.0012780542576627477
+        },
+        {
+          "Brier": 1.2089089871354564e-05,
+          "NLL": 0.002560661619543936,
+          "case_id": "contractnli:eced6528:dev:381:nda-10",
+          "correct": 1,
+          "document_id": 381,
+          "elapsed_seconds": 1.31905936304247,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.9974426140778403
+        },
+        {
+          "Brier": 1.6795184160577893e-06,
+          "NLL": 0.0010239158822038519,
+          "case_id": "contractnli:eced6528:dev:381:nda-16",
+          "correct": 1,
+          "document_id": 381,
+          "elapsed_seconds": 1.1159123820252717,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.998976608140796
+        },
+        {
+          "Brier": 2.7227825268546892e-05,
+          "NLL": 0.0038060606370535766,
+          "case_id": "contractnli:eced6528:dev:70:nda-1",
+          "correct": 1,
+          "document_id": 70,
+          "elapsed_seconds": 1.2824656660086475,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.9962011732313089
+        },
+        {
+          "Brier": 2.43512129406081e-05,
+          "NLL": 0.0035794942666429463,
+          "case_id": "contractnli:eced6528:dev:70:nda-10",
+          "correct": 1,
+          "document_id": 70,
+          "elapsed_seconds": 1.456326312967576,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-10",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.9964269044859166
+        },
+        {
+          "Brier": 1.9869816116088967,
+          "NLL": 5.75388861974832,
+          "case_id": "contractnli:eced6528:dev:70:nda-16",
+          "correct": 0,
+          "document_id": 70,
+          "elapsed_seconds": 1.4510853250394575,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.003170428205080937
+        },
+        {
+          "Brier": 1.5280255724799232,
+          "NLL": 5.429800475578794,
+          "case_id": "contractnli:eced6528:dev:563:nda-1",
+          "correct": 0,
+          "document_id": 563,
+          "elapsed_seconds": 1.2190792259643786,
+          "gold": "Contradiction",
+          "hypothesis_id": "nda-1",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.004383970424573204
+        },
+        {
+          "Brier": 0.005502224893700047,
+          "NLL": 0.05439745646042349,
+          "case_id": "contractnli:eced6528:dev:563:nda-10",
+          "correct": 1,
+          "document_id": 563,
+          "elapsed_seconds": 1.1054027740028687,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.947055618314044
+        },
+        {
+          "Brier": 0.05649001533444946,
+          "NLL": 0.1862480612204278,
+          "case_id": "contractnli:eced6528:dev:563:nda-16",
+          "correct": 1,
+          "document_id": 563,
+          "elapsed_seconds": 1.1234895740053616,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-16",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.8300676618437413
+        },
+        {
+          "Brier": 0.4812933656456772,
+          "NLL": 0.6782739952969061,
+          "case_id": "contractnli:eced6528:dev:75:nda-1",
+          "correct": 1,
+          "document_id": 75,
+          "elapsed_seconds": 1.1075158410239965,
+          "gold": "NotMentioned",
+          "hypothesis_id": "nda-1",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.507492170740806
+        },
+        {
+          "Brier": 0.001552146049427893,
+          "NLL": 0.02847550362652207,
+          "case_id": "contractnli:eced6528:dev:75:nda-10",
+          "correct": 1,
+          "document_id": 75,
+          "elapsed_seconds": 1.2818564050248824,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-10",
+          "prediction": "Entailment",
+          "probability_of_gold": 0.9719261025193262
+        },
+        {
+          "Brier": 1.575709429899231,
+          "NLL": 2.1918205453916166,
+          "case_id": "contractnli:eced6528:dev:75:nda-16",
+          "correct": 0,
+          "document_id": 75,
+          "elapsed_seconds": 1.113869181019254,
+          "gold": "Entailment",
+          "hypothesis_id": "nda-16",
+          "prediction": "NotMentioned",
+          "probability_of_gold": 0.11171318445151504
+        }
+      ]
+    }
+  },
+  "native104_champion_preserved": true,
+  "network_audit": {
+    "admissible": true,
+    "all_audited_operations_denied_before_IO": true,
+    "attribution": "Optional urllib3 IPv6-probe compatibility, not E48 event attribution proof.",
+    "audited_successful_network_operations": 0,
+    "blocked_optional_import_bind_probes": 1,
+    "event_counts": {
+      "socket.bind": 1
+    },
+    "public_socket_wrappers_installed": [
+      "socket.connect",
+      "socket.connect_ex",
+      "socket.bind",
+      "socket.send",
+      "socket.sendall",
+      "socket.sendto",
+      "socket.sendmsg",
+      "socket.recv",
+      "socket.recv_into",
+      "socket.recvfrom",
+      "socket.recvfrom_into",
+      "socket.recvmsg",
+      "socket.recvmsg_into",
+      "socket.listen",
+      "socket.accept",
+      "socket.getaddrinfo",
+      "socket.gethostbyname",
+      "socket.gethostbyname_ex",
+      "socket.gethostbyaddr"
+    ],
+    "scope": "Python audit-hook events only; native Node guard separately checked; no host/argument values retained.",
+    "stage_event_counts": {
+      "reader_transformers_import": {
+        "socket.bind": 1
+      }
+    },
+    "unexpected_blocked_attempts": 0
+  },
+  "new_model_or_native_calls": 0,
+  "numerical_check_scope": "Exact selected-source substring, numeric/date/currency and negation preservation only; no claim of semantic numeric proof. Retrieval miss never proves insufficient evidence.",
+  "official_goal_verified": false,
+  "original_vault_reads": 0,
+  "phase": "dev",
+  "plan_sha256": "aaa9800c80901eea4bda3b2d81ecf941476857d17a56e1a3620a9521f16d8483",
+  "point_gates_passed": false,
+  "proper_score_scope": "Uncalibrated stable FP64 log-softmax of captured FP32 typed head logits; no clipping or fitted calibration.",
+  "qualification_ref": {
+    "bytes": 5567,
+    "path": "/dev/shm/ruvector-e50-audit/DEV_RUNTIME_AND_ALL_PHYSICAL_CLOSURE_QUALIFICATION.v1.json",
+    "sha256": "1323b346e62b5510e5e8beb8679dd5331127716aefff4591451da727b0776a05"
+  },
+  "raw_ref": {
+    "bytes": 376436,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/runs/dev/raw.json",
+    "sha256": "95ea004fee96c92e30645ae9aa7c3c1325234b5e6cd2336dad1d260339f5d7e5"
+  },
+  "schema_version": 1,
+  "scientific_scope": "Project-unused public ContractNLI officialDEV source-group pilot. No fullbenchmark/publisher score, rank or eligibility claim.",
+  "source_freeze_sha256": "3a62a4a17b7d2b2108fcf65a17b65aaf5bf354b34cbc9850387c1606e7e39712",
+  "status": "REJECTED_DEV",
+  "used_confirmation_identities": []
+}

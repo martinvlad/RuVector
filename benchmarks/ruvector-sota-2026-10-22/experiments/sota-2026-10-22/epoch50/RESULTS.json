@@ -1,0 +1,259 @@
+{
+  "actual_SOURCE_commit": "73e9fc76a7c6ac560c6e17eb0f7f1dc73920bfdf",
+  "actual_execution": {
+    "BGE_forward_calls_attempted": 28,
+    "BGE_forward_calls_completed": 28,
+    "BGE_initializations_attempted": 1,
+    "BGE_initializations_completed": 1,
+    "BGE_texts_attempted": 201,
+    "BGE_texts_completed": 201,
+    "CONF_DATA_materializations": 0,
+    "CONF_EVALUATE_calls": 0,
+    "CONF_GOLD_calls": 0,
+    "CONF_NLI_forwards": 0,
+    "CONF_native_batches": 0,
+    "DEV_DATA_materializations": 1,
+    "DEV_EVALUATE_calls": 1,
+    "DEV_GOLD_calls": 1,
+    "DEV_semantic_label_decodes": 12,
+    "GPU_calls": 0,
+    "NLI_forwards_attempted": 36,
+    "NLI_forwards_completed": 36,
+    "Node_network_operations_attempted": 0,
+    "Python_network_operations_attempted": 1,
+    "Python_network_operations_blocked": 1,
+    "Root_CLI_prevalidation_failures_before_dispatch": 1,
+    "Root_outer_CLI_invocations": 2,
+    "actual_scientific_supervisor_starts": 1,
+    "actual_scientific_worker_starts": 1,
+    "allowed_further_epoch50_batches": 0,
+    "calibration_calls": 0,
+    "feature_cases_admitted": 12,
+    "feature_documents_admitted": 4,
+    "forecasts_completed": 36,
+    "native_binary_loads_attempted": 1,
+    "native_binary_loads_completed": 1,
+    "native_corpus_batches": 1,
+    "native_corpus_batches_attempted": 1,
+    "native_corpus_batches_completed": 1,
+    "native_hit_source_validations": 567,
+    "native_index_initializations_attempted": 4,
+    "native_index_initializations_completed": 4,
+    "native_insertions_attempted": 189,
+    "native_insertions_completed": 189,
+    "native_len_calls_attempted": 8,
+    "native_len_calls_completed": 8,
+    "native_queries_attempted": 12,
+    "native_queries_completed": 12,
+    "native_version_calls_attempted": 1,
+    "native_version_calls_completed": 1,
+    "outer_wall_seconds_including_capture_physical_cleanup": 72.14082366297953,
+    "paid_API_calls": 0,
+    "reader_initializations_attempted": 1,
+    "reader_initializations_completed": 1,
+    "reader_pair_tokenizations": 216,
+    "semantic_gold_decodes": 12,
+    "semantic_gold_decodes_at_forecast_seal": 0,
+    "training_calls": 0,
+    "unused_conditional_batch_slots_closed": 1,
+    "worker_wall_seconds_including_init_cleanup": 70.76166559499688
+  },
+  "actual_runtime_resources": {
+    "cgroup_scope": "Shared cgroup; not candidate incremental use; peak may predate this run.",
+    "children_max_rss_kib": 2055260,
+    "children_system_seconds": 0.041852,
+    "children_user_seconds": 0.11912199999999999,
+    "compute_threads": 2,
+    "cpu_affinity": [
+      0,
+      1
+    ],
+    "reader_torch_interop_threads": 1,
+    "scope": "SELF excludes child CPU; CHILDREN RSS is largest child high-water, not sum.",
+    "shared_cgroup_memory_current": 12956360704,
+    "shared_cgroup_memory_peak": 17180618752,
+    "worker_max_rss_kib": 2055260,
+    "worker_system_seconds": 1.509699,
+    "worker_user_seconds": 125.999547
+  },
+  "candidate_promoted": false,
+  "confirmation_untouched": true,
+  "created_at": "2026-10-27T01:45:46.000176+00:00",
+  "dataset_attribution": "ContractNLI, Stanford NLP, CC-BY-4.0; exact official dataset/scorer/model revisions and hashes are frozen in plan and source manifests.",
+  "descriptive_uncertainty": {
+    "document_clusters": 4,
+    "native_minus_control": {
+      "lexical": {
+        "Brier": {
+          "p025": -0.8534125941053662,
+          "p975": 0.9260720528104099
+        },
+        "NLL": {
+          "p025": -1.85180219135028,
+          "p975": 2.76934482053727
+        },
+        "accuracy": {
+          "p025": -0.5,
+          "p975": 0.5
+        }
+      },
+      "source_order": {
+        "Brier": {
+          "p025": -0.028735870723253537,
+          "p975": 0.8046233498002664
+        },
+        "NLL": {
+          "p025": -0.7024879238657911,
+          "p975": 1.1911502496940412
+        },
+        "accuracy": {
+          "p025": -0.5,
+          "p975": 0.0
+        }
+      }
+    },
+    "resamples": 256,
+    "scope": "Small public source-group holdout only; descriptive intervals do not establish benchmark generalization or official rank.",
+    "seed": 48
+  },
+  "epoch": 50,
+  "error_summary": "Native missed seven cases; lexical missed six; source order missed four. Every arm missed the sole Contradiction. Native NotMentioned accuracy2/6 versus lexical3/6 and source_order6/6. Retrieval miss is never proof of insufficient evidence.",
+  "exact_evaluation": {
+    "bytes": 104544,
+    "path": "experiments/sota-2026-10-22/epoch50/evaluation/DEV_RESULTS.json",
+    "sha256": "e6b7300101cc94447d237efd4e4576183f6ce123913698fee4d1dde3f7e1b9ff"
+  },
+  "frozen_plan": {
+    "bytes": 31704,
+    "path": "experiments/sota-2026-10-22/epoch50/plan.json",
+    "sha256": "aaa9800c80901eea4bda3b2d81ecf941476857d17a56e1a3620a9521f16d8483"
+  },
+  "gate_checks": {
+    "all_three_full_N12": true,
+    "all_three_gold_classes_represented": true,
+    "lexical:native_Brier_nonincrease": false,
+    "lexical:native_NLL_nonincrease": false,
+    "lexical:native_gain_at_least_two_correct": false,
+    "native_at_least_one_correct_per_gold_class": false,
+    "source_order:native_Brier_nonincrease": false,
+    "source_order:native_NLL_nonincrease": false,
+    "source_order:native_gain_at_least_two_correct": false
+  },
+  "independent_rejection": {
+    "bytes": 13241,
+    "path": "experiments/sota-2026-10-22/audit/epoch50/independent/DEV_SCIENTIFIC_REJECTION_INDEPENDENT.v1.json",
+    "sha256": "16e3df56f7509b1249c57181633d7c08fafca1d384262ca9ce4a909f84f90d47"
+  },
+  "independent_runtime_qualification": {
+    "bytes": 5567,
+    "path": "experiments/sota-2026-10-22/audit/epoch50/independent/DEV_RUNTIME_AND_ALL_PHYSICAL_CLOSURE_QUALIFICATION.v1.json",
+    "sha256": "1323b346e62b5510e5e8beb8679dd5331127716aefff4591451da727b0776a05"
+  },
+  "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+  "metrics": {
+    "lexical": {
+      "Brier": 0.8750895808537106,
+      "N": 12,
+      "NLL": 1.6201192040158403,
+      "accuracy": 0.5,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 1
+        },
+        "Entailment": {
+          "correct": 3,
+          "support": 5
+        },
+        "NotMentioned": {
+          "correct": 3,
+          "support": 6
+        }
+      },
+      "correct": 6,
+      "latency_seconds": {
+        "N": 12,
+        "p50": 1.3682238615001552,
+        "p95": 2.020662295250804,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared BGE/native/index/reader initialization, queue and cleanup. Not publisher latency."
+      }
+    },
+    "native": {
+      "Brier": 1.0330828230293916,
+      "N": 12,
+      "NLL": 2.12669196901695,
+      "accuracy": 0.4166666666666667,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 1
+        },
+        "Entailment": {
+          "correct": 3,
+          "support": 5
+        },
+        "NotMentioned": {
+          "correct": 2,
+          "support": 6
+        }
+      },
+      "correct": 5,
+      "latency_seconds": {
+        "N": 12,
+        "p50": 1.6359443299879786,
+        "p95": 2.166995378609863,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared BGE/native/index/reader initialization, queue and cleanup. Not publisher latency."
+      }
+    },
+    "source_order": {
+      "Brier": 0.6357483178163783,
+      "N": 12,
+      "NLL": 1.749690938210106,
+      "accuracy": 0.6666666666666666,
+      "class_results": {
+        "Contradiction": {
+          "correct": 0,
+          "support": 1
+        },
+        "Entailment": {
+          "correct": 2,
+          "support": 5
+        },
+        "NotMentioned": {
+          "correct": 6,
+          "support": 6
+        }
+      },
+      "correct": 8,
+      "latency_seconds": {
+        "N": 12,
+        "p50": 1.2504678154946305,
+        "p95": 1.4618117675126996,
+        "scope": "Actual perrequest packing/tokenization and model forward; excludes shared BGE/native/index/reader initialization, queue and cleanup. Not publisher latency."
+      }
+    }
+  },
+  "native104_champion_preserved": true,
+  "new_publisher_submission": false,
+  "numerical_check_scope": "Exact selected-source substring, numeric/date/currency and negation preservation only; no claim of semantic numeric proof. Retrieval miss never proves insufficient evidence.",
+  "official_goal_verified": false,
+  "official_rank": null,
+  "operational_note": "One Root approval-hash transcription error failed before attempt reservation/Popen. The corrected exact invocation consumed the one actual DEV batch; no scientific retry occurred.",
+  "proper_score_scope": "Uncalibrated stable FP64 log-softmax of captured FP32 typed head logits; no clipping or fitted calibration.",
+  "schema_version": 1,
+  "scientific_scope": "Twelve public official-DEV ContractNLI cases from four document groups. Matched same-model retrieval ablation. This is a rejected diagnostic pilot, with no full benchmark or official publisher rank claim.",
+  "sealed_raw": {
+    "bytes": 376436,
+    "path": "experiments/sota-2026-10-22/epoch50/runs/dev/raw.json",
+    "sha256": "95ea004fee96c92e30645ae9aa7c3c1325234b5e6cd2336dad1d260339f5d7e5"
+  },
+  "source_checkpoint": "f65c8a3e2ad835577e912d60c817e86ba73e29cb",
+  "source_freeze": {
+    "bytes": 15932,
+    "path": "experiments/sota-2026-10-22/epoch50/SOURCE_FREEZE.json",
+    "sha256": "3a62a4a17b7d2b2108fcf65a17b65aaf5bf354b34cbc9850387c1606e7e39712"
+  },
+  "source_overlap_uncertainty": "Generic pretrained training/source overlap is unknown; project-unused identities do not establish pretraining decontamination.",
+  "status": "REJECTED_DEV",
+  "used_confirmation_identities": []
+}

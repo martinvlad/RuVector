@@ -1,0 +1,131 @@
+{
+  "Node_syntax_only": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "--check",
+      "/dev/shm/ruvector-e56-candidate/source/native_helper.cjs"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  "Python_AST_files": [
+    "inherited_guards.py",
+    "inherited_packing.py",
+    "inherited_reader.py",
+    "io_guard.py",
+    "native_accounting.py",
+    "search_policy.py",
+    "supervisor.py",
+    "support.py",
+    "test_inert.py",
+    "test_native_accounting.py",
+    "worker.py"
+  ],
+  "actual_native_batches": 0,
+  "actual_runtime_model_native_imports": 0,
+  "all_source_files_still_no_pycache": true,
+  "epoch": 56,
+  "schema_version": 1,
+  "scope": "Invented scalar/token encodings and mocked transport only. No actual tokenizer/model/BGE/native/Gold/API/GPU initialization or corpus batch.",
+  "source_refs": [
+    {
+      "bytes": 51087,
+      "path": "/dev/shm/ruvector-e56-candidate/source/authored_fixtures.json",
+      "sha256": "9207b7019d0f05d1e8c4a822511cfd7df3332ce5df2f34262cd4db9d658b999b"
+    },
+    {
+      "bytes": 4994,
+      "path": "/dev/shm/ruvector-e56-candidate/source/inherited_guards.py",
+      "sha256": "2d3aad4713828a69eba4becbee5fb1c731164638a0000742aaa5bef24376f7dc"
+    },
+    {
+      "bytes": 25255,
+      "path": "/dev/shm/ruvector-e56-candidate/source/inherited_packing.py",
+      "sha256": "10d2d59e1ba860700e1e22e12010756130b15973bc2c4f25885b1bd654341c5b"
+    },
+    {
+      "bytes": 18049,
+      "path": "/dev/shm/ruvector-e56-candidate/source/inherited_reader.py",
+      "sha256": "108a842198a96d0d28af53d92b7f3edcb1fbe0012c422917a6f63667d76b95c1"
+    },
+    {
+      "bytes": 4849,
+      "path": "/dev/shm/ruvector-e56-candidate/source/io_guard.py",
+      "sha256": "9bcb717c704114f9d9fb69ca6ed1838482e37a8491d81ca1162f54126056c13b"
+    },
+    {
+      "bytes": 10650,
+      "path": "/dev/shm/ruvector-e56-candidate/source/native_accounting.py",
+      "sha256": "379588fcbe15f9db598c899740c54c280237d1853a3fea6575b72d0898ff21be"
+    },
+    {
+      "bytes": 9392,
+      "path": "/dev/shm/ruvector-e56-candidate/source/native_helper.cjs",
+      "sha256": "e634d6882fd6af133e758a12c864736d45cd8ac5d3ac3bcf302514f72b10c5bd"
+    },
+    {
+      "bytes": 3007,
+      "path": "/dev/shm/ruvector-e56-candidate/source/search_policy.py",
+      "sha256": "356f42fc110155bd9340ab35c8ebe69db5b88a907d903dc2eeffaba6a1f0505e"
+    },
+    {
+      "bytes": 16968,
+      "path": "/dev/shm/ruvector-e56-candidate/source/supervisor.py",
+      "sha256": "1c5e10607f7b2133a56713d4ebe8b71dcd623071861531001273fbfe9395dc60"
+    },
+    {
+      "bytes": 12757,
+      "path": "/dev/shm/ruvector-e56-candidate/source/support.py",
+      "sha256": "352b085acda25e4558a5604065c843789949bd026858be889e2e7526a4288a85"
+    },
+    {
+      "bytes": 15057,
+      "path": "/dev/shm/ruvector-e56-candidate/source/test_inert.py",
+      "sha256": "3b089c2b0218f8743aaeabc78bb54e4da50fa50fda1a7f39ad83746866ddbc1d"
+    },
+    {
+      "bytes": 17349,
+      "path": "/dev/shm/ruvector-e56-candidate/source/test_native_accounting.py",
+      "sha256": "ad7919141e0768e8af51a6bb28afe51f20603e8f91ba0297a77e6e3fa769b1c6"
+    },
+    {
+      "bytes": 19845,
+      "path": "/dev/shm/ruvector-e56-candidate/source/worker.py",
+      "sha256": "91ec6393ad3977d2da6d466858f84fea6adbe27417f2f4e9af5b6efa853b3622"
+    }
+  ],
+  "status": "INERT_SOURCE_CHECKS_PASSED",
+  "tests": [
+    {
+      "argv": [
+        "taskset",
+        "-c",
+        "0,1",
+        "python",
+        "-I",
+        "-B",
+        "/dev/shm/ruvector-e56-candidate/source/test_native_accounting.py"
+      ],
+      "exit_code": 0,
+      "stderr": "test_mismatched_terminal_rejects_even_when_progress_complete (__main__.MockedTransportTests.test_mismatched_terminal_rejects_even_when_progress_complete) ... ok\ntest_missing_capture_is_not_expected_filled (__main__.MockedTransportTests.test_missing_capture_is_not_expected_filled) ... ok\ntest_partial_native_failure_retains_pending_attempt (__main__.MockedTransportTests.test_partial_native_failure_retains_pending_attempt) ... ok\ntest_success_counter_and_dict_use_actual_snapshot_once (__main__.MockedTransportTests.test_success_counter_and_dict_use_actual_snapshot_once) ... ok\ntest_bad_terminal_receipt_cannot_be_replaced_after_failure (__main__.SnapshotTests.test_bad_terminal_receipt_cannot_be_replaced_after_failure) ... ok\ntest_capture_file_symlink_and_byte_cap_rejected (__main__.SnapshotTests.test_capture_file_symlink_and_byte_cap_rejected) ... ok\ntest_changed_source_signature_rejected_after_bounded_read (__main__.SnapshotTests.test_changed_source_signature_rejected_after_bounded_read) ... ok\ntest_counter_and_dict_full_native_event_totals_not_doubled (__main__.SnapshotTests.test_counter_and_dict_full_native_event_totals_not_doubled) ... ok\ntest_counter_decrease_rejected (__main__.SnapshotTests.test_counter_decrease_rejected) ... ok\ntest_duplicate_json_key_rejected (__main__.SnapshotTests.test_duplicate_json_key_rejected) ... ok\ntest_frozen_geometry_and_caps_cannot_be_relaxed (__main__.SnapshotTests.test_frozen_geometry_and_caps_cannot_be_relaxed) ... ok\ntest_full_log_capture_is_explicitly_one_shot (__main__.SnapshotTests.test_full_log_capture_is_explicitly_one_shot) ... ok\ntest_generic_single_index_large_snapshot_schema (__main__.SnapshotTests.test_generic_single_index_large_snapshot_schema) ... ok\ntest_identical_snapshot_replay_is_idempotent_for_dict_and_counter (__main__.SnapshotTests.test_identical_snapshot_replay_is_idempotent_for_dict_and_counter) ... ok\ntest_invalid_counts_types_keys_and_caps_latch_failure (__main__.SnapshotTests.test_invalid_counts_types_keys_and_caps_latch_failure) ... ok\ntest_invalid_event_after_qualification_latches_uncertainty (__main__.SnapshotTests.test_invalid_event_after_qualification_latches_uncertainty) ... ok\ntest_missing_capture_never_fills_expected_counts (__main__.SnapshotTests.test_missing_capture_never_fills_expected_counts) ... ok\ntest_negative_or_nonfinite_clock_and_unknown_stage_rejected (__main__.SnapshotTests.test_negative_or_nonfinite_clock_and_unknown_stage_rejected) ... ok\ntest_parent_addition_drift_is_detected_not_overwritten (__main__.SnapshotTests.test_parent_addition_drift_is_detected_not_overwritten) ... ok\ntest_partial_last_record_retains_valid_prefix (__main__.SnapshotTests.test_partial_last_record_retains_valid_prefix) ... ok\ntest_pending_attempt_stays_uncertain_without_terminal (__main__.SnapshotTests.test_pending_attempt_stays_uncertain_without_terminal) ... ok\ntest_post_read_byte_cap_catches_growth_after_initial_stat (__main__.SnapshotTests.test_post_read_byte_cap_catches_growth_after_initial_stat) ... ok\ntest_terminal_without_full_event_evidence_rejected (__main__.SnapshotTests.test_terminal_without_full_event_evidence_rejected) ... ok\ntest_unrelated_python_counters_preserved (__main__.SnapshotTests.test_unrelated_python_counters_preserved) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.146s\n\nOK\n",
+      "stdout": "",
+      "wall_seconds": 0.2633023909875192
+    },
+    {
+      "argv": [
+        "taskset",
+        "-c",
+        "0,1",
+        "python",
+        "-I",
+        "-B",
+        "/dev/shm/ruvector-e56-candidate/source/test_inert.py"
+      ],
+      "exit_code": 0,
+      "stderr": "test_absent_zip_canonical_escape_rejected (__main__.SourceContractTests.test_absent_zip_canonical_escape_rejected) ... ok\ntest_absent_zip_policy_removes_only_frozen_entry_retains_deny (__main__.SourceContractTests.test_absent_zip_policy_removes_only_frozen_entry_retains_deny) ... ok\ntest_all_new_runtime_epoch_dict_literals_are_56 (__main__.SourceContractTests.test_all_new_runtime_epoch_dict_literals_are_56) ... ok\ntest_benchmark_identity_rejected (__main__.SourceContractTests.test_benchmark_identity_rejected) ... ok\ntest_blank_boundary_coalesces (__main__.SourceContractTests.test_blank_boundary_coalesces) ... ok\ntest_changed_absent_zip_hash_rejected_without_path_mutation (__main__.SourceContractTests.test_changed_absent_zip_hash_rejected_without_path_mutation) ... ok\ntest_combining_boundary_coalesces (__main__.SourceContractTests.test_combining_boundary_coalesces) ... ok\ntest_corrupt_source_rejected (__main__.SourceContractTests.test_corrupt_source_rejected) ... ok\ntest_delegate_exact_original_methods (__main__.SourceContractTests.test_delegate_exact_original_methods) ... ok\ntest_denied_open_all_original_suffixes_still_fail_closed (__main__.SourceContractTests.test_denied_open_all_original_suffixes_still_fail_closed) ... ok\ntest_existing_zip_policy_rejected_without_path_mutation (__main__.SourceContractTests.test_existing_zip_policy_rejected_without_path_mutation) ... ok\ntest_false_branch_coverage_rejected (__main__.SourceContractTests.test_false_branch_coverage_rejected) ... ok\ntest_fixture_role_validation (__main__.SourceContractTests.test_fixture_role_validation) ... ok\ntest_headroom_precedes_version_policy_and_science (__main__.SourceContractTests.test_headroom_precedes_version_policy_and_science) ... ok\ntest_import_does_not_load_runtime (__main__.SourceContractTests.test_import_does_not_load_runtime) ... ok\ntest_invented_oversized_branch (__main__.SourceContractTests.test_invented_oversized_branch) ... ok\ntest_invented_unfragmentable_rejected (__main__.SourceContractTests.test_invented_unfragmentable_rejected) ... ok\ntest_native_diff_scope (__main__.SourceContractTests.test_native_diff_scope) ... ok\ntest_no_confirmation_role (__main__.SourceContractTests.test_no_confirmation_role) ... ok\ntest_no_reader_constructor_or_score_call (__main__.SourceContractTests.test_no_reader_constructor_or_score_call) ... ok\ntest_no_unsafe_pair_rewrite (__main__.SourceContractTests.test_no_unsafe_pair_rewrite) ... ok\ntest_numeric_boundary_coalesces (__main__.SourceContractTests.test_numeric_boundary_coalesces) ... ok\ntest_original_fitting_group_preserved (__main__.SourceContractTests.test_original_fitting_group_preserved) ... ok\ntest_supervisor_exact_guardian21_fence (__main__.SourceContractTests.test_supervisor_exact_guardian21_fence) ... ok\ntest_supervisor_external_termination_enters_cleanup (__main__.SourceContractTests.test_supervisor_external_termination_enters_cleanup) ... ok\ntest_supervisor_hard_absolute_clock (__main__.SourceContractTests.test_supervisor_hard_absolute_clock) ... ok\ntest_supervisor_signal_deferred_through_child_identity_capture (__main__.SourceContractTests.test_supervisor_signal_deferred_through_child_identity_capture) ... ok\ntest_whole_source_partition_preserves (__main__.SourceContractTests.test_whole_source_partition_preserves) ... ok\ntest_zwj_boundary_coalesces (__main__.SourceContractTests.test_zwj_boundary_coalesces) ... ok\n\n----------------------------------------------------------------------\nRan 29 tests in 0.052s\n\nOK\n",
+      "stdout": "",
+      "wall_seconds": 0.1827719999710098
+    }
+  ]
+}

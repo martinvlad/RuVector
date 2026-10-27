@@ -1,0 +1,180 @@
+{
+  "E53_native4of12_vs_sourceorder8of12": true,
+  "E53_status": "REJECTED_DEV",
+  "E54_actual_tokenizer_BGE_native_NLI_calls": 0,
+  "E54_all_slots_closed": true,
+  "E54_status": "REJECTED_RUNTIME_NOT_SCORED",
+  "E54_unknown_denied_open_targets": 6,
+  "E55": {
+    "actual_operations": {
+      "BGE_forward_calls_attempted": 12,
+      "BGE_forward_calls_completed": 12,
+      "BGE_initializations_attempted": 1,
+      "BGE_initializations_completed": 1,
+      "BGE_texts_attempted": 50,
+      "BGE_texts_completed": 50,
+      "GPU_calls": 0,
+      "NLI_forwards_attempted": 0,
+      "NLI_forwards_completed": 0,
+      "Node_network_operations_attempted": 0,
+      "Python_network_operations_attempted": 1,
+      "Python_network_operations_blocked": 1,
+      "Root_CLI_invocations": 1,
+      "actual_native_helper_starts": 1,
+      "actual_worker_starts": 1,
+      "allowed_further_epoch55_attempts": 0,
+      "calibration_calls": 0,
+      "engineering_contexts_completed": 48,
+      "forbidden_model_or_archive_file_access_attempts": 0,
+      "native_binary_loads_attempted": 1,
+      "native_binary_loads_completed": 1,
+      "native_corpus_batches": 1,
+      "native_corpus_batches_attempted": 1,
+      "native_corpus_batches_completed": 1,
+      "native_hit_source_validations": 114,
+      "native_index_initializations_attempted": 4,
+      "native_index_initializations_completed": 4,
+      "native_insertions_attempted": 38,
+      "native_insertions_completed": 38,
+      "native_len_calls_attempted": 8,
+      "native_len_calls_completed": 8,
+      "native_queries_attempted": 12,
+      "native_queries_completed": 12,
+      "native_version_calls_attempted": 1,
+      "native_version_calls_completed": 1,
+      "paid_API_calls": 0,
+      "reader_capacity_tokenizations": 48,
+      "reader_fragmentation_pair_tokenizations": 126,
+      "reader_fragmentation_pair_tokenizations_completed": 126,
+      "reader_packing_pair_tokenizations": 522,
+      "reader_packing_pair_tokenizations_completed": 522,
+      "reader_pair_tokenizations": 648,
+      "reader_pair_tokenizations_completed": 648,
+      "semantic_gold_decodes": 0,
+      "tokenizer_initializations_attempted": 1,
+      "tokenizer_initializations_completed": 1,
+      "training_calls": 0,
+      "typed_model_initializations": 0
+    },
+    "all_slots_closed": true,
+    "engineering_gates_qualified": true,
+    "native_counter_accounting": {
+      "actual_native_operation_caps_qualified": true,
+      "no_runtime_patch_or_retry": true,
+      "original_frozen_reporter_executed": false,
+      "qualified": false,
+      "raw_counter_integrity_qualified": false,
+      "raw_counters_are_not_actual_execution_summary": true,
+      "raw_native_counter_mismatches": {
+        "native_binary_loads_attempted": {
+          "actual": 1,
+          "raw": 2
+        },
+        "native_binary_loads_completed": {
+          "actual": 1,
+          "raw": 2
+        },
+        "native_hit_source_validations": {
+          "actual": 114,
+          "raw": 228
+        },
+        "native_index_initializations_attempted": {
+          "actual": 4,
+          "raw": 8
+        },
+        "native_index_initializations_completed": {
+          "actual": 4,
+          "raw": 8
+        },
+        "native_insertions_attempted": {
+          "actual": 38,
+          "raw": 76
+        },
+        "native_insertions_completed": {
+          "actual": 38,
+          "raw": 76
+        },
+        "native_len_calls_attempted": {
+          "actual": 8,
+          "raw": 16
+        },
+        "native_len_calls_completed": {
+          "actual": 8,
+          "raw": 16
+        },
+        "native_queries_attempted": {
+          "actual": 12,
+          "raw": 24
+        },
+        "native_queries_completed": {
+          "actual": 12,
+          "raw": 24
+        },
+        "native_version_calls_attempted": {
+          "actual": 1,
+          "raw": 2
+        },
+        "native_version_calls_completed": {
+          "actual": 1,
+          "raw": 2
+        }
+      },
+      "raw_receipt_preserved_unmodified": true,
+      "separate_new_metadata_writer_required": true,
+      "source_evidenced_cause": "Frozen support.run_native uses Counter.update(COMPLETE snapshot), then Counter.update(expected); both add. All13nonzero native scalar fields in raw are exactly2x currenthelperterminal, rather than evidence of repeated execution. Raw remains unchanged."
+    },
+    "protected_confirmation_unused": true,
+    "quality_metrics": {
+      "Brier": null,
+      "NLL": null,
+      "accuracy": null
+    },
+    "raw_counter_integrity_qualified": false,
+    "status": "ENGINEERING_CAPACITY_QUALIFIED_WITH_RAW_COUNTER_DEFECT_NOT_BENCHMARK_SCORED"
+  },
+  "actual_source_commit": "ffdd0699f3254c5dd09437533d38111a8521c920",
+  "champion": "SubmittedNative104/RRF10 unchanged",
+  "epoch": 56,
+  "epoch1": {
+    "DEV_correct": 106,
+    "DEV_n": 183,
+    "candidate": "learned residual head",
+    "confirmation_candidate": 39,
+    "confirmation_control": 41,
+    "epoch": 1,
+    "n": 48,
+    "source_report": "audit/epoch1-promotion-decision-v1.json",
+    "status": "REJECTED"
+  },
+  "epoch2": {
+    "brier_candidate": 0.4999147275769355,
+    "brier_control": 0.4995167302004609,
+    "candidate": "decision-preserving calibration",
+    "candidate_correct": 57,
+    "control_correct": 57,
+    "epoch": 2,
+    "n": 96,
+    "nll_candidate": 0.6930619081225885,
+    "nll_control": 0.6926639080519976,
+    "source_report": "audit/epoch2-actual-independent-v1.json",
+    "status": "REJECTED"
+  },
+  "goal_met": false,
+  "kind": "FRESH_CHECKPOINT_AND_EXACT_PRIOR_REJECTION_REVIEW",
+  "next_step": "Repair Counter.update native aggregation with idempotent validated snapshot and operation-cap regression before any new native measurement. New source/data pilot only after independent licence/scorer/case identity freeze. No E55rerun or reclassification of authored fixtures as benchmark generalization.",
+  "no_Git_mutations_model_native_DATA_Gold_train_calibration_calls": true,
+  "official_rank": null,
+  "prior_rejection_ledger": {
+    "bytes": 248294,
+    "path": "experiments/sota-2026-10-22/epoch55/REJECTION_LEDGER.json",
+    "sha256": "1ac6aa7ef6665a4c13fdd0bc64f4e28fd6178c99f3e6350e4f67ffef49fcc3cc"
+  },
+  "prior_rejection_records": 47,
+  "role_scope": "All historical easy48 andLegal96 DEV forever; DOC17 remains unused publisher-exposed DEV; existingconfirmation UNQUALIFIED_HOLD/unused. No new benchmark payload/features/labels accessed by this review.",
+  "schema_version": 1,
+  "unchanged_source_holds_not_retested": {
+    "FinNLI": "Author-mediated data/license access; no contact or repeated access probes.",
+    "FinQA": "Program task/source-rights/model-nonuse holds; README case/page/filing aliases are DEV forever.",
+    "ModernBERT": "Exact training/test nonuse lineage not qualified; no repeated card probes or weights."
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "GPU_calls": 0,
+  "arms": [
+    "native",
+    "lexical",
+    "source_order",
+    "whole_source"
+  ],
+  "calibration_calls": 0,
+  "confirmation_materialization_authorized": false,
+  "context_policy": {
+    "capacity_precheck": {
+      "all_source_proposals": "Reader.tokenize requires nonempty claim/source; original hypothesisfirst/premisesecond return values retained unmodified. Genuine fullpairs encoded and exact512cap checked independently for everyproposal/window.",
+      "capacity_only": "Reader.hypothesis_pair_capacity returns Pythonint from original hypothesis SINGLE length plus one extraSEP; pinnedBERT single2specials/pair3specials checked at eachcapacitycall. Never an inference packet.",
+      "expected_capacity_tokenizations": 48,
+      "expected_forward_pair_validations": "Exactly raw.expected_physical_forwards; equal actual completedNLIforwards.",
+      "expected_fragmentation_pair_tokenizations": "Positiveactualattempts=completed<=12000; exactly3*sum(publicdoccapacity_measurements); originalgenuinepairsinsideadmittedbatch.",
+      "expected_packing_pair_tokenizations": "Positiveactualattempts=completed<=24000; stage sum=global<=36000. Scalarsinglecapacitycallsremain48.",
+      "forward_boundary": "score revalidates exact3keys/finiteintegerIDs/intattention1/trueBERT0then1segments/originalCLS101,SEP102 boundaries and nonemptysegmentcontent BEFOREtorch.tensor/attemptcounter/model call. Capacityscalar/singlepacket failsclosed.",
+      "model_or_tokenizer_changes": false,
+      "synthetic_field_or_context_injection": false,
+      "whitespace_only_source_proposal": "Sourceblankunits deterministicallycoalescewithadjacentcontent; no standaloneblankfragmentorblanktailpacket. Alloriginalcharsretained, no fabricatedcontext."
+    },
+    "main_three_arms": [
+      "native",
+      "lexical",
+      "source_order"
+    ],
+    "maximum_full_pair_tokens": 512,
+    "maximum_whole_source_units_main_three": 4,
+    "neutral_scope": "Learned typed NotMentioned only. Retrieval miss never proves whole-source insufficient evidence. Even complete source coverage does not establish semantic absence.",
+    "numerical_checks": "Exact source offsets/substrings/SHA plus numeric/date/currency/negation occurrence preservation perwindow and across fullsource partition. No semantic arithmetic/date proof, fitted confidence, or prediction override.",
+    "selection": "All3retrievalarms greedilyadmit atmost4whole sourcefragments fromtheidentical sharedcatalog in rankorder, restoreselectedfragments tosourceorder, insertnewline-newline, retainwholeclaim, actualpair<=512.",
+    "shared_fragment_catalog": {
+      "algorithm": "SOURCE_OFFSET_PARENT_UNIT_FRAGMENT_V1",
+      "claim_capacity_rule": "Actual original genuine hypothesis/source-pair tokenizations for all3frozenclaims; maximumcount decidesfit, originalvalues unchanged, no approximate/additive/monotonic-prefixassumption.",
+      "construction_order": "Originalfeaturevalidation then faithfulReaderinitialization then sharedlabel-blindcatalog; allcatalogfragments/all3claims prevalidated before any BGEinitialization/nativebatch/NLI. All4armpackets/fullcoverageprevalidated beforefirstphysicalforward.",
+      "endpoint_proposal_rule": "Forovercapacitygroupsonly, deterministicatmost16evenlyrank-spaced safeendpointswithin1024originalcodepoints(includeearliest/latest), farthestfirst. IfNONEinsidehorizon, onlynearestsafeendbeyondhorizon. Eachproposalactualoriginal3claimgenuinepaircount<=512 mandatory. HorizonisSEARCHbound,nottokenestimate. NoRNG,label/metricselection,adaptivebenchmarkgridorbacktracking; thinningmayrejectvalidpartitions.",
+      "failure": "Anyprotectedatom/unsafecharunit/unrepresentablegreedypartition/cap/deadline/offset/numericboundaryfailure rejectswholebatch andclosesepochslots; no neutralanswerfromretrievalmiss.",
+      "fragmentation_pair_tokenization_cap": 12000,
+      "global_pair_tokenization_cap": 36000,
+      "limits": "600seconds/CPU2 remainprimaryrealbatchlimits; no extraqualifications/probes/warmups/corpus, zero paid/GPU. Stagepaircaps countattemptsandcompletions;48separatescalarcapacitycalls are alsoinsidebatchclock.",
+      "max_endpoint_proposals_per_fragment": 16,
+      "maximum_fragments_per_document": 1024,
+      "maximum_fragments_per_phase": 4096,
+      "packing_pair_tokenization_cap": 24000,
+      "pair_token_cap": 512,
+      "preserve_fitting_units": "Onlyovercapacity(coalesced)sourcegroupsfragment. Fittingauthoritativeunitsremainexactlyintact except minimal deterministic mergers for whitespace-onlyunits, source-globalprotectedregexcrossings, or combiningmark/ZWJunsafeparentboundaries.",
+      "proposal_search_horizon_codepoints": 1024,
+      "safe_fragment_cuts": "Originalsource whitespace/punctuation boundaries outside source-globaldeclarednumeric/date/currency/negation regex occurrences, no cut beforecombiningmark ornexttoZWJ; whitespace-onlyprefix/tail coalesced/attached, nevermodelpacket.",
+      "selection": "Frozenendpointschedulewith1024codepointSEARCHhorizon/<=16rank-spacedproposals perfragment; choosefarthestactualall3claim-admissiblecandidate. Memoizeactual3claimcountvector foridenticaldocumentspan only. Thinning/greedyfailureisnotglobalpartitionimpossibility; no othercuts/grid/retry/replacementafterfailure.",
+      "semantic_scope": "Declaredregexpreservationandcharactercoverage are not universalnumeric/grapheme/semanticproof. Crosswindowrelations canstillbelost; learnedNotMentioned/retrievalmiss neverproof ofinsufficientevidence.",
+      "shared_all_arms": true,
+      "source_integrity": "Globaloriginalcharacter/codepointoffsets and parentunit intersections retained; everycharacterexactlyonce in sharedcatalog/complete-sourcecontrol, no rewrite/normalization/truncation/dummycontext/fabricatedIDs.",
+      "source_text_published": false
+    },
+    "whole_source": {
+      "aggregation": "max(1.0-pNotMentioned), exact computed-key tie earliest source-order window; select complete original3way forecast unchanged.",
+      "all_partitions_validated_before_first_physical_forward": true,
+      "author_documented_aggregation": false,
+      "failure": "Sharedcatalogprevalidatedfragmentalone<=512forall3claims; anylatercapacity/mismatch/>24windowsrejectsentirebatch, no partial/neutralfallback/replacement/retry.",
+      "maximum_windows": 24,
+      "partition": "Greedyconsecutivecomplete sharedfragments insourceorder; everyoriginalsourcecharacterexactlyonce; no insertedseparatorwithinwindow; validateallwindowsbeforefirstNLI."
+    }
+  },
+  "epoch": 53,
+  "fixed_gates": {
+    "CF_current_authorization": false,
+    "DEV_point_pass_does_not_qualify_CF_lineage": true,
+    "DEV_point_pass_only_authorizes_independent_confirmation_review": false,
+    "N_per_arm": 12,
+    "all_forecasts_and_runtime_integrity_required": true,
+    "all_three_gold_classes_represented": true,
+    "arms_per_case": 4,
+    "conditional_confirmation_requires_new_independent_model_heldout_proof": true,
+    "controls": [
+      "lexical",
+      "source_order",
+      "whole_source"
+    ],
+    "final_forecasts_per_phase": 48,
+    "native_Brier_nonincrease_versus_each_control": true,
+    "native_NLL_nonincrease_versus_each_control": true,
+    "native_accuracy_gain_minimum_correct_versus_each_control": 2,
+    "native_at_least_one_correct_per_class": true,
+    "no_training_calibration_or_parameter_selection_on_confirmation": true,
+    "physical_model_forwards_maximum": 324,
+    "same_frozen_gates_apply_to_conditional_confirmation": true
+  },
+  "fragmentation_policy": {
+    "algorithm": "SOURCE_OFFSET_PARENT_UNIT_FRAGMENT_V1",
+    "claim_capacity_rule": "Actual original genuine hypothesis/source-pair tokenizations for all3frozenclaims; maximumcount decidesfit, originalvalues unchanged, no approximate/additive/monotonic-prefixassumption.",
+    "construction_order": "Originalfeaturevalidation then faithfulReaderinitialization then sharedlabel-blindcatalog; allcatalogfragments/all3claims prevalidated before any BGEinitialization/nativebatch/NLI. All4armpackets/fullcoverageprevalidated beforefirstphysicalforward.",
+    "endpoint_proposal_rule": "Forovercapacitygroupsonly, deterministicatmost16evenlyrank-spaced safeendpointswithin1024originalcodepoints(includeearliest/latest), farthestfirst. IfNONEinsidehorizon, onlynearestsafeendbeyondhorizon. Eachproposalactualoriginal3claimgenuinepaircount<=512 mandatory. HorizonisSEARCHbound,nottokenestimate. NoRNG,label/metricselection,adaptivebenchmarkgridorbacktracking; thinningmayrejectvalidpartitions.",
+    "failure": "Anyprotectedatom/unsafecharunit/unrepresentablegreedypartition/cap/deadline/offset/numericboundaryfailure rejectswholebatch andclosesepochslots; no neutralanswerfromretrievalmiss.",
+    "fragmentation_pair_tokenization_cap": 12000,
+    "global_pair_tokenization_cap": 36000,
+    "limits": "600seconds/CPU2 remainprimaryrealbatchlimits; no extraqualifications/probes/warmups/corpus, zero paid/GPU. Stagepaircaps countattemptsandcompletions;48separatescalarcapacitycalls are alsoinsidebatchclock.",
+    "max_endpoint_proposals_per_fragment": 16,
+    "maximum_fragments_per_document": 1024,
+    "maximum_fragments_per_phase": 4096,
+    "packing_pair_tokenization_cap": 24000,
+    "pair_token_cap": 512,
+    "preserve_fitting_units": "Onlyovercapacity(coalesced)sourcegroupsfragment. Fittingauthoritativeunitsremainexactlyintact except minimal deterministic mergers for whitespace-onlyunits, source-globalprotectedregexcrossings, or combiningmark/ZWJunsafeparentboundaries.",
+    "proposal_search_horizon_codepoints": 1024,
+    "safe_fragment_cuts": "Originalsource whitespace/punctuation boundaries outside source-globaldeclarednumeric/date/currency/negation regex occurrences, no cut beforecombiningmark ornexttoZWJ; whitespace-onlyprefix/tail coalesced/attached, nevermodelpacket.",
+    "selection": "Frozenendpointschedulewith1024codepointSEARCHhorizon/<=16rank-spacedproposals perfragment; choosefarthestactualall3claim-admissiblecandidate. Memoizeactual3claimcountvector foridenticaldocumentspan only. Thinning/greedyfailureisnotglobalpartitionimpossibility; no othercuts/grid/retry/replacementafterfailure.",
+    "semantic_scope": "Declaredregexpreservationandcharactercoverage are not universalnumeric/grapheme/semanticproof. Crosswindowrelations canstillbelost; learnedNotMentioned/retrievalmiss neverproof ofinsufficientevidence.",
+    "shared_all_arms": true,
+    "source_integrity": "Globaloriginalcharacter/codepointoffsets and parentunit intersections retained; everycharacterexactlyonce in sharedcatalog/complete-sourcecontrol, no rewrite/normalization/truncation/dummycontext/fabricatedIDs.",
+    "source_text_published": false
+  },
+  "hypothesis": "A materialpre-retrievalsourcecatalogchange—actualall3claimcapacitycompatibleexactoffsetfragments—can allow faithfulcontracttypedBERTclassificationandnativeevidenceselectioncomparison withoutdiscardingoverlongsourceunits. All4arms sharecatalog; no claimqualityorconfirmationgeneralization established byengineeringfixtures.",
+  "interpretation": "12publicDEVclassificationcases/4docgroups/3hypotheses,48finalforecasts/48..324physicalforwards; localproper/latencydescriptivesnotfull17hypothesis/spanbenchmark/publisherscore/rank/eligibility.",
+  "kind": "REAL_CONTRACTNLI_CONTRACT_BERT_WHOLE_SOURCE_PILOT",
+  "native104_champion_preserved": true,
+  "new_DEV_document_ids": [
+    39,
+    205,
+    582,
+    9
+  ],
+  "numerical_scope": "Declaredregexpreservationandcharactercoverage are not universalnumeric/grapheme/semanticproof. Crosswindowrelations canstillbelost; learnedNotMentioned/retrievalmiss neverproof ofinsufficientevidence.",
+  "paid_API_calls": 0,
+  "phase_limits": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "GPU_calls": 0,
+    "actual_final_forecasts_per_phase": 48,
+    "actual_model_forwards_maximum_per_phase": 324,
+    "calibration_calls": 0,
+    "compute_threads": 2,
+    "conditional_confirmation_second_only": true,
+    "confirmation": {
+      "allowed": false,
+      "cases": 12,
+      "documents": 4,
+      "forecasts": 48,
+      "maximum_model_forward_calls": 324,
+      "reason": "UNQUALIFIED_LINEAGE_HOLD"
+    },
+    "confirmation_dispatch_currently_allowed": false,
+    "dev": {
+      "allowed_after_separate_admission": true,
+      "cases": 12,
+      "documents": 4,
+      "forecasts": 48,
+      "maximum_model_forward_calls": 324
+    },
+    "native_batches_maximum": 2,
+    "new_paid_API_calls": 0,
+    "one_DEV_batch": true,
+    "outer_hard_stop_seconds": 600,
+    "outer_kill_seconds": 595,
+    "outer_terminate_seconds": 590,
+    "retries": 0,
+    "seconds_per_native_batch_including_initialization_and_cleanup": 600,
+    "supervisor_terminate_seconds": 580,
+    "training_calls": 0,
+    "warmup_or_additional_corpus_probes": 0,
+    "worker_soft_deadline_seconds": 570
+  },
+  "prior_exact_outcomes": {
+    "bytes": 3037,
+    "path": "experiments/sota-2026-10-22/epoch53/model-source/SOURCE_RESEARCH_DECISION.v1.json",
+    "sha256": "e774fecf740819b4c216bdccab22f0ad1eb825762d01aef9cb6991ad65f82f45"
+  },
+  "promotion_authorized": false,
+  "role_policy": {
+    "bytes": 16400,
+    "path": "experiments/sota-2026-10-22/epoch53/data/IDENTITY_POLICY.v1.json",
+    "sha256": "c6ef19b7311a1885785fe4b554e41227494a4c5f1a0a679aafe657f6050458bb"
+  },
+  "role_scope": "Project-unusedDEVdiagnostic, publishercheckpoint-development exposed; notfreshmodelgeneralization. SameCF4metadata-onlyUNQUALIFIED_HOLD.",
+  "schema_version": 1,
+  "source_checkpoint": "655e7aa57e34b0d5b0702e3a5957640a932b9d23",
+  "training_calls": 0
+}

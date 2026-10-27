@@ -1,0 +1,281 @@
+{
+  "CLI": [
+    "taskset -c 0,1 python -I -B e50_custody.py DATA --phase dev --project PROJECT --admission ROOT_DATA_ADMISSION --expected-admission-sha256 SHA --archive EXACT_ARCHIVE_PATH",
+    "taskset -c 0,1 python -I -B e50_custody.py GOLD --phase dev --project PROJECT --admission ROOT_GOLD_ADMISSION --expected-admission-sha256 SHA"
+  ],
+  "DATA_report_fields_for_runtime": [
+    "schema_version",
+    "epoch",
+    "kind",
+    "phase",
+    "status=READY_LABEL_BLIND_FEATURES_AND_OPAQUE_VAULT",
+    "plan_sha256",
+    "source_freeze_sha256",
+    "features exactref (alias private_features)",
+    "private_vault exactref",
+    "selected_ids",
+    "errors=[]"
+  ],
+  "E49_origin_metadata_only": "Original overlay source paths are metadata only. Actual guard reads exact current E50/data/provenance snapshots; oldE48/earlier inherited inputs remain actualbaselineCP/Git.",
+  "E49_snapshot_provenance_inputs": [
+    {
+      "bytes": 15683,
+      "path": "experiments/sota-2026-10-22/epoch50/data/provenance/E49_IDENTITY_POLICY.snapshot.json",
+      "sha256": "ee3f7cdd0dae8eeaab7b908b25f4b55af9549252ca727cd39db30a0141f27105"
+    },
+    {
+      "bytes": 1551,
+      "path": "experiments/sota-2026-10-22/epoch50/data/provenance/E49_USED_CONFIRMATION.snapshot.json",
+      "sha256": "f2102d9acc07e7faa526e4fde201af60a17f20eec725105096cfa1c65a897b32"
+    },
+    {
+      "bytes": 2688,
+      "path": "experiments/sota-2026-10-22/epoch50/data/provenance/E49_RESULTS.snapshot.json",
+      "sha256": "c1f1108b3428d88c51d9a4de5b0ef9b05d1e81c2772db0ef143d9761de1bb5e2"
+    },
+    {
+      "bytes": 6703,
+      "path": "experiments/sota-2026-10-22/epoch50/data/provenance/E49_SOURCE_PUBLICATION_STOP.snapshot.json",
+      "sha256": "54b795d9d0f111658ac23eeb12ab9aa2a4b42f0652fe4a4b7328061ed7ab6923"
+    },
+    {
+      "bytes": 1788,
+      "path": "experiments/sota-2026-10-22/epoch50/data/provenance/E49_LOCAL_RECOVERY_CONTINUATION.snapshot.json",
+      "sha256": "457c2e9c04b0d20682397c3aa3a45549900e22ccfe58c92ee964a6f6fa552e25"
+    }
+  ],
+  "ROOT_DATA_ADMISSION_required": {
+    "allowed_cases": "exact phase case-ID list12",
+    "confirmation_materialization_authorized": "false for DEV; true for conditional CONF with independent_dev_acceptance_ref",
+    "data_policy_ref": "exact frozen policy ref",
+    "epoch": 50,
+    "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+    "mode": "DATA",
+    "owner_ref": "exact frozen owner ref",
+    "phase": "dev or confirmation",
+    "plan_ref": "exact ref",
+    "private_output": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/private",
+    "schema_version": 1,
+    "source_admission_ref": "exact ref",
+    "source_freeze_ref": "exact ref"
+  },
+  "ROOT_GOLD_ADMISSION_required": {
+    "data_admission_ref": "exact actual DATA report ref",
+    "epoch": 50,
+    "expected_forecasts": 36,
+    "expected_native_corpus_batches": 1,
+    "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+    "mode": "GOLD",
+    "owner_ref": "exact frozen owner ref",
+    "phase": "dev or confirmation",
+    "physical_closure_ref": "exact actual physical closure ref",
+    "plan_ref": "exact ref",
+    "qualification_ref": "exact independent runtime qualification ref",
+    "raw_ref": "exact captured RAWv1 ref",
+    "raw_seal_ref": "exact raw seal ref",
+    "schema_version": 1,
+    "source_freeze_ref": "exact ref"
+  },
+  "actual_recovery_independent_proof": {
+    "bytes": 4145,
+    "path": "experiments/sota-2026-10-22/epoch50/data/provenance/E50_RECOVERY_ACTUAL_REMOTE_READBACK.snapshot.json",
+    "sha256": "23122a9efdff3a79cb0224ecc72ae18a98bbb26e63fbc2e91605050b87dde3da"
+  },
+  "actual_recovery_independent_proof_required_before_payload": true,
+  "canonical_typed_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "conditional_CONFIRM_additional_guard": {
+    "independent_dev_acceptance_ref": "exact source-bound independent acceptance report",
+    "required_fields": [
+      "epoch50",
+      "kind",
+      "phase=dev",
+      "checks_passed=true",
+      "dev_passed=true",
+      "confirmation_eligibility_accepted=true",
+      "plan_sha256",
+      "source_freeze_sha256",
+      "used_confirmation_identities=[]"
+    ]
+  },
+  "custody_failure_policy": "One exclusive attempt per phase/mode before payload/vault access; O_EXCL/fsync outputs, no overwrite/retry, only hashed errors. Gold attempted/completed per-token markers retain ambiguity on partial failures. Any selected source access retires DEV identities forever; conditional CONF is consumed conservatively when its DATA attempt starts.",
+  "epoch": 50,
+  "feature_bank_schema": {
+    "cases": "12 records {id,document_id,hypothesis_id,input_sha256,claim}; no annotation values",
+    "documents": "4 original document records: document_id/record_ordinal/source_group_sha256/source_document_sha256/normalized_document_sha256/source_filename_key_sha256/evidence",
+    "epoch": 50,
+    "evidence": "[{unit_id,sentence,start,end}] exact contiguous original-source character partition; inherited label-blind source_catalog, NOT gold evidence spans",
+    "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+    "role": "dev or confirmation",
+    "schema_version": 1,
+    "source_archive_sha256": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b"
+  },
+  "feature_hash_semantics": {
+    "input_sha256": "SHA256(json.dumps({claim:originalHypothesis,document:originalDocument},sort_keys=True,separators=(comma,colon),ensure_ascii=False,allow_nan=False).encode())",
+    "normalized_document_sha256": "SHA256(UTF8(whitespace-collapse(original.casefold()))), noNFKC",
+    "source_document_sha256": "SHA256(UTF8(join evidence sentences exactly))",
+    "source_group_sha256": "SHA256(UTF8(ContractNLI|archiveSHA|dev|decimalDocumentID))"
+  },
+  "independent_unused_role_eligibility": {
+    "bytes": 4170,
+    "path": "experiments/sota-2026-10-22/audit/epoch50/preparation/INITIAL_E49_RECOVERY_CUSTODY_AND_UNUSED_ROLE_ELIGIBILITY.v1.json",
+    "sha256": "9685e9a6dbc4426c4e1c4413fe82c0473e8e02984002269e7580b61f3348b853"
+  },
+  "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+  "model_raw_order": [
+    "Entailment",
+    "Neutral",
+    "Contradiction"
+  ],
+  "official_raw_choice_literals": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "official_scorer": {
+    "choice_codec_sha256": "9c63102a01576c230da94695f593fd7bd4fe2d0b20672b74e8a7f62aba426fc4",
+    "code_license": "Apache-2.0",
+    "repository": "stanfordnlp/contract-nli-bert",
+    "revision": "058c56fd62d56897bb4fcfbf1be71b17aee3a79c"
+  },
+  "output_paths": {
+    "CONF_DATA_report": "experiments/sota-2026-10-22/audit/epoch50/CONFIRMATION_DATA_ADMISSION.json",
+    "CONF_GOLD_report": "experiments/sota-2026-10-22/audit/epoch50/CONFIRMATION_GOLD_JOIN_REPORT.json",
+    "CONF_features": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/private/CONF_FEATURES.json",
+    "CONF_gold_joined": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/private/CONF_GOLD_JOINED.json",
+    "CONF_vault": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/private/CONF_GOLD.vault.json",
+    "DEV_DATA_report": "experiments/sota-2026-10-22/audit/epoch50/DATA_ADMISSION.json",
+    "DEV_GOLD_report": "experiments/sota-2026-10-22/audit/epoch50/GOLD_JOIN_REPORT.json",
+    "DEV_features": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/private/DEV_FEATURES.json",
+    "DEV_gold_joined": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/private/DEV_GOLD_JOINED.json",
+    "DEV_vault": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/private/DEV_GOLD.vault.json"
+  },
+  "physical_closure_required": {
+    "PID_namespace": "same actual owner/current namespace",
+    "checks_passed": true,
+    "epoch": 50,
+    "kernel_boot_id": "same actual owner/current boot",
+    "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+    "owned_process_identities": "nonempty distinct list of {pid,startticks,pgid,sid}; Gold independently rechecks absent or same terminal0/FDSize0/statm0 and scans owned PGID/SID for live/failed members",
+    "phase": "same phase",
+    "schema_version": 1
+  },
+  "policy_ref": {
+    "bytes": 20214,
+    "path": "IDENTITY_POLICY.v1.json",
+    "sha256": "1e7212ae59d25a082ac559969d1c7ea2202e0aac3a17d6f7778f17a27224a0ac"
+  },
+  "prior_epoch48_exclusion_contract": {
+    "DEV_forever": [
+      63,
+      598,
+      29,
+      575
+    ],
+    "exact_evidence": "Policy source_inputs[4:7] hash-bound E48policy,USED_CONFIRMATION,RESULTS; metadata replay requires29before and21after; no old text or Gold read.",
+    "exclude_all_from_new21_pool": true,
+    "reserved_unused_HOLD": [
+      72,
+      44,
+      486,
+      3
+    ]
+  },
+  "qualification_required": {
+    "actual_forecasts": 36,
+    "actual_native_corpus_batches": 1,
+    "all_forecasts_complete_before_gold": true,
+    "all_owned_processes_physically_closed": true,
+    "checks_passed": true,
+    "epoch": 50,
+    "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+    "phase": "same phase",
+    "plan_sha256": "same plan ref SHA",
+    "raw_sha256": "same raw_ref SHA",
+    "source_freeze_sha256": "same source freeze ref SHA"
+  },
+  "raw_seal_required": {
+    "epoch": 50,
+    "forecast_count": 36,
+    "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+    "phase": "same phase",
+    "plan_sha256": "same plan ref SHA",
+    "raw_ref": "same exact raw_ref",
+    "schema_version": 1,
+    "source_freeze_sha256": "same source freeze ref SHA"
+  },
+  "raw_to_typed": [
+    0,
+    2,
+    1
+  ],
+  "reference_schema": {
+    "bytes": "exact integer",
+    "path": "absolute or project-relative canonical nonsymlink file path",
+    "sha256": "exact SHA256"
+  },
+  "same_unused_E49_roles_no_reselection": {
+    "new_epoch50_slot_tokens_required": true,
+    "new_grid_or_reselection": false,
+    "prior_epoch49_DEV_cases": [
+      "contractnli:eced6528:dev:381:nda-1",
+      "contractnli:eced6528:dev:381:nda-10",
+      "contractnli:eced6528:dev:381:nda-16",
+      "contractnli:eced6528:dev:70:nda-1",
+      "contractnli:eced6528:dev:70:nda-10",
+      "contractnli:eced6528:dev:70:nda-16",
+      "contractnli:eced6528:dev:563:nda-1",
+      "contractnli:eced6528:dev:563:nda-10",
+      "contractnli:eced6528:dev:563:nda-16",
+      "contractnli:eced6528:dev:75:nda-1",
+      "contractnli:eced6528:dev:75:nda-10",
+      "contractnli:eced6528:dev:75:nda-16"
+    ],
+    "prior_epoch49_actual_selected_text_or_label_accesses": 0,
+    "prior_epoch49_reserved_confirmation_cases": [
+      "contractnli:eced6528:dev:19:nda-1",
+      "contractnli:eced6528:dev:19:nda-10",
+      "contractnli:eced6528:dev:19:nda-16",
+      "contractnli:eced6528:dev:45:nda-1",
+      "contractnli:eced6528:dev:45:nda-10",
+      "contractnli:eced6528:dev:45:nda-16",
+      "contractnli:eced6528:dev:56:nda-1",
+      "contractnli:eced6528:dev:56:nda-10",
+      "contractnli:eced6528:dev:56:nda-16",
+      "contractnli:eced6528:dev:12:nda-1",
+      "contractnli:eced6528:dev:12:nda-10",
+      "contractnli:eced6528:dev:12:nda-16"
+    ],
+    "prior_epoch49_slots_closed_never_replay": true,
+    "scope": "Same metadata-selected public pilot roles; independently requalified project-unused after E49 publication stop, no source text/length/labels used.",
+    "selection_salt_and_ranked21_metadata_byte_values_retained": true
+  },
+  "schema_version": 1,
+  "scientific_scope": "Project-unused public officialDEV12 transfer pilot only; four document clusters, known17hypotheses. Unknown semantic aliases and pretraining overlap remain; no sealed publisher/fullbenchmark/generalization/SOTA claim. Champion native104 preserved; no training/calibration.",
+  "source_admission_required": {
+    "epoch": 50,
+    "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+    "owner_ref": "exact frozen owner ref",
+    "parent": "f65c8a3e2ad835577e912d60c817e86ba73e29cb",
+    "plan_ref": "exact ref",
+    "schema_version": 1,
+    "scientific_dispatch_authorized": false,
+    "source_commit": "actual E50 SOURCE commit (not base, not either retired UNKNOWN object)",
+    "source_freeze_ref": "exact ref",
+    "source_full_tree_verified": true,
+    "source_publication_independently_verified": true
+  },
+  "source_binding_failure_policy": "Custody verify_source_binding requires SOURCE_CHECKPOINT_RESOLVED isTrue and actual40hex SOURCE. Current placeholder cannot execute DATA/Gold even with an admission.",
+  "source_checkpoint_resolved": true,
+  "source_dataset": {
+    "license": "CC-BY-4.0",
+    "repository": "stanfordnlp/contract-nli",
+    "revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9",
+    "source_split": "dev"
+  },
+  "source_freeze_contract": "files unique list exact {path,bytes,sha256}; all files hash-verified before DATA/GOLD; policy, executed custody and adjacent exact source_catalog must be present. plan epoch/kind/source_checkpoint/data_roles exactly policy.",
+  "status": "SOURCE_ONLY_ACTUAL_RECOVERY_BASE_RESOLVED_BEFORE_DATA_NO_MODEL_GOLD_OR_CODE_IMPORTS"
+}

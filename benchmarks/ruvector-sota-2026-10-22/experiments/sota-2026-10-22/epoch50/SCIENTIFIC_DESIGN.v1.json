@@ -1,0 +1,324 @@
+{
+  "acceptance_policy": "native104 remains preserved. Even a public DEV/confirmation point pass requires separately confirmed matching publisher protocol/eligibility and official result/rank before any SOTA claim or automation stop.",
+  "actual_recovery_independent_proof": {
+    "bytes": 4145,
+    "path": "experiments/sota-2026-10-22/epoch50/data/provenance/E50_RECOVERY_ACTUAL_REMOTE_READBACK.snapshot.json",
+    "sha256": "23122a9efdff3a79cb0224ecc72ae18a98bbb26e63fbc2e91605050b87dde3da"
+  },
+  "arms": [
+    "native",
+    "lexical",
+    "source_order"
+  ],
+  "canonical_typed_order": [
+    "Entailment",
+    "Contradiction",
+    "NotMentioned"
+  ],
+  "context_policy": {
+    "maximum_full_pair_tokens": 512,
+    "maximum_whole_source_units": 4,
+    "neutral_scope": "Learned neutral prediction only. Retrieval miss never proves full-source insufficient evidence.",
+    "numerical_checks": "Exact selected-source offsets, substring hashes and preservation of numeric/date/currency/negation occurrences; no semantic numerical proof or prediction override.",
+    "selection": "Frozen rank-order greedy whole-unit admission; restore selected units to source order; same packing for every arm. No truncation, rewriting, duplicate/overlapping source units, score-dependent fallback or label selection."
+  },
+  "data_roles": {
+    "calibration": [],
+    "confirmation": [
+      "contractnli:eced6528:dev:19:nda-1",
+      "contractnli:eced6528:dev:19:nda-10",
+      "contractnli:eced6528:dev:19:nda-16",
+      "contractnli:eced6528:dev:45:nda-1",
+      "contractnli:eced6528:dev:45:nda-10",
+      "contractnli:eced6528:dev:45:nda-16",
+      "contractnli:eced6528:dev:56:nda-1",
+      "contractnli:eced6528:dev:56:nda-10",
+      "contractnli:eced6528:dev:56:nda-16",
+      "contractnli:eced6528:dev:12:nda-1",
+      "contractnli:eced6528:dev:12:nda-10",
+      "contractnli:eced6528:dev:12:nda-16"
+    ],
+    "dev": [
+      "contractnli:eced6528:dev:381:nda-1",
+      "contractnli:eced6528:dev:381:nda-10",
+      "contractnli:eced6528:dev:381:nda-16",
+      "contractnli:eced6528:dev:70:nda-1",
+      "contractnli:eced6528:dev:70:nda-10",
+      "contractnli:eced6528:dev:70:nda-16",
+      "contractnli:eced6528:dev:563:nda-1",
+      "contractnli:eced6528:dev:563:nda-10",
+      "contractnli:eced6528:dev:563:nda-16",
+      "contractnli:eced6528:dev:75:nda-1",
+      "contractnli:eced6528:dev:75:nda-10",
+      "contractnli:eced6528:dev:75:nda-16"
+    ],
+    "train": []
+  },
+  "dataset": {
+    "attribution": "Stanford ContractNLI: A Dataset for Document-level Natural Language Inference for Contracts; official repository and immutable revision above.",
+    "license": "CC-BY-4.0",
+    "license_ref": {
+      "bytes": 18656,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_LICENSE.txt",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+    },
+    "member": "contract-nli/dev.json",
+    "member_sha256": "310af7d661d2ab50ee3700169cef524c75f39fb296bbf5a515c229eb0f42e68e",
+    "repository": "stanfordnlp/contract-nli",
+    "revision": "eced6528dd3c1d14d73f9a87df8f7bdbc03126f9"
+  },
+  "epoch": 50,
+  "faithful_loader_contract": {
+    "all395_original_mmap_storage_pointers_equal": true,
+    "both_nonpersistent_buffers": "position_ids CPUint64 arange514 and token_type_ids CPUint64 zeros(1,514)",
+    "construction": "torch.device(meta) with original classifier and original learned RobertaPooler; torch.load(weights_only=True,mmap=True,map_location=cpu); load_state_dict(strict=True,assign=True)",
+    "entire_initialization_in_phase_clock": true,
+    "exact_model_id": "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+    "exact_model_revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+    "finite_check_view_maximum_elements": 1000000,
+    "headroom_required_before_admission_and_large_asset_hash": true,
+    "large_asset_hash_reads_maximum_bytes": 1048576,
+    "minimum_finite_cgroup_headroom_bytes": 3221225472,
+    "no_meta_parameters_or_buffers_after_load": true,
+    "no_missing_or_extra_learned_keys": true,
+    "no_random_missing_tensor_copy_reinitialization_or_fallback": true,
+    "original_dtype": "float32",
+    "original_learned_RobertaPooler_preserved": true,
+    "original_learned_elements": 356412419,
+    "original_learned_tensors": 395,
+    "original_weight_sha256": "a51c55cb7dc41c4c862f06a3d9c413a8aa0619222bc56f06cb6f2f5b2d3ee14a",
+    "reader_initialization_before_BGE_and_native": true,
+    "real_model_loads_before_measurement": 0,
+    "shape_dtype_CPU_finite_checks_all395": true
+  },
+  "faithful_loader_source_contract": {
+    "bytes": 4744,
+    "path": "experiments/sota-2026-10-22/epoch50/model-source/RUNTIME_CONTRACT.v1.json",
+    "sha256": "08f2569399519662dc54979a9ea65be201bb7f933461be025d1ae1434d463750"
+  },
+  "frozen_at": "2026-10-27T00:55:11.351293+00:00",
+  "frozen_pilot_evaluator_scope": "Source binding only; actual pilot accuracy/Brier/NLL/latency/errors/resources measured only after admitted complete execution; no full official scorer execution or publisher result claim.",
+  "gates": {
+    "DEV_point_pass_only_authorizes_independent_confirmation_review": true,
+    "N_per_arm": 12,
+    "all_forecasts_and_runtime_integrity_required": true,
+    "all_three_gold_classes_represented": true,
+    "native_Brier_nonincrease_versus_each_control": true,
+    "native_NLL_nonincrease_versus_each_control": true,
+    "native_accuracy_gain_minimum_correct_versus_each_control": 2,
+    "native_at_least_one_correct_per_class": true,
+    "no_training_calibration_or_parameter_selection_on_confirmation": true,
+    "same_frozen_gates_apply_to_conditional_confirmation": true
+  },
+  "gates_frozen_before_measurement": true,
+  "hypothesis": "The same materially stronger original ynie large typed NLI head remains unmeasured after E48 initialization termination and E49 pre-DATA publication stop. E50 tests faithful all395-tensor meta/mmap/assign loading plus native RuVector evidence selection against identical-reader lexical and source-order controls, using the same independently requalified untouched E49 metadata roles and wholly new E50 slots. No question grid, label selection, runtime retry or learned-tensor change.",
+  "identity_policy": {
+    "bytes": 20214,
+    "path": "experiments/sota-2026-10-22/epoch50/data/IDENTITY_POLICY.v1.json",
+    "sha256": "1e7212ae59d25a082ac559969d1c7ea2202e0aac3a17d6f7778f17a27224a0ac"
+  },
+  "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+  "limits": {
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "GPU_calls": 0,
+    "actual_model_forwards_maximum_per_phase": 36,
+    "calibration_calls": 0,
+    "compute_threads": 2,
+    "conditional_confirmation_second_only": true,
+    "native_batches_maximum": 2,
+    "new_paid_API_calls": 0,
+    "one_DEV_batch": true,
+    "outer_hard_stop_seconds": 600,
+    "outer_kill_seconds": 595,
+    "outer_terminate_seconds": 590,
+    "retries": 0,
+    "seconds_per_native_batch_including_initialization_and_cleanup": 600,
+    "supervisor_terminate_seconds": 580,
+    "training_calls": 0,
+    "warmup_or_additional_corpus_probes": 0,
+    "worker_soft_deadline_seconds": 570
+  },
+  "minimum_headroom_before_data_and_science_bytes": 3221225472,
+  "model": {
+    "declared_training": [
+      "SNLI",
+      "MNLI",
+      "FEVER-NLI",
+      "ANLI R1",
+      "ANLI R2",
+      "ANLI R3"
+    ],
+    "model_license": "MIT, official pinned author modelcard",
+    "novelty_scope": "Same original ynie head/weights/revision as E48/E49; E48 NLIforwards0 and E49 allscientificcalls0. Newepoch50 ownership/slots/generalized explicit-phase outer protocol; no globally novel architecture or measured quality claim.",
+    "original_weight_upload": "2020-10-17T01:56:23.000Z",
+    "repository": "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+    "revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+    "unknowns": [
+      "Generic pretraining/source-document overlap",
+      "Publisher eligibility",
+      "Actual faithful-loader CPU latency and study accuracy before this experiment",
+      "E48 SIGKILL cause unproven; memory pressure plausible only"
+    ],
+    "weight_sha256": "a51c55cb7dc41c4c862f06a3d9c413a8aa0619222bc56f06cb6f2f5b2d3ee14a"
+  },
+  "model_source_final_READY": {
+    "bytes": 5703,
+    "path": "experiments/sota-2026-10-22/epoch50/model-source/SOURCE_READY.v1.json",
+    "sha256": "3aae98de7158477375bdeb70fce113baa8d99449872c51df90397b59f6a96547"
+  },
+  "native104_champion_preserved": true,
+  "network_acceptance_contract": {
+    "Node_attempts_required": 0,
+    "all_Python_attempts_must_equal_blocked": true,
+    "all_network_IO_denied": true,
+    "all_other_Python_attempts": "Denied and runtime qualification fails",
+    "classified_optional_denied_probe": {
+      "event": "socket.bind",
+      "maximum_total": 1,
+      "stages": [
+        "reader_torch_import",
+        "reader_transformers_import"
+      ]
+    },
+    "private_argument_or_host_values_retained": false,
+    "retained_event_fields_only": [
+      "event",
+      "count",
+      "stage"
+    ],
+    "successful_network_IO_allowed": 0,
+    "worker_network_audit_admissible_required": true
+  },
+  "new_phase_protocol": {
+    "confirmation_requires_independent_frozen_DEV_acceptance_and_explicit_materialization_authorization": true,
+    "exact_once_intent_and_independent_approval_bytes_SHA_required": true,
+    "journal_prefixes": {
+      "confirmation": "CONF",
+      "dev": "DEV"
+    },
+    "native_batch_ordinals": {
+      "confirmation": 2,
+      "dev": 1
+    },
+    "outer_checks_intent_admission_and_single_argv_phase_match": true,
+    "outer_launcher": "launch_phase_once.py",
+    "phase_specific_runs_and_private_run_directories": true,
+    "required_phase_argument": "--phase dev|confirmation"
+  },
+  "no_publisher_submission_or_outgoing_mail_authorized": true,
+  "official_goal_verified": false,
+  "old_E49_slots_closed_nonreplayable": true,
+  "owner_generation": 15,
+  "owner_ref": {
+    "bytes": 711,
+    "path": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402/owner.json",
+    "sha256": "2854df82624e7c7c236b45b799c383a3555673a6268d7500858f1b9bc18410bc"
+  },
+  "phase_document_ids": {
+    "confirmation": [
+      19,
+      45,
+      56,
+      12
+    ],
+    "dev": [
+      381,
+      70,
+      563,
+      75
+    ]
+  },
+  "phase_slots": {
+    "confirmation": {
+      "condition": "Unchanged reader/plan/source and all DEV gates independently accepted plus project-unused source/lineage eligibility; no early source materialization or labels.",
+      "ordinal": 2,
+      "token": "703a1af0dfcc468b93328cef73f1c9ce8c920c353485a9468f6a5de050dcf843"
+    },
+    "dev": {
+      "condition": "Actual SOURCE independently verified + once DATA + frozen source/owner/independent source review; no retry.",
+      "ordinal": 1,
+      "token": "d13bee1c811205a3f9158a8ab9b618408b5c5701844125d8f0060f9579236ae8"
+    }
+  },
+  "prior_epoch48_identity_exclusions": {
+    "DEV_forever": [
+      63,
+      598,
+      29,
+      575
+    ],
+    "exclude_all_from_selection_and_semantic_alias_checks": true,
+    "reserved_unused_HOLD": [
+      72,
+      44,
+      486,
+      3
+    ]
+  },
+  "raw_to_typed_indices": [
+    0,
+    2,
+    1
+  ],
+  "runtime_asset_verification": {
+    "bytes": 5257,
+    "path": "experiments/sota-2026-10-22/epoch50/preparation/CURRENT_RUNTIME_ASSET_VERIFICATION.v1.json",
+    "sha256": "cdaf7dbe84bb470a3ae23b1929979850a0b6e5b29d328745e61b98c57a6d5673"
+  },
+  "same_unused_E49_roles_requalified": {
+    "bytes": 4170,
+    "path": "experiments/sota-2026-10-22/audit/epoch50/preparation/INITIAL_E49_RECOVERY_CUSTODY_AND_UNUSED_ROLE_ELIGIBILITY.v1.json",
+    "sha256": "9685e9a6dbc4426c4e1c4413fe82c0473e8e02984002269e7580b61f3348b853"
+  },
+  "schema_version": 1,
+  "scorer": {
+    "executed_pilot_metrics": {
+      "bytes": 16383,
+      "path": "experiments/sota-2026-10-22/runtime/epoch50/evaluate.py",
+      "sha256": "730ecda4f09598dc61b5189d5e7624644b87e11ba3740e99055b88a3a39fed83"
+    },
+    "official_code_license": "Apache-2.0",
+    "official_code_license_ref": {
+      "bytes": 11357,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/code_LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "official_codec": {
+      "bytes": 5754,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_nli__dataset__loader.py",
+      "sha256": "9c63102a01576c230da94695f593fd7bd4fe2d0b20672b74e8a7f62aba426fc4"
+    },
+    "official_evaluation_source": {
+      "bytes": 15025,
+      "path": "experiments/sota-2026-10-22/epoch40/preparation/data-source/source_metadata/contract_nli__evaluation.py",
+      "sha256": "f5acd4497e002652b2f29a6827fecd355b96ec041c4c174b1938eea2f8c42cf4"
+    },
+    "official_repository": "stanfordnlp/contract-nli-bert",
+    "official_revision": "058c56fd62d56897bb4fcfbf1be71b17aee3a79c",
+    "scope": "Typed exact-match accuracy plus separately frozen stable Brier/NLL scorer. No full official benchmark score or publisher scorer execution claim."
+  },
+  "slot_scope": "Public one-shot nonces, not credentials. Reserved slots are not executed batches; actual attempts/completions come only from captured runtime receipts. Owner loss/uncertain mutation closes unexecuted currentepoch slots without replay.",
+  "source_archive_availability": {
+    "bytes": 484,
+    "path": "experiments/sota-2026-10-22/epoch50/preparation/SOURCE_DATA_ARCHIVE_AVAILABILITY.v1.json",
+    "sha256": "62c0f46e88f030b89fc519cf02e7745d8b52ce0c44ce8acd6f915a3efc1c607a"
+  },
+  "source_checkpoint": "f65c8a3e2ad835577e912d60c817e86ba73e29cb",
+  "source_revision_note": "Actual f65 archive-recovery base independently verified; newGuardian15/slots with same independently unusedroles/candidate/gates. Final standardpublication source refs bind actualreviewed renderer output; scientificpublication+explicitDATA/SCI required.",
+  "standard_publication_contract": {
+    "bytes": 7006,
+    "path": "experiments/sota-2026-10-22/epoch50/publication/INTERFACE.md",
+    "sha256": "e34d75ff24881ff01c6eb6b2c025146dc5d2f8572b78af4fb59966e578597f9d"
+  },
+  "standard_publication_source_READY": {
+    "bytes": 2120,
+    "path": "experiments/sota-2026-10-22/epoch50/publication/STANDARD_READY.v1.json",
+    "sha256": "4c4763f2120a1064d2f76beefd9934e7cf290fdb028a656d08a6c6bcb6194328"
+  },
+  "status": "PREREGISTERED_SOURCE_ONLY_NO_DATA_OR_MODEL_MEASUREMENT",
+  "uncertainty": "Only four document clusters per phase and three fixed hypotheses. Public source-group holdout, not sealed publisher evaluation or proof of benchmark generalization;256 seed48 document bootstrap retained as descriptive only and does not affect frozen point gates.",
+  "used_confirmation_identities": []
+}

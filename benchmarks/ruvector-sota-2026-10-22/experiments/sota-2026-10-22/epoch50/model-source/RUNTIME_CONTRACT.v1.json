@@ -1,0 +1,130 @@
+{
+  "W50": "/dev/shm/ruvector-sota-2026-10-22/epoch50-ad86e60e2402",
+  "budgets": {
+    "CPU_threads": 2,
+    "hidden_canary_warmup_forwards": 0,
+    "maximum_native_batches": 2,
+    "maximum_seconds_each": 600,
+    "outer_KILL": 595,
+    "outer_TERM": 590,
+    "outer_stop": 600,
+    "paid_API_GPU_train_calibration_calls": 0,
+    "scored_forwards_each_phase": 36,
+    "supervisor_TERM": 580,
+    "worker_soft": 570
+  },
+  "epoch": 50,
+  "frozen_algorithm": {
+    "canonical_typed_order": [
+      "Entailment",
+      "Contradiction",
+      "NotMentioned"
+    ],
+    "maximum_pair_tokens": 512,
+    "maximum_whole_source_units": 4,
+    "model_loading": "Original learnedpooler plus meta constructor; all395 exact keys/shapes/FP32CPU finite chunks<=1M; weights_only+mmap+strictassign; all395 sourcepointers exact; both nonpersistentCPU buffers position_ids arange514/token_type_ids zero; no random/copied/dropped learned tensors.",
+    "no_evidence": "A retrieval miss never proves insufficient evidence; no Neutral fallback.",
+    "numeric_checks": "Exact selected-source numeric/date/currency/negation occurrence preservation, not semantic numerical proof or label override.",
+    "same_model_arms": [
+      "native",
+      "lexical",
+      "source_order"
+    ],
+    "whole_claim_and_units_preserved": true
+  },
+  "frozen_point_gates": {
+    "N_per_arm_per_phase": 12,
+    "all3_Gold_classes_represented_and_nativeatleast1correcteach": true,
+    "descriptive_document_cluster_resample_seed": 48,
+    "descriptive_resamples": 256,
+    "native_Brier_and_NLL_nonincrease_vs_both_controls": true,
+    "native_correct_gain_at_least_per_control": 2
+  },
+  "kind": "REAL_CONTRACTNLI_ROBERTA_FAITHFUL_MMAP_TRANSFER_PILOT",
+  "launch_environment": {
+    "BLIS_NUM_THREADS": "2",
+    "MKL_DYNAMIC": "FALSE",
+    "OMP_THREAD_LIMIT": "2",
+    "RAYON_NUM_THREADS": "2",
+    "UV_THREADPOOL_SIZE": "2",
+    "VECLIB_MAXIMUM_THREADS": "2"
+  },
+  "memory": {
+    "OOM_cause_claim": "None; E48 SIGKILL cause unproven.",
+    "asset_hash_read_max_bytes": 1048576,
+    "finite_check_max_elements": 1000000,
+    "minimum_cgroup_headroom_bytes": 3221225472,
+    "preflight": "Before admission/largeasset hash/metaconstructor/mmap load"
+  },
+  "native104_champion_preserved": true,
+  "network": {
+    "all_IO_denied": true,
+    "all_other_attempts": "Denied and acceptance fails",
+    "optional_blocked_import_probe": {
+      "event": "socket.bind",
+      "max_total": 1,
+      "stage": [
+        "reader_torch_import",
+        "reader_transformers_import"
+      ]
+    },
+    "recorded": "Event names/counts/stage only; never hosts/arguments",
+    "successful_IO_allowed": 0
+  },
+  "official_quality_or_rank_claim": false,
+  "original_model": {
+    "FP32_elements": 356412419,
+    "ZIP_members": 397,
+    "fresh_current_asset_rehash": "Root required before scientific admission; not claimed by these inert tests",
+    "learned_tensors": 395,
+    "model_id": "ynie/roberta-large-snli_mnli_fever_anli_R1_R2_R3-nli",
+    "model_revision": "5b605abab9b75bc87ab66cfc049ef58d9d64b8ed",
+    "weight_bytes": 1425814813,
+    "weight_sha256": "a51c55cb7dc41c4c862f06a3d9c413a8aa0619222bc56f06cb6f2f5b2d3ee14a"
+  },
+  "owner": {
+    "epoch": 50,
+    "generation": 15,
+    "lock_device": 33,
+    "lock_inode": 13626,
+    "owner_bytes": 711,
+    "owner_sha256": "2854df82624e7c7c236b45b799c383a3555673a6268d7500858f1b9bc18410bc",
+    "pid": 158817,
+    "startticks": 38479788
+  },
+  "phase_protocol": {
+    "confirmation_requires_independent_frozen_DEV_acceptance_and_explicit_materialization_authorization": true,
+    "exact_once_intent_and_independent_approval_bytes_SHA_required": true,
+    "journal_prefixes": {
+      "confirmation": "CONF",
+      "dev": "DEV"
+    },
+    "native_batch_ordinals": {
+      "confirmation": 2,
+      "dev": 1
+    },
+    "outer_checks_intent_admission_and_single_argv_phase_match": true,
+    "outer_launcher": "launch_phase_once.py",
+    "phase_specific_runs_and_private_run_directories": true,
+    "required_phase_argument": "--phase dev|confirmation"
+  },
+  "schema_version": 1,
+  "status": "UNMEASURED_SAME_FAITHFUL_MMAP_CANDIDATE",
+  "unchanged_learned_reader_guards_structure": {
+    "guards.py": {
+      "byte_identical_to_verified_E49_final": true,
+      "bytes": 4994,
+      "sha256": "2d3aad4713828a69eba4becbee5fb1c731164638a0000742aaa5bef24376f7dc"
+    },
+    "model_contract.json": {
+      "byte_identical_to_verified_E49_final": true,
+      "bytes": 25318,
+      "sha256": "044a9cbf1d3caeb318afc54207e39c5ddcc4639c7f20418691fcf44e03b92be9"
+    },
+    "reader.py": {
+      "byte_identical_to_verified_E49_final": true,
+      "bytes": 13723,
+      "sha256": "1a106c338b16fc3d3e2683f9126dac55c1300d72151147991254b6e335625d16"
+    }
+  }
+}

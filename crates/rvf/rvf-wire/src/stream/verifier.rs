@@ -15,7 +15,7 @@ use rvf_crypto::StreamSha256 as Sha256;
 use rvf_crypto::{chunk_list_hash_flat, leaf_hash};
 use rvf_types::sha256::ct_eq;
 use rvf_types::stream::*;
-use rvf_types::{ErrorCode, SEGMENT_MAGIC};
+use rvf_types::{ErrorCode, ROOT_MANIFEST_MAGIC_BYTES, SEGMENT_MAGIC};
 
 extern crate alloc;
 
@@ -28,8 +28,14 @@ pub enum StreamState {
     Receiving,
     /// Input ended early; `resume` continues at chunk granularity.
     Suspended,
-    /// Every segment verified and the byte count matches.
+    /// Every segment verified, the byte count matches and the body identity
+    /// is confirmed (or the descriptor carries none). Terminal and safe.
     Complete,
+    /// Every segment verified, but chunks arrived out of file order so
+    /// `rvf_identity` is NOT confirmed. `rvf_identity` must not be used as an
+    /// identity until [`StreamVerifier::finish_identity`] moves this to
+    /// `Complete`. The chunk commitments themselves are verified.
+    CompleteUnverified,
     /// The descriptor was refused (terminal).
     Rejected(ErrorCode),
     /// Terminal failure: revoke, terminate, drop layers.
@@ -72,6 +78,15 @@ pub enum Event<'a> {
         /// Total body bytes.
         body_len: u64,
     },
+    /// An authentic, already verified chunk was received again: ignored.
+    Duplicate {
+        /// Segment id.
+        seg_id: u64,
+        /// Chunk index.
+        chunk_index: u32,
+    },
+    /// The descriptor frame was received again, byte-identical: ignored.
+    DuplicateDescriptor,
     /// A chunk table matched its commitment.
     TableVerified {
         /// Segment id.
@@ -117,6 +132,9 @@ pub struct StreamVerifier<'p> {
     left: usize,
     faults: u32,
     verified_bytes: u64,
+    table_bytes: u64,
+    dup_cap: u64,
+    dups: u64,
     identity: Option<IdentityTracker>,
     identity_status: Option<IdentityStatus>,
     max_chunk_len: u64,
@@ -145,6 +163,9 @@ impl<'p> StreamVerifier<'p> {
             left: 0,
             faults: 0,
             verified_bytes: 0,
+            table_bytes: 0,
+            dup_cap: 0,
+            dups: 0,
             identity: None,
             identity_status: None,
             max_chunk_len: 0,
@@ -203,7 +224,10 @@ impl<'p> StreamVerifier<'p> {
 
     /// Terminal failure; used by the frame reader for size lies.
     pub fn poison(&mut self, code: ErrorCode) -> ErrorCode {
-        if !matches!(self.state, StreamState::Rejected(_)) {
+        if matches!(
+            self.state,
+            StreamState::AwaitDescriptor | StreamState::Receiving | StreamState::Poisoned(_)
+        ) {
             self.state = StreamState::Poisoned(code);
         }
         code
@@ -262,6 +286,11 @@ impl<'p> StreamVerifier<'p> {
                 self.max_table_payload = self.max_table_payload.max(32 * n as u64);
             }
         }
+        let total_chunks: u64 = self.segs.iter().map(|s| s.n as u64).sum();
+        self.dup_cap = self
+            .policy
+            .max_duplicate_frames
+            .unwrap_or(4 * total_chunks + 64);
         self.left = d.entries.len();
         if h.flags & STREAM_FLAG_IDENTITY_PRESENT != 0 {
             self.identity = Some(IdentityTracker {
@@ -303,8 +332,32 @@ impl<'p> StreamVerifier<'p> {
         match frame.first() {
             Some(&FRAME_CHUNK) => self.on_chunk(frame),
             Some(&FRAME_CHUNK_TABLE) => self.on_table(frame),
+            Some(&FRAME_DESCRIPTOR) => self.on_descriptor_again(frame),
             _ => Err(self.fault(ErrorCode::StreamUnexpectedFrame)),
         }
+    }
+
+    fn count_duplicate(&mut self) -> Result<(), ErrorCode> {
+        self.dups += 1;
+        if self.dups > self.dup_cap {
+            return Err(self.poison(ErrorCode::StreamDuplicateFlood));
+        }
+        Ok(())
+    }
+
+    /// A descriptor frame after admission: ignored if byte-identical, else a fault.
+    fn on_descriptor_again<'a>(&mut self, f: &'a [u8]) -> Result<Event<'a>, ErrorCode> {
+        if f.len() < 5 || rd32(f, 1) as usize != f.len() - 5 {
+            return Err(self.poison(ErrorCode::StreamFrameSizeLie));
+        }
+        let same = f.len() - 5 <= self.policy.max_descriptor_bytes
+            && rvf_crypto::descriptor_hash(&f[5..])
+                == self.desc.as_ref().expect("installed").descriptor_hash;
+        if !same {
+            return Err(self.fault(ErrorCode::StreamUnexpectedFrame));
+        }
+        self.count_duplicate()?;
+        Ok(Event::DuplicateDescriptor)
     }
 
     fn on_table<'a>(&mut self, f: &'a [u8]) -> Result<Event<'a>, ErrorCode> {
@@ -325,6 +378,10 @@ impl<'p> StreamVerifier<'p> {
         if n != s.n {
             return Err(self.poison(ErrorCode::StreamFrameSizeLie));
         }
+        let want = 32 * n as u64;
+        if self.table_bytes + want > self.policy.max_table_bytes {
+            return Err(self.fault(ErrorCode::StreamLimitExceeded));
+        }
         let d = self.desc.as_ref().expect("descriptor installed");
         let ok = chunk_list_hash_flat(&d.header.file_id, seg_id, &f[13..])
             .is_some_and(|h| ct_eq(&h, &d.entries[i].chunk_table_hash));
@@ -332,6 +389,7 @@ impl<'p> StreamVerifier<'p> {
             return Err(self.fault(ErrorCode::StreamTableHashMismatch));
         }
         self.segs[i].leaves = Some(f[13..].to_vec());
+        self.table_bytes += want;
         Ok(Event::TableVerified { seg_id })
     }
 
@@ -352,6 +410,9 @@ impl<'p> StreamVerifier<'p> {
             (d.header, d.entries[i])
         };
         let s = &self.segs[i];
+        if idx < s.next {
+            return self.on_duplicate_chunk(i, idx, f);
+        }
         if s.done || idx != s.next {
             return Err(self.fault(ErrorCode::StreamUnexpectedFrame));
         }
@@ -390,6 +451,12 @@ impl<'p> StreamVerifier<'p> {
                 return Err(self.poison(ErrorCode::StreamWeakChecksum));
             }
         }
+        if idx == 0
+            && e.seg_type == STREAM_SEG_TYPE_ROOT_PAGE
+            && bytes[..4] != ROOT_MANIFEST_MAGIC_BYTES
+        {
+            return Err(self.poison(ErrorCode::StreamTableInvalid));
+        }
         let body_offset = e.body_offset + idx as u64 * h.chunk_size().unwrap_or(0);
         if let Some(t) = &mut self.identity {
             if t.feasible && t.pos == body_offset {
@@ -408,7 +475,6 @@ impl<'p> StreamVerifier<'p> {
         s.next += 1;
         if s.next == s.n {
             s.done = true;
-            s.leaves = None;
             segment_verified = true;
             self.left -= 1;
             let st = e.stage as usize;
@@ -437,6 +503,36 @@ impl<'p> StreamVerifier<'p> {
         })
     }
 
+    /// A chunk below the next expected index: idempotent if it hashes to the
+    /// verified leaf, otherwise an ordinary hash-mismatch fault.
+    fn on_duplicate_chunk<'a>(
+        &mut self,
+        i: usize,
+        idx: u32,
+        f: &'a [u8],
+    ) -> Result<Event<'a>, ErrorCode> {
+        let (seg_id, bytes) = (rd64(f, 1), &f[17..]);
+        let (h, e) = {
+            let d = self.desc.as_ref().expect("descriptor installed");
+            (d.header, d.entries[i])
+        };
+        if h.chunk_len(e.stored_len, idx) != Some(bytes.len() as u64) {
+            return Err(self.poison(ErrorCode::StreamFrameSizeLie));
+        }
+        let mut w = e.chunk_table_hash;
+        if let Some(l) = &self.segs[i].leaves {
+            w.copy_from_slice(&l[idx as usize * 32..idx as usize * 32 + 32]);
+        }
+        if !ct_eq(&leaf_hash(&h.file_id, seg_id, idx, bytes), &w) {
+            return Err(self.fault(ErrorCode::StreamChunkHashMismatch));
+        }
+        self.count_duplicate()?;
+        Ok(Event::Duplicate {
+            seg_id,
+            chunk_index: idx,
+        })
+    }
+
     fn finish(&mut self) -> Result<IdentityStatus, ErrorCode> {
         let h = self.desc.as_ref().expect("descriptor installed").header;
         if self.verified_bytes != h.body_len {
@@ -453,7 +549,11 @@ impl<'p> StreamVerifier<'p> {
             Some(_) => IdentityStatus::Unverifiable,
         };
         self.identity_status = Some(st);
-        self.state = StreamState::Complete;
+        self.state = if st == IdentityStatus::Unverifiable {
+            StreamState::CompleteUnverified
+        } else {
+            StreamState::Complete
+        };
         Ok(st)
     }
 
@@ -465,7 +565,7 @@ impl<'p> StreamVerifier<'p> {
         &mut self,
         mut read_at: impl FnMut(u64, &mut [u8]) -> bool,
     ) -> Result<(), ErrorCode> {
-        if self.state != StreamState::Complete
+        if self.state != StreamState::CompleteUnverified
             || self.identity_status != Some(IdentityStatus::Unverifiable)
         {
             return Err(ErrorCode::StreamBadState);
@@ -483,9 +583,12 @@ impl<'p> StreamVerifier<'p> {
             pos += n as u64;
         }
         if !ct_eq(&hasher.finalize(), &h.rvf_identity) {
-            return Err(self.poison(ErrorCode::StreamIdentityMismatch));
+            // Explicit retroactive revocation of an unverified artifact.
+            self.state = StreamState::Poisoned(ErrorCode::StreamIdentityMismatch);
+            return Err(ErrorCode::StreamIdentityMismatch);
         }
         self.identity_status = Some(IdentityStatus::Verified);
+        self.state = StreamState::Complete;
         Ok(())
     }
 }
